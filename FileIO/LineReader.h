@@ -1,14 +1,12 @@
 #pragma once
 
-
-#include <iomanip>
 #include <fstream>
-#include <sstream>
 #include <string>
 #include <vector>
-#include <dirent.h>
 
 #include "../Strings/split.h"
+
+
 #define forLineInFile(macroFileName, ...)\
 {								\
 	do 							\
