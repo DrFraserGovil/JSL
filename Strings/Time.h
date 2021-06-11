@@ -8,14 +8,14 @@
 
 namespace JSL
 {
-	void printTime()
+	void PrintCurrentTime()
 	{
 		auto now = std::chrono::system_clock::now();
 		std::time_t now_t = std::chrono::system_clock::to_time_t(now);
 		std::cout << "Current time is: "<< std::ctime(&now_t) << std::endl;
 	}
 	
-	std::string formatDuration(std::chrono::time_point<std::chrono::system_clock> start, std::chrono::time_point<std::chrono::system_clock> end)
+	std::string FormatTimeDuration(std::chrono::time_point<std::chrono::system_clock> start, std::chrono::time_point<std::chrono::system_clock> end)
 	{
 		std::chrono::duration<double> diff = end - start;
 		double seconds = diff.count();
