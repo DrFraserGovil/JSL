@@ -1,21 +1,24 @@
 #pragma once
 #include <chrono>
 #include <string>
-
+#include <sstream>
 #include <vector>
 #include <iostream>
 
 
 namespace JSL
 {
-	void PrintCurrentTime()
+	inline std::string PrintCurrentTime()
 	{
 		auto now = std::chrono::system_clock::now();
 		std::time_t now_t = std::chrono::system_clock::to_time_t(now);
-		std::cout << "Current time is: "<< std::ctime(&now_t) << std::endl;
+		std::ostringstream out;
+		out << "Current time is: ";
+		out << std::ctime(&now_t);
+		return out.str();
 	}
 	
-	std::string FormatTimeDuration(std::chrono::time_point<std::chrono::system_clock> start, std::chrono::time_point<std::chrono::system_clock> end)
+	inline std::string FormatTimeDuration(std::chrono::time_point<std::chrono::system_clock> start, std::chrono::time_point<std::chrono::system_clock> end)
 	{
 		std::chrono::duration<double> diff = end - start;
 		double seconds = diff.count();

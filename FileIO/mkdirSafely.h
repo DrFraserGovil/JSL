@@ -10,7 +10,7 @@ namespace JSL
 		std::string Message;
 	};
 	
-	mkdirReturn mkdirSafely(std::string directory)
+	mkdirReturn inline mkdirSafely(std::string directory)
 	{
 		mkdirReturn output;
 		output.Successful = true;

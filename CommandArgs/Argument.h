@@ -5,8 +5,17 @@
 
 namespace JSL
 {
+	class ArgumentInterface
+	{
+		public:
+		//~ ArgumentInterface(){};
+		virtual void Parse( char * arg, char * value){};
+		virtual void ListParse( int argc, char * argv[]){};
+		virtual void Configure(std::string configFile, char configDelimiter){};
+	};
+	
 	template <class T>
-	class Argument
+	class Argument : public ArgumentInterface
 	{
 		public:
 			T Value;
@@ -23,32 +32,51 @@ namespace JSL
 				TriggerString = trigger;
 				StringCheck();
 			}
-			Argument(T defaultValue, std::string trigger,const int argc,const char * argv[])
+			Argument(T defaultValue, std::string trigger, int argc, char * argv[])
 			{
 				Value = defaultValue;
 				TriggerString = trigger;
 				
-				for (int i = 1; i < argc-1; ++i)
-				{
-					Parse(argv[i],argv[i+1]);
-				}
+				ListParse(argc,argv);
 				StringCheck();
 			}
 			
-			Argument(T defaultValue, std::string trigger, std::string configFile,const char configDelimiter)
+			Argument(T defaultValue, std::string trigger, std::string configFile, char configDelimiter)
 			{
 				Value = defaultValue;
 				TriggerString = trigger;
 				forLineVectorIn(configFile, configDelimiter,
-					Parse(FILE_LINE_VECTOR[0].c_str(), FILE_LINE_VECTOR[1].c_str());
+				
+					if (FILE_LINE_VECTOR[0] == TriggerString)
+					{
+						AssignValue(FILE_LINE_VECTOR[1]);
+					}
 				);
 				StringCheck();
 			}
 			
-			void Parse(const char * arg,const char * value)
+			void Configure(std::string configFile, char configDelimiter)
+			{
+				forLineVectorIn(configFile, configDelimiter,
+					if (FILE_LINE_VECTOR[0] == TriggerString)
+					{
+						AssignValue(FILE_LINE_VECTOR[1]);
+					}
+				);
+			}
+			
+			void ListParse( int argc, char * argv[])
+			{
+				for (int i = 1; i < argc-1; ++i)
+				{
+					Parse(argv[i],argv[i+1]);
+				}
+			}
+			
+			void Parse( char * arg, char * value)
 			{
 				std::string sArg = arg;
-				if (sArg == TriggerString)
+				if (sArg == "-" + TriggerString)
 				{
 					AssignValue(value);
 				}
@@ -62,11 +90,15 @@ namespace JSL
 		private:
 			std::string TriggerString;
 			
-			void AssignValue(const char * value){};
-			
+			void AssignValue( char * value){};
+			void AssignValue(std::string value)
+			{
+				char * v = value.data();
+				AssignValue(v);
+			}
 			void StringCheck()
 			{
-				const std::vector<std::string> ProtectedStrings = {"--help", "-help"};
+				 std::vector<std::string> ProtectedStrings = {"help"};
 				
 				for (int i = 0; i < ProtectedStrings.size(); ++i)
 				{
@@ -79,7 +111,7 @@ namespace JSL
 	};
 	
 	template<>
-	void Argument<int>::AssignValue(const char * value)
+	inline void Argument<int>::AssignValue( char * value)
 	{
 		double testDouble = std::stod(value);
 		int testInt = std::stoi(value);
@@ -94,19 +126,19 @@ namespace JSL
 	
 	//specific parsing functions for different types
 	template<>
-	void Argument<double>::AssignValue(const char * value)
+	inline void Argument<double>::AssignValue( char * value)
 	{
 		Value = std::stod(value);
 	}
 	
 	template<>
-	void Argument<std::string>::AssignValue(const char * value)
+	inline void Argument<std::string>::AssignValue( char * value)
 	{
 		Value = (std::string)value;
 	}
 	
 	template<>
-	void Argument<bool>::AssignValue(const char * value)
+	inline void Argument<bool>::AssignValue( char * value)
 	{
 		int testValue = std::stoi(value);
 		if (testValue != 0 && testValue != 1)
