@@ -12,6 +12,8 @@ namespace JSL
 		virtual void Parse( char * arg, char * value){};
 		virtual void ListParse( int argc, char * argv[]){};
 		virtual void Configure(std::string configFile, char configDelimiter){};
+		protected:
+		std::string TriggerString;
 	};
 	
 	template <class T>
@@ -58,7 +60,7 @@ namespace JSL
 			void Configure(std::string configFile, char configDelimiter)
 			{
 				forLineVectorIn(configFile, configDelimiter,
-					if (FILE_LINE_VECTOR[0] == TriggerString)
+					if (FILE_LINE_VECTOR.size() > 1 && FILE_LINE_VECTOR[0] == TriggerString)
 					{
 						AssignValue(FILE_LINE_VECTOR[1]);
 					}
@@ -86,9 +88,9 @@ namespace JSL
 			{
 				return Value;
 			}
-
+			
 		private:
-			std::string TriggerString;
+			
 			
 			void AssignValue( char * value){};
 			void AssignValue(std::string value)
@@ -120,7 +122,9 @@ namespace JSL
 		{
 			throw std::invalid_argument("Argument passed to " + TriggerString + " was a double, expected an integer");
 		}
-		Value = std::stoi(value);
+		
+		//this method ensures that it can interpret in exponential notation as stod can do that!
+		Value = (int)testDouble;
 	}
 	
 	
