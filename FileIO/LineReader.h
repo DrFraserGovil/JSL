@@ -7,7 +7,7 @@
 #include "../Strings/split.h"
 
 
-#define forLineInFile(macroFileName, ...)\
+#define forLineIn(macroFileName, ...)\
 {								\
 	do 							\
 	{							\
@@ -26,7 +26,7 @@
 	} while(0);						\
 }									\
 
-#define forLineVectorInFile(macroFileName, token,...)\
+#define forLineVectorIn(macroFileName, token,...)\
 {								\
 	do 							\
 	{							\
