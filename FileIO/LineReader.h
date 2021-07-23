@@ -7,14 +7,14 @@
 #include "../Strings/split.h"
 
 
-#define forLineInFile(macroFileName, ...)\
+#define forLineIn(macroFileName, ...)\
 {								\
 	do 							\
 	{							\
 		std::ifstream macroFile(macroFileName);	\
 		if (!macroFile.is_open())	\
 		{							\
-			std::cout << "\n\nERROR: Could not find the file '" << macroFileName << ".\n\nPlease provide a valid directory within the Output directory\n\n " << std::endl;	\
+			std::cout << "\n\nERROR: Could not find the file '" << macroFileName << ".\n\nPlease provide a valid filepath.\n\n " << std::endl;	\
 			exit(1);				\
 		}							\
 		std::string FILE_LINE;				\
@@ -26,14 +26,14 @@
 	} while(0);						\
 }									\
 
-#define forLineVectorInFile(macroFileName, token,...)\
+#define forLineVectorIn(macroFileName, token,...)\
 {								\
 	do 							\
 	{							\
 		std::ifstream macroFile(macroFileName);	\
 		if (!macroFile.is_open())	\
 		{							\
-			std::cout << "\n\nERROR: Could not find the file '" << macroFileName << ".\n\nPlease provide a valid directory within the Output directory\n\n " << std::endl;	\
+			std::cout << "\n\nERROR: Could not find the file '" << macroFileName << ".\n\nPlease provide a valid filepath.\n\n " << std::endl;	\
 			exit(1);				\
 		}							\
 		std::string FILE_LINE;				\

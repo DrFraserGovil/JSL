@@ -5,7 +5,7 @@
 
 namespace JSL
 {
-	std::vector<std::string> split(const std::string& s, char delimiter)
+	inline std::vector<std::string> split(const std::string& s, char delimiter)
 	{
 		//dumb brute-force string splitter based on a delimiter
 		std::vector<std::string> tokens;
