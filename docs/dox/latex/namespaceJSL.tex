@@ -8,7 +8,7 @@ class \hyperlink{classJSL_1_1Argument}{Argument}
 class \hyperlink{classJSL_1_1ArgumentInterface}{Argument\+Interface}
 \item 
 struct \hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A wrapper for the return type of \hyperlink{namespaceJSL_a1db6f26ec58c53d1a56375c0f1b27c77}{mkdir\+Safely()} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,32 +18,76 @@ std\+::vector$<$ std\+::string $>$ \hyperlink{namespaceJSL_a34a7ba28084b304e97a7
 \item 
 std\+::string \hyperlink{namespaceJSL_a22fc26d87034a744e42e70e77db892df}{Print\+Current\+Time} ()
 \item 
-std\+::string \hyperlink{namespaceJSL_a5382fb9fe415f76c7dadd5f39dbad099}{Format\+Time\+Duration} (std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ start, std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ end)
+std\+::string \hyperlink{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}{Format\+Duration} (int time\+In\+Seconds)
+\item 
+std\+::string \hyperlink{namespaceJSL_ae7af96a0311784e019209221335f76d9}{Format\+Clock} (std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ start, std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ end)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{namespaceJSL_a5382fb9fe415f76c7dadd5f39dbad099}\label{namespaceJSL_a5382fb9fe415f76c7dadd5f39dbad099}} 
-\index{J\+SL@{J\+SL}!Format\+Time\+Duration@{Format\+Time\+Duration}}
-\index{Format\+Time\+Duration@{Format\+Time\+Duration}!J\+SL@{J\+SL}}
-\subsubsection{\texorpdfstring{Format\+Time\+Duration()}{FormatTimeDuration()}}
-{\footnotesize\ttfamily std\+::string J\+S\+L\+::\+Format\+Time\+Duration (\begin{DoxyParamCaption}\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$}]{start,  }\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{namespaceJSL_ae7af96a0311784e019209221335f76d9}\label{namespaceJSL_ae7af96a0311784e019209221335f76d9}} 
+\index{J\+SL@{J\+SL}!Format\+Clock@{Format\+Clock}}
+\index{Format\+Clock@{Format\+Clock}!J\+SL@{J\+SL}}
+\subsubsection{\texorpdfstring{Format\+Clock()}{FormatClock()}}
+{\footnotesize\ttfamily std\+::string J\+S\+L\+::\+Format\+Clock (\begin{DoxyParamCaption}\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$}]{start,  }\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Calls \hyperlink{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}{Format\+Duration()} on the duration of the start and endpoints of a {\ttfamily chrono} stopwatch. 
+\begin{DoxyParams}{Parameters}
+{\em start} & A {\ttfamily chrono} object representing the start of the duration \\
+\hline
+{\em end} & The corresponding end-\/point {\ttfamily chrono} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}\label{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}} 
+\index{J\+SL@{J\+SL}!Format\+Duration@{Format\+Duration}}
+\index{Format\+Duration@{Format\+Duration}!J\+SL@{J\+SL}}
+\subsubsection{\texorpdfstring{Format\+Duration()}{FormatDuration()}}
+{\footnotesize\ttfamily std\+::string J\+S\+L\+::\+Format\+Duration (\begin{DoxyParamCaption}\item[{int}]{time\+In\+Seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given a duration in seconds, convert it into standard Day/\+Hour/\+Minute/\+Second formatted string. 
+\begin{DoxyParams}{Parameters}
+{\em time\+In\+Seconds} & The time to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A human-\/readable string equal to the input 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespaceJSL_a1db6f26ec58c53d1a56375c0f1b27c77}\label{namespaceJSL_a1db6f26ec58c53d1a56375c0f1b27c77}} 
 \index{J\+SL@{J\+SL}!mkdir\+Safely@{mkdir\+Safely}}
 \index{mkdir\+Safely@{mkdir\+Safely}!J\+SL@{J\+SL}}
 \subsubsection{\texorpdfstring{mkdir\+Safely()}{mkdirSafely()}}
 {\footnotesize\ttfamily \hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return} J\+S\+L\+::mkdir\+Safely (\begin{DoxyParamCaption}\item[{std\+::string}]{directory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Checks the status of the target directory, if it does not exist, attempts to create it. Works wherever the {\ttfamily mkdir} command is installed. 
+\begin{DoxyParams}{Parameters}
+{\em directory} & Path (relative or absolute) to the desired directory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return} object detailing the success + associated messages for the request 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespaceJSL_a22fc26d87034a744e42e70e77db892df}\label{namespaceJSL_a22fc26d87034a744e42e70e77db892df}} 
 \index{J\+SL@{J\+SL}!Print\+Current\+Time@{Print\+Current\+Time}}
 \index{Print\+Current\+Time@{Print\+Current\+Time}!J\+SL@{J\+SL}}
 \subsubsection{\texorpdfstring{Print\+Current\+Time()}{PrintCurrentTime()}}
 {\footnotesize\ttfamily std\+::string J\+S\+L\+::\+Print\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Get current system time in a readable format \begin{DoxyReturn}{Returns}
+A string of the readable format 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespaceJSL_a34a7ba28084b304e97a707c653dce887}\label{namespaceJSL_a34a7ba28084b304e97a707c653dce887}} 
 \index{J\+SL@{J\+SL}!split@{split}}
 \index{split@{split}!J\+SL@{J\+SL}}
 \subsubsection{\texorpdfstring{split()}{split()}}
 {\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ J\+S\+L\+::split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{char}]{delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Splits the string based on the chosen delimiter. Repeated delimiters are ignored. 
+\begin{DoxyParams}{Parameters}
+{\em s} & The input string to be split (unchanged) \\
+\hline
+{\em delimiter} & The delimiting character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of non-\/empty strings. 
+\end{DoxyReturn}

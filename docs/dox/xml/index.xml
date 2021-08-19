@@ -12,12 +12,11 @@
     <member refid="classJSL_1_1Argument_1a8984e7ce23155259d90a3e98170f36e0" kind="function"><name>Parse</name></member>
     <member refid="classJSL_1_1Argument_1a965bc0dfdce6e03380605af313f8c880" kind="function"><name>operator T</name></member>
     <member refid="classJSL_1_1Argument_1a8614eb66f807132c4323847e05e666c4" kind="function"><name>CheckForInvalidTriggers</name></member>
-    <member refid="classJSL_1_1Argument_1abc43696d406a6d369cd1b3d8cb1540b5" kind="function"><name>AssignValue</name></member>
-    <member refid="classJSL_1_1Argument_1af0c053ad614c0f20c48cf31389eee7e9" kind="function"><name>AssignValue</name></member>
-    <member refid="classJSL_1_1Argument_1a2b60a11be4f0ba28dfb3395c49ced06b" kind="function"><name>AssignValue</name></member>
-    <member refid="classJSL_1_1Argument_1afbd6b9b5c50de60cee39f4b0ab327375" kind="function"><name>AssignValue</name></member>
-    <member refid="classJSL_1_1Argument_1a1b443f8b8948e7aaec2154ed15e6f08f" kind="function"><name>AssignValue</name></member>
-    <member refid="classJSL_1_1Argument_1ac71e37555de1dea3b6d297bf0909a920" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1a6e8fe8e7cca2aeffe23f6fbadb88d4c8" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1a059e7c6f1d9232a93cf725510fe2db27" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1af5ccee16ba3403ef62d4bec9d380c762" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1a0831822da0a2da47daa07d2e51b87d2a" kind="function"><name>AssignValue</name></member>
   </compound>
   <compound refid="classJSL_1_1ArgumentInterface" kind="class"><name>JSL::ArgumentInterface</name>
     <member refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kind="variable"><name>TriggerString</name></member>
@@ -33,7 +32,8 @@
     <member refid="namespaceJSL_1a1db6f26ec58c53d1a56375c0f1b27c77" kind="function"><name>mkdirSafely</name></member>
     <member refid="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" kind="function"><name>split</name></member>
     <member refid="namespaceJSL_1a22fc26d87034a744e42e70e77db892df" kind="function"><name>PrintCurrentTime</name></member>
-    <member refid="namespaceJSL_1a5382fb9fe415f76c7dadd5f39dbad099" kind="function"><name>FormatTimeDuration</name></member>
+    <member refid="namespaceJSL_1ad7ff2220bbab0294b95b9aa85332a222" kind="function"><name>FormatDuration</name></member>
+    <member refid="namespaceJSL_1ae7af96a0311784e019209221335f76d9" kind="function"><name>FormatClock</name></member>
   </compound>
   <compound refid="Argument_8h" kind="file"><name>Argument.h</name>
   </compound>

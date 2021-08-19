@@ -41,18 +41,16 @@ T \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}
 \item 
 void \hyperlink{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}{Check\+For\+Invalid\+Triggers} ()
 \begin{DoxyCompactList}\small\item\em Some Triggers are disallowed -\/ they usually are protected names such as \char`\"{}help\char`\"{}, though other properties may trigger this funciton to throw an error. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value} (char $\ast$value)
+virtual void \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value} (const char $\ast$value)
 \begin{DoxyCompactList}\small\item\em Virtual override for template-\/specific Assign\+Value calls. Most template types will require a custom handler to convert value into the chosen template type -- some default ones are provided below. \end{DoxyCompactList}\item 
-void \hyperlink{classJSL_1_1Argument_af0c053ad614c0f20c48cf31389eee7e9}{Assign\+Value} (std\+::string value)
-\begin{DoxyCompactList}\small\item\em Allow value assignments with strings, because C++ char/strings made my head hurt. \end{DoxyCompactList}\item 
-{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_a2b60a11be4f0ba28dfb3395c49ced06b}{Assign\+Value} (char $\ast$value)
-\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$double$>$ objects. Throws an error if the value is a non-\/integer, to prevent silent casting/truncation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_afbd6b9b5c50de60cee39f4b0ab327375}{Assign\+Value} (char $\ast$value)
-\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$double$>$ objects. \end{DoxyCompactList}\item 
-{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_a1b443f8b8948e7aaec2154ed15e6f08f}{Assign\+Value} (char $\ast$value)
-\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for \hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument$<$std\+::string$>$} objects. \end{DoxyCompactList}\item 
-{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_ac71e37555de1dea3b6d297bf0909a920}{Assign\+Value} (char $\ast$value)
-\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$bool$>$ objects. Accepts only 0/1 as valid bool-\/strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_a6e8fe8e7cca2aeffe23f6fbadb88d4c8}{Assign\+Value} (const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()} function for Argument$<$double$>$ objects. Throws an error if the value is a non-\/integer, to prevent silent casting/truncation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_a059e7c6f1d9232a93cf725510fe2db27}{Assign\+Value} (const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()} function for Argument$<$double$>$ objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_af5ccee16ba3403ef62d4bec9d380c762}{Assign\+Value} (const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()} function for \hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument$<$std\+::string$>$} objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_a0831822da0a2da47daa07d2e51b87d2a}{Assign\+Value} (const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()} function for Argument$<$bool$>$ objects. Accepts only 0/1 as valid bool-\/strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -60,7 +58,7 @@ void \hyperlink{classJSL_1_1Argument_af0c053ad614c0f20c48cf31389eee7e9}{Assign\+
 \subsubsection*{template$<$class T$>$\newline
 class J\+S\+L\+::\+Argument$<$ T $>$}
 
-A class which allows arbitrary template parameters to be read in as command-\/line arguments using a Name/\+Value pair system. Upon construction, the \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value} parameter takes the default value (if provided), until it is overriden by a successful argument/\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String} match. 
+A class which allows arbitrary template parameters to be read in as command-\/line arguments or from a configuraiton file using a Name/\+Value pair system. Upon construction, the \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value} parameter takes the default value (if provided), until it is overriden by a successful argument/\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String} match. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}\label{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}} 
@@ -155,71 +153,60 @@ Constructor which initialises as per \hyperlink{classJSL_1_1Argument_a2511f7c98e
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}\label{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}} 
+\mbox{\Hypertarget{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}\label{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}} 
 \index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
 \index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
-\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-virtual void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+virtual void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
 
 
 
 Virtual override for template-\/specific Assign\+Value calls. Most template types will require a custom handler to convert value into the chosen template type -- some default ones are provided below. 
 
-\mbox{\Hypertarget{classJSL_1_1Argument_af0c053ad614c0f20c48cf31389eee7e9}\label{classJSL_1_1Argument_af0c053ad614c0f20c48cf31389eee7e9}} 
+\mbox{\Hypertarget{classJSL_1_1Argument_a6e8fe8e7cca2aeffe23f6fbadb88d4c8}\label{classJSL_1_1Argument_a6e8fe8e7cca2aeffe23f6fbadb88d4c8}} 
 \index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
 \index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
-\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{std\+::string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-Allow value assignments with strings, because C++ char/strings made my head hurt. 
-
-\mbox{\Hypertarget{classJSL_1_1Argument_a2b60a11be4f0ba28dfb3395c49ced06b}\label{classJSL_1_1Argument_a2b60a11be4f0ba28dfb3395c49ced06b}} 
-\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
-\index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
-\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily template$<$$>$ \\
-void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ int $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ int $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$double$>$ objects. Throws an error if the value is a non-\/integer, to prevent silent casting/truncation. 
+Override of the \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()} function for Argument$<$double$>$ objects. Throws an error if the value is a non-\/integer, to prevent silent casting/truncation. 
 
-\mbox{\Hypertarget{classJSL_1_1Argument_afbd6b9b5c50de60cee39f4b0ab327375}\label{classJSL_1_1Argument_afbd6b9b5c50de60cee39f4b0ab327375}} 
+\mbox{\Hypertarget{classJSL_1_1Argument_a059e7c6f1d9232a93cf725510fe2db27}\label{classJSL_1_1Argument_a059e7c6f1d9232a93cf725510fe2db27}} 
 \index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
 \index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
-\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily template$<$$>$ \\
-void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ double $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ double $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$double$>$ objects. 
+Override of the \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()} function for Argument$<$double$>$ objects. 
 
-\mbox{\Hypertarget{classJSL_1_1Argument_a1b443f8b8948e7aaec2154ed15e6f08f}\label{classJSL_1_1Argument_a1b443f8b8948e7aaec2154ed15e6f08f}} 
+\mbox{\Hypertarget{classJSL_1_1Argument_af5ccee16ba3403ef62d4bec9d380c762}\label{classJSL_1_1Argument_af5ccee16ba3403ef62d4bec9d380c762}} 
 \index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
 \index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
-\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily template$<$$>$ \\
-void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ std\+::string $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ std\+::string $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for \hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument$<$std\+::string$>$} objects. 
+Override of the \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()} function for \hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument$<$std\+::string$>$} objects. 
 
-\mbox{\Hypertarget{classJSL_1_1Argument_ac71e37555de1dea3b6d297bf0909a920}\label{classJSL_1_1Argument_ac71e37555de1dea3b6d297bf0909a920}} 
+\mbox{\Hypertarget{classJSL_1_1Argument_a0831822da0a2da47daa07d2e51b87d2a}\label{classJSL_1_1Argument_a0831822da0a2da47daa07d2e51b87d2a}} 
 \index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
 \index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
-\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily template$<$$>$ \\
-void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ bool $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ bool $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$bool$>$ objects. Accepts only 0/1 as valid bool-\/strings. 
+Override of the \hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()} function for Argument$<$bool$>$ objects. Accepts only 0/1 as valid bool-\/strings. 
 
 \mbox{\Hypertarget{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}\label{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}} 
 \index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Check\+For\+Invalid\+Triggers@{Check\+For\+Invalid\+Triggers}}

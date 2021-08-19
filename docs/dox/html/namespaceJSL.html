@@ -73,6 +73,7 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ArgumentInterface.html">ArgumentInterface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structJSL_1_1mkdirReturn.html">mkdirReturn</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for the return type of <a class="el" href="namespaceJSL.html#a1db6f26ec58c53d1a56375c0f1b27c77">mkdirSafely()</a>  <a href="structJSL_1_1mkdirReturn.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -83,12 +84,14 @@ Functions</h2></td></tr>
 <tr class="separator:a34a7ba28084b304e97a707c653dce887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22fc26d87034a744e42e70e77db892df"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a22fc26d87034a744e42e70e77db892df">PrintCurrentTime</a> ()</td></tr>
 <tr class="separator:a22fc26d87034a744e42e70e77db892df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5382fb9fe415f76c7dadd5f39dbad099"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a5382fb9fe415f76c7dadd5f39dbad099">FormatTimeDuration</a> (std::chrono::time_point&lt; std::chrono::system_clock &gt; start, std::chrono::time_point&lt; std::chrono::system_clock &gt; end)</td></tr>
-<tr class="separator:a5382fb9fe415f76c7dadd5f39dbad099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7ff2220bbab0294b95b9aa85332a222"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222">FormatDuration</a> (int timeInSeconds)</td></tr>
+<tr class="separator:ad7ff2220bbab0294b95b9aa85332a222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7af96a0311784e019209221335f76d9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae7af96a0311784e019209221335f76d9">FormatClock</a> (std::chrono::time_point&lt; std::chrono::system_clock &gt; start, std::chrono::time_point&lt; std::chrono::system_clock &gt; end)</td></tr>
+<tr class="separator:ae7af96a0311784e019209221335f76d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a5382fb9fe415f76c7dadd5f39dbad099"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5382fb9fe415f76c7dadd5f39dbad099">&#9670;&nbsp;</a></span>FormatTimeDuration()</h2>
+<a id="ae7af96a0311784e019209221335f76d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7af96a0311784e019209221335f76d9">&#9670;&nbsp;</a></span>FormatClock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -97,7 +100,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string JSL::FormatTimeDuration </td>
+          <td class="memname">std::string JSL::FormatClock </td>
           <td>(</td>
           <td class="paramtype">std::chrono::time_point&lt; std::chrono::system_clock &gt;&#160;</td>
           <td class="paramname"><em>start</em>, </td>
@@ -120,6 +123,46 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Calls <a class="el" href="namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222">FormatDuration()</a> on the duration of the start and endpoints of a <code>chrono</code> stopwatch. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>A <code>chrono</code> object representing the start of the duration </td></tr>
+    <tr><td class="paramname">end</td><td>The corresponding end-point <code>chrono</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad7ff2220bbab0294b95b9aa85332a222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ff2220bbab0294b95b9aa85332a222">&#9670;&nbsp;</a></span>FormatDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string JSL::FormatDuration </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeInSeconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeInSeconds</td><td>The time to be converted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A human-readable string equal to the input </dd></dl>
 
 </div>
 </div>
@@ -146,6 +189,13 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Checks the status of the target directory, if it does not exist, attempts to create it. Works wherever the <code>mkdir</code> command is installed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">directory</td><td>Path (relative or absolute) to the desired directory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structJSL_1_1mkdirReturn.html" title="A wrapper for the return type of mkdirSafely() ">mkdirReturn</a> object detailing the success + associated messages for the request </dd></dl>
 
 </div>
 </div>
@@ -171,6 +221,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get current system time in a readable format </p><dl class="section return"><dt>Returns</dt><dd>A string of the readable format </dd></dl>
 
 </div>
 </div>
@@ -207,6 +258,14 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Splits the string based on the chosen delimiter. Repeated delimiters are ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The input string to be split (unchanged) </td></tr>
+    <tr><td class="paramname">delimiter</td><td>The delimiting character </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of non-empty strings. </dd></dl>
 
 </div>
 </div>

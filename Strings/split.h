@@ -5,6 +5,12 @@
 
 namespace JSL
 {
+	/*!
+	 Splits the string based on the chosen delimiter. Repeated delimiters are ignored.
+	 * \param s The input string to be split (unchanged)
+	 * \param delimiter The delimiting character
+	 * \returns A vector of non-empty strings. 
+	*/
 	inline std::vector<std::string> split(const std::string& s, char delimiter)
 	{
 		//dumb brute-force string splitter based on a delimiter

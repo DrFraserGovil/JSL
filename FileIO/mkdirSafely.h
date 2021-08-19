@@ -4,14 +4,25 @@
 
 namespace JSL
 {
+	
+	//!A wrapper for the return type of mkdirSafely()
 	struct mkdirReturn
 	{
+		//!True if the directory already existed, or was succesfully created.
 		bool Successful;
+		//!Contains the logging messages from the function
 		std::string Message;
 	};
 	
+	
+	/*!
+		  Checks the status of the target directory, if it does not exist, attempts to create it. Works wherever the `mkdir` command is installed.   
+		  \param directory Path (relative or absolute) to the desired directory
+		  * \return A mkdirReturn object detailing the success + associated messages for the request
+		*/
 	mkdirReturn inline mkdirSafely(std::string directory)
 	{
+		
 		mkdirReturn output;
 		output.Successful = true;
 		output.Message = "";

@@ -214,7 +214,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="71" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="71" bodyend="83"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="71" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="71" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1aa626ff37dbebaf0501614dc625a76383" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -251,7 +251,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="86" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="86" bodyend="94"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="80" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="80" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1aa2b18bb35e90f91e224a06d60835053a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -289,7 +289,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="97" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="97" bodyend="103"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="91" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="91" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1a8984e7ce23155259d90a3e98170f36e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -326,7 +326,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="106" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="106" bodyend="113"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="100" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="100" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1a965bc0dfdce6e03380605af313f8c880" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -339,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="116" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="116" bodyend="119"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="110" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="110" bodyend="113"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -354,15 +354,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="124" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="124" bodyend="135"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="118" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="118" bodyend="129"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Argument_1abc43696d406a6d369cd1b3d8cb1540b5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>virtual void JSL::Argument&lt; T &gt;::AssignValue</definition>
-        <argsstring>(char *value)</argsstring>
+        <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>value</declname>
         </param>
         <briefdescription>
@@ -371,106 +371,89 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="138" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="138" bodyend="138"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="132" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="132" bodyend="132"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Argument_1af0c053ad614c0f20c48cf31389eee7e9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void JSL::Argument&lt; T &gt;::AssignValue</definition>
-        <argsstring>(std::string value)</argsstring>
-        <name>AssignValue</name>
-        <param>
-          <type>std::string</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-<para>Allow value assignments with strings, because C++ char/strings made my head hurt. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="141" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="141" bodyend="144"/>
-      </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Argument_1a2b60a11be4f0ba28dfb3395c49ced06b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Argument_1a6e8fe8e7cca2aeffe23f6fbadb88d4c8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
         </templateparamlist>
         <type>void</type>
         <definition>void JSL::Argument&lt; int &gt;::AssignValue</definition>
-        <argsstring>(char *value)</argsstring>
+        <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>Override of the <ref refid="classJSL_1_1Argument_1abc43696d406a6d369cd1b3d8cb1540b5" kindref="member">AssignValue()</ref> function for Argument&lt;double&gt; objects. Throws an error if the value is a non-integer, to prevent silent casting/truncation. </para>        </briefdescription>
+<para>Override of the <ref refid="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" kindref="member">AssignValue()</ref> function for Argument&lt;double&gt; objects. Throws an error if the value is a non-integer, to prevent silent casting/truncation. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="150" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="150" bodyend="162"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="138" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="138" bodyend="150"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Argument_1afbd6b9b5c50de60cee39f4b0ab327375" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Argument_1a059e7c6f1d9232a93cf725510fe2db27" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
         </templateparamlist>
         <type>void</type>
         <definition>void JSL::Argument&lt; double &gt;::AssignValue</definition>
-        <argsstring>(char *value)</argsstring>
+        <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>Override of the <ref refid="classJSL_1_1Argument_1abc43696d406a6d369cd1b3d8cb1540b5" kindref="member">AssignValue()</ref> function for Argument&lt;double&gt; objects. </para>        </briefdescription>
+<para>Override of the <ref refid="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" kindref="member">AssignValue()</ref> function for Argument&lt;double&gt; objects. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="167" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="167" bodyend="170"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="155" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="155" bodyend="158"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Argument_1a1b443f8b8948e7aaec2154ed15e6f08f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Argument_1af5ccee16ba3403ef62d4bec9d380c762" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
         </templateparamlist>
         <type>void</type>
         <definition>void JSL::Argument&lt; std::string &gt;::AssignValue</definition>
-        <argsstring>(char *value)</argsstring>
+        <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>Override of the <ref refid="classJSL_1_1Argument_1abc43696d406a6d369cd1b3d8cb1540b5" kindref="member">AssignValue()</ref> function for <ref refid="classJSL_1_1Argument_1ab438509a3c030516de72f3f493295bd5" kindref="member">Argument&lt;std::string&gt;</ref> objects. </para>        </briefdescription>
+<para>Override of the <ref refid="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" kindref="member">AssignValue()</ref> function for <ref refid="classJSL_1_1Argument_1ab438509a3c030516de72f3f493295bd5" kindref="member">Argument&lt;std::string&gt;</ref> objects. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="174" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="174" bodyend="177"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="162" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="162" bodyend="165"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Argument_1ac71e37555de1dea3b6d297bf0909a920" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Argument_1a0831822da0a2da47daa07d2e51b87d2a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
         </templateparamlist>
         <type>void</type>
         <definition>void JSL::Argument&lt; bool &gt;::AssignValue</definition>
-        <argsstring>(char *value)</argsstring>
+        <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
         <param>
-          <type>char *</type>
+          <type>const char *</type>
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>Override of the <ref refid="classJSL_1_1Argument_1abc43696d406a6d369cd1b3d8cb1540b5" kindref="member">AssignValue()</ref> function for Argument&lt;bool&gt; objects. Accepts only 0/1 as valid bool-strings. </para>        </briefdescription>
+<para>Override of the <ref refid="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" kindref="member">AssignValue()</ref> function for Argument&lt;bool&gt; objects. Accepts only 0/1 as valid bool-strings. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="181" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="181" bodyend="189"/>
+        <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="169" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="169" bodyend="177"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>A class which allows arbitrary template parameters to be read in as command-line arguments using a Name/Value pair system. Upon construction, the <ref refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" kindref="member">Value</ref> parameter takes the default value (if provided), until it is overriden by a successful argument/<ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref> match. </para>    </detaileddescription>
+<para>A class which allows arbitrary template parameters to be read in as command-line arguments or from a configuraiton file using a Name/Value pair system. Upon construction, the <ref refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" kindref="member">Value</ref> parameter takes the default value (if provided), until it is overriden by a successful argument/<ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref> match. </para>    </detaileddescription>
     <inheritancegraph>
       <node id="1">
         <label>JSL::ArgumentInterface</label>
@@ -495,19 +478,18 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="36" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="35" bodyend="146"/>
+    <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="36" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="35" bodyend="134"/>
     <listofallmembers>
       <member refid="classJSL_1_1Argument_1ab438509a3c030516de72f3f493295bd5" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
       <member refid="classJSL_1_1Argument_1ab07e7981db832cce30f534c67f6491f4" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
       <member refid="classJSL_1_1Argument_1a2511f7c98ee2b0b59650f468341b8747" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
       <member refid="classJSL_1_1Argument_1a4d187d2fb658021866b173987b920ab4" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
       <member refid="classJSL_1_1Argument_1a83799e9089f88d7e6cf30990fae42610" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
-      <member refid="classJSL_1_1Argument_1abc43696d406a6d369cd1b3d8cb1540b5" prot="private" virt="virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
-      <member refid="classJSL_1_1Argument_1af0c053ad614c0f20c48cf31389eee7e9" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
-      <member refid="classJSL_1_1Argument_1a2b60a11be4f0ba28dfb3395c49ced06b" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
-      <member refid="classJSL_1_1Argument_1afbd6b9b5c50de60cee39f4b0ab327375" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
-      <member refid="classJSL_1_1Argument_1a1b443f8b8948e7aaec2154ed15e6f08f" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
-      <member refid="classJSL_1_1Argument_1ac71e37555de1dea3b6d297bf0909a920" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
+      <member refid="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" prot="private" virt="virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
+      <member refid="classJSL_1_1Argument_1a6e8fe8e7cca2aeffe23f6fbadb88d4c8" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
+      <member refid="classJSL_1_1Argument_1a059e7c6f1d9232a93cf725510fe2db27" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
+      <member refid="classJSL_1_1Argument_1af5ccee16ba3403ef62d4bec9d380c762" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
+      <member refid="classJSL_1_1Argument_1a0831822da0a2da47daa07d2e51b87d2a" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
       <member refid="classJSL_1_1Argument_1a8614eb66f807132c4323847e05e666c4" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>CheckForInvalidTriggers</name></member>
       <member refid="classJSL_1_1Argument_1aa626ff37dbebaf0501614dc625a76383" prot="public" virt="virtual"><scope>JSL::Argument</scope><name>Configure</name></member>
       <member refid="classJSL_1_1Argument_1aa2b18bb35e90f91e224a06d60835053a" prot="public" virt="virtual"><scope>JSL::Argument</scope><name>ListParse</name></member>

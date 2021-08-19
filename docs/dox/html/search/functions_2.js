@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['formattimeduration',['FormatTimeDuration',['../namespaceJSL.html#a5382fb9fe415f76c7dadd5f39dbad099',1,'JSL']]]
+  ['formatclock',['FormatClock',['../namespaceJSL.html#ae7af96a0311784e019209221335f76d9',1,'JSL']]],
+  ['formatduration',['FormatDuration',['../namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222',1,'JSL']]]
 ];

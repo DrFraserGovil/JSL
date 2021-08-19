@@ -18,10 +18,19 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Checks the status of the target directory, if it does not exist, attempts to create it. Works wherever the <computeroutput>mkdir</computeroutput> command is installed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path (relative or absolute) to the desired directory </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="structJSL_1_1mkdirReturn" kindref="compound">mkdirReturn</ref> object detailing the success + associated messages for the request </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="13" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="13" bodyend="45"/>
+        <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="23" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="23" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; std::string &gt;</type>
@@ -39,10 +48,26 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Splits the string based on the chosen delimiter. Repeated delimiters are ignored. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input string to be split (unchanged) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delimiting character </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of non-empty strings. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/Strings/split.h" line="8" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/split.h" bodystart="8" bodyend="22"/>
+        <location file="/home/fraserj/Documents/Work/JSL/Strings/split.h" line="14" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/split.h" bodystart="14" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a22fc26d87034a744e42e70e77db892df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -52,16 +77,43 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Get current system time in a readable format <simplesect kind="return"><para>A string of the readable format </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/Strings/Time.h" line="11" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/Time.h" bodystart="11" bodyend="19"/>
+        <location file="/home/fraserj/Documents/Work/JSL/Strings/Time.h" line="16" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/Time.h" bodystart="16" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1a5382fb9fe415f76c7dadd5f39dbad099" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceJSL_1ad7ff2220bbab0294b95b9aa85332a222" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
-        <definition>std::string JSL::FormatTimeDuration</definition>
+        <definition>std::string JSL::FormatDuration</definition>
+        <argsstring>(int timeInSeconds)</argsstring>
+        <name>FormatDuration</name>
+        <param>
+          <type>int</type>
+          <declname>timeInSeconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeInSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time to be converted </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A human-readable string equal to the input </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fraserj/Documents/Work/JSL/Strings/Time.h" line="31" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/Time.h" bodystart="31" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ae7af96a0311784e019209221335f76d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::FormatClock</definition>
         <argsstring>(std::chrono::time_point&lt; std::chrono::system_clock &gt; start, std::chrono::time_point&lt; std::chrono::system_clock &gt; end)</argsstring>
-        <name>FormatTimeDuration</name>
+        <name>FormatClock</name>
         <param>
           <type>std::chrono::time_point&lt; std::chrono::system_clock &gt;</type>
           <declname>start</declname>
@@ -73,10 +125,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Calls <ref refid="namespaceJSL_1ad7ff2220bbab0294b95b9aa85332a222" kindref="member">FormatDuration()</ref> on the duration of the start and endpoints of a <computeroutput>chrono</computeroutput> stopwatch. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <computeroutput>chrono</computeroutput> object representing the start of the duration </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The corresponding end-point <computeroutput>chrono</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/Strings/Time.h" line="21" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/Time.h" bodystart="21" bodyend="53"/>
+        <location file="/home/fraserj/Documents/Work/JSL/Strings/Time.h" line="66" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/Time.h" bodystart="66" bodyend="73"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
