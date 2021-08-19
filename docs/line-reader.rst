@@ -28,6 +28,7 @@ They are somewhat hacky macros which wrap around custom code. This means you nee
 * After the close-paren, remember a semi-colon.
 
 * They are not within the JSL namespace, annoyingly
+
 Macros
 ************
 
@@ -59,7 +60,9 @@ If the file ``sonnet116.txt`` contains the full text of `the relevant Shakespear
 	}
 
 
-When run::
+When run:
+
+.. code-block:: text
 
 	>./sonnet
 	tempests
