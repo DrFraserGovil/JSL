@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="JSL_8h" kind="file" language="C++">
+    <compoundname>JSL.h</compoundname>
+    <includes refid="FileIO_8h" local="yes">FileIO/FileIO.h</includes>
+    <includes refid="Strings_8h" local="yes">Strings/Strings.h</includes>
+    <includes refid="CommandArgs_8h" local="yes">CommandArgs/CommandArgs.h</includes>
+    <incdepgraph>
+      <node id="71">
+        <label>Time.h</label>
+        <link refid="Time_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>stdexcept</label>
+      </node>
+      <node id="64">
+        <label>string</label>
+      </node>
+      <node id="63">
+        <label>fstream</label>
+      </node>
+      <node id="61">
+        <label>FileIO/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>Argument.h</label>
+        <link refid="Argument_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>vector</label>
+      </node>
+      <node id="67">
+        <label>sstream</label>
+      </node>
+      <node id="70">
+        <label>Strings/Strings.h</label>
+        <link refid="Strings_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>LineReader.h</label>
+        <link refid="LineReader_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>iostream</label>
+      </node>
+      <node id="72">
+        <label>chrono</label>
+      </node>
+      <node id="74">
+        <label>CommandArgs/CommandArgs.h</label>
+        <link refid="CommandArgs_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>../Strings/split.h</label>
+        <link refid="split_8h"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>mkdirSafely.h</label>
+        <link refid="mkdirSafely_8h"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>/home/fraserj/Documents/Work/JSL/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">The<sp/>JSL<sp/>(Jack<sp/>Standard<sp/>Library)<sp/>is<sp/>a<sp/>collection<sp/>of<sp/>code<sp/>written<sp/>by<sp/>Jack<sp/>Fraser<sp/>(https://orcid.org/0000-0002-6980-8484)<sp/>during<sp/>the<sp/>course<sp/>of<sp/>his<sp/>PhD<sp/>(2018-2022)</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment">This<sp/>code<sp/>is<sp/>intended<sp/>to<sp/>capture<sp/>several<sp/>elements<sp/>of<sp/>boilerplate<sp/>code<sp/>that<sp/>I<sp/>ended<sp/>up<sp/>writing<sp/>again<sp/>and<sp/>again<sp/>across<sp/>several<sp/>projects.<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">It<sp/>shouldn&apos;t<sp/>be<sp/>of<sp/>any<sp/>interest<sp/>to<sp/>anyone<sp/>else,<sp/>but<sp/>just<sp/>in<sp/>case,<sp/>it<sp/>is<sp/>distributed<sp/>under<sp/>a<sp/>GNU<sp/>v3<sp/>public<sp/>license.<sp/>Go<sp/>nuts,<sp/>weirdos.<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="FileIO_8h" kindref="compound">FileIO/FileIO.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Strings_8h" kindref="compound">Strings/Strings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CommandArgs_8h" kindref="compound">CommandArgs/CommandArgs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fraserj/Documents/Work/JSL/JSL.h"/>
+  </compounddef>
+</doxygen>

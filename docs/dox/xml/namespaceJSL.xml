@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceJSL" kind="namespace" language="C++">
+    <compoundname>JSL</compoundname>
+    <innerclass refid="classJSL_1_1Argument" prot="public">JSL::Argument</innerclass>
+    <innerclass refid="classJSL_1_1ArgumentInterface" prot="public">JSL::ArgumentInterface</innerclass>
+    <innerclass refid="structJSL_1_1mkdirReturn" prot="public">JSL::mkdirReturn</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1a1db6f26ec58c53d1a56375c0f1b27c77" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structJSL_1_1mkdirReturn" kindref="compound">mkdirReturn</ref></type>
+        <definition>mkdirReturn JSL::mkdirSafely</definition>
+        <argsstring>(std::string directory)</argsstring>
+        <name>mkdirSafely</name>
+        <param>
+          <type>std::string</type>
+          <declname>directory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="13" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="13" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; JSL::split</definition>
+        <argsstring>(const std::string &amp;s, char delimiter)</argsstring>
+        <name>split</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fraserj/Documents/Work/JSL/Strings/split.h" line="8" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/split.h" bodystart="8" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a22fc26d87034a744e42e70e77db892df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::PrintCurrentTime</definition>
+        <argsstring>()</argsstring>
+        <name>PrintCurrentTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fraserj/Documents/Work/JSL/Strings/Time.h" line="11" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/Time.h" bodystart="11" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a5382fb9fe415f76c7dadd5f39dbad099" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::FormatTimeDuration</definition>
+        <argsstring>(std::chrono::time_point&lt; std::chrono::system_clock &gt; start, std::chrono::time_point&lt; std::chrono::system_clock &gt; end)</argsstring>
+        <name>FormatTimeDuration</name>
+        <param>
+          <type>std::chrono::time_point&lt; std::chrono::system_clock &gt;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>std::chrono::time_point&lt; std::chrono::system_clock &gt;</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fraserj/Documents/Work/JSL/Strings/Time.h" line="21" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/Strings/Time.h" bodystart="21" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h" line="7" column="1"/>
+  </compounddef>
+</doxygen>

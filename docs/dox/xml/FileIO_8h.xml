@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="FileIO_8h" kind="file" language="C++">
+    <compoundname>FileIO.h</compoundname>
+    <includes refid="LineReader_8h" local="yes">LineReader.h</includes>
+    <includes refid="mkdirSafely_8h" local="yes">mkdirSafely.h</includes>
+    <includedby refid="Argument_8h" local="yes">/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h</includedby>
+    <includedby refid="JSL_8h" local="yes">/home/fraserj/Documents/Work/JSL/JSL.h</includedby>
+    <incdepgraph>
+      <node id="31">
+        <label>string</label>
+      </node>
+      <node id="30">
+        <label>fstream</label>
+      </node>
+      <node id="28">
+        <label>/home/fraserj/Documents/Work/JSL/FileIO/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>vector</label>
+      </node>
+      <node id="34">
+        <label>sstream</label>
+      </node>
+      <node id="29">
+        <label>LineReader.h</label>
+        <link refid="LineReader_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>../Strings/split.h</label>
+        <link refid="split_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>mkdirSafely.h</label>
+        <link refid="mkdirSafely_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="37">
+        <label>/home/fraserj/Documents/Work/JSL/FileIO/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h</label>
+        <link refid="Argument_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>/home/fraserj/Documents/Work/JSL/CommandArgs/CommandArgs.h</label>
+        <link refid="CommandArgs_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>/home/fraserj/Documents/Work/JSL/JSL.h</label>
+        <link refid="JSL_8h"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LineReader_8h" kindref="compound">LineReader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mkdirSafely_8h" kindref="compound">mkdirSafely.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/fraserj/Documents/Work/JSL/FileIO/FileIO.h"/>
+  </compounddef>
+</doxygen>

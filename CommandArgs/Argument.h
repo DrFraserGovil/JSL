@@ -5,68 +5,89 @@
 
 namespace JSL
 {
+	/*!
+		A wrapper class for all Argument objects, enabling heterogenous argument lists etc. to be constructed. 	
+		Contains the virtual methods common to all objects. All Argument objects are assumed to take name-value pairs, with the associated name indicated by the #TriggerString
+	*/
 	class ArgumentInterface
 	{
 		public:
-		//~ ArgumentInterface(){};
-		virtual void Parse( char * arg, char * value){};
-		virtual void ListParse( int argc, char * argv[]){};
-		virtual void Configure(std::string configFile, char configDelimiter){};
+			
+			//!Virtual alias for Argument::Parse()
+			virtual void Parse( char * name, char * value){};
+			
+			//!Virtual alias for Argument::ListParse()
+			virtual void ListParse( int argc, char * argv[]){};
+			
+			//!Virtual alias for Argument::Configure()
+			virtual void Configure(std::string configFile, char configDelimiter){};
 		protected:
-		std::string TriggerString;
+			//!The chosen "Name" of the Argument - the string which will trigger the Parse() function to write in the passed value
+			std::string TriggerString;
 	};
 	
+	
+	
+	/*!
+		A class which allows arbitrary template parameters to be read in as command-line arguments or from a configuraiton file using a Name/Value pair system. Upon construction, the #Value parameter takes the default value (if provided), until it is overriden by a successful argument/#TriggerString match.
+	*/
 	template <class T>
 	class Argument : public ArgumentInterface
 	{
+		
 		public:
+			//!The current value of the argument. 
 			T Value;
 		
+			//!Default constructor
 			Argument(){};
+			
+			//!Constructor initialising the #TriggerString. Value is set to uninitialised memory of the Template type. \param trigger The value of #TriggerString, and the "name" of this parameter 
 			Argument(std::string trigger)
 			{
 				TriggerString = trigger;
-				StringCheck();
+				CheckForInvalidTriggers();
 			}
+			
+			//!Constructor which initialises the #TriggerString and #Value members. \param defaultValue The initialisation value of #Value - overridden if Parse() is called. \param trigger The value of #TriggerString, and the "name" of this parameter 
 			Argument(T defaultValue, std::string trigger)
 			{
 				Value = defaultValue;
 				TriggerString = trigger;
-				StringCheck();
+				CheckForInvalidTriggers();
 			}
+			
+			//!Constructor which initialises as per #Argument(T defaultValue, std::string trigger), but which also immediately calls ListParse() to check for assignment \param defaultValue The initialisation value of #Value - overridden if Parse() is called. \param trigger The value of #TriggerString, and the "name" of this parameter \param argc The number of commandline arguments \param argv[] the command line list
 			Argument(T defaultValue, std::string trigger, int argc, char * argv[])
 			{
 				Value = defaultValue;
 				TriggerString = trigger;
 				
 				ListParse(argc,argv);
-				StringCheck();
+				CheckForInvalidTriggers();
 			}
 			
+			//!Constructor which initialises as per #Argument(T defaultValue, std::string trigger), but which also immediately calls Configure() to check for assignment \param defaultValue The initialisation value of #Value - overridden if Parse() is called. \param trigger The value of #TriggerString, and the "name" of this parameter \param configFile The path to the file to open and parse for configuration data \param configDelimiter The delimiter used to separate Name/Value pairs in the cofiguration file
 			Argument(T defaultValue, std::string trigger, std::string configFile, char configDelimiter)
 			{
 				Value = defaultValue;
 				TriggerString = trigger;
-				forLineVectorIn(configFile, configDelimiter,
-				
-					if (FILE_LINE_VECTOR[0] == TriggerString)
-					{
-						AssignValue(FILE_LINE_VECTOR[1]);
-					}
-				);
-				StringCheck();
+				Configure(configFile, configDelimiter);
+				CheckForInvalidTriggers();
 			}
 			
+			//!Iterate through a configuration file, extracting Name/Value pairs and calling Parse() in them. Each Name/Value pair should be on a new line in the file, and separated by the *configDelimiter*. \param configFile The path to the file to open and parse for configuration data \param configDelimiter The delimiter used to separate Name/Value pairs in the cofiguration file
 			void Configure(std::string configFile, char configDelimiter)
 			{
 				forLineVectorIn(configFile, configDelimiter,
 					if (FILE_LINE_VECTOR.size() > 1 && FILE_LINE_VECTOR[0] == TriggerString)
 					{
-						AssignValue(FILE_LINE_VECTOR[1]);
+						AssignValue(FILE_LINE_VECTOR[1].c_str());
 					}
 				);
 			}
 			
+			//!Iterate through the provided commandline args, extracting Name/Value pairs and calling Parse() on them. \param argc The number of arguments passed to the program \param argv[] The argument list (argv[0] is assumed to be the the name of the program, and is ignored)
 			void ListParse( int argc, char * argv[])
 			{
 				for (int i = 1; i < argc-1; ++i)
@@ -75,32 +96,28 @@ namespace JSL
 				}
 			}
 			
-			void Parse( char * arg, char * value)
+			//! Checks if the Name matches the TriggerString. For a successful match, Name must be prefaced by one more dash than found in TriggerString. \param name The name-string of the Name/Value pair\param value The value-string of the Name/Value pair. 
+			void Parse( char * name, char * value)
 			{
-				std::string sArg = arg;
+				std::string sArg = name;
 				if (sArg == "-" + TriggerString)
 				{
 					AssignValue(value);
 				}
 			}
 	
+			//! Allow the Argument object to be implicitly casted into the value of #Value, and hence treated as an object of the templated type.
 			operator T()
 			{
 				return Value;
 			}
 			
 		private:
+			//!Some Triggers are disallowed - they usually are protected names such as "help", though other properties may trigger this funciton to throw an error.
 			
-			
-			void AssignValue( char * value){};
-			void AssignValue(std::string value)
+			void CheckForInvalidTriggers()
 			{
-				char * v = value.data();
-				AssignValue(v);
-			}
-			void StringCheck()
-			{
-				 std::vector<std::string> ProtectedStrings = {"help"};
+				std::vector<std::string> ProtectedStrings = {"help"};
 				
 				for (int i = 0; i < ProtectedStrings.size(); ++i)
 				{
@@ -110,10 +127,15 @@ namespace JSL
 					}
 				}
 			}
+			
+			//!Virtual override for template-specific AssignValue calls. Most template types will require a custom handler to convert value into the chosen template type -- some default ones are provided below.
+			virtual void AssignValue( const char * value){};
+			
 	};
 	
+	//!Override of the AssignValue() function for Argument<double> objects. Throws an error if the value is a non-integer, to prevent silent casting/truncation
 	template<>
-	inline void Argument<int>::AssignValue( char * value)
+	inline void Argument<int>::AssignValue( const char * value)
 	{
 		double testDouble = std::stod(value);
 		int testInt = std::stoi(value);
@@ -128,21 +150,23 @@ namespace JSL
 	}
 	
 	
-	//specific parsing functions for different types
-	template<>
-	inline void Argument<double>::AssignValue( char * value)
+	//!Override of the AssignValue() function for Argument<double> objects
+	template<> 
+	inline void Argument<double>::AssignValue(const char * value)
 	{
 		Value = std::stod(value);
 	}
 	
+	//!Override of the AssignValue() function for Argument<std::string> objects
 	template<>
-	inline void Argument<std::string>::AssignValue( char * value)
+	inline void Argument<std::string>::AssignValue(const char * value)
 	{
 		Value = (std::string)value;
 	}
 	
+	//!Override of the AssignValue() function for Argument<bool> objects. Accepts only 0/1 as valid bool-strings
 	template<>
-	inline void Argument<bool>::AssignValue( char * value)
+	inline void Argument<bool>::AssignValue( const char * value)
 	{
 		int testValue = std::stoi(value);
 		if (testValue != 0 && testValue != 1)

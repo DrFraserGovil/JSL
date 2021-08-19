@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structJSL_1_1mkdirReturn" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::mkdirReturn</compoundname>
+    <includes refid="mkdirSafely_8h" local="no">mkdirSafely.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structJSL_1_1mkdirReturn_1a76abe5af61a20e13756f833b79782b7f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::mkdirReturn::Successful</definition>
+        <argsstring></argsstring>
+        <name>Successful</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="9" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::mkdirReturn::Message</definition>
+        <argsstring></argsstring>
+        <name>Message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="10" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="8" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="7" bodyend="11"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" prot="public" virt="non-virtual"><scope>JSL::mkdirReturn</scope><name>Message</name></member>
+      <member refid="structJSL_1_1mkdirReturn_1a76abe5af61a20e13756f833b79782b7f" prot="public" virt="non-virtual"><scope>JSL::mkdirReturn</scope><name>Successful</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

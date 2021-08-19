@@ -1,0 +1,330 @@
+\hypertarget{classJSL_1_1Argument}{}\section{J\+SL\+:\+:Argument$<$ T $>$ Class Template Reference}
+\label{classJSL_1_1Argument}\index{J\+S\+L\+::\+Argument$<$ T $>$@{J\+S\+L\+::\+Argument$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Argument.\+h$>$}
+
+Inheritance diagram for J\+SL\+:\+:Argument$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classJSL_1_1Argument}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classJSL_1_1Argument_ab07e7981db832cce30f534c67f6491f4}{Argument} (std\+::string trigger)
+\begin{DoxyCompactList}\small\item\em Constructor initialising the \hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}. Value is set to uninitialised memory of the Template type. \end{DoxyCompactList}\item 
+\hyperlink{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}{Argument} (T default\+Value, std\+::string trigger)
+\begin{DoxyCompactList}\small\item\em Constructor which initialises the \hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String} and \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value} members. \end{DoxyCompactList}\item 
+\hyperlink{classJSL_1_1Argument_a4d187d2fb658021866b173987b920ab4}{Argument} (T default\+Value, std\+::string trigger, int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Constructor which initialises as per \hyperlink{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}{Argument(\+T default\+Value, std\+::string trigger)}, but which also immediately calls \hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{List\+Parse()} to check for assignment. \end{DoxyCompactList}\item 
+\hyperlink{classJSL_1_1Argument_a83799e9089f88d7e6cf30990fae42610}{Argument} (T default\+Value, std\+::string trigger, std\+::string config\+File, char config\+Delimiter)
+\begin{DoxyCompactList}\small\item\em Constructor which initialises as per \hyperlink{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}{Argument(\+T default\+Value, std\+::string trigger)}, but which also immediately calls \hyperlink{classJSL_1_1Argument_aa626ff37dbebaf0501614dc625a76383}{Configure()} to check for assignment. \end{DoxyCompactList}\item 
+void \hyperlink{classJSL_1_1Argument_aa626ff37dbebaf0501614dc625a76383}{Configure} (std\+::string config\+File, char config\+Delimiter)
+\begin{DoxyCompactList}\small\item\em Iterate through a configuration file, extracting Name/\+Value pairs and calling \hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()} in them. Each Name/\+Value pair should be on a new line in the file, and separated by the {\itshape config\+Delimiter}. \end{DoxyCompactList}\item 
+void \hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{List\+Parse} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Iterate through the provided commandline args, extracting Name/\+Value pairs and calling \hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()} on them. \end{DoxyCompactList}\item 
+void \hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse} (char $\ast$name, char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Checks if the Name matches the Trigger\+String. For a successful match, Name must be prefaced by one more dash than found in Trigger\+String. \end{DoxyCompactList}\item 
+\hyperlink{classJSL_1_1Argument_a965bc0dfdce6e03380605af313f8c880}{operator T} ()
+\begin{DoxyCompactList}\small\item\em Allow the \hyperlink{classJSL_1_1Argument}{Argument} object to be implicitly casted into the value of \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}, and hence treated as an object of the templated type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}
+\begin{DoxyCompactList}\small\item\em The current value of the argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}{Check\+For\+Invalid\+Triggers} ()
+\begin{DoxyCompactList}\small\item\em Some Triggers are disallowed -\/ they usually are protected names such as \char`\"{}help\char`\"{}, though other properties may trigger this funciton to throw an error. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value} (char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Virtual override for template-\/specific Assign\+Value calls. Most template types will require a custom handler to convert value into the chosen template type -- some default ones are provided below. \end{DoxyCompactList}\item 
+void \hyperlink{classJSL_1_1Argument_af0c053ad614c0f20c48cf31389eee7e9}{Assign\+Value} (std\+::string value)
+\begin{DoxyCompactList}\small\item\em Allow value assignments with strings, because C++ char/strings made my head hurt. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_a2b60a11be4f0ba28dfb3395c49ced06b}{Assign\+Value} (char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$double$>$ objects. Throws an error if the value is a non-\/integer, to prevent silent casting/truncation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_afbd6b9b5c50de60cee39f4b0ab327375}{Assign\+Value} (char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$double$>$ objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_a1b443f8b8948e7aaec2154ed15e6f08f}{Assign\+Value} (char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for \hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument$<$std\+::string$>$} objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{classJSL_1_1Argument_ac71e37555de1dea3b6d297bf0909a920}{Assign\+Value} (char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$bool$>$ objects. Accepts only 0/1 as valid bool-\/strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class J\+S\+L\+::\+Argument$<$ T $>$}
+
+A class which allows arbitrary template parameters to be read in as command-\/line arguments using a Name/\+Value pair system. Upon construction, the \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value} parameter takes the default value (if provided), until it is overriden by a successful argument/\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String} match. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}\label{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::\hyperlink{classJSL_1_1Argument}{Argument} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_ab07e7981db832cce30f534c67f6491f4}\label{classJSL_1_1Argument_ab07e7981db832cce30f534c67f6491f4}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::\hyperlink{classJSL_1_1Argument}{Argument} (\begin{DoxyParamCaption}\item[{std\+::string}]{trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor initialising the \hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}. Value is set to uninitialised memory of the Template type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trigger} & The value of \hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}, and the \char`\"{}name\char`\"{} of this parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}\label{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::\hyperlink{classJSL_1_1Argument}{Argument} (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor which initialises the \hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String} and \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value} members. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Value} & The initialisation value of \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value} -\/ overridden if \hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()} is called. \\
+\hline
+{\em trigger} & The value of \hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}, and the \char`\"{}name\char`\"{} of this parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSL_1_1Argument_a4d187d2fb658021866b173987b920ab4}\label{classJSL_1_1Argument_a4d187d2fb658021866b173987b920ab4}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::\hyperlink{classJSL_1_1Argument}{Argument} (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger,  }\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor which initialises as per \hyperlink{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}{Argument(\+T default\+Value, std\+::string trigger)}, but which also immediately calls \hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{List\+Parse()} to check for assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Value} & The initialisation value of \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value} -\/ overridden if \hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()} is called. \\
+\hline
+{\em trigger} & The value of \hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}, and the \char`\"{}name\char`\"{} of this parameter \\
+\hline
+{\em argc} & The number of commandline arguments \\
+\hline
+{\em argv\mbox{[}$\,$\mbox{]}} & the command line list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSL_1_1Argument_a83799e9089f88d7e6cf30990fae42610}\label{classJSL_1_1Argument_a83799e9089f88d7e6cf30990fae42610}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::\hyperlink{classJSL_1_1Argument}{Argument} (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger,  }\item[{std\+::string}]{config\+File,  }\item[{char}]{config\+Delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor which initialises as per \hyperlink{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}{Argument(\+T default\+Value, std\+::string trigger)}, but which also immediately calls \hyperlink{classJSL_1_1Argument_aa626ff37dbebaf0501614dc625a76383}{Configure()} to check for assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Value} & The initialisation value of \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value} -\/ overridden if \hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()} is called. \\
+\hline
+{\em trigger} & The value of \hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}, and the \char`\"{}name\char`\"{} of this parameter \\
+\hline
+{\em config\+File} & The path to the file to open and parse for configuration data \\
+\hline
+{\em config\+Delimiter} & The delimiter used to separate Name/\+Value pairs in the cofiguration file \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}\label{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
+\index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Virtual override for template-\/specific Assign\+Value calls. Most template types will require a custom handler to convert value into the chosen template type -- some default ones are provided below. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_af0c053ad614c0f20c48cf31389eee7e9}\label{classJSL_1_1Argument_af0c053ad614c0f20c48cf31389eee7e9}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
+\index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{std\+::string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Allow value assignments with strings, because C++ char/strings made my head hurt. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_a2b60a11be4f0ba28dfb3395c49ced06b}\label{classJSL_1_1Argument_a2b60a11be4f0ba28dfb3395c49ced06b}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
+\index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ int $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$double$>$ objects. Throws an error if the value is a non-\/integer, to prevent silent casting/truncation. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_afbd6b9b5c50de60cee39f4b0ab327375}\label{classJSL_1_1Argument_afbd6b9b5c50de60cee39f4b0ab327375}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
+\index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ double $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$double$>$ objects. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_a1b443f8b8948e7aaec2154ed15e6f08f}\label{classJSL_1_1Argument_a1b443f8b8948e7aaec2154ed15e6f08f}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
+\index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ std\+::string $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for \hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument$<$std\+::string$>$} objects. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_ac71e37555de1dea3b6d297bf0909a920}\label{classJSL_1_1Argument_ac71e37555de1dea3b6d297bf0909a920}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Assign\+Value@{Assign\+Value}}
+\index{Assign\+Value@{Assign\+Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Assign\+Value()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ bool $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Override of the \hyperlink{classJSL_1_1Argument_abc43696d406a6d369cd1b3d8cb1540b5}{Assign\+Value()} function for Argument$<$bool$>$ objects. Accepts only 0/1 as valid bool-\/strings. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}\label{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Check\+For\+Invalid\+Triggers@{Check\+For\+Invalid\+Triggers}}
+\index{Check\+For\+Invalid\+Triggers@{Check\+For\+Invalid\+Triggers}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Check\+For\+Invalid\+Triggers()}{CheckForInvalidTriggers()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Check\+For\+Invalid\+Triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Some Triggers are disallowed -\/ they usually are protected names such as \char`\"{}help\char`\"{}, though other properties may trigger this funciton to throw an error. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_aa626ff37dbebaf0501614dc625a76383}\label{classJSL_1_1Argument_aa626ff37dbebaf0501614dc625a76383}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Configure@{Configure}}
+\index{Configure@{Configure}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Configure()}{Configure()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Configure (\begin{DoxyParamCaption}\item[{std\+::string}]{config\+File,  }\item[{char}]{config\+Delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Iterate through a configuration file, extracting Name/\+Value pairs and calling \hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()} in them. Each Name/\+Value pair should be on a new line in the file, and separated by the {\itshape config\+Delimiter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+File} & The path to the file to open and parse for configuration data \\
+\hline
+{\em config\+Delimiter} & The delimiter used to separate Name/\+Value pairs in the cofiguration file \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classJSL_1_1ArgumentInterface_aac7c3106f99c407e625b9bc6a6c8c446}{J\+S\+L\+::\+Argument\+Interface}.
+
+\mbox{\Hypertarget{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}\label{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!List\+Parse@{List\+Parse}}
+\index{List\+Parse@{List\+Parse}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{List\+Parse()}{ListParse()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::List\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Iterate through the provided commandline args, extracting Name/\+Value pairs and calling \hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()} on them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of arguments passed to the program \\
+\hline
+{\em argv\mbox{[}$\,$\mbox{]}} & The argument list (argv\mbox{[}0\mbox{]} is assumed to be the the name of the program, and is ignored) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classJSL_1_1ArgumentInterface_a256b5bd88b5f6638353f108c48f3ee65}{J\+S\+L\+::\+Argument\+Interface}.
+
+\mbox{\Hypertarget{classJSL_1_1Argument_a965bc0dfdce6e03380605af313f8c880}\label{classJSL_1_1Argument_a965bc0dfdce6e03380605af313f8c880}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!operator T@{operator T}}
+\index{operator T@{operator T}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{operator T()}{operator T()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::operator T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allow the \hyperlink{classJSL_1_1Argument}{Argument} object to be implicitly casted into the value of \hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}, and hence treated as an object of the templated type. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}\label{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Parse@{Parse}}
+\index{Parse@{Parse}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Parse (\begin{DoxyParamCaption}\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the Name matches the Trigger\+String. For a successful match, Name must be prefaced by one more dash than found in Trigger\+String. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name-\/string of the Name/\+Value pair\\
+\hline
+{\em value} & The value-\/string of the Name/\+Value pair. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classJSL_1_1ArgumentInterface_a28b487f7a4fa6e721ed6629abe2073f2}{J\+S\+L\+::\+Argument\+Interface}.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}\label{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}} 
+\index{J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}!Value@{Value}}
+\index{Value@{Value}!J\+S\+L\+::\+Argument@{J\+S\+L\+::\+Argument}}
+\subsubsection{\texorpdfstring{Value}{Value}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}$<$ T $>$\+::Value}
+
+
+
+The current value of the argument. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/fraserj/\+Documents/\+Work/\+J\+S\+L/\+Command\+Args/\hyperlink{Argument_8h}{Argument.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classJSL_1_1Argument" kind="class"><name>JSL::Argument</name>
+    <member refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" kind="variable"><name>Value</name></member>
+    <member refid="classJSL_1_1Argument_1ab438509a3c030516de72f3f493295bd5" kind="function"><name>Argument</name></member>
+    <member refid="classJSL_1_1Argument_1ab07e7981db832cce30f534c67f6491f4" kind="function"><name>Argument</name></member>
+    <member refid="classJSL_1_1Argument_1a2511f7c98ee2b0b59650f468341b8747" kind="function"><name>Argument</name></member>
+    <member refid="classJSL_1_1Argument_1a4d187d2fb658021866b173987b920ab4" kind="function"><name>Argument</name></member>
+    <member refid="classJSL_1_1Argument_1a83799e9089f88d7e6cf30990fae42610" kind="function"><name>Argument</name></member>
+    <member refid="classJSL_1_1Argument_1aa626ff37dbebaf0501614dc625a76383" kind="function"><name>Configure</name></member>
+    <member refid="classJSL_1_1Argument_1aa2b18bb35e90f91e224a06d60835053a" kind="function"><name>ListParse</name></member>
+    <member refid="classJSL_1_1Argument_1a8984e7ce23155259d90a3e98170f36e0" kind="function"><name>Parse</name></member>
+    <member refid="classJSL_1_1Argument_1a965bc0dfdce6e03380605af313f8c880" kind="function"><name>operator T</name></member>
+    <member refid="classJSL_1_1Argument_1a8614eb66f807132c4323847e05e666c4" kind="function"><name>CheckForInvalidTriggers</name></member>
+    <member refid="classJSL_1_1Argument_1abc43696d406a6d369cd1b3d8cb1540b5" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1af0c053ad614c0f20c48cf31389eee7e9" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1a2b60a11be4f0ba28dfb3395c49ced06b" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1afbd6b9b5c50de60cee39f4b0ab327375" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1a1b443f8b8948e7aaec2154ed15e6f08f" kind="function"><name>AssignValue</name></member>
+    <member refid="classJSL_1_1Argument_1ac71e37555de1dea3b6d297bf0909a920" kind="function"><name>AssignValue</name></member>
+  </compound>
+  <compound refid="classJSL_1_1ArgumentInterface" kind="class"><name>JSL::ArgumentInterface</name>
+    <member refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kind="variable"><name>TriggerString</name></member>
+    <member refid="classJSL_1_1ArgumentInterface_1a28b487f7a4fa6e721ed6629abe2073f2" kind="function"><name>Parse</name></member>
+    <member refid="classJSL_1_1ArgumentInterface_1a256b5bd88b5f6638353f108c48f3ee65" kind="function"><name>ListParse</name></member>
+    <member refid="classJSL_1_1ArgumentInterface_1aac7c3106f99c407e625b9bc6a6c8c446" kind="function"><name>Configure</name></member>
+  </compound>
+  <compound refid="structJSL_1_1mkdirReturn" kind="struct"><name>JSL::mkdirReturn</name>
+    <member refid="structJSL_1_1mkdirReturn_1a76abe5af61a20e13756f833b79782b7f" kind="variable"><name>Successful</name></member>
+    <member refid="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" kind="variable"><name>Message</name></member>
+  </compound>
+  <compound refid="namespaceJSL" kind="namespace"><name>JSL</name>
+    <member refid="namespaceJSL_1a1db6f26ec58c53d1a56375c0f1b27c77" kind="function"><name>mkdirSafely</name></member>
+    <member refid="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" kind="function"><name>split</name></member>
+    <member refid="namespaceJSL_1a22fc26d87034a744e42e70e77db892df" kind="function"><name>PrintCurrentTime</name></member>
+    <member refid="namespaceJSL_1a5382fb9fe415f76c7dadd5f39dbad099" kind="function"><name>FormatTimeDuration</name></member>
+  </compound>
+  <compound refid="Argument_8h" kind="file"><name>Argument.h</name>
+  </compound>
+  <compound refid="CommandArgs_8h" kind="file"><name>CommandArgs.h</name>
+  </compound>
+  <compound refid="FileIO_8h" kind="file"><name>FileIO.h</name>
+  </compound>
+  <compound refid="LineReader_8h" kind="file"><name>LineReader.h</name>
+    <member refid="LineReader_8h_1a5480fba013891b2f3033cc97d5d8edf4" kind="define"><name>forLineIn</name></member>
+    <member refid="LineReader_8h_1abdfa973ea7dd7efb90a74e8ec636f5ed" kind="define"><name>forLineVectorIn</name></member>
+  </compound>
+  <compound refid="mkdirSafely_8h" kind="file"><name>mkdirSafely.h</name>
+  </compound>
+  <compound refid="JSL_8h" kind="file"><name>JSL.h</name>
+  </compound>
+  <compound refid="split_8h" kind="file"><name>split.h</name>
+  </compound>
+  <compound refid="Strings_8h" kind="file"><name>Strings.h</name>
+  </compound>
+  <compound refid="Time_8h" kind="file"><name>Time.h</name>
+  </compound>
+  <compound refid="dir_31d17c3e3262f3f46fb0f6e98a9d9bc0" kind="dir"><name>/home/fraserj/Documents/Work/JSL/CommandArgs</name>
+  </compound>
+  <compound refid="dir_f55099b0de92dfb47c7a836a4dc87b8d" kind="dir"><name>/home/fraserj/Documents/Work/JSL/FileIO</name>
+  </compound>
+  <compound refid="dir_60aef1110311be2210a1ebd3c40da4ac" kind="dir"><name>/home/fraserj/Documents/Work/JSL/Strings</name>
+  </compound>
+</doxygenindex>
