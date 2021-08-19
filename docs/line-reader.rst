@@ -38,7 +38,7 @@ Macros
 Example Usage
 *********************
 
-If the file ``sonnet116.txt`` contains the full text of `the relevant Shakespearean Sonnet <https://www.poetryfoundation.org/poems/45106/sonnet-116-let-me-not-to-the-marriage-of-true-minds>`_, then, and that we wished to find the 4th word of any line more than 40 characters long:
+If the file ``sonnet116.txt`` contains the full text of `the relevant Shakespearean Sonnet <https://www.poetryfoundation.org/poems/45106/sonnet-116-let-me-not-to-the-marriage-of-true-minds>`_, and we wished to find the 4th word of any line more than 40 characters long:
 
 .. code-block:: c++
 	:emphasize-lines: 1
