@@ -12,6 +12,14 @@ struct \mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return}}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{initialise\+File}} (const std\+::string \&filename)
+\item 
+void \mbox{\hyperlink{namespaceJSL_a838b3a913896993bc008408d164ec19d}{write\+String\+To\+File}} (const std\+::string \&filename, const std\+::string \&content)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceJSL_a1d611217d83275af846cbc091ff98f53}{write\+Vector\+To\+File}} (const std\+::string \&filename, const std\+::vector$<$ T $>$ \&content\+Vector, const std\+::string \&delimiter, bool include\+Terminal\+Line\+Break)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceJSL_a8c08233b0cb834d4dcde1153b4b8c8c7}{write\+Matrix\+To\+File}} (const std\+::string \&filename, const std\+::vector$<$ std\+::vector$<$ T $>$$>$ content\+Matrix, const std\+::string \&column\+Delimiter, const std\+::string \&row\+Delimiter)
+\item 
 bool \mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{location\+Exists}} (const std\+::string \&filename)
 \item 
 \mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return}} \mbox{\hyperlink{namespaceJSL_abf525d02b8c49f21ef7faa68b7571f93}{mkdir}} (std\+::string directory)
@@ -54,6 +62,17 @@ Given a duration in seconds, convert it into standard Day/\+Hour/\+Minute/\+Seco
 \begin{DoxyReturn}{Returns}
 A human-\/readable string equal to the input 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}\label{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}} 
+\index{JSL@{JSL}!initialiseFile@{initialiseFile}}
+\index{initialiseFile@{initialiseFile}!JSL@{JSL}}
+\doxysubsubsection{\texorpdfstring{initialiseFile()}{initialiseFile()}}
+{\footnotesize\ttfamily void J\+S\+L\+::initialise\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+Creates a blank file at the specified location, overwriting any other file at the given location 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file which the system will attempt to open \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}\label{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}} 
 \index{JSL@{JSL}!locationExists@{locationExists}}
 \index{locationExists@{locationExists}!JSL@{JSL}}
@@ -109,3 +128,52 @@ Splits the string based on the chosen delimiter. Repeated delimiters are ignored
 \begin{DoxyReturn}{Returns}
 A vector of non-\/empty strings. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJSL_a8c08233b0cb834d4dcde1153b4b8c8c7}\label{namespaceJSL_a8c08233b0cb834d4dcde1153b4b8c8c7}} 
+\index{JSL@{JSL}!writeMatrixToFile@{writeMatrixToFile}}
+\index{writeMatrixToFile@{writeMatrixToFile}!JSL@{JSL}}
+\doxysubsubsection{\texorpdfstring{writeMatrixToFile()}{writeMatrixToFile()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void J\+S\+L\+::write\+Matrix\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::vector$<$ std\+::vector$<$ T $>$$>$}]{content\+Matrix,  }\item[{const std\+::string \&}]{column\+Delimiter,  }\item[{const std\+::string \&}]{row\+Delimiter }\end{DoxyParamCaption})}
+
+As with write\+String\+To\+File and write\+Vector\+To\+File, but accepts a vector$<$vector$>$ of templated entities. The writing loops over the outer vector (the rows), and then at each step, the inner vectors(the columns). Writing them one at a time, separated by the delimiter objects. Objects need not be square matrices to be successfully written. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The target file location \\
+\hline
+{\em content\+Matrix} & A vector$<$vector$>$ of templated objects to be written to file \\
+\hline
+{\em column\+Delimiter} & The character(s) to be written after every individual entry {\itshape except} the final entry in each row \\
+\hline
+{\em row\+Relimiter} & The character(s) to be written at the end of each row {\itshape including} the final row. This will probably be a linebreak! \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceJSL_a838b3a913896993bc008408d164ec19d}\label{namespaceJSL_a838b3a913896993bc008408d164ec19d}} 
+\index{JSL@{JSL}!writeStringToFile@{writeStringToFile}}
+\index{writeStringToFile@{writeStringToFile}!JSL@{JSL}}
+\doxysubsubsection{\texorpdfstring{writeStringToFile()}{writeStringToFile()}}
+{\footnotesize\ttfamily void J\+S\+L\+::write\+String\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{content }\end{DoxyParamCaption})}
+
+Opens the provided file and appends the provided string to the file, before closing it. If the file does not exist, it creates it. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The target file location \\
+\hline
+{\em content} & The desired string to be appended to the file (accepts control characters) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceJSL_a1d611217d83275af846cbc091ff98f53}\label{namespaceJSL_a1d611217d83275af846cbc091ff98f53}} 
+\index{JSL@{JSL}!writeVectorToFile@{writeVectorToFile}}
+\index{writeVectorToFile@{writeVectorToFile}!JSL@{JSL}}
+\doxysubsubsection{\texorpdfstring{writeVectorToFile()}{writeVectorToFile()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void J\+S\+L\+::write\+Vector\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::vector$<$ T $>$ \&}]{content\+Vector,  }\item[{const std\+::string \&}]{delimiter,  }\item[{bool}]{include\+Terminal\+Line\+Break }\end{DoxyParamCaption})}
+
+As with write\+String\+To\+File, but accepts a vector of templated entities. The writing loops over the vector and writes them one at a time, separated by the delimiter object 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The target file location \\
+\hline
+{\em content\+Vector} & A vector of templated objects to be written to file \\
+\hline
+{\em delimiter} & The character(s) to be written after every entry of content\+Vector {\itshape except} the final entry \\
+\hline
+{\em include\+Terminal\+Line\+Break} & If true, appends a linebreak character at the end of the vector. Useful for sequentially writing rows of data to file. \\
+\hline
+\end{DoxyParams}

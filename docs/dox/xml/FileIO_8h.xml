@@ -5,6 +5,7 @@
     <includes refid="LineReader_8h" local="yes">LineReader.h</includes>
     <includes refid="mkdir_8h" local="yes">mkdir.h</includes>
     <includes refid="locationExists_8h" local="yes">locationExists.h</includes>
+    <includes refid="fileWriter_8h" local="yes">fileWriter.h</includes>
     <includedby refid="Argument_8h" local="yes">/home/jack/Documents/Work/JSL/CommandArgs/Argument.h</includedby>
     <includedby refid="JSL_8h" local="yes">/home/jack/Documents/Work/JSL/JSL.h</includedby>
     <incdepgraph>
@@ -20,6 +21,8 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
       <node id="10">
         <label>locationExists.h</label>
@@ -32,8 +35,19 @@
       <node id="4">
         <label>string</label>
       </node>
+      <node id="12">
+        <label>fileWriter.h</label>
+        <link refid="fileWriter_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="3">
         <label>fstream</label>
+      </node>
+      <node id="13">
+        <label>string.h</label>
       </node>
       <node id="5">
         <label>vector</label>
@@ -113,6 +127,7 @@
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LineReader_8h" kindref="compound">LineReader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mkdir_8h" kindref="compound">mkdir.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="locationExists_8h" kindref="compound">locationExists.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fileWriter_8h" kindref="compound">fileWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/jack/Documents/Work/JSL/FileIO/FileIO.h"/>
   </compounddef>

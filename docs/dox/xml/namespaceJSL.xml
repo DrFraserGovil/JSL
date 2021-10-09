@@ -6,6 +6,208 @@
     <innerclass refid="classJSL_1_1ArgumentInterface" prot="public">JSL::ArgumentInterface</innerclass>
     <innerclass refid="structJSL_1_1mkdirReturn" prot="public">JSL::mkdirReturn</innerclass>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1a47d8cb112d513ee5a3ae38ca6a89743d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::initialiseFile</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>initialiseFile</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a blank file at the specified location, overwriting any other file at the given location <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file which the system will attempt to open </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/fileWriter.h" line="10" column="6" bodyfile="/home/jack/Documents/Work/JSL/FileIO/fileWriter.h" bodystart="10" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a838b3a913896993bc008408d164ec19d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::writeStringToFile</definition>
+        <argsstring>(const std::string &amp;filename, const std::string &amp;content)</argsstring>
+        <name>writeStringToFile</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens the provided file and appends the provided string to the file, before closing it. If the file does not exist, it creates it. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target file location </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired string to be appended to the file (accepts control characters) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/fileWriter.h" line="23" column="6" bodyfile="/home/jack/Documents/Work/JSL/FileIO/fileWriter.h" bodystart="23" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a1d611217d83275af846cbc091ff98f53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::writeVectorToFile</definition>
+        <argsstring>(const std::string &amp;filename, const std::vector&lt; T &gt; &amp;contentVector, const std::string &amp;delimiter, bool includeTerminalLineBreak)</argsstring>
+        <name>writeVectorToFile</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>contentVector</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>includeTerminalLineBreak</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>As with writeStringToFile, but accepts a vector of templated entities. The writing loops over the vector and writes them one at a time, separated by the delimiter object <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target file location </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contentVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of templated objects to be written to file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character(s) to be written after every entry of contentVector <emphasis>except</emphasis> the final entry </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>includeTerminalLineBreak</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, appends a linebreak character at the end of the vector. Useful for sequentially writing rows of data to file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/fileWriter.h" line="39" column="6" bodyfile="/home/jack/Documents/Work/JSL/FileIO/fileWriter.h" bodystart="39" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a8c08233b0cb834d4dcde1153b4b8c8c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::writeMatrixToFile</definition>
+        <argsstring>(const std::string &amp;filename, const std::vector&lt; std::vector&lt; T &gt;&gt; contentMatrix, const std::string &amp;columnDelimiter, const std::string &amp;rowDelimiter)</argsstring>
+        <name>writeMatrixToFile</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; T &gt;&gt;</type>
+          <declname>contentMatrix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>columnDelimiter</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>rowDelimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>As with writeStringToFile and writeVectorToFile, but accepts a vector&lt;vector&gt; of templated entities. The writing loops over the outer vector (the rows), and then at each step, the inner vectors(the columns). Writing them one at a time, separated by the delimiter objects. Objects need not be square matrices to be successfully written. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target file location </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contentMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector&lt;vector&gt; of templated objects to be written to file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columnDelimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character(s) to be written after every individual entry <emphasis>except</emphasis> the final entry in each row </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rowRelimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character(s) to be written at the end of each row <emphasis>including</emphasis> the final row. This will probably be a linebreak! </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/fileWriter.h" line="68" column="6" bodyfile="/home/jack/Documents/Work/JSL/FileIO/fileWriter.h" bodystart="68" bodyend="86"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a1752cd7c6e1134da51e9307527e0d788" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool JSL::locationExists</definition>

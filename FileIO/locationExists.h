@@ -16,4 +16,5 @@ namespace JSL
 		struct stat buffer;   
 		return (stat (filename.c_str(), &buffer) == 0); 
 	}
+		
 }

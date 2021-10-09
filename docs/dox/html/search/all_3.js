@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['jsl_12',['JSL',['../namespaceJSL.html',1,'']]],
-  ['jsl_2eh_13',['JSL.h',['../JSL_8h.html',1,'']]]
+  ['initialisefile_13',['initialiseFile',['../namespaceJSL.html#a47d8cb112d513ee5a3ae38ca6a89743d',1,'JSL']]]
 ];

@@ -1,7 +1,7 @@
 .. dir-handler
 
 #########################
-Safe Director Maker
+Safe Directory Maker
 #########################
 
 

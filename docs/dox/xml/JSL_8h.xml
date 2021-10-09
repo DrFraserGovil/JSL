@@ -18,6 +18,8 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
       <node id="11">
         <label>locationExists.h</label>
@@ -27,7 +29,7 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="21">
         <label>stdexcept</label>
       </node>
       <node id="5">
@@ -38,28 +40,36 @@
         <link refid="JSL_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="20">
         <label>Argument.h</label>
         <link refid="Argument_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>fileWriter.h</label>
+        <link refid="fileWriter_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>fstream</label>
       </node>
-      <node id="14">
+      <node id="16">
         <label>Time.h</label>
         <link refid="Time_8h"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
@@ -67,15 +77,18 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="13">
+      <node id="14">
+        <label>string.h</label>
+      </node>
+      <node id="15">
         <label>Strings/Strings.h</label>
         <link refid="Strings_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -96,16 +109,16 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="19">
         <label>CommandArgs/CommandArgs.h</label>
         <link refid="CommandArgs_8h"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="18">
         <label>iostream</label>
       </node>
-      <node id="15">
+      <node id="17">
         <label>chrono</label>
       </node>
       <node id="7">

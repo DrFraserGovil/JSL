@@ -29,6 +29,10 @@
     <member refid="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" kind="variable"><name>Message</name></member>
   </compound>
   <compound refid="namespaceJSL" kind="namespace"><name>JSL</name>
+    <member refid="namespaceJSL_1a47d8cb112d513ee5a3ae38ca6a89743d" kind="function"><name>initialiseFile</name></member>
+    <member refid="namespaceJSL_1a838b3a913896993bc008408d164ec19d" kind="function"><name>writeStringToFile</name></member>
+    <member refid="namespaceJSL_1a1d611217d83275af846cbc091ff98f53" kind="function"><name>writeVectorToFile</name></member>
+    <member refid="namespaceJSL_1a8c08233b0cb834d4dcde1153b4b8c8c7" kind="function"><name>writeMatrixToFile</name></member>
     <member refid="namespaceJSL_1a1752cd7c6e1134da51e9307527e0d788" kind="function"><name>locationExists</name></member>
     <member refid="namespaceJSL_1abf525d02b8c49f21ef7faa68b7571f93" kind="function"><name>mkdir</name></member>
     <member refid="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" kind="function"><name>split</name></member>
@@ -41,6 +45,8 @@
   <compound refid="CommandArgs_8h" kind="file"><name>CommandArgs.h</name>
   </compound>
   <compound refid="FileIO_8h" kind="file"><name>FileIO.h</name>
+  </compound>
+  <compound refid="fileWriter_8h" kind="file"><name>fileWriter.h</name>
   </compound>
   <compound refid="LineReader_8h" kind="file"><name>LineReader.h</name>
     <member refid="LineReader_8h_1a5480fba013891b2f3033cc97d5d8edf4" kind="define"><name>forLineIn</name></member>

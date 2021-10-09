@@ -81,6 +81,16 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a47d8cb112d513ee5a3ae38ca6a89743d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a47d8cb112d513ee5a3ae38ca6a89743d">initialiseFile</a> (const std::string &amp;filename)</td></tr>
+<tr class="separator:a47d8cb112d513ee5a3ae38ca6a89743d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838b3a913896993bc008408d164ec19d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a838b3a913896993bc008408d164ec19d">writeStringToFile</a> (const std::string &amp;filename, const std::string &amp;content)</td></tr>
+<tr class="separator:a838b3a913896993bc008408d164ec19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d611217d83275af846cbc091ff98f53"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1d611217d83275af846cbc091ff98f53"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a1d611217d83275af846cbc091ff98f53">writeVectorToFile</a> (const std::string &amp;filename, const std::vector&lt; T &gt; &amp;contentVector, const std::string &amp;delimiter, bool includeTerminalLineBreak)</td></tr>
+<tr class="separator:a1d611217d83275af846cbc091ff98f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c08233b0cb834d4dcde1153b4b8c8c7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a8c08233b0cb834d4dcde1153b4b8c8c7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a8c08233b0cb834d4dcde1153b4b8c8c7">writeMatrixToFile</a> (const std::string &amp;filename, const std::vector&lt; std::vector&lt; T &gt;&gt; contentMatrix, const std::string &amp;columnDelimiter, const std::string &amp;rowDelimiter)</td></tr>
+<tr class="separator:a8c08233b0cb834d4dcde1153b4b8c8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1752cd7c6e1134da51e9307527e0d788"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a1752cd7c6e1134da51e9307527e0d788">locationExists</a> (const std::string &amp;filename)</td></tr>
 <tr class="separator:a1752cd7c6e1134da51e9307527e0d788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf525d02b8c49f21ef7faa68b7571f93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSL_1_1mkdirReturn.html">mkdirReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#abf525d02b8c49f21ef7faa68b7571f93">mkdir</a> (std::string directory)</td></tr>
@@ -168,6 +178,30 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A human-readable string equal to the input </dd></dl>
+
+</div>
+</div>
+<a id="a47d8cb112d513ee5a3ae38ca6a89743d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d8cb112d513ee5a3ae38ca6a89743d">&#9670;&nbsp;</a></span>initialiseFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JSL::initialiseFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a blank file at the specified location, overwriting any other file at the given location </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The file which the system will attempt to open </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -298,6 +332,143 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector of non-empty strings. </dd></dl>
+
+</div>
+</div>
+<a id="a8c08233b0cb834d4dcde1153b4b8c8c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c08233b0cb834d4dcde1153b4b8c8c7">&#9670;&nbsp;</a></span>writeMatrixToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void JSL::writeMatrixToFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; T &gt;&gt;&#160;</td>
+          <td class="paramname"><em>contentMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>columnDelimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>rowDelimiter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>As with writeStringToFile and writeVectorToFile, but accepts a vector&lt;vector&gt; of templated entities. The writing loops over the outer vector (the rows), and then at each step, the inner vectors(the columns). Writing them one at a time, separated by the delimiter objects. Objects need not be square matrices to be successfully written. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The target file location </td></tr>
+    <tr><td class="paramname">contentMatrix</td><td>A vector&lt;vector&gt; of templated objects to be written to file </td></tr>
+    <tr><td class="paramname">columnDelimiter</td><td>The character(s) to be written after every individual entry <em>except</em> the final entry in each row </td></tr>
+    <tr><td class="paramname">rowRelimiter</td><td>The character(s) to be written at the end of each row <em>including</em> the final row. This will probably be a linebreak! </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a838b3a913896993bc008408d164ec19d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a838b3a913896993bc008408d164ec19d">&#9670;&nbsp;</a></span>writeStringToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JSL::writeStringToFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>content</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Opens the provided file and appends the provided string to the file, before closing it. If the file does not exist, it creates it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The target file location </td></tr>
+    <tr><td class="paramname">content</td><td>The desired string to be appended to the file (accepts control characters) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1d611217d83275af846cbc091ff98f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d611217d83275af846cbc091ff98f53">&#9670;&nbsp;</a></span>writeVectorToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void JSL::writeVectorToFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>contentVector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>includeTerminalLineBreak</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>As with writeStringToFile, but accepts a vector of templated entities. The writing loops over the vector and writes them one at a time, separated by the delimiter object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The target file location </td></tr>
+    <tr><td class="paramname">contentVector</td><td>A vector of templated objects to be written to file </td></tr>
+    <tr><td class="paramname">delimiter</td><td>The character(s) to be written after every entry of contentVector <em>except</em> the final entry </td></tr>
+    <tr><td class="paramname">includeTerminalLineBreak</td><td>If true, appends a linebreak character at the end of the vector. Useful for sequentially writing rows of data to file. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
