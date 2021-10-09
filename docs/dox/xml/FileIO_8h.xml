@@ -1,90 +1,106 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="FileIO_8h" kind="file" language="C++">
     <compoundname>FileIO.h</compoundname>
     <includes refid="LineReader_8h" local="yes">LineReader.h</includes>
-    <includes refid="mkdirSafely_8h" local="yes">mkdirSafely.h</includes>
-    <includedby refid="Argument_8h" local="yes">/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h</includedby>
-    <includedby refid="JSL_8h" local="yes">/home/fraserj/Documents/Work/JSL/JSL.h</includedby>
+    <includes refid="mkdir_8h" local="yes">mkdir.h</includes>
+    <includes refid="locationExists_8h" local="yes">locationExists.h</includes>
+    <includedby refid="Argument_8h" local="yes">/home/jack/Documents/Work/JSL/CommandArgs/Argument.h</includedby>
+    <includedby refid="JSL_8h" local="yes">/home/jack/Documents/Work/JSL/JSL.h</includedby>
     <incdepgraph>
-      <node id="31">
+      <node id="11">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="1">
+        <label>/home/jack/Documents/Work/JSL/FileIO/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>locationExists.h</label>
+        <link refid="locationExists_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
         <label>string</label>
       </node>
-      <node id="30">
+      <node id="3">
         <label>fstream</label>
       </node>
-      <node id="28">
-        <label>/home/fraserj/Documents/Work/JSL/FileIO/FileIO.h</label>
-        <link refid="FileIO_8h"/>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-      </node>
-      <node id="32">
+      <node id="5">
         <label>vector</label>
       </node>
-      <node id="34">
+      <node id="7">
         <label>sstream</label>
       </node>
-      <node id="29">
+      <node id="2">
         <label>LineReader.h</label>
         <link refid="LineReader_8h"/>
-        <childnode refid="30" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="33">
+      <node id="6">
         <label>../Strings/split.h</label>
         <link refid="split_8h"/>
-        <childnode refid="31" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-      </node>
-      <node id="35">
-        <label>mkdirSafely.h</label>
-        <link refid="mkdirSafely_8h"/>
-        <childnode refid="36" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="36">
+      <node id="8">
+        <label>mkdir.h</label>
+        <link refid="mkdir_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
         <label>dirent.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="37">
-        <label>/home/fraserj/Documents/Work/JSL/FileIO/FileIO.h</label>
+      <node id="1">
+        <label>/home/jack/Documents/Work/JSL/FileIO/FileIO.h</label>
         <link refid="FileIO_8h"/>
-        <childnode refid="38" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
-        </childnode>
-      </node>
-      <node id="38">
-        <label>/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h</label>
-        <link refid="Argument_8h"/>
-        <childnode refid="39" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="39">
-        <label>/home/fraserj/Documents/Work/JSL/CommandArgs/CommandArgs.h</label>
-        <link refid="CommandArgs_8h"/>
-        <childnode refid="40" relation="include">
-        </childnode>
-      </node>
-      <node id="40">
-        <label>/home/fraserj/Documents/Work/JSL/JSL.h</label>
+      <node id="4">
+        <label>/home/jack/Documents/Work/JSL/JSL.h</label>
         <link refid="JSL_8h"/>
+      </node>
+      <node id="2">
+        <label>/home/jack/Documents/Work/JSL/CommandArgs/Argument.h</label>
+        <link refid="Argument_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/jack/Documents/Work/JSL/CommandArgs/CommandArgs.h</label>
+        <link refid="CommandArgs_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <briefdescription>
@@ -95,8 +111,9 @@
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LineReader_8h" kindref="compound">LineReader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mkdirSafely_8h" kindref="compound">mkdirSafely.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mkdir_8h" kindref="compound">mkdir.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="locationExists_8h" kindref="compound">locationExists.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/fraserj/Documents/Work/JSL/FileIO/FileIO.h"/>
+    <location file="/home/jack/Documents/Work/JSL/FileIO/FileIO.h"/>
   </compounddef>
 </doxygen>

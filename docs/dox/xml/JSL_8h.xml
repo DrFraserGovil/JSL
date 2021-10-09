@@ -1,119 +1,134 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="JSL_8h" kind="file" language="C++">
     <compoundname>JSL.h</compoundname>
     <includes refid="FileIO_8h" local="yes">FileIO/FileIO.h</includes>
     <includes refid="Strings_8h" local="yes">Strings/Strings.h</includes>
     <includes refid="CommandArgs_8h" local="yes">CommandArgs/CommandArgs.h</includes>
     <incdepgraph>
-      <node id="71">
-        <label>Time.h</label>
-        <link refid="Time_8h"/>
-        <childnode refid="72" relation="include">
-        </childnode>
-        <childnode refid="64" relation="include">
-        </childnode>
-        <childnode refid="67" relation="include">
-        </childnode>
-        <childnode refid="65" relation="include">
-        </childnode>
-        <childnode refid="73" relation="include">
-        </childnode>
+      <node id="12">
+        <label>sys/stat.h</label>
       </node>
-      <node id="76">
-        <label>stdexcept</label>
-      </node>
-      <node id="64">
-        <label>string</label>
-      </node>
-      <node id="63">
-        <label>fstream</label>
-      </node>
-      <node id="61">
+      <node id="2">
         <label>FileIO/FileIO.h</label>
         <link refid="FileIO_8h"/>
-        <childnode refid="62" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="68" relation="include">
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="75">
+      <node id="11">
+        <label>locationExists.h</label>
+        <link refid="locationExists_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>stdexcept</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>/home/jack/Documents/Work/JSL/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
         <label>Argument.h</label>
         <link refid="Argument_8h"/>
-        <childnode refid="64" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="76" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="61" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="65">
-        <label>vector</label>
+      <node id="4">
+        <label>fstream</label>
       </node>
-      <node id="67">
-        <label>sstream</label>
+      <node id="14">
+        <label>Time.h</label>
+        <link refid="Time_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
-      <node id="70">
+      <node id="13">
         <label>Strings/Strings.h</label>
         <link refid="Strings_8h"/>
-        <childnode refid="66" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="71" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="62">
+      <node id="6">
+        <label>vector</label>
+      </node>
+      <node id="8">
+        <label>sstream</label>
+      </node>
+      <node id="3">
         <label>LineReader.h</label>
         <link refid="LineReader_8h"/>
-        <childnode refid="63" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="64" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="65" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="66" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="73">
-        <label>iostream</label>
-      </node>
-      <node id="72">
-        <label>chrono</label>
-      </node>
-      <node id="74">
+      <node id="17">
         <label>CommandArgs/CommandArgs.h</label>
         <link refid="CommandArgs_8h"/>
-        <childnode refid="75" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="66">
+      <node id="16">
+        <label>iostream</label>
+      </node>
+      <node id="15">
+        <label>chrono</label>
+      </node>
+      <node id="7">
         <label>../Strings/split.h</label>
         <link refid="split_8h"/>
-        <childnode refid="64" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="65" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="67" relation="include">
-        </childnode>
-      </node>
-      <node id="68">
-        <label>mkdirSafely.h</label>
-        <link refid="mkdirSafely_8h"/>
-        <childnode refid="69" relation="include">
-        </childnode>
-        <childnode refid="64" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="60">
-        <label>/home/fraserj/Documents/Work/JSL/JSL.h</label>
-        <link refid="JSL_8h"/>
-        <childnode refid="61" relation="include">
+      <node id="9">
+        <label>mkdir.h</label>
+        <link refid="mkdir_8h"/>
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="70" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="74" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="69">
+      <node id="10">
         <label>dirent.h</label>
       </node>
     </incdepgraph>
@@ -136,6 +151,6 @@
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CommandArgs_8h" kindref="compound">CommandArgs/CommandArgs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/fraserj/Documents/Work/JSL/JSL.h"/>
+    <location file="/home/jack/Documents/Work/JSL/JSL.h"/>
   </compounddef>
 </doxygen>

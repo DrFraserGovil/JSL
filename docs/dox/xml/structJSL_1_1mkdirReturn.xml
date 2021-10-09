@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="structJSL_1_1mkdirReturn" kind="struct" language="C++" prot="public">
     <compoundname>JSL::mkdirReturn</compoundname>
-    <includes refid="mkdirSafely_8h" local="no">mkdirSafely.h</includes>
+    <includes refid="mkdir_8h" local="no">mkdir.h</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structJSL_1_1mkdirReturn_1a76abe5af61a20e13756f833b79782b7f" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -10,12 +10,13 @@
         <argsstring></argsstring>
         <name>Successful</name>
         <briefdescription>
-<para>True if the directory already existed, or was succesfully created. </para>        </briefdescription>
+<para>True if the directory already existed, or was succesfully created. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="12" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="12" bodyend="-1"/>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" line="13" column="6" bodyfile="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -23,19 +24,21 @@
         <argsstring></argsstring>
         <name>Message</name>
         <briefdescription>
-<para>Contains the logging messages from the function. </para>        </briefdescription>
+<para>Contains the logging messages from the function. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="14" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="14" bodyend="-1"/>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" line="15" column="13" bodyfile="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A wrapper for the return type of <ref refid="namespaceJSL_1a1db6f26ec58c53d1a56375c0f1b27c77" kindref="member">mkdirSafely()</ref> </para>    </briefdescription>
+<para>A wrapper for the return type of mkdirSafely() </para>
+    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" line="10" column="1" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/mkdirSafely.h" bodystart="9" bodyend="15"/>
+    <location file="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" line="11" column="1" bodyfile="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" bodystart="10" bodyend="16"/>
     <listofallmembers>
       <member refid="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" prot="public" virt="non-virtual"><scope>JSL::mkdirReturn</scope><name>Message</name></member>
       <member refid="structJSL_1_1mkdirReturn_1a76abe5af61a20e13756f833b79782b7f" prot="public" virt="non-virtual"><scope>JSL::mkdirReturn</scope><name>Successful</name></member>

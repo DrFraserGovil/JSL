@@ -1,78 +1,78 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="LineReader_8h" kind="file" language="C++">
     <compoundname>LineReader.h</compoundname>
     <includes local="no">fstream</includes>
     <includes local="no">string</includes>
     <includes local="no">vector</includes>
     <includes refid="split_8h" local="yes">../Strings/split.h</includes>
-    <includedby refid="FileIO_8h" local="yes">/home/fraserj/Documents/Work/JSL/FileIO/FileIO.h</includedby>
+    <includedby refid="FileIO_8h" local="yes">/home/jack/Documents/Work/JSL/FileIO/FileIO.h</includedby>
     <incdepgraph>
-      <node id="43">
+      <node id="3">
         <label>string</label>
       </node>
-      <node id="42">
+      <node id="2">
         <label>fstream</label>
       </node>
-      <node id="44">
+      <node id="4">
         <label>vector</label>
       </node>
-      <node id="46">
+      <node id="6">
         <label>sstream</label>
       </node>
-      <node id="41">
-        <label>/home/fraserj/Documents/Work/JSL/FileIO/LineReader.h</label>
+      <node id="1">
+        <label>/home/jack/Documents/Work/JSL/FileIO/LineReader.h</label>
         <link refid="LineReader_8h"/>
-        <childnode refid="42" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="45">
+      <node id="5">
         <label>../Strings/split.h</label>
         <link refid="split_8h"/>
-        <childnode refid="43" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="46" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="48">
-        <label>/home/fraserj/Documents/Work/JSL/FileIO/FileIO.h</label>
+      <node id="2">
+        <label>/home/jack/Documents/Work/JSL/FileIO/FileIO.h</label>
         <link refid="FileIO_8h"/>
-        <childnode refid="49" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="51" relation="include">
-        </childnode>
-      </node>
-      <node id="49">
-        <label>/home/fraserj/Documents/Work/JSL/CommandArgs/Argument.h</label>
-        <link refid="Argument_8h"/>
-        <childnode refid="50" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="47">
-        <label>/home/fraserj/Documents/Work/JSL/FileIO/LineReader.h</label>
-        <link refid="LineReader_8h"/>
-        <childnode refid="48" relation="include">
-        </childnode>
-      </node>
-      <node id="50">
-        <label>/home/fraserj/Documents/Work/JSL/CommandArgs/CommandArgs.h</label>
-        <link refid="CommandArgs_8h"/>
-        <childnode refid="51" relation="include">
-        </childnode>
-      </node>
-      <node id="51">
-        <label>/home/fraserj/Documents/Work/JSL/JSL.h</label>
+      <node id="5">
+        <label>/home/jack/Documents/Work/JSL/JSL.h</label>
         <link refid="JSL_8h"/>
+      </node>
+      <node id="3">
+        <label>/home/jack/Documents/Work/JSL/CommandArgs/Argument.h</label>
+        <link refid="Argument_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/jack/Documents/Work/JSL/FileIO/LineReader.h</label>
+        <link refid="LineReader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/jack/Documents/Work/JSL/CommandArgs/CommandArgs.h</label>
+        <link refid="CommandArgs_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
@@ -105,21 +105,25 @@
 <parametername>macroFileName</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The target file to search through </para></parameterdescription>
+<para>The target file to search through </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>...</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A custom block of C++ code which executes on every line of the file. You may use any externally defined variables within this block. </para></parameterdescription>
+<para>A custom block of C++ code which executes on every line of the file. You may use any externally defined variables within this block. </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Current line is accessible via the variable <computeroutput>std::string FILE_LINE</computeroutput>. If the file does not exist, throws an <computeroutput>exit(1)</computeroutput> command </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>Current line is accessible via the variable <computeroutput>std::string FILE_LINE</computeroutput>. If the file does not exist, throws an <computeroutput>exit(1)</computeroutput> command </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/FileIO/LineReader.h" line="16" column="9" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/LineReader.h" bodystart="16" bodyend="-1"/>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/LineReader.h" line="16" column="9" bodyfile="/home/jack/Documents/Work/JSL/FileIO/LineReader.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="LineReader_8h_1abdfa973ea7dd7efb90a74e8ec636f5ed" prot="public" static="no">
         <name>forLineVectorIn</name>
@@ -140,28 +144,33 @@
 <parametername>macroFileName</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The target file to search through </para></parameterdescription>
+<para>The target file to search through </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>token</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The delimiter used to break up <computeroutput>FILE_LINE</computeroutput> into <computeroutput>FILE_LINE_VECTOR</computeroutput> </para></parameterdescription>
+<para>The delimiter used to break up <computeroutput>FILE_LINE</computeroutput> into <computeroutput>FILE_LINE_VECTOR</computeroutput> </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>...</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A custom block of C++ code which executes on every line of the file. You may use any externally defined variables within this block. </para></parameterdescription>
+<para>A custom block of C++ code which executes on every line of the file. You may use any externally defined variables within this block. </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Current line is accessible via the variable <computeroutput>std::string FILE_LINE</computeroutput> and <computeroutput>std::vector&lt;std::string&gt;&gt; FILE_LINE_VECTOR</computeroutput>. If the file does not exist, throws an <computeroutput>exit(1)</computeroutput> command </para></simplesect>
-</para>        </detaileddescription>
+<simplesect kind="return"><para>Current line is accessible via the variable <computeroutput>std::string FILE_LINE</computeroutput> and <computeroutput>std::vector&lt;std::string&gt;&gt; FILE_LINE_VECTOR</computeroutput>. If the file does not exist, throws an <computeroutput>exit(1)</computeroutput> command </para>
+</simplesect>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/fraserj/Documents/Work/JSL/FileIO/LineReader.h" line="43" column="9" bodyfile="/home/fraserj/Documents/Work/JSL/FileIO/LineReader.h" bodystart="43" bodyend="-1"/>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/LineReader.h" line="43" column="9" bodyfile="/home/jack/Documents/Work/JSL/FileIO/LineReader.h" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -206,6 +215,6 @@
 <codeline lineno="48"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="49"><highlight class="preprocessor">}<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
     </programlisting>
-    <location file="/home/fraserj/Documents/Work/JSL/FileIO/LineReader.h"/>
+    <location file="/home/jack/Documents/Work/JSL/FileIO/LineReader.h"/>
   </compounddef>
 </doxygen>

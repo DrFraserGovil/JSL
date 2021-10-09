@@ -1,6 +1,7 @@
 #pragma once
 #include <dirent.h>
 #include <string>
+#include "locationExists.h"
 
 namespace JSL
 {
@@ -26,10 +27,10 @@ namespace JSL
 		mkdirReturn output;
 		output.Successful = true;
 		output.Message = "";
-		const char * dirChar = directory.c_str();
-	
-		DIR *dir = opendir(dirChar);
-		if (dir)
+		
+		
+		
+		if (JSL::locationExists(directory))
 		{
 			output.Message += "\tDirectory '" + directory + "' already exists. Request to mkdir ignored.\n";
 		}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mkdirsafely',['mkdirSafely',['../namespaceJSL.html#a1db6f26ec58c53d1a56375c0f1b27c77',1,'JSL']]]
+  ['mkdir_54',['mkdir',['../namespaceJSL.html#abf525d02b8c49f21ef7faa68b7571f93',1,'JSL']]]
 ];

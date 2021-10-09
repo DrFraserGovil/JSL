@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="dir_f55099b0de92dfb47c7a836a4dc87b8d" kind="dir">
-    <compoundname>/home/fraserj/Documents/Work/JSL/FileIO</compoundname>
+    <compoundname>/home/jack/Documents/Work/JSL/FileIO</compoundname>
     <innerfile refid="FileIO_8h">FileIO.h</innerfile>
     <innerfile refid="LineReader_8h">LineReader.h</innerfile>
-    <innerfile refid="mkdirSafely_8h">mkdirSafely.h</innerfile>
+    <innerfile refid="locationExists_8h">locationExists.h</innerfile>
+    <innerfile refid="mkdir_8h">mkdir.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/fraserj/Documents/Work/JSL/FileIO/"/>
+    <location file="/home/jack/Documents/Work/JSL/FileIO/"/>
   </compounddef>
 </doxygen>
