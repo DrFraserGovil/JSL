@@ -78,6 +78,8 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structJSL_1_1mkdirReturn.html">mkdirReturn</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for the return type of mkdirSafely()  <a href="structJSL_1_1mkdirReturn.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1UnitTest.html">UnitTest</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -95,16 +97,45 @@ Functions</h2></td></tr>
 <tr class="separator:a1752cd7c6e1134da51e9307527e0d788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf525d02b8c49f21ef7faa68b7571f93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSL_1_1mkdirReturn.html">mkdirReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#abf525d02b8c49f21ef7faa68b7571f93">mkdir</a> (std::string directory)</td></tr>
 <tr class="separator:abf525d02b8c49f21ef7faa68b7571f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48b92e64fb9d321121df976b770efa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae48b92e64fb9d321121df976b770efa6">rm</a> (std::string location, bool recursive)</td></tr>
+<tr class="separator:ae48b92e64fb9d321121df976b770efa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a7ba28084b304e97a707c653dce887"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a34a7ba28084b304e97a707c653dce887">split</a> (const std::string &amp;s, char delimiter)</td></tr>
 <tr class="separator:a34a7ba28084b304e97a707c653dce887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22fc26d87034a744e42e70e77db892df"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a22fc26d87034a744e42e70e77db892df">PrintCurrentTime</a> ()</td></tr>
-<tr class="separator:a22fc26d87034a744e42e70e77db892df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae58b7096986a16b70a27e1609eff3014"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae58b7096986a16b70a27e1609eff3014">CurrentTime</a> ()</td></tr>
+<tr class="separator:ae58b7096986a16b70a27e1609eff3014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7ff2220bbab0294b95b9aa85332a222"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222">FormatDuration</a> (int timeInSeconds)</td></tr>
 <tr class="separator:ad7ff2220bbab0294b95b9aa85332a222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7af96a0311784e019209221335f76d9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae7af96a0311784e019209221335f76d9">FormatClock</a> (std::chrono::time_point&lt; std::chrono::system_clock &gt; start, std::chrono::time_point&lt; std::chrono::system_clock &gt; end)</td></tr>
 <tr class="separator:ae7af96a0311784e019209221335f76d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ae58b7096986a16b70a27e1609eff3014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae58b7096986a16b70a27e1609eff3014">&#9670;&nbsp;</a></span>CurrentTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string JSL::CurrentTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get current system time in a readable format (note: was previously called PrintCurrentTime) </p><dl class="section return"><dt>Returns</dt><dd>A string of the readable format <br  />
+ </dd></dl>
+
+</div>
+</div>
 <a id="ae7af96a0311784e019209221335f76d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7af96a0311784e019209221335f76d9">&#9670;&nbsp;</a></span>FormatClock()</h2>
 
@@ -171,7 +202,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. Times less than 1 second are reported as "less than 1 second" </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeInSeconds</td><td>The time to be converted </td></tr>
   </table>
@@ -264,8 +295,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a22fc26d87034a744e42e70e77db892df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22fc26d87034a744e42e70e77db892df">&#9670;&nbsp;</a></span>PrintCurrentTime()</h2>
+<a id="ae48b92e64fb9d321121df976b770efa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48b92e64fb9d321121df976b770efa6">&#9670;&nbsp;</a></span>rm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,10 +305,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string JSL::PrintCurrentTime </td>
+          <td class="memname">void JSL::rm </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>recursive</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -286,8 +328,13 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get current system time in a readable format </p><dl class="section return"><dt>Returns</dt><dd>A string of the readable format <br  />
- </dd></dl>
+<p>Calls a system-rm on the provided location, and attempts to remove it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The target location on which rm is called </td></tr>
+    <tr><td class="paramname">recursive</td><td>If true, appends -r to the command, and so removes all subdirectories etc. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -10,10 +10,10 @@ namespace JSL
 {
 	
 	/*!
-		Get current system time in a readable format
+		Get current system time in a readable format (note: was previously called PrintCurrentTime)
 	 * \returns A string of the readable format   
 	*/
-	inline std::string PrintCurrentTime()
+	inline std::string CurrentTime()
 	{
 		auto now = std::chrono::system_clock::now();
 		std::time_t now_t = std::chrono::system_clock::to_time_t(now);
@@ -24,18 +24,24 @@ namespace JSL
 	}
 	
 	/*!
-		Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. 
+		Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. Times less than 1 second are reported as "less than 1 second"
 		\param timeInSeconds The time to be converted
 		\returns A human-readable string equal to the input
 	 */
 	inline std::string FormatDuration(int timeInSeconds)
 	{
+		
 		std::vector<std::string> divisions= {"Day", "Hour", "Minute", "Second"};
 		std::vector<int> duration = {86400, 3600, 60 , 1};
 		//std::vector<int> chunks = std::vector(0,divisions.size());
 		
 		bool nothingAdded = true;
 		std::string output = "";
+		if (timeInSeconds < 0)
+		{
+			timeInSeconds = abs(timeInSeconds);
+			output += "(negative) ";
+		}
 		for (int i = 0; i < divisions.size(); ++i)
 		{
 			int v = timeInSeconds / duration[i];
@@ -56,6 +62,7 @@ namespace JSL
 		{
 			output = "less than 1 second";
 		}	
+		return output;
 	}
 	
 	/*!

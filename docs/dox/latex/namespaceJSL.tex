@@ -8,7 +8,9 @@ class \mbox{\hyperlink{classJSL_1_1Argument}{Argument}}
 class \mbox{\hyperlink{classJSL_1_1ArgumentInterface}{Argument\+Interface}}
 \item 
 struct \mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return}}
-\begin{DoxyCompactList}\small\item\em A wrapper for the return type of mkdir\+Safely() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A wrapper for the return type of mkdir\+Safely() \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJSL_1_1UnitTest}{Unit\+Test}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,9 +26,11 @@ bool \mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{location\+
 \item 
 \mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return}} \mbox{\hyperlink{namespaceJSL_abf525d02b8c49f21ef7faa68b7571f93}{mkdir}} (std\+::string directory)
 \item 
+void \mbox{\hyperlink{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}{rm}} (std\+::string location, bool recursive)
+\item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_a34a7ba28084b304e97a707c653dce887}{split}} (const std\+::string \&s, char delimiter)
 \item 
-std\+::string \mbox{\hyperlink{namespaceJSL_a22fc26d87034a744e42e70e77db892df}{Print\+Current\+Time}} ()
+std\+::string \mbox{\hyperlink{namespaceJSL_ae58b7096986a16b70a27e1609eff3014}{Current\+Time}} ()
 \item 
 std\+::string \mbox{\hyperlink{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}{Format\+Duration}} (int time\+In\+Seconds)
 \item 
@@ -35,6 +39,16 @@ std\+::string \mbox{\hyperlink{namespaceJSL_ae7af96a0311784e019209221335f76d9}{F
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceJSL_ae58b7096986a16b70a27e1609eff3014}\label{namespaceJSL_ae58b7096986a16b70a27e1609eff3014}} 
+\index{JSL@{JSL}!CurrentTime@{CurrentTime}}
+\index{CurrentTime@{CurrentTime}!JSL@{JSL}}
+\doxysubsubsection{\texorpdfstring{CurrentTime()}{CurrentTime()}}
+{\footnotesize\ttfamily std\+::string J\+S\+L\+::\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get current system time in a readable format (note\+: was previously called Print\+Current\+Time) \begin{DoxyReturn}{Returns}
+A string of the readable format ~\newline
+ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespaceJSL_ae7af96a0311784e019209221335f76d9}\label{namespaceJSL_ae7af96a0311784e019209221335f76d9}} 
 \index{JSL@{JSL}!FormatClock@{FormatClock}}
 \index{FormatClock@{FormatClock}!JSL@{JSL}}
@@ -54,7 +68,7 @@ Calls \mbox{\hyperlink{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}{Format\+D
 \doxysubsubsection{\texorpdfstring{FormatDuration()}{FormatDuration()}}
 {\footnotesize\ttfamily std\+::string J\+S\+L\+::\+Format\+Duration (\begin{DoxyParamCaption}\item[{int}]{time\+In\+Seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Given a duration in seconds, convert it into standard Day/\+Hour/\+Minute/\+Second formatted string. 
+Given a duration in seconds, convert it into standard Day/\+Hour/\+Minute/\+Second formatted string. Times less than 1 second are reported as \char`\"{}less than 1 second\char`\"{} 
 \begin{DoxyParams}{Parameters}
 {\em time\+In\+Seconds} & The time to be converted \\
 \hline
@@ -102,16 +116,19 @@ Checks the status of the target directory, if it does not exist, attempts to cre
 \begin{DoxyReturn}{Returns}
 A \mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return}} object detailing the success + associated messages for the request 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespaceJSL_a22fc26d87034a744e42e70e77db892df}\label{namespaceJSL_a22fc26d87034a744e42e70e77db892df}} 
-\index{JSL@{JSL}!PrintCurrentTime@{PrintCurrentTime}}
-\index{PrintCurrentTime@{PrintCurrentTime}!JSL@{JSL}}
-\doxysubsubsection{\texorpdfstring{PrintCurrentTime()}{PrintCurrentTime()}}
-{\footnotesize\ttfamily std\+::string J\+S\+L\+::\+Print\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}\label{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}} 
+\index{JSL@{JSL}!rm@{rm}}
+\index{rm@{rm}!JSL@{JSL}}
+\doxysubsubsection{\texorpdfstring{rm()}{rm()}}
+{\footnotesize\ttfamily void J\+S\+L\+::rm (\begin{DoxyParamCaption}\item[{std\+::string}]{location,  }\item[{bool}]{recursive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Get current system time in a readable format \begin{DoxyReturn}{Returns}
-A string of the readable format ~\newline
- 
-\end{DoxyReturn}
+Calls a system-\/rm on the provided location, and attempts to remove it. 
+\begin{DoxyParams}{Parameters}
+{\em location} & The target location on which rm is called \\
+\hline
+{\em recursive} & If true, appends -\/r to the command, and so removes all subdirectories etc. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespaceJSL_a34a7ba28084b304e97a707c653dce887}\label{namespaceJSL_a34a7ba28084b304e97a707c653dce887}} 
 \index{JSL@{JSL}!split@{split}}
 \index{split@{split}!JSL@{JSL}}

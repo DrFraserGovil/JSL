@@ -10,5 +10,6 @@ File handling is one of those things that is always far harder than you expect i
 	line-reader
 	file-writer
 	dir-handler
+	rm
 	location-checker
 	:caption: Members:

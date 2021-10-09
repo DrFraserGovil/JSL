@@ -14,6 +14,7 @@ Even more likely, you are in fact me, reading this a year or two down the line w
 	file-handling
 	command-args
 	strings
+	unit-testing
 	:maxdepth: 2
 	:caption: Contents:
 

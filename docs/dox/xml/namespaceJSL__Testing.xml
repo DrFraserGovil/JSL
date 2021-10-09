@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceJSL__Testing" kind="namespace" language="C++">
+    <compoundname>JSL_Testing</compoundname>
+    <innerclass refid="classJSL__Testing_1_1IOTest" prot="public">JSL_Testing::IOTest</innerclass>
+    <innerclass refid="classJSL__Testing_1_1MetaTest" prot="public">JSL_Testing::MetaTest</innerclass>
+    <innerclass refid="classJSL__Testing_1_1StringTest" prot="public">JSL_Testing::StringTest</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL__Testing_1a509a70d20fdc2e9975d9b0b8ae424ef1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL_Testing::RunAllTests</definition>
+        <argsstring>()</argsstring>
+        <name>RunAllTests</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="246" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="246" bodyend="262"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="5" column="1"/>
+  </compounddef>
+</doxygen>

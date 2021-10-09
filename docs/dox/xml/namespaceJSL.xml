@@ -5,6 +5,7 @@
     <innerclass refid="classJSL_1_1Argument" prot="public">JSL::Argument</innerclass>
     <innerclass refid="classJSL_1_1ArgumentInterface" prot="public">JSL::ArgumentInterface</innerclass>
     <innerclass refid="structJSL_1_1mkdirReturn" prot="public">JSL::mkdirReturn</innerclass>
+    <innerclass refid="classJSL_1_1UnitTest" prot="public">JSL::UnitTest</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="namespaceJSL_1a47d8cb112d513ee5a3ae38ca6a89743d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -267,6 +268,45 @@
         </inbodydescription>
         <location file="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" line="24" column="20" bodyfile="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" bodystart="24" bodyend="57"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::rm</definition>
+        <argsstring>(std::string location, bool recursive)</argsstring>
+        <name>rm</name>
+        <param>
+          <type>std::string</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>recursive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calls a system-rm on the provided location, and attempts to remove it. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target location on which rm is called </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>recursive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, appends -r to the command, and so removes all subdirectories etc. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/FileIO/rm.h" line="14" column="13" bodyfile="/home/jack/Documents/Work/JSL/FileIO/rm.h" bodystart="14" bodyend="45"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; std::string &gt;</type>
         <definition>std::vector&lt;std::string&gt; JSL::split</definition>
@@ -308,15 +348,15 @@
         </inbodydescription>
         <location file="/home/jack/Documents/Work/JSL/Strings/split.h" line="14" column="20" bodyfile="/home/jack/Documents/Work/JSL/Strings/split.h" bodystart="14" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1a22fc26d87034a744e42e70e77db892df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceJSL_1ae58b7096986a16b70a27e1609eff3014" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
-        <definition>std::string JSL::PrintCurrentTime</definition>
+        <definition>std::string JSL::CurrentTime</definition>
         <argsstring>()</argsstring>
-        <name>PrintCurrentTime</name>
+        <name>CurrentTime</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Get current system time in a readable format <simplesect kind="return"><para>A string of the readable format <linebreak/>
+<para>Get current system time in a readable format (note: was previously called PrintCurrentTime) <simplesect kind="return"><para>A string of the readable format <linebreak/>
  </para>
 </simplesect>
 </para>
@@ -337,7 +377,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. <parameterlist kind="param"><parameteritem>
+<para>Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. Times less than 1 second are reported as &quot;less than 1 second&quot; <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>timeInSeconds</parametername>
 </parameternamelist>
@@ -352,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Strings/Time.h" line="31" column="20" bodyfile="/home/jack/Documents/Work/JSL/Strings/Time.h" bodystart="31" bodyend="59"/>
+        <location file="/home/jack/Documents/Work/JSL/Strings/Time.h" line="31" column="20" bodyfile="/home/jack/Documents/Work/JSL/Strings/Time.h" bodystart="31" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ae7af96a0311784e019209221335f76d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -391,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Strings/Time.h" line="66" column="20" bodyfile="/home/jack/Documents/Work/JSL/Strings/Time.h" bodystart="66" bodyend="73"/>
+        <location file="/home/jack/Documents/Work/JSL/Strings/Time.h" line="73" column="20" bodyfile="/home/jack/Documents/Work/JSL/Strings/Time.h" bodystart="73" bodyend="80"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -24,9 +24,32 @@
     <member refid="classJSL_1_1ArgumentInterface_1a256b5bd88b5f6638353f108c48f3ee65" kind="function"><name>ListParse</name></member>
     <member refid="classJSL_1_1ArgumentInterface_1aac7c3106f99c407e625b9bc6a6c8c446" kind="function"><name>Configure</name></member>
   </compound>
+  <compound refid="classJSL__Testing_1_1IOTest" kind="class"><name>JSL_Testing::IOTest</name>
+    <member refid="classJSL__Testing_1_1IOTest_1a75479573809562118ab4d233c2bc0471" kind="function"><name>IOTest</name></member>
+    <member refid="classJSL__Testing_1_1IOTest_1a85daecacc71354b5dc0dee36840b8704" kind="function"><name>Run_Test</name></member>
+  </compound>
+  <compound refid="classJSL__Testing_1_1MetaTest" kind="class"><name>JSL_Testing::MetaTest</name>
+    <member refid="classJSL__Testing_1_1MetaTest_1a17efe6a92ae4934828a61d9f1120e67d" kind="function"><name>MetaTest</name></member>
+    <member refid="classJSL__Testing_1_1MetaTest_1a528c0f23452518d8b7d7112b935a12a7" kind="function"><name>Run_MetaTest</name></member>
+  </compound>
   <compound refid="structJSL_1_1mkdirReturn" kind="struct"><name>JSL::mkdirReturn</name>
     <member refid="structJSL_1_1mkdirReturn_1a76abe5af61a20e13756f833b79782b7f" kind="variable"><name>Successful</name></member>
     <member refid="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" kind="variable"><name>Message</name></member>
+  </compound>
+  <compound refid="classJSL__Testing_1_1StringTest" kind="class"><name>JSL_Testing::StringTest</name>
+    <member refid="classJSL__Testing_1_1StringTest_1a5be5ef071697a4e106c1a1e51ded1cf6" kind="function"><name>StringTest</name></member>
+    <member refid="classJSL__Testing_1_1StringTest_1ada0409cd10e3f09788994a9115331ff7" kind="function"><name>Run_Test</name></member>
+  </compound>
+  <compound refid="classJSL_1_1UnitTest" kind="class"><name>JSL::UnitTest</name>
+    <member refid="classJSL_1_1UnitTest_1a53c19424147e72fa6392470627f15049" kind="variable"><name>Name</name></member>
+    <member refid="classJSL_1_1UnitTest_1afac1f363a8406fad39316ee772a837a9" kind="variable"><name>Passed</name></member>
+    <member refid="classJSL_1_1UnitTest_1a54dc4908d757c7f523be12a4275e595c" kind="variable"><name>NonCriticalFailure</name></member>
+    <member refid="classJSL_1_1UnitTest_1a3dcc71e7e8f72f0f07b8fc552b777ad8" kind="variable"><name>MessageBuffer</name></member>
+    <member refid="classJSL_1_1UnitTest_1aa3bc8d5c99696d5bc6e63b8da358a0ed" kind="function"><name>UnitTest</name></member>
+    <member refid="classJSL_1_1UnitTest_1aa8369ab1ce2a537bff2ea7e1c8818490" kind="function"><name>Run_Test</name></member>
+    <member refid="classJSL_1_1UnitTest_1aabec19b081be8a428f12e4b5e3dc2a9c" kind="function"><name>BufferedTest</name></member>
+    <member refid="classJSL_1_1UnitTest_1a39e1076dd985334ce21606ae2a383f70" kind="function"><name>Results</name></member>
+    <member refid="classJSL_1_1UnitTest_1a3629d1bca071da7a2af6b7de29be1430" kind="function"><name>basicConditionCheck</name></member>
   </compound>
   <compound refid="namespaceJSL" kind="namespace"><name>JSL</name>
     <member refid="namespaceJSL_1a47d8cb112d513ee5a3ae38ca6a89743d" kind="function"><name>initialiseFile</name></member>
@@ -35,10 +58,14 @@
     <member refid="namespaceJSL_1a8c08233b0cb834d4dcde1153b4b8c8c7" kind="function"><name>writeMatrixToFile</name></member>
     <member refid="namespaceJSL_1a1752cd7c6e1134da51e9307527e0d788" kind="function"><name>locationExists</name></member>
     <member refid="namespaceJSL_1abf525d02b8c49f21ef7faa68b7571f93" kind="function"><name>mkdir</name></member>
+    <member refid="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" kind="function"><name>rm</name></member>
     <member refid="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" kind="function"><name>split</name></member>
-    <member refid="namespaceJSL_1a22fc26d87034a744e42e70e77db892df" kind="function"><name>PrintCurrentTime</name></member>
+    <member refid="namespaceJSL_1ae58b7096986a16b70a27e1609eff3014" kind="function"><name>CurrentTime</name></member>
     <member refid="namespaceJSL_1ad7ff2220bbab0294b95b9aa85332a222" kind="function"><name>FormatDuration</name></member>
     <member refid="namespaceJSL_1ae7af96a0311784e019209221335f76d9" kind="function"><name>FormatClock</name></member>
+  </compound>
+  <compound refid="namespaceJSL__Testing" kind="namespace"><name>JSL_Testing</name>
+    <member refid="namespaceJSL__Testing_1a509a70d20fdc2e9975d9b0b8ae424ef1" kind="function"><name>RunAllTests</name></member>
   </compound>
   <compound refid="Argument_8h" kind="file"><name>Argument.h</name>
   </compound>
@@ -56,6 +83,8 @@
   </compound>
   <compound refid="mkdir_8h" kind="file"><name>mkdir.h</name>
   </compound>
+  <compound refid="rm_8h" kind="file"><name>rm.h</name>
+  </compound>
   <compound refid="JSL_8h" kind="file"><name>JSL.h</name>
   </compound>
   <compound refid="split_8h" kind="file"><name>split.h</name>
@@ -64,10 +93,18 @@
   </compound>
   <compound refid="Time_8h" kind="file"><name>Time.h</name>
   </compound>
+  <compound refid="Testing_8h" kind="file"><name>Testing.h</name>
+  </compound>
+  <compound refid="Testing__UnitTests_8h" kind="file"><name>Testing_UnitTests.h</name>
+  </compound>
+  <compound refid="UnitTest_8h" kind="file"><name>UnitTest.h</name>
+  </compound>
   <compound refid="dir_31d17c3e3262f3f46fb0f6e98a9d9bc0" kind="dir"><name>/home/jack/Documents/Work/JSL/CommandArgs</name>
   </compound>
   <compound refid="dir_f55099b0de92dfb47c7a836a4dc87b8d" kind="dir"><name>/home/jack/Documents/Work/JSL/FileIO</name>
   </compound>
   <compound refid="dir_60aef1110311be2210a1ebd3c40da4ac" kind="dir"><name>/home/jack/Documents/Work/JSL/Strings</name>
+  </compound>
+  <compound refid="dir_52baaaedca03977d67375a3431bf5277" kind="dir"><name>/home/jack/Documents/Work/JSL/Testing</name>
   </compound>
 </doxygenindex>

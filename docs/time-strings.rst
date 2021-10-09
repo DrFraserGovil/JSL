@@ -9,7 +9,7 @@ Often when tracking the progress of long-running code, it is useful to be able t
 PrintCurrentTime
 ***********************
 
-.. doxygenfunction:: JSL::PrintCurrentTime
+.. doxygenfunction:: JSL::CurrentTime
 
 
 FormatDuration
