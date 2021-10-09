@@ -13,7 +13,7 @@ namespace JSL_Testing
 				Run_Test();
 			}
 			
-			void Run_MetaTest()
+			void Run_Test()
 			{
 				std::vector<std::string> MetaMessage;
 				bool goodMetaTest = true;
@@ -243,6 +243,87 @@ namespace JSL_Testing
 			}
 	};
 	
+	class ArgumentTest : public JSL::UnitTest
+	{
+		public:
+			ArgumentTest()
+			{
+				Name = "JSL::Argument";
+				NonCriticalFailure = false;
+				MessageBuffer.resize(0);
+				BufferedTest();
+			}
+			void Run_Test()
+			{
+				Passed = true;
+				
+				//Basic casting test
+				JSL::Argument<int> intArg(3,"int");
+				JSL::Argument<double> doubleArg(5.5,"double");
+				
+				double expectedSum = 3 + 5.5;
+				double sum = intArg + doubleArg;
+				
+				std::string success = "Basic casting methods successful";
+				std::string failure = "Basic casting methods failed";
+				basicConditionCheck(sum == expectedSum, success,failure);
+				
+				
+				//Test the parsing methods
+				std::vector<char *> args = {"test.cpp","-int","5","-double","-2.2","-schlom","hey","-boolio","1"};
+				
+				intArg.ListParse(args.size(),args.data());
+				doubleArg.ListParse(args.size(), args.data());
+				expectedSum = 5 - 2.2;
+				sum = intArg + doubleArg;
+				success = "List Parse methods successful";
+				failure = "List Parse methods failed";
+				basicConditionCheck(sum == expectedSum, success,failure);
+				
+				bool boolsuccess = true;
+				try
+				{
+					JSL::Argument<bool> boolArg(false,"boolio",args.size(),args.data());
+					boolsuccess = boolArg;
+				}
+				catch (...)
+				{
+					boolsuccess = false;
+				}
+				success = "Boolean parsing worked";
+				failure = "Boolean parsing failed";
+				basicConditionCheck(boolsuccess,success,failure);
+				
+				bool stringsuccess = true;
+				try
+				{
+					JSL::Argument<std::string> stringArg("ho","schlom",args.size(),args.data());
+					stringsuccess = (std::string)stringArg == "hey";
+				}
+				catch (...)
+				{
+					stringsuccess = false;
+				}
+				success = "String parsing worked";
+				failure = "String parsing failed";
+				basicConditionCheck(stringsuccess,success,failure);
+				
+				bool intAvert = true;
+				try
+				{
+					JSL::Argument<int> intArg(2,"double",args.size(),args.data());
+					intAvert = false;
+				}
+				catch (...)
+				{
+					intAvert = true;
+				}
+				success = "Successfully threw an error when casting an int to a double";
+				failure = "Failed to throw an error when setting an int to a double....";
+				basicConditionCheck(intAvert,success,failure);
+			}
+	};
+	
 	void RunAllTests()
 	{
 		std::cout << "Beginning testing of all JSL objects...\n" << std::endl;
@@ -257,6 +338,8 @@ namespace JSL_Testing
 		IOTest ioT;
 		ioT.Results();
 		
+		ArgumentTest argT;
+		argT.Results();
 		std::cout << "\nTesting complete." << std::endl;
 		
 	}
