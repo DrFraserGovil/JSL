@@ -20,7 +20,7 @@ namespace JSL
 		  \param directory Path (relative or absolute) to the desired directory
 		  * \return A mkdirReturn object detailing the success + associated messages for the request
 		*/
-	mkdirReturn inline mkdirSafely(std::string directory)
+	mkdirReturn inline mkdir(std::string directory)
 	{
 		
 		mkdirReturn output;
