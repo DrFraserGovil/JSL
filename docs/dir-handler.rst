@@ -11,7 +11,7 @@ Often you wish to create an Output directory or suchlike within your code - but 
 Function 
 *****************
 
-.. doxygenfunction:: mkdirSafely
+.. doxygenfunction:: mkdir
 
 
 
