@@ -123,7 +123,7 @@ namespace JSL
 		
 			Vector & operator+=(const Vector & rhs)
 			{
-				if (Size != rhs.Size())
+				if (Size != rhs.Size)
 				{
 					throw std::runtime_error("Cannot add vectors of different sizes");
 				}
@@ -135,7 +135,7 @@ namespace JSL
 			}
 			Vector & operator-=(const Vector & rhs)
 			{
-				if (Size != rhs.Size())
+				if (Size != rhs.Size)
 				{
 					throw std::runtime_error("Cannot add vectors of different sizes");
 				}
