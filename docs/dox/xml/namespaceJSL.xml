@@ -6,6 +6,7 @@
     <innerclass refid="classJSL_1_1ArgumentInterface" prot="public">JSL::ArgumentInterface</innerclass>
     <innerclass refid="structJSL_1_1mkdirReturn" prot="public">JSL::mkdirReturn</innerclass>
     <innerclass refid="classJSL_1_1UnitTest" prot="public">JSL::UnitTest</innerclass>
+    <innerclass refid="classJSL_1_1Vector" prot="public">JSL::Vector</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="namespaceJSL_1a47d8cb112d513ee5a3ae38ca6a89743d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -306,6 +307,636 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/jack/Documents/Work/JSL/FileIO/rm.h" line="14" column="13" bodyfile="/home/jack/Documents/Work/JSL/FileIO/rm.h" bodystart="14" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1aeae64b7e0cfdc1ab5f35cca90c32d9f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double JSL::VectorDotProduct</definition>
+        <argsstring>(const Vector &amp;lhs, const Vector &amp;rhs)</argsstring>
+        <name>VectorDotProduct</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>The standard dot product on R^n. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> 1,</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> 2 (order irrelevant) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sum (lhs_i * rhs_i) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="268" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="268" bodyend="280" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="12" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1aa7816eb0cd81b74241ce460237990e70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::VectorCrossProduct</definition>
+        <argsstring>(const Vector &amp;lhs, const Vector &amp;rhs)</argsstring>
+        <name>VectorCrossProduct</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>The standard cross product <ndash/> only defined on R^3 (throws an error else) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> 1</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> 2 (order relevant - using standard conventions <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> 1 x <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> 2) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> cross product of inputs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="283" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="283" bodyend="298" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="13" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a09355c91f84fd99d4634bf9189fef51d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double JSL::AngleBetweenVectors</definition>
+        <argsstring>(const Vector &amp;lhs, const Vector &amp;rhs)</argsstring>
+        <name>AngleBetweenVectors</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Uses <ref refid="classJSL_1_1Vector_1aa8af717591f5548ff471b6e4b28d7f9c" kindref="member">Vector::Norm()</ref> and <ref refid="namespaceJSL_1aeae64b7e0cfdc1ab5f35cca90c32d9f6" kindref="member">VectorDotProduct()</ref> to extract an angle between the vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> 1,</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> 2 (order irrelevant) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle between the two vectors (between 0 and M_PI) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="301" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="301" bodyend="314" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="14" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a7fad54be308ccb76f68933d91c3c542f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::operator==</definition>
+        <argsstring>(const Vector &amp;lhs, const Vector &amp;rhs)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="138" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="138" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a394a4f9cee0747c76d1190b0365c7b5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::operator!=</definition>
+        <argsstring>(const Vector &amp;lhs, const Vector &amp;rhs)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="155" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ae6530b77174d0dfae8e0d6e2a810f672" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator+</definition>
+        <argsstring>(const Vector &amp;lhs, const Vector &amp;rhs)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Performs obvious vector addition (a+b)_i = a_i + b_i. Throws an error if the vectors are not the same size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first vector to be summed</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second vector to be summed (order is irrelevant) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector lhs + rhs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="161" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="161" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a1d8393f2865dc23e7975ad041e341ba5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator-</definition>
+        <argsstring>(const Vector &amp;lhs, const Vector &amp;rhs)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Performs obvious vector subtraction (a-b)_i = a_i - b_i. Throws an error if the vectors are not the same size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base vector</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be subtracted from the base vector (order does matter!) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector lhs - rhs. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="177" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="177" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a4b293e2ac3df51113e80022cb3c2ac99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator+</definition>
+        <argsstring>(const Vector &amp;lhs, const double &amp;scalar)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>Adds the value of scalar to every element in the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be summed</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scalar to be added element-wise </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector lhs + scalar </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="194" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="194" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ac5ceabb8b9e657c5e2d0faf9b20a36e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator+</definition>
+        <argsstring>(const double &amp;scalar, const Vector &amp;rhs)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Exactly equivalent to <ref refid="namespaceJSL_1a4b293e2ac3df51113e80022cb3c2ac99" kindref="member">JSL::operator+(const Vector &amp;lhs, const double &amp;scalar)</ref>, just swapped around. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scalar to be added element-wise</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be summed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The scalar + rhs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="207" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="207" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ac6bd9311dd73aa6227d826bdb94e748d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator-</definition>
+        <argsstring>(const Vector &amp;lhs, const double &amp;scalar)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>Subtracts the value of scalar to every element in the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base vector</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scalar to be subtracted from the base vector element wise </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector lhs - scalar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="212" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="212" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ab3d17c5cc03a2048e8637d2054fbc138" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator-</definition>
+        <argsstring>(const double &amp;scalar, const Vector &amp;rhs)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>A slightly odd operation (included for completeness) - adds the value of scalar to the negative of the elements of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value which acts as a base</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector which will be subtracted elementwise from the base scalar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector scalar - rhs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="218" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="218" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ab4eefbed468f275164855895335b8a29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator*</definition>
+        <argsstring>(const double &amp;scalar, const Vector &amp;rhs)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Naive element-wise scalar multiplication. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to multiply elements by</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to multiply </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointwise product of the elements of rhs and the scalar </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="230" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="230" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1afc5e092de4a9bdc5795d40ee0f51c7b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator*</definition>
+        <argsstring>(const Vector &amp;lhs, const double &amp;scalar)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>Alias of <ref refid="namespaceJSL_1ac5ceabb8b9e657c5e2d0faf9b20a36e8" kindref="member">JSL::operator+(const double &amp;scalar,const Vector &amp;rhs)</ref> with the operation order swapped around. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to multiply</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to multiply elements by </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointwise product of the elements of lhs and the scalar </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="241" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a1427fd44260592b7d65d27946969fba1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator/</definition>
+        <argsstring>(const Vector &amp;lhs, const double &amp;scalar)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>Essentially an alias for <ref refid="namespaceJSL_1ac5ceabb8b9e657c5e2d0faf9b20a36e8" kindref="member">JSL::operator+(const double &amp;scalar,const Vector &amp;rhs)</ref> with the scalar set to one-over itself, i.e. pointwise division of the provided vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to divide</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to divide elements by </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointwise divisor of the elements of lhs and the scalar </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="247" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="247" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1a5c033d19e73e78e75327d425616fbbb1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>Vector JSL::operator*</definition>
+        <argsstring>(const Vector &amp;lhs, const Vector &amp;rhs)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Executes the pointwise (Hadamard) product of two vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first vector to be multiplied</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second vector to be multiplied (order is irrelevant) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector (lhs * rhs)_i = lhs_i * rhs_i </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="257" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="257" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ad9900d0292867da361ddb3f1200a1f99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; JSL::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Vector &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Calls <ref refid="classJSL_1_1Vector_1a73579b4a194cc924341806a5d9ea3817" kindref="member">JSL::Vector::to_string()</ref> and then passes it to the provided stream, enabling sweet, smooth output such as std::cout &lt;&lt; v1 &lt;&lt; std::endl. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream capable of parsing strings</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector object to be inserted into the stream for output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the modified stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="317" column="8" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="317" bodyend="321"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; std::string &gt;</type>

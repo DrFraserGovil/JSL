@@ -100,9 +100,17 @@ namespace JSL
 				}
 				else
 				{
-					MessageBuffer.push_back(failuremessage);
+					MessageBuffer.push_back("ERROR: " + failuremessage);
 					Passed = false;
 				}
+			}
+			
+			//! An override of the other function, preventing dual-typing of basic output messages
+			void basicConditionCheck(bool condition, std::string messageFramework)
+			{
+				std::string success = messageFramework + " was successful";
+				std::string failure = messageFramework + " failed";
+				basicConditionCheck(condition,success,failure);
 			}
 	};
 }

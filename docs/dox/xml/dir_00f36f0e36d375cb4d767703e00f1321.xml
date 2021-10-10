@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_00f36f0e36d375cb4d767703e00f1321" kind="dir">
+    <compoundname>/home/jack/Documents/Work/JSL/Maths</compoundname>
+    <innerfile refid="Maths_8h">Maths.h</innerfile>
+    <innerfile refid="vector_8h">vector.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jack/Documents/Work/JSL/Maths/"/>
+  </compounddef>
+</doxygen>

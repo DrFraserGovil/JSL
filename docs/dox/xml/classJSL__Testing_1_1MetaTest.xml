@@ -16,20 +16,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="9" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="9" bodyend="14"/>
+        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="10" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="10" bodyend="15"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL__Testing_1_1MetaTest_1a528c0f23452518d8b7d7112b935a12a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL__Testing_1_1MetaTest_1a176352dcd54f9ec7df8f1548882e6820" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>void JSL_Testing::MetaTest::Run_MetaTest</definition>
+        <definition>void JSL_Testing::MetaTest::Run_Test</definition>
         <argsstring>()</argsstring>
-        <name>Run_MetaTest</name>
+        <name>Run_Test</name>
+        <reimplements refid="classJSL_1_1UnitTest_1aa8369ab1ce2a537bff2ea7e1c8818490">Run_Test</reimplements>
         <briefdescription>
+<para>All children which want to take advantage of the <ref refid="classJSL_1_1UnitTest_1aabec19b081be8a428f12e4b5e3dc2a9c" kindref="member">BufferedTest()</ref> command should have the bulk of their testing within this command. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="16" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="16" bodyend="49"/>
+        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="17" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="17" bodyend="50"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -60,9 +62,10 @@
         <link refid="classJSL_1_1UnitTest"/>
       </node>
     </collaborationgraph>
-    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="7" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="6" bodyend="51"/>
+    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="8" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="7" bodyend="52"/>
     <listofallmembers>
       <member refid="classJSL_1_1UnitTest_1a3629d1bca071da7a2af6b7de29be1430" prot="protected" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>basicConditionCheck</name></member>
+      <member refid="classJSL_1_1UnitTest_1a53ede0c6b420eaf64faf752c0518340e" prot="protected" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>basicConditionCheck</name></member>
       <member refid="classJSL_1_1UnitTest_1aabec19b081be8a428f12e4b5e3dc2a9c" prot="public" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>BufferedTest</name></member>
       <member refid="classJSL_1_1UnitTest_1a3dcc71e7e8f72f0f07b8fc552b777ad8" prot="public" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>MessageBuffer</name></member>
       <member refid="classJSL__Testing_1_1MetaTest_1a17efe6a92ae4934828a61d9f1120e67d" prot="public" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>MetaTest</name></member>
@@ -70,8 +73,7 @@
       <member refid="classJSL_1_1UnitTest_1a54dc4908d757c7f523be12a4275e595c" prot="public" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>NonCriticalFailure</name></member>
       <member refid="classJSL_1_1UnitTest_1afac1f363a8406fad39316ee772a837a9" prot="public" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>Passed</name></member>
       <member refid="classJSL_1_1UnitTest_1a39e1076dd985334ce21606ae2a383f70" prot="public" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>Results</name></member>
-      <member refid="classJSL__Testing_1_1MetaTest_1a528c0f23452518d8b7d7112b935a12a7" prot="public" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>Run_MetaTest</name></member>
-      <member refid="classJSL_1_1UnitTest_1aa8369ab1ce2a537bff2ea7e1c8818490" prot="public" virt="virtual"><scope>JSL_Testing::MetaTest</scope><name>Run_Test</name></member>
+      <member refid="classJSL__Testing_1_1MetaTest_1a176352dcd54f9ec7df8f1548882e6820" prot="public" virt="virtual"><scope>JSL_Testing::MetaTest</scope><name>Run_Test</name></member>
       <member refid="classJSL_1_1UnitTest_1aa3bc8d5c99696d5bc6e63b8da358a0ed" prot="public" virt="non-virtual"><scope>JSL_Testing::MetaTest</scope><name>UnitTest</name></member>
     </listofallmembers>
   </compounddef>

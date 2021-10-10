@@ -5,6 +5,7 @@
     <includes refid="FileIO_8h" local="yes">FileIO/FileIO.h</includes>
     <includes refid="Strings_8h" local="yes">Strings/Strings.h</includes>
     <includes refid="CommandArgs_8h" local="yes">CommandArgs/CommandArgs.h</includes>
+    <includes refid="Maths_8h" local="yes">Maths/Maths.h</includes>
     <includes refid="Testing_8h" local="yes">Testing/Testing.h</includes>
     <includedby refid="Testing__UnitTests_8h" local="yes">/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h</includedby>
     <incdepgraph>
@@ -25,7 +26,7 @@
         <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="27">
         <label>UnitTest.h</label>
         <link refid="UnitTest_8h"/>
         <childnode refid="16" relation="include">
@@ -40,6 +41,23 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
+      </node>
+      <node id="24">
+        <label>vector.h</label>
+        <link refid="vector_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>cmath</label>
       </node>
       <node id="14">
         <label>stdexcept</label>
@@ -69,6 +87,8 @@
         <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="22">
@@ -120,6 +140,12 @@
       <node id="6">
         <label>vector</label>
       </node>
+      <node id="23">
+        <label>Maths/Maths.h</label>
+        <link refid="Maths_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
       <node id="8">
         <label>sstream</label>
       </node>
@@ -142,9 +168,14 @@
         </childnode>
       </node>
       <node id="25">
+        <label>math.h</label>
+      </node>
+      <node id="28">
         <label>Testing_UnitTests.h</label>
         <link refid="Testing__UnitTests_8h"/>
         <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
         </childnode>
       </node>
       <node id="20">
@@ -153,12 +184,12 @@
       <node id="19">
         <label>chrono</label>
       </node>
-      <node id="23">
+      <node id="26">
         <label>Testing/Testing.h</label>
         <link refid="Testing_8h"/>
-        <childnode refid="24" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -222,7 +253,10 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="FileIO_8h" kindref="compound">FileIO/FileIO.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Strings_8h" kindref="compound">Strings/Strings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CommandArgs_8h" kindref="compound">CommandArgs/CommandArgs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Testing_8h" kindref="compound">Testing/Testing.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Maths_8h" kindref="compound">Maths/Maths.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Testing_8h" kindref="compound">Testing/Testing.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/jack/Documents/Work/JSL/JSL.h"/>
   </compounddef>

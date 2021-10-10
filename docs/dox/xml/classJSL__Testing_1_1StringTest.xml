@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="58" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="58" bodyend="65"/>
+        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="59" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="59" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classJSL__Testing_1_1StringTest_1ada0409cd10e3f09788994a9115331ff7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="68" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="68" bodyend="110"/>
+        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="69" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="69" bodyend="111"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -62,9 +62,10 @@
         <link refid="classJSL_1_1UnitTest"/>
       </node>
     </collaborationgraph>
-    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="55" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="54" bodyend="112"/>
+    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="56" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="55" bodyend="113"/>
     <listofallmembers>
       <member refid="classJSL_1_1UnitTest_1a3629d1bca071da7a2af6b7de29be1430" prot="protected" virt="non-virtual"><scope>JSL_Testing::StringTest</scope><name>basicConditionCheck</name></member>
+      <member refid="classJSL_1_1UnitTest_1a53ede0c6b420eaf64faf752c0518340e" prot="protected" virt="non-virtual"><scope>JSL_Testing::StringTest</scope><name>basicConditionCheck</name></member>
       <member refid="classJSL_1_1UnitTest_1aabec19b081be8a428f12e4b5e3dc2a9c" prot="public" virt="non-virtual"><scope>JSL_Testing::StringTest</scope><name>BufferedTest</name></member>
       <member refid="classJSL_1_1UnitTest_1a3dcc71e7e8f72f0f07b8fc552b777ad8" prot="public" virt="non-virtual"><scope>JSL_Testing::StringTest</scope><name>MessageBuffer</name></member>
       <member refid="classJSL_1_1UnitTest_1a53c19424147e72fa6392470627f15049" prot="public" virt="non-virtual"><scope>JSL_Testing::StringTest</scope><name>Name</name></member>

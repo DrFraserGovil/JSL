@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['triggerstring_115',['TriggerString',['../classJSL_1_1ArgumentInterface.html#afa2d1f96c4971070d3de5824f297312f',1,'JSL::ArgumentInterface']]]
+  ['size_168',['Size',['../classJSL_1_1Vector.html#a00ad33e216a63f17ff9dc51db06970a6',1,'JSL::Vector']]],
+  ['successful_169',['Successful',['../structJSL_1_1mkdirReturn.html#a76abe5af61a20e13756f833b79782b7f',1,'JSL::mkdirReturn']]]
 ];

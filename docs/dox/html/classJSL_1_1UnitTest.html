@@ -81,9 +81,11 @@ Inheritance diagram for JSL::UnitTest:</div>
  <div class="center">
   <img src="classJSL_1_1UnitTest.png" usemap="#JSL::UnitTest_map" alt=""/>
   <map id="JSL::UnitTest_map" name="JSL::UnitTest_map">
-<area href="classJSL__Testing_1_1IOTest.html" alt="JSL_Testing::IOTest" shape="rect" coords="0,56,143,80"/>
-<area href="classJSL__Testing_1_1MetaTest.html" alt="JSL_Testing::MetaTest" shape="rect" coords="153,56,296,80"/>
-<area href="classJSL__Testing_1_1StringTest.html" alt="JSL_Testing::StringTest" shape="rect" coords="306,56,449,80"/>
+<area href="classJSL__Testing_1_1ArgumentTest.html" alt="JSL_Testing::ArgumentTest" shape="rect" coords="0,56,164,80"/>
+<area href="classJSL__Testing_1_1IOTest.html" alt="JSL_Testing::IOTest" shape="rect" coords="174,56,338,80"/>
+<area href="classJSL__Testing_1_1MathTest.html" alt="JSL_Testing::MathTest" shape="rect" coords="348,56,512,80"/>
+<area href="classJSL__Testing_1_1MetaTest.html" alt="JSL_Testing::MetaTest" shape="rect" coords="522,56,686,80"/>
+<area href="classJSL__Testing_1_1StringTest.html" alt="JSL_Testing::StringTest" shape="rect" coords="696,56,860,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -121,6 +123,9 @@ Data Fields</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3629d1bca071da7a2af6b7de29be1430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1UnitTest.html#a3629d1bca071da7a2af6b7de29be1430">basicConditionCheck</a> (bool condition, std::string successmessage, std::string failuremessage)</td></tr>
 <tr class="separator:a3629d1bca071da7a2af6b7de29be1430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ede0c6b420eaf64faf752c0518340e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1UnitTest.html#a53ede0c6b420eaf64faf752c0518340e">basicConditionCheck</a> (bool condition, std::string messageFramework)</td></tr>
+<tr class="memdesc:a53ede0c6b420eaf64faf752c0518340e"><td class="mdescLeft">&#160;</td><td class="mdescRight">An override of the other function, preventing dual-typing of basic output messages.  <a href="classJSL_1_1UnitTest.html#a53ede0c6b420eaf64faf752c0518340e">More...</a><br /></td></tr>
+<tr class="separator:a53ede0c6b420eaf64faf752c0518340e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A parent class for various unit testing frameworks. Provides a consistent API for interacting with the unit tests. The class is essentially meaningless on its own, but when coupled to a decently written subclass (i.e. <a class="el" href="classJSL__Testing_1_1StringTest.html">JSL_Testing::StringTest</a>), it becomes very useful. </p>
@@ -153,8 +158,46 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a53ede0c6b420eaf64faf752c0518340e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ede0c6b420eaf64faf752c0518340e">&#9670;&nbsp;</a></span>basicConditionCheck() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JSL::UnitTest::basicConditionCheck </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>condition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>messageFramework</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An override of the other function, preventing dual-typing of basic output messages. </p>
+
+</div>
+</div>
 <a id="a3629d1bca071da7a2af6b7de29be1430"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3629d1bca071da7a2af6b7de29be1430">&#9670;&nbsp;</a></span>basicConditionCheck()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3629d1bca071da7a2af6b7de29be1430">&#9670;&nbsp;</a></span>basicConditionCheck() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,7 +326,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>All children which want to take advantage of the <a class="el" href="classJSL_1_1UnitTest.html#aabec19b081be8a428f12e4b5e3dc2a9c" title="Calls the overridden function Run_Test() within a try-catch loop. Provides an extra level of safety a...">BufferedTest()</a> command should have the bulk of their testing within this command. </p>
 
-<p>Reimplemented in <a class="el" href="classJSL__Testing_1_1IOTest.html#a85daecacc71354b5dc0dee36840b8704">JSL_Testing::IOTest</a>, and <a class="el" href="classJSL__Testing_1_1StringTest.html#ada0409cd10e3f09788994a9115331ff7">JSL_Testing::StringTest</a>.</p>
+<p>Reimplemented in <a class="el" href="classJSL__Testing_1_1MathTest.html#a9a313d8c09f92dd9dcf5e3f65818bb23">JSL_Testing::MathTest</a>, <a class="el" href="classJSL__Testing_1_1ArgumentTest.html#a1c4c626d57e448da86866ef414308e97">JSL_Testing::ArgumentTest</a>, <a class="el" href="classJSL__Testing_1_1IOTest.html#a85daecacc71354b5dc0dee36840b8704">JSL_Testing::IOTest</a>, <a class="el" href="classJSL__Testing_1_1StringTest.html#ada0409cd10e3f09788994a9115331ff7">JSL_Testing::StringTest</a>, and <a class="el" href="classJSL__Testing_1_1MetaTest.html#a176352dcd54f9ec7df8f1548882e6820">JSL_Testing::MetaTest</a>.</p>
 
 </div>
 </div>

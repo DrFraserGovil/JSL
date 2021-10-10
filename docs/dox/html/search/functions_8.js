@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['parse_97',['Parse',['../classJSL_1_1ArgumentInterface.html#a28b487f7a4fa6e721ed6629abe2073f2',1,'JSL::ArgumentInterface::Parse()'],['../classJSL_1_1Argument.html#a8984e7ce23155259d90a3e98170f36e0',1,'JSL::Argument::Parse()']]]
+  ['negativeintegererror_133',['negativeIntegerError',['../classJSL_1_1Vector.html#ac41d3cb075c2bd871c31b96dedba08fe',1,'JSL::Vector']]],
+  ['norm_134',['Norm',['../classJSL_1_1Vector.html#aa8af717591f5548ff471b6e4b28d7f9c',1,'JSL::Vector']]]
 ];

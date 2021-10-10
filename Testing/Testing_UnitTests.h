@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../JSL.h"
+#include <cmath>
 namespace JSL_Testing
 {
 	class MetaTest : public JSL::UnitTest
@@ -324,6 +325,188 @@ namespace JSL_Testing
 			}
 	};
 	
+	class MathTest : public JSL::UnitTest
+	{
+		public:
+			MathTest()
+			{
+				Name = "JSL::Math";
+				NonCriticalFailure = false;
+				MessageBuffer.resize(0);
+				BufferedTest();
+			}
+			void Run_Test()
+			{
+				VectorTest();
+			}
+			void VectorTest()
+			{
+				Passed = true;
+				
+				const int n = 5;
+				JSL::Vector v1(n);
+				
+				bool allEqualToZero = true;
+				for (int i = 0; i < n; ++i)
+				{
+					if (v1[i] != 0)
+					{
+						allEqualToZero = false;
+					}
+				}
+				std::string message = "JSL::Vector Zero-initialisation method and basic access test";
+				basicConditionCheck(allEqualToZero,message);
+				
+				
+				
+				v1[0] = n;
+				bool basicAssignmentCheck = (v1[0] == n);
+				message = "JSL::Vector Basic array-assignment syntax";
+				basicConditionCheck(basicAssignmentCheck,message);
+				
+				
+				std::vector<double> initStruct(n,0);
+				initStruct[0] = n;
+				JSL::Vector v2(initStruct);
+				bool v2Init = true;
+				for (int i = 0; i < n; ++i)
+				{
+					if (v2[i] != v1[i])
+					{
+						v2Init = false;
+					}
+				}
+				message = "JSL::Vector initialisation using std::vector";
+				basicConditionCheck(v2Init,message);
+				
+				bool overFlowSuccess;
+				try
+				{
+					double a = v1[n+1];
+					overFlowSuccess = false;
+				}
+				catch (std::runtime_error)
+				{
+					overFlowSuccess = true;
+				}
+				message = "JSL::Vector overflow error-throwing";
+				basicConditionCheck(overFlowSuccess,message);
+				
+				bool underFlowSuccess;
+				try
+				{
+					double a = v1[-1];
+					underFlowSuccess = false;
+				}
+				catch (std::runtime_error)
+				{
+					underFlowSuccess = true;
+				}
+				message = "JSL::Vector underflow error-throwing";
+				basicConditionCheck(overFlowSuccess,message);
+				
+				bool equalityCheck = (v1 == v2);
+				message = "JSL::Vector equality testing";
+				basicConditionCheck(equalityCheck,message);
+				
+				++v2[0];
+				bool inEqualityCheck = (v1 != v2);
+				message = "JSL::Vector inequality testing";
+				basicConditionCheck(inEqualityCheck,message);
+				
+				
+				double offset = 3.2;
+				JSL::Vector v3 = v1 + v2;
+				JSL::Vector v4 = offset + v1;
+				JSL::Vector v5 = v1 + offset;
+				bool summationWorks = true;
+				for (int i = 0; i < n; ++i)
+				{
+					bool summer = (v3[i] == (v1[i] + v2[i]));
+					bool scalarsum = (v4[i] == v1[i] + offset);
+					bool sumscalar = (v5[i] == v1[i] + offset);
+					
+					if (!summer || !scalarsum || !sumscalar)
+					{
+						summationWorks = false;
+					}
+				}
+				message = "JSL::Vector summation testing";
+				basicConditionCheck(summationWorks,message);
+				
+				double mult = 3;
+				bool scalarMultiplicationWorks = true;
+				v1[0] = 4;
+				JSL::Vector v6 = mult * v1;
+				JSL::Vector v7 = v1 * -mult;
+				for (int i =0; i < n; ++i)
+				{
+					bool forward = v6[i] == mult * v1[i];
+					bool backward = v7[i] == -mult * v1[i];
+					if (!forward || !backward)
+					{
+						scalarMultiplicationWorks = false;
+					}
+				}
+				message = "JSL::Vector scalar multiplication testing";
+				basicConditionCheck(scalarMultiplicationWorks,message);
+				
+				
+				JSL::Vector v8 = v6 - v7;
+				JSL::Vector v9 = v7 - v6;
+				bool subtractCheck = (v8 == 2*mult*v1) && (v9 == -2*mult*v1);
+				message = "JSL::Vector subtraction testing";
+				basicConditionCheck(subtractCheck,message);
+				
+				
+				bool divisorCheck = 0.5 * v1 == v1/2;
+				try
+				{
+					JSL::Vector v10 = v1/0;
+					divisorCheck = false;
+				}
+				catch (std::runtime_error)
+				{
+					//
+				}
+				
+				message = "JSL::Vector division testing (including zero division)";
+				basicConditionCheck(divisorCheck,message);
+				
+				
+				v1[n-1] +=3;
+				v2[n-1] += 9;
+				double expectedDot = 0;
+				double expectedNorm = 0;
+				for (int i = 0; i < n;++i)
+				{
+					expectedDot += v1[i] * v2[i];
+					expectedNorm += v1[i] * v1[i];
+				}
+				bool dotProductWorks = VectorDotProduct(v1,v2) == expectedDot && v1.Dot(v2) == expectedDot;
+				message = "JSL::Vector Dot() member and VectorDotProduct function test";
+				basicConditionCheck(dotProductWorks,message);
+				
+				bool normWorks = sqrt(expectedNorm) == v1.Norm();
+				message = "JSL::Vector Norm() and SqNorm() member test";
+				basicConditionCheck(normWorks, message);
+				
+				// angle & cross product checks 
+				JSL::Vector u1({3,-2,5});
+				JSL::Vector u2({8,7,2});
+				JSL::Vector expectedCross({-39,34,37});
+				double expectedAngle = 1.266158693;
+				double recoveredAngle = u1.AngleBetween(u2);
+				bool angleCorrect = abs(recoveredAngle - expectedAngle) < 1e-8;
+				message = "JSL::Vector AngleBetween() and AngleBetweenVectors() test";
+				basicConditionCheck(angleCorrect, message);
+				
+				message = "JSL::Vector Cross() and VectorCrossProduct() test";
+				basicConditionCheck(u1.Cross(u2) == expectedCross,message);
+			}
+	
+	};
+	
 	void RunAllTests()
 	{
 		std::cout << "Beginning testing of all JSL objects...\n" << std::endl;
@@ -340,6 +523,10 @@ namespace JSL_Testing
 		
 		ArgumentTest argT;
 		argT.Results();
+		
+		MathTest mathT;
+		mathT.Results();
+		
 		std::cout << "\nTesting complete." << std::endl;
 		
 	}

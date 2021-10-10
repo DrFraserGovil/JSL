@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['writematrixtofile_106',['writeMatrixToFile',['../namespaceJSL.html#a8c08233b0cb834d4dcde1153b4b8c8c7',1,'JSL']]],
-  ['writestringtofile_107',['writeStringToFile',['../namespaceJSL.html#a838b3a913896993bc008408d164ec19d',1,'JSL']]],
-  ['writevectortofile_108',['writeVectorToFile',['../namespaceJSL.html#a1d611217d83275af846cbc091ff98f53',1,'JSL']]]
+  ['split_150',['split',['../namespaceJSL.html#a34a7ba28084b304e97a707c653dce887',1,'JSL']]],
+  ['sqnorm_151',['SqNorm',['../classJSL_1_1Vector.html#ac1346e26bc981bf45d2c1c4317dac4e6',1,'JSL::Vector']]],
+  ['stringtest_152',['StringTest',['../classJSL__Testing_1_1StringTest.html#a5be5ef071697a4e106c1a1e51ded1cf6',1,'JSL_Testing::StringTest']]]
 ];

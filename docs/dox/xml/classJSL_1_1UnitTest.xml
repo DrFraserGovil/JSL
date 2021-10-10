@@ -2,7 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classJSL_1_1UnitTest" kind="class" language="C++" prot="public">
     <compoundname>JSL::UnitTest</compoundname>
+    <derivedcompoundref refid="classJSL__Testing_1_1ArgumentTest" prot="public" virt="non-virtual">JSL_Testing::ArgumentTest</derivedcompoundref>
     <derivedcompoundref refid="classJSL__Testing_1_1IOTest" prot="public" virt="non-virtual">JSL_Testing::IOTest</derivedcompoundref>
+    <derivedcompoundref refid="classJSL__Testing_1_1MathTest" prot="public" virt="non-virtual">JSL_Testing::MathTest</derivedcompoundref>
     <derivedcompoundref refid="classJSL__Testing_1_1MetaTest" prot="public" virt="non-virtual">JSL_Testing::MetaTest</derivedcompoundref>
     <derivedcompoundref refid="classJSL__Testing_1_1StringTest" prot="public" virt="non-virtual">JSL_Testing::StringTest</derivedcompoundref>
     <includes refid="UnitTest_8h" local="no">UnitTest.h</includes>
@@ -84,8 +86,11 @@
         <definition>virtual void JSL::UnitTest::Run_Test</definition>
         <argsstring>()</argsstring>
         <name>Run_Test</name>
+        <reimplementedby refid="classJSL__Testing_1_1MetaTest_1a176352dcd54f9ec7df8f1548882e6820">Run_Test</reimplementedby>
         <reimplementedby refid="classJSL__Testing_1_1StringTest_1ada0409cd10e3f09788994a9115331ff7">Run_Test</reimplementedby>
         <reimplementedby refid="classJSL__Testing_1_1IOTest_1a85daecacc71354b5dc0dee36840b8704">Run_Test</reimplementedby>
+        <reimplementedby refid="classJSL__Testing_1_1ArgumentTest_1a1c4c626d57e448da86866ef414308e97">Run_Test</reimplementedby>
+        <reimplementedby refid="classJSL__Testing_1_1MathTest_1a9a313d8c09f92dd9dcf5e3f65818bb23">Run_Test</reimplementedby>
         <briefdescription>
 <para>All children which want to take advantage of the <ref refid="classJSL_1_1UnitTest_1aabec19b081be8a428f12e4b5e3dc2a9c" kindref="member">BufferedTest()</ref> command should have the bulk of their testing within this command. </para>
         </briefdescription>
@@ -179,6 +184,28 @@
         </inbodydescription>
         <location file="/home/jack/Documents/Work/JSL/Testing/UnitTest.h" line="95" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/UnitTest.h" bodystart="95" bodyend="106"/>
       </memberdef>
+      <memberdef kind="function" id="classJSL_1_1UnitTest_1a53ede0c6b420eaf64faf752c0518340e" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::UnitTest::basicConditionCheck</definition>
+        <argsstring>(bool condition, std::string messageFramework)</argsstring>
+        <name>basicConditionCheck</name>
+        <param>
+          <type>bool</type>
+          <declname>condition</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>messageFramework</declname>
+        </param>
+        <briefdescription>
+<para>An override of the other function, preventing dual-typing of basic output messages. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Testing/UnitTest.h" line="109" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/UnitTest.h" bodystart="109" bodyend="114"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -186,19 +213,25 @@
 <para>A parent class for various unit testing frameworks. Provides a consistent API for interacting with the unit tests. The class is essentially meaningless on its own, but when coupled to a decently written subclass (i.e. <ref refid="classJSL__Testing_1_1StringTest" kindref="compound">JSL_Testing::StringTest</ref>), it becomes very useful. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
+      <node id="4">
+        <label>JSL_Testing::MathTest</label>
+        <link refid="classJSL__Testing_1_1MathTest"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
         <label>JSL_Testing::MetaTest</label>
         <link refid="classJSL__Testing_1_1MetaTest"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
+      <node id="3">
         <label>JSL_Testing::IOTest</label>
         <link refid="classJSL__Testing_1_1IOTest"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
+      <node id="6">
         <label>JSL_Testing::StringTest</label>
         <link refid="classJSL__Testing_1_1StringTest"/>
         <childnode refid="1" relation="public-inheritance">
@@ -208,10 +241,17 @@
         <label>JSL::UnitTest</label>
         <link refid="classJSL_1_1UnitTest"/>
       </node>
+      <node id="2">
+        <label>JSL_Testing::ArgumentTest</label>
+        <link refid="classJSL__Testing_1_1ArgumentTest"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
     </inheritancegraph>
-    <location file="/home/jack/Documents/Work/JSL/Testing/UnitTest.h" line="12" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/UnitTest.h" bodystart="11" bodyend="107"/>
+    <location file="/home/jack/Documents/Work/JSL/Testing/UnitTest.h" line="12" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/UnitTest.h" bodystart="11" bodyend="115"/>
     <listofallmembers>
       <member refid="classJSL_1_1UnitTest_1a3629d1bca071da7a2af6b7de29be1430" prot="protected" virt="non-virtual"><scope>JSL::UnitTest</scope><name>basicConditionCheck</name></member>
+      <member refid="classJSL_1_1UnitTest_1a53ede0c6b420eaf64faf752c0518340e" prot="protected" virt="non-virtual"><scope>JSL::UnitTest</scope><name>basicConditionCheck</name></member>
       <member refid="classJSL_1_1UnitTest_1aabec19b081be8a428f12e4b5e3dc2a9c" prot="public" virt="non-virtual"><scope>JSL::UnitTest</scope><name>BufferedTest</name></member>
       <member refid="classJSL_1_1UnitTest_1a3dcc71e7e8f72f0f07b8fc552b777ad8" prot="public" virt="non-virtual"><scope>JSL::UnitTest</scope><name>MessageBuffer</name></member>
       <member refid="classJSL_1_1UnitTest_1a53c19424147e72fa6392470627f15049" prot="public" virt="non-virtual"><scope>JSL::UnitTest</scope><name>Name</name></member>

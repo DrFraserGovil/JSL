@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['formatclock_88',['FormatClock',['../namespaceJSL.html#ae7af96a0311784e019209221335f76d9',1,'JSL']]],
-  ['formatduration_89',['FormatDuration',['../namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222',1,'JSL']]]
+  ['dot_123',['Dot',['../classJSL_1_1Vector.html#a60660b5a26e0ddace46f31699834b671',1,'JSL::Vector']]]
 ];

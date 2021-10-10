@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['name_111',['Name',['../classJSL_1_1UnitTest.html#a53c19424147e72fa6392470627f15049',1,'JSL::UnitTest']]],
-  ['noncriticalfailure_112',['NonCriticalFailure',['../classJSL_1_1UnitTest.html#a54dc4908d757c7f523be12a4275e595c',1,'JSL::UnitTest']]]
+  ['message_163',['Message',['../structJSL_1_1mkdirReturn.html#a64650d2f4b3d2ca29de3a4dcfdadbd0e',1,'JSL::mkdirReturn']]],
+  ['messagebuffer_164',['MessageBuffer',['../classJSL_1_1UnitTest.html#a3dcc71e7e8f72f0f07b8fc552b777ad8',1,'JSL::UnitTest']]]
 ];

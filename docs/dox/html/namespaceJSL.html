@@ -80,6 +80,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1UnitTest.html">UnitTest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Vector.html">Vector</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -99,6 +101,52 @@ Functions</h2></td></tr>
 <tr class="separator:abf525d02b8c49f21ef7faa68b7571f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae48b92e64fb9d321121df976b770efa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae48b92e64fb9d321121df976b770efa6">rm</a> (std::string location, bool recursive)</td></tr>
 <tr class="separator:ae48b92e64fb9d321121df976b770efa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae64b7e0cfdc1ab5f35cca90c32d9f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6">VectorDotProduct</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:aeae64b7e0cfdc1ab5f35cca90c32d9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The standard dot product on R^n.  <a href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6">More...</a><br /></td></tr>
+<tr class="separator:aeae64b7e0cfdc1ab5f35cca90c32d9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7816eb0cd81b74241ce460237990e70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#aa7816eb0cd81b74241ce460237990e70">VectorCrossProduct</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:aa7816eb0cd81b74241ce460237990e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">The standard cross product &ndash; only defined on R^3 (throws an error else)  <a href="namespaceJSL.html#aa7816eb0cd81b74241ce460237990e70">More...</a><br /></td></tr>
+<tr class="separator:aa7816eb0cd81b74241ce460237990e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09355c91f84fd99d4634bf9189fef51d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a09355c91f84fd99d4634bf9189fef51d">AngleBetweenVectors</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a09355c91f84fd99d4634bf9189fef51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses <a class="el" href="classJSL_1_1Vector.html#aa8af717591f5548ff471b6e4b28d7f9c" title="The norm of the current object,.">Vector::Norm()</a> and <a class="el" href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6" title="The standard dot product on R^n.">VectorDotProduct()</a> to extract an angle between the vectors.  <a href="namespaceJSL.html#a09355c91f84fd99d4634bf9189fef51d">More...</a><br /></td></tr>
+<tr class="separator:a09355c91f84fd99d4634bf9189fef51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fad54be308ccb76f68933d91c3c542f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a7fad54be308ccb76f68933d91c3c542f">operator==</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="separator:a7fad54be308ccb76f68933d91c3c542f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a394a4f9cee0747c76d1190b0365c7b5a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a394a4f9cee0747c76d1190b0365c7b5a">operator!=</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="separator:a394a4f9cee0747c76d1190b0365c7b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6530b77174d0dfae8e0d6e2a810f672"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae6530b77174d0dfae8e0d6e2a810f672">operator+</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:ae6530b77174d0dfae8e0d6e2a810f672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs obvious vector addition (a+b)_i = a_i + b_i. Throws an error if the vectors are not the same size.  <a href="namespaceJSL.html#ae6530b77174d0dfae8e0d6e2a810f672">More...</a><br /></td></tr>
+<tr class="separator:ae6530b77174d0dfae8e0d6e2a810f672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8393f2865dc23e7975ad041e341ba5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a1d8393f2865dc23e7975ad041e341ba5">operator-</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a1d8393f2865dc23e7975ad041e341ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs obvious vector subtraction (a-b)_i = a_i - b_i. Throws an error if the vectors are not the same size.  <a href="namespaceJSL.html#a1d8393f2865dc23e7975ad041e341ba5">More...</a><br /></td></tr>
+<tr class="separator:a1d8393f2865dc23e7975ad041e341ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b293e2ac3df51113e80022cb3c2ac99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a4b293e2ac3df51113e80022cb3c2ac99">operator+</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const double &amp;scalar)</td></tr>
+<tr class="memdesc:a4b293e2ac3df51113e80022cb3c2ac99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the value of scalar to every element in the vector.  <a href="namespaceJSL.html#a4b293e2ac3df51113e80022cb3c2ac99">More...</a><br /></td></tr>
+<tr class="separator:a4b293e2ac3df51113e80022cb3c2ac99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ceabb8b9e657c5e2d0faf9b20a36e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ac5ceabb8b9e657c5e2d0faf9b20a36e8">operator+</a> (const double &amp;scalar, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:ac5ceabb8b9e657c5e2d0faf9b20a36e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exactly equivalent to <a class="el" href="namespaceJSL.html#a4b293e2ac3df51113e80022cb3c2ac99" title="Adds the value of scalar to every element in the vector.">JSL::operator+(const Vector &amp;lhs, const double &amp;scalar)</a>, just swapped around.  <a href="namespaceJSL.html#ac5ceabb8b9e657c5e2d0faf9b20a36e8">More...</a><br /></td></tr>
+<tr class="separator:ac5ceabb8b9e657c5e2d0faf9b20a36e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6bd9311dd73aa6227d826bdb94e748d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ac6bd9311dd73aa6227d826bdb94e748d">operator-</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const double &amp;scalar)</td></tr>
+<tr class="memdesc:ac6bd9311dd73aa6227d826bdb94e748d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts the value of scalar to every element in the vector.  <a href="namespaceJSL.html#ac6bd9311dd73aa6227d826bdb94e748d">More...</a><br /></td></tr>
+<tr class="separator:ac6bd9311dd73aa6227d826bdb94e748d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d17c5cc03a2048e8637d2054fbc138"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ab3d17c5cc03a2048e8637d2054fbc138">operator-</a> (const double &amp;scalar, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:ab3d17c5cc03a2048e8637d2054fbc138"><td class="mdescLeft">&#160;</td><td class="mdescRight">A slightly odd operation (included for completeness) - adds the value of scalar to the negative of the elements of the vector.  <a href="namespaceJSL.html#ab3d17c5cc03a2048e8637d2054fbc138">More...</a><br /></td></tr>
+<tr class="separator:ab3d17c5cc03a2048e8637d2054fbc138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4eefbed468f275164855895335b8a29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ab4eefbed468f275164855895335b8a29">operator*</a> (const double &amp;scalar, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:ab4eefbed468f275164855895335b8a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Naive element-wise scalar multiplication.  <a href="namespaceJSL.html#ab4eefbed468f275164855895335b8a29">More...</a><br /></td></tr>
+<tr class="separator:ab4eefbed468f275164855895335b8a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc5e092de4a9bdc5795d40ee0f51c7b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#afc5e092de4a9bdc5795d40ee0f51c7b9">operator*</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const double &amp;scalar)</td></tr>
+<tr class="memdesc:afc5e092de4a9bdc5795d40ee0f51c7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias of <a class="el" href="namespaceJSL.html#ac5ceabb8b9e657c5e2d0faf9b20a36e8" title="Exactly equivalent to JSL::operator+(const Vector &amp;lhs, const double &amp;scalar), just swapped around.">JSL::operator+(const double &amp;scalar,const Vector &amp;rhs)</a> with the operation order swapped around.  <a href="namespaceJSL.html#afc5e092de4a9bdc5795d40ee0f51c7b9">More...</a><br /></td></tr>
+<tr class="separator:afc5e092de4a9bdc5795d40ee0f51c7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1427fd44260592b7d65d27946969fba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a1427fd44260592b7d65d27946969fba1">operator/</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const double &amp;scalar)</td></tr>
+<tr class="memdesc:a1427fd44260592b7d65d27946969fba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Essentially an alias for <a class="el" href="namespaceJSL.html#ac5ceabb8b9e657c5e2d0faf9b20a36e8" title="Exactly equivalent to JSL::operator+(const Vector &amp;lhs, const double &amp;scalar), just swapped around.">JSL::operator+(const double &amp;scalar,const Vector &amp;rhs)</a> with the scalar set to one-over itself, i.e. pointwise division of the provided vector.  <a href="namespaceJSL.html#a1427fd44260592b7d65d27946969fba1">More...</a><br /></td></tr>
+<tr class="separator:a1427fd44260592b7d65d27946969fba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c033d19e73e78e75327d425616fbbb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a5c033d19e73e78e75327d425616fbbb1">operator*</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a5c033d19e73e78e75327d425616fbbb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the pointwise (Hadamard) product of two vectors.  <a href="namespaceJSL.html#a5c033d19e73e78e75327d425616fbbb1">More...</a><br /></td></tr>
+<tr class="separator:a5c033d19e73e78e75327d425616fbbb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9900d0292867da361ddb3f1200a1f99"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ad9900d0292867da361ddb3f1200a1f99">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;obj)</td></tr>
+<tr class="memdesc:ad9900d0292867da361ddb3f1200a1f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Vector.html#a73579b4a194cc924341806a5d9ea3817" title="Converts the vector into a human-readable string.">JSL::Vector::to_string()</a> and then passes it to the provided stream, enabling sweet, smooth output such as std::cout &lt;&lt; v1 &lt;&lt; std::endl.  <a href="namespaceJSL.html#ad9900d0292867da361ddb3f1200a1f99">More...</a><br /></td></tr>
+<tr class="separator:ad9900d0292867da361ddb3f1200a1f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a7ba28084b304e97a707c653dce887"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a34a7ba28084b304e97a707c653dce887">split</a> (const std::string &amp;s, char delimiter)</td></tr>
 <tr class="separator:a34a7ba28084b304e97a707c653dce887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae58b7096986a16b70a27e1609eff3014"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae58b7096986a16b70a27e1609eff3014">CurrentTime</a> ()</td></tr>
@@ -109,6 +157,52 @@ Functions</h2></td></tr>
 <tr class="separator:ae7af96a0311784e019209221335f76d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a09355c91f84fd99d4634bf9189fef51d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09355c91f84fd99d4634bf9189fef51d">&#9670;&nbsp;</a></span>AngleBetweenVectors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JSL::AngleBetweenVectors </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses <a class="el" href="classJSL_1_1Vector.html#aa8af717591f5548ff471b6e4b28d7f9c" title="The norm of the current object,.">Vector::Norm()</a> and <a class="el" href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6" title="The standard dot product on R^n.">VectorDotProduct()</a> to extract an angle between the vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td><a class="el" href="classJSL_1_1Vector.html">Vector</a> 1,</td></tr>
+    <tr><td class="paramname">rhs</td><td><a class="el" href="classJSL_1_1Vector.html">Vector</a> 2 (order irrelevant) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The angle between the two vectors (between 0 and M_PI) </dd></dl>
+
+</div>
+</div>
 <a id="ae58b7096986a16b70a27e1609eff3014"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae58b7096986a16b70a27e1609eff3014">&#9670;&nbsp;</a></span>CurrentTime()</h2>
 
@@ -295,6 +389,584 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a394a4f9cee0747c76d1190b0365c7b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a394a4f9cee0747c76d1190b0365c7b5a">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JSL::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4eefbed468f275164855895335b8a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4eefbed468f275164855895335b8a29">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Naive element-wise scalar multiplication. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The value to multiply elements by</td></tr>
+    <tr><td class="paramname">rhs</td><td>The vector to multiply </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pointwise product of the elements of rhs and the scalar </dd></dl>
+
+</div>
+</div>
+<a id="afc5e092de4a9bdc5795d40ee0f51c7b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc5e092de4a9bdc5795d40ee0f51c7b9">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Alias of <a class="el" href="namespaceJSL.html#ac5ceabb8b9e657c5e2d0faf9b20a36e8" title="Exactly equivalent to JSL::operator+(const Vector &amp;lhs, const double &amp;scalar), just swapped around.">JSL::operator+(const double &amp;scalar,const Vector &amp;rhs)</a> with the operation order swapped around. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The vector to multiply</td></tr>
+    <tr><td class="paramname">scalar</td><td>The value to multiply elements by </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pointwise product of the elements of lhs and the scalar </dd></dl>
+
+</div>
+</div>
+<a id="a5c033d19e73e78e75327d425616fbbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c033d19e73e78e75327d425616fbbb1">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes the pointwise (Hadamard) product of two vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The first vector to be multiplied</td></tr>
+    <tr><td class="paramname">rhs</td><td>The second vector to be multiplied (order is irrelevant) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector (lhs * rhs)_i = lhs_i * rhs_i </dd></dl>
+
+</div>
+</div>
+<a id="ac5ceabb8b9e657c5e2d0faf9b20a36e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ceabb8b9e657c5e2d0faf9b20a36e8">&#9670;&nbsp;</a></span>operator+() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exactly equivalent to <a class="el" href="namespaceJSL.html#a4b293e2ac3df51113e80022cb3c2ac99" title="Adds the value of scalar to every element in the vector.">JSL::operator+(const Vector &amp;lhs, const double &amp;scalar)</a>, just swapped around. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The scalar to be added element-wise</td></tr>
+    <tr><td class="paramname">rhs</td><td>The vector to be summed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The scalar + rhs </dd></dl>
+
+</div>
+</div>
+<a id="a4b293e2ac3df51113e80022cb3c2ac99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b293e2ac3df51113e80022cb3c2ac99">&#9670;&nbsp;</a></span>operator+() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the value of scalar to every element in the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The vector to be summed</td></tr>
+    <tr><td class="paramname">scalar</td><td>The scalar to be added element-wise </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector lhs + scalar </dd></dl>
+
+</div>
+</div>
+<a id="ae6530b77174d0dfae8e0d6e2a810f672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6530b77174d0dfae8e0d6e2a810f672">&#9670;&nbsp;</a></span>operator+() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs obvious vector addition (a+b)_i = a_i + b_i. Throws an error if the vectors are not the same size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The first vector to be summed</td></tr>
+    <tr><td class="paramname">rhs</td><td>The second vector to be summed (order is irrelevant) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector lhs + rhs </dd></dl>
+
+</div>
+</div>
+<a id="ab3d17c5cc03a2048e8637d2054fbc138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d17c5cc03a2048e8637d2054fbc138">&#9670;&nbsp;</a></span>operator-() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A slightly odd operation (included for completeness) - adds the value of scalar to the negative of the elements of the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The value which acts as a base</td></tr>
+    <tr><td class="paramname">rhs</td><td>The vector which will be subtracted elementwise from the base scalar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector scalar - rhs </dd></dl>
+
+</div>
+</div>
+<a id="ac6bd9311dd73aa6227d826bdb94e748d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6bd9311dd73aa6227d826bdb94e748d">&#9670;&nbsp;</a></span>operator-() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subtracts the value of scalar to every element in the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The base vector</td></tr>
+    <tr><td class="paramname">scalar</td><td>The scalar to be subtracted from the base vector element wise </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector lhs - scalar. </dd></dl>
+
+</div>
+</div>
+<a id="a1d8393f2865dc23e7975ad041e341ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d8393f2865dc23e7975ad041e341ba5">&#9670;&nbsp;</a></span>operator-() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs obvious vector subtraction (a-b)_i = a_i - b_i. Throws an error if the vectors are not the same size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The base vector</td></tr>
+    <tr><td class="paramname">rhs</td><td>The vector to be subtracted from the base vector (order does matter!) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector lhs - rhs. </dd></dl>
+
+</div>
+</div>
+<a id="a1427fd44260592b7d65d27946969fba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1427fd44260592b7d65d27946969fba1">&#9670;&nbsp;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Essentially an alias for <a class="el" href="namespaceJSL.html#ac5ceabb8b9e657c5e2d0faf9b20a36e8" title="Exactly equivalent to JSL::operator+(const Vector &amp;lhs, const double &amp;scalar), just swapped around.">JSL::operator+(const double &amp;scalar,const Vector &amp;rhs)</a> with the scalar set to one-over itself, i.e. pointwise division of the provided vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The vector to divide</td></tr>
+    <tr><td class="paramname">scalar</td><td>The value to divide elements by </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pointwise divisor of the elements of lhs and the scalar </dd></dl>
+
+</div>
+</div>
+<a id="ad9900d0292867da361ddb3f1200a1f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9900d0292867da361ddb3f1200a1f99">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; JSL::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calls <a class="el" href="classJSL_1_1Vector.html#a73579b4a194cc924341806a5d9ea3817" title="Converts the vector into a human-readable string.">JSL::Vector::to_string()</a> and then passes it to the provided stream, enabling sweet, smooth output such as std::cout &lt;&lt; v1 &lt;&lt; std::endl. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>An output stream capable of parsing strings</td></tr>
+    <tr><td class="paramname">obj</td><td>A vector object to be inserted into the stream for output </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the modified stream </dd></dl>
+
+</div>
+</div>
+<a id="a7fad54be308ccb76f68933d91c3c542f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fad54be308ccb76f68933d91c3c542f">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JSL::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae48b92e64fb9d321121df976b770efa6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae48b92e64fb9d321121df976b770efa6">&#9670;&nbsp;</a></span>rm()</h2>
 
@@ -379,6 +1051,98 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector of non-empty strings. </dd></dl>
+
+</div>
+</div>
+<a id="aa7816eb0cd81b74241ce460237990e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7816eb0cd81b74241ce460237990e70">&#9670;&nbsp;</a></span>VectorCrossProduct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Vector.html">Vector</a> JSL::VectorCrossProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The standard cross product &ndash; only defined on R^3 (throws an error else) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td><a class="el" href="classJSL_1_1Vector.html">Vector</a> 1</td></tr>
+    <tr><td class="paramname">rhs</td><td><a class="el" href="classJSL_1_1Vector.html">Vector</a> 2 (order relevant - using standard conventions <a class="el" href="classJSL_1_1Vector.html">Vector</a> 1 x <a class="el" href="classJSL_1_1Vector.html">Vector</a> 2) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classJSL_1_1Vector.html">Vector</a> cross product of inputs </dd></dl>
+
+</div>
+</div>
+<a id="aeae64b7e0cfdc1ab5f35cca90c32d9f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeae64b7e0cfdc1ab5f35cca90c32d9f6">&#9670;&nbsp;</a></span>VectorDotProduct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JSL::VectorDotProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The standard dot product on R^n. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td><a class="el" href="classJSL_1_1Vector.html">Vector</a> 1,</td></tr>
+    <tr><td class="paramname">rhs</td><td><a class="el" href="classJSL_1_1Vector.html">Vector</a> 2 (order irrelevant) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sum (lhs_i * rhs_i) </dd></dl>
 
 </div>
 </div>

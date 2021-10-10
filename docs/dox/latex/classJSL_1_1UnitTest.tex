@@ -7,7 +7,7 @@
 Inheritance diagram for J\+SL\+::Unit\+Test\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classJSL_1_1UnitTest}
+\includegraphics[height=1.302326cm]{classJSL_1_1UnitTest}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -36,7 +36,9 @@ std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basic\+Condition\+Check}} (bool condition, std\+::string successmessage, std\+::string failuremessage)
-\end{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1UnitTest_a53ede0c6b420eaf64faf752c0518340e}{basic\+Condition\+Check}} (bool condition, std\+::string message\+Framework)
+\begin{DoxyCompactList}\small\item\em An override of the other function, preventing dual-\/typing of basic output messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -56,10 +58,20 @@ Constructor class. Initialises the system to a failing state.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSL_1_1UnitTest_a53ede0c6b420eaf64faf752c0518340e}\label{classJSL_1_1UnitTest_a53ede0c6b420eaf64faf752c0518340e}} 
+\index{JSL::UnitTest@{JSL::UnitTest}!basicConditionCheck@{basicConditionCheck}}
+\index{basicConditionCheck@{basicConditionCheck}!JSL::UnitTest@{JSL::UnitTest}}
+\doxysubsubsection{\texorpdfstring{basicConditionCheck()}{basicConditionCheck()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void J\+S\+L\+::\+Unit\+Test\+::basic\+Condition\+Check (\begin{DoxyParamCaption}\item[{bool}]{condition,  }\item[{std\+::string}]{message\+Framework }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+An override of the other function, preventing dual-\/typing of basic output messages. 
+
 \mbox{\Hypertarget{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}\label{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}} 
 \index{JSL::UnitTest@{JSL::UnitTest}!basicConditionCheck@{basicConditionCheck}}
 \index{basicConditionCheck@{basicConditionCheck}!JSL::UnitTest@{JSL::UnitTest}}
-\doxysubsubsection{\texorpdfstring{basicConditionCheck()}{basicConditionCheck()}}
+\doxysubsubsection{\texorpdfstring{basicConditionCheck()}{basicConditionCheck()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void J\+S\+L\+::\+Unit\+Test\+::basic\+Condition\+Check (\begin{DoxyParamCaption}\item[{bool}]{condition,  }\item[{std\+::string}]{successmessage,  }\item[{std\+::string}]{failuremessage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 A structure to help basic logic flow within unit tests. If the condition is false, the unit test considers itself failed, and updates the messages and Passed status accordingly 
@@ -106,7 +118,7 @@ All children which want to take advantage of the \mbox{\hyperlink{classJSL_1_1Un
 
 
 
-Reimplemented in \mbox{\hyperlink{classJSL__Testing_1_1IOTest_a85daecacc71354b5dc0dee36840b8704}{J\+S\+L\+\_\+\+Testing\+::\+I\+O\+Test}}, and \mbox{\hyperlink{classJSL__Testing_1_1StringTest_ada0409cd10e3f09788994a9115331ff7}{J\+S\+L\+\_\+\+Testing\+::\+String\+Test}}.
+Reimplemented in \mbox{\hyperlink{classJSL__Testing_1_1MathTest_a9a313d8c09f92dd9dcf5e3f65818bb23}{J\+S\+L\+\_\+\+Testing\+::\+Math\+Test}}, \mbox{\hyperlink{classJSL__Testing_1_1ArgumentTest_a1c4c626d57e448da86866ef414308e97}{J\+S\+L\+\_\+\+Testing\+::\+Argument\+Test}}, \mbox{\hyperlink{classJSL__Testing_1_1IOTest_a85daecacc71354b5dc0dee36840b8704}{J\+S\+L\+\_\+\+Testing\+::\+I\+O\+Test}}, \mbox{\hyperlink{classJSL__Testing_1_1StringTest_ada0409cd10e3f09788994a9115331ff7}{J\+S\+L\+\_\+\+Testing\+::\+String\+Test}}, and \mbox{\hyperlink{classJSL__Testing_1_1MetaTest_a176352dcd54f9ec7df8f1548882e6820}{J\+S\+L\+\_\+\+Testing\+::\+Meta\+Test}}.
 
 
 

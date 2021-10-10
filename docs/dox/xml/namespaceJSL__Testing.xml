@@ -2,7 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="namespaceJSL__Testing" kind="namespace" language="C++">
     <compoundname>JSL_Testing</compoundname>
+    <innerclass refid="classJSL__Testing_1_1ArgumentTest" prot="public">JSL_Testing::ArgumentTest</innerclass>
     <innerclass refid="classJSL__Testing_1_1IOTest" prot="public">JSL_Testing::IOTest</innerclass>
+    <innerclass refid="classJSL__Testing_1_1MathTest" prot="public">JSL_Testing::MathTest</innerclass>
     <innerclass refid="classJSL__Testing_1_1MetaTest" prot="public">JSL_Testing::MetaTest</innerclass>
     <innerclass refid="classJSL__Testing_1_1StringTest" prot="public">JSL_Testing::StringTest</innerclass>
       <sectiondef kind="func">
@@ -17,13 +19,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="246" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="246" bodyend="262"/>
+        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="510" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="510" bodyend="532"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="5" column="1"/>
+    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="6" column="1"/>
   </compounddef>
 </doxygen>
