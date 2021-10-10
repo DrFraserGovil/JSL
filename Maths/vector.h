@@ -149,14 +149,28 @@ namespace JSL
 			{
 				for (int i = 0; i < Size; ++i)
 				{
-					Data[i] += rhs[i];
+					Data[i] += scalar;
 				}
 			}
 			Vector & operator-=(const double & scalar)
 			{
 				for (int i = 0; i < Size; ++i)
 				{
-					Data[i] -= rhs[i];
+					Data[i] -= scalar;
+				}
+			}
+			Vector & operator*=(const double & scalar)
+			{
+				for (int i = 0; i < Size; ++i)
+				{
+					Data[i] *= scalar;
+				}
+			}
+			Vector & operator/=(const double & scalar)
+			{
+				for (int i = 0; i < Size; ++i)
+				{
+					Data[i] /= scalar;
 				}
 			}
 		private:
