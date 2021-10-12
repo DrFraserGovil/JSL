@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="342" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="342" bodyend="506"/>
+        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="342" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="342" bodyend="547"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -75,7 +75,7 @@
         <link refid="classJSL_1_1UnitTest"/>
       </node>
     </collaborationgraph>
-    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="329" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="328" bodyend="508"/>
+    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="329" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="328" bodyend="549"/>
     <listofallmembers>
       <member refid="classJSL_1_1UnitTest_1a3629d1bca071da7a2af6b7de29be1430" prot="protected" virt="non-virtual"><scope>JSL_Testing::MathTest</scope><name>basicConditionCheck</name></member>
       <member refid="classJSL_1_1UnitTest_1a53ede0c6b420eaf64faf752c0518340e" prot="protected" virt="non-virtual"><scope>JSL_Testing::MathTest</scope><name>basicConditionCheck</name></member>

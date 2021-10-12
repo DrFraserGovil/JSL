@@ -348,7 +348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="268" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="268" bodyend="280" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="12" declcolumn="15"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="340" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="340" bodyend="352" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="12" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1aa7816eb0cd81b74241ce460237990e70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -390,7 +390,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="283" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="283" bodyend="298" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="13" declcolumn="15"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="355" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="355" bodyend="370" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="13" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a09355c91f84fd99d4634bf9189fef51d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -432,7 +432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="301" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="301" bodyend="314" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="14" declcolumn="15"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="373" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="373" bodyend="386" declfile="/home/jack/Documents/Work/JSL/Maths/vector.h" declline="14" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a7fad54be308ccb76f68933d91c3c542f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -453,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="138" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="138" bodyend="153"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="205" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="205" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a394a4f9cee0747c76d1190b0365c7b5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -474,7 +474,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="155" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="155" bodyend="158"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="222" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="222" bodyend="225"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ae6530b77174d0dfae8e0d6e2a810f672" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -516,7 +516,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="161" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="161" bodyend="175"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="228" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="228" bodyend="242"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a1d8393f2865dc23e7975ad041e341ba5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -558,7 +558,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="177" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="177" bodyend="191"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="244" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="244" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a4b293e2ac3df51113e80022cb3c2ac99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -600,7 +600,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="194" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="194" bodyend="204"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="261" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="261" bodyend="271"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ac5ceabb8b9e657c5e2d0faf9b20a36e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -642,7 +642,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="207" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="207" bodyend="210"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="274" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="274" bodyend="277"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ac6bd9311dd73aa6227d826bdb94e748d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -684,7 +684,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="212" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="212" bodyend="215"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="279" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="279" bodyend="282"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ab3d17c5cc03a2048e8637d2054fbc138" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -726,7 +726,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="218" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="218" bodyend="227"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="285" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="285" bodyend="294"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ab4eefbed468f275164855895335b8a29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -768,7 +768,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="230" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="230" bodyend="238"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="302" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="302" bodyend="310"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1afc5e092de4a9bdc5795d40ee0f51c7b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -810,7 +810,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="241" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="241" bodyend="244"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="313" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="313" bodyend="316"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a1427fd44260592b7d65d27946969fba1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -852,7 +852,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="247" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="247" bodyend="254"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="319" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="319" bodyend="326"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a5c033d19e73e78e75327d425616fbbb1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -894,7 +894,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="257" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="257" bodyend="265"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="329" column="15" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="329" bodyend="337"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ad9900d0292867da361ddb3f1200a1f99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -936,7 +936,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="317" column="8" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="317" bodyend="321"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="389" column="8" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="389" bodyend="393"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; std::string &gt;</type>

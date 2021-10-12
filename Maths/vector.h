@@ -121,6 +121,7 @@ namespace JSL
 				return outString;
 			}
 		
+			//! In-place addition of two vectors. Calls Vector operator+(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be accumulated into the current object. Must be the same Size as the calling object. \returns A reference to the now-modified calling object
 			Vector & operator+=(const Vector & rhs)
 			{
 				if (Size != rhs.Size)
@@ -133,6 +134,7 @@ namespace JSL
 				}
 				return *this;
 			}
+			//! In-place subtraction of two vectors. Calls Vector operator-(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be subtracted from the current object. Must be the same Size as the calling object. \returns A reference to the now-modified calling object
 			Vector & operator-=(const Vector & rhs)
 			{
 				if (Size != rhs.Size)
@@ -145,6 +147,8 @@ namespace JSL
 				}
 				return *this;
 			}
+			
+			//! In-place addition of a scalar onto the callign object. Calls Vector operator+(const Vector & lhs, const double & scalar) using this object as lhs. \param scalar The double to be accumulated into the current object. \returns A reference to the now-modified calling object
 			Vector & operator+=(const double & scalar)
 			{
 				for (int i = 0; i < Size; ++i)
@@ -153,6 +157,8 @@ namespace JSL
 				}
 				return *this;
 			}
+			
+			//! In-place subtraction of a scalar onto the callign object. Calls Vector operator-(const Vector & lhs, const double & scalar) using this object as lhs. \param scalar The double to be subtracted from the current object. \returns A reference to the now-modified calling object
 			Vector & operator-=(const double & scalar)
 			{
 				for (int i = 0; i < Size; ++i)
@@ -161,6 +167,8 @@ namespace JSL
 				}
 				return *this;
 			}
+			
+			//! In-place multiplication of a scalar with the calling object. Calls Vector operator*(const Vector & lhs, const double & scalar) using this object as lhs. \param scalar The double to be accumulated into the current object. \returns A reference to the now-modified calling object
 			Vector & operator*=(const double & scalar)
 			{
 				for (int i = 0; i < Size; ++i)
@@ -169,6 +177,8 @@ namespace JSL
 				}
 				return *this;
 			}
+			
+			//! In-place division of the calling object with a scalar. Calls Vector operator/(const Vector & lhs, const double & scalar) using this object as lhs. \param scalar The double to be accumulated into the current object. \returns A reference to the now-modified calling object
 			Vector & operator/=(const double & scalar)
 			{
 				for (int i = 0; i < Size; ++i)

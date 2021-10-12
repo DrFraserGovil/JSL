@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="124" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="124" bodyend="-1"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="191" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="191" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -268,6 +268,186 @@
         </inbodydescription>
         <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="109" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="109" bodyend="122"/>
       </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1ad46bf395dd6122ce152c33aad2672a9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector&amp; JSL::Vector::operator+=</definition>
+        <argsstring>(const Vector &amp;rhs)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>In-place addition of two vectors. Calls <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> <ref refid="namespaceJSL_1ae6530b77174d0dfae8e0d6e2a810f672" kindref="member">operator+(const Vector &amp; lhs, const Vector &amp; rhs)</ref> using this object as lhs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be accumulated into the current object. Must be the same Size as the calling object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the now-modified calling object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="125" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="125" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1a71720a9266944049cd3adfbe50e1703f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector&amp; JSL::Vector::operator-=</definition>
+        <argsstring>(const Vector &amp;rhs)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>In-place subtraction of two vectors. Calls <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> <ref refid="namespaceJSL_1a1d8393f2865dc23e7975ad041e341ba5" kindref="member">operator-(const Vector &amp; lhs, const Vector &amp; rhs)</ref> using this object as lhs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be subtracted from the current object. Must be the same Size as the calling object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the now-modified calling object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="138" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="138" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1aeca45a175db04725394a1b576507e708" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector&amp; JSL::Vector::operator+=</definition>
+        <argsstring>(const double &amp;scalar)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>In-place addition of a scalar onto the callign object. Calls <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> <ref refid="namespaceJSL_1a4b293e2ac3df51113e80022cb3c2ac99" kindref="member">operator+(const Vector &amp; lhs, const double &amp; scalar)</ref> using this object as lhs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The double to be accumulated into the current object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the now-modified calling object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="152" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="152" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1a8a395851b8dffbe5b0aea7e051f9aac8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector&amp; JSL::Vector::operator-=</definition>
+        <argsstring>(const double &amp;scalar)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>In-place subtraction of a scalar onto the callign object. Calls <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> <ref refid="namespaceJSL_1ac6bd9311dd73aa6227d826bdb94e748d" kindref="member">operator-(const Vector &amp; lhs, const double &amp; scalar)</ref> using this object as lhs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The double to be subtracted from the current object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the now-modified calling object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="162" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="162" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1ad2fb2b88e3447881c1dac08897c5c8a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector&amp; JSL::Vector::operator*=</definition>
+        <argsstring>(const double &amp;scalar)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>In-place multiplication of a scalar with the calling object. Calls <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> <ref refid="namespaceJSL_1afc5e092de4a9bdc5795d40ee0f51c7b9" kindref="member">operator*(const Vector &amp; lhs, const double &amp; scalar)</ref> using this object as lhs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The double to be accumulated into the current object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the now-modified calling object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="172" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="172" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1a0ce3dc2b4c99dbe6acdec350e2f46ab6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
+        <definition>Vector&amp; JSL::Vector::operator/=</definition>
+        <argsstring>(const double &amp;scalar)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+<para>In-place division of the calling object with a scalar. Calls <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> <ref refid="namespaceJSL_1a1427fd44260592b7d65d27946969fba1" kindref="member">operator/(const Vector &amp; lhs, const double &amp; scalar)</ref> using this object as lhs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The double to be accumulated into the current object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the now-modified calling object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="182" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="182" bodyend="189"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
       <memberdef kind="function" id="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
@@ -285,7 +465,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="126" column="20" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="126" bodyend="129"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="193" column="20" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="193" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -302,7 +482,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="130" column="20" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="130" bodyend="133"/>
+        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="197" column="20" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="197" bodyend="200"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -310,7 +490,7 @@
     <detaileddescription>
 <para>A class implementing basic R^n vector mathematics. Mostly acts as an extention to the basic std::vector object, but with the implicit assumption that the objects should behave like members of a true vector space, can unambiguously overload some operators and add in additional functionality. </para>
     </detaileddescription>
-    <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="20" column="1" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="19" bodyend="134"/>
+    <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="20" column="1" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="19" bodyend="201"/>
     <listofallmembers>
       <member refid="classJSL_1_1Vector_1a0529640bc02ce994026184d93f43f9c3" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>AngleBetween</name></member>
       <member refid="classJSL_1_1Vector_1a59ff98a99ebcf2b589290b9e57b8e184" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Cross</name></member>
@@ -318,6 +498,12 @@
       <member refid="classJSL_1_1Vector_1a60660b5a26e0ddace46f31699834b671" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Dot</name></member>
       <member refid="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" prot="private" virt="non-virtual"><scope>JSL::Vector</scope><name>negativeIntegerError</name></member>
       <member refid="classJSL_1_1Vector_1aa8af717591f5548ff471b6e4b28d7f9c" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Norm</name></member>
+      <member refid="classJSL_1_1Vector_1ad2fb2b88e3447881c1dac08897c5c8a8" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator*=</name></member>
+      <member refid="classJSL_1_1Vector_1ad46bf395dd6122ce152c33aad2672a9b" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator+=</name></member>
+      <member refid="classJSL_1_1Vector_1aeca45a175db04725394a1b576507e708" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator+=</name></member>
+      <member refid="classJSL_1_1Vector_1a71720a9266944049cd3adfbe50e1703f" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator-=</name></member>
+      <member refid="classJSL_1_1Vector_1a8a395851b8dffbe5b0aea7e051f9aac8" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator-=</name></member>
+      <member refid="classJSL_1_1Vector_1a0ce3dc2b4c99dbe6acdec350e2f46ab6" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator/=</name></member>
       <member refid="classJSL_1_1Vector_1a7ff5112a7be30ca24b8ed953aaadd045" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator[]</name></member>
       <member refid="classJSL_1_1Vector_1ae461792ef0aeb62ac07c939dacedda99" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator[]</name></member>
       <member refid="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" prot="private" virt="non-virtual"><scope>JSL::Vector</scope><name>outOfBoundsError</name></member>

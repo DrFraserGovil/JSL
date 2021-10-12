@@ -545,64 +545,105 @@ $(function() {
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                basicConditionCheck(divisorCheck,message);</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                </div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                </div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                v1[n-1] +=3;</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                v2[n-1] += 9;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                <span class="keywordtype">double</span> expectedDot = 0;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                <span class="keywordtype">double</span> expectedNorm = 0;</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n;++i)</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                {</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                    expectedDot += v1[i] * v2[i];</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                    expectedNorm += v1[i] * v1[i];</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                }</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                <span class="keywordtype">bool</span> dotProductWorks = <a class="code" href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6">VectorDotProduct</a>(v1,v2) == expectedDot &amp;&amp; v1.Dot(v2) == expectedDot;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                message = <span class="stringliteral">&quot;JSL::Vector Dot() member and VectorDotProduct function test&quot;</span>;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                basicConditionCheck(dotProductWorks,message);</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                </div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                <span class="keywordtype">bool</span> normWorks = sqrt(expectedNorm) == v1.Norm();</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                message = <span class="stringliteral">&quot;JSL::Vector Norm() and SqNorm() member test&quot;</span>;</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                basicConditionCheck(normWorks, message);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                <span class="comment">//in place modification</span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                std::vector&lt;double&gt; v11Base ={1,2,99,-100,10};</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                std::vector&lt;double&gt; v12Base= {-2,10.2,13,-99.999,0.02}; </div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> v11(v11Base);</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> v11_original = v11;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> v12(v12Base);</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                </div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                std::string test = <span class="stringliteral">&quot;JSL::Vector += JSL::Vector test&quot;</span>;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                v11 += v12;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                <span class="keywordtype">bool</span> inPlaceAdditionWorks = (v11 == (v11_original + v12));</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                basicConditionCheck(inPlaceAdditionWorks,test);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                v11 -= v12;</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                test = <span class="stringliteral">&quot;JSL::Vector -= JSL::Vector test&quot;</span>;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                <span class="keywordtype">bool</span> inPlaceSubtractionWorks = (v11 == v11_original);</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                basicConditionCheck(inPlaceSubtractionWorks,test);</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                </div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                <span class="comment">// angle &amp; cross product checks </span></div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> u1({3,-2,5});</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> u2({8,7,2});</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> expectedCross({-39,34,37});</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                <span class="keywordtype">double</span> expectedAngle = 1.266158693;</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                <span class="keywordtype">double</span> recoveredAngle = u1.<a class="code" href="classJSL_1_1Vector.html#a0529640bc02ce994026184d93f43f9c3">AngleBetween</a>(u2);</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                <span class="keywordtype">bool</span> angleCorrect = abs(recoveredAngle - expectedAngle) &lt; 1e-8;</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                message = <span class="stringliteral">&quot;JSL::Vector AngleBetween() and AngleBetweenVectors() test&quot;</span>;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                basicConditionCheck(angleCorrect, message);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                test = <span class="stringliteral">&quot;JSL::Vector += scalar test&quot;</span>;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                v11 += 5;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                <span class="keywordtype">bool</span> inPlaceScalarAddition = (v11 == (v11_original + 5));</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                basicConditionCheck(inPlaceScalarAddition, test);</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                test = <span class="stringliteral">&quot;JSL::Vector -= scalar test&quot;</span>;</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                v11 -= 3;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                <span class="keywordtype">bool</span> inPlaceScalarSubtraction = (v11 == (v11_original + 2));</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                basicConditionCheck(inPlaceScalarSubtraction, test);</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                </div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                message = <span class="stringliteral">&quot;JSL::Vector Cross() and VectorCrossProduct() test&quot;</span>;</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                basicConditionCheck(u1.Cross(u2) == expectedCross,message);</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;            }</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    </div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    };</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    </div>
-<div class="line"><a name="l00510"></a><span class="lineno"><a class="line" href="namespaceJSL__Testing.html#a509a70d20fdc2e9975d9b0b8ae424ef1">  510</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceJSL__Testing.html#a509a70d20fdc2e9975d9b0b8ae424ef1">RunAllTests</a>()</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    {</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Beginning testing of all JSL objects...\n&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        </div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        <span class="comment">//The ordering of these tests is important! Do not shuffle them around.</span></div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <a class="code" href="classJSL__Testing_1_1MetaTest.html">MetaTest</a> metaT;</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        metaT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        </div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        <a class="code" href="classJSL__Testing_1_1StringTest.html">StringTest</a> stringT;</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        stringT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        </div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        <a class="code" href="classJSL__Testing_1_1IOTest.html">IOTest</a> ioT;</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        ioT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        </div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <a class="code" href="classJSL__Testing_1_1ArgumentTest.html">ArgumentTest</a> argT;</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        argT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        </div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <a class="code" href="classJSL__Testing_1_1MathTest.html">MathTest</a> mathT;</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        mathT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        </div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\nTesting complete.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        </div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    }</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;}   </div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    </div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                test = <span class="stringliteral">&quot;JSL::Vector *= scalar test&quot;</span>;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                v11 -= 2;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                v11 *= 3;</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <span class="keywordtype">bool</span> inPlaceMultiplicationWorks = (v11 == 3 *v11_original) &amp;&amp; (v11 == v11_original*3);</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                basicConditionCheck(inPlaceMultiplicationWorks,test); </div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                </div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                test = <span class="stringliteral">&quot;JSL::Vector /= scalar test&quot;</span>;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                v11/= 6;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                <span class="keywordtype">bool</span> inPlaceScalarDivision = (v11 == v11_original/2);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                basicConditionCheck(inPlaceScalarDivision, test);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                </div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                v1[n-1] +=3;</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                v2[n-1] += 9;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                <span class="keywordtype">double</span> expectedDot = 0;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                <span class="keywordtype">double</span> expectedNorm = 0;</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n;++i)</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                {</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                    expectedDot += v1[i] * v2[i];</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                    expectedNorm += v1[i] * v1[i];</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                }</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                <span class="keywordtype">bool</span> dotProductWorks = <a class="code" href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6">VectorDotProduct</a>(v1,v2) == expectedDot &amp;&amp; v1.Dot(v2) == expectedDot;</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                message = <span class="stringliteral">&quot;JSL::Vector Dot() member and VectorDotProduct function test&quot;</span>;</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                basicConditionCheck(dotProductWorks,message);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                <span class="keywordtype">bool</span> normWorks = sqrt(expectedNorm) == v1.Norm();</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                message = <span class="stringliteral">&quot;JSL::Vector Norm() and SqNorm() member test&quot;</span>;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                basicConditionCheck(normWorks, message);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                </div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                <span class="comment">// angle &amp; cross product checks </span></div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> u1({3,-2,5});</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> u2({8,7,2});</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                <a class="code" href="classJSL_1_1Vector.html">JSL::Vector</a> expectedCross({-39,34,37});</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                <span class="keywordtype">double</span> expectedAngle = 1.266158693;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                <span class="keywordtype">double</span> recoveredAngle = u1.<a class="code" href="classJSL_1_1Vector.html#a0529640bc02ce994026184d93f43f9c3">AngleBetween</a>(u2);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                <span class="keywordtype">bool</span> angleCorrect = abs(recoveredAngle - expectedAngle) &lt; 1e-8;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                message = <span class="stringliteral">&quot;JSL::Vector AngleBetween() and AngleBetweenVectors() test&quot;</span>;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                basicConditionCheck(angleCorrect, message);</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                </div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                message = <span class="stringliteral">&quot;JSL::Vector Cross() and VectorCrossProduct() test&quot;</span>;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                basicConditionCheck(u1.Cross(u2) == expectedCross,message);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                </div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            }</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    </div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    };</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    </div>
+<div class="line"><a name="l00551"></a><span class="lineno"><a class="line" href="namespaceJSL__Testing.html#a509a70d20fdc2e9975d9b0b8ae424ef1">  551</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceJSL__Testing.html#a509a70d20fdc2e9975d9b0b8ae424ef1">RunAllTests</a>()</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    {</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Beginning testing of all JSL objects...\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="comment">//The ordering of these tests is important! Do not shuffle them around.</span></div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <a class="code" href="classJSL__Testing_1_1MetaTest.html">MetaTest</a> metaT;</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        metaT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        </div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <a class="code" href="classJSL__Testing_1_1StringTest.html">StringTest</a> stringT;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        stringT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        </div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <a class="code" href="classJSL__Testing_1_1IOTest.html">IOTest</a> ioT;</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        ioT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        </div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <a class="code" href="classJSL__Testing_1_1ArgumentTest.html">ArgumentTest</a> argT;</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        argT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        </div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <a class="code" href="classJSL__Testing_1_1MathTest.html">MathTest</a> mathT;</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        mathT.<a class="code" href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">Results</a>();</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        </div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\nTesting complete.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        </div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    }</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;}   </div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassJSL__Testing_1_1MetaTest_html"><div class="ttname"><a href="classJSL__Testing_1_1MetaTest.html">JSL_Testing::MetaTest</a></div><div class="ttdef"><b>Definition:</b> Testing_UnitTests.h:7</div></div>
 <div class="ttc" id="astructJSL_1_1mkdirReturn_html_a76abe5af61a20e13756f833b79782b7f"><div class="ttname"><a href="structJSL_1_1mkdirReturn.html#a76abe5af61a20e13756f833b79782b7f">JSL::mkdirReturn::Successful</a></div><div class="ttdeci">bool Successful</div><div class="ttdoc">True if the directory already existed, or was succesfully created.</div><div class="ttdef"><b>Definition:</b> mkdir.h:13</div></div>
@@ -615,7 +656,7 @@ $(function() {
 <div class="ttc" id="anamespaceJSL_html"><div class="ttname"><a href="namespaceJSL.html">JSL</a></div><div class="ttdef"><b>Definition:</b> Argument.h:6</div></div>
 <div class="ttc" id="aclassJSL__Testing_1_1MathTest_html"><div class="ttname"><a href="classJSL__Testing_1_1MathTest.html">JSL_Testing::MathTest</a></div><div class="ttdef"><b>Definition:</b> Testing_UnitTests.h:328</div></div>
 <div class="ttc" id="aclassJSL__Testing_1_1IOTest_html_a75479573809562118ab4d233c2bc0471"><div class="ttname"><a href="classJSL__Testing_1_1IOTest.html#a75479573809562118ab4d233c2bc0471">JSL_Testing::IOTest::IOTest</a></div><div class="ttdeci">IOTest()</div><div class="ttdef"><b>Definition:</b> Testing_UnitTests.h:118</div></div>
-<div class="ttc" id="anamespaceJSL_html_aeae64b7e0cfdc1ab5f35cca90c32d9f6"><div class="ttname"><a href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6">JSL::VectorDotProduct</a></div><div class="ttdeci">double VectorDotProduct(const Vector &amp;lhs, const Vector &amp;rhs)</div><div class="ttdoc">The standard dot product on R^n.</div><div class="ttdef"><b>Definition:</b> vector.h:268</div></div>
+<div class="ttc" id="anamespaceJSL_html_aeae64b7e0cfdc1ab5f35cca90c32d9f6"><div class="ttname"><a href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6">JSL::VectorDotProduct</a></div><div class="ttdeci">double VectorDotProduct(const Vector &amp;lhs, const Vector &amp;rhs)</div><div class="ttdoc">The standard dot product on R^n.</div><div class="ttdef"><b>Definition:</b> vector.h:340</div></div>
 <div class="ttc" id="aclassJSL_1_1UnitTest_html_a53c19424147e72fa6392470627f15049"><div class="ttname"><a href="classJSL_1_1UnitTest.html#a53c19424147e72fa6392470627f15049">JSL::UnitTest::Name</a></div><div class="ttdeci">std::string Name</div><div class="ttdoc">The name by which the UnitTest refers to itself. This should be fairly descriptive,...</div><div class="ttdef"><b>Definition:</b> UnitTest.h:15</div></div>
 <div class="ttc" id="aclassJSL_1_1UnitTest_html_afac1f363a8406fad39316ee772a837a9"><div class="ttname"><a href="classJSL_1_1UnitTest.html#afac1f363a8406fad39316ee772a837a9">JSL::UnitTest::Passed</a></div><div class="ttdeci">bool Passed</div><div class="ttdoc">If true, the UnitTest is considered successful, and no errors are thrown.</div><div class="ttdef"><b>Definition:</b> UnitTest.h:18</div></div>
 <div class="ttc" id="aclassJSL_1_1Argument_html_aa2b18bb35e90f91e224a06d60835053a"><div class="ttname"><a href="classJSL_1_1Argument.html#aa2b18bb35e90f91e224a06d60835053a">JSL::Argument::ListParse</a></div><div class="ttdeci">void ListParse(int argc, char *argv[])</div><div class="ttdoc">Iterate through the provided commandline args, extracting Name/Value pairs and calling Parse() on the...</div><div class="ttdef"><b>Definition:</b> Argument.h:91</div></div>
@@ -637,7 +678,7 @@ $(function() {
 <div class="ttc" id="aclassJSL_1_1UnitTest_html_a39e1076dd985334ce21606ae2a383f70"><div class="ttname"><a href="classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70">JSL::UnitTest::Results</a></div><div class="ttdeci">bool Results()</div><div class="ttdoc">Prints the results of the testing to the terminal and prints the contents of MessageBuffer line-by-li...</div><div class="ttdef"><b>Definition:</b> UnitTest.h:58</div></div>
 <div class="ttc" id="aclassJSL_1_1UnitTest_html_a3629d1bca071da7a2af6b7de29be1430"><div class="ttname"><a href="classJSL_1_1UnitTest.html#a3629d1bca071da7a2af6b7de29be1430">JSL::UnitTest::basicConditionCheck</a></div><div class="ttdeci">void basicConditionCheck(bool condition, std::string successmessage, std::string failuremessage)</div><div class="ttdef"><b>Definition:</b> UnitTest.h:95</div></div>
 <div class="ttc" id="aclassJSL__Testing_1_1MetaTest_html_a17efe6a92ae4934828a61d9f1120e67d"><div class="ttname"><a href="classJSL__Testing_1_1MetaTest.html#a17efe6a92ae4934828a61d9f1120e67d">JSL_Testing::MetaTest::MetaTest</a></div><div class="ttdeci">MetaTest()</div><div class="ttdef"><b>Definition:</b> Testing_UnitTests.h:10</div></div>
-<div class="ttc" id="anamespaceJSL__Testing_html_a509a70d20fdc2e9975d9b0b8ae424ef1"><div class="ttname"><a href="namespaceJSL__Testing.html#a509a70d20fdc2e9975d9b0b8ae424ef1">JSL_Testing::RunAllTests</a></div><div class="ttdeci">void RunAllTests()</div><div class="ttdef"><b>Definition:</b> Testing_UnitTests.h:510</div></div>
+<div class="ttc" id="anamespaceJSL__Testing_html_a509a70d20fdc2e9975d9b0b8ae424ef1"><div class="ttname"><a href="namespaceJSL__Testing.html#a509a70d20fdc2e9975d9b0b8ae424ef1">JSL_Testing::RunAllTests</a></div><div class="ttdeci">void RunAllTests()</div><div class="ttdef"><b>Definition:</b> Testing_UnitTests.h:551</div></div>
 <div class="ttc" id="aclassJSL__Testing_1_1MathTest_html_a635d8ad180a2e1412543c62381f5ea80"><div class="ttname"><a href="classJSL__Testing_1_1MathTest.html#a635d8ad180a2e1412543c62381f5ea80">JSL_Testing::MathTest::MathTest</a></div><div class="ttdeci">MathTest()</div><div class="ttdef"><b>Definition:</b> Testing_UnitTests.h:331</div></div>
 <div class="ttc" id="aclassJSL__Testing_1_1StringTest_html_ada0409cd10e3f09788994a9115331ff7"><div class="ttname"><a href="classJSL__Testing_1_1StringTest.html#ada0409cd10e3f09788994a9115331ff7">JSL_Testing::StringTest::Run_Test</a></div><div class="ttdeci">void Run_Test()</div><div class="ttdoc">All children which want to take advantage of the BufferedTest() command should have the bulk of their...</div><div class="ttdef"><b>Definition:</b> Testing_UnitTests.h:69</div></div>
 <div class="ttc" id="aclassJSL_1_1Vector_html"><div class="ttname"><a href="classJSL_1_1Vector.html">JSL::Vector</a></div><div class="ttdef"><b>Definition:</b> vector.h:19</div></div>

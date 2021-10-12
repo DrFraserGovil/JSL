@@ -26,7 +26,19 @@ double \mbox{\hyperlink{classJSL_1_1Vector_aa8af717591f5548ff471b6e4b28d7f9c}{No
 double \mbox{\hyperlink{classJSL_1_1Vector_a0529640bc02ce994026184d93f43f9c3}{Angle\+Between}} (const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&rhs) const
 \begin{DoxyCompactList}\small\item\em A member-\/alias for \mbox{\hyperlink{namespaceJSL_a09355c91f84fd99d4634bf9189fef51d}{Angle\+Between\+Vectors()}}, with the first argument being the current object. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classJSL_1_1Vector_a73579b4a194cc924341806a5d9ea3817}{to\+\_\+string}} () const
-\begin{DoxyCompactList}\small\item\em Converts the vector into a human-\/readable string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts the vector into a human-\/readable string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& \mbox{\hyperlink{classJSL_1_1Vector_ad46bf395dd6122ce152c33aad2672a9b}{operator+=}} (const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em In-\/place addition of two vectors. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ae6530b77174d0dfae8e0d6e2a810f672}{operator+(const Vector \& lhs, const Vector \& rhs)}} using this object as lhs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& \mbox{\hyperlink{classJSL_1_1Vector_a71720a9266944049cd3adfbe50e1703f}{operator-\/=}} (const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em In-\/place subtraction of two vectors. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a1d8393f2865dc23e7975ad041e341ba5}{operator-\/(const Vector \& lhs, const Vector \& rhs)}} using this object as lhs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& \mbox{\hyperlink{classJSL_1_1Vector_aeca45a175db04725394a1b576507e708}{operator+=}} (const double \&scalar)
+\begin{DoxyCompactList}\small\item\em In-\/place addition of a scalar onto the callign object. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a4b293e2ac3df51113e80022cb3c2ac99}{operator+(const Vector \& lhs, const double \& scalar)}} using this object as lhs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& \mbox{\hyperlink{classJSL_1_1Vector_a8a395851b8dffbe5b0aea7e051f9aac8}{operator-\/=}} (const double \&scalar)
+\begin{DoxyCompactList}\small\item\em In-\/place subtraction of a scalar onto the callign object. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ac6bd9311dd73aa6227d826bdb94e748d}{operator-\/(const Vector \& lhs, const double \& scalar)}} using this object as lhs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& \mbox{\hyperlink{classJSL_1_1Vector_ad2fb2b88e3447881c1dac08897c5c8a8}{operator$\ast$=}} (const double \&scalar)
+\begin{DoxyCompactList}\small\item\em In-\/place multiplication of a scalar with the calling object. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_afc5e092de4a9bdc5795d40ee0f51c7b9}{operator$\ast$(const Vector \& lhs, const double \& scalar)}} using this object as lhs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& \mbox{\hyperlink{classJSL_1_1Vector_a0ce3dc2b4c99dbe6acdec350e2f46ab6}{operator/=}} (const double \&scalar)
+\begin{DoxyCompactList}\small\item\em In-\/place division of the calling object with a scalar. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a1427fd44260592b7d65d27946969fba1}{operator/(const Vector \& lhs, const double \& scalar)}} using this object as lhs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
@@ -155,6 +167,114 @@ The norm of the current object,.
 
 \begin{DoxyReturn}{Returns}
 The square-\/root of the \mbox{\hyperlink{classJSL_1_1Vector_ac1346e26bc981bf45d2c1c4317dac4e6}{Sq\+Norm()}} function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJSL_1_1Vector_ad2fb2b88e3447881c1dac08897c5c8a8}\label{classJSL_1_1Vector_ad2fb2b88e3447881c1dac08897c5c8a8}} 
+\index{JSL::Vector@{JSL::Vector}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{Vector}}\& J\+S\+L\+::\+Vector\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const double \&}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+In-\/place multiplication of a scalar with the calling object. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_afc5e092de4a9bdc5795d40ee0f51c7b9}{operator$\ast$(const Vector \& lhs, const double \& scalar)}} using this object as lhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The double to be accumulated into the current object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the now-\/modified calling object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJSL_1_1Vector_aeca45a175db04725394a1b576507e708}\label{classJSL_1_1Vector_aeca45a175db04725394a1b576507e708}} 
+\index{JSL::Vector@{JSL::Vector}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{Vector}}\& J\+S\+L\+::\+Vector\+::operator+= (\begin{DoxyParamCaption}\item[{const double \&}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+In-\/place addition of a scalar onto the callign object. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a4b293e2ac3df51113e80022cb3c2ac99}{operator+(const Vector \& lhs, const double \& scalar)}} using this object as lhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The double to be accumulated into the current object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the now-\/modified calling object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJSL_1_1Vector_ad46bf395dd6122ce152c33aad2672a9b}\label{classJSL_1_1Vector_ad46bf395dd6122ce152c33aad2672a9b}} 
+\index{JSL::Vector@{JSL::Vector}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{Vector}}\& J\+S\+L\+::\+Vector\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+In-\/place addition of two vectors. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ae6530b77174d0dfae8e0d6e2a810f672}{operator+(const Vector \& lhs, const Vector \& rhs)}} using this object as lhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The vector to be accumulated into the current object. Must be the same Size as the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the now-\/modified calling object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJSL_1_1Vector_a8a395851b8dffbe5b0aea7e051f9aac8}\label{classJSL_1_1Vector_a8a395851b8dffbe5b0aea7e051f9aac8}} 
+\index{JSL::Vector@{JSL::Vector}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{Vector}}\& J\+S\+L\+::\+Vector\+::operator-\/= (\begin{DoxyParamCaption}\item[{const double \&}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+In-\/place subtraction of a scalar onto the callign object. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ac6bd9311dd73aa6227d826bdb94e748d}{operator-\/(const Vector \& lhs, const double \& scalar)}} using this object as lhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The double to be subtracted from the current object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the now-\/modified calling object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJSL_1_1Vector_a71720a9266944049cd3adfbe50e1703f}\label{classJSL_1_1Vector_a71720a9266944049cd3adfbe50e1703f}} 
+\index{JSL::Vector@{JSL::Vector}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{Vector}}\& J\+S\+L\+::\+Vector\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+In-\/place subtraction of two vectors. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a1d8393f2865dc23e7975ad041e341ba5}{operator-\/(const Vector \& lhs, const Vector \& rhs)}} using this object as lhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The vector to be subtracted from the current object. Must be the same Size as the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the now-\/modified calling object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJSL_1_1Vector_a0ce3dc2b4c99dbe6acdec350e2f46ab6}\label{classJSL_1_1Vector_a0ce3dc2b4c99dbe6acdec350e2f46ab6}} 
+\index{JSL::Vector@{JSL::Vector}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{Vector}}\& J\+S\+L\+::\+Vector\+::operator/= (\begin{DoxyParamCaption}\item[{const double \&}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+In-\/place division of the calling object with a scalar. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a1427fd44260592b7d65d27946969fba1}{operator/(const Vector \& lhs, const double \& scalar)}} using this object as lhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The double to be accumulated into the current object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the now-\/modified calling object 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Vector_a7ff5112a7be30ca24b8ed953aaadd045}\label{classJSL_1_1Vector_a7ff5112a7be30ca24b8ed953aaadd045}} 
 \index{JSL::Vector@{JSL::Vector}!operator\mbox{[}\mbox{]}@{operator[]}}

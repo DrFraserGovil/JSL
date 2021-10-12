@@ -74,6 +74,12 @@
     <member refid="classJSL_1_1Vector_1aa8af717591f5548ff471b6e4b28d7f9c" kind="function"><name>Norm</name></member>
     <member refid="classJSL_1_1Vector_1a0529640bc02ce994026184d93f43f9c3" kind="function"><name>AngleBetween</name></member>
     <member refid="classJSL_1_1Vector_1a73579b4a194cc924341806a5d9ea3817" kind="function"><name>to_string</name></member>
+    <member refid="classJSL_1_1Vector_1ad46bf395dd6122ce152c33aad2672a9b" kind="function"><name>operator+=</name></member>
+    <member refid="classJSL_1_1Vector_1a71720a9266944049cd3adfbe50e1703f" kind="function"><name>operator-=</name></member>
+    <member refid="classJSL_1_1Vector_1aeca45a175db04725394a1b576507e708" kind="function"><name>operator+=</name></member>
+    <member refid="classJSL_1_1Vector_1a8a395851b8dffbe5b0aea7e051f9aac8" kind="function"><name>operator-=</name></member>
+    <member refid="classJSL_1_1Vector_1ad2fb2b88e3447881c1dac08897c5c8a8" kind="function"><name>operator*=</name></member>
+    <member refid="classJSL_1_1Vector_1a0ce3dc2b4c99dbe6acdec350e2f46ab6" kind="function"><name>operator/=</name></member>
     <member refid="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" kind="function"><name>negativeIntegerError</name></member>
     <member refid="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" kind="function"><name>outOfBoundsError</name></member>
   </compound>
