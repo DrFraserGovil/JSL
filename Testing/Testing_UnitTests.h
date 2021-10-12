@@ -474,6 +474,44 @@ namespace JSL_Testing
 				basicConditionCheck(divisorCheck,message);
 				
 				
+				//in place modification
+				std::vector<double> v11Base ={1,2,99,-100,10};
+				std::vector<double> v12Base= {-2,10.2,13,-99.999,0.02}; 
+				JSL::Vector v11(v11Base);
+				JSL::Vector v11_original = v11;
+				JSL::Vector v12(v12Base);
+				
+				std::string test = "JSL::Vector += JSL::Vector test";
+				v11 += v12;
+				bool inPlaceAdditionWorks = (v11 == (v11_original + v12));
+				basicConditionCheck(inPlaceAdditionWorks,test);
+				
+				v11 -= v12;
+				test = "JSL::Vector -= JSL::Vector test";
+				bool inPlaceSubtractionWorks = (v11 == v11_original);
+				basicConditionCheck(inPlaceSubtractionWorks,test);
+				
+				test = "JSL::Vector += scalar test";
+				v11 += 5;
+				bool inPlaceScalarAddition = (v11 == (v11_original + 5));
+				basicConditionCheck(inPlaceScalarAddition, test);
+				
+				test = "JSL::Vector -= scalar test";
+				v11 -= 3;
+				bool inPlaceScalarSubtraction = (v11 == (v11_original + 2));
+				basicConditionCheck(inPlaceScalarSubtraction, test);
+				
+				test = "JSL::Vector *= scalar test";
+				v11 -= 2;
+				v11 *= 3;
+				bool inPlaceMultiplicationWorks = (v11 == 3 *v11_original) && (v11 == v11_original*3);
+				basicConditionCheck(inPlaceMultiplicationWorks,test); 
+				
+				test = "JSL::Vector /= scalar test";
+				v11/= 6;
+				bool inPlaceScalarDivision = (v11 == v11_original/2);
+				basicConditionCheck(inPlaceScalarDivision, test);
+				
 				v1[n-1] +=3;
 				v2[n-1] += 9;
 				double expectedDot = 0;
@@ -503,6 +541,9 @@ namespace JSL_Testing
 				
 				message = "JSL::Vector Cross() and VectorCrossProduct() test";
 				basicConditionCheck(u1.Cross(u2) == expectedCross,message);
+				
+				
+
 			}
 	
 	};

@@ -151,6 +151,7 @@ namespace JSL
 				{
 					Data[i] += scalar;
 				}
+				return *this;
 			}
 			Vector & operator-=(const double & scalar)
 			{
@@ -158,6 +159,7 @@ namespace JSL
 				{
 					Data[i] -= scalar;
 				}
+				return *this;
 			}
 			Vector & operator*=(const double & scalar)
 			{
@@ -165,6 +167,7 @@ namespace JSL
 				{
 					Data[i] *= scalar;
 				}
+				return *this;
 			}
 			Vector & operator/=(const double & scalar)
 			{
@@ -172,6 +175,7 @@ namespace JSL
 				{
 					Data[i] /= scalar;
 				}
+				return *this;
 			}
 		private:
 			std::vector<double> Data;
