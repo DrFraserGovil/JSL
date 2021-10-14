@@ -663,9 +663,22 @@ namespace JSL_Testing
 				Passed = true;
 
 				JSL::Quaternion Q;
+				Q.Scalar() = 1;
+				Q.Vector(2) = 3;
 				JSL::Quaternion Q2 = 5 * JSL::Quaternion::One();
+				Q2.Vector(1) = -2;
 				JSL::Quaternion Q3 = Q + Q2;
-				std::cout << Q3<< std::endl;
+				std::cout << "Q1 = " << Q << "   Q2 =" << Q2 << std::endl;
+				
+				JSL::Matrix M(4,4);
+				for (int i  =0 ; i < 4; ++i)
+				{
+					M(i,i) = 2*(i + 1);
+				}
+				std::cout << "M = " << M << std::endl;
+				
+				std::cout << M * (Q * Q2) << std::endl;
+				std::cout << (M*Q) * Q2 << std::endl;
 				
 			}
 	};
