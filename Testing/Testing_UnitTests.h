@@ -325,21 +325,18 @@ namespace JSL_Testing
 			}
 	};
 	
-	class MathTest : public JSL::UnitTest
+	class VectorTest : public JSL::UnitTest
 	{
 		public:
-			MathTest()
+			VectorTest()
 			{
-				Name = "JSL::Math";
+				Name = "JSL::Vector";
 				NonCriticalFailure = false;
 				MessageBuffer.resize(0);
 				BufferedTest();
 			}
+			
 			void Run_Test()
-			{
-				VectorTest();
-			}
-			void VectorTest()
 			{
 				Passed = true;
 				
@@ -543,9 +540,106 @@ namespace JSL_Testing
 				basicConditionCheck(u1.Cross(u2) == expectedCross,message);
 				
 				
+				
+				
+				message = "Copy Assignment test";
+				JSL::Vector u99(v1.Size() + 10);
+				u99 = v1;
+				basicConditionCheck(u99 == v1, message);
+				
 
 			}
+	};
 	
+	class MatrixTest : public JSL::UnitTest
+	{
+		public:
+			MatrixTest()
+			{
+				Name = "JSL::Matrix";
+				NonCriticalFailure = false;
+				MessageBuffer.resize(0);
+				BufferedTest();
+			}
+			void Run_Test()
+			{
+				Passed = true;
+				int rows = 3;
+				int cols = 4;
+				JSL::Matrix A(rows,cols);
+				
+				std::string test = "JSL::Matrix Basic initialisation and assignment test";
+				int value = 5;
+				A(0,0) += value; //+= ensures that initialisation to 0 happened!
+				basicConditionCheck(A(0,0) == value,test);
+				
+				test = "JSL::Matrix Equality Checking";
+				JSL::Matrix B(rows+1,cols);
+				JSL::Matrix C(rows,cols);
+				C(0,0) += value;
+				JSL::Matrix D(rows,cols);
+				basicConditionCheck(A == C && A != B && A != D && B != D, test);
+				
+				
+				test = "JSL::Matrix Copy Assignment test";
+				
+				JSL::Matrix E(20,10);
+				E = A;
+				bool isIdentical = (E == A);
+				basicConditionCheck(isIdentical,test);
+						
+				JSL::Matrix I = JSL::Matrix::Identity(3);
+				
+				
+				test = "JSL::Matrix Basic Linear Algebra test";
+				std::vector<std::vector<double>> temp = {{2.5,9,1},{-2,3,4},{8,9,3}};
+				std::vector<std::vector<double>> temp2 = {{1.5,-9,4},{-22,33,41},{-2.2,9,4}};
+				
+				std::vector<std::vector<double>> expectedTxT2 = {{-196.45,283.5,383},{-77.8,153,131},{-192.6,252,413}};
+				
+				JSL::Matrix M1(temp);
+				JSL::Matrix M2(temp2);
+				
+				JSL::Matrix M3 = M1 + 3 * M2;
+				JSL::Matrix M4 = M3 - M1/2 + 99;
+				
+				JSL::Matrix M5 = 100 - M4;
+				M5 += 2 ;
+				M5 *= 2;
+				M5 /= 3;
+				bool expectedResult = true;
+				for (int i = 0; i < temp.size(); ++i)
+				{
+					for (int j = 0; j < temp[i].size(); ++j)
+					{	
+						double expectedValue = 2 - 2* temp2[i][j] - temp[i][j]/3;
+						double diff = abs(expectedValue - M5(i,j));
+						if (diff > 1e-9)
+						{
+							expectedResult = false;
+						}
+					}
+				}
+				basicConditionCheck(expectedResult,test);
+				
+				test = "JSL::Matrix Multiplication test";
+				JSL::Matrix expectedM1M2(expectedTxT2);
+				JSL::Matrix M1M2 = M1 * M2;
+				basicConditionCheck(M1M2 == expectedM1M2,test);
+				
+				test = "JSL::Matrix In-place matrix operation test";
+				M1*=M2;
+				M1+=4;
+				basicConditionCheck(M1M2+4 == M1,test);
+				
+				
+				test = "JSL::Matrix Extraction & Transposition test";
+				int n = M1.Rows() - 1;
+				JSL::Vector v1 = M1.GetRow(n);
+				JSL::Matrix M1T = M1.Transpose();
+				JSL::Vector v2= M1T.GetColumn(n);
+				basicConditionCheck(v1==v2,test);
+			}
 	};
 	
 	void RunAllTests()
@@ -565,8 +659,11 @@ namespace JSL_Testing
 		ArgumentTest argT;
 		argT.Results();
 		
-		MathTest mathT;
-		mathT.Results();
+		VectorTest vectorT;
+		vectorT.Results();
+		
+		MatrixTest matT;
+		matT.Results();
 		
 		std::cout << "\nTesting complete." << std::endl;
 		

@@ -20,25 +20,28 @@ namespace JSL
 	{
 		public:
 			
-			//! The dimensionality of the vector. Under no realistic circumstances should this change over time, or differ from the true data length. If it does, I have messed up and this structure becomes borked.
-			const int Size;
+			
 			
 			//!Initialises the vector to a state of length n, populated by zeros \param n The length of the vector to be created
-			Vector(int n): Size(n)
+			Vector(int n): nElements(n)
 			{
 				Data = std::vector<double>(n,0.0);
 			}
 			
 			//!Initialises the vector to contain the provided stl vector\param input An std::vector which the new Vector will envelop.
-			Vector(std::vector<double> input): Data(input), Size(input.size())
+			Vector(std::vector<double> input): Data(input), nElements(input.size())
 			{
 				
 			}
 			
+			int Size() const
+			{
+				return nElements;
+			}
 			//! Overload access operator so can call Vector[0] etc as normal for a vector class. Performs checks on the size so that you cannot over/underflow the memory access
 			double & operator[](int idx)
 			{
-				if (idx < Size && idx >= 0)
+				if (idx < nElements && idx >= 0)
 				{
 					return Data[idx];
 				}
@@ -58,7 +61,7 @@ namespace JSL
 			//! Replication of non-const version (annoying) but necessary for good access....
 			const double& operator[](int idx) const
 			{
-				if (idx < Size && idx >= 0)
+				if (idx < nElements && idx >= 0)
 				{
 					return Data[idx];
 				}
@@ -109,10 +112,10 @@ namespace JSL
 			std::string to_string() const
 			{
 				std::string outString = "(";
-				for (int i = 0; i < Size; ++i)
+				for (int i = 0; i < nElements; ++i)
 				{
 					outString += std::to_string(Data[i]);
-					if (i < Size - 1)
+					if (i < nElements - 1)
 					{
 						outString += ", ";
 					}
@@ -121,27 +124,27 @@ namespace JSL
 				return outString;
 			}
 		
-			//! In-place addition of two vectors. Calls Vector operator+(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be accumulated into the current object. Must be the same Size as the calling object. \returns A reference to the now-modified calling object
+			//! In-place addition of two vectors. Calls Vector operator+(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be accumulated into the current object. Must be the same nElements as the calling object. \returns A reference to the now-modified calling object
 			Vector & operator+=(const Vector & rhs)
 			{
-				if (Size != rhs.Size)
+				if (nElements != rhs.Size())
 				{
 					throw std::runtime_error("Cannot add vectors of different sizes");
 				}
-				for (int i = 0; i < Size; ++i)
+				for (int i = 0; i < nElements; ++i)
 				{
 					Data[i] += rhs[i];
 				}
 				return *this;
 			}
-			//! In-place subtraction of two vectors. Calls Vector operator-(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be subtracted from the current object. Must be the same Size as the calling object. \returns A reference to the now-modified calling object
+			//! In-place subtraction of two vectors. Calls Vector operator-(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be subtracted from the current object. Must be the same nElements as the calling object. \returns A reference to the now-modified calling object
 			Vector & operator-=(const Vector & rhs)
 			{
-				if (Size != rhs.Size)
+				if (nElements != rhs.Size())
 				{
 					throw std::runtime_error("Cannot add vectors of different sizes");
 				}
-				for (int i = 0; i < Size; ++i)
+				for (int i = 0; i < nElements; ++i)
 				{
 					Data[i] -= rhs[i];
 				}
@@ -151,7 +154,7 @@ namespace JSL
 			//! In-place addition of a scalar onto the callign object. Calls Vector operator+(const Vector & lhs, const double & scalar) using this object as lhs. \param scalar The double to be accumulated into the current object. \returns A reference to the now-modified calling object
 			Vector & operator+=(const double & scalar)
 			{
-				for (int i = 0; i < Size; ++i)
+				for (int i = 0; i < nElements; ++i)
 				{
 					Data[i] += scalar;
 				}
@@ -161,7 +164,7 @@ namespace JSL
 			//! In-place subtraction of a scalar onto the callign object. Calls Vector operator-(const Vector & lhs, const double & scalar) using this object as lhs. \param scalar The double to be subtracted from the current object. \returns A reference to the now-modified calling object
 			Vector & operator-=(const double & scalar)
 			{
-				for (int i = 0; i < Size; ++i)
+				for (int i = 0; i < nElements; ++i)
 				{
 					Data[i] -= scalar;
 				}
@@ -171,7 +174,7 @@ namespace JSL
 			//! In-place multiplication of a scalar with the calling object. Calls Vector operator*(const Vector & lhs, const double & scalar) using this object as lhs. \param scalar The double to be accumulated into the current object. \returns A reference to the now-modified calling object
 			Vector & operator*=(const double & scalar)
 			{
-				for (int i = 0; i < Size; ++i)
+				for (int i = 0; i < nElements; ++i)
 				{
 					Data[i] *= scalar;
 				}
@@ -181,7 +184,7 @@ namespace JSL
 			//! In-place division of the calling object with a scalar. Calls Vector operator/(const Vector & lhs, const double & scalar) using this object as lhs. \param scalar The double to be accumulated into the current object. \returns A reference to the now-modified calling object
 			Vector & operator/=(const double & scalar)
 			{
-				for (int i = 0; i < Size; ++i)
+				for (int i = 0; i < nElements; ++i)
 				{
 					Data[i] /= scalar;
 				}
@@ -190,13 +193,14 @@ namespace JSL
 		private:
 			std::vector<double> Data;
 						
+			int nElements;
 			std::string inline negativeIntegerError(int idx) const
 			{
 				return "JSL::Vector Error: Cannot access negative indices (" + std::to_string(idx) + ").";
 			}
 			std::string inline outOfBoundsError(int idx) const
 			{
-				return "JSL::Vector Error: " + std::to_string(idx) +" exceeds the length of this vector (" + std::to_string(Size) + ").";
+				return "JSL::Vector Error: " + std::to_string(idx) +" exceeds the length of this vector (" + std::to_string(nElements) + ").";
 			}
 	};
 	
@@ -204,12 +208,12 @@ namespace JSL
 	
 	inline bool operator==(const Vector & lhs, const Vector & rhs)
 	{
-		if (lhs.Size != rhs.Size)
+		if (lhs.Size() != rhs.Size())
 		{
 			return false;
 		}
 		
-		for (int i = 0; i < lhs.Size;++i)
+		for (int i = 0; i < lhs.Size();++i)
 		{
 			if (lhs[i] != rhs[i])
 			{
@@ -227,14 +231,14 @@ namespace JSL
 	//! Performs obvious vector addition (a+b)_i = a_i + b_i. Throws an error if the vectors are not the same size. \param lhs The first vector to be summed \param rhs The second vector to be summed (order is irrelevant) \return The vector lhs + rhs
 	inline Vector operator+(const Vector & lhs, const Vector & rhs)
 	{
-		if (rhs.Size != lhs.Size)
+		if (rhs.Size() != lhs.Size())
 		{
 			throw std::runtime_error("JSL::Vector Error: Cannot peform + operation on vectors of different sizes");
 		}
 		
 		JSL::Vector output = lhs;
 		
-		for (int i = 0; i < output.Size; ++i)
+		for (int i = 0; i < output.Size(); ++i)
 		{
 			output[i] += rhs[i];
 		}
@@ -243,14 +247,14 @@ namespace JSL
 	//! Performs obvious vector subtraction (a-b)_i = a_i - b_i. Throws an error if the vectors are not the same size. \param lhs The base vector \param rhs The vector to be subtracted from the base vector (order does matter!) \return The vector lhs - rhs.
 	inline Vector operator-(const Vector & lhs, const Vector & rhs)
 	{
-		if (rhs.Size != lhs.Size)
+		if (rhs.Size() != lhs.Size())
 		{
 			throw std::runtime_error("JSL::Vector Error: Cannot peform - operation on vectors of different sizes");
 		}
 		
 		JSL::Vector output = lhs;
 		
-		for (int i = 0; i < output.Size; ++i)
+		for (int i = 0; i < output.Size(); ++i)
 		{
 			output[i] -= rhs[i];
 		}
@@ -263,7 +267,7 @@ namespace JSL
 
 		JSL::Vector output = lhs;
 		
-		for (int i = 0; i < output.Size; ++i)
+		for (int i = 0; i < output.Size(); ++i)
 		{
 			output[i] += scalar;
 		}
@@ -285,8 +289,8 @@ namespace JSL
 	inline Vector operator-(const double & scalar, const Vector & rhs)
 	{
 		//To do it the `clever' way would be to redirect this to return scalar + -1*rhs, but this would involve two separate loops over the array. Annoyingly, turns out to be better to just copy the loop code and do it only once.
-		JSL::Vector output(rhs.Size);
-		for (int i = 0; i < output.Size; ++i)
+		JSL::Vector output(rhs.Size());
+		for (int i = 0; i < output.Size(); ++i)
 		{
 			output[i] = scalar - rhs[i];
 		}
@@ -302,7 +306,7 @@ namespace JSL
 	inline Vector operator*(const double & scalar, const Vector & rhs)
 	{
 		JSL::Vector output = rhs;
-		for (int i = 0; i < output.Size; ++i)
+		for (int i = 0; i < output.Size(); ++i)
 		{
 			output[i] *= scalar;
 		}
@@ -329,7 +333,7 @@ namespace JSL
 	inline Vector operator*(const Vector & lhs, const Vector & rhs)
 	{
 		JSL::Vector output = rhs;
-		for (int i = 0; i < output.Size; ++i)
+		for (int i = 0; i < output.Size(); ++i)
 		{
 			output[i] *= rhs[i];
 		}
@@ -340,11 +344,11 @@ namespace JSL
 	inline double VectorDotProduct(const Vector & lhs, const Vector & rhs)
 	{
 		double sum =0;
-		if (lhs.Size != rhs.Size)
+		if (lhs.Size() != rhs.Size())
 		{
 			throw std::runtime_error("Cannot take the dot product of vectors of different sizes");
 		}
-		for (int i = 0; i < lhs.Size; ++i)
+		for (int i = 0; i < lhs.Size(); ++i)
 		{
 			sum += lhs[i] * rhs[i];
 		}
@@ -354,8 +358,8 @@ namespace JSL
 	//! The standard cross product -- only defined on R^3 (throws an error else) \param lhs Vector 1 \param rhs Vector 2 (order relevant - using standard conventions Vector 1 x Vector 2) \returns Vector cross product of inputs
 	inline Vector VectorCrossProduct(const Vector & lhs, const Vector & rhs)
 	{
-		bool correctSize = (lhs.Size == 3) && (rhs.Size == 3);
-		if (!correctSize)
+		bool correctnElements = (lhs.Size() == 3) && (rhs.Size() == 3);
+		if (!correctnElements)
 		{
 			throw std::runtime_error("Cannot compute the cross product for vectors not on R^3");
 		}
