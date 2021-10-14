@@ -407,7 +407,7 @@ namespace JSL
 		return output;
 	}
 	
-	inline Matrix operator*(const Matrix & lhs, const Vector & rhs)
+	inline Vector operator*(const Matrix & lhs, const Vector & rhs)
 	{
 		if (lhs.Columns() != rhs.Size())
 		{
@@ -416,16 +416,13 @@ namespace JSL
 			throw std::runtime_error("JSL::Vector Error: Cannot multiply matrices and vectors of incompatible sizes: " + s1 + " vs " + s2);
 		}
 		
-		Matrix output(lhs.Rows(),rhs.Columns());
+		Vector output(lhs.Rows());
 		
-		for (int i = 0; i < output.Rows(); ++i)
+		for (int i = 0; i < output.Size(); ++i)
 		{
-			for (int j = 0; j < output.Columns(); ++j)
+			for (int k = 0; k < lhs.Columns(); ++k)
 			{
-				for (int k = 0; k < lhs.Columns(); ++k)
-				{
-					output(i,j) += lhs(i,k) * rhs(k,j);
-				}
+				output[i] += lhs(i,k) * rhs[k];
 			}
 		}
 		return output;

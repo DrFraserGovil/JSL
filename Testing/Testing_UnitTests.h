@@ -639,6 +639,12 @@ namespace JSL_Testing
 				JSL::Matrix M1T = M1.Transpose();
 				JSL::Vector v2= M1T.GetColumn(n);
 				basicConditionCheck(v1==v2,test);
+				
+				test = "JSL::Matrix and JSL::Vector multiplication";
+				JSL::Matrix M ({{1,2,3},{4,5,6},{7,8,9}});
+				JSL::Vector v({10,11,12});
+				JSL::Vector expectedProduct({68,167,266});
+				basicConditionCheck(M*v == expectedProduct,test);
 			}
 	};
 	
