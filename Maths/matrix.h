@@ -407,6 +407,30 @@ namespace JSL
 		return output;
 	}
 	
+	inline Matrix operator*(const Matrix & lhs, const Vector & rhs)
+	{
+		if (lhs.Columns() != rhs.Size())
+		{
+			std::string s1 = "(" + std::to_string(lhs.Rows()) + "x"+ std::to_string(lhs.Columns()) + ")";
+			std::string s2 = "(" + std::to_string(rhs.Size()) + ")";
+			throw std::runtime_error("JSL::Vector Error: Cannot multiply matrices and vectors of incompatible sizes: " + s1 + " vs " + s2);
+		}
+		
+		Matrix output(lhs.Rows(),rhs.Columns());
+		
+		for (int i = 0; i < output.Rows(); ++i)
+		{
+			for (int j = 0; j < output.Columns(); ++j)
+			{
+				for (int k = 0; k < lhs.Columns(); ++k)
+				{
+					output(i,j) += lhs(i,k) * rhs(k,j);
+				}
+			}
+		}
+		return output;
+	}
+	
 	//! Exactly equivalent to JSL::operator+(const Matrix &lhs, const double &scalar), just swapped around. \param scalar The scalar to be added element-wise \param rhs The matrix to be summed \return The scalar + rhs
 	inline Matrix operator+(const double & scalar, const Matrix & rhs)
 	{
