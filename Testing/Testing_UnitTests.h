@@ -648,6 +648,29 @@ namespace JSL_Testing
 			}
 	};
 	
+	class QuaternionTest : public JSL::UnitTest
+		{
+		public:
+			QuaternionTest()
+			{
+				Name = "JSL::Quaternion";
+				NonCriticalFailure = false;
+				MessageBuffer.resize(0);
+				BufferedTest();
+			}
+			void Run_Test()
+			{
+				Passed = true;
+
+				JSL::Quaternion Q;
+				JSL::Quaternion Q2 = 5 * JSL::Quaternion::One();
+				JSL::Quaternion Q3 = Q + Q2;
+				std::cout << Q3<< std::endl;
+				
+			}
+	};
+
+	
 	void RunAllTests()
 	{
 		std::cout << "Beginning testing of all JSL objects...\n" << std::endl;
@@ -670,6 +693,9 @@ namespace JSL_Testing
 		
 		MatrixTest matT;
 		matT.Results();
+		
+		QuaternionTest qT;
+		qT.Results();
 		
 		std::cout << "\nTesting complete." << std::endl;
 		

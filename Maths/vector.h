@@ -190,7 +190,7 @@ namespace JSL
 				}
 				return *this;
 			}
-		private:
+		protected:
 			std::vector<double> Data;
 						
 			int nElements;
