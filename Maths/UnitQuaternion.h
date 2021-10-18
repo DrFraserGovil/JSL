@@ -15,16 +15,20 @@ namespace JSL
 		public:
 			
 			
-			UnitQuaternion() : Quaternion
+			UnitQuaternion() : Quaternion()
 			{
 				Data[0] = 1;
 			}
 		
 			UnitQuaternion(const double & scalar, const JSL::Vector & vec): Quaternion(scalar,vec)
 			{
-				
+				CheckNormalisation(true);
 			}
-	
+			UnitQuaternion(std::vector<double> vec) : Quaternion(vec)
+			{
+				CheckNormalisation(true);
+			}
+			
 			
 	
 	
@@ -44,7 +48,7 @@ namespace JSL
 			{
 				double NormalisationTolerance = 1e-5;
 				bool isNormalised = true;
-				if ( abs(Norm() -1) < NormalisationTolerance)
+				if ( abs(Norm() -1) > NormalisationTolerance)
 				{
 					isNormalised = false;
 					
@@ -55,5 +59,5 @@ namespace JSL
 				}
 				return isNormalised;
 			}
-	}
+	};
 }

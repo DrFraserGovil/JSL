@@ -423,6 +423,7 @@ namespace JSL
 			for (int k = 0; k < lhs.Columns(); ++k)
 			{
 				output[i] += lhs(i,k) * rhs[k];
+		
 			}
 		}
 		return output;

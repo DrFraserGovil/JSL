@@ -658,28 +658,33 @@ namespace JSL_Testing
 				MessageBuffer.resize(0);
 				BufferedTest();
 			}
+			
+			
+			
 			void Run_Test()
 			{
 				Passed = true;
 
-				JSL::Quaternion Q;
-				Q.Scalar() = 1;
-				Q.Vector(2) = 3;
-				JSL::Quaternion Q2 = 5 * JSL::Quaternion::One();
-				Q2.Vector(1) = -2;
-				JSL::Quaternion Q3 = Q + Q2;
-				std::cout << "Q1 = " << Q << "   Q2 =" << Q2 << std::endl;
+				JSL::Quaternion a = JSL::Quaternion::Random(); 
+				JSL::Quaternion b = JSL::Quaternion::Random();
+				JSL::Quaternion c = JSL::Quaternion::Random();
 				
-				JSL::Matrix M(4,4);
-				for (int i  =0 ; i < 4; ++i)
-				{
-					M(i,i) = 2*(i + 1);
-				}
-				std::cout << "M = " << M << std::endl;
 				
-				std::cout << M * (Q * Q2) << std::endl;
-				std::cout << (M*Q) * Q2 << std::endl;
+				std::cout << "a = " << a << std::endl; 
+				std::cout << "b = " << b << std::endl;
+				std::cout << "c = " << c << std::endl;
 				
+
+				//~ JSL::Matrix La = Q.LeftMultiplicationMatrix();
+				//~ JSL::Matrix LaB = Q.Conjugate().LeftMultiplicationMatrix();
+				
+				//~ JSL::Matrix Rb = Q2.RightMultiplicationMatrix();
+				//~ JSL::Matrix RbB = Q2.Conjugate().RightMultiplicationMatrix();
+				
+				//~ std::cout << "\n\n R(bar)L = " <<  RbB * La<< std::endl;
+				//~ std::cout << "\n\n RL(bar) = " << Rb * LaB << std::endl;
+				
+				//~ std::cout << "\n\n RL - LR = " << LR - RL << std::endl;
 			}
 	};
 
