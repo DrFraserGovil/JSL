@@ -111,7 +111,11 @@ namespace JSL
 			//! Converts the vector into a human-readable string \returns A representation of the vector, such as (1,4.5,3)
 			std::string to_string() const
 			{
-				std::string outString = "(";
+				return "(" + to_simple_string() + ")";
+			}
+			std::string to_simple_string() const
+			{
+				std::string outString = "";
 				for (int i = 0; i < nElements; ++i)
 				{
 					outString += std::to_string(Data[i]);
@@ -120,7 +124,6 @@ namespace JSL
 						outString += ", ";
 					}
 				}
-				outString += ")";
 				return outString;
 			}
 		
