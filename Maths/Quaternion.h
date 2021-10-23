@@ -10,6 +10,9 @@
 
 namespace JSL
 {
+	//forward declarations for circularity
+	class Quaternion;
+	
 	
 	class Quaternion : public JSL::Vector
 	{
@@ -29,7 +32,13 @@ namespace JSL
 					Data[i+1] = vec[i];
 				}
 			}
-			
+			Quaternion(const double & a,const double & b,const double & c,const double & d) : JSL::Vector(4)
+			{
+				Data[0] = a;
+				Data[1] = b;
+				Data[2] = c;
+				Data[3] = d;
+			} 
 			Quaternion(const JSL::Vector & vec4) : JSL::Vector(vec4)
 			{
 				if (vec4.Size() != 4)
@@ -92,6 +101,7 @@ namespace JSL
 			{
 				return Quaternion(Scalar(), -1*Vector());
 			}
+
 			
 			JSL::Matrix LeftMultiplicationMatrix() const
 			{
@@ -168,6 +178,19 @@ namespace JSL
 		}
 		
 		return 1.0/N * lhs * rhs.Conjugate();
+	}
+	
+	inline Quaternion exp(const JSL::Quaternion & a)
+	{
+		double sc = std::exp(a.Scalar());
+		double theta = a.Vector().Norm();
+		double sinc = sin(theta)/theta;
+		if (theta == 0)
+		{
+			sinc = 1;
+		}
+		JSL::Quaternion base(cos(theta), sinc * a.Vector());
+		return sc * base;
 	}
 }
 
