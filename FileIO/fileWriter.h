@@ -7,7 +7,7 @@ namespace JSL
 	 * Creates a blank file at the specified location, overwriting any other file at the given location
 	 * \param filename The file which the system will attempt to open
 	*/
-	void initialiseFile(const std::string & filename)
+	void inline initialiseFile(const std::string & filename)
 	{
 		std::fstream file;
 		file.open(filename,std::ios::out);	
@@ -20,7 +20,7 @@ namespace JSL
 	 * \param filename The target file location
 	 * \param content The desired string to be appended to the file (accepts control characters)
 	*/
-	void writeStringToFile(const std::string & filename, const std::string & content)
+	void inline writeStringToFile(const std::string & filename, const std::string & content)
 	{
 		std::fstream file;
 		file.open(filename, std::ios::app);
@@ -36,7 +36,7 @@ namespace JSL
 	 * \param includeTerminalLineBreak If true, appends a linebreak character at the end of the vector. Useful for sequentially writing rows of data to file.
 	*/
 	template<class T>
-	void writeVectorToFile(const std::string & filename, const std::vector<T> & contentVector, const std::string & delimiter, bool includeTerminalLineBreak)
+	void inline writeVectorToFile(const std::string & filename, const std::vector<T> & contentVector, const std::string & delimiter, bool includeTerminalLineBreak)
 	{
 		std::fstream file;
 		file.open(filename,std::ios::app);
@@ -65,7 +65,7 @@ namespace JSL
 	 * \param rowRelimiter The character(s) to be written at the end of each row *including* the final row. This will probably be a linebreak!
 	*/
 	template<class T>
-	void writeMatrixToFile(const std::string & filename, const std::vector<std::vector<T>> contentMatrix, const std::string & columnDelimiter, const std::string & rowDelimiter)
+	void inline writeMatrixToFile(const std::string & filename, const std::vector<std::vector<T>> contentMatrix, const std::string & columnDelimiter, const std::string & rowDelimiter)
 	{
 		std::fstream file;
 		file.open(filename,std::ios::app);

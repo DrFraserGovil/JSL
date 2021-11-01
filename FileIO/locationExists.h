@@ -11,7 +11,7 @@ namespace JSL
 	 * \param filename the name of the file or directory to be checked
 	 * \returns true if location exists (and is accessible), false if not
 	*/ 
-	bool locationExists(const std::string & filename)
+	bool inline locationExists(const std::string & filename)
 	{
 		struct stat buffer;   
 		return (stat (filename.c_str(), &buffer) == 0); 

@@ -322,7 +322,7 @@ namespace JSL
 	}
 	
 		
-	bool MatrixSizesEqual(const Matrix & m1, const Matrix & m2)
+	bool inline MatrixSizesEqual(const Matrix & m1, const Matrix & m2)
 	{
 		return (m1.Rows() == m2.Rows() && m1.Columns() == m2.Columns() );
 	}	

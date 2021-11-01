@@ -689,7 +689,7 @@ namespace JSL_Testing
 	};
 
 	
-	void RunAllTests()
+	void inline RunAllTests()
 	{
 		std::cout << "Beginning testing of all JSL objects...\n" << std::endl;
 		
