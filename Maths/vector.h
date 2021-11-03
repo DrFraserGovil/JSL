@@ -207,6 +207,17 @@ namespace JSL
 				}
 				return *this;
 			}
+			
+			//!Reports true if any members are NaN
+			bool isnan()
+			{
+				bool isnan = false;
+				for (int i = 0; i < nElements; ++i)
+				{
+					isnan = isnan || std::isnan(Data[i]);
+				}
+				return isnan;
+			}
 		protected:
 			std::vector<double> Data;
 						
