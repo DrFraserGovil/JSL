@@ -126,6 +126,20 @@ namespace JSL
 				}
 				return outString;
 			}
+			std::string to_string_precision(const int n) const
+			{
+				std::ostringstream out;
+				out.precision(n);
+				for (int i = 0; i < nElements; ++i)
+				{
+					out << std::fixed << Data[i];
+					if (i < nElements - 1)
+					{
+						out << ", ";
+					}
+				}
+			    return out.str();
+			}
 		
 			//! In-place addition of two vectors. Calls Vector operator+(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be accumulated into the current object. Must be the same nElements as the calling object. \returns A reference to the now-modified calling object
 			Vector & operator+=(const Vector & rhs)
