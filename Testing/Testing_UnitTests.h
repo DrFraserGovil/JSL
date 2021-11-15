@@ -673,8 +673,7 @@ namespace JSL_Testing
 		MatrixTest matT;
 		matT.Results();
 		
-		QuaternionTest qT;
-		qT.Results();
+
 		
 		std::cout << "\nTesting complete." << std::endl;
 		
