@@ -20,7 +20,10 @@ namespace JSL
 	{
 		public:
 			
-			
+			Vector(): nElements(0)
+			{
+				Data = std::vector<double>(0.0,0.0);
+			}
 			
 			//!Initialises the vector to a state of length n, populated by zeros \param n The length of the vector to be created
 			Vector(int n): nElements(n)
