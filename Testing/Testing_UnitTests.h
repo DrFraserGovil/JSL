@@ -648,45 +648,6 @@ namespace JSL_Testing
 			}
 	};
 	
-	class QuaternionTest : public JSL::UnitTest
-		{
-		public:
-			QuaternionTest()
-			{
-				Name = "JSL::Quaternion";
-				NonCriticalFailure = false;
-				MessageBuffer.resize(0);
-				BufferedTest();
-			}
-			
-			
-			
-			void Run_Test()
-			{
-				Passed = true;
-
-				JSL::Quaternion a = JSL::Quaternion::Random(); 
-				JSL::Quaternion b = JSL::Quaternion::Random();
-				JSL::Quaternion c = JSL::Quaternion::Random();
-				
-				
-				std::cout << "a = " << a << std::endl; 
-				std::cout << "b = " << b << std::endl;
-				std::cout << "c = " << c << std::endl;
-				
-
-				//~ JSL::Matrix La = Q.LeftMultiplicationMatrix();
-				//~ JSL::Matrix LaB = Q.Conjugate().LeftMultiplicationMatrix();
-				
-				//~ JSL::Matrix Rb = Q2.RightMultiplicationMatrix();
-				//~ JSL::Matrix RbB = Q2.Conjugate().RightMultiplicationMatrix();
-				
-				//~ std::cout << "\n\n R(bar)L = " <<  RbB * La<< std::endl;
-				//~ std::cout << "\n\n RL(bar) = " << Rb * LaB << std::endl;
-				
-				//~ std::cout << "\n\n RL - LR = " << LR - RL << std::endl;
-			}
-	};
 
 	
 	void inline RunAllTests()
