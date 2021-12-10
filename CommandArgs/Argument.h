@@ -113,9 +113,9 @@ namespace JSL
 			}
 			
 			//! Annoying const version
-			const operator T()
+			operator T() const
 			{
-				return Value;
+				return Value
 			}
 			
 		private:
