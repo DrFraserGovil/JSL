@@ -112,6 +112,12 @@ namespace JSL
 				return Value;
 			}
 			
+			//! Annoying const version
+			const operator T()
+			{
+				return Value;
+			}
+			
 		private:
 			//!Some Triggers are disallowed - they usually are protected names such as "help", though other properties may trigger this funciton to throw an error.
 			
