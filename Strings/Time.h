@@ -18,7 +18,7 @@ namespace JSL
 		auto now = std::chrono::system_clock::now();
 		std::time_t now_t = std::chrono::system_clock::to_time_t(now);
 		std::ostringstream out;
-		out << "Current time is: ";
+		//~ out << "Current time is: ";
 		out << std::ctime(&now_t);
 		return out.str();
 	}
