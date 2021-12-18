@@ -138,7 +138,7 @@ namespace JSL
 				}
 			}
 			
-			void StreamTo(std::string & stream, std::string delimiter)
+			void StreamTo(std::stringstream & stream, std::string delimiter)
 			{
 				stream << TriggerString << ", " << Value;
 			}
