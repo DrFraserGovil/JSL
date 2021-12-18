@@ -53,7 +53,7 @@ namespace JSL
 			}
 			
 			//!Constructor which initialises the #TriggerString and #Value members. \param defaultValue The initialisation value of #Value - overridden if Parse() is called. \param trigger The value of #TriggerString, and the "name" of this parameter 
-			Argument(T defaultValue) : ArgumentInterface(trigger)
+			Argument(T defaultValue,std::string trigger) : ArgumentInterface(trigger)
 			{
 				Value = defaultValue;
 				//~ TriggerString = trigger;
