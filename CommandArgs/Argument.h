@@ -28,7 +28,7 @@ namespace JSL
 			//!The chosen "Name" of the Argument - the string which will trigger the Parse() function to write in the passed value
 			const std::string TriggerString;
 		
-			virtual void StreamTo(std::stringstream & stream, std::string delimiter);
+			virtual void StreamTo(std::stringstream & stream, std::string delimiter){};
 	};
 	
 	
