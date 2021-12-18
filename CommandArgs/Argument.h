@@ -13,6 +13,8 @@ namespace JSL
 	{
 		public:
 			
+			ArgumentInterface(std::string string) : TriggerString(string) {};
+			 
 			//!Virtual alias for Argument::Parse()
 			virtual void Parse( char * name, char * value){};
 			
@@ -21,9 +23,11 @@ namespace JSL
 			
 			//!Virtual alias for Argument::Configure()
 			virtual void Configure(std::string configFile, char configDelimiter){};
-		protected:
+			
 			//!The chosen "Name" of the Argument - the string which will trigger the Parse() function to write in the passed value
-			std::string TriggerString;
+			const std::string TriggerString;
+		
+			
 	};
 	
 	
@@ -43,35 +47,34 @@ namespace JSL
 			Argument(){};
 			
 			//!Constructor initialising the #TriggerString. Value is set to uninitialised memory of the Template type. \param trigger The value of #TriggerString, and the "name" of this parameter 
-			Argument(std::string trigger)
+			Argument(std::string trigger) : ArgumentInterface(trigger)
 			{
-				TriggerString = trigger;
 				CheckForInvalidTriggers();
 			}
 			
 			//!Constructor which initialises the #TriggerString and #Value members. \param defaultValue The initialisation value of #Value - overridden if Parse() is called. \param trigger The value of #TriggerString, and the "name" of this parameter 
-			Argument(T defaultValue, std::string trigger)
+			Argument(T defaultValue) : ArgumentInterface(trigger)
 			{
 				Value = defaultValue;
-				TriggerString = trigger;
+				//~ TriggerString = trigger;
 				CheckForInvalidTriggers();
 			}
 			
 			//!Constructor which initialises as per #Argument(T defaultValue, std::string trigger), but which also immediately calls ListParse() to check for assignment \param defaultValue The initialisation value of #Value - overridden if Parse() is called. \param trigger The value of #TriggerString, and the "name" of this parameter \param argc The number of commandline arguments \param argv[] the command line list
-			Argument(T defaultValue, std::string trigger, int argc, char * argv[])
+			Argument(T defaultValue, std::string trigger, int argc, char * argv[]) : ArgumentInterface(trigger)
 			{
 				Value = defaultValue;
-				TriggerString = trigger;
+				//~ TriggerString = trigger;
 				
 				ListParse(argc,argv);
 				CheckForInvalidTriggers();
 			}
 			
 			//!Constructor which initialises as per #Argument(T defaultValue, std::string trigger), but which also immediately calls Configure() to check for assignment \param defaultValue The initialisation value of #Value - overridden if Parse() is called. \param trigger The value of #TriggerString, and the "name" of this parameter \param configFile The path to the file to open and parse for configuration data \param configDelimiter The delimiter used to separate Name/Value pairs in the cofiguration file
-			Argument(T defaultValue, std::string trigger, std::string configFile, char configDelimiter)
+			Argument(T defaultValue, std::string trigger, std::string configFile, char configDelimiter) : ArgumentInterface(trigger)
 			{
 				Value = defaultValue;
-				TriggerString = trigger;
+				//~ TriggerString = trigger;
 				Configure(configFile, configDelimiter);
 				CheckForInvalidTriggers();
 			}
