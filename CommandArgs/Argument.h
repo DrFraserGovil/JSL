@@ -2,6 +2,7 @@
 #include <string>;
 #include <stdexcept>
 #include "../FileIO/FileIO.h";
+#include <sstream>
 
 namespace JSL
 {
@@ -27,7 +28,7 @@ namespace JSL
 			//!The chosen "Name" of the Argument - the string which will trigger the Parse() function to write in the passed value
 			const std::string TriggerString;
 		
-			
+			virtual void StreamTo(std::stringstream & stream, std::string delimiter);
 	};
 	
 	
@@ -135,6 +136,11 @@ namespace JSL
 						throw std::invalid_argument(TriggerString + " is a protected triggername");
 					}
 				}
+			}
+			
+			void StreamTo(std::string & stream, std::string delimiter)
+			{
+				stream << TriggerString << ", " << Value;
 			}
 			
 			//!Virtual override for template-specific AssignValue calls. Most template types will require a custom handler to convert value into the chosen template type -- some default ones are provided below.
