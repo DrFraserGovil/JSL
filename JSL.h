@@ -11,6 +11,6 @@ It shouldn't be of any interest to anyone else, but just in case, it is distribu
 #include "Strings/Strings.h"
 #include "CommandArgs/CommandArgs.h"
 #include "Maths/Maths.h"
-
+#include "Vector/Vector.h"
 #include "Testing/Testing.h"
 
