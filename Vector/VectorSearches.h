@@ -17,7 +17,7 @@ namespace JSL
 			}
 		}
 		return -1;
-	}
+	};
 	
 	template <typename T>
 	std::vector<size_t> SortIndices(const std::vector<T> &v) {
@@ -34,7 +34,7 @@ namespace JSL
 	       [&v](size_t i1, size_t i2) {return v[i1] < v[i2];});
 	
 	  return idx;
-	}
+	};
 	
 	
 	
@@ -60,5 +60,5 @@ namespace JSL
 			}
 		}
 		return id;
-	}
+	};
 }
