@@ -7,7 +7,7 @@ namespace JSL
 {
 	//gets first id such that y[id] == x. If no such id exists, returns negative value
 	template<class T>
-	int FindXInY(T x, const std::vector<T> & y)
+	inline int FindXInY(T x, const std::vector<T> & y)
 	{
 		for (int j = 0; j < y.size(); ++j)
 		{
@@ -20,7 +20,7 @@ namespace JSL
 	};
 	
 	template <typename T>
-	std::vector<size_t> SortIndices(const std::vector<T> &v) {
+	inline  std::vector<size_t> SortIndices(const std::vector<T> &v) {
 	
 	  // initialize original index locations
 	  std::vector<size_t> idx(v.size());
@@ -39,7 +39,7 @@ namespace JSL
 	
 	
 	//!Similar to FindXInY except where you do not expect an exact match. Searches through an (assumed sorted) vector and locates the first value greater than or equal to the target value, else returns the index of the final value in the array
-	int UpperBoundLocator(double val, const std::vector<double> & valArray)
+	inline int UpperBoundLocator(double val, const std::vector<double> & valArray)
 	{
 		int id = 0;
 		bool stillSearching = true;
