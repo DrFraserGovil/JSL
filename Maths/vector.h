@@ -4,6 +4,7 @@
 #include <string.h>
 #include <iostream>
 #include <math.h>
+#include <ostream>
 
 namespace JSL
 {

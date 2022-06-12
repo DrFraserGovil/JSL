@@ -1,7 +1,8 @@
 #pragma once
-#include <string>;
+#include <string>
 #include <stdexcept>
-#include "../FileIO/FileIO.h";
+#include <math.h>
+#include "../FileIO/FileIO.h"
 #include <sstream>
 
 namespace JSL

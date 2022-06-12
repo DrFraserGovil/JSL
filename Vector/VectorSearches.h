@@ -1,7 +1,7 @@
 #pragma once
 #include <numeric>      // std::iota
 #include <algorithm>  
-
+#include <math.h>
 
 namespace JSL
 {
