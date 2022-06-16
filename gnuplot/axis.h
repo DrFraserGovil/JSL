@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../FileIO/FileIO.h"
 #include "PlotData.h"
+#include "../System/System.h"
 namespace JSL
 {
 	class Axis
@@ -27,7 +28,7 @@ namespace JSL
 			template<typename T, typename S>
 			void Plot(const std::vector<T> & x,const std::vector<S>  & y)
 			{
-				assert(x.size()==y.size());
+				Assert("Can only plot vectors of equal size",x.size()==y.size());
 				std::string name = NewData();
 				WriteData(name,x,y);
 				Data.push_back(PlotData(name,Line));
@@ -36,7 +37,7 @@ namespace JSL
 			template<typename T, typename S>
 			void Scatter(const std::vector<T> & x,const std::vector<S>  & y)
 			{
-				assert(x.size()==y.size());
+				Assert("Scatter only works on vectors of equal size",x.size()==y.size());
 				std::string name = NewData();
 				WriteData(name,x,y);
 				Data.push_back(PlotData(name,ScatterStar));

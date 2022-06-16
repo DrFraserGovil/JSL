@@ -2,6 +2,7 @@
 #include <vector>
 #include "axis.h"
 #include "../FileIO/FileIO.h"
+#include "../System/System.h"
 namespace JSL
 {
 	class gnuplot
@@ -9,7 +10,10 @@ namespace JSL
 		public:
 			gnuplot()
 			{
-				DirName = "gnuplot_tmp_" + std::to_string(rand());
+				DirName = "gnuplot_tmp";
+				#ifdef JSL_MULTIPLE_GNUPLOT_INSTANCE
+					DirName += "_" + std::to_string(rand());
+				#endif
 				axis = Axis(DirName);
 				mkdir(DirName);
 			};
@@ -82,8 +86,7 @@ namespace JSL
 						}
 					}
 				}
-				std::string command = "gnuplot -p " + gpFile;
-				std::system(command.c_str());	
+				systemCall("gnuplot -p " + gpFile);
 			};
 
 			std::vector<Axis> & operator[](int i)

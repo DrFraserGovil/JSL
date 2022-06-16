@@ -3,6 +3,7 @@
 #include <string>
 #include "locationExists.h"
 #include <stdexcept>
+#include "../System/System.h"
 namespace JSL
 {
 	
@@ -13,35 +14,13 @@ namespace JSL
 	*/
 	void inline rm(std::string location, bool recursive)
 	{
-		bool fileExists = JSL::locationExists(location);
-		
-		if (fileExists)
+		std::string command = "rm ";
+		if (recursive)
 		{
-			try
-			{
-				std::string command = "rm ";
-				if (recursive)
-				{
-					command += "-r ";
-				}
-				command.append(location);
-				const char *commandChar = command.c_str(); 
-				const int dir_err = system(commandChar);
-			}
-			catch (const std::exception& e)
-			{
-				std::string error = "\n\n\nERROR: A problem was encountered trying to remove " + location + ". Error message is as follows\n";
-				error = error + std::string(e.what());
-				
-				throw std::runtime_error(error);
-			}
+			command += "-r ";
 		}
-		else
-		{
-			std::string error =  location + " does not exist. Could not rm this file. Termination will commence";
-			throw std::runtime_error(error);
-		}
-		
+		command += location;
+		systemCall(command);	
 	}
 	
 	
