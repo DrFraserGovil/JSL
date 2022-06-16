@@ -7,8 +7,8 @@ namespace JSL
 
 
 	
-	enum ErrorCode {JSLError, SystemError, OverrunError, FailedAssertion};
-	std::vector<std::string> ErrorNames = {"ERROR", "SYSTEM ERROR", "OVERRUN ERROR", "FAILED ASSERTION"};
+	enum ErrorCode {JSLError, SystemError, OverrunError, FailedAssertion,IOError};
+	std::vector<std::string> ErrorNames = {"ERROR", "SYSTEM ERROR", "OVERRUN ERROR", "FAILED ASSERTION","IOError"};
 	
 	/*!
 		Design

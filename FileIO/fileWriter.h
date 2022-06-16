@@ -2,6 +2,7 @@
 #include "string.h"
 #include <fstream>
 #include <iostream>
+#include "../System/System.h"
 namespace JSL
 {	
 	/*! 
@@ -97,7 +98,7 @@ namespace JSL
 	 * \param filename The target file location
 	 * \param delimiter The character(s) to be written after every individual vecs entry *except* the final entry on each row, which is a linebreak.
 	 * \param v1 The first vector to be written to file
-	 * \param vecs A variadic template for any number of additional vectors, of any type (said type must have support for the streaming operator, <<). All vecs must be the same length
+	 * \param vecs A variadic template for any number (including 0) of additional vectors, of any type (said type must have support for the streaming operator, <<). All vecs must be the same length
 	*/
 	template<typename T, typename... Ts>
 	void inline writeMultiVectorToFile(const std::string & filename, const std::string & delimiter, const std::vector<T>& v1, const std::vector<Ts>&...  vecs)
@@ -106,11 +107,7 @@ namespace JSL
 		if  constexpr (sizeof...(vecs) > 0)
 		{	
 			bool allEqual = internal::variadicLengthEquality(v1.size(),vecs...);
-			if (!allEqual)
-			{
-				std::cout << "JSL::VECTOR_LENGTH_ERROR: You called an aligned-write function (writeMultiVectorToFile) on a set of vectors with different sizes" << std::endl;
-				exit(5);
-			}
+			Assert("All vectors in writeMultiVectorToFile should be of the same length",allEqual);
 		}
 		int N = v1.size();
 		std::fstream file;

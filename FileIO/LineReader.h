@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "../Strings/split.h"
-
+#include "../System/System.h"
 
 /*!
 	Iterates through the file line-by-line (until EOF), saving the current line to ``std::string FILE_LINE``
@@ -20,8 +20,7 @@
 		std::ifstream macroFile(macroFileName);	\
 		if (!macroFile.is_open())	\
 		{							\
-			std::cout << "\n\nERROR: Could not find the file '" << macroFileName << ".\n\nPlease provide a valid filepath.\n\n " << std::endl;	\
-			exit(1);				\
+			JSL::Error(JSL::IOError,"Could not find the file '" + macroFileName + ".\n\nPlease provide a valid filepath.");\
 		}							\
 		std::string FILE_LINE;				\
 		while (getline(macroFile,FILE_LINE))	\

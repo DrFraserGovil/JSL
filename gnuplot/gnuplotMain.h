@@ -91,14 +91,13 @@ namespace JSL
 
 			std::vector<Axis> & operator[](int i)
 			{
-				std::cout << "Indexing " << i << " out of " << subAxes.size() << std::endl;
 				if (subAxes.size() == 0)
 				{
 					if (i != 0)
 					{
-						std::cout << "ERROR -- you cannot index into subplots before intialising" << std::endl;
+						std::cout << "ERROR -- " << std::endl;
 						CleanupTempFiles();
-						exit(5);
+						Error(OverrunError, "you cannot index into subplots before intialising");
 					}
 				}
 				return subAxes[i];
