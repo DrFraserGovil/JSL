@@ -1,6 +1,7 @@
 #pragma once
 #include "string.h"
 #include <fstream>
+#include <iostream>
 namespace JSL
 {	
 	/*! 
@@ -57,6 +58,71 @@ namespace JSL
 		file.close();
 	} 
 	
+	namespace internal
+	{
+		/*!
+			* This is a helper function for writeMultiVectorToFile, and performs the recursive looping over the variadic vector templates.
+		*/
+		template<typename T, typename... Ts>
+		void inline variadicVectorPrint(std::fstream& os, const std::string & delimiter, int i, const std::vector<T>& first, const std::vector<Ts>&... args)
+		{
+			os << first[i];
+			if constexpr (sizeof...(args) > 0)
+			{
+				os << delimiter;
+				variadicVectorPrint(os,delimiter,i,args...); // shunts the remaining args one element over, so the second element becomes "first", and hence recursively loops until no elements left in args
+			}
+			else
+			{
+				os << "\n";
+			}
+		}
+
+		template<typename T, typename...Ts>
+		bool inline variadicLengthEquality(size_t length, const std::vector<T> & first, const std::vector<Ts>&...args)
+		{
+			if constexpr (sizeof...(args) > 0)
+			{
+				
+				return (first.size() == length) &&  variadicLengthEquality(length,args...);
+			}
+			else
+			{
+				return first.size() == length;
+			}
+		}
+	}
+	/*!
+	 * As with writeVectorToFile, but accepts arbitrary vectors of templated entities. The writing loops over the length of the vectors (which must all be the same length), and writes them sequentially, separated by the delimiter, and a linebreak at the end of each row -- i.e v1[0], v2[0], v3[0], ... (linebreak) v1[1], v2[1], ... etc.
+	 * \param filename The target file location
+	 * \param delimiter The character(s) to be written after every individual vecs entry *except* the final entry on each row, which is a linebreak.
+	 * \param v1 The first vector to be written to file
+	 * \param vecs A variadic template for any number of additional vectors, of any type (said type must have support for the streaming operator, <<). All vecs must be the same length
+	*/
+	template<typename T, typename... Ts>
+	void inline writeMultiVectorToFile(const std::string & filename, const std::string & delimiter, const std::vector<T>& v1, const std::vector<Ts>&...  vecs)
+	{
+		
+		if  constexpr (sizeof...(vecs) > 0)
+		{	
+			bool allEqual = internal::variadicLengthEquality(v1.size(),vecs...);
+			if (!allEqual)
+			{
+				std::cout << "JSL::VECTOR_LENGTH_ERROR: You called an aligned-write function (writeMultiVectorToFile) on a set of vectors with different sizes" << std::endl;
+				exit(5);
+			}
+		}
+		int N = v1.size();
+		std::fstream file;
+		file.open(filename,std::ios::app);
+		for (int i = 0; i < N; ++i)
+		{
+			internal::variadicVectorPrint(file,delimiter,i,v1,vecs...);			
+		}
+		file.close();
+	}
+
+
 	/*!
 	 * As with writeStringToFile and writeVectorToFile, but accepts a vector<vector> of templated entities. The writing loops over the outer vector (the rows), and then at each step, the inner vectors(the columns). Writing them one at a time, separated by the delimiter objects. Objects need not be square matrices to be successfully written. 
 	 * \param filename The target file location

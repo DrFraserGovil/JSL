@@ -4,7 +4,7 @@ Test/
 makefile
 # Prerequisites
 *.d
-
+*.vscode
 */_build/*
 
 # Compiled Object files
