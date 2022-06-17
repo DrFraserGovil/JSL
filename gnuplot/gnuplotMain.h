@@ -14,7 +14,9 @@ namespace JSL
 				#ifdef JSL_MULTIPLE_GNUPLOT_INSTANCE
 					DirName += "_" + std::to_string(rand());
 				#endif
-				axis = Axis(DirName);
+				Axes = {{Axis(DirName)}};
+				axis_x = 0;
+				axis_y = 0;
 				mkdir(DirName);
 			};
 			~gnuplot()
@@ -24,10 +26,10 @@ namespace JSL
 
 			void SetMultiplot(int yCount, int xCount)
 			{
-				subAxes = std::vector<std::vector<Axis>>(yCount);
+				Axes = std::vector<std::vector<Axis>>(yCount);
 				for (int i = 0; i < yCount; ++i)
 				{
-					subAxes[i] = std::vector<Axis>(xCount,DirName);
+					Axes[i] = std::vector<Axis>(xCount,DirName);
 				}
 
 			}
@@ -38,84 +40,83 @@ namespace JSL
 			};
 			void SetAxis(int idx)
 			{
-				axis_x = idx % subAxes.size();
-				axis_y = (idx - axis_x)/(subAxes.size());
-				std::cout << axis_y << "  " << axis_x << std::endl;
+				axis_y = idx  / Axes[0].size();
+				axis_x = idx % Axes[0].size();	
 			};
 			template<typename T, typename S>
 			void Plot(const std::vector<T> & x,const std::vector<S>  & y)
 			{
-				if (subAxes.size() == 0)
-				{
-					axis.Plot(x,y);
-				}
-				else
-				{
-					subAxes[axis_y][axis_x].Plot(x,y);
-				}			
+				Axes[axis_y][axis_x].Plot(x,y);			
 			};
 			template<typename T, typename S>
 			void Scatter(const std::vector<T> & x,const std::vector<S>  & y)
 			{
-				if (subAxes.size() == 0)
-				{
-					axis.Scatter(x,y);
-				}
-				else
-				{
-					subAxes[axis_y][axis_x].Scatter(x,y);
-				}	
+				Axes[axis_y][axis_x].Scatter(x,y);	
 			};
 			void Show()
 			{
 				std::string gpFile = DirName + "/" + "plotter.gp";
 				InitialiseOutput(gpFile);
 
-				if (subAxes.size() == 0)
-				{
-					writeStringToFile(gpFile,axis.Show());
-				}
-				else
+				if (Axes.size() > 0 || Axes[0].size() > 0)
 				{
 					WriteMultiplotToFile(gpFile);
-					for (int i =0; i < subAxes.size(); ++i)
+				}
+				for (int i =0; i < Axes.size(); ++i)
+				{
+					for (int j = 0; j < Axes[i].size(); ++j)
 					{
-						for (int j = 0; j < subAxes[i].size(); ++j)
-						{
-							writeStringToFile(gpFile,subAxes[i][j].Show());
-						}
+						writeStringToFile(gpFile,Axes[i][j].Show());
 					}
 				}
+				
 				systemCall("gnuplot -p " + gpFile);
 			};
 
 			std::vector<Axis> & operator[](int i)
 			{
-				if (subAxes.size() == 0)
-				{
-					if (i != 0)
-					{
-						std::cout << "ERROR -- " << std::endl;
-						CleanupTempFiles();
-						Error(OverrunError, "you cannot index into subplots before intialising");
-					}
-				}
-				return subAxes[i];
+				return Axes[i];
 			};
 			void xrange(double min,double max)
 			{
-				axis.xrange(min,max);
+				Axes[axis_y][axis_x].xrange(min,max);
 			}
 			void yrange(double min, double max)
 			{
-				axis.yrange(min,max);
+				Axes[axis_y][axis_x].yrange(min,max);
+			}
+
+			void WindowSize(int width, int height)
+			{
+				defaultSize = false;
+				windowWidth = width;
+				windowHeight = height;
+			}
+
+			void SetTerminal(std::string t)
+			{
+				terminal = t;
+			}
+			void SetOutput(std::string out)
+			{
+				output = out;
+			}void SetFont(std::string f)
+			{
+				font = f;
 			}
 		private:
-			Axis axis;
-			std::vector<std::vector<Axis>> subAxes;
+		
+			std::vector<std::vector<Axis>> Axes;
 			std::string DirName;
 			int axis_x;
 			int axis_y;
+
+			std::string terminal = "qt";
+			std::string output = "__null__";
+			std::string font = "Geneva,9";
+			bool defaultSize = true;
+			int windowWidth;
+			int windowHeight;
 			void CleanupTempFiles()
 			{
 				rm(DirName,true);
@@ -126,7 +127,18 @@ namespace JSL
 				initialiseFile(outName);
 				std::string introMessage = "#This is a temporary gnuplot script constructed by the JSL::gnuplot library\n#It should delete itself after being called. If it has not, then an error has occured. \n#You may delete this file and the directory containing it without problem.\n";
 
-				introMessage += "set term qt font \"Geneva,9\"\n"; //needed because mac hates me
+				introMessage += "set terminal " + terminal;
+				introMessage += " font \"" + font +"\""; //needed because mac hates me
+				if (!defaultSize)
+				{
+					introMessage += " size " + std::to_string(windowWidth) + "," + std::to_string(windowHeight) + "\n";
+				}
+				introMessage += "\n";
+				if (output != "__null__")
+				{
+					introMessage += "set output \"" + output + "\"\n";
+				}
+				
 				// introMessage += "set terminal cairo\n";
 				writeStringToFile(outName,introMessage);				
 
@@ -134,7 +146,7 @@ namespace JSL
 			void WriteMultiplotToFile(std::string gpFile)
 			{
 				std::string multiplotInfo = "\nset multiplot layout ";
-				multiplotInfo += std::to_string(subAxes.size()) + "," + std::to_string(subAxes[0].size());
+				multiplotInfo += std::to_string(Axes.size()) + "," + std::to_string(Axes[0].size());
 				multiplotInfo += "\\\n";
 				multiplotInfo += "\tmargins 0.1,0.98,0.1,0.98 \\\n\t spacing 0.08,0.08\n\n";
 				writeStringToFile(gpFile,multiplotInfo);
