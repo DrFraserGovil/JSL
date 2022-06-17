@@ -25,23 +25,30 @@ namespace JSL
 				DataIdx = 0;
 			}
 
-			template<typename T, typename S>
-			void Plot(const std::vector<T> & x,const std::vector<S>  & y)
-			{
-				Assert("Can only plot vectors of equal size",x.size()==y.size());
-				std::string name = NewData();
-				WriteData(name,x,y);
-				Data.push_back(PlotData(name,Line));
-			};
-
-			template<typename T, typename S>
-			void Scatter(const std::vector<T> & x,const std::vector<S>  & y)
+			template<class T, class S, typename... Ts>
+			PlotData & Plot(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args)
 			{
 				Assert("Scatter only works on vectors of equal size",x.size()==y.size());
 				std::string name = NewData();
 				WriteData(name,x,y);
-				Data.push_back(PlotData(name,ScatterStar));
+
+				Data.push_back(PlotData(name,DataIdx,Line,args...));
+
+				return Data[Data.size()-1];
 			};
+
+			template<class T, class S, typename... Ts>
+			PlotData & Scatter(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args)
+			{
+				Assert("Scatter only works on vectors of equal size",x.size()==y.size());
+				std::string name = NewData();
+				WriteData(name,x,y);
+
+				Data.push_back(PlotData(name,DataIdx,ScatterPoint,args...));
+
+				return Data[Data.size()-1];
+			};
+			
 
 			std::string Show()
 			{
@@ -49,22 +56,15 @@ namespace JSL
 				AddProperty("set title \"" + Title + "\"");
 				AddProperty("set xlabel \"" + xlabel + "\"");
 				AddProperty("set ylabel \"" + ylabel + "\"");
-				if (range_x.size() == 2)
+				std::string key_cmd = "set key";
+				if (!legendActive)
 				{
-					AddProperty("set xrange [" + std::to_string(range_x[0]) + ":" + std::to_string(range_x[1]) + "]");
+					key_cmd = "un" + key_cmd;
 				}
-				else
-				{
-					AddProperty("set xrange [*:*]");
-				}
-				if (range_y.size() == 2)
-				{
-					AddProperty("set yrange [" + std::to_string(range_y[0]) + ":" + std::to_string(range_y[1]) + "]");
-				}
-				else
-				{
-					AddProperty("set yrange [*:*]");
-				}
+				AddProperty(key_cmd);
+				RangeSetter("x",range_x);
+				RangeSetter("y",range_y);
+				
 				if (DataIdx > 0)
 				{
 					WriteCommand += "plot ";
@@ -75,6 +75,7 @@ namespace JSL
 				}
 				else
 				{
+					//creates an empty axis - else gnuplot skips them and the alignment gets all messed up
 					AddProperty("set xrange [0:1]\nset yrange[0:1]\nset key off\nplot 5\n\n");
 				}
 				return WriteCommand;
@@ -88,9 +89,14 @@ namespace JSL
 			{
 				range_y = {min,max};
 			}
+			void HasLegend(bool state)
+			{
+				legendActive = state;
+			}
 		private:
 			std::string DataDir;
 			std::vector<PlotData> Data;
+			bool legendActive = false;
 			int DataIdx;
 			std::string WriteCommand;
 			std::string NewData()
@@ -113,5 +119,16 @@ namespace JSL
 			{
 				WriteCommand += Data[i].Write();
 			};
+
+			void RangeSetter(const std::string & axisPrefix, const std::vector<double> & range)
+			{
+				std::string val = "[*:*]";
+				if (range.size() == 2)
+				{
+					val = "[" + std::to_string(range_x[0]) + ":" + std::to_string(range_x[1]) + "]";
+				}
+				std::string cmd = "set " + axisPrefix + "range " + val;
+				AddProperty(cmd);
+			}
 	};
 };

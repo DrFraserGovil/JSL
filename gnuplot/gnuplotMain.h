@@ -43,16 +43,27 @@ namespace JSL
 				axis_y = idx  / Axes[0].size();
 				axis_x = idx % Axes[0].size();	
 			};
-			template<typename T, typename S>
-			void Plot(const std::vector<T> & x,const std::vector<S>  & y)
+			template<class T, class S>
+			PlotData & Plot(const std::vector<T> & x,const std::vector<S>  & y)
 			{
-				Axes[axis_y][axis_x].Plot(x,y);			
+				return Axes[axis_y][axis_x].Plot(x,y);			
 			};
-			template<typename T, typename S>
-			void Scatter(const std::vector<T> & x,const std::vector<S>  & y)
+			template<class T, class S>//allows templating for non-vector objects which can nevertheless be successfully cast as vectors
+			PlotData & Plot(const T & x,const S  & y)
 			{
-				Axes[axis_y][axis_x].Scatter(x,y);	
+				return Axes[axis_y][axis_x].Plot((std::vector<double>)x,(std::vector<double>)y);			
 			};
+			template<class T, class S>
+			PlotData & Scatter(const std::vector<T> & x,const std::vector<S>  & y)
+			{
+				return Axes[axis_y][axis_x].Scatter(x,y);	
+			};
+			template<class T, class S>//allows templating for non-vector objects which can nevertheless be successfully cast as vectors
+			PlotData & Scatter(const T & x,const S  & y)
+			{
+				return Axes[axis_y][axis_x].Scatter((std::vector<double>)x,(std::vector<double>)y);			
+			};
+
 			void Show()
 			{
 				std::string gpFile = DirName + "/" + "plotter.gp";
@@ -100,9 +111,14 @@ namespace JSL
 			void SetOutput(std::string out)
 			{
 				output = out;
-			}void SetFont(std::string f)
+			}
+			void SetFont(std::string f)
 			{
 				font = f;
+			}
+			void HasLegend(bool state)
+			{
+				Axes[axis_y][axis_x].HasLegend(state);
 			}
 		private:
 		
@@ -119,7 +135,9 @@ namespace JSL
 			int windowHeight;
 			void CleanupTempFiles()
 			{
-				rm(DirName,true);
+				#ifndef GNUPLOT_NO_TIDY
+					rm(DirName,true);
+				#endif
 			}
 
 			void InitialiseOutput(std::string outName)

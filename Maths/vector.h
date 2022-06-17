@@ -37,7 +37,11 @@ namespace JSL
 			{
 				
 			}
-			
+			//!Initialises the vector to contain the provided stl vector\param input An std::vector which the new Vector will envelop.
+			Vector(std::vector<int> input): nElements(input.size())
+			{
+				Data = std::vector<double>(input.begin(),input.end());
+			}
 			int Size() const
 			{
 				return nElements;
@@ -145,6 +149,12 @@ namespace JSL
 			    return out.str();
 			}
 		
+			//!Implicit conversion back to std::vector<double>
+			inline operator std::vector<double>() const
+			{
+				return Data;
+			};
+
 			//! In-place addition of two vectors. Calls Vector operator+(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be accumulated into the current object. Must be the same nElements as the calling object. \returns A reference to the now-modified calling object
 			Vector & operator+=(const Vector & rhs)
 			{
@@ -221,6 +231,19 @@ namespace JSL
 					isnan = isnan || std::isnan(Data[i]);
 				}
 				return isnan;
+			}
+
+			static Vector linspace(double start, double end, int length)
+			{
+				Vector out(length);
+				Assert("Endpoint of linspace must be after start point", end > start);
+				double delta = (end - start)/(length - 1);
+				for (int i = 0; i < length - 1; ++i)
+				{
+					out[i] = start + i * delta;
+				}
+				out[length-1] = end;
+				return out;
 			}
 		protected:
 			std::vector<double> Data;
@@ -428,4 +451,13 @@ namespace JSL
 		return os;
 	}
 	
+	Vector ElementWiseOperation(Vector input, double (*function)(double))
+	{
+		Vector out(input.Size());
+		for (int i = 0; i < input.Size();++i)
+		{
+			out[i] = function(input[i]);
+		}
+		return out;
+	}
 }
