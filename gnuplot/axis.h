@@ -59,19 +59,8 @@ namespace JSL
 				AddProperty("set xlabel \"" + xlabel + "\"");
 				AddProperty("set ylabel \"" + ylabel + "\"");
 
-				if (isLog_x || isLog_y)
-				{
-					std::string t = "";
-					if (isLog_x)
-					{
-						t+="x";
-					}
-					if (isLog_y)
-					{
-						t+="y";
-					}
-					AddProperty("set log " + t);
-				}
+				LogSetter("x",isLog_x);
+				LogSetter("y",isLog_y);
 
 				std::string key_cmd = "set key";
 				if (!legendActive)
@@ -153,6 +142,15 @@ namespace JSL
 				WriteCommand += Data[i].Write();
 			};
 
+			void LogSetter(const std::string & prefix, bool active)
+			{
+				std::string t = "set log " + prefix;
+				if (!active)
+				{
+					t = "un" + t;
+				}
+				AddProperty(t);
+			}
 			void RangeSetter(const std::string & axisPrefix, const std::vector<double> & range)
 			{
 				std::string val = "[*:*]";
