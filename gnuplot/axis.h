@@ -14,6 +14,8 @@ namespace JSL
 			std::string ylabel;
 			std::vector<double> range_x;
 			std::vector<double> range_y;
+			bool isLog_x = false;
+			bool isLog_y = false;
 			Axis(){};
 			Axis(std::string rootDir)
 			{
@@ -56,6 +58,21 @@ namespace JSL
 				AddProperty("set title \"" + Title + "\"");
 				AddProperty("set xlabel \"" + xlabel + "\"");
 				AddProperty("set ylabel \"" + ylabel + "\"");
+
+				if (isLog_x || isLog_y)
+				{
+					std::string t = "";
+					if (isLog_x)
+					{
+						t+="x";
+					}
+					if (isLog_y)
+					{
+						t+="y";
+					}
+					AddProperty("set log " + t);
+				}
+
 				std::string key_cmd = "set key";
 				if (!legendActive)
 				{
@@ -88,6 +105,22 @@ namespace JSL
 			void yrange(double min, double max)
 			{
 				range_y = {min,max};
+			}
+			void SetXLabel(std::string xl)
+			{
+				xlabel = xl;
+			}
+			void SetYLabel(std::string yl)
+			{
+				ylabel = yl;
+			}
+			void SetXLog(bool val)
+			{
+				isLog_x = val;
+			}
+			void SetYLog(bool val)
+			{
+				isLog_y = val;
 			}
 			void HasLegend(bool state)
 			{

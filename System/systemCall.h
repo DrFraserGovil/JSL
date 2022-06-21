@@ -6,7 +6,7 @@ namespace JSL
 {
 
 
-	void systemCall(const std::string & command)
+	inline void systemCall(const std::string & command)
 	{
 		int errorStatus = std::system(command.c_str());
 

@@ -43,15 +43,15 @@ namespace JSL
 				axis_y = idx  / Axes[0].size();
 				axis_x = idx % Axes[0].size();	
 			};
-			template<class T, class S>
-			PlotData & Plot(const std::vector<T> & x,const std::vector<S>  & y)
+			template<class T, class S, typename... Ts>
+			PlotData & Plot(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args)
 			{
-				return Axes[axis_y][axis_x].Plot(x,y);			
+				return Axes[axis_y][axis_x].Plot(x,y,args...);			
 			};
-			template<class T, class S>//allows templating for non-vector objects which can nevertheless be successfully cast as vectors
-			PlotData & Plot(const T & x,const S  & y)
+			template<class T, class S,typename... Ts>//allows templating for non-vector objects which can nevertheless be successfully cast as vectors
+			PlotData & Plot(const T & x,const S  & y, NameValuePair<Ts>... args)
 			{
-				return Axes[axis_y][axis_x].Plot((std::vector<double>)x,(std::vector<double>)y);			
+				return Axes[axis_y][axis_x].Plot((std::vector<double>)x,(std::vector<double>)y, args...);			
 			};
 			template<class T, class S>
 			PlotData & Scatter(const std::vector<T> & x,const std::vector<S>  & y)
@@ -96,7 +96,22 @@ namespace JSL
 			{
 				Axes[axis_y][axis_x].yrange(min,max);
 			}
-
+			void SetXLog(bool val)
+			{
+				Axes[axis_y][axis_x].SetXLog(val);
+			}
+			void SetYLog(bool val)
+			{
+				Axes[axis_y][axis_x].SetYLog(val);
+			}
+			void SetXLabel(std::string xl)
+			{
+				Axes[axis_y][axis_x].SetXLabel(xl);
+			}
+			void SetYLabel(std::string yl)
+			{
+				Axes[axis_y][axis_x].SetYLabel(yl);
+			}
 			void WindowSize(int width, int height)
 			{
 				defaultSize = false;

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <math.h>
 #include <ostream>
-
+#include "../System/System.h"
 namespace JSL
 {
 	//Forward declarations to make some of the weird circular stuff work --> these are defined in full later!
@@ -154,6 +154,11 @@ namespace JSL
 			{
 				return Data;
 			};
+			//!Implicit conversion back to std::vector<double>
+			inline operator std::vector<int>() const
+			{
+				return std::vector<int>(Data.begin(),Data.end());
+			};
 
 			//! In-place addition of two vectors. Calls Vector operator+(const Vector & lhs, const Vector & rhs) using this object as lhs. \param rhs The vector to be accumulated into the current object. Must be the same nElements as the calling object. \returns A reference to the now-modified calling object
 			Vector & operator+=(const Vector & rhs)
@@ -243,6 +248,21 @@ namespace JSL
 					out[i] = start + i * delta;
 				}
 				out[length-1] = end;
+				return out;
+			}
+			static Vector intspace(int start, int end, int step)
+			{
+				Assert("Endpoint of intspace must be after start point", end > start);
+				int length = (end - start)/step + 1;
+				Vector out(length);
+				int p= start;
+				int i = 0;
+				while (p <= end)
+				{
+					out[i] = p;
+					p+= step;
+					++i;
+				}
 				return out;
 			}
 		protected:
@@ -451,7 +471,7 @@ namespace JSL
 		return os;
 	}
 	
-	Vector ElementWiseOperation(Vector input, double (*function)(double))
+	inline Vector ElementWiseOperation(Vector input, double (*function)(double))
 	{
 		Vector out(input.Size());
 		for (int i = 0; i < input.Size();++i)

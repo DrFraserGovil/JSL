@@ -151,7 +151,7 @@ namespace JSL
 				{
 					case Line:
 					{
-						line += "with line ";
+						line += "with lines ";
 						line += "dt " + dashType;
 						break;
 					}
@@ -185,7 +185,17 @@ namespace JSL
 			{
 				
 				colour = "__null__";
-				dashType = "solid";
+				
+				switch (type)
+				{
+					case Line:
+						SetPenType(Solid);
+						break;
+					case ScatterPoint:
+						SetPenType(OpenCircle);
+						break;
+				};
+
 				penSize = 1;
 				legend = "Data " + std::to_string(Idx);
 			}
