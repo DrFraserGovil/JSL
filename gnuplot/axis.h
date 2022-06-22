@@ -6,10 +6,25 @@
 #include "../System/System.h"
 namespace JSL
 {
+	namespace Fonts
+	{
+		enum Target {Global,SuperTitle,Title,Label,Legend};
+
+		inline std::string SizeString(int size)
+		{
+			std::string out = "";
+			if (size > 0)
+			{
+				out = " font 	\"," + std::to_string(size) + "\"";
+			}
+			return out;
+		}
+	}
+
 	class Axis
 	{
 		public:
-			std::string Title;
+			std::string title;
 			std::string xlabel;
 			std::string ylabel;
 			std::vector<double> range_x;
@@ -21,7 +36,7 @@ namespace JSL
 			{
 				DataDir = rootDir + "/" + "axis_" + std::to_string(rand());
 				mkdir(DataDir);
-				Title = "Test";
+				title = "__null__";
 				xlabel = "x";
 				ylabel = "y";
 				DataIdx = 0;
@@ -55,10 +70,18 @@ namespace JSL
 			std::string Show()
 			{
 				WriteCommand = "\n\n";
-				AddProperty("set title \"" + Title + "\"");
-				AddProperty("set xlabel \"" + xlabel + "\"");
-				AddProperty("set ylabel \"" + ylabel + "\"");
+				if (title != "__null__")
+				{
+					AddProperty("set title \"" + title + "\"" + Fonts::SizeString(titleFontSize));
+				}
+				else
+				{
+					AddProperty("unset title");
+				}
 
+				AddProperty("set xlabel \"" + xlabel + "\"" + Fonts::SizeString(axisFontSize));
+				AddProperty("set ylabel \"" + ylabel + "\"" + Fonts::SizeString(axisFontSize));
+				AddProperty("set tics " + Fonts::SizeString(axisFontSize));
 				LogSetter("x",isLog_x);
 				LogSetter("y",isLog_y);
 
@@ -67,7 +90,7 @@ namespace JSL
 				{
 					key_cmd = "un" + key_cmd;
 				}
-				AddProperty(key_cmd);
+				AddProperty(key_cmd + Fonts::SizeString(legendFontSize));
 				RangeSetter("x",range_x);
 				RangeSetter("y",range_y);
 				
@@ -87,11 +110,11 @@ namespace JSL
 				return WriteCommand;
 			}
 
-			void xrange(double min, double max)
+			void SetXRange(double min, double max)
 			{
 				range_x = {min,max};
 			}
-			void yrange(double min, double max)
+			void SetYRange(double min, double max)
 			{
 				range_y = {min,max};
 			}
@@ -103,6 +126,16 @@ namespace JSL
 			{
 				ylabel = yl;
 			}
+			void SetXLabel(std::string xl, int size)
+			{
+				xlabel = xl;
+				axisFontSize = size;
+			}
+			void SetYLabel(std::string yl, int size)
+			{
+				ylabel = yl;
+				axisFontSize = size;
+			}
 			void SetXLog(bool val)
 			{
 				isLog_x = val;
@@ -111,11 +144,49 @@ namespace JSL
 			{
 				isLog_y = val;
 			}
-			void HasLegend(bool state)
+			void SetLegend(bool state)
 			{
 				legendActive = state;
 			}
+			void SetTitle(std::string tit)
+			{
+				title = tit;
+			}
+			void SetTitle(std::string tit, int size)
+			{
+				title = tit;
+				titleFontSize = size;
+			}
+
+			void SetFontSize(Fonts::Target target, unsigned int size)
+			{
+				switch (target)
+				{
+					case Fonts::Title:
+					{
+						titleFontSize = size;
+						break;
+					}
+					case Fonts::Label:
+					{
+						axisFontSize = size;
+						break;
+					}
+					case Fonts::Legend:
+					{
+						legendFontSize = size;
+						break;
+					}
+					default:
+					{
+						Error("Cannot set global or supertitle font size from within axis scope");
+					}
+				}
+			}
 		private:
+			int axisFontSize = -1;
+			int titleFontSize = -1;
+			int legendFontSize = -1;
 			std::string DataDir;
 			std::vector<PlotData> Data;
 			bool legendActive = false;
@@ -161,5 +232,7 @@ namespace JSL
 				std::string cmd = "set " + axisPrefix + "range " + val;
 				AddProperty(cmd);
 			}
+
+			
 	};
 };

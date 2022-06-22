@@ -31,6 +31,7 @@ namespace JSL
 				{
 					Axes[i] = std::vector<Axis>(xCount,DirName);
 				}
+				axisCount = xCount * yCount;
 
 			}
 			void SetAxis(int y, int x)
@@ -53,15 +54,15 @@ namespace JSL
 			{
 				return Axes[axis_y][axis_x].Plot((std::vector<double>)x,(std::vector<double>)y, args...);			
 			};
-			template<class T, class S>
-			PlotData & Scatter(const std::vector<T> & x,const std::vector<S>  & y)
+			template<class T, class S, typename... Ts>
+			PlotData & Scatter(const std::vector<T> & x,const std::vector<S>  & y,NameValuePair<Ts>... args)
 			{
-				return Axes[axis_y][axis_x].Scatter(x,y);	
+				return Axes[axis_y][axis_x].Scatter(x,y,args...);	
 			};
-			template<class T, class S>//allows templating for non-vector objects which can nevertheless be successfully cast as vectors
-			PlotData & Scatter(const T & x,const S  & y)
+			template<class T, class S, typename... Ts>//allows templating for non-vector objects which can nevertheless be successfully cast as vectors
+			PlotData & Scatter(const T & x,const S  & y,NameValuePair<Ts>... args)
 			{
-				return Axes[axis_y][axis_x].Scatter((std::vector<double>)x,(std::vector<double>)y);			
+				return Axes[axis_y][axis_x].Scatter((std::vector<double>)x,(std::vector<double>)y,args...);			
 			};
 
 			void Show()
@@ -88,13 +89,13 @@ namespace JSL
 			{
 				return Axes[i];
 			};
-			void xrange(double min,double max)
+			void SetXRange(double min,double max)
 			{
-				Axes[axis_y][axis_x].xrange(min,max);
+				Axes[axis_y][axis_x].SetXRange(min,max);
 			}
-			void yrange(double min, double max)
+			void SetYRange(double min, double max)
 			{
-				Axes[axis_y][axis_x].yrange(min,max);
+				Axes[axis_y][axis_x].SetXRange(min,max);
 			}
 			void SetXLog(bool val)
 			{
@@ -112,13 +113,41 @@ namespace JSL
 			{
 				Axes[axis_y][axis_x].SetYLabel(yl);
 			}
+			void SetXLabel(std::string xl,int size)
+			{
+				Axes[axis_y][axis_x].SetXLabel(xl, size);
+			}
+			void SetYLabel(std::string yl, int size)
+			{
+				Axes[axis_y][axis_x].SetYLabel(yl,size);
+			}
+			void SetLegend(bool state)
+			{
+				Axes[axis_y][axis_x].SetLegend(state);
+			}
 			void WindowSize(int width, int height)
 			{
 				defaultSize = false;
 				windowWidth = width;
 				windowHeight = height;
 			}
-
+			void SetTitle(std::string tit)
+			{
+				Axes[axis_y][axis_x].SetTitle(tit);
+			}
+			void SetTitle(std::string tit, int size)
+			{
+				Axes[axis_y][axis_x].SetTitle(tit, size);
+			}
+			void SetSuperTitle(std::string tit)
+			{
+				superTitle = tit;
+			}
+			void SetSuperTitle(std::string tit, int size)
+			{
+				superTitle = tit;
+				superTitleFontSize = size;
+			}
 			void SetTerminal(std::string t)
 			{
 				terminal = t;
@@ -131,20 +160,40 @@ namespace JSL
 			{
 				font = f;
 			}
-			void HasLegend(bool state)
+			void SetFontSize(Fonts::Target target, unsigned int size)
 			{
-				Axes[axis_y][axis_x].HasLegend(state);
+				switch (target)
+				{
+				case Fonts::Global:
+					globalFontSize = size;
+					break;
+				case Fonts::Title: //guard against title being used in single tile mode?
+					if (axisCount == 1 && superTitleFontSize < 0)
+					{
+						superTitleFontSize = size;
+					}
+					Axes[axis_y][axis_x].SetFontSize(target,size);
+					break;
+				case Fonts::SuperTitle:
+					superTitleFontSize = size;
+					break;
+				default:
+					Axes[axis_y][axis_x].SetFontSize(target,size);
+					break;
+				}
 			}
 		private:
-		
+			std::string superTitle = "__null__";
 			std::vector<std::vector<Axis>> Axes;
 			std::string DirName;
 			int axis_x;
 			int axis_y;
-
+			int axisCount = 1;
 			std::string terminal = "qt";
 			std::string output = "__null__";
-			std::string font = "Geneva,9";
+			std::string font = "Geneva";
+			int globalFontSize = 14;
+			int superTitleFontSize = -1;
 			bool defaultSize = true;
 			int windowWidth;
 			int windowHeight;
@@ -161,7 +210,7 @@ namespace JSL
 				std::string introMessage = "#This is a temporary gnuplot script constructed by the JSL::gnuplot library\n#It should delete itself after being called. If it has not, then an error has occured. \n#You may delete this file and the directory containing it without problem.\n";
 
 				introMessage += "set terminal " + terminal;
-				introMessage += " font \"" + font +"\""; //needed because mac hates me
+				introMessage += " font \"" + font  + "," + std::to_string(globalFontSize) +"\""; //needed because mac hates me
 				if (!defaultSize)
 				{
 					introMessage += " size " + std::to_string(windowWidth) + "," + std::to_string(windowHeight) + "\n";
@@ -172,6 +221,7 @@ namespace JSL
 					introMessage += "set output \"" + output + "\"\n";
 				}
 				
+				
 				// introMessage += "set terminal cairo\n";
 				writeStringToFile(outName,introMessage);				
 
@@ -180,8 +230,13 @@ namespace JSL
 			{
 				std::string multiplotInfo = "\nset multiplot layout ";
 				multiplotInfo += std::to_string(Axes.size()) + "," + std::to_string(Axes[0].size());
-				multiplotInfo += "\\\n";
-				multiplotInfo += "\tmargins 0.1,0.98,0.1,0.98 \\\n\t spacing 0.08,0.08\n\n";
+				if (superTitle != "__null__")
+				{
+					multiplotInfo += " title \"" + superTitle + "\"" + Fonts::SizeString(superTitleFontSize);
+					multiplotInfo += "\n";
+				}
+				// multiplotInfo += "\\\n";
+				// multiplotInfo += "\tmargins 0.1,0.98,0.1,0.98 \\\n\t spacing 0.08,0.08\n\n";
 				writeStringToFile(gpFile,multiplotInfo);
 			}
 	};

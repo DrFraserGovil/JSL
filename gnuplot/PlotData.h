@@ -3,7 +3,7 @@
 namespace JSL
 {
 	enum PlotType {Line,ScatterPoint};
-	enum Property {Colour,PenSize,PenType};
+	enum Property {Colour,PenSize,PenType,Legend};
 	enum LineType {Solid, Dash, DashDot,Dotted, DashDotDot};
 	enum ScatterType {Dot, Plus,Cross,Star,OpenSquare,FilledSquare,OpenCircle,FilledCircle,OpenDelta,FilledDelta,OpenNabla,FilledNabla,OpenDiamond,FilledDiamond};
 	
@@ -22,12 +22,12 @@ namespace JSL
 	namespace LineProperties
 	{
 		template<typename T>
-		NameValuePair<T> PenSize(T w)
+		inline NameValuePair<T> PenSize(T w)
 		{
 			return NameValuePair<T>(JSL::PenSize,w);
 		}
 		template<typename T>
-		NameValuePair<T> Colour(T c)
+		inline NameValuePair<T> Colour(T c)
 		{
 			return NameValuePair<T>(JSL::Colour,c);
 		}
@@ -37,9 +37,14 @@ namespace JSL
 			return NameValuePair<T>(JSL::PenType,c);
 		}
 		template<typename T>
-		NameValuePair<T> ScatterType(T c)
+		inline NameValuePair<T> ScatterType(T c)
 		{
 			return NameValuePair<T>(JSL::PenType,c);
+		}
+
+		inline NameValuePair<std::string>Legend(std::string s)
+		{
+			return NameValuePair<std::string>(JSL::Legend,s);
 		}
 	}
 
@@ -143,6 +148,16 @@ namespace JSL
 			{
 				SetPenType(t);
 			}
+
+			template<typename T>
+			void SetLegend(T t)
+			{
+				Error("Cannot parse legends as anything other than strings");
+			}
+			void SetLegend(std::string s)
+			{
+				legend = s;
+			}
 			std::string Write()
 			{
 				std::string line = "";
@@ -222,6 +237,10 @@ namespace JSL
 				case PenType:
 					SetPenType(nv.Value);
 					break;
+				case Legend:
+					SetLegend(nv.Value);
+					break;
+				
 				default:
 					break;
 				}
