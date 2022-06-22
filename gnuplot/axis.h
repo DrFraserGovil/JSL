@@ -20,7 +20,15 @@ namespace JSL
 			return out;
 		}
 	}
-
+	namespace internal
+	{
+		inline std::string signifier(const double & x,int significance)
+		{
+			std::ostringstream os;
+			os << std::setprecision(significance) << x;
+			return os.str();
+		}
+	}
 	class Axis
 	{
 		public:
@@ -225,10 +233,9 @@ namespace JSL
 			void RangeSetter(const std::string & axisPrefix, const std::vector<double> & range)
 			{
 				std::string val = "[*:*]";
-				std::cout << "Setting " << axisPrefix << " range " << range.size() << std::endl;
 				if (range.size() == 2)
 				{
-					val = "[" + std::to_string(range[0]) + ":" + std::to_string(range[1]) + "]";
+					val = "[" + internal::signifier(range[0],8) + ":" + internal::signifier(range[1],8) + "]";
 				}
 
 

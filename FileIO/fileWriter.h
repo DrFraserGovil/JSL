@@ -70,7 +70,7 @@ namespace JSL
 			os << first[i];
 			if constexpr (sizeof...(args) > 0)
 			{
-				os << delimiter;
+				os  <<delimiter;
 				variadicVectorPrint(os,delimiter,i,args...); // shunts the remaining args one element over, so the second element becomes "first", and hence recursively loops until no elements left in args
 			}
 			else
