@@ -95,7 +95,7 @@ namespace JSL
 			}
 			void SetYRange(double min, double max)
 			{
-				Axes[axis_y][axis_x].SetXRange(min,max);
+				Axes[axis_y][axis_x].SetYRange(min,max);
 			}
 			void SetXLog(bool val)
 			{
