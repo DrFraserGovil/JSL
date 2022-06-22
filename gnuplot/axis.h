@@ -225,10 +225,13 @@ namespace JSL
 			void RangeSetter(const std::string & axisPrefix, const std::vector<double> & range)
 			{
 				std::string val = "[*:*]";
+				std::cout << "Setting " << axisPrefix << " range " << range.size() << std::endl;
 				if (range.size() == 2)
 				{
-					val = "[" + std::to_string(range_x[0]) + ":" + std::to_string(range_x[1]) + "]";
+					val = "[" + std::to_string(range[0]) + ":" + std::to_string(range[1]) + "]";
 				}
+
+
 				std::string cmd = "set " + axisPrefix + "range " + val;
 				AddProperty(cmd);
 			}
