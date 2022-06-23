@@ -22,115 +22,23 @@
         <defname>Symbol</defname>
         <defval>&apos;#&apos;</defval>
       </param>
+      <param>
+        <type>unsigned int</type>
+        <declname>MaxHashes</declname>
+        <defname>MaxHashes</defname>
+        <defval>20</defval>
+      </param>
     </templateparamlist>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a7814c15a0bb7fef15d7a79800e4c3f00" prot="private" static="no" mutable="no">
-        <type>int</type>
-        <definition>int JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::MaxHashes</definition>
-        <argsstring></argsstring>
-        <name>MaxHashes</name>
-        <qualifiedname>JSL::ProgressBar::MaxHashes</qualifiedname>
-        <initializer>= 32</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="12" column="5" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="12" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1ab94f1adc8ac9de3799a0c0fff5218e6e" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a7354c455382575329326bedfd210957e" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::firstPrint</definition>
+        <definition>bool JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::firstPrint</definition>
         <argsstring></argsstring>
         <name>firstPrint</name>
         <qualifiedname>JSL::ProgressBar::firstPrint</qualifiedname>
         <initializer>= true</initializer>
         <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="13" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="13" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a078a1b566733d0177ab4bc94bbcab9ad" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; int &gt;</type>
-        <definition>std::vector&lt;int&gt; JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::BarTargets</definition>
-        <argsstring></argsstring>
-        <name>BarTargets</name>
-        <qualifiedname>JSL::ProgressBar::BarTargets</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="14" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="14" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a0593aa1757ff10db2e7e9eb17234a56d" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; double &gt;</type>
-        <definition>std::vector&lt;double&gt; JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::BarProgress</definition>
-        <argsstring></argsstring>
-        <name>BarProgress</name>
-        <qualifiedname>JSL::ProgressBar::BarProgress</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="15" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="15" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a84de0a555d9671a5e003332730c5086f" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; int &gt;</type>
-        <definition>std::vector&lt;int&gt; JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::Hashes</definition>
-        <argsstring></argsstring>
-        <name>Hashes</name>
-        <qualifiedname>JSL::ProgressBar::Hashes</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="16" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="16" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a2a74b78253b885897afe16656843ed2a" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; std::string &gt;</type>
-        <definition>std::vector&lt;std::string&gt; JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::Names</definition>
-        <argsstring></argsstring>
-        <name>Names</name>
-        <qualifiedname>JSL::ProgressBar::Names</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="17" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="17" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a363db1f5a02c263b5a767e91787aaa51" prot="private" static="no" mutable="no">
-        <type>const int</type>
-        <definition>const int JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::BarCount</definition>
-        <argsstring></argsstring>
-        <name>BarCount</name>
-        <qualifiedname>JSL::ProgressBar::BarCount</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="18" column="11" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="18" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a147d0312ca3d0985cebabee2329881c1" prot="private" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::reprintNeeded</definition>
-        <argsstring></argsstring>
-        <name>reprintNeeded</name>
-        <qualifiedname>JSL::ProgressBar::reprintNeeded</qualifiedname>
-        <briefdescription>
+<para>Toggle to ensure open-brace &quot;[&quot; is printed only once. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -138,39 +46,116 @@
         </inbodydescription>
         <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="19" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="19" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a02f64d66bd98230dd800a543d4203d03" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a4fabdafceac14f4fbbb3e364578f6e1c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::BarTargets</definition>
+        <argsstring></argsstring>
+        <name>BarTargets</name>
+        <qualifiedname>JSL::ProgressBar::BarTargets</qualifiedname>
+        <briefdescription>
+<para>Storage for the target number of processes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="20" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a8ab0aeecd87eaa2754a5a58aea3cca51" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::BarProgress</definition>
+        <argsstring></argsstring>
+        <name>BarProgress</name>
+        <qualifiedname>JSL::ProgressBar::BarProgress</qualifiedname>
+        <briefdescription>
+<para>Current progress value (between 0 and 1) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="21" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a0798094501860753307f92eafa464b4f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::Hashes</definition>
+        <argsstring></argsstring>
+        <name>Hashes</name>
+        <qualifiedname>JSL::ProgressBar::Hashes</qualifiedname>
+        <briefdescription>
+<para>Current printed number of symbols for each bar. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="22" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1ab85ccf4638d649d88becf47e2af83525" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::Names</definition>
+        <argsstring></argsstring>
+        <name>Names</name>
+        <qualifiedname>JSL::ProgressBar::Names</qualifiedname>
+        <briefdescription>
+<para>The names printed in front of each bar. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="23" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a913055a04bad40dbbf66f0f8247bb8b0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::reprintNeeded</definition>
+        <argsstring></argsstring>
+        <name>reprintNeeded</name>
+        <qualifiedname>JSL::ProgressBar::reprintNeeded</qualifiedname>
+        <briefdescription>
+<para>Toggle which ensures reprinting only occurs when something changes, prevents unnecessary overhead. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="25" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1ae3160fd31be03fadd4c92a0906f64f79" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::bufferWidth</definition>
+        <definition>int JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::bufferWidth</definition>
         <argsstring></argsstring>
         <name>bufferWidth</name>
         <qualifiedname>JSL::ProgressBar::bufferWidth</qualifiedname>
         <initializer>= 10</initializer>
         <briefdescription>
+<para>Default size allocated for names, increases if a value of anmes would overfill it. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="20" column="5" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="20" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="26" column="5" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="26" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1ad1b42914e2355692ff89b64b52ccf3b3" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classJSL_1_1ProgressBar_1a3439198bd34393a92cfbc9067247be4a" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::prevHashes</definition>
+        <definition>int JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::prevHashes</definition>
         <argsstring></argsstring>
         <name>prevHashes</name>
         <qualifiedname>JSL::ProgressBar::prevHashes</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
+<para>Used in DeleteMode=false to compute new hashe number. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="21" column="5" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="21" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="27" column="5" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1ab74a1cf8c35e19a0a1a16be7b6ca8321" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a7088deecfe936d4eaba784cff05270f4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -179,7 +164,7 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::UnpackTargets</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::UnpackTargets</definition>
         <argsstring>(int target, Ts... targets)</argsstring>
         <name>UnpackTargets</name>
         <qualifiedname>JSL::ProgressBar::UnpackTargets</qualifiedname>
@@ -192,14 +177,15 @@
           <declname>targets</declname>
         </param>
         <briefdescription>
+<para>The variadic internal function called by the compiler, looping over the arbitrary number of inputs and storing them in internal vectors. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="24" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="24" bodyend="34"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="31" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="31" bodyend="41"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1aa2329ecb7ba4cf6a53581277100f446a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a73c79e8e00905454aa2853b39d8143b6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -208,7 +194,7 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::UnrollPositions</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::UnrollPositions</definition>
         <argsstring>(const int idx, int pos, Ts... remainder)</argsstring>
         <name>UnrollPositions</name>
         <qualifiedname>JSL::ProgressBar::UnrollPositions</qualifiedname>
@@ -225,58 +211,62 @@
           <declname>remainder</declname>
         </param>
         <briefdescription>
+<para>The variadic internal function which is called by <ref refid="classJSL_1_1ProgressBar_1ac7d924894ea76344ec2b1540d329a05f" kindref="member">Update()</ref>, loops over the arguments and computes the number of Symbols required by each bar. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="36" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="36" bodyend="53"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="45" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="45" bodyend="62"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1add093b3d1e10846ee6076810ee057d92" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1adafc5d517ac0dc23b9761bce1d68f953" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::ClearScreen</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::ClearScreen</definition>
         <argsstring>()</argsstring>
         <name>ClearScreen</name>
         <qualifiedname>JSL::ProgressBar::ClearScreen</qualifiedname>
         <briefdescription>
+<para>Loops over the existing bars and erases them using ANSI codes. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="54" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="54" bodyend="61"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="65" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="65" bodyend="72"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a1b571359397cc3f619f21d02eb20998e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1af3353e136ef9636dc81d401fdc6276f6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::PrintPositions_DeleteMode</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::PrintPositions_DeleteMode</definition>
         <argsstring>()</argsstring>
         <name>PrintPositions_DeleteMode</name>
         <qualifiedname>JSL::ProgressBar::PrintPositions_DeleteMode</qualifiedname>
         <briefdescription>
+<para>The version of Printing which happens if DeleteMode is true <ndash/> clears the previous bars using ANSI codes, then overwrites them with the new values. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="62" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="62" bodyend="78"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="74" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="74" bodyend="90"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a24c5d1e1936dfd67ad0377daa26756cd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a5dba8513809faf0a0f9a315b1f527314" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::PrintPositions_RetainMode</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::PrintPositions_RetainMode</definition>
         <argsstring>()</argsstring>
         <name>PrintPositions_RetainMode</name>
         <qualifiedname>JSL::ProgressBar::PrintPositions_RetainMode</qualifiedname>
         <briefdescription>
+<para>The version of Printing which happens if DeleteMode is false - gradually prints the progress bar one Symbol at a time, then adds the close brace &quot;]&quot; whn the final one is printed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="79" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="79" bodyend="97"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="93" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="93" bodyend="111"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a07e26ed8fdd7620aeb881973d6b84be8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a387540b26d9e8cef6ef694e78ca21d05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -285,23 +275,33 @@
           </param>
         </templateparamlist>
         <type></type>
-        <definition>JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::ProgressBar</definition>
-        <argsstring>(Ts... target)</argsstring>
+        <definition>JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::ProgressBar</definition>
+        <argsstring>(Ts... targetCounts)</argsstring>
         <name>ProgressBar</name>
         <qualifiedname>JSL::ProgressBar::ProgressBar</qualifiedname>
         <param>
           <type>Ts...</type>
-          <declname>target</declname>
+          <declname>targetCounts</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Constructor function. Accepts a number of integer arguments equal to Dimension, throws an error if this is not true. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>targetCounts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of processes (i.e. max loop index) that must complete before each bar is considered full. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="100" column="1" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="100" bodyend="104"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="119" column="1" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="119" bodyend="125"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1aa9e8aae58f1d27e83706c06253244325" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1ac7d924894ea76344ec2b1540d329a05f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -310,7 +310,7 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::Update</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::Update</definition>
         <argsstring>(Ts... positions)</argsstring>
         <name>Update</name>
         <qualifiedname>JSL::ProgressBar::Update</qualifiedname>
@@ -321,32 +321,24 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Provide a progress update (i.e. loop index) for each of the active bars. Accepts a number of integer arguments equal to Dimension. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>positons</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current process count (to be compared against the targets) of the open progress bars </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="107" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="107" bodyend="124"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="132" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="132" bodyend="150"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1aa7d83ba6ed7ac7dd956b8e91e2bf4939" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1ade149b634fe82923f5a284ba34045fbc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::SetName</definition>
-        <argsstring>(const std::string &amp;name)</argsstring>
-        <name>SetName</name>
-        <qualifiedname>JSL::ProgressBar::SetName</qualifiedname>
-        <param>
-          <type>const std::string &amp;</type>
-          <declname>name</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="125" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="125" bodyend="130"/>
-      </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a0dd7eb5fec57702317cf3e6bd807bcb4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::SetName</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::SetName</definition>
         <argsstring>(const std::vector&lt; std::string &gt; &amp;names)</argsstring>
         <name>SetName</name>
         <qualifiedname>JSL::ProgressBar::SetName</qualifiedname>
@@ -355,16 +347,27 @@
           <declname>names</declname>
         </param>
         <briefdescription>
+<para>Sets all names for the bars simultaneously. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of strings (equal to Dimension), each of which is printed before their respective bar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="131" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="131" bodyend="139"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="155" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="155" bodyend="163"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1aea4a38ec99476f7863bc66acea2552a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1ad02946ede96408489d672d15ab200958" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::SetName</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::SetName</definition>
         <argsstring>(unsigned int idx, const std::string &amp;name)</argsstring>
         <name>SetName</name>
         <qualifiedname>JSL::ProgressBar::SetName</qualifiedname>
@@ -377,55 +380,136 @@
           <declname>name</declname>
         </param>
         <briefdescription>
+<para>Changes the name of the idx-th bar. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bar name to be changes</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string which is printed in the front of the bar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="140" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="140" bodyend="149"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="166" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="166" bodyend="175"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a76f9fea64fe63406ee061730bfa0a3c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1ac434128522cfdfe01a2d9c791188c8ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt;::Clear</definition>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::SetName</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>SetName</name>
+        <qualifiedname>JSL::ProgressBar::SetName</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>An override for <ref refid="classJSL_1_1ProgressBar_1ad02946ede96408489d672d15ab200958" kindref="member">SetName(unsigned int idx, const std::string &amp; name)</ref> available only when Dimension == 1. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to go in front of the bar as it prints </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="178" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="178" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1ProgressBar_1a5fa7f8ced9592b0cea5a366157332eff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::Clear</definition>
         <argsstring>()</argsstring>
         <name>Clear</name>
         <qualifiedname>JSL::ProgressBar::Clear</qualifiedname>
         <briefdescription>
+<para>Deletes all levels of the bar from the screen, useful once the bar has finished and is no longer needed. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="152" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="152" bodyend="155"/>
+        <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="186" column="6" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="186" bodyend="189"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
+<para>A neat display widget for tracking the progress of a process by printing a progress bar on the screen, which updates to visually indicate the process is running. Supports arbitrary &quot;levels&quot; of progress bars which can be independently modified through a variadic argument interface. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of concurrent bars to print (fixes the number of arguments which must be provided to subsequent functions). Defaults to 1 if 0 template arguments provided </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DeleteMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, utilises <ref refid="namespaceJSL_1ae38780f94d60045b904b289eb3ab8eda" kindref="member">JSL::deleteLine()</ref> to remove the previous line before reprinting, such that the bar appears animated. If false, provides a more limited form of animation (false only available in Dimension==1 mode). Defaults to true. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Symbol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The symbol which is printed within the bar to fill up space. Defaults to &quot;#&quot;. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MaxHashes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of symbols in a full bar (dictates the width of the progress bar) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
-    <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="9" column="1" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="10" bodyend="156"/>
+    <location file="/Users/jf20/Documents/JSL/Display/ProgressBar.h" line="16" column="1" bodyfile="/Users/jf20/Documents/JSL/Display/ProgressBar.h" bodystart="17" bodyend="190"/>
     <listofallmembers>
-      <member refid="classJSL_1_1ProgressBar_1a363db1f5a02c263b5a767e91787aaa51" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>BarCount</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a0593aa1757ff10db2e7e9eb17234a56d" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>BarProgress</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a078a1b566733d0177ab4bc94bbcab9ad" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>BarTargets</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a02f64d66bd98230dd800a543d4203d03" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>bufferWidth</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a76f9fea64fe63406ee061730bfa0a3c9" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>Clear</name></member>
-      <member refid="classJSL_1_1ProgressBar_1add093b3d1e10846ee6076810ee057d92" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>ClearScreen</name></member>
-      <member refid="classJSL_1_1ProgressBar_1ab94f1adc8ac9de3799a0c0fff5218e6e" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>firstPrint</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a84de0a555d9671a5e003332730c5086f" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>Hashes</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a7814c15a0bb7fef15d7a79800e4c3f00" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>MaxHashes</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a2a74b78253b885897afe16656843ed2a" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>Names</name></member>
-      <member refid="classJSL_1_1ProgressBar_1ad1b42914e2355692ff89b64b52ccf3b3" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>prevHashes</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a1b571359397cc3f619f21d02eb20998e" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>PrintPositions_DeleteMode</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a24c5d1e1936dfd67ad0377daa26756cd" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>PrintPositions_RetainMode</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a07e26ed8fdd7620aeb881973d6b84be8" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>ProgressBar</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a147d0312ca3d0985cebabee2329881c1" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>reprintNeeded</name></member>
-      <member refid="classJSL_1_1ProgressBar_1aa7d83ba6ed7ac7dd956b8e91e2bf4939" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>SetName</name></member>
-      <member refid="classJSL_1_1ProgressBar_1a0dd7eb5fec57702317cf3e6bd807bcb4" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>SetName</name></member>
-      <member refid="classJSL_1_1ProgressBar_1aea4a38ec99476f7863bc66acea2552a7" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>SetName</name></member>
-      <member refid="classJSL_1_1ProgressBar_1ab74a1cf8c35e19a0a1a16be7b6ca8321" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>UnpackTargets</name></member>
-      <member refid="classJSL_1_1ProgressBar_1aa2329ecb7ba4cf6a53581277100f446a" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>UnrollPositions</name></member>
-      <member refid="classJSL_1_1ProgressBar_1aa9e8aae58f1d27e83706c06253244325" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>Update</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a8ab0aeecd87eaa2754a5a58aea3cca51" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>BarProgress</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a4fabdafceac14f4fbbb3e364578f6e1c" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>BarTargets</name></member>
+      <member refid="classJSL_1_1ProgressBar_1ae3160fd31be03fadd4c92a0906f64f79" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>bufferWidth</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a5fa7f8ced9592b0cea5a366157332eff" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>Clear</name></member>
+      <member refid="classJSL_1_1ProgressBar_1adafc5d517ac0dc23b9761bce1d68f953" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>ClearScreen</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a7354c455382575329326bedfd210957e" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>firstPrint</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a0798094501860753307f92eafa464b4f" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>Hashes</name></member>
+      <member refid="classJSL_1_1ProgressBar_1ab85ccf4638d649d88becf47e2af83525" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>Names</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a3439198bd34393a92cfbc9067247be4a" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>prevHashes</name></member>
+      <member refid="classJSL_1_1ProgressBar_1af3353e136ef9636dc81d401fdc6276f6" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>PrintPositions_DeleteMode</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a5dba8513809faf0a0f9a315b1f527314" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>PrintPositions_RetainMode</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a387540b26d9e8cef6ef694e78ca21d05" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>ProgressBar</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a913055a04bad40dbbf66f0f8247bb8b0" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>reprintNeeded</name></member>
+      <member refid="classJSL_1_1ProgressBar_1ade149b634fe82923f5a284ba34045fbc" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>SetName</name></member>
+      <member refid="classJSL_1_1ProgressBar_1ad02946ede96408489d672d15ab200958" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>SetName</name></member>
+      <member refid="classJSL_1_1ProgressBar_1ac434128522cfdfe01a2d9c791188c8ec" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>SetName</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a7088deecfe936d4eaba784cff05270f4" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>UnpackTargets</name></member>
+      <member refid="classJSL_1_1ProgressBar_1a73c79e8e00905454aa2853b39d8143b6" prot="private" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>UnrollPositions</name></member>
+      <member refid="classJSL_1_1ProgressBar_1ac7d924894ea76344ec2b1540d329a05f" prot="public" virt="non-virtual"><scope>JSL::ProgressBar</scope><name>Update</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

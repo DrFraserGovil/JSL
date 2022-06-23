@@ -2,8 +2,8 @@ var searchData=
 [
   ['checkforinvalidtriggers_0',['CheckForInvalidTriggers',['../classJSL_1_1Argument.html#a8614eb66f807132c4323847e05e666c4',1,'JSL::Argument']]],
   ['cleanuptempfiles_1',['CleanupTempFiles',['../classJSL_1_1gnuplot.html#a0601a115a1052a39a6621e42ec4d4f3e',1,'JSL::gnuplot']]],
-  ['clear_2',['Clear',['../classJSL_1_1ProgressBar.html#a76f9fea64fe63406ee061730bfa0a3c9',1,'JSL::ProgressBar']]],
-  ['clearscreen_3',['ClearScreen',['../classJSL_1_1ProgressBar.html#add093b3d1e10846ee6076810ee057d92',1,'JSL::ProgressBar']]],
+  ['clear_2',['Clear',['../classJSL_1_1ProgressBar.html#a5fa7f8ced9592b0cea5a366157332eff',1,'JSL::ProgressBar']]],
+  ['clearscreen_3',['ClearScreen',['../classJSL_1_1ProgressBar.html#adafc5d517ac0dc23b9761bce1d68f953',1,'JSL::ProgressBar']]],
   ['clearscreen_4',['clearScreen',['../namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed',1,'JSL']]],
   ['clearscreen_2eh_5',['clearScreen.h',['../clearScreen_8h.html',1,'']]],
   ['colour_6',['colour',['../classJSL_1_1PlotData.html#a2936bcc90d54c471f31388e2673081b3',1,'JSL::PlotData']]],

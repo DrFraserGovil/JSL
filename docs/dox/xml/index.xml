@@ -197,27 +197,25 @@
     <member refid="classJSL_1_1PlotData_1a2e57942c52c4ec76436bd3179e4ee2cd" kind="function"><name>ParseNVPair</name></member>
   </compound>
   <compound refid="classJSL_1_1ProgressBar" kind="class"><name>JSL::ProgressBar</name>
-    <member refid="classJSL_1_1ProgressBar_1a7814c15a0bb7fef15d7a79800e4c3f00" kind="variable"><name>MaxHashes</name></member>
-    <member refid="classJSL_1_1ProgressBar_1ab94f1adc8ac9de3799a0c0fff5218e6e" kind="variable"><name>firstPrint</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a078a1b566733d0177ab4bc94bbcab9ad" kind="variable"><name>BarTargets</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a0593aa1757ff10db2e7e9eb17234a56d" kind="variable"><name>BarProgress</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a84de0a555d9671a5e003332730c5086f" kind="variable"><name>Hashes</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a2a74b78253b885897afe16656843ed2a" kind="variable"><name>Names</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a363db1f5a02c263b5a767e91787aaa51" kind="variable"><name>BarCount</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a147d0312ca3d0985cebabee2329881c1" kind="variable"><name>reprintNeeded</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a02f64d66bd98230dd800a543d4203d03" kind="variable"><name>bufferWidth</name></member>
-    <member refid="classJSL_1_1ProgressBar_1ad1b42914e2355692ff89b64b52ccf3b3" kind="variable"><name>prevHashes</name></member>
-    <member refid="classJSL_1_1ProgressBar_1ab74a1cf8c35e19a0a1a16be7b6ca8321" kind="function"><name>UnpackTargets</name></member>
-    <member refid="classJSL_1_1ProgressBar_1aa2329ecb7ba4cf6a53581277100f446a" kind="function"><name>UnrollPositions</name></member>
-    <member refid="classJSL_1_1ProgressBar_1add093b3d1e10846ee6076810ee057d92" kind="function"><name>ClearScreen</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a1b571359397cc3f619f21d02eb20998e" kind="function"><name>PrintPositions_DeleteMode</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a24c5d1e1936dfd67ad0377daa26756cd" kind="function"><name>PrintPositions_RetainMode</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a07e26ed8fdd7620aeb881973d6b84be8" kind="function"><name>ProgressBar</name></member>
-    <member refid="classJSL_1_1ProgressBar_1aa9e8aae58f1d27e83706c06253244325" kind="function"><name>Update</name></member>
-    <member refid="classJSL_1_1ProgressBar_1aa7d83ba6ed7ac7dd956b8e91e2bf4939" kind="function"><name>SetName</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a0dd7eb5fec57702317cf3e6bd807bcb4" kind="function"><name>SetName</name></member>
-    <member refid="classJSL_1_1ProgressBar_1aea4a38ec99476f7863bc66acea2552a7" kind="function"><name>SetName</name></member>
-    <member refid="classJSL_1_1ProgressBar_1a76f9fea64fe63406ee061730bfa0a3c9" kind="function"><name>Clear</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a7354c455382575329326bedfd210957e" kind="variable"><name>firstPrint</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a4fabdafceac14f4fbbb3e364578f6e1c" kind="variable"><name>BarTargets</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a8ab0aeecd87eaa2754a5a58aea3cca51" kind="variable"><name>BarProgress</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a0798094501860753307f92eafa464b4f" kind="variable"><name>Hashes</name></member>
+    <member refid="classJSL_1_1ProgressBar_1ab85ccf4638d649d88becf47e2af83525" kind="variable"><name>Names</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a913055a04bad40dbbf66f0f8247bb8b0" kind="variable"><name>reprintNeeded</name></member>
+    <member refid="classJSL_1_1ProgressBar_1ae3160fd31be03fadd4c92a0906f64f79" kind="variable"><name>bufferWidth</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a3439198bd34393a92cfbc9067247be4a" kind="variable"><name>prevHashes</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a7088deecfe936d4eaba784cff05270f4" kind="function"><name>UnpackTargets</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a73c79e8e00905454aa2853b39d8143b6" kind="function"><name>UnrollPositions</name></member>
+    <member refid="classJSL_1_1ProgressBar_1adafc5d517ac0dc23b9761bce1d68f953" kind="function"><name>ClearScreen</name></member>
+    <member refid="classJSL_1_1ProgressBar_1af3353e136ef9636dc81d401fdc6276f6" kind="function"><name>PrintPositions_DeleteMode</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a5dba8513809faf0a0f9a315b1f527314" kind="function"><name>PrintPositions_RetainMode</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a387540b26d9e8cef6ef694e78ca21d05" kind="function"><name>ProgressBar</name></member>
+    <member refid="classJSL_1_1ProgressBar_1ac7d924894ea76344ec2b1540d329a05f" kind="function"><name>Update</name></member>
+    <member refid="classJSL_1_1ProgressBar_1ade149b634fe82923f5a284ba34045fbc" kind="function"><name>SetName</name></member>
+    <member refid="classJSL_1_1ProgressBar_1ad02946ede96408489d672d15ab200958" kind="function"><name>SetName</name></member>
+    <member refid="classJSL_1_1ProgressBar_1ac434128522cfdfe01a2d9c791188c8ec" kind="function"><name>SetName</name></member>
+    <member refid="classJSL_1_1ProgressBar_1a5fa7f8ced9592b0cea5a366157332eff" kind="function"><name>Clear</name></member>
   </compound>
   <compound refid="classJSL_1_1Quaternion" kind="class"><name>JSL::Quaternion</name>
     <member refid="classJSL_1_1Quaternion_1a3bfe577832b38cdf2dbbb143c9487add" kind="function"><name>Quaternion</name></member>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>JSL: JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt; Class Template Reference</title>
+<title>JSL: JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a>  </div>
-  <div class="headertitle"><div class="title">JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -78,67 +78,91 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a07e26ed8fdd7620aeb881973d6b84be8"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:a07e26ed8fdd7620aeb881973d6b84be8"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a07e26ed8fdd7620aeb881973d6b84be8">ProgressBar</a> (Ts... target)</td></tr>
-<tr class="separator:a07e26ed8fdd7620aeb881973d6b84be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9e8aae58f1d27e83706c06253244325"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:aa9e8aae58f1d27e83706c06253244325"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#aa9e8aae58f1d27e83706c06253244325">Update</a> (Ts... positions)</td></tr>
-<tr class="separator:aa9e8aae58f1d27e83706c06253244325"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7d83ba6ed7ac7dd956b8e91e2bf4939"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#aa7d83ba6ed7ac7dd956b8e91e2bf4939">SetName</a> (const std::string &amp;name)</td></tr>
-<tr class="separator:aa7d83ba6ed7ac7dd956b8e91e2bf4939"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dd7eb5fec57702317cf3e6bd807bcb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a0dd7eb5fec57702317cf3e6bd807bcb4">SetName</a> (const std::vector&lt; std::string &gt; &amp;names)</td></tr>
-<tr class="separator:a0dd7eb5fec57702317cf3e6bd807bcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea4a38ec99476f7863bc66acea2552a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#aea4a38ec99476f7863bc66acea2552a7">SetName</a> (unsigned int idx, const std::string &amp;name)</td></tr>
-<tr class="separator:aea4a38ec99476f7863bc66acea2552a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76f9fea64fe63406ee061730bfa0a3c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a76f9fea64fe63406ee061730bfa0a3c9">Clear</a> ()</td></tr>
-<tr class="separator:a76f9fea64fe63406ee061730bfa0a3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387540b26d9e8cef6ef694e78ca21d05"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a387540b26d9e8cef6ef694e78ca21d05"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a387540b26d9e8cef6ef694e78ca21d05">ProgressBar</a> (Ts... targetCounts)</td></tr>
+<tr class="separator:a387540b26d9e8cef6ef694e78ca21d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d924894ea76344ec2b1540d329a05f"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:ac7d924894ea76344ec2b1540d329a05f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ac7d924894ea76344ec2b1540d329a05f">Update</a> (Ts... positions)</td></tr>
+<tr class="separator:ac7d924894ea76344ec2b1540d329a05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade149b634fe82923f5a284ba34045fbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ade149b634fe82923f5a284ba34045fbc">SetName</a> (const std::vector&lt; std::string &gt; &amp;names)</td></tr>
+<tr class="memdesc:ade149b634fe82923f5a284ba34045fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all names for the bars simultaneously.  <a href="classJSL_1_1ProgressBar.html#ade149b634fe82923f5a284ba34045fbc">More...</a><br /></td></tr>
+<tr class="separator:ade149b634fe82923f5a284ba34045fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad02946ede96408489d672d15ab200958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ad02946ede96408489d672d15ab200958">SetName</a> (unsigned int idx, const std::string &amp;name)</td></tr>
+<tr class="memdesc:ad02946ede96408489d672d15ab200958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the name of the idx-th bar.  <a href="classJSL_1_1ProgressBar.html#ad02946ede96408489d672d15ab200958">More...</a><br /></td></tr>
+<tr class="separator:ad02946ede96408489d672d15ab200958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac434128522cfdfe01a2d9c791188c8ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ac434128522cfdfe01a2d9c791188c8ec">SetName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:ac434128522cfdfe01a2d9c791188c8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">An override for <a class="el" href="classJSL_1_1ProgressBar.html#ad02946ede96408489d672d15ab200958" title="Changes the name of the idx-th bar.">SetName(unsigned int idx, const std::string &amp; name)</a> available only when Dimension == 1.  <a href="classJSL_1_1ProgressBar.html#ac434128522cfdfe01a2d9c791188c8ec">More...</a><br /></td></tr>
+<tr class="separator:ac434128522cfdfe01a2d9c791188c8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa7f8ced9592b0cea5a366157332eff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a5fa7f8ced9592b0cea5a366157332eff">Clear</a> ()</td></tr>
+<tr class="memdesc:a5fa7f8ced9592b0cea5a366157332eff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all levels of the bar from the screen, useful once the bar has finished and is no longer needed.  <a href="classJSL_1_1ProgressBar.html#a5fa7f8ced9592b0cea5a366157332eff">More...</a><br /></td></tr>
+<tr class="separator:a5fa7f8ced9592b0cea5a366157332eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ab74a1cf8c35e19a0a1a16be7b6ca8321"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:ab74a1cf8c35e19a0a1a16be7b6ca8321"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ab74a1cf8c35e19a0a1a16be7b6ca8321">UnpackTargets</a> (int target, Ts... targets)</td></tr>
-<tr class="separator:ab74a1cf8c35e19a0a1a16be7b6ca8321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2329ecb7ba4cf6a53581277100f446a"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:aa2329ecb7ba4cf6a53581277100f446a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#aa2329ecb7ba4cf6a53581277100f446a">UnrollPositions</a> (const int idx, int pos, Ts... remainder)</td></tr>
-<tr class="separator:aa2329ecb7ba4cf6a53581277100f446a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add093b3d1e10846ee6076810ee057d92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#add093b3d1e10846ee6076810ee057d92">ClearScreen</a> ()</td></tr>
-<tr class="separator:add093b3d1e10846ee6076810ee057d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b571359397cc3f619f21d02eb20998e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a1b571359397cc3f619f21d02eb20998e">PrintPositions_DeleteMode</a> ()</td></tr>
-<tr class="separator:a1b571359397cc3f619f21d02eb20998e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c5d1e1936dfd67ad0377daa26756cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a24c5d1e1936dfd67ad0377daa26756cd">PrintPositions_RetainMode</a> ()</td></tr>
-<tr class="separator:a24c5d1e1936dfd67ad0377daa26756cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7088deecfe936d4eaba784cff05270f4"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a7088deecfe936d4eaba784cff05270f4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a7088deecfe936d4eaba784cff05270f4">UnpackTargets</a> (int target, Ts... targets)</td></tr>
+<tr class="memdesc:a7088deecfe936d4eaba784cff05270f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variadic internal function called by the compiler, looping over the arbitrary number of inputs and storing them in internal vectors.  <a href="classJSL_1_1ProgressBar.html#a7088deecfe936d4eaba784cff05270f4">More...</a><br /></td></tr>
+<tr class="separator:a7088deecfe936d4eaba784cff05270f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c79e8e00905454aa2853b39d8143b6"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a73c79e8e00905454aa2853b39d8143b6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a73c79e8e00905454aa2853b39d8143b6">UnrollPositions</a> (const int idx, int pos, Ts... remainder)</td></tr>
+<tr class="memdesc:a73c79e8e00905454aa2853b39d8143b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variadic internal function which is called by <a class="el" href="classJSL_1_1ProgressBar.html#ac7d924894ea76344ec2b1540d329a05f">Update()</a>, loops over the arguments and computes the number of Symbols required by each bar.  <a href="classJSL_1_1ProgressBar.html#a73c79e8e00905454aa2853b39d8143b6">More...</a><br /></td></tr>
+<tr class="separator:a73c79e8e00905454aa2853b39d8143b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adafc5d517ac0dc23b9761bce1d68f953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#adafc5d517ac0dc23b9761bce1d68f953">ClearScreen</a> ()</td></tr>
+<tr class="memdesc:adafc5d517ac0dc23b9761bce1d68f953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loops over the existing bars and erases them using ANSI codes.  <a href="classJSL_1_1ProgressBar.html#adafc5d517ac0dc23b9761bce1d68f953">More...</a><br /></td></tr>
+<tr class="separator:adafc5d517ac0dc23b9761bce1d68f953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3353e136ef9636dc81d401fdc6276f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#af3353e136ef9636dc81d401fdc6276f6">PrintPositions_DeleteMode</a> ()</td></tr>
+<tr class="memdesc:af3353e136ef9636dc81d401fdc6276f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The version of Printing which happens if DeleteMode is true &ndash; clears the previous bars using ANSI codes, then overwrites them with the new values.  <a href="classJSL_1_1ProgressBar.html#af3353e136ef9636dc81d401fdc6276f6">More...</a><br /></td></tr>
+<tr class="separator:af3353e136ef9636dc81d401fdc6276f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dba8513809faf0a0f9a315b1f527314"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a5dba8513809faf0a0f9a315b1f527314">PrintPositions_RetainMode</a> ()</td></tr>
+<tr class="memdesc:a5dba8513809faf0a0f9a315b1f527314"><td class="mdescLeft">&#160;</td><td class="mdescRight">The version of Printing which happens if DeleteMode is false - gradually prints the progress bar one Symbol at a time, then adds the close brace "]" whn the final one is printed.  <a href="classJSL_1_1ProgressBar.html#a5dba8513809faf0a0f9a315b1f527314">More...</a><br /></td></tr>
+<tr class="separator:a5dba8513809faf0a0f9a315b1f527314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a7814c15a0bb7fef15d7a79800e4c3f00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a7814c15a0bb7fef15d7a79800e4c3f00">MaxHashes</a> = 32</td></tr>
-<tr class="separator:a7814c15a0bb7fef15d7a79800e4c3f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab94f1adc8ac9de3799a0c0fff5218e6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ab94f1adc8ac9de3799a0c0fff5218e6e">firstPrint</a> = true</td></tr>
-<tr class="separator:ab94f1adc8ac9de3799a0c0fff5218e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a078a1b566733d0177ab4bc94bbcab9ad"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a078a1b566733d0177ab4bc94bbcab9ad">BarTargets</a></td></tr>
-<tr class="separator:a078a1b566733d0177ab4bc94bbcab9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0593aa1757ff10db2e7e9eb17234a56d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a0593aa1757ff10db2e7e9eb17234a56d">BarProgress</a></td></tr>
-<tr class="separator:a0593aa1757ff10db2e7e9eb17234a56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84de0a555d9671a5e003332730c5086f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a84de0a555d9671a5e003332730c5086f">Hashes</a></td></tr>
-<tr class="separator:a84de0a555d9671a5e003332730c5086f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a74b78253b885897afe16656843ed2a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a2a74b78253b885897afe16656843ed2a">Names</a></td></tr>
-<tr class="separator:a2a74b78253b885897afe16656843ed2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a363db1f5a02c263b5a767e91787aaa51"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a363db1f5a02c263b5a767e91787aaa51">BarCount</a></td></tr>
-<tr class="separator:a363db1f5a02c263b5a767e91787aaa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a147d0312ca3d0985cebabee2329881c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a147d0312ca3d0985cebabee2329881c1">reprintNeeded</a></td></tr>
-<tr class="separator:a147d0312ca3d0985cebabee2329881c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02f64d66bd98230dd800a543d4203d03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a02f64d66bd98230dd800a543d4203d03">bufferWidth</a> = 10</td></tr>
-<tr class="separator:a02f64d66bd98230dd800a543d4203d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1b42914e2355692ff89b64b52ccf3b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ad1b42914e2355692ff89b64b52ccf3b3">prevHashes</a> = 0</td></tr>
-<tr class="separator:ad1b42914e2355692ff89b64b52ccf3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7354c455382575329326bedfd210957e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a7354c455382575329326bedfd210957e">firstPrint</a> = true</td></tr>
+<tr class="memdesc:a7354c455382575329326bedfd210957e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle to ensure open-brace "[" is printed only once.  <a href="classJSL_1_1ProgressBar.html#a7354c455382575329326bedfd210957e">More...</a><br /></td></tr>
+<tr class="separator:a7354c455382575329326bedfd210957e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fabdafceac14f4fbbb3e364578f6e1c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a4fabdafceac14f4fbbb3e364578f6e1c">BarTargets</a></td></tr>
+<tr class="memdesc:a4fabdafceac14f4fbbb3e364578f6e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage for the target number of processes.  <a href="classJSL_1_1ProgressBar.html#a4fabdafceac14f4fbbb3e364578f6e1c">More...</a><br /></td></tr>
+<tr class="separator:a4fabdafceac14f4fbbb3e364578f6e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab0aeecd87eaa2754a5a58aea3cca51"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a8ab0aeecd87eaa2754a5a58aea3cca51">BarProgress</a></td></tr>
+<tr class="memdesc:a8ab0aeecd87eaa2754a5a58aea3cca51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current progress value (between 0 and 1)  <a href="classJSL_1_1ProgressBar.html#a8ab0aeecd87eaa2754a5a58aea3cca51">More...</a><br /></td></tr>
+<tr class="separator:a8ab0aeecd87eaa2754a5a58aea3cca51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0798094501860753307f92eafa464b4f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a0798094501860753307f92eafa464b4f">Hashes</a></td></tr>
+<tr class="memdesc:a0798094501860753307f92eafa464b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current printed number of symbols for each bar.  <a href="classJSL_1_1ProgressBar.html#a0798094501860753307f92eafa464b4f">More...</a><br /></td></tr>
+<tr class="separator:a0798094501860753307f92eafa464b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab85ccf4638d649d88becf47e2af83525"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ab85ccf4638d649d88becf47e2af83525">Names</a></td></tr>
+<tr class="memdesc:ab85ccf4638d649d88becf47e2af83525"><td class="mdescLeft">&#160;</td><td class="mdescRight">The names printed in front of each bar.  <a href="classJSL_1_1ProgressBar.html#ab85ccf4638d649d88becf47e2af83525">More...</a><br /></td></tr>
+<tr class="separator:ab85ccf4638d649d88becf47e2af83525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913055a04bad40dbbf66f0f8247bb8b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a913055a04bad40dbbf66f0f8247bb8b0">reprintNeeded</a></td></tr>
+<tr class="memdesc:a913055a04bad40dbbf66f0f8247bb8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle which ensures reprinting only occurs when something changes, prevents unnecessary overhead.  <a href="classJSL_1_1ProgressBar.html#a913055a04bad40dbbf66f0f8247bb8b0">More...</a><br /></td></tr>
+<tr class="separator:a913055a04bad40dbbf66f0f8247bb8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3160fd31be03fadd4c92a0906f64f79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#ae3160fd31be03fadd4c92a0906f64f79">bufferWidth</a> = 10</td></tr>
+<tr class="memdesc:ae3160fd31be03fadd4c92a0906f64f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default size allocated for names, increases if a value of anmes would overfill it.  <a href="classJSL_1_1ProgressBar.html#ae3160fd31be03fadd4c92a0906f64f79">More...</a><br /></td></tr>
+<tr class="separator:ae3160fd31be03fadd4c92a0906f64f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3439198bd34393a92cfbc9067247be4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html#a3439198bd34393a92cfbc9067247be4a">prevHashes</a> = 0</td></tr>
+<tr class="memdesc:a3439198bd34393a92cfbc9067247be4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in DeleteMode=false to compute new hashe number.  <a href="classJSL_1_1ProgressBar.html#a3439198bd34393a92cfbc9067247be4a">More...</a><br /></td></tr>
+<tr class="separator:a3439198bd34393a92cfbc9067247be4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a07e26ed8fdd7620aeb881973d6b84be8" name="a07e26ed8fdd7620aeb881973d6b84be8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07e26ed8fdd7620aeb881973d6b84be8">&#9670;&nbsp;</a></span>ProgressBar()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt;<br />
+class JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;</div><p >A neat display widget for tracking the progress of a process by printing a progress bar on the screen, which updates to visually indicate the process is running. Supports arbitrary "levels" of progress bars which can be independently modified through a variadic argument interface. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Dimension</td><td>The number of concurrent bars to print (fixes the number of arguments which must be provided to subsequent functions). Defaults to 1 if 0 template arguments provided </td></tr>
+    <tr><td class="paramname">DeleteMode</td><td>If true, utilises <a class="el" href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda" title="Removes the last line of text, moving the cursor from its current position, to the beginning of the l...">JSL::deleteLine()</a> to remove the previous line before reprinting, such that the bar appears animated. If false, provides a more limited form of animation (false only available in Dimension==1 mode). Defaults to true. </td></tr>
+    <tr><td class="paramname">Symbol</td><td>The symbol which is printed within the bar to fill up space. Defaults to "#". </td></tr>
+    <tr><td class="paramname">MaxHashes</td><td>The number of symbols in a full bar (dictates the width of the progress bar) </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a387540b26d9e8cef6ef694e78ca21d05" name="a387540b26d9e8cef6ef694e78ca21d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387540b26d9e8cef6ef694e78ca21d05">&#9670;&nbsp;</a></span>ProgressBar()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Ts&gt; </div>
 <table class="mlabels">
@@ -146,10 +170,10 @@ template&lt;typename... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::ProgressBar </td>
+          <td class="memname"><a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::ProgressBar </td>
           <td>(</td>
           <td class="paramtype">Ts...&#160;</td>
-          <td class="paramname"><em>target</em></td><td>)</td>
+          <td class="paramname"><em>targetCounts</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -159,23 +183,29 @@ template&lt;typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Constructor function. Accepts a number of integer arguments equal to Dimension, throws an error if this is not true. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetCounts</td><td>The number of processes (i.e. max loop index) that must complete before each bar is considered full. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a76f9fea64fe63406ee061730bfa0a3c9" name="a76f9fea64fe63406ee061730bfa0a3c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76f9fea64fe63406ee061730bfa0a3c9">&#9670;&nbsp;</a></span>Clear()</h2>
+<a id="a5fa7f8ced9592b0cea5a366157332eff" name="a5fa7f8ced9592b0cea5a366157332eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa7f8ced9592b0cea5a366157332eff">&#9670;&nbsp;</a></span>Clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::Clear </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::Clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -188,21 +218,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Deletes all levels of the bar from the screen, useful once the bar has finished and is no longer needed. </p>
+
 </div>
 </div>
-<a id="add093b3d1e10846ee6076810ee057d92" name="add093b3d1e10846ee6076810ee057d92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add093b3d1e10846ee6076810ee057d92">&#9670;&nbsp;</a></span>ClearScreen()</h2>
+<a id="adafc5d517ac0dc23b9761bce1d68f953" name="adafc5d517ac0dc23b9761bce1d68f953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adafc5d517ac0dc23b9761bce1d68f953">&#9670;&nbsp;</a></span>ClearScreen()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::ClearScreen </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::ClearScreen </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -215,21 +247,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Loops over the existing bars and erases them using ANSI codes. </p>
+
 </div>
 </div>
-<a id="a1b571359397cc3f619f21d02eb20998e" name="a1b571359397cc3f619f21d02eb20998e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b571359397cc3f619f21d02eb20998e">&#9670;&nbsp;</a></span>PrintPositions_DeleteMode()</h2>
+<a id="af3353e136ef9636dc81d401fdc6276f6" name="af3353e136ef9636dc81d401fdc6276f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3353e136ef9636dc81d401fdc6276f6">&#9670;&nbsp;</a></span>PrintPositions_DeleteMode()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::PrintPositions_DeleteMode </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::PrintPositions_DeleteMode </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -242,21 +276,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>The version of Printing which happens if DeleteMode is true &ndash; clears the previous bars using ANSI codes, then overwrites them with the new values. </p>
+
 </div>
 </div>
-<a id="a24c5d1e1936dfd67ad0377daa26756cd" name="a24c5d1e1936dfd67ad0377daa26756cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24c5d1e1936dfd67ad0377daa26756cd">&#9670;&nbsp;</a></span>PrintPositions_RetainMode()</h2>
+<a id="a5dba8513809faf0a0f9a315b1f527314" name="a5dba8513809faf0a0f9a315b1f527314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dba8513809faf0a0f9a315b1f527314">&#9670;&nbsp;</a></span>PrintPositions_RetainMode()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::PrintPositions_RetainMode </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::PrintPositions_RetainMode </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -269,21 +305,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>The version of Printing which happens if DeleteMode is false - gradually prints the progress bar one Symbol at a time, then adds the close brace "]" whn the final one is printed. </p>
+
 </div>
 </div>
-<a id="aa7d83ba6ed7ac7dd956b8e91e2bf4939" name="aa7d83ba6ed7ac7dd956b8e91e2bf4939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7d83ba6ed7ac7dd956b8e91e2bf4939">&#9670;&nbsp;</a></span>SetName() <span class="overload">[1/3]</span></h2>
+<a id="ac434128522cfdfe01a2d9c791188c8ec" name="ac434128522cfdfe01a2d9c791188c8ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac434128522cfdfe01a2d9c791188c8ec">&#9670;&nbsp;</a></span>SetName() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::SetName </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::SetName </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -297,21 +335,29 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>An override for <a class="el" href="classJSL_1_1ProgressBar.html#ad02946ede96408489d672d15ab200958" title="Changes the name of the idx-th bar.">SetName(unsigned int idx, const std::string &amp; name)</a> available only when Dimension == 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The message to go in front of the bar as it prints </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a0dd7eb5fec57702317cf3e6bd807bcb4" name="a0dd7eb5fec57702317cf3e6bd807bcb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dd7eb5fec57702317cf3e6bd807bcb4">&#9670;&nbsp;</a></span>SetName() <span class="overload">[2/3]</span></h2>
+<a id="ade149b634fe82923f5a284ba34045fbc" name="ade149b634fe82923f5a284ba34045fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade149b634fe82923f5a284ba34045fbc">&#9670;&nbsp;</a></span>SetName() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::SetName </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::SetName </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
           <td class="paramname"><em>names</em></td><td>)</td>
@@ -325,21 +371,29 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Sets all names for the bars simultaneously. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">names</td><td>A vector of strings (equal to Dimension), each of which is printed before their respective bar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="aea4a38ec99476f7863bc66acea2552a7" name="aea4a38ec99476f7863bc66acea2552a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea4a38ec99476f7863bc66acea2552a7">&#9670;&nbsp;</a></span>SetName() <span class="overload">[3/3]</span></h2>
+<a id="ad02946ede96408489d672d15ab200958" name="ad02946ede96408489d672d15ab200958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad02946ede96408489d672d15ab200958">&#9670;&nbsp;</a></span>SetName() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::SetName </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::SetName </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>idx</em>, </td>
@@ -363,15 +417,24 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Changes the name of the idx-th bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>The bar name to be changes</td></tr>
+    <tr><td class="paramname">name</td><td>The string which is printed in the front of the bar </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ab74a1cf8c35e19a0a1a16be7b6ca8321" name="ab74a1cf8c35e19a0a1a16be7b6ca8321"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab74a1cf8c35e19a0a1a16be7b6ca8321">&#9670;&nbsp;</a></span>UnpackTargets()</h2>
+<a id="a7088deecfe936d4eaba784cff05270f4" name="a7088deecfe936d4eaba784cff05270f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7088deecfe936d4eaba784cff05270f4">&#9670;&nbsp;</a></span>UnpackTargets()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Ts&gt; </div>
 <table class="mlabels">
@@ -379,7 +442,7 @@ template&lt;typename... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::UnpackTargets </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::UnpackTargets </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>target</em>, </td>
@@ -403,15 +466,17 @@ template&lt;typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The variadic internal function called by the compiler, looping over the arbitrary number of inputs and storing them in internal vectors. </p>
+
 </div>
 </div>
-<a id="aa2329ecb7ba4cf6a53581277100f446a" name="aa2329ecb7ba4cf6a53581277100f446a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2329ecb7ba4cf6a53581277100f446a">&#9670;&nbsp;</a></span>UnrollPositions()</h2>
+<a id="a73c79e8e00905454aa2853b39d8143b6" name="a73c79e8e00905454aa2853b39d8143b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c79e8e00905454aa2853b39d8143b6">&#9670;&nbsp;</a></span>UnrollPositions()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Ts&gt; </div>
 <table class="mlabels">
@@ -419,7 +484,7 @@ template&lt;typename... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::UnrollPositions </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::UnrollPositions </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>idx</em>, </td>
@@ -449,15 +514,17 @@ template&lt;typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The variadic internal function which is called by <a class="el" href="classJSL_1_1ProgressBar.html#ac7d924894ea76344ec2b1540d329a05f">Update()</a>, loops over the arguments and computes the number of Symbols required by each bar. </p>
+
 </div>
 </div>
-<a id="aa9e8aae58f1d27e83706c06253244325" name="aa9e8aae58f1d27e83706c06253244325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9e8aae58f1d27e83706c06253244325">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="ac7d924894ea76344ec2b1540d329a05f" name="ac7d924894ea76344ec2b1540d329a05f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d924894ea76344ec2b1540d329a05f">&#9670;&nbsp;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Ts&gt; </div>
 <table class="mlabels">
@@ -465,7 +532,7 @@ template&lt;typename... Ts&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::Update </td>
+          <td class="memname">void <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::Update </td>
           <td>(</td>
           <td class="paramtype">Ts...&#160;</td>
           <td class="paramname"><em>positions</em></td><td>)</td>
@@ -478,23 +545,29 @@ template&lt;typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Provide a progress update (i.e. loop index) for each of the active bars. Accepts a number of integer arguments equal to Dimension. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">positons</td><td>The current process count (to be compared against the targets) of the open progress bars </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a id="a363db1f5a02c263b5a767e91787aaa51" name="a363db1f5a02c263b5a767e91787aaa51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a363db1f5a02c263b5a767e91787aaa51">&#9670;&nbsp;</a></span>BarCount</h2>
+<a id="a8ab0aeecd87eaa2754a5a58aea3cca51" name="a8ab0aeecd87eaa2754a5a58aea3cca51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab0aeecd87eaa2754a5a58aea3cca51">&#9670;&nbsp;</a></span>BarProgress</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::BarCount</td>
+          <td class="memname">std::vector&lt;double&gt; <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::BarProgress</td>
         </tr>
       </table>
   </td>
@@ -504,21 +577,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Current progress value (between 0 and 1) </p>
+
 </div>
 </div>
-<a id="a0593aa1757ff10db2e7e9eb17234a56d" name="a0593aa1757ff10db2e7e9eb17234a56d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0593aa1757ff10db2e7e9eb17234a56d">&#9670;&nbsp;</a></span>BarProgress</h2>
+<a id="a4fabdafceac14f4fbbb3e364578f6e1c" name="a4fabdafceac14f4fbbb3e364578f6e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fabdafceac14f4fbbb3e364578f6e1c">&#9670;&nbsp;</a></span>BarTargets</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::BarProgress</td>
+          <td class="memname">std::vector&lt;int&gt; <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::BarTargets</td>
         </tr>
       </table>
   </td>
@@ -528,21 +603,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Storage for the target number of processes. </p>
+
 </div>
 </div>
-<a id="a078a1b566733d0177ab4bc94bbcab9ad" name="a078a1b566733d0177ab4bc94bbcab9ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a078a1b566733d0177ab4bc94bbcab9ad">&#9670;&nbsp;</a></span>BarTargets</h2>
+<a id="ae3160fd31be03fadd4c92a0906f64f79" name="ae3160fd31be03fadd4c92a0906f64f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3160fd31be03fadd4c92a0906f64f79">&#9670;&nbsp;</a></span>bufferWidth</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;int&gt; <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::BarTargets</td>
+          <td class="memname">int <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::bufferWidth = 10</td>
         </tr>
       </table>
   </td>
@@ -552,21 +629,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Default size allocated for names, increases if a value of anmes would overfill it. </p>
+
 </div>
 </div>
-<a id="a02f64d66bd98230dd800a543d4203d03" name="a02f64d66bd98230dd800a543d4203d03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02f64d66bd98230dd800a543d4203d03">&#9670;&nbsp;</a></span>bufferWidth</h2>
+<a id="a7354c455382575329326bedfd210957e" name="a7354c455382575329326bedfd210957e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7354c455382575329326bedfd210957e">&#9670;&nbsp;</a></span>firstPrint</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::bufferWidth = 10</td>
+          <td class="memname">bool <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::firstPrint = true</td>
         </tr>
       </table>
   </td>
@@ -576,21 +655,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Toggle to ensure open-brace "[" is printed only once. </p>
+
 </div>
 </div>
-<a id="ab94f1adc8ac9de3799a0c0fff5218e6e" name="ab94f1adc8ac9de3799a0c0fff5218e6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab94f1adc8ac9de3799a0c0fff5218e6e">&#9670;&nbsp;</a></span>firstPrint</h2>
+<a id="a0798094501860753307f92eafa464b4f" name="a0798094501860753307f92eafa464b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0798094501860753307f92eafa464b4f">&#9670;&nbsp;</a></span>Hashes</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::firstPrint = true</td>
+          <td class="memname">std::vector&lt;int&gt; <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::Hashes</td>
         </tr>
       </table>
   </td>
@@ -600,21 +681,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Current printed number of symbols for each bar. </p>
+
 </div>
 </div>
-<a id="a84de0a555d9671a5e003332730c5086f" name="a84de0a555d9671a5e003332730c5086f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84de0a555d9671a5e003332730c5086f">&#9670;&nbsp;</a></span>Hashes</h2>
+<a id="ab85ccf4638d649d88becf47e2af83525" name="ab85ccf4638d649d88becf47e2af83525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab85ccf4638d649d88becf47e2af83525">&#9670;&nbsp;</a></span>Names</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;int&gt; <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::Hashes</td>
+          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::Names</td>
         </tr>
       </table>
   </td>
@@ -624,21 +707,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>The names printed in front of each bar. </p>
+
 </div>
 </div>
-<a id="a7814c15a0bb7fef15d7a79800e4c3f00" name="a7814c15a0bb7fef15d7a79800e4c3f00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7814c15a0bb7fef15d7a79800e4c3f00">&#9670;&nbsp;</a></span>MaxHashes</h2>
+<a id="a3439198bd34393a92cfbc9067247be4a" name="a3439198bd34393a92cfbc9067247be4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3439198bd34393a92cfbc9067247be4a">&#9670;&nbsp;</a></span>prevHashes</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::MaxHashes = 32</td>
+          <td class="memname">int <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::prevHashes = 0</td>
         </tr>
       </table>
   </td>
@@ -648,21 +733,23 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
+<p>Used in DeleteMode=false to compute new hashe number. </p>
+
 </div>
 </div>
-<a id="a2a74b78253b885897afe16656843ed2a" name="a2a74b78253b885897afe16656843ed2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a74b78253b885897afe16656843ed2a">&#9670;&nbsp;</a></span>Names</h2>
+<a id="a913055a04bad40dbbf66f0f8247bb8b0" name="a913055a04bad40dbbf66f0f8247bb8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913055a04bad40dbbf66f0f8247bb8b0">&#9670;&nbsp;</a></span>reprintNeeded</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
+template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#', unsigned int MaxHashes = 20&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::Names</td>
+          <td class="memname">bool <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;::reprintNeeded</td>
         </tr>
       </table>
   </td>
@@ -672,53 +759,7 @@ template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </d
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ad1b42914e2355692ff89b64b52ccf3b3" name="ad1b42914e2355692ff89b64b52ccf3b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1b42914e2355692ff89b64b52ccf3b3">&#9670;&nbsp;</a></span>prevHashes</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::prevHashes = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a147d0312ca3d0985cebabee2329881c1" name="a147d0312ca3d0985cebabee2329881c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a147d0312ca3d0985cebabee2329881c1">&#9670;&nbsp;</a></span>reprintNeeded</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int Dimension = 1, bool DeleteMode = true, char Symbol = '#'&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classJSL_1_1ProgressBar.html">JSL::ProgressBar</a>&lt; Dimension, DeleteMode, Symbol &gt;::reprintNeeded</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Toggle which ensures reprinting only occurs when something changes, prevents unnecessary overhead. </p>
 
 </div>
 </div>

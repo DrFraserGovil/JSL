@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['barcount_0',['BarCount',['../classJSL_1_1ProgressBar.html#a363db1f5a02c263b5a767e91787aaa51',1,'JSL::ProgressBar']]],
-  ['barprogress_1',['BarProgress',['../classJSL_1_1ProgressBar.html#a0593aa1757ff10db2e7e9eb17234a56d',1,'JSL::ProgressBar']]],
-  ['bartargets_2',['BarTargets',['../classJSL_1_1ProgressBar.html#a078a1b566733d0177ab4bc94bbcab9ad',1,'JSL::ProgressBar']]],
-  ['bufferwidth_3',['bufferWidth',['../classJSL_1_1ProgressBar.html#a02f64d66bd98230dd800a543d4203d03',1,'JSL::ProgressBar']]]
+  ['barprogress_0',['BarProgress',['../classJSL_1_1ProgressBar.html#a8ab0aeecd87eaa2754a5a58aea3cca51',1,'JSL::ProgressBar']]],
+  ['bartargets_1',['BarTargets',['../classJSL_1_1ProgressBar.html#a4fabdafceac14f4fbbb3e364578f6e1c',1,'JSL::ProgressBar']]],
+  ['bufferwidth_2',['bufferWidth',['../classJSL_1_1ProgressBar.html#ae3160fd31be03fadd4c92a0906f64f79',1,'JSL::ProgressBar']]]
 ];

@@ -408,7 +408,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="12" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="12" bodyend="16"/>
+        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="12" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="12" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ae38780f94d60045b904b289eb3ab8eda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -417,13 +417,13 @@
         <name>deleteLine</name>
         <qualifiedname>JSL::deleteLine</qualifiedname>
         <briefdescription>
-<para>Removes the last line of text, moving the cursor from its current position, to the beginning of the line. If you want to remove the linebreak which caused that line to exist in the first place, must be followed up with <ref refid="namespaceJSL_1a405f53748ca024b70694b0534cfcf4a3" kindref="member">jumpLineUp()</ref> </para>
+<para>Removes the last line of text, moving the cursor from its current position, to the beginning of the line. If you want to remove the linebreak which caused that line to exist in the first place, must be followed up with <ref refid="namespaceJSL_1a405f53748ca024b70694b0534cfcf4a3" kindref="member">jumpLineUp()</ref>. ALternatively, if a linebreak has been printed and you want to delete that line <emphasis>first</emphasis>, you must call <ref refid="namespaceJSL_1a405f53748ca024b70694b0534cfcf4a3" kindref="member">jumpLineUp()</ref> before <ref refid="namespaceJSL_1ae38780f94d60045b904b289eb3ab8eda" kindref="member">deleteLine()</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="18" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="18" bodyend="22"/>
+        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="17" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="17" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a47d8cb112d513ee5a3ae38ca6a89743d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
