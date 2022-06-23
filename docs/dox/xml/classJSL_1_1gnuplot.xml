@@ -403,6 +403,9 @@
 <para>Passes the arguments along to the <ref refid="classJSL_1_1Axis_1a95b78211cb09e6c6f0834fd353890a1d" kindref="member">Axis::Plot()</ref> function associated with the current axis focus. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the generated <ref refid="classJSL_1_1PlotData" kindref="compound">JSL::PlotData</ref> object, allowing for post-facto modification of the linestyle. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -443,6 +446,9 @@
 <para>As with <ref refid="classJSL_1_1gnuplot_1ad7759efccfffa13d51620a3a695823ea" kindref="member">Plot(const std::vector&lt;T&gt; &amp; x,const std::vector&lt;S&gt;  &amp; y, NameValuePair&lt;Ts&gt;... args)</ref>, but permits non-vector objects which can still be cast into vectors (i.e. <ref refid="classJSL_1_1Vector" kindref="compound">JSL::Vector</ref> objects) </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the generated <ref refid="classJSL_1_1PlotData" kindref="compound">JSL::PlotData</ref> object, allowing for post-facto modification of the linestyle. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -483,6 +489,9 @@
 <para>Passes the arguments along to the <ref refid="classJSL_1_1Axis_1abcccbd36fd86e0504c02a66dabc5f763" kindref="member">Axis::Scatter()</ref> function associated with the current axis focus. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the generated <ref refid="classJSL_1_1PlotData" kindref="compound">JSL::PlotData</ref> object, allowing for post-facto modification of the linestyle. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -523,6 +532,9 @@
 <para>As with <ref refid="classJSL_1_1gnuplot_1a90306a67b5b8d990cbcb13b3f6f6eaa3" kindref="member">Scatter(const std::vector&lt;T&gt; &amp; x,const std::vector&lt;S&gt;  &amp; y, NameValuePair&lt;Ts&gt;... args)</ref>, but permits non-vector objects which can still be cast into vectors (i.e. <ref refid="classJSL_1_1Vector" kindref="compound">JSL::Vector</ref> objects) </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the generated <ref refid="classJSL_1_1PlotData" kindref="compound">JSL::PlotData</ref> object, allowing for post-facto modification of the linestyle. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

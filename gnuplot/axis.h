@@ -53,7 +53,7 @@ namespace JSL
 				DataIdx = 0;
 			}
 
-			//! Adds a line plot to the axis, plotting x against y, and using the args to define what the line looks like \param x The x coordinates of the data to be plotted \param y The y coordinates of the data t be plotted, must be the same length as x \param args A variadic list of NameValuePair objects, used to define the properties of the line
+			//! Adds a line plot to the axis, plotting x against y, and using the args to define what the line looks like \param x The x coordinates of the data to be plotted \param y The y coordinates of the data t be plotted, must be the same length as x \param args A variadic list of NameValuePair objects, used to define the properties of the line \returns A reference to the generated JSL::PlotData object, allowing for post-facto modification of the linestyle.
 			template<class T, class S, typename... Ts>
 			PlotData & Plot(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args)
 			{
@@ -66,7 +66,7 @@ namespace JSL
 				return Data[Data.size()-1];
 			};
 
-			//! Adds a scatter plot to the axis, plotting x against y, and using the args to define what the line looks like \param x The x coordinates of the data to be plotted \param y The y coordinates of the data t be plotted, must be the same length as x \param args A variadic list of NameValuePair objects, used to define the properties of the line
+			//! Adds a scatter plot to the axis, plotting x against y, and using the args to define what the line looks like \param x The x coordinates of the data to be plotted \param y The y coordinates of the data t be plotted, must be the same length as x \param args A variadic list of NameValuePair objects, used to define the properties of the line \returns A reference to the generated JSL::PlotData object, allowing for post-facto modification of the linestyle.
 			template<class T, class S, typename... Ts>
 			PlotData & Scatter(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args)
 			{

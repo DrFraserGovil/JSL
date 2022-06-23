@@ -3,16 +3,16 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_ab3202b0829bd8c97cf11fa3ba1056ced}{Pen\+Size}} (T w)
-\item 
+\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ int $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a01e508bb8a1d683fcf8771c08dc53dfb}{Pen\+Size}} (int w)
+\begin{DoxyCompactList}\small\item\em Auto constructs pensize specifier. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a617f9fb19b5c9ec868056a665fca451c}{Colour}} (T c)
-\item 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a53085936a7f874c924b456ab7d888dd4}{Pen\+Type}} (T c)
-\item 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a1d98a87b934ea854350f03976cf79616}{Scatter\+Type}} (T c)
-\item 
+\begin{DoxyCompactList}\small\item\em Auto constructs single-\/argument colour specifier. Has to be template because can use either string or std\+::vector types to specify. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355}{Line\+Type}} $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_ab079b176b53f91602a34c241f06f70f9}{Pen\+Type}} (\mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355}{Line\+Type}} c)
+\begin{DoxyCompactList}\small\item\em Auto constructs pentype specifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL\+::\+Scatter\+Type}} $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_aaab3926d36b47c74c5ec25758c7236ce}{Scatter\+Type}} (\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL\+::\+Scatter\+Type}} c)
+\begin{DoxyCompactList}\small\item\em Auto constructs scattertype specifier. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a6f09486f21ae83a4a69f0a18d0023a73}{Legend}} (std\+::string s)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Auto constructs legend specifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -23,30 +23,47 @@
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ T $>$ JSL\+::\+Line\+Properties\+::\+Colour (\begin{DoxyParamCaption}\item[{T}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Auto constructs single-\/argument colour specifier. Has to be template because can use either string or std\+::vector types to specify. 
+
 \mbox{\Hypertarget{namespaceJSL_1_1LineProperties_a6f09486f21ae83a4a69f0a18d0023a73}\label{namespaceJSL_1_1LineProperties_a6f09486f21ae83a4a69f0a18d0023a73}} 
 \index{JSL::LineProperties@{JSL::LineProperties}!Legend@{Legend}}
 \index{Legend@{Legend}!JSL::LineProperties@{JSL::LineProperties}}
 \doxysubsubsection{\texorpdfstring{Legend()}{Legend()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ std\+::string $>$ JSL\+::\+Line\+Properties\+::\+Legend (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{namespaceJSL_1_1LineProperties_ab3202b0829bd8c97cf11fa3ba1056ced}\label{namespaceJSL_1_1LineProperties_ab3202b0829bd8c97cf11fa3ba1056ced}} 
+
+
+Auto constructs legend specifier. 
+
+\mbox{\Hypertarget{namespaceJSL_1_1LineProperties_a01e508bb8a1d683fcf8771c08dc53dfb}\label{namespaceJSL_1_1LineProperties_a01e508bb8a1d683fcf8771c08dc53dfb}} 
 \index{JSL::LineProperties@{JSL::LineProperties}!PenSize@{PenSize}}
 \index{PenSize@{PenSize}!JSL::LineProperties@{JSL::LineProperties}}
 \doxysubsubsection{\texorpdfstring{PenSize()}{PenSize()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ T $>$ JSL\+::\+Line\+Properties\+::\+Pen\+Size (\begin{DoxyParamCaption}\item[{T}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ int $>$ JSL\+::\+Line\+Properties\+::\+Pen\+Size (\begin{DoxyParamCaption}\item[{int}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{namespaceJSL_1_1LineProperties_a53085936a7f874c924b456ab7d888dd4}\label{namespaceJSL_1_1LineProperties_a53085936a7f874c924b456ab7d888dd4}} 
+
+
+Auto constructs pensize specifier. 
+
+\mbox{\Hypertarget{namespaceJSL_1_1LineProperties_ab079b176b53f91602a34c241f06f70f9}\label{namespaceJSL_1_1LineProperties_ab079b176b53f91602a34c241f06f70f9}} 
 \index{JSL::LineProperties@{JSL::LineProperties}!PenType@{PenType}}
 \index{PenType@{PenType}!JSL::LineProperties@{JSL::LineProperties}}
 \doxysubsubsection{\texorpdfstring{PenType()}{PenType()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ T $>$ JSL\+::\+Line\+Properties\+::\+Pen\+Type (\begin{DoxyParamCaption}\item[{T}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355}{Line\+Type}} $>$ JSL\+::\+Line\+Properties\+::\+Pen\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355}{Line\+Type}}}]{c }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespaceJSL_1_1LineProperties_a1d98a87b934ea854350f03976cf79616}\label{namespaceJSL_1_1LineProperties_a1d98a87b934ea854350f03976cf79616}} 
+
+
+Auto constructs pentype specifier. 
+
+\mbox{\Hypertarget{namespaceJSL_1_1LineProperties_aaab3926d36b47c74c5ec25758c7236ce}\label{namespaceJSL_1_1LineProperties_aaab3926d36b47c74c5ec25758c7236ce}} 
 \index{JSL::LineProperties@{JSL::LineProperties}!ScatterType@{ScatterType}}
 \index{ScatterType@{ScatterType}!JSL::LineProperties@{JSL::LineProperties}}
 \doxysubsubsection{\texorpdfstring{ScatterType()}{ScatterType()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ T $>$ JSL\+::\+Line\+Properties\+::\+Scatter\+Type (\begin{DoxyParamCaption}\item[{T}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL\+::\+Scatter\+Type}} $>$ JSL\+::\+Line\+Properties\+::\+Scatter\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL\+::\+Scatter\+Type}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Auto constructs scattertype specifier. 
 

@@ -7,12 +7,13 @@ namespace JSL
 	enum LineType {Solid, Dash, DashDot,Dotted, DashDotDot};
 	enum ScatterType {Dot, Plus,Cross,Star,OpenSquare,FilledSquare,OpenCircle,FilledCircle,OpenDelta,FilledDelta,OpenNabla,FilledNabla,OpenDiamond,FilledDiamond};
 	
+	//! A simple struct for associating a datatype a member of JSL::Property
 	template<typename T>
 	struct NameValuePair
 	{
-		Property Name;
-		T Value;
-		
+		Property Name; //!< Informs JSL::PlotData which internal property the Value is associated with
+		T Value; //!< An arbitrary datum, which JSL::PlotData will try to interpret using one of its many template functions.
+		//!Boring constructor
 		NameValuePair(Property name, T value)
 		{
 			Name = name;
@@ -21,37 +22,39 @@ namespace JSL
 	};
 	namespace LineProperties
 	{
-		template<typename T>
-		inline NameValuePair<T> PenSize(T w)
+		//! Auto constructs pensize specifier
+		inline NameValuePair<int> PenSize(int w)
 		{
-			return NameValuePair<T>(JSL::PenSize,w);
+			return NameValuePair<int>(JSL::PenSize,w);
 		}
+		//! Auto constructs single-argument colour specifier. Has to be template because can use either string or std::vector types to specify
 		template<typename T>
 		inline NameValuePair<T> Colour(T c)
 		{
 			return NameValuePair<T>(JSL::Colour,c);
 		}
-		template<typename T>
-		NameValuePair<T> PenType(T c)
+		//! Auto constructs pentype specifier
+		NameValuePair<LineType> PenType(LineType c)
 		{
-			return NameValuePair<T>(JSL::PenType,c);
+			return NameValuePair<LineType>(JSL::PenType,c);
 		}
-		template<typename T>
-		inline NameValuePair<T> ScatterType(T c)
+		//! Auto constructs scattertype specifier
+		inline NameValuePair<JSL::ScatterType> ScatterType(JSL::ScatterType c)
 		{
-			return NameValuePair<T>(JSL::PenType,c);
+			return NameValuePair<JSL::ScatterType>(JSL::PenType,c);
 		}
-
+		//! Auto constructs legend specifier
 		inline NameValuePair<std::string>Legend(std::string s)
 		{
 			return NameValuePair<std::string>(JSL::Legend,s);
 		}
 	}
-
+	//! A holder class for the datalocation, and line specification for each plot added to an axis.
 	class PlotData
 	{
 		public:	
 			
+			//! Constructor \param data The relative filepath to the location where the associated data is stored. \param idx The id of the data (and the index of this object within the Axis::Data vector). \param args A variadic list of JSL::NameValuePair objects used for pre-facto changes to the line style 
 			template<typename... Ts>
 			PlotData(std::string data,int idx,PlotType t, NameValuePair<Ts>... args) : DataLocation(data)
 			{
@@ -63,59 +66,59 @@ namespace JSL
 					ParseLoop(args...);
 				}
 			}
+
+			//! Default template function - used to throw error messages if innapropriate colour specifications used. **Note the spelling of colour!!**
 			template<typename T>
 			void SetColour(T v)
 			{
 				Error("Cannot parse colours in the provided format. Please use a supported colour encoding");
 			}
+			//! Sets the colour value of the line to the given string. No checks are made that this string corresponds to a valid gnuplot colour.**Note the spelling of colour!!**
 			void SetColour(std::string c)
 			{
 				colour = "\"" + c + "\"";
 			}
+			//! SetColour override for c-style string - simple converts to std::string then calls SetColour(std::string c) **Note the spelling of colour!!**
 			void SetColour(const char * c)
 			{
 				SetColour((std::string) c);
 			}
-			void SetColour(int r, int g, int b)
+			//! Sets the colour to that specified by the RGB value, converting it into a gnuplot-readable format **Note the spelling of colour!!** \param r The red value (between 0 and 255) \param g The green value (between 0 and 255) \param b The blue value (between 0 and 255)
+			void SetColour(unsigned int r, unsigned int g, unsigned int b)
 			{
-				int combined = 65536 * (r % 256) + 256 * (g%256) + (b%256);
+				int combined = 65536 * (r % 256) + 256 * (g%256) + (b%256); //bitshifting nonsense
 				colour = " rgb " + std::to_string(combined);
 			}		
-			void SetColour(std::vector<int> cs)
+			//! Sets the colour to that specified by the RGB value **Note the spelling of colour!!** \param cs A length-three vector corresponding to RGB values
+			void SetColour(std::vector<unsigned int> cs)
 			{
 				Assert("RGB Vectors must have length 3", cs.size() == 3);
 				SetColour(cs[0],cs[1],cs[2]);
 			}
-
+			//! Default template function - used to throw error messages if innapropriate pensize specifications used.
 			template<typename T>
 			void SetPenSize(T v)
 			{
 				Error("Cannot parse pensizes in the provided format. Please use a supported pensize encoding");
 			}
+
+			//! Sets the width of the pen used to draw lines (and also the thickness of scatter-points)
 			void SetPenSize(int l)
 			{
 				penSize = l;
 			}	
 
+			//! Default template function - used to throw error messages if innapropriate pen type specification used.
 			template<typename T>
 			void SetPenType(T v)
 			{
-				Error("Cannot parse pensizes in the provided format. Please use a supported pensize encoding");
+				Error("Cannot parse pentypes in the provided format. Please use a supported pensize encoding");
 			}
-			void SetPenType(std::string t)
-			{
-				dashType = t;
-			}
-			void SetPenType(const char * t)
-			{
-				dashType = (std::string) t;
-			}
-			void SetPenType(int i)
-			{
-				dashType = std::to_string(i);
-			}
+
+			//! Sets the LineType (dashed, solid, etc) for the object \param t The JSL::LineType specifier
 			void SetPenType(JSL::LineType t)
 			{
+				Assert("Can only set pentype for line objects - use ScatterType for scatterobjects",type==Line);
 				switch (t)
 				{
 					case Solid:
@@ -139,25 +142,34 @@ namespace JSL
 
 				}
 			}
-			void SetPenType(JSL::ScatterType t)
-			{
-				dashType = std::to_string((int)t);
-			}
+			//! Default template function - used to throw error messages if innapropriate scatter type specification used.
 			template<typename T>
 			void SetScatterType(T t)
 			{
-				SetPenType(t);
+				std::cout << t << std::endl;
+				Error("Cannot parse scattertype in the provided format. Please use a supported pensize encoding");
 			}
 
+			//! Sets the LineType (circle, dot, square) for the object \param t The JSL::ScatterType specifier
+			void SetScatterType(ScatterType t)
+			{
+				Assert("Can only set scattertype for scatter objects - use LineType for line objects",type==ScatterPoint);
+				dashType = std::to_string((int)t);
+			}
+			//! Default template function - used to throw error messages if innapropriate specification used.
 			template<typename T>
 			void SetLegend(T t)
 			{
 				Error("Cannot parse legends as anything other than strings");
 			}
+
+			//! Sets the name for this plot on the legend
 			void SetLegend(std::string s)
 			{
 				legend = s;
 			}
+
+			//! Formats the internal data and writes it to a string for use in a gnuplot script \returns A string containing the necessary data to plot the internal data
 			std::string Write()
 			{
 				std::string line = "";
@@ -189,13 +201,15 @@ namespace JSL
 				return line + ",\\\n";
 			}
 		private:
-			std::string DataLocation;
-			int Idx;
-			std::string dashType;
-			PlotType type;
-			std::string legend;
-			std::string colour;
-			int penSize;
+			std::string DataLocation; //!< The file location for the x/y data used in this plot
+			int Idx; //!< The ID of this plot, pretty much only used to generate a default legend (i.e. Plot 1)
+			std::string dashType; //!< The dashType specifier (either for linestyle - dash/solid, or scatterstyle - circle/dot/square etc.)
+			PlotType type; //!< Denotes either Line plots or scatter plots etc.
+			std::string legend; //!< The name associated with this data on the legend
+			std::string colour; //!< The colour used to plot the data - if not specified, uses the default gnuplot colour roster.
+			int penSize; //!< The thickness of the pen used to write the data
+
+			//! Sets the default values of the members
 			void DefaultInit()
 			{
 				
@@ -207,13 +221,15 @@ namespace JSL
 						SetPenType(Solid);
 						break;
 					case ScatterPoint:
-						SetPenType(OpenCircle);
+						SetScatterType(OpenCircle);
 						break;
 				};
 
 				penSize = 1;
 				legend = "Data " + std::to_string(Idx);
 			}
+
+			//! Variadic function which parses the JSL::NameValuePairs provided to the function for pre-facto modification
 			template<typename T, typename... Ts>
 			void ParseLoop(NameValuePair<T> n1, NameValuePair<Ts>... ns)
 			{
@@ -223,6 +239,7 @@ namespace JSL
 					ParseLoop(ns...);
 				}
 			}
+			//! Given a JSL::NameValuePair object, attempt to interpret it, given the Name value, passing the Value portion to the relevant templated function outlined above
 			template<typename T>
 			void ParseNVPair(NameValuePair<T> nv)
 			{
@@ -235,7 +252,15 @@ namespace JSL
 					SetPenSize(nv.Value);
 					break;
 				case PenType:
-					SetPenType(nv.Value);
+					if (type == Line)
+					{
+						std::cout << "calling line" << std::endl;
+						SetPenType(nv.Value);
+					}
+					else
+					{
+						SetScatterType(nv.Value);
+					}
 					break;
 				case Legend:
 					SetLegend(nv.Value);

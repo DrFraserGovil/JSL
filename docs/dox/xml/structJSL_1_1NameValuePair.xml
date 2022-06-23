@@ -16,12 +16,13 @@
         <name>Name</name>
         <qualifiedname>JSL::NameValuePair::Name</qualifiedname>
         <briefdescription>
+<para>Informs <ref refid="classJSL_1_1PlotData" kindref="compound">JSL::PlotData</ref> which internal property the Value is associated with. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="13" column="10" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="13" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="14" column="10" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structJSL_1_1NameValuePair_1a03e493ef338a55846408051a5d544b11" prot="public" static="no" mutable="no">
         <type>T</type>
@@ -32,10 +33,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>An arbitrary datum, which <ref refid="classJSL_1_1PlotData" kindref="compound">JSL::PlotData</ref> will try to interpret using one of its many template functions. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="14" column="3" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="14" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="15" column="3" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -54,19 +56,21 @@
           <declname>value</declname>
         </param>
         <briefdescription>
+<para>Boring constructor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="16" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="16" bodyend="20"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="17" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="17" bodyend="21"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>A simple struct for associating a datatype a member of <ref refid="namespaceJSL_1ad5aeae8cb562d6f38c724cbdc51d81f8" kindref="member">JSL::Property</ref>. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="11" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="12" bodyend="21"/>
+    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="12" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="13" bodyend="22"/>
     <listofallmembers>
       <member refid="structJSL_1_1NameValuePair_1a43effa79099e9015b45b6b9a9f8a2f0a" prot="public" virt="non-virtual"><scope>JSL::NameValuePair</scope><name>Name</name></member>
       <member refid="structJSL_1_1NameValuePair_1aad7234d2606ab8dc017a62206f4a4a69" prot="public" virt="non-virtual"><scope>JSL::NameValuePair</scope><name>NameValuePair</name></member>

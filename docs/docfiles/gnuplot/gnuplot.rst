@@ -13,6 +13,8 @@ Behind the scenes, that is all that this interface does -- writes data to file, 
 .. toctree::
 	gp-main
 	gp-axis
+	plot-data
+	nv-pair
 	properties
 	compile-flags
 	:caption: Members:

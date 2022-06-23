@@ -5,9 +5,9 @@
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structJSL_1_1NameValuePair}{JSL\+::\+Name\+Value\+Pair$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em A simple struct for associating a datatype a member of \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8}{JSL\+::\+Property}}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classJSL_1_1PlotData}{JSL\+::\+Plot\+Data}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A holder class for the datalocation, and line specification for each plot added to an axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,13 +60,13 @@ enum \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL\+::\+S
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\Name\+Value\+Pair$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_ab3202b0829bd8c97cf11fa3ba1056ced}{JSL\+::\+Line\+Properties\+::\+Pen\+Size}} (T w)
-\item 
+Name\+Value\+Pair$<$ int $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a01e508bb8a1d683fcf8771c08dc53dfb}{JSL\+::\+Line\+Properties\+::\+Pen\+Size}} (int w)
+\begin{DoxyCompactList}\small\item\em Auto constructs pensize specifier. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\Name\+Value\+Pair$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a617f9fb19b5c9ec868056a665fca451c}{JSL\+::\+Line\+Properties\+::\+Colour}} (T c)
-\item 
-{\footnotesize template$<$typename T $>$ }\\Name\+Value\+Pair$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a53085936a7f874c924b456ab7d888dd4}{JSL\+::\+Line\+Properties\+::\+Pen\+Type}} (T c)
-\item 
-{\footnotesize template$<$typename T $>$ }\\Name\+Value\+Pair$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a1d98a87b934ea854350f03976cf79616}{JSL\+::\+Line\+Properties\+::\+Scatter\+Type}} (T c)
-\item 
+\begin{DoxyCompactList}\small\item\em Auto constructs single-\/argument colour specifier. Has to be template because can use either string or std\+::vector types to specify. \end{DoxyCompactList}\item 
+Name\+Value\+Pair$<$ Line\+Type $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_ab079b176b53f91602a34c241f06f70f9}{JSL\+::\+Line\+Properties\+::\+Pen\+Type}} (Line\+Type c)
+\begin{DoxyCompactList}\small\item\em Auto constructs pentype specifier. \end{DoxyCompactList}\item 
+Name\+Value\+Pair$<$ \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL\+::\+Scatter\+Type}} $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_aaab3926d36b47c74c5ec25758c7236ce}{JSL\+::\+Line\+Properties\+::\+Scatter\+Type}} (\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL\+::\+Scatter\+Type}} c)
+\begin{DoxyCompactList}\small\item\em Auto constructs scattertype specifier. \end{DoxyCompactList}\item 
 Name\+Value\+Pair$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a6f09486f21ae83a4a69f0a18d0023a73}{JSL\+::\+Line\+Properties\+::\+Legend}} (std\+::string s)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Auto constructs legend specifier. \end{DoxyCompactList}\end{DoxyCompactItemize}

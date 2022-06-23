@@ -52,25 +52,25 @@ namespace JSL
 			axis_x = idx % Axes[0].size();
 		};
 
-		//! Passes the arguments along to the Axis::Plot() function associated with the current axis focus
+		//! Passes the arguments along to the Axis::Plot() function associated with the current axis focus\returns A reference to the generated JSL::PlotData object, allowing for post-facto modification of the linestyle.
 		template <class T, class S, typename... Ts>
 		PlotData &Plot(const std::vector<T> &x, const std::vector<S> &y, NameValuePair<Ts>... args)
 		{
 			return Axes[axis_y][axis_x].Plot(x, y, args...);
 		};
-		//! As with Plot(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args), but permits non-vector objects which can still be cast into vectors (i.e. JSL::Vector objects)
+		//! As with Plot(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args), but permits non-vector objects which can still be cast into vectors (i.e. JSL::Vector objects)\returns A reference to the generated JSL::PlotData object, allowing for post-facto modification of the linestyle.
 		template <class T, class S, typename... Ts>
 		PlotData &Plot(const T &x, const S &y, NameValuePair<Ts>... args)
 		{
 			return Axes[axis_y][axis_x].Plot((std::vector<double>)x, (std::vector<double>)y, args...);
 		};
-		//! Passes the arguments along to the Axis::Scatter() function associated with the current axis focus
+		//! Passes the arguments along to the Axis::Scatter() function associated with the current axis focus \returns A reference to the generated JSL::PlotData object, allowing for post-facto modification of the linestyle.
 		template <class T, class S, typename... Ts>
 		PlotData &Scatter(const std::vector<T> &x, const std::vector<S> &y, NameValuePair<Ts>... args)
 		{
 			return Axes[axis_y][axis_x].Scatter(x, y, args...);
 		};
-		//! As with Scatter(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args), but permits non-vector objects which can still be cast into vectors (i.e. JSL::Vector objects)
+		//! As with Scatter(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args), but permits non-vector objects which can still be cast into vectors (i.e. JSL::Vector objects) \returns A reference to the generated JSL::PlotData object, allowing for post-facto modification of the linestyle.
 		template <class T, class S, typename... Ts> // allows templating for non-vector objects which can nevertheless be successfully cast as vectors
 		PlotData &Scatter(const T &x, const S &y, NameValuePair<Ts>... args)
 		{

@@ -178,17 +178,14 @@
     <member refid="classJSL_1_1PlotData_1a67c6db4673dc35b4433e26dc9259a22f" kind="function"><name>SetColour</name></member>
     <member refid="classJSL_1_1PlotData_1af350ddfe10bf959868087490d58cc6f6" kind="function"><name>SetColour</name></member>
     <member refid="classJSL_1_1PlotData_1a04b4ee30bc1c289bc956bead3ad016da" kind="function"><name>SetColour</name></member>
-    <member refid="classJSL_1_1PlotData_1af17925614e1c493cd9ab67fa40e059b5" kind="function"><name>SetColour</name></member>
-    <member refid="classJSL_1_1PlotData_1a85482ac6105c688e2c45627176bd8a48" kind="function"><name>SetColour</name></member>
+    <member refid="classJSL_1_1PlotData_1a433b879e54d8ab172d6b3a73600ff1df" kind="function"><name>SetColour</name></member>
+    <member refid="classJSL_1_1PlotData_1af96df168f1f17d3405e7c630ea6e1649" kind="function"><name>SetColour</name></member>
     <member refid="classJSL_1_1PlotData_1acb517655ae4ab52c1512fd48c0589d31" kind="function"><name>SetPenSize</name></member>
     <member refid="classJSL_1_1PlotData_1aed7875d8ef940f0e1c0ec9321fc03001" kind="function"><name>SetPenSize</name></member>
     <member refid="classJSL_1_1PlotData_1a3e8e3327c8d29e55468709a1d02f554e" kind="function"><name>SetPenType</name></member>
-    <member refid="classJSL_1_1PlotData_1a700a1bda59a82ccb0893c9da51ede414" kind="function"><name>SetPenType</name></member>
-    <member refid="classJSL_1_1PlotData_1a233b61c2d872ef28b342a508392ccb49" kind="function"><name>SetPenType</name></member>
-    <member refid="classJSL_1_1PlotData_1a89f366ff9fdedb9494f29a6c601e5a2c" kind="function"><name>SetPenType</name></member>
     <member refid="classJSL_1_1PlotData_1aa12ffd19507678e013db6a221a0c5849" kind="function"><name>SetPenType</name></member>
-    <member refid="classJSL_1_1PlotData_1afb7ec483755fe2c95970ab6d0d3a4b4a" kind="function"><name>SetPenType</name></member>
     <member refid="classJSL_1_1PlotData_1a30cf21f46a1911587a4381bfb40c3403" kind="function"><name>SetScatterType</name></member>
+    <member refid="classJSL_1_1PlotData_1a677bd22e71e15894d5ac1d5fa652236b" kind="function"><name>SetScatterType</name></member>
     <member refid="classJSL_1_1PlotData_1a24fa5385585f0eaa2777072ef2d818c2" kind="function"><name>SetLegend</name></member>
     <member refid="classJSL_1_1PlotData_1a5e2c9a97035e97e3658c8bcc2913dab3" kind="function"><name>SetLegend</name></member>
     <member refid="classJSL_1_1PlotData_1a34c9a6d891f3434c13f9fd1e604e734c" kind="function"><name>Write</name></member>
@@ -380,10 +377,10 @@
     <member refid="namespaceJSL_1_1internal_1ae5d5175406e607b000d8a7e719e7dd5e" kind="function"><name>variadicAssertion</name></member>
   </compound>
   <compound refid="namespaceJSL_1_1LineProperties" kind="namespace"><name>JSL::LineProperties</name>
-    <member refid="namespaceJSL_1_1LineProperties_1ab3202b0829bd8c97cf11fa3ba1056ced" kind="function"><name>PenSize</name></member>
+    <member refid="namespaceJSL_1_1LineProperties_1a01e508bb8a1d683fcf8771c08dc53dfb" kind="function"><name>PenSize</name></member>
     <member refid="namespaceJSL_1_1LineProperties_1a617f9fb19b5c9ec868056a665fca451c" kind="function"><name>Colour</name></member>
-    <member refid="namespaceJSL_1_1LineProperties_1a53085936a7f874c924b456ab7d888dd4" kind="function"><name>PenType</name></member>
-    <member refid="namespaceJSL_1_1LineProperties_1a1d98a87b934ea854350f03976cf79616" kind="function"><name>ScatterType</name></member>
+    <member refid="namespaceJSL_1_1LineProperties_1ab079b176b53f91602a34c241f06f70f9" kind="function"><name>PenType</name></member>
+    <member refid="namespaceJSL_1_1LineProperties_1aaab3926d36b47c74c5ec25758c7236ce" kind="function"><name>ScatterType</name></member>
     <member refid="namespaceJSL_1_1LineProperties_1a6f09486f21ae83a4a69f0a18d0023a73" kind="function"><name>Legend</name></member>
   </compound>
   <compound refid="namespaceJSL__Testing" kind="namespace"><name>JSL_Testing</name>

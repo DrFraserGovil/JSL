@@ -3,28 +3,24 @@
   <compounddef id="namespaceJSL_1_1LineProperties" kind="namespace" language="C++">
     <compoundname>JSL::LineProperties</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1ab3202b0829bd8c97cf11fa3ba1056ced" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; T &gt;</type>
-        <definition>NameValuePair&lt; T &gt; JSL::LineProperties::PenSize</definition>
-        <argsstring>(T w)</argsstring>
+      <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1a01e508bb8a1d683fcf8771c08dc53dfb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; int &gt;</type>
+        <definition>NameValuePair&lt; int &gt; JSL::LineProperties::PenSize</definition>
+        <argsstring>(int w)</argsstring>
         <name>PenSize</name>
         <qualifiedname>JSL::LineProperties::PenSize</qualifiedname>
         <param>
-          <type>T</type>
+          <type>int</type>
           <declname>w</declname>
         </param>
         <briefdescription>
+<para>Auto constructs pensize specifier. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="25" column="22" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="25" bodyend="28"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="26" column="22" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="26" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1a617f9fb19b5c9ec868056a665fca451c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -42,58 +38,51 @@
           <declname>c</declname>
         </param>
         <briefdescription>
+<para>Auto constructs single-argument colour specifier. Has to be template because can use either string or std::vector types to specify. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="30" column="22" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="30" bodyend="33"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="32" column="22" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="32" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1a53085936a7f874c924b456ab7d888dd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; T &gt;</type>
-        <definition>NameValuePair&lt; T &gt; JSL::LineProperties::PenType</definition>
-        <argsstring>(T c)</argsstring>
+      <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1ab079b176b53f91602a34c241f06f70f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; <ref refid="namespaceJSL_1acbabfae0b320d418d49485b7c50bc355" kindref="member">LineType</ref> &gt;</type>
+        <definition>NameValuePair&lt; LineType &gt; JSL::LineProperties::PenType</definition>
+        <argsstring>(LineType c)</argsstring>
         <name>PenType</name>
         <qualifiedname>JSL::LineProperties::PenType</qualifiedname>
         <param>
-          <type>T</type>
+          <type><ref refid="namespaceJSL_1acbabfae0b320d418d49485b7c50bc355" kindref="member">LineType</ref></type>
           <declname>c</declname>
         </param>
         <briefdescription>
+<para>Auto constructs pentype specifier. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="35" column="15" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="35" bodyend="38"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="37" column="15" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="37" bodyend="40"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1a1d98a87b934ea854350f03976cf79616" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; T &gt;</type>
-        <definition>NameValuePair&lt; T &gt; JSL::LineProperties::ScatterType</definition>
-        <argsstring>(T c)</argsstring>
+      <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1aaab3926d36b47c74c5ec25758c7236ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; <ref refid="namespaceJSL_1a086efb36ddb107d45961a6b46932c526" kindref="member">JSL::ScatterType</ref> &gt;</type>
+        <definition>NameValuePair&lt; JSL::ScatterType &gt; JSL::LineProperties::ScatterType</definition>
+        <argsstring>(JSL::ScatterType c)</argsstring>
         <name>ScatterType</name>
         <qualifiedname>JSL::LineProperties::ScatterType</qualifiedname>
         <param>
-          <type>T</type>
+          <type><ref refid="namespaceJSL_1a086efb36ddb107d45961a6b46932c526" kindref="member">JSL::ScatterType</ref></type>
           <declname>c</declname>
         </param>
         <briefdescription>
+<para>Auto constructs scattertype specifier. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="40" column="22" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="40" bodyend="43"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="42" column="22" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="42" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1a6f09486f21ae83a4a69f0a18d0023a73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; std::string &gt;</type>
@@ -106,18 +95,19 @@
           <declname>s</declname>
         </param>
         <briefdescription>
+<para>Auto constructs legend specifier. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="45" column="21" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="45" bodyend="48"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="47" column="21" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="47" bodyend="50"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="22" column="1"/>
+    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="23" column="1"/>
   </compounddef>
 </doxygen>

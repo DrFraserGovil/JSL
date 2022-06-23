@@ -11,12 +11,13 @@
         <name>DataLocation</name>
         <qualifiedname>JSL::PlotData::DataLocation</qualifiedname>
         <briefdescription>
+<para>The file location for the x/y data used in this plot. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="192" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="192" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="204" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="204" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1PlotData_1a9c2193e46a79618ee04e4d229f44f20c" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -25,12 +26,13 @@
         <name>Idx</name>
         <qualifiedname>JSL::PlotData::Idx</qualifiedname>
         <briefdescription>
+<para>The ID of this plot, pretty much only used to generate a default legend (i.e. Plot 1) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="193" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="193" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="205" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="205" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1PlotData_1ab84555b21166659535d130f84ac74b42" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -39,12 +41,13 @@
         <name>dashType</name>
         <qualifiedname>JSL::PlotData::dashType</qualifiedname>
         <briefdescription>
+<para>The dashType specifier (either for linestyle - dash/solid, or scatterstyle - circle/dot/square etc.) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="194" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="194" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="206" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="206" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1PlotData_1a419724bfc1943f5c5efbc7607f9034d1" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceJSL_1a871354b683a8bee0151dbfbbde49beda" kindref="member">PlotType</ref></type>
@@ -53,12 +56,13 @@
         <name>type</name>
         <qualifiedname>JSL::PlotData::type</qualifiedname>
         <briefdescription>
+<para>Denotes either Line plots or scatter plots etc. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="195" column="10" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="195" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="207" column="10" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="207" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1PlotData_1a17ce4f8c1648a676421b39a204b0a37d" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -67,12 +71,13 @@
         <name>legend</name>
         <qualifiedname>JSL::PlotData::legend</qualifiedname>
         <briefdescription>
+<para>The name associated with this data on the legend. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="196" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="196" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="208" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="208" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1PlotData_1a2936bcc90d54c471f31388e2673081b3" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -81,12 +86,13 @@
         <name>colour</name>
         <qualifiedname>JSL::PlotData::colour</qualifiedname>
         <briefdescription>
+<para>The colour used to plot the data - if not specified, uses the default gnuplot colour roster. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="197" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="197" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="209" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="209" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1PlotData_1a91bf6edbf9d8a28cf5255aa1ed74948c" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -95,12 +101,13 @@
         <name>penSize</name>
         <qualifiedname>JSL::PlotData::penSize</qualifiedname>
         <briefdescription>
+<para>The thickness of the pen used to write the data. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="198" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="198" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="210" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="210" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -134,12 +141,39 @@
           <declname>args</declname>
         </param>
         <briefdescription>
+<para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The relative filepath to the location where the associated data is stored.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The id of the data (and the index of this object within the <ref refid="classJSL_1_1Axis_1a493f7f5899d5e867ade59af8e10e95bd" kindref="member">Axis::Data</ref> vector).</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A variadic list of <ref refid="structJSL_1_1NameValuePair" kindref="compound">JSL::NameValuePair</ref> objects used for pre-facto changes to the line style </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="56" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="56" bodyend="65"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="59" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="59" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a67c6db4673dc35b4433e26dc9259a22f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -157,12 +191,13 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Default template function - used to throw error messages if innapropriate colour specifications used. <bold>Note the spelling of colour!!</bold> </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="67" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="67" bodyend="70"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="72" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="72" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1af350ddfe10bf959868087490d58cc6f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -175,12 +210,13 @@
           <declname>c</declname>
         </param>
         <briefdescription>
+<para>Sets the colour value of the line to the given string. No checks are made that this string corresponds to a valid gnuplot colour.**Note the spelling of colour!!**. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="71" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="71" bodyend="74"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="77" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="77" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a04b4ee30bc1c289bc956bead3ad016da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -193,56 +229,95 @@
           <declname>c</declname>
         </param>
         <briefdescription>
+<para>SetColour override for c-style string - simple converts to std::string then calls <ref refid="classJSL_1_1PlotData_1af350ddfe10bf959868087490d58cc6f6" kindref="member">SetColour(std::string c)</ref> <bold>Note the spelling of colour!!</bold> </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="75" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="75" bodyend="78"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="82" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="82" bodyend="85"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1PlotData_1af17925614e1c493cd9ab67fa40e059b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1PlotData_1a433b879e54d8ab172d6b3a73600ff1df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void JSL::PlotData::SetColour</definition>
-        <argsstring>(int r, int g, int b)</argsstring>
+        <argsstring>(unsigned int r, unsigned int g, unsigned int b)</argsstring>
         <name>SetColour</name>
         <qualifiedname>JSL::PlotData::SetColour</qualifiedname>
         <param>
-          <type>int</type>
+          <type>unsigned int</type>
           <declname>r</declname>
         </param>
         <param>
-          <type>int</type>
+          <type>unsigned int</type>
           <declname>g</declname>
         </param>
         <param>
-          <type>int</type>
+          <type>unsigned int</type>
           <declname>b</declname>
         </param>
         <briefdescription>
+<para>Sets the colour to that specified by the RGB value, converting it into a gnuplot-readable format <bold>Note the spelling of colour!!</bold> </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The red value (between 0 and 255)</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The green value (between 0 and 255)</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The blue value (between 0 and 255) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="79" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="79" bodyend="83"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="87" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="87" bodyend="91"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1PlotData_1a85482ac6105c688e2c45627176bd8a48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1PlotData_1af96df168f1f17d3405e7c630ea6e1649" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void JSL::PlotData::SetColour</definition>
-        <argsstring>(std::vector&lt; int &gt; cs)</argsstring>
+        <argsstring>(std::vector&lt; unsigned int &gt; cs)</argsstring>
         <name>SetColour</name>
         <qualifiedname>JSL::PlotData::SetColour</qualifiedname>
         <param>
-          <type>std::vector&lt; int &gt;</type>
+          <type>std::vector&lt; unsigned int &gt;</type>
           <declname>cs</declname>
         </param>
         <briefdescription>
+<para>Sets the colour to that specified by the RGB value <bold>Note the spelling of colour!!</bold> </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A length-three vector corresponding to RGB values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="84" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="84" bodyend="88"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="93" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="93" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1acb517655ae4ab52c1512fd48c0589d31" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -260,12 +335,13 @@
           <declname>v</declname>
         </param>
         <briefdescription>
+<para>Default template function - used to throw error messages if innapropriate pensize specifications used. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="91" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="91" bodyend="94"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="100" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="100" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1aed7875d8ef940f0e1c0ec9321fc03001" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -278,12 +354,13 @@
           <declname>l</declname>
         </param>
         <briefdescription>
+<para>Sets the width of the pen used to draw lines (and also the thickness of scatter-points) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="95" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="95" bodyend="98"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="106" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="106" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a3e8e3327c8d29e55468709a1d02f554e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -301,60 +378,7 @@
           <declname>v</declname>
         </param>
         <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="101" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="101" bodyend="104"/>
-      </memberdef>
-      <memberdef kind="function" id="classJSL_1_1PlotData_1a700a1bda59a82ccb0893c9da51ede414" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void JSL::PlotData::SetPenType</definition>
-        <argsstring>(std::string t)</argsstring>
-        <name>SetPenType</name>
-        <qualifiedname>JSL::PlotData::SetPenType</qualifiedname>
-        <param>
-          <type>std::string</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="105" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="105" bodyend="108"/>
-      </memberdef>
-      <memberdef kind="function" id="classJSL_1_1PlotData_1a233b61c2d872ef28b342a508392ccb49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void JSL::PlotData::SetPenType</definition>
-        <argsstring>(const char *t)</argsstring>
-        <name>SetPenType</name>
-        <qualifiedname>JSL::PlotData::SetPenType</qualifiedname>
-        <param>
-          <type>const char *</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="109" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="109" bodyend="112"/>
-      </memberdef>
-      <memberdef kind="function" id="classJSL_1_1PlotData_1a89f366ff9fdedb9494f29a6c601e5a2c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void JSL::PlotData::SetPenType</definition>
-        <argsstring>(int i)</argsstring>
-        <name>SetPenType</name>
-        <qualifiedname>JSL::PlotData::SetPenType</qualifiedname>
-        <param>
-          <type>int</type>
-          <declname>i</declname>
-        </param>
-        <briefdescription>
+<para>Default template function - used to throw error messages if innapropriate pen type specification used. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -373,30 +397,23 @@
           <declname>t</declname>
         </param>
         <briefdescription>
+<para>Sets the LineType (dashed, solid, etc) for the object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="namespaceJSL_1acbabfae0b320d418d49485b7c50bc355" kindref="member">JSL::LineType</ref> specifier </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="117" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="117" bodyend="141"/>
-      </memberdef>
-      <memberdef kind="function" id="classJSL_1_1PlotData_1afb7ec483755fe2c95970ab6d0d3a4b4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void JSL::PlotData::SetPenType</definition>
-        <argsstring>(JSL::ScatterType t)</argsstring>
-        <name>SetPenType</name>
-        <qualifiedname>JSL::PlotData::SetPenType</qualifiedname>
-        <param>
-          <type><ref refid="namespaceJSL_1a086efb36ddb107d45961a6b46932c526" kindref="member">JSL::ScatterType</ref></type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="142" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="142" bodyend="145"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="119" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="119" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a30cf21f46a1911587a4381bfb40c3403" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -414,12 +431,42 @@
           <declname>t</declname>
         </param>
         <briefdescription>
+<para>Default template function - used to throw error messages if innapropriate scatter type specification used. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="147" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="147" bodyend="150"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="147" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="147" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1PlotData_1a677bd22e71e15894d5ac1d5fa652236b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::PlotData::SetScatterType</definition>
+        <argsstring>(ScatterType t)</argsstring>
+        <name>SetScatterType</name>
+        <qualifiedname>JSL::PlotData::SetScatterType</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1a086efb36ddb107d45961a6b46932c526" kindref="member">ScatterType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Sets the LineType (circle, dot, square) for the object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="namespaceJSL_1a086efb36ddb107d45961a6b46932c526" kindref="member">JSL::ScatterType</ref> specifier </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="154" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="154" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a24fa5385585f0eaa2777072ef2d818c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -437,12 +484,13 @@
           <declname>t</declname>
         </param>
         <briefdescription>
+<para>Default template function - used to throw error messages if innapropriate specification used. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="153" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="153" bodyend="156"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="161" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="161" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a5e2c9a97035e97e3658c8bcc2913dab3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -455,12 +503,13 @@
           <declname>s</declname>
         </param>
         <briefdescription>
+<para>Sets the name for this plot on the legend. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="157" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="157" bodyend="160"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="167" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="167" bodyend="170"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a34c9a6d891f3434c13f9fd1e604e734c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -469,12 +518,16 @@
         <name>Write</name>
         <qualifiedname>JSL::PlotData::Write</qualifiedname>
         <briefdescription>
+<para>Formats the internal data and writes it to a string for use in a gnuplot script. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>A string containing the necessary data to plot the internal data </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="161" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="161" bodyend="190"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="173" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="173" bodyend="202"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -485,12 +538,13 @@
         <name>DefaultInit</name>
         <qualifiedname>JSL::PlotData::DefaultInit</qualifiedname>
         <briefdescription>
+<para>Sets the default values of the members. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="199" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="199" bodyend="216"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="213" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="213" bodyend="230"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a0cb1885e91da9457fd684a60547e66d0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -517,12 +571,13 @@
           <declname>ns</declname>
         </param>
         <briefdescription>
+<para>Variadic function which parses the JSL::NameValuePairs provided to the function for pre-facto modification. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="218" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="218" bodyend="225"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="234" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="234" bodyend="241"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1PlotData_1a2e57942c52c4ec76436bd3179e4ee2cd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -540,19 +595,21 @@
           <declname>nv</declname>
         </param>
         <briefdescription>
+<para>Given a <ref refid="structJSL_1_1NameValuePair" kindref="compound">JSL::NameValuePair</ref> object, attempt to interpret it, given the Name value, passing the Value portion to the relevant templated function outlined above. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="227" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="227" bodyend="247"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="244" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="244" bodyend="272"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>A holder class for the datalocation, and line specification for each plot added to an axis. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="51" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="52" bodyend="248"/>
+    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="53" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="54" bodyend="273"/>
     <listofallmembers>
       <member refid="classJSL_1_1PlotData_1a2936bcc90d54c471f31388e2673081b3" prot="private" virt="non-virtual"><scope>JSL::PlotData</scope><name>colour</name></member>
       <member refid="classJSL_1_1PlotData_1ab84555b21166659535d130f84ac74b42" prot="private" virt="non-virtual"><scope>JSL::PlotData</scope><name>dashType</name></member>
@@ -567,19 +624,16 @@
       <member refid="classJSL_1_1PlotData_1a67c6db4673dc35b4433e26dc9259a22f" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetColour</name></member>
       <member refid="classJSL_1_1PlotData_1af350ddfe10bf959868087490d58cc6f6" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetColour</name></member>
       <member refid="classJSL_1_1PlotData_1a04b4ee30bc1c289bc956bead3ad016da" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetColour</name></member>
-      <member refid="classJSL_1_1PlotData_1af17925614e1c493cd9ab67fa40e059b5" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetColour</name></member>
-      <member refid="classJSL_1_1PlotData_1a85482ac6105c688e2c45627176bd8a48" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetColour</name></member>
+      <member refid="classJSL_1_1PlotData_1a433b879e54d8ab172d6b3a73600ff1df" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetColour</name></member>
+      <member refid="classJSL_1_1PlotData_1af96df168f1f17d3405e7c630ea6e1649" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetColour</name></member>
       <member refid="classJSL_1_1PlotData_1a24fa5385585f0eaa2777072ef2d818c2" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetLegend</name></member>
       <member refid="classJSL_1_1PlotData_1a5e2c9a97035e97e3658c8bcc2913dab3" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetLegend</name></member>
       <member refid="classJSL_1_1PlotData_1acb517655ae4ab52c1512fd48c0589d31" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetPenSize</name></member>
       <member refid="classJSL_1_1PlotData_1aed7875d8ef940f0e1c0ec9321fc03001" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetPenSize</name></member>
       <member refid="classJSL_1_1PlotData_1a3e8e3327c8d29e55468709a1d02f554e" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetPenType</name></member>
-      <member refid="classJSL_1_1PlotData_1a700a1bda59a82ccb0893c9da51ede414" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetPenType</name></member>
-      <member refid="classJSL_1_1PlotData_1a233b61c2d872ef28b342a508392ccb49" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetPenType</name></member>
-      <member refid="classJSL_1_1PlotData_1a89f366ff9fdedb9494f29a6c601e5a2c" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetPenType</name></member>
       <member refid="classJSL_1_1PlotData_1aa12ffd19507678e013db6a221a0c5849" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetPenType</name></member>
-      <member refid="classJSL_1_1PlotData_1afb7ec483755fe2c95970ab6d0d3a4b4a" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetPenType</name></member>
       <member refid="classJSL_1_1PlotData_1a30cf21f46a1911587a4381bfb40c3403" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetScatterType</name></member>
+      <member refid="classJSL_1_1PlotData_1a677bd22e71e15894d5ac1d5fa652236b" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>SetScatterType</name></member>
       <member refid="classJSL_1_1PlotData_1a419724bfc1943f5c5efbc7607f9034d1" prot="private" virt="non-virtual"><scope>JSL::PlotData</scope><name>type</name></member>
       <member refid="classJSL_1_1PlotData_1a34c9a6d891f3434c13f9fd1e604e734c" prot="public" virt="non-virtual"><scope>JSL::PlotData</scope><name>Write</name></member>
     </listofallmembers>

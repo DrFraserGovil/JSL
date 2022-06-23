@@ -74,82 +74,106 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A holder class for the datalocation, and line specification for each plot added to an axis.  
+ <a href="classJSL_1_1PlotData.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="PlotData_8h_source.html">PlotData.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acefcd21025b95d2f76313dfd578bb25f"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:acefcd21025b95d2f76313dfd578bb25f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#acefcd21025b95d2f76313dfd578bb25f">PlotData</a> (std::string data, int idx, <a class="el" href="namespaceJSL.html#a871354b683a8bee0151dbfbbde49beda">PlotType</a> t, <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; Ts &gt;... args)</td></tr>
+<tr class="memdesc:acefcd21025b95d2f76313dfd578bb25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classJSL_1_1PlotData.html#acefcd21025b95d2f76313dfd578bb25f">More...</a><br /></td></tr>
 <tr class="separator:acefcd21025b95d2f76313dfd578bb25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67c6db4673dc35b4433e26dc9259a22f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a67c6db4673dc35b4433e26dc9259a22f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a67c6db4673dc35b4433e26dc9259a22f">SetColour</a> (T v)</td></tr>
+<tr class="memdesc:a67c6db4673dc35b4433e26dc9259a22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default template function - used to throw error messages if innapropriate colour specifications used. <b>Note the spelling of colour!!</b>  <a href="classJSL_1_1PlotData.html#a67c6db4673dc35b4433e26dc9259a22f">More...</a><br /></td></tr>
 <tr class="separator:a67c6db4673dc35b4433e26dc9259a22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af350ddfe10bf959868087490d58cc6f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#af350ddfe10bf959868087490d58cc6f6">SetColour</a> (std::string c)</td></tr>
+<tr class="memdesc:af350ddfe10bf959868087490d58cc6f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the colour value of the line to the given string. No checks are made that this string corresponds to a valid gnuplot colour.**Note the spelling of colour!!**.  <a href="classJSL_1_1PlotData.html#af350ddfe10bf959868087490d58cc6f6">More...</a><br /></td></tr>
 <tr class="separator:af350ddfe10bf959868087490d58cc6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04b4ee30bc1c289bc956bead3ad016da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a04b4ee30bc1c289bc956bead3ad016da">SetColour</a> (const char *c)</td></tr>
+<tr class="memdesc:a04b4ee30bc1c289bc956bead3ad016da"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetColour override for c-style string - simple converts to std::string then calls <a class="el" href="classJSL_1_1PlotData.html#af350ddfe10bf959868087490d58cc6f6" title="Sets the colour value of the line to the given string. No checks are made that this string correspond...">SetColour(std::string c)</a> <b>Note the spelling of colour!!</b>  <a href="classJSL_1_1PlotData.html#a04b4ee30bc1c289bc956bead3ad016da">More...</a><br /></td></tr>
 <tr class="separator:a04b4ee30bc1c289bc956bead3ad016da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af17925614e1c493cd9ab67fa40e059b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#af17925614e1c493cd9ab67fa40e059b5">SetColour</a> (int r, int g, int b)</td></tr>
-<tr class="separator:af17925614e1c493cd9ab67fa40e059b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85482ac6105c688e2c45627176bd8a48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a85482ac6105c688e2c45627176bd8a48">SetColour</a> (std::vector&lt; int &gt; cs)</td></tr>
-<tr class="separator:a85482ac6105c688e2c45627176bd8a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433b879e54d8ab172d6b3a73600ff1df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a433b879e54d8ab172d6b3a73600ff1df">SetColour</a> (unsigned int r, unsigned int g, unsigned int b)</td></tr>
+<tr class="memdesc:a433b879e54d8ab172d6b3a73600ff1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the colour to that specified by the RGB value, converting it into a gnuplot-readable format <b>Note the spelling of colour!!</b>  <a href="classJSL_1_1PlotData.html#a433b879e54d8ab172d6b3a73600ff1df">More...</a><br /></td></tr>
+<tr class="separator:a433b879e54d8ab172d6b3a73600ff1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96df168f1f17d3405e7c630ea6e1649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#af96df168f1f17d3405e7c630ea6e1649">SetColour</a> (std::vector&lt; unsigned int &gt; cs)</td></tr>
+<tr class="memdesc:af96df168f1f17d3405e7c630ea6e1649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the colour to that specified by the RGB value <b>Note the spelling of colour!!</b>  <a href="classJSL_1_1PlotData.html#af96df168f1f17d3405e7c630ea6e1649">More...</a><br /></td></tr>
+<tr class="separator:af96df168f1f17d3405e7c630ea6e1649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb517655ae4ab52c1512fd48c0589d31"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:acb517655ae4ab52c1512fd48c0589d31"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#acb517655ae4ab52c1512fd48c0589d31">SetPenSize</a> (T v)</td></tr>
+<tr class="memdesc:acb517655ae4ab52c1512fd48c0589d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default template function - used to throw error messages if innapropriate pensize specifications used.  <a href="classJSL_1_1PlotData.html#acb517655ae4ab52c1512fd48c0589d31">More...</a><br /></td></tr>
 <tr class="separator:acb517655ae4ab52c1512fd48c0589d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed7875d8ef940f0e1c0ec9321fc03001"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#aed7875d8ef940f0e1c0ec9321fc03001">SetPenSize</a> (int l)</td></tr>
+<tr class="memdesc:aed7875d8ef940f0e1c0ec9321fc03001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the width of the pen used to draw lines (and also the thickness of scatter-points)  <a href="classJSL_1_1PlotData.html#aed7875d8ef940f0e1c0ec9321fc03001">More...</a><br /></td></tr>
 <tr class="separator:aed7875d8ef940f0e1c0ec9321fc03001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e8e3327c8d29e55468709a1d02f554e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3e8e3327c8d29e55468709a1d02f554e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a3e8e3327c8d29e55468709a1d02f554e">SetPenType</a> (T v)</td></tr>
+<tr class="memdesc:a3e8e3327c8d29e55468709a1d02f554e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default template function - used to throw error messages if innapropriate pen type specification used.  <a href="classJSL_1_1PlotData.html#a3e8e3327c8d29e55468709a1d02f554e">More...</a><br /></td></tr>
 <tr class="separator:a3e8e3327c8d29e55468709a1d02f554e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700a1bda59a82ccb0893c9da51ede414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a700a1bda59a82ccb0893c9da51ede414">SetPenType</a> (std::string t)</td></tr>
-<tr class="separator:a700a1bda59a82ccb0893c9da51ede414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a233b61c2d872ef28b342a508392ccb49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a233b61c2d872ef28b342a508392ccb49">SetPenType</a> (const char *t)</td></tr>
-<tr class="separator:a233b61c2d872ef28b342a508392ccb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f366ff9fdedb9494f29a6c601e5a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a89f366ff9fdedb9494f29a6c601e5a2c">SetPenType</a> (int i)</td></tr>
-<tr class="separator:a89f366ff9fdedb9494f29a6c601e5a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa12ffd19507678e013db6a221a0c5849"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#aa12ffd19507678e013db6a221a0c5849">SetPenType</a> (<a class="el" href="namespaceJSL.html#acbabfae0b320d418d49485b7c50bc355">JSL::LineType</a> t)</td></tr>
+<tr class="memdesc:aa12ffd19507678e013db6a221a0c5849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the LineType (dashed, solid, etc) for the object.  <a href="classJSL_1_1PlotData.html#aa12ffd19507678e013db6a221a0c5849">More...</a><br /></td></tr>
 <tr class="separator:aa12ffd19507678e013db6a221a0c5849"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb7ec483755fe2c95970ab6d0d3a4b4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#afb7ec483755fe2c95970ab6d0d3a4b4a">SetPenType</a> (<a class="el" href="namespaceJSL.html#a086efb36ddb107d45961a6b46932c526">JSL::ScatterType</a> t)</td></tr>
-<tr class="separator:afb7ec483755fe2c95970ab6d0d3a4b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30cf21f46a1911587a4381bfb40c3403"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a30cf21f46a1911587a4381bfb40c3403"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a30cf21f46a1911587a4381bfb40c3403">SetScatterType</a> (T t)</td></tr>
+<tr class="memdesc:a30cf21f46a1911587a4381bfb40c3403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default template function - used to throw error messages if innapropriate scatter type specification used.  <a href="classJSL_1_1PlotData.html#a30cf21f46a1911587a4381bfb40c3403">More...</a><br /></td></tr>
 <tr class="separator:a30cf21f46a1911587a4381bfb40c3403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a677bd22e71e15894d5ac1d5fa652236b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a677bd22e71e15894d5ac1d5fa652236b">SetScatterType</a> (<a class="el" href="namespaceJSL.html#a086efb36ddb107d45961a6b46932c526">ScatterType</a> t)</td></tr>
+<tr class="memdesc:a677bd22e71e15894d5ac1d5fa652236b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the LineType (circle, dot, square) for the object.  <a href="classJSL_1_1PlotData.html#a677bd22e71e15894d5ac1d5fa652236b">More...</a><br /></td></tr>
+<tr class="separator:a677bd22e71e15894d5ac1d5fa652236b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24fa5385585f0eaa2777072ef2d818c2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a24fa5385585f0eaa2777072ef2d818c2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a24fa5385585f0eaa2777072ef2d818c2">SetLegend</a> (T t)</td></tr>
+<tr class="memdesc:a24fa5385585f0eaa2777072ef2d818c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default template function - used to throw error messages if innapropriate specification used.  <a href="classJSL_1_1PlotData.html#a24fa5385585f0eaa2777072ef2d818c2">More...</a><br /></td></tr>
 <tr class="separator:a24fa5385585f0eaa2777072ef2d818c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e2c9a97035e97e3658c8bcc2913dab3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a5e2c9a97035e97e3658c8bcc2913dab3">SetLegend</a> (std::string s)</td></tr>
+<tr class="memdesc:a5e2c9a97035e97e3658c8bcc2913dab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name for this plot on the legend.  <a href="classJSL_1_1PlotData.html#a5e2c9a97035e97e3658c8bcc2913dab3">More...</a><br /></td></tr>
 <tr class="separator:a5e2c9a97035e97e3658c8bcc2913dab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c9a6d891f3434c13f9fd1e604e734c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a34c9a6d891f3434c13f9fd1e604e734c">Write</a> ()</td></tr>
+<tr class="memdesc:a34c9a6d891f3434c13f9fd1e604e734c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats the internal data and writes it to a string for use in a gnuplot script.  <a href="classJSL_1_1PlotData.html#a34c9a6d891f3434c13f9fd1e604e734c">More...</a><br /></td></tr>
 <tr class="separator:a34c9a6d891f3434c13f9fd1e604e734c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ab25bd54000960736d1c2687fc52b8bcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#ab25bd54000960736d1c2687fc52b8bcc">DefaultInit</a> ()</td></tr>
+<tr class="memdesc:ab25bd54000960736d1c2687fc52b8bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default values of the members.  <a href="classJSL_1_1PlotData.html#ab25bd54000960736d1c2687fc52b8bcc">More...</a><br /></td></tr>
 <tr class="separator:ab25bd54000960736d1c2687fc52b8bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cb1885e91da9457fd684a60547e66d0"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Ts&gt; </td></tr>
 <tr class="memitem:a0cb1885e91da9457fd684a60547e66d0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a0cb1885e91da9457fd684a60547e66d0">ParseLoop</a> (<a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; T &gt; n1, <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; Ts &gt;... ns)</td></tr>
+<tr class="memdesc:a0cb1885e91da9457fd684a60547e66d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variadic function which parses the JSL::NameValuePairs provided to the function for pre-facto modification.  <a href="classJSL_1_1PlotData.html#a0cb1885e91da9457fd684a60547e66d0">More...</a><br /></td></tr>
 <tr class="separator:a0cb1885e91da9457fd684a60547e66d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e57942c52c4ec76436bd3179e4ee2cd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a2e57942c52c4ec76436bd3179e4ee2cd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a2e57942c52c4ec76436bd3179e4ee2cd">ParseNVPair</a> (<a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; T &gt; nv)</td></tr>
+<tr class="memdesc:a2e57942c52c4ec76436bd3179e4ee2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a <a class="el" href="structJSL_1_1NameValuePair.html" title="A simple struct for associating a datatype a member of JSL::Property.">JSL::NameValuePair</a> object, attempt to interpret it, given the Name value, passing the Value portion to the relevant templated function outlined above.  <a href="classJSL_1_1PlotData.html#a2e57942c52c4ec76436bd3179e4ee2cd">More...</a><br /></td></tr>
 <tr class="separator:a2e57942c52c4ec76436bd3179e4ee2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a59b333717ba98216efcd19499eacc6d9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a59b333717ba98216efcd19499eacc6d9">DataLocation</a></td></tr>
+<tr class="memdesc:a59b333717ba98216efcd19499eacc6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file location for the x/y data used in this plot.  <a href="classJSL_1_1PlotData.html#a59b333717ba98216efcd19499eacc6d9">More...</a><br /></td></tr>
 <tr class="separator:a59b333717ba98216efcd19499eacc6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c2193e46a79618ee04e4d229f44f20c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a9c2193e46a79618ee04e4d229f44f20c">Idx</a></td></tr>
+<tr class="memdesc:a9c2193e46a79618ee04e4d229f44f20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of this plot, pretty much only used to generate a default legend (i.e. Plot 1)  <a href="classJSL_1_1PlotData.html#a9c2193e46a79618ee04e4d229f44f20c">More...</a><br /></td></tr>
 <tr class="separator:a9c2193e46a79618ee04e4d229f44f20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab84555b21166659535d130f84ac74b42"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#ab84555b21166659535d130f84ac74b42">dashType</a></td></tr>
+<tr class="memdesc:ab84555b21166659535d130f84ac74b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dashType specifier (either for linestyle - dash/solid, or scatterstyle - circle/dot/square etc.)  <a href="classJSL_1_1PlotData.html#ab84555b21166659535d130f84ac74b42">More...</a><br /></td></tr>
 <tr class="separator:ab84555b21166659535d130f84ac74b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a419724bfc1943f5c5efbc7607f9034d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceJSL.html#a871354b683a8bee0151dbfbbde49beda">PlotType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a419724bfc1943f5c5efbc7607f9034d1">type</a></td></tr>
+<tr class="memdesc:a419724bfc1943f5c5efbc7607f9034d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes either Line plots or scatter plots etc.  <a href="classJSL_1_1PlotData.html#a419724bfc1943f5c5efbc7607f9034d1">More...</a><br /></td></tr>
 <tr class="separator:a419724bfc1943f5c5efbc7607f9034d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17ce4f8c1648a676421b39a204b0a37d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a17ce4f8c1648a676421b39a204b0a37d">legend</a></td></tr>
+<tr class="memdesc:a17ce4f8c1648a676421b39a204b0a37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name associated with this data on the legend.  <a href="classJSL_1_1PlotData.html#a17ce4f8c1648a676421b39a204b0a37d">More...</a><br /></td></tr>
 <tr class="separator:a17ce4f8c1648a676421b39a204b0a37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2936bcc90d54c471f31388e2673081b3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a2936bcc90d54c471f31388e2673081b3">colour</a></td></tr>
+<tr class="memdesc:a2936bcc90d54c471f31388e2673081b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The colour used to plot the data - if not specified, uses the default gnuplot colour roster.  <a href="classJSL_1_1PlotData.html#a2936bcc90d54c471f31388e2673081b3">More...</a><br /></td></tr>
 <tr class="separator:a2936bcc90d54c471f31388e2673081b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91bf6edbf9d8a28cf5255aa1ed74948c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1PlotData.html#a91bf6edbf9d8a28cf5255aa1ed74948c">penSize</a></td></tr>
+<tr class="memdesc:a91bf6edbf9d8a28cf5255aa1ed74948c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The thickness of the pen used to write the data.  <a href="classJSL_1_1PlotData.html#a91bf6edbf9d8a28cf5255aa1ed74948c">More...</a><br /></td></tr>
 <tr class="separator:a91bf6edbf9d8a28cf5255aa1ed74948c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A holder class for the datalocation, and line specification for each plot added to an axis. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acefcd21025b95d2f76313dfd578bb25f" name="acefcd21025b95d2f76313dfd578bb25f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acefcd21025b95d2f76313dfd578bb25f">&#9670;&nbsp;</a></span>PlotData()</h2>
 
@@ -198,6 +222,16 @@ template&lt;typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The relative filepath to the location where the associated data is stored.</td></tr>
+    <tr><td class="paramname">idx</td><td>The id of the data (and the index of this object within the <a class="el" href="classJSL_1_1Axis.html#a493f7f5899d5e867ade59af8e10e95bd" title="A vector of data detailing what should be plotted, and what it looks like, accessed during Axis::Show...">Axis::Data</a> vector).</td></tr>
+    <tr><td class="paramname">args</td><td>A variadic list of <a class="el" href="structJSL_1_1NameValuePair.html" title="A simple struct for associating a datatype a member of JSL::Property.">JSL::NameValuePair</a> objects used for pre-facto changes to the line style </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -223,6 +257,8 @@ template&lt;typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the default values of the members. </p>
 
 </div>
 </div>
@@ -262,6 +298,8 @@ template&lt;typename T , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Variadic function which parses the JSL::NameValuePairs provided to the function for pre-facto modification. </p>
+
 </div>
 </div>
 <a id="a2e57942c52c4ec76436bd3179e4ee2cd" name="a2e57942c52c4ec76436bd3179e4ee2cd"></a>
@@ -290,6 +328,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Given a <a class="el" href="structJSL_1_1NameValuePair.html" title="A simple struct for associating a datatype a member of JSL::Property.">JSL::NameValuePair</a> object, attempt to interpret it, given the Name value, passing the Value portion to the relevant templated function outlined above. </p>
+
 </div>
 </div>
 <a id="a04b4ee30bc1c289bc956bead3ad016da" name="a04b4ee30bc1c289bc956bead3ad016da"></a>
@@ -316,52 +356,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="af17925614e1c493cd9ab67fa40e059b5" name="af17925614e1c493cd9ab67fa40e059b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af17925614e1c493cd9ab67fa40e059b5">&#9670;&nbsp;</a></span>SetColour() <span class="overload">[2/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void JSL::PlotData::SetColour </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>SetColour override for c-style string - simple converts to std::string then calls <a class="el" href="classJSL_1_1PlotData.html#af350ddfe10bf959868087490d58cc6f6" title="Sets the colour value of the line to the given string. No checks are made that this string correspond...">SetColour(std::string c)</a> <b>Note the spelling of colour!!</b> </p>
 
 </div>
 </div>
 <a id="af350ddfe10bf959868087490d58cc6f6" name="af350ddfe10bf959868087490d58cc6f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af350ddfe10bf959868087490d58cc6f6">&#9670;&nbsp;</a></span>SetColour() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af350ddfe10bf959868087490d58cc6f6">&#9670;&nbsp;</a></span>SetColour() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -384,10 +384,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the colour value of the line to the given string. No checks are made that this string corresponds to a valid gnuplot colour.**Note the spelling of colour!!**. </p>
+
 </div>
 </div>
-<a id="a85482ac6105c688e2c45627176bd8a48" name="a85482ac6105c688e2c45627176bd8a48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85482ac6105c688e2c45627176bd8a48">&#9670;&nbsp;</a></span>SetColour() <span class="overload">[4/5]</span></h2>
+<a id="af96df168f1f17d3405e7c630ea6e1649" name="af96df168f1f17d3405e7c630ea6e1649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96df168f1f17d3405e7c630ea6e1649">&#9670;&nbsp;</a></span>SetColour() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -398,7 +400,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void JSL::PlotData::SetColour </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramtype">std::vector&lt; unsigned int &gt;&#160;</td>
           <td class="paramname"><em>cs</em></td><td>)</td>
           <td></td>
         </tr>
@@ -410,10 +412,18 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the colour to that specified by the RGB value <b>Note the spelling of colour!!</b> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cs</td><td>A length-three vector corresponding to RGB values </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a67c6db4673dc35b4433e26dc9259a22f" name="a67c6db4673dc35b4433e26dc9259a22f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67c6db4673dc35b4433e26dc9259a22f">&#9670;&nbsp;</a></span>SetColour() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a67c6db4673dc35b4433e26dc9259a22f">&#9670;&nbsp;</a></span>SetColour() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,6 +447,60 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default template function - used to throw error messages if innapropriate colour specifications used. <b>Note the spelling of colour!!</b> </p>
+
+</div>
+</div>
+<a id="a433b879e54d8ab172d6b3a73600ff1df" name="a433b879e54d8ab172d6b3a73600ff1df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433b879e54d8ab172d6b3a73600ff1df">&#9670;&nbsp;</a></span>SetColour() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JSL::PlotData::SetColour </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the colour to that specified by the RGB value, converting it into a gnuplot-readable format <b>Note the spelling of colour!!</b> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>The red value (between 0 and 255)</td></tr>
+    <tr><td class="paramname">g</td><td>The green value (between 0 and 255)</td></tr>
+    <tr><td class="paramname">b</td><td>The blue value (between 0 and 255) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -463,6 +527,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the name for this plot on the legend. </p>
 
 </div>
 </div>
@@ -492,6 +558,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Default template function - used to throw error messages if innapropriate specification used. </p>
+
 </div>
 </div>
 <a id="aed7875d8ef940f0e1c0ec9321fc03001" name="aed7875d8ef940f0e1c0ec9321fc03001"></a>
@@ -517,6 +585,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the width of the pen used to draw lines (and also the thickness of scatter-points) </p>
 
 </div>
 </div>
@@ -546,62 +616,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a233b61c2d872ef28b342a508392ccb49" name="a233b61c2d872ef28b342a508392ccb49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a233b61c2d872ef28b342a508392ccb49">&#9670;&nbsp;</a></span>SetPenType() <span class="overload">[1/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void JSL::PlotData::SetPenType </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a89f366ff9fdedb9494f29a6c601e5a2c" name="a89f366ff9fdedb9494f29a6c601e5a2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89f366ff9fdedb9494f29a6c601e5a2c">&#9670;&nbsp;</a></span>SetPenType() <span class="overload">[2/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void JSL::PlotData::SetPenType </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Default template function - used to throw error messages if innapropriate pensize specifications used. </p>
 
 </div>
 </div>
 <a id="aa12ffd19507678e013db6a221a0c5849" name="aa12ffd19507678e013db6a221a0c5849"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa12ffd19507678e013db6a221a0c5849">&#9670;&nbsp;</a></span>SetPenType() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa12ffd19507678e013db6a221a0c5849">&#9670;&nbsp;</a></span>SetPenType() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -624,62 +644,18 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="afb7ec483755fe2c95970ab6d0d3a4b4a" name="afb7ec483755fe2c95970ab6d0d3a4b4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb7ec483755fe2c95970ab6d0d3a4b4a">&#9670;&nbsp;</a></span>SetPenType() <span class="overload">[4/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void JSL::PlotData::SetPenType </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceJSL.html#a086efb36ddb107d45961a6b46932c526">JSL::ScatterType</a>&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a700a1bda59a82ccb0893c9da51ede414" name="a700a1bda59a82ccb0893c9da51ede414"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a700a1bda59a82ccb0893c9da51ede414">&#9670;&nbsp;</a></span>SetPenType() <span class="overload">[5/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void JSL::PlotData::SetPenType </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Sets the LineType (dashed, solid, etc) for the object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The <a class="el" href="namespaceJSL.html#acbabfae0b320d418d49485b7c50bc355">JSL::LineType</a> specifier </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a id="a3e8e3327c8d29e55468709a1d02f554e" name="a3e8e3327c8d29e55468709a1d02f554e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e8e3327c8d29e55468709a1d02f554e">&#9670;&nbsp;</a></span>SetPenType() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8e3327c8d29e55468709a1d02f554e">&#9670;&nbsp;</a></span>SetPenType() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -704,10 +680,46 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Default template function - used to throw error messages if innapropriate pen type specification used. </p>
+
+</div>
+</div>
+<a id="a677bd22e71e15894d5ac1d5fa652236b" name="a677bd22e71e15894d5ac1d5fa652236b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a677bd22e71e15894d5ac1d5fa652236b">&#9670;&nbsp;</a></span>SetScatterType() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JSL::PlotData::SetScatterType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceJSL.html#a086efb36ddb107d45961a6b46932c526">ScatterType</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the LineType (circle, dot, square) for the object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The <a class="el" href="namespaceJSL.html#a086efb36ddb107d45961a6b46932c526">JSL::ScatterType</a> specifier </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a30cf21f46a1911587a4381bfb40c3403" name="a30cf21f46a1911587a4381bfb40c3403"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30cf21f46a1911587a4381bfb40c3403">&#9670;&nbsp;</a></span>SetScatterType()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a30cf21f46a1911587a4381bfb40c3403">&#9670;&nbsp;</a></span>SetScatterType() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -731,6 +743,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default template function - used to throw error messages if innapropriate scatter type specification used. </p>
 
 </div>
 </div>
@@ -757,6 +771,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Formats the internal data and writes it to a string for use in a gnuplot script. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the necessary data to plot the internal data </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
@@ -780,6 +797,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The colour used to plot the data - if not specified, uses the default gnuplot colour roster. </p>
+
 </div>
 </div>
 <a id="ab84555b21166659535d130f84ac74b42" name="ab84555b21166659535d130f84ac74b42"></a>
@@ -801,6 +820,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The dashType specifier (either for linestyle - dash/solid, or scatterstyle - circle/dot/square etc.) </p>
 
 </div>
 </div>
@@ -824,6 +845,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The file location for the x/y data used in this plot. </p>
+
 </div>
 </div>
 <a id="a9c2193e46a79618ee04e4d229f44f20c" name="a9c2193e46a79618ee04e4d229f44f20c"></a>
@@ -845,6 +868,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The ID of this plot, pretty much only used to generate a default legend (i.e. Plot 1) </p>
 
 </div>
 </div>
@@ -868,6 +893,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The name associated with this data on the legend. </p>
+
 </div>
 </div>
 <a id="a91bf6edbf9d8a28cf5255aa1ed74948c" name="a91bf6edbf9d8a28cf5255aa1ed74948c"></a>
@@ -890,6 +917,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The thickness of the pen used to write the data. </p>
+
 </div>
 </div>
 <a id="a419724bfc1943f5c5efbc7607f9034d1" name="a419724bfc1943f5c5efbc7607f9034d1"></a>
@@ -911,6 +940,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Denotes either Line plots or scatter plots etc. </p>
 
 </div>
 </div>
