@@ -94,7 +94,7 @@ namespace JSL
 		}
 	}
 	/*!
-	 * As with writeVectorToFile, but accepts arbitrary vectors of templated entities. The writing loops over the length of the vectors (which must all be the same length), and writes them sequentially, separated by the delimiter, and a linebreak at the end of each row -- i.e v1[0], v2[0], v3[0], ... (linebreak) v1[1], v2[1], ... etc.
+	 * As with writeVectorToFile, but accepts arbitrary vectors of templated entities. The writing loops over the length of the vectors (which must all be the same length), and writes them sequentially, separated by the delimiter, and a linebreak at the end of each row - i.e v1[0], v2[0], v3[0], ... (linebreak) v1[1], v2[1], ... etc.
 	 * \param filename The target file location
 	 * \param delimiter The character(s) to be written after every individual vecs entry *except* the final entry on each row, which is a linebreak.
 	 * \param v1 The first vector to be written to file

@@ -24,6 +24,8 @@ Vector Writer
 
 .. doxygenfunction:: writeVectorToFile
 
+.. doxygenfunction:: writeMultiVectorToFile
+	
 ================
 Matrix Writer
 ================

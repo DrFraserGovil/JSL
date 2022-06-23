@@ -34,7 +34,7 @@ namespace JSL
 	}
 
 	/*!
-		Returns the sorted index array associated with a vector -- not the sorted array itself \param v A vector of objects where the less than operator is defined \returns a sorted index-vector y such that v[y[0]] is the smallest value in the array, v[y[1]] is the next, and so on. 
+		Returns the sorted index array associated with a vector - not the sorted array itself \param v A vector of objects where the less than operator is defined \returns a sorted index-vector y such that v[y[0]] is the smallest value in the array, v[y[1]] is the next, and so on. 
 	*/
 	template <typename T>
 	inline  std::vector<size_t> SortIndices(const std::vector<T> &v) {
