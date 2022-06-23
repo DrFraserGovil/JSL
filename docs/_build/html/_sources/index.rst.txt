@@ -15,7 +15,6 @@ Even more likely, you are in fact me, reading this a year or two down the line w
 	docfiles/files/file-handling
 	docfiles/args/command-args
 	docfiles/strings/strings
-	unit-testing
 	:maxdepth: 2
 	:caption: Contents:
 

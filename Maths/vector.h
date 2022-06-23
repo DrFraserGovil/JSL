@@ -5,6 +5,7 @@
 #include <iostream>
 #include <math.h>
 #include <ostream>
+#include <sstream>
 #include "../System/System.h"
 namespace JSL
 {
