@@ -11,10 +11,10 @@ The JSL ('Jack Standard Library') is a set of tools developed by me (Jack Fraser
 Even more likely, you are in fact me, reading this a year or two down the line wondering "what on Earth did you do?". If so, I am sorry. 
 
 .. toctree::
-	docfiles/maths/mathematics
-	docfiles/files/file-handling
-	docfiles/args/command-args
-	docfiles/strings/strings
+	mathematics
+	file-handling
+	command-args
+	strings
 	:maxdepth: 2
 	:caption: Contents:
 
