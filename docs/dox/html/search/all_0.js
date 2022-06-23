@@ -4,7 +4,7 @@ var searchData=
   ['addproperty_1',['AddProperty',['../classJSL_1_1Axis.html#a30ec179de40908ac5ccb809365f3862e',1,'JSL::Axis']]],
   ['anglebetween_2',['AngleBetween',['../classJSL_1_1Vector.html#a0529640bc02ce994026184d93f43f9c3',1,'JSL::Vector']]],
   ['anglebetweenvectors_3',['AngleBetweenVectors',['../namespaceJSL.html#a09355c91f84fd99d4634bf9189fef51d',1,'JSL']]],
-  ['argument_4',['Argument',['../classJSL_1_1Argument.html#a83799e9089f88d7e6cf30990fae42610',1,'JSL::Argument::Argument(T defaultValue, std::string trigger, std::string configFile, char configDelimiter)'],['../classJSL_1_1Argument.html#a4d187d2fb658021866b173987b920ab4',1,'JSL::Argument::Argument(T defaultValue, std::string trigger, int argc, char *argv[])'],['../classJSL_1_1Argument.html#a2511f7c98ee2b0b59650f468341b8747',1,'JSL::Argument::Argument(T defaultValue, std::string trigger)'],['../classJSL_1_1Argument.html#ab07e7981db832cce30f534c67f6491f4',1,'JSL::Argument::Argument(std::string trigger)'],['../classJSL_1_1Argument.html#ab438509a3c030516de72f3f493295bd5',1,'JSL::Argument::Argument()'],['../classJSL_1_1Argument.html',1,'JSL::Argument&lt; T &gt;']]],
+  ['argument_4',['Argument',['../classJSL_1_1Argument.html#a83799e9089f88d7e6cf30990fae42610',1,'JSL::Argument::Argument(T defaultValue, std::string trigger, std::string configFile, char configDelimiter)'],['../classJSL_1_1Argument.html#a4d187d2fb658021866b173987b920ab4',1,'JSL::Argument::Argument(T defaultValue, std::string trigger, int argc, char *argv[])'],['../classJSL_1_1Argument.html#a2511f7c98ee2b0b59650f468341b8747',1,'JSL::Argument::Argument(T defaultValue, std::string trigger)'],['../classJSL_1_1Argument.html#ab438509a3c030516de72f3f493295bd5',1,'JSL::Argument::Argument()'],['../classJSL_1_1Argument.html#ab07e7981db832cce30f534c67f6491f4',1,'JSL::Argument::Argument(std::string trigger)'],['../classJSL_1_1Argument.html',1,'JSL::Argument&lt; T &gt;']]],
   ['argument_2eh_5',['Argument.h',['../Argument_8h.html',1,'']]],
   ['argumentinterface_6',['ArgumentInterface',['../classJSL_1_1ArgumentInterface.html#a5c12814b0c7d12369aebd77baa19fbac',1,'JSL::ArgumentInterface::ArgumentInterface()'],['../classJSL_1_1ArgumentInterface.html',1,'JSL::ArgumentInterface']]],
   ['argumenttest_7',['ArgumentTest',['../classJSL__Testing_1_1ArgumentTest.html#a3d83658826bd70b33349e53a7326ae5a',1,'JSL_Testing::ArgumentTest::ArgumentTest()'],['../classJSL__Testing_1_1ArgumentTest.html',1,'JSL_Testing::ArgumentTest']]],
@@ -16,7 +16,9 @@ var searchData=
   ['axis_13',['Axis',['../classJSL_1_1Axis.html#a557386d460e8ad72ea2f6670857c99db',1,'JSL::Axis::Axis()'],['../classJSL_1_1Axis.html#a597377a9446c7739b41c967412080588',1,'JSL::Axis::Axis(std::string rootDir)'],['../classJSL_1_1Axis.html',1,'JSL::Axis']]],
   ['axis_2eh_14',['axis.h',['../axis_8h.html',1,'']]],
   ['axis_5fx_15',['axis_x',['../classJSL_1_1gnuplot.html#a102660ecaaece0b2b35e311b530e8b73',1,'JSL::gnuplot']]],
-  ['axis_5fy_16',['axis_y',['../classJSL_1_1gnuplot.html#acf4f664ab476e047cdbf7f6dd1bfa74e',1,'JSL::gnuplot']]],
-  ['axiscount_17',['axisCount',['../classJSL_1_1gnuplot.html#a666ddb205d0cb9c76813e2f8075c1b65',1,'JSL::gnuplot']]],
-  ['axisfontsize_18',['axisFontSize',['../classJSL_1_1Axis.html#a99a36f25ce02c490762a34a536c373f1',1,'JSL::Axis']]]
+  ['axis_5fx_5fmax_16',['axis_x_max',['../classJSL_1_1gnuplot.html#a4cb279032f4f688412bea6fb3c2e7289',1,'JSL::gnuplot']]],
+  ['axis_5fy_17',['axis_y',['../classJSL_1_1gnuplot.html#acf4f664ab476e047cdbf7f6dd1bfa74e',1,'JSL::gnuplot']]],
+  ['axis_5fy_5fmax_18',['axis_y_max',['../classJSL_1_1gnuplot.html#af0aefa22a2dcb30ff3f3b794e3b2749d',1,'JSL::gnuplot']]],
+  ['axiscount_19',['axisCount',['../classJSL_1_1gnuplot.html#a666ddb205d0cb9c76813e2f8075c1b65',1,'JSL::gnuplot']]],
+  ['axisfontsize_20',['axisFontSize',['../classJSL_1_1Axis.html#a99a36f25ce02c490762a34a536c373f1',1,'JSL::Axis']]]
 ];

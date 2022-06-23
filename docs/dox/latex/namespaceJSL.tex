@@ -19,7 +19,7 @@ class \mbox{\hyperlink{classJSL_1_1ArgumentInterface}{Argument\+Interface}}
 class \mbox{\hyperlink{classJSL_1_1Axis}{Axis}}
 \item 
 class \mbox{\hyperlink{classJSL_1_1gnuplot}{gnuplot}}
-\item 
+\begin{DoxyCompactList}\small\item\em The global interface for the plotting system. All calls should be piped through this individual class. Each gnuplot object corresponds to a single plot (though they might have severable axes within each plot) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}}
 \item 
 struct \mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdir\+Return}}
@@ -83,6 +83,7 @@ enum \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{Error\+Cod
 , \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443}{Failed\+Assertion}}
 , \newline
 \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{IOError}}
+, \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973}{Plotting\+Error}}
  \}
 \begin{DoxyCompactList}\small\item\em A list of recognised \mbox{\hyperlink{namespaceJSL}{JSL}} errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -203,7 +204,7 @@ void \mbox{\hyperlink{namespaceJSL_a5cd4ed117decf1140104ad8566b589ac}{system\+Ca
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_a606f5a286ccd4cf3d860d2efde2eac82}{Error\+Names}} = \{\char`\"{}ERROR\char`\"{}, \char`\"{}SYSTEM ERROR\char`\"{}, \char`\"{}OVERRUN ERROR\char`\"{}, \char`\"{}FAILED ASSERTION\char`\"{},\char`\"{}\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{IOError}}\char`\"{}\}
+const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_a606f5a286ccd4cf3d860d2efde2eac82}{Error\+Names}} = \{\char`\"{}ERROR\char`\"{}, \char`\"{}SYSTEM ERROR\char`\"{}, \char`\"{}OVERRUN ERROR\char`\"{}, \char`\"{}FAILED ASSERTION\char`\"{},\char`\"{}\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{IOError}}\char`\"{}, \char`\"{}GNUPLOT ERROR\char`\"{}\}
 \end{DoxyCompactItemize}
 
 
@@ -237,6 +238,10 @@ Failed\+Assertion&As the name implies, failed assertions. \\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{IOError@{IOError}!JSL@{JSL}}\index{JSL@{JSL}!IOError@{IOError}}}\mbox{\Hypertarget{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}\label{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}} 
 IOError&Errors induced by file. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlottingError@{PlottingError}!JSL@{JSL}}\index{JSL@{JSL}!PlottingError@{PlottingError}}}\mbox{\Hypertarget{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973}\label{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973}} 
+Plotting\+Error&Unique error induced by \mbox{\hyperlink{classJSL_1_1gnuplot}{JSL\+::gnuplot}}. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -1340,5 +1345,5 @@ As with write\+String\+To\+File, but accepts a vector of templated entities. The
 \index{JSL@{JSL}!ErrorNames@{ErrorNames}}
 \index{ErrorNames@{ErrorNames}!JSL@{JSL}}
 \doxysubsubsection{\texorpdfstring{ErrorNames}{ErrorNames}}
-{\footnotesize\ttfamily const std\+::vector$<$std\+::string$>$ JSL\+::\+Error\+Names = \{\char`\"{}ERROR\char`\"{}, \char`\"{}SYSTEM ERROR\char`\"{}, \char`\"{}OVERRUN ERROR\char`\"{}, \char`\"{}FAILED ASSERTION\char`\"{},\char`\"{}\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{IOError}}\char`\"{}\}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::string$>$ JSL\+::\+Error\+Names = \{\char`\"{}ERROR\char`\"{}, \char`\"{}SYSTEM ERROR\char`\"{}, \char`\"{}OVERRUN ERROR\char`\"{}, \char`\"{}FAILED ASSERTION\char`\"{},\char`\"{}\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{IOError}}\char`\"{}, \char`\"{}GNUPLOT ERROR\char`\"{}\}}
 

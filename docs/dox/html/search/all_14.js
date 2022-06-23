@@ -5,10 +5,9 @@ var searchData=
   ['windowwidth_2',['windowWidth',['../classJSL_1_1gnuplot.html#abd2c1a49e45beb3ac554a58694965be2',1,'JSL::gnuplot']]],
   ['write_3',['Write',['../classJSL_1_1PlotData.html#a34c9a6d891f3434c13f9fd1e604e734c',1,'JSL::PlotData']]],
   ['writecommand_4',['WriteCommand',['../classJSL_1_1Axis.html#a6655e1d9a5b38321b80adb17d4e9c596',1,'JSL::Axis']]],
-  ['writedata_5',['WriteData',['../classJSL_1_1Axis.html#a6ddc56786848490ecd988d6f3c1a55b0',1,'JSL::Axis']]],
-  ['writematrixtofile_6',['writeMatrixToFile',['../namespaceJSL.html#ae790600d9f16e338cfc8b50cd1bfc8f4',1,'JSL']]],
-  ['writemultiplottofile_7',['WriteMultiplotToFile',['../classJSL_1_1gnuplot.html#aa35fd7f6ebe1c18ea39d6cdbb12f8aa0',1,'JSL::gnuplot']]],
-  ['writemultivectortofile_8',['writeMultiVectorToFile',['../namespaceJSL.html#a425710dc6536490f1c1d6a5ce621f0e3',1,'JSL']]],
-  ['writestringtofile_9',['writeStringToFile',['../namespaceJSL.html#a838b3a913896993bc008408d164ec19d',1,'JSL']]],
-  ['writevectortofile_10',['writeVectorToFile',['../namespaceJSL.html#a1d611217d83275af846cbc091ff98f53',1,'JSL']]]
+  ['writematrixtofile_5',['writeMatrixToFile',['../namespaceJSL.html#ae790600d9f16e338cfc8b50cd1bfc8f4',1,'JSL']]],
+  ['writemultiplottofile_6',['WriteMultiplotToFile',['../classJSL_1_1gnuplot.html#aa35fd7f6ebe1c18ea39d6cdbb12f8aa0',1,'JSL::gnuplot']]],
+  ['writemultivectortofile_7',['writeMultiVectorToFile',['../namespaceJSL.html#a425710dc6536490f1c1d6a5ce621f0e3',1,'JSL']]],
+  ['writestringtofile_8',['writeStringToFile',['../namespaceJSL.html#a838b3a913896993bc008408d164ec19d',1,'JSL']]],
+  ['writevectortofile_9',['writeVectorToFile',['../namespaceJSL.html#a1d611217d83275af846cbc091ff98f53',1,'JSL']]]
 ];

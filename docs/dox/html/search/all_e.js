@@ -10,12 +10,13 @@ var searchData=
   ['plot_7',['Plot',['../classJSL_1_1Axis.html#a95b78211cb09e6c6f0834fd353890a1d',1,'JSL::Axis::Plot()'],['../classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea',1,'JSL::gnuplot::Plot(const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y, NameValuePair&lt; Ts &gt;... args)'],['../classJSL_1_1gnuplot.html#aff8f871df4ddbbbf519572dd1f717588',1,'JSL::gnuplot::Plot(const T &amp;x, const S &amp;y, NameValuePair&lt; Ts &gt;... args)']]],
   ['plotdata_8',['PlotData',['../classJSL_1_1PlotData.html',1,'JSL::PlotData'],['../classJSL_1_1PlotData.html#acefcd21025b95d2f76313dfd578bb25f',1,'JSL::PlotData::PlotData()']]],
   ['plotdata_2eh_9',['PlotData.h',['../PlotData_8h.html',1,'']]],
-  ['plottype_10',['PlotType',['../namespaceJSL.html#a871354b683a8bee0151dbfbbde49beda',1,'JSL']]],
-  ['plus_11',['Plus',['../namespaceJSL.html#a086efb36ddb107d45961a6b46932c526ac54fadde63eae4fbfb5090af9e2c8c68',1,'JSL']]],
-  ['prevhashes_12',['prevHashes',['../classJSL_1_1ProgressBar.html#a3439198bd34393a92cfbc9067247be4a',1,'JSL::ProgressBar']]],
-  ['printpositions_5fdeletemode_13',['PrintPositions_DeleteMode',['../classJSL_1_1ProgressBar.html#af3353e136ef9636dc81d401fdc6276f6',1,'JSL::ProgressBar']]],
-  ['printpositions_5fretainmode_14',['PrintPositions_RetainMode',['../classJSL_1_1ProgressBar.html#a5dba8513809faf0a0f9a315b1f527314',1,'JSL::ProgressBar']]],
-  ['progressbar_15',['ProgressBar',['../classJSL_1_1ProgressBar.html',1,'JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;'],['../classJSL_1_1ProgressBar.html#a387540b26d9e8cef6ef694e78ca21d05',1,'JSL::ProgressBar::ProgressBar()']]],
-  ['progressbar_2eh_16',['ProgressBar.h',['../ProgressBar_8h.html',1,'']]],
-  ['property_17',['Property',['../namespaceJSL.html#ad5aeae8cb562d6f38c724cbdc51d81f8',1,'JSL']]]
+  ['plottingerror_10',['PlottingError',['../namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973',1,'JSL']]],
+  ['plottype_11',['PlotType',['../namespaceJSL.html#a871354b683a8bee0151dbfbbde49beda',1,'JSL']]],
+  ['plus_12',['Plus',['../namespaceJSL.html#a086efb36ddb107d45961a6b46932c526ac54fadde63eae4fbfb5090af9e2c8c68',1,'JSL']]],
+  ['prevhashes_13',['prevHashes',['../classJSL_1_1ProgressBar.html#a3439198bd34393a92cfbc9067247be4a',1,'JSL::ProgressBar']]],
+  ['printpositions_5fdeletemode_14',['PrintPositions_DeleteMode',['../classJSL_1_1ProgressBar.html#af3353e136ef9636dc81d401fdc6276f6',1,'JSL::ProgressBar']]],
+  ['printpositions_5fretainmode_15',['PrintPositions_RetainMode',['../classJSL_1_1ProgressBar.html#a5dba8513809faf0a0f9a315b1f527314',1,'JSL::ProgressBar']]],
+  ['progressbar_16',['ProgressBar',['../classJSL_1_1ProgressBar.html',1,'JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;'],['../classJSL_1_1ProgressBar.html#a387540b26d9e8cef6ef694e78ca21d05',1,'JSL::ProgressBar::ProgressBar()']]],
+  ['progressbar_2eh_17',['ProgressBar.h',['../ProgressBar_8h.html',1,'']]],
+  ['property_18',['Property',['../namespaceJSL.html#ad5aeae8cb562d6f38c724cbdc51d81f8',1,'JSL']]]
 ];

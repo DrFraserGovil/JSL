@@ -11,12 +11,12 @@ enum \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{T
 , \newline
 \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eeab031025a82ff39f9a9183b2ee36c6b25}{Legend}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A Font\+::\+Target enumerates the possible fontsizes which can be set by the gnuplot regime. Used in either the Axis\+::\+Set\+Font\+Size function or gnuplot\+::\+Set\+Font\+Size. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{Size\+String}} (int size)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates the appropriate font-\/resizing string (if size \texorpdfstring{$<$}{<} 0, uses the default Global value) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -25,6 +25,10 @@ std\+::string \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f17
 \index{Target@{Target}!JSL::Fonts@{JSL::Fonts}}
 \doxysubsubsection{\texorpdfstring{Target}{Target}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{JSL\+::\+Fonts\+::\+Target}}}
+
+
+
+A Font\+::\+Target enumerates the possible fontsizes which can be set by the gnuplot regime. Used in either the \mbox{\hyperlink{classJSL_1_1Axis_abe9191f5cdcc181e7bc80badb8c007f3}{Axis\+::\+Set\+Font\+Size}} function or \mbox{\hyperlink{classJSL_1_1gnuplot_a8ccee4ee28636d9b9494dba28d26b7d9}{gnuplot\+::\+Set\+Font\+Size}}. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Global@{Global}!JSL::Fonts@{JSL::Fonts}}\index{JSL::Fonts@{JSL::Fonts}!Global@{Global}}}\mbox{\Hypertarget{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eead0545c4e33d28a3450f2d7fda228303e}\label{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eead0545c4e33d28a3450f2d7fda228303e}} 
@@ -57,3 +61,12 @@ Legend&\\
 \doxysubsubsection{\texorpdfstring{SizeString()}{SizeString()}}
 {\footnotesize\ttfamily std\+::string JSL\+::\+Fonts\+::\+Size\+String (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Generates the appropriate font-\/resizing string (if size \texorpdfstring{$<$}{<} 0, uses the default Global value) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The font size to turn into a string \\
+\hline
+\end{DoxyParams}

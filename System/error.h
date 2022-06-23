@@ -11,9 +11,10 @@ namespace JSL
 		SystemError, //!< Used when something really went bad, like a failed JSL::systemCall
 		OverrunError, //!< Vector Access overruns, bad memory requests
 		FailedAssertion, //!< As the name implies, failed assertions
-		IOError //!< Errors induced by file
+		IOError, //!< Errors induced by file
+		PlottingError //!< Unique error induced by JSL::gnuplot
 	};
-	const std::vector<std::string> ErrorNames = {"ERROR", "SYSTEM ERROR", "OVERRUN ERROR", "FAILED ASSERTION","IOError"};
+	const std::vector<std::string> ErrorNames = {"ERROR", "SYSTEM ERROR", "OVERRUN ERROR", "FAILED ASSERTION","IOError", "GNUPLOT ERROR"};
 	
 	/*!
 		An easy way to package throwing errors using the throw command. \param code One of JSL::ErrorCode to help identify the cause \param message The output message

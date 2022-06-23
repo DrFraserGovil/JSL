@@ -57,8 +57,8 @@
     <member refid="classJSL_1_1Axis_1a23d28c6f113683490020da26e716cf14" kind="function"><name>SetYRange</name></member>
     <member refid="classJSL_1_1Axis_1a28b2289c6d91769b48afe16c43819bb3" kind="function"><name>SetXLabel</name></member>
     <member refid="classJSL_1_1Axis_1a1d476b1547d88ee7c0c80f1a4e86faf4" kind="function"><name>SetYLabel</name></member>
-    <member refid="classJSL_1_1Axis_1af5265d3c8f5043ead5d7c4e76285213f" kind="function"><name>SetXLabel</name></member>
-    <member refid="classJSL_1_1Axis_1a9f9d9926512e9e7100022877995dbec6" kind="function"><name>SetYLabel</name></member>
+    <member refid="classJSL_1_1Axis_1a290663ea6c5991a52e8ffa3497e4f2e5" kind="function"><name>SetXLabel</name></member>
+    <member refid="classJSL_1_1Axis_1a80473fe4e172302383c9160cc7248b40" kind="function"><name>SetYLabel</name></member>
     <member refid="classJSL_1_1Axis_1aeef14102e056fa25dba72f9c1d61a2f6" kind="function"><name>SetXLog</name></member>
     <member refid="classJSL_1_1Axis_1ad0695f111619f714627fd0269c8fec30" kind="function"><name>SetYLog</name></member>
     <member refid="classJSL_1_1Axis_1ac4c489a5fe9d37df1be1f82637bc6787" kind="function"><name>SetLegend</name></member>
@@ -66,7 +66,6 @@
     <member refid="classJSL_1_1Axis_1ae62a2c80ec71bf5f6c78c9347fc51303" kind="function"><name>SetTitle</name></member>
     <member refid="classJSL_1_1Axis_1abe9191f5cdcc181e7bc80badb8c007f3" kind="function"><name>SetFontSize</name></member>
     <member refid="classJSL_1_1Axis_1a47a1fd72c650b4e7e4f2289b0dfc5864" kind="function"><name>NewData</name></member>
-    <member refid="classJSL_1_1Axis_1a6ddc56786848490ecd988d6f3c1a55b0" kind="function"><name>WriteData</name></member>
     <member refid="classJSL_1_1Axis_1a30ec179de40908ac5ccb809365f3862e" kind="function"><name>AddProperty</name></member>
     <member refid="classJSL_1_1Axis_1afb135dc41127b155952fc3f42c2730c1" kind="function"><name>AddPlot</name></member>
     <member refid="classJSL_1_1Axis_1a666da7ba874d1e4c6926536918e7c8cc" kind="function"><name>LogSetter</name></member>
@@ -78,6 +77,8 @@
     <member refid="classJSL_1_1gnuplot_1a200e2b9b95ccd38d4f8e019c594b318f" kind="variable"><name>DirName</name></member>
     <member refid="classJSL_1_1gnuplot_1a102660ecaaece0b2b35e311b530e8b73" kind="variable"><name>axis_x</name></member>
     <member refid="classJSL_1_1gnuplot_1acf4f664ab476e047cdbf7f6dd1bfa74e" kind="variable"><name>axis_y</name></member>
+    <member refid="classJSL_1_1gnuplot_1a4cb279032f4f688412bea6fb3c2e7289" kind="variable"><name>axis_x_max</name></member>
+    <member refid="classJSL_1_1gnuplot_1af0aefa22a2dcb30ff3f3b794e3b2749d" kind="variable"><name>axis_y_max</name></member>
     <member refid="classJSL_1_1gnuplot_1a666ddb205d0cb9c76813e2f8075c1b65" kind="variable"><name>axisCount</name></member>
     <member refid="classJSL_1_1gnuplot_1aa091157be13eeb60c3193ad06aba9b6f" kind="variable"><name>terminal</name></member>
     <member refid="classJSL_1_1gnuplot_1a631da60df3e3fb00e2d01c87be4da930" kind="variable"><name>output</name></member>
@@ -90,7 +91,7 @@
     <member refid="classJSL_1_1gnuplot_1aafcfb0c9032e7f0cfeddcc3baf2cc21f" kind="function"><name>gnuplot</name></member>
     <member refid="classJSL_1_1gnuplot_1a1654a89612515dc3cd3c2a45c60dc733" kind="function"><name>~gnuplot</name></member>
     <member refid="classJSL_1_1gnuplot_1aa1e759e1965581b7c4fe508d2bca7060" kind="function"><name>SetMultiplot</name></member>
-    <member refid="classJSL_1_1gnuplot_1a036f04bf999e752754f96108bc83ec5e" kind="function"><name>SetAxis</name></member>
+    <member refid="classJSL_1_1gnuplot_1aaa70a8840886ba609533e6b0fd6f5bc1" kind="function"><name>SetAxis</name></member>
     <member refid="classJSL_1_1gnuplot_1af5ba95fdc854b7de524431efe9793f0a" kind="function"><name>SetAxis</name></member>
     <member refid="classJSL_1_1gnuplot_1ad7759efccfffa13d51620a3a695823ea" kind="function"><name>Plot</name></member>
     <member refid="classJSL_1_1gnuplot_1aff8f871df4ddbbbf519572dd1f717588" kind="function"><name>Plot</name></member>
@@ -304,6 +305,7 @@
     <member refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702" kind="enumvalue"><name>OverrunError</name></member>
     <member refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443" kind="enumvalue"><name>FailedAssertion</name></member>
     <member refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" kind="enumvalue"><name>IOError</name></member>
+    <member refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973" kind="enumvalue"><name>PlottingError</name></member>
     <member refid="namespaceJSL_1a606f5a286ccd4cf3d860d2efde2eac82" kind="variable"><name>ErrorNames</name></member>
     <member refid="namespaceJSL_1a428e6ac7fa22e5c5aa3bceb9e17fe970" kind="function"><name>FindXInY</name></member>
     <member refid="namespaceJSL_1ab806e537ccfdea16b7d194d77cdb307e" kind="function"><name>FindXInY</name></member>

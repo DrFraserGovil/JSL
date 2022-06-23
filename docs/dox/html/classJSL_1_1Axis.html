@@ -68,7 +68,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">JSL::Axis Class Reference</div></div>
@@ -80,95 +79,128 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a557386d460e8ad72ea2f6670857c99db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a557386d460e8ad72ea2f6670857c99db">Axis</a> ()</td></tr>
+<tr class="memdesc:a557386d460e8ad72ea2f6670857c99db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default, empty constructor (necessary for std::vector&lt;Axis&gt; to exist, even if never called)  <a href="classJSL_1_1Axis.html#a557386d460e8ad72ea2f6670857c99db">More...</a><br /></td></tr>
 <tr class="separator:a557386d460e8ad72ea2f6670857c99db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a597377a9446c7739b41c967412080588"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a597377a9446c7739b41c967412080588">Axis</a> (std::string rootDir)</td></tr>
+<tr class="memdesc:a597377a9446c7739b41c967412080588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expected constructor, generates a random id for itself, and generates a temporary directory in which it stores its data.  <a href="classJSL_1_1Axis.html#a597377a9446c7739b41c967412080588">More...</a><br /></td></tr>
 <tr class="separator:a597377a9446c7739b41c967412080588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95b78211cb09e6c6f0834fd353890a1d"><td class="memTemplParams" colspan="2">template&lt;class T , class S , typename... Ts&gt; </td></tr>
 <tr class="memitem:a95b78211cb09e6c6f0834fd353890a1d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1PlotData.html">PlotData</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a95b78211cb09e6c6f0834fd353890a1d">Plot</a> (const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y, <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; Ts &gt;... args)</td></tr>
+<tr class="memdesc:a95b78211cb09e6c6f0834fd353890a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a line plot to the axis, plotting x against y, and using the args to define what the line looks like.  <a href="classJSL_1_1Axis.html#a95b78211cb09e6c6f0834fd353890a1d">More...</a><br /></td></tr>
 <tr class="separator:a95b78211cb09e6c6f0834fd353890a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcccbd36fd86e0504c02a66dabc5f763"><td class="memTemplParams" colspan="2">template&lt;class T , class S , typename... Ts&gt; </td></tr>
 <tr class="memitem:abcccbd36fd86e0504c02a66dabc5f763"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1PlotData.html">PlotData</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#abcccbd36fd86e0504c02a66dabc5f763">Scatter</a> (const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y, <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; Ts &gt;... args)</td></tr>
+<tr class="memdesc:abcccbd36fd86e0504c02a66dabc5f763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a scatter plot to the axis, plotting x against y, and using the args to define what the line looks like.  <a href="classJSL_1_1Axis.html#abcccbd36fd86e0504c02a66dabc5f763">More...</a><br /></td></tr>
 <tr class="separator:abcccbd36fd86e0504c02a66dabc5f763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33cf7955573e8cae7c58a48e264fa573"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573">Show</a> ()</td></tr>
+<tr class="memdesc:a33cf7955573e8cae7c58a48e264fa573"><td class="mdescLeft">&#160;</td><td class="mdescRight">The command which generates the gnuplot scripting code for plotting the data on this axis.  <a href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573">More...</a><br /></td></tr>
 <tr class="separator:a33cf7955573e8cae7c58a48e264fa573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bfb933a1509615566ca72a98e8574ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a0bfb933a1509615566ca72a98e8574ca">SetXRange</a> (double min, double max)</td></tr>
+<tr class="memdesc:a0bfb933a1509615566ca72a98e8574ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for range_x.  <a href="classJSL_1_1Axis.html#a0bfb933a1509615566ca72a98e8574ca">More...</a><br /></td></tr>
 <tr class="separator:a0bfb933a1509615566ca72a98e8574ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23d28c6f113683490020da26e716cf14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a23d28c6f113683490020da26e716cf14">SetYRange</a> (double min, double max)</td></tr>
+<tr class="memdesc:a23d28c6f113683490020da26e716cf14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1Axis.html#a9718570f4efec1fc9a6484c2e9f1d565" title="A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero,...">Axis::range_y</a>.  <a href="classJSL_1_1Axis.html#a23d28c6f113683490020da26e716cf14">More...</a><br /></td></tr>
 <tr class="separator:a23d28c6f113683490020da26e716cf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28b2289c6d91769b48afe16c43819bb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a28b2289c6d91769b48afe16c43819bb3">SetXLabel</a> (std::string xl)</td></tr>
+<tr class="memdesc:a28b2289c6d91769b48afe16c43819bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496" title="The text which appears underneath the x axis.">Axis::xlabel</a>.  <a href="classJSL_1_1Axis.html#a28b2289c6d91769b48afe16c43819bb3">More...</a><br /></td></tr>
 <tr class="separator:a28b2289c6d91769b48afe16c43819bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d476b1547d88ee7c0c80f1a4e86faf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a1d476b1547d88ee7c0c80f1a4e86faf4">SetYLabel</a> (std::string yl)</td></tr>
+<tr class="memdesc:a1d476b1547d88ee7c0c80f1a4e86faf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff" title="The text which appears to the left of the y axis.">Axis::ylabel</a>.  <a href="classJSL_1_1Axis.html#a1d476b1547d88ee7c0c80f1a4e86faf4">More...</a><br /></td></tr>
 <tr class="separator:a1d476b1547d88ee7c0c80f1a4e86faf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5265d3c8f5043ead5d7c4e76285213f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#af5265d3c8f5043ead5d7c4e76285213f">SetXLabel</a> (std::string xl, int size)</td></tr>
-<tr class="separator:af5265d3c8f5043ead5d7c4e76285213f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f9d9926512e9e7100022877995dbec6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a9f9d9926512e9e7100022877995dbec6">SetYLabel</a> (std::string yl, int size)</td></tr>
-<tr class="separator:a9f9d9926512e9e7100022877995dbec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a290663ea6c5991a52e8ffa3497e4f2e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a290663ea6c5991a52e8ffa3497e4f2e5">SetXLabel</a> (std::string xl, int fontsize)</td></tr>
+<tr class="memdesc:a290663ea6c5991a52e8ffa3497e4f2e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for <a class="el" href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496" title="The text which appears underneath the x axis.">Axis::xlabel</a> which also sets the font size of the axis text.  <a href="classJSL_1_1Axis.html#a290663ea6c5991a52e8ffa3497e4f2e5">More...</a><br /></td></tr>
+<tr class="separator:a290663ea6c5991a52e8ffa3497e4f2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80473fe4e172302383c9160cc7248b40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a80473fe4e172302383c9160cc7248b40">SetYLabel</a> (std::string yl, int fontsize)</td></tr>
+<tr class="memdesc:a80473fe4e172302383c9160cc7248b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for <a class="el" href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff" title="The text which appears to the left of the y axis.">Axis::ylabel</a> which also sets the font size of the axis text.  <a href="classJSL_1_1Axis.html#a80473fe4e172302383c9160cc7248b40">More...</a><br /></td></tr>
+<tr class="separator:a80473fe4e172302383c9160cc7248b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeef14102e056fa25dba72f9c1d61a2f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#aeef14102e056fa25dba72f9c1d61a2f6">SetXLog</a> (bool val)</td></tr>
+<tr class="memdesc:aeef14102e056fa25dba72f9c1d61a2f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1Axis.html#a80164659b50a175dcd1c8f34b4de1164" title="If true, uses logarithmic scaling on the x axis.">Axis::isLog_x</a>.  <a href="classJSL_1_1Axis.html#aeef14102e056fa25dba72f9c1d61a2f6">More...</a><br /></td></tr>
 <tr class="separator:aeef14102e056fa25dba72f9c1d61a2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0695f111619f714627fd0269c8fec30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#ad0695f111619f714627fd0269c8fec30">SetYLog</a> (bool val)</td></tr>
+<tr class="memdesc:ad0695f111619f714627fd0269c8fec30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1Axis.html#acbea4a8261fa63858287b70306a75a8b" title="If false, uses logarithmic scaling on the x axis.">Axis::isLog_y</a>.  <a href="classJSL_1_1Axis.html#ad0695f111619f714627fd0269c8fec30">More...</a><br /></td></tr>
 <tr class="separator:ad0695f111619f714627fd0269c8fec30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4c489a5fe9d37df1be1f82637bc6787"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#ac4c489a5fe9d37df1be1f82637bc6787">SetLegend</a> (bool state)</td></tr>
+<tr class="memdesc:ac4c489a5fe9d37df1be1f82637bc6787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1Axis.html#a16738eebad49e0faf3c883e1550d2d04" title="If true, shows a legend on the axis.">Axis::legendActive</a>.  <a href="classJSL_1_1Axis.html#ac4c489a5fe9d37df1be1f82637bc6787">More...</a><br /></td></tr>
 <tr class="separator:ac4c489a5fe9d37df1be1f82637bc6787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35138d001b953b9aa0b327840ed9bba3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a35138d001b953b9aa0b327840ed9bba3">SetTitle</a> (std::string tit)</td></tr>
+<tr class="memdesc:a35138d001b953b9aa0b327840ed9bba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0" title="The text which appears above the axis.">Axis::title</a>.  <a href="classJSL_1_1Axis.html#a35138d001b953b9aa0b327840ed9bba3">More...</a><br /></td></tr>
 <tr class="separator:a35138d001b953b9aa0b327840ed9bba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae62a2c80ec71bf5f6c78c9347fc51303"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#ae62a2c80ec71bf5f6c78c9347fc51303">SetTitle</a> (std::string tit, int size)</td></tr>
+<tr class="memdesc:ae62a2c80ec71bf5f6c78c9347fc51303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for <a class="el" href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0" title="The text which appears above the axis.">Axis::title</a> which also sets the fontsize for the title.  <a href="classJSL_1_1Axis.html#ae62a2c80ec71bf5f6c78c9347fc51303">More...</a><br /></td></tr>
 <tr class="separator:ae62a2c80ec71bf5f6c78c9347fc51303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe9191f5cdcc181e7bc80badb8c007f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#abe9191f5cdcc181e7bc80badb8c007f3">SetFontSize</a> (<a class="el" href="namespaceJSL_1_1Fonts.html#a7a55fcb9c82e5a8c7f98ce1c803d08ee">Fonts::Target</a> target, unsigned int size)</td></tr>
+<tr class="memdesc:abe9191f5cdcc181e7bc80badb8c007f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the fontsize of one of the texts associated with the axis.  <a href="classJSL_1_1Axis.html#abe9191f5cdcc181e7bc80badb8c007f3">More...</a><br /></td></tr>
 <tr class="separator:abe9191f5cdcc181e7bc80badb8c007f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a60a1a28cb72b5542c025bb0626a7bcb0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0">title</a></td></tr>
-<tr class="separator:a60a1a28cb72b5542c025bb0626a7bcb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdde241e2210da810c69d4cf117e9496"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496">xlabel</a></td></tr>
-<tr class="separator:abdde241e2210da810c69d4cf117e9496"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf6df18a857aef382343b1506641d6ff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff">ylabel</a></td></tr>
-<tr class="separator:aaf6df18a857aef382343b1506641d6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a078cf9b840f394d0189cd170373f3015"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a078cf9b840f394d0189cd170373f3015">range_x</a></td></tr>
-<tr class="separator:a078cf9b840f394d0189cd170373f3015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9718570f4efec1fc9a6484c2e9f1d565"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a9718570f4efec1fc9a6484c2e9f1d565">range_y</a></td></tr>
-<tr class="separator:a9718570f4efec1fc9a6484c2e9f1d565"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80164659b50a175dcd1c8f34b4de1164"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a80164659b50a175dcd1c8f34b4de1164">isLog_x</a> = false</td></tr>
-<tr class="separator:a80164659b50a175dcd1c8f34b4de1164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbea4a8261fa63858287b70306a75a8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#acbea4a8261fa63858287b70306a75a8b">isLog_y</a> = false</td></tr>
-<tr class="separator:acbea4a8261fa63858287b70306a75a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a47a1fd72c650b4e7e4f2289b0dfc5864"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a47a1fd72c650b4e7e4f2289b0dfc5864">NewData</a> ()</td></tr>
+<tr class="memdesc:a47a1fd72c650b4e7e4f2289b0dfc5864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when data added to the axis. Increments the data counter, and generates a filename and file into which the plot data will be saved.  <a href="classJSL_1_1Axis.html#a47a1fd72c650b4e7e4f2289b0dfc5864">More...</a><br /></td></tr>
 <tr class="separator:a47a1fd72c650b4e7e4f2289b0dfc5864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ddc56786848490ecd988d6f3c1a55b0"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
-<tr class="memitem:a6ddc56786848490ecd988d6f3c1a55b0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a6ddc56786848490ecd988d6f3c1a55b0">WriteData</a> (std::string fileName, const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y)</td></tr>
-<tr class="separator:a6ddc56786848490ecd988d6f3c1a55b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30ec179de40908ac5ccb809365f3862e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a30ec179de40908ac5ccb809365f3862e">AddProperty</a> (std::string line)</td></tr>
+<tr class="memdesc:a30ec179de40908ac5ccb809365f3862e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to add unique properties to <a class="el" href="classJSL_1_1Axis.html#a6655e1d9a5b38321b80adb17d4e9c596" title="The string into which the Axis::Show() function puts all its data.">Axis::WriteCommand</a> during the <a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573" title="The command which generates the gnuplot scripting code for plotting the data on this axis.">Axis::Show()</a> phase, followed by a linebreak.  <a href="classJSL_1_1Axis.html#a30ec179de40908ac5ccb809365f3862e">More...</a><br /></td></tr>
 <tr class="separator:a30ec179de40908ac5ccb809365f3862e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb135dc41127b155952fc3f42c2730c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#afb135dc41127b155952fc3f42c2730c1">AddPlot</a> (int i)</td></tr>
+<tr class="memdesc:afb135dc41127b155952fc3f42c2730c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called during <a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573" title="The command which generates the gnuplot scripting code for plotting the data on this axis.">Axis::Show()</a>, writes the data associated with the i-th line to the <a class="el" href="classJSL_1_1Axis.html#a6655e1d9a5b38321b80adb17d4e9c596" title="The string into which the Axis::Show() function puts all its data.">Axis::WriteCommand</a>.  <a href="classJSL_1_1Axis.html#afb135dc41127b155952fc3f42c2730c1">More...</a><br /></td></tr>
 <tr class="separator:afb135dc41127b155952fc3f42c2730c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a666da7ba874d1e4c6926536918e7c8cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a666da7ba874d1e4c6926536918e7c8cc">LogSetter</a> (const std::string &amp;prefix, bool active)</td></tr>
+<tr class="memdesc:a666da7ba874d1e4c6926536918e7c8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a string for either the x or y axis value of the logarithm toggle, which is then piped to <a class="el" href="classJSL_1_1Axis.html#a30ec179de40908ac5ccb809365f3862e" title="Used to add unique properties to Axis::WriteCommand during the Axis::Show() phase,...">Axis::AddProperty</a>.  <a href="classJSL_1_1Axis.html#a666da7ba874d1e4c6926536918e7c8cc">More...</a><br /></td></tr>
 <tr class="separator:a666da7ba874d1e4c6926536918e7c8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac28d3fe416dc77f068a96db4d41c869"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#aac28d3fe416dc77f068a96db4d41c869">RangeSetter</a> (const std::string &amp;axisPrefix, const std::vector&lt; double &gt; &amp;range)</td></tr>
+<tr class="memdesc:aac28d3fe416dc77f068a96db4d41c869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a string for either the x or y axis value of the range, which is then piped to <a class="el" href="classJSL_1_1Axis.html#a30ec179de40908ac5ccb809365f3862e" title="Used to add unique properties to Axis::WriteCommand during the Axis::Show() phase,...">Axis::AddProperty</a>.  <a href="classJSL_1_1Axis.html#aac28d3fe416dc77f068a96db4d41c869">More...</a><br /></td></tr>
 <tr class="separator:aac28d3fe416dc77f068a96db4d41c869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a60a1a28cb72b5542c025bb0626a7bcb0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0">title</a></td></tr>
+<tr class="memdesc:a60a1a28cb72b5542c025bb0626a7bcb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The text which appears above the axis.  <a href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0">More...</a><br /></td></tr>
+<tr class="separator:a60a1a28cb72b5542c025bb0626a7bcb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdde241e2210da810c69d4cf117e9496"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496">xlabel</a></td></tr>
+<tr class="memdesc:abdde241e2210da810c69d4cf117e9496"><td class="mdescLeft">&#160;</td><td class="mdescRight">The text which appears underneath the x axis.  <a href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496">More...</a><br /></td></tr>
+<tr class="separator:abdde241e2210da810c69d4cf117e9496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6df18a857aef382343b1506641d6ff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff">ylabel</a></td></tr>
+<tr class="memdesc:aaf6df18a857aef382343b1506641d6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The text which appears to the left of the y axis.  <a href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff">More...</a><br /></td></tr>
+<tr class="separator:aaf6df18a857aef382343b1506641d6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a078cf9b840f394d0189cd170373f3015"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a078cf9b840f394d0189cd170373f3015">range_x</a></td></tr>
+<tr class="memdesc:a078cf9b840f394d0189cd170373f3015"><td class="mdescLeft">&#160;</td><td class="mdescRight">A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling.  <a href="classJSL_1_1Axis.html#a078cf9b840f394d0189cd170373f3015">More...</a><br /></td></tr>
+<tr class="separator:a078cf9b840f394d0189cd170373f3015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9718570f4efec1fc9a6484c2e9f1d565"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a9718570f4efec1fc9a6484c2e9f1d565">range_y</a></td></tr>
+<tr class="memdesc:a9718570f4efec1fc9a6484c2e9f1d565"><td class="mdescLeft">&#160;</td><td class="mdescRight">A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling.  <a href="classJSL_1_1Axis.html#a9718570f4efec1fc9a6484c2e9f1d565">More...</a><br /></td></tr>
+<tr class="separator:a9718570f4efec1fc9a6484c2e9f1d565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80164659b50a175dcd1c8f34b4de1164"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a80164659b50a175dcd1c8f34b4de1164">isLog_x</a> = false</td></tr>
+<tr class="memdesc:a80164659b50a175dcd1c8f34b4de1164"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, uses logarithmic scaling on the x axis.  <a href="classJSL_1_1Axis.html#a80164659b50a175dcd1c8f34b4de1164">More...</a><br /></td></tr>
+<tr class="separator:a80164659b50a175dcd1c8f34b4de1164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbea4a8261fa63858287b70306a75a8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#acbea4a8261fa63858287b70306a75a8b">isLog_y</a> = false</td></tr>
+<tr class="memdesc:acbea4a8261fa63858287b70306a75a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">If false, uses logarithmic scaling on the x axis.  <a href="classJSL_1_1Axis.html#acbea4a8261fa63858287b70306a75a8b">More...</a><br /></td></tr>
+<tr class="separator:acbea4a8261fa63858287b70306a75a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99a36f25ce02c490762a34a536c373f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a99a36f25ce02c490762a34a536c373f1">axisFontSize</a> = -1</td></tr>
+<tr class="memdesc:a99a36f25ce02c490762a34a536c373f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The font size used to write both the <a class="el" href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496" title="The text which appears underneath the x axis.">Axis::xlabel</a> and <a class="el" href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff" title="The text which appears to the left of the y axis.">Axis::ylabel</a> (cannot be different for x/y). If &lt; 0, uses the value of <a class="el" href="classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573">gnuplot::globalFontSize</a>.  <a href="classJSL_1_1Axis.html#a99a36f25ce02c490762a34a536c373f1">More...</a><br /></td></tr>
 <tr class="separator:a99a36f25ce02c490762a34a536c373f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6800d42f740631e37e3a1fe472955ea4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a6800d42f740631e37e3a1fe472955ea4">titleFontSize</a> = -1</td></tr>
+<tr class="memdesc:a6800d42f740631e37e3a1fe472955ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The font size used to write <a class="el" href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0" title="The text which appears above the axis.">Axis::title</a>. If &lt; 0, uses the value of <a class="el" href="classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573">gnuplot::globalFontSize</a>.  <a href="classJSL_1_1Axis.html#a6800d42f740631e37e3a1fe472955ea4">More...</a><br /></td></tr>
 <tr class="separator:a6800d42f740631e37e3a1fe472955ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5c155153ea1a6caaaf555955bb1cd29"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#aa5c155153ea1a6caaaf555955bb1cd29">legendFontSize</a> = -1</td></tr>
+<tr class="memdesc:aa5c155153ea1a6caaaf555955bb1cd29"><td class="mdescLeft">&#160;</td><td class="mdescRight">The font size used to write the legend, if active. If &lt; 0, uses the value of <a class="el" href="classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573">gnuplot::globalFontSize</a>.  <a href="classJSL_1_1Axis.html#aa5c155153ea1a6caaaf555955bb1cd29">More...</a><br /></td></tr>
 <tr class="separator:aa5c155153ea1a6caaaf555955bb1cd29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01db63a8d0674c821172dd3bc720fc7e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a01db63a8d0674c821172dd3bc720fc7e">DataDir</a></td></tr>
+<tr class="memdesc:a01db63a8d0674c821172dd3bc720fc7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The directory reserved for this axis to write its data to file for gnuplot to later scoop up.  <a href="classJSL_1_1Axis.html#a01db63a8d0674c821172dd3bc720fc7e">More...</a><br /></td></tr>
 <tr class="separator:a01db63a8d0674c821172dd3bc720fc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a493f7f5899d5e867ade59af8e10e95bd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classJSL_1_1PlotData.html">PlotData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a493f7f5899d5e867ade59af8e10e95bd">Data</a></td></tr>
+<tr class="memdesc:a493f7f5899d5e867ade59af8e10e95bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of data detailing what should be plotted, and what it looks like, accessed during <a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573" title="The command which generates the gnuplot scripting code for plotting the data on this axis.">Axis::Show()</a>  <a href="classJSL_1_1Axis.html#a493f7f5899d5e867ade59af8e10e95bd">More...</a><br /></td></tr>
 <tr class="separator:a493f7f5899d5e867ade59af8e10e95bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16738eebad49e0faf3c883e1550d2d04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a16738eebad49e0faf3c883e1550d2d04">legendActive</a> = false</td></tr>
+<tr class="memdesc:a16738eebad49e0faf3c883e1550d2d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, shows a legend on the axis.  <a href="classJSL_1_1Axis.html#a16738eebad49e0faf3c883e1550d2d04">More...</a><br /></td></tr>
 <tr class="separator:a16738eebad49e0faf3c883e1550d2d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acca070c88101d07fd42e35a606849e1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#acca070c88101d07fd42e35a606849e1f">DataIdx</a></td></tr>
+<tr class="memdesc:acca070c88101d07fd42e35a606849e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current counter for how many plots/lines have been added to the axis, used to index <a class="el" href="classJSL_1_1Axis.html#a493f7f5899d5e867ade59af8e10e95bd" title="A vector of data detailing what should be plotted, and what it looks like, accessed during Axis::Show...">Axis::Data</a>.  <a href="classJSL_1_1Axis.html#acca070c88101d07fd42e35a606849e1f">More...</a><br /></td></tr>
 <tr class="separator:acca070c88101d07fd42e35a606849e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6655e1d9a5b38321b80adb17d4e9c596"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html#a6655e1d9a5b38321b80adb17d4e9c596">WriteCommand</a></td></tr>
+<tr class="memdesc:a6655e1d9a5b38321b80adb17d4e9c596"><td class="mdescLeft">&#160;</td><td class="mdescRight">The string into which the <a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573" title="The command which generates the gnuplot scripting code for plotting the data on this axis.">Axis::Show()</a> function puts all its data.  <a href="classJSL_1_1Axis.html#a6655e1d9a5b38321b80adb17d4e9c596">More...</a><br /></td></tr>
 <tr class="separator:a6655e1d9a5b38321b80adb17d4e9c596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >An axis is a single instance of a plotting &lsquo;grid&rsquo; on the screen. Multiple such axes can exist simultaneously (via <a class="el" href="classJSL_1_1gnuplot.html#aa1e759e1965581b7c4fe508d2bca7060" title="Puts gnuplot into multiplot mode, with yCount rows and xCount columns. Whenever this function is call...">gnuplot::SetMultiplot()</a>), with each axis tracking their own data and properties individually. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a557386d460e8ad72ea2f6670857c99db" name="a557386d460e8ad72ea2f6670857c99db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a557386d460e8ad72ea2f6670857c99db">&#9670;&nbsp;</a></span>Axis() <span class="overload">[1/2]</span></h2>
 
@@ -191,6 +223,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default, empty constructor (necessary for std::vector&lt;Axis&gt; to exist, even if never called) </p>
 
 </div>
 </div>
@@ -217,6 +251,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Expected constructor, generates a random id for itself, and generates a temporary directory in which it stores its data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rootDir</td><td>The temporary folder generated by <a class="el" href="classJSL_1_1gnuplot.html" title="The global interface for the plotting system. All calls should be piped through this individual class...">JSL::gnuplot</a>, into which all temp data goes </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -245,6 +287,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Called during <a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573" title="The command which generates the gnuplot scripting code for plotting the data on this axis.">Axis::Show()</a>, writes the data associated with the i-th line to the <a class="el" href="classJSL_1_1Axis.html#a6655e1d9a5b38321b80adb17d4e9c596" title="The string into which the Axis::Show() function puts all its data.">Axis::WriteCommand</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>The index of the data to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a30ec179de40908ac5ccb809365f3862e" name="a30ec179de40908ac5ccb809365f3862e"></a>
@@ -270,6 +320,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Used to add unique properties to <a class="el" href="classJSL_1_1Axis.html#a6655e1d9a5b38321b80adb17d4e9c596" title="The string into which the Axis::Show() function puts all its data.">Axis::WriteCommand</a> during the <a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573" title="The command which generates the gnuplot scripting code for plotting the data on this axis.">Axis::Show()</a> phase, followed by a linebreak. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A property to be written to file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -307,6 +365,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Generates a string for either the x or y axis value of the logarithm toggle, which is then piped to <a class="el" href="classJSL_1_1Axis.html#a30ec179de40908ac5ccb809365f3862e" title="Used to add unique properties to Axis::WriteCommand during the Axis::Show() phase,...">Axis::AddProperty</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prefix</td><td>Either "x" or "y"</td></tr>
+    <tr><td class="paramname">active</td><td>Either value of <a class="el" href="classJSL_1_1Axis.html#a80164659b50a175dcd1c8f34b4de1164" title="If true, uses logarithmic scaling on the x axis.">Axis::isLog_x</a> or <a class="el" href="classJSL_1_1Axis.html#acbea4a8261fa63858287b70306a75a8b" title="If false, uses logarithmic scaling on the x axis.">Axis::isLog_y</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a47a1fd72c650b4e7e4f2289b0dfc5864" name="a47a1fd72c650b4e7e4f2289b0dfc5864"></a>
@@ -331,6 +398,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called when data added to the axis. Increments the data counter, and generates a filename and file into which the plot data will be saved. </p>
+<dl class="section return"><dt>Returns</dt><dd>The name of the file generated to store the data </dd></dl>
 
 </div>
 </div>
@@ -376,6 +446,16 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Adds a line plot to the axis, plotting x against y, and using the args to define what the line looks like. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x coordinates of the data to be plotted</td></tr>
+    <tr><td class="paramname">y</td><td>The y coordinates of the data t be plotted, must be the same length as x</td></tr>
+    <tr><td class="paramname">args</td><td>A variadic list of <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a> objects, used to define the properties of the line </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aac28d3fe416dc77f068a96db4d41c869" name="aac28d3fe416dc77f068a96db4d41c869"></a>
@@ -411,6 +491,15 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Generates a string for either the x or y axis value of the range, which is then piped to <a class="el" href="classJSL_1_1Axis.html#a30ec179de40908ac5ccb809365f3862e" title="Used to add unique properties to Axis::WriteCommand during the Axis::Show() phase,...">Axis::AddProperty</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prefix</td><td>Either "x" or "y"</td></tr>
+    <tr><td class="paramname">active</td><td>Either value of Axis::xrange or Axis::yrange </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -456,6 +545,16 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Adds a scatter plot to the axis, plotting x against y, and using the args to define what the line looks like. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x coordinates of the data to be plotted</td></tr>
+    <tr><td class="paramname">y</td><td>The y coordinates of the data t be plotted, must be the same length as x</td></tr>
+    <tr><td class="paramname">args</td><td>A variadic list of <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a> objects, used to define the properties of the line </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="abe9191f5cdcc181e7bc80badb8c007f3" name="abe9191f5cdcc181e7bc80badb8c007f3"></a>
@@ -492,6 +591,15 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the fontsize of one of the texts associated with the axis. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>The identifier of the text to be changed</td></tr>
+    <tr><td class="paramname">size</td><td>The desired fontsize </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ac4c489a5fe9d37df1be1f82637bc6787" name="ac4c489a5fe9d37df1be1f82637bc6787"></a>
@@ -518,6 +626,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simple setter for <a class="el" href="classJSL_1_1Axis.html#a16738eebad49e0faf3c883e1550d2d04" title="If true, shows a legend on the axis.">Axis::legendActive</a>. </p>
+
 </div>
 </div>
 <a id="a35138d001b953b9aa0b327840ed9bba3" name="a35138d001b953b9aa0b327840ed9bba3"></a>
@@ -543,6 +653,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Simple setter for <a class="el" href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0" title="The text which appears above the axis.">Axis::title</a>. </p>
 
 </div>
 </div>
@@ -580,6 +692,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Setter for <a class="el" href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0" title="The text which appears above the axis.">Axis::title</a> which also sets the fontsize for the title. </p>
+
 </div>
 </div>
 <a id="a28b2289c6d91769b48afe16c43819bb3" name="a28b2289c6d91769b48afe16c43819bb3"></a>
@@ -606,10 +720,12 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simple setter for <a class="el" href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496" title="The text which appears underneath the x axis.">Axis::xlabel</a>. </p>
+
 </div>
 </div>
-<a id="af5265d3c8f5043ead5d7c4e76285213f" name="af5265d3c8f5043ead5d7c4e76285213f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5265d3c8f5043ead5d7c4e76285213f">&#9670;&nbsp;</a></span>SetXLabel() <span class="overload">[2/2]</span></h2>
+<a id="a290663ea6c5991a52e8ffa3497e4f2e5" name="a290663ea6c5991a52e8ffa3497e4f2e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a290663ea6c5991a52e8ffa3497e4f2e5">&#9670;&nbsp;</a></span>SetXLabel() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -627,7 +743,7 @@ template&lt;class T , class S , typename... Ts&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
+          <td class="paramname"><em>fontsize</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -641,6 +757,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Setter for <a class="el" href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496" title="The text which appears underneath the x axis.">Axis::xlabel</a> which also sets the font size of the axis text. </p>
 
 </div>
 </div>
@@ -667,6 +785,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Simple setter for <a class="el" href="classJSL_1_1Axis.html#a80164659b50a175dcd1c8f34b4de1164" title="If true, uses logarithmic scaling on the x axis.">Axis::isLog_x</a>. </p>
 
 </div>
 </div>
@@ -704,6 +824,15 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simple setter for range_x. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>The lower bound of the x range</td></tr>
+    <tr><td class="paramname">max</td><td>The upper bound of the x range </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a1d476b1547d88ee7c0c80f1a4e86faf4" name="a1d476b1547d88ee7c0c80f1a4e86faf4"></a>
@@ -730,10 +859,12 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simple setter for <a class="el" href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff" title="The text which appears to the left of the y axis.">Axis::ylabel</a>. </p>
+
 </div>
 </div>
-<a id="a9f9d9926512e9e7100022877995dbec6" name="a9f9d9926512e9e7100022877995dbec6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f9d9926512e9e7100022877995dbec6">&#9670;&nbsp;</a></span>SetYLabel() <span class="overload">[2/2]</span></h2>
+<a id="a80473fe4e172302383c9160cc7248b40" name="a80473fe4e172302383c9160cc7248b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80473fe4e172302383c9160cc7248b40">&#9670;&nbsp;</a></span>SetYLabel() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -751,7 +882,7 @@ template&lt;class T , class S , typename... Ts&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
+          <td class="paramname"><em>fontsize</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -765,6 +896,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Setter for <a class="el" href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff" title="The text which appears to the left of the y axis.">Axis::ylabel</a> which also sets the font size of the axis text. </p>
 
 </div>
 </div>
@@ -791,6 +924,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Simple setter for <a class="el" href="classJSL_1_1Axis.html#acbea4a8261fa63858287b70306a75a8b" title="If false, uses logarithmic scaling on the x axis.">Axis::isLog_y</a>. </p>
 
 </div>
 </div>
@@ -828,6 +963,15 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simple setter for <a class="el" href="classJSL_1_1Axis.html#a9718570f4efec1fc9a6484c2e9f1d565" title="A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero,...">Axis::range_y</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>The lower bound of the y range</td></tr>
+    <tr><td class="paramname">max</td><td>The upper bound of the y range </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a33cf7955573e8cae7c58a48e264fa573" name="a33cf7955573e8cae7c58a48e264fa573"></a>
@@ -853,49 +997,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a6ddc56786848490ecd988d6f3c1a55b0" name="a6ddc56786848490ecd988d6f3c1a55b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ddc56786848490ecd988d6f3c1a55b0">&#9670;&nbsp;</a></span>WriteData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , typename S &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void JSL::Axis::WriteData </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>fileName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; S &gt; &amp;&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>The command which generates the gnuplot scripting code for plotting the data on this axis. </p>
+<dl class="section return"><dt>Returns</dt><dd>The string corresponding to the gnuplot script, must be written to file to be actionable </dd></dl>
 
 </div>
 </div>
@@ -920,6 +1023,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The font size used to write both the <a class="el" href="classJSL_1_1Axis.html#abdde241e2210da810c69d4cf117e9496" title="The text which appears underneath the x axis.">Axis::xlabel</a> and <a class="el" href="classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff" title="The text which appears to the left of the y axis.">Axis::ylabel</a> (cannot be different for x/y). If &lt; 0, uses the value of <a class="el" href="classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573">gnuplot::globalFontSize</a>. </p>
+
 </div>
 </div>
 <a id="a493f7f5899d5e867ade59af8e10e95bd" name="a493f7f5899d5e867ade59af8e10e95bd"></a>
@@ -941,6 +1046,8 @@ template&lt;typename T , typename S &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A vector of data detailing what should be plotted, and what it looks like, accessed during <a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573" title="The command which generates the gnuplot scripting code for plotting the data on this axis.">Axis::Show()</a> </p>
 
 </div>
 </div>
@@ -964,6 +1071,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The directory reserved for this axis to write its data to file for gnuplot to later scoop up. </p>
+
 </div>
 </div>
 <a id="acca070c88101d07fd42e35a606849e1f" name="acca070c88101d07fd42e35a606849e1f"></a>
@@ -986,6 +1095,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The current counter for how many plots/lines have been added to the axis, used to index <a class="el" href="classJSL_1_1Axis.html#a493f7f5899d5e867ade59af8e10e95bd" title="A vector of data detailing what should be plotted, and what it looks like, accessed during Axis::Show...">Axis::Data</a>. </p>
+
 </div>
 </div>
 <a id="a80164659b50a175dcd1c8f34b4de1164" name="a80164659b50a175dcd1c8f34b4de1164"></a>
@@ -993,12 +1104,22 @@ template&lt;typename T , typename S &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool JSL::Axis::isLog_x = false</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>If true, uses logarithmic scaling on the x axis. </p>
 
 </div>
 </div>
@@ -1007,12 +1128,22 @@ template&lt;typename T , typename S &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool JSL::Axis::isLog_y = false</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>If false, uses logarithmic scaling on the x axis. </p>
 
 </div>
 </div>
@@ -1036,6 +1167,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>If true, shows a legend on the axis. </p>
+
 </div>
 </div>
 <a id="aa5c155153ea1a6caaaf555955bb1cd29" name="aa5c155153ea1a6caaaf555955bb1cd29"></a>
@@ -1058,6 +1191,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The font size used to write the legend, if active. If &lt; 0, uses the value of <a class="el" href="classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573">gnuplot::globalFontSize</a>. </p>
+
 </div>
 </div>
 <a id="a078cf9b840f394d0189cd170373f3015" name="a078cf9b840f394d0189cd170373f3015"></a>
@@ -1065,12 +1200,22 @@ template&lt;typename T , typename S &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;double&gt; JSL::Axis::range_x</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling. </p>
 
 </div>
 </div>
@@ -1079,12 +1224,22 @@ template&lt;typename T , typename S &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;double&gt; JSL::Axis::range_y</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling. </p>
 
 </div>
 </div>
@@ -1093,12 +1248,22 @@ template&lt;typename T , typename S &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string JSL::Axis::title</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>The text which appears above the axis. </p>
 
 </div>
 </div>
@@ -1122,6 +1287,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The font size used to write <a class="el" href="classJSL_1_1Axis.html#a60a1a28cb72b5542c025bb0626a7bcb0" title="The text which appears above the axis.">Axis::title</a>. If &lt; 0, uses the value of <a class="el" href="classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573">gnuplot::globalFontSize</a>. </p>
+
 </div>
 </div>
 <a id="a6655e1d9a5b38321b80adb17d4e9c596" name="a6655e1d9a5b38321b80adb17d4e9c596"></a>
@@ -1144,6 +1311,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The string into which the <a class="el" href="classJSL_1_1Axis.html#a33cf7955573e8cae7c58a48e264fa573" title="The command which generates the gnuplot scripting code for plotting the data on this axis.">Axis::Show()</a> function puts all its data. </p>
+
 </div>
 </div>
 <a id="abdde241e2210da810c69d4cf117e9496" name="abdde241e2210da810c69d4cf117e9496"></a>
@@ -1151,12 +1320,22 @@ template&lt;typename T , typename S &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string JSL::Axis::xlabel</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>The text which appears underneath the x axis. </p>
 
 </div>
 </div>
@@ -1165,12 +1344,22 @@ template&lt;typename T , typename S &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string JSL::Axis::ylabel</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>The text which appears to the left of the y axis. </p>
 
 </div>
 </div>

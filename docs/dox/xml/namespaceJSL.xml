@@ -284,6 +284,14 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973" prot="public">
+          <name>PlottingError</name>
+          <briefdescription>
+<para>Unique error induced by <ref refid="classJSL_1_1gnuplot" kindref="compound">JSL::gnuplot</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>A list of recognised <ref refid="namespaceJSL" kindref="compound">JSL</ref> errors. </para>
         </briefdescription>
@@ -291,7 +299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/error.h" line="10" column="1" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="10" bodyend="15"/>
+        <location file="/Users/jf20/Documents/JSL/System/error.h" line="10" column="1" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="10" bodyend="16"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -301,14 +309,14 @@
         <argsstring></argsstring>
         <name>ErrorNames</name>
         <qualifiedname>JSL::ErrorNames</qualifiedname>
-        <initializer>= {&quot;ERROR&quot;, &quot;SYSTEM ERROR&quot;, &quot;OVERRUN ERROR&quot;, &quot;FAILED ASSERTION&quot;,&quot;<ref refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" kindref="member">IOError</ref>&quot;}</initializer>
+        <initializer>= {&quot;ERROR&quot;, &quot;SYSTEM ERROR&quot;, &quot;OVERRUN ERROR&quot;, &quot;FAILED ASSERTION&quot;,&quot;<ref refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" kindref="member">IOError</ref>&quot;, &quot;GNUPLOT ERROR&quot;}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/error.h" line="16" column="19" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="16" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/System/error.h" line="17" column="19" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -2439,7 +2447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/error.h" line="21" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="21" bodyend="25"/>
+        <location file="/Users/jf20/Documents/JSL/System/error.h" line="22" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="22" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a0241a3cc1fa4dd4d319ab8686d1cfaa3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2468,7 +2476,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/error.h" line="28" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="28" bodyend="31"/>
+        <location file="/Users/jf20/Documents/JSL/System/error.h" line="29" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="29" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>

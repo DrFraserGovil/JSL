@@ -43,12 +43,13 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>A Font::Target enumerates the possible fontsizes which can be set by the gnuplot regime. Used in either the <ref refid="classJSL_1_1Axis_1abe9191f5cdcc181e7bc80badb8c007f3" kindref="member">Axis::SetFontSize</ref> function or <ref refid="classJSL_1_1gnuplot_1a8ccee4ee28636d9b9494dba28d26b7d9" kindref="member">gnuplot::SetFontSize</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/axis.h" line="11" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/axis.h" bodystart="11" bodyend="11"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/axis.h" line="12" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/axis.h" bodystart="12" bodyend="12"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -63,12 +64,23 @@
           <declname>size</declname>
         </param>
         <briefdescription>
+<para>Generates the appropriate font-resizing string (if size &lt; 0, uses the default Global value) </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The font size to turn into a string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/axis.h" line="13" column="20" bodyfile="/Users/jf20/Documents/JSL/gnuplot/axis.h" bodystart="13" bodyend="21"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/axis.h" line="15" column="20" bodyfile="/Users/jf20/Documents/JSL/gnuplot/axis.h" bodystart="15" bodyend="23"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

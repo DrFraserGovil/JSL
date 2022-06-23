@@ -8,91 +8,89 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classJSL_1_1Axis_a557386d460e8ad72ea2f6670857c99db}{Axis}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default, empty constructor (necessary for std\+::vector$<$\+Axis$>$ to exist, even if never called) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Axis_a597377a9446c7739b41c967412080588}{Axis}} (std\+::string root\+Dir)
-\item 
+\begin{DoxyCompactList}\small\item\em Expected constructor, generates a random id for itself, and generates a temporary directory in which it stores its data. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T , class S , typename... Ts$>$ }\\\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& \mbox{\hyperlink{classJSL_1_1Axis_a95b78211cb09e6c6f0834fd353890a1d}{Plot}} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ S $>$ \&y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$... args)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a line plot to the axis, plotting x against y, and using the args to define what the line looks like. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T , class S , typename... Ts$>$ }\\\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& \mbox{\hyperlink{classJSL_1_1Axis_abcccbd36fd86e0504c02a66dabc5f763}{Scatter}} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ S $>$ \&y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$... args)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a scatter plot to the axis, plotting x against y, and using the args to define what the line looks like. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Show}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The command which generates the gnuplot scripting code for plotting the data on this axis. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_a0bfb933a1509615566ca72a98e8574ca}{Set\+XRange}} (double min, double max)
-\item 
+\begin{DoxyCompactList}\small\item\em Simple setter for range\+\_\+x. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_a23d28c6f113683490020da26e716cf14}{Set\+YRange}} (double min, double max)
-\item 
+\begin{DoxyCompactList}\small\item\em Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}{Axis\+::range\+\_\+y}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_a28b2289c6d91769b48afe16c43819bb3}{Set\+XLabel}} (std\+::string xl)
-\item 
+\begin{DoxyCompactList}\small\item\em Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{Axis\+::xlabel}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_a1d476b1547d88ee7c0c80f1a4e86faf4}{Set\+YLabel}} (std\+::string yl)
-\item 
-void \mbox{\hyperlink{classJSL_1_1Axis_af5265d3c8f5043ead5d7c4e76285213f}{Set\+XLabel}} (std\+::string xl, int size)
-\item 
-void \mbox{\hyperlink{classJSL_1_1Axis_a9f9d9926512e9e7100022877995dbec6}{Set\+YLabel}} (std\+::string yl, int size)
-\item 
+\begin{DoxyCompactList}\small\item\em Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{Axis\+::ylabel}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJSL_1_1Axis_a290663ea6c5991a52e8ffa3497e4f2e5}{Set\+XLabel}} (std\+::string xl, int fontsize)
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{Axis\+::xlabel}} which also sets the font size of the axis text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJSL_1_1Axis_a80473fe4e172302383c9160cc7248b40}{Set\+YLabel}} (std\+::string yl, int fontsize)
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{Axis\+::ylabel}} which also sets the font size of the axis text. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_aeef14102e056fa25dba72f9c1d61a2f6}{Set\+XLog}} (bool val)
-\item 
+\begin{DoxyCompactList}\small\item\em Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}{Axis\+::is\+Log\+\_\+x}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_ad0695f111619f714627fd0269c8fec30}{Set\+YLog}} (bool val)
-\item 
+\begin{DoxyCompactList}\small\item\em Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}{Axis\+::is\+Log\+\_\+y}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_ac4c489a5fe9d37df1be1f82637bc6787}{Set\+Legend}} (bool state)
-\item 
+\begin{DoxyCompactList}\small\item\em Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_a16738eebad49e0faf3c883e1550d2d04}{Axis\+::legend\+Active}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_a35138d001b953b9aa0b327840ed9bba3}{Set\+Title}} (std\+::string tit)
-\item 
+\begin{DoxyCompactList}\small\item\em Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{Axis\+::title}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_ae62a2c80ec71bf5f6c78c9347fc51303}{Set\+Title}} (std\+::string tit, int size)
-\item 
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{Axis\+::title}} which also sets the fontsize for the title. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_abe9191f5cdcc181e7bc80badb8c007f3}{Set\+Font\+Size}} (\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{Fonts\+::\+Target}} target, unsigned int size)
-\end{DoxyCompactItemize}
-\doxysubsection*{Data Fields}
-\begin{DoxyCompactItemize}
-\item 
-std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{title}}
-\item 
-std\+::string \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{xlabel}}
-\item 
-std\+::string \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{ylabel}}
-\item 
-std\+::vector$<$ double $>$ \mbox{\hyperlink{classJSL_1_1Axis_a078cf9b840f394d0189cd170373f3015}{range\+\_\+x}}
-\item 
-std\+::vector$<$ double $>$ \mbox{\hyperlink{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}{range\+\_\+y}}
-\item 
-bool \mbox{\hyperlink{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}{is\+Log\+\_\+x}} = false
-\item 
-bool \mbox{\hyperlink{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}{is\+Log\+\_\+y}} = false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the fontsize of one of the texts associated with the axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a47a1fd72c650b4e7e4f2289b0dfc5864}{New\+Data}} ()
-\item 
-{\footnotesize template$<$typename T , typename S $>$ }\\void \mbox{\hyperlink{classJSL_1_1Axis_a6ddc56786848490ecd988d6f3c1a55b0}{Write\+Data}} (std\+::string file\+Name, const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ S $>$ \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Called when data added to the axis. Increments the data counter, and generates a filename and file into which the plot data will be saved. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{Add\+Property}} (std\+::string line)
-\item 
+\begin{DoxyCompactList}\small\item\em Used to add unique properties to \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{Axis\+::\+Write\+Command}} during the \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Axis\+::\+Show()}} phase, followed by a linebreak. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_afb135dc41127b155952fc3f42c2730c1}{Add\+Plot}} (int i)
-\item 
+\begin{DoxyCompactList}\small\item\em Called during \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Axis\+::\+Show()}}, writes the data associated with the i-\/th line to the \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{Axis\+::\+Write\+Command}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_a666da7ba874d1e4c6926536918e7c8cc}{Log\+Setter}} (const std\+::string \&prefix, bool active)
-\item 
+\begin{DoxyCompactList}\small\item\em Generates a string for either the x or y axis value of the logarithm toggle, which is then piped to \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{Axis\+::\+Add\+Property}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Axis_aac28d3fe416dc77f068a96db4d41c869}{Range\+Setter}} (const std\+::string \&axis\+Prefix, const std\+::vector$<$ double $>$ \&range)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates a string for either the x or y axis value of the range, which is then piped to \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{Axis\+::\+Add\+Property}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{title}}
+\begin{DoxyCompactList}\small\item\em The text which appears above the axis. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{xlabel}}
+\begin{DoxyCompactList}\small\item\em The text which appears underneath the x axis. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{ylabel}}
+\begin{DoxyCompactList}\small\item\em The text which appears to the left of the y axis. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classJSL_1_1Axis_a078cf9b840f394d0189cd170373f3015}{range\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em A (max) length-\/2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-\/scaling. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}{range\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em A (max) length-\/2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-\/scaling. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}{is\+Log\+\_\+x}} = false
+\begin{DoxyCompactList}\small\item\em If true, uses logarithmic scaling on the x axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}{is\+Log\+\_\+y}} = false
+\begin{DoxyCompactList}\small\item\em If false, uses logarithmic scaling on the x axis. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classJSL_1_1Axis_a99a36f25ce02c490762a34a536c373f1}{axis\+Font\+Size}} = -\/1
-\item 
+\begin{DoxyCompactList}\small\item\em The font size used to write both the \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{Axis\+::xlabel}} and \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{Axis\+::ylabel}} (cannot be different for x/y). If \texorpdfstring{$<$}{<} 0, uses the value of \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{gnuplot\+::global\+Font\+Size}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classJSL_1_1Axis_a6800d42f740631e37e3a1fe472955ea4}{title\+Font\+Size}} = -\/1
-\item 
+\begin{DoxyCompactList}\small\item\em The font size used to write \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{Axis\+::title}}. If \texorpdfstring{$<$}{<} 0, uses the value of \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{gnuplot\+::global\+Font\+Size}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classJSL_1_1Axis_aa5c155153ea1a6caaaf555955bb1cd29}{legend\+Font\+Size}} = -\/1
-\item 
+\begin{DoxyCompactList}\small\item\em The font size used to write the legend, if active. If \texorpdfstring{$<$}{<} 0, uses the value of \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{gnuplot\+::global\+Font\+Size}}. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a01db63a8d0674c821172dd3bc720fc7e}{Data\+Dir}}
-\item 
+\begin{DoxyCompactList}\small\item\em The directory reserved for this axis to write its data to file for gnuplot to later scoop up. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} $>$ \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}}
-\item 
+\begin{DoxyCompactList}\small\item\em A vector of data detailing what should be plotted, and what it looks like, accessed during \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Axis\+::\+Show()}} \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classJSL_1_1Axis_a16738eebad49e0faf3c883e1550d2d04}{legend\+Active}} = false
-\item 
+\begin{DoxyCompactList}\small\item\em If true, shows a legend on the axis. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{Data\+Idx}}
-\item 
+\begin{DoxyCompactList}\small\item\em The current counter for how many plots/lines have been added to the axis, used to index \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Axis\+::\+Data}}. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{Write\+Command}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The string into which the \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Axis\+::\+Show()}} function puts all its data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+An axis is a single instance of a plotting `grid' on the screen. Multiple such axes can exist simultaneously (via \mbox{\hyperlink{classJSL_1_1gnuplot_aa1e759e1965581b7c4fe508d2bca7060}{gnuplot\+::\+Set\+Multiplot()}}), with each axis tracking their own data and properties individually. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classJSL_1_1Axis_a557386d460e8ad72ea2f6670857c99db}\label{classJSL_1_1Axis_a557386d460e8ad72ea2f6670857c99db}} 
@@ -100,6 +98,10 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 \index{Axis@{Axis}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{Axis()}{Axis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily JSL\+::\+Axis\+::\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default, empty constructor (necessary for std\+::vector$<$\+Axis$>$ to exist, even if never called) 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_a597377a9446c7739b41c967412080588}\label{classJSL_1_1Axis_a597377a9446c7739b41c967412080588}} 
 \index{JSL::Axis@{JSL::Axis}!Axis@{Axis}}
@@ -109,6 +111,15 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 
 
 
+Expected constructor, generates a random id for itself, and generates a temporary directory in which it stores its data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\+Dir} & The temporary folder generated by \mbox{\hyperlink{classJSL_1_1gnuplot}{JSL\+::gnuplot}}, into which all temp data goes \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classJSL_1_1Axis_afb135dc41127b155952fc3f42c2730c1}\label{classJSL_1_1Axis_afb135dc41127b155952fc3f42c2730c1}} 
 \index{JSL::Axis@{JSL::Axis}!AddPlot@{AddPlot}}
@@ -116,24 +127,60 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 \doxysubsubsection{\texorpdfstring{AddPlot()}{AddPlot()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Add\+Plot (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+Called during \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Axis\+::\+Show()}}, writes the data associated with the i-\/th line to the \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{Axis\+::\+Write\+Command}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the data to be written \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}\label{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}} 
 \index{JSL::Axis@{JSL::Axis}!AddProperty@{AddProperty}}
 \index{AddProperty@{AddProperty}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{AddProperty()}{AddProperty()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Add\+Property (\begin{DoxyParamCaption}\item[{std\+::string}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+Used to add unique properties to \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{Axis\+::\+Write\+Command}} during the \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Axis\+::\+Show()}} phase, followed by a linebreak. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A property to be written to file \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_a666da7ba874d1e4c6926536918e7c8cc}\label{classJSL_1_1Axis_a666da7ba874d1e4c6926536918e7c8cc}} 
 \index{JSL::Axis@{JSL::Axis}!LogSetter@{LogSetter}}
 \index{LogSetter@{LogSetter}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{LogSetter()}{LogSetter()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Log\+Setter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefix,  }\item[{bool}]{active }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+Generates a string for either the x or y axis value of the logarithm toggle, which is then piped to \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{Axis\+::\+Add\+Property}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & Either \char`\"{}x\char`\"{} or \char`\"{}y\char`\"{}\\
+\hline
+{\em active} & Either value of \mbox{\hyperlink{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}{Axis\+::is\+Log\+\_\+x}} or \mbox{\hyperlink{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}{Axis\+::is\+Log\+\_\+y}} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_a47a1fd72c650b4e7e4f2289b0dfc5864}\label{classJSL_1_1Axis_a47a1fd72c650b4e7e4f2289b0dfc5864}} 
 \index{JSL::Axis@{JSL::Axis}!NewData@{NewData}}
 \index{NewData@{NewData}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{NewData()}{NewData()}}
 {\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::\+New\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+Called when data added to the axis. Increments the data counter, and generates a filename and file into which the plot data will be saved. 
+
+\begin{DoxyReturn}{Returns}
+The name of the file generated to store the data 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Axis_a95b78211cb09e6c6f0834fd353890a1d}\label{classJSL_1_1Axis_a95b78211cb09e6c6f0834fd353890a1d}} 
 \index{JSL::Axis@{JSL::Axis}!Plot@{Plot}}
 \index{Plot@{Plot}!JSL::Axis@{JSL::Axis}}
@@ -141,12 +188,36 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 {\footnotesize\ttfamily template$<$class T , class S , typename... Ts$>$ \\
 \mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& JSL\+::\+Axis\+::\+Plot (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{x,  }\item[{const std\+::vector$<$ S $>$ \&}]{y,  }\item[{\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Adds a line plot to the axis, plotting x against y, and using the args to define what the line looks like. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinates of the data to be plotted\\
+\hline
+{\em y} & The y coordinates of the data t be plotted, must be the same length as x\\
+\hline
+{\em args} & A variadic list of \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}} objects, used to define the properties of the line \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_aac28d3fe416dc77f068a96db4d41c869}\label{classJSL_1_1Axis_aac28d3fe416dc77f068a96db4d41c869}} 
 \index{JSL::Axis@{JSL::Axis}!RangeSetter@{RangeSetter}}
 \index{RangeSetter@{RangeSetter}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{RangeSetter()}{RangeSetter()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Range\+Setter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{axis\+Prefix,  }\item[{const std\+::vector$<$ double $>$ \&}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+
+Generates a string for either the x or y axis value of the range, which is then piped to \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{Axis\+::\+Add\+Property}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & Either \char`\"{}x\char`\"{} or \char`\"{}y\char`\"{}\\
+\hline
+{\em active} & Either value of Axis\+::xrange or Axis\+::yrange \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_abcccbd36fd86e0504c02a66dabc5f763}\label{classJSL_1_1Axis_abcccbd36fd86e0504c02a66dabc5f763}} 
 \index{JSL::Axis@{JSL::Axis}!Scatter@{Scatter}}
 \index{Scatter@{Scatter}!JSL::Axis@{JSL::Axis}}
@@ -154,17 +225,45 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 {\footnotesize\ttfamily template$<$class T , class S , typename... Ts$>$ \\
 \mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& JSL\+::\+Axis\+::\+Scatter (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{x,  }\item[{const std\+::vector$<$ S $>$ \&}]{y,  }\item[{\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Adds a scatter plot to the axis, plotting x against y, and using the args to define what the line looks like. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinates of the data to be plotted\\
+\hline
+{\em y} & The y coordinates of the data t be plotted, must be the same length as x\\
+\hline
+{\em args} & A variadic list of \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}} objects, used to define the properties of the line \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_abe9191f5cdcc181e7bc80badb8c007f3}\label{classJSL_1_1Axis_abe9191f5cdcc181e7bc80badb8c007f3}} 
 \index{JSL::Axis@{JSL::Axis}!SetFontSize@{SetFontSize}}
 \index{SetFontSize@{SetFontSize}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{SetFontSize()}{SetFontSize()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+Font\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{Fonts\+::\+Target}}}]{target,  }\item[{unsigned int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Sets the fontsize of one of the texts associated with the axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The identifier of the text to be changed\\
+\hline
+{\em size} & The desired fontsize \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_ac4c489a5fe9d37df1be1f82637bc6787}\label{classJSL_1_1Axis_ac4c489a5fe9d37df1be1f82637bc6787}} 
 \index{JSL::Axis@{JSL::Axis}!SetLegend@{SetLegend}}
 \index{SetLegend@{SetLegend}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{SetLegend()}{SetLegend()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+Legend (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_a16738eebad49e0faf3c883e1550d2d04}{Axis\+::legend\+Active}}. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_a35138d001b953b9aa0b327840ed9bba3}\label{classJSL_1_1Axis_a35138d001b953b9aa0b327840ed9bba3}} 
 \index{JSL::Axis@{JSL::Axis}!SetTitle@{SetTitle}}
@@ -172,11 +271,19 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 \doxysubsubsection{\texorpdfstring{SetTitle()}{SetTitle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{tit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{Axis\+::title}}. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_ae62a2c80ec71bf5f6c78c9347fc51303}\label{classJSL_1_1Axis_ae62a2c80ec71bf5f6c78c9347fc51303}} 
 \index{JSL::Axis@{JSL::Axis}!SetTitle@{SetTitle}}
 \index{SetTitle@{SetTitle}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{SetTitle()}{SetTitle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{tit,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter for \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{Axis\+::title}} which also sets the fontsize for the title. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_a28b2289c6d91769b48afe16c43819bb3}\label{classJSL_1_1Axis_a28b2289c6d91769b48afe16c43819bb3}} 
 \index{JSL::Axis@{JSL::Axis}!SetXLabel@{SetXLabel}}
@@ -184,11 +291,19 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 \doxysubsubsection{\texorpdfstring{SetXLabel()}{SetXLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+XLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{xl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classJSL_1_1Axis_af5265d3c8f5043ead5d7c4e76285213f}\label{classJSL_1_1Axis_af5265d3c8f5043ead5d7c4e76285213f}} 
+
+
+Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{Axis\+::xlabel}}. 
+
+\mbox{\Hypertarget{classJSL_1_1Axis_a290663ea6c5991a52e8ffa3497e4f2e5}\label{classJSL_1_1Axis_a290663ea6c5991a52e8ffa3497e4f2e5}} 
 \index{JSL::Axis@{JSL::Axis}!SetXLabel@{SetXLabel}}
 \index{SetXLabel@{SetXLabel}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{SetXLabel()}{SetXLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+XLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{xl,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+XLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{xl,  }\item[{int}]{fontsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter for \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{Axis\+::xlabel}} which also sets the font size of the axis text. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_aeef14102e056fa25dba72f9c1d61a2f6}\label{classJSL_1_1Axis_aeef14102e056fa25dba72f9c1d61a2f6}} 
 \index{JSL::Axis@{JSL::Axis}!SetXLog@{SetXLog}}
@@ -196,23 +311,46 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 \doxysubsubsection{\texorpdfstring{SetXLog()}{SetXLog()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+XLog (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}{Axis\+::is\+Log\+\_\+x}}. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_a0bfb933a1509615566ca72a98e8574ca}\label{classJSL_1_1Axis_a0bfb933a1509615566ca72a98e8574ca}} 
 \index{JSL::Axis@{JSL::Axis}!SetXRange@{SetXRange}}
 \index{SetXRange@{SetXRange}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{SetXRange()}{SetXRange()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+XRange (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Simple setter for range\+\_\+x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The lower bound of the x range\\
+\hline
+{\em max} & The upper bound of the x range \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_a1d476b1547d88ee7c0c80f1a4e86faf4}\label{classJSL_1_1Axis_a1d476b1547d88ee7c0c80f1a4e86faf4}} 
 \index{JSL::Axis@{JSL::Axis}!SetYLabel@{SetYLabel}}
 \index{SetYLabel@{SetYLabel}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{SetYLabel()}{SetYLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+YLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{yl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classJSL_1_1Axis_a9f9d9926512e9e7100022877995dbec6}\label{classJSL_1_1Axis_a9f9d9926512e9e7100022877995dbec6}} 
+
+
+Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{Axis\+::ylabel}}. 
+
+\mbox{\Hypertarget{classJSL_1_1Axis_a80473fe4e172302383c9160cc7248b40}\label{classJSL_1_1Axis_a80473fe4e172302383c9160cc7248b40}} 
 \index{JSL::Axis@{JSL::Axis}!SetYLabel@{SetYLabel}}
 \index{SetYLabel@{SetYLabel}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{SetYLabel()}{SetYLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+YLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{yl,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+YLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{yl,  }\item[{int}]{fontsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter for \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{Axis\+::ylabel}} which also sets the font size of the axis text. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_ad0695f111619f714627fd0269c8fec30}\label{classJSL_1_1Axis_ad0695f111619f714627fd0269c8fec30}} 
 \index{JSL::Axis@{JSL::Axis}!SetYLog@{SetYLog}}
@@ -220,25 +358,40 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c59
 \doxysubsubsection{\texorpdfstring{SetYLog()}{SetYLog()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+YLog (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}{Axis\+::is\+Log\+\_\+y}}. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_a23d28c6f113683490020da26e716cf14}\label{classJSL_1_1Axis_a23d28c6f113683490020da26e716cf14}} 
 \index{JSL::Axis@{JSL::Axis}!SetYRange@{SetYRange}}
 \index{SetYRange@{SetYRange}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{SetYRange()}{SetYRange()}}
 {\footnotesize\ttfamily void JSL\+::\+Axis\+::\+Set\+YRange (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Simple setter for \mbox{\hyperlink{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}{Axis\+::range\+\_\+y}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The lower bound of the y range\\
+\hline
+{\em max} & The upper bound of the y range \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}\label{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}} 
 \index{JSL::Axis@{JSL::Axis}!Show@{Show}}
 \index{Show@{Show}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{Show()}{Show()}}
 {\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classJSL_1_1Axis_a6ddc56786848490ecd988d6f3c1a55b0}\label{classJSL_1_1Axis_a6ddc56786848490ecd988d6f3c1a55b0}} 
-\index{JSL::Axis@{JSL::Axis}!WriteData@{WriteData}}
-\index{WriteData@{WriteData}!JSL::Axis@{JSL::Axis}}
-\doxysubsubsection{\texorpdfstring{WriteData()}{WriteData()}}
-{\footnotesize\ttfamily template$<$typename T , typename S $>$ \\
-void JSL\+::\+Axis\+::\+Write\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name,  }\item[{const std\+::vector$<$ T $>$ \&}]{x,  }\item[{const std\+::vector$<$ S $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
+
+The command which generates the gnuplot scripting code for plotting the data on this axis. 
+
+\begin{DoxyReturn}{Returns}
+The string corresponding to the gnuplot script, must be written to file to be actionable 
+\end{DoxyReturn}
 
 
 \doxysubsection{Field Documentation}
@@ -248,11 +401,19 @@ void JSL\+::\+Axis\+::\+Write\+Data (\begin{DoxyParamCaption}\item[{std\+::strin
 \doxysubsubsection{\texorpdfstring{axisFontSize}{axisFontSize}}
 {\footnotesize\ttfamily int JSL\+::\+Axis\+::axis\+Font\+Size = -\/1\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The font size used to write both the \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{Axis\+::xlabel}} and \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{Axis\+::ylabel}} (cannot be different for x/y). If \texorpdfstring{$<$}{<} 0, uses the value of \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{gnuplot\+::global\+Font\+Size}}. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}\label{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}} 
 \index{JSL::Axis@{JSL::Axis}!Data@{Data}}
 \index{Data@{Data}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{Data}{Data}}
 {\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}}$>$ JSL\+::\+Axis\+::\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A vector of data detailing what should be plotted, and what it looks like, accessed during \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Axis\+::\+Show()}} 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_a01db63a8d0674c821172dd3bc720fc7e}\label{classJSL_1_1Axis_a01db63a8d0674c821172dd3bc720fc7e}} 
 \index{JSL::Axis@{JSL::Axis}!DataDir@{DataDir}}
@@ -260,23 +421,39 @@ void JSL\+::\+Axis\+::\+Write\+Data (\begin{DoxyParamCaption}\item[{std\+::strin
 \doxysubsubsection{\texorpdfstring{DataDir}{DataDir}}
 {\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::\+Data\+Dir\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The directory reserved for this axis to write its data to file for gnuplot to later scoop up. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}\label{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}} 
 \index{JSL::Axis@{JSL::Axis}!DataIdx@{DataIdx}}
 \index{DataIdx@{DataIdx}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{DataIdx}{DataIdx}}
 {\footnotesize\ttfamily int JSL\+::\+Axis\+::\+Data\+Idx\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The current counter for how many plots/lines have been added to the axis, used to index \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Axis\+::\+Data}}. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}\label{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}} 
 \index{JSL::Axis@{JSL::Axis}!isLog\_x@{isLog\_x}}
 \index{isLog\_x@{isLog\_x}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{isLog\_x}{isLog\_x}}
-{\footnotesize\ttfamily bool JSL\+::\+Axis\+::is\+Log\+\_\+x = false}
+{\footnotesize\ttfamily bool JSL\+::\+Axis\+::is\+Log\+\_\+x = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If true, uses logarithmic scaling on the x axis. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}\label{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}} 
 \index{JSL::Axis@{JSL::Axis}!isLog\_y@{isLog\_y}}
 \index{isLog\_y@{isLog\_y}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{isLog\_y}{isLog\_y}}
-{\footnotesize\ttfamily bool JSL\+::\+Axis\+::is\+Log\+\_\+y = false}
+{\footnotesize\ttfamily bool JSL\+::\+Axis\+::is\+Log\+\_\+y = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If false, uses logarithmic scaling on the x axis. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_a16738eebad49e0faf3c883e1550d2d04}\label{classJSL_1_1Axis_a16738eebad49e0faf3c883e1550d2d04}} 
 \index{JSL::Axis@{JSL::Axis}!legendActive@{legendActive}}
@@ -284,29 +461,49 @@ void JSL\+::\+Axis\+::\+Write\+Data (\begin{DoxyParamCaption}\item[{std\+::strin
 \doxysubsubsection{\texorpdfstring{legendActive}{legendActive}}
 {\footnotesize\ttfamily bool JSL\+::\+Axis\+::legend\+Active = false\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+If true, shows a legend on the axis. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_aa5c155153ea1a6caaaf555955bb1cd29}\label{classJSL_1_1Axis_aa5c155153ea1a6caaaf555955bb1cd29}} 
 \index{JSL::Axis@{JSL::Axis}!legendFontSize@{legendFontSize}}
 \index{legendFontSize@{legendFontSize}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{legendFontSize}{legendFontSize}}
 {\footnotesize\ttfamily int JSL\+::\+Axis\+::legend\+Font\+Size = -\/1\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The font size used to write the legend, if active. If \texorpdfstring{$<$}{<} 0, uses the value of \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{gnuplot\+::global\+Font\+Size}}. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_a078cf9b840f394d0189cd170373f3015}\label{classJSL_1_1Axis_a078cf9b840f394d0189cd170373f3015}} 
 \index{JSL::Axis@{JSL::Axis}!range\_x@{range\_x}}
 \index{range\_x@{range\_x}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{range\_x}{range\_x}}
-{\footnotesize\ttfamily std\+::vector$<$double$>$ JSL\+::\+Axis\+::range\+\_\+x}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ JSL\+::\+Axis\+::range\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A (max) length-\/2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-\/scaling. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}\label{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}} 
 \index{JSL::Axis@{JSL::Axis}!range\_y@{range\_y}}
 \index{range\_y@{range\_y}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{range\_y}{range\_y}}
-{\footnotesize\ttfamily std\+::vector$<$double$>$ JSL\+::\+Axis\+::range\+\_\+y}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ JSL\+::\+Axis\+::range\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A (max) length-\/2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-\/scaling. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}\label{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}} 
 \index{JSL::Axis@{JSL::Axis}!title@{title}}
 \index{title@{title}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{title}{title}}
-{\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::title}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The text which appears above the axis. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_a6800d42f740631e37e3a1fe472955ea4}\label{classJSL_1_1Axis_a6800d42f740631e37e3a1fe472955ea4}} 
 \index{JSL::Axis@{JSL::Axis}!titleFontSize@{titleFontSize}}
@@ -314,23 +511,39 @@ void JSL\+::\+Axis\+::\+Write\+Data (\begin{DoxyParamCaption}\item[{std\+::strin
 \doxysubsubsection{\texorpdfstring{titleFontSize}{titleFontSize}}
 {\footnotesize\ttfamily int JSL\+::\+Axis\+::title\+Font\+Size = -\/1\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The font size used to write \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{Axis\+::title}}. If \texorpdfstring{$<$}{<} 0, uses the value of \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{gnuplot\+::global\+Font\+Size}}. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}\label{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}} 
 \index{JSL::Axis@{JSL::Axis}!WriteCommand@{WriteCommand}}
 \index{WriteCommand@{WriteCommand}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{WriteCommand}{WriteCommand}}
 {\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::\+Write\+Command\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The string into which the \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Axis\+::\+Show()}} function puts all its data. 
+
 \mbox{\Hypertarget{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}\label{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}} 
 \index{JSL::Axis@{JSL::Axis}!xlabel@{xlabel}}
 \index{xlabel@{xlabel}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{xlabel}{xlabel}}
-{\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::xlabel}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::xlabel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The text which appears underneath the x axis. 
 
 \mbox{\Hypertarget{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}\label{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}} 
 \index{JSL::Axis@{JSL::Axis}!ylabel@{ylabel}}
 \index{ylabel@{ylabel}!JSL::Axis@{JSL::Axis}}
 \doxysubsubsection{\texorpdfstring{ylabel}{ylabel}}
-{\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::ylabel}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Axis\+::ylabel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The text which appears to the left of the y axis. 
 
 
 

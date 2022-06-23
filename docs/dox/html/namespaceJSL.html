@@ -90,6 +90,7 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Axis.html">Axis</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html">gnuplot</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global interface for the plotting system. All calls should be piped through this individual class. Each gnuplot object corresponds to a single plot (though they might have severable axes within each plot)  <a href="classJSL_1_1gnuplot.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Matrix.html">Matrix</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +158,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443">FailedAssertion</a>
 , <br />
 &#160;&#160;<a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4">IOError</a>
+, <a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973">PlottingError</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a5059dbafa288b9b3beac1746f4acae61"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of recognised <a class="el" href="namespaceJSL.html">JSL</a> errors.  <a href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61">More...</a><br /></td></tr>
@@ -324,7 +326,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a606f5a286ccd4cf3d860d2efde2eac82"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a606f5a286ccd4cf3d860d2efde2eac82">ErrorNames</a> = {&quot;ERROR&quot;, &quot;SYSTEM ERROR&quot;, &quot;OVERRUN ERROR&quot;, &quot;FAILED ASSERTION&quot;,&quot;<a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4">IOError</a>&quot;}</td></tr>
+<tr class="memitem:a606f5a286ccd4cf3d860d2efde2eac82"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a606f5a286ccd4cf3d860d2efde2eac82">ErrorNames</a> = {&quot;ERROR&quot;, &quot;SYSTEM ERROR&quot;, &quot;OVERRUN ERROR&quot;, &quot;FAILED ASSERTION&quot;,&quot;<a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4">IOError</a>&quot;, &quot;GNUPLOT ERROR&quot;}</td></tr>
 <tr class="separator:a606f5a286ccd4cf3d860d2efde2eac82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -351,6 +353,8 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443" name="a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443"></a>FailedAssertion&#160;</td><td class="fielddoc"><p >As the name implies, failed assertions. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" name="a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4"></a>IOError&#160;</td><td class="fielddoc"><p >Errors induced by file. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973" name="a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973"></a>PlottingError&#160;</td><td class="fielddoc"><p >Unique error induced by <a class="el" href="classJSL_1_1gnuplot.html" title="The global interface for the plotting system. All calls should be piped through this individual class...">JSL::gnuplot</a>. </p>
 </td></tr>
 </table>
 
@@ -2861,7 +2865,7 @@ template&lt;class T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;std::string&gt; JSL::ErrorNames = {&quot;ERROR&quot;, &quot;SYSTEM ERROR&quot;, &quot;OVERRUN ERROR&quot;, &quot;FAILED ASSERTION&quot;,&quot;<a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4">IOError</a>&quot;}</td>
+          <td class="memname">const std::vector&lt;std::string&gt; JSL::ErrorNames = {&quot;ERROR&quot;, &quot;SYSTEM ERROR&quot;, &quot;OVERRUN ERROR&quot;, &quot;FAILED ASSERTION&quot;,&quot;<a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4">IOError</a>&quot;, &quot;GNUPLOT ERROR&quot;}</td>
         </tr>
       </table>
 </div><div class="memdoc">

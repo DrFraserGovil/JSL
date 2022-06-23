@@ -74,114 +74,169 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The global interface for the plotting system. All calls should be piped through this individual class. Each gnuplot object corresponds to a single plot (though they might have severable axes within each plot)  
+ <a href="classJSL_1_1gnuplot.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="gnuplotMain_8h_source.html">gnuplotMain.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aafcfb0c9032e7f0cfeddcc3baf2cc21f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aafcfb0c9032e7f0cfeddcc3baf2cc21f">gnuplot</a> ()</td></tr>
+<tr class="memdesc:aafcfb0c9032e7f0cfeddcc3baf2cc21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor function, generates a unique name for itself, and creates a directory into which it stores its own data.  <a href="classJSL_1_1gnuplot.html#aafcfb0c9032e7f0cfeddcc3baf2cc21f">More...</a><br /></td></tr>
 <tr class="separator:aafcfb0c9032e7f0cfeddcc3baf2cc21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1654a89612515dc3cd3c2a45c60dc733"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a1654a89612515dc3cd3c2a45c60dc733">~gnuplot</a> ()</td></tr>
+<tr class="memdesc:a1654a89612515dc3cd3c2a45c60dc733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom destructor which also calls CleanupTempFiles, tidying up after itself.  <a href="classJSL_1_1gnuplot.html#a1654a89612515dc3cd3c2a45c60dc733">More...</a><br /></td></tr>
 <tr class="separator:a1654a89612515dc3cd3c2a45c60dc733"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1e759e1965581b7c4fe508d2bca7060"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aa1e759e1965581b7c4fe508d2bca7060">SetMultiplot</a> (int yCount, int xCount)</td></tr>
+<tr class="memdesc:aa1e759e1965581b7c4fe508d2bca7060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts gnuplot into multiplot mode, with yCount rows and xCount columns. Whenever this function is called, the entire set of axes is wiped clean.  <a href="classJSL_1_1gnuplot.html#aa1e759e1965581b7c4fe508d2bca7060">More...</a><br /></td></tr>
 <tr class="separator:aa1e759e1965581b7c4fe508d2bca7060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a036f04bf999e752754f96108bc83ec5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a036f04bf999e752754f96108bc83ec5e">SetAxis</a> (int y, int x)</td></tr>
-<tr class="separator:a036f04bf999e752754f96108bc83ec5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa70a8840886ba609533e6b0fd6f5bc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aaa70a8840886ba609533e6b0fd6f5bc1">SetAxis</a> (unsigned int y, unsigned int x)</td></tr>
+<tr class="memdesc:aaa70a8840886ba609533e6b0fd6f5bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current axis focus to the y-th row and x-th column. The "axis in focus" is acted upon whenever the gnuplot object is given a command (i.e. <a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">gnuplot::Plot</a>) which does not otherwise specify the axis. By "switching focus", calling <a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">gnuplot::Plot</a> will write on different axes. It is also possible to act on the axes directly, using the operator[] overload, i.e. gnuplot[i][j].<a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">Plot()</a> would produce the same output as gnuplot.SetAxis(i,j); <a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">Plot()</a> - though with the second version, a subsequent call to <a class="el" href="classJSL_1_1gnuplot.html#a90306a67b5b8d990cbcb13b3f6f6eaa3" title="Passes the arguments along to the Axis::Scatter() function associated with the current axis focus.">Scatter()</a> would be written to the same axis, which would not be guaranteed for the first case.  <a href="classJSL_1_1gnuplot.html#aaa70a8840886ba609533e6b0fd6f5bc1">More...</a><br /></td></tr>
+<tr class="separator:aaa70a8840886ba609533e6b0fd6f5bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5ba95fdc854b7de524431efe9793f0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#af5ba95fdc854b7de524431efe9793f0a">SetAxis</a> (int idx)</td></tr>
+<tr class="memdesc:af5ba95fdc854b7de524431efe9793f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current axis focus to the idx-th axis, numbering columns-then-rows.  <a href="classJSL_1_1gnuplot.html#af5ba95fdc854b7de524431efe9793f0a">More...</a><br /></td></tr>
 <tr class="separator:af5ba95fdc854b7de524431efe9793f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7759efccfffa13d51620a3a695823ea"><td class="memTemplParams" colspan="2">template&lt;class T , class S , typename... Ts&gt; </td></tr>
 <tr class="memitem:ad7759efccfffa13d51620a3a695823ea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1PlotData.html">PlotData</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea">Plot</a> (const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y, <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; Ts &gt;... args)</td></tr>
+<tr class="memdesc:ad7759efccfffa13d51620a3a695823ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the arguments along to the <a class="el" href="classJSL_1_1Axis.html#a95b78211cb09e6c6f0834fd353890a1d" title="Adds a line plot to the axis, plotting x against y, and using the args to define what the line looks ...">Axis::Plot()</a> function associated with the current axis focus.  <a href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea">More...</a><br /></td></tr>
 <tr class="separator:ad7759efccfffa13d51620a3a695823ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff8f871df4ddbbbf519572dd1f717588"><td class="memTemplParams" colspan="2">template&lt;class T , class S , typename... Ts&gt; </td></tr>
 <tr class="memitem:aff8f871df4ddbbbf519572dd1f717588"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1PlotData.html">PlotData</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aff8f871df4ddbbbf519572dd1f717588">Plot</a> (const T &amp;x, const S &amp;y, <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; Ts &gt;... args)</td></tr>
+<tr class="memdesc:aff8f871df4ddbbbf519572dd1f717588"><td class="mdescLeft">&#160;</td><td class="mdescRight">As with <a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">Plot(const std::vector&lt;T&gt; &amp; x,const std::vector&lt;S&gt;  &amp; y, NameValuePair&lt;Ts&gt;... args)</a>, but permits non-vector objects which can still be cast into vectors (i.e. <a class="el" href="classJSL_1_1Vector.html">JSL::Vector</a> objects)  <a href="classJSL_1_1gnuplot.html#aff8f871df4ddbbbf519572dd1f717588">More...</a><br /></td></tr>
 <tr class="separator:aff8f871df4ddbbbf519572dd1f717588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90306a67b5b8d990cbcb13b3f6f6eaa3"><td class="memTemplParams" colspan="2">template&lt;class T , class S , typename... Ts&gt; </td></tr>
 <tr class="memitem:a90306a67b5b8d990cbcb13b3f6f6eaa3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1PlotData.html">PlotData</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a90306a67b5b8d990cbcb13b3f6f6eaa3">Scatter</a> (const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y, <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; Ts &gt;... args)</td></tr>
+<tr class="memdesc:a90306a67b5b8d990cbcb13b3f6f6eaa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the arguments along to the <a class="el" href="classJSL_1_1Axis.html#abcccbd36fd86e0504c02a66dabc5f763" title="Adds a scatter plot to the axis, plotting x against y, and using the args to define what the line loo...">Axis::Scatter()</a> function associated with the current axis focus.  <a href="classJSL_1_1gnuplot.html#a90306a67b5b8d990cbcb13b3f6f6eaa3">More...</a><br /></td></tr>
 <tr class="separator:a90306a67b5b8d990cbcb13b3f6f6eaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfd19ba6419d0c23d18dbeb4f6302f59"><td class="memTemplParams" colspan="2">template&lt;class T , class S , typename... Ts&gt; </td></tr>
 <tr class="memitem:adfd19ba6419d0c23d18dbeb4f6302f59"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1PlotData.html">PlotData</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#adfd19ba6419d0c23d18dbeb4f6302f59">Scatter</a> (const T &amp;x, const S &amp;y, <a class="el" href="structJSL_1_1NameValuePair.html">NameValuePair</a>&lt; Ts &gt;... args)</td></tr>
+<tr class="memdesc:adfd19ba6419d0c23d18dbeb4f6302f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">As with <a class="el" href="classJSL_1_1gnuplot.html#a90306a67b5b8d990cbcb13b3f6f6eaa3" title="Passes the arguments along to the Axis::Scatter() function associated with the current axis focus.">Scatter(const std::vector&lt;T&gt; &amp; x,const std::vector&lt;S&gt;  &amp; y, NameValuePair&lt;Ts&gt;... args)</a>, but permits non-vector objects which can still be cast into vectors (i.e. <a class="el" href="classJSL_1_1Vector.html">JSL::Vector</a> objects)  <a href="classJSL_1_1gnuplot.html#adfd19ba6419d0c23d18dbeb4f6302f59">More...</a><br /></td></tr>
 <tr class="separator:adfd19ba6419d0c23d18dbeb4f6302f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a147fc21e6c9b48d823a16c738953d081"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a147fc21e6c9b48d823a16c738953d081">Show</a> ()</td></tr>
+<tr class="memdesc:a147fc21e6c9b48d823a16c738953d081"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key function - until this function is called, the plot is hypothetical. Calling this function generates a gnuplot script file, which each axis writes to to generate the appropriate plot, which is then called using a system command, producing the plot.  <a href="classJSL_1_1gnuplot.html#a147fc21e6c9b48d823a16c738953d081">More...</a><br /></td></tr>
 <tr class="separator:a147fc21e6c9b48d823a16c738953d081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0ace47c0e36ef49cae6592a8a841926"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classJSL_1_1Axis.html">Axis</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#af0ace47c0e36ef49cae6592a8a841926">operator[]</a> (int i)</td></tr>
+<tr class="memdesc:af0ace47c0e36ef49cae6592a8a841926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows indexing into the Axes without using the SetAxis(int,int) function, accessing the <a class="el" href="classJSL_1_1Axis.html">Axis</a> object directly. Note that this returns a vector of axis objects, hence access must be via gunplot[i][j].  <a href="classJSL_1_1gnuplot.html#af0ace47c0e36ef49cae6592a8a841926">More...</a><br /></td></tr>
 <tr class="separator:af0ace47c0e36ef49cae6592a8a841926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26eba111f5ff83b852eded604d23fbe2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a26eba111f5ff83b852eded604d23fbe2">SetXRange</a> (double min, double max)</td></tr>
+<tr class="memdesc:a26eba111f5ff83b852eded604d23fbe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#a0bfb933a1509615566ca72a98e8574ca" title="Simple setter for range_x.">Axis::SetXRange(double,double)</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a26eba111f5ff83b852eded604d23fbe2">More...</a><br /></td></tr>
 <tr class="separator:a26eba111f5ff83b852eded604d23fbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39e8bdc9b9bb9e47e4acdd0b17ad5430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a39e8bdc9b9bb9e47e4acdd0b17ad5430">SetYRange</a> (double min, double max)</td></tr>
+<tr class="memdesc:a39e8bdc9b9bb9e47e4acdd0b17ad5430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#a23d28c6f113683490020da26e716cf14" title="Simple setter for Axis::range_y.">Axis::SetYRange(double,double)</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a39e8bdc9b9bb9e47e4acdd0b17ad5430">More...</a><br /></td></tr>
 <tr class="separator:a39e8bdc9b9bb9e47e4acdd0b17ad5430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2230b64696435194780c99e8107ac51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#af2230b64696435194780c99e8107ac51">SetXLog</a> (bool val)</td></tr>
+<tr class="memdesc:af2230b64696435194780c99e8107ac51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#aeef14102e056fa25dba72f9c1d61a2f6" title="Simple setter for Axis::isLog_x.">Axis::SetXLog</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#af2230b64696435194780c99e8107ac51">More...</a><br /></td></tr>
 <tr class="separator:af2230b64696435194780c99e8107ac51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a244f8e993705d7c79cbb37451db39632"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a244f8e993705d7c79cbb37451db39632">SetYLog</a> (bool val)</td></tr>
+<tr class="memdesc:a244f8e993705d7c79cbb37451db39632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#ad0695f111619f714627fd0269c8fec30" title="Simple setter for Axis::isLog_y.">Axis::SetYLog</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a244f8e993705d7c79cbb37451db39632">More...</a><br /></td></tr>
 <tr class="separator:a244f8e993705d7c79cbb37451db39632"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80699eb05778c88b435ec62a5afe3a5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a80699eb05778c88b435ec62a5afe3a5d">SetXLabel</a> (std::string xl)</td></tr>
+<tr class="memdesc:a80699eb05778c88b435ec62a5afe3a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#a28b2289c6d91769b48afe16c43819bb3" title="Simple setter for Axis::xlabel.">Axis::SetXLabel(std::string)</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a80699eb05778c88b435ec62a5afe3a5d">More...</a><br /></td></tr>
 <tr class="separator:a80699eb05778c88b435ec62a5afe3a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a741f78103dd76eaff9475351b7f49edd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a741f78103dd76eaff9475351b7f49edd">SetYLabel</a> (std::string yl)</td></tr>
+<tr class="memdesc:a741f78103dd76eaff9475351b7f49edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#a1d476b1547d88ee7c0c80f1a4e86faf4" title="Simple setter for Axis::ylabel.">Axis::SetYLabel(std::string)</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a741f78103dd76eaff9475351b7f49edd">More...</a><br /></td></tr>
 <tr class="separator:a741f78103dd76eaff9475351b7f49edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4b92e98fe9231ed52d1f0c88c3cbd93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aa4b92e98fe9231ed52d1f0c88c3cbd93">SetXLabel</a> (std::string xl, int size)</td></tr>
+<tr class="memdesc:aa4b92e98fe9231ed52d1f0c88c3cbd93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#a290663ea6c5991a52e8ffa3497e4f2e5" title="Setter for Axis::xlabel which also sets the font size of the axis text.">Axis::SetXLabel(std::string,int)</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#aa4b92e98fe9231ed52d1f0c88c3cbd93">More...</a><br /></td></tr>
 <tr class="separator:aa4b92e98fe9231ed52d1f0c88c3cbd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a721199548950cfd60fb43d3ac3bc0fe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a721199548950cfd60fb43d3ac3bc0fe1">SetYLabel</a> (std::string yl, int size)</td></tr>
+<tr class="memdesc:a721199548950cfd60fb43d3ac3bc0fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#a80473fe4e172302383c9160cc7248b40" title="Setter for Axis::ylabel which also sets the font size of the axis text.">Axis::SetYLabel(std::string,int)</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a721199548950cfd60fb43d3ac3bc0fe1">More...</a><br /></td></tr>
 <tr class="separator:a721199548950cfd60fb43d3ac3bc0fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a270b6a2f344a1d102b4eddd8aa47a6e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a270b6a2f344a1d102b4eddd8aa47a6e9">SetLegend</a> (bool state)</td></tr>
+<tr class="memdesc:a270b6a2f344a1d102b4eddd8aa47a6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#ac4c489a5fe9d37df1be1f82637bc6787" title="Simple setter for Axis::legendActive.">Axis::SetLegend</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a270b6a2f344a1d102b4eddd8aa47a6e9">More...</a><br /></td></tr>
 <tr class="separator:a270b6a2f344a1d102b4eddd8aa47a6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cebc934c85d8b6e39950218328f71e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a6cebc934c85d8b6e39950218328f71e3">WindowSize</a> (int width, int height)</td></tr>
+<tr class="memdesc:a6cebc934c85d8b6e39950218328f71e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the window size of the generated plot, measured in pixels.  <a href="classJSL_1_1gnuplot.html#a6cebc934c85d8b6e39950218328f71e3">More...</a><br /></td></tr>
 <tr class="separator:a6cebc934c85d8b6e39950218328f71e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a929f817e0c0d2bf119a4aa06ef507289"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a929f817e0c0d2bf119a4aa06ef507289">SetTitle</a> (std::string tit)</td></tr>
+<tr class="memdesc:a929f817e0c0d2bf119a4aa06ef507289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#a35138d001b953b9aa0b327840ed9bba3" title="Simple setter for Axis::title.">Axis::SetTitle(std::string)</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a929f817e0c0d2bf119a4aa06ef507289">More...</a><br /></td></tr>
 <tr class="separator:a929f817e0c0d2bf119a4aa06ef507289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ece1d633a3978a6d2bcdacd43331b2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a8ece1d633a3978a6d2bcdacd43331b2f">SetTitle</a> (std::string tit, int size)</td></tr>
+<tr class="memdesc:a8ece1d633a3978a6d2bcdacd43331b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Axis.html#ae62a2c80ec71bf5f6c78c9347fc51303" title="Setter for Axis::title which also sets the fontsize for the title.">Axis::SetTitle(std::string,int)</a> on the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a8ece1d633a3978a6d2bcdacd43331b2f">More...</a><br /></td></tr>
 <tr class="separator:a8ece1d633a3978a6d2bcdacd43331b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b9f002e0c20b19611b29e459be3581d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a3b9f002e0c20b19611b29e459be3581d">SetSuperTitle</a> (std::string tit)</td></tr>
+<tr class="memdesc:a3b9f002e0c20b19611b29e459be3581d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#a16e01fe5ebc78d04cb9683d49c2aee91" title="In multiplot mode, the supertitle appears above all other axis titles.">gnuplot::superTitle</a>.  <a href="classJSL_1_1gnuplot.html#a3b9f002e0c20b19611b29e459be3581d">More...</a><br /></td></tr>
 <tr class="separator:a3b9f002e0c20b19611b29e459be3581d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a2f9350971fb144772b550a8be84073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a9a2f9350971fb144772b550a8be84073">SetSuperTitle</a> (std::string tit, int size)</td></tr>
+<tr class="memdesc:a9a2f9350971fb144772b550a8be84073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#a16e01fe5ebc78d04cb9683d49c2aee91" title="In multiplot mode, the supertitle appears above all other axis titles.">gnuplot::superTitle</a>, and changes the font size it is written to.  <a href="classJSL_1_1gnuplot.html#a9a2f9350971fb144772b550a8be84073">More...</a><br /></td></tr>
 <tr class="separator:a9a2f9350971fb144772b550a8be84073"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad29ef895e0251319e59198fe6d8ade6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#ad29ef895e0251319e59198fe6d8ade6a">SetTerminal</a> (std::string t)</td></tr>
+<tr class="memdesc:ad29ef895e0251319e59198fe6d8ade6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#aa091157be13eeb60c3193ad06aba9b6f" title="The current gnuplot terminal mode. See gnuplot documentation for more details.">gnuplot::terminal</a>.  <a href="classJSL_1_1gnuplot.html#ad29ef895e0251319e59198fe6d8ade6a">More...</a><br /></td></tr>
 <tr class="separator:ad29ef895e0251319e59198fe6d8ade6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a166e0499cea89f696db40cbc26d114"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a6a166e0499cea89f696db40cbc26d114">SetOutput</a> (std::string out)</td></tr>
+<tr class="memdesc:a6a166e0499cea89f696db40cbc26d114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#a631da60df3e3fb00e2d01c87be4da930" title="The current output file that gnuplot will try to save to, if the terminal permits it....">gnuplot::output</a>.  <a href="classJSL_1_1gnuplot.html#a6a166e0499cea89f696db40cbc26d114">More...</a><br /></td></tr>
 <tr class="separator:a6a166e0499cea89f696db40cbc26d114"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed7de1ddfe25a18ff4aafaa55ee62ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aed7de1ddfe25a18ff4aafaa55ee62ce8">SetFont</a> (std::string f)</td></tr>
+<tr class="memdesc:aed7de1ddfe25a18ff4aafaa55ee62ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#a4c5db7bfe99161369b4c2d31ad4d7ece" title="The current global font used by the terminal.">gnuplot::font</a>.  <a href="classJSL_1_1gnuplot.html#aed7de1ddfe25a18ff4aafaa55ee62ce8">More...</a><br /></td></tr>
 <tr class="separator:aed7de1ddfe25a18ff4aafaa55ee62ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ccee4ee28636d9b9494dba28d26b7d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a8ccee4ee28636d9b9494dba28d26b7d9">SetFontSize</a> (<a class="el" href="namespaceJSL_1_1Fonts.html#a7a55fcb9c82e5a8c7f98ce1c803d08ee">Fonts::Target</a> target, unsigned int size)</td></tr>
+<tr class="memdesc:a8ccee4ee28636d9b9494dba28d26b7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the fontsize of one of the texts associated with either the global fonts (such as global default or supertitle), or of the axis currently in focus.  <a href="classJSL_1_1gnuplot.html#a8ccee4ee28636d9b9494dba28d26b7d9">More...</a><br /></td></tr>
 <tr class="separator:a8ccee4ee28636d9b9494dba28d26b7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a0601a115a1052a39a6621e42ec4d4f3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a0601a115a1052a39a6621e42ec4d4f3e">CleanupTempFiles</a> ()</td></tr>
+<tr class="memdesc:a0601a115a1052a39a6621e42ec4d4f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current value of the window height.  <a href="classJSL_1_1gnuplot.html#a0601a115a1052a39a6621e42ec4d4f3e">More...</a><br /></td></tr>
 <tr class="separator:a0601a115a1052a39a6621e42ec4d4f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a275c33fa2dc4fce5a8af1f8d2ec7562d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a275c33fa2dc4fce5a8af1f8d2ec7562d">InitialiseOutput</a> (std::string outName)</td></tr>
+<tr class="memdesc:a275c33fa2dc4fce5a8af1f8d2ec7562d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a default message and begins the setup of the gnuplot script.  <a href="classJSL_1_1gnuplot.html#a275c33fa2dc4fce5a8af1f8d2ec7562d">More...</a><br /></td></tr>
 <tr class="separator:a275c33fa2dc4fce5a8af1f8d2ec7562d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa35fd7f6ebe1c18ea39d6cdbb12f8aa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aa35fd7f6ebe1c18ea39d6cdbb12f8aa0">WriteMultiplotToFile</a> (std::string gpFile)</td></tr>
+<tr class="memdesc:aa35fd7f6ebe1c18ea39d6cdbb12f8aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the data associated with the multiplot information to file.  <a href="classJSL_1_1gnuplot.html#aa35fd7f6ebe1c18ea39d6cdbb12f8aa0">More...</a><br /></td></tr>
 <tr class="separator:aa35fd7f6ebe1c18ea39d6cdbb12f8aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a16e01fe5ebc78d04cb9683d49c2aee91"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a16e01fe5ebc78d04cb9683d49c2aee91">superTitle</a> = &quot;__null__&quot;</td></tr>
+<tr class="memdesc:a16e01fe5ebc78d04cb9683d49c2aee91"><td class="mdescLeft">&#160;</td><td class="mdescRight">In multiplot mode, the supertitle appears above all other axis titles.  <a href="classJSL_1_1gnuplot.html#a16e01fe5ebc78d04cb9683d49c2aee91">More...</a><br /></td></tr>
 <tr class="separator:a16e01fe5ebc78d04cb9683d49c2aee91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae989349518a66a36b8003506b7af48ea"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="classJSL_1_1Axis.html">Axis</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#ae989349518a66a36b8003506b7af48ea">Axes</a></td></tr>
+<tr class="memdesc:ae989349518a66a36b8003506b7af48ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The array of <a class="el" href="classJSL_1_1Axis.html">JSL::Axis</a> objects containing the relevant plot data.  <a href="classJSL_1_1gnuplot.html#ae989349518a66a36b8003506b7af48ea">More...</a><br /></td></tr>
 <tr class="separator:ae989349518a66a36b8003506b7af48ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a200e2b9b95ccd38d4f8e019c594b318f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a200e2b9b95ccd38d4f8e019c594b318f">DirName</a></td></tr>
+<tr class="memdesc:a200e2b9b95ccd38d4f8e019c594b318f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The temporary directory name created for this gnuplot object.  <a href="classJSL_1_1gnuplot.html#a200e2b9b95ccd38d4f8e019c594b318f">More...</a><br /></td></tr>
 <tr class="separator:a200e2b9b95ccd38d4f8e019c594b318f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a102660ecaaece0b2b35e311b530e8b73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a102660ecaaece0b2b35e311b530e8b73">axis_x</a></td></tr>
+<tr class="memdesc:a102660ecaaece0b2b35e311b530e8b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current x position of the axis in focus.  <a href="classJSL_1_1gnuplot.html#a102660ecaaece0b2b35e311b530e8b73">More...</a><br /></td></tr>
 <tr class="separator:a102660ecaaece0b2b35e311b530e8b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf4f664ab476e047cdbf7f6dd1bfa74e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#acf4f664ab476e047cdbf7f6dd1bfa74e">axis_y</a></td></tr>
+<tr class="memdesc:acf4f664ab476e047cdbf7f6dd1bfa74e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current y position of the axis in focus.  <a href="classJSL_1_1gnuplot.html#acf4f664ab476e047cdbf7f6dd1bfa74e">More...</a><br /></td></tr>
 <tr class="separator:acf4f664ab476e047cdbf7f6dd1bfa74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cb279032f4f688412bea6fb3c2e7289"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a4cb279032f4f688412bea6fb3c2e7289">axis_x_max</a> = 0</td></tr>
+<tr class="memdesc:a4cb279032f4f688412bea6fb3c2e7289"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum permitted value of <a class="el" href="classJSL_1_1gnuplot.html#a102660ecaaece0b2b35e311b530e8b73" title="The current x position of the axis in focus.">gnuplot::axis_x</a>.  <a href="classJSL_1_1gnuplot.html#a4cb279032f4f688412bea6fb3c2e7289">More...</a><br /></td></tr>
+<tr class="separator:a4cb279032f4f688412bea6fb3c2e7289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0aefa22a2dcb30ff3f3b794e3b2749d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#af0aefa22a2dcb30ff3f3b794e3b2749d">axis_y_max</a> = 0</td></tr>
+<tr class="memdesc:af0aefa22a2dcb30ff3f3b794e3b2749d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum permitted value of <a class="el" href="classJSL_1_1gnuplot.html#acf4f664ab476e047cdbf7f6dd1bfa74e" title="The current y position of the axis in focus.">gnuplot::axis_y</a>.  <a href="classJSL_1_1gnuplot.html#af0aefa22a2dcb30ff3f3b794e3b2749d">More...</a><br /></td></tr>
+<tr class="separator:af0aefa22a2dcb30ff3f3b794e3b2749d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a666ddb205d0cb9c76813e2f8075c1b65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a666ddb205d0cb9c76813e2f8075c1b65">axisCount</a> = 1</td></tr>
+<tr class="memdesc:a666ddb205d0cb9c76813e2f8075c1b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current number of axes on the figure.  <a href="classJSL_1_1gnuplot.html#a666ddb205d0cb9c76813e2f8075c1b65">More...</a><br /></td></tr>
 <tr class="separator:a666ddb205d0cb9c76813e2f8075c1b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa091157be13eeb60c3193ad06aba9b6f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aa091157be13eeb60c3193ad06aba9b6f">terminal</a> = &quot;qt&quot;</td></tr>
+<tr class="memdesc:aa091157be13eeb60c3193ad06aba9b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current gnuplot terminal mode. See gnuplot documentation for more details.  <a href="classJSL_1_1gnuplot.html#aa091157be13eeb60c3193ad06aba9b6f">More...</a><br /></td></tr>
 <tr class="separator:aa091157be13eeb60c3193ad06aba9b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a631da60df3e3fb00e2d01c87be4da930"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a631da60df3e3fb00e2d01c87be4da930">output</a> = &quot;__null__&quot;</td></tr>
+<tr class="memdesc:a631da60df3e3fb00e2d01c87be4da930"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current output file that gnuplot will try to save to, if the terminal permits it. If set to <b>null</b>, this argument is ignored.  <a href="classJSL_1_1gnuplot.html#a631da60df3e3fb00e2d01c87be4da930">More...</a><br /></td></tr>
 <tr class="separator:a631da60df3e3fb00e2d01c87be4da930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c5db7bfe99161369b4c2d31ad4d7ece"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a4c5db7bfe99161369b4c2d31ad4d7ece">font</a> = &quot;Geneva&quot;</td></tr>
+<tr class="memdesc:a4c5db7bfe99161369b4c2d31ad4d7ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current global font used by the terminal.  <a href="classJSL_1_1gnuplot.html#a4c5db7bfe99161369b4c2d31ad4d7ece">More...</a><br /></td></tr>
 <tr class="separator:a4c5db7bfe99161369b4c2d31ad4d7ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc845a03e444f2f39bfbfbb3c9a45573"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573">globalFontSize</a> = 14</td></tr>
 <tr class="separator:abc845a03e444f2f39bfbfbb3c9a45573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99581d61b67ad3f0537dca6b041942ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a99581d61b67ad3f0537dca6b041942ba">superTitleFontSize</a> = -1</td></tr>
+<tr class="memdesc:a99581d61b67ad3f0537dca6b041942ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; The global font size, which is used unless otherwise specified by a SetFontSize call  <a href="classJSL_1_1gnuplot.html#a99581d61b67ad3f0537dca6b041942ba">More...</a><br /></td></tr>
 <tr class="separator:a99581d61b67ad3f0537dca6b041942ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2426c9fb055e1c69503166958602e2de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#a2426c9fb055e1c69503166958602e2de">defaultSize</a> = true</td></tr>
 <tr class="separator:a2426c9fb055e1c69503166958602e2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd2c1a49e45beb3ac554a58694965be2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#abd2c1a49e45beb3ac554a58694965be2">windowWidth</a></td></tr>
+<tr class="memdesc:abd2c1a49e45beb3ac554a58694965be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle indicating that <a class="el" href="classJSL_1_1gnuplot.html#a6cebc934c85d8b6e39950218328f71e3" title="Changes the window size of the generated plot, measured in pixels.">gnuplot::WindowSize()</a> has not been called &ndash; needed because changing window size is gross in gnuplot, so best left alone!  <a href="classJSL_1_1gnuplot.html#abd2c1a49e45beb3ac554a58694965be2">More...</a><br /></td></tr>
 <tr class="separator:abd2c1a49e45beb3ac554a58694965be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0e38b8208be147845e6708b1aa46a04"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1gnuplot.html#aa0e38b8208be147845e6708b1aa46a04">windowHeight</a></td></tr>
+<tr class="memdesc:aa0e38b8208be147845e6708b1aa46a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current value of the window Width.  <a href="classJSL_1_1gnuplot.html#aa0e38b8208be147845e6708b1aa46a04">More...</a><br /></td></tr>
 <tr class="separator:aa0e38b8208be147845e6708b1aa46a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >The global interface for the plotting system. All calls should be piped through this individual class. Each gnuplot object corresponds to a single plot (though they might have severable axes within each plot) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aafcfb0c9032e7f0cfeddcc3baf2cc21f" name="aafcfb0c9032e7f0cfeddcc3baf2cc21f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aafcfb0c9032e7f0cfeddcc3baf2cc21f">&#9670;&nbsp;</a></span>gnuplot()</h2>
 
@@ -204,6 +259,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor function, generates a unique name for itself, and creates a directory into which it stores its own data. </p>
 
 </div>
 </div>
@@ -229,6 +286,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Custom destructor which also calls CleanupTempFiles, tidying up after itself. </p>
 
 </div>
 </div>
@@ -256,6 +315,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Current value of the window height. </p>
+<p >When called, and if the relevant compiler flag is not set, recursively deletes the directory associated with <a class="el" href="classJSL_1_1gnuplot.html#a200e2b9b95ccd38d4f8e019c594b318f" title="The temporary directory name created for this gnuplot object.">gnuplot::DirName</a> </p>
+
 </div>
 </div>
 <a id="a275c33fa2dc4fce5a8af1f8d2ec7562d" name="a275c33fa2dc4fce5a8af1f8d2ec7562d"></a>
@@ -282,6 +344,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Prints a default message and begins the setup of the gnuplot script. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outName</td><td>the name of the gnuplot script </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af0ace47c0e36ef49cae6592a8a841926" name="af0ace47c0e36ef49cae6592a8a841926"></a>
@@ -307,6 +377,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Allows indexing into the Axes without using the SetAxis(int,int) function, accessing the <a class="el" href="classJSL_1_1Axis.html">Axis</a> object directly. Note that this returns a vector of axis objects, hence access must be via gunplot[i][j]. </p>
 
 </div>
 </div>
@@ -352,6 +424,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Passes the arguments along to the <a class="el" href="classJSL_1_1Axis.html#a95b78211cb09e6c6f0834fd353890a1d" title="Adds a line plot to the axis, plotting x against y, and using the args to define what the line looks ...">Axis::Plot()</a> function associated with the current axis focus. </p>
+
 </div>
 </div>
 <a id="aff8f871df4ddbbbf519572dd1f717588" name="aff8f871df4ddbbbf519572dd1f717588"></a>
@@ -395,6 +469,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>As with <a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">Plot(const std::vector&lt;T&gt; &amp; x,const std::vector&lt;S&gt;  &amp; y, NameValuePair&lt;Ts&gt;... args)</a>, but permits non-vector objects which can still be cast into vectors (i.e. <a class="el" href="classJSL_1_1Vector.html">JSL::Vector</a> objects) </p>
 
 </div>
 </div>
@@ -440,6 +516,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Passes the arguments along to the <a class="el" href="classJSL_1_1Axis.html#abcccbd36fd86e0504c02a66dabc5f763" title="Adds a scatter plot to the axis, plotting x against y, and using the args to define what the line loo...">Axis::Scatter()</a> function associated with the current axis focus. </p>
+
 </div>
 </div>
 <a id="adfd19ba6419d0c23d18dbeb4f6302f59" name="adfd19ba6419d0c23d18dbeb4f6302f59"></a>
@@ -484,6 +562,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>As with <a class="el" href="classJSL_1_1gnuplot.html#a90306a67b5b8d990cbcb13b3f6f6eaa3" title="Passes the arguments along to the Axis::Scatter() function associated with the current axis focus.">Scatter(const std::vector&lt;T&gt; &amp; x,const std::vector&lt;S&gt;  &amp; y, NameValuePair&lt;Ts&gt;... args)</a>, but permits non-vector objects which can still be cast into vectors (i.e. <a class="el" href="classJSL_1_1Vector.html">JSL::Vector</a> objects) </p>
+
 </div>
 </div>
 <a id="af5ba95fdc854b7de524431efe9793f0a" name="af5ba95fdc854b7de524431efe9793f0a"></a>
@@ -510,10 +590,12 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the current axis focus to the idx-th axis, numbering columns-then-rows. </p>
+
 </div>
 </div>
-<a id="a036f04bf999e752754f96108bc83ec5e" name="a036f04bf999e752754f96108bc83ec5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a036f04bf999e752754f96108bc83ec5e">&#9670;&nbsp;</a></span>SetAxis() <span class="overload">[2/2]</span></h2>
+<a id="aaa70a8840886ba609533e6b0fd6f5bc1" name="aaa70a8840886ba609533e6b0fd6f5bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa70a8840886ba609533e6b0fd6f5bc1">&#9670;&nbsp;</a></span>SetAxis() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,13 +606,13 @@ template&lt;class T , class S , typename... Ts&gt; </div>
         <tr>
           <td class="memname">void JSL::gnuplot::SetAxis </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>x</em>&#160;</td>
         </tr>
         <tr>
@@ -545,6 +627,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the current axis focus to the y-th row and x-th column. The "axis in focus" is acted upon whenever the gnuplot object is given a command (i.e. <a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">gnuplot::Plot</a>) which does not otherwise specify the axis. By "switching focus", calling <a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">gnuplot::Plot</a> will write on different axes. It is also possible to act on the axes directly, using the operator[] overload, i.e. gnuplot[i][j].<a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">Plot()</a> would produce the same output as gnuplot.SetAxis(i,j); <a class="el" href="classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea" title="Passes the arguments along to the Axis::Plot() function associated with the current axis focus.">Plot()</a> - though with the second version, a subsequent call to <a class="el" href="classJSL_1_1gnuplot.html#a90306a67b5b8d990cbcb13b3f6f6eaa3" title="Passes the arguments along to the Axis::Scatter() function associated with the current axis focus.">Scatter()</a> would be written to the same axis, which would not be guaranteed for the first case. </p>
 
 </div>
 </div>
@@ -571,6 +655,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#a4c5db7bfe99161369b4c2d31ad4d7ece" title="The current global font used by the terminal.">gnuplot::font</a>. </p>
 
 </div>
 </div>
@@ -608,6 +694,15 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the fontsize of one of the texts associated with either the global fonts (such as global default or supertitle), or of the axis currently in focus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>The identifier of the text to be changed</td></tr>
+    <tr><td class="paramname">size</td><td>The desired fontsize </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a270b6a2f344a1d102b4eddd8aa47a6e9" name="a270b6a2f344a1d102b4eddd8aa47a6e9"></a>
@@ -633,6 +728,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#ac4c489a5fe9d37df1be1f82637bc6787" title="Simple setter for Axis::legendActive.">Axis::SetLegend</a> on the axis currently in focus. </p>
 
 </div>
 </div>
@@ -670,6 +767,15 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Puts gnuplot into multiplot mode, with yCount rows and xCount columns. Whenever this function is called, the entire set of axes is wiped clean. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">yCount</td><td>The number of rows</td></tr>
+    <tr><td class="paramname">xCount</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a6a166e0499cea89f696db40cbc26d114" name="a6a166e0499cea89f696db40cbc26d114"></a>
@@ -696,6 +802,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#a631da60df3e3fb00e2d01c87be4da930" title="The current output file that gnuplot will try to save to, if the terminal permits it....">gnuplot::output</a>. </p>
+
 </div>
 </div>
 <a id="a3b9f002e0c20b19611b29e459be3581d" name="a3b9f002e0c20b19611b29e459be3581d"></a>
@@ -721,6 +829,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#a16e01fe5ebc78d04cb9683d49c2aee91" title="In multiplot mode, the supertitle appears above all other axis titles.">gnuplot::superTitle</a>. </p>
 
 </div>
 </div>
@@ -758,6 +868,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#a16e01fe5ebc78d04cb9683d49c2aee91" title="In multiplot mode, the supertitle appears above all other axis titles.">gnuplot::superTitle</a>, and changes the font size it is written to. </p>
+
 </div>
 </div>
 <a id="ad29ef895e0251319e59198fe6d8ade6a" name="ad29ef895e0251319e59198fe6d8ade6a"></a>
@@ -784,6 +896,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simple setter for <a class="el" href="classJSL_1_1gnuplot.html#aa091157be13eeb60c3193ad06aba9b6f" title="The current gnuplot terminal mode. See gnuplot documentation for more details.">gnuplot::terminal</a>. </p>
+
 </div>
 </div>
 <a id="a929f817e0c0d2bf119a4aa06ef507289" name="a929f817e0c0d2bf119a4aa06ef507289"></a>
@@ -809,6 +923,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#a35138d001b953b9aa0b327840ed9bba3" title="Simple setter for Axis::title.">Axis::SetTitle(std::string)</a> on the axis currently in focus. </p>
 
 </div>
 </div>
@@ -846,6 +962,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#ae62a2c80ec71bf5f6c78c9347fc51303" title="Setter for Axis::title which also sets the fontsize for the title.">Axis::SetTitle(std::string,int)</a> on the axis currently in focus. </p>
+
 </div>
 </div>
 <a id="a80699eb05778c88b435ec62a5afe3a5d" name="a80699eb05778c88b435ec62a5afe3a5d"></a>
@@ -871,6 +989,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#a28b2289c6d91769b48afe16c43819bb3" title="Simple setter for Axis::xlabel.">Axis::SetXLabel(std::string)</a> on the axis currently in focus. </p>
 
 </div>
 </div>
@@ -908,6 +1028,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#a290663ea6c5991a52e8ffa3497e4f2e5" title="Setter for Axis::xlabel which also sets the font size of the axis text.">Axis::SetXLabel(std::string,int)</a> on the axis currently in focus. </p>
+
 </div>
 </div>
 <a id="af2230b64696435194780c99e8107ac51" name="af2230b64696435194780c99e8107ac51"></a>
@@ -933,6 +1055,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#aeef14102e056fa25dba72f9c1d61a2f6" title="Simple setter for Axis::isLog_x.">Axis::SetXLog</a> on the axis currently in focus. </p>
 
 </div>
 </div>
@@ -970,6 +1094,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#a0bfb933a1509615566ca72a98e8574ca" title="Simple setter for range_x.">Axis::SetXRange(double,double)</a> on the axis currently in focus. </p>
+
 </div>
 </div>
 <a id="a741f78103dd76eaff9475351b7f49edd" name="a741f78103dd76eaff9475351b7f49edd"></a>
@@ -995,6 +1121,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#a1d476b1547d88ee7c0c80f1a4e86faf4" title="Simple setter for Axis::ylabel.">Axis::SetYLabel(std::string)</a> on the axis currently in focus. </p>
 
 </div>
 </div>
@@ -1032,6 +1160,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#a80473fe4e172302383c9160cc7248b40" title="Setter for Axis::ylabel which also sets the font size of the axis text.">Axis::SetYLabel(std::string,int)</a> on the axis currently in focus. </p>
+
 </div>
 </div>
 <a id="a244f8e993705d7c79cbb37451db39632" name="a244f8e993705d7c79cbb37451db39632"></a>
@@ -1057,6 +1187,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#ad0695f111619f714627fd0269c8fec30" title="Simple setter for Axis::isLog_y.">Axis::SetYLog</a> on the axis currently in focus. </p>
 
 </div>
 </div>
@@ -1094,6 +1226,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Calls <a class="el" href="classJSL_1_1Axis.html#a23d28c6f113683490020da26e716cf14" title="Simple setter for Axis::range_y.">Axis::SetYRange(double,double)</a> on the axis currently in focus. </p>
+
 </div>
 </div>
 <a id="a147fc21e6c9b48d823a16c738953d081" name="a147fc21e6c9b48d823a16c738953d081"></a>
@@ -1118,6 +1252,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The key function - until this function is called, the plot is hypothetical. Calling this function generates a gnuplot script file, which each axis writes to to generate the appropriate plot, which is then called using a system command, producing the plot. </p>
 
 </div>
 </div>
@@ -1155,6 +1291,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Changes the window size of the generated plot, measured in pixels. </p>
+
 </div>
 </div>
 <a id="aa35fd7f6ebe1c18ea39d6cdbb12f8aa0" name="aa35fd7f6ebe1c18ea39d6cdbb12f8aa0"></a>
@@ -1181,6 +1319,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Writes the data associated with the multiplot information to file. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
@@ -1204,6 +1344,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The array of <a class="el" href="classJSL_1_1Axis.html">JSL::Axis</a> objects containing the relevant plot data. </p>
+
 </div>
 </div>
 <a id="a102660ecaaece0b2b35e311b530e8b73" name="a102660ecaaece0b2b35e311b530e8b73"></a>
@@ -1225,6 +1367,32 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The current x position of the axis in focus. </p>
+
+</div>
+</div>
+<a id="a4cb279032f4f688412bea6fb3c2e7289" name="a4cb279032f4f688412bea6fb3c2e7289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cb279032f4f688412bea6fb3c2e7289">&#9670;&nbsp;</a></span>axis_x_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JSL::gnuplot::axis_x_max = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The maximum permitted value of <a class="el" href="classJSL_1_1gnuplot.html#a102660ecaaece0b2b35e311b530e8b73" title="The current x position of the axis in focus.">gnuplot::axis_x</a>. </p>
 
 </div>
 </div>
@@ -1248,6 +1416,32 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The current y position of the axis in focus. </p>
+
+</div>
+</div>
+<a id="af0aefa22a2dcb30ff3f3b794e3b2749d" name="af0aefa22a2dcb30ff3f3b794e3b2749d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0aefa22a2dcb30ff3f3b794e3b2749d">&#9670;&nbsp;</a></span>axis_y_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JSL::gnuplot::axis_y_max = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The maximum permitted value of <a class="el" href="classJSL_1_1gnuplot.html#acf4f664ab476e047cdbf7f6dd1bfa74e" title="The current y position of the axis in focus.">gnuplot::axis_y</a>. </p>
+
 </div>
 </div>
 <a id="a666ddb205d0cb9c76813e2f8075c1b65" name="a666ddb205d0cb9c76813e2f8075c1b65"></a>
@@ -1269,6 +1463,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The current number of axes on the figure. </p>
 
 </div>
 </div>
@@ -1314,6 +1510,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The temporary directory name created for this gnuplot object. </p>
+
 </div>
 </div>
 <a id="a4c5db7bfe99161369b4c2d31ad4d7ece" name="a4c5db7bfe99161369b4c2d31ad4d7ece"></a>
@@ -1335,6 +1533,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The current global font used by the terminal. </p>
 
 </div>
 </div>
@@ -1380,6 +1580,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The current output file that gnuplot will try to save to, if the terminal permits it. If set to <b>null</b>, this argument is ignored. </p>
+
 </div>
 </div>
 <a id="a16e01fe5ebc78d04cb9683d49c2aee91" name="a16e01fe5ebc78d04cb9683d49c2aee91"></a>
@@ -1401,6 +1603,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>In multiplot mode, the supertitle appears above all other axis titles. </p>
 
 </div>
 </div>
@@ -1424,6 +1628,9 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>&lt; The global font size, which is used unless otherwise specified by a SetFontSize call </p>
+<p >The font size assigned to <a class="el" href="classJSL_1_1gnuplot.html#a16e01fe5ebc78d04cb9683d49c2aee91" title="In multiplot mode, the supertitle appears above all other axis titles.">gnuplot::superTitle</a>. If &lt; 0, uses the value of <a class="el" href="classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573">gnuplot::globalFontSize</a> </p>
+
 </div>
 </div>
 <a id="aa091157be13eeb60c3193ad06aba9b6f" name="aa091157be13eeb60c3193ad06aba9b6f"></a>
@@ -1445,6 +1652,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The current gnuplot terminal mode. See gnuplot documentation for more details. </p>
 
 </div>
 </div>
@@ -1468,6 +1677,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Current value of the window Width. </p>
+
 </div>
 </div>
 <a id="abd2c1a49e45beb3ac554a58694965be2" name="abd2c1a49e45beb3ac554a58694965be2"></a>
@@ -1489,6 +1700,8 @@ template&lt;class T , class S , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Toggle indicating that <a class="el" href="classJSL_1_1gnuplot.html#a6cebc934c85d8b6e39950218328f71e3" title="Changes the window size of the generated plot, measured in pixels.">gnuplot::WindowSize()</a> has not been called &ndash; needed because changing window size is gross in gnuplot, so best left alone! </p>
 
 </div>
 </div>
