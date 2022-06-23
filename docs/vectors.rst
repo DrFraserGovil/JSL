@@ -58,9 +58,9 @@ In accordance with the definition of a Vector Space, we define scalar multiplica
 .. doxygenfunction:: JSL::operator/(const Vector &lhs, const double &scalar)
 
 
-We also define the following vector multiplication-adjacent operations. Be careful that you are using the one which you want!
+We also define the following vector multiplication-adjacent operations.
 
-.. doxygenfunction:: JSL::operator*(const Vector &lhs, const Vector &rhs)
+.. doxygenfunction:: JSL::Hadamard(const Vector &lhs, const Vector &rhs)
 
 .. doxygenfunction:: JSL::VectorDotProduct(const Vector &lhs, const Vector &rhs)
 
@@ -72,3 +72,5 @@ Misc.
 ----------
 
 .. doxygenfunction:: JSL::operator<<(std::ostream& os, const Vector & obj)
+
+.. doxygenfunction:: JSL::ElementWiseOperation(Vector input, double (*function)(double))

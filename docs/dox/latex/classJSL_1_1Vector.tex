@@ -46,7 +46,7 @@ std\+::string \mbox{\hyperlink{classJSL_1_1Vector_a91d4cf29c2865069520d03292844d
 \mbox{\hyperlink{classJSL_1_1Vector_a41023e6371572e76196b44553b48215c}{operator std\+::vector$<$ double $>$}} () const
 \begin{DoxyCompactList}\small\item\em Implicit conversion back to std\+::vector$<$double$>$ \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Vector_a284efd325068f5c75fd8d627325f01b3}{operator std\+::vector$<$ int $>$}} () const
-\begin{DoxyCompactList}\small\item\em Implicit conversion back to std\+::vector$<$double$>$ \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Implicit conversion back to std\+::vector$<$int$>$ \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& \mbox{\hyperlink{classJSL_1_1Vector_ab0c81c187542077c13839a07cfc77d89}{operator+=}} (const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&rhs)
 \begin{DoxyCompactList}\small\item\em In-\/place addition of two vectors. Calls \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ae6530b77174d0dfae8e0d6e2a810f672}{operator+(const Vector \& lhs, const Vector \& rhs)}} using this object as lhs. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& \mbox{\hyperlink{classJSL_1_1Vector_a492901b0924e8055144af4c5e5b99ebf}{operator-\/=}} (const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&rhs)
@@ -64,10 +64,10 @@ bool \mbox{\hyperlink{classJSL_1_1Vector_ad7dc3af5e90b59e3ba2efc458e192a4c}{isna
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{classJSL_1_1Vector_a5fdf625cabc0a4546f850382afa67dc4}{linspace}} (double start, double end, int length)
-\item 
+static \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{classJSL_1_1Vector_a46fc3e1d5ee9bdb66844aa5e2e5112e9}{linspace}} (double start, double end, unsigned int length)
+\begin{DoxyCompactList}\small\item\em Constructs a vector of specified length with start and end points (inclusive) given by the user, with the intervening points linearly spaced apart. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{classJSL_1_1Vector_a4ca666ae14cef413dcf3679a10a7fbb9}{intspace}} (int start, int end, int step)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Similar to \mbox{\hyperlink{classJSL_1_1Vector_a46fc3e1d5ee9bdb66844aa5e2e5112e9}{linspace()}}, but for integer values. Note that the step is specified here, not the length. It is possible that end is not included in the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -202,6 +202,22 @@ The dot product of rhs and the object
 \doxysubsubsection{\texorpdfstring{intspace()}{intspace()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} JSL\+::\+Vector\+::intspace (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{end,  }\item[{int}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Similar to \mbox{\hyperlink{classJSL_1_1Vector_a46fc3e1d5ee9bdb66844aa5e2e5112e9}{linspace()}}, but for integer values. Note that the step is specified here, not the length. It is possible that end is not included in the array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The first element of the returned array\\
+\hline
+{\em end} & The maximum possible value for the final element in the array\\
+\hline
+{\em step} & The (integer) distance between each successive element in the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector, starting at \#start, increasing by \#step each time. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Vector_ad7dc3af5e90b59e3ba2efc458e192a4c}\label{classJSL_1_1Vector_ad7dc3af5e90b59e3ba2efc458e192a4c}} 
 \index{JSL::Vector@{JSL::Vector}!isnan@{isnan}}
 \index{isnan@{isnan}!JSL::Vector@{JSL::Vector}}
@@ -212,12 +228,28 @@ The dot product of rhs and the object
 
 Reports true if any members are NaN. 
 
-\mbox{\Hypertarget{classJSL_1_1Vector_a5fdf625cabc0a4546f850382afa67dc4}\label{classJSL_1_1Vector_a5fdf625cabc0a4546f850382afa67dc4}} 
+\mbox{\Hypertarget{classJSL_1_1Vector_a46fc3e1d5ee9bdb66844aa5e2e5112e9}\label{classJSL_1_1Vector_a46fc3e1d5ee9bdb66844aa5e2e5112e9}} 
 \index{JSL::Vector@{JSL::Vector}!linspace@{linspace}}
 \index{linspace@{linspace}!JSL::Vector@{JSL::Vector}}
 \doxysubsubsection{\texorpdfstring{linspace()}{linspace()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} JSL\+::\+Vector\+::linspace (\begin{DoxyParamCaption}\item[{double}]{start,  }\item[{double}]{end,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} JSL\+::\+Vector\+::linspace (\begin{DoxyParamCaption}\item[{double}]{start,  }\item[{double}]{end,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Constructs a vector of specified length with start and end points (inclusive) given by the user, with the intervening points linearly spaced apart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The first element of the returned array\\
+\hline
+{\em end} & The final element of the array (included in the range!)\\
+\hline
+{\em length} & The length of the returned array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector (start, start + x,start + 2x, .... end) 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Vector_ac41d3cb075c2bd871c31b96dedba08fe}\label{classJSL_1_1Vector_ac41d3cb075c2bd871c31b96dedba08fe}} 
 \index{JSL::Vector@{JSL::Vector}!negativeIntegerError@{negativeIntegerError}}
 \index{negativeIntegerError@{negativeIntegerError}!JSL::Vector@{JSL::Vector}}
@@ -255,7 +287,7 @@ Implicit conversion back to std\+::vector$<$double$>$
 
 
 
-Implicit conversion back to std\+::vector$<$double$>$ 
+Implicit conversion back to std\+::vector$<$int$>$ 
 
 \mbox{\Hypertarget{classJSL_1_1Vector_a3d7bee6bfd0624c8bebf63a1c7c3309b}\label{classJSL_1_1Vector_a3d7bee6bfd0624c8bebf63a1c7c3309b}} 
 \index{JSL::Vector@{JSL::Vector}!operator$\ast$=@{operator$\ast$=}}

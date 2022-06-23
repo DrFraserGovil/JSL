@@ -13,7 +13,7 @@ Even more likely, you are in fact me, reading this a year or two down the line w
 .. toctree::
 	mathematics
 	file-handling
-	command-args
+	docfiles/args/command-args
 	strings
 	:maxdepth: 2
 	:caption: Contents:

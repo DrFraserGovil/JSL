@@ -1486,7 +1486,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="420" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="420" bodyend="432" declfile="/Users/jf20/Documents/JSL/Maths/vector.h" declline="14" declcolumn="15"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="418" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="418" bodyend="430" declfile="/Users/jf20/Documents/JSL/Maths/vector.h" declline="14" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1aa7816eb0cd81b74241ce460237990e70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1529,7 +1529,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="435" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="435" bodyend="450" declfile="/Users/jf20/Documents/JSL/Maths/vector.h" declline="15" declcolumn="15"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="433" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="433" bodyend="448" declfile="/Users/jf20/Documents/JSL/Maths/vector.h" declline="15" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a09355c91f84fd99d4634bf9189fef51d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -1572,7 +1572,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="453" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="453" bodyend="466" declfile="/Users/jf20/Documents/JSL/Maths/vector.h" declline="16" declcolumn="15"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="451" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="451" bodyend="464" declfile="/Users/jf20/Documents/JSL/Maths/vector.h" declline="16" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a7fad54be308ccb76f68933d91c3c542f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1594,7 +1594,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="285" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="285" bodyend="300"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="287" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="287" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a394a4f9cee0747c76d1190b0365c7b5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1616,7 +1616,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="302" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="302" bodyend="305"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="304" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="304" bodyend="307"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ae6530b77174d0dfae8e0d6e2a810f672" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1659,7 +1659,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="308" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="308" bodyend="322"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="310" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="310" bodyend="324"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a1d8393f2865dc23e7975ad041e341ba5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1702,7 +1702,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="324" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="324" bodyend="338"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="326" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="326" bodyend="340"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a4b293e2ac3df51113e80022cb3c2ac99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1745,7 +1745,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="341" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="341" bodyend="351"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="343" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="343" bodyend="353"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ac5ceabb8b9e657c5e2d0faf9b20a36e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1788,7 +1788,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="354" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="354" bodyend="357"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="356" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="356" bodyend="359"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ac6bd9311dd73aa6227d826bdb94e748d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1831,7 +1831,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="359" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="359" bodyend="362"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="361" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="361" bodyend="364"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ab3d17c5cc03a2048e8637d2054fbc138" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1874,7 +1874,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="365" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="365" bodyend="374"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="367" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="367" bodyend="376"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ab4eefbed468f275164855895335b8a29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1917,7 +1917,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="382" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="382" bodyend="390"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="380" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="380" bodyend="388"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1afc5e092de4a9bdc5795d40ee0f51c7b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1960,7 +1960,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="393" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="393" bodyend="396"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="391" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="391" bodyend="394"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a1427fd44260592b7d65d27946969fba1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -2003,7 +2003,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="399" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="399" bodyend="406"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="397" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="397" bodyend="404"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a6fd4487b0a8ac5713df4a37079287913" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -2046,7 +2046,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="409" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="409" bodyend="417"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="407" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="407" bodyend="415"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ad01cc2984ad2ce5a85fb31960835dd04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -2089,7 +2089,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="469" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="469" bodyend="473"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="467" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="467" bodyend="471"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a941b0093a8d1298a0dc0c4403f63a826" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -2106,12 +2106,33 @@
           <declname>function</declname>
         </param>
         <briefdescription>
+<para>A nice way to perform a simple function on every element of a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the vector on which the operation will be performed</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a funciton which accepts and returns a double. Can also be a lambda function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector y such that y_i = f(x_i) </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="475" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="475" bodyend="483"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="474" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="474" bodyend="482"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1aa37a5ffd99a34e2f12377c9f00b31c50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; std::string &gt;</type>

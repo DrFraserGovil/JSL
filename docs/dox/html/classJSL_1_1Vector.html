@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a41023e6371572e76196b44553b48215c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit conversion back to std::vector&lt;double&gt;  <a href="classJSL_1_1Vector.html#a41023e6371572e76196b44553b48215c">More...</a><br /></td></tr>
 <tr class="separator:a41023e6371572e76196b44553b48215c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a284efd325068f5c75fd8d627325f01b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Vector.html#a284efd325068f5c75fd8d627325f01b3">operator std::vector&lt; int &gt;</a> () const</td></tr>
-<tr class="memdesc:a284efd325068f5c75fd8d627325f01b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit conversion back to std::vector&lt;double&gt;  <a href="classJSL_1_1Vector.html#a284efd325068f5c75fd8d627325f01b3">More...</a><br /></td></tr>
+<tr class="memdesc:a284efd325068f5c75fd8d627325f01b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit conversion back to std::vector&lt;int&gt;  <a href="classJSL_1_1Vector.html#a284efd325068f5c75fd8d627325f01b3">More...</a><br /></td></tr>
 <tr class="separator:a284efd325068f5c75fd8d627325f01b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0c81c187542077c13839a07cfc77d89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Vector.html#ab0c81c187542077c13839a07cfc77d89">operator+=</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
 <tr class="memdesc:ab0c81c187542077c13839a07cfc77d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">In-place addition of two vectors. Calls <a class="el" href="classJSL_1_1Vector.html">Vector</a> <a class="el" href="namespaceJSL.html#ae6530b77174d0dfae8e0d6e2a810f672" title="Performs obvious vector addition (a+b)_i = a_i + b_i. Throws an error if the vectors are not the same...">operator+(const Vector &amp; lhs, const Vector &amp; rhs)</a> using this object as lhs.  <a href="classJSL_1_1Vector.html#ab0c81c187542077c13839a07cfc77d89">More...</a><br /></td></tr>
@@ -159,9 +159,11 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a5fdf625cabc0a4546f850382afa67dc4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Vector.html#a5fdf625cabc0a4546f850382afa67dc4">linspace</a> (double start, double end, int length)</td></tr>
-<tr class="separator:a5fdf625cabc0a4546f850382afa67dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46fc3e1d5ee9bdb66844aa5e2e5112e9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Vector.html#a46fc3e1d5ee9bdb66844aa5e2e5112e9">linspace</a> (double start, double end, unsigned int length)</td></tr>
+<tr class="memdesc:a46fc3e1d5ee9bdb66844aa5e2e5112e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a vector of specified length with start and end points (inclusive) given by the user, with the intervening points linearly spaced apart.  <a href="classJSL_1_1Vector.html#a46fc3e1d5ee9bdb66844aa5e2e5112e9">More...</a><br /></td></tr>
+<tr class="separator:a46fc3e1d5ee9bdb66844aa5e2e5112e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ca666ae14cef413dcf3679a10a7fbb9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Vector.html#a4ca666ae14cef413dcf3679a10a7fbb9">intspace</a> (int start, int end, int step)</td></tr>
+<tr class="memdesc:a4ca666ae14cef413dcf3679a10a7fbb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classJSL_1_1Vector.html#a46fc3e1d5ee9bdb66844aa5e2e5112e9" title="Constructs a vector of specified length with start and end points (inclusive) given by the user,...">linspace()</a>, but for integer values. Note that the step is specified here, not the length. It is possible that end is not included in the array.  <a href="classJSL_1_1Vector.html#a4ca666ae14cef413dcf3679a10a7fbb9">More...</a><br /></td></tr>
 <tr class="separator:a4ca666ae14cef413dcf3679a10a7fbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -454,6 +456,17 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Similar to <a class="el" href="classJSL_1_1Vector.html#a46fc3e1d5ee9bdb66844aa5e2e5112e9" title="Constructs a vector of specified length with start and end points (inclusive) given by the user,...">linspace()</a>, but for integer values. Note that the step is specified here, not the length. It is possible that end is not included in the array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>The first element of the returned array</td></tr>
+    <tr><td class="paramname">end</td><td>The maximum possible value for the final element in the array</td></tr>
+    <tr><td class="paramname">step</td><td>The (integer) distance between each successive element in the array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector, starting at #start, increasing by #step each time. </dd></dl>
+
 </div>
 </div>
 <a id="ad7dc3af5e90b59e3ba2efc458e192a4c" name="ad7dc3af5e90b59e3ba2efc458e192a4c"></a>
@@ -483,8 +496,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5fdf625cabc0a4546f850382afa67dc4" name="a5fdf625cabc0a4546f850382afa67dc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fdf625cabc0a4546f850382afa67dc4">&#9670;&nbsp;</a></span>linspace()</h2>
+<a id="a46fc3e1d5ee9bdb66844aa5e2e5112e9" name="a46fc3e1d5ee9bdb66844aa5e2e5112e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46fc3e1d5ee9bdb66844aa5e2e5112e9">&#9670;&nbsp;</a></span>linspace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -507,7 +520,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>length</em>&#160;</td>
         </tr>
         <tr>
@@ -522,6 +535,17 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructs a vector of specified length with start and end points (inclusive) given by the user, with the intervening points linearly spaced apart. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>The first element of the returned array</td></tr>
+    <tr><td class="paramname">end</td><td>The final element of the array (included in the range!)</td></tr>
+    <tr><td class="paramname">length</td><td>The length of the returned array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector (start, start + x,start + 2x, .... end) </dd></dl>
 
 </div>
 </div>
@@ -629,7 +653,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implicit conversion back to std::vector&lt;double&gt; </p>
+<p>Implicit conversion back to std::vector&lt;int&gt; </p>
 
 </div>
 </div>

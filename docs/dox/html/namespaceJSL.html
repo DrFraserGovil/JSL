@@ -296,6 +296,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ad01cc2984ad2ce5a85fb31960835dd04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Vector.html#a73579b4a194cc924341806a5d9ea3817" title="Converts the vector into a human-readable string.">JSL::Vector::to_string()</a> and then passes it to the provided stream, enabling sweet, smooth output such as std::cout &lt;&lt; v1 &lt;&lt; std::endl.  <a href="namespaceJSL.html#ad01cc2984ad2ce5a85fb31960835dd04">More...</a><br /></td></tr>
 <tr class="separator:ad01cc2984ad2ce5a85fb31960835dd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a941b0093a8d1298a0dc0c4403f63a826"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a941b0093a8d1298a0dc0c4403f63a826">ElementWiseOperation</a> (<a class="el" href="classJSL_1_1Vector.html">Vector</a> input, double(*function)(double))</td></tr>
+<tr class="memdesc:a941b0093a8d1298a0dc0c4403f63a826"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nice way to perform a simple function on every element of a vector.  <a href="namespaceJSL.html#a941b0093a8d1298a0dc0c4403f63a826">More...</a><br /></td></tr>
 <tr class="separator:a941b0093a8d1298a0dc0c4403f63a826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa37a5ffd99a34e2f12377c9f00b31c50"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#aa37a5ffd99a34e2f12377c9f00b31c50">split</a> (const std::string &amp;s, char delimiter)</td></tr>
 <tr class="separator:aa37a5ffd99a34e2f12377c9f00b31c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -626,6 +627,16 @@ template&lt;typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A nice way to perform a simple function on every element of a vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>the vector on which the operation will be performed</td></tr>
+    <tr><td class="paramname">function</td><td>A pointer to a funciton which accepts and returns a double. Can also be a lambda function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector y such that y_i = f(x_i) </dd></dl>
 
 </div>
 </div>

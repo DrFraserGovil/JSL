@@ -191,7 +191,7 @@ bool \mbox{\hyperlink{namespaceJSL_a394a4f9cee0747c76d1190b0365c7b5a}{operator!=
 std\+::ostream \& \mbox{\hyperlink{namespaceJSL_ad01cc2984ad2ce5a85fb31960835dd04}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&obj)
 \begin{DoxyCompactList}\small\item\em Calls \mbox{\hyperlink{classJSL_1_1Vector_a73579b4a194cc924341806a5d9ea3817}{JSL\+::\+Vector\+::to\+\_\+string()}} and then passes it to the provided stream, enabling sweet, smooth output such as std\+::cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} v1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} std\+::endl. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a941b0093a8d1298a0dc0c4403f63a826}{Element\+Wise\+Operation}} (\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} input, double($\ast$function)(double))
-\item 
+\begin{DoxyCompactList}\small\item\em A nice way to perform a simple function on every element of a vector. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_aa37a5ffd99a34e2f12377c9f00b31c50}{split}} (const std\+::string \&s, char delimiter)
 \item 
 std\+::string \mbox{\hyperlink{namespaceJSL_ae58b7096986a16b70a27e1609eff3014}{Current\+Time}} ()
@@ -434,6 +434,20 @@ A string of the readable format ~\newline
 \doxysubsubsection{\texorpdfstring{ElementWiseOperation()}{ElementWiseOperation()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} JSL\+::\+Element\+Wise\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJSL_1_1Vector}{Vector}}}]{input,  }\item[{double($\ast$)(double)}]{function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+A nice way to perform a simple function on every element of a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & the vector on which the operation will be performed\\
+\hline
+{\em function} & A pointer to a funciton which accepts and returns a double. Can also be a lambda function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector y such that y\+\_\+i = f(x\+\_\+i) 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespaceJSL_a0241a3cc1fa4dd4d319ab8686d1cfaa3}\label{namespaceJSL_a0241a3cc1fa4dd4d319ab8686d1cfaa3}} 
 \index{JSL@{JSL}!Error@{Error}}
 \index{Error@{Error}!JSL@{JSL}}

@@ -155,7 +155,7 @@ namespace JSL
 			{
 				return Data;
 			};
-			//!Implicit conversion back to std::vector<double>
+			//!Implicit conversion back to std::vector<int>
 			inline operator std::vector<int>() const
 			{
 				return std::vector<int>(Data.begin(),Data.end());
@@ -239,10 +239,11 @@ namespace JSL
 				return isnan;
 			}
 
-			static Vector linspace(double start, double end, int length)
+			//!Constructs a vector of specified length with start and end points (inclusive) given by the user, with the intervening points linearly spaced apart.  \param start The first element of the returned array \param end The final element of the array (included in the range!) \param length The length of the returned array \returns The vector (start, start + x,start + 2x, .... end)
+			static Vector linspace(double start, double end, unsigned int length)
 			{
 				Vector out(length);
-				Assert("Endpoint of linspace must be after start point", end > start);
+				Assert("Endpoint of linspace must be after start point", end > start && length > 1);
 				double delta = (end - start)/(length - 1);
 				for (int i = 0; i < length - 1; ++i)
 				{
@@ -251,6 +252,7 @@ namespace JSL
 				out[length-1] = end;
 				return out;
 			}
+			//! Similar to linspace(), but for integer values. Note that the step is specified here, not the length. It is possible that end is not included in the array. \param start The first element of the returned array \param end The maximum possible value for the final element in the array \param step The (integer) distance between each successive element in the array \return A vector, starting at #start, increasing by #step each time.
 			static Vector intspace(int start, int end, int step)
 			{
 				Assert("Endpoint of intspace must be after start point", end > start);
@@ -374,10 +376,6 @@ namespace JSL
 	}
 	
 	
-	
-	
-	
-	
 	//! Naive element-wise scalar multiplication. \param scalar The value to multiply elements by \param rhs The vector to multiply \returns The pointwise product of the elements of rhs and the scalar
 	inline Vector operator*(const double & scalar, const Vector & rhs)
 	{
@@ -472,6 +470,7 @@ namespace JSL
 		return os;
 	}
 	
+	//!A nice way to perform a simple function on every element of a vector. \param input the vector on which the operation will be performed \param function A pointer to a funciton which accepts and returns a double. Can also be a lambda function. \returns The vector y such that y_i = f(x_i)
 	inline Vector ElementWiseOperation(Vector input, double (*function)(double))
 	{
 		Vector out(input.Size());

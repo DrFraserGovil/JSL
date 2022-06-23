@@ -220,234 +220,230 @@
 \DoxyCodeLine{239                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector_ad7dc3af5e90b59e3ba2efc458e192a4c}{isnan}};}
 \DoxyCodeLine{240             \}}
 \DoxyCodeLine{241 }
-\DoxyCodeLine{242             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{classJSL_1_1Vector_a5fdf625cabc0a4546f850382afa67dc4}{linspace}}(\textcolor{keywordtype}{double} start, \textcolor{keywordtype}{double} end, \textcolor{keywordtype}{int} length)}
-\DoxyCodeLine{243             \{}
-\DoxyCodeLine{244                 \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} out(length);}
-\DoxyCodeLine{245                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}Endpoint of linspace must be after start point"{}}, end > start);}
-\DoxyCodeLine{246                 \textcolor{keywordtype}{double} delta = (end -\/ start)/(length -\/ 1);}
-\DoxyCodeLine{247                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length -\/ 1; ++i)}
-\DoxyCodeLine{248                 \{}
-\DoxyCodeLine{249                     out[i] = start + i * delta;}
-\DoxyCodeLine{250                 \}}
-\DoxyCodeLine{251                 out[length-\/1] = end;}
-\DoxyCodeLine{252                 \textcolor{keywordflow}{return} out;}
-\DoxyCodeLine{253             \}}
-\DoxyCodeLine{254             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{classJSL_1_1Vector_a4ca666ae14cef413dcf3679a10a7fbb9}{intspace}}(\textcolor{keywordtype}{int} start, \textcolor{keywordtype}{int} end, \textcolor{keywordtype}{int} step)}
-\DoxyCodeLine{255             \{}
-\DoxyCodeLine{256                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}Endpoint of intspace must be after start point"{}}, end > start);}
-\DoxyCodeLine{257                 \textcolor{keywordtype}{int} length = (end -\/ start)/step + 1;}
-\DoxyCodeLine{258                 \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} out(length);}
-\DoxyCodeLine{259                 \textcolor{keywordtype}{int} p= start;}
-\DoxyCodeLine{260                 \textcolor{keywordtype}{int} i = 0;}
-\DoxyCodeLine{261                 \textcolor{keywordflow}{while} (p <= end)}
-\DoxyCodeLine{262                 \{}
-\DoxyCodeLine{263                     out[i] = p;}
-\DoxyCodeLine{264                     p+= step;}
-\DoxyCodeLine{265                     ++i;}
-\DoxyCodeLine{266                 \}}
-\DoxyCodeLine{267                 \textcolor{keywordflow}{return} out;}
-\DoxyCodeLine{268             \}}
-\DoxyCodeLine{269         \textcolor{keyword}{protected}:}
-\DoxyCodeLine{270             std::vector<double> \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}};}
-\DoxyCodeLine{271                         }
-\DoxyCodeLine{272             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Vector_a84eb32f5917a770c895e106834a6c05d}{nElements}};}
-\DoxyCodeLine{273             std::string \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector_ac41d3cb075c2bd871c31b96dedba08fe}{negativeIntegerError}}(\textcolor{keywordtype}{int} idx)\textcolor{keyword}{ const}}
-\DoxyCodeLine{274 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{275                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}JSL::Vector Error: Cannot access negative indices ("{}} + std::to\_string(idx) + \textcolor{stringliteral}{"{})."{}};}
-\DoxyCodeLine{276             \}}
-\DoxyCodeLine{277             std::string \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector_ab081a68e1fc526f4bf866de0ba61a09b}{outOfBoundsError}}(\textcolor{keywordtype}{int} idx)\textcolor{keyword}{ const}}
-\DoxyCodeLine{278 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{279                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}JSL::Vector Error: "{}} + std::to\_string(idx) +\textcolor{stringliteral}{"{} exceeds the length of this vector ("{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Vector_a84eb32f5917a770c895e106834a6c05d}{nElements}}) + \textcolor{stringliteral}{"{})."{}};}
-\DoxyCodeLine{280             \}}
-\DoxyCodeLine{281     \};}
-\DoxyCodeLine{282     }
-\DoxyCodeLine{283     \textcolor{comment}{//Overloaded operators}}
+\DoxyCodeLine{243             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{classJSL_1_1Vector_a46fc3e1d5ee9bdb66844aa5e2e5112e9}{linspace}}(\textcolor{keywordtype}{double} start, \textcolor{keywordtype}{double} end, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} length)}
+\DoxyCodeLine{244             \{}
+\DoxyCodeLine{245                 \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} out(length);}
+\DoxyCodeLine{246                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}Endpoint of linspace must be after start point"{}}, end > start \&\& length > 1);}
+\DoxyCodeLine{247                 \textcolor{keywordtype}{double} delta = (end -\/ start)/(length -\/ 1);}
+\DoxyCodeLine{248                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length -\/ 1; ++i)}
+\DoxyCodeLine{249                 \{}
+\DoxyCodeLine{250                     out[i] = start + i * delta;}
+\DoxyCodeLine{251                 \}}
+\DoxyCodeLine{252                 out[length-\/1] = end;}
+\DoxyCodeLine{253                 \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{254             \}}
+\DoxyCodeLine{256             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{classJSL_1_1Vector_a4ca666ae14cef413dcf3679a10a7fbb9}{intspace}}(\textcolor{keywordtype}{int} start, \textcolor{keywordtype}{int} end, \textcolor{keywordtype}{int} step)}
+\DoxyCodeLine{257             \{}
+\DoxyCodeLine{258                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}Endpoint of intspace must be after start point"{}}, end > start);}
+\DoxyCodeLine{259                 \textcolor{keywordtype}{int} length = (end -\/ start)/step + 1;}
+\DoxyCodeLine{260                 \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} out(length);}
+\DoxyCodeLine{261                 \textcolor{keywordtype}{int} p= start;}
+\DoxyCodeLine{262                 \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{263                 \textcolor{keywordflow}{while} (p <= end)}
+\DoxyCodeLine{264                 \{}
+\DoxyCodeLine{265                     out[i] = p;}
+\DoxyCodeLine{266                     p+= step;}
+\DoxyCodeLine{267                     ++i;}
+\DoxyCodeLine{268                 \}}
+\DoxyCodeLine{269                 \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{270             \}}
+\DoxyCodeLine{271         \textcolor{keyword}{protected}:}
+\DoxyCodeLine{272             std::vector<double> \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}};}
+\DoxyCodeLine{273                         }
+\DoxyCodeLine{274             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Vector_a84eb32f5917a770c895e106834a6c05d}{nElements}};}
+\DoxyCodeLine{275             std::string \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector_ac41d3cb075c2bd871c31b96dedba08fe}{negativeIntegerError}}(\textcolor{keywordtype}{int} idx)\textcolor{keyword}{ const}}
+\DoxyCodeLine{276 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{277                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}JSL::Vector Error: Cannot access negative indices ("{}} + std::to\_string(idx) + \textcolor{stringliteral}{"{})."{}};}
+\DoxyCodeLine{278             \}}
+\DoxyCodeLine{279             std::string \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector_ab081a68e1fc526f4bf866de0ba61a09b}{outOfBoundsError}}(\textcolor{keywordtype}{int} idx)\textcolor{keyword}{ const}}
+\DoxyCodeLine{280 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{281                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}JSL::Vector Error: "{}} + std::to\_string(idx) +\textcolor{stringliteral}{"{} exceeds the length of this vector ("{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Vector_a84eb32f5917a770c895e106834a6c05d}{nElements}}) + \textcolor{stringliteral}{"{})."{}};}
+\DoxyCodeLine{282             \}}
+\DoxyCodeLine{283     \};}
 \DoxyCodeLine{284     }
-\DoxyCodeLine{285     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceJSL_a682c8bb3fff54370f38dcb16794fc7c5}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{286     \{}
-\DoxyCodeLine{287         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
-\DoxyCodeLine{288         \{}
-\DoxyCodeLine{289             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{290         \}}
-\DoxyCodeLine{291         }
-\DoxyCodeLine{292         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}();++i)}
-\DoxyCodeLine{293         \{}
-\DoxyCodeLine{294             \textcolor{keywordflow}{if} (lhs[i] != rhs[i])}
-\DoxyCodeLine{295             \{}
-\DoxyCodeLine{296                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{297             \}}
-\DoxyCodeLine{298         \}}
-\DoxyCodeLine{299         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{300     \}}
-\DoxyCodeLine{301     }
-\DoxyCodeLine{302     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceJSL_a8b19814a4b6cb667d1e27133acc38513}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{303     \{}
-\DoxyCodeLine{304         \textcolor{keywordflow}{return} !(lhs == rhs);}
-\DoxyCodeLine{305     \}}
-\DoxyCodeLine{306 }
-\DoxyCodeLine{308     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{309     \{}
-\DoxyCodeLine{310         \textcolor{keywordflow}{if} (rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
-\DoxyCodeLine{311         \{}
-\DoxyCodeLine{312             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform + operation on vectors of different sizes"{}});}
-\DoxyCodeLine{313         \}}
-\DoxyCodeLine{314         }
-\DoxyCodeLine{315         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = lhs;}
+\DoxyCodeLine{285     \textcolor{comment}{//Overloaded operators}}
+\DoxyCodeLine{286     }
+\DoxyCodeLine{287     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceJSL_a682c8bb3fff54370f38dcb16794fc7c5}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{288     \{}
+\DoxyCodeLine{289         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
+\DoxyCodeLine{290         \{}
+\DoxyCodeLine{291             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{292         \}}
+\DoxyCodeLine{293         }
+\DoxyCodeLine{294         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}();++i)}
+\DoxyCodeLine{295         \{}
+\DoxyCodeLine{296             \textcolor{keywordflow}{if} (lhs[i] != rhs[i])}
+\DoxyCodeLine{297             \{}
+\DoxyCodeLine{298                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{299             \}}
+\DoxyCodeLine{300         \}}
+\DoxyCodeLine{301         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{302     \}}
+\DoxyCodeLine{303     }
+\DoxyCodeLine{304     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceJSL_a8b19814a4b6cb667d1e27133acc38513}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{305     \{}
+\DoxyCodeLine{306         \textcolor{keywordflow}{return} !(lhs == rhs);}
+\DoxyCodeLine{307     \}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{310     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{311     \{}
+\DoxyCodeLine{312         \textcolor{keywordflow}{if} (rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
+\DoxyCodeLine{313         \{}
+\DoxyCodeLine{314             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform + operation on vectors of different sizes"{}});}
+\DoxyCodeLine{315         \}}
 \DoxyCodeLine{316         }
-\DoxyCodeLine{317         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
-\DoxyCodeLine{318         \{}
-\DoxyCodeLine{319             output[i] += rhs[i];}
-\DoxyCodeLine{320         \}}
-\DoxyCodeLine{321         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{322     \};}
-\DoxyCodeLine{324     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{325     \{}
-\DoxyCodeLine{326         \textcolor{keywordflow}{if} (rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
-\DoxyCodeLine{327         \{}
-\DoxyCodeLine{328             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform -\/ operation on vectors of different sizes"{}});}
-\DoxyCodeLine{329         \}}
-\DoxyCodeLine{330         }
-\DoxyCodeLine{331         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = lhs;}
+\DoxyCodeLine{317         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = lhs;}
+\DoxyCodeLine{318         }
+\DoxyCodeLine{319         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
+\DoxyCodeLine{320         \{}
+\DoxyCodeLine{321             output[i] += rhs[i];}
+\DoxyCodeLine{322         \}}
+\DoxyCodeLine{323         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{324     \};}
+\DoxyCodeLine{326     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{327     \{}
+\DoxyCodeLine{328         \textcolor{keywordflow}{if} (rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
+\DoxyCodeLine{329         \{}
+\DoxyCodeLine{330             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform -\/ operation on vectors of different sizes"{}});}
+\DoxyCodeLine{331         \}}
 \DoxyCodeLine{332         }
-\DoxyCodeLine{333         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
-\DoxyCodeLine{334         \{}
-\DoxyCodeLine{335             output[i] -\/= rhs[i];}
-\DoxyCodeLine{336         \}}
-\DoxyCodeLine{337         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{338     \};}
-\DoxyCodeLine{339 }
-\DoxyCodeLine{341     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{342     \{}
-\DoxyCodeLine{343 }
-\DoxyCodeLine{344         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = lhs;}
-\DoxyCodeLine{345         }
-\DoxyCodeLine{346         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
-\DoxyCodeLine{347         \{}
-\DoxyCodeLine{348             output[i] += scalar;}
-\DoxyCodeLine{349         \}}
-\DoxyCodeLine{350         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{351     \};}
-\DoxyCodeLine{352     }
-\DoxyCodeLine{354     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{355     \{}
-\DoxyCodeLine{356         \textcolor{keywordflow}{return} rhs + scalar;}
-\DoxyCodeLine{357     \}}
-\DoxyCodeLine{359     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{360     \{}
-\DoxyCodeLine{361         \textcolor{keywordflow}{return} lhs + -\/1*scalar;}
-\DoxyCodeLine{362     \}}
-\DoxyCodeLine{363     }
-\DoxyCodeLine{365     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{366     \{}
-\DoxyCodeLine{367         \textcolor{comment}{//To do it the `clever' way would be to redirect this to return scalar + -\/1*rhs, but this would involve two separate loops over the array. Annoyingly, turns out to be better to just copy the loop code and do it only once.}}
-\DoxyCodeLine{368         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output(rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}());}
-\DoxyCodeLine{369         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
-\DoxyCodeLine{370         \{}
-\DoxyCodeLine{371             output[i] = scalar -\/ rhs[i];}
-\DoxyCodeLine{372         \}}
-\DoxyCodeLine{373         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{374     \}}
-\DoxyCodeLine{375     }
-\DoxyCodeLine{376     }
+\DoxyCodeLine{333         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = lhs;}
+\DoxyCodeLine{334         }
+\DoxyCodeLine{335         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
+\DoxyCodeLine{336         \{}
+\DoxyCodeLine{337             output[i] -\/= rhs[i];}
+\DoxyCodeLine{338         \}}
+\DoxyCodeLine{339         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{340     \};}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{343     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{344     \{}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = lhs;}
+\DoxyCodeLine{347         }
+\DoxyCodeLine{348         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
+\DoxyCodeLine{349         \{}
+\DoxyCodeLine{350             output[i] += scalar;}
+\DoxyCodeLine{351         \}}
+\DoxyCodeLine{352         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{353     \};}
+\DoxyCodeLine{354     }
+\DoxyCodeLine{356     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{357     \{}
+\DoxyCodeLine{358         \textcolor{keywordflow}{return} rhs + scalar;}
+\DoxyCodeLine{359     \}}
+\DoxyCodeLine{361     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{362     \{}
+\DoxyCodeLine{363         \textcolor{keywordflow}{return} lhs + -\/1*scalar;}
+\DoxyCodeLine{364     \}}
+\DoxyCodeLine{365     }
+\DoxyCodeLine{367     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{368     \{}
+\DoxyCodeLine{369         \textcolor{comment}{//To do it the `clever' way would be to redirect this to return scalar + -\/1*rhs, but this would involve two separate loops over the array. Annoyingly, turns out to be better to just copy the loop code and do it only once.}}
+\DoxyCodeLine{370         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output(rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}());}
+\DoxyCodeLine{371         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
+\DoxyCodeLine{372         \{}
+\DoxyCodeLine{373             output[i] = scalar -\/ rhs[i];}
+\DoxyCodeLine{374         \}}
+\DoxyCodeLine{375         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{376     \}}
 \DoxyCodeLine{377     }
 \DoxyCodeLine{378     }
-\DoxyCodeLine{379     }
-\DoxyCodeLine{380     }
-\DoxyCodeLine{382     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{383     \{}
-\DoxyCodeLine{384         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = rhs;}
-\DoxyCodeLine{385         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
-\DoxyCodeLine{386         \{}
-\DoxyCodeLine{387             output[i] *= scalar;}
-\DoxyCodeLine{388         \}}
-\DoxyCodeLine{389         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{390     \}}
-\DoxyCodeLine{391     }
-\DoxyCodeLine{393     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{394     \{}
-\DoxyCodeLine{395         \textcolor{keywordflow}{return} scalar * lhs;}
-\DoxyCodeLine{396     \}}
-\DoxyCodeLine{397     }
-\DoxyCodeLine{399     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ab1f3153179f59c59a0c2a5e553889eb1}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{400     \{}
-\DoxyCodeLine{401         \textcolor{keywordflow}{if} (scalar == 0)}
-\DoxyCodeLine{402         \{}
-\DoxyCodeLine{403             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Division by zero results in undefined behaviour"{}});}
-\DoxyCodeLine{404         \}}
-\DoxyCodeLine{405         \textcolor{keywordflow}{return} 1.0/scalar * lhs;}
-\DoxyCodeLine{406     \}}
-\DoxyCodeLine{407     }
-\DoxyCodeLine{409     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a6fd4487b0a8ac5713df4a37079287913}{Hadamard}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{410     \{}
-\DoxyCodeLine{411         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = rhs;}
-\DoxyCodeLine{412         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
-\DoxyCodeLine{413         \{}
-\DoxyCodeLine{414             output[i] *= rhs[i];}
-\DoxyCodeLine{415         \}}
-\DoxyCodeLine{416         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{417     \}}
-\DoxyCodeLine{418     }
-\DoxyCodeLine{420     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceJSL_aeae64b7e0cfdc1ab5f35cca90c32d9f6}{VectorDotProduct}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{421     \{}
-\DoxyCodeLine{422         \textcolor{keywordtype}{double} sum =0;}
-\DoxyCodeLine{423         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
-\DoxyCodeLine{424         \{}
-\DoxyCodeLine{425             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot take the dot product of vectors of different sizes"{}});}
-\DoxyCodeLine{426         \}}
-\DoxyCodeLine{427         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
-\DoxyCodeLine{428         \{}
-\DoxyCodeLine{429             sum += lhs[i] * rhs[i];}
-\DoxyCodeLine{430         \}}
-\DoxyCodeLine{431         \textcolor{keywordflow}{return} sum;}
-\DoxyCodeLine{432     \}}
-\DoxyCodeLine{433     }
-\DoxyCodeLine{435     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_aa7816eb0cd81b74241ce460237990e70}{VectorCrossProduct}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{436     \{}
-\DoxyCodeLine{437         \textcolor{keywordtype}{bool} correctnElements = (lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() == 3) \&\& (rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() == 3);}
-\DoxyCodeLine{438         \textcolor{keywordflow}{if} (!correctnElements)}
-\DoxyCodeLine{439         \{}
-\DoxyCodeLine{440             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot compute the cross product for vectors not on R\string^3"{}});}
-\DoxyCodeLine{441         \}}
+\DoxyCodeLine{380     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{381     \{}
+\DoxyCodeLine{382         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = rhs;}
+\DoxyCodeLine{383         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
+\DoxyCodeLine{384         \{}
+\DoxyCodeLine{385             output[i] *= scalar;}
+\DoxyCodeLine{386         \}}
+\DoxyCodeLine{387         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{388     \}}
+\DoxyCodeLine{389     }
+\DoxyCodeLine{391     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{392     \{}
+\DoxyCodeLine{393         \textcolor{keywordflow}{return} scalar * lhs;}
+\DoxyCodeLine{394     \}}
+\DoxyCodeLine{395     }
+\DoxyCodeLine{397     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_ab1f3153179f59c59a0c2a5e553889eb1}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{398     \{}
+\DoxyCodeLine{399         \textcolor{keywordflow}{if} (scalar == 0)}
+\DoxyCodeLine{400         \{}
+\DoxyCodeLine{401             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Division by zero results in undefined behaviour"{}});}
+\DoxyCodeLine{402         \}}
+\DoxyCodeLine{403         \textcolor{keywordflow}{return} 1.0/scalar * lhs;}
+\DoxyCodeLine{404     \}}
+\DoxyCodeLine{405     }
+\DoxyCodeLine{407     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a6fd4487b0a8ac5713df4a37079287913}{Hadamard}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{408     \{}
+\DoxyCodeLine{409         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output = rhs;}
+\DoxyCodeLine{410         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
+\DoxyCodeLine{411         \{}
+\DoxyCodeLine{412             output[i] *= rhs[i];}
+\DoxyCodeLine{413         \}}
+\DoxyCodeLine{414         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{415     \}}
+\DoxyCodeLine{416     }
+\DoxyCodeLine{418     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceJSL_aeae64b7e0cfdc1ab5f35cca90c32d9f6}{VectorDotProduct}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{419     \{}
+\DoxyCodeLine{420         \textcolor{keywordtype}{double} sum =0;}
+\DoxyCodeLine{421         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
+\DoxyCodeLine{422         \{}
+\DoxyCodeLine{423             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot take the dot product of vectors of different sizes"{}});}
+\DoxyCodeLine{424         \}}
+\DoxyCodeLine{425         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
+\DoxyCodeLine{426         \{}
+\DoxyCodeLine{427             sum += lhs[i] * rhs[i];}
+\DoxyCodeLine{428         \}}
+\DoxyCodeLine{429         \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{430     \}}
+\DoxyCodeLine{431     }
+\DoxyCodeLine{433     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_aa7816eb0cd81b74241ce460237990e70}{VectorCrossProduct}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{434     \{}
+\DoxyCodeLine{435         \textcolor{keywordtype}{bool} correctnElements = (lhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() == 3) \&\& (rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() == 3);}
+\DoxyCodeLine{436         \textcolor{keywordflow}{if} (!correctnElements)}
+\DoxyCodeLine{437         \{}
+\DoxyCodeLine{438             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot compute the cross product for vectors not on R\string^3"{}});}
+\DoxyCodeLine{439         \}}
+\DoxyCodeLine{440         }
+\DoxyCodeLine{441         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output(3);}
 \DoxyCodeLine{442         }
-\DoxyCodeLine{443         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} output(3);}
-\DoxyCodeLine{444         }
-\DoxyCodeLine{445         output[0] = lhs[1]*rhs[2] -\/ rhs[1]*lhs[2];}
-\DoxyCodeLine{446         output[1] = lhs[2]*rhs[0] -\/ rhs[2]*lhs[0];}
-\DoxyCodeLine{447         output[2] = lhs[0]*rhs[1] -\/ rhs[0]*lhs[1];}
-\DoxyCodeLine{448         }
-\DoxyCodeLine{449         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{450     \}}
-\DoxyCodeLine{451     }
-\DoxyCodeLine{453     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceJSL_a09355c91f84fd99d4634bf9189fef51d}{AngleBetweenVectors}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{454     \{}
-\DoxyCodeLine{455         \textcolor{keywordtype}{double} aDotb = lhs.\mbox{\hyperlink{classJSL_1_1Vector_a60660b5a26e0ddace46f31699834b671}{Dot}}(rhs);}
-\DoxyCodeLine{456         \textcolor{keywordtype}{double} norms = lhs.\mbox{\hyperlink{classJSL_1_1Vector_aa8af717591f5548ff471b6e4b28d7f9c}{Norm}}() * rhs.\mbox{\hyperlink{classJSL_1_1Vector_aa8af717591f5548ff471b6e4b28d7f9c}{Norm}}();}
-\DoxyCodeLine{457         \textcolor{keywordflow}{if} (norms == 0)}
-\DoxyCodeLine{458         \{}
-\DoxyCodeLine{459             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}The angle between a vector of length zero is undefined"{}});}
-\DoxyCodeLine{460         \}}
+\DoxyCodeLine{443         output[0] = lhs[1]*rhs[2] -\/ rhs[1]*lhs[2];}
+\DoxyCodeLine{444         output[1] = lhs[2]*rhs[0] -\/ rhs[2]*lhs[0];}
+\DoxyCodeLine{445         output[2] = lhs[0]*rhs[1] -\/ rhs[0]*lhs[1];}
+\DoxyCodeLine{446         }
+\DoxyCodeLine{447         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{448     \}}
+\DoxyCodeLine{449     }
+\DoxyCodeLine{451     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceJSL_a09355c91f84fd99d4634bf9189fef51d}{AngleBetweenVectors}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{452     \{}
+\DoxyCodeLine{453         \textcolor{keywordtype}{double} aDotb = lhs.\mbox{\hyperlink{classJSL_1_1Vector_a60660b5a26e0ddace46f31699834b671}{Dot}}(rhs);}
+\DoxyCodeLine{454         \textcolor{keywordtype}{double} norms = lhs.\mbox{\hyperlink{classJSL_1_1Vector_aa8af717591f5548ff471b6e4b28d7f9c}{Norm}}() * rhs.\mbox{\hyperlink{classJSL_1_1Vector_aa8af717591f5548ff471b6e4b28d7f9c}{Norm}}();}
+\DoxyCodeLine{455         \textcolor{keywordflow}{if} (norms == 0)}
+\DoxyCodeLine{456         \{}
+\DoxyCodeLine{457             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}The angle between a vector of length zero is undefined"{}});}
+\DoxyCodeLine{458         \}}
+\DoxyCodeLine{459         }
+\DoxyCodeLine{460         \textcolor{keywordtype}{double} cosTheta = std::min(1.0,aDotb /norms);}
 \DoxyCodeLine{461         }
-\DoxyCodeLine{462         \textcolor{keywordtype}{double} cosTheta = std::min(1.0,aDotb /norms);}
+\DoxyCodeLine{462         \textcolor{keywordflow}{return} acos(cosTheta);}
 \DoxyCodeLine{463         }
-\DoxyCodeLine{464         \textcolor{keywordflow}{return} acos(cosTheta);}
-\DoxyCodeLine{465         }
-\DoxyCodeLine{466     \}}
-\DoxyCodeLine{467 }
-\DoxyCodeLine{469     \textcolor{keyword}{inline} std::ostream\& \mbox{\hyperlink{namespaceJSL_a7e357c34e91d1eb03c15ca437a285ea1}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& obj)}
-\DoxyCodeLine{470     \{}
-\DoxyCodeLine{471         os << obj.\mbox{\hyperlink{classJSL_1_1Vector_a73579b4a194cc924341806a5d9ea3817}{to\_string}}();}
-\DoxyCodeLine{472         \textcolor{keywordflow}{return} os;}
-\DoxyCodeLine{473     \}}
-\DoxyCodeLine{474     }
-\DoxyCodeLine{475     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a941b0093a8d1298a0dc0c4403f63a826}{ElementWiseOperation}}(\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} input, \textcolor{keywordtype}{double} (*function)(\textcolor{keywordtype}{double}))}
-\DoxyCodeLine{476     \{}
-\DoxyCodeLine{477         \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} out(input.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}());}
-\DoxyCodeLine{478         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < input.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}();++i)}
-\DoxyCodeLine{479         \{}
-\DoxyCodeLine{480             out[i] = function(input[i]);}
-\DoxyCodeLine{481         \}}
-\DoxyCodeLine{482         \textcolor{keywordflow}{return} out;}
-\DoxyCodeLine{483     \}}
-\DoxyCodeLine{484 \}}
+\DoxyCodeLine{464     \}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{467     \textcolor{keyword}{inline} std::ostream\& \mbox{\hyperlink{namespaceJSL_a7e357c34e91d1eb03c15ca437a285ea1}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& obj)}
+\DoxyCodeLine{468     \{}
+\DoxyCodeLine{469         os << obj.\mbox{\hyperlink{classJSL_1_1Vector_a73579b4a194cc924341806a5d9ea3817}{to\_string}}();}
+\DoxyCodeLine{470         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{471     \}}
+\DoxyCodeLine{472     }
+\DoxyCodeLine{474     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a941b0093a8d1298a0dc0c4403f63a826}{ElementWiseOperation}}(\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} input, \textcolor{keywordtype}{double} (*function)(\textcolor{keywordtype}{double}))}
+\DoxyCodeLine{475     \{}
+\DoxyCodeLine{476         \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} out(input.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}());}
+\DoxyCodeLine{477         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < input.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}();++i)}
+\DoxyCodeLine{478         \{}
+\DoxyCodeLine{479             out[i] = function(input[i]);}
+\DoxyCodeLine{480         \}}
+\DoxyCodeLine{481         \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{482     \}}
+\DoxyCodeLine{483 \}}
 
 \end{DoxyCode}

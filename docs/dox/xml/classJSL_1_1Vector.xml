@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="270" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="270" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="272" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="272" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Vector_1a84eb32f5917a770c895e106834a6c05d" prot="protected" static="no" mutable="no">
         <type>int</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="272" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="272" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="274" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="274" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -389,7 +389,7 @@
         <name>operator std::vector&lt; int &gt;</name>
         <qualifiedname>JSL::Vector::vector&lt; int &gt;</qualifiedname>
         <briefdescription>
-<para>Implicit conversion back to std::vector&lt;double&gt; </para>
+<para>Implicit conversion back to std::vector&lt;int&gt; </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -600,10 +600,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classJSL_1_1Vector_1a5fdf625cabc0a4546f850382afa67dc4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a46fc3e1d5ee9bdb66844aa5e2e5112e9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
         <definition>static Vector JSL::Vector::linspace</definition>
-        <argsstring>(double start, double end, int length)</argsstring>
+        <argsstring>(double start, double end, unsigned int length)</argsstring>
         <name>linspace</name>
         <qualifiedname>JSL::Vector::linspace</qualifiedname>
         <param>
@@ -615,16 +615,45 @@
           <declname>end</declname>
         </param>
         <param>
-          <type>int</type>
+          <type>unsigned int</type>
           <declname>length</declname>
         </param>
         <briefdescription>
+<para>Constructs a vector of specified length with start and end points (inclusive) given by the user, with the intervening points linearly spaced apart. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first element of the returned array</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The final element of the array (included in the range!)</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the returned array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector (start, start + x,start + 2x, .... end) </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="242" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="242" bodyend="253"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="243" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="243" bodyend="254"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1a4ca666ae14cef413dcf3679a10a7fbb9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -645,12 +674,41 @@
           <declname>step</declname>
         </param>
         <briefdescription>
+<para>Similar to <ref refid="classJSL_1_1Vector_1a46fc3e1d5ee9bdb66844aa5e2e5112e9" kindref="member">linspace()</ref>, but for integer values. Note that the step is specified here, not the length. It is possible that end is not included in the array. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first element of the returned array</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum possible value for the final element in the array</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The (integer) distance between each successive element in the array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector, starting at #start, increasing by #step each time. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="254" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="254" bodyend="268"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="256" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="256" bodyend="270"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -670,7 +728,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="273" column="20" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="273" bodyend="276"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="275" column="20" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="275" bodyend="278"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -688,7 +746,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="277" column="20" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="277" bodyend="280"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="279" column="20" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="279" bodyend="282"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -708,7 +766,7 @@
         <link refid="classJSL_1_1Vector"/>
       </node>
     </inheritancegraph>
-    <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="21" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="22" bodyend="281"/>
+    <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="21" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="22" bodyend="283"/>
     <listofallmembers>
       <member refid="classJSL_1_1Vector_1a0529640bc02ce994026184d93f43f9c3" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>AngleBetween</name></member>
       <member refid="classJSL_1_1Vector_1a59ff98a99ebcf2b589290b9e57b8e184" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Cross</name></member>
@@ -716,7 +774,7 @@
       <member refid="classJSL_1_1Vector_1a60660b5a26e0ddace46f31699834b671" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Dot</name></member>
       <member refid="classJSL_1_1Vector_1a4ca666ae14cef413dcf3679a10a7fbb9" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>intspace</name></member>
       <member refid="classJSL_1_1Vector_1ad7dc3af5e90b59e3ba2efc458e192a4c" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>isnan</name></member>
-      <member refid="classJSL_1_1Vector_1a5fdf625cabc0a4546f850382afa67dc4" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>linspace</name></member>
+      <member refid="classJSL_1_1Vector_1a46fc3e1d5ee9bdb66844aa5e2e5112e9" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>linspace</name></member>
       <member refid="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" prot="protected" virt="non-virtual"><scope>JSL::Vector</scope><name>negativeIntegerError</name></member>
       <member refid="classJSL_1_1Vector_1a84eb32f5917a770c895e106834a6c05d" prot="protected" virt="non-virtual"><scope>JSL::Vector</scope><name>nElements</name></member>
       <member refid="classJSL_1_1Vector_1aa8af717591f5548ff471b6e4b28d7f9c" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Norm</name></member>

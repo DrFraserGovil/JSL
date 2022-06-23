@@ -280,7 +280,7 @@
     <member refid="classJSL_1_1Vector_1a3d7bee6bfd0624c8bebf63a1c7c3309b" kind="function"><name>operator*=</name></member>
     <member refid="classJSL_1_1Vector_1acc5dec41ebc9cfc77a2b4be5eab07392" kind="function"><name>operator/=</name></member>
     <member refid="classJSL_1_1Vector_1ad7dc3af5e90b59e3ba2efc458e192a4c" kind="function"><name>isnan</name></member>
-    <member refid="classJSL_1_1Vector_1a5fdf625cabc0a4546f850382afa67dc4" kind="function"><name>linspace</name></member>
+    <member refid="classJSL_1_1Vector_1a46fc3e1d5ee9bdb66844aa5e2e5112e9" kind="function"><name>linspace</name></member>
     <member refid="classJSL_1_1Vector_1a4ca666ae14cef413dcf3679a10a7fbb9" kind="function"><name>intspace</name></member>
     <member refid="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" kind="function"><name>negativeIntegerError</name></member>
     <member refid="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" kind="function"><name>outOfBoundsError</name></member>

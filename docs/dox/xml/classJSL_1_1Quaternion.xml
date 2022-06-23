@@ -310,7 +310,7 @@
       <member refid="classJSL_1_1Vector_1a4ca666ae14cef413dcf3679a10a7fbb9" prot="public" virt="non-virtual"><scope>JSL::Quaternion</scope><name>intspace</name></member>
       <member refid="classJSL_1_1Vector_1ad7dc3af5e90b59e3ba2efc458e192a4c" prot="public" virt="non-virtual"><scope>JSL::Quaternion</scope><name>isnan</name></member>
       <member refid="classJSL_1_1Quaternion_1ada6a7067e13b60a65a6103f7508f62f3" prot="public" virt="non-virtual"><scope>JSL::Quaternion</scope><name>LeftMultiplicationMatrix</name></member>
-      <member refid="classJSL_1_1Vector_1a5fdf625cabc0a4546f850382afa67dc4" prot="public" virt="non-virtual"><scope>JSL::Quaternion</scope><name>linspace</name></member>
+      <member refid="classJSL_1_1Vector_1a46fc3e1d5ee9bdb66844aa5e2e5112e9" prot="public" virt="non-virtual"><scope>JSL::Quaternion</scope><name>linspace</name></member>
       <member refid="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" prot="protected" virt="non-virtual"><scope>JSL::Quaternion</scope><name>negativeIntegerError</name></member>
       <member refid="classJSL_1_1Vector_1a84eb32f5917a770c895e106834a6c05d" prot="protected" virt="non-virtual"><scope>JSL::Quaternion</scope><name>nElements</name></member>
       <member refid="classJSL_1_1Vector_1aa8af717591f5548ff471b6e4b28d7f9c" prot="public" virt="non-virtual"><scope>JSL::Quaternion</scope><name>Norm</name></member>
