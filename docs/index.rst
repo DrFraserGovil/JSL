@@ -12,6 +12,7 @@ Even more likely, you are in fact me, reading this a year or two down the line w
 
 .. toctree::
 	docfiles/system/system
+	docfiles/display/display
 	docfiles/files/file-handling
 	docfiles/maths/mathematics
 	docfiles/gnuplot/gnuplot
