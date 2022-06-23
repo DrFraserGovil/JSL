@@ -84,7 +84,7 @@ enum \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{Error\+Cod
 , \newline
 \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{IOError}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A list of recognised \mbox{\hyperlink{namespaceJSL}{JSL}} errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -195,11 +195,11 @@ std\+::string \mbox{\hyperlink{namespaceJSL_ae7af96a0311784e019209221335f76d9}{F
 void \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}} (\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{Error\+Code}} code, const std\+::string \&message)
 \item 
 void \mbox{\hyperlink{namespaceJSL_a0241a3cc1fa4dd4d319ab8686d1cfaa3}{Error}} (const std\+::string \&message)
-\item 
+\begin{DoxyCompactList}\small\item\em The default version of \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error(\+Error\+Code code, const std\+::string \& message)}}, throwing \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSL\+::\+JSLError}} as the identifier code. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}{rm}} (std\+::string location, bool recursive)
 \item 
 void \mbox{\hyperlink{namespaceJSL_a5cd4ed117decf1140104ad8566b589ac}{system\+Call}} (const std\+::string \&command)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Uses C++\textquotesingle{}s std\+::system to run a command given by the inpt string, and checks for errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -214,25 +214,29 @@ const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_a606f5a28
 \doxysubsubsection{\texorpdfstring{ErrorCode}{ErrorCode}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{JSL\+::\+Error\+Code}}}
 
+
+
+A list of recognised \mbox{\hyperlink{namespaceJSL}{JSL}} errors. 
+
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JSLError@{JSLError}!JSL@{JSL}}\index{JSL@{JSL}!JSLError@{JSLError}}}\mbox{\Hypertarget{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}\label{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}} 
-JSLError&\\
+JSLError&Global error term. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SystemError@{SystemError}!JSL@{JSL}}\index{JSL@{JSL}!SystemError@{SystemError}}}\mbox{\Hypertarget{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30}\label{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30}} 
-System\+Error&\\
+System\+Error&Used when something really went bad, like a failed \mbox{\hyperlink{namespaceJSL_a5cd4ed117decf1140104ad8566b589ac}{JSL\+::system\+Call}}. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{OverrunError@{OverrunError}!JSL@{JSL}}\index{JSL@{JSL}!OverrunError@{OverrunError}}}\mbox{\Hypertarget{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702}\label{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702}} 
-Overrun\+Error&\\
+Overrun\+Error&\mbox{\hyperlink{classJSL_1_1Vector}{Vector}} Access overruns, bad memory requests. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{FailedAssertion@{FailedAssertion}!JSL@{JSL}}\index{JSL@{JSL}!FailedAssertion@{FailedAssertion}}}\mbox{\Hypertarget{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443}\label{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443}} 
-Failed\+Assertion&\\
+Failed\+Assertion&As the name implies, failed assertions. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{IOError@{IOError}!JSL@{JSL}}\index{JSL@{JSL}!IOError@{IOError}}}\mbox{\Hypertarget{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}\label{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}} 
-IOError&\\
+IOError&Errors induced by file. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -398,6 +402,13 @@ The angle between the two vectors (between 0 and M\+\_\+\+PI)
 {\footnotesize\ttfamily template$<$typename... Ts$>$ \\
 void JSL\+::\+Assert (\begin{DoxyParamCaption}\item[{std\+::string}]{assertion\+Message,  }\item[{Ts...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+A function which checks that a stated set of conditions are met, and throws a \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{JSL\+::\+Error}} if they are not. Variadic function, and so accepts an arbitrary number of conditions without impact on runtime.
+\begin{DoxyParams}{Parameters}
+{\em assertion\+Message} & The message that gets printed out if the assertion fails. Also useful for internal documentation of code\\
+\hline
+{\em args} & A list of booleans to be checked \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespaceJSL_a071b279ad5267ce66ff86c614952a3ed}\label{namespaceJSL_a071b279ad5267ce66ff86c614952a3ed}} 
 \index{JSL@{JSL}!clearScreen@{clearScreen}}
 \index{clearScreen@{clearScreen}!JSL@{JSL}}
@@ -454,13 +465,29 @@ The vector y such that y\+\_\+i = f(x\+\_\+i)
 \doxysubsubsection{\texorpdfstring{Error()}{Error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void JSL\+::\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+The default version of \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error(\+Error\+Code code, const std\+::string \& message)}}, throwing \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSL\+::\+JSLError}} as the identifier code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message passed to the throw command. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespaceJSL_a5783bc90550deca94c1790e581fb707d}\label{namespaceJSL_a5783bc90550deca94c1790e581fb707d}} 
 \index{JSL@{JSL}!Error@{Error}}
 \index{Error@{Error}!JSL@{JSL}}
 \doxysubsubsection{\texorpdfstring{Error()}{Error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void JSL\+::\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{Error\+Code}}}]{code,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Design \mbox{\Hypertarget{namespaceJSL_ab806e537ccfdea16b7d194d77cdb307e}\label{namespaceJSL_ab806e537ccfdea16b7d194d77cdb307e}} 
+An easy way to package throwing errors using the throw command.
+\begin{DoxyParams}{Parameters}
+{\em code} & One of \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{JSL\+::\+Error\+Code}} to help identify the cause\\
+\hline
+{\em message} & The output message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceJSL_ab806e537ccfdea16b7d194d77cdb307e}\label{namespaceJSL_ab806e537ccfdea16b7d194d77cdb307e}} 
 \index{JSL@{JSL}!FindXInY@{FindXInY}}
 \index{FindXInY@{FindXInY}!JSL@{JSL}}
 \doxysubsubsection{\texorpdfstring{FindXInY()}{FindXInY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -546,7 +573,7 @@ A useful function when one knows a value needs to be between 0 and 1.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-min(max(0,a),1) -- i.\+e., if 0 
+min(max(0,a),1), i.\+e., if 0 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespaceJSL_a6fd4487b0a8ac5713df4a37079287913}\label{namespaceJSL_a6fd4487b0a8ac5713df4a37079287913}} 
 \index{JSL@{JSL}!Hadamard@{Hadamard}}
@@ -1180,6 +1207,15 @@ A vector of non-\/empty strings.
 \doxysubsubsection{\texorpdfstring{systemCall()}{systemCall()}}
 {\footnotesize\ttfamily void JSL\+::system\+Call (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Uses C++\textquotesingle{}s std\+::system to run a command given by the inpt string, and checks for errors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to be executed by the system\textquotesingle{}s default command processor (/bin/bash, cmd.\+exe etc) \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{namespaceJSL_a6e3dd386e7ab4be6fae6e0bdf8c98e91}\label{namespaceJSL_a6e3dd386e7ab4be6fae6e0bdf8c98e91}} 
 \index{JSL@{JSL}!UpperBoundLocator@{UpperBoundLocator}}
 \index{UpperBoundLocator@{UpperBoundLocator}!JSL@{JSL}}

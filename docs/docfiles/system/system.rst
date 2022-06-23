@@ -8,6 +8,8 @@ The System section of the JSL library exposes a number of system calls -- typica
 
 
 .. toctree::
+	system-call
+	error-calls
 	rm
 	:maxdepth: 2
 	:caption: Contents:

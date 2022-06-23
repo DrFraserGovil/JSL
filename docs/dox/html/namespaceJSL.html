@@ -159,6 +159,7 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4">IOError</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a5059dbafa288b9b3beac1746f4acae61"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of recognised <a class="el" href="namespaceJSL.html">JSL</a> errors.  <a href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61">More...</a><br /></td></tr>
 <tr class="separator:a5059dbafa288b9b3beac1746f4acae61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -313,10 +314,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a5783bc90550deca94c1790e581fb707d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a5783bc90550deca94c1790e581fb707d">Error</a> (<a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61">ErrorCode</a> code, const std::string &amp;message)</td></tr>
 <tr class="separator:a5783bc90550deca94c1790e581fb707d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0241a3cc1fa4dd4d319ab8686d1cfaa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a0241a3cc1fa4dd4d319ab8686d1cfaa3">Error</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:a0241a3cc1fa4dd4d319ab8686d1cfaa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default version of <a class="el" href="namespaceJSL.html#a5783bc90550deca94c1790e581fb707d">Error(ErrorCode code, const std::string &amp; message)</a>, throwing <a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196" title="Global error term.">JSL::JSLError</a> as the identifier code.  <a href="namespaceJSL.html#a0241a3cc1fa4dd4d319ab8686d1cfaa3">More...</a><br /></td></tr>
 <tr class="separator:a0241a3cc1fa4dd4d319ab8686d1cfaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae48b92e64fb9d321121df976b770efa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae48b92e64fb9d321121df976b770efa6">rm</a> (std::string location, bool recursive)</td></tr>
 <tr class="separator:ae48b92e64fb9d321121df976b770efa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cd4ed117decf1140104ad8566b589ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a5cd4ed117decf1140104ad8566b589ac">systemCall</a> (const std::string &amp;command)</td></tr>
+<tr class="memdesc:a5cd4ed117decf1140104ad8566b589ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses C++'s std::system to run a command given by the inpt string, and checks for errors.  <a href="namespaceJSL.html#a5cd4ed117decf1140104ad8566b589ac">More...</a><br /></td></tr>
 <tr class="separator:a5cd4ed117decf1140104ad8566b589ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -336,12 +339,19 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>A list of recognised <a class="el" href="namespaceJSL.html">JSL</a> errors. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196" name="a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196"></a>JSLError&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30" name="a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30"></a>SystemError&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702" name="a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702"></a>OverrunError&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443" name="a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443"></a>FailedAssertion&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" name="a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4"></a>IOError&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196" name="a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196"></a>JSLError&#160;</td><td class="fielddoc"><p >Global error term. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30" name="a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30"></a>SystemError&#160;</td><td class="fielddoc"><p >Used when something really went bad, like a failed <a class="el" href="namespaceJSL.html#a5cd4ed117decf1140104ad8566b589ac" title="Uses C++&#39;s std::system to run a command given by the inpt string, and checks for errors.">JSL::systemCall</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702" name="a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702"></a>OverrunError&#160;</td><td class="fielddoc"><p ><a class="el" href="classJSL_1_1Vector.html">Vector</a> Access overruns, bad memory requests. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443" name="a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443"></a>FailedAssertion&#160;</td><td class="fielddoc"><p >As the name implies, failed assertions. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" name="a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4"></a>IOError&#160;</td><td class="fielddoc"><p >Errors induced by file. </p>
+</td></tr>
 </table>
 
 </div>
@@ -517,6 +527,13 @@ template&lt;typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >A function which checks that a stated set of conditions are met, and throws a <a class="el" href="namespaceJSL.html#a5783bc90550deca94c1790e581fb707d">JSL::Error</a> if they are not. Variadic function, and so accepts an arbitrary number of conditions without impact on runtime.</p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assertionMessage</td><td>The message that gets printed out if the assertion fails. Also useful for internal documentation of code</td></tr>
+    <tr><td class="paramname">args</td><td>A list of booleans to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -671,6 +688,14 @@ template&lt;typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>The default version of <a class="el" href="namespaceJSL.html#a5783bc90550deca94c1790e581fb707d">Error(ErrorCode code, const std::string &amp; message)</a>, throwing <a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196" title="Global error term.">JSL::JSLError</a> as the identifier code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The error message passed to the throw command. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5783bc90550deca94c1790e581fb707d" name="a5783bc90550deca94c1790e581fb707d"></a>
@@ -706,7 +731,13 @@ template&lt;typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Design </p>
+<p >An easy way to package throwing errors using the throw command.</p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>One of <a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61" title="A list of recognised JSL errors.">JSL::ErrorCode</a> to help identify the cause</td></tr>
+    <tr><td class="paramname">message</td><td>The output message </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -918,7 +949,7 @@ template&lt;class T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>min(max(0,a),1) &ndash; i.e., if 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>min(max(0,a),1), i.e., if 0 </dd></dl>
 
 </div>
 </div>
@@ -2461,6 +2492,14 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Uses C++'s std::system to run a command given by the inpt string, and checks for errors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The command to be executed by the system's default command processor (/bin/bash, cmd.exe etc) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

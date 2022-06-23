@@ -24,7 +24,7 @@ namespace JSL
 	{
 		for (int j = 0; j < y.size(); ++j)
 		{
-			double diff = abs(x - y[i])/(1e-99 +x);
+			double diff = abs(x - y[j])/(1e-99 +x);
 			if (diff <= tolerance)
 			{
 				return j; 

@@ -247,6 +247,7 @@
         <enumvalue id="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196" prot="public">
           <name>JSLError</name>
           <briefdescription>
+<para>Global error term. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -254,6 +255,7 @@
         <enumvalue id="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30" prot="public">
           <name>SystemError</name>
           <briefdescription>
+<para>Used when something really went bad, like a failed <ref refid="namespaceJSL_1a5cd4ed117decf1140104ad8566b589ac" kindref="member">JSL::systemCall</ref>. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -261,6 +263,7 @@
         <enumvalue id="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702" prot="public">
           <name>OverrunError</name>
           <briefdescription>
+<para><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> Access overruns, bad memory requests. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -268,6 +271,7 @@
         <enumvalue id="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443" prot="public">
           <name>FailedAssertion</name>
           <briefdescription>
+<para>As the name implies, failed assertions. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -275,17 +279,19 @@
         <enumvalue id="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" prot="public">
           <name>IOError</name>
           <briefdescription>
+<para>Errors induced by file. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>A list of recognised <ref refid="namespaceJSL" kindref="compound">JSL</ref> errors. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/error.h" line="10" column="1" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="10" bodyend="10"/>
+        <location file="/Users/jf20/Documents/JSL/System/error.h" line="10" column="1" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="10" bodyend="15"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -302,7 +308,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/error.h" line="11" column="19" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="11" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/System/error.h" line="16" column="19" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -1521,7 +1527,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>min(max(0,a),1) <ndash/> i.e., if 0 </para>
+<simplesect kind="return"><para>min(max(0,a),1), i.e., if 0 </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -2372,10 +2378,28 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>A function which checks that a stated set of conditions are met, and throws a <ref refid="namespaceJSL_1a5783bc90550deca94c1790e581fb707d" kindref="member">JSL::Error</ref> if they are not. Variadic function, and so accepts an arbitrary number of conditions without impact on runtime.<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>assertionMessage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message that gets printed out if the assertion fails. Also useful for internal documentation of code</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list of booleans to be checked </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/assert.h" line="25" column="13" bodyfile="/Users/jf20/Documents/JSL/System/assert.h" bodystart="25" bodyend="33"/>
+        <location file="/Users/jf20/Documents/JSL/System/assert.h" line="30" column="13" bodyfile="/Users/jf20/Documents/JSL/System/assert.h" bodystart="30" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a5783bc90550deca94c1790e581fb707d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2394,11 +2418,28 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Design </para>
+<para>An easy way to package throwing errors using the throw command.<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One of <ref refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61" kindref="member">JSL::ErrorCode</ref> to help identify the cause</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output message </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/error.h" line="17" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="17" bodyend="21"/>
+        <location file="/Users/jf20/Documents/JSL/System/error.h" line="21" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="21" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a0241a3cc1fa4dd4d319ab8686d1cfaa3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2411,12 +2452,23 @@
           <declname>message</declname>
         </param>
         <briefdescription>
+<para>The default version of <ref refid="namespaceJSL_1a5783bc90550deca94c1790e581fb707d" kindref="member">Error(ErrorCode code, const std::string &amp; message)</ref>, throwing <ref refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196" kindref="member">JSL::JSLError</ref> as the identifier code. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error message passed to the throw command. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/System/error.h" line="23" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="23" bodyend="26"/>
+        <location file="/Users/jf20/Documents/JSL/System/error.h" line="28" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="28" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2469,8 +2521,19 @@
           <declname>command</declname>
         </param>
         <briefdescription>
+<para>Uses C++&apos;s std::system to run a command given by the inpt string, and checks for errors. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command to be executed by the system&apos;s default command processor (/bin/bash, cmd.exe etc) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

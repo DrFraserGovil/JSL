@@ -1,9 +1,9 @@
 #pragma once
 #include <dirent.h>
 #include <string>
-#include "locationExists.h"
+#include "../FileIO/locationExists.h"
 #include <stdexcept>
-#include "../System/System.h"
+#include "systemCall.h"
 namespace JSL
 {
 	
