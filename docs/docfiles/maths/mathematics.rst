@@ -10,5 +10,6 @@ Many mathematical functions are defined elsewhere, so I have taken care not to r
 .. toctree::
 	vectors
 	matrix
+	misc
 	:maxdepth: 2
 	:caption: Contents:
