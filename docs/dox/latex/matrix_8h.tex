@@ -20,11 +20,11 @@ namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{namespaceJSL_a682c8bb3fff54370f38dcb16794fc7c5}{JSL\+::operator==}} (const Matrix \&lhs, const Matrix \&rhs)
-\item 
+\begin{DoxyCompactList}\small\item\em An overloaded equality checker. Checks size, then checks each entry -\/ quick for finding mismatches, but requires full sweep to confirm total equality. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespaceJSL_a8b19814a4b6cb667d1e27133acc38513}{JSL\+::operator!=}} (const Matrix \&lhs, const Matrix \&rhs)
-\item 
+\begin{DoxyCompactList}\small\item\em Simply returns the inverse of the equality operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespaceJSL_a38d1bbf23dc57ec028ea8d91a9688957}{JSL\+::\+Matrix\+Sizes\+Equal}} (const Matrix \&m1, const Matrix \&m2)
-\item 
+\begin{DoxyCompactList}\small\item\em Confirms the sizes (i.\+e. row count and column count) of the matrices are equal. \end{DoxyCompactList}\item 
 Matrix \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{JSL\+::operator+}} (const Matrix \&lhs, const Matrix \&rhs)
 \begin{DoxyCompactList}\small\item\em Performs obvious matrix addition (a+b)\+\_\+ij = a\+\_\+ij + b\+\_\+ij. Throws an error if the matrices are not the same size. \end{DoxyCompactList}\item 
 Matrix \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{JSL\+::operator-\/}} (const Matrix \&lhs, const Matrix \&rhs)
@@ -32,9 +32,9 @@ Matrix \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{JSL\+::o
 Matrix \mbox{\hyperlink{namespaceJSL_ad779a68a2d565490f76dd16adfc3091e}{JSL\+::operator+}} (const Matrix \&lhs, const double \&scalar)
 \begin{DoxyCompactList}\small\item\em Adds the value of scalar to every element in the matrix. \end{DoxyCompactList}\item 
 Matrix \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{JSL\+::operator$\ast$}} (const Matrix \&lhs, const Matrix \&rhs)
-\item 
+\begin{DoxyCompactList}\small\item\em Performs standard matix multiplication, (AB)\+\_\+ij = A\+\_\+ik B\+\_\+kj. Only works on matrices of compatible sizes, and left-\/right ordering matters. \end{DoxyCompactList}\item 
 Vector \mbox{\hyperlink{namespaceJSL_a823f5e48d384320644698917c0a1c85c}{JSL\+::operator$\ast$}} (const Matrix \&lhs, const Vector \&rhs)
-\item 
+\begin{DoxyCompactList}\small\item\em Multiplies a vector by the matrix, following the rule (Av)\+\_\+i = A\+\_\+ij v\+\_\+j. \end{DoxyCompactList}\item 
 Matrix \mbox{\hyperlink{namespaceJSL_a5f6c1988cf84b088617e0f12fc1e98da}{JSL\+::operator+}} (const double \&scalar, const Matrix \&rhs)
 \begin{DoxyCompactList}\small\item\em Exactly equivalent to \mbox{\hyperlink{namespaceJSL_ad779a68a2d565490f76dd16adfc3091e}{JSL\+::operator+(const Matrix \&lhs, const double \&scalar)}}, just swapped around. \end{DoxyCompactList}\item 
 Matrix \mbox{\hyperlink{namespaceJSL_a6d5304adbdadcb062246266f4ece24a1}{JSL\+::operator-\/}} (const Matrix \&lhs, const double \&scalar)

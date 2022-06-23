@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ylabel_0',['ylabel',['../classJSL_1_1Axis.html#aaf6df18a857aef382343b1506641d6ff',1,'JSL::Axis']]]
+  ['_7egnuplot_0',['~gnuplot',['../classJSL_1_1gnuplot.html#a1654a89612515dc3cd3c2a45c60dc733',1,'JSL::gnuplot']]]
 ];

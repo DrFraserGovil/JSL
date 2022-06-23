@@ -8,25 +8,25 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classJSL_1_1Matrix_a90ddd1113043b8959b0943be24f9ad9f}{Matrix}} (const int n, const int m)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialises a zero matrix of the specified size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Matrix_a1d398af495c3906cfb1b1c9b0e8978f7}{Matrix}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ input)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialises a matrix from a vector-\/of-\/vectors, inferring the size as appropriate. Throws an error if the columns are not uniform size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Matrix_ae6198f4beabaff7700265fffeb490ed7}{Matrix}} (const \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \&input)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Private access. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Private access. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{classJSL_1_1Matrix_a984691eac759ff0e8f98252d07be7e1a}{Transpose}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the matrix P such that P(i,j) = Q(j,i) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Vector}{JSL\+::\+Vector}} \mbox{\hyperlink{classJSL_1_1Matrix_aa8bae8650234f5e5569277563d68f22d}{Get\+Row}} (int row\+ID) const
-\item 
+\begin{DoxyCompactList}\small\item\em Allows vectorised access to an entire row (very quick to to contiguus storage) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Vector}{JSL\+::\+Vector}} \mbox{\hyperlink{classJSL_1_1Matrix_a11ea58ca43e028123f628966eb4834a0}{Get\+Column}} (int col\+ID) const
-\item 
+\begin{DoxyCompactList}\small\item\em Allows vectorised access to an entire column (slow due to non-\/contiguous storage) \end{DoxyCompactList}\item 
 double \& \mbox{\hyperlink{classJSL_1_1Matrix_ae054e5a63242a6f40e334546bdc25145}{operator()}} (int row\+ID, int column\+ID)
-\item 
+\begin{DoxyCompactList}\small\item\em Allows access similar to \mbox{[}i\mbox{]}\mbox{[}j\mbox{]}, but without exposing the internal structure of the matrix to machinations. Allows modification, i.\+e. A(i,j) = 2 sets the value. \end{DoxyCompactList}\item 
 const double \& \mbox{\hyperlink{classJSL_1_1Matrix_acc7c27b8630959a593a886118f90fb08}{operator()}} (int row\+ID, int column\+ID) const
-\item 
+\begin{DoxyCompactList}\small\item\em Annoying const override of access syntax (see non-\/const version) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a89a5d5b76dbc28e1980167cb560a45ff}{operator+=}} (const \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \&rhs)
 \begin{DoxyCompactList}\small\item\em In-\/place addition of two matrices. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a196d368632d44d5262f668618fb3cefc}{operator-\/=}} (const \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \&rhs)
@@ -37,12 +37,10 @@ const double \& \mbox{\hyperlink{classJSL_1_1Matrix_acc7c27b8630959a593a886118f9
 \begin{DoxyCompactList}\small\item\em In-\/place subtraction of a scalar onto the calling object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_afba6a5e0e92aedc053fcd60428461800}{operator$\ast$=}} (const double \&scalar)
 \begin{DoxyCompactList}\small\item\em In-\/place multiplication of a scalar onto the calling object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a92a576aff5ec384719d7a7f7f5b7ce99}{operator$\ast$=}} (const \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \&rhs)
-\item 
 \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_aea26657df162243cfb7f44db591fb133}{operator/=}} (const double \&scalar)
 \begin{DoxyCompactList}\small\item\em In-\/place division of a scalar onto the calling object. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classJSL_1_1Matrix_abcf44559767ab6939851f0d3b60c6fa8}{to\+\_\+string}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts the matrix to a human-\/readable string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -64,6 +62,9 @@ int \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{n\+Co
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+As with \mbox{\hyperlink{classJSL_1_1Vector}{JSL\+::\+Vector}}, a \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} is a member of R$^\wedge$(m,n), and hence is a wrapper for std\+::vector$<$std\+::vector$<$double$>$$>$ with various other overloaded operators. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classJSL_1_1Matrix_a90ddd1113043b8959b0943be24f9ad9f}\label{classJSL_1_1Matrix_a90ddd1113043b8959b0943be24f9ad9f}} 
 \index{JSL::Matrix@{JSL::Matrix}!Matrix@{Matrix}}
@@ -71,17 +72,41 @@ int \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{n\+Co
 \doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily JSL\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const int}]{n,  }\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Initialises a zero matrix of the specified size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of rows\\
+\hline
+{\em m} & The number of columns \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Matrix_a1d398af495c3906cfb1b1c9b0e8978f7}\label{classJSL_1_1Matrix_a1d398af495c3906cfb1b1c9b0e8978f7}} 
 \index{JSL::Matrix@{JSL::Matrix}!Matrix@{Matrix}}
 \index{Matrix@{Matrix}!JSL::Matrix@{JSL::Matrix}}
 \doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily JSL\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Initialises a matrix from a vector-\/of-\/vectors, inferring the size as appropriate. Throws an error if the columns are not uniform size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The data to be copied into the matrix as Matrix(i,j) = input\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Matrix_ae6198f4beabaff7700265fffeb490ed7}\label{classJSL_1_1Matrix_ae6198f4beabaff7700265fffeb490ed7}} 
 \index{JSL::Matrix@{JSL::Matrix}!Matrix@{Matrix}}
 \index{Matrix@{Matrix}!JSL::Matrix@{JSL::Matrix}}
 \doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily JSL\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
 
 
 
@@ -92,18 +117,49 @@ int \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{n\+Co
 \doxysubsubsection{\texorpdfstring{Columns()}{Columns()}}
 {\footnotesize\ttfamily int JSL\+::\+Matrix\+::\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Private access. 
+
+\begin{DoxyReturn}{Returns}
+The number of columns in the matrix 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Matrix_a11ea58ca43e028123f628966eb4834a0}\label{classJSL_1_1Matrix_a11ea58ca43e028123f628966eb4834a0}} 
 \index{JSL::Matrix@{JSL::Matrix}!GetColumn@{GetColumn}}
 \index{GetColumn@{GetColumn}!JSL::Matrix@{JSL::Matrix}}
 \doxysubsubsection{\texorpdfstring{GetColumn()}{GetColumn()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{JSL\+::\+Vector}} JSL\+::\+Matrix\+::\+Get\+Column (\begin{DoxyParamCaption}\item[{int}]{col\+ID }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Allows vectorised access to an entire column (slow due to non-\/contiguous storage) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column\+ID} & The column index to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The column, packaged as a \mbox{\hyperlink{classJSL_1_1Vector}{JSL\+::\+Vector}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Matrix_aa8bae8650234f5e5569277563d68f22d}\label{classJSL_1_1Matrix_aa8bae8650234f5e5569277563d68f22d}} 
 \index{JSL::Matrix@{JSL::Matrix}!GetRow@{GetRow}}
 \index{GetRow@{GetRow}!JSL::Matrix@{JSL::Matrix}}
 \doxysubsubsection{\texorpdfstring{GetRow()}{GetRow()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Vector}{JSL\+::\+Vector}} JSL\+::\+Matrix\+::\+Get\+Row (\begin{DoxyParamCaption}\item[{int}]{row\+ID }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Allows vectorised access to an entire row (very quick to to contiguus storage) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+ID} & The row index to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The row, packaged as a \mbox{\hyperlink{classJSL_1_1Vector}{JSL\+::\+Vector}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Matrix_afd9edd73e5f559eed02b063d4c4e47f8}\label{classJSL_1_1Matrix_afd9edd73e5f559eed02b063d4c4e47f8}} 
 \index{JSL::Matrix@{JSL::Matrix}!Identity@{Identity}}
 \index{Identity@{Identity}!JSL::Matrix@{JSL::Matrix}}
@@ -114,22 +170,43 @@ int \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{n\+Co
 
 specialised psuedo-\/constructor for the identity matrix 
 
+\begin{DoxyReturn}{Returns}
+The matrix A such that A\mbox{[}i\mbox{]}\mbox{[}i\mbox{]} = 1, otherwise A\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} = 0 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Matrix_ae054e5a63242a6f40e334546bdc25145}\label{classJSL_1_1Matrix_ae054e5a63242a6f40e334546bdc25145}} 
 \index{JSL::Matrix@{JSL::Matrix}!operator()@{operator()}}
 \index{operator()@{operator()}!JSL::Matrix@{JSL::Matrix}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily double \& JSL\+::\+Matrix\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row\+ID,  }\item[{int}]{column\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Allows access similar to \mbox{[}i\mbox{]}\mbox{[}j\mbox{]}, but without exposing the internal structure of the matrix to machinations. Allows modification, i.\+e. A(i,j) = 2 sets the value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+ID} & row coordinate of target\\
+\hline
+{\em column\+ID} & column coordinate of target \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the data point 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Matrix_acc7c27b8630959a593a886118f90fb08}\label{classJSL_1_1Matrix_acc7c27b8630959a593a886118f90fb08}} 
 \index{JSL::Matrix@{JSL::Matrix}!operator()@{operator()}}
 \index{operator()@{operator()}!JSL::Matrix@{JSL::Matrix}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily const double \& JSL\+::\+Matrix\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row\+ID,  }\item[{int}]{column\+ID }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Annoying const override of access syntax (see non-\/const version) 
+
 \mbox{\Hypertarget{classJSL_1_1Matrix_afba6a5e0e92aedc053fcd60428461800}\label{classJSL_1_1Matrix_afba6a5e0e92aedc053fcd60428461800}} 
 \index{JSL::Matrix@{JSL::Matrix}!operator$\ast$=@{operator$\ast$=}}
 \index{operator$\ast$=@{operator$\ast$=}!JSL::Matrix@{JSL::Matrix}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& JSL\+::\+Matrix\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const double \&}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -144,12 +221,6 @@ In-\/place multiplication of a scalar onto the calling object.
 \begin{DoxyReturn}{Returns}
 A reference to the now-\/modified calling object 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classJSL_1_1Matrix_a92a576aff5ec384719d7a7f7f5b7ce99}\label{classJSL_1_1Matrix_a92a576aff5ec384719d7a7f7f5b7ce99}} 
-\index{JSL::Matrix@{JSL::Matrix}!operator$\ast$=@{operator$\ast$=}}
-\index{operator$\ast$=@{operator$\ast$=}!JSL::Matrix@{JSL::Matrix}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& JSL\+::\+Matrix\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
 \mbox{\Hypertarget{classJSL_1_1Matrix_a7e4bc02f6a1b7a999ec2e404c90d40e6}\label{classJSL_1_1Matrix_a7e4bc02f6a1b7a999ec2e404c90d40e6}} 
 \index{JSL::Matrix@{JSL::Matrix}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!JSL::Matrix@{JSL::Matrix}}
@@ -252,18 +323,40 @@ A reference to the now-\/modified calling object
 \doxysubsubsection{\texorpdfstring{Rows()}{Rows()}}
 {\footnotesize\ttfamily int JSL\+::\+Matrix\+::\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Private access. 
+
+\begin{DoxyReturn}{Returns}
+The number of rows in the matrix 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Matrix_abcf44559767ab6939851f0d3b60c6fa8}\label{classJSL_1_1Matrix_abcf44559767ab6939851f0d3b60c6fa8}} 
 \index{JSL::Matrix@{JSL::Matrix}!to\_string@{to\_string}}
 \index{to\_string@{to\_string}!JSL::Matrix@{JSL::Matrix}}
 \doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
 {\footnotesize\ttfamily std\+::string JSL\+::\+Matrix\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Converts the matrix to a human-\/readable string. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the object ~\newline
+ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classJSL_1_1Matrix_a984691eac759ff0e8f98252d07be7e1a}\label{classJSL_1_1Matrix_a984691eac759ff0e8f98252d07be7e1a}} 
 \index{JSL::Matrix@{JSL::Matrix}!Transpose@{Transpose}}
 \index{Transpose@{Transpose}!JSL::Matrix@{JSL::Matrix}}
 \doxysubsubsection{\texorpdfstring{Transpose()}{Transpose()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} JSL\+::\+Matrix\+::\+Transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Returns the matrix P such that P(i,j) = Q(j,i) 
+
+\begin{DoxyReturn}{Returns}
+The mathematical transpose of the current matrix 
+\end{DoxyReturn}
 
 
 \doxysubsection{Field Documentation}

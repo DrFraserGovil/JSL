@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="286" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="286" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="268" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="268" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Matrix_1a7b7a081bbf419b613f19142a634b2cfa" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="288" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="288" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="270" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="270" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Matrix_1aef59f1402d2137e86aebf6b21f97ee6d" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="289" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="289" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="271" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="271" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -63,12 +63,31 @@
           <declname>m</declname>
         </param>
         <briefdescription>
+<para>Initialises a zero matrix of the specified size. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of rows</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of columns </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="15" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="15" bodyend="18"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="19" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="19" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1a1d398af495c3906cfb1b1c9b0e8978f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -81,12 +100,23 @@
           <declname>input</declname>
         </param>
         <briefdescription>
+<para>Initialises a matrix from a vector-of-vectors, inferring the size as appropriate. Throws an error if the columns are not uniform size. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to be copied into the matrix as Matrix(i,j) = input[i][j] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="20" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="20" bodyend="40"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="25" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="25" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1ae6198f4beabaff7700265fffeb490ed7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -99,12 +129,13 @@
           <declname>input</declname>
         </param>
         <briefdescription>
+<para>Copy constructor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="42" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="42" bodyend="53"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="47" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="47" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1af784cad8dcbb502c06be62e2e328ef6c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -113,12 +144,16 @@
         <name>Rows</name>
         <qualifiedname>JSL::Matrix::Rows</qualifiedname>
         <briefdescription>
+<para>Private access. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The number of rows in the matrix </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="55" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="55" bodyend="58"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="60" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="60" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1a8aba7f9803b553df2aeae68aba3445f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -127,12 +162,16 @@
         <name>Columns</name>
         <qualifiedname>JSL::Matrix::Columns</qualifiedname>
         <briefdescription>
+<para>Private access. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The number of columns in the matrix </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="59" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="59" bodyend="62"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="65" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="65" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1a984691eac759ff0e8f98252d07be7e1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -141,12 +180,16 @@
         <name>Transpose</name>
         <qualifiedname>JSL::Matrix::Transpose</qualifiedname>
         <briefdescription>
+<para>Returns the matrix P such that P(i,j) = Q(j,i) </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The mathematical transpose of the current matrix </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="64" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="64" bodyend="75"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="71" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="71" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1aa8bae8650234f5e5569277563d68f22d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">JSL::Vector</ref></type>
@@ -159,12 +202,25 @@
           <declname>rowID</declname>
         </param>
         <briefdescription>
+<para>Allows vectorised access to an entire row (very quick to to contiguus storage) </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rowID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The row index to output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The row, packaged as a <ref refid="classJSL_1_1Vector" kindref="compound">JSL::Vector</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="77" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="77" bodyend="87"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="85" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="85" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1a11ea58ca43e028123f628966eb4834a0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">JSL::Vector</ref></type>
@@ -177,12 +233,25 @@
           <declname>colID</declname>
         </param>
         <briefdescription>
+<para>Allows vectorised access to an entire column (slow due to non-contiguous storage) </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>columnID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The column index to output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The column, packaged as a <ref refid="classJSL_1_1Vector" kindref="compound">JSL::Vector</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="88" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="88" bodyend="104"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="97" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="97" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1ae054e5a63242a6f40e334546bdc25145" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double &amp;</type>
@@ -199,12 +268,33 @@
           <declname>columnID</declname>
         </param>
         <briefdescription>
+<para>Allows access similar to [i][j], but without exposing the internal structure of the matrix to machinations. Allows modification, i.e. A(i,j) = 2 sets the value. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rowID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>row coordinate of target</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columnID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>column coordinate of target </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the data point </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="119" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="119" bodyend="129"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="128" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="128" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1acc7c27b8630959a593a886118f90fb08" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const double &amp;</type>
@@ -221,12 +311,13 @@
           <declname>columnID</declname>
         </param>
         <briefdescription>
+<para>Annoying const override of access syntax (see non-const version) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="131" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="131" bodyend="142"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="140" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="140" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1a89a5d5b76dbc28e1980167cb560a45ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -257,7 +348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="145" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="145" bodyend="159"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="154" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="154" bodyend="168"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1a196d368632d44d5262f668618fb3cefc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -288,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="162" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="162" bodyend="176"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="171" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="171" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1a7e4bc02f6a1b7a999ec2e404c90d40e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -319,7 +410,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="179" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="179" bodyend="189"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="188" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="188" bodyend="198"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1a87e59f6b3a32a2b12f5a73fb4db1e5f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -350,7 +441,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="192" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="192" bodyend="202"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="201" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="201" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1afba6a5e0e92aedc053fcd60428461800" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -381,25 +472,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="205" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="205" bodyend="215"/>
-      </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Matrix_1a92a576aff5ec384719d7a7f7f5b7ce99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> &amp;</type>
-        <definition>Matrix &amp; JSL::Matrix::operator*=</definition>
-        <argsstring>(const Matrix &amp;rhs)</argsstring>
-        <name>operator*=</name>
-        <qualifiedname>JSL::Matrix::operator*=</qualifiedname>
-        <param>
-          <type>const <ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> &amp;</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="217" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="217" bodyend="244"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="214" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="214" bodyend="224"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1aea26657df162243cfb7f44db591fb133" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> &amp;</type>
@@ -430,7 +503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="247" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="247" bodyend="257"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="228" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="228" bodyend="238"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Matrix_1abcf44559767ab6939851f0d3b60c6fa8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -439,12 +512,17 @@
         <name>to_string</name>
         <qualifiedname>JSL::Matrix::to_string</qualifiedname>
         <briefdescription>
+<para>Converts the matrix to a human-readable string. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>A string representing the object <linebreak/>
+ </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="259" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="259" bodyend="281"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="241" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="241" bodyend="263"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -462,10 +540,13 @@
 <para>specialised psuedo-constructor for the identity matrix </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The matrix A such that A[i][i] = 1, otherwise A[i][j] = 0 </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="108" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="108" bodyend="116"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="117" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="117" bodyend="125"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -489,14 +570,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="291" column="20" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="291" bodyend="296"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="273" column="20" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="273" bodyend="278"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
+<para>As with <ref refid="classJSL_1_1Vector" kindref="compound">JSL::Vector</ref>, a <ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref> is a member of R^(m,n), and hence is a wrapper for std::vector&lt;std::vector&lt;double&gt;&gt; with various other overloaded operators. </para>
     </detaileddescription>
-    <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="11" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="12" bodyend="297"/>
+    <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="14" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="15" bodyend="279"/>
     <listofallmembers>
       <member refid="classJSL_1_1Matrix_1a8aba7f9803b553df2aeae68aba3445f5" prot="public" virt="non-virtual"><scope>JSL::Matrix</scope><name>Columns</name></member>
       <member refid="classJSL_1_1Matrix_1a446d23ba93238f3e2dfc79a3a4d5eb7e" prot="private" virt="non-virtual"><scope>JSL::Matrix</scope><name>Data</name></member>
@@ -511,7 +593,6 @@
       <member refid="classJSL_1_1Matrix_1ae054e5a63242a6f40e334546bdc25145" prot="public" virt="non-virtual"><scope>JSL::Matrix</scope><name>operator()</name></member>
       <member refid="classJSL_1_1Matrix_1acc7c27b8630959a593a886118f90fb08" prot="public" virt="non-virtual"><scope>JSL::Matrix</scope><name>operator()</name></member>
       <member refid="classJSL_1_1Matrix_1afba6a5e0e92aedc053fcd60428461800" prot="public" virt="non-virtual"><scope>JSL::Matrix</scope><name>operator*=</name></member>
-      <member refid="classJSL_1_1Matrix_1a92a576aff5ec384719d7a7f7f5b7ce99" prot="public" virt="non-virtual"><scope>JSL::Matrix</scope><name>operator*=</name></member>
       <member refid="classJSL_1_1Matrix_1a89a5d5b76dbc28e1980167cb560a45ff" prot="public" virt="non-virtual"><scope>JSL::Matrix</scope><name>operator+=</name></member>
       <member refid="classJSL_1_1Matrix_1a7e4bc02f6a1b7a999ec2e404c90d40e6" prot="public" virt="non-virtual"><scope>JSL::Matrix</scope><name>operator+=</name></member>
       <member refid="classJSL_1_1Matrix_1a196d368632d44d5262f668618fb3cefc" prot="public" virt="non-virtual"><scope>JSL::Matrix</scope><name>operator-=</name></member>

@@ -81,15 +81,9 @@
         </childnode>
       </node>
       <node id="16">
-        <label>/Users/jf20/Documents/JSL/Maths/Q_temp.h</label>
-        <link refid="Q__temp_8h"/>
-      </node>
-      <node id="17">
         <label>/Users/jf20/Documents/JSL/Maths/matrix.h</label>
         <link refid="matrix_8h"/>
         <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="14">
@@ -98,8 +92,6 @@
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -113,7 +105,7 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -126,7 +118,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="17">
         <label>/Users/jf20/Documents/JSL/System/rm.h</label>
         <link refid="rm_8h"/>
         <childnode refid="2" relation="include">

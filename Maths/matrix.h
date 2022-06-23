@@ -8,15 +8,20 @@
 namespace JSL
 {
 	
+	/*!
+		As with JSL::Vector, a Matrix is a member of R^(m,n), and hence is a wrapper for std::vector<std::vector<double>> with various other overloaded operators.
+	*/
 	class Matrix
 	{
 		public:
-					
+			
+			//!Initialises a zero matrix of the specified size \param n The number of rows \param m The number of columns 
 			Matrix(const int n,const int m): nRows(n), nCols(m)
 			{
 				Data = std::vector<std::vector<double>>(n,std::vector<double>(m,0.0));
 			}
 			
+			//!Initialises a matrix from a vector-of-vectors, inferring the size as appropriate. Throws an error if the columns are not uniform size. \param input The data to be copied into the matrix as Matrix(i,j) = input[i][j]
 			Matrix(std::vector<std::vector<double>> input): nRows(input.size()), nCols( input[0].size())
 			{
 				if (nCols <= 0)
@@ -38,7 +43,7 @@ namespace JSL
 				}
 				
 			}
-			
+			//!Copy constructor
 			Matrix(const Matrix & input): nRows(input.Rows()), nCols(input.Columns())
 			{
 				Data = std::vector<std::vector<double>>(nRows,std::vector<double>(nCols,0.0));
@@ -51,16 +56,18 @@ namespace JSL
 					}
 				}
 			}
-			
+			//! Private access \returns The number of rows in the matrix
 			int Rows() const
 			{
 				return nRows;
 			}
+			//! Private access \returns The number of columns in the matrix
 			int Columns() const
 			{
 				return nCols;
 			}
 			
+			//! Returns the matrix P such that P(i,j) = Q(j,i) \return The mathematical transpose of the current matrix
 			Matrix Transpose()
 			{
 				Matrix output(nCols,nRows);
@@ -74,6 +81,7 @@ namespace JSL
 				return output;
 			}
 			
+			//! Allows vectorised access to an entire row (very quick to to contiguus storage) \param rowID The row index to output \return The row, packaged as a JSL::Vector
 			JSL::Vector GetRow(int rowID) const
 			{
 				if (rowID < nRows && rowID >= 0)
@@ -85,6 +93,7 @@ namespace JSL
 					throw std::runtime_error("ERROR in JSL::Matrix: Row " + std::to_string(rowID) + " is out of bounds (0->" + std::to_string(nRows-1) + ")");
 				}
 			}
+			//! Allows vectorised access to an entire column (slow due to non-contiguous storage) \param columnID The column index to output \return The column, packaged as a JSL::Vector
 			JSL::Vector GetColumn(int colID) const
 			{
 				if (colID < nCols && colID >= 0)
@@ -104,7 +113,7 @@ namespace JSL
 			}
 			
 			
-			//!specialised psuedo-constructor for the identity matrix
+			//!specialised psuedo-constructor for the identity matrix \returns The matrix A such that A[i][i] = 1, otherwise A[i][j] = 0
 			static Matrix Identity(int n)
 			{
 				JSL::Matrix m(n,n);
@@ -115,7 +124,7 @@ namespace JSL
 				return m;
 			}
 		
-		
+			//! Allows access similar to [i][j], but without exposing the internal structure of the matrix to machinations. Allows modification, i.e. A(i,j) = 2 sets the value \param rowID row coordinate of target \param columnID column coordinate of target \returns A reference to the data point
 			double & operator()(int rowID, int columnID)
 			{
 				if (rowID < nRows && rowID >= 0 && columnID < nCols && columnID >= 0)
@@ -127,7 +136,7 @@ namespace JSL
 					throw std::runtime_error(outOfBoundsError(rowID,columnID));
 				}
 			}
-		
+			//! Annoying const override of access syntax (see non-const version)
 			const double & operator()(int rowID, int columnID) const
 			{
 				
@@ -214,34 +223,6 @@ namespace JSL
 				return *this;
 			}
 			
-			Matrix & operator*=(const Matrix & rhs)
-			{
-				if (Columns() != rhs.Rows())
-				{
-					std::string s1 = "(" + std::to_string(Rows()) + "x"+ std::to_string(Columns()) + ")";
-					std::string s2 = "(" + std::to_string(rhs.Rows()) + "x"+ std::to_string(rhs.Columns()) + ")";
-					throw std::runtime_error("JSL::Vector Error: Cannot peform *= operation on matrices of incompatible sizes: " + s1 + " vs " + s2);
-				}
-				
-				std::vector<std::vector<double>>newData(nRows,std::vector<double>(rhs.Columns(),0.0));
-				
-				for (int i = 0; i < newData.size(); ++i)
-				{
-					for (int j = 0; j < newData[0].size(); ++j)
-					{
-						for (int k = 0; k < Columns(); ++k)
-						{
-							newData[i][j] += Data[i][k] * rhs(k,j);
-						}
-					}
-				}
-				
-				//Assign in....changes the shape of the object potentially!
-				Data = newData;
-				nRows = Data.size();
-				nCols = Data[0].size();
-				return *this;
-			}
 			
 			//! In-place division of a scalar onto the calling object. \param scalar The double to divide the current object by. \returns A reference to the now-modified calling object
 			Matrix & operator/=(const double & scalar)
@@ -255,7 +236,8 @@ namespace JSL
 				}
 				return *this;
 			}
-							
+
+			//! Converts the matrix to a human-readable string \returns A string representing the object		
 			std::string to_string() const
 			{
 				std::string outString = "[";
@@ -296,6 +278,7 @@ namespace JSL
 			}
 	};
 	
+	//!An overloaded equality checker. Checks size, then checks each entry - quick for finding mismatches, but requires full sweep to confirm total equality \param lhs The first matrix \param rhs the value to be compared to lhs for equality \returns True, if equal, false if not
 	inline bool operator==(const Matrix & lhs, const Matrix & rhs)
 	{
 		if (lhs.Columns() != rhs.Columns() || lhs.Rows() != rhs.Rows())
@@ -316,12 +299,13 @@ namespace JSL
 		return true;
 	}
 	
+	//! Simply returns the inverse of the equality operator \param lhs The first matrix \param rhs the value to be compared to lhs for equality \returns False if equal, true if not
 	inline bool operator!=(const Matrix & lhs, const Matrix & rhs)
 	{
 		return !(lhs == rhs);
 	}
 	
-		
+	//! Confirms the sizes (i.e. row count and column count) of the matrices are equal. \param lhs The first matrix \param rhs the value to be compared to lhs for size equality \returns True, if equal in size, false if not
 	bool inline MatrixSizesEqual(const Matrix & m1, const Matrix & m2)
 	{
 		return (m1.Rows() == m2.Rows() && m1.Columns() == m2.Columns() );
@@ -382,7 +366,7 @@ namespace JSL
 		return output;
 	};
 	
-	
+	//! Performs standard matix multiplication, (AB)_ij = A_ik B_kj. Only works on matrices of compatible sizes, and left-right ordering matters. \param lhs The left hand size of the multiplication \param The right hand side of the multiplication \returns The product lhs * rhs accordingto standard matrix product rules. Size of output is lhs.Rows by rhs.Columns
 	inline Matrix operator*(const Matrix & lhs, const Matrix & rhs)
 	{
 		if (lhs.Columns() != rhs.Rows())
@@ -407,6 +391,7 @@ namespace JSL
 		return output;
 	}
 	
+	//! Multiplies a vector by the matrix, following the rule (Av)_i = A_ij v_j \param lhs The matrix operating on the matrix \param rhs The vector to be operated upon \returns The product (lhs * rhs), which is a Vector the same size as rhs
 	inline Vector operator*(const Matrix & lhs, const Vector & rhs)
 	{
 		if (lhs.Columns() != rhs.Size())

@@ -11,7 +11,6 @@
     <innerclass refid="structJSL_1_1NameValuePair" prot="public">JSL::NameValuePair</innerclass>
     <innerclass refid="classJSL_1_1PlotData" prot="public">JSL::PlotData</innerclass>
     <innerclass refid="classJSL_1_1ProgressBar" prot="public">JSL::ProgressBar</innerclass>
-    <innerclass refid="classJSL_1_1Quaternion" prot="public">JSL::Quaternion</innerclass>
     <innerclass refid="classJSL_1_1UnitTest" prot="public">JSL::UnitTest</innerclass>
     <innerclass refid="classJSL_1_1Vector" prot="public">JSL::Vector</innerclass>
     <innernamespace refid="namespaceJSL_1_1Fonts">JSL::Fonts</innernamespace>
@@ -428,7 +427,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Returns the sorted index array associated with a vector <ndash/> not the sorted array itself<parameterlist kind="param"><parameteritem>
+<para>Returns the sorted index array associated with a vector - not the sorted array itself<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>v</parametername>
 </parameternamelist>
@@ -685,7 +684,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>As with writeVectorToFile, but accepts arbitrary vectors of templated entities. The writing loops over the length of the vectors (which must all be the same length), and writes them sequentially, separated by the delimiter, and a linebreak at the end of each row <ndash/> i.e v1[0], v2[0], v3[0], ... (linebreak) v1[1], v2[1], ... etc. <parameterlist kind="param"><parameteritem>
+<para>As with writeVectorToFile, but accepts arbitrary vectors of templated entities. The writing loops over the length of the vectors (which must all be the same length), and writes them sequentially, separated by the delimiter, and a linebreak at the end of each row - i.e v1[0], v2[0], v3[0], ... (linebreak) v1[1], v2[1], ... etc. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>filename</parametername>
 </parameternamelist>
@@ -869,12 +868,33 @@
           <declname>rhs</declname>
         </param>
         <briefdescription>
+<para>An overloaded equality checker. Checks size, then checks each entry - quick for finding mismatches, but requires full sweep to confirm total equality. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first matrix</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to be compared to lhs for equality </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True, if equal, false if not </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="299" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="299" bodyend="317"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="282" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="282" bodyend="300"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a8b19814a4b6cb667d1e27133acc38513" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -891,12 +911,33 @@
           <declname>rhs</declname>
         </param>
         <briefdescription>
+<para>Simply returns the inverse of the equality operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first matrix</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to be compared to lhs for equality </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>False if equal, true if not </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="319" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="319" bodyend="322"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="303" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="303" bodyend="306"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a38d1bbf23dc57ec028ea8d91a9688957" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -913,12 +954,33 @@
           <declname>m2</declname>
         </param>
         <briefdescription>
+<para>Confirms the sizes (i.e. row count and column count) of the matrices are equal. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first matrix</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to be compared to lhs for size equality </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True, if equal in size, false if not </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="325" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="325" bodyend="328"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="309" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="309" bodyend="312"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ad1bcc74167579ecff71209bf8c9c47a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -961,7 +1023,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="331" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="331" bodyend="348"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="315" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="315" bodyend="332"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a4f1a2a224c7f6a8c57627b03594cd89f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1004,7 +1066,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="350" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="350" bodyend="367"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="334" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="334" bodyend="351"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ad779a68a2d565490f76dd16adfc3091e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1047,7 +1109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="370" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="370" bodyend="383"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="354" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="354" bodyend="367"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a95d670e99aed43f857d8ba5e6f3d7897" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1064,12 +1126,33 @@
           <declname>rhs</declname>
         </param>
         <briefdescription>
+<para>Performs standard matix multiplication, (AB)_ij = A_ik B_kj. Only works on matrices of compatible sizes, and left-right ordering matters. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left hand size of the multiplication</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>right hand side of the multiplication </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The product lhs * rhs accordingto standard matrix product rules. Size of output is lhs.Rows by rhs.Columns </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="386" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="386" bodyend="408"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="370" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="370" bodyend="392"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a823f5e48d384320644698917c0a1c85c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
@@ -1086,12 +1169,33 @@
           <declname>rhs</declname>
         </param>
         <briefdescription>
+<para>Multiplies a vector by the matrix, following the rule (Av)_i = A_ij v_j. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix operating on the matrix</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be operated upon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The product (lhs * rhs), which is a <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> the same size as rhs </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="410" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="410" bodyend="430"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="395" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="395" bodyend="415"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a5f6c1988cf84b088617e0f12fc1e98da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1134,7 +1238,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="433" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="433" bodyend="436"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="418" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="418" bodyend="421"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a6d5304adbdadcb062246266f4ece24a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1177,7 +1281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="438" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="438" bodyend="441"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="423" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="423" bodyend="426"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a80fcd230a03dd81f1c37fec030619bf9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1220,7 +1324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="445" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="445" bodyend="457"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="430" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="430" bodyend="442"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a69548e09ba5835ee87ac4d28907b5435" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1263,7 +1367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="460" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="460" bodyend="463"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="445" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="445" bodyend="448"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ab1f3153179f59c59a0c2a5e553889eb1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1306,7 +1410,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="466" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="466" bodyend="473"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="451" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="451" bodyend="458"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1aebaffa5dc8073b816908a9708a36b7bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Matrix" kindref="compound">Matrix</ref></type>
@@ -1349,7 +1453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="475" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="475" bodyend="478"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="460" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="460" bodyend="463"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a7e357c34e91d1eb03c15ca437a285ea1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -1392,7 +1496,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="482" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="482" bodyend="486"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/matrix.h" line="467" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/matrix.h" bodystart="467" bodyend="471"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a017f24cfdf73ecc218aab718c1badd89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -1405,96 +1509,25 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>A useful function when one knows a value needs to be between 0 and 1. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be tested </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>min(max(0,a),1) <ndash/> i.e., if 0 </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/MiscFunctions.h" line="5" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/MiscFunctions.h" bodystart="5" bodyend="8"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1aff956bc38fdc0a19f41e202699560dff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref></type>
-        <definition>Quaternion JSL::operator*</definition>
-        <argsstring>(const Quaternion &amp;lhs, const Quaternion &amp;rhs)</argsstring>
-        <name>operator*</name>
-        <qualifiedname>JSL::operator*</qualifiedname>
-        <param>
-          <type>const <ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref> &amp;</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref> &amp;</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/Q_temp.h" line="157" column="19" bodyfile="/Users/jf20/Documents/JSL/Maths/Q_temp.h" bodystart="157" bodyend="162"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1a87842870ba7998a0ec521782b2d2f621" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref></type>
-        <definition>Quaternion JSL::operator*</definition>
-        <argsstring>(const JSL::Matrix &amp;lhs, const Quaternion &amp;rhs)</argsstring>
-        <name>operator*</name>
-        <qualifiedname>JSL::operator*</qualifiedname>
-        <param>
-          <type>const <ref refid="classJSL_1_1Matrix" kindref="compound">JSL::Matrix</ref> &amp;</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref> &amp;</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/Q_temp.h" line="164" column="19" bodyfile="/Users/jf20/Documents/JSL/Maths/Q_temp.h" bodystart="164" bodyend="170"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1a68fed2d9fae3ec9612dd8e8282cf1336" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref></type>
-        <definition>Quaternion JSL::operator/</definition>
-        <argsstring>(const Quaternion &amp;lhs, const Quaternion &amp;rhs)</argsstring>
-        <name>operator/</name>
-        <qualifiedname>JSL::operator/</qualifiedname>
-        <param>
-          <type>const <ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref> &amp;</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref> &amp;</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/Q_temp.h" line="172" column="19" bodyfile="/Users/jf20/Documents/JSL/Maths/Q_temp.h" bodystart="172" bodyend="181"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1a943a21cab5e9abe4331b20d37cd3f8a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classJSL_1_1Quaternion" kindref="compound">Quaternion</ref></type>
-        <definition>Quaternion JSL::exp</definition>
-        <argsstring>(const JSL::Quaternion &amp;a)</argsstring>
-        <name>exp</name>
-        <qualifiedname>JSL::exp</qualifiedname>
-        <param>
-          <type>const <ref refid="classJSL_1_1Quaternion" kindref="compound">JSL::Quaternion</ref> &amp;</type>
-          <declname>a</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Maths/Q_temp.h" line="183" column="19" bodyfile="/Users/jf20/Documents/JSL/Maths/Q_temp.h" bodystart="183" bodyend="194"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/MiscFunctions.h" line="6" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/MiscFunctions.h" bodystart="6" bodyend="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1aeae64b7e0cfdc1ab5f35cca90c32d9f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>

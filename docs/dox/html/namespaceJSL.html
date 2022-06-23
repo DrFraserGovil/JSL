@@ -102,8 +102,6 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1ProgressBar.html">ProgressBar</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1UnitTest.html">UnitTest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Vector.html">Vector</a></td></tr>
@@ -205,10 +203,13 @@ Functions</h2></td></tr>
 <tr class="memitem:abf525d02b8c49f21ef7faa68b7571f93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSL_1_1mkdirReturn.html">mkdirReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#abf525d02b8c49f21ef7faa68b7571f93">mkdir</a> (std::string directory)</td></tr>
 <tr class="separator:abf525d02b8c49f21ef7faa68b7571f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a682c8bb3fff54370f38dcb16794fc7c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a682c8bb3fff54370f38dcb16794fc7c5">operator==</a> (const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;lhs, const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a682c8bb3fff54370f38dcb16794fc7c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An overloaded equality checker. Checks size, then checks each entry - quick for finding mismatches, but requires full sweep to confirm total equality.  <a href="namespaceJSL.html#a682c8bb3fff54370f38dcb16794fc7c5">More...</a><br /></td></tr>
 <tr class="separator:a682c8bb3fff54370f38dcb16794fc7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b19814a4b6cb667d1e27133acc38513"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a8b19814a4b6cb667d1e27133acc38513">operator!=</a> (const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;lhs, const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a8b19814a4b6cb667d1e27133acc38513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simply returns the inverse of the equality operator.  <a href="namespaceJSL.html#a8b19814a4b6cb667d1e27133acc38513">More...</a><br /></td></tr>
 <tr class="separator:a8b19814a4b6cb667d1e27133acc38513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d1bbf23dc57ec028ea8d91a9688957"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a38d1bbf23dc57ec028ea8d91a9688957">MatrixSizesEqual</a> (const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;m1, const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;m2)</td></tr>
+<tr class="memdesc:a38d1bbf23dc57ec028ea8d91a9688957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confirms the sizes (i.e. row count and column count) of the matrices are equal.  <a href="namespaceJSL.html#a38d1bbf23dc57ec028ea8d91a9688957">More...</a><br /></td></tr>
 <tr class="separator:a38d1bbf23dc57ec028ea8d91a9688957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1bcc74167579ecff71209bf8c9c47a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ad1bcc74167579ecff71209bf8c9c47a3">operator+</a> (const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;lhs, const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;rhs)</td></tr>
 <tr class="memdesc:ad1bcc74167579ecff71209bf8c9c47a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs obvious matrix addition (a+b)_ij = a_ij + b_ij. Throws an error if the matrices are not the same size.  <a href="namespaceJSL.html#ad1bcc74167579ecff71209bf8c9c47a3">More...</a><br /></td></tr>
@@ -220,8 +221,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ad779a68a2d565490f76dd16adfc3091e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the value of scalar to every element in the matrix.  <a href="namespaceJSL.html#ad779a68a2d565490f76dd16adfc3091e">More...</a><br /></td></tr>
 <tr class="separator:ad779a68a2d565490f76dd16adfc3091e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95d670e99aed43f857d8ba5e6f3d7897"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a95d670e99aed43f857d8ba5e6f3d7897">operator*</a> (const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;lhs, const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a95d670e99aed43f857d8ba5e6f3d7897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs standard matix multiplication, (AB)_ij = A_ik B_kj. Only works on matrices of compatible sizes, and left-right ordering matters.  <a href="namespaceJSL.html#a95d670e99aed43f857d8ba5e6f3d7897">More...</a><br /></td></tr>
 <tr class="separator:a95d670e99aed43f857d8ba5e6f3d7897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a823f5e48d384320644698917c0a1c85c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a823f5e48d384320644698917c0a1c85c">operator*</a> (const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a823f5e48d384320644698917c0a1c85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies a vector by the matrix, following the rule (Av)_i = A_ij v_j.  <a href="namespaceJSL.html#a823f5e48d384320644698917c0a1c85c">More...</a><br /></td></tr>
 <tr class="separator:a823f5e48d384320644698917c0a1c85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f6c1988cf84b088617e0f12fc1e98da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a5f6c1988cf84b088617e0f12fc1e98da">operator+</a> (const double &amp;scalar, const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;rhs)</td></tr>
 <tr class="memdesc:a5f6c1988cf84b088617e0f12fc1e98da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exactly equivalent to <a class="el" href="namespaceJSL.html#ad779a68a2d565490f76dd16adfc3091e" title="Adds the value of scalar to every element in the matrix.">JSL::operator+(const Matrix &amp;lhs, const double &amp;scalar)</a>, just swapped around.  <a href="namespaceJSL.html#a5f6c1988cf84b088617e0f12fc1e98da">More...</a><br /></td></tr>
@@ -242,18 +245,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:aebaffa5dc8073b816908a9708a36b7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A slightly odd operation (included for completeness) - adds the value of scalar to the negative of the elements of the vector.  <a href="namespaceJSL.html#aebaffa5dc8073b816908a9708a36b7bf">More...</a><br /></td></tr>
 <tr class="separator:aebaffa5dc8073b816908a9708a36b7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e357c34e91d1eb03c15ca437a285ea1"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a7e357c34e91d1eb03c15ca437a285ea1">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classJSL_1_1Matrix.html">Matrix</a> &amp;obj)</td></tr>
-<tr class="memdesc:a7e357c34e91d1eb03c15ca437a285ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Matrix.html#abcf44559767ab6939851f0d3b60c6fa8">JSL::Matrix::to_string()</a> and then passes it to the provided stream, enabling sweet, smooth output such as std::cout &lt;&lt; M &lt;&lt; std::endl.  <a href="namespaceJSL.html#a7e357c34e91d1eb03c15ca437a285ea1">More...</a><br /></td></tr>
+<tr class="memdesc:a7e357c34e91d1eb03c15ca437a285ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="classJSL_1_1Matrix.html#abcf44559767ab6939851f0d3b60c6fa8" title="Converts the matrix to a human-readable string.">JSL::Matrix::to_string()</a> and then passes it to the provided stream, enabling sweet, smooth output such as std::cout &lt;&lt; M &lt;&lt; std::endl.  <a href="namespaceJSL.html#a7e357c34e91d1eb03c15ca437a285ea1">More...</a><br /></td></tr>
 <tr class="separator:a7e357c34e91d1eb03c15ca437a285ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a017f24cfdf73ecc218aab718c1badd89"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a017f24cfdf73ecc218aab718c1badd89">FractionBounder</a> (double a)</td></tr>
+<tr class="memdesc:a017f24cfdf73ecc218aab718c1badd89"><td class="mdescLeft">&#160;</td><td class="mdescRight">A useful function when one knows a value needs to be between 0 and 1.  <a href="namespaceJSL.html#a017f24cfdf73ecc218aab718c1badd89">More...</a><br /></td></tr>
 <tr class="separator:a017f24cfdf73ecc218aab718c1badd89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff956bc38fdc0a19f41e202699560dff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#aff956bc38fdc0a19f41e202699560dff">operator*</a> (const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;lhs, const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;rhs)</td></tr>
-<tr class="separator:aff956bc38fdc0a19f41e202699560dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87842870ba7998a0ec521782b2d2f621"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a87842870ba7998a0ec521782b2d2f621">operator*</a> (const <a class="el" href="classJSL_1_1Matrix.html">JSL::Matrix</a> &amp;lhs, const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;rhs)</td></tr>
-<tr class="separator:a87842870ba7998a0ec521782b2d2f621"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68fed2d9fae3ec9612dd8e8282cf1336"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a68fed2d9fae3ec9612dd8e8282cf1336">operator/</a> (const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;lhs, const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;rhs)</td></tr>
-<tr class="separator:a68fed2d9fae3ec9612dd8e8282cf1336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a943a21cab5e9abe4331b20d37cd3f8a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a943a21cab5e9abe4331b20d37cd3f8a1">exp</a> (const <a class="el" href="classJSL_1_1Quaternion.html">JSL::Quaternion</a> &amp;a)</td></tr>
-<tr class="separator:a943a21cab5e9abe4331b20d37cd3f8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeae64b7e0cfdc1ab5f35cca90c32d9f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6">VectorDotProduct</a> (const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;lhs, const <a class="el" href="classJSL_1_1Vector.html">Vector</a> &amp;rhs)</td></tr>
 <tr class="memdesc:aeae64b7e0cfdc1ab5f35cca90c32d9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The standard dot product on R^n.  <a href="namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6">More...</a><br /></td></tr>
 <tr class="separator:aeae64b7e0cfdc1ab5f35cca90c32d9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -714,32 +710,6 @@ template&lt;typename... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a943a21cab5e9abe4331b20d37cd3f8a1" name="a943a21cab5e9abe4331b20d37cd3f8a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a943a21cab5e9abe4331b20d37cd3f8a1">&#9670;&nbsp;</a></span>exp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> JSL::exp </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classJSL_1_1Quaternion.html">JSL::Quaternion</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ab806e537ccfdea16b7d194d77cdb307e" name="ab806e537ccfdea16b7d194d77cdb307e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab806e537ccfdea16b7d194d77cdb307e">&#9670;&nbsp;</a></span>FindXInY() <span class="overload">[1/2]</span></h2>
 
@@ -941,6 +911,15 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>A useful function when one knows a value needs to be between 0 and 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The value to be tested </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>min(max(0,a),1) &ndash; i.e., if 0 </dd></dl>
+
 </div>
 </div>
 <a id="a6fd4487b0a8ac5713df4a37079287913" name="a6fd4487b0a8ac5713df4a37079287913"></a>
@@ -1115,6 +1094,16 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Confirms the sizes (i.e. row count and column count) of the matrices are equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The first matrix</td></tr>
+    <tr><td class="paramname">rhs</td><td>the value to be compared to lhs for size equality </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True, if equal in size, false if not </dd></dl>
+
 </div>
 </div>
 <a id="abf525d02b8c49f21ef7faa68b7571f93" name="abf525d02b8c49f21ef7faa68b7571f93"></a>
@@ -1185,6 +1174,16 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Simply returns the inverse of the equality operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The first matrix</td></tr>
+    <tr><td class="paramname">rhs</td><td>the value to be compared to lhs for equality </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>False if equal, true if not </dd></dl>
+
 </div>
 </div>
 <a id="a394a4f9cee0747c76d1190b0365c7b5a" name="a394a4f9cee0747c76d1190b0365c7b5a"></a>
@@ -1224,7 +1223,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <a id="a80fcd230a03dd81f1c37fec030619bf9" name="a80fcd230a03dd81f1c37fec030619bf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80fcd230a03dd81f1c37fec030619bf9">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a80fcd230a03dd81f1c37fec030619bf9">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1270,7 +1269,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <a id="ab4eefbed468f275164855895335b8a29" name="ab4eefbed468f275164855895335b8a29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4eefbed468f275164855895335b8a29">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4eefbed468f275164855895335b8a29">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1315,44 +1314,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a87842870ba7998a0ec521782b2d2f621" name="a87842870ba7998a0ec521782b2d2f621"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87842870ba7998a0ec521782b2d2f621">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> JSL::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classJSL_1_1Matrix.html">JSL::Matrix</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a69548e09ba5835ee87ac4d28907b5435" name="a69548e09ba5835ee87ac4d28907b5435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69548e09ba5835ee87ac4d28907b5435">&#9670;&nbsp;</a></span>operator*() <span class="overload">[4/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a69548e09ba5835ee87ac4d28907b5435">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1398,7 +1361,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <a id="a95d670e99aed43f857d8ba5e6f3d7897" name="a95d670e99aed43f857d8ba5e6f3d7897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95d670e99aed43f857d8ba5e6f3d7897">&#9670;&nbsp;</a></span>operator*() <span class="overload">[5/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d670e99aed43f857d8ba5e6f3d7897">&#9670;&nbsp;</a></span>operator*() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1431,10 +1394,20 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Performs standard matix multiplication, (AB)_ij = A_ik B_kj. Only works on matrices of compatible sizes, and left-right ordering matters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The left hand size of the multiplication</td></tr>
+    <tr><td class="paramname">The</td><td>right hand side of the multiplication </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The product lhs * rhs accordingto standard matrix product rules. Size of output is lhs.Rows by rhs.Columns </dd></dl>
+
 </div>
 </div>
 <a id="a823f5e48d384320644698917c0a1c85c" name="a823f5e48d384320644698917c0a1c85c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a823f5e48d384320644698917c0a1c85c">&#9670;&nbsp;</a></span>operator*() <span class="overload">[6/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a823f5e48d384320644698917c0a1c85c">&#9670;&nbsp;</a></span>operator*() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1467,46 +1440,20 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="aff956bc38fdc0a19f41e202699560dff" name="aff956bc38fdc0a19f41e202699560dff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff956bc38fdc0a19f41e202699560dff">&#9670;&nbsp;</a></span>operator*() <span class="overload">[7/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> JSL::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Multiplies a vector by the matrix, following the rule (Av)_i = A_ij v_j. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The matrix operating on the matrix</td></tr>
+    <tr><td class="paramname">rhs</td><td>The vector to be operated upon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The product (lhs * rhs), which is a <a class="el" href="classJSL_1_1Vector.html">Vector</a> the same size as rhs </dd></dl>
 
 </div>
 </div>
 <a id="afc5e092de4a9bdc5795d40ee0f51c7b9" name="afc5e092de4a9bdc5795d40ee0f51c7b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc5e092de4a9bdc5795d40ee0f51c7b9">&#9670;&nbsp;</a></span>operator*() <span class="overload">[8/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afc5e092de4a9bdc5795d40ee0f51c7b9">&#9670;&nbsp;</a></span>operator*() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2104,7 +2051,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <a id="ab1f3153179f59c59a0c2a5e553889eb1" name="ab1f3153179f59c59a0c2a5e553889eb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1f3153179f59c59a0c2a5e553889eb1">&#9670;&nbsp;</a></span>operator/() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f3153179f59c59a0c2a5e553889eb1">&#9670;&nbsp;</a></span>operator/() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2149,44 +2096,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a68fed2d9fae3ec9612dd8e8282cf1336" name="a68fed2d9fae3ec9612dd8e8282cf1336"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68fed2d9fae3ec9612dd8e8282cf1336">&#9670;&nbsp;</a></span>operator/() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> JSL::operator/ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classJSL_1_1Quaternion.html">Quaternion</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a1427fd44260592b7d65d27946969fba1" name="a1427fd44260592b7d65d27946969fba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1427fd44260592b7d65d27946969fba1">&#9670;&nbsp;</a></span>operator/() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1427fd44260592b7d65d27946969fba1">&#9670;&nbsp;</a></span>operator/() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2265,7 +2176,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Calls <a class="el" href="classJSL_1_1Matrix.html#abcf44559767ab6939851f0d3b60c6fa8">JSL::Matrix::to_string()</a> and then passes it to the provided stream, enabling sweet, smooth output such as std::cout &lt;&lt; M &lt;&lt; std::endl. </p>
+<p>Calls <a class="el" href="classJSL_1_1Matrix.html#abcf44559767ab6939851f0d3b60c6fa8" title="Converts the matrix to a human-readable string.">JSL::Matrix::to_string()</a> and then passes it to the provided stream, enabling sweet, smooth output such as std::cout &lt;&lt; M &lt;&lt; std::endl. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>An output stream capable of parsing strings</td></tr>
@@ -2356,6 +2267,16 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>An overloaded equality checker. Checks size, then checks each entry - quick for finding mismatches, but requires full sweep to confirm total equality. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The first matrix</td></tr>
+    <tr><td class="paramname">rhs</td><td>the value to be compared to lhs for equality </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True, if equal, false if not </dd></dl>
 
 </div>
 </div>
@@ -2463,7 +2384,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Returns the sorted index array associated with a vector &ndash; not the sorted array itself</p><dl class="params"><dt>Parameters</dt><dd>
+<p >Returns the sorted index array associated with a vector - not the sorted array itself</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>A vector of objects where the less than operator is defined </td></tr>
   </table>
@@ -2779,7 +2700,7 @@ template&lt;typename T , typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >As with writeVectorToFile, but accepts arbitrary vectors of templated entities. The writing loops over the length of the vectors (which must all be the same length), and writes them sequentially, separated by the delimiter, and a linebreak at the end of each row &ndash; i.e v1[0], v2[0], v3[0], ... (linebreak) v1[1], v2[1], ... etc. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >As with writeVectorToFile, but accepts arbitrary vectors of templated entities. The writing loops over the length of the vectors (which must all be the same length), and writes them sequentially, separated by the delimiter, and a linebreak at the end of each row - i.e v1[0], v2[0], v3[0], ... (linebreak) v1[1], v2[1], ... etc. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>The target file location </td></tr>
     <tr><td class="paramname">delimiter</td><td>The character(s) to be written after every individual vecs entry <em>except</em> the final entry on each row, which is a linebreak. </td></tr>

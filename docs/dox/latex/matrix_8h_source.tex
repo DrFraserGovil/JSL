@@ -12,465 +12,431 @@
 \DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
 \DoxyCodeLine{9 \{}
 \DoxyCodeLine{10     }
-\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}}}
-\DoxyCodeLine{12     \{}
-\DoxyCodeLine{13         \textcolor{keyword}{public}:}
-\DoxyCodeLine{14                     }
-\DoxyCodeLine{15             \mbox{\hyperlink{classJSL_1_1Matrix_a90ddd1113043b8959b0943be24f9ad9f}{Matrix}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} n,\textcolor{keyword}{const} \textcolor{keywordtype}{int} m): \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}(n), \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}(m)}
-\DoxyCodeLine{16             \{}
-\DoxyCodeLine{17                 \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}} = std::vector<std::vector<double>>(n,std::vector<double>(m,0.0));}
-\DoxyCodeLine{18             \}}
-\DoxyCodeLine{19             }
-\DoxyCodeLine{20             \mbox{\hyperlink{classJSL_1_1Matrix_a1d398af495c3906cfb1b1c9b0e8978f7}{Matrix}}(std::vector<std::vector<double>> input): \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}(input.size()), \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}( input[0].size())}
-\DoxyCodeLine{21             \{}
-\DoxyCodeLine{22                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} <= 0)}
-\DoxyCodeLine{23                 \{}
-\DoxyCodeLine{24                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot construct a JSL::Matrix with zero columns"{}});}
-\DoxyCodeLine{25                 \}}
-\DoxyCodeLine{26                 \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}} = std::vector<std::vector<double>>(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}},std::vector<double>(\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}},0.0));}
-\DoxyCodeLine{27                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{14     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keyword}{public}:}
+\DoxyCodeLine{17             }
+\DoxyCodeLine{19             \mbox{\hyperlink{classJSL_1_1Matrix_a90ddd1113043b8959b0943be24f9ad9f}{Matrix}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} n,\textcolor{keyword}{const} \textcolor{keywordtype}{int} m): \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}(n), \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}(m)}
+\DoxyCodeLine{20             \{}
+\DoxyCodeLine{21                 \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}} = std::vector<std::vector<double>>(n,std::vector<double>(m,0.0));}
+\DoxyCodeLine{22             \}}
+\DoxyCodeLine{23             }
+\DoxyCodeLine{25             \mbox{\hyperlink{classJSL_1_1Matrix_a1d398af495c3906cfb1b1c9b0e8978f7}{Matrix}}(std::vector<std::vector<double>> input): \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}(input.size()), \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}( input[0].size())}
+\DoxyCodeLine{26             \{}
+\DoxyCodeLine{27                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} <= 0)}
 \DoxyCodeLine{28                 \{}
-\DoxyCodeLine{29                     \textcolor{keywordflow}{if} (input[i].size() != \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}})}
-\DoxyCodeLine{30                     \{}
-\DoxyCodeLine{31                         }
-\DoxyCodeLine{32                         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot construct a JSL::Matrix from rows with differing number of columns. Please ensure input array is rectangular."{}});}
-\DoxyCodeLine{33                     \}}
-\DoxyCodeLine{34                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{29                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot construct a JSL::Matrix with zero columns"{}});}
+\DoxyCodeLine{30                 \}}
+\DoxyCodeLine{31                 \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}} = std::vector<std::vector<double>>(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}},std::vector<double>(\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}},0.0));}
+\DoxyCodeLine{32                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{33                 \{}
+\DoxyCodeLine{34                     \textcolor{keywordflow}{if} (input[i].size() != \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}})}
 \DoxyCodeLine{35                     \{}
-\DoxyCodeLine{36                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] = input[i][j];}
-\DoxyCodeLine{37                     \}}
-\DoxyCodeLine{38                 \}}
-\DoxyCodeLine{39                 }
-\DoxyCodeLine{40             \}}
-\DoxyCodeLine{41             }
-\DoxyCodeLine{42             \mbox{\hyperlink{classJSL_1_1Matrix_ae6198f4beabaff7700265fffeb490ed7}{Matrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& input): \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}(input.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()), \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}(input.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}())}
-\DoxyCodeLine{43             \{}
-\DoxyCodeLine{44                 \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}} = std::vector<std::vector<double>>(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}},std::vector<double>(\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}},0.0));}
-\DoxyCodeLine{45                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{46                 \{}
-\DoxyCodeLine{47                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{48                     \{}
-\DoxyCodeLine{49                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] = input(i,j);}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51                     \}}
-\DoxyCodeLine{52                 \}}
-\DoxyCodeLine{53             \}}
-\DoxyCodeLine{54             }
-\DoxyCodeLine{55             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{56 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{57                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}};}
+\DoxyCodeLine{36                         }
+\DoxyCodeLine{37                         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot construct a JSL::Matrix from rows with differing number of columns. Please ensure input array is rectangular."{}});}
+\DoxyCodeLine{38                     \}}
+\DoxyCodeLine{39                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{40                     \{}
+\DoxyCodeLine{41                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] = input[i][j];}
+\DoxyCodeLine{42                     \}}
+\DoxyCodeLine{43                 \}}
+\DoxyCodeLine{44                 }
+\DoxyCodeLine{45             \}}
+\DoxyCodeLine{47             \mbox{\hyperlink{classJSL_1_1Matrix_ae6198f4beabaff7700265fffeb490ed7}{Matrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& input): \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}(input.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()), \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}(input.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}())}
+\DoxyCodeLine{48             \{}
+\DoxyCodeLine{49                 \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}} = std::vector<std::vector<double>>(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}},std::vector<double>(\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}},0.0));}
+\DoxyCodeLine{50                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{51                 \{}
+\DoxyCodeLine{52                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{53                     \{}
+\DoxyCodeLine{54                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] = input(i,j);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56                     \}}
+\DoxyCodeLine{57                 \}}
 \DoxyCodeLine{58             \}}
-\DoxyCodeLine{59             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{60 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{61                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}};}
-\DoxyCodeLine{62             \}}
-\DoxyCodeLine{63             }
-\DoxyCodeLine{64             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{classJSL_1_1Matrix_a984691eac759ff0e8f98252d07be7e1a}{Transpose}}()}
-\DoxyCodeLine{65             \{}
-\DoxyCodeLine{66                 \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output(\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}},\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}});}
-\DoxyCodeLine{67                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{68                 \{}
-\DoxyCodeLine{69                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j <\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{70                     \{}
-\DoxyCodeLine{71                         output(j,i) = \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j];}
-\DoxyCodeLine{72                     \}}
-\DoxyCodeLine{73                 \}}
-\DoxyCodeLine{74                 \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{75             \}}
-\DoxyCodeLine{76             }
-\DoxyCodeLine{77             \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} \mbox{\hyperlink{classJSL_1_1Matrix_aa8bae8650234f5e5569277563d68f22d}{GetRow}}(\textcolor{keywordtype}{int} rowID)\textcolor{keyword}{ const}}
-\DoxyCodeLine{78 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{79                 \textcolor{keywordflow}{if} (rowID < nRows \&\& rowID >= 0)}
-\DoxyCodeLine{80                 \{}
-\DoxyCodeLine{81                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}}(\mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[rowID]);}
-\DoxyCodeLine{82                 \}}
-\DoxyCodeLine{83                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{84                 \{}
-\DoxyCodeLine{85                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}ERROR in JSL::Matrix: Row "{}} + std::to\_string(rowID) + \textcolor{stringliteral}{"{} is out of bounds (0-\/>"{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}-\/1) + \textcolor{stringliteral}{"{})"{}});}
-\DoxyCodeLine{86                 \}}
-\DoxyCodeLine{87             \}}
-\DoxyCodeLine{88             \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} \mbox{\hyperlink{classJSL_1_1Matrix_a11ea58ca43e028123f628966eb4834a0}{GetColumn}}(\textcolor{keywordtype}{int} colID)\textcolor{keyword}{ const}}
-\DoxyCodeLine{89 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{90                 \textcolor{keywordflow}{if} (colID < nCols \&\& colID >= 0)}
-\DoxyCodeLine{91                 \{}
-\DoxyCodeLine{92                     std::vector<double> data(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}},0.0);}
-\DoxyCodeLine{93                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{94                     \{}
-\DoxyCodeLine{95                         data[i] = \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][colID];}
-\DoxyCodeLine{96                         }
-\DoxyCodeLine{97                     \}}
-\DoxyCodeLine{98                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}}(data);}
-\DoxyCodeLine{99                 \}}
-\DoxyCodeLine{100                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{101                 \{}
-\DoxyCodeLine{102                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}ERROR in JSL::Matrix: Column "{}} + std::to\_string(colID) + \textcolor{stringliteral}{"{} is out of bounds (0-\/>"{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}-\/1) + \textcolor{stringliteral}{"{})"{}});}
-\DoxyCodeLine{103                 \}}
-\DoxyCodeLine{104             \}}
-\DoxyCodeLine{105             }
-\DoxyCodeLine{106             }
-\DoxyCodeLine{108             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{classJSL_1_1Matrix_afd9edd73e5f559eed02b063d4c4e47f8}{Identity}}(\textcolor{keywordtype}{int} n)}
-\DoxyCodeLine{109             \{}
-\DoxyCodeLine{110                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} m(n,n);}
-\DoxyCodeLine{111                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i)}
-\DoxyCodeLine{112                 \{}
-\DoxyCodeLine{113                     m(i,i) = 1;}
-\DoxyCodeLine{114                 \}}
-\DoxyCodeLine{115                 \textcolor{keywordflow}{return} m;}
-\DoxyCodeLine{116             \}}
-\DoxyCodeLine{117         }
-\DoxyCodeLine{118         }
-\DoxyCodeLine{119             \textcolor{keywordtype}{double} \& \mbox{\hyperlink{classJSL_1_1Matrix_ae054e5a63242a6f40e334546bdc25145}{operator()}}(\textcolor{keywordtype}{int} rowID, \textcolor{keywordtype}{int} columnID)}
-\DoxyCodeLine{120             \{}
-\DoxyCodeLine{121                 \textcolor{keywordflow}{if} (rowID < nRows \&\& rowID >= 0 \&\& columnID < nCols \&\& columnID >= 0)}
-\DoxyCodeLine{122                 \{}
-\DoxyCodeLine{123                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[rowID][columnID];}
-\DoxyCodeLine{124                 \}}
-\DoxyCodeLine{125                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{126                 \{}
-\DoxyCodeLine{127                     \textcolor{keywordflow}{throw} std::runtime\_error(\mbox{\hyperlink{classJSL_1_1Matrix_a92eb431da436e1e2922b211a9f158203}{outOfBoundsError}}(rowID,columnID));}
-\DoxyCodeLine{128                 \}}
-\DoxyCodeLine{129             \}}
-\DoxyCodeLine{130         }
-\DoxyCodeLine{131             \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& \mbox{\hyperlink{classJSL_1_1Matrix_acc7c27b8630959a593a886118f90fb08}{operator()}}(\textcolor{keywordtype}{int} rowID, \textcolor{keywordtype}{int} columnID)\textcolor{keyword}{ const}}
-\DoxyCodeLine{132 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{133                 }
-\DoxyCodeLine{134                 \textcolor{keywordflow}{if} (rowID < nRows \&\& rowID >= 0 \&\& columnID < nCols \&\& columnID >= 0)}
+\DoxyCodeLine{60             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{61 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{62                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}};}
+\DoxyCodeLine{63             \}}
+\DoxyCodeLine{65             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{66 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{67                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}};}
+\DoxyCodeLine{68             \}}
+\DoxyCodeLine{69             }
+\DoxyCodeLine{71             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{classJSL_1_1Matrix_a984691eac759ff0e8f98252d07be7e1a}{Transpose}}()}
+\DoxyCodeLine{72             \{}
+\DoxyCodeLine{73                 \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output(\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}},\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}});}
+\DoxyCodeLine{74                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{75                 \{}
+\DoxyCodeLine{76                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j <\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{77                     \{}
+\DoxyCodeLine{78                         output(j,i) = \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j];}
+\DoxyCodeLine{79                     \}}
+\DoxyCodeLine{80                 \}}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{82             \}}
+\DoxyCodeLine{83             }
+\DoxyCodeLine{85             \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} \mbox{\hyperlink{classJSL_1_1Matrix_aa8bae8650234f5e5569277563d68f22d}{GetRow}}(\textcolor{keywordtype}{int} rowID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{86 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{87                 \textcolor{keywordflow}{if} (rowID < nRows \&\& rowID >= 0)}
+\DoxyCodeLine{88                 \{}
+\DoxyCodeLine{89                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}}(\mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[rowID]);}
+\DoxyCodeLine{90                 \}}
+\DoxyCodeLine{91                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{92                 \{}
+\DoxyCodeLine{93                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}ERROR in JSL::Matrix: Row "{}} + std::to\_string(rowID) + \textcolor{stringliteral}{"{} is out of bounds (0-\/>"{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}-\/1) + \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{94                 \}}
+\DoxyCodeLine{95             \}}
+\DoxyCodeLine{97             \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} \mbox{\hyperlink{classJSL_1_1Matrix_a11ea58ca43e028123f628966eb4834a0}{GetColumn}}(\textcolor{keywordtype}{int} colID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{98 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{99                 \textcolor{keywordflow}{if} (colID < nCols \&\& colID >= 0)}
+\DoxyCodeLine{100                 \{}
+\DoxyCodeLine{101                     std::vector<double> data(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}},0.0);}
+\DoxyCodeLine{102                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{103                     \{}
+\DoxyCodeLine{104                         data[i] = \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][colID];}
+\DoxyCodeLine{105                         }
+\DoxyCodeLine{106                     \}}
+\DoxyCodeLine{107                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}}(data);}
+\DoxyCodeLine{108                 \}}
+\DoxyCodeLine{109                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{110                 \{}
+\DoxyCodeLine{111                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}ERROR in JSL::Matrix: Column "{}} + std::to\_string(colID) + \textcolor{stringliteral}{"{} is out of bounds (0-\/>"{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}-\/1) + \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{112                 \}}
+\DoxyCodeLine{113             \}}
+\DoxyCodeLine{114             }
+\DoxyCodeLine{115             }
+\DoxyCodeLine{117             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{classJSL_1_1Matrix_afd9edd73e5f559eed02b063d4c4e47f8}{Identity}}(\textcolor{keywordtype}{int} n)}
+\DoxyCodeLine{118             \{}
+\DoxyCodeLine{119                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} m(n,n);}
+\DoxyCodeLine{120                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i)}
+\DoxyCodeLine{121                 \{}
+\DoxyCodeLine{122                     m(i,i) = 1;}
+\DoxyCodeLine{123                 \}}
+\DoxyCodeLine{124                 \textcolor{keywordflow}{return} m;}
+\DoxyCodeLine{125             \}}
+\DoxyCodeLine{126         }
+\DoxyCodeLine{128             \textcolor{keywordtype}{double} \& \mbox{\hyperlink{classJSL_1_1Matrix_ae054e5a63242a6f40e334546bdc25145}{operator()}}(\textcolor{keywordtype}{int} rowID, \textcolor{keywordtype}{int} columnID)}
+\DoxyCodeLine{129             \{}
+\DoxyCodeLine{130                 \textcolor{keywordflow}{if} (rowID < nRows \&\& rowID >= 0 \&\& columnID < nCols \&\& columnID >= 0)}
+\DoxyCodeLine{131                 \{}
+\DoxyCodeLine{132                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[rowID][columnID];}
+\DoxyCodeLine{133                 \}}
+\DoxyCodeLine{134                 \textcolor{keywordflow}{else}}
 \DoxyCodeLine{135                 \{}
-\DoxyCodeLine{136                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[rowID][columnID];}
+\DoxyCodeLine{136                     \textcolor{keywordflow}{throw} std::runtime\_error(\mbox{\hyperlink{classJSL_1_1Matrix_a92eb431da436e1e2922b211a9f158203}{outOfBoundsError}}(rowID,columnID));}
 \DoxyCodeLine{137                 \}}
-\DoxyCodeLine{138                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{139                 \{}
-\DoxyCodeLine{140                     \textcolor{keywordflow}{throw} std::runtime\_error(\mbox{\hyperlink{classJSL_1_1Matrix_a92eb431da436e1e2922b211a9f158203}{outOfBoundsError}}(rowID,columnID));}
-\DoxyCodeLine{141                 \}}
-\DoxyCodeLine{142             \}}
-\DoxyCodeLine{143         }
-\DoxyCodeLine{145             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a89a5d5b76dbc28e1980167cb560a45ff}{operator+=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{146             \{}
-\DoxyCodeLine{147                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}} != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() || \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}())}
+\DoxyCodeLine{138             \}}
+\DoxyCodeLine{140             \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& \mbox{\hyperlink{classJSL_1_1Matrix_acc7c27b8630959a593a886118f90fb08}{operator()}}(\textcolor{keywordtype}{int} rowID, \textcolor{keywordtype}{int} columnID)\textcolor{keyword}{ const}}
+\DoxyCodeLine{141 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{142                 }
+\DoxyCodeLine{143                 \textcolor{keywordflow}{if} (rowID < nRows \&\& rowID >= 0 \&\& columnID < nCols \&\& columnID >= 0)}
+\DoxyCodeLine{144                 \{}
+\DoxyCodeLine{145                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[rowID][columnID];}
+\DoxyCodeLine{146                 \}}
+\DoxyCodeLine{147                 \textcolor{keywordflow}{else}}
 \DoxyCodeLine{148                 \{}
-\DoxyCodeLine{149                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot add vectors of different sizes"{}});}
+\DoxyCodeLine{149                     \textcolor{keywordflow}{throw} std::runtime\_error(\mbox{\hyperlink{classJSL_1_1Matrix_a92eb431da436e1e2922b211a9f158203}{outOfBoundsError}}(rowID,columnID));}
 \DoxyCodeLine{150                 \}}
-\DoxyCodeLine{151                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{152                 \{}
-\DoxyCodeLine{153                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{154                     \{}
-\DoxyCodeLine{155                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] += rhs(i,j);}
-\DoxyCodeLine{156                     \}}
-\DoxyCodeLine{157                 \}}
-\DoxyCodeLine{158                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{159             \}}
-\DoxyCodeLine{160             }
-\DoxyCodeLine{162             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a196d368632d44d5262f668618fb3cefc}{operator-\/=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{163             \{}
-\DoxyCodeLine{164                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}} != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() || \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}())}
-\DoxyCodeLine{165                 \{}
-\DoxyCodeLine{166                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot subtract vectors of different sizes"{}});}
-\DoxyCodeLine{167                 \}}
-\DoxyCodeLine{168                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{169                 \{}
-\DoxyCodeLine{170                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{171                     \{}
-\DoxyCodeLine{172                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] -\/= rhs(i,j);}
-\DoxyCodeLine{173                     \}}
-\DoxyCodeLine{174                 \}}
-\DoxyCodeLine{175                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{176             \}}
-\DoxyCodeLine{177             }
-\DoxyCodeLine{179             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a7e4bc02f6a1b7a999ec2e404c90d40e6}{operator+=}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{180             \{}
-\DoxyCodeLine{181                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{182                 \{}
-\DoxyCodeLine{183                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{184                     \{}
-\DoxyCodeLine{185                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] += scalar;}
-\DoxyCodeLine{186                     \}}
-\DoxyCodeLine{187                 \}}
-\DoxyCodeLine{188                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{189             \}}
-\DoxyCodeLine{190             }
-\DoxyCodeLine{192             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a87e59f6b3a32a2b12f5a73fb4db1e5f1}{operator-\/=}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{193             \{}
-\DoxyCodeLine{194                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{195                 \{}
-\DoxyCodeLine{196                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{197                     \{}
-\DoxyCodeLine{198                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] -\/= scalar;}
-\DoxyCodeLine{199                     \}}
-\DoxyCodeLine{200                 \}}
-\DoxyCodeLine{201                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{202             \}}
-\DoxyCodeLine{203             }
-\DoxyCodeLine{205             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_afba6a5e0e92aedc053fcd60428461800}{operator*=}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{206             \{}
-\DoxyCodeLine{207                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{208                 \{}
-\DoxyCodeLine{209                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{210                     \{}
-\DoxyCodeLine{211                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] *= scalar;}
-\DoxyCodeLine{212                     \}}
-\DoxyCodeLine{213                 \}}
-\DoxyCodeLine{214                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{215             \}}
-\DoxyCodeLine{216             }
-\DoxyCodeLine{217             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a92a576aff5ec384719d7a7f7f5b7ce99}{operator*=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{218             \{}
-\DoxyCodeLine{219                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}())}
-\DoxyCodeLine{220                 \{}
-\DoxyCodeLine{221                     std::string s1 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}x"{}}+ std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{222                     std::string s2 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}x"{}}+ std::to\_string(rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{223                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform *= operation on matrices of incompatible sizes: "{}} + s1 + \textcolor{stringliteral}{"{} vs "{}} + s2);}
-\DoxyCodeLine{224                 \}}
-\DoxyCodeLine{225                 }
-\DoxyCodeLine{226                 std::vector<std::vector<double>>newData(\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}},std::vector<double>(rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(),0.0));}
-\DoxyCodeLine{227                 }
-\DoxyCodeLine{228                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < newData.size(); ++i)}
-\DoxyCodeLine{229                 \{}
-\DoxyCodeLine{230                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < newData[0].size(); ++j)}
-\DoxyCodeLine{231                     \{}
-\DoxyCodeLine{232                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++k)}
-\DoxyCodeLine{233                         \{}
-\DoxyCodeLine{234                             newData[i][j] += \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][k] * rhs(k,j);}
-\DoxyCodeLine{235                         \}}
-\DoxyCodeLine{236                     \}}
-\DoxyCodeLine{237                 \}}
-\DoxyCodeLine{238                 }
-\DoxyCodeLine{239                 \textcolor{comment}{//Assign in....changes the shape of the object potentially!}}
-\DoxyCodeLine{240                 \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}} = newData;}
-\DoxyCodeLine{241                 \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}} = \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}.size();}
-\DoxyCodeLine{242                 \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} = \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[0].size();}
-\DoxyCodeLine{243                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{244             \}}
-\DoxyCodeLine{245             }
-\DoxyCodeLine{247             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_aea26657df162243cfb7f44db591fb133}{operator/=}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{248             \{}
-\DoxyCodeLine{249                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{250                 \{}
-\DoxyCodeLine{251                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{252                     \{}
-\DoxyCodeLine{253                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] /= scalar;}
+\DoxyCodeLine{151             \}}
+\DoxyCodeLine{152         }
+\DoxyCodeLine{154             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a89a5d5b76dbc28e1980167cb560a45ff}{operator+=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{155             \{}
+\DoxyCodeLine{156                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}} != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() || \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}())}
+\DoxyCodeLine{157                 \{}
+\DoxyCodeLine{158                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot add vectors of different sizes"{}});}
+\DoxyCodeLine{159                 \}}
+\DoxyCodeLine{160                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{161                 \{}
+\DoxyCodeLine{162                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{163                     \{}
+\DoxyCodeLine{164                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] += rhs(i,j);}
+\DoxyCodeLine{165                     \}}
+\DoxyCodeLine{166                 \}}
+\DoxyCodeLine{167                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{168             \}}
+\DoxyCodeLine{169             }
+\DoxyCodeLine{171             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a196d368632d44d5262f668618fb3cefc}{operator-\/=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{172             \{}
+\DoxyCodeLine{173                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}} != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() || \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}())}
+\DoxyCodeLine{174                 \{}
+\DoxyCodeLine{175                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot subtract vectors of different sizes"{}});}
+\DoxyCodeLine{176                 \}}
+\DoxyCodeLine{177                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{178                 \{}
+\DoxyCodeLine{179                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{180                     \{}
+\DoxyCodeLine{181                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] -\/= rhs(i,j);}
+\DoxyCodeLine{182                     \}}
+\DoxyCodeLine{183                 \}}
+\DoxyCodeLine{184                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{185             \}}
+\DoxyCodeLine{186             }
+\DoxyCodeLine{188             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a7e4bc02f6a1b7a999ec2e404c90d40e6}{operator+=}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{189             \{}
+\DoxyCodeLine{190                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{191                 \{}
+\DoxyCodeLine{192                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{193                     \{}
+\DoxyCodeLine{194                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] += scalar;}
+\DoxyCodeLine{195                     \}}
+\DoxyCodeLine{196                 \}}
+\DoxyCodeLine{197                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{198             \}}
+\DoxyCodeLine{199             }
+\DoxyCodeLine{201             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_a87e59f6b3a32a2b12f5a73fb4db1e5f1}{operator-\/=}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{202             \{}
+\DoxyCodeLine{203                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{204                 \{}
+\DoxyCodeLine{205                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{206                     \{}
+\DoxyCodeLine{207                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] -\/= scalar;}
+\DoxyCodeLine{208                     \}}
+\DoxyCodeLine{209                 \}}
+\DoxyCodeLine{210                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{211             \}}
+\DoxyCodeLine{212             }
+\DoxyCodeLine{214             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_afba6a5e0e92aedc053fcd60428461800}{operator*=}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{215             \{}
+\DoxyCodeLine{216                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{217                 \{}
+\DoxyCodeLine{218                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{219                     \{}
+\DoxyCodeLine{220                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] *= scalar;}
+\DoxyCodeLine{221                     \}}
+\DoxyCodeLine{222                 \}}
+\DoxyCodeLine{223                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{224             \}}
+\DoxyCodeLine{225             }
+\DoxyCodeLine{226             }
+\DoxyCodeLine{228             \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& \mbox{\hyperlink{classJSL_1_1Matrix_aea26657df162243cfb7f44db591fb133}{operator/=}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{229             \{}
+\DoxyCodeLine{230                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{231                 \{}
+\DoxyCodeLine{232                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{233                     \{}
+\DoxyCodeLine{234                         \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j] /= scalar;}
+\DoxyCodeLine{235                     \}}
+\DoxyCodeLine{236                 \}}
+\DoxyCodeLine{237                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{238             \}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{241             std::string \mbox{\hyperlink{classJSL_1_1Matrix_abcf44559767ab6939851f0d3b60c6fa8}{to\_string}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{242 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{243                 std::string outString = \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{244                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
+\DoxyCodeLine{245                 \{}
+\DoxyCodeLine{246                     outString += \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{247                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
+\DoxyCodeLine{248                     \{}
+\DoxyCodeLine{249                         outString += std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j]);}
+\DoxyCodeLine{250                         \textcolor{keywordflow}{if} (j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} -\/ 1)}
+\DoxyCodeLine{251                         \{}
+\DoxyCodeLine{252                             outString += \textcolor{stringliteral}{"{}, "{}};}
+\DoxyCodeLine{253                         \}}
 \DoxyCodeLine{254                     \}}
-\DoxyCodeLine{255                 \}}
-\DoxyCodeLine{256                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{257             \}}
-\DoxyCodeLine{258                             }
-\DoxyCodeLine{259             std::string \mbox{\hyperlink{classJSL_1_1Matrix_abcf44559767ab6939851f0d3b60c6fa8}{to\_string}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{260 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{261                 std::string outString = \textcolor{stringliteral}{"{}["{}};}
-\DoxyCodeLine{262                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}}; ++i)}
-\DoxyCodeLine{263                 \{}
-\DoxyCodeLine{264                     outString += \textcolor{stringliteral}{"{}["{}};}
-\DoxyCodeLine{265                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}}; ++j)}
-\DoxyCodeLine{266                     \{}
-\DoxyCodeLine{267                         outString += std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}}[i][j]);}
-\DoxyCodeLine{268                         \textcolor{keywordflow}{if} (j < \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}} -\/ 1)}
-\DoxyCodeLine{269                         \{}
-\DoxyCodeLine{270                             outString += \textcolor{stringliteral}{"{}, "{}};}
-\DoxyCodeLine{271                         \}}
-\DoxyCodeLine{272                     \}}
-\DoxyCodeLine{273                     outString += \textcolor{stringliteral}{"{}]"{}};}
-\DoxyCodeLine{274                     \textcolor{keywordflow}{if} (i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}} -\/ 1)}
-\DoxyCodeLine{275                     \{}
-\DoxyCodeLine{276                         outString += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{277                     \}}
-\DoxyCodeLine{278                 \}}
-\DoxyCodeLine{279                 outString += \textcolor{stringliteral}{"{}]"{}};}
-\DoxyCodeLine{280                 \textcolor{keywordflow}{return} outString;}
-\DoxyCodeLine{281             \}}
-\DoxyCodeLine{282         }
-\DoxyCodeLine{283         }
-\DoxyCodeLine{284         }
-\DoxyCodeLine{285         \textcolor{keyword}{private}:}
-\DoxyCodeLine{286             std::vector<std::vector<double>> \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}};}
-\DoxyCodeLine{287             }
-\DoxyCodeLine{288             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}};}
-\DoxyCodeLine{289             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}};}
-\DoxyCodeLine{290 }
-\DoxyCodeLine{291             std::string \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix_a92eb431da436e1e2922b211a9f158203}{outOfBoundsError}}(\textcolor{keywordtype}{int} idx1,\textcolor{keywordtype}{int} idx2)\textcolor{keyword}{ const}}
-\DoxyCodeLine{292 \textcolor{keyword}{            }\{}
-\DoxyCodeLine{293                 \textcolor{keyword}{const} std::string coord = \textcolor{stringliteral}{"{}("{}} + std::to\_string(idx1) + \textcolor{stringliteral}{"{}, "{}} + std::to\_string(idx2) + \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{294                 \textcolor{keyword}{const} std::string size =  \textcolor{stringliteral}{"{}("{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}, "{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{295                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ERROR in JSL::Vector: Attempted to access "{}} + coord + \textcolor{stringliteral}{"{} but matrix is of size "{}} + size;         }
-\DoxyCodeLine{296             \}}
-\DoxyCodeLine{297     \};}
-\DoxyCodeLine{298     }
-\DoxyCodeLine{299     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceJSL_a682c8bb3fff54370f38dcb16794fc7c5}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{300     \{}
-\DoxyCodeLine{301         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() || lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}())}
-\DoxyCodeLine{302         \{}
-\DoxyCodeLine{303             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{304         \}}
-\DoxyCodeLine{305         }
-\DoxyCodeLine{306         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}();++i)}
-\DoxyCodeLine{307         \{}
-\DoxyCodeLine{308             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
-\DoxyCodeLine{309             \{}
-\DoxyCodeLine{310                 \textcolor{keywordflow}{if} (lhs(i,j) != rhs(i,j))}
-\DoxyCodeLine{311                 \{}
-\DoxyCodeLine{312                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{313                 \}}
-\DoxyCodeLine{314             \}}
-\DoxyCodeLine{315         \}}
-\DoxyCodeLine{316         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{317     \}}
-\DoxyCodeLine{318     }
-\DoxyCodeLine{319     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceJSL_a8b19814a4b6cb667d1e27133acc38513}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{320     \{}
-\DoxyCodeLine{321         \textcolor{keywordflow}{return} !(lhs == rhs);}
-\DoxyCodeLine{322     \}}
-\DoxyCodeLine{323     }
-\DoxyCodeLine{324         }
-\DoxyCodeLine{325     \textcolor{keywordtype}{bool} \textcolor{keyword}{inline} \mbox{\hyperlink{namespaceJSL_a38d1bbf23dc57ec028ea8d91a9688957}{MatrixSizesEqual}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& m1, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& m2)}
-\DoxyCodeLine{326     \{}
-\DoxyCodeLine{327         \textcolor{keywordflow}{return} (m1.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() == m2.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() \&\& m1.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() == m2.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() );}
-\DoxyCodeLine{328     \}   }
-\DoxyCodeLine{329     }
-\DoxyCodeLine{331     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{332     \{}
-\DoxyCodeLine{333         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespaceJSL_a38d1bbf23dc57ec028ea8d91a9688957}{MatrixSizesEqual}}(lhs,rhs))}
-\DoxyCodeLine{334         \{}
-\DoxyCodeLine{335             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform + operation on matrices of different sizes"{}});}
-\DoxyCodeLine{336         \}}
-\DoxyCodeLine{337         }
-\DoxyCodeLine{338         \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} output = lhs;}
-\DoxyCodeLine{339         }
-\DoxyCodeLine{340         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
-\DoxyCodeLine{341         \{}
-\DoxyCodeLine{342             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
-\DoxyCodeLine{343             \{}
-\DoxyCodeLine{344                 output(i,j) += rhs(i,j);}
-\DoxyCodeLine{345             \}}
-\DoxyCodeLine{346         \}}
-\DoxyCodeLine{347         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{348     \};}
-\DoxyCodeLine{350     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{351     \{}
-\DoxyCodeLine{352         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespaceJSL_a38d1bbf23dc57ec028ea8d91a9688957}{MatrixSizesEqual}}(lhs,rhs))}
-\DoxyCodeLine{353         \{}
-\DoxyCodeLine{354             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform + operation on matrices of different sizes"{}});}
-\DoxyCodeLine{355         \}}
-\DoxyCodeLine{356         }
+\DoxyCodeLine{255                     outString += \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{256                     \textcolor{keywordflow}{if} (i < \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}} -\/ 1)}
+\DoxyCodeLine{257                     \{}
+\DoxyCodeLine{258                         outString += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{259                     \}}
+\DoxyCodeLine{260                 \}}
+\DoxyCodeLine{261                 outString += \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{262                 \textcolor{keywordflow}{return} outString;}
+\DoxyCodeLine{263             \}}
+\DoxyCodeLine{264         }
+\DoxyCodeLine{265         }
+\DoxyCodeLine{266         }
+\DoxyCodeLine{267         \textcolor{keyword}{private}:}
+\DoxyCodeLine{268             std::vector<std::vector<double>> \mbox{\hyperlink{classJSL_1_1Matrix_a446d23ba93238f3e2dfc79a3a4d5eb7e}{Data}};}
+\DoxyCodeLine{269             }
+\DoxyCodeLine{270             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Matrix_a7b7a081bbf419b613f19142a634b2cfa}{nRows}};}
+\DoxyCodeLine{271             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Matrix_aef59f1402d2137e86aebf6b21f97ee6d}{nCols}};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273             std::string \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix_a92eb431da436e1e2922b211a9f158203}{outOfBoundsError}}(\textcolor{keywordtype}{int} idx1,\textcolor{keywordtype}{int} idx2)\textcolor{keyword}{ const}}
+\DoxyCodeLine{274 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{275                 \textcolor{keyword}{const} std::string coord = \textcolor{stringliteral}{"{}("{}} + std::to\_string(idx1) + \textcolor{stringliteral}{"{}, "{}} + std::to\_string(idx2) + \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{276                 \textcolor{keyword}{const} std::string size =  \textcolor{stringliteral}{"{}("{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}, "{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{277                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}ERROR in JSL::Vector: Attempted to access "{}} + coord + \textcolor{stringliteral}{"{} but matrix is of size "{}} + size;         }
+\DoxyCodeLine{278             \}}
+\DoxyCodeLine{279     \};}
+\DoxyCodeLine{280     }
+\DoxyCodeLine{282     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceJSL_a682c8bb3fff54370f38dcb16794fc7c5}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{283     \{}
+\DoxyCodeLine{284         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() || lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}())}
+\DoxyCodeLine{285         \{}
+\DoxyCodeLine{286             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{287         \}}
+\DoxyCodeLine{288         }
+\DoxyCodeLine{289         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}();++i)}
+\DoxyCodeLine{290         \{}
+\DoxyCodeLine{291             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
+\DoxyCodeLine{292             \{}
+\DoxyCodeLine{293                 \textcolor{keywordflow}{if} (lhs(i,j) != rhs(i,j))}
+\DoxyCodeLine{294                 \{}
+\DoxyCodeLine{295                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{296                 \}}
+\DoxyCodeLine{297             \}}
+\DoxyCodeLine{298         \}}
+\DoxyCodeLine{299         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{300     \}}
+\DoxyCodeLine{301     }
+\DoxyCodeLine{303     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceJSL_a8b19814a4b6cb667d1e27133acc38513}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{304     \{}
+\DoxyCodeLine{305         \textcolor{keywordflow}{return} !(lhs == rhs);}
+\DoxyCodeLine{306     \}}
+\DoxyCodeLine{307     }
+\DoxyCodeLine{309     \textcolor{keywordtype}{bool} \textcolor{keyword}{inline} \mbox{\hyperlink{namespaceJSL_a38d1bbf23dc57ec028ea8d91a9688957}{MatrixSizesEqual}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& m1, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& m2)}
+\DoxyCodeLine{310     \{}
+\DoxyCodeLine{311         \textcolor{keywordflow}{return} (m1.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() == m2.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() \&\& m1.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() == m2.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() );}
+\DoxyCodeLine{312     \}   }
+\DoxyCodeLine{313     }
+\DoxyCodeLine{315     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{316     \{}
+\DoxyCodeLine{317         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespaceJSL_a38d1bbf23dc57ec028ea8d91a9688957}{MatrixSizesEqual}}(lhs,rhs))}
+\DoxyCodeLine{318         \{}
+\DoxyCodeLine{319             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform + operation on matrices of different sizes"{}});}
+\DoxyCodeLine{320         \}}
+\DoxyCodeLine{321         }
+\DoxyCodeLine{322         \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} output = lhs;}
+\DoxyCodeLine{323         }
+\DoxyCodeLine{324         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
+\DoxyCodeLine{325         \{}
+\DoxyCodeLine{326             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
+\DoxyCodeLine{327             \{}
+\DoxyCodeLine{328                 output(i,j) += rhs(i,j);}
+\DoxyCodeLine{329             \}}
+\DoxyCodeLine{330         \}}
+\DoxyCodeLine{331         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{332     \};}
+\DoxyCodeLine{334     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{335     \{}
+\DoxyCodeLine{336         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespaceJSL_a38d1bbf23dc57ec028ea8d91a9688957}{MatrixSizesEqual}}(lhs,rhs))}
+\DoxyCodeLine{337         \{}
+\DoxyCodeLine{338             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform + operation on matrices of different sizes"{}});}
+\DoxyCodeLine{339         \}}
+\DoxyCodeLine{340         }
+\DoxyCodeLine{341         \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output = lhs;}
+\DoxyCodeLine{342         }
+\DoxyCodeLine{343         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
+\DoxyCodeLine{344         \{}
+\DoxyCodeLine{345             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
+\DoxyCodeLine{346             \{}
+\DoxyCodeLine{347                 output(i,j) -\/= rhs(i,j);}
+\DoxyCodeLine{348             \}}
+\DoxyCodeLine{349         \}}
+\DoxyCodeLine{350         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{351     \};}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{354     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{355     \{}
+\DoxyCodeLine{356 }
 \DoxyCodeLine{357         \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output = lhs;}
 \DoxyCodeLine{358         }
 \DoxyCodeLine{359         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
 \DoxyCodeLine{360         \{}
 \DoxyCodeLine{361             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
 \DoxyCodeLine{362             \{}
-\DoxyCodeLine{363                 output(i,j) -\/= rhs(i,j);}
+\DoxyCodeLine{363                 output(i,j) += scalar;}
 \DoxyCodeLine{364             \}}
 \DoxyCodeLine{365         \}}
 \DoxyCodeLine{366         \textcolor{keywordflow}{return} output;}
 \DoxyCodeLine{367     \};}
-\DoxyCodeLine{368 }
-\DoxyCodeLine{370     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{368     }
+\DoxyCodeLine{370     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
 \DoxyCodeLine{371     \{}
-\DoxyCodeLine{372 }
-\DoxyCodeLine{373         \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output = lhs;}
-\DoxyCodeLine{374         }
-\DoxyCodeLine{375         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
-\DoxyCodeLine{376         \{}
-\DoxyCodeLine{377             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
-\DoxyCodeLine{378             \{}
-\DoxyCodeLine{379                 output(i,j) += scalar;}
-\DoxyCodeLine{380             \}}
-\DoxyCodeLine{381         \}}
-\DoxyCodeLine{382         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{383     \};}
-\DoxyCodeLine{384     }
-\DoxyCodeLine{385     }
-\DoxyCodeLine{386     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{387     \{}
-\DoxyCodeLine{388         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}())}
-\DoxyCodeLine{389         \{}
-\DoxyCodeLine{390             std::string s1 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}x"{}}+ std::to\_string(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{391             std::string s2 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}x"{}}+ std::to\_string(rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{392             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform  operation on matrices of incompatible sizes: "{}} + s1 + \textcolor{stringliteral}{"{} vs "{}} + s2);}
-\DoxyCodeLine{393         \}}
-\DoxyCodeLine{394         }
-\DoxyCodeLine{395         \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(),rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}());}
-\DoxyCodeLine{396         }
-\DoxyCodeLine{397         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
+\DoxyCodeLine{372         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() != rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}())}
+\DoxyCodeLine{373         \{}
+\DoxyCodeLine{374             std::string s1 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}x"{}}+ std::to\_string(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{375             std::string s2 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(rhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}x"{}}+ std::to\_string(rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{376             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot peform  operation on matrices of incompatible sizes: "{}} + s1 + \textcolor{stringliteral}{"{} vs "{}} + s2);}
+\DoxyCodeLine{377         \}}
+\DoxyCodeLine{378         }
+\DoxyCodeLine{379         \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(),rhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}());}
+\DoxyCodeLine{380         }
+\DoxyCodeLine{381         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
+\DoxyCodeLine{382         \{}
+\DoxyCodeLine{383             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
+\DoxyCodeLine{384             \{}
+\DoxyCodeLine{385                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++k)}
+\DoxyCodeLine{386                 \{}
+\DoxyCodeLine{387                     output(i,j) += lhs(i,k) * rhs(k,j);}
+\DoxyCodeLine{388                 \}}
+\DoxyCodeLine{389             \}}
+\DoxyCodeLine{390         \}}
+\DoxyCodeLine{391         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{392     \}}
+\DoxyCodeLine{393     }
+\DoxyCodeLine{395     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
+\DoxyCodeLine{396     \{}
+\DoxyCodeLine{397         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() != rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
 \DoxyCodeLine{398         \{}
-\DoxyCodeLine{399             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
-\DoxyCodeLine{400             \{}
-\DoxyCodeLine{401                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++k)}
-\DoxyCodeLine{402                 \{}
-\DoxyCodeLine{403                     output(i,j) += lhs(i,k) * rhs(k,j);}
-\DoxyCodeLine{404                 \}}
-\DoxyCodeLine{405             \}}
-\DoxyCodeLine{406         \}}
-\DoxyCodeLine{407         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{408     \}}
-\DoxyCodeLine{409     }
-\DoxyCodeLine{410     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \& rhs)}
-\DoxyCodeLine{411     \{}
-\DoxyCodeLine{412         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}() != rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}())}
-\DoxyCodeLine{413         \{}
-\DoxyCodeLine{414             std::string s1 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}x"{}}+ std::to\_string(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{415             std::string s2 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}()) + \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{416             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot multiply matrices and vectors of incompatible sizes: "{}} + s1 + \textcolor{stringliteral}{"{} vs "{}} + s2);}
-\DoxyCodeLine{417         \}}
-\DoxyCodeLine{418         }
-\DoxyCodeLine{419         \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} output(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}());}
-\DoxyCodeLine{420         }
-\DoxyCodeLine{421         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
-\DoxyCodeLine{422         \{}
-\DoxyCodeLine{423             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++k)}
-\DoxyCodeLine{424             \{}
-\DoxyCodeLine{425                 output[i] += lhs(i,k) * rhs[k];}
-\DoxyCodeLine{426         }
-\DoxyCodeLine{427             \}}
-\DoxyCodeLine{428         \}}
-\DoxyCodeLine{429         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{430     \}}
-\DoxyCodeLine{431     }
-\DoxyCodeLine{433     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{434     \{}
-\DoxyCodeLine{435         \textcolor{keywordflow}{return} rhs + scalar;}
-\DoxyCodeLine{436     \}}
-\DoxyCodeLine{438     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{439     \{}
-\DoxyCodeLine{440         \textcolor{keywordflow}{return} lhs + -\/1*scalar;}
-\DoxyCodeLine{441     \}}
-\DoxyCodeLine{442     }
+\DoxyCodeLine{399             std::string s1 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}()) + \textcolor{stringliteral}{"{}x"{}}+ std::to\_string(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}()) + \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{400             std::string s2 = \textcolor{stringliteral}{"{}("{}} + std::to\_string(rhs.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}()) + \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{401             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}JSL::Vector Error: Cannot multiply matrices and vectors of incompatible sizes: "{}} + s1 + \textcolor{stringliteral}{"{} vs "{}} + s2);}
+\DoxyCodeLine{402         \}}
+\DoxyCodeLine{403         }
+\DoxyCodeLine{404         \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} output(lhs.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}());}
+\DoxyCodeLine{405         }
+\DoxyCodeLine{406         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}(); ++i)}
+\DoxyCodeLine{407         \{}
+\DoxyCodeLine{408             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < lhs.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++k)}
+\DoxyCodeLine{409             \{}
+\DoxyCodeLine{410                 output[i] += lhs(i,k) * rhs[k];}
+\DoxyCodeLine{411         }
+\DoxyCodeLine{412             \}}
+\DoxyCodeLine{413         \}}
+\DoxyCodeLine{414         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{415     \}}
+\DoxyCodeLine{416     }
+\DoxyCodeLine{418     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_ad1bcc74167579ecff71209bf8c9c47a3}{operator+}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{419     \{}
+\DoxyCodeLine{420         \textcolor{keywordflow}{return} rhs + scalar;}
+\DoxyCodeLine{421     \}}
+\DoxyCodeLine{423     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{424     \{}
+\DoxyCodeLine{425         \textcolor{keywordflow}{return} lhs + -\/1*scalar;}
+\DoxyCodeLine{426     \}}
+\DoxyCodeLine{427     }
+\DoxyCodeLine{428     }
+\DoxyCodeLine{430     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{431     \{}
+\DoxyCodeLine{432         \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output = rhs;}
+\DoxyCodeLine{433         }
+\DoxyCodeLine{434         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
+\DoxyCodeLine{435         \{}
+\DoxyCodeLine{436             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
+\DoxyCodeLine{437             \{}
+\DoxyCodeLine{438                 output(i,j) *= scalar;}
+\DoxyCodeLine{439             \}}
+\DoxyCodeLine{440         \}}
+\DoxyCodeLine{441         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{442     \}}
 \DoxyCodeLine{443     }
-\DoxyCodeLine{445     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
+\DoxyCodeLine{445     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
 \DoxyCodeLine{446     \{}
-\DoxyCodeLine{447         \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} output = rhs;}
-\DoxyCodeLine{448         }
-\DoxyCodeLine{449         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}(); ++i)}
-\DoxyCodeLine{450         \{}
-\DoxyCodeLine{451             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < output.\mbox{\hyperlink{classJSL_1_1Matrix_a8aba7f9803b553df2aeae68aba3445f5}{Columns}}(); ++j)}
-\DoxyCodeLine{452             \{}
-\DoxyCodeLine{453                 output(i,j) *= scalar;}
-\DoxyCodeLine{454             \}}
-\DoxyCodeLine{455         \}}
-\DoxyCodeLine{456         \textcolor{keywordflow}{return} output;}
-\DoxyCodeLine{457     \}}
-\DoxyCodeLine{458     }
-\DoxyCodeLine{460     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{447         \textcolor{keywordflow}{return} scalar * lhs;}
+\DoxyCodeLine{448     \}}
+\DoxyCodeLine{449     }
+\DoxyCodeLine{451     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_ab1f3153179f59c59a0c2a5e553889eb1}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
+\DoxyCodeLine{452     \{}
+\DoxyCodeLine{453         \textcolor{keywordflow}{if} (scalar == 0)}
+\DoxyCodeLine{454         \{}
+\DoxyCodeLine{455             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Division by zero results in undefined behaviour"{}});}
+\DoxyCodeLine{456         \}}
+\DoxyCodeLine{457         \textcolor{keywordflow}{return} 1.0/scalar * lhs;}
+\DoxyCodeLine{458     \}}
+\DoxyCodeLine{460     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
 \DoxyCodeLine{461     \{}
-\DoxyCodeLine{462         \textcolor{keywordflow}{return} scalar * lhs;}
+\DoxyCodeLine{462         \textcolor{keywordflow}{return} scalar + -\/1 * rhs;}
 \DoxyCodeLine{463     \}}
 \DoxyCodeLine{464     }
-\DoxyCodeLine{466     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_ab1f3153179f59c59a0c2a5e553889eb1}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& lhs, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar)}
-\DoxyCodeLine{467     \{}
-\DoxyCodeLine{468         \textcolor{keywordflow}{if} (scalar == 0)}
-\DoxyCodeLine{469         \{}
-\DoxyCodeLine{470             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Division by zero results in undefined behaviour"{}});}
-\DoxyCodeLine{471         \}}
-\DoxyCodeLine{472         \textcolor{keywordflow}{return} 1.0/scalar * lhs;}
-\DoxyCodeLine{473     \}}
-\DoxyCodeLine{475     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \mbox{\hyperlink{namespaceJSL_a4f1a2a224c7f6a8c57627b03594cd89f}{operator-\/}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& rhs)}
-\DoxyCodeLine{476     \{}
-\DoxyCodeLine{477         \textcolor{keywordflow}{return} scalar + -\/1 * rhs;}
-\DoxyCodeLine{478     \}}
-\DoxyCodeLine{479     }
-\DoxyCodeLine{480     }
-\DoxyCodeLine{482     \textcolor{keyword}{inline} std::ostream\& \mbox{\hyperlink{namespaceJSL_a7e357c34e91d1eb03c15ca437a285ea1}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& obj) }
-\DoxyCodeLine{483     \{}
-\DoxyCodeLine{484         os << obj.\mbox{\hyperlink{classJSL_1_1Matrix_abcf44559767ab6939851f0d3b60c6fa8}{to\_string}}();}
-\DoxyCodeLine{485         \textcolor{keywordflow}{return} os;}
-\DoxyCodeLine{486     \}}
-\DoxyCodeLine{487 \}}
+\DoxyCodeLine{465     }
+\DoxyCodeLine{467     \textcolor{keyword}{inline} std::ostream\& \mbox{\hyperlink{namespaceJSL_a7e357c34e91d1eb03c15ca437a285ea1}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{Matrix}} \& obj) }
+\DoxyCodeLine{468     \{}
+\DoxyCodeLine{469         os << obj.\mbox{\hyperlink{classJSL_1_1Matrix_abcf44559767ab6939851f0d3b60c6fa8}{to\_string}}();}
+\DoxyCodeLine{470         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{471     \}}
+\DoxyCodeLine{472 \}}
 
 \end{DoxyCode}

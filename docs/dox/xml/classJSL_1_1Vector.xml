@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classJSL_1_1Vector" kind="class" language="C++" prot="public">
     <compoundname>JSL::Vector</compoundname>
-    <derivedcompoundref refid="classJSL_1_1Quaternion" prot="public" virt="non-virtual">JSL::Quaternion</derivedcompoundref>
     <includes refid="vector_8h" local="no">vector.h</includes>
       <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classJSL_1_1Vector_1aec102ab8391080ddaedeb4605ef40c5c" prot="protected" static="no" mutable="no">
@@ -754,18 +753,6 @@
     <detaileddescription>
 <para>A class implementing basic R^n vector mathematics. Mostly acts as an extention to the basic std::vector object, but with the implicit assumption that the objects should behave like members of a true vector space, can unambiguously overload some operators and add in additional functionality. </para>
     </detaileddescription>
-    <inheritancegraph>
-      <node id="2">
-        <label>JSL::Quaternion</label>
-        <link refid="classJSL_1_1Quaternion"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>JSL::Vector</label>
-        <link refid="classJSL_1_1Vector"/>
-      </node>
-    </inheritancegraph>
     <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="21" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="22" bodyend="283"/>
     <listofallmembers>
       <member refid="classJSL_1_1Vector_1a0529640bc02ce994026184d93f43f9c3" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>AngleBetween</name></member>

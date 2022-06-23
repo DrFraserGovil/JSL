@@ -143,7 +143,6 @@
     <member refid="classJSL_1_1Matrix_1a7e4bc02f6a1b7a999ec2e404c90d40e6" kind="function"><name>operator+=</name></member>
     <member refid="classJSL_1_1Matrix_1a87e59f6b3a32a2b12f5a73fb4db1e5f1" kind="function"><name>operator-=</name></member>
     <member refid="classJSL_1_1Matrix_1afba6a5e0e92aedc053fcd60428461800" kind="function"><name>operator*=</name></member>
-    <member refid="classJSL_1_1Matrix_1a92a576aff5ec384719d7a7f7f5b7ce99" kind="function"><name>operator*=</name></member>
     <member refid="classJSL_1_1Matrix_1aea26657df162243cfb7f44db591fb133" kind="function"><name>operator/=</name></member>
     <member refid="classJSL_1_1Matrix_1abcf44559767ab6939851f0d3b60c6fa8" kind="function"><name>to_string</name></member>
     <member refid="classJSL_1_1Matrix_1afd9edd73e5f559eed02b063d4c4e47f8" kind="function"><name>Identity</name></member>
@@ -216,24 +215,6 @@
     <member refid="classJSL_1_1ProgressBar_1ad02946ede96408489d672d15ab200958" kind="function"><name>SetName</name></member>
     <member refid="classJSL_1_1ProgressBar_1ac434128522cfdfe01a2d9c791188c8ec" kind="function"><name>SetName</name></member>
     <member refid="classJSL_1_1ProgressBar_1a5fa7f8ced9592b0cea5a366157332eff" kind="function"><name>Clear</name></member>
-  </compound>
-  <compound refid="classJSL_1_1Quaternion" kind="class"><name>JSL::Quaternion</name>
-    <member refid="classJSL_1_1Quaternion_1a3bfe577832b38cdf2dbbb143c9487add" kind="function"><name>Quaternion</name></member>
-    <member refid="classJSL_1_1Quaternion_1ae31be96e94176f1e5278cfaeba39dedc" kind="function"><name>Quaternion</name></member>
-    <member refid="classJSL_1_1Quaternion_1ac0fa428adfcbc3db2eff9b5c86e7a075" kind="function"><name>Quaternion</name></member>
-    <member refid="classJSL_1_1Quaternion_1a6b71605f5fafada8e94bab1bf9af55bd" kind="function"><name>Quaternion</name></member>
-    <member refid="classJSL_1_1Quaternion_1a738b4fb82caf2a0334818ac4e6c494de" kind="function"><name>Quaternion</name></member>
-    <member refid="classJSL_1_1Quaternion_1a23653df5519ca5fdf8ac375e205a21f3" kind="function"><name>Scalar</name></member>
-    <member refid="classJSL_1_1Quaternion_1abe767bf371a5344a3a8ad164ee2986c7" kind="function"><name>Vector</name></member>
-    <member refid="classJSL_1_1Quaternion_1abf935faf93b74e3fa4394982892f8c2e" kind="function"><name>Scalar</name></member>
-    <member refid="classJSL_1_1Quaternion_1ac98d63f8c4b5c79baedc24a23b1e1e1f" kind="function"><name>Vector</name></member>
-    <member refid="classJSL_1_1Quaternion_1a0255f2026ec4af9cff42d09d2309af01" kind="function"><name>Vector</name></member>
-    <member refid="classJSL_1_1Quaternion_1a9bea717f4cd1b5d4e3bdb8eedfbaed2c" kind="function"><name>Conjugate</name></member>
-    <member refid="classJSL_1_1Quaternion_1ada6a7067e13b60a65a6103f7508f62f3" kind="function"><name>LeftMultiplicationMatrix</name></member>
-    <member refid="classJSL_1_1Quaternion_1a081b38fc741f2dc9d4f2b955acbed833" kind="function"><name>RightMultiplicationMatrix</name></member>
-    <member refid="classJSL_1_1Quaternion_1adf0c22bf67a2ab873b998b34583de2e0" kind="function"><name>One</name></member>
-    <member refid="classJSL_1_1Quaternion_1a63e84edb5230efc8378d86b5d182221d" kind="function"><name>Zero</name></member>
-    <member refid="classJSL_1_1Quaternion_1a8d47df19d5d74b82a8e348391e8ef8c4" kind="function"><name>Random</name></member>
   </compound>
   <compound refid="classJSL__Testing_1_1StringTest" kind="class"><name>JSL_Testing::StringTest</name>
     <member refid="classJSL__Testing_1_1StringTest_1a5be5ef071697a4e106c1a1e51ded1cf6" kind="function"><name>StringTest</name></member>
@@ -354,10 +335,6 @@
     <member refid="namespaceJSL_1aebaffa5dc8073b816908a9708a36b7bf" kind="function"><name>operator-</name></member>
     <member refid="namespaceJSL_1a7e357c34e91d1eb03c15ca437a285ea1" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="namespaceJSL_1a017f24cfdf73ecc218aab718c1badd89" kind="function"><name>FractionBounder</name></member>
-    <member refid="namespaceJSL_1aff956bc38fdc0a19f41e202699560dff" kind="function"><name>operator*</name></member>
-    <member refid="namespaceJSL_1a87842870ba7998a0ec521782b2d2f621" kind="function"><name>operator*</name></member>
-    <member refid="namespaceJSL_1a68fed2d9fae3ec9612dd8e8282cf1336" kind="function"><name>operator/</name></member>
-    <member refid="namespaceJSL_1a943a21cab5e9abe4331b20d37cd3f8a1" kind="function"><name>exp</name></member>
     <member refid="namespaceJSL_1aeae64b7e0cfdc1ab5f35cca90c32d9f6" kind="function"><name>VectorDotProduct</name></member>
     <member refid="namespaceJSL_1aa7816eb0cd81b74241ce460237990e70" kind="function"><name>VectorCrossProduct</name></member>
     <member refid="namespaceJSL_1a09355c91f84fd99d4634bf9189fef51d" kind="function"><name>AngleBetweenVectors</name></member>
@@ -451,8 +428,6 @@
   <compound refid="matrix_8h" kind="file"><name>matrix.h</name>
   </compound>
   <compound refid="MiscFunctions_8h" kind="file"><name>MiscFunctions.h</name>
-  </compound>
-  <compound refid="Q__temp_8h" kind="file"><name>Q_temp.h</name>
   </compound>
   <compound refid="vector_8h" kind="file"><name>vector.h</name>
   </compound>
