@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'JSL'
-copyright = '2021, J. Fraser'
-author = 'J. Fraser'
+copyright = '2022, J. Fraser-Govil'
+author = 'J. Fraser-Govil'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
