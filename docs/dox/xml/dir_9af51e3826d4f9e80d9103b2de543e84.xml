@@ -4,6 +4,7 @@
     <compoundname>/Users/jf20/Documents/JSL/System</compoundname>
     <innerfile refid="assert_8h">assert.h</innerfile>
     <innerfile refid="error_8h">error.h</innerfile>
+    <innerfile refid="rm_8h">rm.h</innerfile>
     <innerfile refid="System_8h">System.h</innerfile>
     <innerfile refid="systemCall_8h">systemCall.h</innerfile>
     <briefdescription>

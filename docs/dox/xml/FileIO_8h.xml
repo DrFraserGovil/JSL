@@ -4,7 +4,6 @@
     <compoundname>FileIO.h</compoundname>
     <includes refid="LineReader_8h" local="yes">LineReader.h</includes>
     <includes refid="mkdir_8h" local="yes">mkdir.h</includes>
-    <includes refid="rm_8h" local="yes">rm.h</includes>
     <includes refid="locationExists_8h" local="yes">locationExists.h</includes>
     <includes refid="fileWriter_8h" local="yes">fileWriter.h</includes>
     <includedby refid="Argument_8h" local="yes">/Users/jf20/Documents/JSL/CommandArgs/Argument.h</includedby>
@@ -17,11 +16,9 @@
         <link refid="FileIO_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
@@ -52,36 +49,22 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="11">
         <label>locationExists.h</label>
         <link refid="locationExists_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>mkdir.h</label>
-        <link refid="mkdir_8h"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="17">
-        <label>rm.h</label>
-        <link refid="rm_8h"/>
-        <childnode refid="14" relation="include">
+        <label>mkdir.h</label>
+        <link refid="mkdir_8h"/>
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -99,34 +82,50 @@
         <link refid="System_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="15">
         <label>assert.h</label>
         <link refid="assert_8h"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="14">
         <label>error.h</label>
         <link refid="error_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>systemCall.h</label>
-        <link refid="systemCall_8h"/>
-        <childnode refid="9" relation="include">
+      <node id="9">
+        <label>rm.h</label>
+        <link refid="rm_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="16">
+        <label>systemCall.h</label>
+        <link refid="systemCall_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
         <label>dirent.h</label>
       </node>
       <node id="3">
@@ -138,7 +137,7 @@
       <node id="7">
         <label>sstream</label>
       </node>
-      <node id="10">
+      <node id="13">
         <label>stdexcept</label>
       </node>
       <node id="4">
@@ -147,7 +146,7 @@
       <node id="19">
         <label>string.h</label>
       </node>
-      <node id="16">
+      <node id="12">
         <label>sys/stat.h</label>
       </node>
       <node id="5">
@@ -225,9 +224,8 @@
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LineReader_8h" kindref="compound">LineReader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mkdir_8h" kindref="compound">mkdir.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rm_8h" kindref="compound">rm.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="locationExists_8h" kindref="compound">locationExists.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fileWriter_8h" kindref="compound">fileWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="locationExists_8h" kindref="compound">locationExists.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fileWriter_8h" kindref="compound">fileWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/jf20/Documents/JSL/FileIO/FileIO.h"/>
   </compounddef>

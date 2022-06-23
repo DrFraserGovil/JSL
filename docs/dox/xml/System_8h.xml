@@ -2,56 +2,87 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="System_8h" kind="file" language="C++">
     <compoundname>System.h</compoundname>
+    <includes refid="rm_8h" local="yes">rm.h</includes>
     <includes refid="error_8h" local="yes">error.h</includes>
     <includes refid="assert_8h" local="yes">assert.h</includes>
     <includes refid="systemCall_8h" local="yes">systemCall.h</includes>
     <includedby refid="LineReader_8h" local="yes">/Users/jf20/Documents/JSL/FileIO/LineReader.h</includedby>
     <includedby refid="fileWriter_8h" local="yes">/Users/jf20/Documents/JSL/FileIO/fileWriter.h</includedby>
-    <includedby refid="rm_8h" local="yes">/Users/jf20/Documents/JSL/FileIO/rm.h</includedby>
     <includedby refid="JSL_8h" local="yes">/Users/jf20/Documents/JSL/JSL.h</includedby>
     <includedby refid="vector_8h" local="yes">/Users/jf20/Documents/JSL/Maths/vector.h</includedby>
+    <includedby refid="rm_8h" local="yes">/Users/jf20/Documents/JSL/System/rm.h</includedby>
     <includedby refid="axis_8h" local="yes">/Users/jf20/Documents/JSL/gnuplot/axis.h</includedby>
     <includedby refid="gnuplotMain_8h" local="yes">/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h</includedby>
     <incdepgraph>
+      <node id="5">
+        <label>locationExists.h</label>
+        <link refid="locationExists_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/Users/jf20/Documents/JSL/System/System.h</label>
         <link refid="System_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>assert.h</label>
+        <link refid="assert_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-      </node>
-      <node id="6">
-        <label>assert.h</label>
-        <link refid="assert_8h"/>
-        <childnode refid="2" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="2">
-        <label>error.h</label>
-        <link refid="error_8h"/>
+        <label>rm.h</label>
+        <link refid="rm_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-      </node>
-      <node id="7">
-        <label>systemCall.h</label>
-        <link refid="systemCall_8h"/>
-        <childnode refid="2" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>stdexcept</label>
+      <node id="11">
+        <label>systemCall.h</label>
+        <link refid="systemCall_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
       <node id="3">
+        <label>dirent.h</label>
+      </node>
+      <node id="7">
+        <label>stdexcept</label>
+      </node>
+      <node id="4">
         <label>string</label>
       </node>
-      <node id="5">
+      <node id="6">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="9">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -92,44 +123,38 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="13">
-        <label>/Users/jf20/Documents/JSL/FileIO/rm.h</label>
-        <link refid="rm_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="6">
         <label>/Users/jf20/Documents/JSL/JSL.h</label>
         <link refid="JSL_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="14">
         <label>/Users/jf20/Documents/JSL/Maths/Maths.h</label>
         <link refid="Maths_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="15">
         <label>/Users/jf20/Documents/JSL/Maths/Q_temp.h</label>
         <link refid="Q__temp_8h"/>
       </node>
-      <node id="17">
+      <node id="16">
         <label>/Users/jf20/Documents/JSL/Maths/matrix.h</label>
         <link refid="matrix_8h"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="13">
         <label>/Users/jf20/Documents/JSL/Maths/vector.h</label>
         <link refid="vector_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -139,15 +164,21 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/Users/jf20/Documents/JSL/System/rm.h</label>
+        <link refid="rm_8h"/>
+        <childnode refid="1" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -189,10 +220,10 @@
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rm_8h" kindref="compound">rm.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="error_8h" kindref="compound">error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="assert_8h" kindref="compound">assert.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="systemCall_8h" kindref="compound">systemCall.h</ref>&quot;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="systemCall_8h" kindref="compound">systemCall.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/jf20/Documents/JSL/System/System.h"/>
   </compounddef>

@@ -7,7 +7,6 @@
     <innerfile refid="LineReader_8h">LineReader.h</innerfile>
     <innerfile refid="locationExists_8h">locationExists.h</innerfile>
     <innerfile refid="mkdir_8h">mkdir.h</innerfile>
-    <innerfile refid="rm_8h">rm.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

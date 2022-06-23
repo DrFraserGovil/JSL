@@ -339,7 +339,6 @@
     <member refid="namespaceJSL_1ae790600d9f16e338cfc8b50cd1bfc8f4" kind="function"><name>writeMatrixToFile</name></member>
     <member refid="namespaceJSL_1a1752cd7c6e1134da51e9307527e0d788" kind="function"><name>locationExists</name></member>
     <member refid="namespaceJSL_1abf525d02b8c49f21ef7faa68b7571f93" kind="function"><name>mkdir</name></member>
-    <member refid="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" kind="function"><name>rm</name></member>
     <member refid="namespaceJSL_1a682c8bb3fff54370f38dcb16794fc7c5" kind="function"><name>operator==</name></member>
     <member refid="namespaceJSL_1a8b19814a4b6cb667d1e27133acc38513" kind="function"><name>operator!=</name></member>
     <member refid="namespaceJSL_1a38d1bbf23dc57ec028ea8d91a9688957" kind="function"><name>MatrixSizesEqual</name></member>
@@ -384,6 +383,7 @@
     <member refid="namespaceJSL_1a1a7afe30fd764dc4151982a2631f08d3" kind="function"><name>Assert</name></member>
     <member refid="namespaceJSL_1a5783bc90550deca94c1790e581fb707d" kind="function"><name>Error</name></member>
     <member refid="namespaceJSL_1a0241a3cc1fa4dd4d319ab8686d1cfaa3" kind="function"><name>Error</name></member>
+    <member refid="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" kind="function"><name>rm</name></member>
     <member refid="namespaceJSL_1a5cd4ed117decf1140104ad8566b589ac" kind="function"><name>systemCall</name></member>
   </compound>
   <compound refid="namespaceJSL_1_1Fonts" kind="namespace"><name>JSL::Fonts</name>
@@ -437,8 +437,6 @@
   </compound>
   <compound refid="mkdir_8h" kind="file"><name>mkdir.h</name>
   </compound>
-  <compound refid="rm_8h" kind="file"><name>rm.h</name>
-  </compound>
   <compound refid="axis_8h" kind="file"><name>axis.h</name>
   </compound>
   <compound refid="gnuplot_8h" kind="file"><name>gnuplot.h</name>
@@ -468,6 +466,8 @@
   <compound refid="assert_8h" kind="file"><name>assert.h</name>
   </compound>
   <compound refid="error_8h" kind="file"><name>error.h</name>
+  </compound>
+  <compound refid="rm_8h" kind="file"><name>rm.h</name>
   </compound>
   <compound refid="System_8h" kind="file"><name>System.h</name>
   </compound>

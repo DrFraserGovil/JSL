@@ -763,46 +763,6 @@
         </inbodydescription>
         <location file="/Users/jf20/Documents/JSL/FileIO/mkdir.h" line="24" column="20" bodyfile="/Users/jf20/Documents/JSL/FileIO/mkdir.h" bodystart="24" bodyend="57"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void JSL::rm</definition>
-        <argsstring>(std::string location, bool recursive)</argsstring>
-        <name>rm</name>
-        <qualifiedname>JSL::rm</qualifiedname>
-        <param>
-          <type>std::string</type>
-          <declname>location</declname>
-        </param>
-        <param>
-          <type>bool</type>
-          <declname>recursive</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Calls a system-rm on the provided location, and attempts to remove it. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>location</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The target location on which rm is called </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>recursive</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If true, appends -r to the command, and so removes all subdirectories etc. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/FileIO/rm.h" line="15" column="13" bodyfile="/Users/jf20/Documents/JSL/FileIO/rm.h" bodystart="15" bodyend="24"/>
-      </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a682c8bb3fff54370f38dcb16794fc7c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool JSL::operator==</definition>
@@ -2333,6 +2293,46 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/jf20/Documents/JSL/System/error.h" line="23" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::rm</definition>
+        <argsstring>(std::string location, bool recursive)</argsstring>
+        <name>rm</name>
+        <qualifiedname>JSL::rm</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>recursive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calls a system-rm on the provided location, and attempts to remove it. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target location on which rm is called </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>recursive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, appends -r to the command, and so removes all subdirectories etc. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/System/rm.h" line="15" column="13" bodyfile="/Users/jf20/Documents/JSL/System/rm.h" bodystart="15" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a5cd4ed117decf1140104ad8566b589ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
