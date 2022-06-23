@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="Array_8h" kind="file" language="C++">
+    <compoundname>Array.h</compoundname>
+    <includes refid="VectorSearches_8h" local="yes">VectorSearches.h</includes>
+    <includedby refid="JSL_8h" local="yes">/Users/jf20/Documents/JSL/JSL.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/jf20/Documents/JSL/Array/Array.h</label>
+        <link refid="Array_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>VectorSearches.h</label>
+        <link refid="VectorSearches_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>algorithm</label>
+      </node>
+      <node id="5">
+        <label>math.h</label>
+      </node>
+      <node id="3">
+        <label>numeric</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>/Users/jf20/Documents/JSL/Array/Array.h</label>
+        <link refid="Array_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/Users/jf20/Documents/JSL/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/Users/jf20/Documents/JSL/Testing/Testing.h</label>
+        <link refid="Testing_8h"/>
+      </node>
+      <node id="3">
+        <label>/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h</label>
+        <link refid="Testing__UnitTests_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="VectorSearches_8h" kindref="compound">VectorSearches.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/jf20/Documents/JSL/Array/Array.h"/>
+  </compounddef>
+</doxygen>

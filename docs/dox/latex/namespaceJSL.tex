@@ -90,6 +90,12 @@ enum \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{Error\+Cod
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{namespaceJSL_a428e6ac7fa22e5c5aa3bceb9e17fe970}{Find\+XInY}} (T x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespaceJSL_a1d104ebd2bbb9ec6eade1abbb59fa84e}{Sort\+Indices}} (const std\+::vector$<$ T $>$ \&v)
+\item 
+int \mbox{\hyperlink{namespaceJSL_a6e3dd386e7ab4be6fae6e0bdf8c98e91}{Upper\+Bound\+Locator}} (double val, const std\+::vector$<$ double $>$ \&val\+Array)
+\begin{DoxyCompactList}\small\item\em Similar to Find\+XInY except where you do not expect an exact match. Searches through an (assumed sorted) vector and locates the first value greater than or equal to the target value, else returns the index of the final value in the array. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceJSL_a405f53748ca024b70694b0534cfcf4a3}{jump\+Line\+Up}} ()
 \item 
 void \mbox{\hyperlink{namespaceJSL_a071b279ad5267ce66ff86c614952a3ed}{clear\+Screen}} ()
@@ -201,13 +207,7 @@ void \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}} (\
 void \mbox{\hyperlink{namespaceJSL_a0241a3cc1fa4dd4d319ab8686d1cfaa3}{Error}} (const std\+::string \&message)
 \item 
 void \mbox{\hyperlink{namespaceJSL_a5cd4ed117decf1140104ad8566b589ac}{system\+Call}} (const std\+::string \&command)
-\item 
-{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{namespaceJSL_a428e6ac7fa22e5c5aa3bceb9e17fe970}{Find\+XInY}} (T x, const std\+::vector$<$ T $>$ \&y)
-\item 
-{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespaceJSL_a1d104ebd2bbb9ec6eade1abbb59fa84e}{Sort\+Indices}} (const std\+::vector$<$ T $>$ \&v)
-\item 
-int \mbox{\hyperlink{namespaceJSL_a6e3dd386e7ab4be6fae6e0bdf8c98e91}{Upper\+Bound\+Locator}} (double val, const std\+::vector$<$ double $>$ \&val\+Array)
-\begin{DoxyCompactList}\small\item\em Similar to Find\+XInY except where you do not expect an exact match. Searches through an (assumed sorted) vector and locates the first value greater than or equal to the target value, else returns the index of the final value in the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 

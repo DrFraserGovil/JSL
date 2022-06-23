@@ -326,6 +326,9 @@
     <member refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443" kind="enumvalue"><name>FailedAssertion</name></member>
     <member refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" kind="enumvalue"><name>IOError</name></member>
     <member refid="namespaceJSL_1a606f5a286ccd4cf3d860d2efde2eac82" kind="variable"><name>ErrorNames</name></member>
+    <member refid="namespaceJSL_1a428e6ac7fa22e5c5aa3bceb9e17fe970" kind="function"><name>FindXInY</name></member>
+    <member refid="namespaceJSL_1a1d104ebd2bbb9ec6eade1abbb59fa84e" kind="function"><name>SortIndices</name></member>
+    <member refid="namespaceJSL_1a6e3dd386e7ab4be6fae6e0bdf8c98e91" kind="function"><name>UpperBoundLocator</name></member>
     <member refid="namespaceJSL_1a405f53748ca024b70694b0534cfcf4a3" kind="function"><name>jumpLineUp</name></member>
     <member refid="namespaceJSL_1a071b279ad5267ce66ff86c614952a3ed" kind="function"><name>clearScreen</name></member>
     <member refid="namespaceJSL_1ae38780f94d60045b904b289eb3ab8eda" kind="function"><name>deleteLine</name></member>
@@ -382,9 +385,6 @@
     <member refid="namespaceJSL_1a5783bc90550deca94c1790e581fb707d" kind="function"><name>Error</name></member>
     <member refid="namespaceJSL_1a0241a3cc1fa4dd4d319ab8686d1cfaa3" kind="function"><name>Error</name></member>
     <member refid="namespaceJSL_1a5cd4ed117decf1140104ad8566b589ac" kind="function"><name>systemCall</name></member>
-    <member refid="namespaceJSL_1a428e6ac7fa22e5c5aa3bceb9e17fe970" kind="function"><name>FindXInY</name></member>
-    <member refid="namespaceJSL_1a1d104ebd2bbb9ec6eade1abbb59fa84e" kind="function"><name>SortIndices</name></member>
-    <member refid="namespaceJSL_1a6e3dd386e7ab4be6fae6e0bdf8c98e91" kind="function"><name>UpperBoundLocator</name></member>
   </compound>
   <compound refid="namespaceJSL_1_1Fonts" kind="namespace"><name>JSL::Fonts</name>
     <member refid="namespaceJSL_1_1Fonts_1a7a55fcb9c82e5a8c7f98ce1c803d08ee" kind="enum"><name>Target</name></member>
@@ -410,6 +410,10 @@
   </compound>
   <compound refid="namespaceJSL__Testing" kind="namespace"><name>JSL_Testing</name>
     <member refid="namespaceJSL__Testing_1a509a70d20fdc2e9975d9b0b8ae424ef1" kind="function"><name>RunAllTests</name></member>
+  </compound>
+  <compound refid="Array_8h" kind="file"><name>Array.h</name>
+  </compound>
+  <compound refid="VectorSearches_8h" kind="file"><name>VectorSearches.h</name>
   </compound>
   <compound refid="Argument_8h" kind="file"><name>Argument.h</name>
   </compound>
@@ -475,9 +479,7 @@
   </compound>
   <compound refid="UnitTest_8h" kind="file"><name>UnitTest.h</name>
   </compound>
-  <compound refid="Vector_8h" kind="file"><name>Vector.h</name>
-  </compound>
-  <compound refid="VectorSearches_8h" kind="file"><name>VectorSearches.h</name>
+  <compound refid="dir_4579ab86b6b5ba4f41755bb37c0fc6ca" kind="dir"><name>/Users/jf20/Documents/JSL/Array</name>
   </compound>
   <compound refid="dir_31d17c3e3262f3f46fb0f6e98a9d9bc0" kind="dir"><name>/Users/jf20/Documents/JSL/CommandArgs</name>
   </compound>
@@ -494,7 +496,5 @@
   <compound refid="dir_9af51e3826d4f9e80d9103b2de543e84" kind="dir"><name>/Users/jf20/Documents/JSL/System</name>
   </compound>
   <compound refid="dir_52baaaedca03977d67375a3431bf5277" kind="dir"><name>/Users/jf20/Documents/JSL/Testing</name>
-  </compound>
-  <compound refid="dir_6f539ff7f1e57d810587ac57a02ef21e" kind="dir"><name>/Users/jf20/Documents/JSL/Vector</name>
   </compound>
 </doxygenindex>
