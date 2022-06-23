@@ -1,0 +1,41 @@
+\hypertarget{LineReader_8h_source}{}\doxysection{Line\+Reader.\+h}
+\label{LineReader_8h_source}\index{/Users/jf20/Documents/JSL/FileIO/LineReader.h@{/Users/jf20/Documents/JSL/FileIO/LineReader.h}}
+\mbox{\hyperlink{LineReader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../Strings/split.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../System/System.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define forLineIn(macroFileName, ...)\(\backslash\)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\{                               \(\backslash\)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    do                          \(\backslash\)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{    \{                           \(\backslash\)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{        std::ifstream macroFile(macroFileName); \(\backslash\)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{        if (!macroFile.is\_open())   \(\backslash\)}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{        \{                           \(\backslash\)}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{            JSL::Error(JSL::IOError,"{}Could not find the file '"{}} + macroFileName + "{}.\(\backslash\)n\(\backslash\)nPlease provide a valid filepath."{});\(\backslash\)}
+\DoxyCodeLine{24         \}                           \(\backslash\)}
+\DoxyCodeLine{25         std::string FILE\_LINE;              \(\backslash\)}
+\DoxyCodeLine{26         while (getline(macroFile,FILE\_LINE))    \(\backslash\)}
+\DoxyCodeLine{27         \{                           \(\backslash\)}
+\DoxyCodeLine{28             \_\_VA\_ARGS\_\_             \(\backslash\)}
+\DoxyCodeLine{29         \}                           \(\backslash\)}
+\DoxyCodeLine{30         macroFile.close();          \(\backslash\)}
+\DoxyCodeLine{31     \} while(0);                     \(\backslash\)}
+\DoxyCodeLine{32 \}                                   \(\backslash\)}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define forLineVectorIn(macroFileName, token,...)\(\backslash\)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\{                               \(\backslash\)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{    forLineIn(macroFileName,                    \(\backslash\)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{            std::vector<std::string> FILE\_LINE\_VECTOR = JSL::split(FILE\_LINE,token);    \(\backslash\)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{            \_\_VA\_ARGS\_\_;                \(\backslash\)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{    );                                  \(\backslash\)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\}       }}
+
+\end{DoxyCode}

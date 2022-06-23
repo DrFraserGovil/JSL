@@ -1,0 +1,688 @@
+\hypertarget{Testing__UnitTests_8h_source}{}\doxysection{Testing\+\_\+\+Unit\+Tests.\+h}
+\label{Testing__UnitTests_8h_source}\index{/Users/jf20/Documents/JSL/Testing/Testing\_UnitTests.h@{/Users/jf20/Documents/JSL/Testing/Testing\_UnitTests.h}}
+\mbox{\hyperlink{Testing__UnitTests_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}../JSL.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL__Testing}{JSL\_Testing}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL__Testing_1_1MetaTest}{MetaTest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classJSL_1_1UnitTest}{JSL::UnitTest}}}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         \textcolor{keyword}{public}:}
+\DoxyCodeLine{10             \mbox{\hyperlink{classJSL__Testing_1_1MetaTest_a17efe6a92ae4934828a61d9f1120e67d}{MetaTest}}() : \mbox{\hyperlink{namespaceJSL}{JSL}}::\mbox{\hyperlink{classJSL_1_1UnitTest_aa3bc8d5c99696d5bc6e63b8da358a0ed}{UnitTest}}()}
+\DoxyCodeLine{11             \{}
+\DoxyCodeLine{12                 \mbox{\hyperlink{classJSL_1_1UnitTest_a53c19424147e72fa6392470627f15049}{Name}} = \textcolor{stringliteral}{"{}JSL::UnitTest"{}};}
+\DoxyCodeLine{13                 }
+\DoxyCodeLine{14                 \mbox{\hyperlink{classJSL__Testing_1_1MetaTest_a176352dcd54f9ec7df8f1548882e6820}{Run\_Test}}();}
+\DoxyCodeLine{15             \}}
+\DoxyCodeLine{16             }
+\DoxyCodeLine{17             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL__Testing_1_1MetaTest_a176352dcd54f9ec7df8f1548882e6820}{Run\_Test}}()}
+\DoxyCodeLine{18             \{}
+\DoxyCodeLine{19                 std::vector<std::string> MetaMessage;}
+\DoxyCodeLine{20                 \textcolor{keywordtype}{bool} goodMetaTest = \textcolor{keyword}{true};}
+\DoxyCodeLine{21                 }
+\DoxyCodeLine{22                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} != \textcolor{keyword}{false})}
+\DoxyCodeLine{23                 \{}
+\DoxyCodeLine{24                     MetaMessage.push\_back(\textcolor{stringliteral}{"{}Baseline Pass initialisation failed"{}});}
+\DoxyCodeLine{25                     goodMetaTest = \textcolor{keyword}{false};}
+\DoxyCodeLine{26                 \}}
+\DoxyCodeLine{27                 }
+\DoxyCodeLine{28                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}}[0].length() == 0)}
+\DoxyCodeLine{29                 \{}
+\DoxyCodeLine{30                     MetaMessage.push\_back(\textcolor{stringliteral}{"{}Baseline string initialisation failed"{}});}
+\DoxyCodeLine{31                     goodMetaTest = \textcolor{keyword}{false};}
+\DoxyCodeLine{32                 \}}
+\DoxyCodeLine{33                 }
+\DoxyCodeLine{34                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classJSL_1_1UnitTest_a54dc4908d757c7f523be12a4275e595c}{NonCriticalFailure}})}
+\DoxyCodeLine{35                 \{}
+\DoxyCodeLine{36                     MetaMessage.push\_back(\textcolor{stringliteral}{"{}Default critical analysis is set to exit"{}});}
+\DoxyCodeLine{37                     goodMetaTest = \textcolor{keyword}{false};}
+\DoxyCodeLine{38                 \}}
+\DoxyCodeLine{39                 }
+\DoxyCodeLine{40                 \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} = goodMetaTest;}
+\DoxyCodeLine{41                 \mbox{\hyperlink{classJSL_1_1UnitTest_a54dc4908d757c7f523be12a4275e595c}{NonCriticalFailure}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{42                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}})}
+\DoxyCodeLine{43                 \{}
+\DoxyCodeLine{44                     \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}}[0] = \textcolor{stringliteral}{"{}The baseline UnitTest structure is operating as expected"{}};}
+\DoxyCodeLine{45                 \}}
+\DoxyCodeLine{46                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{47                 \{}
+\DoxyCodeLine{48                     \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}} = MetaMessage;}
+\DoxyCodeLine{49                 \}}
+\DoxyCodeLine{50             \}}
+\DoxyCodeLine{51             }
+\DoxyCodeLine{52     \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     }
+\DoxyCodeLine{55     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL__Testing_1_1StringTest}{StringTest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classJSL_1_1UnitTest}{JSL::UnitTest}}}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57         \textcolor{keyword}{public}: }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \mbox{\hyperlink{classJSL__Testing_1_1StringTest_a5be5ef071697a4e106c1a1e51ded1cf6}{StringTest}}()}
+\DoxyCodeLine{60         \{}
+\DoxyCodeLine{61             \mbox{\hyperlink{classJSL_1_1UnitTest_a53c19424147e72fa6392470627f15049}{Name}} = \textcolor{stringliteral}{"{}JSL::String"{}};}
+\DoxyCodeLine{62             \mbox{\hyperlink{classJSL_1_1UnitTest_a54dc4908d757c7f523be12a4275e595c}{NonCriticalFailure}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{63             }
+\DoxyCodeLine{64             \mbox{\hyperlink{classJSL_1_1UnitTest_aabec19b081be8a428f12e4b5e3dc2a9c}{BufferedTest}}();}
+\DoxyCodeLine{65             }
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67         }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL__Testing_1_1StringTest_ada0409cd10e3f09788994a9115331ff7}{Run\_Test}}()}
+\DoxyCodeLine{70         \{}
+\DoxyCodeLine{71             \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{72             \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}}.resize(0);}
+\DoxyCodeLine{73             }
+\DoxyCodeLine{74             \textcolor{comment}{//split test}}
+\DoxyCodeLine{75             std::string splitTestString= \textcolor{stringliteral}{"{}1,2,3,4,5,octopus"{}};}
+\DoxyCodeLine{76             std::vector<std::string> expectedOutput = \{\textcolor{stringliteral}{"{}1"{}},\textcolor{stringliteral}{"{}2"{}},\textcolor{stringliteral}{"{}3"{}},\textcolor{stringliteral}{"{}4"{}},\textcolor{stringliteral}{"{}5"{}},\textcolor{stringliteral}{"{}octopus"{}}\};}
+\DoxyCodeLine{77             std::vector<std::string> output= \mbox{\hyperlink{namespaceJSL_aa37a5ffd99a34e2f12377c9f00b31c50}{JSL::split}}(splitTestString,\textcolor{charliteral}{','});}
+\DoxyCodeLine{78             \textcolor{keywordtype}{bool} passedSplitTest = \textcolor{keyword}{true};}
+\DoxyCodeLine{79             std::string splitMessage = \textcolor{stringliteral}{"{}JSL::split() functions correctly"{}};}
+\DoxyCodeLine{80             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.size(); ++i)}
+\DoxyCodeLine{81             \{}
+\DoxyCodeLine{82                 \textcolor{keywordflow}{if} (output[i] !=  expectedOutput[i])}
+\DoxyCodeLine{83                 \{}
+\DoxyCodeLine{84                     passedSplitTest = \textcolor{keyword}{false};}
+\DoxyCodeLine{85                     splitMessage = \textcolor{stringliteral}{"{}JSL::split() not functioning as expected"{}};}
+\DoxyCodeLine{86                 \}}
+\DoxyCodeLine{87             \}}
+\DoxyCodeLine{88         }
+\DoxyCodeLine{89             \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}}.push\_back(splitMessage);}
+\DoxyCodeLine{90             \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} = \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} || passedSplitTest;}
+\DoxyCodeLine{91             }
+\DoxyCodeLine{92             \textcolor{comment}{//current time test}}
+\DoxyCodeLine{93             \textcolor{keywordtype}{bool} passedTimeTests = \textcolor{keyword}{true};}
+\DoxyCodeLine{94             std::string timeMessage;}
+\DoxyCodeLine{95             std::string time = \mbox{\hyperlink{namespaceJSL_ae58b7096986a16b70a27e1609eff3014}{JSL::CurrentTime}}();}
+\DoxyCodeLine{96             }
+\DoxyCodeLine{97             }
+\DoxyCodeLine{98             std::string success = \textcolor{stringliteral}{"{}Current time acquisition returned the following: "{}} + time;}
+\DoxyCodeLine{99             std::string failure = \textcolor{stringliteral}{"{}Current time acquisition failed"{}};}
+\DoxyCodeLine{100             \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(time.length() > 0, success,failure);}
+\DoxyCodeLine{101             }
+\DoxyCodeLine{102             }
+\DoxyCodeLine{103             \textcolor{keywordtype}{int} funDuration = 86468;}
+\DoxyCodeLine{104             std::string expectedFormatOutput = \textcolor{stringliteral}{"{}1 Day 1 Minute 8 Seconds "{}};}
+\DoxyCodeLine{105             }
+\DoxyCodeLine{106             std::string formatOutput = \mbox{\hyperlink{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}{JSL::FormatDuration}}(funDuration);}
+\DoxyCodeLine{107             }
+\DoxyCodeLine{108             success = \textcolor{stringliteral}{"{}Time formatting working as expected"{}};}
+\DoxyCodeLine{109             failure = \textcolor{stringliteral}{"{}Time formatting failed: "{}} + formatOutput + \textcolor{stringliteral}{"{}!= "{}} + expectedFormatOutput;}
+\DoxyCodeLine{110             \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(expectedFormatOutput == formatOutput, success,failure);}
+\DoxyCodeLine{111         \}}
+\DoxyCodeLine{112         }
+\DoxyCodeLine{113     \};}
+\DoxyCodeLine{114     }
+\DoxyCodeLine{115     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL__Testing_1_1IOTest}{IOTest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classJSL_1_1UnitTest}{JSL::UnitTest}}}
+\DoxyCodeLine{116     \{}
+\DoxyCodeLine{117         \textcolor{keyword}{public}:}
+\DoxyCodeLine{118             \mbox{\hyperlink{classJSL__Testing_1_1IOTest_a75479573809562118ab4d233c2bc0471}{IOTest}}()}
+\DoxyCodeLine{119             \{}
+\DoxyCodeLine{120                 \mbox{\hyperlink{classJSL_1_1UnitTest_a53c19424147e72fa6392470627f15049}{Name}} = \textcolor{stringliteral}{"{}JSL::FileIO"{}};}
+\DoxyCodeLine{121                 \mbox{\hyperlink{classJSL_1_1UnitTest_a54dc4908d757c7f523be12a4275e595c}{NonCriticalFailure}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{122                 \mbox{\hyperlink{classJSL_1_1UnitTest_aabec19b081be8a428f12e4b5e3dc2a9c}{BufferedTest}}();}
+\DoxyCodeLine{123             \}}
+\DoxyCodeLine{124             }
+\DoxyCodeLine{125             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL__Testing_1_1IOTest_a85daecacc71354b5dc0dee36840b8704}{Run\_Test}}()}
+\DoxyCodeLine{126             \{}
+\DoxyCodeLine{127                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}}.resize(0);}
+\DoxyCodeLine{128                 \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{129                 std::string message;}
+\DoxyCodeLine{130                 }
+\DoxyCodeLine{131                 \textcolor{comment}{// I believe /. and /.. are guaranteed to exist everywhere...seems the safest way to check that this works}}
+\DoxyCodeLine{132                 \textcolor{keywordtype}{bool} canFindLocality = \mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{JSL::locationExists}}(\textcolor{stringliteral}{"{}/."{}}) \&\& \mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{JSL::locationExists}}(\textcolor{stringliteral}{"{}/.."{}});}
+\DoxyCodeLine{133                 std::string success =\textcolor{stringliteral}{"{}The location-\/existence checker identified itself as being in a linux filesystem"{}};}
+\DoxyCodeLine{134                 std::string failure =\textcolor{stringliteral}{"{}The location-\/existence checker could not identify a basic linux filesystem"{}};}
+\DoxyCodeLine{135                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(canFindLocality, success,failure);}
+\DoxyCodeLine{136                 }
+\DoxyCodeLine{137                 }
+\DoxyCodeLine{138                 }
+\DoxyCodeLine{139                 \textcolor{comment}{//mkdir checker}}
+\DoxyCodeLine{140                 std::string tempDirNameTopLevel = \textcolor{stringliteral}{"{}iotest\_tmp"{}};}
+\DoxyCodeLine{141                 std::string nested = \textcolor{stringliteral}{"{}nested/nested2"{}};}
+\DoxyCodeLine{142                 std::string tempDirName = tempDirNameTopLevel + \textcolor{stringliteral}{"{}/"{}} + nested;}
+\DoxyCodeLine{143                 \mbox{\hyperlink{structJSL_1_1mkdirReturn}{JSL::mkdirReturn}} output = \mbox{\hyperlink{namespaceJSL_abf525d02b8c49f21ef7faa68b7571f93}{JSL::mkdir}}(tempDirName);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145                 success = \textcolor{stringliteral}{"{}The mkdir routine successfully created "{}} + tempDirName;}
+\DoxyCodeLine{146                 failure = \textcolor{stringliteral}{"{}mkdir Routined failed to create "{}} + tempDirName;}
+\DoxyCodeLine{147                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(output.\mbox{\hyperlink{structJSL_1_1mkdirReturn_a76abe5af61a20e13756f833b79782b7f}{Successful}} \&\& \mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{JSL::locationExists}}(tempDirName), success,failure);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150                 }
+\DoxyCodeLine{151                 \textcolor{comment}{//initialise file}}
+\DoxyCodeLine{152                 std::string fileName = tempDirName + \textcolor{stringliteral}{"{}/test.txt"{}};}
+\DoxyCodeLine{153                 \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{JSL::initialiseFile}}(fileName);}
+\DoxyCodeLine{154                 }
+\DoxyCodeLine{155                 success = fileName + \textcolor{stringliteral}{"{} was successfully initialised as an empty file"{}};;}
+\DoxyCodeLine{156                 failure = \textcolor{stringliteral}{"{}Could not initialise "{}} + fileName + \textcolor{stringliteral}{"{} as an empty file"{}};}
+\DoxyCodeLine{157                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(\mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{JSL::locationExists}}(fileName), success,failure);}
+\DoxyCodeLine{158                 }
+\DoxyCodeLine{159                 }
+\DoxyCodeLine{160                 \textcolor{comment}{//file writing -\/-\/ can use some JSL::String stuff here as we are guaranteed to reach this point only if split() etc. pass their tests}}
+\DoxyCodeLine{161                 std::string testString = \textcolor{stringliteral}{"{}test 0 1 2, j z y, 99 29, 100 200 300"{}};}
+\DoxyCodeLine{162                 \mbox{\hyperlink{namespaceJSL_a838b3a913896993bc008408d164ec19d}{JSL::writeStringToFile}}(fileName,testString);}
+\DoxyCodeLine{163                 }
+\DoxyCodeLine{164                 \textcolor{keywordtype}{int} lines = 0;}
+\DoxyCodeLine{165                 \textcolor{keywordtype}{bool} linesMatched = \textcolor{keyword}{true};}
+\DoxyCodeLine{166                 \mbox{\hyperlink{LineReader_8h_a5480fba013891b2f3033cc97d5d8edf4}{forLineIn}}(fileName,}
+\DoxyCodeLine{167                     ++lines;}
+\DoxyCodeLine{168                     \textcolor{keywordflow}{if} (FILE\_LINE != testString)}
+\DoxyCodeLine{169                     \{}
+\DoxyCodeLine{170                         linesMatched = \textcolor{keyword}{false};}
+\DoxyCodeLine{171                     \}}
+\DoxyCodeLine{172                 );}
+\DoxyCodeLine{173                 \textcolor{keywordflow}{if} (lines > 1)}
+\DoxyCodeLine{174                 \{}
+\DoxyCodeLine{175                     linesMatched = \textcolor{keyword}{false};}
+\DoxyCodeLine{176                 \}}
+\DoxyCodeLine{177                 }
+\DoxyCodeLine{178                 success = \textcolor{stringliteral}{"{}JSL::writeStringToFile and forLineIn were able to work together to produce consistent output"{}};}
+\DoxyCodeLine{179                 failure = \textcolor{stringliteral}{"{}JSL::writeStringToFile and forLineIn did not produce consistent output"{}};}
+\DoxyCodeLine{180                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(linesMatched, success,failure);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182                 \textcolor{comment}{//vector check}}
+\DoxyCodeLine{183                 \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{JSL::initialiseFile}}(fileName);}
+\DoxyCodeLine{184                 std::vector<std::string> rows = \mbox{\hyperlink{namespaceJSL_aa37a5ffd99a34e2f12377c9f00b31c50}{JSL::split}}(testString,\textcolor{charliteral}{','});}
+\DoxyCodeLine{185                 \mbox{\hyperlink{namespaceJSL_a1d611217d83275af846cbc091ff98f53}{JSL::writeVectorToFile}}(fileName,rows,\textcolor{stringliteral}{"{}\(\backslash\)n"{}},\textcolor{keyword}{false});}
+\DoxyCodeLine{186                 lines = 0;}
+\DoxyCodeLine{187                 linesMatched = \textcolor{keyword}{true};}
+\DoxyCodeLine{188                 \mbox{\hyperlink{LineReader_8h_a5480fba013891b2f3033cc97d5d8edf4}{forLineIn}}(fileName,}
+\DoxyCodeLine{189                     ++lines;}
+\DoxyCodeLine{190                     \textcolor{keywordflow}{if} (FILE\_LINE != rows[lines-\/1])}
+\DoxyCodeLine{191                     \{}
+\DoxyCodeLine{192                         linesMatched = \textcolor{keyword}{false};}
+\DoxyCodeLine{193                     \}}
+\DoxyCodeLine{194                 );}
+\DoxyCodeLine{195                 \textcolor{keywordflow}{if} (lines != rows.size())}
+\DoxyCodeLine{196                 \{}
+\DoxyCodeLine{197                     linesMatched= \textcolor{keyword}{false};}
+\DoxyCodeLine{198                 \}}
+\DoxyCodeLine{199                 success = \textcolor{stringliteral}{"{}JSL::writeVectorToFile and forLineIn were able to work together to produce consistent output"{}};}
+\DoxyCodeLine{200                 failure = \textcolor{stringliteral}{"{}JSL::writeVectorToFile and forLineIn did not produce consistent output"{}};}
+\DoxyCodeLine{201                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(linesMatched, success,failure);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204                 \textcolor{comment}{//matrix check}}
+\DoxyCodeLine{205                 \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{JSL::initialiseFile}}(fileName);}
+\DoxyCodeLine{206                 std::vector<std::vector<std::string>> matrix;}
+\DoxyCodeLine{207                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} row : rows)}
+\DoxyCodeLine{208                 \{}
+\DoxyCodeLine{209                     matrix.push\_back(\mbox{\hyperlink{namespaceJSL_aa37a5ffd99a34e2f12377c9f00b31c50}{JSL::split}}(row,\textcolor{charliteral}{' '}));}
+\DoxyCodeLine{210                 \}}
+\DoxyCodeLine{211                 \mbox{\hyperlink{namespaceJSL_ae790600d9f16e338cfc8b50cd1bfc8f4}{JSL::writeMatrixToFile}}(fileName,matrix,\textcolor{stringliteral}{"{}|"{}},\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{212                 linesMatched = \textcolor{keyword}{true};}
+\DoxyCodeLine{213                 lines = 0;}
+\DoxyCodeLine{214                 \mbox{\hyperlink{LineReader_8h_abdfa973ea7dd7efb90a74e8ec636f5ed}{forLineVectorIn}}(fileName,\textcolor{charliteral}{'|'},}
+\DoxyCodeLine{215                     \textcolor{keywordflow}{if} (FILE\_LINE\_VECTOR.size() != matrix[lines].size())}
+\DoxyCodeLine{216                     \{}
+\DoxyCodeLine{217                         linesMatched = false;}
+\DoxyCodeLine{218                     \}}
+\DoxyCodeLine{219                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{220                     \{}
+\DoxyCodeLine{221                         for (int i = 0; i < FILE\_LINE\_VECTOR.size(); ++i)}
+\DoxyCodeLine{222                         \{}
+\DoxyCodeLine{223                             if (FILE\_LINE\_VECTOR[i] != matrix[lines][i])}
+\DoxyCodeLine{224                             \{}
+\DoxyCodeLine{225                                 linesMatched = false;}
+\DoxyCodeLine{226                             \}}
+\DoxyCodeLine{227                         \}}
+\DoxyCodeLine{228                     \}}
+\DoxyCodeLine{229                     ++lines;}
+\DoxyCodeLine{230                 );}
+\DoxyCodeLine{231                 \textcolor{keywordflow}{if} (lines != matrix.size())}
+\DoxyCodeLine{232                 \{}
+\DoxyCodeLine{233                     linesMatched = \textcolor{keyword}{false};}
+\DoxyCodeLine{234                 \}}
+\DoxyCodeLine{235                 success = \textcolor{stringliteral}{"{}JSL::writeMatrixToFile and forLineVectorIn were able to work together to produce consistent output"{}};}
+\DoxyCodeLine{236                 failure = \textcolor{stringliteral}{"{}JSL::writeMatrixToFile and forLineVectorIn did not produce consistent output"{}};}
+\DoxyCodeLine{237                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(linesMatched, success,failure);}
+\DoxyCodeLine{238                 }
+\DoxyCodeLine{239                 \textcolor{comment}{//removal check!}}
+\DoxyCodeLine{240                 \mbox{\hyperlink{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}{JSL::rm}}(tempDirNameTopLevel,\textcolor{keyword}{true});}
+\DoxyCodeLine{241                 success = \textcolor{stringliteral}{"{}JSL::rm was able to remove the test files"{}};}
+\DoxyCodeLine{242                 failure = \textcolor{stringliteral}{"{}JSL::rm could not remove the test files"{}};}
+\DoxyCodeLine{243                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(!\mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{JSL::locationExists}}(tempDirNameTopLevel),success,failure);}
+\DoxyCodeLine{244             \}}
+\DoxyCodeLine{245     \};}
+\DoxyCodeLine{246     }
+\DoxyCodeLine{247     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL__Testing_1_1ArgumentTest}{ArgumentTest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classJSL_1_1UnitTest}{JSL::UnitTest}}}
+\DoxyCodeLine{248     \{}
+\DoxyCodeLine{249         \textcolor{keyword}{public}:}
+\DoxyCodeLine{250             \mbox{\hyperlink{classJSL__Testing_1_1ArgumentTest_a3d83658826bd70b33349e53a7326ae5a}{ArgumentTest}}()}
+\DoxyCodeLine{251             \{}
+\DoxyCodeLine{252                 Name = \textcolor{stringliteral}{"{}JSL::Argument"{}};}
+\DoxyCodeLine{253                 NonCriticalFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{254                 MessageBuffer.resize(0);}
+\DoxyCodeLine{255                 BufferedTest();}
+\DoxyCodeLine{256             \}}
+\DoxyCodeLine{257             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL__Testing_1_1ArgumentTest_a1c4c626d57e448da86866ef414308e97}{Run\_Test}}()}
+\DoxyCodeLine{258             \{}
+\DoxyCodeLine{259                 Passed = \textcolor{keyword}{true};}
+\DoxyCodeLine{260                 }
+\DoxyCodeLine{261                 \textcolor{comment}{//Basic casting test}}
+\DoxyCodeLine{262                 \mbox{\hyperlink{classJSL_1_1Argument}{JSL::Argument<int>}} intArg(3,\textcolor{stringliteral}{"{}int"{}});}
+\DoxyCodeLine{263                 \mbox{\hyperlink{classJSL_1_1Argument}{JSL::Argument<double>}} doubleArg(5.5,\textcolor{stringliteral}{"{}double"{}});}
+\DoxyCodeLine{264                 }
+\DoxyCodeLine{265                 \textcolor{keywordtype}{double} expectedSum = 3 + 5.5;}
+\DoxyCodeLine{266                 \textcolor{keywordtype}{double} sum = intArg + doubleArg;}
+\DoxyCodeLine{267                 }
+\DoxyCodeLine{268                 std::string success = \textcolor{stringliteral}{"{}Basic casting methods successful"{}};}
+\DoxyCodeLine{269                 std::string failure = \textcolor{stringliteral}{"{}Basic casting methods failed"{}};}
+\DoxyCodeLine{270                 basicConditionCheck(sum == expectedSum, success,failure);}
+\DoxyCodeLine{271                 }
+\DoxyCodeLine{272                 }
+\DoxyCodeLine{273                 \textcolor{comment}{//Test the parsing methods}}
+\DoxyCodeLine{274                 std::vector<char *> args = \{\textcolor{stringliteral}{"{}test.cpp"{}},\textcolor{stringliteral}{"{}-\/int"{}},\textcolor{stringliteral}{"{}5"{}},\textcolor{stringliteral}{"{}-\/double"{}},\textcolor{stringliteral}{"{}-\/2.2"{}},\textcolor{stringliteral}{"{}-\/schlom"{}},\textcolor{stringliteral}{"{}hey"{}},\textcolor{stringliteral}{"{}-\/boolio"{}},\textcolor{stringliteral}{"{}1"{}}\};}
+\DoxyCodeLine{275                 }
+\DoxyCodeLine{276                 intArg.\mbox{\hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{ListParse}}(args.size(),args.data());}
+\DoxyCodeLine{277                 doubleArg.\mbox{\hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{ListParse}}(args.size(), args.data());}
+\DoxyCodeLine{278                 expectedSum = 5 -\/ 2.2;}
+\DoxyCodeLine{279                 sum = intArg + doubleArg;}
+\DoxyCodeLine{280                 success = \textcolor{stringliteral}{"{}List Parse methods successful"{}};}
+\DoxyCodeLine{281                 failure = \textcolor{stringliteral}{"{}List Parse methods failed"{}};}
+\DoxyCodeLine{282                 basicConditionCheck(sum == expectedSum, success,failure);}
+\DoxyCodeLine{283                 }
+\DoxyCodeLine{284                 \textcolor{keywordtype}{bool} boolsuccess = \textcolor{keyword}{true};}
+\DoxyCodeLine{285                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{286                 \{}
+\DoxyCodeLine{287                     \mbox{\hyperlink{classJSL_1_1Argument}{JSL::Argument<bool>}} boolArg(\textcolor{keyword}{false},\textcolor{stringliteral}{"{}boolio"{}},args.size(),args.data());}
+\DoxyCodeLine{288                     boolsuccess = boolArg;}
+\DoxyCodeLine{289                 \}}
+\DoxyCodeLine{290                 \textcolor{keywordflow}{catch} (...)}
+\DoxyCodeLine{291                 \{}
+\DoxyCodeLine{292                     boolsuccess = \textcolor{keyword}{false};}
+\DoxyCodeLine{293                 \}}
+\DoxyCodeLine{294                 success = \textcolor{stringliteral}{"{}Boolean parsing worked"{}};}
+\DoxyCodeLine{295                 failure = \textcolor{stringliteral}{"{}Boolean parsing failed"{}};}
+\DoxyCodeLine{296                 basicConditionCheck(boolsuccess,success,failure);}
+\DoxyCodeLine{297                 }
+\DoxyCodeLine{298                 \textcolor{keywordtype}{bool} stringsuccess = \textcolor{keyword}{true};}
+\DoxyCodeLine{299                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{300                 \{}
+\DoxyCodeLine{301                     \mbox{\hyperlink{classJSL_1_1Argument}{JSL::Argument<std::string>}} stringArg(\textcolor{stringliteral}{"{}ho"{}},\textcolor{stringliteral}{"{}schlom"{}},args.size(),args.data());}
+\DoxyCodeLine{302                     stringsuccess = (std::string)stringArg == \textcolor{stringliteral}{"{}hey"{}};}
+\DoxyCodeLine{303                 \}}
+\DoxyCodeLine{304                 \textcolor{keywordflow}{catch} (...)}
+\DoxyCodeLine{305                 \{}
+\DoxyCodeLine{306                     stringsuccess = \textcolor{keyword}{false};}
+\DoxyCodeLine{307                 \}}
+\DoxyCodeLine{308                 success = \textcolor{stringliteral}{"{}String parsing worked"{}};}
+\DoxyCodeLine{309                 failure = \textcolor{stringliteral}{"{}String parsing failed"{}};}
+\DoxyCodeLine{310                 basicConditionCheck(stringsuccess,success,failure);}
+\DoxyCodeLine{311                 }
+\DoxyCodeLine{312                 \textcolor{keywordtype}{bool} intAvert = \textcolor{keyword}{true};}
+\DoxyCodeLine{313                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{314                 \{}
+\DoxyCodeLine{315                     \mbox{\hyperlink{classJSL_1_1Argument}{JSL::Argument<int>}} intArg(2,\textcolor{stringliteral}{"{}double"{}},args.size(),args.data());}
+\DoxyCodeLine{316                     intAvert = \textcolor{keyword}{false};}
+\DoxyCodeLine{317                 \}}
+\DoxyCodeLine{318                 \textcolor{keywordflow}{catch} (...)}
+\DoxyCodeLine{319                 \{}
+\DoxyCodeLine{320                     intAvert = \textcolor{keyword}{true};}
+\DoxyCodeLine{321                 \}}
+\DoxyCodeLine{322                 success = \textcolor{stringliteral}{"{}Successfully threw an error when casting an int to a double"{}};}
+\DoxyCodeLine{323                 failure = \textcolor{stringliteral}{"{}Failed to throw an error when setting an int to a double...."{}};}
+\DoxyCodeLine{324                 basicConditionCheck(intAvert,success,failure);}
+\DoxyCodeLine{325             \}}
+\DoxyCodeLine{326     \};}
+\DoxyCodeLine{327     }
+\DoxyCodeLine{328     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL__Testing_1_1VectorTest}{VectorTest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classJSL_1_1UnitTest}{JSL::UnitTest}}}
+\DoxyCodeLine{329     \{}
+\DoxyCodeLine{330         \textcolor{keyword}{public}:}
+\DoxyCodeLine{331             \mbox{\hyperlink{classJSL__Testing_1_1VectorTest_a4750f287bc10a0df1f4f28cb84598bc2}{VectorTest}}()}
+\DoxyCodeLine{332             \{}
+\DoxyCodeLine{333                 Name = \textcolor{stringliteral}{"{}JSL::Vector"{}};}
+\DoxyCodeLine{334                 NonCriticalFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{335                 MessageBuffer.resize(0);}
+\DoxyCodeLine{336                 BufferedTest();}
+\DoxyCodeLine{337             \}}
+\DoxyCodeLine{338             }
+\DoxyCodeLine{339             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL__Testing_1_1VectorTest_ad79bb4654e6f7b59d31d7239ee0c2b82}{Run\_Test}}()}
+\DoxyCodeLine{340             \{}
+\DoxyCodeLine{341                 Passed = \textcolor{keyword}{true};}
+\DoxyCodeLine{342                 }
+\DoxyCodeLine{343                 \textcolor{keyword}{const} \textcolor{keywordtype}{int} n = 5;}
+\DoxyCodeLine{344                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v1(n);}
+\DoxyCodeLine{345                 }
+\DoxyCodeLine{346                 \textcolor{keywordtype}{bool} allEqualToZero = \textcolor{keyword}{true};}
+\DoxyCodeLine{347                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i)}
+\DoxyCodeLine{348                 \{}
+\DoxyCodeLine{349                     \textcolor{keywordflow}{if} (v1[i] != 0)}
+\DoxyCodeLine{350                     \{}
+\DoxyCodeLine{351                         allEqualToZero = \textcolor{keyword}{false};}
+\DoxyCodeLine{352                     \}}
+\DoxyCodeLine{353                 \}}
+\DoxyCodeLine{354                 std::string message = \textcolor{stringliteral}{"{}JSL::Vector Zero-\/initialisation method and basic access test"{}};}
+\DoxyCodeLine{355                 basicConditionCheck(allEqualToZero,message);}
+\DoxyCodeLine{356                 }
+\DoxyCodeLine{357                 }
+\DoxyCodeLine{358                 }
+\DoxyCodeLine{359                 v1[0] = n;}
+\DoxyCodeLine{360                 \textcolor{keywordtype}{bool} basicAssignmentCheck = (v1[0] == n);}
+\DoxyCodeLine{361                 message = \textcolor{stringliteral}{"{}JSL::Vector Basic array-\/assignment syntax"{}};}
+\DoxyCodeLine{362                 basicConditionCheck(basicAssignmentCheck,message);}
+\DoxyCodeLine{363                 }
+\DoxyCodeLine{364                 }
+\DoxyCodeLine{365                 std::vector<double> initStruct(n,0);}
+\DoxyCodeLine{366                 initStruct[0] = n;}
+\DoxyCodeLine{367                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v2(initStruct);}
+\DoxyCodeLine{368                 \textcolor{keywordtype}{bool} v2Init = \textcolor{keyword}{true};}
+\DoxyCodeLine{369                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i)}
+\DoxyCodeLine{370                 \{}
+\DoxyCodeLine{371                     \textcolor{keywordflow}{if} (v2[i] != v1[i])}
+\DoxyCodeLine{372                     \{}
+\DoxyCodeLine{373                         v2Init = \textcolor{keyword}{false};}
+\DoxyCodeLine{374                     \}}
+\DoxyCodeLine{375                 \}}
+\DoxyCodeLine{376                 message = \textcolor{stringliteral}{"{}JSL::Vector initialisation using std::vector"{}};}
+\DoxyCodeLine{377                 basicConditionCheck(v2Init,message);}
+\DoxyCodeLine{378                 }
+\DoxyCodeLine{379                 \textcolor{keywordtype}{bool} overFlowSuccess;}
+\DoxyCodeLine{380                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{381                 \{}
+\DoxyCodeLine{382                     \textcolor{keywordtype}{double} a = v1[n+1];}
+\DoxyCodeLine{383                     overFlowSuccess = \textcolor{keyword}{false};}
+\DoxyCodeLine{384                 \}}
+\DoxyCodeLine{385                 \textcolor{keywordflow}{catch} (std::runtime\_error)}
+\DoxyCodeLine{386                 \{}
+\DoxyCodeLine{387                     overFlowSuccess = \textcolor{keyword}{true};}
+\DoxyCodeLine{388                 \}}
+\DoxyCodeLine{389                 message = \textcolor{stringliteral}{"{}JSL::Vector overflow error-\/throwing"{}};}
+\DoxyCodeLine{390                 basicConditionCheck(overFlowSuccess,message);}
+\DoxyCodeLine{391                 }
+\DoxyCodeLine{392                 \textcolor{keywordtype}{bool} underFlowSuccess;}
+\DoxyCodeLine{393                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{394                 \{}
+\DoxyCodeLine{395                     \textcolor{keywordtype}{double} a = v1[-\/1];}
+\DoxyCodeLine{396                     underFlowSuccess = \textcolor{keyword}{false};}
+\DoxyCodeLine{397                 \}}
+\DoxyCodeLine{398                 \textcolor{keywordflow}{catch} (std::runtime\_error)}
+\DoxyCodeLine{399                 \{}
+\DoxyCodeLine{400                     underFlowSuccess = \textcolor{keyword}{true};}
+\DoxyCodeLine{401                 \}}
+\DoxyCodeLine{402                 message = \textcolor{stringliteral}{"{}JSL::Vector underflow error-\/throwing"{}};}
+\DoxyCodeLine{403                 basicConditionCheck(overFlowSuccess,message);}
+\DoxyCodeLine{404                 }
+\DoxyCodeLine{405                 \textcolor{keywordtype}{bool} equalityCheck = (v1 == v2);}
+\DoxyCodeLine{406                 message = \textcolor{stringliteral}{"{}JSL::Vector equality testing"{}};}
+\DoxyCodeLine{407                 basicConditionCheck(equalityCheck,message);}
+\DoxyCodeLine{408                 }
+\DoxyCodeLine{409                 ++v2[0];}
+\DoxyCodeLine{410                 \textcolor{keywordtype}{bool} inEqualityCheck = (v1 != v2);}
+\DoxyCodeLine{411                 message = \textcolor{stringliteral}{"{}JSL::Vector inequality testing"{}};}
+\DoxyCodeLine{412                 basicConditionCheck(inEqualityCheck,message);}
+\DoxyCodeLine{413                 }
+\DoxyCodeLine{414                 }
+\DoxyCodeLine{415                 \textcolor{keywordtype}{double} offset = 3.2;}
+\DoxyCodeLine{416                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v3 = v1 + v2;}
+\DoxyCodeLine{417                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v4 = offset + v1;}
+\DoxyCodeLine{418                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v5 = v1 + offset;}
+\DoxyCodeLine{419                 \textcolor{keywordtype}{bool} summationWorks = \textcolor{keyword}{true};}
+\DoxyCodeLine{420                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i)}
+\DoxyCodeLine{421                 \{}
+\DoxyCodeLine{422                     \textcolor{keywordtype}{bool} summer = (v3[i] == (v1[i] + v2[i]));}
+\DoxyCodeLine{423                     \textcolor{keywordtype}{bool} scalarsum = (v4[i] == v1[i] + offset);}
+\DoxyCodeLine{424                     \textcolor{keywordtype}{bool} sumscalar = (v5[i] == v1[i] + offset);}
+\DoxyCodeLine{425                     }
+\DoxyCodeLine{426                     \textcolor{keywordflow}{if} (!summer || !scalarsum || !sumscalar)}
+\DoxyCodeLine{427                     \{}
+\DoxyCodeLine{428                         summationWorks = \textcolor{keyword}{false};}
+\DoxyCodeLine{429                     \}}
+\DoxyCodeLine{430                 \}}
+\DoxyCodeLine{431                 message = \textcolor{stringliteral}{"{}JSL::Vector summation testing"{}};}
+\DoxyCodeLine{432                 basicConditionCheck(summationWorks,message);}
+\DoxyCodeLine{433                 }
+\DoxyCodeLine{434                 \textcolor{keywordtype}{double} mult = 3;}
+\DoxyCodeLine{435                 \textcolor{keywordtype}{bool} scalarMultiplicationWorks = \textcolor{keyword}{true};}
+\DoxyCodeLine{436                 v1[0] = 4;}
+\DoxyCodeLine{437                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v6 = mult * v1;}
+\DoxyCodeLine{438                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v7 = v1 * -\/mult;}
+\DoxyCodeLine{439                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i =0; i < n; ++i)}
+\DoxyCodeLine{440                 \{}
+\DoxyCodeLine{441                     \textcolor{keywordtype}{bool} forward = v6[i] == mult * v1[i];}
+\DoxyCodeLine{442                     \textcolor{keywordtype}{bool} backward = v7[i] == -\/mult * v1[i];}
+\DoxyCodeLine{443                     \textcolor{keywordflow}{if} (!forward || !backward)}
+\DoxyCodeLine{444                     \{}
+\DoxyCodeLine{445                         scalarMultiplicationWorks = \textcolor{keyword}{false};}
+\DoxyCodeLine{446                     \}}
+\DoxyCodeLine{447                 \}}
+\DoxyCodeLine{448                 message = \textcolor{stringliteral}{"{}JSL::Vector scalar multiplication testing"{}};}
+\DoxyCodeLine{449                 basicConditionCheck(scalarMultiplicationWorks,message);}
+\DoxyCodeLine{450                 }
+\DoxyCodeLine{451                 }
+\DoxyCodeLine{452                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v8 = v6 -\/ v7;}
+\DoxyCodeLine{453                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v9 = v7 -\/ v6;}
+\DoxyCodeLine{454                 \textcolor{keywordtype}{bool} subtractCheck = (v8 == 2*mult*v1) \&\& (v9 == -\/2*mult*v1);}
+\DoxyCodeLine{455                 message = \textcolor{stringliteral}{"{}JSL::Vector subtraction testing"{}};}
+\DoxyCodeLine{456                 basicConditionCheck(subtractCheck,message);}
+\DoxyCodeLine{457                 }
+\DoxyCodeLine{458                 }
+\DoxyCodeLine{459                 \textcolor{keywordtype}{bool} divisorCheck = 0.5 * v1 == v1/2;}
+\DoxyCodeLine{460                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{461                 \{}
+\DoxyCodeLine{462                     \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v10 = v1/0;}
+\DoxyCodeLine{463                     divisorCheck = \textcolor{keyword}{false};}
+\DoxyCodeLine{464                 \}}
+\DoxyCodeLine{465                 \textcolor{keywordflow}{catch} (std::runtime\_error)}
+\DoxyCodeLine{466                 \{}
+\DoxyCodeLine{467                     \textcolor{comment}{//}}
+\DoxyCodeLine{468                 \}}
+\DoxyCodeLine{469                 }
+\DoxyCodeLine{470                 message = \textcolor{stringliteral}{"{}JSL::Vector division testing (including zero division)"{}};}
+\DoxyCodeLine{471                 basicConditionCheck(divisorCheck,message);}
+\DoxyCodeLine{472                 }
+\DoxyCodeLine{473                 }
+\DoxyCodeLine{474                 \textcolor{comment}{//in place modification}}
+\DoxyCodeLine{475                 std::vector<double> v11Base =\{1,2,99,-\/100,10\};}
+\DoxyCodeLine{476                 std::vector<double> v12Base= \{-\/2,10.2,13,-\/99.999,0.02\}; }
+\DoxyCodeLine{477                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v11(v11Base);}
+\DoxyCodeLine{478                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v11\_original = v11;}
+\DoxyCodeLine{479                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v12(v12Base);}
+\DoxyCodeLine{480                 }
+\DoxyCodeLine{481                 std::string test = \textcolor{stringliteral}{"{}JSL::Vector += JSL::Vector test"{}};}
+\DoxyCodeLine{482                 v11 += v12;}
+\DoxyCodeLine{483                 \textcolor{keywordtype}{bool} inPlaceAdditionWorks = (v11 == (v11\_original + v12));}
+\DoxyCodeLine{484                 basicConditionCheck(inPlaceAdditionWorks,test);}
+\DoxyCodeLine{485                 }
+\DoxyCodeLine{486                 v11 -\/= v12;}
+\DoxyCodeLine{487                 test = \textcolor{stringliteral}{"{}JSL::Vector -\/= JSL::Vector test"{}};}
+\DoxyCodeLine{488                 \textcolor{keywordtype}{bool} inPlaceSubtractionWorks = (v11 == v11\_original);}
+\DoxyCodeLine{489                 basicConditionCheck(inPlaceSubtractionWorks,test);}
+\DoxyCodeLine{490                 }
+\DoxyCodeLine{491                 test = \textcolor{stringliteral}{"{}JSL::Vector += scalar test"{}};}
+\DoxyCodeLine{492                 v11 += 5;}
+\DoxyCodeLine{493                 \textcolor{keywordtype}{bool} inPlaceScalarAddition = (v11 == (v11\_original + 5));}
+\DoxyCodeLine{494                 basicConditionCheck(inPlaceScalarAddition, test);}
+\DoxyCodeLine{495                 }
+\DoxyCodeLine{496                 test = \textcolor{stringliteral}{"{}JSL::Vector -\/= scalar test"{}};}
+\DoxyCodeLine{497                 v11 -\/= 3;}
+\DoxyCodeLine{498                 \textcolor{keywordtype}{bool} inPlaceScalarSubtraction = (v11 == (v11\_original + 2));}
+\DoxyCodeLine{499                 basicConditionCheck(inPlaceScalarSubtraction, test);}
+\DoxyCodeLine{500                 }
+\DoxyCodeLine{501                 test = \textcolor{stringliteral}{"{}JSL::Vector *= scalar test"{}};}
+\DoxyCodeLine{502                 v11 -\/= 2;}
+\DoxyCodeLine{503                 v11 *= 3;}
+\DoxyCodeLine{504                 \textcolor{keywordtype}{bool} inPlaceMultiplicationWorks = (v11 == 3 *v11\_original) \&\& (v11 == v11\_original*3);}
+\DoxyCodeLine{505                 basicConditionCheck(inPlaceMultiplicationWorks,test); }
+\DoxyCodeLine{506                 }
+\DoxyCodeLine{507                 test = \textcolor{stringliteral}{"{}JSL::Vector /= scalar test"{}};}
+\DoxyCodeLine{508                 v11/= 6;}
+\DoxyCodeLine{509                 \textcolor{keywordtype}{bool} inPlaceScalarDivision = (v11 == v11\_original/2);}
+\DoxyCodeLine{510                 basicConditionCheck(inPlaceScalarDivision, test);}
+\DoxyCodeLine{511                 }
+\DoxyCodeLine{512                 v1[n-\/1] +=3;}
+\DoxyCodeLine{513                 v2[n-\/1] += 9;}
+\DoxyCodeLine{514                 \textcolor{keywordtype}{double} expectedDot = 0;}
+\DoxyCodeLine{515                 \textcolor{keywordtype}{double} expectedNorm = 0;}
+\DoxyCodeLine{516                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n;++i)}
+\DoxyCodeLine{517                 \{}
+\DoxyCodeLine{518                     expectedDot += v1[i] * v2[i];}
+\DoxyCodeLine{519                     expectedNorm += v1[i] * v1[i];}
+\DoxyCodeLine{520                 \}}
+\DoxyCodeLine{521                 \textcolor{keywordtype}{bool} dotProductWorks = \mbox{\hyperlink{namespaceJSL_aeae64b7e0cfdc1ab5f35cca90c32d9f6}{VectorDotProduct}}(v1,v2) == expectedDot \&\& v1.\mbox{\hyperlink{classJSL_1_1Vector_a60660b5a26e0ddace46f31699834b671}{Dot}}(v2) == expectedDot;}
+\DoxyCodeLine{522                 message = \textcolor{stringliteral}{"{}JSL::Vector Dot() member and VectorDotProduct function test"{}};}
+\DoxyCodeLine{523                 basicConditionCheck(dotProductWorks,message);}
+\DoxyCodeLine{524                 }
+\DoxyCodeLine{525                 \textcolor{keywordtype}{bool} normWorks = sqrt(expectedNorm) == v1.\mbox{\hyperlink{classJSL_1_1Vector_aa8af717591f5548ff471b6e4b28d7f9c}{Norm}}();}
+\DoxyCodeLine{526                 message = \textcolor{stringliteral}{"{}JSL::Vector Norm() and SqNorm() member test"{}};}
+\DoxyCodeLine{527                 basicConditionCheck(normWorks, message);}
+\DoxyCodeLine{528                 }
+\DoxyCodeLine{529                 \textcolor{comment}{// angle \& cross product checks }}
+\DoxyCodeLine{530                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} u1(\{3,-\/2,5\});}
+\DoxyCodeLine{531                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} u2(\{8,7,2\});}
+\DoxyCodeLine{532                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} expectedCross(\{-\/39,34,37\});}
+\DoxyCodeLine{533                 \textcolor{keywordtype}{double} expectedAngle = 1.266158693;}
+\DoxyCodeLine{534                 \textcolor{keywordtype}{double} recoveredAngle = u1.\mbox{\hyperlink{classJSL_1_1Vector_a0529640bc02ce994026184d93f43f9c3}{AngleBetween}}(u2);}
+\DoxyCodeLine{535                 \textcolor{keywordtype}{bool} angleCorrect = abs(recoveredAngle -\/ expectedAngle) < 1e-\/8;}
+\DoxyCodeLine{536                 message = \textcolor{stringliteral}{"{}JSL::Vector AngleBetween() and AngleBetweenVectors() test"{}};}
+\DoxyCodeLine{537                 basicConditionCheck(angleCorrect, message);}
+\DoxyCodeLine{538                 }
+\DoxyCodeLine{539                 message = \textcolor{stringliteral}{"{}JSL::Vector Cross() and VectorCrossProduct() test"{}};}
+\DoxyCodeLine{540                 basicConditionCheck(u1.Cross(u2) == expectedCross,message);}
+\DoxyCodeLine{541                 }
+\DoxyCodeLine{542                 }
+\DoxyCodeLine{543                 }
+\DoxyCodeLine{544                 }
+\DoxyCodeLine{545                 message = \textcolor{stringliteral}{"{}Copy Assignment test"{}};}
+\DoxyCodeLine{546                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} u99(v1.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() + 10);}
+\DoxyCodeLine{547                 u99 = v1;}
+\DoxyCodeLine{548                 basicConditionCheck(u99 == v1, message);}
+\DoxyCodeLine{549                 }
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551             \}}
+\DoxyCodeLine{552     \};}
+\DoxyCodeLine{553     }
+\DoxyCodeLine{554     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL__Testing_1_1MatrixTest}{MatrixTest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classJSL_1_1UnitTest}{JSL::UnitTest}}}
+\DoxyCodeLine{555     \{}
+\DoxyCodeLine{556         \textcolor{keyword}{public}:}
+\DoxyCodeLine{557             \mbox{\hyperlink{classJSL__Testing_1_1MatrixTest_a9cd56fe4c4d7db6cfd53c86252e8d033}{MatrixTest}}()}
+\DoxyCodeLine{558             \{}
+\DoxyCodeLine{559                 Name = \textcolor{stringliteral}{"{}JSL::Matrix"{}};}
+\DoxyCodeLine{560                 NonCriticalFailure = \textcolor{keyword}{false};}
+\DoxyCodeLine{561                 MessageBuffer.resize(0);}
+\DoxyCodeLine{562                 BufferedTest();}
+\DoxyCodeLine{563             \}}
+\DoxyCodeLine{564             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL__Testing_1_1MatrixTest_a8fe2a671faf414dbd13c407ab52b75fb}{Run\_Test}}()}
+\DoxyCodeLine{565             \{}
+\DoxyCodeLine{566                 Passed = \textcolor{keyword}{true};}
+\DoxyCodeLine{567                 \textcolor{keywordtype}{int} rows = 3;}
+\DoxyCodeLine{568                 \textcolor{keywordtype}{int} cols = 4;}
+\DoxyCodeLine{569                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} A(rows,cols);}
+\DoxyCodeLine{570                 }
+\DoxyCodeLine{571                 std::string test = \textcolor{stringliteral}{"{}JSL::Matrix Basic initialisation and assignment test"{}};}
+\DoxyCodeLine{572                 \textcolor{keywordtype}{int} value = 5;}
+\DoxyCodeLine{573                 A(0,0) += value; \textcolor{comment}{//+= ensures that initialisation to 0 happened!}}
+\DoxyCodeLine{574                 basicConditionCheck(A(0,0) == value,test);}
+\DoxyCodeLine{575                 }
+\DoxyCodeLine{576                 test = \textcolor{stringliteral}{"{}JSL::Matrix Equality Checking"{}};}
+\DoxyCodeLine{577                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} B(rows+1,cols);}
+\DoxyCodeLine{578                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} C(rows,cols);}
+\DoxyCodeLine{579                 C(0,0) += value;}
+\DoxyCodeLine{580                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} D(rows,cols);}
+\DoxyCodeLine{581                 basicConditionCheck(A == C \&\& A != B \&\& A != D \&\& B != D, test);}
+\DoxyCodeLine{582                 }
+\DoxyCodeLine{583                 }
+\DoxyCodeLine{584                 test = \textcolor{stringliteral}{"{}JSL::Matrix Copy Assignment test"{}};}
+\DoxyCodeLine{585                 }
+\DoxyCodeLine{586                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} E(20,10);}
+\DoxyCodeLine{587                 E = A;}
+\DoxyCodeLine{588                 \textcolor{keywordtype}{bool} isIdentical = (E == A);}
+\DoxyCodeLine{589                 basicConditionCheck(isIdentical,test);}
+\DoxyCodeLine{590                         }
+\DoxyCodeLine{591                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} I = \mbox{\hyperlink{classJSL_1_1Matrix_afd9edd73e5f559eed02b063d4c4e47f8}{JSL::Matrix::Identity}}(3);}
+\DoxyCodeLine{592                 }
+\DoxyCodeLine{593                 }
+\DoxyCodeLine{594                 test = \textcolor{stringliteral}{"{}JSL::Matrix Basic Linear Algebra test"{}};}
+\DoxyCodeLine{595                 std::vector<std::vector<double>> temp = \{\{2.5,9,1\},\{-\/2,3,4\},\{8,9,3\}\};}
+\DoxyCodeLine{596                 std::vector<std::vector<double>> temp2 = \{\{1.5,-\/9,4\},\{-\/22,33,41\},\{-\/2.2,9,4\}\};}
+\DoxyCodeLine{597                 }
+\DoxyCodeLine{598                 std::vector<std::vector<double>> expectedTxT2 = \{\{-\/196.45,283.5,383\},\{-\/77.8,153,131\},\{-\/192.6,252,413\}\};}
+\DoxyCodeLine{599                 }
+\DoxyCodeLine{600                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M1(temp);}
+\DoxyCodeLine{601                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M2(temp2);}
+\DoxyCodeLine{602                 }
+\DoxyCodeLine{603                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M3 = M1 + 3 * M2;}
+\DoxyCodeLine{604                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M4 = M3 -\/ M1/2 + 99;}
+\DoxyCodeLine{605                 }
+\DoxyCodeLine{606                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M5 = 100 -\/ M4;}
+\DoxyCodeLine{607                 M5 += 2 ;}
+\DoxyCodeLine{608                 M5 *= 2;}
+\DoxyCodeLine{609                 M5 /= 3;}
+\DoxyCodeLine{610                 \textcolor{keywordtype}{bool} expectedResult = \textcolor{keyword}{true};}
+\DoxyCodeLine{611                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < temp.size(); ++i)}
+\DoxyCodeLine{612                 \{}
+\DoxyCodeLine{613                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < temp[i].size(); ++j)}
+\DoxyCodeLine{614                     \{   }
+\DoxyCodeLine{615                         \textcolor{keywordtype}{double} expectedValue = 2 -\/ 2* temp2[i][j] -\/ temp[i][j]/3;}
+\DoxyCodeLine{616                         \textcolor{keywordtype}{double} diff = abs(expectedValue -\/ M5(i,j));}
+\DoxyCodeLine{617                         \textcolor{keywordflow}{if} (diff > 1e-\/9)}
+\DoxyCodeLine{618                         \{}
+\DoxyCodeLine{619                             expectedResult = \textcolor{keyword}{false};}
+\DoxyCodeLine{620                         \}}
+\DoxyCodeLine{621                     \}}
+\DoxyCodeLine{622                 \}}
+\DoxyCodeLine{623                 basicConditionCheck(expectedResult,test);}
+\DoxyCodeLine{624                 }
+\DoxyCodeLine{625                 test = \textcolor{stringliteral}{"{}JSL::Matrix Multiplication test"{}};}
+\DoxyCodeLine{626                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} expectedM1M2(expectedTxT2);}
+\DoxyCodeLine{627                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M1M2 = M1 * M2;}
+\DoxyCodeLine{628                 basicConditionCheck(M1M2 == expectedM1M2,test);}
+\DoxyCodeLine{629                 }
+\DoxyCodeLine{630                 test = \textcolor{stringliteral}{"{}JSL::Matrix In-\/place matrix operation test"{}};}
+\DoxyCodeLine{631                 M1*=M2;}
+\DoxyCodeLine{632                 M1+=4;}
+\DoxyCodeLine{633                 basicConditionCheck(M1M2+4 == M1,test);}
+\DoxyCodeLine{634                 }
+\DoxyCodeLine{635                 }
+\DoxyCodeLine{636                 test = \textcolor{stringliteral}{"{}JSL::Matrix Extraction \& Transposition test"{}};}
+\DoxyCodeLine{637                 \textcolor{keywordtype}{int} n = M1.\mbox{\hyperlink{classJSL_1_1Matrix_af784cad8dcbb502c06be62e2e328ef6c}{Rows}}() -\/ 1;}
+\DoxyCodeLine{638                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v1 = M1.\mbox{\hyperlink{classJSL_1_1Matrix_aa8bae8650234f5e5569277563d68f22d}{GetRow}}(n);}
+\DoxyCodeLine{639                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M1T = M1.\mbox{\hyperlink{classJSL_1_1Matrix_a984691eac759ff0e8f98252d07be7e1a}{Transpose}}();}
+\DoxyCodeLine{640                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v2= M1T.\mbox{\hyperlink{classJSL_1_1Matrix_a11ea58ca43e028123f628966eb4834a0}{GetColumn}}(n);}
+\DoxyCodeLine{641                 basicConditionCheck(v1==v2,test);}
+\DoxyCodeLine{642                 }
+\DoxyCodeLine{643                 test = \textcolor{stringliteral}{"{}JSL::Matrix and JSL::Vector multiplication"{}};}
+\DoxyCodeLine{644                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M (\{\{1,2,3\},\{4,5,6\},\{7,8,9\}\});}
+\DoxyCodeLine{645                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v(\{10,11,12\});}
+\DoxyCodeLine{646                 \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} expectedProduct(\{68,167,266\});}
+\DoxyCodeLine{647                 basicConditionCheck(M*v == expectedProduct,test);}
+\DoxyCodeLine{648             \}}
+\DoxyCodeLine{649     \};}
+\DoxyCodeLine{650     }
+\DoxyCodeLine{651 }
+\DoxyCodeLine{652     }
+\DoxyCodeLine{653     \textcolor{keywordtype}{void} \textcolor{keyword}{inline} \mbox{\hyperlink{namespaceJSL__Testing_a509a70d20fdc2e9975d9b0b8ae424ef1}{RunAllTests}}()}
+\DoxyCodeLine{654     \{}
+\DoxyCodeLine{655         std::cout << \textcolor{stringliteral}{"{}Beginning testing of all JSL objects...\(\backslash\)n"{}} << std::endl;}
+\DoxyCodeLine{656         }
+\DoxyCodeLine{657         \textcolor{comment}{//The ordering of these tests is important! Do not shuffle them around.}}
+\DoxyCodeLine{658         \mbox{\hyperlink{classJSL__Testing_1_1MetaTest}{MetaTest}} metaT;}
+\DoxyCodeLine{659         metaT.\mbox{\hyperlink{classJSL_1_1UnitTest_a39e1076dd985334ce21606ae2a383f70}{Results}}();}
+\DoxyCodeLine{660         }
+\DoxyCodeLine{661         \mbox{\hyperlink{classJSL__Testing_1_1StringTest}{StringTest}} stringT;}
+\DoxyCodeLine{662         stringT.\mbox{\hyperlink{classJSL_1_1UnitTest_a39e1076dd985334ce21606ae2a383f70}{Results}}();}
+\DoxyCodeLine{663         }
+\DoxyCodeLine{664         \mbox{\hyperlink{classJSL__Testing_1_1IOTest}{IOTest}} ioT;}
+\DoxyCodeLine{665         ioT.\mbox{\hyperlink{classJSL_1_1UnitTest_a39e1076dd985334ce21606ae2a383f70}{Results}}();}
+\DoxyCodeLine{666         }
+\DoxyCodeLine{667         \mbox{\hyperlink{classJSL__Testing_1_1ArgumentTest}{ArgumentTest}} argT;}
+\DoxyCodeLine{668         argT.\mbox{\hyperlink{classJSL_1_1UnitTest_a39e1076dd985334ce21606ae2a383f70}{Results}}();}
+\DoxyCodeLine{669         }
+\DoxyCodeLine{670         \mbox{\hyperlink{classJSL__Testing_1_1VectorTest}{VectorTest}} vectorT;}
+\DoxyCodeLine{671         vectorT.\mbox{\hyperlink{classJSL_1_1UnitTest_a39e1076dd985334ce21606ae2a383f70}{Results}}();}
+\DoxyCodeLine{672         }
+\DoxyCodeLine{673         \mbox{\hyperlink{classJSL__Testing_1_1MatrixTest}{MatrixTest}} matT;}
+\DoxyCodeLine{674         matT.\mbox{\hyperlink{classJSL_1_1UnitTest_a39e1076dd985334ce21606ae2a383f70}{Results}}();}
+\DoxyCodeLine{675         }
+\DoxyCodeLine{676 }
+\DoxyCodeLine{677         }
+\DoxyCodeLine{678         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nTesting complete."{}} << std::endl;}
+\DoxyCodeLine{679         }
+\DoxyCodeLine{680     \}}
+\DoxyCodeLine{681 \}   }
+\DoxyCodeLine{682     }
+
+\end{DoxyCode}

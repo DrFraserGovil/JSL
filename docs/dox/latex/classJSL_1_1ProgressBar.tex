@@ -1,0 +1,222 @@
+\hypertarget{classJSL_1_1ProgressBar}{}\doxysection{JSL\+::Progress\+Bar\texorpdfstring{$<$}{<} Dimension, Delete\+Mode, Symbol \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classJSL_1_1ProgressBar}\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+
+
+{\ttfamily \#include $<$Progress\+Bar.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{classJSL_1_1ProgressBar_a07e26ed8fdd7620aeb881973d6b84be8}{Progress\+Bar}} (Ts... target)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\void \mbox{\hyperlink{classJSL_1_1ProgressBar_aa9e8aae58f1d27e83706c06253244325}{Update}} (Ts... positions)
+\item 
+void \mbox{\hyperlink{classJSL_1_1ProgressBar_aa7d83ba6ed7ac7dd956b8e91e2bf4939}{Set\+Name}} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classJSL_1_1ProgressBar_a0dd7eb5fec57702317cf3e6bd807bcb4}{Set\+Name}} (const std\+::vector$<$ std\+::string $>$ \&names)
+\item 
+void \mbox{\hyperlink{classJSL_1_1ProgressBar_aea4a38ec99476f7863bc66acea2552a7}{Set\+Name}} (unsigned int idx, const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classJSL_1_1ProgressBar_a76f9fea64fe63406ee061730bfa0a3c9}{Clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\void \mbox{\hyperlink{classJSL_1_1ProgressBar_ab74a1cf8c35e19a0a1a16be7b6ca8321}{Unpack\+Targets}} (int target, Ts... targets)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\void \mbox{\hyperlink{classJSL_1_1ProgressBar_aa2329ecb7ba4cf6a53581277100f446a}{Unroll\+Positions}} (const int idx, int pos, Ts... remainder)
+\item 
+void \mbox{\hyperlink{classJSL_1_1ProgressBar_add093b3d1e10846ee6076810ee057d92}{Clear\+Screen}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1ProgressBar_a1b571359397cc3f619f21d02eb20998e}{Print\+Positions\+\_\+\+Delete\+Mode}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1ProgressBar_a24c5d1e1936dfd67ad0377daa26756cd}{Print\+Positions\+\_\+\+Retain\+Mode}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classJSL_1_1ProgressBar_a7814c15a0bb7fef15d7a79800e4c3f00}{Max\+Hashes}} = 32
+\item 
+bool \mbox{\hyperlink{classJSL_1_1ProgressBar_ab94f1adc8ac9de3799a0c0fff5218e6e}{first\+Print}} = true
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classJSL_1_1ProgressBar_a078a1b566733d0177ab4bc94bbcab9ad}{Bar\+Targets}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classJSL_1_1ProgressBar_a0593aa1757ff10db2e7e9eb17234a56d}{Bar\+Progress}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classJSL_1_1ProgressBar_a84de0a555d9671a5e003332730c5086f}{Hashes}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classJSL_1_1ProgressBar_a2a74b78253b885897afe16656843ed2a}{Names}}
+\item 
+const int \mbox{\hyperlink{classJSL_1_1ProgressBar_a363db1f5a02c263b5a767e91787aaa51}{Bar\+Count}}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1ProgressBar_a147d0312ca3d0985cebabee2329881c1}{reprint\+Needed}}
+\item 
+int \mbox{\hyperlink{classJSL_1_1ProgressBar_a02f64d66bd98230dd800a543d4203d03}{buffer\+Width}} = 10
+\item 
+int \mbox{\hyperlink{classJSL_1_1ProgressBar_ad1b42914e2355692ff89b64b52ccf3b3}{prev\+Hashes}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a07e26ed8fdd7620aeb881973d6b84be8}\label{classJSL_1_1ProgressBar_a07e26ed8fdd7620aeb881973d6b84be8}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!ProgressBar@{ProgressBar}}
+\index{ProgressBar@{ProgressBar}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{ProgressBar()}{ProgressBar()}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Progress\+Bar (\begin{DoxyParamCaption}\item[{Ts...}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a76f9fea64fe63406ee061730bfa0a3c9}\label{classJSL_1_1ProgressBar_a76f9fea64fe63406ee061730bfa0a3c9}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_add093b3d1e10846ee6076810ee057d92}\label{classJSL_1_1ProgressBar_add093b3d1e10846ee6076810ee057d92}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!ClearScreen@{ClearScreen}}
+\index{ClearScreen@{ClearScreen}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{ClearScreen()}{ClearScreen()}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Clear\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a1b571359397cc3f619f21d02eb20998e}\label{classJSL_1_1ProgressBar_a1b571359397cc3f619f21d02eb20998e}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!PrintPositions\_DeleteMode@{PrintPositions\_DeleteMode}}
+\index{PrintPositions\_DeleteMode@{PrintPositions\_DeleteMode}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{PrintPositions\_DeleteMode()}{PrintPositions\_DeleteMode()}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Print\+Positions\+\_\+\+Delete\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a24c5d1e1936dfd67ad0377daa26756cd}\label{classJSL_1_1ProgressBar_a24c5d1e1936dfd67ad0377daa26756cd}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!PrintPositions\_RetainMode@{PrintPositions\_RetainMode}}
+\index{PrintPositions\_RetainMode@{PrintPositions\_RetainMode}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{PrintPositions\_RetainMode()}{PrintPositions\_RetainMode()}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Print\+Positions\+\_\+\+Retain\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_aa7d83ba6ed7ac7dd956b8e91e2bf4939}\label{classJSL_1_1ProgressBar_aa7d83ba6ed7ac7dd956b8e91e2bf4939}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!SetName@{SetName}}
+\index{SetName@{SetName}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a0dd7eb5fec57702317cf3e6bd807bcb4}\label{classJSL_1_1ProgressBar_a0dd7eb5fec57702317cf3e6bd807bcb4}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!SetName@{SetName}}
+\index{SetName@{SetName}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_aea4a38ec99476f7863bc66acea2552a7}\label{classJSL_1_1ProgressBar_aea4a38ec99476f7863bc66acea2552a7}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!SetName@{SetName}}
+\index{SetName@{SetName}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{unsigned int}]{idx,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_ab74a1cf8c35e19a0a1a16be7b6ca8321}\label{classJSL_1_1ProgressBar_ab74a1cf8c35e19a0a1a16be7b6ca8321}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!UnpackTargets@{UnpackTargets}}
+\index{UnpackTargets@{UnpackTargets}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{UnpackTargets()}{UnpackTargets()}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+template$<$typename... Ts$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Unpack\+Targets (\begin{DoxyParamCaption}\item[{int}]{target,  }\item[{Ts...}]{targets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_aa2329ecb7ba4cf6a53581277100f446a}\label{classJSL_1_1ProgressBar_aa2329ecb7ba4cf6a53581277100f446a}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!UnrollPositions@{UnrollPositions}}
+\index{UnrollPositions@{UnrollPositions}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{UnrollPositions()}{UnrollPositions()}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+template$<$typename... Ts$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Unroll\+Positions (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{int}]{pos,  }\item[{Ts...}]{remainder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_aa9e8aae58f1d27e83706c06253244325}\label{classJSL_1_1ProgressBar_aa9e8aae58f1d27e83706c06253244325}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!Update@{Update}}
+\index{Update@{Update}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+template$<$typename... Ts$>$ \\
+void \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Update (\begin{DoxyParamCaption}\item[{Ts...}]{positions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a363db1f5a02c263b5a767e91787aaa51}\label{classJSL_1_1ProgressBar_a363db1f5a02c263b5a767e91787aaa51}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!BarCount@{BarCount}}
+\index{BarCount@{BarCount}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{BarCount}{BarCount}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+const int \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Bar\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a0593aa1757ff10db2e7e9eb17234a56d}\label{classJSL_1_1ProgressBar_a0593aa1757ff10db2e7e9eb17234a56d}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!BarProgress@{BarProgress}}
+\index{BarProgress@{BarProgress}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{BarProgress}{BarProgress}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+std\+::vector$<$double$>$ \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Bar\+Progress\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a078a1b566733d0177ab4bc94bbcab9ad}\label{classJSL_1_1ProgressBar_a078a1b566733d0177ab4bc94bbcab9ad}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!BarTargets@{BarTargets}}
+\index{BarTargets@{BarTargets}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{BarTargets}{BarTargets}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+std\+::vector$<$int$>$ \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Bar\+Targets\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a02f64d66bd98230dd800a543d4203d03}\label{classJSL_1_1ProgressBar_a02f64d66bd98230dd800a543d4203d03}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!bufferWidth@{bufferWidth}}
+\index{bufferWidth@{bufferWidth}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{bufferWidth}{bufferWidth}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+int \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::buffer\+Width = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_ab94f1adc8ac9de3799a0c0fff5218e6e}\label{classJSL_1_1ProgressBar_ab94f1adc8ac9de3799a0c0fff5218e6e}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!firstPrint@{firstPrint}}
+\index{firstPrint@{firstPrint}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{firstPrint}{firstPrint}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+bool \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::first\+Print = true\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a84de0a555d9671a5e003332730c5086f}\label{classJSL_1_1ProgressBar_a84de0a555d9671a5e003332730c5086f}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!Hashes@{Hashes}}
+\index{Hashes@{Hashes}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{Hashes}{Hashes}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+std\+::vector$<$int$>$ \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Hashes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a7814c15a0bb7fef15d7a79800e4c3f00}\label{classJSL_1_1ProgressBar_a7814c15a0bb7fef15d7a79800e4c3f00}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!MaxHashes@{MaxHashes}}
+\index{MaxHashes@{MaxHashes}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{MaxHashes}{MaxHashes}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+int \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Max\+Hashes = 32\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a2a74b78253b885897afe16656843ed2a}\label{classJSL_1_1ProgressBar_a2a74b78253b885897afe16656843ed2a}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!Names@{Names}}
+\index{Names@{Names}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{Names}{Names}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+std\+::vector$<$std\+::string$>$ \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::\+Names\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_ad1b42914e2355692ff89b64b52ccf3b3}\label{classJSL_1_1ProgressBar_ad1b42914e2355692ff89b64b52ccf3b3}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!prevHashes@{prevHashes}}
+\index{prevHashes@{prevHashes}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{prevHashes}{prevHashes}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+int \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::prev\+Hashes = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1ProgressBar_a147d0312ca3d0985cebabee2329881c1}\label{classJSL_1_1ProgressBar_a147d0312ca3d0985cebabee2329881c1}} 
+\index{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}!reprintNeeded@{reprintNeeded}}
+\index{reprintNeeded@{reprintNeeded}!JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$@{JSL::ProgressBar$<$ Dimension, DeleteMode, Symbol $>$}}
+\doxysubsubsection{\texorpdfstring{reprintNeeded}{reprintNeeded}}
+{\footnotesize\ttfamily template$<$int Dimension = 1, bool Delete\+Mode = true, char Symbol = \textquotesingle{}\#\textquotesingle{}$>$ \\
+bool \mbox{\hyperlink{classJSL_1_1ProgressBar}{JSL\+::\+Progress\+Bar}}$<$ Dimension, Delete\+Mode, Symbol $>$\+::reprint\+Needed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/jf20/\+Documents/\+JSL/\+Display/\mbox{\hyperlink{ProgressBar_8h}{Progress\+Bar.\+h}}\end{DoxyCompactItemize}

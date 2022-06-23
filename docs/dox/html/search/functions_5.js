@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['initialisefile_130',['initialiseFile',['../namespaceJSL.html#a47d8cb112d513ee5a3ae38ca6a89743d',1,'JSL']]],
-  ['iotest_131',['IOTest',['../classJSL__Testing_1_1IOTest.html#a75479573809562118ab4d233c2bc0471',1,'JSL_Testing::IOTest']]]
+  ['findxiny_0',['FindXInY',['../namespaceJSL.html#a428e6ac7fa22e5c5aa3bceb9e17fe970',1,'JSL']]],
+  ['formatclock_1',['FormatClock',['../namespaceJSL.html#ae7af96a0311784e019209221335f76d9',1,'JSL']]],
+  ['formatduration_2',['FormatDuration',['../namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222',1,'JSL']]],
+  ['fractionbounder_3',['FractionBounder',['../namespaceJSL.html#a017f24cfdf73ecc218aab718c1badd89',1,'JSL']]]
 ];

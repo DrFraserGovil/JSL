@@ -1,20 +1,30 @@
-\hypertarget{fileWriter_8h}{}\doxysection{/home/jack/\+Documents/\+Work/\+J\+S\+L/\+File\+I\+O/file\+Writer.h File Reference}
-\label{fileWriter_8h}\index{/home/jack/Documents/Work/JSL/FileIO/fileWriter.h@{/home/jack/Documents/Work/JSL/FileIO/fileWriter.h}}
+\hypertarget{fileWriter_8h}{}\doxysection{/\+Users/jf20/\+Documents/\+JSL/\+File\+IO/file\+Writer.h File Reference}
+\label{fileWriter_8h}\index{/Users/jf20/Documents/JSL/FileIO/fileWriter.h@{/Users/jf20/Documents/JSL/FileIO/fileWriter.h}}
 {\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}../\+System/\+System.\+h\char`\"{}}\newline
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{namespaceJSL}{J\+SL}}
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1internal}{JSL\+::internal}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{J\+S\+L\+::initialise\+File}} (const std\+::string \&filename)
+void \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{JSL\+::initialise\+File}} (const std\+::string \&filename)
 \item 
-void \mbox{\hyperlink{namespaceJSL_a838b3a913896993bc008408d164ec19d}{J\+S\+L\+::write\+String\+To\+File}} (const std\+::string \&filename, const std\+::string \&content)
+void \mbox{\hyperlink{namespaceJSL_a838b3a913896993bc008408d164ec19d}{JSL\+::write\+String\+To\+File}} (const std\+::string \&filename, const std\+::string \&content)
 \item 
-{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceJSL_a1d611217d83275af846cbc091ff98f53}{J\+S\+L\+::write\+Vector\+To\+File}} (const std\+::string \&filename, const std\+::vector$<$ T $>$ \&content\+Vector, const std\+::string \&delimiter, bool include\+Terminal\+Line\+Break)
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceJSL_a1d611217d83275af846cbc091ff98f53}{JSL\+::write\+Vector\+To\+File}} (const std\+::string \&filename, const std\+::vector$<$ T $>$ \&content\+Vector, const std\+::string \&delimiter, bool include\+Terminal\+Line\+Break)
 \item 
-{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceJSL_a8c08233b0cb834d4dcde1153b4b8c8c7}{J\+S\+L\+::write\+Matrix\+To\+File}} (const std\+::string \&filename, const std\+::vector$<$ std\+::vector$<$ T $>$$>$ content\+Matrix, const std\+::string \&column\+Delimiter, const std\+::string \&row\+Delimiter)
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\void \mbox{\hyperlink{namespaceJSL_1_1internal_a7d30ff3799fac0a4594525b50b8c5ba6}{JSL\+::internal\+::variadic\+Vector\+Print}} (std\+::fstream \&os, const std\+::string \&delimiter, int i, const std\+::vector$<$ T $>$ \&first, const std\+::vector$<$ Ts $>$ \&... args)
+\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\bool \mbox{\hyperlink{namespaceJSL_1_1internal_acf34245ed74263da6fd864feaed681ed}{JSL\+::internal\+::variadic\+Length\+Equality}} (size\+\_\+t length, const std\+::vector$<$ T $>$ \&first, const std\+::vector$<$ Ts $>$ \&...args)
+\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\void \mbox{\hyperlink{namespaceJSL_a425710dc6536490f1c1d6a5ce621f0e3}{JSL\+::write\+Multi\+Vector\+To\+File}} (const std\+::string \&filename, const std\+::string \&delimiter, const std\+::vector$<$ T $>$ \&v1, const std\+::vector$<$ Ts $>$ \&... vecs)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceJSL_ae790600d9f16e338cfc8b50cd1bfc8f4}{JSL\+::write\+Matrix\+To\+File}} (const std\+::string \&filename, const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ content\+Matrix, const std\+::string \&column\+Delimiter, const std\+::string \&row\+Delimiter)
 \end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1Fonts" kind="namespace" language="C++">
+    <compoundname>JSL::Fonts</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceJSL_1_1Fonts_1a7a55fcb9c82e5a8c7f98ce1c803d08ee" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Target</name>
+        <qualifiedname>JSL::Fonts::Target</qualifiedname>
+        <enumvalue id="namespaceJSL_1_1Fonts_1a7a55fcb9c82e5a8c7f98ce1c803d08eead0545c4e33d28a3450f2d7fda228303e" prot="public">
+          <name>Global</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Fonts_1a7a55fcb9c82e5a8c7f98ce1c803d08eea43877ae65c82a120f36e34052714b182" prot="public">
+          <name>SuperTitle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Fonts_1a7a55fcb9c82e5a8c7f98ce1c803d08eeacdacd74f88fa721134ee5813ca56b0e3" prot="public">
+          <name>Title</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Fonts_1a7a55fcb9c82e5a8c7f98ce1c803d08eea4a13f624c089b0f1d3c7e68db34da8a2" prot="public">
+          <name>Label</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Fonts_1a7a55fcb9c82e5a8c7f98ce1c803d08eeab031025a82ff39f9a9183b2ee36c6b25" prot="public">
+          <name>Legend</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/axis.h" line="11" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/axis.h" bodystart="11" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1Fonts_1a916d4546aed69a1f4da72a0f172dc4a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::Fonts::SizeString</definition>
+        <argsstring>(int size)</argsstring>
+        <name>SizeString</name>
+        <qualifiedname>JSL::Fonts::SizeString</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/axis.h" line="13" column="20" bodyfile="/Users/jf20/Documents/JSL/gnuplot/axis.h" bodystart="13" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jf20/Documents/JSL/gnuplot/axis.h" line="9" column="1"/>
+  </compounddef>
+</doxygen>

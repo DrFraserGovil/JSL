@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="structJSL_1_1NameValuePair" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::NameValuePair</compoundname>
+    <includes refid="PlotData_8h" local="no">PlotData.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structJSL_1_1NameValuePair_1a43effa79099e9015b45b6b9a9f8a2f0a" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceJSL_1ad5aeae8cb562d6f38c724cbdc51d81f8" kindref="member">Property</ref></type>
+        <definition>Property JSL::NameValuePair&lt; T &gt;::Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>JSL::NameValuePair::Name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="13" column="10" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1NameValuePair_1a03e493ef338a55846408051a5d544b11" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T JSL::NameValuePair&lt; T &gt;::Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <qualifiedname>JSL::NameValuePair::Value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="14" column="3" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structJSL_1_1NameValuePair_1aad7234d2606ab8dc017a62206f4a4a69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::NameValuePair&lt; T &gt;::NameValuePair</definition>
+        <argsstring>(Property name, T value)</argsstring>
+        <name>NameValuePair</name>
+        <qualifiedname>JSL::NameValuePair::NameValuePair</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1ad5aeae8cb562d6f38c724cbdc51d81f8" kindref="member">Property</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="16" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="16" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="11" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="12" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1NameValuePair_1a43effa79099e9015b45b6b9a9f8a2f0a" prot="public" virt="non-virtual"><scope>JSL::NameValuePair</scope><name>Name</name></member>
+      <member refid="structJSL_1_1NameValuePair_1aad7234d2606ab8dc017a62206f4a4a69" prot="public" virt="non-virtual"><scope>JSL::NameValuePair</scope><name>NameValuePair</name></member>
+      <member refid="structJSL_1_1NameValuePair_1a03e493ef338a55846408051a5d544b11" prot="public" virt="non-virtual"><scope>JSL::NameValuePair</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

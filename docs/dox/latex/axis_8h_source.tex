@@ -1,0 +1,254 @@
+\hypertarget{axis_8h_source}{}\doxysection{axis.\+h}
+\label{axis_8h_source}\index{/Users/jf20/Documents/JSL/gnuplot/axis.h@{/Users/jf20/Documents/JSL/gnuplot/axis.h}}
+\mbox{\hyperlink{axis_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../FileIO/FileIO.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{PlotData_8h}{PlotData.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../System/System.h"{}}}
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{namespace }Fonts}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{Target}} \{\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eead0545c4e33d28a3450f2d7fda228303e}{Global}},\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eea43877ae65c82a120f36e34052714b182}{SuperTitle}},\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eeacdacd74f88fa721134ee5813ca56b0e3}{Title}},\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eea4a13f624c089b0f1d3c7e68db34da8a2}{Label}},\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eeab031025a82ff39f9a9183b2ee36c6b25}{Legend}}\};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         \textcolor{keyword}{inline} std::string \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{SizeString}}(\textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{14         \{}
+\DoxyCodeLine{15             std::string out = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{16             \textcolor{keywordflow}{if} (size > 0)}
+\DoxyCodeLine{17             \{}
+\DoxyCodeLine{18                 out = \textcolor{stringliteral}{"{} font    \(\backslash\)"{},"{}} + std::to\_string(size) + \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}};}
+\DoxyCodeLine{19             \}}
+\DoxyCodeLine{20             \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{21         \}}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23     \textcolor{keyword}{namespace }internal}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         \textcolor{keyword}{inline} std::string \mbox{\hyperlink{namespaceJSL_1_1internal_ad9e3cb9332be17eb5344432eb2a58570}{signifier}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& x,\textcolor{keywordtype}{int} significance)}
+\DoxyCodeLine{26         \{}
+\DoxyCodeLine{27             std::ostringstream os;}
+\DoxyCodeLine{28             os << std::setprecision(significance) << x;}
+\DoxyCodeLine{29             \textcolor{keywordflow}{return} os.str();}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31     \}}
+\DoxyCodeLine{32     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1Axis}{Axis}}}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \textcolor{keyword}{public}:}
+\DoxyCodeLine{35             std::string \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{title}};}
+\DoxyCodeLine{36             std::string \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{xlabel}};}
+\DoxyCodeLine{37             std::string \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{ylabel}};}
+\DoxyCodeLine{38             std::vector<double> \mbox{\hyperlink{classJSL_1_1Axis_a078cf9b840f394d0189cd170373f3015}{range\_x}};}
+\DoxyCodeLine{39             std::vector<double> \mbox{\hyperlink{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}{range\_y}};}
+\DoxyCodeLine{40             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}{isLog\_x}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{41             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}{isLog\_y}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{42             \mbox{\hyperlink{classJSL_1_1Axis_a557386d460e8ad72ea2f6670857c99db}{Axis}}()\{\};}
+\DoxyCodeLine{43             \mbox{\hyperlink{classJSL_1_1Axis_a597377a9446c7739b41c967412080588}{Axis}}(std::string rootDir)}
+\DoxyCodeLine{44             \{}
+\DoxyCodeLine{45                 \mbox{\hyperlink{classJSL_1_1Axis_a01db63a8d0674c821172dd3bc720fc7e}{DataDir}} = rootDir + \textcolor{stringliteral}{"{}/"{}} + \textcolor{stringliteral}{"{}axis\_"{}} + std::to\_string(rand());}
+\DoxyCodeLine{46                 \mbox{\hyperlink{namespaceJSL_abf525d02b8c49f21ef7faa68b7571f93}{mkdir}}(\mbox{\hyperlink{classJSL_1_1Axis_a01db63a8d0674c821172dd3bc720fc7e}{DataDir}});}
+\DoxyCodeLine{47                 \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{title}} = \textcolor{stringliteral}{"{}\_\_null\_\_"{}};}
+\DoxyCodeLine{48                 \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{xlabel}} = \textcolor{stringliteral}{"{}x"{}};}
+\DoxyCodeLine{49                 \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{ylabel}} = \textcolor{stringliteral}{"{}y"{}};}
+\DoxyCodeLine{50                 \mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{DataIdx}} = 0;}
+\DoxyCodeLine{51             \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53             \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class }S, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{54             \mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}} \& \mbox{\hyperlink{classJSL_1_1Axis_a95b78211cb09e6c6f0834fd353890a1d}{Plot}}(\textcolor{keyword}{const} std::vector<T> \& x,\textcolor{keyword}{const} std::vector<S>  \& y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<Ts>}}... args)}
+\DoxyCodeLine{55             \{}
+\DoxyCodeLine{56                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}Scatter only works on vectors of equal size"{}},x.size()==y.size());}
+\DoxyCodeLine{57                 std::string name = \mbox{\hyperlink{classJSL_1_1Axis_a47a1fd72c650b4e7e4f2289b0dfc5864}{NewData}}();}
+\DoxyCodeLine{58                 \mbox{\hyperlink{classJSL_1_1Axis_a6ddc56786848490ecd988d6f3c1a55b0}{WriteData}}(name,x,y);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60                 \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}}.push\_back(\mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}}(name,\mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{DataIdx}},\mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaafa1098e16302d619cc16c6117128c7e2}{Line}},args...));}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}}[\mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}}.size()-\/1];}
+\DoxyCodeLine{63             \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65             \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class }S, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{66             \mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}} \& \mbox{\hyperlink{classJSL_1_1Axis_abcccbd36fd86e0504c02a66dabc5f763}{Scatter}}(\textcolor{keyword}{const} std::vector<T> \& x,\textcolor{keyword}{const} std::vector<S>  \& y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<Ts>}}... args)}
+\DoxyCodeLine{67             \{}
+\DoxyCodeLine{68                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}Scatter only works on vectors of equal size"{}},x.size()==y.size());}
+\DoxyCodeLine{69                 std::string name = \mbox{\hyperlink{classJSL_1_1Axis_a47a1fd72c650b4e7e4f2289b0dfc5864}{NewData}}();}
+\DoxyCodeLine{70                 \mbox{\hyperlink{classJSL_1_1Axis_a6ddc56786848490ecd988d6f3c1a55b0}{WriteData}}(name,x,y);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72                 \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}}.push\_back(\mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}}(name,\mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{DataIdx}},\mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaa523747d04b06019ae6db545703793d22}{ScatterPoint}},args...));}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}}[\mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}}.size()-\/1];}
+\DoxyCodeLine{75             \};}
+\DoxyCodeLine{76             }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78             std::string \mbox{\hyperlink{classJSL_1_1Axis_a33cf7955573e8cae7c58a48e264fa573}{Show}}()}
+\DoxyCodeLine{79             \{}
+\DoxyCodeLine{80                 \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{WriteCommand}} = \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{title}} != \textcolor{stringliteral}{"{}\_\_null\_\_"{}})}
+\DoxyCodeLine{82                 \{}
+\DoxyCodeLine{83                     \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(\textcolor{stringliteral}{"{}set title \(\backslash\)"{}"{}} + \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{title}} + \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} + \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{Fonts::SizeString}}(\mbox{\hyperlink{classJSL_1_1Axis_a6800d42f740631e37e3a1fe472955ea4}{titleFontSize}}));}
+\DoxyCodeLine{84                 \}}
+\DoxyCodeLine{85                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{86                 \{}
+\DoxyCodeLine{87                     \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(\textcolor{stringliteral}{"{}unset title"{}});}
+\DoxyCodeLine{88                 \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90                 \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(\textcolor{stringliteral}{"{}set xlabel \(\backslash\)"{}"{}} + \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{xlabel}} + \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} + \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{Fonts::SizeString}}(\mbox{\hyperlink{classJSL_1_1Axis_a99a36f25ce02c490762a34a536c373f1}{axisFontSize}}));}
+\DoxyCodeLine{91                 \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(\textcolor{stringliteral}{"{}set ylabel \(\backslash\)"{}"{}} + \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{ylabel}} + \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} + \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{Fonts::SizeString}}(\mbox{\hyperlink{classJSL_1_1Axis_a99a36f25ce02c490762a34a536c373f1}{axisFontSize}}));}
+\DoxyCodeLine{92                 \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(\textcolor{stringliteral}{"{}set tics "{}} + \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{Fonts::SizeString}}(\mbox{\hyperlink{classJSL_1_1Axis_a99a36f25ce02c490762a34a536c373f1}{axisFontSize}}));}
+\DoxyCodeLine{93                 \mbox{\hyperlink{classJSL_1_1Axis_a666da7ba874d1e4c6926536918e7c8cc}{LogSetter}}(\textcolor{stringliteral}{"{}x"{}},\mbox{\hyperlink{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}{isLog\_x}});}
+\DoxyCodeLine{94                 \mbox{\hyperlink{classJSL_1_1Axis_a666da7ba874d1e4c6926536918e7c8cc}{LogSetter}}(\textcolor{stringliteral}{"{}y"{}},\mbox{\hyperlink{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}{isLog\_y}});}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96                 std::string key\_cmd = \textcolor{stringliteral}{"{}set key"{}};}
+\DoxyCodeLine{97                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classJSL_1_1Axis_a16738eebad49e0faf3c883e1550d2d04}{legendActive}})}
+\DoxyCodeLine{98                 \{}
+\DoxyCodeLine{99                     key\_cmd = \textcolor{stringliteral}{"{}un"{}} + key\_cmd;}
+\DoxyCodeLine{100                 \}}
+\DoxyCodeLine{101                 \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(key\_cmd + \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{Fonts::SizeString}}(\mbox{\hyperlink{classJSL_1_1Axis_aa5c155153ea1a6caaaf555955bb1cd29}{legendFontSize}}));}
+\DoxyCodeLine{102                 \mbox{\hyperlink{classJSL_1_1Axis_aac28d3fe416dc77f068a96db4d41c869}{RangeSetter}}(\textcolor{stringliteral}{"{}x"{}},\mbox{\hyperlink{classJSL_1_1Axis_a078cf9b840f394d0189cd170373f3015}{range\_x}});}
+\DoxyCodeLine{103                 \mbox{\hyperlink{classJSL_1_1Axis_aac28d3fe416dc77f068a96db4d41c869}{RangeSetter}}(\textcolor{stringliteral}{"{}y"{}},\mbox{\hyperlink{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}{range\_y}});}
+\DoxyCodeLine{104                 }
+\DoxyCodeLine{105                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{DataIdx}} > 0)}
+\DoxyCodeLine{106                 \{}
+\DoxyCodeLine{107                     \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{WriteCommand}} += \textcolor{stringliteral}{"{}plot "{}};}
+\DoxyCodeLine{108                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i =0; i < \mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{DataIdx}}; ++i)}
+\DoxyCodeLine{109                     \{}
+\DoxyCodeLine{110                         \mbox{\hyperlink{classJSL_1_1Axis_afb135dc41127b155952fc3f42c2730c1}{AddPlot}}(i);}
+\DoxyCodeLine{111                     \}}
+\DoxyCodeLine{112                 \}}
+\DoxyCodeLine{113                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{114                 \{}
+\DoxyCodeLine{115                     \textcolor{comment}{//creates an empty axis -\/ else gnuplot skips them and the alignment gets all messed up}}
+\DoxyCodeLine{116                     \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(\textcolor{stringliteral}{"{}set xrange [0:1]\(\backslash\)nset yrange[0:1]\(\backslash\)nset key off\(\backslash\)nplot 5\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{117                 \}}
+\DoxyCodeLine{118                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{WriteCommand}};}
+\DoxyCodeLine{119             \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a0bfb933a1509615566ca72a98e8574ca}{SetXRange}}(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max)}
+\DoxyCodeLine{122             \{}
+\DoxyCodeLine{123                 \mbox{\hyperlink{classJSL_1_1Axis_a078cf9b840f394d0189cd170373f3015}{range\_x}} = \{min,max\};}
+\DoxyCodeLine{124             \}}
+\DoxyCodeLine{125             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a23d28c6f113683490020da26e716cf14}{SetYRange}}(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max)}
+\DoxyCodeLine{126             \{}
+\DoxyCodeLine{127                 \mbox{\hyperlink{classJSL_1_1Axis_a9718570f4efec1fc9a6484c2e9f1d565}{range\_y}} = \{min,max\};}
+\DoxyCodeLine{128             \}}
+\DoxyCodeLine{129             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a28b2289c6d91769b48afe16c43819bb3}{SetXLabel}}(std::string xl)}
+\DoxyCodeLine{130             \{}
+\DoxyCodeLine{131                 \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{xlabel}} = xl;}
+\DoxyCodeLine{132             \}}
+\DoxyCodeLine{133             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a1d476b1547d88ee7c0c80f1a4e86faf4}{SetYLabel}}(std::string yl)}
+\DoxyCodeLine{134             \{}
+\DoxyCodeLine{135                 \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{ylabel}} = yl;}
+\DoxyCodeLine{136             \}}
+\DoxyCodeLine{137             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_af5265d3c8f5043ead5d7c4e76285213f}{SetXLabel}}(std::string xl, \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{138             \{}
+\DoxyCodeLine{139                 \mbox{\hyperlink{classJSL_1_1Axis_abdde241e2210da810c69d4cf117e9496}{xlabel}} = xl;}
+\DoxyCodeLine{140                 \mbox{\hyperlink{classJSL_1_1Axis_a99a36f25ce02c490762a34a536c373f1}{axisFontSize}} = size;}
+\DoxyCodeLine{141             \}}
+\DoxyCodeLine{142             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a9f9d9926512e9e7100022877995dbec6}{SetYLabel}}(std::string yl, \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{143             \{}
+\DoxyCodeLine{144                 \mbox{\hyperlink{classJSL_1_1Axis_aaf6df18a857aef382343b1506641d6ff}{ylabel}} = yl;}
+\DoxyCodeLine{145                 \mbox{\hyperlink{classJSL_1_1Axis_a99a36f25ce02c490762a34a536c373f1}{axisFontSize}} = size;}
+\DoxyCodeLine{146             \}}
+\DoxyCodeLine{147             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_aeef14102e056fa25dba72f9c1d61a2f6}{SetXLog}}(\textcolor{keywordtype}{bool} val)}
+\DoxyCodeLine{148             \{}
+\DoxyCodeLine{149                 \mbox{\hyperlink{classJSL_1_1Axis_a80164659b50a175dcd1c8f34b4de1164}{isLog\_x}} = val;}
+\DoxyCodeLine{150             \}}
+\DoxyCodeLine{151             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_ad0695f111619f714627fd0269c8fec30}{SetYLog}}(\textcolor{keywordtype}{bool} val)}
+\DoxyCodeLine{152             \{}
+\DoxyCodeLine{153                 \mbox{\hyperlink{classJSL_1_1Axis_acbea4a8261fa63858287b70306a75a8b}{isLog\_y}} = val;}
+\DoxyCodeLine{154             \}}
+\DoxyCodeLine{155             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_ac4c489a5fe9d37df1be1f82637bc6787}{SetLegend}}(\textcolor{keywordtype}{bool} state)}
+\DoxyCodeLine{156             \{}
+\DoxyCodeLine{157                 \mbox{\hyperlink{classJSL_1_1Axis_a16738eebad49e0faf3c883e1550d2d04}{legendActive}} = state;}
+\DoxyCodeLine{158             \}}
+\DoxyCodeLine{159             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a35138d001b953b9aa0b327840ed9bba3}{SetTitle}}(std::string tit)}
+\DoxyCodeLine{160             \{}
+\DoxyCodeLine{161                 \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{title}} = tit;}
+\DoxyCodeLine{162             \}}
+\DoxyCodeLine{163             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_ae62a2c80ec71bf5f6c78c9347fc51303}{SetTitle}}(std::string tit, \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{164             \{}
+\DoxyCodeLine{165                 \mbox{\hyperlink{classJSL_1_1Axis_a60a1a28cb72b5542c025bb0626a7bcb0}{title}} = tit;}
+\DoxyCodeLine{166                 \mbox{\hyperlink{classJSL_1_1Axis_a6800d42f740631e37e3a1fe472955ea4}{titleFontSize}} = size;}
+\DoxyCodeLine{167             \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_abe9191f5cdcc181e7bc80badb8c007f3}{SetFontSize}}(\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{Fonts::Target}} target, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{170             \{}
+\DoxyCodeLine{171                 \textcolor{keywordflow}{switch} (target)}
+\DoxyCodeLine{172                 \{}
+\DoxyCodeLine{173                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eeacdacd74f88fa721134ee5813ca56b0e3}{Fonts::Title}}:}
+\DoxyCodeLine{174                     \{}
+\DoxyCodeLine{175                         \mbox{\hyperlink{classJSL_1_1Axis_a6800d42f740631e37e3a1fe472955ea4}{titleFontSize}} = size;}
+\DoxyCodeLine{176                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{177                     \}}
+\DoxyCodeLine{178                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eea4a13f624c089b0f1d3c7e68db34da8a2}{Fonts::Label}}:}
+\DoxyCodeLine{179                     \{}
+\DoxyCodeLine{180                         \mbox{\hyperlink{classJSL_1_1Axis_a99a36f25ce02c490762a34a536c373f1}{axisFontSize}} = size;}
+\DoxyCodeLine{181                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{182                     \}}
+\DoxyCodeLine{183                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eeab031025a82ff39f9a9183b2ee36c6b25}{Fonts::Legend}}:}
+\DoxyCodeLine{184                     \{}
+\DoxyCodeLine{185                         \mbox{\hyperlink{classJSL_1_1Axis_aa5c155153ea1a6caaaf555955bb1cd29}{legendFontSize}} = size;}
+\DoxyCodeLine{186                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{187                     \}}
+\DoxyCodeLine{188                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{189                     \{}
+\DoxyCodeLine{190                         \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\textcolor{stringliteral}{"{}Cannot set global or supertitle font size from within axis scope"{}});}
+\DoxyCodeLine{191                     \}}
+\DoxyCodeLine{192                 \}}
+\DoxyCodeLine{193             \}}
+\DoxyCodeLine{194         \textcolor{keyword}{private}:}
+\DoxyCodeLine{195             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Axis_a99a36f25ce02c490762a34a536c373f1}{axisFontSize}} = -\/1;}
+\DoxyCodeLine{196             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Axis_a6800d42f740631e37e3a1fe472955ea4}{titleFontSize}} = -\/1;}
+\DoxyCodeLine{197             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Axis_aa5c155153ea1a6caaaf555955bb1cd29}{legendFontSize}} = -\/1;}
+\DoxyCodeLine{198             std::string \mbox{\hyperlink{classJSL_1_1Axis_a01db63a8d0674c821172dd3bc720fc7e}{DataDir}};}
+\DoxyCodeLine{199             std::vector<PlotData> \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}};}
+\DoxyCodeLine{200             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1Axis_a16738eebad49e0faf3c883e1550d2d04}{legendActive}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{201             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{DataIdx}};}
+\DoxyCodeLine{202             std::string \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{WriteCommand}};}
+\DoxyCodeLine{203             std::string \mbox{\hyperlink{classJSL_1_1Axis_a47a1fd72c650b4e7e4f2289b0dfc5864}{NewData}}()}
+\DoxyCodeLine{204             \{}
+\DoxyCodeLine{205                 ++\mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{DataIdx}};}
+\DoxyCodeLine{206                 std::string name = \mbox{\hyperlink{classJSL_1_1Axis_a01db63a8d0674c821172dd3bc720fc7e}{DataDir}} + \textcolor{stringliteral}{"{}/dataChunk\_"{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1Axis_acca070c88101d07fd42e35a606849e1f}{DataIdx}});}
+\DoxyCodeLine{207                 \textcolor{keywordflow}{return} name;}
+\DoxyCodeLine{208             \}}
+\DoxyCodeLine{209             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} S>}
+\DoxyCodeLine{210             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a6ddc56786848490ecd988d6f3c1a55b0}{WriteData}}(std::string fileName,\textcolor{keyword}{const} std::vector<T> \& x,\textcolor{keyword}{const} std::vector<S>  \& y)}
+\DoxyCodeLine{211             \{}
+\DoxyCodeLine{212                 \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{initialiseFile}}(fileName);}
+\DoxyCodeLine{213                 \mbox{\hyperlink{namespaceJSL_a425710dc6536490f1c1d6a5ce621f0e3}{writeMultiVectorToFile}}(fileName,\textcolor{stringliteral}{"{}, "{}},x,y);}
+\DoxyCodeLine{214             \}}
+\DoxyCodeLine{215             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(std::string line)}
+\DoxyCodeLine{216             \{}
+\DoxyCodeLine{217                 \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{WriteCommand}} += line + \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{218             \}}
+\DoxyCodeLine{219             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_afb135dc41127b155952fc3f42c2730c1}{AddPlot}}(\textcolor{keywordtype}{int} i)}
+\DoxyCodeLine{220             \{}
+\DoxyCodeLine{221                 \mbox{\hyperlink{classJSL_1_1Axis_a6655e1d9a5b38321b80adb17d4e9c596}{WriteCommand}} += \mbox{\hyperlink{classJSL_1_1Axis_a493f7f5899d5e867ade59af8e10e95bd}{Data}}[i].Write();}
+\DoxyCodeLine{222             \};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_a666da7ba874d1e4c6926536918e7c8cc}{LogSetter}}(\textcolor{keyword}{const} std::string \& prefix, \textcolor{keywordtype}{bool} active)}
+\DoxyCodeLine{225             \{}
+\DoxyCodeLine{226                 std::string t = \textcolor{stringliteral}{"{}set log "{}} + prefix;}
+\DoxyCodeLine{227                 \textcolor{keywordflow}{if} (!active)}
+\DoxyCodeLine{228                 \{}
+\DoxyCodeLine{229                     t = \textcolor{stringliteral}{"{}un"{}} + t;}
+\DoxyCodeLine{230                 \}}
+\DoxyCodeLine{231                 \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(t);}
+\DoxyCodeLine{232             \}}
+\DoxyCodeLine{233             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Axis_aac28d3fe416dc77f068a96db4d41c869}{RangeSetter}}(\textcolor{keyword}{const} std::string \& axisPrefix, \textcolor{keyword}{const} std::vector<double> \& range)}
+\DoxyCodeLine{234             \{}
+\DoxyCodeLine{235                 std::string val = \textcolor{stringliteral}{"{}[*:*]"{}};}
+\DoxyCodeLine{236                 \textcolor{keywordflow}{if} (range.size() == 2)}
+\DoxyCodeLine{237                 \{}
+\DoxyCodeLine{238                     val = \textcolor{stringliteral}{"{}["{}} + \mbox{\hyperlink{namespaceJSL_1_1internal_ad9e3cb9332be17eb5344432eb2a58570}{internal::signifier}}(range[0],8) + \textcolor{stringliteral}{"{}:"{}} + \mbox{\hyperlink{namespaceJSL_1_1internal_ad9e3cb9332be17eb5344432eb2a58570}{internal::signifier}}(range[1],8) + \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{239                 \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242                 std::string cmd = \textcolor{stringliteral}{"{}set "{}} + axisPrefix + \textcolor{stringliteral}{"{}range "{}} + val;}
+\DoxyCodeLine{243                 \mbox{\hyperlink{classJSL_1_1Axis_a30ec179de40908ac5ccb809365f3862e}{AddProperty}}(cmd);}
+\DoxyCodeLine{244             \}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246             }
+\DoxyCodeLine{247     \};}
+\DoxyCodeLine{248 \};}
+
+\end{DoxyCode}

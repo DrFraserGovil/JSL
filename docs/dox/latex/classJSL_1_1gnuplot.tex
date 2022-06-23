@@ -1,0 +1,401 @@
+\hypertarget{classJSL_1_1gnuplot}{}\doxysection{JSL\+::gnuplot Class Reference}
+\label{classJSL_1_1gnuplot}\index{JSL::gnuplot@{JSL::gnuplot}}
+
+
+{\ttfamily \#include $<$gnuplot\+Main.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1gnuplot_aafcfb0c9032e7f0cfeddcc3baf2cc21f}{gnuplot}} ()
+\item 
+\mbox{\hyperlink{classJSL_1_1gnuplot_a1654a89612515dc3cd3c2a45c60dc733}{$\sim$gnuplot}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_aa1e759e1965581b7c4fe508d2bca7060}{Set\+Multiplot}} (int y\+Count, int x\+Count)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a036f04bf999e752754f96108bc83ec5e}{Set\+Axis}} (int y, int x)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_af5ba95fdc854b7de524431efe9793f0a}{Set\+Axis}} (int idx)
+\item 
+{\footnotesize template$<$class T , class S , typename... Ts$>$ }\\\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& \mbox{\hyperlink{classJSL_1_1gnuplot_ad7759efccfffa13d51620a3a695823ea}{Plot}} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ S $>$ \&y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$... args)
+\item 
+{\footnotesize template$<$class T , class S , typename... Ts$>$ }\\\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& \mbox{\hyperlink{classJSL_1_1gnuplot_aff8f871df4ddbbbf519572dd1f717588}{Plot}} (const T \&x, const S \&y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$... args)
+\item 
+{\footnotesize template$<$class T , class S , typename... Ts$>$ }\\\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& \mbox{\hyperlink{classJSL_1_1gnuplot_a90306a67b5b8d990cbcb13b3f6f6eaa3}{Scatter}} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ S $>$ \&y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$... args)
+\item 
+{\footnotesize template$<$class T , class S , typename... Ts$>$ }\\\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& \mbox{\hyperlink{classJSL_1_1gnuplot_adfd19ba6419d0c23d18dbeb4f6302f59}{Scatter}} (const T \&x, const S \&y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$... args)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a147fc21e6c9b48d823a16c738953d081}{Show}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classJSL_1_1Axis}{Axis}} $>$ \& \mbox{\hyperlink{classJSL_1_1gnuplot_af0ace47c0e36ef49cae6592a8a841926}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a26eba111f5ff83b852eded604d23fbe2}{Set\+XRange}} (double min, double max)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a39e8bdc9b9bb9e47e4acdd0b17ad5430}{Set\+YRange}} (double min, double max)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_af2230b64696435194780c99e8107ac51}{Set\+XLog}} (bool val)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a244f8e993705d7c79cbb37451db39632}{Set\+YLog}} (bool val)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a80699eb05778c88b435ec62a5afe3a5d}{Set\+XLabel}} (std\+::string xl)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a741f78103dd76eaff9475351b7f49edd}{Set\+YLabel}} (std\+::string yl)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_aa4b92e98fe9231ed52d1f0c88c3cbd93}{Set\+XLabel}} (std\+::string xl, int size)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a721199548950cfd60fb43d3ac3bc0fe1}{Set\+YLabel}} (std\+::string yl, int size)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a270b6a2f344a1d102b4eddd8aa47a6e9}{Set\+Legend}} (bool state)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a6cebc934c85d8b6e39950218328f71e3}{Window\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a929f817e0c0d2bf119a4aa06ef507289}{Set\+Title}} (std\+::string tit)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a8ece1d633a3978a6d2bcdacd43331b2f}{Set\+Title}} (std\+::string tit, int size)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a3b9f002e0c20b19611b29e459be3581d}{Set\+Super\+Title}} (std\+::string tit)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a9a2f9350971fb144772b550a8be84073}{Set\+Super\+Title}} (std\+::string tit, int size)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_ad29ef895e0251319e59198fe6d8ade6a}{Set\+Terminal}} (std\+::string t)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a6a166e0499cea89f696db40cbc26d114}{Set\+Output}} (std\+::string out)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_aed7de1ddfe25a18ff4aafaa55ee62ce8}{Set\+Font}} (std\+::string f)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a8ccee4ee28636d9b9494dba28d26b7d9}{Set\+Font\+Size}} (\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{Fonts\+::\+Target}} target, unsigned int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a0601a115a1052a39a6621e42ec4d4f3e}{Cleanup\+Temp\+Files}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_a275c33fa2dc4fce5a8af1f8d2ec7562d}{Initialise\+Output}} (std\+::string out\+Name)
+\item 
+void \mbox{\hyperlink{classJSL_1_1gnuplot_aa35fd7f6ebe1c18ea39d6cdbb12f8aa0}{Write\+Multiplot\+To\+File}} (std\+::string gp\+File)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1gnuplot_a16e01fe5ebc78d04cb9683d49c2aee91}{super\+Title}} = \char`\"{}\+\_\+\+\_\+null\+\_\+\+\_\+\char`\"{}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classJSL_1_1Axis}{Axis}} $>$ $>$ \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{Dir\+Name}}
+\item 
+int \mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\+\_\+x}}
+\item 
+int \mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\+\_\+y}}
+\item 
+int \mbox{\hyperlink{classJSL_1_1gnuplot_a666ddb205d0cb9c76813e2f8075c1b65}{axis\+Count}} = 1
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1gnuplot_aa091157be13eeb60c3193ad06aba9b6f}{terminal}} = \char`\"{}qt\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1gnuplot_a631da60df3e3fb00e2d01c87be4da930}{output}} = \char`\"{}\+\_\+\+\_\+null\+\_\+\+\_\+\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1gnuplot_a4c5db7bfe99161369b4c2d31ad4d7ece}{font}} = \char`\"{}Geneva\char`\"{}
+\item 
+int \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{global\+Font\+Size}} = 14
+\item 
+int \mbox{\hyperlink{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}{super\+Title\+Font\+Size}} = -\/1
+\item 
+bool \mbox{\hyperlink{classJSL_1_1gnuplot_a2426c9fb055e1c69503166958602e2de}{default\+Size}} = true
+\item 
+int \mbox{\hyperlink{classJSL_1_1gnuplot_abd2c1a49e45beb3ac554a58694965be2}{window\+Width}}
+\item 
+int \mbox{\hyperlink{classJSL_1_1gnuplot_aa0e38b8208be147845e6708b1aa46a04}{window\+Height}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJSL_1_1gnuplot_aafcfb0c9032e7f0cfeddcc3baf2cc21f}\label{classJSL_1_1gnuplot_aafcfb0c9032e7f0cfeddcc3baf2cc21f}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!gnuplot@{gnuplot}}
+\index{gnuplot@{gnuplot}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{gnuplot()}{gnuplot()}}
+{\footnotesize\ttfamily JSL\+::gnuplot\+::gnuplot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a1654a89612515dc3cd3c2a45c60dc733}\label{classJSL_1_1gnuplot_a1654a89612515dc3cd3c2a45c60dc733}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!````~gnuplot@{$\sim$gnuplot}}
+\index{````~gnuplot@{$\sim$gnuplot}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{$\sim$gnuplot()}{~gnuplot()}}
+{\footnotesize\ttfamily JSL\+::gnuplot\+::$\sim$gnuplot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a0601a115a1052a39a6621e42ec4d4f3e}\label{classJSL_1_1gnuplot_a0601a115a1052a39a6621e42ec4d4f3e}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!CleanupTempFiles@{CleanupTempFiles}}
+\index{CleanupTempFiles@{CleanupTempFiles}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{CleanupTempFiles()}{CleanupTempFiles()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Cleanup\+Temp\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a275c33fa2dc4fce5a8af1f8d2ec7562d}\label{classJSL_1_1gnuplot_a275c33fa2dc4fce5a8af1f8d2ec7562d}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!InitialiseOutput@{InitialiseOutput}}
+\index{InitialiseOutput@{InitialiseOutput}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{InitialiseOutput()}{InitialiseOutput()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Initialise\+Output (\begin{DoxyParamCaption}\item[{std\+::string}]{out\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_af0ace47c0e36ef49cae6592a8a841926}\label{classJSL_1_1gnuplot_af0ace47c0e36ef49cae6592a8a841926}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classJSL_1_1Axis}{Axis}} $>$ \& JSL\+::gnuplot\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_ad7759efccfffa13d51620a3a695823ea}\label{classJSL_1_1gnuplot_ad7759efccfffa13d51620a3a695823ea}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!Plot@{Plot}}
+\index{Plot@{Plot}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{Plot()}{Plot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T , class S , typename... Ts$>$ \\
+\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& JSL\+::gnuplot\+::\+Plot (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{x,  }\item[{const std\+::vector$<$ S $>$ \&}]{y,  }\item[{\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_aff8f871df4ddbbbf519572dd1f717588}\label{classJSL_1_1gnuplot_aff8f871df4ddbbbf519572dd1f717588}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!Plot@{Plot}}
+\index{Plot@{Plot}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{Plot()}{Plot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T , class S , typename... Ts$>$ \\
+\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& JSL\+::gnuplot\+::\+Plot (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const S \&}]{y,  }\item[{\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a90306a67b5b8d990cbcb13b3f6f6eaa3}\label{classJSL_1_1gnuplot_a90306a67b5b8d990cbcb13b3f6f6eaa3}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!Scatter@{Scatter}}
+\index{Scatter@{Scatter}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{Scatter()}{Scatter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T , class S , typename... Ts$>$ \\
+\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& JSL\+::gnuplot\+::\+Scatter (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{x,  }\item[{const std\+::vector$<$ S $>$ \&}]{y,  }\item[{\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_adfd19ba6419d0c23d18dbeb4f6302f59}\label{classJSL_1_1gnuplot_adfd19ba6419d0c23d18dbeb4f6302f59}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!Scatter@{Scatter}}
+\index{Scatter@{Scatter}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{Scatter()}{Scatter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T , class S , typename... Ts$>$ \\
+\mbox{\hyperlink{classJSL_1_1PlotData}{Plot\+Data}} \& JSL\+::gnuplot\+::\+Scatter (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const S \&}]{y,  }\item[{\mbox{\hyperlink{structJSL_1_1NameValuePair}{Name\+Value\+Pair}}$<$ Ts $>$...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_af5ba95fdc854b7de524431efe9793f0a}\label{classJSL_1_1gnuplot_af5ba95fdc854b7de524431efe9793f0a}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetAxis@{SetAxis}}
+\index{SetAxis@{SetAxis}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetAxis()}{SetAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Axis (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a036f04bf999e752754f96108bc83ec5e}\label{classJSL_1_1gnuplot_a036f04bf999e752754f96108bc83ec5e}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetAxis@{SetAxis}}
+\index{SetAxis@{SetAxis}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetAxis()}{SetAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Axis (\begin{DoxyParamCaption}\item[{int}]{y,  }\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_aed7de1ddfe25a18ff4aafaa55ee62ce8}\label{classJSL_1_1gnuplot_aed7de1ddfe25a18ff4aafaa55ee62ce8}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetFont@{SetFont}}
+\index{SetFont@{SetFont}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetFont()}{SetFont()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Font (\begin{DoxyParamCaption}\item[{std\+::string}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a8ccee4ee28636d9b9494dba28d26b7d9}\label{classJSL_1_1gnuplot_a8ccee4ee28636d9b9494dba28d26b7d9}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetFontSize@{SetFontSize}}
+\index{SetFontSize@{SetFontSize}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetFontSize()}{SetFontSize()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Font\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{Fonts\+::\+Target}}}]{target,  }\item[{unsigned int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a270b6a2f344a1d102b4eddd8aa47a6e9}\label{classJSL_1_1gnuplot_a270b6a2f344a1d102b4eddd8aa47a6e9}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetLegend@{SetLegend}}
+\index{SetLegend@{SetLegend}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetLegend()}{SetLegend()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Legend (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_aa1e759e1965581b7c4fe508d2bca7060}\label{classJSL_1_1gnuplot_aa1e759e1965581b7c4fe508d2bca7060}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetMultiplot@{SetMultiplot}}
+\index{SetMultiplot@{SetMultiplot}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetMultiplot()}{SetMultiplot()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Multiplot (\begin{DoxyParamCaption}\item[{int}]{y\+Count,  }\item[{int}]{x\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a6a166e0499cea89f696db40cbc26d114}\label{classJSL_1_1gnuplot_a6a166e0499cea89f696db40cbc26d114}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetOutput@{SetOutput}}
+\index{SetOutput@{SetOutput}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetOutput()}{SetOutput()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Output (\begin{DoxyParamCaption}\item[{std\+::string}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a3b9f002e0c20b19611b29e459be3581d}\label{classJSL_1_1gnuplot_a3b9f002e0c20b19611b29e459be3581d}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetSuperTitle@{SetSuperTitle}}
+\index{SetSuperTitle@{SetSuperTitle}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetSuperTitle()}{SetSuperTitle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Super\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{tit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a9a2f9350971fb144772b550a8be84073}\label{classJSL_1_1gnuplot_a9a2f9350971fb144772b550a8be84073}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetSuperTitle@{SetSuperTitle}}
+\index{SetSuperTitle@{SetSuperTitle}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetSuperTitle()}{SetSuperTitle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Super\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{tit,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_ad29ef895e0251319e59198fe6d8ade6a}\label{classJSL_1_1gnuplot_ad29ef895e0251319e59198fe6d8ade6a}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetTerminal@{SetTerminal}}
+\index{SetTerminal@{SetTerminal}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetTerminal()}{SetTerminal()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Terminal (\begin{DoxyParamCaption}\item[{std\+::string}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a929f817e0c0d2bf119a4aa06ef507289}\label{classJSL_1_1gnuplot_a929f817e0c0d2bf119a4aa06ef507289}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetTitle@{SetTitle}}
+\index{SetTitle@{SetTitle}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetTitle()}{SetTitle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{tit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a8ece1d633a3978a6d2bcdacd43331b2f}\label{classJSL_1_1gnuplot_a8ece1d633a3978a6d2bcdacd43331b2f}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetTitle@{SetTitle}}
+\index{SetTitle@{SetTitle}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetTitle()}{SetTitle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{tit,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a80699eb05778c88b435ec62a5afe3a5d}\label{classJSL_1_1gnuplot_a80699eb05778c88b435ec62a5afe3a5d}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetXLabel@{SetXLabel}}
+\index{SetXLabel@{SetXLabel}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetXLabel()}{SetXLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+XLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{xl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_aa4b92e98fe9231ed52d1f0c88c3cbd93}\label{classJSL_1_1gnuplot_aa4b92e98fe9231ed52d1f0c88c3cbd93}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetXLabel@{SetXLabel}}
+\index{SetXLabel@{SetXLabel}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetXLabel()}{SetXLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+XLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{xl,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_af2230b64696435194780c99e8107ac51}\label{classJSL_1_1gnuplot_af2230b64696435194780c99e8107ac51}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetXLog@{SetXLog}}
+\index{SetXLog@{SetXLog}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetXLog()}{SetXLog()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+XLog (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a26eba111f5ff83b852eded604d23fbe2}\label{classJSL_1_1gnuplot_a26eba111f5ff83b852eded604d23fbe2}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetXRange@{SetXRange}}
+\index{SetXRange@{SetXRange}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetXRange()}{SetXRange()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+XRange (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a741f78103dd76eaff9475351b7f49edd}\label{classJSL_1_1gnuplot_a741f78103dd76eaff9475351b7f49edd}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetYLabel@{SetYLabel}}
+\index{SetYLabel@{SetYLabel}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetYLabel()}{SetYLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+YLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{yl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a721199548950cfd60fb43d3ac3bc0fe1}\label{classJSL_1_1gnuplot_a721199548950cfd60fb43d3ac3bc0fe1}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetYLabel@{SetYLabel}}
+\index{SetYLabel@{SetYLabel}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetYLabel()}{SetYLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+YLabel (\begin{DoxyParamCaption}\item[{std\+::string}]{yl,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a244f8e993705d7c79cbb37451db39632}\label{classJSL_1_1gnuplot_a244f8e993705d7c79cbb37451db39632}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetYLog@{SetYLog}}
+\index{SetYLog@{SetYLog}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetYLog()}{SetYLog()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+YLog (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a39e8bdc9b9bb9e47e4acdd0b17ad5430}\label{classJSL_1_1gnuplot_a39e8bdc9b9bb9e47e4acdd0b17ad5430}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!SetYRange@{SetYRange}}
+\index{SetYRange@{SetYRange}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{SetYRange()}{SetYRange()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Set\+YRange (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a147fc21e6c9b48d823a16c738953d081}\label{classJSL_1_1gnuplot_a147fc21e6c9b48d823a16c738953d081}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!Show@{Show}}
+\index{Show@{Show}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a6cebc934c85d8b6e39950218328f71e3}\label{classJSL_1_1gnuplot_a6cebc934c85d8b6e39950218328f71e3}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!WindowSize@{WindowSize}}
+\index{WindowSize@{WindowSize}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{WindowSize()}{WindowSize()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Window\+Size (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_aa35fd7f6ebe1c18ea39d6cdbb12f8aa0}\label{classJSL_1_1gnuplot_aa35fd7f6ebe1c18ea39d6cdbb12f8aa0}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!WriteMultiplotToFile@{WriteMultiplotToFile}}
+\index{WriteMultiplotToFile@{WriteMultiplotToFile}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{WriteMultiplotToFile()}{WriteMultiplotToFile()}}
+{\footnotesize\ttfamily void JSL\+::gnuplot\+::\+Write\+Multiplot\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{gp\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}\label{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!Axes@{Axes}}
+\index{Axes@{Axes}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{Axes}{Axes}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{classJSL_1_1Axis}{Axis}}$>$ $>$ JSL\+::gnuplot\+::\+Axes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}\label{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!axis\_x@{axis\_x}}
+\index{axis\_x@{axis\_x}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{axis\_x}{axis\_x}}
+{\footnotesize\ttfamily int JSL\+::gnuplot\+::axis\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}\label{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!axis\_y@{axis\_y}}
+\index{axis\_y@{axis\_y}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{axis\_y}{axis\_y}}
+{\footnotesize\ttfamily int JSL\+::gnuplot\+::axis\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a666ddb205d0cb9c76813e2f8075c1b65}\label{classJSL_1_1gnuplot_a666ddb205d0cb9c76813e2f8075c1b65}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!axisCount@{axisCount}}
+\index{axisCount@{axisCount}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{axisCount}{axisCount}}
+{\footnotesize\ttfamily int JSL\+::gnuplot\+::axis\+Count = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a2426c9fb055e1c69503166958602e2de}\label{classJSL_1_1gnuplot_a2426c9fb055e1c69503166958602e2de}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!defaultSize@{defaultSize}}
+\index{defaultSize@{defaultSize}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{defaultSize}{defaultSize}}
+{\footnotesize\ttfamily bool JSL\+::gnuplot\+::default\+Size = true\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}\label{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!DirName@{DirName}}
+\index{DirName@{DirName}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{DirName}{DirName}}
+{\footnotesize\ttfamily std\+::string JSL\+::gnuplot\+::\+Dir\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a4c5db7bfe99161369b4c2d31ad4d7ece}\label{classJSL_1_1gnuplot_a4c5db7bfe99161369b4c2d31ad4d7ece}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!font@{font}}
+\index{font@{font}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily std\+::string JSL\+::gnuplot\+::font = \char`\"{}Geneva\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}\label{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!globalFontSize@{globalFontSize}}
+\index{globalFontSize@{globalFontSize}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{globalFontSize}{globalFontSize}}
+{\footnotesize\ttfamily int JSL\+::gnuplot\+::global\+Font\+Size = 14\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a631da60df3e3fb00e2d01c87be4da930}\label{classJSL_1_1gnuplot_a631da60df3e3fb00e2d01c87be4da930}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!output@{output}}
+\index{output@{output}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily std\+::string JSL\+::gnuplot\+::output = \char`\"{}\+\_\+\+\_\+null\+\_\+\+\_\+\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a16e01fe5ebc78d04cb9683d49c2aee91}\label{classJSL_1_1gnuplot_a16e01fe5ebc78d04cb9683d49c2aee91}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!superTitle@{superTitle}}
+\index{superTitle@{superTitle}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{superTitle}{superTitle}}
+{\footnotesize\ttfamily std\+::string JSL\+::gnuplot\+::super\+Title = \char`\"{}\+\_\+\+\_\+null\+\_\+\+\_\+\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}\label{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!superTitleFontSize@{superTitleFontSize}}
+\index{superTitleFontSize@{superTitleFontSize}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{superTitleFontSize}{superTitleFontSize}}
+{\footnotesize\ttfamily int JSL\+::gnuplot\+::super\+Title\+Font\+Size = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_aa091157be13eeb60c3193ad06aba9b6f}\label{classJSL_1_1gnuplot_aa091157be13eeb60c3193ad06aba9b6f}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!terminal@{terminal}}
+\index{terminal@{terminal}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{terminal}{terminal}}
+{\footnotesize\ttfamily std\+::string JSL\+::gnuplot\+::terminal = \char`\"{}qt\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_aa0e38b8208be147845e6708b1aa46a04}\label{classJSL_1_1gnuplot_aa0e38b8208be147845e6708b1aa46a04}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!windowHeight@{windowHeight}}
+\index{windowHeight@{windowHeight}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{windowHeight}{windowHeight}}
+{\footnotesize\ttfamily int JSL\+::gnuplot\+::window\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSL_1_1gnuplot_abd2c1a49e45beb3ac554a58694965be2}\label{classJSL_1_1gnuplot_abd2c1a49e45beb3ac554a58694965be2}} 
+\index{JSL::gnuplot@{JSL::gnuplot}!windowWidth@{windowWidth}}
+\index{windowWidth@{windowWidth}!JSL::gnuplot@{JSL::gnuplot}}
+\doxysubsubsection{\texorpdfstring{windowWidth}{windowWidth}}
+{\footnotesize\ttfamily int JSL\+::gnuplot\+::window\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/jf20/\+Documents/\+JSL/gnuplot/\mbox{\hyperlink{gnuplotMain_8h}{gnuplot\+Main.\+h}}\end{DoxyCompactItemize}

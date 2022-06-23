@@ -1,0 +1,72 @@
+\hypertarget{PlotData_8h}{}\doxysection{/\+Users/jf20/\+Documents/\+JSL/gnuplot/\+Plot\+Data.h File Reference}
+\label{PlotData_8h}\index{/Users/jf20/Documents/JSL/gnuplot/PlotData.h@{/Users/jf20/Documents/JSL/gnuplot/PlotData.h}}
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structJSL_1_1NameValuePair}{JSL\+::\+Name\+Value\+Pair$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1PlotData}{JSL\+::\+Plot\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1LineProperties}{JSL\+::\+Line\+Properties}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49beda}{JSL\+::\+Plot\+Type}} \{ \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaafa1098e16302d619cc16c6117128c7e2}{JSL\+::\+Line}}
+, \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaa523747d04b06019ae6db545703793d22}{JSL\+::\+Scatter\+Point}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8}{JSL\+::\+Property}} \{ \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ae7660181e67b34cc8012e44899358c0a}{JSL\+::\+Colour}}
+, \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8a22d189b48d50314bdd20b34e9a40e4a5}{JSL\+::\+Pen\+Size}}
+, \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ab516e098813c27967b8e649b94f98db8}{JSL\+::\+Pen\+Type}}
+, \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8afadeba2e8b035dc3c761f416c88a293d}{JSL\+::\+Legend}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355}{JSL\+::\+Line\+Type}} \{ \newline
+\mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355aaf6d64d28f76aa54961a419d3d9e17b5}{JSL\+::\+Solid}}
+, \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355a5d77703e9d097677886b897d9a2eeb62}{JSL\+::\+Dash}}
+, \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355af0b887cb0d75c330317bc843146bfc92}{JSL\+::\+Dash\+Dot}}
+, \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355ac3cd9b153ce73b7d8dd0485ae186379d}{JSL\+::\+Dotted}}
+, \newline
+\mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355a48afd9609abb3d990c826b2c74850d3e}{JSL\+::\+Dash\+Dot\+Dot}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL\+::\+Scatter\+Type}} \{ \newline
+\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a7d6491e51b0151fad51114bdc9fe0006}{JSL\+::\+Dot}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526ac54fadde63eae4fbfb5090af9e2c8c68}{JSL\+::\+Plus}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526af2349f50039f930d90a39a689282aaf8}{JSL\+::\+Cross}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a3d4283b7785e19142f43a8d705f45128}{JSL\+::\+Star}}
+, \newline
+\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526af5af415948dea41c775febe11df59707}{JSL\+::\+Open\+Square}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526ab2977a42bdf7f8cafd62d56eb573d71a}{JSL\+::\+Filled\+Square}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a24102e043f642c5aadf0a5184838e065}{JSL\+::\+Open\+Circle}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a1e5a2218783d5197e73aab6b16f3add3}{JSL\+::\+Filled\+Circle}}
+, \newline
+\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a163fb60ab5d5beca95d7afa4c97d6fda}{JSL\+::\+Open\+Delta}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526abc2204e7d338e5c0f3c5b524c3250352}{JSL\+::\+Filled\+Delta}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526ae6f313a61f49260feabbe0252daebf39}{JSL\+::\+Open\+Nabla}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526ac57738c0de5dcd2b52aedd0ac353fcd8}{JSL\+::\+Filled\+Nabla}}
+, \newline
+\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526aede7da49ec9867bc58a9883ac6f7fd12}{JSL\+::\+Open\+Diamond}}
+, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a9ba302e97b23281952e4e194387808b2}{JSL\+::\+Filled\+Diamond}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\Name\+Value\+Pair$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_ab3202b0829bd8c97cf11fa3ba1056ced}{JSL\+::\+Line\+Properties\+::\+Pen\+Size}} (T w)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Name\+Value\+Pair$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a617f9fb19b5c9ec868056a665fca451c}{JSL\+::\+Line\+Properties\+::\+Colour}} (T c)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Name\+Value\+Pair$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a53085936a7f874c924b456ab7d888dd4}{JSL\+::\+Line\+Properties\+::\+Pen\+Type}} (T c)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Name\+Value\+Pair$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a1d98a87b934ea854350f03976cf79616}{JSL\+::\+Line\+Properties\+::\+Scatter\+Type}} (T c)
+\item 
+Name\+Value\+Pair$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a6f09486f21ae83a4a69f0a18d0023a73}{JSL\+::\+Line\+Properties\+::\+Legend}} (std\+::string s)
+\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classJSL_1_1Argument" kind="class" language="C++" prot="public">
     <compoundname>JSL::Argument</compoundname>
     <basecompoundref refid="classJSL_1_1ArgumentInterface" prot="public" virt="non-virtual">JSL::ArgumentInterface</basecompoundref>
@@ -15,6 +15,7 @@
         <definition>T JSL::Argument&lt; T &gt;::Value</definition>
         <argsstring></argsstring>
         <name>Value</name>
+        <qualifiedname>JSL::Argument::Value</qualifiedname>
         <briefdescription>
 <para>The current value of the argument. </para>
         </briefdescription>
@@ -22,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="40" column="3" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="40" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="46" column="3" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -31,6 +32,7 @@
         <definition>JSL::Argument&lt; T &gt;::Argument</definition>
         <argsstring>()</argsstring>
         <name>Argument</name>
+        <qualifiedname>JSL::Argument::Argument</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -38,19 +40,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="43" column="1" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="43" bodyend="43"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="49" column="1" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="49" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1ab07e7981db832cce30f534c67f6491f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>JSL::Argument&lt; T &gt;::Argument</definition>
         <argsstring>(std::string trigger)</argsstring>
         <name>Argument</name>
+        <qualifiedname>JSL::Argument::Argument</qualifiedname>
         <param>
           <type>std::string</type>
           <declname>trigger</declname>
         </param>
         <briefdescription>
-<para>Constructor initialising the <ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref>. Value is set to uninitialised memory of the Template type. </para>
+<para>Constructor initialising the <ref refid="classJSL_1_1ArgumentInterface_1a29460ecfd033ad1a485333767e28b816" kindref="member">TriggerString</ref>. Value is set to uninitialised memory of the Template type. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -58,7 +61,7 @@
 <parametername>trigger</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The value of <ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref>, and the &quot;name&quot; of this parameter </para>
+<para>The value of <ref refid="classJSL_1_1ArgumentInterface_1a29460ecfd033ad1a485333767e28b816" kindref="member">TriggerString</ref>, and the &quot;name&quot; of this parameter </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -66,13 +69,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="46" column="1" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="46" bodyend="50"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="52" column="1" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="52" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1a2511f7c98ee2b0b59650f468341b8747" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>JSL::Argument&lt; T &gt;::Argument</definition>
         <argsstring>(T defaultValue, std::string trigger)</argsstring>
         <name>Argument</name>
+        <qualifiedname>JSL::Argument::Argument</qualifiedname>
         <param>
           <type>T</type>
           <declname>defaultValue</declname>
@@ -82,7 +86,7 @@
           <declname>trigger</declname>
         </param>
         <briefdescription>
-<para>Constructor which initialises the <ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref> and <ref refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" kindref="member">Value</ref> members. </para>
+<para>Constructor which initialises the <ref refid="classJSL_1_1ArgumentInterface_1a29460ecfd033ad1a485333767e28b816" kindref="member">TriggerString</ref> and <ref refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" kindref="member">Value</ref> members. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -98,7 +102,7 @@
 <parametername>trigger</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The value of <ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref>, and the &quot;name&quot; of this parameter </para>
+<para>The value of <ref refid="classJSL_1_1ArgumentInterface_1a29460ecfd033ad1a485333767e28b816" kindref="member">TriggerString</ref>, and the &quot;name&quot; of this parameter </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -106,13 +110,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="53" column="1" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="53" bodyend="58"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="58" column="1" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="58" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1a4d187d2fb658021866b173987b920ab4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>JSL::Argument&lt; T &gt;::Argument</definition>
         <argsstring>(T defaultValue, std::string trigger, int argc, char *argv[])</argsstring>
         <name>Argument</name>
+        <qualifiedname>JSL::Argument::Argument</qualifiedname>
         <param>
           <type>T</type>
           <declname>defaultValue</declname>
@@ -147,7 +152,7 @@
 <parametername>trigger</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The value of <ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref>, and the &quot;name&quot; of this parameter</para>
+<para>The value of <ref refid="classJSL_1_1ArgumentInterface_1a29460ecfd033ad1a485333767e28b816" kindref="member">TriggerString</ref>, and the &quot;name&quot; of this parameter</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -171,13 +176,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="61" column="1" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="61" bodyend="68"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="66" column="1" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="66" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1a83799e9089f88d7e6cf30990fae42610" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>JSL::Argument&lt; T &gt;::Argument</definition>
         <argsstring>(T defaultValue, std::string trigger, std::string configFile, char configDelimiter)</argsstring>
         <name>Argument</name>
+        <qualifiedname>JSL::Argument::Argument</qualifiedname>
         <param>
           <type>T</type>
           <declname>defaultValue</declname>
@@ -211,7 +217,7 @@
 <parametername>trigger</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The value of <ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref>, and the &quot;name&quot; of this parameter</para>
+<para>The value of <ref refid="classJSL_1_1ArgumentInterface_1a29460ecfd033ad1a485333767e28b816" kindref="member">TriggerString</ref>, and the &quot;name&quot; of this parameter</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -235,13 +241,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="71" column="1" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="71" bodyend="77"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="76" column="1" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="76" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1aa626ff37dbebaf0501614dc625a76383" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>void JSL::Argument&lt; T &gt;::Configure</definition>
         <argsstring>(std::string configFile, char configDelimiter)</argsstring>
         <name>Configure</name>
+        <qualifiedname>JSL::Argument::Configure</qualifiedname>
         <reimplements refid="classJSL_1_1ArgumentInterface_1aac7c3106f99c407e625b9bc6a6c8c446">Configure</reimplements>
         <param>
           <type>std::string</type>
@@ -276,13 +283,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="80" column="6" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="80" bodyend="88"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="85" column="6" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="85" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1aa2b18bb35e90f91e224a06d60835053a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>void JSL::Argument&lt; T &gt;::ListParse</definition>
         <argsstring>(int argc, char *argv[])</argsstring>
         <name>ListParse</name>
+        <qualifiedname>JSL::Argument::ListParse</qualifiedname>
         <reimplements refid="classJSL_1_1ArgumentInterface_1a256b5bd88b5f6638353f108c48f3ee65">ListParse</reimplements>
         <param>
           <type>int</type>
@@ -318,13 +326,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="91" column="6" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="91" bodyend="97"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="96" column="6" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="96" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1a8984e7ce23155259d90a3e98170f36e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>void JSL::Argument&lt; T &gt;::Parse</definition>
         <argsstring>(char *name, char *value)</argsstring>
         <name>Parse</name>
+        <qualifiedname>JSL::Argument::Parse</qualifiedname>
         <reimplements refid="classJSL_1_1ArgumentInterface_1a28b487f7a4fa6e721ed6629abe2073f2">Parse</reimplements>
         <param>
           <type>char *</type>
@@ -359,13 +368,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="100" column="6" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="100" bodyend="107"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="105" column="6" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="105" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1a965bc0dfdce6e03380605af313f8c880" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>JSL::Argument&lt; T &gt;::operator T</definition>
         <argsstring>()</argsstring>
         <name>operator T</name>
+        <qualifiedname>JSL::Argument::operator T</qualifiedname>
         <briefdescription>
 <para>Allow the <ref refid="classJSL_1_1Argument" kindref="compound">Argument</ref> object to be implicitly casted into the value of <ref refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" kindref="member">Value</ref>, and hence treated as an object of the templated type. </para>
         </briefdescription>
@@ -373,7 +383,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="110" column="1" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="110" bodyend="113"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="115" column="1" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Argument_1a088b37401f3183f6f3b081bfd370c991" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Argument&lt; T &gt;::operator T</definition>
+        <argsstring>() const</argsstring>
+        <name>operator T</name>
+        <qualifiedname>JSL::Argument::operator T</qualifiedname>
+        <briefdescription>
+<para>Annoying const version. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="121" column="1" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="121" bodyend="124"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -382,6 +407,7 @@
         <definition>void JSL::Argument&lt; T &gt;::CheckForInvalidTriggers</definition>
         <argsstring>()</argsstring>
         <name>CheckForInvalidTriggers</name>
+        <qualifiedname>JSL::Argument::CheckForInvalidTriggers</qualifiedname>
         <briefdescription>
 <para>Some Triggers are disallowed - they usually are protected names such as &quot;help&quot;, though other properties may trigger this funciton to throw an error. </para>
         </briefdescription>
@@ -389,13 +415,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="118" column="6" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="118" bodyend="129"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="129" column="6" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="129" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Argument_1ab06f610d3c79d7c96e6f62c0e9d98acc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void JSL::Argument&lt; T &gt;::StreamTo</definition>
+        <argsstring>(std::stringstream &amp;stream, std::string delimiter)</argsstring>
+        <name>StreamTo</name>
+        <qualifiedname>JSL::Argument::StreamTo</qualifiedname>
+        <reimplements refid="classJSL_1_1ArgumentInterface_1a12d47b53c73ad1e996d524f515a20dad">StreamTo</reimplements>
+        <param>
+          <type>std::stringstream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="142" column="6" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="142" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>virtual void JSL::Argument&lt; T &gt;::AssignValue</definition>
         <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
+        <qualifiedname>JSL::Argument::AssignValue</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>value</declname>
@@ -407,13 +457,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="132" column="14" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="132" bodyend="132"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="148" column="14" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="148" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1ab62b81b196fdc434ab03cd3257ab4aef" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void JSL::Argument&lt; int &gt;::AssignValue</definition>
         <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
+        <qualifiedname>JSL::Argument::AssignValue</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>value</declname>
@@ -425,13 +476,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="138" column="22" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="138" bodyend="150"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="154" column="22" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="154" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1ad023ca0ed8f956af79fb060eabd844c9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void JSL::Argument&lt; double &gt;::AssignValue</definition>
         <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
+        <qualifiedname>JSL::Argument::AssignValue</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>value</declname>
@@ -443,13 +495,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="155" column="22" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="155" bodyend="158"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="171" column="22" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="171" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1ad379e95cccb05516525e2634cba93579" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void JSL::Argument&lt; std::string &gt;::AssignValue</definition>
         <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
+        <qualifiedname>JSL::Argument::AssignValue</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>value</declname>
@@ -461,13 +514,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="162" column="22" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="162" bodyend="165"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="178" column="22" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="178" bodyend="181"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Argument_1a3a1fc796058e3bc1b1a4778688249baf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void JSL::Argument&lt; bool &gt;::AssignValue</definition>
         <argsstring>(const char *value)</argsstring>
         <name>AssignValue</name>
+        <qualifiedname>JSL::Argument::AssignValue</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>value</declname>
@@ -479,45 +533,46 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="169" column="22" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="169" bodyend="177"/>
+        <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="185" column="22" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="185" bodyend="193"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>A class which allows arbitrary template parameters to be read in as command-line arguments or from a configuraiton file using a Name/Value pair system. Upon construction, the <ref refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" kindref="member">Value</ref> parameter takes the default value (if provided), until it is overriden by a successful argument/<ref refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" kindref="member">TriggerString</ref> match. </para>
+<para>A class which allows arbitrary template parameters to be read in as command-line arguments or from a configuraiton file using a Name/Value pair system. Upon construction, the <ref refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" kindref="member">Value</ref> parameter takes the default value (if provided), until it is overriden by a successful argument/<ref refid="classJSL_1_1ArgumentInterface_1a29460ecfd033ad1a485333767e28b816" kindref="member">TriggerString</ref> match. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>JSL::ArgumentInterface</label>
-        <link refid="classJSL_1_1ArgumentInterface"/>
-      </node>
       <node id="1">
         <label>JSL::Argument&lt; T &gt;</label>
         <link refid="classJSL_1_1Argument"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::ArgumentInterface</label>
+        <link refid="classJSL_1_1ArgumentInterface"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>JSL::ArgumentInterface</label>
-        <link refid="classJSL_1_1ArgumentInterface"/>
-      </node>
       <node id="1">
         <label>JSL::Argument&lt; T &gt;</label>
         <link refid="classJSL_1_1Argument"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>JSL::ArgumentInterface</label>
+        <link refid="classJSL_1_1ArgumentInterface"/>
+      </node>
     </collaborationgraph>
-    <location file="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" line="36" column="1" bodyfile="/home/jack/Documents/Work/JSL/CommandArgs/Argument.h" bodystart="35" bodyend="134"/>
+    <location file="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" line="41" column="1" bodyfile="/Users/jf20/Documents/JSL/CommandArgs/Argument.h" bodystart="42" bodyend="150"/>
     <listofallmembers>
       <member refid="classJSL_1_1Argument_1ab438509a3c030516de72f3f493295bd5" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
       <member refid="classJSL_1_1Argument_1ab07e7981db832cce30f534c67f6491f4" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
       <member refid="classJSL_1_1Argument_1a2511f7c98ee2b0b59650f468341b8747" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
       <member refid="classJSL_1_1Argument_1a4d187d2fb658021866b173987b920ab4" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
       <member refid="classJSL_1_1Argument_1a83799e9089f88d7e6cf30990fae42610" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Argument</name></member>
+      <member refid="classJSL_1_1ArgumentInterface_1a5c12814b0c7d12369aebd77baa19fbac" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>ArgumentInterface</name></member>
       <member refid="classJSL_1_1Argument_1ac77530598054943c996dbb5fb677b844" prot="private" virt="virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
       <member refid="classJSL_1_1Argument_1ab62b81b196fdc434ab03cd3257ab4aef" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
       <member refid="classJSL_1_1Argument_1ad023ca0ed8f956af79fb060eabd844c9" prot="private" virt="non-virtual"><scope>JSL::Argument</scope><name>AssignValue</name></member>
@@ -527,8 +582,10 @@
       <member refid="classJSL_1_1Argument_1aa626ff37dbebaf0501614dc625a76383" prot="public" virt="virtual"><scope>JSL::Argument</scope><name>Configure</name></member>
       <member refid="classJSL_1_1Argument_1aa2b18bb35e90f91e224a06d60835053a" prot="public" virt="virtual"><scope>JSL::Argument</scope><name>ListParse</name></member>
       <member refid="classJSL_1_1Argument_1a965bc0dfdce6e03380605af313f8c880" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>operator T</name></member>
+      <member refid="classJSL_1_1Argument_1a088b37401f3183f6f3b081bfd370c991" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>operator T</name></member>
       <member refid="classJSL_1_1Argument_1a8984e7ce23155259d90a3e98170f36e0" prot="public" virt="virtual"><scope>JSL::Argument</scope><name>Parse</name></member>
-      <member refid="classJSL_1_1ArgumentInterface_1afa2d1f96c4971070d3de5824f297312f" prot="protected" virt="non-virtual"><scope>JSL::Argument</scope><name>TriggerString</name></member>
+      <member refid="classJSL_1_1Argument_1ab06f610d3c79d7c96e6f62c0e9d98acc" prot="private" virt="virtual"><scope>JSL::Argument</scope><name>StreamTo</name></member>
+      <member refid="classJSL_1_1ArgumentInterface_1a29460ecfd033ad1a485333767e28b816" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>TriggerString</name></member>
       <member refid="classJSL_1_1Argument_1a83ada5bfa412192f76dd4290f679defd" prot="public" virt="non-virtual"><scope>JSL::Argument</scope><name>Value</name></member>
     </listofallmembers>
   </compounddef>

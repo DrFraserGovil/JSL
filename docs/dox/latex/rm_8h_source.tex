@@ -1,0 +1,28 @@
+\hypertarget{rm_8h_source}{}\doxysection{rm.\+h}
+\label{rm_8h_source}\index{/Users/jf20/Documents/JSL/FileIO/rm.h@{/Users/jf20/Documents/JSL/FileIO/rm.h}}
+\mbox{\hyperlink{rm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <dirent.h>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{locationExists_8h}{locationExists.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../System/System.h"{}}}
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     }
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} \textcolor{keyword}{inline} \mbox{\hyperlink{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}{rm}}(std::string location, \textcolor{keywordtype}{bool} recursive)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         std::string command = \textcolor{stringliteral}{"{}rm "{}};}
+\DoxyCodeLine{18         \textcolor{keywordflow}{if} (recursive)}
+\DoxyCodeLine{19         \{}
+\DoxyCodeLine{20             command += \textcolor{stringliteral}{"{}-\/r "{}};}
+\DoxyCodeLine{21         \}}
+\DoxyCodeLine{22         command += location;}
+\DoxyCodeLine{23         \mbox{\hyperlink{namespaceJSL_a5cd4ed117decf1140104ad8566b589ac}{systemCall}}(command);  }
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     }
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}

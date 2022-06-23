@@ -1,0 +1,29 @@
+\hypertarget{split_8h_source}{}\doxysection{split.\+h}
+\label{split_8h_source}\index{/Users/jf20/Documents/JSL/Strings/split.h@{/Users/jf20/Documents/JSL/Strings/split.h}}
+\mbox{\hyperlink{split_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{inline} std::vector<std::string> \mbox{\hyperlink{namespaceJSL_aa37a5ffd99a34e2f12377c9f00b31c50}{split}}(\textcolor{keyword}{const} std::string\& s, \textcolor{keywordtype}{char} delimiter)}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{comment}{//dumb brute-\/force string splitter based on a delimiter}}
+\DoxyCodeLine{17         std::vector<std::string> tokens;}
+\DoxyCodeLine{18         std::string token;}
+\DoxyCodeLine{19         std::istringstream tokenStream(s);}
+\DoxyCodeLine{20         \textcolor{keywordflow}{while} (getline(tokenStream, token, delimiter))}
+\DoxyCodeLine{21         \{}
+\DoxyCodeLine{22             \textcolor{keywordflow}{if}( token.length() > 0) \textcolor{comment}{// empty rows not allowed}}
+\DoxyCodeLine{23             \{}
+\DoxyCodeLine{24                 tokens.push\_back(token);}
+\DoxyCodeLine{25             \}}
+\DoxyCodeLine{26         \}}
+\DoxyCodeLine{27         \textcolor{keywordflow}{return} tokens;}
+\DoxyCodeLine{28     \};}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}

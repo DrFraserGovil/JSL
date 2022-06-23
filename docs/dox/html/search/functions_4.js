@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['formatclock_128',['FormatClock',['../namespaceJSL.html#ae7af96a0311784e019209221335f76d9',1,'JSL']]],
-  ['formatduration_129',['FormatDuration',['../namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222',1,'JSL']]]
+  ['elementwiseoperation_0',['ElementWiseOperation',['../namespaceJSL.html#a941b0093a8d1298a0dc0c4403f63a826',1,'JSL']]],
+  ['error_1',['Error',['../namespaceJSL.html#a5783bc90550deca94c1790e581fb707d',1,'JSL::Error(ErrorCode code, const std::string &amp;message)'],['../namespaceJSL.html#a0241a3cc1fa4dd4d319ab8686d1cfaa3',1,'JSL::Error(const std::string &amp;message)']]],
+  ['exp_2',['exp',['../namespaceJSL.html#a943a21cab5e9abe4331b20d37cd3f8a1',1,'JSL']]]
 ];

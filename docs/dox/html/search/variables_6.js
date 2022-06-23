@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_179',['Value',['../classJSL_1_1Argument.html#a83ada5bfa412192f76dd4290f679defd',1,'JSL::Argument']]]
+  ['globalfontsize_0',['globalFontSize',['../classJSL_1_1gnuplot.html#abc845a03e444f2f39bfbfbb3c9a45573',1,'JSL::gnuplot']]]
 ];

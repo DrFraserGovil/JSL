@@ -1,0 +1,74 @@
+\hypertarget{Time_8h_source}{}\doxysection{Time.\+h}
+\label{Time_8h_source}\index{/Users/jf20/Documents/JSL/Strings/Time.h@{/Users/jf20/Documents/JSL/Strings/Time.h}}
+\mbox{\hyperlink{Time_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     }
+\DoxyCodeLine{16     \textcolor{keyword}{inline} std::string \mbox{\hyperlink{namespaceJSL_ae58b7096986a16b70a27e1609eff3014}{CurrentTime}}()}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \textcolor{keyword}{auto} now = std::chrono::system\_clock::now();}
+\DoxyCodeLine{19         std::time\_t now\_t = std::chrono::system\_clock::to\_time\_t(now);}
+\DoxyCodeLine{20         std::ostringstream out;}
+\DoxyCodeLine{21         \textcolor{comment}{//\string~ out << "{}Current time is: "{};}}
+\DoxyCodeLine{22         out << std::ctime(\&now\_t);}
+\DoxyCodeLine{23         \textcolor{keywordflow}{return} out.str();}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     }
+\DoxyCodeLine{31     \textcolor{keyword}{inline} std::string \mbox{\hyperlink{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}{FormatDuration}}(\textcolor{keywordtype}{int} timeInSeconds)}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         }
+\DoxyCodeLine{34         std::vector<std::string> divisions= \{\textcolor{stringliteral}{"{}Day"{}}, \textcolor{stringliteral}{"{}Hour"{}}, \textcolor{stringliteral}{"{}Minute"{}}, \textcolor{stringliteral}{"{}Second"{}}\};}
+\DoxyCodeLine{35         std::vector<int> duration = \{86400, 3600, 60 , 1\};}
+\DoxyCodeLine{36         \textcolor{comment}{//std::vector<int> chunks = std::vector(0,divisions.size());}}
+\DoxyCodeLine{37         }
+\DoxyCodeLine{38         \textcolor{keywordtype}{bool} nothingAdded = \textcolor{keyword}{true};}
+\DoxyCodeLine{39         std::string output = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{40         \textcolor{keywordflow}{if} (timeInSeconds < 0)}
+\DoxyCodeLine{41         \{}
+\DoxyCodeLine{42             timeInSeconds = abs(timeInSeconds);}
+\DoxyCodeLine{43             output += \textcolor{stringliteral}{"{}(negative) "{}};}
+\DoxyCodeLine{44         \}}
+\DoxyCodeLine{45         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < divisions.size(); ++i)}
+\DoxyCodeLine{46         \{}
+\DoxyCodeLine{47             \textcolor{keywordtype}{int} v = timeInSeconds / duration[i];}
+\DoxyCodeLine{48             timeInSeconds -\/= v * duration[i];}
+\DoxyCodeLine{49             }
+\DoxyCodeLine{50             \textcolor{keywordflow}{if} (v > 0)}
+\DoxyCodeLine{51             \{}
+\DoxyCodeLine{52                 nothingAdded = \textcolor{keyword}{false};}
+\DoxyCodeLine{53                 output += std::to\_string(v) + \textcolor{stringliteral}{"{} "{}} + divisions[i];}
+\DoxyCodeLine{54                 \textcolor{keywordflow}{if} (v > 1)}
+\DoxyCodeLine{55                 \{}
+\DoxyCodeLine{56                     output += \textcolor{stringliteral}{"{}s"{}};}
+\DoxyCodeLine{57                 \}}
+\DoxyCodeLine{58                 output += \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{59             \}}
+\DoxyCodeLine{60         \}}
+\DoxyCodeLine{61         \textcolor{keywordflow}{if} (nothingAdded)}
+\DoxyCodeLine{62         \{}
+\DoxyCodeLine{63             output = \textcolor{stringliteral}{"{}less than 1 second"{}};}
+\DoxyCodeLine{64         \}   }
+\DoxyCodeLine{65         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67     }
+\DoxyCodeLine{73     \textcolor{keyword}{inline} std::string \mbox{\hyperlink{namespaceJSL_ae7af96a0311784e019209221335f76d9}{FormatClock}}(std::chrono::time\_point<std::chrono::system\_clock> start, std::chrono::time\_point<std::chrono::system\_clock> end)}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         std::chrono::duration<double> diff = end -\/ start;}
+\DoxyCodeLine{76         \textcolor{keywordtype}{double} seconds = diff.count();}
+\DoxyCodeLine{77         }
+\DoxyCodeLine{78         }
+\DoxyCodeLine{79         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceJSL_ad7ff2220bbab0294b95b9aa85332a222}{FormatDuration}}(seconds);}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \}}
+
+\end{DoxyCode}

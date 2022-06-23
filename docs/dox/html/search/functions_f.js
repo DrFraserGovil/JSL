@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['vector_163',['Vector',['../classJSL_1_1Vector.html#aea8654ed3fb875d43f669a5f2e26fb25',1,'JSL::Vector::Vector(int n)'],['../classJSL_1_1Vector.html#af5be93b29e1c2aab2882827d5001a2aa',1,'JSL::Vector::Vector(std::vector&lt; double &gt; input)']]],
-  ['vectorcrossproduct_164',['VectorCrossProduct',['../namespaceJSL.html#aa7816eb0cd81b74241ce460237990e70',1,'JSL']]],
-  ['vectordotproduct_165',['VectorDotProduct',['../namespaceJSL.html#aeae64b7e0cfdc1ab5f35cca90c32d9f6',1,'JSL']]],
-  ['vectortest_166',['VectorTest',['../classJSL__Testing_1_1MathTest.html#ae7c2bc5386e9c8d7fba78ef5b4df6fc8',1,'JSL_Testing::MathTest']]]
+  ['quaternion_0',['Quaternion',['../classJSL_1_1Quaternion.html#a3bfe577832b38cdf2dbbb143c9487add',1,'JSL::Quaternion::Quaternion()'],['../classJSL_1_1Quaternion.html#ae31be96e94176f1e5278cfaeba39dedc',1,'JSL::Quaternion::Quaternion(const double &amp;scalar, const JSL::Vector &amp;vec)'],['../classJSL_1_1Quaternion.html#ac0fa428adfcbc3db2eff9b5c86e7a075',1,'JSL::Quaternion::Quaternion(const double &amp;a, const double &amp;b, const double &amp;c, const double &amp;d)'],['../classJSL_1_1Quaternion.html#a6b71605f5fafada8e94bab1bf9af55bd',1,'JSL::Quaternion::Quaternion(const JSL::Vector &amp;vec4)'],['../classJSL_1_1Quaternion.html#a738b4fb82caf2a0334818ac4e6c494de',1,'JSL::Quaternion::Quaternion(const std::vector&lt; double &gt; &amp;vec4)']]]
 ];

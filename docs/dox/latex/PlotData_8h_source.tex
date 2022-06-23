@@ -1,0 +1,255 @@
+\hypertarget{PlotData_8h_source}{}\doxysection{Plot\+Data.\+h}
+\label{PlotData_8h_source}\index{/Users/jf20/Documents/JSL/gnuplot/PlotData.h@{/Users/jf20/Documents/JSL/gnuplot/PlotData.h}}
+\mbox{\hyperlink{PlotData_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49beda}{PlotType}} \{\mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaafa1098e16302d619cc16c6117128c7e2}{Line}},\mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaa523747d04b06019ae6db545703793d22}{ScatterPoint}}\};}
+\DoxyCodeLine{6     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8}{Property}} \{\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ae7660181e67b34cc8012e44899358c0a}{Colour}},\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8a22d189b48d50314bdd20b34e9a40e4a5}{PenSize}},\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ab516e098813c27967b8e649b94f98db8}{PenType}},\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8afadeba2e8b035dc3c761f416c88a293d}{Legend}}\};}
+\DoxyCodeLine{7     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355}{LineType}} \{\mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355aaf6d64d28f76aa54961a419d3d9e17b5}{Solid}}, \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355a5d77703e9d097677886b897d9a2eeb62}{Dash}}, \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355af0b887cb0d75c330317bc843146bfc92}{DashDot}},\mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355ac3cd9b153ce73b7d8dd0485ae186379d}{Dotted}}, \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355a48afd9609abb3d990c826b2c74850d3e}{DashDotDot}}\};}
+\DoxyCodeLine{8     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{ScatterType}} \{\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a7d6491e51b0151fad51114bdc9fe0006}{Dot}}, \mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526ac54fadde63eae4fbfb5090af9e2c8c68}{Plus}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526af2349f50039f930d90a39a689282aaf8}{Cross}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a3d4283b7785e19142f43a8d705f45128}{Star}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526af5af415948dea41c775febe11df59707}{OpenSquare}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526ab2977a42bdf7f8cafd62d56eb573d71a}{FilledSquare}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a24102e043f642c5aadf0a5184838e065}{OpenCircle}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a1e5a2218783d5197e73aab6b16f3add3}{FilledCircle}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a163fb60ab5d5beca95d7afa4c97d6fda}{OpenDelta}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526abc2204e7d338e5c0f3c5b524c3250352}{FilledDelta}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526ae6f313a61f49260feabbe0252daebf39}{OpenNabla}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526ac57738c0de5dcd2b52aedd0ac353fcd8}{FilledNabla}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526aede7da49ec9867bc58a9883ac6f7fd12}{OpenDiamond}},\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a9ba302e97b23281952e4e194387808b2}{FilledDiamond}}\};}
+\DoxyCodeLine{9     }
+\DoxyCodeLine{10     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{11     \textcolor{keyword}{struct }\mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13         \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8}{Property}} \mbox{\hyperlink{structJSL_1_1NameValuePair_a43effa79099e9015b45b6b9a9f8a2f0a}{Name}};}
+\DoxyCodeLine{14         T \mbox{\hyperlink{structJSL_1_1NameValuePair_a03e493ef338a55846408051a5d544b11}{Value}};}
+\DoxyCodeLine{15         }
+\DoxyCodeLine{16         \mbox{\hyperlink{structJSL_1_1NameValuePair_aad7234d2606ab8dc017a62206f4a4a69}{NameValuePair}}(\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8}{Property}} name, T value)}
+\DoxyCodeLine{17         \{}
+\DoxyCodeLine{18             \mbox{\hyperlink{structJSL_1_1NameValuePair_a43effa79099e9015b45b6b9a9f8a2f0a}{Name}} = name;}
+\DoxyCodeLine{19             \mbox{\hyperlink{structJSL_1_1NameValuePair_a03e493ef338a55846408051a5d544b11}{Value}} = value;}
+\DoxyCodeLine{20         \}}
+\DoxyCodeLine{21     \};}
+\DoxyCodeLine{22     \textcolor{keyword}{namespace }LineProperties}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{25         \textcolor{keyword}{inline} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}} \mbox{\hyperlink{namespaceJSL_1_1LineProperties_ab3202b0829bd8c97cf11fa3ba1056ced}{PenSize}}(T w)}
+\DoxyCodeLine{26         \{}
+\DoxyCodeLine{27             \textcolor{keywordflow}{return} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}}(\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8a22d189b48d50314bdd20b34e9a40e4a5}{JSL::PenSize}},w);}
+\DoxyCodeLine{28         \}}
+\DoxyCodeLine{29         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{30         \textcolor{keyword}{inline} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}} \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a617f9fb19b5c9ec868056a665fca451c}{Colour}}(T c)}
+\DoxyCodeLine{31         \{}
+\DoxyCodeLine{32             \textcolor{keywordflow}{return} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}}(\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ae7660181e67b34cc8012e44899358c0a}{JSL::Colour}},c);}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{35         \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}} \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a53085936a7f874c924b456ab7d888dd4}{PenType}}(T c)}
+\DoxyCodeLine{36         \{}
+\DoxyCodeLine{37             \textcolor{keywordflow}{return} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}}(\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ab516e098813c27967b8e649b94f98db8}{JSL::PenType}},c);}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{40         \textcolor{keyword}{inline} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}} \mbox{\hyperlink{namespaceJSL_1_1LineProperties_a1d98a87b934ea854350f03976cf79616}{ScatterType}}(T c)}
+\DoxyCodeLine{41         \{}
+\DoxyCodeLine{42             \textcolor{keywordflow}{return} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}}(\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ab516e098813c27967b8e649b94f98db8}{JSL::PenType}},c);}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keyword}{inline} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<std::string>}}\mbox{\hyperlink{namespaceJSL_1_1LineProperties_a6f09486f21ae83a4a69f0a18d0023a73}{Legend}}(std::string s)}
+\DoxyCodeLine{46         \{}
+\DoxyCodeLine{47             \textcolor{keywordflow}{return} \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<std::string>}}(\mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8afadeba2e8b035dc3c761f416c88a293d}{JSL::Legend}},s);}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}}}
+\DoxyCodeLine{52     \{}
+\DoxyCodeLine{53         \textcolor{keyword}{public}: }
+\DoxyCodeLine{54             }
+\DoxyCodeLine{55             \textcolor{keyword}{template}<\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{56             \mbox{\hyperlink{classJSL_1_1PlotData_acefcd21025b95d2f76313dfd578bb25f}{PlotData}}(std::string data,\textcolor{keywordtype}{int} idx,\mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49beda}{PlotType}} t, \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<Ts>}}... args) : \mbox{\hyperlink{classJSL_1_1PlotData_a59b333717ba98216efcd19499eacc6d9}{DataLocation}}(data)}
+\DoxyCodeLine{57             \{}
+\DoxyCodeLine{58                 \mbox{\hyperlink{classJSL_1_1PlotData_a9c2193e46a79618ee04e4d229f44f20c}{Idx}} = idx;}
+\DoxyCodeLine{59                 \mbox{\hyperlink{classJSL_1_1PlotData_a419724bfc1943f5c5efbc7607f9034d1}{type}} = t;}
+\DoxyCodeLine{60                 \mbox{\hyperlink{classJSL_1_1PlotData_ab25bd54000960736d1c2687fc52b8bcc}{DefaultInit}}();}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{sizeof}...(args) > 0)}
+\DoxyCodeLine{62                 \{   }
+\DoxyCodeLine{63                     \mbox{\hyperlink{classJSL_1_1PlotData_a0cb1885e91da9457fd684a60547e66d0}{ParseLoop}}(args...);}
+\DoxyCodeLine{64                 \}}
+\DoxyCodeLine{65             \}}
+\DoxyCodeLine{66             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{67             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a67c6db4673dc35b4433e26dc9259a22f}{SetColour}}(T v)}
+\DoxyCodeLine{68             \{}
+\DoxyCodeLine{69                 \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\textcolor{stringliteral}{"{}Cannot parse colours in the provided format. Please use a supported colour encoding"{}});}
+\DoxyCodeLine{70             \}}
+\DoxyCodeLine{71             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_af350ddfe10bf959868087490d58cc6f6}{SetColour}}(std::string c)}
+\DoxyCodeLine{72             \{}
+\DoxyCodeLine{73                 \mbox{\hyperlink{classJSL_1_1PlotData_a2936bcc90d54c471f31388e2673081b3}{colour}} = \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} + c + \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}};}
+\DoxyCodeLine{74             \}}
+\DoxyCodeLine{75             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a04b4ee30bc1c289bc956bead3ad016da}{SetColour}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * c)}
+\DoxyCodeLine{76             \{}
+\DoxyCodeLine{77                 \mbox{\hyperlink{classJSL_1_1PlotData_a67c6db4673dc35b4433e26dc9259a22f}{SetColour}}((std::string) c);}
+\DoxyCodeLine{78             \}}
+\DoxyCodeLine{79             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_af17925614e1c493cd9ab67fa40e059b5}{SetColour}}(\textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} g, \textcolor{keywordtype}{int} b)}
+\DoxyCodeLine{80             \{}
+\DoxyCodeLine{81                 \textcolor{keywordtype}{int} combined = 65536 * (r \% 256) + 256 * (g\%256) + (b\%256);}
+\DoxyCodeLine{82                 \mbox{\hyperlink{classJSL_1_1PlotData_a2936bcc90d54c471f31388e2673081b3}{colour}} = \textcolor{stringliteral}{"{} rgb "{}} + std::to\_string(combined);}
+\DoxyCodeLine{83             \}       }
+\DoxyCodeLine{84             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a85482ac6105c688e2c45627176bd8a48}{SetColour}}(std::vector<int> cs)}
+\DoxyCodeLine{85             \{}
+\DoxyCodeLine{86                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}RGB Vectors must have length 3"{}}, cs.size() == 3);}
+\DoxyCodeLine{87                 \mbox{\hyperlink{classJSL_1_1PlotData_a67c6db4673dc35b4433e26dc9259a22f}{SetColour}}(cs[0],cs[1],cs[2]);}
+\DoxyCodeLine{88             \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{91             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_acb517655ae4ab52c1512fd48c0589d31}{SetPenSize}}(T v)}
+\DoxyCodeLine{92             \{}
+\DoxyCodeLine{93                 \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\textcolor{stringliteral}{"{}Cannot parse pensizes in the provided format. Please use a supported pensize encoding"{}});}
+\DoxyCodeLine{94             \}}
+\DoxyCodeLine{95             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_aed7875d8ef940f0e1c0ec9321fc03001}{SetPenSize}}(\textcolor{keywordtype}{int} l)}
+\DoxyCodeLine{96             \{}
+\DoxyCodeLine{97                 \mbox{\hyperlink{classJSL_1_1PlotData_a91bf6edbf9d8a28cf5255aa1ed74948c}{penSize}} = l;}
+\DoxyCodeLine{98             \}   }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{101             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a3e8e3327c8d29e55468709a1d02f554e}{SetPenType}}(T v)}
+\DoxyCodeLine{102             \{}
+\DoxyCodeLine{103                 \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\textcolor{stringliteral}{"{}Cannot parse pensizes in the provided format. Please use a supported pensize encoding"{}});}
+\DoxyCodeLine{104             \}}
+\DoxyCodeLine{105             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a700a1bda59a82ccb0893c9da51ede414}{SetPenType}}(std::string t)}
+\DoxyCodeLine{106             \{}
+\DoxyCodeLine{107                 \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = t;}
+\DoxyCodeLine{108             \}}
+\DoxyCodeLine{109             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a233b61c2d872ef28b342a508392ccb49}{SetPenType}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * t)}
+\DoxyCodeLine{110             \{}
+\DoxyCodeLine{111                 \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = (std::string) t;}
+\DoxyCodeLine{112             \}}
+\DoxyCodeLine{113             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a89f366ff9fdedb9494f29a6c601e5a2c}{SetPenType}}(\textcolor{keywordtype}{int} i)}
+\DoxyCodeLine{114             \{}
+\DoxyCodeLine{115                 \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = std::to\_string(i);}
+\DoxyCodeLine{116             \}}
+\DoxyCodeLine{117             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_aa12ffd19507678e013db6a221a0c5849}{SetPenType}}(\mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355}{JSL::LineType}} t)}
+\DoxyCodeLine{118             \{}
+\DoxyCodeLine{119                 \textcolor{keywordflow}{switch} (t)}
+\DoxyCodeLine{120                 \{}
+\DoxyCodeLine{121                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355aaf6d64d28f76aa54961a419d3d9e17b5}{Solid}}:}
+\DoxyCodeLine{122                         \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = \textcolor{stringliteral}{"{}1"{}};}
+\DoxyCodeLine{123                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{124                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355a5d77703e9d097677886b897d9a2eeb62}{Dash}}:}
+\DoxyCodeLine{125                         \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = \textcolor{stringliteral}{"{}2"{}};}
+\DoxyCodeLine{126                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{127                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355af0b887cb0d75c330317bc843146bfc92}{DashDot}}:}
+\DoxyCodeLine{128                         \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = \textcolor{stringliteral}{"{}4"{}};}
+\DoxyCodeLine{129                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{130                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355ac3cd9b153ce73b7d8dd0485ae186379d}{Dotted}}:}
+\DoxyCodeLine{131                         \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = \textcolor{stringliteral}{"{}3"{}};}
+\DoxyCodeLine{132                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{133                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355a48afd9609abb3d990c826b2c74850d3e}{DashDotDot}}:}
+\DoxyCodeLine{134                         \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = \textcolor{stringliteral}{"{}5"{}};}
+\DoxyCodeLine{135                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{136                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{137                         \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = \textcolor{stringliteral}{"{}-\/1"{}};}
+\DoxyCodeLine{138                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140                 \}}
+\DoxyCodeLine{141             \}}
+\DoxyCodeLine{142             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_afb7ec483755fe2c95970ab6d0d3a4b4a}{SetPenType}}(\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526}{JSL::ScatterType}} t)}
+\DoxyCodeLine{143             \{}
+\DoxyCodeLine{144                 \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}} = std::to\_string((\textcolor{keywordtype}{int})t);}
+\DoxyCodeLine{145             \}}
+\DoxyCodeLine{146             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{147             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a30cf21f46a1911587a4381bfb40c3403}{SetScatterType}}(T t)}
+\DoxyCodeLine{148             \{}
+\DoxyCodeLine{149                 \mbox{\hyperlink{classJSL_1_1PlotData_a3e8e3327c8d29e55468709a1d02f554e}{SetPenType}}(t);}
+\DoxyCodeLine{150             \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{153             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a24fa5385585f0eaa2777072ef2d818c2}{SetLegend}}(T t)}
+\DoxyCodeLine{154             \{}
+\DoxyCodeLine{155                 \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\textcolor{stringliteral}{"{}Cannot parse legends as anything other than strings"{}});}
+\DoxyCodeLine{156             \}}
+\DoxyCodeLine{157             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a5e2c9a97035e97e3658c8bcc2913dab3}{SetLegend}}(std::string s)}
+\DoxyCodeLine{158             \{}
+\DoxyCodeLine{159                 \mbox{\hyperlink{classJSL_1_1PlotData_a17ce4f8c1648a676421b39a204b0a37d}{legend}} = s;}
+\DoxyCodeLine{160             \}}
+\DoxyCodeLine{161             std::string \mbox{\hyperlink{classJSL_1_1PlotData_a34c9a6d891f3434c13f9fd1e604e734c}{Write}}()}
+\DoxyCodeLine{162             \{}
+\DoxyCodeLine{163                 std::string line = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{164                 line += \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)"{}"{}} + \mbox{\hyperlink{classJSL_1_1PlotData_a59b333717ba98216efcd19499eacc6d9}{DataLocation}} + \textcolor{stringliteral}{"{}\(\backslash\)"{} using 1:2 "{}};}
+\DoxyCodeLine{165                 \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classJSL_1_1PlotData_a419724bfc1943f5c5efbc7607f9034d1}{type}})}
+\DoxyCodeLine{166                 \{}
+\DoxyCodeLine{167                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaafa1098e16302d619cc16c6117128c7e2}{Line}}:}
+\DoxyCodeLine{168                     \{}
+\DoxyCodeLine{169                         line += \textcolor{stringliteral}{"{}with lines "{}};}
+\DoxyCodeLine{170                         line += \textcolor{stringliteral}{"{}dt "{}} + \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}};}
+\DoxyCodeLine{171                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{172                     \}}
+\DoxyCodeLine{173                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaa523747d04b06019ae6db545703793d22}{ScatterPoint}}:}
+\DoxyCodeLine{174                     \{}
+\DoxyCodeLine{175                         line += \textcolor{stringliteral}{"{} pt "{}} + \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}};}
+\DoxyCodeLine{176                     \}}
+\DoxyCodeLine{177                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{178                     \{}
+\DoxyCodeLine{179                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{180                     \}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182                 \}}
+\DoxyCodeLine{183                 line += \textcolor{stringliteral}{"{} lw "{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1PlotData_a91bf6edbf9d8a28cf5255aa1ed74948c}{penSize}});}
+\DoxyCodeLine{184                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1PlotData_a2936bcc90d54c471f31388e2673081b3}{colour}} != \textcolor{stringliteral}{"{}\_\_null\_\_"{}})}
+\DoxyCodeLine{185                 \{}
+\DoxyCodeLine{186                     line += \textcolor{stringliteral}{"{} lc "{}} + \mbox{\hyperlink{classJSL_1_1PlotData_a2936bcc90d54c471f31388e2673081b3}{colour}};}
+\DoxyCodeLine{187                 \}}
+\DoxyCodeLine{188                 line += \textcolor{stringliteral}{"{} title \(\backslash\)"{}"{}} + \mbox{\hyperlink{classJSL_1_1PlotData_a17ce4f8c1648a676421b39a204b0a37d}{legend}}+ \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}};}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{return} line + \textcolor{stringliteral}{"{},\(\backslash\)\(\backslash\)\(\backslash\)n"{}};}
+\DoxyCodeLine{190             \}}
+\DoxyCodeLine{191         \textcolor{keyword}{private}:}
+\DoxyCodeLine{192             std::string \mbox{\hyperlink{classJSL_1_1PlotData_a59b333717ba98216efcd19499eacc6d9}{DataLocation}};}
+\DoxyCodeLine{193             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1PlotData_a9c2193e46a79618ee04e4d229f44f20c}{Idx}};}
+\DoxyCodeLine{194             std::string \mbox{\hyperlink{classJSL_1_1PlotData_ab84555b21166659535d130f84ac74b42}{dashType}};}
+\DoxyCodeLine{195             \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49beda}{PlotType}} \mbox{\hyperlink{classJSL_1_1PlotData_a419724bfc1943f5c5efbc7607f9034d1}{type}};}
+\DoxyCodeLine{196             std::string \mbox{\hyperlink{classJSL_1_1PlotData_a17ce4f8c1648a676421b39a204b0a37d}{legend}};}
+\DoxyCodeLine{197             std::string \mbox{\hyperlink{classJSL_1_1PlotData_a2936bcc90d54c471f31388e2673081b3}{colour}};}
+\DoxyCodeLine{198             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1PlotData_a91bf6edbf9d8a28cf5255aa1ed74948c}{penSize}};}
+\DoxyCodeLine{199             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_ab25bd54000960736d1c2687fc52b8bcc}{DefaultInit}}()}
+\DoxyCodeLine{200             \{}
+\DoxyCodeLine{201                 }
+\DoxyCodeLine{202                 \mbox{\hyperlink{classJSL_1_1PlotData_a2936bcc90d54c471f31388e2673081b3}{colour}} = \textcolor{stringliteral}{"{}\_\_null\_\_"{}};}
+\DoxyCodeLine{203                 }
+\DoxyCodeLine{204                 \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classJSL_1_1PlotData_a419724bfc1943f5c5efbc7607f9034d1}{type}})}
+\DoxyCodeLine{205                 \{}
+\DoxyCodeLine{206                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaafa1098e16302d619cc16c6117128c7e2}{Line}}:}
+\DoxyCodeLine{207                         \mbox{\hyperlink{classJSL_1_1PlotData_a3e8e3327c8d29e55468709a1d02f554e}{SetPenType}}(\mbox{\hyperlink{namespaceJSL_acbabfae0b320d418d49485b7c50bc355aaf6d64d28f76aa54961a419d3d9e17b5}{Solid}});}
+\DoxyCodeLine{208                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{209                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_a871354b683a8bee0151dbfbbde49bedaa523747d04b06019ae6db545703793d22}{ScatterPoint}}:}
+\DoxyCodeLine{210                         \mbox{\hyperlink{classJSL_1_1PlotData_a3e8e3327c8d29e55468709a1d02f554e}{SetPenType}}(\mbox{\hyperlink{namespaceJSL_a086efb36ddb107d45961a6b46932c526a24102e043f642c5aadf0a5184838e065}{OpenCircle}});}
+\DoxyCodeLine{211                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{212                 \};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214                 \mbox{\hyperlink{classJSL_1_1PlotData_a91bf6edbf9d8a28cf5255aa1ed74948c}{penSize}} = 1;}
+\DoxyCodeLine{215                 \mbox{\hyperlink{classJSL_1_1PlotData_a17ce4f8c1648a676421b39a204b0a37d}{legend}} = \textcolor{stringliteral}{"{}Data "{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1PlotData_a9c2193e46a79618ee04e4d229f44f20c}{Idx}});}
+\DoxyCodeLine{216             \}}
+\DoxyCodeLine{217             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{218             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a0cb1885e91da9457fd684a60547e66d0}{ParseLoop}}(\mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}} n1, \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<Ts>}}... ns)}
+\DoxyCodeLine{219             \{}
+\DoxyCodeLine{220                 \mbox{\hyperlink{classJSL_1_1PlotData_a2e57942c52c4ec76436bd3179e4ee2cd}{ParseNVPair}}(n1);}
+\DoxyCodeLine{221                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{sizeof}...(ns) > 0)}
+\DoxyCodeLine{222                 \{}
+\DoxyCodeLine{223                     \mbox{\hyperlink{classJSL_1_1PlotData_a0cb1885e91da9457fd684a60547e66d0}{ParseLoop}}(ns...);}
+\DoxyCodeLine{224                 \}}
+\DoxyCodeLine{225             \}}
+\DoxyCodeLine{226             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{227             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1PlotData_a2e57942c52c4ec76436bd3179e4ee2cd}{ParseNVPair}}(\mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<T>}} nv)}
+\DoxyCodeLine{228             \{}
+\DoxyCodeLine{229                 \textcolor{keywordflow}{switch} (nv.\mbox{\hyperlink{structJSL_1_1NameValuePair_a43effa79099e9015b45b6b9a9f8a2f0a}{Name}})}
+\DoxyCodeLine{230                 \{}
+\DoxyCodeLine{231                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ae7660181e67b34cc8012e44899358c0a}{Colour}}:}
+\DoxyCodeLine{232                     \mbox{\hyperlink{classJSL_1_1PlotData_a67c6db4673dc35b4433e26dc9259a22f}{SetColour}}(nv.\mbox{\hyperlink{structJSL_1_1NameValuePair_a03e493ef338a55846408051a5d544b11}{Value}});}
+\DoxyCodeLine{233                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{234                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8a22d189b48d50314bdd20b34e9a40e4a5}{PenSize}}:}
+\DoxyCodeLine{235                     \mbox{\hyperlink{classJSL_1_1PlotData_acb517655ae4ab52c1512fd48c0589d31}{SetPenSize}}(nv.\mbox{\hyperlink{structJSL_1_1NameValuePair_a03e493ef338a55846408051a5d544b11}{Value}});}
+\DoxyCodeLine{236                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{237                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8ab516e098813c27967b8e649b94f98db8}{PenType}}:}
+\DoxyCodeLine{238                     \mbox{\hyperlink{classJSL_1_1PlotData_a3e8e3327c8d29e55468709a1d02f554e}{SetPenType}}(nv.\mbox{\hyperlink{structJSL_1_1NameValuePair_a03e493ef338a55846408051a5d544b11}{Value}});}
+\DoxyCodeLine{239                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{240                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_ad5aeae8cb562d6f38c724cbdc51d81f8afadeba2e8b035dc3c761f416c88a293d}{Legend}}:}
+\DoxyCodeLine{241                     \mbox{\hyperlink{classJSL_1_1PlotData_a24fa5385585f0eaa2777072ef2d818c2}{SetLegend}}(nv.\mbox{\hyperlink{structJSL_1_1NameValuePair_a03e493ef338a55846408051a5d544b11}{Value}});}
+\DoxyCodeLine{242                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{243                 }
+\DoxyCodeLine{244                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{245                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{246                 \}}
+\DoxyCodeLine{247             \}}
+\DoxyCodeLine{248     \};}
+\DoxyCodeLine{249 \}}
+
+\end{DoxyCode}

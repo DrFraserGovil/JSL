@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1internal" kind="namespace" language="C++">
+    <compoundname>JSL::internal</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1internal_1a7d30ff3799fac0a4594525b50b8c5ba6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::internal::variadicVectorPrint</definition>
+        <argsstring>(std::fstream &amp;os, const std::string &amp;delimiter, int i, const std::vector&lt; T &gt; &amp;first, const std::vector&lt; Ts &gt; &amp;... args)</argsstring>
+        <name>variadicVectorPrint</name>
+        <qualifiedname>JSL::internal::variadicVectorPrint</qualifiedname>
+        <param>
+          <type>std::fstream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; Ts &gt; &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a helper function for writeMultiVectorToFile, and performs the recursive looping over the variadic vector templates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/FileIO/fileWriter.h" line="68" column="13" bodyfile="/Users/jf20/Documents/JSL/FileIO/fileWriter.h" bodystart="68" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1internal_1acf34245ed74263da6fd864feaed681ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool JSL::internal::variadicLengthEquality</definition>
+        <argsstring>(size_t length, const std::vector&lt; T &gt; &amp;first, const std::vector&lt; Ts &gt; &amp;...args)</argsstring>
+        <name>variadicLengthEquality</name>
+        <qualifiedname>JSL::internal::variadicLengthEquality</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; Ts &gt; &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/FileIO/fileWriter.h" line="83" column="13" bodyfile="/Users/jf20/Documents/JSL/FileIO/fileWriter.h" bodystart="83" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1internal_1ad9e3cb9332be17eb5344432eb2a58570" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::internal::signifier</definition>
+        <argsstring>(const double &amp;x, int significance)</argsstring>
+        <name>signifier</name>
+        <qualifiedname>JSL::internal::signifier</qualifiedname>
+        <param>
+          <type>const double &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>significance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/axis.h" line="25" column="20" bodyfile="/Users/jf20/Documents/JSL/gnuplot/axis.h" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1internal_1ae5d5175406e607b000d8a7e719e7dd5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool JSL::internal::variadicAssertion</definition>
+        <argsstring>(bool first, Ts... args)</argsstring>
+        <name>variadicAssertion</name>
+        <qualifiedname>JSL::internal::variadicAssertion</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>Ts...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/System/assert.h" line="12" column="6" bodyfile="/Users/jf20/Documents/JSL/System/assert.h" bodystart="12" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jf20/Documents/JSL/FileIO/fileWriter.h" line="62" column="1"/>
+  </compounddef>
+</doxygen>

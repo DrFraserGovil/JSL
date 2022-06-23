@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="dir_f55099b0de92dfb47c7a836a4dc87b8d" kind="dir">
-    <compoundname>/home/jack/Documents/Work/JSL/FileIO</compoundname>
+    <compoundname>/Users/jf20/Documents/JSL/FileIO</compoundname>
     <innerfile refid="FileIO_8h">FileIO.h</innerfile>
     <innerfile refid="fileWriter_8h">fileWriter.h</innerfile>
     <innerfile refid="LineReader_8h">LineReader.h</innerfile>
@@ -12,6 +12,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/jack/Documents/Work/JSL/FileIO/"/>
+    <location file="/Users/jf20/Documents/JSL/FileIO/"/>
   </compounddef>
 </doxygen>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="dir_60aef1110311be2210a1ebd3c40da4ac" kind="dir">
-    <compoundname>/home/jack/Documents/Work/JSL/Strings</compoundname>
+    <compoundname>/Users/jf20/Documents/JSL/Strings</compoundname>
     <innerfile refid="split_8h">split.h</innerfile>
     <innerfile refid="Strings_8h">Strings.h</innerfile>
     <innerfile refid="Time_8h">Time.h</innerfile>
@@ -9,6 +9,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/jack/Documents/Work/JSL/Strings/"/>
+    <location file="/Users/jf20/Documents/JSL/Strings/"/>
   </compounddef>
 </doxygen>

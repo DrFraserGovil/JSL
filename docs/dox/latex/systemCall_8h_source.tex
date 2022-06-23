@@ -1,0 +1,25 @@
+\hypertarget{systemCall_8h_source}{}\doxysection{system\+Call.\+h}
+\label{systemCall_8h_source}\index{/Users/jf20/Documents/JSL/System/systemCall.h@{/Users/jf20/Documents/JSL/System/systemCall.h}}
+\mbox{\hyperlink{systemCall_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{error_8h}{error.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceJSL_a5cd4ed117decf1140104ad8566b589ac}{systemCall}}(\textcolor{keyword}{const} std::string \& command)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keywordtype}{int} errorStatus = std::system(command.c\_str());}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         \textcolor{keywordflow}{if} (errorStatus != 0)}
+\DoxyCodeLine{14         \{}
+\DoxyCodeLine{15             \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30}{SystemError}},\textcolor{stringliteral}{"{}The system call \(\backslash\)'"{}} + command + \textcolor{stringliteral}{"{}\(\backslash\)' returned error "{}} + std::to\_string(errorStatus));}
+\DoxyCodeLine{16         \}}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="systemCall_8h" kind="file" language="C++">
+    <compoundname>systemCall.h</compoundname>
+    <includes refid="error_8h" local="yes">error.h</includes>
+    <includedby refid="System_8h" local="yes">/Users/jf20/Documents/JSL/System/System.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/jf20/Documents/JSL/System/systemCall.h</label>
+        <link refid="systemCall_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdexcept</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>/Users/jf20/Documents/JSL/CommandArgs/Argument.h</label>
+        <link refid="Argument_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/Users/jf20/Documents/JSL/CommandArgs/CommandArgs.h</label>
+        <link refid="CommandArgs_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/Users/jf20/Documents/JSL/FileIO/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/Users/jf20/Documents/JSL/FileIO/LineReader.h</label>
+        <link refid="LineReader_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/Users/jf20/Documents/JSL/FileIO/fileWriter.h</label>
+        <link refid="fileWriter_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/Users/jf20/Documents/JSL/FileIO/rm.h</label>
+        <link refid="rm_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/Users/jf20/Documents/JSL/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/Users/jf20/Documents/JSL/Maths/Maths.h</label>
+        <link refid="Maths_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/Users/jf20/Documents/JSL/Maths/Q_temp.h</label>
+        <link refid="Q__temp_8h"/>
+      </node>
+      <node id="18">
+        <label>/Users/jf20/Documents/JSL/Maths/matrix.h</label>
+        <link refid="matrix_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>/Users/jf20/Documents/JSL/Maths/vector.h</label>
+        <link refid="vector_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/Users/jf20/Documents/JSL/System/System.h</label>
+        <link refid="System_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/jf20/Documents/JSL/System/systemCall.h</label>
+        <link refid="systemCall_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/Users/jf20/Documents/JSL/Testing/Testing.h</label>
+        <link refid="Testing_8h"/>
+      </node>
+      <node id="8">
+        <label>/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h</label>
+        <link refid="Testing__UnitTests_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/Users/jf20/Documents/JSL/gnuplot/axis.h</label>
+        <link refid="axis_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/Users/jf20/Documents/JSL/gnuplot/gnuplot.h</label>
+        <link refid="gnuplot_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h</label>
+        <link refid="gnuplotMain_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="error_8h" kindref="compound">error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL" kindref="compound">JSL</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="namespaceJSL_1a5cd4ed117decf1140104ad8566b589ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1a5cd4ed117decf1140104ad8566b589ac" kindref="member">systemCall</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>command)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errorStatus<sp/>=<sp/>std::system(command.c_str());</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(errorStatus<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1a5783bc90550deca94c1790e581fb707d" kindref="member">Error</ref>(<ref refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30" kindref="member">SystemError</ref>,</highlight><highlight class="stringliteral">&quot;The<sp/>system<sp/>call<sp/>\&apos;&quot;</highlight><highlight class="normal"><sp/>+<sp/>command<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\&apos;<sp/>returned<sp/>error<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(errorStatus));</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/jf20/Documents/JSL/System/systemCall.h"/>
+  </compounddef>
+</doxygen>

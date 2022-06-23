@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="dir_6f539ff7f1e57d810587ac57a02ef21e" kind="dir">
+    <compoundname>/Users/jf20/Documents/JSL/Vector</compoundname>
+    <innerfile refid="Vector_8h">Vector.h</innerfile>
+    <innerfile refid="VectorSearches_8h">VectorSearches.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jf20/Documents/JSL/Vector/"/>
+  </compounddef>
+</doxygen>

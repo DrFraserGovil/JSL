@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['results_59',['Results',['../classJSL_1_1UnitTest.html#a39e1076dd985334ce21606ae2a383f70',1,'JSL::UnitTest']]],
-  ['rm_60',['rm',['../namespaceJSL.html#ae48b92e64fb9d321121df976b770efa6',1,'JSL']]],
-  ['rm_2eh_61',['rm.h',['../rm_8h.html',1,'']]],
-  ['run_5ftest_62',['Run_Test',['../classJSL__Testing_1_1MetaTest.html#a176352dcd54f9ec7df8f1548882e6820',1,'JSL_Testing::MetaTest::Run_Test()'],['../classJSL__Testing_1_1StringTest.html#ada0409cd10e3f09788994a9115331ff7',1,'JSL_Testing::StringTest::Run_Test()'],['../classJSL__Testing_1_1IOTest.html#a85daecacc71354b5dc0dee36840b8704',1,'JSL_Testing::IOTest::Run_Test()'],['../classJSL__Testing_1_1ArgumentTest.html#a1c4c626d57e448da86866ef414308e97',1,'JSL_Testing::ArgumentTest::Run_Test()'],['../classJSL__Testing_1_1MathTest.html#a9a313d8c09f92dd9dcf5e3f65818bb23',1,'JSL_Testing::MathTest::Run_Test()'],['../classJSL_1_1UnitTest.html#aa8369ab1ce2a537bff2ea7e1c8818490',1,'JSL::UnitTest::Run_Test()']]],
-  ['runalltests_63',['RunAllTests',['../namespaceJSL__Testing.html#a509a70d20fdc2e9975d9b0b8ae424ef1',1,'JSL_Testing']]]
+  ['name_0',['Name',['../structJSL_1_1NameValuePair.html#a43effa79099e9015b45b6b9a9f8a2f0a',1,'JSL::NameValuePair::Name()'],['../classJSL_1_1UnitTest.html#a53c19424147e72fa6392470627f15049',1,'JSL::UnitTest::Name()']]],
+  ['names_1',['Names',['../classJSL_1_1ProgressBar.html#a2a74b78253b885897afe16656843ed2a',1,'JSL::ProgressBar']]],
+  ['namevaluepair_2',['NameValuePair',['../structJSL_1_1NameValuePair.html',1,'JSL::NameValuePair&lt; T &gt;'],['../structJSL_1_1NameValuePair.html#aad7234d2606ab8dc017a62206f4a4a69',1,'JSL::NameValuePair::NameValuePair()']]],
+  ['ncols_3',['nCols',['../classJSL_1_1Matrix.html#aef59f1402d2137e86aebf6b21f97ee6d',1,'JSL::Matrix']]],
+  ['negativeintegererror_4',['negativeIntegerError',['../classJSL_1_1Vector.html#ac41d3cb075c2bd871c31b96dedba08fe',1,'JSL::Vector']]],
+  ['nelements_5',['nElements',['../classJSL_1_1Vector.html#a84eb32f5917a770c895e106834a6c05d',1,'JSL::Vector']]],
+  ['newdata_6',['NewData',['../classJSL_1_1Axis.html#a47a1fd72c650b4e7e4f2289b0dfc5864',1,'JSL::Axis']]],
+  ['noncriticalfailure_7',['NonCriticalFailure',['../classJSL_1_1UnitTest.html#a54dc4908d757c7f523be12a4275e595c',1,'JSL::UnitTest']]],
+  ['norm_8',['Norm',['../classJSL_1_1Vector.html#aa8af717591f5548ff471b6e4b28d7f9c',1,'JSL::Vector']]],
+  ['nrows_9',['nRows',['../classJSL_1_1Matrix.html#a7b7a081bbf419b613f19142a634b2cfa',1,'JSL::Matrix']]]
 ];

@@ -1,150 +1,67 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="Testing_8h" kind="file" language="C++">
     <compoundname>Testing.h</compoundname>
     <includes refid="UnitTest_8h" local="yes">UnitTest.h</includes>
     <includes refid="Testing__UnitTests_8h" local="yes">Testing_UnitTests.h</includes>
-    <includedby refid="JSL_8h" local="yes">/home/jack/Documents/Work/JSL/JSL.h</includedby>
     <incdepgraph>
-      <node id="17">
-        <label>sys/stat.h</label>
+      <node id="29">
+        <label>Argument.h</label>
+        <link refid="Argument_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>CommandArgs/CommandArgs.h</label>
+        <link refid="CommandArgs_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>Display/Display.h</label>
+        <link refid="Display_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>ProgressBar.h</label>
+        <link refid="ProgressBar_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>clearScreen.h</label>
+        <link refid="clearScreen_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="7">
         <label>FileIO/FileIO.h</label>
         <link refid="FileIO_8h"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>UnitTest.h</label>
-        <link refid="UnitTest_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>locationExists.h</label>
-        <link refid="locationExists_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>vector.h</label>
-        <link refid="vector_8h"/>
-        <childnode refid="11" relation="include">
-        </childnode>
         <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>cmath</label>
-      </node>
-      <node id="19">
-        <label>stdexcept</label>
-      </node>
-      <node id="10">
-        <label>string</label>
-      </node>
-      <node id="18">
-        <label>rm.h</label>
-        <link refid="rm_8h"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>../JSL.h</label>
-        <link refid="JSL_8h"/>
-        <childnode refid="7" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="1" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>Argument.h</label>
-        <link refid="Argument_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>fileWriter.h</label>
-        <link refid="fileWriter_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>fstream</label>
-      </node>
-      <node id="22">
-        <label>Time.h</label>
-        <link refid="Time_8h"/>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>string.h</label>
-      </node>
-      <node id="21">
-        <label>Strings/Strings.h</label>
-        <link refid="Strings_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>vector</label>
-      </node>
-      <node id="26">
-        <label>Maths/Maths.h</label>
-        <link refid="Maths_8h"/>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>sstream</label>
       </node>
       <node id="8">
         <label>LineReader.h</label>
@@ -157,36 +74,145 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
       </node>
       <node id="24">
-        <label>CommandArgs/CommandArgs.h</label>
-        <link refid="CommandArgs_8h"/>
-        <childnode refid="25" relation="include">
+        <label>fileWriter.h</label>
+        <link refid="fileWriter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="28">
-        <label>math.h</label>
-      </node>
-      <node id="5">
-        <label>Testing_UnitTests.h</label>
-        <link refid="Testing__UnitTests_8h"/>
-        <childnode refid="6" relation="include">
+      <node id="21">
+        <label>locationExists.h</label>
+        <link refid="locationExists_8h"/>
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>iostream</label>
+      <node id="19">
+        <label>mkdir.h</label>
+        <link refid="mkdir_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
       </node>
       <node id="23">
-        <label>chrono</label>
-      </node>
-      <node id="1">
-        <label>/home/jack/Documents/Work/JSL/Testing/Testing.h</label>
-        <link refid="Testing_8h"/>
-        <childnode refid="2" relation="include">
+        <label>rm.h</label>
+        <link refid="rm_8h"/>
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>Maths/Maths.h</label>
+        <link refid="Maths_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>MiscFunctions.h</label>
+        <link refid="MiscFunctions_8h"/>
+      </node>
+      <node id="35">
+        <label>matrix.h</label>
+        <link refid="matrix_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>vector.h</label>
+        <link refid="vector_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>Strings/Strings.h</label>
+        <link refid="Strings_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Time.h</label>
+        <link refid="Time_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="12">
@@ -200,39 +226,163 @@
         </childnode>
       </node>
       <node id="14">
-        <label>mkdir.h</label>
-        <link refid="mkdir_8h"/>
+        <label>../System/System.h</label>
+        <link refid="System_8h"/>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>assert.h</label>
+        <link refid="assert_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>error.h</label>
+        <link refid="error_8h"/>
         <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-      </node>
-      <node id="15">
-        <label>dirent.h</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="2">
-        <label>/home/jack/Documents/Work/JSL/JSL.h</label>
-        <link refid="JSL_8h"/>
-        <childnode refid="3" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h</label>
-        <link refid="Testing__UnitTests_8h"/>
-        <childnode refid="1" relation="include">
+      <node id="18">
+        <label>systemCall.h</label>
+        <link refid="systemCall_8h"/>
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
       <node id="1">
-        <label>/home/jack/Documents/Work/JSL/Testing/Testing.h</label>
+        <label>/Users/jf20/Documents/JSL/Testing/Testing.h</label>
         <link refid="Testing_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
-    </invincdepgraph>
+      <node id="5">
+        <label>Testing_UnitTests.h</label>
+        <link refid="Testing__UnitTests_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>UnitTest.h</label>
+        <link refid="UnitTest_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Vector/Vector.h</label>
+        <link refid="Vector_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>VectorSearches.h</label>
+        <link refid="VectorSearches_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>PlotData.h</label>
+        <link refid="PlotData_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>axis.h</label>
+        <link refid="axis_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>gnuplot/gnuplot.h</label>
+        <link refid="gnuplot_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>gnuplotMain.h</label>
+        <link refid="gnuplotMain_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>algorithm</label>
+      </node>
+      <node id="27">
+        <label>chrono</label>
+      </node>
+      <node id="32">
+        <label>cmath</label>
+      </node>
+      <node id="20">
+        <label>dirent.h</label>
+      </node>
+      <node id="9">
+        <label>fstream</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="30">
+        <label>math.h</label>
+      </node>
+      <node id="39">
+        <label>numeric</label>
+      </node>
+      <node id="34">
+        <label>ostream</label>
+      </node>
+      <node id="13">
+        <label>sstream</label>
+      </node>
+      <node id="16">
+        <label>stdexcept</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="22">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -244,6 +394,6 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Testing__UnitTests_8h" kindref="compound">Testing_UnitTests.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/jack/Documents/Work/JSL/Testing/Testing.h"/>
+    <location file="/Users/jf20/Documents/JSL/Testing/Testing.h"/>
   </compounddef>
 </doxygen>

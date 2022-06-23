@@ -1,0 +1,21 @@
+\hypertarget{locationExists_8h_source}{}\doxysection{location\+Exists.\+h}
+\label{locationExists_8h_source}\index{/Users/jf20/Documents/JSL/FileIO/locationExists.h@{/Users/jf20/Documents/JSL/FileIO/locationExists.h}}
+\mbox{\hyperlink{locationExists_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <sys/stat.h>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     }
+\DoxyCodeLine{14     \textcolor{keywordtype}{bool} \textcolor{keyword}{inline} \mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{locationExists}}(\textcolor{keyword}{const} std::string \& filename)}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keyword}{struct }stat buffer;   }
+\DoxyCodeLine{17         \textcolor{keywordflow}{return} (stat (filename.c\_str(), \&buffer) == 0); }
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19         }
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}

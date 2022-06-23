@@ -1,10 +1,10 @@
-\hypertarget{classJSL_1_1Argument}{}\doxysection{J\+SL\+::Argument$<$ T $>$ Class Template Reference}
+\hypertarget{classJSL_1_1Argument}{}\doxysection{JSL\+::Argument\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
 \label{classJSL_1_1Argument}\index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 
 
 {\ttfamily \#include $<$Argument.\+h$>$}
 
-Inheritance diagram for J\+SL\+::Argument$<$ T $>$\+:\begin{figure}[H]
+Inheritance diagram for JSL\+::Argument\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classJSL_1_1Argument}
@@ -16,9 +16,9 @@ Inheritance diagram for J\+SL\+::Argument$<$ T $>$\+:\begin{figure}[H]
 \mbox{\hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Argument_ab07e7981db832cce30f534c67f6491f4}{Argument}} (std\+::string trigger)
-\begin{DoxyCompactList}\small\item\em Constructor initialising the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}}. Value is set to uninitialised memory of the Template type. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor initialising the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}}. Value is set to uninitialised memory of the Template type. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}{Argument}} (T default\+Value, std\+::string trigger)
-\begin{DoxyCompactList}\small\item\em Constructor which initialises the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}} and \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} members. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor which initialises the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}} and \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} members. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Argument_a4d187d2fb658021866b173987b920ab4}{Argument}} (T default\+Value, std\+::string trigger, int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Constructor which initialises as per \mbox{\hyperlink{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}{Argument(\+T default\+Value, std\+::string trigger)}}, but which also immediately calls \mbox{\hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{List\+Parse()}} to check for assignment. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Argument_a83799e9089f88d7e6cf30990fae42610}{Argument}} (T default\+Value, std\+::string trigger, std\+::string config\+File, char config\+Delimiter)
@@ -30,7 +30,9 @@ void \mbox{\hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{Li
 void \mbox{\hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse}} (char $\ast$name, char $\ast$value)
 \begin{DoxyCompactList}\small\item\em Checks if the Name matches the Trigger\+String. For a successful match, Name must be prefaced by one more dash than found in Trigger\+String. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classJSL_1_1Argument_a965bc0dfdce6e03380605af313f8c880}{operator T}} ()
-\begin{DoxyCompactList}\small\item\em Allow the \mbox{\hyperlink{classJSL_1_1Argument}{Argument}} object to be implicitly casted into the value of \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}}, and hence treated as an object of the templated type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allow the \mbox{\hyperlink{classJSL_1_1Argument}{Argument}} object to be implicitly casted into the value of \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}}, and hence treated as an object of the templated type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Argument_a088b37401f3183f6f3b081bfd370c991}{operator T}} () const
+\begin{DoxyCompactList}\small\item\em Annoying const version. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,6 +43,8 @@ T \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value
 \item 
 void \mbox{\hyperlink{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}{Check\+For\+Invalid\+Triggers}} ()
 \begin{DoxyCompactList}\small\item\em Some Triggers are disallowed -\/ they usually are protected names such as \char`\"{}help\char`\"{}, though other properties may trigger this funciton to throw an error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJSL_1_1Argument_ab06f610d3c79d7c96e6f62c0e9d98acc}{Stream\+To}} (std\+::stringstream \&stream, std\+::string delimiter)
+\item 
 virtual void \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value}} (const char $\ast$value)
 \begin{DoxyCompactList}\small\item\em Virtual override for template-\/specific Assign\+Value calls. Most template types will require a custom handler to convert value into the chosen template type -- some default ones are provided below. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Argument_ab62b81b196fdc434ab03cd3257ab4aef}{Assign\+Value}} (const char $\ast$value)
@@ -51,14 +55,12 @@ void \mbox{\hyperlink{classJSL_1_1Argument_ad379e95cccb05516525e2634cba93579}{As
 \begin{DoxyCompactList}\small\item\em Override of the \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()}} function for \mbox{\hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument$<$std\+::string$>$}} objects. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classJSL_1_1Argument_a3a1fc796058e3bc1b1a4778688249baf}{Assign\+Value}} (const char $\ast$value)
 \begin{DoxyCompactList}\small\item\em Override of the \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Assign\+Value()}} function for Argument$<$bool$>$ objects. Accepts only 0/1 as valid bool-\/strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$class T$>$\newline
-class J\+S\+L\+::\+Argument$<$ T $>$}
-
-A class which allows arbitrary template parameters to be read in as command-\/line arguments or from a configuraiton file using a Name/\+Value pair system. Upon construction, the \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} parameter takes the default value (if provided), until it is overriden by a successful argument/\mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}} match. 
+class JSL\+::\+Argument$<$ T $>$}
+A class which allows arbitrary template parameters to be read in as command-\/line arguments or from a configuraiton file using a Name/\+Value pair system. Upon construction, the \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} parameter takes the default value (if provided), until it is overriden by a successful argument/\mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}} match. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}\label{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}} 
@@ -66,7 +68,7 @@ A class which allows arbitrary template parameters to be read in as command-\/li
 \index{Argument@{Argument}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::\mbox{\hyperlink{classJSL_1_1Argument}{Argument}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Argument (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -77,15 +79,15 @@ Default constructor.
 \index{Argument@{Argument}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::\mbox{\hyperlink{classJSL_1_1Argument}{Argument}} (\begin{DoxyParamCaption}\item[{std\+::string}]{trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Argument (\begin{DoxyParamCaption}\item[{std\+::string}]{trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Constructor initialising the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}}. Value is set to uninitialised memory of the Template type. 
+Constructor initialising the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}}. Value is set to uninitialised memory of the Template type. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em trigger} & The value of \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}}, and the \char`\"{}name\char`\"{} of this parameter \\
+{\em trigger} & The value of \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}}, and the \char`\"{}name\char`\"{} of this parameter \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}\label{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}} 
@@ -93,17 +95,17 @@ Constructor initialising the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2
 \index{Argument@{Argument}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::\mbox{\hyperlink{classJSL_1_1Argument}{Argument}} (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Argument (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Constructor which initialises the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}} and \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} members. 
+Constructor which initialises the \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}} and \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} members. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em default\+Value} & The initialisation value of \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} -\/ overridden if \mbox{\hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()}} is called.\\
 \hline
-{\em trigger} & The value of \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}}, and the \char`\"{}name\char`\"{} of this parameter \\
+{\em trigger} & The value of \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}}, and the \char`\"{}name\char`\"{} of this parameter \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classJSL_1_1Argument_a4d187d2fb658021866b173987b920ab4}\label{classJSL_1_1Argument_a4d187d2fb658021866b173987b920ab4}} 
@@ -111,7 +113,7 @@ Constructor which initialises the \mbox{\hyperlink{classJSL_1_1ArgumentInterface
 \index{Argument@{Argument}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::\mbox{\hyperlink{classJSL_1_1Argument}{Argument}} (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger,  }\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Argument (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger,  }\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -121,7 +123,7 @@ Constructor which initialises as per \mbox{\hyperlink{classJSL_1_1Argument_a2511
 \begin{DoxyParams}{Parameters}
 {\em default\+Value} & The initialisation value of \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} -\/ overridden if \mbox{\hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()}} is called.\\
 \hline
-{\em trigger} & The value of \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}}, and the \char`\"{}name\char`\"{} of this parameter\\
+{\em trigger} & The value of \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}}, and the \char`\"{}name\char`\"{} of this parameter\\
 \hline
 {\em argc} & The number of commandline arguments\\
 \hline
@@ -133,7 +135,7 @@ Constructor which initialises as per \mbox{\hyperlink{classJSL_1_1Argument_a2511
 \index{Argument@{Argument}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Argument()}{Argument()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::\mbox{\hyperlink{classJSL_1_1Argument}{Argument}} (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger,  }\item[{std\+::string}]{config\+File,  }\item[{char}]{config\+Delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Argument (\begin{DoxyParamCaption}\item[{T}]{default\+Value,  }\item[{std\+::string}]{trigger,  }\item[{std\+::string}]{config\+File,  }\item[{char}]{config\+Delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -143,7 +145,7 @@ Constructor which initialises as per \mbox{\hyperlink{classJSL_1_1Argument_a2511
 \begin{DoxyParams}{Parameters}
 {\em default\+Value} & The initialisation value of \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} -\/ overridden if \mbox{\hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse()}} is called.\\
 \hline
-{\em trigger} & The value of \mbox{\hyperlink{classJSL_1_1ArgumentInterface_afa2d1f96c4971070d3de5824f297312f}{Trigger\+String}}, and the \char`\"{}name\char`\"{} of this parameter\\
+{\em trigger} & The value of \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{Trigger\+String}}, and the \char`\"{}name\char`\"{} of this parameter\\
 \hline
 {\em config\+File} & The path to the file to open and parse for configuration data\\
 \hline
@@ -158,7 +160,7 @@ Constructor which initialises as per \mbox{\hyperlink{classJSL_1_1Argument_a2511
 \index{AssignValue@{AssignValue}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{AssignValue()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-virtual void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+virtual void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
 
 
 
@@ -168,7 +170,7 @@ Virtual override for template-\/specific Assign\+Value calls. Most template type
 \index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!AssignValue@{AssignValue}}
 \index{AssignValue@{AssignValue}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{AssignValue()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
-{\footnotesize\ttfamily void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ int $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ int $>$\+::\+Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
@@ -178,7 +180,7 @@ Override of the \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb
 \index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!AssignValue@{AssignValue}}
 \index{AssignValue@{AssignValue}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{AssignValue()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
-{\footnotesize\ttfamily void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ double $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ double $>$\+::\+Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
@@ -188,7 +190,7 @@ Override of the \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb
 \index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!AssignValue@{AssignValue}}
 \index{AssignValue@{AssignValue}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{AssignValue()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
-{\footnotesize\ttfamily void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ std\+::string $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ std\+::string $>$\+::\+Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
@@ -198,7 +200,7 @@ Override of the \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb
 \index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!AssignValue@{AssignValue}}
 \index{AssignValue@{AssignValue}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{AssignValue()}{AssignValue()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
-{\footnotesize\ttfamily void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ bool $>$\+::Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ bool $>$\+::\+Assign\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
@@ -209,7 +211,7 @@ Override of the \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb
 \index{CheckForInvalidTriggers@{CheckForInvalidTriggers}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{CheckForInvalidTriggers()}{CheckForInvalidTriggers()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::Check\+For\+Invalid\+Triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Check\+For\+Invalid\+Triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
@@ -220,7 +222,7 @@ Some Triggers are disallowed -\/ they usually are protected names such as \char`
 \index{Configure@{Configure}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Configure()}{Configure()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::Configure (\begin{DoxyParamCaption}\item[{std\+::string}]{config\+File,  }\item[{char}]{config\+Delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Configure (\begin{DoxyParamCaption}\item[{std\+::string}]{config\+File,  }\item[{char}]{config\+Delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -235,14 +237,14 @@ Iterate through a configuration file, extracting Name/\+Value pairs and calling 
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{classJSL_1_1ArgumentInterface_aac7c3106f99c407e625b9bc6a6c8c446}{J\+S\+L\+::\+Argument\+Interface}}.
+Reimplemented from \mbox{\hyperlink{classJSL_1_1ArgumentInterface_aac7c3106f99c407e625b9bc6a6c8c446}{JSL\+::\+Argument\+Interface}}.
 
 \mbox{\Hypertarget{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}\label{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}} 
 \index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!ListParse@{ListParse}}
 \index{ListParse@{ListParse}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{ListParse()}{ListParse()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::List\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+List\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -257,25 +259,36 @@ Iterate through the provided commandline args, extracting Name/\+Value pairs and
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a256b5bd88b5f6638353f108c48f3ee65}{J\+S\+L\+::\+Argument\+Interface}}.
+Reimplemented from \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a256b5bd88b5f6638353f108c48f3ee65}{JSL\+::\+Argument\+Interface}}.
 
 \mbox{\Hypertarget{classJSL_1_1Argument_a965bc0dfdce6e03380605af313f8c880}\label{classJSL_1_1Argument_a965bc0dfdce6e03380605af313f8c880}} 
 \index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!operator T@{operator T}}
 \index{operator T@{operator T}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{operator T()}{operator T()}}
+\doxysubsubsection{\texorpdfstring{operator T()}{operator T()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::operator T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::operator T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Allow the \mbox{\hyperlink{classJSL_1_1Argument}{Argument}} object to be implicitly casted into the value of \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}}, and hence treated as an object of the templated type. 
+
+\mbox{\Hypertarget{classJSL_1_1Argument_a088b37401f3183f6f3b081bfd370c991}\label{classJSL_1_1Argument_a088b37401f3183f6f3b081bfd370c991}} 
+\index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!operator T@{operator T}}
+\index{operator T@{operator T}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator T()}{operator T()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::operator T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Annoying const version. 
 
 \mbox{\Hypertarget{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}\label{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}} 
 \index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!Parse@{Parse}}
 \index{Parse@{Parse}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::Parse (\begin{DoxyParamCaption}\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Parse (\begin{DoxyParamCaption}\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -290,7 +303,18 @@ Checks if the Name matches the Trigger\+String. For a successful match, Name mus
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a28b487f7a4fa6e721ed6629abe2073f2}{J\+S\+L\+::\+Argument\+Interface}}.
+Reimplemented from \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a28b487f7a4fa6e721ed6629abe2073f2}{JSL\+::\+Argument\+Interface}}.
+
+\mbox{\Hypertarget{classJSL_1_1Argument_ab06f610d3c79d7c96e6f62c0e9d98acc}\label{classJSL_1_1Argument_ab06f610d3c79d7c96e6f62c0e9d98acc}} 
+\index{JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}!StreamTo@{StreamTo}}
+\index{StreamTo@{StreamTo}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StreamTo()}{StreamTo()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Stream\+To (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{stream,  }\item[{std\+::string}]{delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a12d47b53c73ad1e996d524f515a20dad}{JSL\+::\+Argument\+Interface}}.
 
 
 
@@ -300,7 +324,7 @@ Reimplemented from \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a28b487f7a4fa6
 \index{Value@{Value}!JSL::Argument$<$ T $>$@{JSL::Argument$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Value}{Value}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-T \mbox{\hyperlink{classJSL_1_1Argument}{J\+S\+L\+::\+Argument}}$<$ T $>$\+::Value}
+T \mbox{\hyperlink{classJSL_1_1Argument}{JSL\+::\+Argument}}$<$ T $>$\+::\+Value}
 
 
 
@@ -310,4 +334,4 @@ The current value of the argument.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/jack/\+Documents/\+Work/\+J\+S\+L/\+Command\+Args/\mbox{\hyperlink{Argument_8h}{Argument.\+h}}\end{DoxyCompactItemize}
+/\+Users/jf20/\+Documents/\+JSL/\+Command\+Args/\mbox{\hyperlink{Argument_8h}{Argument.\+h}}\end{DoxyCompactItemize}

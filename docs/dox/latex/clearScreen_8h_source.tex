@@ -1,0 +1,28 @@
+\hypertarget{clearScreen_8h_source}{}\doxysection{clear\+Screen.\+h}
+\label{clearScreen_8h_source}\index{/Users/jf20/Documents/JSL/Display/clearScreen.h@{/Users/jf20/Documents/JSL/Display/clearScreen.h}}
+\mbox{\hyperlink{clearScreen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceJSL_a405f53748ca024b70694b0534cfcf4a3}{jumpLineUp}}()}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[F"{}});}
+\DoxyCodeLine{9     \}}
+\DoxyCodeLine{10     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceJSL_a071b279ad5267ce66ff86c614952a3ed}{clearScreen}}()}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{comment}{// std::cout << "{}\(\backslash\)033[H\(\backslash\)033[J"{} << std::endl;}}
+\DoxyCodeLine{13         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[H\(\backslash\)033[J"{}});}
+\DoxyCodeLine{14         \mbox{\hyperlink{namespaceJSL_a405f53748ca024b70694b0534cfcf4a3}{jumpLineUp}}();}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceJSL_ae38780f94d60045b904b289eb3ab8eda}{deleteLine}}()}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         printf(\textcolor{stringliteral}{"{}\(\backslash\)33[2K\(\backslash\)r"{}});}
+\DoxyCodeLine{19         \textcolor{comment}{// std::cout << std::flush;}}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21     }
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['maths_2eh_106',['Maths.h',['../Maths_8h.html',1,'']]],
-  ['mkdir_2eh_107',['mkdir.h',['../mkdir_8h.html',1,'']]]
+  ['gnuplot_2eh_0',['gnuplot.h',['../gnuplot_8h.html',1,'']]],
+  ['gnuplotmain_2eh_1',['gnuplotMain.h',['../gnuplotMain_8h.html',1,'']]]
 ];

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="dir_156159653e49ec558d22e51ad21a05bc" kind="dir">
+    <compoundname>/Users/jf20/Documents/JSL/gnuplot</compoundname>
+    <innerfile refid="axis_8h">axis.h</innerfile>
+    <innerfile refid="gnuplot_8h">gnuplot.h</innerfile>
+    <innerfile refid="gnuplotMain_8h">gnuplotMain.h</innerfile>
+    <innerfile refid="PlotData_8h">PlotData.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jf20/Documents/JSL/gnuplot/"/>
+  </compounddef>
+</doxygen>

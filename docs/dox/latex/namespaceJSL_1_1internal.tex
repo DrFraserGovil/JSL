@@ -1,0 +1,44 @@
+\hypertarget{namespaceJSL_1_1internal}{}\doxysection{JSL\+::internal Namespace Reference}
+\label{namespaceJSL_1_1internal}\index{JSL::internal@{JSL::internal}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\void \mbox{\hyperlink{namespaceJSL_1_1internal_a7d30ff3799fac0a4594525b50b8c5ba6}{variadic\+Vector\+Print}} (std\+::fstream \&os, const std\+::string \&delimiter, int i, const std\+::vector$<$ T $>$ \&first, const std\+::vector$<$ Ts $>$ \&... args)
+\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\bool \mbox{\hyperlink{namespaceJSL_1_1internal_acf34245ed74263da6fd864feaed681ed}{variadic\+Length\+Equality}} (size\+\_\+t length, const std\+::vector$<$ T $>$ \&first, const std\+::vector$<$ Ts $>$ \&...args)
+\item 
+std\+::string \mbox{\hyperlink{namespaceJSL_1_1internal_ad9e3cb9332be17eb5344432eb2a58570}{signifier}} (const double \&x, int significance)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\bool \mbox{\hyperlink{namespaceJSL_1_1internal_ae5d5175406e607b000d8a7e719e7dd5e}{variadic\+Assertion}} (bool first, Ts... args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceJSL_1_1internal_ad9e3cb9332be17eb5344432eb2a58570}\label{namespaceJSL_1_1internal_ad9e3cb9332be17eb5344432eb2a58570}} 
+\index{JSL::internal@{JSL::internal}!signifier@{signifier}}
+\index{signifier@{signifier}!JSL::internal@{JSL::internal}}
+\doxysubsubsection{\texorpdfstring{signifier()}{signifier()}}
+{\footnotesize\ttfamily std\+::string JSL\+::internal\+::signifier (\begin{DoxyParamCaption}\item[{const double \&}]{x,  }\item[{int}]{significance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespaceJSL_1_1internal_ae5d5175406e607b000d8a7e719e7dd5e}\label{namespaceJSL_1_1internal_ae5d5175406e607b000d8a7e719e7dd5e}} 
+\index{JSL::internal@{JSL::internal}!variadicAssertion@{variadicAssertion}}
+\index{variadicAssertion@{variadicAssertion}!JSL::internal@{JSL::internal}}
+\doxysubsubsection{\texorpdfstring{variadicAssertion()}{variadicAssertion()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+bool JSL\+::internal\+::variadic\+Assertion (\begin{DoxyParamCaption}\item[{bool}]{first,  }\item[{Ts...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceJSL_1_1internal_acf34245ed74263da6fd864feaed681ed}\label{namespaceJSL_1_1internal_acf34245ed74263da6fd864feaed681ed}} 
+\index{JSL::internal@{JSL::internal}!variadicLengthEquality@{variadicLengthEquality}}
+\index{variadicLengthEquality@{variadicLengthEquality}!JSL::internal@{JSL::internal}}
+\doxysubsubsection{\texorpdfstring{variadicLengthEquality()}{variadicLengthEquality()}}
+{\footnotesize\ttfamily template$<$typename T , typename... Ts$>$ \\
+bool JSL\+::internal\+::variadic\+Length\+Equality (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{length,  }\item[{const std\+::vector$<$ T $>$ \&}]{first,  }\item[{const std\+::vector$<$ Ts $>$ \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespaceJSL_1_1internal_a7d30ff3799fac0a4594525b50b8c5ba6}\label{namespaceJSL_1_1internal_a7d30ff3799fac0a4594525b50b8c5ba6}} 
+\index{JSL::internal@{JSL::internal}!variadicVectorPrint@{variadicVectorPrint}}
+\index{variadicVectorPrint@{variadicVectorPrint}!JSL::internal@{JSL::internal}}
+\doxysubsubsection{\texorpdfstring{variadicVectorPrint()}{variadicVectorPrint()}}
+{\footnotesize\ttfamily template$<$typename T , typename... Ts$>$ \\
+void JSL\+::internal\+::variadic\+Vector\+Print (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{os,  }\item[{const std\+::string \&}]{delimiter,  }\item[{int}]{i,  }\item[{const std\+::vector$<$ T $>$ \&}]{first,  }\item[{const std\+::vector$<$ Ts $>$ \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is a helper function for write\+Multi\+Vector\+To\+File, and performs the recursive looping over the variadic vector templates. 

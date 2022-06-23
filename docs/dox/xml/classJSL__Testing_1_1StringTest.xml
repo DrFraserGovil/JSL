@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classJSL__Testing_1_1StringTest" kind="class" language="C++" prot="public">
     <compoundname>JSL_Testing::StringTest</compoundname>
     <basecompoundref refid="classJSL_1_1UnitTest" prot="public" virt="non-virtual">JSL::UnitTest</basecompoundref>
@@ -10,19 +10,21 @@
         <definition>JSL_Testing::StringTest::StringTest</definition>
         <argsstring>()</argsstring>
         <name>StringTest</name>
+        <qualifiedname>JSL_Testing::StringTest::StringTest</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="59" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="59" bodyend="66"/>
+        <location file="/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h" line="59" column="1" bodyfile="/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h" bodystart="59" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classJSL__Testing_1_1StringTest_1ada0409cd10e3f09788994a9115331ff7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>void JSL_Testing::StringTest::Run_Test</definition>
         <argsstring>()</argsstring>
         <name>Run_Test</name>
+        <qualifiedname>JSL_Testing::StringTest::Run_Test</qualifiedname>
         <reimplements refid="classJSL_1_1UnitTest_1aa8369ab1ce2a537bff2ea7e1c8818490">Run_Test</reimplements>
         <briefdescription>
 <para>All children which want to take advantage of the <ref refid="classJSL_1_1UnitTest_1aabec19b081be8a428f12e4b5e3dc2a9c" kindref="member">BufferedTest()</ref> command should have the bulk of their testing within this command. </para>
@@ -31,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="69" column="6" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="69" bodyend="111"/>
+        <location file="/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h" line="69" column="6" bodyfile="/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h" bodystart="69" bodyend="111"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -39,30 +41,30 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="2">
+        <label>JSL::UnitTest</label>
+        <link refid="classJSL_1_1UnitTest"/>
+      </node>
       <node id="1">
         <label>JSL_Testing::StringTest</label>
         <link refid="classJSL__Testing_1_1StringTest"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="2">
-        <label>JSL::UnitTest</label>
-        <link refid="classJSL_1_1UnitTest"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="2">
+        <label>JSL::UnitTest</label>
+        <link refid="classJSL_1_1UnitTest"/>
+      </node>
       <node id="1">
         <label>JSL_Testing::StringTest</label>
         <link refid="classJSL__Testing_1_1StringTest"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>JSL::UnitTest</label>
-        <link refid="classJSL_1_1UnitTest"/>
-      </node>
     </collaborationgraph>
-    <location file="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" line="56" column="1" bodyfile="/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h" bodystart="55" bodyend="113"/>
+    <location file="/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h" line="55" column="1" bodyfile="/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h" bodystart="56" bodyend="113"/>
     <listofallmembers>
       <member refid="classJSL_1_1UnitTest_1a3629d1bca071da7a2af6b7de29be1430" prot="protected" virt="non-virtual"><scope>JSL_Testing::StringTest</scope><name>basicConditionCheck</name></member>
       <member refid="classJSL_1_1UnitTest_1a53ede0c6b420eaf64faf752c0518340e" prot="protected" virt="non-virtual"><scope>JSL_Testing::StringTest</scope><name>basicConditionCheck</name></member>

@@ -1,45 +1,60 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classJSL_1_1Vector" kind="class" language="C++" prot="public">
     <compoundname>JSL::Vector</compoundname>
+    <derivedcompoundref refid="classJSL_1_1Quaternion" prot="public" virt="non-virtual">JSL::Quaternion</derivedcompoundref>
     <includes refid="vector_8h" local="no">vector.h</includes>
-      <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="classJSL_1_1Vector_1a00ad33e216a63f17ff9dc51db06970a6" prot="public" static="no" mutable="no">
-        <type>const int</type>
-        <definition>const int JSL::Vector::Size</definition>
-        <argsstring></argsstring>
-        <name>Size</name>
-        <briefdescription>
-<para>The dimensionality of the vector. Under no realistic circumstances should this change over time, or differ from the true data length. If it does, I have messed up and this structure becomes borked. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="24" column="11" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="24" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classJSL_1_1Vector_1aec102ab8391080ddaedeb4605ef40c5c" prot="private" static="no" mutable="no">
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Vector_1aec102ab8391080ddaedeb4605ef40c5c" prot="protected" static="no" mutable="no">
         <type>std::vector&lt; double &gt;</type>
         <definition>std::vector&lt;double&gt; JSL::Vector::Data</definition>
         <argsstring></argsstring>
         <name>Data</name>
+        <qualifiedname>JSL::Vector::Data</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="191" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="191" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="269" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Vector_1a84eb32f5917a770c895e106834a6c05d" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::Vector::nElements</definition>
+        <argsstring></argsstring>
+        <name>nElements</name>
+        <qualifiedname>JSL::Vector::nElements</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="271" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="271" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a840fca607f8eae7dea1494b2954d3a3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Vector::Vector</definition>
+        <argsstring>()</argsstring>
+        <name>Vector</name>
+        <qualifiedname>JSL::Vector::Vector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="24" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="24" bodyend="27"/>
+      </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1aea8654ed3fb875d43f669a5f2e26fb25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>JSL::Vector::Vector</definition>
         <argsstring>(int n)</argsstring>
         <name>Vector</name>
+        <qualifiedname>JSL::Vector::Vector</qualifiedname>
         <param>
           <type>int</type>
           <declname>n</declname>
@@ -61,13 +76,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="27" column="1" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="27" bodyend="30"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="30" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="30" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1af5be93b29e1c2aab2882827d5001a2aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>JSL::Vector::Vector</definition>
         <argsstring>(std::vector&lt; double &gt; input)</argsstring>
         <name>Vector</name>
+        <qualifiedname>JSL::Vector::Vector</qualifiedname>
         <param>
           <type>std::vector&lt; double &gt;</type>
           <declname>input</declname>
@@ -89,13 +105,57 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="33" column="1" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="33" bodyend="36"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="36" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="36" bodyend="39"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1a7ff5112a7be30ca24b8ed953aaadd045" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a7b07c27a73798d08b3a6271318f112c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Vector::Vector</definition>
+        <argsstring>(std::vector&lt; int &gt; input)</argsstring>
+        <name>Vector</name>
+        <qualifiedname>JSL::Vector::Vector</qualifiedname>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Initialises the vector to contain the provided stl vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An std::vector which the new <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> will envelop. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="41" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1a53b26ca32061ebf41430fe2322f79c0c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int JSL::Vector::Size</definition>
+        <argsstring>() const</argsstring>
+        <name>Size</name>
+        <qualifiedname>JSL::Vector::Size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="45" column="5" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1afc97ae2f771605f0cc32456542a2f0d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double &amp;</type>
-        <definition>double&amp; JSL::Vector::operator[]</definition>
+        <definition>double &amp; JSL::Vector::operator[]</definition>
         <argsstring>(int idx)</argsstring>
         <name>operator[]</name>
+        <qualifiedname>JSL::Vector::operator[]</qualifiedname>
         <param>
           <type>int</type>
           <declname>idx</declname>
@@ -107,13 +167,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="39" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="39" bodyend="56"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="50" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="50" bodyend="67"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1ae461792ef0aeb62ac07c939dacedda99" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a57b871b70f9b894b0e5c302d1f9b71ad" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const double &amp;</type>
-        <definition>const double&amp; JSL::Vector::operator[]</definition>
+        <definition>const double &amp; JSL::Vector::operator[]</definition>
         <argsstring>(int idx) const</argsstring>
         <name>operator[]</name>
+        <qualifiedname>JSL::Vector::operator[]</qualifiedname>
         <param>
           <type>int</type>
           <declname>idx</declname>
@@ -125,13 +186,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="59" column="14" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="59" bodyend="76"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="70" column="14" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="70" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1a60660b5a26e0ddace46f31699834b671" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double JSL::Vector::Dot</definition>
         <argsstring>(const Vector &amp;rhs) const</argsstring>
         <name>Dot</name>
+        <qualifiedname>JSL::Vector::Dot</qualifiedname>
         <param>
           <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
           <declname>rhs</declname>
@@ -155,13 +217,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="79" column="8" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="79" bodyend="82"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="90" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="90" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1a59ff98a99ebcf2b589290b9e57b8e184" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
         <definition>Vector JSL::Vector::Cross</definition>
         <argsstring>(const Vector &amp;rhs) const</argsstring>
         <name>Cross</name>
+        <qualifiedname>JSL::Vector::Cross</qualifiedname>
         <param>
           <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
           <declname>rhs</declname>
@@ -185,13 +248,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="85" column="8" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="85" bodyend="88"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="96" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="96" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1ac1346e26bc981bf45d2c1c4317dac4e6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double JSL::Vector::SqNorm</definition>
         <argsstring>() const</argsstring>
         <name>SqNorm</name>
+        <qualifiedname>JSL::Vector::SqNorm</qualifiedname>
         <briefdescription>
 <para>The squared-norm of the current object, calculated using <ref refid="classJSL_1_1Vector_1a60660b5a26e0ddace46f31699834b671" kindref="member">Dot()</ref>. Probably not as much use as <ref refid="classJSL_1_1Vector_1aa8af717591f5548ff471b6e4b28d7f9c" kindref="member">Norm()</ref>, but saves time sqrting and then squaring again! </para>
         </briefdescription>
@@ -202,13 +266,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="91" column="8" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="91" bodyend="94"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="102" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="102" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1aa8af717591f5548ff471b6e4b28d7f9c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double JSL::Vector::Norm</definition>
         <argsstring>() const</argsstring>
         <name>Norm</name>
+        <qualifiedname>JSL::Vector::Norm</qualifiedname>
         <briefdescription>
 <para>The norm of the current object,. </para>
         </briefdescription>
@@ -219,13 +284,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="97" column="8" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="97" bodyend="100"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="108" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="108" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1a0529640bc02ce994026184d93f43f9c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double JSL::Vector::AngleBetween</definition>
         <argsstring>(const Vector &amp;rhs) const</argsstring>
         <name>AngleBetween</name>
+        <qualifiedname>JSL::Vector::AngleBetween</qualifiedname>
         <param>
           <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
           <declname>rhs</declname>
@@ -249,13 +315,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="103" column="8" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="103" bodyend="106"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="114" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="114" bodyend="117"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Vector_1a73579b4a194cc924341806a5d9ea3817" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
         <definition>std::string JSL::Vector::to_string</definition>
         <argsstring>() const</argsstring>
         <name>to_string</name>
+        <qualifiedname>JSL::Vector::to_string</qualifiedname>
         <briefdescription>
 <para>Converts the vector into a human-readable string. </para>
         </briefdescription>
@@ -266,13 +333,76 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="109" column="13" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="109" bodyend="122"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="120" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="120" bodyend="123"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1ad46bf395dd6122ce152c33aad2672a9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1ad2d0bfdb432809a88a49f4576b0afb5a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::Vector::to_simple_string</definition>
+        <argsstring>() const</argsstring>
+        <name>to_simple_string</name>
+        <qualifiedname>JSL::Vector::to_simple_string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="124" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="124" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1a91d4cf29c2865069520d03292844d84f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::Vector::to_string_precision</definition>
+        <argsstring>(const int n) const</argsstring>
+        <name>to_string_precision</name>
+        <qualifiedname>JSL::Vector::to_string_precision</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="137" column="13" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="137" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1a41023e6371572e76196b44553b48215c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Vector::operator std::vector&lt; double &gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::vector&lt; double &gt;</name>
+        <qualifiedname>JSL::Vector::vector&lt; double &gt;</qualifiedname>
+        <briefdescription>
+<para>Implicit conversion back to std::vector&lt;double&gt; </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="153" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1a284efd325068f5c75fd8d627325f01b3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Vector::operator std::vector&lt; int &gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::vector&lt; int &gt;</name>
+        <qualifiedname>JSL::Vector::vector&lt; int &gt;</qualifiedname>
+        <briefdescription>
+<para>Implicit conversion back to std::vector&lt;double&gt; </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="158" column="8" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1ab0c81c187542077c13839a07cfc77d89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
-        <definition>Vector&amp; JSL::Vector::operator+=</definition>
+        <definition>Vector &amp; JSL::Vector::operator+=</definition>
         <argsstring>(const Vector &amp;rhs)</argsstring>
         <name>operator+=</name>
+        <qualifiedname>JSL::Vector::operator+=</qualifiedname>
         <param>
           <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
           <declname>rhs</declname>
@@ -286,7 +416,7 @@
 <parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The vector to be accumulated into the current object. Must be the same Size as the calling object. </para>
+<para>The vector to be accumulated into the current object. Must be the same nElements as the calling object. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -296,13 +426,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="125" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="125" bodyend="136"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="164" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="164" bodyend="175"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1a71720a9266944049cd3adfbe50e1703f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a492901b0924e8055144af4c5e5b99ebf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
-        <definition>Vector&amp; JSL::Vector::operator-=</definition>
+        <definition>Vector &amp; JSL::Vector::operator-=</definition>
         <argsstring>(const Vector &amp;rhs)</argsstring>
         <name>operator-=</name>
+        <qualifiedname>JSL::Vector::operator-=</qualifiedname>
         <param>
           <type>const <ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
           <declname>rhs</declname>
@@ -316,7 +447,7 @@
 <parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The vector to be subtracted from the current object. Must be the same Size as the calling object. </para>
+<para>The vector to be subtracted from the current object. Must be the same nElements as the calling object. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -326,13 +457,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="138" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="138" bodyend="149"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="177" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="177" bodyend="188"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1aeca45a175db04725394a1b576507e708" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a56d1795d754957311d22303c397174c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
-        <definition>Vector&amp; JSL::Vector::operator+=</definition>
+        <definition>Vector &amp; JSL::Vector::operator+=</definition>
         <argsstring>(const double &amp;scalar)</argsstring>
         <name>operator+=</name>
+        <qualifiedname>JSL::Vector::operator+=</qualifiedname>
         <param>
           <type>const double &amp;</type>
           <declname>scalar</declname>
@@ -356,13 +488,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="152" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="152" bodyend="159"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="191" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="191" bodyend="198"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1a8a395851b8dffbe5b0aea7e051f9aac8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a953e5c39a0036ed7507a64c1810b65e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
-        <definition>Vector&amp; JSL::Vector::operator-=</definition>
+        <definition>Vector &amp; JSL::Vector::operator-=</definition>
         <argsstring>(const double &amp;scalar)</argsstring>
         <name>operator-=</name>
+        <qualifiedname>JSL::Vector::operator-=</qualifiedname>
         <param>
           <type>const double &amp;</type>
           <declname>scalar</declname>
@@ -386,13 +519,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="162" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="162" bodyend="169"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="201" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="201" bodyend="208"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1ad2fb2b88e3447881c1dac08897c5c8a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a3d7bee6bfd0624c8bebf63a1c7c3309b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
-        <definition>Vector&amp; JSL::Vector::operator*=</definition>
+        <definition>Vector &amp; JSL::Vector::operator*=</definition>
         <argsstring>(const double &amp;scalar)</argsstring>
         <name>operator*=</name>
+        <qualifiedname>JSL::Vector::operator*=</qualifiedname>
         <param>
           <type>const double &amp;</type>
           <declname>scalar</declname>
@@ -416,13 +550,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="172" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="172" bodyend="179"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="211" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="211" bodyend="218"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1a0ce3dc2b4c99dbe6acdec350e2f46ab6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1acc5dec41ebc9cfc77a2b4be5eab07392" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref> &amp;</type>
-        <definition>Vector&amp; JSL::Vector::operator/=</definition>
+        <definition>Vector &amp; JSL::Vector::operator/=</definition>
         <argsstring>(const double &amp;scalar)</argsstring>
         <name>operator/=</name>
+        <qualifiedname>JSL::Vector::operator/=</qualifiedname>
         <param>
           <type>const double &amp;</type>
           <declname>scalar</declname>
@@ -446,15 +581,85 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="182" column="9" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="182" bodyend="189"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="221" column="9" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="221" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1ad7dc3af5e90b59e3ba2efc458e192a4c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::Vector::isnan</definition>
+        <argsstring>()</argsstring>
+        <name>isnan</name>
+        <qualifiedname>JSL::Vector::isnan</qualifiedname>
+        <briefdescription>
+<para>Reports true if any members are NaN. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="231" column="6" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="231" bodyend="239"/>
       </memberdef>
       </sectiondef>
-      <sectiondef kind="private-func">
-      <memberdef kind="function" id="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classJSL_1_1Vector_1a5fdf625cabc0a4546f850382afa67dc4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>static Vector JSL::Vector::linspace</definition>
+        <argsstring>(double start, double end, int length)</argsstring>
+        <name>linspace</name>
+        <qualifiedname>JSL::Vector::linspace</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="241" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="241" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Vector_1a4ca666ae14cef413dcf3679a10a7fbb9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Vector" kindref="compound">Vector</ref></type>
+        <definition>static Vector JSL::Vector::intspace</definition>
+        <argsstring>(int start, int end, int step)</argsstring>
+        <name>intspace</name>
+        <qualifiedname>JSL::Vector::intspace</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>step</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="253" column="15" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="253" bodyend="267"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
         <definition>std::string JSL::Vector::negativeIntegerError</definition>
         <argsstring>(int idx) const</argsstring>
         <name>negativeIntegerError</name>
+        <qualifiedname>JSL::Vector::negativeIntegerError</qualifiedname>
         <param>
           <type>int</type>
           <declname>idx</declname>
@@ -465,13 +670,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="193" column="20" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="193" bodyend="196"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="272" column="20" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="272" bodyend="275"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
         <definition>std::string JSL::Vector::outOfBoundsError</definition>
         <argsstring>(int idx) const</argsstring>
         <name>outOfBoundsError</name>
+        <qualifiedname>JSL::Vector::outOfBoundsError</qualifiedname>
         <param>
           <type>int</type>
           <declname>idx</declname>
@@ -482,7 +688,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="197" column="20" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="197" bodyend="200"/>
+        <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="276" column="20" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="276" bodyend="279"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -490,28 +696,50 @@
     <detaileddescription>
 <para>A class implementing basic R^n vector mathematics. Mostly acts as an extention to the basic std::vector object, but with the implicit assumption that the objects should behave like members of a true vector space, can unambiguously overload some operators and add in additional functionality. </para>
     </detaileddescription>
-    <location file="/home/jack/Documents/Work/JSL/Maths/vector.h" line="20" column="1" bodyfile="/home/jack/Documents/Work/JSL/Maths/vector.h" bodystart="19" bodyend="201"/>
+    <inheritancegraph>
+      <node id="2">
+        <label>JSL::Quaternion</label>
+        <link refid="classJSL_1_1Quaternion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>JSL::Vector</label>
+        <link refid="classJSL_1_1Vector"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/jf20/Documents/JSL/Maths/vector.h" line="20" column="1" bodyfile="/Users/jf20/Documents/JSL/Maths/vector.h" bodystart="21" bodyend="280"/>
     <listofallmembers>
       <member refid="classJSL_1_1Vector_1a0529640bc02ce994026184d93f43f9c3" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>AngleBetween</name></member>
       <member refid="classJSL_1_1Vector_1a59ff98a99ebcf2b589290b9e57b8e184" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Cross</name></member>
-      <member refid="classJSL_1_1Vector_1aec102ab8391080ddaedeb4605ef40c5c" prot="private" virt="non-virtual"><scope>JSL::Vector</scope><name>Data</name></member>
+      <member refid="classJSL_1_1Vector_1aec102ab8391080ddaedeb4605ef40c5c" prot="protected" virt="non-virtual"><scope>JSL::Vector</scope><name>Data</name></member>
       <member refid="classJSL_1_1Vector_1a60660b5a26e0ddace46f31699834b671" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Dot</name></member>
-      <member refid="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" prot="private" virt="non-virtual"><scope>JSL::Vector</scope><name>negativeIntegerError</name></member>
+      <member refid="classJSL_1_1Vector_1a4ca666ae14cef413dcf3679a10a7fbb9" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>intspace</name></member>
+      <member refid="classJSL_1_1Vector_1ad7dc3af5e90b59e3ba2efc458e192a4c" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>isnan</name></member>
+      <member refid="classJSL_1_1Vector_1a5fdf625cabc0a4546f850382afa67dc4" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>linspace</name></member>
+      <member refid="classJSL_1_1Vector_1ac41d3cb075c2bd871c31b96dedba08fe" prot="protected" virt="non-virtual"><scope>JSL::Vector</scope><name>negativeIntegerError</name></member>
+      <member refid="classJSL_1_1Vector_1a84eb32f5917a770c895e106834a6c05d" prot="protected" virt="non-virtual"><scope>JSL::Vector</scope><name>nElements</name></member>
       <member refid="classJSL_1_1Vector_1aa8af717591f5548ff471b6e4b28d7f9c" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Norm</name></member>
-      <member refid="classJSL_1_1Vector_1ad2fb2b88e3447881c1dac08897c5c8a8" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator*=</name></member>
-      <member refid="classJSL_1_1Vector_1ad46bf395dd6122ce152c33aad2672a9b" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator+=</name></member>
-      <member refid="classJSL_1_1Vector_1aeca45a175db04725394a1b576507e708" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator+=</name></member>
-      <member refid="classJSL_1_1Vector_1a71720a9266944049cd3adfbe50e1703f" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator-=</name></member>
-      <member refid="classJSL_1_1Vector_1a8a395851b8dffbe5b0aea7e051f9aac8" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator-=</name></member>
-      <member refid="classJSL_1_1Vector_1a0ce3dc2b4c99dbe6acdec350e2f46ab6" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator/=</name></member>
-      <member refid="classJSL_1_1Vector_1a7ff5112a7be30ca24b8ed953aaadd045" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator[]</name></member>
-      <member refid="classJSL_1_1Vector_1ae461792ef0aeb62ac07c939dacedda99" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator[]</name></member>
-      <member refid="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" prot="private" virt="non-virtual"><scope>JSL::Vector</scope><name>outOfBoundsError</name></member>
-      <member refid="classJSL_1_1Vector_1a00ad33e216a63f17ff9dc51db06970a6" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Size</name></member>
+      <member refid="classJSL_1_1Vector_1a41023e6371572e76196b44553b48215c" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator std::vector&lt; double &gt;</name></member>
+      <member refid="classJSL_1_1Vector_1a284efd325068f5c75fd8d627325f01b3" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator std::vector&lt; int &gt;</name></member>
+      <member refid="classJSL_1_1Vector_1a3d7bee6bfd0624c8bebf63a1c7c3309b" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator*=</name></member>
+      <member refid="classJSL_1_1Vector_1ab0c81c187542077c13839a07cfc77d89" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator+=</name></member>
+      <member refid="classJSL_1_1Vector_1a56d1795d754957311d22303c397174c1" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator+=</name></member>
+      <member refid="classJSL_1_1Vector_1a492901b0924e8055144af4c5e5b99ebf" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator-=</name></member>
+      <member refid="classJSL_1_1Vector_1a953e5c39a0036ed7507a64c1810b65e6" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator-=</name></member>
+      <member refid="classJSL_1_1Vector_1acc5dec41ebc9cfc77a2b4be5eab07392" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator/=</name></member>
+      <member refid="classJSL_1_1Vector_1afc97ae2f771605f0cc32456542a2f0d5" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator[]</name></member>
+      <member refid="classJSL_1_1Vector_1a57b871b70f9b894b0e5c302d1f9b71ad" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>operator[]</name></member>
+      <member refid="classJSL_1_1Vector_1ab081a68e1fc526f4bf866de0ba61a09b" prot="protected" virt="non-virtual"><scope>JSL::Vector</scope><name>outOfBoundsError</name></member>
+      <member refid="classJSL_1_1Vector_1a53b26ca32061ebf41430fe2322f79c0c" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Size</name></member>
       <member refid="classJSL_1_1Vector_1ac1346e26bc981bf45d2c1c4317dac4e6" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>SqNorm</name></member>
+      <member refid="classJSL_1_1Vector_1ad2d0bfdb432809a88a49f4576b0afb5a" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>to_simple_string</name></member>
       <member refid="classJSL_1_1Vector_1a73579b4a194cc924341806a5d9ea3817" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>to_string</name></member>
+      <member refid="classJSL_1_1Vector_1a91d4cf29c2865069520d03292844d84f" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>to_string_precision</name></member>
+      <member refid="classJSL_1_1Vector_1a840fca607f8eae7dea1494b2954d3a3c" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Vector</name></member>
       <member refid="classJSL_1_1Vector_1aea8654ed3fb875d43f669a5f2e26fb25" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Vector</name></member>
       <member refid="classJSL_1_1Vector_1af5be93b29e1c2aab2882827d5001a2aa" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Vector</name></member>
+      <member refid="classJSL_1_1Vector_1a7b07c27a73798d08b3a6271318f112c0" prot="public" virt="non-virtual"><scope>JSL::Vector</scope><name>Vector</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

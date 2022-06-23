@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="structJSL_1_1mkdirReturn" kind="struct" language="C++" prot="public">
     <compoundname>JSL::mkdirReturn</compoundname>
     <includes refid="mkdir_8h" local="no">mkdir.h</includes>
@@ -9,6 +9,7 @@
         <definition>bool JSL::mkdirReturn::Successful</definition>
         <argsstring></argsstring>
         <name>Successful</name>
+        <qualifiedname>JSL::mkdirReturn::Successful</qualifiedname>
         <briefdescription>
 <para>True if the directory already existed, or was succesfully created. </para>
         </briefdescription>
@@ -16,13 +17,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" line="13" column="6" bodyfile="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" bodystart="13" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/FileIO/mkdir.h" line="13" column="6" bodyfile="/Users/jf20/Documents/JSL/FileIO/mkdir.h" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" prot="public" static="no" mutable="no">
         <type>std::string</type>
         <definition>std::string JSL::mkdirReturn::Message</definition>
         <argsstring></argsstring>
         <name>Message</name>
+        <qualifiedname>JSL::mkdirReturn::Message</qualifiedname>
         <briefdescription>
 <para>Contains the logging messages from the function. </para>
         </briefdescription>
@@ -30,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" line="15" column="13" bodyfile="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" bodystart="15" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/FileIO/mkdir.h" line="15" column="13" bodyfile="/Users/jf20/Documents/JSL/FileIO/mkdir.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -38,7 +40,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" line="11" column="1" bodyfile="/home/jack/Documents/Work/JSL/FileIO/mkdir.h" bodystart="10" bodyend="16"/>
+    <location file="/Users/jf20/Documents/JSL/FileIO/mkdir.h" line="10" column="1" bodyfile="/Users/jf20/Documents/JSL/FileIO/mkdir.h" bodystart="11" bodyend="16"/>
     <listofallmembers>
       <member refid="structJSL_1_1mkdirReturn_1a64650d2f4b3d2ca29de3a4dcfdadbd0e" prot="public" virt="non-virtual"><scope>JSL::mkdirReturn</scope><name>Message</name></member>
       <member refid="structJSL_1_1mkdirReturn_1a76abe5af61a20e13756f833b79782b7f" prot="public" virt="non-virtual"><scope>JSL::mkdirReturn</scope><name>Successful</name></member>

@@ -1,0 +1,174 @@
+\hypertarget{Argument_8h_source}{}\doxysection{Argument.\+h}
+\label{Argument_8h_source}\index{/Users/jf20/Documents/JSL/CommandArgs/Argument.h@{/Users/jf20/Documents/JSL/CommandArgs/Argument.h}}
+\mbox{\hyperlink{Argument_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}../FileIO/FileIO.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1ArgumentInterface}{ArgumentInterface}}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keyword}{public}:}
+\DoxyCodeLine{17             }
+\DoxyCodeLine{18             \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a5c12814b0c7d12369aebd77baa19fbac}{ArgumentInterface}}(std::string \textcolor{keywordtype}{string}) : \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{TriggerString}}(string) \{\};}
+\DoxyCodeLine{19              }
+\DoxyCodeLine{21             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a28b487f7a4fa6e721ed6629abe2073f2}{Parse}}( \textcolor{keywordtype}{char} * name, \textcolor{keywordtype}{char} * value)\{\};}
+\DoxyCodeLine{22             }
+\DoxyCodeLine{24             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a256b5bd88b5f6638353f108c48f3ee65}{ListParse}}( \textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} * argv[])\{\};}
+\DoxyCodeLine{25             }
+\DoxyCodeLine{27             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ArgumentInterface_aac7c3106f99c407e625b9bc6a6c8c446}{Configure}}(std::string configFile, \textcolor{keywordtype}{char} configDelimiter)\{\};}
+\DoxyCodeLine{28             }
+\DoxyCodeLine{30             \textcolor{keyword}{const} std::string \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{TriggerString}};}
+\DoxyCodeLine{31         }
+\DoxyCodeLine{32             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a12d47b53c73ad1e996d524f515a20dad}{StreamTo}}(std::stringstream \& stream, std::string delimiter)\{\};}
+\DoxyCodeLine{33     \};}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35     }
+\DoxyCodeLine{36     }
+\DoxyCodeLine{40     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{41     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1Argument}{Argument}} : \textcolor{keyword}{public} \mbox{\hyperlink{classJSL_1_1ArgumentInterface}{ArgumentInterface}}}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         }
+\DoxyCodeLine{44         \textcolor{keyword}{public}:}
+\DoxyCodeLine{46             T \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}};}
+\DoxyCodeLine{47         }
+\DoxyCodeLine{49             \mbox{\hyperlink{classJSL_1_1Argument_ab438509a3c030516de72f3f493295bd5}{Argument}}()\{\};}
+\DoxyCodeLine{50             }
+\DoxyCodeLine{52             \mbox{\hyperlink{classJSL_1_1Argument_ab07e7981db832cce30f534c67f6491f4}{Argument}}(std::string trigger) : \mbox{\hyperlink{classJSL_1_1ArgumentInterface}{ArgumentInterface}}(trigger)}
+\DoxyCodeLine{53             \{}
+\DoxyCodeLine{54                 \mbox{\hyperlink{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}{CheckForInvalidTriggers}}();}
+\DoxyCodeLine{55             \}}
+\DoxyCodeLine{56             }
+\DoxyCodeLine{58             \mbox{\hyperlink{classJSL_1_1Argument_a2511f7c98ee2b0b59650f468341b8747}{Argument}}(T defaultValue,std::string trigger) : \mbox{\hyperlink{classJSL_1_1ArgumentInterface}{ArgumentInterface}}(trigger)}
+\DoxyCodeLine{59             \{}
+\DoxyCodeLine{60                 \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} = defaultValue;}
+\DoxyCodeLine{61                 \textcolor{comment}{//\string~ TriggerString = trigger;}}
+\DoxyCodeLine{62                 \mbox{\hyperlink{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}{CheckForInvalidTriggers}}();}
+\DoxyCodeLine{63             \}}
+\DoxyCodeLine{64             }
+\DoxyCodeLine{66             \mbox{\hyperlink{classJSL_1_1Argument_a4d187d2fb658021866b173987b920ab4}{Argument}}(T defaultValue, std::string trigger, \textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} * argv[]) : \mbox{\hyperlink{classJSL_1_1ArgumentInterface}{ArgumentInterface}}(trigger)}
+\DoxyCodeLine{67             \{}
+\DoxyCodeLine{68                 \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} = defaultValue;}
+\DoxyCodeLine{69                 \textcolor{comment}{//\string~ TriggerString = trigger;}}
+\DoxyCodeLine{70                 }
+\DoxyCodeLine{71                 \mbox{\hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{ListParse}}(argc,argv);}
+\DoxyCodeLine{72                 \mbox{\hyperlink{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}{CheckForInvalidTriggers}}();}
+\DoxyCodeLine{73             \}}
+\DoxyCodeLine{74             }
+\DoxyCodeLine{76             \mbox{\hyperlink{classJSL_1_1Argument_a83799e9089f88d7e6cf30990fae42610}{Argument}}(T defaultValue, std::string trigger, std::string configFile, \textcolor{keywordtype}{char} configDelimiter) : \mbox{\hyperlink{classJSL_1_1ArgumentInterface}{ArgumentInterface}}(trigger)}
+\DoxyCodeLine{77             \{}
+\DoxyCodeLine{78                 \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}} = defaultValue;}
+\DoxyCodeLine{79                 \textcolor{comment}{//\string~ TriggerString = trigger;}}
+\DoxyCodeLine{80                 \mbox{\hyperlink{classJSL_1_1Argument_aa626ff37dbebaf0501614dc625a76383}{Configure}}(configFile, configDelimiter);}
+\DoxyCodeLine{81                 \mbox{\hyperlink{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}{CheckForInvalidTriggers}}();}
+\DoxyCodeLine{82             \}}
+\DoxyCodeLine{83             }
+\DoxyCodeLine{85             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_aa626ff37dbebaf0501614dc625a76383}{Configure}}(std::string configFile, \textcolor{keywordtype}{char} configDelimiter)}
+\DoxyCodeLine{86             \{}
+\DoxyCodeLine{87                 \mbox{\hyperlink{LineReader_8h_abdfa973ea7dd7efb90a74e8ec636f5ed}{forLineVectorIn}}(configFile, configDelimiter,}
+\DoxyCodeLine{88                     \textcolor{keywordflow}{if} (FILE\_LINE\_VECTOR.size() > 1 \&\& FILE\_LINE\_VECTOR[0] == \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{TriggerString}})}
+\DoxyCodeLine{89                     \{}
+\DoxyCodeLine{90                         AssignValue(FILE\_LINE\_VECTOR[1].c\_str());}
+\DoxyCodeLine{91                     \}}
+\DoxyCodeLine{92                 );}
+\DoxyCodeLine{93             \}}
+\DoxyCodeLine{94             }
+\DoxyCodeLine{96             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_aa2b18bb35e90f91e224a06d60835053a}{ListParse}}( \textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} * argv[])}
+\DoxyCodeLine{97             \{}
+\DoxyCodeLine{98                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < argc-\/1; ++i)}
+\DoxyCodeLine{99                 \{}
+\DoxyCodeLine{100                     \mbox{\hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse}}(argv[i],argv[i+1]);}
+\DoxyCodeLine{101                 \}}
+\DoxyCodeLine{102             \}}
+\DoxyCodeLine{103             }
+\DoxyCodeLine{105             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_a8984e7ce23155259d90a3e98170f36e0}{Parse}}( \textcolor{keywordtype}{char} * name, \textcolor{keywordtype}{char} * value)}
+\DoxyCodeLine{106             \{}
+\DoxyCodeLine{107                 std::string sArg = name;}
+\DoxyCodeLine{108                 \textcolor{keywordflow}{if} (sArg == \textcolor{stringliteral}{"{}-\/"{}} + \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{TriggerString}})}
+\DoxyCodeLine{109                 \{}
+\DoxyCodeLine{110                     \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{AssignValue}}(value);}
+\DoxyCodeLine{111                 \}}
+\DoxyCodeLine{112             \}}
+\DoxyCodeLine{113     }
+\DoxyCodeLine{115             \textcolor{keyword}{operator} T()}
+\DoxyCodeLine{116             \{}
+\DoxyCodeLine{117                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}};}
+\DoxyCodeLine{118             \}}
+\DoxyCodeLine{119             }
+\DoxyCodeLine{121             \textcolor{keyword}{operator} T()\textcolor{keyword}{ const}}
+\DoxyCodeLine{122 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{123                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}};}
+\DoxyCodeLine{124             \}}
+\DoxyCodeLine{125             }
+\DoxyCodeLine{126         \textcolor{keyword}{private}:}
+\DoxyCodeLine{128             }
+\DoxyCodeLine{129             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_a8614eb66f807132c4323847e05e666c4}{CheckForInvalidTriggers}}()}
+\DoxyCodeLine{130             \{}
+\DoxyCodeLine{131                 std::vector<std::string> ProtectedStrings = \{\textcolor{stringliteral}{"{}help"{}}\};}
+\DoxyCodeLine{132                 }
+\DoxyCodeLine{133                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < ProtectedStrings.size(); ++i)}
+\DoxyCodeLine{134                 \{}
+\DoxyCodeLine{135                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{TriggerString}} == ProtectedStrings[i])}
+\DoxyCodeLine{136                     \{}
+\DoxyCodeLine{137                         \textcolor{keywordflow}{throw} std::invalid\_argument(\mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{TriggerString}} + \textcolor{stringliteral}{"{} is a protected triggername"{}});}
+\DoxyCodeLine{138                     \}}
+\DoxyCodeLine{139                 \}}
+\DoxyCodeLine{140             \}}
+\DoxyCodeLine{141             }
+\DoxyCodeLine{142             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_ab06f610d3c79d7c96e6f62c0e9d98acc}{StreamTo}}(std::stringstream \& stream, std::string delimiter)}
+\DoxyCodeLine{143             \{}
+\DoxyCodeLine{144                 stream << \mbox{\hyperlink{classJSL_1_1ArgumentInterface_a29460ecfd033ad1a485333767e28b816}{TriggerString}} << \textcolor{stringliteral}{"{}, "{}} << \mbox{\hyperlink{classJSL_1_1Argument_a83ada5bfa412192f76dd4290f679defd}{Value}};}
+\DoxyCodeLine{145             \}}
+\DoxyCodeLine{146             }
+\DoxyCodeLine{148             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{AssignValue}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} * value)\{\};}
+\DoxyCodeLine{149             }
+\DoxyCodeLine{150     \};}
+\DoxyCodeLine{151     }
+\DoxyCodeLine{153     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{154     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Argument<int>::AssignValue}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} * value)}
+\DoxyCodeLine{155     \{}
+\DoxyCodeLine{156         \textcolor{keywordtype}{double} testDouble = std::stod(value);}
+\DoxyCodeLine{157         \textcolor{keywordtype}{int} testInt = std::stoi(value);}
+\DoxyCodeLine{158         }
+\DoxyCodeLine{159         \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{double})testInt != testDouble)}
+\DoxyCodeLine{160         \{}
+\DoxyCodeLine{161             \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Argument passed to "{}} + TriggerString + \textcolor{stringliteral}{"{} was a double, expected an integer"{}});}
+\DoxyCodeLine{162         \}}
+\DoxyCodeLine{163         }
+\DoxyCodeLine{164         \textcolor{comment}{//this method ensures that it can interpret in exponential notation as stod can do that!}}
+\DoxyCodeLine{165         Value = (int)testDouble;}
+\DoxyCodeLine{166     \}}
+\DoxyCodeLine{167     }
+\DoxyCodeLine{168     }
+\DoxyCodeLine{170     \textcolor{keyword}{template}<> }
+\DoxyCodeLine{171     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Argument<double>::AssignValue}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * value)}
+\DoxyCodeLine{172     \{}
+\DoxyCodeLine{173         Value = std::stod(value);}
+\DoxyCodeLine{174     \}}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{177     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{178     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Argument<std::string>::AssignValue}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * value)}
+\DoxyCodeLine{179     \{}
+\DoxyCodeLine{180         Value = (std::string)value;}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182     }
+\DoxyCodeLine{184     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{185     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1Argument_ac77530598054943c996dbb5fb677b844}{Argument<bool>::AssignValue}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} * value)}
+\DoxyCodeLine{186     \{}
+\DoxyCodeLine{187         \textcolor{keywordtype}{int} testValue = std::stoi(value);}
+\DoxyCodeLine{188         \textcolor{keywordflow}{if} (testValue != 0 \&\& testValue != 1)}
+\DoxyCodeLine{189         \{}
+\DoxyCodeLine{190             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Argument passed to "{}} + TriggerString + \textcolor{stringliteral}{"{} was not a bool (0 or 1)"{}});}
+\DoxyCodeLine{191         \}}
+\DoxyCodeLine{192         Value = (bool)testValue;}
+\DoxyCodeLine{193     \}}
+\DoxyCodeLine{194     }
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \}}
+
+\end{DoxyCode}

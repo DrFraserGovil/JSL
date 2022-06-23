@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['listparse_132',['ListParse',['../classJSL_1_1ArgumentInterface.html#a256b5bd88b5f6638353f108c48f3ee65',1,'JSL::ArgumentInterface::ListParse()'],['../classJSL_1_1Argument.html#aa2b18bb35e90f91e224a06d60835053a',1,'JSL::Argument::ListParse()']]],
-  ['locationexists_133',['locationExists',['../namespaceJSL.html#a1752cd7c6e1134da51e9307527e0d788',1,'JSL']]]
+  ['getcolumn_0',['GetColumn',['../classJSL_1_1Matrix.html#a11ea58ca43e028123f628966eb4834a0',1,'JSL::Matrix']]],
+  ['getrow_1',['GetRow',['../classJSL_1_1Matrix.html#aa8bae8650234f5e5569277563d68f22d',1,'JSL::Matrix']]],
+  ['gnuplot_2',['gnuplot',['../classJSL_1_1gnuplot.html#aafcfb0c9032e7f0cfeddcc3baf2cc21f',1,'JSL::gnuplot']]]
 ];

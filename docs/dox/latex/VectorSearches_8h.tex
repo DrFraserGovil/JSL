@@ -1,0 +1,19 @@
+\hypertarget{VectorSearches_8h}{}\doxysection{/\+Users/jf20/\+Documents/\+JSL/\+Vector/\+Vector\+Searches.h File Reference}
+\label{VectorSearches_8h}\index{/Users/jf20/Documents/JSL/Vector/VectorSearches.h@{/Users/jf20/Documents/JSL/Vector/VectorSearches.h}}
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{namespaceJSL_a428e6ac7fa22e5c5aa3bceb9e17fe970}{JSL\+::\+Find\+XInY}} (T x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespaceJSL_a1d104ebd2bbb9ec6eade1abbb59fa84e}{JSL\+::\+Sort\+Indices}} (const std\+::vector$<$ T $>$ \&v)
+\item 
+int \mbox{\hyperlink{namespaceJSL_a6e3dd386e7ab4be6fae6e0bdf8c98e91}{JSL\+::\+Upper\+Bound\+Locator}} (double val, const std\+::vector$<$ double $>$ \&val\+Array)
+\begin{DoxyCompactList}\small\item\em Similar to Find\+XInY except where you do not expect an exact match. Searches through an (assumed sorted) vector and locates the first value greater than or equal to the target value, else returns the index of the final value in the array. \end{DoxyCompactList}\end{DoxyCompactItemize}

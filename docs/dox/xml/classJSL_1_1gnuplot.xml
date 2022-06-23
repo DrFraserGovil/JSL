@@ -1,0 +1,954 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classJSL_1_1gnuplot" kind="class" language="C++" prot="public">
+    <compoundname>JSL::gnuplot</compoundname>
+    <includes refid="gnuplotMain_8h" local="no">gnuplotMain.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1a16e01fe5ebc78d04cb9683d49c2aee91" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::gnuplot::superTitle</definition>
+        <argsstring></argsstring>
+        <name>superTitle</name>
+        <qualifiedname>JSL::gnuplot::superTitle</qualifiedname>
+        <initializer>= &quot;__null__&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="186" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1ae989349518a66a36b8003506b7af48ea" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; <ref refid="classJSL_1_1Axis" kindref="compound">Axis</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;Axis&gt; &gt; JSL::gnuplot::Axes</definition>
+        <argsstring></argsstring>
+        <name>Axes</name>
+        <qualifiedname>JSL::gnuplot::Axes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="187" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1a200e2b9b95ccd38d4f8e019c594b318f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::gnuplot::DirName</definition>
+        <argsstring></argsstring>
+        <name>DirName</name>
+        <qualifiedname>JSL::gnuplot::DirName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="188" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1a102660ecaaece0b2b35e311b530e8b73" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::gnuplot::axis_x</definition>
+        <argsstring></argsstring>
+        <name>axis_x</name>
+        <qualifiedname>JSL::gnuplot::axis_x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="189" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1acf4f664ab476e047cdbf7f6dd1bfa74e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::gnuplot::axis_y</definition>
+        <argsstring></argsstring>
+        <name>axis_y</name>
+        <qualifiedname>JSL::gnuplot::axis_y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="190" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1a666ddb205d0cb9c76813e2f8075c1b65" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::gnuplot::axisCount</definition>
+        <argsstring></argsstring>
+        <name>axisCount</name>
+        <qualifiedname>JSL::gnuplot::axisCount</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="191" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1aa091157be13eeb60c3193ad06aba9b6f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::gnuplot::terminal</definition>
+        <argsstring></argsstring>
+        <name>terminal</name>
+        <qualifiedname>JSL::gnuplot::terminal</qualifiedname>
+        <initializer>= &quot;qt&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="192" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1a631da60df3e3fb00e2d01c87be4da930" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::gnuplot::output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <qualifiedname>JSL::gnuplot::output</qualifiedname>
+        <initializer>= &quot;__null__&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="193" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1a4c5db7bfe99161369b4c2d31ad4d7ece" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::gnuplot::font</definition>
+        <argsstring></argsstring>
+        <name>font</name>
+        <qualifiedname>JSL::gnuplot::font</qualifiedname>
+        <initializer>= &quot;Geneva&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="194" column="13" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1abc845a03e444f2f39bfbfbb3c9a45573" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::gnuplot::globalFontSize</definition>
+        <argsstring></argsstring>
+        <name>globalFontSize</name>
+        <qualifiedname>JSL::gnuplot::globalFontSize</qualifiedname>
+        <initializer>= 14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="195" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1a99581d61b67ad3f0537dca6b041942ba" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::gnuplot::superTitleFontSize</definition>
+        <argsstring></argsstring>
+        <name>superTitleFontSize</name>
+        <qualifiedname>JSL::gnuplot::superTitleFontSize</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="196" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1a2426c9fb055e1c69503166958602e2de" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::gnuplot::defaultSize</definition>
+        <argsstring></argsstring>
+        <name>defaultSize</name>
+        <qualifiedname>JSL::gnuplot::defaultSize</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="197" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1abd2c1a49e45beb3ac554a58694965be2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::gnuplot::windowWidth</definition>
+        <argsstring></argsstring>
+        <name>windowWidth</name>
+        <qualifiedname>JSL::gnuplot::windowWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="198" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1gnuplot_1aa0e38b8208be147845e6708b1aa46a04" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::gnuplot::windowHeight</definition>
+        <argsstring></argsstring>
+        <name>windowHeight</name>
+        <qualifiedname>JSL::gnuplot::windowHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="199" column="5" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1aafcfb0c9032e7f0cfeddcc3baf2cc21f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::gnuplot::gnuplot</definition>
+        <argsstring>()</argsstring>
+        <name>gnuplot</name>
+        <qualifiedname>JSL::gnuplot::gnuplot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="11" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="11" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a1654a89612515dc3cd3c2a45c60dc733" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::gnuplot::~gnuplot</definition>
+        <argsstring>()</argsstring>
+        <name>~gnuplot</name>
+        <qualifiedname>JSL::gnuplot::~gnuplot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="22" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1aa1e759e1965581b7c4fe508d2bca7060" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetMultiplot</definition>
+        <argsstring>(int yCount, int xCount)</argsstring>
+        <name>SetMultiplot</name>
+        <qualifiedname>JSL::gnuplot::SetMultiplot</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>yCount</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="27" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="27" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a036f04bf999e752754f96108bc83ec5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetAxis</definition>
+        <argsstring>(int y, int x)</argsstring>
+        <name>SetAxis</name>
+        <qualifiedname>JSL::gnuplot::SetAxis</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="37" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1af5ba95fdc854b7de524431efe9793f0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetAxis</definition>
+        <argsstring>(int idx)</argsstring>
+        <name>SetAxis</name>
+        <qualifiedname>JSL::gnuplot::SetAxis</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="42" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1ad7759efccfffa13d51620a3a695823ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class S</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classJSL_1_1PlotData" kindref="compound">PlotData</ref> &amp;</type>
+        <definition>PlotData &amp; JSL::gnuplot::Plot</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y, NameValuePair&lt; Ts &gt;... args)</argsstring>
+        <name>Plot</name>
+        <qualifiedname>JSL::gnuplot::Plot</qualifiedname>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; S &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; Ts &gt;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="48" column="11" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1aff8f871df4ddbbbf519572dd1f717588" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class S</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classJSL_1_1PlotData" kindref="compound">PlotData</ref> &amp;</type>
+        <definition>PlotData &amp; JSL::gnuplot::Plot</definition>
+        <argsstring>(const T &amp;x, const S &amp;y, NameValuePair&lt; Ts &gt;... args)</argsstring>
+        <name>Plot</name>
+        <qualifiedname>JSL::gnuplot::Plot</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const S &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; Ts &gt;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="53" column="11" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a90306a67b5b8d990cbcb13b3f6f6eaa3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class S</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classJSL_1_1PlotData" kindref="compound">PlotData</ref> &amp;</type>
+        <definition>PlotData &amp; JSL::gnuplot::Scatter</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y, NameValuePair&lt; Ts &gt;... args)</argsstring>
+        <name>Scatter</name>
+        <qualifiedname>JSL::gnuplot::Scatter</qualifiedname>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; S &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; Ts &gt;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="58" column="11" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1adfd19ba6419d0c23d18dbeb4f6302f59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class S</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classJSL_1_1PlotData" kindref="compound">PlotData</ref> &amp;</type>
+        <definition>PlotData &amp; JSL::gnuplot::Scatter</definition>
+        <argsstring>(const T &amp;x, const S &amp;y, NameValuePair&lt; Ts &gt;... args)</argsstring>
+        <name>Scatter</name>
+        <qualifiedname>JSL::gnuplot::Scatter</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const S &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; Ts &gt;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="63" column="11" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a147fc21e6c9b48d823a16c738953d081" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::Show</definition>
+        <argsstring>()</argsstring>
+        <name>Show</name>
+        <qualifiedname>JSL::gnuplot::Show</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="68" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="68" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1af0ace47c0e36ef49cae6592a8a841926" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classJSL_1_1Axis" kindref="compound">Axis</ref> &gt; &amp;</type>
+        <definition>std::vector&lt; Axis &gt; &amp; JSL::gnuplot::operator[]</definition>
+        <argsstring>(int i)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>JSL::gnuplot::operator[]</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="88" column="14" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a26eba111f5ff83b852eded604d23fbe2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetXRange</definition>
+        <argsstring>(double min, double max)</argsstring>
+        <name>SetXRange</name>
+        <qualifiedname>JSL::gnuplot::SetXRange</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="92" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a39e8bdc9b9bb9e47e4acdd0b17ad5430" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetYRange</definition>
+        <argsstring>(double min, double max)</argsstring>
+        <name>SetYRange</name>
+        <qualifiedname>JSL::gnuplot::SetYRange</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="96" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1af2230b64696435194780c99e8107ac51" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetXLog</definition>
+        <argsstring>(bool val)</argsstring>
+        <name>SetXLog</name>
+        <qualifiedname>JSL::gnuplot::SetXLog</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="100" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a244f8e993705d7c79cbb37451db39632" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetYLog</definition>
+        <argsstring>(bool val)</argsstring>
+        <name>SetYLog</name>
+        <qualifiedname>JSL::gnuplot::SetYLog</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="104" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a80699eb05778c88b435ec62a5afe3a5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetXLabel</definition>
+        <argsstring>(std::string xl)</argsstring>
+        <name>SetXLabel</name>
+        <qualifiedname>JSL::gnuplot::SetXLabel</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>xl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="108" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a741f78103dd76eaff9475351b7f49edd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetYLabel</definition>
+        <argsstring>(std::string yl)</argsstring>
+        <name>SetYLabel</name>
+        <qualifiedname>JSL::gnuplot::SetYLabel</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>yl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="112" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1aa4b92e98fe9231ed52d1f0c88c3cbd93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetXLabel</definition>
+        <argsstring>(std::string xl, int size)</argsstring>
+        <name>SetXLabel</name>
+        <qualifiedname>JSL::gnuplot::SetXLabel</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>xl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="116" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a721199548950cfd60fb43d3ac3bc0fe1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetYLabel</definition>
+        <argsstring>(std::string yl, int size)</argsstring>
+        <name>SetYLabel</name>
+        <qualifiedname>JSL::gnuplot::SetYLabel</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>yl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="120" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a270b6a2f344a1d102b4eddd8aa47a6e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetLegend</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>SetLegend</name>
+        <qualifiedname>JSL::gnuplot::SetLegend</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="124" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a6cebc934c85d8b6e39950218328f71e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::WindowSize</definition>
+        <argsstring>(int width, int height)</argsstring>
+        <name>WindowSize</name>
+        <qualifiedname>JSL::gnuplot::WindowSize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="128" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="128" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a929f817e0c0d2bf119a4aa06ef507289" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetTitle</definition>
+        <argsstring>(std::string tit)</argsstring>
+        <name>SetTitle</name>
+        <qualifiedname>JSL::gnuplot::SetTitle</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>tit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="134" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="134" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a8ece1d633a3978a6d2bcdacd43331b2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetTitle</definition>
+        <argsstring>(std::string tit, int size)</argsstring>
+        <name>SetTitle</name>
+        <qualifiedname>JSL::gnuplot::SetTitle</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>tit</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="138" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a3b9f002e0c20b19611b29e459be3581d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetSuperTitle</definition>
+        <argsstring>(std::string tit)</argsstring>
+        <name>SetSuperTitle</name>
+        <qualifiedname>JSL::gnuplot::SetSuperTitle</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>tit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="142" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="142" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a9a2f9350971fb144772b550a8be84073" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetSuperTitle</definition>
+        <argsstring>(std::string tit, int size)</argsstring>
+        <name>SetSuperTitle</name>
+        <qualifiedname>JSL::gnuplot::SetSuperTitle</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>tit</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="146" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="146" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1ad29ef895e0251319e59198fe6d8ade6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetTerminal</definition>
+        <argsstring>(std::string t)</argsstring>
+        <name>SetTerminal</name>
+        <qualifiedname>JSL::gnuplot::SetTerminal</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="151" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="151" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a6a166e0499cea89f696db40cbc26d114" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetOutput</definition>
+        <argsstring>(std::string out)</argsstring>
+        <name>SetOutput</name>
+        <qualifiedname>JSL::gnuplot::SetOutput</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="155" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1aed7de1ddfe25a18ff4aafaa55ee62ce8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetFont</definition>
+        <argsstring>(std::string f)</argsstring>
+        <name>SetFont</name>
+        <qualifiedname>JSL::gnuplot::SetFont</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="159" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a8ccee4ee28636d9b9494dba28d26b7d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::SetFontSize</definition>
+        <argsstring>(Fonts::Target target, unsigned int size)</argsstring>
+        <name>SetFontSize</name>
+        <qualifiedname>JSL::gnuplot::SetFontSize</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Fonts_1a7a55fcb9c82e5a8c7f98ce1c803d08ee" kindref="member">Fonts::Target</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="163" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="163" bodyend="184"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a0601a115a1052a39a6621e42ec4d4f3e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::CleanupTempFiles</definition>
+        <argsstring>()</argsstring>
+        <name>CleanupTempFiles</name>
+        <qualifiedname>JSL::gnuplot::CleanupTempFiles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="200" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="200" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1a275c33fa2dc4fce5a8af1f8d2ec7562d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::InitialiseOutput</definition>
+        <argsstring>(std::string outName)</argsstring>
+        <name>InitialiseOutput</name>
+        <qualifiedname>JSL::gnuplot::InitialiseOutput</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>outName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="207" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="207" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1gnuplot_1aa35fd7f6ebe1c18ea39d6cdbb12f8aa0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::gnuplot::WriteMultiplotToFile</definition>
+        <argsstring>(std::string gpFile)</argsstring>
+        <name>WriteMultiplotToFile</name>
+        <qualifiedname>JSL::gnuplot::WriteMultiplotToFile</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>gpFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="229" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="229" bodyend="241"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" line="8" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h" bodystart="9" bodyend="242"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1gnuplot_1ae989349518a66a36b8003506b7af48ea" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>Axes</name></member>
+      <member refid="classJSL_1_1gnuplot_1a102660ecaaece0b2b35e311b530e8b73" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>axis_x</name></member>
+      <member refid="classJSL_1_1gnuplot_1acf4f664ab476e047cdbf7f6dd1bfa74e" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>axis_y</name></member>
+      <member refid="classJSL_1_1gnuplot_1a666ddb205d0cb9c76813e2f8075c1b65" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>axisCount</name></member>
+      <member refid="classJSL_1_1gnuplot_1a0601a115a1052a39a6621e42ec4d4f3e" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>CleanupTempFiles</name></member>
+      <member refid="classJSL_1_1gnuplot_1a2426c9fb055e1c69503166958602e2de" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>defaultSize</name></member>
+      <member refid="classJSL_1_1gnuplot_1a200e2b9b95ccd38d4f8e019c594b318f" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>DirName</name></member>
+      <member refid="classJSL_1_1gnuplot_1a4c5db7bfe99161369b4c2d31ad4d7ece" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>font</name></member>
+      <member refid="classJSL_1_1gnuplot_1abc845a03e444f2f39bfbfbb3c9a45573" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>globalFontSize</name></member>
+      <member refid="classJSL_1_1gnuplot_1aafcfb0c9032e7f0cfeddcc3baf2cc21f" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>gnuplot</name></member>
+      <member refid="classJSL_1_1gnuplot_1a275c33fa2dc4fce5a8af1f8d2ec7562d" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>InitialiseOutput</name></member>
+      <member refid="classJSL_1_1gnuplot_1af0ace47c0e36ef49cae6592a8a841926" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>operator[]</name></member>
+      <member refid="classJSL_1_1gnuplot_1a631da60df3e3fb00e2d01c87be4da930" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>output</name></member>
+      <member refid="classJSL_1_1gnuplot_1ad7759efccfffa13d51620a3a695823ea" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>Plot</name></member>
+      <member refid="classJSL_1_1gnuplot_1aff8f871df4ddbbbf519572dd1f717588" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>Plot</name></member>
+      <member refid="classJSL_1_1gnuplot_1a90306a67b5b8d990cbcb13b3f6f6eaa3" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>Scatter</name></member>
+      <member refid="classJSL_1_1gnuplot_1adfd19ba6419d0c23d18dbeb4f6302f59" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>Scatter</name></member>
+      <member refid="classJSL_1_1gnuplot_1a036f04bf999e752754f96108bc83ec5e" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetAxis</name></member>
+      <member refid="classJSL_1_1gnuplot_1af5ba95fdc854b7de524431efe9793f0a" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetAxis</name></member>
+      <member refid="classJSL_1_1gnuplot_1aed7de1ddfe25a18ff4aafaa55ee62ce8" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetFont</name></member>
+      <member refid="classJSL_1_1gnuplot_1a8ccee4ee28636d9b9494dba28d26b7d9" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetFontSize</name></member>
+      <member refid="classJSL_1_1gnuplot_1a270b6a2f344a1d102b4eddd8aa47a6e9" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetLegend</name></member>
+      <member refid="classJSL_1_1gnuplot_1aa1e759e1965581b7c4fe508d2bca7060" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetMultiplot</name></member>
+      <member refid="classJSL_1_1gnuplot_1a6a166e0499cea89f696db40cbc26d114" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetOutput</name></member>
+      <member refid="classJSL_1_1gnuplot_1a3b9f002e0c20b19611b29e459be3581d" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetSuperTitle</name></member>
+      <member refid="classJSL_1_1gnuplot_1a9a2f9350971fb144772b550a8be84073" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetSuperTitle</name></member>
+      <member refid="classJSL_1_1gnuplot_1ad29ef895e0251319e59198fe6d8ade6a" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetTerminal</name></member>
+      <member refid="classJSL_1_1gnuplot_1a929f817e0c0d2bf119a4aa06ef507289" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetTitle</name></member>
+      <member refid="classJSL_1_1gnuplot_1a8ece1d633a3978a6d2bcdacd43331b2f" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetTitle</name></member>
+      <member refid="classJSL_1_1gnuplot_1a80699eb05778c88b435ec62a5afe3a5d" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetXLabel</name></member>
+      <member refid="classJSL_1_1gnuplot_1aa4b92e98fe9231ed52d1f0c88c3cbd93" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetXLabel</name></member>
+      <member refid="classJSL_1_1gnuplot_1af2230b64696435194780c99e8107ac51" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetXLog</name></member>
+      <member refid="classJSL_1_1gnuplot_1a26eba111f5ff83b852eded604d23fbe2" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetXRange</name></member>
+      <member refid="classJSL_1_1gnuplot_1a741f78103dd76eaff9475351b7f49edd" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetYLabel</name></member>
+      <member refid="classJSL_1_1gnuplot_1a721199548950cfd60fb43d3ac3bc0fe1" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetYLabel</name></member>
+      <member refid="classJSL_1_1gnuplot_1a244f8e993705d7c79cbb37451db39632" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetYLog</name></member>
+      <member refid="classJSL_1_1gnuplot_1a39e8bdc9b9bb9e47e4acdd0b17ad5430" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>SetYRange</name></member>
+      <member refid="classJSL_1_1gnuplot_1a147fc21e6c9b48d823a16c738953d081" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>Show</name></member>
+      <member refid="classJSL_1_1gnuplot_1a16e01fe5ebc78d04cb9683d49c2aee91" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>superTitle</name></member>
+      <member refid="classJSL_1_1gnuplot_1a99581d61b67ad3f0537dca6b041942ba" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>superTitleFontSize</name></member>
+      <member refid="classJSL_1_1gnuplot_1aa091157be13eeb60c3193ad06aba9b6f" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>terminal</name></member>
+      <member refid="classJSL_1_1gnuplot_1aa0e38b8208be147845e6708b1aa46a04" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>windowHeight</name></member>
+      <member refid="classJSL_1_1gnuplot_1a6cebc934c85d8b6e39950218328f71e3" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>WindowSize</name></member>
+      <member refid="classJSL_1_1gnuplot_1abd2c1a49e45beb3ac554a58694965be2" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>windowWidth</name></member>
+      <member refid="classJSL_1_1gnuplot_1aa35fd7f6ebe1c18ea39d6cdbb12f8aa0" prot="private" virt="non-virtual"><scope>JSL::gnuplot</scope><name>WriteMultiplotToFile</name></member>
+      <member refid="classJSL_1_1gnuplot_1a1654a89612515dc3cd3c2a45c60dc733" prot="public" virt="non-virtual"><scope>JSL::gnuplot</scope><name>~gnuplot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

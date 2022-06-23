@@ -1,0 +1,56 @@
+\hypertarget{mkdir_8h_source}{}\doxysection{mkdir.\+h}
+\label{mkdir_8h_source}\index{/Users/jf20/Documents/JSL/FileIO/mkdir.h@{/Users/jf20/Documents/JSL/FileIO/mkdir.h}}
+\mbox{\hyperlink{mkdir_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <dirent.h>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{locationExists_8h}{locationExists.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     }
+\DoxyCodeLine{10     \textcolor{keyword}{struct }\mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdirReturn}}}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{13         \textcolor{keywordtype}{bool} \mbox{\hyperlink{structJSL_1_1mkdirReturn_a76abe5af61a20e13756f833b79782b7f}{Successful}};}
+\DoxyCodeLine{15         std::string \mbox{\hyperlink{structJSL_1_1mkdirReturn_a64650d2f4b3d2ca29de3a4dcfdadbd0e}{Message}};}
+\DoxyCodeLine{16     \};}
+\DoxyCodeLine{17     }
+\DoxyCodeLine{18     }
+\DoxyCodeLine{24     \mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdirReturn}} \textcolor{keyword}{inline} \mbox{\hyperlink{namespaceJSL_abf525d02b8c49f21ef7faa68b7571f93}{mkdir}}(std::string directory)}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         }
+\DoxyCodeLine{27         \mbox{\hyperlink{structJSL_1_1mkdirReturn}{mkdirReturn}} output;}
+\DoxyCodeLine{28         output.\mbox{\hyperlink{structJSL_1_1mkdirReturn_a76abe5af61a20e13756f833b79782b7f}{Successful}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{29         output.\mbox{\hyperlink{structJSL_1_1mkdirReturn_a64650d2f4b3d2ca29de3a4dcfdadbd0e}{Message}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{30         }
+\DoxyCodeLine{31         }
+\DoxyCodeLine{32         }
+\DoxyCodeLine{33         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}{JSL::locationExists}}(directory))}
+\DoxyCodeLine{34         \{}
+\DoxyCodeLine{35             output.\mbox{\hyperlink{structJSL_1_1mkdirReturn_a64650d2f4b3d2ca29de3a4dcfdadbd0e}{Message}} += \textcolor{stringliteral}{"{}\(\backslash\)tDirectory '"{}} + directory + \textcolor{stringliteral}{"{}' already exists. Request to mkdir ignored.\(\backslash\)n"{}};}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{38         \{}
+\DoxyCodeLine{39             output.\mbox{\hyperlink{structJSL_1_1mkdirReturn_a64650d2f4b3d2ca29de3a4dcfdadbd0e}{Message}} += \textcolor{stringliteral}{"{}Directory '"{}} + directory +\textcolor{stringliteral}{"{}'  does not exist. Constructing directory...\(\backslash\)n"{}};}
+\DoxyCodeLine{40             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{41             \{}
+\DoxyCodeLine{42                 std::string command = \textcolor{stringliteral}{"{}mkdir -\/p "{}};}
+\DoxyCodeLine{43                 command.append(directory);}
+\DoxyCodeLine{44                 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *commandChar = command.c\_str(); }
+\DoxyCodeLine{45                 \textcolor{keyword}{const} \textcolor{keywordtype}{int} dir\_err = system(commandChar);}
+\DoxyCodeLine{46             \}}
+\DoxyCodeLine{47             \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{48             \{}
+\DoxyCodeLine{49                 std::string error = \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n\(\backslash\)nERROR: A problem was encountered trying to create directory. Error message is as follows\(\backslash\)n"{}};}
+\DoxyCodeLine{50                 error = error + std::string(e.what());}
+\DoxyCodeLine{51                 output.\mbox{\hyperlink{structJSL_1_1mkdirReturn_a64650d2f4b3d2ca29de3a4dcfdadbd0e}{Message}} += error;}
+\DoxyCodeLine{52                 output.\mbox{\hyperlink{structJSL_1_1mkdirReturn_a76abe5af61a20e13756f833b79782b7f}{Successful}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{53             \}}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55         }
+\DoxyCodeLine{56         \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}

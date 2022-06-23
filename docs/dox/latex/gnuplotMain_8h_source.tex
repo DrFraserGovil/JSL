@@ -1,0 +1,249 @@
+\hypertarget{gnuplotMain_8h_source}{}\doxysection{gnuplot\+Main.\+h}
+\label{gnuplotMain_8h_source}\index{/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h@{/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h}}
+\mbox{\hyperlink{gnuplotMain_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{axis_8h}{axis.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../FileIO/FileIO.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}../System/System.h"{}}}
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1gnuplot}{gnuplot}}}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         \textcolor{keyword}{public}:}
+\DoxyCodeLine{11             \mbox{\hyperlink{classJSL_1_1gnuplot_aafcfb0c9032e7f0cfeddcc3baf2cc21f}{gnuplot}}()}
+\DoxyCodeLine{12             \{}
+\DoxyCodeLine{13                 \mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{DirName}} = \textcolor{stringliteral}{"{}gnuplot\_tmp"{}};}
+\DoxyCodeLine{14 \textcolor{preprocessor}{                \#ifdef JSL\_MULTIPLE\_GNUPLOT\_INSTANCE}}
+\DoxyCodeLine{15                     \mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{DirName}} += \textcolor{stringliteral}{"{}\_"{}} + std::to\_string(rand());}
+\DoxyCodeLine{16 \textcolor{preprocessor}{                \#endif}}
+\DoxyCodeLine{17                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}} = \{\{\mbox{\hyperlink{classJSL_1_1Axis}{Axis}}(\mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{DirName}})\}\};}
+\DoxyCodeLine{18                 \mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}} = 0;}
+\DoxyCodeLine{19                 \mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}} = 0;}
+\DoxyCodeLine{20                 \mbox{\hyperlink{namespaceJSL_abf525d02b8c49f21ef7faa68b7571f93}{mkdir}}(\mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{DirName}});}
+\DoxyCodeLine{21             \};}
+\DoxyCodeLine{22             \mbox{\hyperlink{classJSL_1_1gnuplot_a1654a89612515dc3cd3c2a45c60dc733}{\string~gnuplot}}()}
+\DoxyCodeLine{23             \{}
+\DoxyCodeLine{24                 \mbox{\hyperlink{classJSL_1_1gnuplot_a0601a115a1052a39a6621e42ec4d4f3e}{CleanupTempFiles}}();}
+\DoxyCodeLine{25             \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_aa1e759e1965581b7c4fe508d2bca7060}{SetMultiplot}}(\textcolor{keywordtype}{int} yCount, \textcolor{keywordtype}{int} xCount)}
+\DoxyCodeLine{28             \{}
+\DoxyCodeLine{29                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}} = std::vector<std::vector<Axis>>(yCount);}
+\DoxyCodeLine{30                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < yCount; ++i)}
+\DoxyCodeLine{31                 \{}
+\DoxyCodeLine{32                     \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[i] = std::vector<Axis>(xCount,\mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{DirName}});}
+\DoxyCodeLine{33                 \}}
+\DoxyCodeLine{34                 \mbox{\hyperlink{classJSL_1_1gnuplot_a666ddb205d0cb9c76813e2f8075c1b65}{axisCount}} = xCount * yCount;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36             \}}
+\DoxyCodeLine{37             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a036f04bf999e752754f96108bc83ec5e}{SetAxis}}(\textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} x)}
+\DoxyCodeLine{38             \{}
+\DoxyCodeLine{39                 \mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}} = x;}
+\DoxyCodeLine{40                 \mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}} = y;}
+\DoxyCodeLine{41             \};}
+\DoxyCodeLine{42             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_af5ba95fdc854b7de524431efe9793f0a}{SetAxis}}(\textcolor{keywordtype}{int} idx)}
+\DoxyCodeLine{43             \{}
+\DoxyCodeLine{44                 \mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}} = idx  / \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[0].size();}
+\DoxyCodeLine{45                 \mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}} = idx \% \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[0].size();    }
+\DoxyCodeLine{46             \};}
+\DoxyCodeLine{47             \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class }S, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{48             \mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}} \& \mbox{\hyperlink{classJSL_1_1gnuplot_ad7759efccfffa13d51620a3a695823ea}{Plot}}(\textcolor{keyword}{const} std::vector<T> \& x,\textcolor{keyword}{const} std::vector<S>  \& y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<Ts>}}... args)}
+\DoxyCodeLine{49             \{}
+\DoxyCodeLine{50                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].Plot(x,y,args...);          }
+\DoxyCodeLine{51             \};}
+\DoxyCodeLine{52             \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class }S,\textcolor{keyword}{typename}... Ts>\textcolor{comment}{//allows templating for non-\/vector objects which can nevertheless be successfully cast as vectors}}
+\DoxyCodeLine{53             \mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}} \& \mbox{\hyperlink{classJSL_1_1gnuplot_aff8f871df4ddbbbf519572dd1f717588}{Plot}}(\textcolor{keyword}{const} T \& x,\textcolor{keyword}{const} S  \& y, \mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<Ts>}}... args)}
+\DoxyCodeLine{54             \{}
+\DoxyCodeLine{55                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].Plot((std::vector<double>)x,(std::vector<double>)y, args...);           }
+\DoxyCodeLine{56             \};}
+\DoxyCodeLine{57             \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class }S, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{58             \mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}} \& \mbox{\hyperlink{classJSL_1_1gnuplot_a90306a67b5b8d990cbcb13b3f6f6eaa3}{Scatter}}(\textcolor{keyword}{const} std::vector<T> \& x,\textcolor{keyword}{const} std::vector<S>  \& y,\mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<Ts>}}... args)}
+\DoxyCodeLine{59             \{}
+\DoxyCodeLine{60                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].Scatter(x,y,args...);   }
+\DoxyCodeLine{61             \};}
+\DoxyCodeLine{62             \textcolor{keyword}{template}<\textcolor{keyword}{class }T, \textcolor{keyword}{class }S, \textcolor{keyword}{typename}... Ts>\textcolor{comment}{//allows templating for non-\/vector objects which can nevertheless be successfully cast as vectors}}
+\DoxyCodeLine{63             \mbox{\hyperlink{classJSL_1_1PlotData}{PlotData}} \& \mbox{\hyperlink{classJSL_1_1gnuplot_adfd19ba6419d0c23d18dbeb4f6302f59}{Scatter}}(\textcolor{keyword}{const} T \& x,\textcolor{keyword}{const} S  \& y,\mbox{\hyperlink{structJSL_1_1NameValuePair}{NameValuePair<Ts>}}... args)}
+\DoxyCodeLine{64             \{}
+\DoxyCodeLine{65                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].Scatter((std::vector<double>)x,(std::vector<double>)y,args...);         }
+\DoxyCodeLine{66             \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a147fc21e6c9b48d823a16c738953d081}{Show}}()}
+\DoxyCodeLine{69             \{}
+\DoxyCodeLine{70                 std::string gpFile = \mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{DirName}} + \textcolor{stringliteral}{"{}/"{}} + \textcolor{stringliteral}{"{}plotter.gp"{}};}
+\DoxyCodeLine{71                 \mbox{\hyperlink{classJSL_1_1gnuplot_a275c33fa2dc4fce5a8af1f8d2ec7562d}{InitialiseOutput}}(gpFile);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}.size() > 0 || \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[0].size() > 0)}
+\DoxyCodeLine{74                 \{}
+\DoxyCodeLine{75                     \mbox{\hyperlink{classJSL_1_1gnuplot_aa35fd7f6ebe1c18ea39d6cdbb12f8aa0}{WriteMultiplotToFile}}(gpFile);}
+\DoxyCodeLine{76                 \}}
+\DoxyCodeLine{77                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i =0; i < \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}.size(); ++i)}
+\DoxyCodeLine{78                 \{}
+\DoxyCodeLine{79                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[i].size(); ++j)}
+\DoxyCodeLine{80                     \{}
+\DoxyCodeLine{81                         \mbox{\hyperlink{namespaceJSL_a838b3a913896993bc008408d164ec19d}{writeStringToFile}}(gpFile,\mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[i][j].\mbox{\hyperlink{classJSL_1_1gnuplot_a147fc21e6c9b48d823a16c738953d081}{Show}}());}
+\DoxyCodeLine{82                     \}}
+\DoxyCodeLine{83                 \}}
+\DoxyCodeLine{84                 }
+\DoxyCodeLine{85                 \mbox{\hyperlink{namespaceJSL_a5cd4ed117decf1140104ad8566b589ac}{systemCall}}(\textcolor{stringliteral}{"{}gnuplot -\/p "{}} + gpFile);}
+\DoxyCodeLine{86             \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88             std::vector<Axis> \& \mbox{\hyperlink{classJSL_1_1gnuplot_af0ace47c0e36ef49cae6592a8a841926}{operator[]}}(\textcolor{keywordtype}{int} i)}
+\DoxyCodeLine{89             \{}
+\DoxyCodeLine{90                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[i];}
+\DoxyCodeLine{91             \};}
+\DoxyCodeLine{92             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a26eba111f5ff83b852eded604d23fbe2}{SetXRange}}(\textcolor{keywordtype}{double} min,\textcolor{keywordtype}{double} max)}
+\DoxyCodeLine{93             \{}
+\DoxyCodeLine{94                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetXRange(min,max);}
+\DoxyCodeLine{95             \}}
+\DoxyCodeLine{96             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a39e8bdc9b9bb9e47e4acdd0b17ad5430}{SetYRange}}(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max)}
+\DoxyCodeLine{97             \{}
+\DoxyCodeLine{98                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetYRange(min,max);}
+\DoxyCodeLine{99             \}}
+\DoxyCodeLine{100             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_af2230b64696435194780c99e8107ac51}{SetXLog}}(\textcolor{keywordtype}{bool} val)}
+\DoxyCodeLine{101             \{}
+\DoxyCodeLine{102                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetXLog(val);}
+\DoxyCodeLine{103             \}}
+\DoxyCodeLine{104             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a244f8e993705d7c79cbb37451db39632}{SetYLog}}(\textcolor{keywordtype}{bool} val)}
+\DoxyCodeLine{105             \{}
+\DoxyCodeLine{106                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetYLog(val);}
+\DoxyCodeLine{107             \}}
+\DoxyCodeLine{108             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a80699eb05778c88b435ec62a5afe3a5d}{SetXLabel}}(std::string xl)}
+\DoxyCodeLine{109             \{}
+\DoxyCodeLine{110                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetXLabel(xl);}
+\DoxyCodeLine{111             \}}
+\DoxyCodeLine{112             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a741f78103dd76eaff9475351b7f49edd}{SetYLabel}}(std::string yl)}
+\DoxyCodeLine{113             \{}
+\DoxyCodeLine{114                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetYLabel(yl);}
+\DoxyCodeLine{115             \}}
+\DoxyCodeLine{116             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_aa4b92e98fe9231ed52d1f0c88c3cbd93}{SetXLabel}}(std::string xl,\textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{117             \{}
+\DoxyCodeLine{118                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetXLabel(xl, size);}
+\DoxyCodeLine{119             \}}
+\DoxyCodeLine{120             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a721199548950cfd60fb43d3ac3bc0fe1}{SetYLabel}}(std::string yl, \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{121             \{}
+\DoxyCodeLine{122                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetYLabel(yl,size);}
+\DoxyCodeLine{123             \}}
+\DoxyCodeLine{124             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a270b6a2f344a1d102b4eddd8aa47a6e9}{SetLegend}}(\textcolor{keywordtype}{bool} state)}
+\DoxyCodeLine{125             \{}
+\DoxyCodeLine{126                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetLegend(state);}
+\DoxyCodeLine{127             \}}
+\DoxyCodeLine{128             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a6cebc934c85d8b6e39950218328f71e3}{WindowSize}}(\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height)}
+\DoxyCodeLine{129             \{}
+\DoxyCodeLine{130                 \mbox{\hyperlink{classJSL_1_1gnuplot_a2426c9fb055e1c69503166958602e2de}{defaultSize}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{131                 \mbox{\hyperlink{classJSL_1_1gnuplot_abd2c1a49e45beb3ac554a58694965be2}{windowWidth}} = width;}
+\DoxyCodeLine{132                 \mbox{\hyperlink{classJSL_1_1gnuplot_aa0e38b8208be147845e6708b1aa46a04}{windowHeight}} = height;}
+\DoxyCodeLine{133             \}}
+\DoxyCodeLine{134             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a929f817e0c0d2bf119a4aa06ef507289}{SetTitle}}(std::string tit)}
+\DoxyCodeLine{135             \{}
+\DoxyCodeLine{136                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetTitle(tit);}
+\DoxyCodeLine{137             \}}
+\DoxyCodeLine{138             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a8ece1d633a3978a6d2bcdacd43331b2f}{SetTitle}}(std::string tit, \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{139             \{}
+\DoxyCodeLine{140                 \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetTitle(tit, size);}
+\DoxyCodeLine{141             \}}
+\DoxyCodeLine{142             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a3b9f002e0c20b19611b29e459be3581d}{SetSuperTitle}}(std::string tit)}
+\DoxyCodeLine{143             \{}
+\DoxyCodeLine{144                 \mbox{\hyperlink{classJSL_1_1gnuplot_a16e01fe5ebc78d04cb9683d49c2aee91}{superTitle}} = tit;}
+\DoxyCodeLine{145             \}}
+\DoxyCodeLine{146             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a9a2f9350971fb144772b550a8be84073}{SetSuperTitle}}(std::string tit, \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{147             \{}
+\DoxyCodeLine{148                 \mbox{\hyperlink{classJSL_1_1gnuplot_a16e01fe5ebc78d04cb9683d49c2aee91}{superTitle}} = tit;}
+\DoxyCodeLine{149                 \mbox{\hyperlink{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}{superTitleFontSize}} = size;}
+\DoxyCodeLine{150             \}}
+\DoxyCodeLine{151             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_ad29ef895e0251319e59198fe6d8ade6a}{SetTerminal}}(std::string t)}
+\DoxyCodeLine{152             \{}
+\DoxyCodeLine{153                 \mbox{\hyperlink{classJSL_1_1gnuplot_aa091157be13eeb60c3193ad06aba9b6f}{terminal}} = t;}
+\DoxyCodeLine{154             \}}
+\DoxyCodeLine{155             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a6a166e0499cea89f696db40cbc26d114}{SetOutput}}(std::string out)}
+\DoxyCodeLine{156             \{}
+\DoxyCodeLine{157                 \mbox{\hyperlink{classJSL_1_1gnuplot_a631da60df3e3fb00e2d01c87be4da930}{output}} = out;}
+\DoxyCodeLine{158             \}}
+\DoxyCodeLine{159             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_aed7de1ddfe25a18ff4aafaa55ee62ce8}{SetFont}}(std::string f)}
+\DoxyCodeLine{160             \{}
+\DoxyCodeLine{161                 \mbox{\hyperlink{classJSL_1_1gnuplot_a4c5db7bfe99161369b4c2d31ad4d7ece}{font}} = f;}
+\DoxyCodeLine{162             \}}
+\DoxyCodeLine{163             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a8ccee4ee28636d9b9494dba28d26b7d9}{SetFontSize}}(\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{Fonts::Target}} target, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{164             \{}
+\DoxyCodeLine{165                 \textcolor{keywordflow}{switch} (target)}
+\DoxyCodeLine{166                 \{}
+\DoxyCodeLine{167                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eead0545c4e33d28a3450f2d7fda228303e}{Fonts::Global}}:}
+\DoxyCodeLine{168                     \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{globalFontSize}} = size;}
+\DoxyCodeLine{169                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{170                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eeacdacd74f88fa721134ee5813ca56b0e3}{Fonts::Title}}: \textcolor{comment}{//guard against title being used in single tile mode?}}
+\DoxyCodeLine{171                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1gnuplot_a666ddb205d0cb9c76813e2f8075c1b65}{axisCount}} == 1 \&\& \mbox{\hyperlink{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}{superTitleFontSize}} < 0)}
+\DoxyCodeLine{172                     \{}
+\DoxyCodeLine{173                         \mbox{\hyperlink{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}{superTitleFontSize}} = size;}
+\DoxyCodeLine{174                     \}}
+\DoxyCodeLine{175                     \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetFontSize(target,size);}
+\DoxyCodeLine{176                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{177                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eea43877ae65c82a120f36e34052714b182}{Fonts::SuperTitle}}:}
+\DoxyCodeLine{178                     \mbox{\hyperlink{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}{superTitleFontSize}} = size;}
+\DoxyCodeLine{179                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{180                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{181                     \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[\mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}}][\mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}}].SetFontSize(target,size);}
+\DoxyCodeLine{182                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{183                 \}}
+\DoxyCodeLine{184             \}}
+\DoxyCodeLine{185         \textcolor{keyword}{private}:}
+\DoxyCodeLine{186             std::string \mbox{\hyperlink{classJSL_1_1gnuplot_a16e01fe5ebc78d04cb9683d49c2aee91}{superTitle}} = \textcolor{stringliteral}{"{}\_\_null\_\_"{}};}
+\DoxyCodeLine{187             std::vector<std::vector<Axis>> \mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}};}
+\DoxyCodeLine{188             std::string \mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{DirName}};}
+\DoxyCodeLine{189             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1gnuplot_a102660ecaaece0b2b35e311b530e8b73}{axis\_x}};}
+\DoxyCodeLine{190             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1gnuplot_acf4f664ab476e047cdbf7f6dd1bfa74e}{axis\_y}};}
+\DoxyCodeLine{191             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1gnuplot_a666ddb205d0cb9c76813e2f8075c1b65}{axisCount}} = 1;}
+\DoxyCodeLine{192             std::string \mbox{\hyperlink{classJSL_1_1gnuplot_aa091157be13eeb60c3193ad06aba9b6f}{terminal}} = \textcolor{stringliteral}{"{}qt"{}};}
+\DoxyCodeLine{193             std::string \mbox{\hyperlink{classJSL_1_1gnuplot_a631da60df3e3fb00e2d01c87be4da930}{output}} = \textcolor{stringliteral}{"{}\_\_null\_\_"{}};}
+\DoxyCodeLine{194             std::string \mbox{\hyperlink{classJSL_1_1gnuplot_a4c5db7bfe99161369b4c2d31ad4d7ece}{font}} = \textcolor{stringliteral}{"{}Geneva"{}};}
+\DoxyCodeLine{195             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{globalFontSize}} = 14;}
+\DoxyCodeLine{196             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}{superTitleFontSize}} = -\/1;}
+\DoxyCodeLine{197             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1gnuplot_a2426c9fb055e1c69503166958602e2de}{defaultSize}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{198             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1gnuplot_abd2c1a49e45beb3ac554a58694965be2}{windowWidth}};}
+\DoxyCodeLine{199             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1gnuplot_aa0e38b8208be147845e6708b1aa46a04}{windowHeight}};}
+\DoxyCodeLine{200             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a0601a115a1052a39a6621e42ec4d4f3e}{CleanupTempFiles}}()}
+\DoxyCodeLine{201             \{}
+\DoxyCodeLine{202 \textcolor{preprocessor}{                \#ifndef GNUPLOT\_NO\_TIDY}}
+\DoxyCodeLine{203                     \mbox{\hyperlink{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}{rm}}(\mbox{\hyperlink{classJSL_1_1gnuplot_a200e2b9b95ccd38d4f8e019c594b318f}{DirName}},\textcolor{keyword}{true});}
+\DoxyCodeLine{204 \textcolor{preprocessor}{                \#endif}}
+\DoxyCodeLine{205             \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_a275c33fa2dc4fce5a8af1f8d2ec7562d}{InitialiseOutput}}(std::string outName)}
+\DoxyCodeLine{208             \{}
+\DoxyCodeLine{209                 \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{initialiseFile}}(outName);}
+\DoxyCodeLine{210                 std::string introMessage = \textcolor{stringliteral}{"{}\#This is a temporary gnuplot script constructed by the JSL::gnuplot library\(\backslash\)n\#It should delete itself after being called. If it has not, then an error has occured. \(\backslash\)n\#You may delete this file and the directory containing it without problem.\(\backslash\)n"{}};}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212                 introMessage += \textcolor{stringliteral}{"{}set terminal "{}} + \mbox{\hyperlink{classJSL_1_1gnuplot_aa091157be13eeb60c3193ad06aba9b6f}{terminal}};}
+\DoxyCodeLine{213                 introMessage += \textcolor{stringliteral}{"{} font \(\backslash\)"{}"{}} + \mbox{\hyperlink{classJSL_1_1gnuplot_a4c5db7bfe99161369b4c2d31ad4d7ece}{font}}  + \textcolor{stringliteral}{"{},"{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1gnuplot_abc845a03e444f2f39bfbfbb3c9a45573}{globalFontSize}}) +\textcolor{stringliteral}{"{}\(\backslash\)"{}"{}}; \textcolor{comment}{//needed because mac hates me}}
+\DoxyCodeLine{214                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classJSL_1_1gnuplot_a2426c9fb055e1c69503166958602e2de}{defaultSize}})}
+\DoxyCodeLine{215                 \{}
+\DoxyCodeLine{216                     introMessage += \textcolor{stringliteral}{"{} size "{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1gnuplot_abd2c1a49e45beb3ac554a58694965be2}{windowWidth}}) + \textcolor{stringliteral}{"{},"{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1gnuplot_aa0e38b8208be147845e6708b1aa46a04}{windowHeight}}) + \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{217                 \}}
+\DoxyCodeLine{218                 introMessage += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{219                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1gnuplot_a631da60df3e3fb00e2d01c87be4da930}{output}} != \textcolor{stringliteral}{"{}\_\_null\_\_"{}})}
+\DoxyCodeLine{220                 \{}
+\DoxyCodeLine{221                     introMessage += \textcolor{stringliteral}{"{}set output \(\backslash\)"{}"{}} + \mbox{\hyperlink{classJSL_1_1gnuplot_a631da60df3e3fb00e2d01c87be4da930}{output}} + \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{222                 \}}
+\DoxyCodeLine{223                 }
+\DoxyCodeLine{224                 }
+\DoxyCodeLine{225                 \textcolor{comment}{// introMessage += "{}set terminal cairo\(\backslash\)n"{};}}
+\DoxyCodeLine{226                 \mbox{\hyperlink{namespaceJSL_a838b3a913896993bc008408d164ec19d}{writeStringToFile}}(outName,introMessage);               }
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228             \}}
+\DoxyCodeLine{229             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1gnuplot_aa35fd7f6ebe1c18ea39d6cdbb12f8aa0}{WriteMultiplotToFile}}(std::string gpFile)}
+\DoxyCodeLine{230             \{}
+\DoxyCodeLine{231                 std::string multiplotInfo = \textcolor{stringliteral}{"{}\(\backslash\)nset multiplot layout "{}};}
+\DoxyCodeLine{232                 multiplotInfo += std::to\_string(\mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}.size()) + \textcolor{stringliteral}{"{},"{}} + std::to\_string(\mbox{\hyperlink{classJSL_1_1gnuplot_ae989349518a66a36b8003506b7af48ea}{Axes}}[0].size());}
+\DoxyCodeLine{233                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1gnuplot_a16e01fe5ebc78d04cb9683d49c2aee91}{superTitle}} != \textcolor{stringliteral}{"{}\_\_null\_\_"{}})}
+\DoxyCodeLine{234                 \{}
+\DoxyCodeLine{235                     multiplotInfo += \textcolor{stringliteral}{"{} title \(\backslash\)"{}"{}} + \mbox{\hyperlink{classJSL_1_1gnuplot_a16e01fe5ebc78d04cb9683d49c2aee91}{superTitle}} + \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}} + \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{Fonts::SizeString}}(\mbox{\hyperlink{classJSL_1_1gnuplot_a99581d61b67ad3f0537dca6b041942ba}{superTitleFontSize}});}
+\DoxyCodeLine{236                     multiplotInfo += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{237                 \}}
+\DoxyCodeLine{238                 \textcolor{comment}{// multiplotInfo += "{}\(\backslash\)\(\backslash\)\(\backslash\)n"{};}}
+\DoxyCodeLine{239                 \textcolor{comment}{// multiplotInfo += "{}\(\backslash\)tmargins 0.1,0.98,0.1,0.98 \(\backslash\)\(\backslash\)\(\backslash\)n\(\backslash\)t spacing 0.08,0.08\(\backslash\)n\(\backslash\)n"{};}}
+\DoxyCodeLine{240                 \mbox{\hyperlink{namespaceJSL_a838b3a913896993bc008408d164ec19d}{writeStringToFile}}(gpFile,multiplotInfo);}
+\DoxyCodeLine{241             \}}
+\DoxyCodeLine{242     \};}
+\DoxyCodeLine{243 \}}
+
+\end{DoxyCode}

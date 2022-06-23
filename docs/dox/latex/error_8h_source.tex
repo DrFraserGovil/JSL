@@ -1,0 +1,30 @@
+\hypertarget{error_8h_source}{}\doxysection{error.\+h}
+\label{error_8h_source}\index{/Users/jf20/Documents/JSL/System/error.h@{/Users/jf20/Documents/JSL/System/error.h}}
+\mbox{\hyperlink{error_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     }
+\DoxyCodeLine{10     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{ErrorCode}} \{\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSLError}}, \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30}{SystemError}}, \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702}{OverrunError}}, \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443}{FailedAssertion}},\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{IOError}}\};}
+\DoxyCodeLine{11     \textcolor{keyword}{const} std::vector<std::string> \mbox{\hyperlink{namespaceJSL_a606f5a286ccd4cf3d860d2efde2eac82}{ErrorNames}} = \{\textcolor{stringliteral}{"{}ERROR"{}}, \textcolor{stringliteral}{"{}SYSTEM ERROR"{}}, \textcolor{stringliteral}{"{}OVERRUN ERROR"{}}, \textcolor{stringliteral}{"{}FAILED ASSERTION"{}},\textcolor{stringliteral}{"{}IOError"{}}\};}
+\DoxyCodeLine{12     }
+\DoxyCodeLine{17     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{ErrorCode}} code, \textcolor{keyword}{const} std::string \& message)}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         std::string newmessage = \textcolor{stringliteral}{"{}\(\backslash\)nJSL "{}} + \mbox{\hyperlink{namespaceJSL_a606f5a286ccd4cf3d860d2efde2eac82}{ErrorNames}}[code] + \textcolor{stringliteral}{"{}: "{}} + message + \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{20         \textcolor{keywordflow}{throw} std::runtime\_error(newmessage);}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\textcolor{keyword}{const} std::string \& message)}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSLError}},message);}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}

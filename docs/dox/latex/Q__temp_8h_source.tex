@@ -1,0 +1,202 @@
+\hypertarget{Q__temp_8h_source}{}\doxysection{Q\+\_\+temp.\+h}
+\label{Q__temp_8h_source}\index{/Users/jf20/Documents/JSL/Maths/Q\_temp.h@{/Users/jf20/Documents/JSL/Maths/Q\_temp.h}}
+\mbox{\hyperlink{Q__temp_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{vector_8h}{vector.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix_8h}{matrix.h}}"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{comment}{//forward declarations for circularity}}
+\DoxyCodeLine{14     \textcolor{keyword}{class }Quaternion;}
+\DoxyCodeLine{15     }
+\DoxyCodeLine{16     }
+\DoxyCodeLine{17     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} : \textcolor{keyword}{public} \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}}}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \textcolor{keyword}{public}: }
+\DoxyCodeLine{20             }
+\DoxyCodeLine{21             \mbox{\hyperlink{classJSL_1_1Quaternion_a3bfe577832b38cdf2dbbb143c9487add}{Quaternion}}() : \mbox{\hyperlink{namespaceJSL}{JSL}}::\mbox{\hyperlink{classJSL_1_1Vector}{Vector}}(4) \{  \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23             \mbox{\hyperlink{classJSL_1_1Quaternion_ae31be96e94176f1e5278cfaeba39dedc}{Quaternion}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& scalar, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} \& vec) : \mbox{\hyperlink{namespaceJSL}{JSL}}::\mbox{\hyperlink{classJSL_1_1Vector}{Vector}}(4)}
+\DoxyCodeLine{24             \{}
+\DoxyCodeLine{25                 \textcolor{keywordflow}{if} (vec.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != 3)}
+\DoxyCodeLine{26                 \{}
+\DoxyCodeLine{27                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}ERROR in JSL::Quaternion: Quaternions(scalar,vector) initialisation only works if the vector has dimension 3"{}});}
+\DoxyCodeLine{28                 \}}
+\DoxyCodeLine{29                 \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[0] = scalar;}
+\DoxyCodeLine{30                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; ++i)}
+\DoxyCodeLine{31                 \{}
+\DoxyCodeLine{32                     \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[i+1] = vec[i];}
+\DoxyCodeLine{33                 \}}
+\DoxyCodeLine{34             \}}
+\DoxyCodeLine{35             \mbox{\hyperlink{classJSL_1_1Quaternion_ac0fa428adfcbc3db2eff9b5c86e7a075}{Quaternion}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& a,\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& b,\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& c,\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& d) : \mbox{\hyperlink{namespaceJSL}{JSL}}::\mbox{\hyperlink{classJSL_1_1Vector}{Vector}}(4)}
+\DoxyCodeLine{36             \{}
+\DoxyCodeLine{37                 \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[0] = a;}
+\DoxyCodeLine{38                 \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[1] = b;}
+\DoxyCodeLine{39                 \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[2] = c;}
+\DoxyCodeLine{40                 \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[3] = d;}
+\DoxyCodeLine{41             \} }
+\DoxyCodeLine{42             \mbox{\hyperlink{classJSL_1_1Quaternion_a6b71605f5fafada8e94bab1bf9af55bd}{Quaternion}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} \& vec4) : \mbox{\hyperlink{namespaceJSL}{JSL}}::\mbox{\hyperlink{classJSL_1_1Vector}{Vector}}(vec4)}
+\DoxyCodeLine{43             \{}
+\DoxyCodeLine{44                 \textcolor{keywordflow}{if} (vec4.\mbox{\hyperlink{classJSL_1_1Vector_a53b26ca32061ebf41430fe2322f79c0c}{Size}}() != 4)}
+\DoxyCodeLine{45                 \{}
+\DoxyCodeLine{46                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}ERROR in JSL::Quaternion: Quaternions(Vector) initialisation only works if the vector has dimension 4"{}});}
+\DoxyCodeLine{47                 \}}
+\DoxyCodeLine{48             \}}
+\DoxyCodeLine{49             \mbox{\hyperlink{classJSL_1_1Quaternion_a738b4fb82caf2a0334818ac4e6c494de}{Quaternion}}(\textcolor{keyword}{const} std::vector<double> \& vec4) : \mbox{\hyperlink{namespaceJSL}{JSL}}::\mbox{\hyperlink{classJSL_1_1Vector}{Vector}}(vec4)}
+\DoxyCodeLine{50             \{}
+\DoxyCodeLine{51                 \textcolor{keywordflow}{if} (vec4.size() != 4)}
+\DoxyCodeLine{52                 \{}
+\DoxyCodeLine{53                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}ERROR in JSL::Quaternion: Quaternions(Vector) initialisation only works if the vector has dimension 4"{}});}
+\DoxyCodeLine{54                 \}}
+\DoxyCodeLine{55             \}}
+\DoxyCodeLine{56             }
+\DoxyCodeLine{57             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classJSL_1_1Quaternion_adf0c22bf67a2ab873b998b34583de2e0}{One}}()}
+\DoxyCodeLine{58             \{}
+\DoxyCodeLine{59                 \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} q;}
+\DoxyCodeLine{60                 q[0] = 1;}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{return} q;}
+\DoxyCodeLine{62             \}}
+\DoxyCodeLine{63             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classJSL_1_1Quaternion_a63e84edb5230efc8378d86b5d182221d}{Zero}}()}
+\DoxyCodeLine{64             \{}
+\DoxyCodeLine{65                 \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} q;}
+\DoxyCodeLine{66                 \textcolor{keywordflow}{return} q;}
+\DoxyCodeLine{67             \}}
+\DoxyCodeLine{68             \textcolor{keyword}{static} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classJSL_1_1Quaternion_a8d47df19d5d74b82a8e348391e8ef8c4}{Random}}()}
+\DoxyCodeLine{69             \{}
+\DoxyCodeLine{70                 \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} q;}
+\DoxyCodeLine{71                 }
+\DoxyCodeLine{72                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 4; ++i)}
+\DoxyCodeLine{73                 \{}
+\DoxyCodeLine{74                     q[i] = (double)random() / RAND\_MAX;}
+\DoxyCodeLine{75                 \}}
+\DoxyCodeLine{76                 }
+\DoxyCodeLine{77                 \textcolor{keywordflow}{return} q;}
+\DoxyCodeLine{78             \}}
+\DoxyCodeLine{79             \textcolor{keywordtype}{double} \& \mbox{\hyperlink{classJSL_1_1Quaternion_a23653df5519ca5fdf8ac375e205a21f3}{Scalar}}()}
+\DoxyCodeLine{80             \{}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[0];}
+\DoxyCodeLine{82             \}}
+\DoxyCodeLine{83             \textcolor{keywordtype}{double} \& \mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{84             \{}
+\DoxyCodeLine{85                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[\textcolor{keywordtype}{id}+1];}
+\DoxyCodeLine{86             \}}
+\DoxyCodeLine{87             \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& \mbox{\hyperlink{classJSL_1_1Quaternion_abf935faf93b74e3fa4394982892f8c2e}{Scalar}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{88 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{89                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[0];}
+\DoxyCodeLine{90             \}}
+\DoxyCodeLine{91             \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& \mbox{\hyperlink{classJSL_1_1Quaternion_ac98d63f8c4b5c79baedc24a23b1e1e1f}{Vector}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})\textcolor{keyword}{ const}}
+\DoxyCodeLine{92 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{93                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[\textcolor{keywordtype}{id}+1];}
+\DoxyCodeLine{94             \}}
+\DoxyCodeLine{95             \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} \mbox{\hyperlink{classJSL_1_1Quaternion_a0255f2026ec4af9cff42d09d2309af01}{Vector}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{96 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{97                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}}(\{\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[1],\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[2],\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[3]\});}
+\DoxyCodeLine{98             \}}
+\DoxyCodeLine{99                 }
+\DoxyCodeLine{100             \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{classJSL_1_1Quaternion_a9bea717f4cd1b5d4e3bdb8eedfbaed2c}{Conjugate}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{101 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{102                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Quaternion_a3bfe577832b38cdf2dbbb143c9487add}{Quaternion}}(\mbox{\hyperlink{classJSL_1_1Quaternion_a23653df5519ca5fdf8ac375e205a21f3}{Scalar}}(), -\/1*\mbox{\hyperlink{classJSL_1_1Quaternion_a0255f2026ec4af9cff42d09d2309af01}{Vector}}());}
+\DoxyCodeLine{103             \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105             }
+\DoxyCodeLine{106             \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} \mbox{\hyperlink{classJSL_1_1Quaternion_ada6a7067e13b60a65a6103f7508f62f3}{LeftMultiplicationMatrix}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{107 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{108                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M(4,4);}
+\DoxyCodeLine{109                 }
+\DoxyCodeLine{110                 M(0,0) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[0];}
+\DoxyCodeLine{111                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < 4; ++i)}
+\DoxyCodeLine{112                 \{}
+\DoxyCodeLine{113                     M(0,i) = -\/\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[i];}
+\DoxyCodeLine{114                     M(i,0) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[i];}
+\DoxyCodeLine{115                     M(i,i) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[0];}
+\DoxyCodeLine{116                 \}}
+\DoxyCodeLine{117                 }
+\DoxyCodeLine{118                 M(1,2) = -\/\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[3];}
+\DoxyCodeLine{119                 M(2,1) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[3];}
+\DoxyCodeLine{120                 M(1,3) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[2];}
+\DoxyCodeLine{121                 M(3,1) = -\/\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[2];}
+\DoxyCodeLine{122                 M(2,3) = -\/\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[1];}
+\DoxyCodeLine{123                 M(3,2) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[1];}
+\DoxyCodeLine{124                 }
+\DoxyCodeLine{125                 \textcolor{keywordflow}{return} M;}
+\DoxyCodeLine{126                 }
+\DoxyCodeLine{127             \}}
+\DoxyCodeLine{128             }
+\DoxyCodeLine{129             \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} \mbox{\hyperlink{classJSL_1_1Quaternion_a081b38fc741f2dc9d4f2b955acbed833}{RightMultiplicationMatrix}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{130 \textcolor{keyword}{            }\{}
+\DoxyCodeLine{131                 \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} M(4,4);}
+\DoxyCodeLine{132                 }
+\DoxyCodeLine{133                 M(0,0) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[0];}
+\DoxyCodeLine{134                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < 4; ++i)}
+\DoxyCodeLine{135                 \{}
+\DoxyCodeLine{136                     M(0,i) = -\/\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[i];}
+\DoxyCodeLine{137                     M(i,0) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[i];}
+\DoxyCodeLine{138                     M(i,i) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[0];}
+\DoxyCodeLine{139                 \}}
+\DoxyCodeLine{140                 }
+\DoxyCodeLine{141                 M(1,2) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[3];}
+\DoxyCodeLine{142                 M(2,1) = -\/\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[3];}
+\DoxyCodeLine{143                 M(1,3) = -\/\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[2];}
+\DoxyCodeLine{144                 M(3,1) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[2];}
+\DoxyCodeLine{145                 M(2,3) = \mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[1];}
+\DoxyCodeLine{146                 M(3,2) = -\/\mbox{\hyperlink{classJSL_1_1Vector_aec102ab8391080ddaedeb4605ef40c5c}{Data}}[1];}
+\DoxyCodeLine{147                 }
+\DoxyCodeLine{148                 \textcolor{keywordflow}{return} M;}
+\DoxyCodeLine{149                 }
+\DoxyCodeLine{150             \}}
+\DoxyCodeLine{151         \textcolor{keyword}{protected}:}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153         }
+\DoxyCodeLine{154             \textcolor{keyword}{using }JSL::Vector::operator[];}
+\DoxyCodeLine{155     \};}
+\DoxyCodeLine{156     }
+\DoxyCodeLine{157     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \& rhs)}
+\DoxyCodeLine{158     \{}
+\DoxyCodeLine{159         \textcolor{keywordtype}{double} scalar = lhs.\mbox{\hyperlink{classJSL_1_1Quaternion_a23653df5519ca5fdf8ac375e205a21f3}{Scalar}}() * rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_a23653df5519ca5fdf8ac375e205a21f3}{Scalar}}() -\/ lhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}().Dot(rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}());}
+\DoxyCodeLine{160         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} vec = lhs.\mbox{\hyperlink{classJSL_1_1Quaternion_a23653df5519ca5fdf8ac375e205a21f3}{Scalar}}() * rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}() + rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_a23653df5519ca5fdf8ac375e205a21f3}{Scalar}}() * lhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}() + lhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}().Cross(rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}());}
+\DoxyCodeLine{161         \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}}(scalar,vec);}
+\DoxyCodeLine{162     \}}
+\DoxyCodeLine{163     }
+\DoxyCodeLine{164     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{namespaceJSL_a95d670e99aed43f857d8ba5e6f3d7897}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Matrix}{JSL::Matrix}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \& rhs)}
+\DoxyCodeLine{165     \{}
+\DoxyCodeLine{166         \textcolor{comment}{//\string~ std::vector<double> vTemp = ;}}
+\DoxyCodeLine{167         \mbox{\hyperlink{classJSL_1_1Vector}{JSL::Vector}} v(\{rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_a23653df5519ca5fdf8ac375e205a21f3}{Scalar}}(),rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}(0),rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}(1),rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}(2)\});}
+\DoxyCodeLine{168         }
+\DoxyCodeLine{169         \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}}(lhs * v);}
+\DoxyCodeLine{170     \}}
+\DoxyCodeLine{171     }
+\DoxyCodeLine{172     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{namespaceJSL_ab1f3153179f59c59a0c2a5e553889eb1}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \& rhs)}
+\DoxyCodeLine{173     \{}
+\DoxyCodeLine{174         \textcolor{keywordtype}{double} N = rhs.\mbox{\hyperlink{classJSL_1_1Vector_aa8af717591f5548ff471b6e4b28d7f9c}{Norm}}();}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if} (N <= 0)}
+\DoxyCodeLine{176         \{}
+\DoxyCodeLine{177             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Quaternion division is not well defined when the norm is 0"{}});}
+\DoxyCodeLine{178         \}}
+\DoxyCodeLine{179         }
+\DoxyCodeLine{180         \textcolor{keywordflow}{return} 1.0/N * lhs * rhs.\mbox{\hyperlink{classJSL_1_1Quaternion_a9bea717f4cd1b5d4e3bdb8eedfbaed2c}{Conjugate}}();}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182     }
+\DoxyCodeLine{183     \textcolor{keyword}{inline} \mbox{\hyperlink{classJSL_1_1Quaternion}{Quaternion}} \mbox{\hyperlink{namespaceJSL_a943a21cab5e9abe4331b20d37cd3f8a1}{exp}}(\textcolor{keyword}{const} \mbox{\hyperlink{classJSL_1_1Quaternion}{JSL::Quaternion}} \& a)}
+\DoxyCodeLine{184     \{}
+\DoxyCodeLine{185         \textcolor{keywordtype}{double} sc = \mbox{\hyperlink{namespaceJSL_a943a21cab5e9abe4331b20d37cd3f8a1}{std::exp}}(a.\mbox{\hyperlink{classJSL_1_1Quaternion_a23653df5519ca5fdf8ac375e205a21f3}{Scalar}}());}
+\DoxyCodeLine{186         \textcolor{keywordtype}{double} theta = a.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}().Norm();}
+\DoxyCodeLine{187         \textcolor{keywordtype}{double} sinc = sin(theta)/theta;}
+\DoxyCodeLine{188         \textcolor{keywordflow}{if} (theta == 0)}
+\DoxyCodeLine{189         \{}
+\DoxyCodeLine{190             sinc = 1;}
+\DoxyCodeLine{191         \}}
+\DoxyCodeLine{192         \mbox{\hyperlink{classJSL_1_1Quaternion}{JSL::Quaternion}} base(cos(theta), sinc * a.\mbox{\hyperlink{classJSL_1_1Quaternion_abe767bf371a5344a3a8ad164ee2986c7}{Vector}}());}
+\DoxyCodeLine{193         \textcolor{keywordflow}{return} sc * base;}
+\DoxyCodeLine{194     \}}
+\DoxyCodeLine{195 \}}
+\DoxyCodeLine{196 }
+
+\end{DoxyCode}

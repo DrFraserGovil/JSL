@@ -1,27 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="LineReader_8h" kind="file" language="C++">
     <compoundname>LineReader.h</compoundname>
     <includes local="no">fstream</includes>
     <includes local="no">string</includes>
     <includes local="no">vector</includes>
     <includes refid="split_8h" local="yes">../Strings/split.h</includes>
-    <includedby refid="FileIO_8h" local="yes">/home/jack/Documents/Work/JSL/FileIO/FileIO.h</includedby>
+    <includes refid="System_8h" local="yes">../System/System.h</includes>
+    <includedby refid="FileIO_8h" local="yes">/Users/jf20/Documents/JSL/FileIO/FileIO.h</includedby>
     <incdepgraph>
-      <node id="3">
-        <label>string</label>
-      </node>
-      <node id="2">
-        <label>fstream</label>
-      </node>
-      <node id="4">
-        <label>vector</label>
-      </node>
-      <node id="6">
-        <label>sstream</label>
-      </node>
       <node id="1">
-        <label>/home/jack/Documents/Work/JSL/FileIO/LineReader.h</label>
+        <label>/Users/jf20/Documents/JSL/FileIO/LineReader.h</label>
         <link refid="LineReader_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -30,6 +19,8 @@
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -42,50 +33,119 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="7">
+        <label>../System/System.h</label>
+        <link refid="System_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>assert.h</label>
+        <link refid="assert_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>systemCall.h</label>
+        <link refid="systemCall_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fstream</label>
+      </node>
+      <node id="6">
+        <label>sstream</label>
+      </node>
+      <node id="9">
+        <label>stdexcept</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>/Users/jf20/Documents/JSL/CommandArgs/Argument.h</label>
+        <link refid="Argument_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/Users/jf20/Documents/JSL/CommandArgs/CommandArgs.h</label>
+        <link refid="CommandArgs_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
       <node id="2">
-        <label>/home/jack/Documents/Work/JSL/FileIO/FileIO.h</label>
+        <label>/Users/jf20/Documents/JSL/FileIO/FileIO.h</label>
         <link refid="FileIO_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-      </node>
-      <node id="5">
-        <label>/home/jack/Documents/Work/JSL/JSL.h</label>
-        <link refid="JSL_8h"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>/home/jack/Documents/Work/JSL/CommandArgs/Argument.h</label>
-        <link refid="Argument_8h"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="1">
-        <label>/home/jack/Documents/Work/JSL/FileIO/LineReader.h</label>
+        <label>/Users/jf20/Documents/JSL/FileIO/LineReader.h</label>
         <link refid="LineReader_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>/home/jack/Documents/Work/JSL/CommandArgs/CommandArgs.h</label>
-        <link refid="CommandArgs_8h"/>
-        <childnode refid="5" relation="include">
+      <node id="5">
+        <label>/Users/jf20/Documents/JSL/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="7">
+        <label>/Users/jf20/Documents/JSL/Testing/Testing.h</label>
+        <link refid="Testing_8h"/>
+      </node>
       <node id="6">
-        <label>/home/jack/Documents/Work/JSL/Testing/Testing_UnitTests.h</label>
+        <label>/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h</label>
         <link refid="Testing__UnitTests_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>/home/jack/Documents/Work/JSL/Testing/Testing.h</label>
-        <link refid="Testing_8h"/>
+      <node id="8">
+        <label>/Users/jf20/Documents/JSL/gnuplot/axis.h</label>
+        <link refid="axis_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/Users/jf20/Documents/JSL/gnuplot/gnuplot.h</label>
+        <link refid="gnuplot_8h"/>
         <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h</label>
+        <link refid="gnuplotMain_8h"/>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -100,8 +160,7 @@
 		std::ifstream macroFile(macroFileName);	\
 		if (!macroFile.is_open())	\
 		{							\
-			std::cout &lt;&lt; &quot;\n\nERROR: Could not find the file &apos;&quot; &lt;&lt; macroFileName &lt;&lt; &quot;.\n\nPlease provide a valid filepath.\n\n &quot; &lt;&lt; std::endl;	\
-			exit(1);				\
+			<ref refid="namespaceJSL_1a5783bc90550deca94c1790e581fb707d" kindref="member">JSL::Error</ref>(<ref refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" kindref="member">JSL::IOError</ref>,&quot;Could not find the file &apos;&quot; + macroFileName + &quot;.\n\nPlease provide a valid filepath.&quot;);\
 		}							\
 		std::string FILE_LINE;				\
 		while (getline(macroFile,FILE_LINE))	\
@@ -137,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/FileIO/LineReader.h" line="16" column="9" bodyfile="/home/jack/Documents/Work/JSL/FileIO/LineReader.h" bodystart="16" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/FileIO/LineReader.h" line="16" column="9" bodyfile="/Users/jf20/Documents/JSL/FileIO/LineReader.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="LineReader_8h_1abdfa973ea7dd7efb90a74e8ec636f5ed" prot="public" static="no">
         <name>forLineVectorIn</name>
@@ -146,14 +205,14 @@
         <param><defname>...</defname></param>
         <initializer>{								\
 	<ref refid="LineReader_8h_1a5480fba013891b2f3033cc97d5d8edf4" kindref="member">forLineIn</ref>(macroFileName,					\
-			std::vector&lt;std::string&gt; FILE_LINE_VECTOR = <ref refid="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" kindref="member">JSL::split</ref>(FILE_LINE,token);	\
+			std::vector&lt;std::string&gt; FILE_LINE_VECTOR = <ref refid="namespaceJSL_1aa37a5ffd99a34e2f12377c9f00b31c50" kindref="member">JSL::split</ref>(FILE_LINE,token);	\
 			__VA_ARGS__;				\
 	);									\
 }</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Iterates through the file line-by-line (until EOF), saving the current line to <computeroutput>std::string FILE_LINE</computeroutput>, and then tokenises it using <ref refid="namespaceJSL_1a34a7ba28084b304e97a707c653dce887" kindref="member">split()</ref>, based on the chosen delimiter, saving it to <computeroutput>std::vector&lt;std::string&gt;&gt; FILE_LINE_VECTOR</computeroutput> <parameterlist kind="param"><parameteritem>
+<para>Iterates through the file line-by-line (until EOF), saving the current line to <computeroutput>std::string FILE_LINE</computeroutput>, and then tokenises it using <ref refid="namespaceJSL_1aa37a5ffd99a34e2f12377c9f00b31c50" kindref="member">split()</ref>, based on the chosen delimiter, saving it to <computeroutput>std::vector&lt;std::string&gt;&gt; FILE_LINE_VECTOR</computeroutput> <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>macroFileName</parametername>
 </parameternamelist>
@@ -184,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/jack/Documents/Work/JSL/FileIO/LineReader.h" line="43" column="9" bodyfile="/home/jack/Documents/Work/JSL/FileIO/LineReader.h" bodystart="43" bodyend="-1"/>
+        <location file="/Users/jf20/Documents/JSL/FileIO/LineReader.h" line="42" column="9" bodyfile="/Users/jf20/Documents/JSL/FileIO/LineReader.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -199,36 +258,35 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Strings/split.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../System/System.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="LineReader_8h_1a5480fba013891b2f3033cc97d5d8edf4" refkind="member"><highlight class="preprocessor">#define<sp/>forLineIn(macroFileName,<sp/>...)\</highlight></codeline>
+<codeline lineno="16" refid="LineReader_8h_1a5480fba013891b2f3033cc97d5d8edf4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>forLineIn(macroFileName,<sp/>...)\</highlight></codeline>
 <codeline lineno="17"><highlight class="preprocessor">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="18"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="19"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ifstream<sp/>macroFile(macroFileName);<sp/>\</highlight></codeline>
 <codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(!macroFile.is_open())<sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\n\nERROR:<sp/>Could<sp/>not<sp/>find<sp/>the<sp/>file<sp/>&apos;&quot;<sp/>&lt;&lt;<sp/>macroFileName<sp/>&lt;&lt;<sp/>&quot;.\n\nPlease<sp/>provide<sp/>a<sp/>valid<sp/>filepath.\n\n<sp/>&quot;<sp/>&lt;&lt;<sp/>std::endl;<sp/><sp/>\</highlight></codeline>
-<codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="25"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>FILE_LINE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(getline(macroFile,FILE_LINE))<sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="31"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>macroFile.close();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>while(0);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="33"><highlight class="preprocessor">}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="LineReader_8h_1abdfa973ea7dd7efb90a74e8ec636f5ed" refkind="member"><highlight class="preprocessor">#define<sp/>forLineVectorIn(macroFileName,<sp/>token,...)\</highlight></codeline>
-<codeline lineno="44"><highlight class="preprocessor">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="45"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>forLineIn(macroFileName,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="46"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>FILE_LINE_VECTOR<sp/>=<sp/>JSL::split(FILE_LINE,token);<sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="47"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="48"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="49"><highlight class="preprocessor">}<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSL::Error(JSL::IOError,&quot;Could<sp/>not<sp/>find<sp/>the<sp/>file<sp/>&apos;&quot;</highlight><highlight class="normal"><sp/>+<sp/>macroFileName<sp/>+<sp/>&quot;.\n\nPlease<sp/>provide<sp/>a<sp/>valid<sp/>filepath.&quot;);\</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>FILE_LINE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(getline(macroFile,FILE_LINE))<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>macroFile.close();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>while(0);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="LineReader_8h_1abdfa973ea7dd7efb90a74e8ec636f5ed" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>forLineVectorIn(macroFileName,<sp/>token,...)\</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>forLineIn(macroFileName,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>FILE_LINE_VECTOR<sp/>=<sp/>JSL::split(FILE_LINE,token);<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor">}<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
     </programlisting>
-    <location file="/home/jack/Documents/Work/JSL/FileIO/LineReader.h"/>
+    <location file="/Users/jf20/Documents/JSL/FileIO/LineReader.h"/>
   </compounddef>
 </doxygen>

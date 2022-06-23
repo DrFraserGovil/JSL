@@ -1,0 +1,104 @@
+\hypertarget{UnitTest_8h_source}{}\doxysection{Unit\+Test.\+h}
+\label{UnitTest_8h_source}\index{/Users/jf20/Documents/JSL/Testing/UnitTest.h@{/Users/jf20/Documents/JSL/Testing/UnitTest.h}}
+\mbox{\hyperlink{UnitTest_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}string.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     }
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1UnitTest}{UnitTest}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13         \textcolor{keyword}{public}:}
+\DoxyCodeLine{15             std::string \mbox{\hyperlink{classJSL_1_1UnitTest_a53c19424147e72fa6392470627f15049}{Name}};}
+\DoxyCodeLine{16         }
+\DoxyCodeLine{18             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}};}
+\DoxyCodeLine{19             }
+\DoxyCodeLine{21             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1UnitTest_a54dc4908d757c7f523be12a4275e595c}{NonCriticalFailure}};}
+\DoxyCodeLine{22             }
+\DoxyCodeLine{24             std::vector<std::string> \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}};}
+\DoxyCodeLine{25             }
+\DoxyCodeLine{26             }
+\DoxyCodeLine{28             \mbox{\hyperlink{classJSL_1_1UnitTest_aa3bc8d5c99696d5bc6e63b8da358a0ed}{UnitTest}}()}
+\DoxyCodeLine{29             \{}
+\DoxyCodeLine{30                 \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{31                 \mbox{\hyperlink{classJSL_1_1UnitTest_a54dc4908d757c7f523be12a4275e595c}{NonCriticalFailure}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{32                 \mbox{\hyperlink{classJSL_1_1UnitTest_a53c19424147e72fa6392470627f15049}{Name}} = \textcolor{stringliteral}{"{}Unnamed"{}};}
+\DoxyCodeLine{33                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}} = \{\textcolor{stringliteral}{"{}Uninitialised testing procedure -\/-\/ this is not a well-\/formatted test"{}}\};}
+\DoxyCodeLine{34                 }
+\DoxyCodeLine{35             \}}
+\DoxyCodeLine{36             }
+\DoxyCodeLine{38             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1UnitTest_aa8369ab1ce2a537bff2ea7e1c8818490}{Run\_Test}}()}
+\DoxyCodeLine{39             \{}
+\DoxyCodeLine{40                 }
+\DoxyCodeLine{41             \}}
+\DoxyCodeLine{42             }
+\DoxyCodeLine{44             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1UnitTest_aabec19b081be8a428f12e4b5e3dc2a9c}{BufferedTest}}()}
+\DoxyCodeLine{45             \{}
+\DoxyCodeLine{46                 \textcolor{keywordflow}{try} }
+\DoxyCodeLine{47                 \{}
+\DoxyCodeLine{48                     \mbox{\hyperlink{classJSL_1_1UnitTest_aa8369ab1ce2a537bff2ea7e1c8818490}{Run\_Test}}();}
+\DoxyCodeLine{49                 \}}
+\DoxyCodeLine{50                 \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{51                 \{}
+\DoxyCodeLine{52                     \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{53                     \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}}.push\_back(\textcolor{stringliteral}{"{}An unhandled runtime error occured with message: \(\backslash\)n\(\backslash\)t"{}} + (std::string)e.what());}
+\DoxyCodeLine{54                 \}}
+\DoxyCodeLine{55             \}}
+\DoxyCodeLine{56             }
+\DoxyCodeLine{58             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1UnitTest_a39e1076dd985334ce21606ae2a383f70}{Results}}()}
+\DoxyCodeLine{59             \{}
+\DoxyCodeLine{60                 std::cout  << \textcolor{stringliteral}{"{}\(\backslash\)n"{}} << \mbox{\hyperlink{classJSL_1_1UnitTest_a53c19424147e72fa6392470627f15049}{Name}};}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}})}
+\DoxyCodeLine{62                 \{}
+\DoxyCodeLine{63                     std::cout << \textcolor{stringliteral}{"{} Test Sequence was successful. "{}} << std::endl;}
+\DoxyCodeLine{64                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} message : \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}})}
+\DoxyCodeLine{65                     \{}
+\DoxyCodeLine{66                         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)t"{}} << message << std::endl;}
+\DoxyCodeLine{67                     \}}
+\DoxyCodeLine{68                 \}}
+\DoxyCodeLine{69                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{70                 \{}
+\DoxyCodeLine{71                     std::cout << \textcolor{stringliteral}{"{} Test Sequence failed with error message:"{}}<< std::endl;}
+\DoxyCodeLine{72                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} message : \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}})}
+\DoxyCodeLine{73                     \{}
+\DoxyCodeLine{74                         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)t"{}} << message << std::endl;}
+\DoxyCodeLine{75                     \}}
+\DoxyCodeLine{76                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1UnitTest_a54dc4908d757c7f523be12a4275e595c}{NonCriticalFailure}})}
+\DoxyCodeLine{77                     \{}
+\DoxyCodeLine{78                         std::cout<< \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)tThis is a non-\/critical failure."{}};}
+\DoxyCodeLine{79                     \}}
+\DoxyCodeLine{80                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{81                     \{}
+\DoxyCodeLine{82                         std::cout <<\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)tThis is judged to be a critical failure. Immediate termination will ensue"{}} << std::endl;}
+\DoxyCodeLine{83                         exit(-\/1);}
+\DoxyCodeLine{84                     \}}
+\DoxyCodeLine{85                 \}}
+\DoxyCodeLine{86                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}};}
+\DoxyCodeLine{87             \}   }
+\DoxyCodeLine{88         \textcolor{keyword}{protected}:}
+\DoxyCodeLine{95             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(\textcolor{keywordtype}{bool} condition, std::string successmessage, std::string failuremessage)}
+\DoxyCodeLine{96             \{}
+\DoxyCodeLine{97                 \textcolor{keywordflow}{if} (condition)}
+\DoxyCodeLine{98                 \{}
+\DoxyCodeLine{99                     \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}}.push\_back(successmessage);}
+\DoxyCodeLine{100                 \}}
+\DoxyCodeLine{101                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{102                 \{}
+\DoxyCodeLine{103                     \mbox{\hyperlink{classJSL_1_1UnitTest_a3dcc71e7e8f72f0f07b8fc552b777ad8}{MessageBuffer}}.push\_back(\textcolor{stringliteral}{"{}ERROR: "{}} + failuremessage);}
+\DoxyCodeLine{104                     \mbox{\hyperlink{classJSL_1_1UnitTest_afac1f363a8406fad39316ee772a837a9}{Passed}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{105                 \}}
+\DoxyCodeLine{106             \}}
+\DoxyCodeLine{107             }
+\DoxyCodeLine{109             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1UnitTest_a53ede0c6b420eaf64faf752c0518340e}{basicConditionCheck}}(\textcolor{keywordtype}{bool} condition, std::string messageFramework)}
+\DoxyCodeLine{110             \{}
+\DoxyCodeLine{111                 std::string success = messageFramework + \textcolor{stringliteral}{"{} was successful"{}};}
+\DoxyCodeLine{112                 std::string failure = messageFramework + \textcolor{stringliteral}{"{} failed"{}};}
+\DoxyCodeLine{113                 \mbox{\hyperlink{classJSL_1_1UnitTest_a3629d1bca071da7a2af6b7de29be1430}{basicConditionCheck}}(condition,success,failure);}
+\DoxyCodeLine{114             \}}
+\DoxyCodeLine{115     \};}
+\DoxyCodeLine{116 \}}
+
+\end{DoxyCode}
