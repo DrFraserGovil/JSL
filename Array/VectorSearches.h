@@ -5,13 +5,13 @@
 
 namespace JSL
 {
-	//gets first id such that y[id] == x. If no such id exists, returns negative value
+	//!Gets first id such that y[id] == x,  assuming that exact equality is well defined (see double override). If no such id exists, returns negative value \param x The value to be searched for \param y The vector to search through  \returns The index of the first element in the array which matches x. Value is negative if no match found
 	template<class T>
 	inline int FindXInY(T x, const std::vector<T> & y)
 	{
 		for (int j = 0; j < y.size(); ++j)
 		{
-			if (abs((y[j] - x)/x) < 1e-6)
+			if (y[j] == x)
 			{
 				return j; 
 			}
@@ -19,13 +19,32 @@ namespace JSL
 		return -1;
 	};
 	
+	//!Gets first id such that (y[id]- x)/x < tolerance. If no such id exists, returns negative value. \param x The value to be searched for \param y The vector to search through \param tolerance The fractional difference permitted between two double values for them to be declared "approximately equal" \returns The index of the first element in the array which matches x. Value is negative if no match found
+	inline int FindXInY(double x, const std::vector<double> & y, double tolerance)
+	{
+		for (int j = 0; j < y.size(); ++j)
+		{
+			double diff = abs(x - y[i])/(1e-99 +x);
+			if (diff <= tolerance)
+			{
+				return j; 
+			}
+		}
+		return -1;
+	}
+
+	/*!
+		Returns the sorted index array associated with a vector -- not the sorted array itself \param v A vector of objects where the less than operator is defined \returns a sorted index-vector y such that v[y[0]] is the smallest value in the array, v[y[1]] is the next, and so on. 
+	*/
 	template <typename T>
 	inline  std::vector<size_t> SortIndices(const std::vector<T> &v) {
 	
 	  // initialize original index locations
 	  std::vector<size_t> idx(v.size());
-	  std::iota(idx.begin(), idx.end(), 0);
+	  std::iota(idx.begin(), idx.end(), 0); //iota is essentially C++'s range function
 	
+
+		//I think I grabbed this from stack overflow.....
 	  // sort indexes based on comparing values in v
 	  // using std::stable_sort instead of std::sort
 	  // to avoid unnecessary index re-orderings

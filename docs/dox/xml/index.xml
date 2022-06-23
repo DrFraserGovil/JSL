@@ -325,6 +325,7 @@
     <member refid="namespaceJSL_1a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4" kind="enumvalue"><name>IOError</name></member>
     <member refid="namespaceJSL_1a606f5a286ccd4cf3d860d2efde2eac82" kind="variable"><name>ErrorNames</name></member>
     <member refid="namespaceJSL_1a428e6ac7fa22e5c5aa3bceb9e17fe970" kind="function"><name>FindXInY</name></member>
+    <member refid="namespaceJSL_1ab806e537ccfdea16b7d194d77cdb307e" kind="function"><name>FindXInY</name></member>
     <member refid="namespaceJSL_1a1d104ebd2bbb9ec6eade1abbb59fa84e" kind="function"><name>SortIndices</name></member>
     <member refid="namespaceJSL_1a6e3dd386e7ab4be6fae6e0bdf8c98e91" kind="function"><name>UpperBoundLocator</name></member>
     <member refid="namespaceJSL_1a405f53748ca024b70694b0534cfcf4a3" kind="function"><name>jumpLineUp</name></member>

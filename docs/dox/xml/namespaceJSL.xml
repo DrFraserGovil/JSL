@@ -327,12 +327,88 @@
           <declname>y</declname>
         </param>
         <briefdescription>
+<para>Gets first id such that y[id] == x, assuming that exact equality is well defined (see double override). If no such id exists, returns negative value. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be searched for</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to search through </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the first element in the array which matches x. Value is negative if no match found </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/jf20/Documents/JSL/Array/VectorSearches.h" line="10" column="12" bodyfile="/Users/jf20/Documents/JSL/Array/VectorSearches.h" bodystart="10" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ab806e537ccfdea16b7d194d77cdb307e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int JSL::FindXInY</definition>
+        <argsstring>(double x, const std::vector&lt; double &gt; &amp;y, double tolerance)</argsstring>
+        <name>FindXInY</name>
+        <qualifiedname>JSL::FindXInY</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tolerance</declname>
+        </param>
+        <briefdescription>
+<para>Gets first id such that (y[id]- x)/x &lt; tolerance. If no such id exists, returns negative value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be searched for</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to search through</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fractional difference permitted between two double values for them to be declared &quot;approximately equal&quot; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the first element in the array which matches x. Value is negative if no match found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/Array/VectorSearches.h" line="23" column="12" bodyfile="/Users/jf20/Documents/JSL/Array/VectorSearches.h" bodystart="23" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a1d104ebd2bbb9ec6eade1abbb59fa84e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -352,10 +428,22 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Returns the sorted index array associated with a vector <ndash/> not the sorted array itself<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of objects where the less than operator is defined </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a sorted index-vector y such that v[y[0]] is the smallest value in the array, v[y[1]] is the next, and so on. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Array/VectorSearches.h" line="23" column="21" bodyfile="/Users/jf20/Documents/JSL/Array/VectorSearches.h" bodystart="23" bodyend="37"/>
+        <location file="/Users/jf20/Documents/JSL/Array/VectorSearches.h" line="40" column="21" bodyfile="/Users/jf20/Documents/JSL/Array/VectorSearches.h" bodystart="40" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a6e3dd386e7ab4be6fae6e0bdf8c98e91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -378,7 +466,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Array/VectorSearches.h" line="42" column="12" bodyfile="/Users/jf20/Documents/JSL/Array/VectorSearches.h" bodystart="42" bodyend="63"/>
+        <location file="/Users/jf20/Documents/JSL/Array/VectorSearches.h" line="61" column="12" bodyfile="/Users/jf20/Documents/JSL/Array/VectorSearches.h" bodystart="61" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a405f53748ca024b70694b0534cfcf4a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>

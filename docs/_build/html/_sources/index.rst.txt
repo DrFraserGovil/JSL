@@ -15,6 +15,7 @@ Even more likely, you are in fact me, reading this a year or two down the line w
 	docfiles/display/display
 	docfiles/files/file-handling
 	docfiles/maths/mathematics
+	docfiles/array/array
 	docfiles/gnuplot/gnuplot
 	docfiles/args/command-args
 	docfiles/strings/strings

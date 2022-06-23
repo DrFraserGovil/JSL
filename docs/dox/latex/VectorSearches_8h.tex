@@ -12,7 +12,9 @@ namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{namespaceJSL_a428e6ac7fa22e5c5aa3bceb9e17fe970}{JSL\+::\+Find\+XInY}} (T x, const std\+::vector$<$ T $>$ \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets first id such that y\mbox{[}id\mbox{]} == x, assuming that exact equality is well defined (see double override). If no such id exists, returns negative value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceJSL_ab806e537ccfdea16b7d194d77cdb307e}{JSL\+::\+Find\+XInY}} (double x, const std\+::vector$<$ double $>$ \&y, double tolerance)
+\begin{DoxyCompactList}\small\item\em Gets first id such that (y\mbox{[}id\mbox{]}-\/ x)/x \texorpdfstring{$<$}{<} tolerance. If no such id exists, returns negative value. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespaceJSL_a1d104ebd2bbb9ec6eade1abbb59fa84e}{JSL\+::\+Sort\+Indices}} (const std\+::vector$<$ T $>$ \&v)
 \item 
 int \mbox{\hyperlink{namespaceJSL_a6e3dd386e7ab4be6fae6e0bdf8c98e91}{JSL\+::\+Upper\+Bound\+Locator}} (double val, const std\+::vector$<$ double $>$ \&val\+Array)

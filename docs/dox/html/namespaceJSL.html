@@ -167,7 +167,11 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a428e6ac7fa22e5c5aa3bceb9e17fe970"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a428e6ac7fa22e5c5aa3bceb9e17fe970"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a428e6ac7fa22e5c5aa3bceb9e17fe970">FindXInY</a> (T x, const std::vector&lt; T &gt; &amp;y)</td></tr>
+<tr class="memdesc:a428e6ac7fa22e5c5aa3bceb9e17fe970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets first id such that y[id] == x, assuming that exact equality is well defined (see double override). If no such id exists, returns negative value.  <a href="namespaceJSL.html#a428e6ac7fa22e5c5aa3bceb9e17fe970">More...</a><br /></td></tr>
 <tr class="separator:a428e6ac7fa22e5c5aa3bceb9e17fe970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab806e537ccfdea16b7d194d77cdb307e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ab806e537ccfdea16b7d194d77cdb307e">FindXInY</a> (double x, const std::vector&lt; double &gt; &amp;y, double tolerance)</td></tr>
+<tr class="memdesc:ab806e537ccfdea16b7d194d77cdb307e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets first id such that (y[id]- x)/x &lt; tolerance. If no such id exists, returns negative value.  <a href="namespaceJSL.html#ab806e537ccfdea16b7d194d77cdb307e">More...</a><br /></td></tr>
+<tr class="separator:ab806e537ccfdea16b7d194d77cdb307e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d104ebd2bbb9ec6eade1abbb59fa84e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1d104ebd2bbb9ec6eade1abbb59fa84e"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a1d104ebd2bbb9ec6eade1abbb59fa84e">SortIndices</a> (const std::vector&lt; T &gt; &amp;v)</td></tr>
 <tr class="separator:a1d104ebd2bbb9ec6eade1abbb59fa84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -736,8 +740,61 @@ template&lt;typename... Ts&gt; </div>
 
 </div>
 </div>
+<a id="ab806e537ccfdea16b7d194d77cdb307e" name="ab806e537ccfdea16b7d194d77cdb307e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab806e537ccfdea16b7d194d77cdb307e">&#9670;&nbsp;</a></span>FindXInY() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JSL::FindXInY </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tolerance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets first id such that (y[id]- x)/x &lt; tolerance. If no such id exists, returns negative value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The value to be searched for</td></tr>
+    <tr><td class="paramname">y</td><td>The vector to search through</td></tr>
+    <tr><td class="paramname">tolerance</td><td>The fractional difference permitted between two double values for them to be declared "approximately equal" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the first element in the array which matches x. Value is negative if no match found </dd></dl>
+
+</div>
+</div>
 <a id="a428e6ac7fa22e5c5aa3bceb9e17fe970" name="a428e6ac7fa22e5c5aa3bceb9e17fe970"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a428e6ac7fa22e5c5aa3bceb9e17fe970">&#9670;&nbsp;</a></span>FindXInY()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a428e6ac7fa22e5c5aa3bceb9e17fe970">&#9670;&nbsp;</a></span>FindXInY() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -771,6 +828,16 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets first id such that y[id] == x, assuming that exact equality is well defined (see double override). If no such id exists, returns negative value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The value to be searched for</td></tr>
+    <tr><td class="paramname">y</td><td>The vector to search through </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the first element in the array which matches x. Value is negative if no match found </dd></dl>
 
 </div>
 </div>
@@ -2396,6 +2463,13 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Returns the sorted index array associated with a vector &ndash; not the sorted array itself</p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>A vector of objects where the less than operator is defined </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a sorted index-vector y such that v[y[0]] is the smallest value in the array, v[y[1]] is the next, and so on. </dd></dl>
 
 </div>
 </div>
