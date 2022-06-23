@@ -74,27 +74,26 @@ $(function() {
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceJSL.html">JSL</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">    6</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">jumpLineUp</a>()</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        printf(<span class="stringliteral">&quot;\033[F&quot;</span>);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed">   10</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed">clearScreen</a>()</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="comment">// std::cout &lt;&lt; &quot;\033[H\033[J&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        printf(<span class="stringliteral">&quot;\033[H\033[J&quot;</span>);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_function" href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">jumpLineUp</a>();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda">   16</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda">deleteLine</a>()</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        printf(<span class="stringliteral">&quot;\33[2K\r&quot;</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="comment">// std::cout &lt;&lt; std::flush;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">    7</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">jumpLineUp</a>()</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        printf(<span class="stringliteral">&quot;\033[F&quot;</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed">   12</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed">clearScreen</a>()</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="comment">// std::cout &lt;&lt; &quot;\033[H\033[J&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        printf(<span class="stringliteral">&quot;\033[H\033[J\033[F&quot;</span>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda">   18</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda">deleteLine</a>()</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        printf(<span class="stringliteral">&quot;\33[2K\r&quot;</span>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="comment">// std::cout &lt;&lt; std::flush;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 <div class="ttc" id="anamespaceJSL_html"><div class="ttname"><a href="namespaceJSL.html">JSL</a></div><div class="ttdef"><b>Definition:</b> VectorSearches.h:7</div></div>
-<div class="ttc" id="anamespaceJSL_html_a071b279ad5267ce66ff86c614952a3ed"><div class="ttname"><a href="namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed">JSL::clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdef"><b>Definition:</b> clearScreen.h:10</div></div>
-<div class="ttc" id="anamespaceJSL_html_a405f53748ca024b70694b0534cfcf4a3"><div class="ttname"><a href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">JSL::jumpLineUp</a></div><div class="ttdeci">void jumpLineUp()</div><div class="ttdef"><b>Definition:</b> clearScreen.h:6</div></div>
-<div class="ttc" id="anamespaceJSL_html_ae38780f94d60045b904b289eb3ab8eda"><div class="ttname"><a href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda">JSL::deleteLine</a></div><div class="ttdeci">void deleteLine()</div><div class="ttdef"><b>Definition:</b> clearScreen.h:16</div></div>
+<div class="ttc" id="anamespaceJSL_html_a071b279ad5267ce66ff86c614952a3ed"><div class="ttname"><a href="namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed">JSL::clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdoc">Equivalent to calling the &quot;clear&quot; command on the shell, removes all text on the terminal,...</div><div class="ttdef"><b>Definition:</b> clearScreen.h:12</div></div>
+<div class="ttc" id="anamespaceJSL_html_a405f53748ca024b70694b0534cfcf4a3"><div class="ttname"><a href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">JSL::jumpLineUp</a></div><div class="ttdeci">void jumpLineUp()</div><div class="ttdoc">Deletes the last linebreak character, jumping the cursor up one line.</div><div class="ttdef"><b>Definition:</b> clearScreen.h:7</div></div>
+<div class="ttc" id="anamespaceJSL_html_ae38780f94d60045b904b289eb3ab8eda"><div class="ttname"><a href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda">JSL::deleteLine</a></div><div class="ttdeci">void deleteLine()</div><div class="ttdoc">Removes the last line of text, moving the cursor from its current position, to the beginning of the l...</div><div class="ttdef"><b>Definition:</b> clearScreen.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

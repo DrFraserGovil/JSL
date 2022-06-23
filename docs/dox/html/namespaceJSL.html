@@ -175,10 +175,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6e3dd386e7ab4be6fae6e0bdf8c98e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to FindXInY except where you do not expect an exact match. Searches through an (assumed sorted) vector and locates the first value greater than or equal to the target value, else returns the index of the final value in the array.  <a href="namespaceJSL.html#a6e3dd386e7ab4be6fae6e0bdf8c98e91">More...</a><br /></td></tr>
 <tr class="separator:a6e3dd386e7ab4be6fae6e0bdf8c98e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a405f53748ca024b70694b0534cfcf4a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">jumpLineUp</a> ()</td></tr>
+<tr class="memdesc:a405f53748ca024b70694b0534cfcf4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the last linebreak character, jumping the cursor up one line.  <a href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3">More...</a><br /></td></tr>
 <tr class="separator:a405f53748ca024b70694b0534cfcf4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a071b279ad5267ce66ff86c614952a3ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed">clearScreen</a> ()</td></tr>
+<tr class="memdesc:a071b279ad5267ce66ff86c614952a3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to calling the "clear" command on the shell, removes all text on the terminal, and returns the cursor to the home position.  <a href="namespaceJSL.html#a071b279ad5267ce66ff86c614952a3ed">More...</a><br /></td></tr>
 <tr class="separator:a071b279ad5267ce66ff86c614952a3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae38780f94d60045b904b289eb3ab8eda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda">deleteLine</a> ()</td></tr>
+<tr class="memdesc:ae38780f94d60045b904b289eb3ab8eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the last line of text, moving the cursor from its current position, to the beginning of the line. If you want to remove the linebreak which caused that line to exist in the first place, must be followed up with <a class="el" href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3" title="Deletes the last linebreak character, jumping the cursor up one line.">jumpLineUp()</a>  <a href="namespaceJSL.html#ae38780f94d60045b904b289eb3ab8eda">More...</a><br /></td></tr>
 <tr class="separator:ae38780f94d60045b904b289eb3ab8eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47d8cb112d513ee5a3ae38ca6a89743d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a47d8cb112d513ee5a3ae38ca6a89743d">initialiseFile</a> (const std::string &amp;filename)</td></tr>
 <tr class="separator:a47d8cb112d513ee5a3ae38ca6a89743d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -540,6 +543,8 @@ template&lt;typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Equivalent to calling the "clear" command on the shell, removes all text on the terminal, and returns the cursor to the home position. </p>
+
 </div>
 </div>
 <a id="ae58b7096986a16b70a27e1609eff3014" name="ae58b7096986a16b70a27e1609eff3014"></a>
@@ -591,6 +596,8 @@ template&lt;typename... Ts&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Removes the last line of text, moving the cursor from its current position, to the beginning of the line. If you want to remove the linebreak which caused that line to exist in the first place, must be followed up with <a class="el" href="namespaceJSL.html#a405f53748ca024b70694b0534cfcf4a3" title="Deletes the last linebreak character, jumping the cursor up one line.">jumpLineUp()</a> </p>
 
 </div>
 </div>
@@ -970,6 +977,8 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Deletes the last linebreak character, jumping the cursor up one line. </p>
+
 </div>
 </div>
 <a id="a1752cd7c6e1134da51e9307527e0d788" name="a1752cd7c6e1134da51e9307527e0d788"></a>
@@ -995,7 +1004,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Checks for the existence of the provided file location &ndash; works on both files and directories. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Checks for the existence of the provided file location, works on both files and directories. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the file or directory to be checked </td></tr>
   </table>

@@ -387,12 +387,13 @@
         <name>jumpLineUp</name>
         <qualifiedname>JSL::jumpLineUp</qualifiedname>
         <briefdescription>
+<para>Deletes the last linebreak character, jumping the cursor up one line. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="6" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="6" bodyend="9"/>
+        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="7" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="7" bodyend="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a071b279ad5267ce66ff86c614952a3ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -401,12 +402,13 @@
         <name>clearScreen</name>
         <qualifiedname>JSL::clearScreen</qualifiedname>
         <briefdescription>
+<para>Equivalent to calling the &quot;clear&quot; command on the shell, removes all text on the terminal, and returns the cursor to the home position. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="10" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="10" bodyend="15"/>
+        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="12" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="12" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ae38780f94d60045b904b289eb3ab8eda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -415,12 +417,13 @@
         <name>deleteLine</name>
         <qualifiedname>JSL::deleteLine</qualifiedname>
         <briefdescription>
+<para>Removes the last line of text, moving the cursor from its current position, to the beginning of the line. If you want to remove the linebreak which caused that line to exist in the first place, must be followed up with <ref refid="namespaceJSL_1a405f53748ca024b70694b0534cfcf4a3" kindref="member">jumpLineUp()</ref> </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="16" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="16" bodyend="20"/>
+        <location file="/Users/jf20/Documents/JSL/Display/clearScreen.h" line="18" column="13" bodyfile="/Users/jf20/Documents/JSL/Display/clearScreen.h" bodystart="18" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1a47d8cb112d513ee5a3ae38ca6a89743d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -715,7 +718,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Checks for the existence of the provided file location <ndash/> works on both files and directories. <parameterlist kind="param"><parameteritem>
+<para>Checks for the existence of the provided file location, works on both files and directories. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>filename</parametername>
 </parameternamelist>

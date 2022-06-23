@@ -97,11 +97,11 @@ enum \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{Error\+Cod
 int \mbox{\hyperlink{namespaceJSL_a6e3dd386e7ab4be6fae6e0bdf8c98e91}{Upper\+Bound\+Locator}} (double val, const std\+::vector$<$ double $>$ \&val\+Array)
 \begin{DoxyCompactList}\small\item\em Similar to Find\+XInY except where you do not expect an exact match. Searches through an (assumed sorted) vector and locates the first value greater than or equal to the target value, else returns the index of the final value in the array. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceJSL_a405f53748ca024b70694b0534cfcf4a3}{jump\+Line\+Up}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Deletes the last linebreak character, jumping the cursor up one line. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceJSL_a071b279ad5267ce66ff86c614952a3ed}{clear\+Screen}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Equivalent to calling the \char`\"{}clear\char`\"{} command on the shell, removes all text on the terminal, and returns the cursor to the home position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceJSL_ae38780f94d60045b904b289eb3ab8eda}{delete\+Line}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Removes the last line of text, moving the cursor from its current position, to the beginning of the line. If you want to remove the linebreak which caused that line to exist in the first place, must be followed up with \mbox{\hyperlink{namespaceJSL_a405f53748ca024b70694b0534cfcf4a3}{jump\+Line\+Up()}} \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceJSL_a47d8cb112d513ee5a3ae38ca6a89743d}{initialise\+File}} (const std\+::string \&filename)
 \item 
 void \mbox{\hyperlink{namespaceJSL_a838b3a913896993bc008408d164ec19d}{write\+String\+To\+File}} (const std\+::string \&filename, const std\+::string \&content)
@@ -412,6 +412,10 @@ void JSL\+::\+Assert (\begin{DoxyParamCaption}\item[{std\+::string}]{assertion\+
 \doxysubsubsection{\texorpdfstring{clearScreen()}{clearScreen()}}
 {\footnotesize\ttfamily void JSL\+::clear\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Equivalent to calling the \char`\"{}clear\char`\"{} command on the shell, removes all text on the terminal, and returns the cursor to the home position. 
+
 \mbox{\Hypertarget{namespaceJSL_ae58b7096986a16b70a27e1609eff3014}\label{namespaceJSL_ae58b7096986a16b70a27e1609eff3014}} 
 \index{JSL@{JSL}!CurrentTime@{CurrentTime}}
 \index{CurrentTime@{CurrentTime}!JSL@{JSL}}
@@ -427,6 +431,10 @@ A string of the readable format ~\newline
 \index{deleteLine@{deleteLine}!JSL@{JSL}}
 \doxysubsubsection{\texorpdfstring{deleteLine()}{deleteLine()}}
 {\footnotesize\ttfamily void JSL\+::delete\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the last line of text, moving the cursor from its current position, to the beginning of the line. If you want to remove the linebreak which caused that line to exist in the first place, must be followed up with \mbox{\hyperlink{namespaceJSL_a405f53748ca024b70694b0534cfcf4a3}{jump\+Line\+Up()}} 
 
 \mbox{\Hypertarget{namespaceJSL_a941b0093a8d1298a0dc0c4403f63a826}\label{namespaceJSL_a941b0093a8d1298a0dc0c4403f63a826}} 
 \index{JSL@{JSL}!ElementWiseOperation@{ElementWiseOperation}}
@@ -543,13 +551,17 @@ Creates a blank file at the specified location, overwriting any other file at th
 \doxysubsubsection{\texorpdfstring{jumpLineUp()}{jumpLineUp()}}
 {\footnotesize\ttfamily void JSL\+::jump\+Line\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Deletes the last linebreak character, jumping the cursor up one line. 
+
 \mbox{\Hypertarget{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}\label{namespaceJSL_a1752cd7c6e1134da51e9307527e0d788}} 
 \index{JSL@{JSL}!locationExists@{locationExists}}
 \index{locationExists@{locationExists}!JSL@{JSL}}
 \doxysubsubsection{\texorpdfstring{locationExists()}{locationExists()}}
 {\footnotesize\ttfamily bool JSL\+::location\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Checks for the existence of the provided file location -- works on both files and directories. 
+Checks for the existence of the provided file location, works on both files and directories. 
 \begin{DoxyParams}{Parameters}
 {\em filename} & the name of the file or directory to be checked \\
 \hline

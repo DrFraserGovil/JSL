@@ -12,8 +12,9 @@ Even more likely, you are in fact me, reading this a year or two down the line w
 
 .. toctree::
 	docfiles/system/system
-	docfiles/maths/mathematics
 	docfiles/files/file-handling
+	docfiles/maths/mathematics
+	docfiles/gnuplot/gnuplot
 	docfiles/args/command-args
 	docfiles/strings/strings
 	:maxdepth: 2

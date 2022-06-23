@@ -8,6 +8,7 @@ The System section of the JSL library exposes a number of system calls -- typica
 
 
 .. toctree::
+	clear-screen
 	rm
 	:maxdepth: 2
 	:caption: Contents:
