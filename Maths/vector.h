@@ -480,4 +480,15 @@ namespace JSL
 		}
 		return out;
 	}
+
+
+	inline Vector pow(double base, Vector exponent)
+	{
+		Vector out(exponent.size());
+		for (int i = 0; i < out.size(); ++i)
+		{
+			out[i] = pow(base,exponent[i]);
+		}
+		return out;
+	}
 }
