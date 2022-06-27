@@ -254,7 +254,6 @@ namespace JSL
 				case PenType:
 					if (type == Line)
 					{
-						std::cout << "calling line" << std::endl;
 						SetPenType(nv.Value);
 					}
 					else
