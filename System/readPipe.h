@@ -36,7 +36,7 @@ namespace JSL
 	}
 
 	//!Performs the most basic readin --> saves the piped input to a string, and returns it
-	std::string readPipedInputString()
+	std::string inline readPipedInputString()
 	{
 		std::string s;
 		int i = 0;
