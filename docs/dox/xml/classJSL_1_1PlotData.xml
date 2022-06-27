@@ -601,7 +601,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="244" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="244" bodyend="272"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="244" column="6" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="244" bodyend="271"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -609,7 +609,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="53" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="54" bodyend="273"/>
+    <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="53" column="1" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="54" bodyend="272"/>
     <listofallmembers>
       <member refid="classJSL_1_1PlotData_1a2936bcc90d54c471f31388e2673081b3" prot="private" virt="non-virtual"><scope>JSL::PlotData</scope><name>colour</name></member>
       <member refid="classJSL_1_1PlotData_1ab84555b21166659535d130f84ac74b42" prot="private" virt="non-virtual"><scope>JSL::PlotData</scope><name>dashType</name></member>

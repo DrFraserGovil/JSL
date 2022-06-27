@@ -46,7 +46,7 @@
         </inbodydescription>
         <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="32" column="22" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="32" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1ab079b176b53f91602a34c241f06f70f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1ab079b176b53f91602a34c241f06f70f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; <ref refid="namespaceJSL_1acbabfae0b320d418d49485b7c50bc355" kindref="member">LineType</ref> &gt;</type>
         <definition>NameValuePair&lt; LineType &gt; JSL::LineProperties::PenType</definition>
         <argsstring>(LineType c)</argsstring>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="37" column="15" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="37" bodyend="40"/>
+        <location file="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" line="37" column="22" bodyfile="/Users/jf20/Documents/JSL/gnuplot/PlotData.h" bodystart="37" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1LineProperties_1aaab3926d36b47c74c5ec25758c7236ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structJSL_1_1NameValuePair" kindref="compound">NameValuePair</ref>&lt; <ref refid="namespaceJSL_1a086efb36ddb107d45961a6b46932c526" kindref="member">JSL::ScatterType</ref> &gt;</type>
