@@ -268,6 +268,21 @@ namespace JSL
 				}
 				return out;
 			}
+			static Vector logintspace(int start, int end, int size)
+			{
+				Assert("Endpoint of intspace must be after start point", end > start);
+				std::vector<int> coords = {start};
+				double factor = pow(end/start,1.0/(size - 1));
+				int x = start;
+				while (x<end)
+				{
+						x = std::max(x+1,(int)round(factor * x));
+						coords.push_back(x);
+				}
+				coords.push_back(end);
+
+				return Vector(coords);
+			}
 		protected:
 			std::vector<double> Data;
 						
@@ -482,12 +497,13 @@ namespace JSL
 	}
 
 
-	inline Vector pow(double base, Vector exponent)
+	inline Vector power(double base, const Vector & exponent)
 	{
-		Vector out(exponent.size());
-		for (int i = 0; i < out.size(); ++i)
+		Vector out(exponent.Size());
+		for (int i = 0; i < out.Size(); ++i)
 		{
-			out[i] = pow(base,exponent[i]);
+			double q = exponent[i];
+			out[i] = pow(base,q);
 		}
 		return out;
 	}
