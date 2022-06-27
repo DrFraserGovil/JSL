@@ -34,7 +34,7 @@ namespace JSL
 			return NameValuePair<T>(JSL::Colour,c);
 		}
 		//! Auto constructs pentype specifier
-		NameValuePair<LineType> PenType(LineType c)
+		inline NameValuePair<LineType> PenType(LineType c)
 		{
 			return NameValuePair<LineType>(JSL::PenType,c);
 		}
