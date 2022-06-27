@@ -358,6 +358,8 @@
     <member refid="namespaceJSL_1a1a7afe30fd764dc4151982a2631f08d3" kind="function"><name>Assert</name></member>
     <member refid="namespaceJSL_1a5783bc90550deca94c1790e581fb707d" kind="function"><name>Error</name></member>
     <member refid="namespaceJSL_1a0241a3cc1fa4dd4d319ab8686d1cfaa3" kind="function"><name>Error</name></member>
+    <member refid="namespaceJSL_1addbf4a35e1d5a856d7c301e1e5829c2f" kind="function"><name>PipedInputFound</name></member>
+    <member refid="namespaceJSL_1ac54b96d9c3678069d34aa56f4a3b3a0f" kind="function"><name>readPipedInputString</name></member>
     <member refid="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" kind="function"><name>rm</name></member>
     <member refid="namespaceJSL_1a5cd4ed117decf1140104ad8566b589ac" kind="function"><name>systemCall</name></member>
   </compound>
@@ -439,6 +441,10 @@
   <compound refid="assert_8h" kind="file"><name>assert.h</name>
   </compound>
   <compound refid="error_8h" kind="file"><name>error.h</name>
+  </compound>
+  <compound refid="readPipe_8h" kind="file"><name>readPipe.h</name>
+    <member refid="readPipe_8h_1a31279539757b2f9eefd27c21e626d91c" kind="define"><name>forLineInPipedInput</name></member>
+    <member refid="readPipe_8h_1a1f4c6286fc9bd9ed7d95ee91a3d303cf" kind="define"><name>forLineVectorInPipedInput</name></member>
   </compound>
   <compound refid="rm_8h" kind="file"><name>rm.h</name>
   </compound>

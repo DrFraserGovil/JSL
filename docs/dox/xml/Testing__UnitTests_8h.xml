@@ -6,64 +6,64 @@
     <includes local="no">cmath</includes>
     <includedby refid="Testing_8h" local="yes">/Users/jf20/Documents/JSL/Testing/Testing.h</includedby>
     <incdepgraph>
-      <node id="35">
+      <node id="37">
         <label>Array/Array.h</label>
         <link refid="Array_8h"/>
-        <childnode refid="36" relation="include">
-        </childnode>
-      </node>
-      <node id="36">
-        <label>VectorSearches.h</label>
-        <link refid="VectorSearches_8h"/>
-        <childnode refid="37" relation="include">
-        </childnode>
         <childnode refid="38" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+      </node>
+      <node id="38">
+        <label>VectorSearches.h</label>
+        <link refid="VectorSearches_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="27">
+      <node id="29">
         <label>Argument.h</label>
         <link refid="Argument_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="28">
         <label>CommandArgs/CommandArgs.h</label>
         <link refid="CommandArgs_8h"/>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="43">
-        <label>Display/Display.h</label>
-        <link refid="Display_8h"/>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
       </node>
       <node id="45">
+        <label>Display/Display.h</label>
+        <link refid="Display_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
         <label>ProgressBar.h</label>
         <link refid="ProgressBar_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="46" relation="include">
         </childnode>
       </node>
-      <node id="44">
+      <node id="46">
         <label>clearScreen.h</label>
         <link refid="clearScreen_8h"/>
-        <childnode refid="22" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -71,11 +71,11 @@
         <link refid="FileIO_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -92,14 +92,14 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="20">
+      <node id="23">
         <label>fileWriter.h</label>
         <link refid="fileWriter_8h"/>
-        <childnode refid="21" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -112,7 +112,7 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="22">
         <label>mkdir.h</label>
         <link refid="mkdir_8h"/>
         <childnode refid="12" relation="include">
@@ -127,87 +127,87 @@
         <link refid="JSL_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="43" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>Maths/Maths.h</label>
-        <link refid="Maths_8h"/>
-        <childnode refid="30" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
         </childnode>
       </node>
-      <node id="34">
+      <node id="31">
+        <label>Maths/Maths.h</label>
+        <link refid="Maths_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
         <label>MiscFunctions.h</label>
         <link refid="MiscFunctions_8h"/>
       </node>
-      <node id="33">
+      <node id="35">
         <label>matrix.h</label>
         <link refid="matrix_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
       </node>
-      <node id="31">
+      <node id="33">
         <label>vector.h</label>
         <link refid="vector_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="25">
         <label>Strings/Strings.h</label>
         <link refid="Strings_8h"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="26">
         <label>Time.h</label>
         <link refid="Time_8h"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -215,7 +215,7 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -239,6 +239,8 @@
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
       </node>
       <node id="18">
         <label>assert.h</label>
@@ -254,6 +256,16 @@
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>readPipe.h</label>
+        <link refid="readPipe_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="11">
@@ -281,56 +293,56 @@
         <link refid="Testing__UnitTests_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
       </node>
-      <node id="42">
+      <node id="44">
         <label>PlotData.h</label>
         <link refid="PlotData_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="43">
         <label>axis.h</label>
         <link refid="axis_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="39">
+      <node id="41">
         <label>gnuplot/gnuplot.h</label>
         <link refid="gnuplot_8h"/>
-        <childnode refid="40" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
       </node>
-      <node id="40">
+      <node id="42">
         <label>gnuplotMain.h</label>
         <link refid="gnuplotMain_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="38">
+      <node id="40">
         <label>algorithm</label>
       </node>
-      <node id="25">
+      <node id="27">
         <label>chrono</label>
       </node>
-      <node id="30">
+      <node id="32">
         <label>cmath</label>
       </node>
       <node id="12">
@@ -339,16 +351,16 @@
       <node id="5">
         <label>fstream</label>
       </node>
-      <node id="22">
+      <node id="21">
         <label>iostream</label>
       </node>
-      <node id="28">
+      <node id="30">
         <label>math.h</label>
       </node>
-      <node id="37">
+      <node id="39">
         <label>numeric</label>
       </node>
-      <node id="32">
+      <node id="34">
         <label>ostream</label>
       </node>
       <node id="9">
@@ -360,11 +372,14 @@
       <node id="6">
         <label>string</label>
       </node>
-      <node id="21">
+      <node id="24">
         <label>string.h</label>
       </node>
       <node id="14">
         <label>sys/stat.h</label>
+      </node>
+      <node id="20">
+        <label>unistd.h</label>
       </node>
       <node id="7">
         <label>vector</label>

@@ -2478,6 +2478,39 @@
         </inbodydescription>
         <location file="/Users/jf20/Documents/JSL/System/error.h" line="29" column="13" bodyfile="/Users/jf20/Documents/JSL/System/error.h" bodystart="29" bodyend="32"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1addbf4a35e1d5a856d7c301e1e5829c2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::PipedInputFound</definition>
+        <argsstring>()</argsstring>
+        <name>PipedInputFound</name>
+        <qualifiedname>JSL::PipedInputFound</qualifiedname>
+        <briefdescription>
+<para>An alias for an isatty command, given a easier to remember name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the program called with piped input (either via | or &lt;). Does not work on Windows. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/System/readPipe.h" line="33" column="13" bodyfile="/Users/jf20/Documents/JSL/System/readPipe.h" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1ac54b96d9c3678069d34aa56f4a3b3a0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::readPipedInputString</definition>
+        <argsstring>()</argsstring>
+        <name>readPipedInputString</name>
+        <qualifiedname>JSL::readPipedInputString</qualifiedname>
+        <briefdescription>
+<para>Performs the most basic readin --&gt; saves the piped input to a string, and returns it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jf20/Documents/JSL/System/readPipe.h" line="39" column="13" bodyfile="/Users/jf20/Documents/JSL/System/readPipe.h" bodystart="39" bodyend="52"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceJSL_1ae48b92e64fb9d321121df976b770efa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void JSL::rm</definition>

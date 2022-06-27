@@ -11,11 +11,11 @@
         <link refid="FileIO_8h"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -32,10 +32,10 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="24">
         <label>fileWriter.h</label>
         <link refid="fileWriter_8h"/>
-        <childnode refid="23" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
@@ -52,7 +52,7 @@
         <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="23">
         <label>mkdir.h</label>
         <link refid="mkdir_8h"/>
         <childnode refid="14" relation="include">
@@ -83,6 +83,8 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
       </node>
       <node id="20">
         <label>assert.h</label>
@@ -98,6 +100,16 @@
         <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>readPipe.h</label>
+        <link refid="readPipe_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -120,7 +132,7 @@
         <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="26">
         <label>PlotData.h</label>
         <link refid="PlotData_8h"/>
         <childnode refid="5" relation="include">
@@ -135,7 +147,7 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
@@ -178,11 +190,14 @@
       <node id="5">
         <label>string</label>
       </node>
-      <node id="23">
+      <node id="25">
         <label>string.h</label>
       </node>
       <node id="16">
         <label>sys/stat.h</label>
+      </node>
+      <node id="22">
+        <label>unistd.h</label>
       </node>
       <node id="3">
         <label>vector</label>

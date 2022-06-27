@@ -39,6 +39,8 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
       <node id="15">
         <label>assert.h</label>
@@ -54,6 +56,16 @@
         <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>readPipe.h</label>
+        <link refid="readPipe_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -96,6 +108,9 @@
       </node>
       <node id="10">
         <label>sys/stat.h</label>
+      </node>
+      <node id="17">
+        <label>unistd.h</label>
       </node>
       <node id="14">
         <label>vector</label>

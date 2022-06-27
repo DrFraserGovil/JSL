@@ -1,0 +1,55 @@
+\hypertarget{readPipe_8h_source}{}\doxysection{read\+Pipe.\+h}
+\label{readPipe_8h_source}\index{/Users/jf20/Documents/JSL/System/readPipe.h@{/Users/jf20/Documents/JSL/System/readPipe.h}}
+\mbox{\hyperlink{readPipe_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{error_8h}{error.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define forLineInPipedInput( ... )\(\backslash\)}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\{                               \(\backslash\)}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{    if (!JSL::PipedInputFound())\{       \(\backslash\)}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{        Error(JSL::IOError,"{}Cannot Read Piped input from standard input channel"{}});\} \(\backslash\)}
+\DoxyCodeLine{10     do                          \(\backslash\)}
+\DoxyCodeLine{11     \{                           \(\backslash\)}
+\DoxyCodeLine{12         std::string PIPE\_LINE;              \(\backslash\)}
+\DoxyCodeLine{13         while (getline(std::cin,PIPE\_LINE)) \(\backslash\)}
+\DoxyCodeLine{14         \{                           \(\backslash\)}
+\DoxyCodeLine{15             \_\_VA\_ARGS\_\_             \(\backslash\)}
+\DoxyCodeLine{16         \}                           \(\backslash\)}
+\DoxyCodeLine{17     \} while(0);                     \(\backslash\)}
+\DoxyCodeLine{18 \}                                   \(\backslash\)}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define forLineVectorInPipedInput(token, ...)\(\backslash\)}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\{                               \(\backslash\)}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{    forLineInPipedInput(        \(\backslash\)}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{            std::vector<std::string> PIPE\_LINE\_VECTOR = JSL::split(PIPE\_LINE);  \(\backslash\)}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{            \_\_VA\_ARGS\_\_             \(\backslash\)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{        \}                           \(\backslash\)}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{    \} while(0);                     \(\backslash\)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\}                                   \(\backslash\)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{}}
+\DoxyCodeLine{30 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{33     \textcolor{keywordtype}{bool} \textcolor{keyword}{inline} \mbox{\hyperlink{namespaceJSL_addbf4a35e1d5a856d7c301e1e5829c2f}{PipedInputFound}}()}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         \textcolor{keywordflow}{return} !isatty(fileno(stdin));}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39     std::string \mbox{\hyperlink{namespaceJSL_ac54b96d9c3678069d34aa56f4a3b3a0f}{readPipedInputString}}()}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         std::string s;}
+\DoxyCodeLine{42         \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{43         \mbox{\hyperlink{readPipe_8h_a31279539757b2f9eefd27c21e626d91c}{forLineInPipedInput}}(}
+\DoxyCodeLine{44             \textcolor{keywordflow}{if} (i > 0)}
+\DoxyCodeLine{45             \{}
+\DoxyCodeLine{46                 s+=\textcolor{stringliteral}{"{}\(\backslash\)n"{}}; \textcolor{comment}{//prevents including the final terminal line break associated with the EOF}}
+\DoxyCodeLine{47             \}}
+\DoxyCodeLine{48             s += PIPE\_LINE;}
+\DoxyCodeLine{49             ++i;}
+\DoxyCodeLine{50         )}
+\DoxyCodeLine{51         \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}

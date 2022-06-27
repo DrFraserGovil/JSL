@@ -320,6 +320,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a0241a3cc1fa4dd4d319ab8686d1cfaa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a0241a3cc1fa4dd4d319ab8686d1cfaa3">Error</a> (const std::string &amp;message)</td></tr>
 <tr class="memdesc:a0241a3cc1fa4dd4d319ab8686d1cfaa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default version of <a class="el" href="namespaceJSL.html#a5783bc90550deca94c1790e581fb707d">Error(ErrorCode code, const std::string &amp; message)</a>, throwing <a class="el" href="namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196" title="Global error term.">JSL::JSLError</a> as the identifier code.  <a href="namespaceJSL.html#a0241a3cc1fa4dd4d319ab8686d1cfaa3">More...</a><br /></td></tr>
 <tr class="separator:a0241a3cc1fa4dd4d319ab8686d1cfaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addbf4a35e1d5a856d7c301e1e5829c2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#addbf4a35e1d5a856d7c301e1e5829c2f">PipedInputFound</a> ()</td></tr>
+<tr class="memdesc:addbf4a35e1d5a856d7c301e1e5829c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">An alias for an isatty command, given a easier to remember name.  <a href="namespaceJSL.html#addbf4a35e1d5a856d7c301e1e5829c2f">More...</a><br /></td></tr>
+<tr class="separator:addbf4a35e1d5a856d7c301e1e5829c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54b96d9c3678069d34aa56f4a3b3a0f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ac54b96d9c3678069d34aa56f4a3b3a0f">readPipedInputString</a> ()</td></tr>
+<tr class="memdesc:ac54b96d9c3678069d34aa56f4a3b3a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the most basic readin --&gt; saves the piped input to a string, and returns it.  <a href="namespaceJSL.html#ac54b96d9c3678069d34aa56f4a3b3a0f">More...</a><br /></td></tr>
+<tr class="separator:ac54b96d9c3678069d34aa56f4a3b3a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae48b92e64fb9d321121df976b770efa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#ae48b92e64fb9d321121df976b770efa6">rm</a> (std::string location, bool recursive)</td></tr>
 <tr class="separator:ae48b92e64fb9d321121df976b770efa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cd4ed117decf1140104ad8566b589ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL.html#a5cd4ed117decf1140104ad8566b589ac">systemCall</a> (const std::string &amp;command)</td></tr>
@@ -2350,6 +2356,53 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="addbf4a35e1d5a856d7c301e1e5829c2f" name="addbf4a35e1d5a856d7c301e1e5829c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addbf4a35e1d5a856d7c301e1e5829c2f">&#9670;&nbsp;</a></span>PipedInputFound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JSL::PipedInputFound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An alias for an isatty command, given a easier to remember name. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the program called with piped input (either via | or &lt;). Does not work on Windows. </dd></dl>
+
+</div>
+</div>
+<a id="ac54b96d9c3678069d34aa56f4a3b3a0f" name="ac54b96d9c3678069d34aa56f4a3b3a0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac54b96d9c3678069d34aa56f4a3b3a0f">&#9670;&nbsp;</a></span>readPipedInputString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string JSL::readPipedInputString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs the most basic readin --&gt; saves the piped input to a string, and returns it. </p>
 
 </div>
 </div>

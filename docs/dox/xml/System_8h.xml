@@ -6,6 +6,7 @@
     <includes refid="error_8h" local="yes">error.h</includes>
     <includes refid="assert_8h" local="yes">assert.h</includes>
     <includes refid="systemCall_8h" local="yes">systemCall.h</includes>
+    <includes refid="readPipe_8h" local="yes">readPipe.h</includes>
     <includedby refid="LineReader_8h" local="yes">/Users/jf20/Documents/JSL/FileIO/LineReader.h</includedby>
     <includedby refid="fileWriter_8h" local="yes">/Users/jf20/Documents/JSL/FileIO/fileWriter.h</includedby>
     <includedby refid="JSL_8h" local="yes">/Users/jf20/Documents/JSL/JSL.h</includedby>
@@ -32,6 +33,8 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
       <node id="11">
         <label>assert.h</label>
@@ -47,6 +50,16 @@
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>readPipe.h</label>
+        <link refid="readPipe_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -72,6 +85,9 @@
       <node id="3">
         <label>dirent.h</label>
       </node>
+      <node id="14">
+        <label>iostream</label>
+      </node>
       <node id="7">
         <label>stdexcept</label>
       </node>
@@ -80,6 +96,9 @@
       </node>
       <node id="6">
         <label>sys/stat.h</label>
+      </node>
+      <node id="13">
+        <label>unistd.h</label>
       </node>
       <node id="10">
         <label>vector</label>
@@ -207,6 +226,7 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="error_8h" kindref="compound">error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="assert_8h" kindref="compound">assert.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="systemCall_8h" kindref="compound">systemCall.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="readPipe_8h" kindref="compound">readPipe.h</ref>&quot;</highlight></codeline>
     </programlisting>
     <location file="/Users/jf20/Documents/JSL/System/System.h"/>
   </compounddef>

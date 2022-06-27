@@ -26,16 +26,16 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="23">
         <label>MiscFunctions.h</label>
         <link refid="MiscFunctions_8h"/>
       </node>
-      <node id="20">
+      <node id="22">
         <label>matrix.h</label>
         <link refid="matrix_8h"/>
         <childnode refid="5" relation="include">
@@ -82,6 +82,8 @@
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
       </node>
       <node id="19">
         <label>assert.h</label>
@@ -97,6 +99,16 @@
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>readPipe.h</label>
+        <link refid="readPipe_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="12">
@@ -148,6 +160,9 @@
       </node>
       <node id="16">
         <label>sys/stat.h</label>
+      </node>
+      <node id="21">
+        <label>unistd.h</label>
       </node>
       <node id="5">
         <label>vector</label>

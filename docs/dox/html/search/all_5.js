@@ -12,8 +12,10 @@ var searchData=
   ['firstprint_9',['firstPrint',['../classJSL_1_1ProgressBar.html#a7354c455382575329326bedfd210957e',1,'JSL::ProgressBar']]],
   ['font_10',['font',['../classJSL_1_1gnuplot.html#a4c5db7bfe99161369b4c2d31ad4d7ece',1,'JSL::gnuplot']]],
   ['forlinein_11',['forLineIn',['../LineReader_8h.html#a5480fba013891b2f3033cc97d5d8edf4',1,'LineReader.h']]],
-  ['forlinevectorin_12',['forLineVectorIn',['../LineReader_8h.html#abdfa973ea7dd7efb90a74e8ec636f5ed',1,'LineReader.h']]],
-  ['formatclock_13',['FormatClock',['../namespaceJSL.html#ae7af96a0311784e019209221335f76d9',1,'JSL']]],
-  ['formatduration_14',['FormatDuration',['../namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222',1,'JSL']]],
-  ['fractionbounder_15',['FractionBounder',['../namespaceJSL.html#a017f24cfdf73ecc218aab718c1badd89',1,'JSL']]]
+  ['forlineinpipedinput_12',['forLineInPipedInput',['../readPipe_8h.html#a31279539757b2f9eefd27c21e626d91c',1,'readPipe.h']]],
+  ['forlinevectorin_13',['forLineVectorIn',['../LineReader_8h.html#abdfa973ea7dd7efb90a74e8ec636f5ed',1,'LineReader.h']]],
+  ['forlinevectorinpipedinput_14',['forLineVectorInPipedInput',['../readPipe_8h.html#a1f4c6286fc9bd9ed7d95ee91a3d303cf',1,'readPipe.h']]],
+  ['formatclock_15',['FormatClock',['../namespaceJSL.html#ae7af96a0311784e019209221335f76d9',1,'JSL']]],
+  ['formatduration_16',['FormatDuration',['../namespaceJSL.html#ad7ff2220bbab0294b95b9aa85332a222',1,'JSL']]],
+  ['fractionbounder_17',['FractionBounder',['../namespaceJSL.html#a017f24cfdf73ecc218aab718c1badd89',1,'JSL']]]
 ];

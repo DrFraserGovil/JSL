@@ -197,6 +197,10 @@ void \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}} (\
 \item 
 void \mbox{\hyperlink{namespaceJSL_a0241a3cc1fa4dd4d319ab8686d1cfaa3}{Error}} (const std\+::string \&message)
 \begin{DoxyCompactList}\small\item\em The default version of \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error(\+Error\+Code code, const std\+::string \& message)}}, throwing \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSL\+::\+JSLError}} as the identifier code. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceJSL_addbf4a35e1d5a856d7c301e1e5829c2f}{Piped\+Input\+Found}} ()
+\begin{DoxyCompactList}\small\item\em An alias for an isatty command, given a easier to remember name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceJSL_ac54b96d9c3678069d34aa56f4a3b3a0f}{read\+Piped\+Input\+String}} ()
+\begin{DoxyCompactList}\small\item\em Performs the most basic readin -\/-\/\texorpdfstring{$>$}{>} saves the piped input to a string, and returns it. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}{rm}} (std\+::string location, bool recursive)
 \item 
 void \mbox{\hyperlink{namespaceJSL_a5cd4ed117decf1140104ad8566b589ac}{system\+Call}} (const std\+::string \&command)
@@ -1161,6 +1165,29 @@ True, if equal, false if not
 \index{operator==@{operator==}!JSL@{JSL}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool JSL\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{classJSL_1_1Vector}{Vector}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespaceJSL_addbf4a35e1d5a856d7c301e1e5829c2f}\label{namespaceJSL_addbf4a35e1d5a856d7c301e1e5829c2f}} 
+\index{JSL@{JSL}!PipedInputFound@{PipedInputFound}}
+\index{PipedInputFound@{PipedInputFound}!JSL@{JSL}}
+\doxysubsubsection{\texorpdfstring{PipedInputFound()}{PipedInputFound()}}
+{\footnotesize\ttfamily bool JSL\+::\+Piped\+Input\+Found (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+An alias for an isatty command, given a easier to remember name. 
+
+\begin{DoxyReturn}{Returns}
+True if the program called with piped input (either via $\vert$ or \texorpdfstring{$<$}{<}). Does not work on Windows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJSL_ac54b96d9c3678069d34aa56f4a3b3a0f}\label{namespaceJSL_ac54b96d9c3678069d34aa56f4a3b3a0f}} 
+\index{JSL@{JSL}!readPipedInputString@{readPipedInputString}}
+\index{readPipedInputString@{readPipedInputString}!JSL@{JSL}}
+\doxysubsubsection{\texorpdfstring{readPipedInputString()}{readPipedInputString()}}
+{\footnotesize\ttfamily std\+::string JSL\+::read\+Piped\+Input\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Performs the most basic readin -\/-\/\texorpdfstring{$>$}{>} saves the piped input to a string, and returns it. 
 
 \mbox{\Hypertarget{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}\label{namespaceJSL_ae48b92e64fb9d321121df976b770efa6}} 
 \index{JSL@{JSL}!rm@{rm}}

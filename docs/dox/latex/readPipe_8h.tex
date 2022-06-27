@@ -1,0 +1,74 @@
+\hypertarget{readPipe_8h}{}\doxysection{/\+Users/jf20/\+Documents/\+JSL/\+System/read\+Pipe.h File Reference}
+\label{readPipe_8h}\index{/Users/jf20/Documents/JSL/System/readPipe.h@{/Users/jf20/Documents/JSL/System/readPipe.h}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{readPipe_8h_a31279539757b2f9eefd27c21e626d91c}{for\+Line\+In\+Piped\+Input}}(...)
+\begin{DoxyCompactList}\small\item\em A similar macro to for\+Line\+In, but this one iterates through piped input (either from explit pipes \char`\"{}$\vert$\char`\"{} or from directed files \char`\"{}$<$\char`\"{}) line by line, exposing the variable PIPE\+\_\+\+LINE for further manipulation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{readPipe_8h_a1f4c6286fc9bd9ed7d95ee91a3d303cf}{for\+Line\+Vector\+In\+Piped\+Input}}(token, ...)
+\begin{DoxyCompactList}\small\item\em A similar macro to for\+Line\+In, but this one iterates through piped input (either from explit pipes \char`\"{}$\vert$\char`\"{} or from directed files \char`\"{}$<$\char`\"{}) line by line, exposing the variable PIPE\+\_\+\+LINE for further manipulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceJSL_addbf4a35e1d5a856d7c301e1e5829c2f}{JSL\+::\+Piped\+Input\+Found}} ()
+\begin{DoxyCompactList}\small\item\em An alias for an isatty command, given a easier to remember name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceJSL_ac54b96d9c3678069d34aa56f4a3b3a0f}{JSL\+::read\+Piped\+Input\+String}} ()
+\begin{DoxyCompactList}\small\item\em Performs the most basic readin -\/-\/\texorpdfstring{$>$}{>} saves the piped input to a string, and returns it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{readPipe_8h_a31279539757b2f9eefd27c21e626d91c}\label{readPipe_8h_a31279539757b2f9eefd27c21e626d91c}} 
+\index{readPipe.h@{readPipe.h}!forLineInPipedInput@{forLineInPipedInput}}
+\index{forLineInPipedInput@{forLineInPipedInput}!readPipe.h@{readPipe.h}}
+\doxysubsubsection{\texorpdfstring{forLineInPipedInput}{forLineInPipedInput}}
+{\footnotesize\ttfamily \#define for\+Line\+In\+Piped\+Input(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{                               \(\backslash\)}
+\DoxyCodeLine{    if (!\mbox{\hyperlink{namespaceJSL_addbf4a35e1d5a856d7c301e1e5829c2f}{JSL::PipedInputFound}}())\{       \(\backslash\)}
+\DoxyCodeLine{        Error(\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{JSL::IOError}},\textcolor{stringliteral}{"{}Cannot Read Piped input from standard input channel"{}});\} \(\backslash\)}
+\DoxyCodeLine{    do                          \(\backslash\)}
+\DoxyCodeLine{    \{                           \(\backslash\)}
+\DoxyCodeLine{        std::string PIPE\_LINE;              \(\backslash\)}
+\DoxyCodeLine{        while (getline(std::cin,PIPE\_LINE)) \(\backslash\)}
+\DoxyCodeLine{        \{                           \(\backslash\)}
+\DoxyCodeLine{            \_\_VA\_ARGS\_\_             \(\backslash\)}
+\DoxyCodeLine{        \}                           \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0);                     \(\backslash\)}
+\DoxyCodeLine{\}                                   \(\backslash\)}
+
+\end{DoxyCode}
+
+
+A similar macro to for\+Line\+In, but this one iterates through piped input (either from explit pipes \char`\"{}$\vert$\char`\"{} or from directed files \char`\"{}$<$\char`\"{}) line by line, exposing the variable PIPE\+\_\+\+LINE for further manipulation. 
+
+\mbox{\Hypertarget{readPipe_8h_a1f4c6286fc9bd9ed7d95ee91a3d303cf}\label{readPipe_8h_a1f4c6286fc9bd9ed7d95ee91a3d303cf}} 
+\index{readPipe.h@{readPipe.h}!forLineVectorInPipedInput@{forLineVectorInPipedInput}}
+\index{forLineVectorInPipedInput@{forLineVectorInPipedInput}!readPipe.h@{readPipe.h}}
+\doxysubsubsection{\texorpdfstring{forLineVectorInPipedInput}{forLineVectorInPipedInput}}
+{\footnotesize\ttfamily \#define for\+Line\+Vector\+In\+Piped\+Input(\begin{DoxyParamCaption}\item[{}]{token,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{                               \(\backslash\)}
+\DoxyCodeLine{    forLineInPipedInput(        \(\backslash\)}
+\DoxyCodeLine{            std::vector<std::string> PIPE\_LINE\_VECTOR = \mbox{\hyperlink{namespaceJSL_aa37a5ffd99a34e2f12377c9f00b31c50}{JSL::split}}(PIPE\_LINE);    \(\backslash\)}
+\DoxyCodeLine{            \_\_VA\_ARGS\_\_             \(\backslash\)}
+\DoxyCodeLine{        \}                           \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0);                     \(\backslash\)}
+\DoxyCodeLine{\}                                   \(\backslash\)}
+
+\end{DoxyCode}
+
+
+A similar macro to for\+Line\+In, but this one iterates through piped input (either from explit pipes \char`\"{}$\vert$\char`\"{} or from directed files \char`\"{}$<$\char`\"{}) line by line, exposing the variable PIPE\+\_\+\+LINE for further manipulation. 
+
