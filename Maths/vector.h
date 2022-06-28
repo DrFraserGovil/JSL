@@ -274,7 +274,7 @@ namespace JSL
 				std::vector<int> coords = {start};
 				double factor = pow(end/start,1.0/(size - 1));
 				int x = start;
-				while (x<end)
+				while (x<(double)end/factor)
 				{
 						x = std::max(x+1,(int)round(factor * x));
 						coords.push_back(x);
