@@ -4,6 +4,7 @@
 #include "../FileIO/FileIO.h"
 #include "PlotData.h"
 #include "../System/System.h"
+#include "colorArray.h"
 namespace JSL
 {
 	namespace Fonts
@@ -222,7 +223,7 @@ namespace JSL
 			std::vector<PlotData> Data; //!< A vector of data detailing what should be plotted, and what it looks like, accessed during Axis::Show()
 			bool legendActive = false; //!< If true, shows a legend on the axis
 			int DataIdx; //!< The current counter for how many plots/lines have been added to the axis, used to index Axis::Data
-			
+			ColourArray Colours;
 			std::string WriteCommand;//!< The string into which the Axis::Show() function puts all its data
 			
 			//!Called when data added to the axis. Increments the data counter, and generates a filename and file into which the plot data will be saved \returns The name of the file generated to store the data
@@ -243,7 +244,7 @@ namespace JSL
 			//!Called during Axis::Show(), writes the data associated with the i-th line to the Axis::WriteCommand \param i The index of the data to be written
 			void AddPlot(int i)
 			{
-				WriteCommand += Data[i].Write();
+				WriteCommand += Data[i].Write(Colours);
 			};
 
 			//!Generates a string for either the x or y axis value of the logarithm toggle, which is then piped to Axis::AddProperty \param prefix Either "x" or "y" \param active Either value of Axis::isLog_x or Axis::isLog_y

@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "colorArray.h"
 namespace JSL
 {
 	enum PlotType {Line,ScatterPoint};
@@ -53,7 +54,6 @@ namespace JSL
 	class PlotData
 	{
 		public:	
-			
 			//! Constructor \param data The relative filepath to the location where the associated data is stored. \param idx The id of the data (and the index of this object within the Axis::Data vector). \param args A variadic list of JSL::NameValuePair objects used for pre-facto changes to the line style 
 			template<typename... Ts>
 			PlotData(std::string data,int idx,PlotType t, NameValuePair<Ts>... args) : DataLocation(data)
@@ -176,7 +176,7 @@ namespace JSL
 			}
 
 			//! Formats the internal data and writes it to a string for use in a gnuplot script \returns A string containing the necessary data to plot the internal data
-			std::string Write()
+			std::string Write(ColourArray & colours)
 			{
 				std::string line = "";
 				line += "\t\"" + DataLocation + "\" using 1:2 ";
@@ -199,10 +199,18 @@ namespace JSL
 
 				}
 				line += " lw " + std::to_string(penSize);
-				if (colour != "__null__")
+				bool holdColour =  colour == "\"hold\"" || colour == "\"previous\"";
+				if (holdColour)
 				{
-					line += " lc " + colour;
+					colour = colours.HoldColour();
 				}
+				if (colour == "__null__")
+				{
+					SetColour(colours.GetNextColour());
+					// std::cout << colour << std::endl;
+				}
+				colours.Save(colour);
+				line += " lc " + colour;
 				line += " title \"" + legend+ "\"";
 				return line + ",\\\n";
 			}
