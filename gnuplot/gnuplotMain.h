@@ -158,7 +158,26 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetLegend(state);
 		}
-
+		//! Calls Axis::SetXTime(bool) on the axis currently in focus.
+		void SetXTime(bool val)
+		{
+			Axes[axis_y][axis_x].SetXTime(val);
+		}
+		//! Calls Axis::SetYTime(bool) on the axis currently in focus.
+		void SetYTime(bool val)
+		{
+			Axes[axis_y][axis_x].SetYTime(val);
+		}
+		//! Calls Axis::SetXTime(bool) on the axis currently in focus.
+		void SetXTicAngle(int val)
+		{
+			Axes[axis_y][axis_x].SetXTicAngle(val);
+		}
+		//! Calls Axis::SetYTime(bool) on the axis currently in focus.
+		void SetYTicAngle(int val)
+		{
+			Axes[axis_y][axis_x].SetYTicAngle(val);
+		}
 		//! Changes the window size of the generated plot, measured in pixels
 		void WindowSize(int width, int height)
 		{
@@ -239,7 +258,7 @@ namespace JSL
 		int axis_x_max = 0;					 //!< The maximum permitted value of gnuplot::axis_x
 		int axis_y_max = 0;					 //!< The maximum permitted value of gnuplot::axis_y
 		int axisCount = 1;					 //!< The current number of axes on the figure
-		std::string terminal = "qt";		 //!< The current gnuplot terminal mode. See gnuplot documentation for more details
+		std::string terminal = "qt 0";		 //!< The current gnuplot terminal mode. See gnuplot documentation for more details
 		std::string output = "__null__";	 //!< The current output file that gnuplot will try to save to, if the terminal permits it. If set to __null__, this argument is ignored
 		std::string font = "Geneva";		 //!< The current global font used by the terminal
 		int globalFontSize = 14;			//! < The global font size, which is used unless otherwise specified by a SetFontSize call

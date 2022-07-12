@@ -105,6 +105,18 @@ namespace JSL
 				return VectorDotProduct(*this,*this);
 			}
 			
+			JSL::Vector PointwiseDivide(JSL::Vector dividor)
+			{
+				JSL::Vector output = *this;
+				JSL::Assert("Can only pointwise divide vectors of the same size", output.Size() == dividor.Size());
+
+				for (int i = 0; i < output.Size(); ++i)
+				{
+					output[i]/=dividor[i];
+				}
+				return output;
+			}
+
 			//! The norm of the current object, \returns The square-root of the SqNorm() function.
 			double Norm() const
 			{

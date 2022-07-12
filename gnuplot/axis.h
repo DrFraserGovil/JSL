@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../FileIO/FileIO.h"
 #include "PlotData.h"
+#include <math.h>
 #include "../System/System.h"
 #include "colorArray.h"
 namespace JSL
@@ -80,6 +81,8 @@ namespace JSL
 				return Data[Data.size()-1];
 			};
 			
+	
+
 			//! The command which generates the gnuplot scripting code for plotting the data on this axis \returns The string corresponding to the gnuplot script, must be written to file to be actionable
 			std::string Show()
 			{
@@ -92,13 +95,15 @@ namespace JSL
 				{
 					AddProperty("unset title");
 				}
-
+				TimeSetter("x",isTime_x);
+				TimeSetter("y",isTime_y);
 				AddProperty("set xlabel \"" + xlabel + "\"" + Fonts::SizeString(axisFontSize));
 				AddProperty("set ylabel \"" + ylabel + "\"" + Fonts::SizeString(axisFontSize));
 				AddProperty("set tics " + Fonts::SizeString(axisFontSize));
 				LogSetter("x",isLog_x);
 				LogSetter("y",isLog_y);
-
+				AngleSetter("x",xTicAngle);
+				AngleSetter("y",yTicAngle);
 				std::string key_cmd = "set key";
 				if (!legendActive)
 				{
@@ -166,6 +171,26 @@ namespace JSL
 			{
 				isLog_y = val;
 			}
+			//! Simple setter for Axis::isTime_x
+			void SetXTime(bool val)
+			{
+				isTime_x = val;
+			}
+			//! Simple setter for Axis::isTime_y
+			void SetYTime(bool val)
+			{
+				isTime_y = val;
+			}
+			//! Simple setter for Axis::xTicAngle
+			void SetXTicAngle(int val)
+			{
+				xTicAngle = val;
+			}
+			//! Simple setter for Axis::yTicAngle;
+			void SetYTicAngle(bool val)
+			{
+				yTicAngle=val;
+			}
 			//! Simple setter for Axis::legendActive
 			void SetLegend(bool state)
 			{
@@ -215,7 +240,11 @@ namespace JSL
 			std::vector<double> range_x; //!< A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling
 			std::vector<double> range_y;//!< A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling
 			bool isLog_x = false;//!< If true, uses logarithmic scaling on the x axis
+			bool isTime_x = false;//!<If true, interprets the x axis as a temporal coordinate
+			bool isTime_y = false;//!<If true, interprets the y axis as a temporal coordinate
 			bool isLog_y = false;//!< If false, uses logarithmic scaling on the x axis
+			int xTicAngle = 0; //!<RotationAngle of xtics
+			int yTicAngle = 0;//!<Rotation Angle of ytics
 			int axisFontSize = -1; //!< The font size used to write both the Axis::xlabel and Axis::ylabel (cannot be different for x/y). If < 0, uses the value of gnuplot::globalFontSize
 			int titleFontSize = -1;//!<The font size used to write Axis::title. If < 0, uses the value of gnuplot::globalFontSize
 			int legendFontSize = -1;//!<The font size used to write the legend, if active. If < 0, uses the value of gnuplot::globalFontSize
@@ -270,7 +299,28 @@ namespace JSL
 				std::string cmd = "set " + axisPrefix + "range " + val;
 				AddProperty(cmd);
 			}
-
-			
+			void TimeSetter(const std::string & axisPrefix, bool timeActive)
+			{
+				if (timeActive)
+				{
+					std::string cmd = "set " + axisPrefix + "data time\nset timefmt \"%s\"";
+					AddProperty(cmd);
+				}
+			}
+			void AngleSetter(const std::string & axisPrefix, int angle)
+			{
+				if (abs(angle) > 0)
+				{
+					std::string cmd = "set " + axisPrefix + "tics rotate by " + std::to_string(angle);
+					if (angle > 0)
+					{
+						double xOffset = -2 * std::cos(3.141592654/180 * angle);
+						double yOffset = -2 * std::sin(3.141592654/180 * angle);
+						cmd += " offset " + std::to_string(xOffset) + "," + std::to_string(yOffset);
+					}
+					// std::cout << cmd << std::endl;
+					AddProperty(cmd);
+				}
+			}
 	};
 };
