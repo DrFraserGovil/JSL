@@ -29,7 +29,6 @@ namespace JSL
 			//!The chosen "Name" of the Argument - the string which will trigger the Parse() function to write in the passed value
 			const std::string TriggerString;
 		
-			virtual void StreamTo(std::stringstream & stream, std::string delimiter){};
 	};
 	
 	
@@ -93,7 +92,7 @@ namespace JSL
 			}
 			
 			//!Iterate through the provided commandline args, extracting Name/Value pairs and calling Parse() on them. \param argc The number of arguments passed to the program \param argv[] The argument list (argv[0] is assumed to be the the name of the program, and is ignored)
-			void ListParse( int argc, char * argv[])
+			virtual void ListParse( int argc, char * argv[])
 			{
 				for (int i = 1; i < argc-1; ++i)
 				{
@@ -139,10 +138,7 @@ namespace JSL
 				}
 			}
 			
-			void StreamTo(std::stringstream & stream, std::string delimiter)
-			{
-				stream << TriggerString << ", " << Value;
-			}
+
 			
 			//!Virtual override for template-specific AssignValue calls. Most template types will require a custom handler to convert value into the chosen template type -- some default ones are provided below.
 			virtual void AssignValue( const char * value){};
@@ -192,5 +188,12 @@ namespace JSL
 		Value = (bool)testValue;
 	}
 	
+	//!Provides an explicit instruction for how to infer outputting the arg-value. This works (temperamentally) without this function, but strings (well-known for being fiddly here) can sometimes mess it up, so providing explicit instruction works for the best.
+	template<class T>
+	std::ostream & operator<<(std::ostream & os, const Argument<T> a)
+	{
+		os << a.Value;
+		return os;
+	}
 
 }
