@@ -31,7 +31,12 @@ namespace JSL
 			Axes = std::vector<std::vector<Axis>>(yCount);
 			for (int i = 0; i < yCount; ++i)
 			{
-				Axes[i] = std::vector<Axis>(xCount, DirName);
+				Axes[i].resize(xCount);
+				for (int j = 0; j < xCount; ++j)
+				{
+					Axes[i][j] = Axis(DirName);
+				}
+				//  = std::vector<Axis>(xCount, DirName);
 			}
 			axisCount = xCount * yCount;
 			axis_x_max = xCount - 1;
@@ -57,6 +62,7 @@ namespace JSL
 		PlotData &Plot(const std::vector<T> &x, const std::vector<S> &y, NameValuePair<Ts>... args)
 		{
 			return Axes[axis_y][axis_x].Plot(x, y, args...);
+
 		};
 		//! As with Plot(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args), but permits non-vector objects which can still be cast into vectors (i.e. JSL::Vector objects)\returns A reference to the generated JSL::PlotData object, allowing for post-facto modification of the linestyle.
 		template <class T, class S, typename... Ts>
