@@ -178,6 +178,10 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetYTicAngle(val);
 		}
+		void SetGrid(bool val)
+		{
+			Axes[axis_y][axis_x].SetGrid(val);
+		}
 		//! Changes the window size of the generated plot, measured in pixels
 		void WindowSize(int width, int height)
 		{

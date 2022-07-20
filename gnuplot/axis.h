@@ -104,7 +104,14 @@ namespace JSL
 				LogSetter("y",isLog_y);
 				AngleSetter("x",xTicAngle);
 				AngleSetter("y",yTicAngle);
+				std::string grid_cmd = "set grid";
+				if (!gridActive)
+				{
+					grid_cmd = "un" + grid_cmd;
+				}
+				AddProperty(grid_cmd);
 				std::string key_cmd = "set key";
+				
 				if (!legendActive)
 				{
 					key_cmd = "un" + key_cmd;
@@ -206,7 +213,11 @@ namespace JSL
 				title = tit;
 				titleFontSize = size;
 			}
-
+			//! Setter for Axis::gridActive
+			void SetGrid(bool state)
+			{
+				gridActive = state;
+			}
 			//!Sets the fontsize of one of the texts associated with the axis \param target The identifier of the text to be changed \param size The desired fontsize
 			void SetFontSize(Fonts::Target target, unsigned int size)
 			{
@@ -243,6 +254,7 @@ namespace JSL
 			bool isTime_x = false;//!<If true, interprets the x axis as a temporal coordinate
 			bool isTime_y = false;//!<If true, interprets the y axis as a temporal coordinate
 			bool isLog_y = false;//!< If false, uses logarithmic scaling on the x axis
+			bool gridActive = false;//!<If true, overlays a grid onto the plot
 			int xTicAngle = 0; //!<RotationAngle of xtics
 			int yTicAngle = 0;//!<Rotation Angle of ytics
 			int axisFontSize = -1; //!< The font size used to write both the Axis::xlabel and Axis::ylabel (cannot be different for x/y). If < 0, uses the value of gnuplot::globalFontSize
