@@ -46,15 +46,42 @@ namespace JSL
 		void SetAxis(unsigned int y, unsigned int x)
 		{
 			Assert("Must index into existing multiplot values", y <= axis_y_max && x <= axis_x_max);
+			Assert("Cannot index into an axis overwritten by a multi-span plot", Axes[y][x].Lock==false);
 			axis_x = x;
 			axis_y = y;
 		};
+
+		//! Allows one to alter the span of the axis when indexing into it, so different axes can have different sizes on the canvas. Note that this enforces a strict lock on where grids can be put - there must be enough room on the existing grid, and the span units are measured in units of these base-axis cells. \param y The y coordinate of the chosen axis (0 indexed, with (0,0) being top left) \param x The x cooridnate of the chosen axis (0 indexed, with (0,0) being top left) \param ySpan the height of the chosen axis in grid cells. Larger values push the bottom of the axis further down whilst keeping the top edge fixed. \param xSpan the width of the chosen axis in grid cells. Larger values push the right hand size of the axis further right, whilst keeping the left edge fixed.
+		void SetAxis(unsigned int y, unsigned int x, unsigned int ySpan, unsigned int xSpan)
+		{
+			Assert("Must index into existing multiplot values", y <= axis_y_max, x <= axis_x_max);
+			Assert("Selected Span must remain within confines", y+ySpan <=axis_y_max + 1, x+xSpan <= axis_x_max + 1);
+			Assert("Cannot index into an axis overwritten by a multi-span plot", Axes[y][x].Lock==false);
+			axis_x = x;
+			axis_y = y;
+			double xs = (double)xSpan / (axis_x_max + 1);
+			double ys = (double)ySpan / (axis_y_max + 1);
+			for (int yy = y; yy < y + ySpan; ++yy)
+			{
+				for (int xx = x; xx < x + xSpan; ++xx)
+				{
+					Assert("Cannot index into an axis overwritten by a multi-span plot", Axes[y][x].Lock==false);
+					if (xx > x || yy > y)
+					{
+						Axes[yy][xx].Lock = true;	
+					}
+					
+				}
+			}
+			Axes[axis_y][axis_x].SetSpan(ys,xs);
+		}
 		//! Sets the current axis focus to the idx-th axis, numbering columns-then-rows
 		void SetAxis(int idx)
 		{
 			Assert("Must index into existing multiplot values", idx < axisCount);
 			axis_y = idx / Axes[0].size();
 			axis_x = idx % Axes[0].size();
+			Assert("Cannot index into an axis overwritten by a multi-span plot", Axes[axis_y][axis_x].Lock==false);
 		};
 
 		//! Passes the arguments along to the Axis::Plot() function associated with the current axis focus\returns A reference to the generated JSL::PlotData object, allowing for post-facto modification of the linestyle.
@@ -97,7 +124,8 @@ namespace JSL
 			{
 				for (int j = 0; j < Axes[i].size(); ++j)
 				{
-					writeStringToFile(gpFile, Axes[i][j].Show());
+					if (Axes[i][j].Lock == false)
+						writeStringToFile(gpFile, Axes[i][j].Show());
 				}
 			}
 

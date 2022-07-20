@@ -40,7 +40,7 @@ namespace JSL
 	class Axis
 	{
 		public:
-			
+			bool Lock = false;
 			//! Default, empty constructor (necessary for std::vector<Axis> to exist, even if never called)
 			Axis(){};
 
@@ -95,6 +95,7 @@ namespace JSL
 				{
 					AddProperty("unset title");
 				}
+				SpanSetter();
 				TimeSetter("x",isTime_x);
 				TimeSetter("y",isTime_y);
 				AddProperty("set xlabel \"" + xlabel + "\"" + Fonts::SizeString(axisFontSize));
@@ -218,6 +219,11 @@ namespace JSL
 			{
 				gridActive = state;
 			}
+			void SetSpan(double y, double x)
+			{
+				xSpan = x;
+				ySpan = y;
+			}
 			//!Sets the fontsize of one of the texts associated with the axis \param target The identifier of the text to be changed \param size The desired fontsize
 			void SetFontSize(Fonts::Target target, unsigned int size)
 			{
@@ -255,6 +261,8 @@ namespace JSL
 			bool isTime_y = false;//!<If true, interprets the y axis as a temporal coordinate
 			bool isLog_y = false;//!< If false, uses logarithmic scaling on the x axis
 			bool gridActive = false;//!<If true, overlays a grid onto the plot
+			double xSpan = -1;
+			double ySpan = -1;
 			int xTicAngle = 0; //!<RotationAngle of xtics
 			int yTicAngle = 0;//!<Rotation Angle of ytics
 			int axisFontSize = -1; //!< The font size used to write both the Axis::xlabel and Axis::ylabel (cannot be different for x/y). If < 0, uses the value of gnuplot::globalFontSize
@@ -297,6 +305,14 @@ namespace JSL
 					t = "un" + t;
 				}
 				AddProperty(t);
+			}
+
+			void SpanSetter()
+			{
+				if (xSpan > 0 && ySpan > 0)
+				{
+					AddProperty("set size " + std::to_string(xSpan) + "," + std::to_string(ySpan));
+				}
 			}
 			//!Generates a string for either the x or y axis value of the range, which is then piped to Axis::AddProperty \param prefix Either "x" or "y" \param active Either value of Axis::xrange or Axis::yrange
 			void RangeSetter(const std::string & axisPrefix, const std::vector<double> & range)
