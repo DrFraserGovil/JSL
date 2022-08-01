@@ -10,7 +10,7 @@ namespace JSL
 	{
 	public:
 		//! Constructor function, generates a unique name for itself, and creates a directory into which it stores its own data
-		gnuplot()
+		gnuplot()	
 		{
 			DirName = "gnuplot_tmp_" + std::to_string(rand());
 			Axes = {{Axis(DirName)}};

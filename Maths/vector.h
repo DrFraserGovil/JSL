@@ -255,7 +255,7 @@ namespace JSL
 			static Vector linspace(double start, double end, unsigned int length)
 			{
 				Vector out(length);
-				Assert("Endpoint of linspace must be after start point", end > start && length > 1);
+				// Assert("Endpoint of linspace must be after start point", end > start && length > 1);
 				double delta = (end - start)/(length - 1);
 				for (int i = 0; i < length - 1; ++i)
 				{
@@ -508,6 +508,15 @@ namespace JSL
 		return out;
 	}
 
+	inline Vector log10(const Vector & input)
+	{
+		Vector out(input.Size());
+		for (int i = 0; i < input.Size();++i)
+		{
+			out[i] = std::log10((double)input[i]);
+		}
+		return out;
+	}
 
 	inline Vector power(double base, const Vector & exponent)
 	{
