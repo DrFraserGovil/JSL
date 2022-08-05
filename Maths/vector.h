@@ -291,8 +291,15 @@ namespace JSL
 						x = std::max(x+1,(int)round(factor * x));
 						coords.push_back(x);
 				}
-				coords.push_back(end);
-
+				if (coords.size() < size)
+				{
+					coords.push_back(end);
+				}
+				else
+				{
+					coords.resize(size);
+					coords[size - 1] = end;
+				}
 				return Vector(coords);
 			}
 		protected:
