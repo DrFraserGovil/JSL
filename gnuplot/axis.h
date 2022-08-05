@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include "../FileIO/FileIO.h"
 #include "PlotData.h"
 #include <math.h>
