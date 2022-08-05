@@ -5,7 +5,7 @@
 #include "../System/assert.h"
 namespace JSL
 {
-	int LineCount(std::string file)
+	int inline LineCount(std::string file)
 	{
 		bool exists = JSL::locationExists(file);
 		JSL::Assert("Can only count lines in files which exist",exists);
