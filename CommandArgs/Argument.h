@@ -28,6 +28,9 @@ namespace JSL
 			
 			//!The chosen "Name" of the Argument - the string which will trigger the Parse() function to write in the passed value
 			const std::string TriggerString;
+
+			//!Virtual alias for Argument::StreamTo()
+			virtual void StreamTo(std::stringstream & stream, std::string delimiter){};
 		
 	};
 	
@@ -108,6 +111,16 @@ namespace JSL
 				{
 					AssignValue(value);
 				}
+			}
+
+			//! Prints the Name and Value of the Argument object into a stringstream. If the delimiter is not just whitespace, adds a space afterwards. \param stream The stream the Name and Value are written to \param delimiter delimiter by which Name and Value are speparated
+			void StreamTo(std::stringstream & stream, std::string delimiter)
+			{
+				stream << TriggerString << delimiter;
+				if(delimiter != " " && delimiter != "\t"){
+					stream << " ";
+				}
+				stream<< Value;
 			}
 	
 			//! Allow the Argument object to be implicitly casted into the value of #Value, and hence treated as an object of the templated type.
