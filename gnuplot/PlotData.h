@@ -3,7 +3,7 @@
 #include "colorArray.h"
 namespace JSL
 {
-	enum PlotType {Line,ScatterPoint};
+	enum PlotType {Line,ScatterPoint,BarChart};
 	enum Property {Colour,PenSize,PenType,Legend};
 	enum LineType {Solid, Dash, DashDot,Dotted, DashDotDot};
 	enum ScatterType {Dot, Plus,Cross,Star,OpenSquare,FilledSquare,OpenCircle,FilledCircle,OpenDelta,FilledDelta,OpenNabla,FilledNabla,OpenDiamond,FilledDiamond};
@@ -124,7 +124,7 @@ namespace JSL
 			//! Sets the LineType (dashed, solid, etc) for the object \param t The JSL::LineType specifier
 			void SetPenType(JSL::LineType t)
 			{
-				Assert("Can only set pentype for line objects - use ScatterType for scatterobjects",type==Line);
+				Assert("Can only set pentype for line objects - use ScatterType for scatterobjects",type==Line || type==BarChart);
 				switch (t)
 				{
 					case Solid:
@@ -179,18 +179,22 @@ namespace JSL
 			std::string Write(ColourArray & colours)
 			{
 				std::string line = "";
-				line += "\t\"" + DataLocation + "\" using 1:2 ";
+				line += "\t\"" + DataLocation + "\" ";
 				switch (type)
 				{
 					case Line:
 					{
-						line += "with lines ";
+						line += "using 1:2 with lines ";
 						line += "dt " + dashType;
 						break;
 					}
 					case ScatterPoint:
 					{
-						line += " pt " + dashType;
+						line += "using 1:2  pt " + dashType;
+					}
+					case BarChart:
+					{
+						line += "using 1:3:xtic(2) with boxes ";
 					}
 					default:
 					{
@@ -236,6 +240,9 @@ namespace JSL
 						break;
 					case ScatterPoint:
 						SetScatterType(OpenCircle);
+						break;
+					case BarChart:
+						SetPenType(Solid);
 						break;
 				};
 

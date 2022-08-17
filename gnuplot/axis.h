@@ -74,6 +74,8 @@ namespace JSL
 			{
 				Assert("Scatter only works on vectors of equal size",x.size()==y.size());
 				std::string name = NewData();
+
+
 				writeMultiVectorToFile(name,", ",x,y);
 
 				Data.push_back(PlotData(name,DataIdx,ScatterPoint,args...));
@@ -81,6 +83,30 @@ namespace JSL
 				return Data[Data.size()-1];
 			};
 			
+
+			template<class T, class S, typename... Ts>
+			PlotData & Chart(const std::vector<T> & x,const std::vector<S>  & y, NameValuePair<Ts>... args)
+			{
+				Assert("Bar Chart only works on vectors of equal size",x.size()==y.size());
+				std::string name = NewData();
+
+
+				std::vector<std::string> mock_x(x.size());
+				for (int i = 0; i < x.size(); ++i)
+				{
+					std::ostringstream os;
+					os << "\"" << x[i] << "\"";
+					mock_x[i] = os.str();
+				}
+				std::vector<int> idx(x.size());
+				std::iota(idx.begin(),idx.end(),1);
+				writeMultiVectorToFile(name," ",idx,mock_x,y);
+
+				Data.push_back(PlotData(name,DataIdx,BarChart,args...));
+
+				return Data[Data.size()-1];
+			};
+
 	
 
 			//! The command which generates the gnuplot scripting code for plotting the data on this axis \returns The string corresponding to the gnuplot script, must be written to file to be actionable
@@ -101,6 +127,8 @@ namespace JSL
 				AddProperty("set xlabel \"" + xlabel + "\"" + Fonts::SizeString(axisFontSize));
 				AddProperty("set ylabel \"" + ylabel + "\"" + Fonts::SizeString(axisFontSize));
 				AddProperty("set tics " + Fonts::SizeString(axisFontSize));
+				AddProperty("set style fill solid");
+				AddProperty("set boxwidth 0.75");
 				LogSetter("x",isLog_x);
 				LogSetter("y",isLog_y);
 				AngleSetter("x",xTicAngle);

@@ -110,6 +110,20 @@ namespace JSL
 			return Axes[axis_y][axis_x].Scatter((std::vector<double>)x, (std::vector<double>)y, args...);
 		};
 
+
+		template <class T, class S, typename... Ts>
+		PlotData &Chart(const std::vector<T> &x, const std::vector<S> &y, NameValuePair<Ts>... args)
+		{
+			return Axes[axis_y][axis_x].Chart(x, y, args...);
+		};
+
+		template <class T, class S, typename... Ts> // allows templating for non-vector objects which can nevertheless be successfully cast as vectors
+		PlotData &Chart(const T &x, const S &y, NameValuePair<Ts>... args)
+		{
+			return Axes[axis_y][axis_x].Chart((std::vector<double>)x, (std::vector<double>)y, args...);
+		};
+
+
 		//! The key function - until this function is called, the plot is hypothetical. Calling this function generates a gnuplot script file, which each axis writes to to generate the appropriate plot, which is then called using a system command, producing the plot.
 		void Show()
 		{
