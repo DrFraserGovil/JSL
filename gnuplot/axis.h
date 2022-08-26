@@ -133,7 +133,7 @@ namespace JSL
 				LogSetter("y",isLog_y);
 				AngleSetter("x",xTicAngle);
 				AngleSetter("y",yTicAngle);
-				std::string grid_cmd = "set grid ytics xtics\nset grid";
+				std::string grid_cmd = "set grid";
 				if (!gridActive)
 				{
 					grid_cmd = "un" + grid_cmd;
