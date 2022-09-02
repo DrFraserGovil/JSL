@@ -251,6 +251,21 @@ namespace JSL
 				return isnan;
 			}
 
+			inline static Vector zeros(unsigned int size)
+			{
+				return Vector(size); ////needs to change if implementation of default ever changes!
+			}
+			inline static Vector random(unsigned int size, double lowerBound, double upperBound)
+			{
+				Vector out(size);
+				for (int i = 0; i < size; ++i)
+				{
+					double r = (double)rand()/RAND_MAX;
+					out[i] = lowerBound + r*(upperBound - lowerBound);
+				}
+				return out;
+			}
+
 			//!Constructs a vector of specified length with start and end points (inclusive) given by the user, with the intervening points linearly spaced apart.  \param start The first element of the returned array \param end The final element of the array (included in the range!) \param length The length of the returned array \returns The vector (start, start + x,start + 2x, .... end)
 			static Vector linspace(double start, double end, unsigned int length)
 			{
@@ -520,7 +535,7 @@ namespace JSL
 		Vector out(input.Size());
 		for (int i = 0; i < input.Size();++i)
 		{
-			out[i] = std::log10((double)input[i]);
+			out[i] = log10((double)input[i]);
 		}
 		return out;
 	}
