@@ -117,6 +117,15 @@ namespace JSL
 				return output;
 			}
 
+			double Sum() const
+			{
+				double s = 0;
+				for (int i  =0; i < nElements; ++i)
+				{
+					s += Data[i];
+				}
+				return s;
+			}
 			//! The norm of the current object, \returns The square-root of the SqNorm() function.
 			double Norm() const
 			{
@@ -255,7 +264,7 @@ namespace JSL
 			{
 				return Vector(size); ////needs to change if implementation of default ever changes!
 			}
-			inline static Vector random(unsigned int size, double lowerBound, double upperBound)
+			inline static Vector RandVec(unsigned int size, double lowerBound, double upperBound)
 			{
 				Vector out(size);
 				for (int i = 0; i < size; ++i)
@@ -535,7 +544,7 @@ namespace JSL
 		Vector out(input.Size());
 		for (int i = 0; i < input.Size();++i)
 		{
-			out[i] = log10((double)input[i]);
+			out[i] = std::log10((double)input[i]);
 		}
 		return out;
 	}
@@ -550,4 +559,6 @@ namespace JSL
 		}
 		return out;
 	}
+
+
 }
