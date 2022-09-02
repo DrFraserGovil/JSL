@@ -191,10 +191,12 @@ namespace JSL
 					case ScatterPoint:
 					{
 						line += "using 1:2  pt " + dashType;
+						break;
 					}
 					case BarChart:
 					{
 						line += "using 1:3:xtic(2) with boxes ";
+						break;
 					}
 					default:
 					{
