@@ -440,7 +440,7 @@ namespace JSL
 	//! Executes the pointwise (Hadamard) product of two vectors \param lhs The first vector to be multiplied \param rhs The second vector to be multiplied (order is irrelevant) \return The vector (lhs * rhs)_i = lhs_i * rhs_i
 	inline Vector Hadamard(const Vector & lhs, const Vector & rhs)
 	{
-		JSL::Vector output = rhs;
+		JSL::Vector output = lhs;
 		for (int i = 0; i < output.Size(); ++i)
 		{
 			output[i] *= rhs[i];
