@@ -51,9 +51,6 @@ namespace JSL
 		double modTerm = h/60 - 2 * floor(h/120);
 		double x = c* (1.0 - abs(modTerm - 1));
 
-		// std::cout << "hp\tc\tx\tm\n";
-		// std::cout << hP << "   " << c << "   " << x << "   ";
-
 		switch ((int)hP)
 		{
 			case 0:
@@ -76,7 +73,6 @@ namespace JSL
 				break;
 		}
 		double m = v - c;
-		// std::cout << m << std::endl;
 		return {r+m,g+m,b+m};
 	}
 
@@ -130,11 +126,9 @@ namespace JSL
 			void SetColours(int n, std::vector<double> start, std::vector<double> end)
 			{
 				ColourList.resize(n);
+				JSL::Assert("RGB arrays must be of length 3",start.size()==3,end.size()==3);
 				auto hsvStart = rgb_to_hsv(start); 
 				auto hsvEnd = rgb_to_hsv(end);
-				// auto rgb = hsv_to_rgb(hsv);
-				// std::cout << JSL::Vector(start) << "->" << JSL::Vector(hsv) << "->" << JSL::Vector(rgb) << std::endl;
-				// std::cout << JSL::Vector(end) << "->" << JSL::Vector(rgb_to_hsv(end)) << "->" << JSL::Vector(hsv_to_rgb(rgb_to_hsv(end))) << std::endl;
 				
 				for (int i = 0; i < n; ++i)
 				{
@@ -142,7 +136,6 @@ namespace JSL
 					double s = hsvStart[1] + (double)i/(n-1) * (hsvEnd[1] - hsvStart[1]); 
 					double v = hsvStart[2] + (double)i/(n-1) * (hsvEnd[2] - hsvStart[2]);
 					ColourList[i] = hsv_to_rgb({h,s,v});
-					std::cout << JSL::Vector(ColourList[i]) << std::endl; 
 				}
 
 				// exit(10);

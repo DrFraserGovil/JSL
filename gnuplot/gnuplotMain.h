@@ -303,12 +303,10 @@ namespace JSL
 		void SetGlobalColourMap(int n, std::vector<double> start, std::vector<double> end)
 		{
 			GlobalColours.SetColours(n,start,end);
-			std::cout << "Setting all colours " << axis_x_max << "  " << axis_y_max << std::endl;
 			for (int i = 0; i <= axis_x_max; ++i)
 			{
 				for (int j = 0; j <= axis_y_max;++j)
 				{
-					std::cout << "Setting " << i << " " << j << std::endl;
 					Axes[j][i].GlobalColourSet(GlobalColours);
 				}
 			}

@@ -299,7 +299,6 @@ namespace JSL
 			void GlobalColourSet(const ColourArray & c)
 			{
 				Colours = c;
-				std::cout << "My colours have been set!" << std::endl;
 			}
 		private:
 			std::string title; //!< The text which appears above the axis 
