@@ -237,6 +237,45 @@ namespace JSL
 				return *this;
 			}
 
+			Matrix Inverse()
+			{
+				Assert("Can only invert square matrices",nRows = nCols);
+				Matrix copy = *this;
+				Matrix output = JSL::Matrix::Identity(nRows);
+
+				for (int i = nRows-1; i >=0; --i)
+				{
+					//check if Data[i][i] != 0, then do swap?!
+					double grab = copy(i,i);
+					for (int j = 0; j < nRows; ++j)
+					{
+						copy(i,j) /= grab;
+						output(i,j)/= grab;
+					}
+					// std::cout << "Step " << 2*i+1 << " with grab = " << grab << "\n" << output.to_string() << " \n\n" << copy.to_string() << std::endl;
+					auto lmod = copy.GetRow(i);
+					auto rmod = output.GetRow(i);
+					for (int q = 0; q < nRows; ++q)
+					{
+						if (q!=i)
+						{
+							double diff = copy(q,i);
+							// std::cout << "Copying val = " << diff << std::endl;
+							for (int p = 0; p < nRows; ++p)
+							{
+								output(q,p) -= diff*rmod[p];
+								copy(q,p) -= diff*lmod[p];
+
+							}
+						}
+					}
+					// std::cout << "Step " << 2*i+2 << "\n" << output.to_string() << " \n\n" << copy.to_string()<< std::endl;
+					// std::cout << output << std::endl;
+				}
+				
+				return output;
+			}
+
 			//! Converts the matrix to a human-readable string \returns A string representing the object		
 			std::string to_string() const
 			{
@@ -262,7 +301,7 @@ namespace JSL
 				return outString;
 			}
 		
-		
+
 		
 		private:
 			std::vector<std::vector<double>> Data;
@@ -377,7 +416,6 @@ namespace JSL
 		}
 		
 		Matrix output(lhs.Rows(),rhs.Columns());
-		
 		for (int i = 0; i < output.Rows(); ++i)
 		{
 			for (int j = 0; j < output.Columns(); ++j)

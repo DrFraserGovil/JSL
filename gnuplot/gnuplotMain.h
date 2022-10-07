@@ -13,7 +13,7 @@ namespace JSL
 		gnuplot()	
 		{
 			DirName = "gnuplot_tmp_" + std::to_string(rand());
-			Axes = {{Axis(DirName)}};
+			Axes = {{Axis(DirName,GlobalColours)}};
 			axis_x = 0;
 			axis_y = 0;
 			mkdir(DirName);
@@ -34,7 +34,7 @@ namespace JSL
 				Axes[i].resize(xCount);
 				for (int j = 0; j < xCount; ++j)
 				{
-					Axes[i][j] = Axis(DirName);
+					Axes[i][j] = Axis(DirName,GlobalColours);
 				}
 				//  = std::vector<Axis>(xCount, DirName);
 			}
@@ -206,6 +206,10 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetLegend(state);
 		}
+		void SetLegendLocation(std::string loc)
+		{
+			Axes[axis_y][axis_x].SetLegendLocation(loc);
+		}
 		//! Calls Axis::SetXTime(bool) on the axis currently in focus.
 		void SetXTime(bool val)
 		{
@@ -277,6 +281,38 @@ namespace JSL
 			font = f;
 		}
 
+		void SetColourMap(std::vector<std::vector<double>> rgb)
+		{
+			Axes[axis_y][axis_x].SetColourMap(rgb);
+		}
+		void SetColourMap(int n, std::vector<double> start, std::vector<double> end)
+		{
+			Axes[axis_y][axis_x].SetColourMap(n,start,end);
+		}
+		void SetGlobalColourMap(std::vector<std::vector<double>> rgb)
+		{
+			GlobalColours.SetColours(rgb);
+			for (int i = 0; i <= axis_x_max; ++i)
+			{
+				for (int j = 0; j <= axis_y_max;++j)
+				{
+					Axes[j][i].GlobalColourSet(GlobalColours);
+				}
+			}
+		}
+		void SetGlobalColourMap(int n, std::vector<double> start, std::vector<double> end)
+		{
+			GlobalColours.SetColours(n,start,end);
+			std::cout << "Setting all colours " << axis_x_max << "  " << axis_y_max << std::endl;
+			for (int i = 0; i <= axis_x_max; ++i)
+			{
+				for (int j = 0; j <= axis_y_max;++j)
+				{
+					std::cout << "Setting " << i << " " << j << std::endl;
+					Axes[j][i].GlobalColourSet(GlobalColours);
+				}
+			}
+		}
 		//! Sets the fontsize of one of the texts associated with either the global fonts (such as global default or supertitle), or of the axis currently in focus \param target The identifier of the text to be changed \param size The desired fontsize
 		void SetFontSize(Fonts::Target target, unsigned int size)
 		{
@@ -318,7 +354,7 @@ namespace JSL
 		bool defaultSize = true;			//! Toggle indicating that gnuplot::WindowSize() has not been called -- needed because changing window size is gross in gnuplot, so best left alone!
 		int windowWidth;					//! Current value of the window Width
 		int windowHeight;					//! Current value of the window height
-
+		ColourArray GlobalColours;
 		//! When called, and if the relevant compiler flag is not set, recursively deletes the directory associated with gnuplot::DirName
 		void CleanupTempFiles()
 		{

@@ -98,9 +98,10 @@ namespace JSL
 			void SetColour(std::vector<double> cs)
 			{
 				Assert("RGB Vectors must have length 3", cs.size() == 3);
-				Assert("When passed as doubles, colour vals must be 0<=x<=1",abs(cs[0]) < 1, abs(cs[1]) < 1, abs(cs[2]) < 1);
+				Assert("When passed as doubles, colour vals must be 0<=x<=1",abs(cs[0]) <= 1, abs(cs[1]) <= 1, abs(cs[2]) <=	 1);
 				SetColour(255*abs(cs[0]),255*abs(cs[1]),255*abs(cs[2]));
 			}
+		
 			//! Default template function - used to throw error messages if innapropriate pensize specifications used.
 			template<typename T>
 			void SetPenSize(T v)

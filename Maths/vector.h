@@ -47,6 +47,15 @@ namespace JSL
 			{
 				return nElements;
 			}
+
+			double Min() const
+			{
+				return *std::min_element(Data.begin(),Data.end());
+			}
+			double Max() const
+			{
+				return *std::max_element(Data.begin(),Data.end());
+			}
 			//! Overload access operator so can call Vector[0] etc as normal for a vector class. Performs checks on the size so that you cannot over/underflow the memory access
 			double & operator[](int idx)
 			{
