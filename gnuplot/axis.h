@@ -153,7 +153,7 @@ namespace JSL
 				AddProperty(key_cmd + Fonts::SizeString(legendFontSize));
 				RangeSetter("x",range_x);
 				RangeSetter("y",range_y);
-				
+				FormatSetter();
 				if (DataIdx > 0)
 				{
 					WriteCommand += "plot ";
@@ -251,6 +251,14 @@ namespace JSL
 				title = tit;
 				titleFontSize = size;
 			}
+			void SetXTicPowerFormat(bool val)
+			{
+				powerFormat_X = val;
+			}
+			void SetYTicPowerFormat(bool val)
+			{
+				powerFormat_Y = val;
+			}
 			//! Setter for Axis::gridActive
 			void SetGrid(bool state)
 			{
@@ -323,6 +331,8 @@ namespace JSL
 			std::vector<PlotData> Data; //!< A vector of data detailing what should be plotted, and what it looks like, accessed during Axis::Show()
 			bool legendActive = false; //!< If true, shows a legend on the axis
 			int DataIdx; //!< The current counter for how many plots/lines have been added to the axis, used to index Axis::Data
+			bool powerFormat_X = false; // sets flag to turn all xtics into powers of 10
+			bool powerFormat_Y = false;
 			ColourArray Colours;
 			std::string WriteCommand;//!< The string into which the Axis::Show() function puts all its data
 			
@@ -384,6 +394,25 @@ namespace JSL
 				{
 					std::string cmd = "set " + axisPrefix + "data time\nset timefmt \"%s\"";
 					AddProperty(cmd);
+				}
+			}
+			void FormatSetter()
+			{
+				if (powerFormat_X)
+				{
+					AddProperty("set format x \"10^{%T}\"");
+				}
+				else
+				{
+					AddProperty("unset format x");
+				}
+				if (powerFormat_Y)
+				{
+					AddProperty("set format y \"10^{%T}\"");
+				}
+				else
+				{
+					AddProperty("unset format y");
 				}
 			}
 			void AngleSetter(const std::string & axisPrefix, int angle)

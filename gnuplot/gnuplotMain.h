@@ -230,6 +230,14 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetYTicAngle(val);
 		}
+		void SetXTicPowerFormat(bool val)
+		{
+			Axes[axis_y][axis_x].SetXTicPowerFormat(val);
+		}
+		void SetYTicPowerFormat(bool val)
+		{
+			Axes[axis_y][axis_x].SetYTicPowerFormat(val);
+		}
 		void SetGrid(bool val)
 		{
 			Axes[axis_y][axis_x].SetGrid(val);
