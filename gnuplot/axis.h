@@ -149,6 +149,10 @@ namespace JSL
 				else
 				{
 					key_cmd += " " + legendLocation;
+					if (legendCols > 1)
+					{
+						key_cmd += " horizontal maxrows " + std::to_string(legendCols);
+					}
 				}
 				AddProperty(key_cmd + Fonts::SizeString(legendFontSize));
 				RangeSetter("x",range_x);
@@ -241,6 +245,10 @@ namespace JSL
 			{
 				legendLocation = loc;
 			}
+			void SetLegendColumns(int cols)
+			{
+				legendCols = cols;
+			}
 			//! Simple setter for Axis::title
 			void SetTitle(std::string tit)
 			{
@@ -327,6 +335,7 @@ namespace JSL
 			int titleFontSize = -1;//!<The font size used to write Axis::title. If < 0, uses the value of gnuplot::globalFontSize
 			int legendFontSize = -1;//!<The font size used to write the legend, if active. If < 0, uses the value of gnuplot::globalFontSize
 			std::string legendLocation = "left top";
+			int legendCols = -1;
 			std::string DataDir; //!< The directory reserved for this axis to write its data to file for gnuplot to later scoop up
 			std::vector<PlotData> Data; //!< A vector of data detailing what should be plotted, and what it looks like, accessed during Axis::Show()
 			bool legendActive = false; //!< If true, shows a legend on the axis

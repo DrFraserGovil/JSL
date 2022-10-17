@@ -210,6 +210,10 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetLegendLocation(loc);
 		}
+		void SetLegendColumns(int cols)
+		{
+			Axes[axis_y][axis_x].SetLegendColumns(cols);
+		}
 		//! Calls Axis::SetXTime(bool) on the axis currently in focus.
 		void SetXTime(bool val)
 		{
