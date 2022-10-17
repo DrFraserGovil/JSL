@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <algorithm>
 #include <stdexcept>
 #include <string.h>
 #include <iostream>
