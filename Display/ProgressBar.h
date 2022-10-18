@@ -15,7 +15,7 @@ namespace JSL
 	template<int Dimension = 1, bool DeleteMode = true, char Symbol = '#',unsigned int MaxHashes =20>
 	class ProgressBar
 	{
-		private:
+		protected:
 			bool firstPrint = true; //!<Toggle to ensure open-brace "[" is printed only once
 			std::vector<int> BarTargets; //!<Storage for the target number of processes
 			std::vector<double> BarProgress; //!< Current progress value (between 0 and 1)
@@ -71,7 +71,7 @@ namespace JSL
 				}
 			}
 			//! The version of Printing which happens if DeleteMode is true -- clears the previous bars using ANSI codes, then overwrites them with the new values
-			void PrintPositions_DeleteMode()
+			virtual void PrintPositions_DeleteMode()
 			{
 				if (!firstPrint)
 				{
