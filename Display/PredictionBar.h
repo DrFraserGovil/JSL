@@ -36,6 +36,7 @@ namespace JSL
 		private:
 			std::chrono::time_point<std::chrono::system_clock> Start;
 			std::chrono::time_point<std::chrono::system_clock> UpdateTime;
+			double CurrentDuration;
 			double Prediction = 0;
 			double prevProgress = 0;
 			void ComputeTime()
@@ -43,6 +44,7 @@ namespace JSL
 				std::chrono::time_point<std::chrono::system_clock> Now = std::chrono::system_clock::now();
 				std::chrono::duration<double,std::ratio<1,1>> totalDuration = Now - Start;
 				std::chrono::duration<double,std::ratio<1,1>> updateDuration = Now - UpdateTime;
+				CurrentDuration = totalDuration.count();
 				if (updateDuration.count() > 1)
 				{
 					this->reprintNeeded = true;
@@ -58,13 +60,26 @@ namespace JSL
 					{
 						double prog = this->BarProgress[i] * (this->BarTargets[i]-1)/(this->BarTargets[i]);
 						totalProg += prog * next;
-						next = 1.0/(this->BarTargets[i]);
+						next = next/(this->BarTargets[i]);
+						// std::cout << i << "  " << prog << "  " << next << "  " << totalProg << std::endl;
 					}
+					
 					double globalRate = totalProg/totalDuration.count();
 					double stepRate = (totalProg - prevProgress)/updateDuration.count();
-					double w = 0.98;
+					double w = 0.5;
 					double meanRate = (1.0 - w)*globalRate + w*stepRate;
-					Prediction = (1.0 - totalProg)/meanRate;
+					double anticipate = std::max(0.0,Prediction - updateDuration.count());
+					double mem = 0.99;
+					double activePrediction = (1.0 - totalProg)/meanRate;
+					if (activePrediction > anticipate)
+					{
+						mem = 0.5;
+					}
+					
+					
+					// std::cout << "Anticiapting " << Prediction << " - " << updateDuration.count() << " = " << Prediction - updateDuration.count() << " = " << anticipate << " actively " << activePrediction << " av = " << mem * anticipate + (1.0 - mem)*activePrediction<< "\n\n\n\n";
+					Prediction = mem * anticipate + (1.0 - mem)*activePrediction;
+					// std::cout << "Estimated " << totalProg << " through at rates " << globalRate << "   " << stepRate << "\n\n\n\n";
 					prevProgress = totalProg;
 				}
 			}
@@ -87,6 +102,10 @@ namespace JSL
 					if (i == Dimension - 1)
 					{
 						std::cout << " ETR: " << FormatDuration(Prediction);
+					}
+					if (i == 0)
+					{
+						std::cout << " " << (int)(100*prevProgress) << "%" << " in " << JSL::FormatDuration(CurrentDuration);
 					}
 					std::cout << "\n";
 				}
