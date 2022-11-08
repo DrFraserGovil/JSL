@@ -3,7 +3,7 @@
 namespace JSL
 {
 
-	std::vector<double> rgb_to_hsv(std::vector<double> rgb)
+	inline std::vector<double> rgb_to_hsv(std::vector<double> rgb)
 	{
 		double r = rgb[0];
 		double g = rgb[1];
@@ -39,7 +39,7 @@ namespace JSL
 		}
 		return {h,s,v};
 	}
-	std::vector<double> hsv_to_rgb(std::vector<double> hsv)
+	inline std::vector<double> hsv_to_rgb(std::vector<double> hsv)
 	{
 		double h = hsv[0];
 		double s = hsv[1];
