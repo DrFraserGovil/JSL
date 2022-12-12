@@ -234,6 +234,14 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetYTicAngle(val);
 		}
+		void SetXTicGap(double gap)
+		{
+			Axes[axis_y][axis_x].SetXTicGap(gap);
+		}
+		void SetYTicGap(double gap)
+		{
+			Axes[axis_y][axis_x].SetYTicGap(gap);
+		}
 		void SetXTicPowerFormat(bool val)
 		{
 			Axes[axis_y][axis_x].SetXTicPowerFormat(val);

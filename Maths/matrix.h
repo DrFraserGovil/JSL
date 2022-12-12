@@ -150,6 +150,32 @@ namespace JSL
 				}
 			}
 		
+
+			Matrix Cholesky() const
+			{
+				Matrix out(nRows,nCols);
+				for (int i = 0; i < nRows; ++i)
+				{
+					double diag = Data[i][i];
+					for (int q = 0; q < i; ++q)
+					{
+						diag -= pow(out(q,i),2);
+					}
+					diag =  sqrt(diag);
+					out(i,i) = diag;
+					for (int j = i+1; j < nRows; ++j)
+					{
+						double el = Data[i][j];
+						for (int q = 0; q < i; ++q)
+						{
+							el -= out(i,q) * out(j,q);
+						}
+						out(j,i) = el/diag;
+					}
+				}
+				return out;
+			}
+
 			//! In-place addition of two matrices. \param rhs The matrix to be accumulated into the current object. Must be the same dimensions as the calling object. \returns A reference to the now-modified calling object
 			Matrix & operator+=(const Matrix & rhs)
 			{
@@ -247,33 +273,56 @@ namespace JSL
 				{
 					//check if Data[i][i] != 0, then do swap?!
 					double grab = copy(i,i);
-					for (int j = 0; j < nRows; ++j)
+					
+					if (abs(grab) > 1e-180)
 					{
-						copy(i,j) /= grab;
-						output(i,j)/= grab;
-					}
-					// std::cout << "Step " << 2*i+1 << " with grab = " << grab << "\n" << output.to_string() << " \n\n" << copy.to_string() << std::endl;
-					auto lmod = copy.GetRow(i);
-					auto rmod = output.GetRow(i);
-					for (int q = 0; q < nRows; ++q)
-					{
-						if (q!=i)
+						for (int j = 0; j < nRows; ++j)
 						{
-							double diff = copy(q,i);
-							// std::cout << "Copying val = " << diff << std::endl;
-							for (int p = 0; p < nRows; ++p)
+							copy(i,j) /= grab;
+							output(i,j)/= grab;
+						}
+						// std::cout << "Step " << 2*i+1 << " with grab = " << grab << "\n" << output.to_string() << " \n\n" << copy.to_string() << std::endl;
+						auto lmod = copy.GetRow(i);
+						auto rmod = output.GetRow(i);
+						for (int q = 0; q < nRows; ++q)
+						{
+							if (q!=i)
 							{
-								output(q,p) -= diff*rmod[p];
-								copy(q,p) -= diff*lmod[p];
-
+								double diff = copy(q,i);
+								// std::cout << "Copying val = " << diff << std::endl;
+								for (int p = 0; p < nRows; ++p)
+								{
+									output(q,p) -= diff*rmod[p];
+									copy(q,p) -= diff*lmod[p];
+									// if (abs(output(q,p)) < 1e-10)
+									// {
+									// 	output(q,p) = 0;
+									// }
+									// if (abs(copy(q,p)) < 1e-10)
+									// {
+									// 	copy(q,p) = 0;
+									// }
+								}
 							}
 						}
 					}
+					
 					// std::cout << "Step " << 2*i+2 << "\n" << output.to_string() << " \n\n" << copy.to_string()<< std::endl;
 					// std::cout << output << std::endl;
 				}
 				
 				return output;
+			}
+
+			double Trace()
+			{
+				assert(nRows == nCols); //can only trace a square matrix
+				double r= 0;
+				for (int i = 0; i < nRows; ++i)
+				{
+					r += Data[i][i]; 
+				}
+				return r;
 			}
 
 			//! Converts the matrix to a human-readable string \returns A string representing the object		

@@ -67,7 +67,7 @@ namespace JSL
 		template<typename T, typename... Ts>
 		void inline variadicVectorPrint(std::fstream& os, const std::string & delimiter, int i, const std::vector<T>& first, const std::vector<Ts>&... args)
 		{
-			os << first[i];
+			os << std::setprecision(10) << first[i];
 			if constexpr (sizeof...(args) > 0)
 			{
 				os  <<delimiter;

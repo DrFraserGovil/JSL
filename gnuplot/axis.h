@@ -96,7 +96,7 @@ namespace JSL
 				for (int i = 0; i < x.size(); ++i)
 				{
 					std::ostringstream os;
-					os << "\"" << x[i] << "\"";
+					os << "" << x[i] << "";
 					mock_x[i] = os.str();
 				}
 				std::vector<int> idx(x.size());
@@ -157,6 +157,8 @@ namespace JSL
 				AddProperty(key_cmd + Fonts::SizeString(legendFontSize));
 				RangeSetter("x",range_x);
 				RangeSetter("y",range_y);
+				TicGapSetter("x",xticgap);
+				TicGapSetter("y",yticgap);
 				FormatSetter();
 				if (DataIdx > 0)
 				{
@@ -263,6 +265,14 @@ namespace JSL
 			{
 				powerFormat_X = val;
 			}
+			void SetXTicGap(double val)
+			{
+				xticgap = val;
+			}
+			void SetYTicGap(double val)
+			{
+				yticgap = val;
+			}
 			void SetYTicPowerFormat(bool val)
 			{
 				powerFormat_Y = val;
@@ -342,6 +352,8 @@ namespace JSL
 			int DataIdx; //!< The current counter for how many plots/lines have been added to the axis, used to index Axis::Data
 			bool powerFormat_X = false; // sets flag to turn all xtics into powers of 10
 			bool powerFormat_Y = false;
+			double xticgap = -1;
+			double yticgap = -1;
 			ColourArray Colours;
 			std::string WriteCommand;//!< The string into which the Axis::Show() function puts all its data
 			
@@ -436,6 +448,15 @@ namespace JSL
 						cmd += " offset " + std::to_string(xOffset) + "," + std::to_string(yOffset);
 					}
 					// std::cout << cmd << std::endl;
+					AddProperty(cmd);
+				}
+			}
+
+			void TicGapSetter(const std::string & axisPrefix, double gap)
+			{
+				if (gap > 0)
+				{
+					std::string cmd = "set " + axisPrefix +"tic " + std::to_string(gap);
 					AddProperty(cmd);
 				}
 			}

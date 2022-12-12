@@ -103,10 +103,10 @@ namespace JSL
 					{
 						std::cout << " ETR: " << FormatDuration(Prediction);
 					}
-					if (i == 0)
-					{
-						std::cout << " " << (int)(100*prevProgress) << "%" << " in " << JSL::FormatDuration(CurrentDuration);
-					}
+					// if (i == 0)
+					// {
+					// 	std::cout << " " << (int)(100*prevProgress) << "%" << " in " << JSL::FormatDuration(CurrentDuration);
+					// }
 					std::cout << "\n";
 				}
 			}

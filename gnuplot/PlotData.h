@@ -174,8 +174,12 @@ namespace JSL
 			void SetLegend(std::string s)
 			{
 				legend = s;
+				useLegend = true;
 			}
-
+			void SetLegend(bool t)
+			{
+				useLegend = t;
+			}
 			//! Formats the internal data and writes it to a string for use in a gnuplot script \returns A string containing the necessary data to plot the internal data
 			std::string Write(ColourArray & colours)
 			{
@@ -218,7 +222,15 @@ namespace JSL
 				}
 				colours.Save(colour);
 				line += " lc " + colour;
-				line += " title \"" + legend+ "\"";
+				
+				if (!useLegend)
+				{
+					line += " notitle";
+				}
+				else
+				{
+					line += " title \"" + legend+ "\"";
+				}
 				return line + ",\\\n";
 			}
 		private:
@@ -229,7 +241,7 @@ namespace JSL
 			std::string legend; //!< The name associated with this data on the legend
 			std::string colour; //!< The colour used to plot the data - if not specified, uses the default gnuplot colour roster.
 			int penSize; //!< The thickness of the pen used to write the data
-
+			bool useLegend = false;
 			//! Sets the default values of the members
 			void DefaultInit()
 			{
