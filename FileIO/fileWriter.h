@@ -147,4 +147,25 @@ namespace JSL
 		}	
 		file.close();
 	}
+
+
+	/*!
+	 * A funciton similar to writeMatrix, but customised to the dumb format required for gnuplot heatmaps with their additional weird linebreak everytime the x-value changes
+	*/
+	template<class T, class R, class S>
+	void inline writeHeatMapToFile(const std::string & filename, const std::vector<R> & x, const std::vector<S> & y, const std::vector<std::vector<T>> z, const std::string & columnDelimiter)
+	{
+		std::fstream file;
+		file.open(filename,std::ios::app);
+
+		for (int i =0 ; i < x.size(); ++i)
+		{
+			for (int j = 0; j < y.size(); ++j)
+			{
+				file << x[i] << columnDelimiter << y[j] << columnDelimiter << z[j][i] << "\n";
+			}
+			file << "\n";
+		}
+		file.close();
+	}
 }

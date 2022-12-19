@@ -123,6 +123,11 @@ namespace JSL
 			return Axes[axis_y][axis_x].Chart((std::vector<double>)x, (std::vector<double>)y, args...);
 		};
 
+		template <class R, class T, class S, typename... Ts>
+		PlotData &Map(const std::vector<T> &x, const std::vector<S> &y, const std::vector<std::vector<R>> &z, NameValuePair<Ts>... args)
+		{
+			return Axes[axis_y][axis_x].Map(x, y, z,args...);
+		};
 
 		//! The key function - until this function is called, the plot is hypothetical. Calling this function generates a gnuplot script file, which each axis writes to to generate the appropriate plot, which is then called using a system command, producing the plot.
 		void Show()

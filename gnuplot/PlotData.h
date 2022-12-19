@@ -3,7 +3,7 @@
 #include "colorArray.h"
 namespace JSL
 {
-	enum PlotType {Line,ScatterPoint,BarChart};
+	enum PlotType {Line,ScatterPoint,BarChart, SurfaceMap};
 	enum Property {Colour,PenSize,PenType,Legend};
 	enum LineType {Solid, Dash, DashDot,Dotted, DashDotDot};
 	enum ScatterType {Dot, Plus,Cross,Star,OpenSquare,FilledSquare,OpenCircle,FilledCircle,OpenDelta,FilledDelta,OpenNabla,FilledNabla,OpenDiamond,FilledDiamond};
@@ -203,6 +203,10 @@ namespace JSL
 						line += "using 1:3:xtic(2) with boxes ";
 						break;
 					}
+					case SurfaceMap:
+					{
+						line += "using 1:2:3 with image ";
+					}
 					default:
 					{
 						break;
@@ -258,6 +262,8 @@ namespace JSL
 						break;
 					case BarChart:
 						SetPenType(Solid);
+						break;
+					default:
 						break;
 				};
 

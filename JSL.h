@@ -7,6 +7,9 @@ This code is intended to capture several elements of boilerplate code that I end
 It shouldn't be of any interest to anyone else, but just in case, it is distributed under a GNU v3 public license. Go nuts, weirdos. 
 */
 
+
+#define JSL_LIBRARY_INSTALLED //define a preprocessor variable which allows other libraries to conditionally install off it
+
 #include "FileIO/FileIO.h"
 #include "Strings/Strings.h"
 #include "CommandArgs/CommandArgs.h"

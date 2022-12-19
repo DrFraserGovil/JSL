@@ -3,7 +3,7 @@
 #include <iostream>
 #include "../FileIO/FileIO.h"
 #include "PlotData.h"
-#include <math.h>
+#include <cmath>
 #include "../System/System.h"
 #include "colorArray.h"
 namespace JSL
@@ -108,7 +108,21 @@ namespace JSL
 				return Data[Data.size()-1];
 			};
 
-	
+			template<class T, class S, class R, typename... Ts>
+			PlotData & Map(const std::vector<T> & x,const std::vector<S>  & y, const std::vector<std::vector<R>> & z, NameValuePair<Ts>... args)
+			{
+				int nx = x.size();
+				int ny = y.size();
+				int nz0 = z.size();
+				int nz1 = z[0].size();
+				Assert("Mapping requires an x-vector, a y-vector and a z-matrix with z[y][x] dimensions consistent",ny==nz0,nx==nz1);
+				std::string name = NewData();
+				
+				writeHeatMapToFile(name,x,y,z," ");
+				Data.push_back(PlotData(name,DataIdx,SurfaceMap,args...));
+				MapMode = true;
+				return Data[Data.size()-1];
+			}
 
 			//! The command which generates the gnuplot scripting code for plotting the data on this axis \returns The string corresponding to the gnuplot script, must be written to file to be actionable
 			std::string Show()
@@ -122,46 +136,63 @@ namespace JSL
 				{
 					AddProperty("unset title");
 				}
-				SpanSetter();
-				TimeSetter("x",isTime_x);
-				TimeSetter("y",isTime_y);
-				AddProperty("set xlabel \"" + xlabel + "\"" + Fonts::SizeString(axisFontSize));
-				AddProperty("set ylabel \"" + ylabel + "\"" + Fonts::SizeString(axisFontSize));
-				AddProperty("set tics " + Fonts::SizeString(axisFontSize));
-				AddProperty("set style fill solid");
-				AddProperty("set boxwidth 0.75");
-				LogSetter("x",isLog_x);
-				LogSetter("y",isLog_y);
-				AngleSetter("x",xTicAngle);
-				AngleSetter("y",yTicAngle);
-				std::string grid_cmd = "set grid";
-				if (!gridActive)
-				{
-					grid_cmd = "un" + grid_cmd;
-				}
-				AddProperty(grid_cmd);
-				std::string key_cmd = "set key";
-				
-				if (!legendActive)
-				{
-					key_cmd = "un" + key_cmd;
-				}
-				else
-				{
-					key_cmd += " " + legendLocation;
-					if (legendCols > 1)
-					{
-						key_cmd += " horizontal maxrows " + std::to_string(legendCols);
-					}
-				}
-				AddProperty(key_cmd + Fonts::SizeString(legendFontSize));
-				RangeSetter("x",range_x);
-				RangeSetter("y",range_y);
-				TicGapSetter("x",xticgap);
-				TicGapSetter("y",yticgap);
-				FormatSetter();
+
 				if (DataIdx > 0)
 				{
+					SpanSetter();
+					TimeSetter("x",isTime_x);
+					TimeSetter("y",isTime_y);
+					if (MapMode)
+					{
+						AddProperty("set view map");
+						// AddProperty("set dgrid3d");
+						// AddProperty("set pm3d interpolate 1,1");
+						AddProperty("unset colorbox");
+					}
+					AddProperty("set border");
+					AddProperty("set xlabel \"" + xlabel + "\"" + Fonts::SizeString(axisFontSize));
+					AddProperty("set ylabel \"" + ylabel + "\"" + Fonts::SizeString(axisFontSize));
+					AddProperty("set tics " + Fonts::SizeString(axisFontSize));
+					AddProperty("set style fill solid");
+					AddProperty("set boxwidth 0.75");
+					// AddProperty("set lmargin 0.1");
+
+					LogSetter("x",isLog_x);
+					LogSetter("y",isLog_y);
+					AngleSetter("x",xTicAngle);
+					AngleSetter("y",yTicAngle);
+					std::string grid_cmd = "set grid";
+					if (!gridActive)
+					{
+						grid_cmd = "un" + grid_cmd;
+					}
+					AddProperty(grid_cmd);
+					std::string key_cmd = "set key";
+					
+					if (!legendActive)
+					{
+						key_cmd = "un" + key_cmd;
+					}
+					else
+					{
+						key_cmd += " " + legendLocation;
+						if (legendCols > 1)
+						{
+							key_cmd += " horizontal maxrows " + std::to_string(legendCols);
+						}
+					}
+					AddProperty(key_cmd + Fonts::SizeString(legendFontSize));
+					RangeSetter("x",range_x);
+					RangeSetter("y",range_y);
+					TicGapSetter("x",xticgap);
+					TicGapSetter("y",yticgap);
+					FormatSetter();
+					
+					// if (MapMode)
+					// {
+					// 	WriteCommand += "s"; // splot for map mode
+					// }
+
 					WriteCommand += "plot ";
 					for (int i =0; i < DataIdx; ++i)
 					{
@@ -171,7 +202,9 @@ namespace JSL
 				else
 				{
 					//creates an empty axis - else gnuplot skips them and the alignment gets all messed up
+					AddProperty("unset border\nunset tics\nunset xlabel\nunset ylabel");
 					AddProperty("set xrange [0:1]\nset yrange[0:1]\nset key off\nplot 5\n\n");
+					
 				}
 				return WriteCommand;
 			}
@@ -346,6 +379,7 @@ namespace JSL
 			int legendFontSize = -1;//!<The font size used to write the legend, if active. If < 0, uses the value of gnuplot::globalFontSize
 			std::string legendLocation = "left top";
 			int legendCols = -1;
+			bool MapMode = false;
 			std::string DataDir; //!< The directory reserved for this axis to write its data to file for gnuplot to later scoop up
 			std::vector<PlotData> Data; //!< A vector of data detailing what should be plotted, and what it looks like, accessed during Axis::Show()
 			bool legendActive = false; //!< If true, shows a legend on the axis
