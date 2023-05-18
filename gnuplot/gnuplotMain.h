@@ -336,6 +336,10 @@ namespace JSL
 				}
 			}
 		}
+		void SetPalette(std::string in)
+		{
+			Axes[axis_y][axis_x].SetPalette(in);
+		}
 		//! Sets the fontsize of one of the texts associated with either the global fonts (such as global default or supertitle), or of the axis currently in focus \param target The identifier of the text to be changed \param size The desired fontsize
 		void SetFontSize(Fonts::Target target, unsigned int size)
 		{

@@ -156,7 +156,10 @@ namespace JSL
 					AddProperty("set style fill solid");
 					AddProperty("set boxwidth 0.75");
 					// AddProperty("set lmargin 0.1");
-
+					if (PaletteActive)
+					{
+						AddProperty("set palette " + palette);
+					}
 					LogSetter("x",isLog_x);
 					LogSetter("y",isLog_y);
 					AngleSetter("x",xTicAngle);
@@ -320,6 +323,11 @@ namespace JSL
 				xSpan = x;
 				ySpan = y;
 			}
+			void SetPalette(std::string in)
+			{
+				PaletteActive = true;
+				palette = in;
+			}
 			//!Sets the fontsize of one of the texts associated with the axis \param target The identifier of the text to be changed \param size The desired fontsize
 			void SetFontSize(Fonts::Target target, unsigned int size)
 			{
@@ -386,6 +394,8 @@ namespace JSL
 			int DataIdx; //!< The current counter for how many plots/lines have been added to the axis, used to index Axis::Data
 			bool powerFormat_X = false; // sets flag to turn all xtics into powers of 10
 			bool powerFormat_Y = false;
+			bool PaletteActive = false;
+			std::string palette;
 			double xticgap = -1;
 			double yticgap = -1;
 			ColourArray Colours;
