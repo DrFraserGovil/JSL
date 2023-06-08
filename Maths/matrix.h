@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <string.h>
 #include <iostream>
+#include <cassert>
 #include <math.h>
 #include "vector.h"
 namespace JSL
