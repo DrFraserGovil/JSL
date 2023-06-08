@@ -2,6 +2,7 @@
 #include "string.h"
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 #include "../System/System.h"
 namespace JSL
 {	
