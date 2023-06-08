@@ -147,7 +147,17 @@ namespace JSL
 						AddProperty("set view map");
 						// AddProperty("set dgrid3d");
 						// AddProperty("set pm3d interpolate 1,1");
-						AddProperty("unset colorbox");
+						if (showColorBar)
+						{	
+							AddProperty("set colorbox");
+							// AddProperty("set autoscale cb");
+						}
+						else
+						{
+							AddProperty("unset colorbox");
+						}
+						RangeSetter("cb",range_c);
+						// AddProperty("unset colorbox");
 					}
 					AddProperty("set border");
 					AddProperty("set xlabel \"" + xlabel + "\"" + Fonts::SizeString(axisFontSize));
@@ -221,6 +231,10 @@ namespace JSL
 			void SetYRange(double min, double max)
 			{
 				range_y = {min,max};
+			}
+			void SetColourRange(double min,double max)
+			{
+				range_c = {min,max};
 			}
 			//! Simple setter for Axis::xlabel
 			void SetXLabel(std::string xl)
@@ -354,7 +368,10 @@ namespace JSL
 					}
 				}
 			}
-
+			void SetColourBar(bool in)
+			{
+				showColorBar = in;
+			}
 			void SetColourMap(std::vector<std::vector<double>> rgb)
 			{
 				Colours.SetColours(rgb);
@@ -373,6 +390,7 @@ namespace JSL
 			std::string ylabel; //!<The text which appears to the left of the y axis
 			std::vector<double> range_x; //!< A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling
 			std::vector<double> range_y;//!< A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling
+			std::vector<double> range_c;
 			bool isLog_x = false;//!< If true, uses logarithmic scaling on the x axis
 			bool isTime_x = false;//!<If true, interprets the x axis as a temporal coordinate
 			bool isTime_y = false;//!<If true, interprets the y axis as a temporal coordinate
@@ -395,6 +413,7 @@ namespace JSL
 			bool powerFormat_X = false; // sets flag to turn all xtics into powers of 10
 			bool powerFormat_Y = false;
 			bool PaletteActive = false;
+			bool showColorBar = true;
 			std::string palette;
 			double xticgap = -1;
 			double yticgap = -1;
@@ -448,8 +467,6 @@ namespace JSL
 				{
 					val = "[" + internal::signifier(range[0],8) + ":" + internal::signifier(range[1],8) + "]";
 				}
-
-
 				std::string cmd = "set " + axisPrefix + "range " + val;
 				AddProperty(cmd);
 			}

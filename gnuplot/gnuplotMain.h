@@ -176,6 +176,10 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetYRange(min, max);
 		}
+		void SetColourRange(double min, double max)
+		{
+			Axes[axis_y][axis_x].SetColourRange(min, max);
+		}
 		//! Calls Axis::SetXLog on the axis currently in focus.
 		void SetXLog(bool val)
 		{
@@ -305,7 +309,10 @@ namespace JSL
 		{
 			font = f;
 		}
-
+		void SetColourBar(bool in)
+		{
+			Axes[axis_y][axis_x].SetColourBar(in);
+		}
 		void SetColourMap(std::vector<std::vector<double>> rgb)
 		{
 			Axes[axis_y][axis_x].SetColourMap(rgb);
