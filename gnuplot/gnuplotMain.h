@@ -190,6 +190,11 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetYLog(val);
 		}
+		//! Calls Axis::SetCBLog on the axis currently in focus.
+		void SetCBLog(bool val)
+		{
+			Axes[axis_y][axis_x].SetCBLog(val);
+		}
 		//! Calls Axis::SetXLabel(std::string) on the axis currently in focus.
 		void SetXLabel(std::string xl)
 		{
@@ -200,6 +205,14 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetYLabel(yl);
 		}
+		void SetCBLabel(std::string cl)
+		{
+			Axes[axis_y][axis_x].SetCBLabel(cl);
+		}
+		void SetCBLabel(std::string cl, int f)
+		{
+			Axes[axis_y][axis_x].SetCBLabel(cl,f);
+		}
 		//! Calls Axis::SetXLabel(std::string,int) on the axis currently in focus.
 		void SetXLabel(std::string xl, int size)
 		{
@@ -209,6 +222,14 @@ namespace JSL
 		void SetYLabel(std::string yl, int size)
 		{
 			Axes[axis_y][axis_x].SetYLabel(yl, size);
+		}
+		void SetXTicLabels(std::vector<std::string> vals)
+		{
+			Axes[axis_y][axis_x].SetXTicLabels(vals);
+		}
+		void SetYTicLabels(std::vector<std::string> vals)
+		{
+			Axes[axis_y][axis_x].SetYTicLabels(vals);
 		}
 		//! Calls Axis::SetLegend on the axis currently in focus.
 		void SetLegend(bool state)

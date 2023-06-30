@@ -52,6 +52,7 @@ namespace JSL
 				title = "__null__";
 				xlabel = "x";
 				ylabel = "y";
+				cblabel = "";
 				DataIdx = 0;
 				Colours = colors;
 			}
@@ -151,16 +152,24 @@ namespace JSL
 						{	
 							AddProperty("set colorbox");
 							// AddProperty("set autoscale cb");
+							AddProperty("set cblabel \"" + cblabel + "\"");
 						}
 						else
 						{
 							AddProperty("unset colorbox");
 						}
 						RangeSetter("cb",range_c);
-						// AddProperty("unset colorbox");
 					}
 					AddProperty("set border");
 					AddProperty("set xlabel \"" + xlabel + "\"" + Fonts::SizeString(axisFontSize));
+					if (xtic_IsString)
+					{
+						TicStringSetter("x",xtic_Strings);
+					}
+					if (ytic_IsString)
+					{
+						TicStringSetter("y",ytic_Strings);
+					}
 					AddProperty("set ylabel \"" + ylabel + "\"" + Fonts::SizeString(axisFontSize));
 					AddProperty("set tics " + Fonts::SizeString(axisFontSize));
 					AddProperty("set style fill solid");
@@ -172,6 +181,7 @@ namespace JSL
 					}
 					LogSetter("x",isLog_x);
 					LogSetter("y",isLog_y);
+					LogSetter("cb", isLog_cb);
 					AngleSetter("x",xTicAngle);
 					AngleSetter("y",yTicAngle);
 					std::string grid_cmd = "set grid";
@@ -258,6 +268,15 @@ namespace JSL
 				ylabel = yl;
 				axisFontSize = fontsize;
 			}
+			void SetCBLabel(std::string cl, int fontsize)
+			{
+				cblabel = cl;
+				axisFontSize = fontsize;
+			}
+			void SetCBLabel(std::string cl)
+			{
+				cblabel = cl;
+			}
 			//! Simple setter for Axis::isLog_x
 			void SetXLog(bool val)
 			{
@@ -267,6 +286,10 @@ namespace JSL
 			void SetYLog(bool val)
 			{
 				isLog_y = val;
+			}
+			void SetCBLog(bool val)
+			{
+				isLog_cb = val;
 			}
 			//! Simple setter for Axis::isTime_x
 			void SetXTime(bool val)
@@ -327,6 +350,17 @@ namespace JSL
 			{
 				powerFormat_Y = val;
 			}
+
+			void SetXTicLabels(std::vector<std::string> vals)
+			{
+				xtic_IsString = true;
+				xtic_Strings = vals;
+			}
+			void SetYTicLabels(std::vector<std::string> vals)
+			{
+				ytic_IsString = true;
+				ytic_Strings = vals;
+			}
 			//! Setter for Axis::gridActive
 			void SetGrid(bool state)
 			{
@@ -384,10 +418,12 @@ namespace JSL
 			{
 				Colours = c;
 			}
+			
 		private:
 			std::string title; //!< The text which appears above the axis 
 			std::string xlabel;//!< The text which appears underneath the x axis
 			std::string ylabel; //!<The text which appears to the left of the y axis
+			std::string cblabel;
 			std::vector<double> range_x; //!< A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling
 			std::vector<double> range_y;//!< A (max) length-2 vector detailing the visual range of the plot on the x axis. If length is zero, uses gnuplot auto-scaling
 			std::vector<double> range_c;
@@ -395,9 +431,16 @@ namespace JSL
 			bool isTime_x = false;//!<If true, interprets the x axis as a temporal coordinate
 			bool isTime_y = false;//!<If true, interprets the y axis as a temporal coordinate
 			bool isLog_y = false;//!< If false, uses logarithmic scaling on the x axis
+			bool isLog_cb = false;
 			bool gridActive = false;//!<If true, overlays a grid onto the plot
 			double xSpan = -1;
 			double ySpan = -1;
+			bool xtic_IsString = false;
+			std::vector<std::string> xtic_Strings;
+			bool ytic_IsString = false;
+			std::vector<std::string> ytic_Strings;
+
+
 			int xTicAngle = 0; //!<RotationAngle of xtics
 			int yTicAngle = 0;//!<Rotation Angle of ytics
 			int axisFontSize = -1; //!< The font size used to write both the Axis::xlabel and Axis::ylabel (cannot be different for x/y). If < 0, uses the value of gnuplot::globalFontSize
@@ -508,7 +551,6 @@ namespace JSL
 						double yOffset = -2 * std::sin(3.141592654/180 * angle);
 						cmd += " offset " + std::to_string(xOffset) + "," + std::to_string(yOffset);
 					}
-					// std::cout << cmd << std::endl;
 					AddProperty(cmd);
 				}
 			}
@@ -521,5 +563,16 @@ namespace JSL
 					AddProperty(cmd);
 				}
 			}
+			void TicStringSetter(std::string axis,std::vector<std::string> vals)
+			{
+				std::string cmd = "set " + axis +"tics (";
+				for (int i = 0; i < vals.size(); ++i)
+				{
+					cmd += "\"" + vals[i] + "\" " + std::to_string(i) + ", ";
+				}
+				cmd += ")";
+				AddProperty(cmd);
+			}
+
 	};
 };

@@ -5,3 +5,4 @@
 #include "locationExists.h"
 #include "fileWriter.h"
 #include "lineCounter.h"
+#include "jfglatex.h"
