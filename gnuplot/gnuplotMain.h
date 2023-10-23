@@ -22,13 +22,11 @@ namespace JSL
 				std::cout << "JSL::GNUPLOT encountered an error making an intermediary directory, error is as follows:\n\n\t" << t.Message << "\n\nExiting...\n";
 				exit(5);
 			}
-			std::cout << "I believe I have initialised a directory " << DirName << std::endl;
 		};
 
 		//! Custom destructor which also calls CleanupTempFiles, tidying up after itself
 		~gnuplot()
 		{
-			std::cout << "Default destructor called " << std::endl;
 			CleanupTempFiles();
 		}
 
@@ -141,7 +139,6 @@ namespace JSL
 		{
 			std::string gpFile = DirName + "/" + "plotter.gp";
 			InitialiseOutput(gpFile);
-			std::cout << " I believe I have initialised the file " << gpFile << std::endl;
 			if (Axes.size() > 0 || Axes[0].size() > 0)
 			{
 				WriteMultiplotToFile(gpFile);
@@ -422,7 +419,6 @@ namespace JSL
 		{
 			#ifndef GNUPLOT_NO_TIDY
 				rm(DirName, true);
-				std::cout << "Deleted " << DirName << std::endl;
 			#endif
 		}
 
