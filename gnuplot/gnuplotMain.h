@@ -17,6 +17,7 @@ namespace JSL
 			axis_x = 0;
 			axis_y = 0;
 			mkdir(DirName);
+			std::cout << "I believe I have initialised a directory " << DirName << std::endl;
 		};
 
 		//! Custom destructor which also calls CleanupTempFiles, tidying up after itself
