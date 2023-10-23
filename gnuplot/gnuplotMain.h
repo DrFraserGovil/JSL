@@ -28,6 +28,7 @@ namespace JSL
 		//! Custom destructor which also calls CleanupTempFiles, tidying up after itself
 		~gnuplot()
 		{
+			std::cout << "Default destructor called " << std::endl;
 			CleanupTempFiles();
 		}
 
