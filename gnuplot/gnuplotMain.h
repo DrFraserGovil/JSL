@@ -421,6 +421,7 @@ namespace JSL
 		{
 			#ifndef GNUPLOT_NO_TIDY
 				rm(DirName, true);
+				std::cout << "Deleted " << DirName << std::endl;
 			#endif
 		}
 
