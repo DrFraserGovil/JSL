@@ -16,7 +16,12 @@ namespace JSL
 			Axes = {{Axis(DirName,GlobalColours)}};
 			axis_x = 0;
 			axis_y = 0;
-			mkdir(DirName);
+			mkdirReturn t = mkdir(DirName);
+			if (!t.Successful)
+			{
+				std::cout << "JSL::GNUPLOT encountered an error making an intermediary directory, error is as follows:\n\n\t" << t.Message << "\n\nExiting...\n";
+				exit(5);
+			}
 			std::cout << "I believe I have initialised a directory " << DirName << std::endl;
 		};
 
