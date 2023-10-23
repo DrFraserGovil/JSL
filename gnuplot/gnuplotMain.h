@@ -134,7 +134,7 @@ namespace JSL
 		{
 			std::string gpFile = DirName + "/" + "plotter.gp";
 			InitialiseOutput(gpFile);
-
+			std::cout << " I believe I have initialised the file " << gpFile << std::endl;
 			if (Axes.size() > 0 || Axes[0].size() > 0)
 			{
 				WriteMultiplotToFile(gpFile);

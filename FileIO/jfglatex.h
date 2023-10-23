@@ -29,7 +29,7 @@ namespace JSL
 		cmd += "mv " + filename + ".pdf " + compilename + ";";
 		if (JSL::locationExists("_build"))
 		{
-			cmd = "mv _build/* ./; " + cmd;
+			cmd = "[[ -f _build/* ]] && mv _build/* ./; " + cmd;
 			// system(mvcmd.c_str());
 		}
 		else
@@ -43,11 +43,10 @@ namespace JSL
 		}
 
 		std::vector<std::string> buildArray={"*.aux", "*.log", "*.toc", "*.mtc*", "*.blg", "*.bbl", "*.out", "*.maf", "*.fdb_latexmk", "*.fls", "*-blx.bib", "*xml", ".snm", "*.nav"};
-
+	// std::vector<std::string> buildArray={"*.aux"};
 		for (int i = 0; i < buildArray.size(); ++i)
 		{
 			cmd += "[ -f " + buildArray[i] + " ] && mv " + buildArray[i] + " _build/;";
-			// system(cmd.c_str());
 		}
 		system(cmd.c_str());
 	}

@@ -150,7 +150,7 @@ namespace JSL
 	inline void Argument<int>::AssignValue( const char * value)
 	{
 		double testDouble = std::stod(value);
-		int testInt = std::stoi(value);
+		int testInt = (int)testDouble;
 		
 		if ((double)testInt != testDouble)
 		{
@@ -158,7 +158,22 @@ namespace JSL
 		}
 		
 		//this method ensures that it can interpret in exponential notation as stod can do that!
-		Value = (int)testDouble;
+		Value = testInt;
+	}
+	//!Override of the AssignValue() function for Argument<long long int> objects. Throws an error if the value is a non-integer, to prevent silent casting/truncation
+	template<>
+	inline void Argument<long long int>::AssignValue( const char * value)
+	{
+		double testDouble = std::stod(value);
+		long long int testInt = (long long int)std::stod(value);
+		
+		if ((double)testInt != testDouble)
+		{
+			throw std::invalid_argument("Argument passed to " + TriggerString + " was a double, expected an integer");
+		}
+		
+		//this method ensures that it can interpret in exponential notation as stod can do that!
+		Value = testInt;
 	}
 	
 	
@@ -175,6 +190,9 @@ namespace JSL
 	{
 		Value = (std::string)value;
 	}
+	
+	
+
 	
 	//!Override of the AssignValue() function for Argument<bool> objects. Accepts only 0/1 as valid bool-strings
 	template<>
