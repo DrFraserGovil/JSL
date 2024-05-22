@@ -18,15 +18,13 @@
 }									\
 
 //! A similar macro to forLineIn, but this one iterates through piped input (either from explit pipes "|" or from directed files "<") line by line, exposing the variable PIPE_LINE for further manipulation
-#define forLineVectorInPipedInput(token, ...)\
+#define forLineVectorInPipedInput(token,...)\
 {								\
-	forLineInPipedInput(		\
-			std::vector<std::string> PIPE_LINE_VECTOR = JSL::split(PIPE_LINE);	\
-			__VA_ARGS__				\
-		}							\
-	} while(0);						\
-}									\
-
+	forLineInPipedInput(					\
+			std::vector<std::string> PIPE_LINE_VECTOR = JSL::split(PIPE_LINE,token);	\
+			__VA_ARGS__;				\
+	)									\
+}		
 namespace JSL
 {
 	//! An alias for an isatty command, given a easier to remember name \returns True if the program called with piped input (either via | or <). Does not work on Windows.

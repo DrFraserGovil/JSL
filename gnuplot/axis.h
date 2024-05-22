@@ -338,6 +338,10 @@ namespace JSL
 			{
 				powerFormat_X = val;
 			}
+			void SetCBTicPowerFormat(bool val)
+			{
+				powerFormat_CB = val;
+			}
 			void SetXTicGap(double val)
 			{
 				xticgap = val;
@@ -455,6 +459,7 @@ namespace JSL
 			int DataIdx; //!< The current counter for how many plots/lines have been added to the axis, used to index Axis::Data
 			bool powerFormat_X = false; // sets flag to turn all xtics into powers of 10
 			bool powerFormat_Y = false;
+			bool powerFormat_CB = false;
 			bool PaletteActive = false;
 			bool showColorBar = true;
 			std::string palette;
@@ -534,6 +539,10 @@ namespace JSL
 				if (powerFormat_Y)
 				{
 					AddProperty("set format y \"10^{%T}\"");
+				}
+				if (powerFormat_CB)
+				{
+					AddProperty("set format cb \"10^{%T}\"");
 				}
 				else
 				{

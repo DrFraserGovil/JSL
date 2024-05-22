@@ -280,6 +280,10 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetXTicPowerFormat(val);
 		}
+		void SetCBTicPowerFormat(bool val)
+		{
+			Axes[axis_y][axis_x].SetCBTicPowerFormat(val);
+		}
 		void SetYTicPowerFormat(bool val)
 		{
 			Axes[axis_y][axis_x].SetYTicPowerFormat(val);
@@ -395,8 +399,12 @@ namespace JSL
 				break;
 			}
 		}
-
+		void SetPersistence(bool val)
+		{
+			BuildPersist = val;
+		}
 	private:
+		bool BuildPersist = false;
 		std::string superTitle = "__null__"; //!< In multiplot mode, the supertitle appears above all other axis titles
 		std::vector<std::vector<Axis>> Axes; //!< The array of JSL::Axis objects containing the relevant plot data
 		std::string DirName;				 //!< The temporary directory name created for this gnuplot object
@@ -417,8 +425,12 @@ namespace JSL
 		//! When called, and if the relevant compiler flag is not set, recursively deletes the directory associated with gnuplot::DirName
 		void CleanupTempFiles()
 		{
+
 			#ifndef GNUPLOT_NO_TIDY
-				rm(DirName, true);
+				if (!BuildPersist)
+				{
+					rm(DirName, true);
+				}
 			#endif
 		}
 
