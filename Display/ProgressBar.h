@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <iomanip>
 #include "clearScreen.h"
 namespace JSL
 {
