@@ -231,6 +231,14 @@ namespace JSL
 		{
 			Axes[axis_y][axis_x].SetXTicLabels(vals);
 		}
+		void SetXTicDirection(JSL::Directions val)
+		{
+			Axes[axis_y][axis_x].SetXTicDirection(val);
+		}
+		void SetYTicDirection(JSL::Directions val)
+		{
+			Axes[axis_y][axis_x].SetYTicDirection(val);
+		}
 		void SetYTicLabels(std::vector<std::string> vals)
 		{
 			Axes[axis_y][axis_x].SetYTicLabels(vals);

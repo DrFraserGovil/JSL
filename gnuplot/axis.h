@@ -8,6 +8,7 @@
 #include "colorArray.h"
 namespace JSL
 {
+	enum Directions {In, Out};
 	namespace Fonts
 	{
 		//!A Font::Target enumerates the possible fontsizes which can be set by the gnuplot regime. Used in either the Axis::SetFontSize function or gnuplot::SetFontSize
@@ -172,6 +173,11 @@ namespace JSL
 					}
 					AddProperty("set ylabel \"" + ylabel + "\"" + Fonts::SizeString(axisFontSize));
 					AddProperty("set tics " + Fonts::SizeString(axisFontSize));
+
+					AddProperty("set xtics nomirror");
+					AddProperty("set ytics nomirror");
+					AddProperty("set xtics " + XTicDirection);
+					AddProperty("set ytics " + YTicDirection);
 					AddProperty("set style fill solid");
 					AddProperty("set boxwidth 0.75");
 					// AddProperty("set lmargin 0.1");
@@ -282,6 +288,30 @@ namespace JSL
 			{
 				isLog_x = val;
 			}
+
+			void SetXTicDirection(JSL::Directions dir)
+			{
+				if (dir == In)
+				{
+					XTicDirection = "in";
+				}
+				else
+				{
+					XTicDirection = "out";
+				}
+			}
+			void SetYTicDirection(JSL::Directions dir)
+			{
+				if (dir == In)
+				{
+					YTicDirection = "in";
+				}
+				else
+				{
+					YTicDirection = "out";
+				}
+			}
+
 			//! Simple setter for Axis::isLog_y
 			void SetYLog(bool val)
 			{
@@ -444,7 +474,8 @@ namespace JSL
 			bool ytic_IsString = false;
 			std::vector<std::string> ytic_Strings;
 
-
+			std::string XTicDirection = "out";
+			std::string YTicDirection = "in";
 			int xTicAngle = 0; //!<RotationAngle of xtics
 			int yTicAngle = 0;//!<Rotation Angle of ytics
 			int axisFontSize = -1; //!< The font size used to write both the Axis::xlabel and Axis::ylabel (cannot be different for x/y). If < 0, uses the value of gnuplot::globalFontSize
@@ -540,14 +571,19 @@ namespace JSL
 				{
 					AddProperty("set format y \"10^{%T}\"");
 				}
+				else
+				{
+					AddProperty("unset format y");
+				}
+
 				if (powerFormat_CB)
 				{
 					AddProperty("set format cb \"10^{%T}\"");
 				}
 				else
 				{
-					AddProperty("unset format y");
-				}
+					AddProperty("unset format cb");
+				}	
 			}
 			void AngleSetter(const std::string & axisPrefix, int angle)
 			{
