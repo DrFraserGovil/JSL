@@ -193,7 +193,7 @@ namespace JSL
 
 	//!Override of the AssignValue() function for Argument<char> objects
 	template<>
-	inline void Argument<std::string>::AssignValue(const char * value)
+	inline void Argument<char>::AssignValue(const char * value)
 	{
 		Value = (char)value[0];
 	}
