@@ -10,13 +10,14 @@ It shouldn't be of any interest to anyone else, but just in case, it is distribu
 
 #define JSL_LIBRARY_INSTALLED //define a preprocessor variable which allows other libraries to conditionally install off it
 
-#include "FileIO/FileIO.h"
-#include "Strings/Strings.h"
-#include "CommandArgs/CommandArgs.h"
-#include "Maths/Maths.h"
-#include "Array/Array.h"
-#include "gnuplot/gnuplot.h"
-#include "System/System.h"
-#include "Display/Display.h"
+#include "modules/Vectors/Search.h"
+// #include "FileIO/FileIO.h"
+// #include "Strings/Strings.h"
+// #include "CommandArgs/CommandArgs.h"
+// #include "Maths/Maths.h"
+// #include "Array/Array.h"
+// #include "gnuplot/gnuplot.h"
+// #include "System/System.h"
+// #include "Display/Display.h"
 // #include "Testing/Testing.h"
 
