@@ -2,3 +2,5 @@
 
 
 #include "vectors.h"
+#include "format.h"
+#include "log.h"

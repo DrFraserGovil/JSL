@@ -5,6 +5,7 @@
 #include <vector>
 namespace JSL
 {
+	//! A value used to indicate `not in array'
     static const size_t NotFound = std::numeric_limits<size_t>::max();
 
     //!Gets first id such that y[id] == x,  assuming that exact equality is well defined (see double override). \param x The value to be searched for \param y The vector to search through  \returns The index of the first element in the array which matches x. Returns JSL::NotFound (equivalent to string::npos) if no match found
