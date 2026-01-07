@@ -28,7 +28,7 @@ namespace JSL
 		\param timeInSeconds The time to be converted
 		\returns A human-readable string equal to the input
 	 */
-	inline std::string FormatDuration(int timeInSeconds)
+	inline std::string FormatDuration(unsigned int timeInSeconds)
 	{
 		
 		std::vector<std::string> divisions= {"Day", "Hour", "Minute", "Second"};

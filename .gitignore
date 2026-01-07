@@ -1,6 +1,5 @@
-test
-test.cpp
-Test/
+*.build
+test/.build
 
 *.DS_Store
 makefile
