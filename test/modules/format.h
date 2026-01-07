@@ -1,5 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
-#include "../../modules/Display/ANSI_Codes.h"
+#include "../../modules/Display/Display.h"
 
 #include <chrono>
 #include <thread>
@@ -67,3 +67,22 @@ TEST_CASE("Colour Testing","[display][colour]")
 
 }
 
+
+TEST_CASE("oroig","[q]")
+{
+    int N = 100000;
+    JSL::ProgressBar PB(N,N);
+    PB.SetWidth(20);
+    PB.SetAnimated(false);
+    for (int i = 0; i < N; ++i)
+    {
+        for (int j = 0; j < N; ++j)
+        {
+            for (int s = 0; s < N; ++s)
+            {
+                N*= 1.0/(3-2*N/N);
+            }
+            PB.Tick();
+        }
+    }
+}

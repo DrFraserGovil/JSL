@@ -49,6 +49,9 @@ namespace JSL
 
     namespace Cursor
     {
+
+        constexpr format Hide         = "\033[?25l";
+        constexpr format Show         = "\033[?25h";
         constexpr format CursorUp     = "\033[A";
         format MoveToColumn(uint32_t column)
         {

@@ -12,7 +12,7 @@
 #define JSL_ACTIVE //define a preprocessor variable which allows other libraries to conditionally install off it
 
 #include "modules/Vectors/Search.h"
-#include "modules/Display/ANSI_Codes.h"
+#include "modules/Display/Display.h"
 #include "modules/Strings/Strings.h"
 #include "modules/FileIO/FileIO.h"
 
