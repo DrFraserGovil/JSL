@@ -13,6 +13,8 @@
 
 #include "modules/Vectors/Search.h"
 #include "modules/Display/ANSI_Codes.h"
+#include "modules/Strings/Strings.h"
+#include "modules/FileIO/FileIO.h"
 
 //Log adds some macros into the global namespace, so gate this behind explicitly asking for it
 #ifdef JSL_INCLUDE_LOG

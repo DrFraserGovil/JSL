@@ -7,5 +7,6 @@
 #include "log.h"
 #include "time.h"
 #include "parse.h"
+#include "files.h"
 
 // no actual main function; catch2 constructs that automagically

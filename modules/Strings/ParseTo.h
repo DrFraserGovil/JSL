@@ -113,6 +113,7 @@ namespace JSL
             }
 
            internal::FatalError("Cannot complete string-boolean conversion") << "Cannot convert string " << sv << "to boolean";
+           return false;
         }
     };
 
@@ -254,6 +255,16 @@ namespace JSL
             
 
         };
+
+        
+
+        // Helper function to create a tuple from a vector of string_views
+        // This uses std::index_sequence and a fold expression for compile-time unpacking
+        template <typename... Ts, std::size_t... Is>
+        std::tuple<Ts...> ImplicitTupleConverter(const std::vector<std::string_view>& sv_vec,std::index_sequence<Is...>)
+        {
+            return std::make_tuple(convert<Ts>(sv_vec[Is])...);
+        }
     }
 
 
@@ -283,5 +294,19 @@ namespace JSL
         return Converter<T>::internalConvert(sv, delimiter);
     }
 
+
+    template <typename... Ts>
+    std::tuple<Ts...> inline ParseTo(const std::vector<std::string_view>& sv_vec)
+    {
+        constexpr std::size_t expected_size = sizeof...(Ts);
+        if (sv_vec.size() != expected_size) 
+        {
+            internal::FatalError("Tuple conversion: Incorrect token count.") << "Tuple conversion error: Token count in vector (" << sv_vec.size()<< ") does not equal tuple size (" << expected_size <<")";
+        }
+        
+
+        // Now, call the implementation which will do the actual conversions
+        return ImplicitTupleConverter<Ts...>(sv_vec, std::index_sequence_for<Ts...>{});
+    }
 }
 
