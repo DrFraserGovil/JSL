@@ -21,3 +21,76 @@ TEST_CASE("Reads files correctly","[file][read][utility]")
 	);
 	REQUIRE(linesRead == linesWritten);
 }
+
+
+void GenerateVectorFile(MockFile & file, std::string delimiter, int linesWritten)
+{
+	for (int i =0 ; i < linesWritten; ++i)
+	{
+		file << i;
+		file << delimiter;
+		file << "test";
+		file << delimiter;
+		file << "gumbo!\n";
+	}
+}
+
+
+TEST_CASE("Reads vector input correctly","[file][utility]")
+{
+	
+	MockFile F;
+	int linesWritten = 100;
+
+	SECTION("Simple delimiter")
+	{
+		int i = 0;
+		GenerateVectorFile(F,",",linesWritten);
+		JSL::forSplitLineIn(F.Path,",",[&](auto vec){
+			REQUIRE(JSL::ParseTo<int>(vec[0])==i);
+			++i;
+		});
+	}
+
+	SECTION("Complex delimiter")
+	{
+		int i = 0;
+		GenerateVectorFile(F,"_-_",linesWritten);
+		JSL::forSplitLineIn(F.Path,"_-_",[&](auto vec){
+			REQUIRE(JSL::ParseTo<int>(vec[0])==i);
+			++i;
+		});
+	}
+
+	SECTION("Tuple Reader")
+	{
+		int i = 0;
+		GenerateVectorFile(F,",",linesWritten);
+		JSL::forLineTupleIn<int,std::string,std::string>(F.Path,",",[&](auto vec){
+			// REQUIRE(JSL::ParseTo<int>(vec[0])==i);
+			REQUIRE(std::get<0>(vec) == i);
+			REQUIRE(std::get<1>(vec) == "test");
+			REQUIRE(std::get<2>(vec) == "gumbo!");
+			++i;
+		});
+	}
+
+	SECTION("Vector parse")
+	{
+		std::string s = "0,1,2,3,4,5,6";
+		auto vec = JSL::ParseTo<std::vector<int>>(s);
+		for (int i =0; i < 7; ++i)
+		{
+			REQUIRE(vec[i] == i);
+		}
+	}
+	SECTION("Vector parse, different delimiters")
+	{
+		std::string s = "0_1_2_3_4_5_6";
+		auto vec = JSL::ParseTo<std::vector<int>>(s,"_");
+		for (int i =0; i < 7; ++i)
+		{
+			REQUIRE(vec[i] == i);
+		}
+	}
+}

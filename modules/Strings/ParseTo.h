@@ -258,13 +258,7 @@ namespace JSL
 
         
 
-        // Helper function to create a tuple from a vector of string_views
-        // This uses std::index_sequence and a fold expression for compile-time unpacking
-        template <typename... Ts, std::size_t... Is>
-        std::tuple<Ts...> ImplicitTupleConverter(const std::vector<std::string_view>& sv_vec,std::index_sequence<Is...>)
-        {
-            return std::make_tuple(convert<Ts>(sv_vec[Is])...);
-        }
+       
     }
 
 
@@ -294,6 +288,15 @@ namespace JSL
         return Converter<T>::internalConvert(sv, delimiter);
     }
 
+    namespace{
+         // Helper function to create a tuple from a vector of string_views
+        // This uses std::index_sequence and a fold expression for compile-time unpacking
+        template <typename... Ts, std::size_t... Is>
+        std::tuple<Ts...> ImplicitTupleConverter(const std::vector<std::string_view>& sv_vec,std::index_sequence<Is...>)
+        {
+            return std::make_tuple(ParseTo<Ts>(sv_vec[Is])...);
+        }
+    }
 
     template <typename... Ts>
     std::tuple<Ts...> inline ParseTo(const std::vector<std::string_view>& sv_vec)
