@@ -3,7 +3,9 @@
 
 #include "vectors.h"
 #include "format.h"
+#include "string.h"
 #include "log.h"
 #include "time.h"
+#include "parse.h"
 
 // no actual main function; catch2 constructs that automagically

@@ -115,5 +115,4 @@ TEST_CASE("FormatDuration edge cases", "[time][string]")
         REQUIRE(JSL::FormatDuration(oneYearOneDay) == "1 Year 1 Day");
     }
 
-
 }
