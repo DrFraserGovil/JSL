@@ -36,7 +36,16 @@ namespace JSL
                 stop_time = std::chrono::high_resolution_clock::now();
             }
 
-
+            double Lap()
+            {
+                if (!startCalled)
+                {
+                    throw std::logic_error("Cannot measure a time without first calling Timer.start()");
+                }
+                using namespace std::chrono;
+                return duration_cast<nanoseconds>
+                    (std::chrono::high_resolution_clock::now() - start_time).count() / 1e9;
+            }
             double Measure()
             {
                 if (!startCalled)

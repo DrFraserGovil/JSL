@@ -2,6 +2,8 @@
 #include <vector>
 #include "ANSI_Codes.h"
 #include "../utils/jsl_error.h"
+#include "../Time/Timer.h"
+
 namespace JSL
 {
     template<size_t Dimension>
@@ -11,18 +13,19 @@ namespace JSL
            
             bool Animated;
             char Symbol;
-           
+            double AnimationDelay = 0.02;   
 
             template<typename... Ts>
-            requires (std::integral<Ts> && ...)
 			ProgressBar(Ts... targetCounts) : Symbol('#')
 			{
-				static_assert( sizeof...(targetCounts)> 0);
+                static_assert((std::is_integral_v<Ts> && ...),"ProgressBar targets must be integral types (int, size_t, etc.)");
+				static_assert( sizeof...(targetCounts)> 0,"Number of arguments must match the ProgressBar Dimension!");
 
 				UnpackTargets(0,targetCounts...);
-                SetWidth(20);
+                SetWidth(25);
                 SetAnimated(true);
                 WrittenToScreen = false;
+                T.Start();
 			}
 
             /*!
@@ -44,7 +47,7 @@ namespace JSL
                 do {
                     --head;
                     ++Progress[head];
-                    if (Progress[head] == Targets[head])
+                    if (Progress[head] >= Targets[head])
                     {
                         Progress[head] = 0;
                     }
@@ -71,23 +74,64 @@ namespace JSL
                 Animated = value;
             }
 
+            void SetPrefix(size_t pos, const std::string & prefix)
+            {
+                if (pos >= Dimension)
+                {
+                    internal::FatalError("Out of range error (progress bar)") << "Cannot assign prefix " << pos << " (" << prefix <<") to progress bar of dimension " << Dimension; 
+                }
+                Prefix[pos] = prefix;
+                BufferPrefix();
+            }
+            void SetSuffix(size_t pos, const std::string & prefix)
+            {
+                if (pos >= Dimension)
+                {
+                    internal::FatalError("Out of range error (progress bar)") << "Cannot assign suffix " << pos << " (" << prefix <<") to progress bar of dimension " << Dimension; 
+                }
+                Suffix[pos] = prefix;
+            }
+            
+            template<typename... Ts>
+            void Suffixes(Ts... strings)
+            {
+                static_assert(sizeof...(strings)==Dimension);
+                UnpackStrings(Suffix,0,strings...);
+            }
+            template<typename... Ts>
+            void Prefixes(Ts... strings)
+            {
+                static_assert(sizeof...(strings)==Dimension);
+                UnpackStrings(Prefix,0,strings...);
+                BufferPrefix();
+                std::cout << "Set prefixes" << std::endl;
+            }
         private:
             size_t Width;
             std::array<size_t,Dimension> Targets;
             std::array<double,Dimension> WidthFraction;
             std::array<size_t,Dimension> Progress;
             std::array<size_t,Dimension> HashCount;
+            std::array<std::string,Dimension> Prefix;
+            std::array<std::string,Dimension> Suffix;
+            Timer T;
             bool WrittenToScreen;
+            bool alreadyFull = false;
             std::ostringstream buffer;
             void CheckUpdates()
             {
-                bool requiresUpdates = false;
+                bool requiresUpdates = !WrittenToScreen;
                 int addHashes = 0;
                 size_t upperLimit = Dimension;
+                bool full = true;
                 if (!Animated) {upperLimit = 1;};
                 for (size_t i =0; i < upperLimit; ++i )
                 {
-                    int newHashes = (int)( WidthFraction[i] * Progress[i] + 0.499);
+                    if (Progress[i] < Targets[i]-1)
+                    {
+                        full = false;
+                    }
+                    size_t newHashes = std::min((int)Width,(int)( WidthFraction[i] * Progress[i] + 0.499));
                     if (newHashes != HashCount[i])
                     {
                         requiresUpdates = true;
@@ -98,12 +142,32 @@ namespace JSL
                         HashCount[i] = newHashes;
                     }
                 }
-
-                if (requiresUpdates && Animated)
+                if (alreadyFull)
                 {
-                    AnimatedUpdate();
+                    full = false;
                 }
-                if (requiresUpdates && !Animated)
+                if (full || (requiresUpdates))
+                {
+                    if (full)
+                    {
+                        alreadyFull = true;
+                    }
+                    TriggerUpdate(addHashes,full);
+                   
+                }
+            }
+            void TriggerUpdate(int addHashes,bool forceUpdate)
+            {
+                if (Animated)
+                {
+                    if (T.Lap() > AnimationDelay || forceUpdate)
+                    {
+                        AnimatedUpdate();
+                        T.Start();
+                    }
+
+                }
+                else
                 {
                     StaticUpdate(addHashes);
                 }
@@ -125,7 +189,7 @@ namespace JSL
                 
                 for (size_t i = 0; i < Dimension; ++i)
                 {
-                    buffer << "[" << std::string(HashCount[i],Symbol) << std::string(Width-HashCount[i],' ') << "]\n";
+                    buffer << Prefix[i] << "[" << std::string(HashCount[i],Symbol) << std::string(Width-HashCount[i],' ') << "] " << Suffix[i] << "\n";
                 }
                 std::cout << JSL::Cursor::Hide << buffer.str() << JSL::Cursor::Show;
                
@@ -138,11 +202,11 @@ namespace JSL
                 // //when static, even if multidimensional, only plot the
                 if (!WrittenToScreen)
                 {
-                    buffer << "[";
+                    buffer << Prefix[0] << "[";
                     WrittenToScreen=true;
                 }
                 buffer << std::string(newHashes,Symbol);
-                if (HashCount[0] == Width)
+                if (HashCount[0] == Width and not alreadyFull)
                 {
                     buffer << "]\n";
                 }
@@ -150,10 +214,36 @@ namespace JSL
                 
             }
             
+            void BufferPrefix()
+            {
+                int maxPos = 0;
+                size_t maxSize = Prefix[0].length();
+                for (size_t i = 1; i < Prefix.size(); ++i)
+                {
+                    size_t testSize = Prefix[i].length();
+                    if (testSize > maxSize)
+                    {
+                        maxSize = testSize;
+                        maxPos = i;
+                    }
+                }
+                std::string & largest = Prefix[maxPos];
+                char finalChar = largest[largest.length() - 1];
+                if (finalChar != ' ')
+                {
+                    largest += " ";
+                    maxSize += 1;
+                }
+                for (auto & prefix : Prefix)
+                {
+                    prefix += std::string(maxSize-prefix.size(),' ');
+                }
+            }
+
             template<typename... Ts>
             void UnpackProgress(int idx, int progress, Ts... remainder)
             {
-                Progress[idx] = std::min(progress,Targets[idx]);
+                Progress[idx] = std::min((int)progress,(int)Targets[idx]);
                 if constexpr (sizeof...(remainder) > 0)
                 {
                     UnpackProgress(idx+1,remainder...);
@@ -163,7 +253,13 @@ namespace JSL
             template<typename... Ts>
 			void UnpackTargets(int idx, int target, Ts... remainder)
 			{
+                if (target == 0)
+                {
+                    internal::FatalError("Zero-size progress bar") << "Dimension " << idx << " of the progress bar is 0";
+                }
 				Targets[idx] = target;
+                Suffix[idx] = "";
+                Prefix[idx] = "";
                 Progress[idx] = 0;
                 HashCount[idx] = 0;
                 if constexpr (sizeof...(remainder) > 0)
@@ -172,10 +268,19 @@ namespace JSL
 				}
 
 			}
+
+            template<typename... Ts>
+			void UnpackStrings(std::array<std::string,Dimension> & targetArray, int idx, std::string target, Ts... remainder)
+			{
+                targetArray[idx] = target;
+                if constexpr (sizeof...(remainder) > 0)
+				{
+					UnpackStrings(targetArray,idx+1,remainder...);
+				}
+            }
     };
 
-    // Defaulting Symbol to '#'
-    template <typename... Ts>
+    template<typename ... Ts>
     ProgressBar(Ts...) -> ProgressBar<sizeof...(Ts)>;
 
 }
