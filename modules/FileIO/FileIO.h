@@ -1,4 +1,5 @@
 #include "forLineIn.h"
 #include "ls.h"
 #include "mkdir.h"
+#include "rm.h"
 #include "pipedInput.h"
