@@ -2,4 +2,5 @@
 #include "ls.h"
 #include "mkdir.h"
 #include "rm.h"
+#include "fileWriters.h"
 #include "pipedInput.h"
