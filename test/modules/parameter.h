@@ -1,0 +1,124 @@
+#include <catch2/catch_test_macros.hpp>
+// #include <catch2/matchers/catch_matchers_string.hpp>
+#include <catch2/matchers/catch_matchers_all.hpp>
+#include "../test_utils/catch_extended.h"
+
+#include "../../modules/Parameters/Parameter.h"
+
+TEST_CASE("Basic Parameter behaviour","[parameter][settings]")
+{
+	using JSL::Parameter;
+	Parameter<int> P(5,"test");
+
+	//Parameter<T> acts as if it were of type T under equality
+	REQUIRE(P == 5);
+
+	//....unless it's a string, because they're weird
+	Parameter<std::string> P2("hi","test2");
+	REQUIRE(P2.Value() == "hi");
+
+	auto msg = capture_stdout([&](){ P2.SetValue("toast");});
+	REQUIRE(P2.Value() == "toast"); //internal values are mutable
+	REQUIRE_THAT(msg,Catch::Matchers::ContainsSubstring("WARNING")); //but throw a warning if you modify them without confirming that's what you want
+
+	msg = capture_stdout([&](){ P2.SetValue("eggs",true);});
+	REQUIRE(P2.Value() == "eggs"); //still mutable
+	REQUIRE(msg.empty()); //but this time no error
+}
+
+
+
+TEST_CASE("Parsing values","[parameter][settings][parse][commandline]")
+{
+	using JSL::Parameter;
+	
+	std::vector<std::string> initialList = {"spoofed_name","-arg1","-5","-arg2","chicken","-arg3","0"};
+	
+	SECTION("Basic assignment")
+	{
+		ArgSpoofer cmd(initialList);
+
+		Parameter<int> nonMatchingArg(1,"test");
+		REQUIRE_NOTHROW(nonMatchingArg.Parse(cmd.argc,cmd.argv)); // don't throw if you don't find your value
+
+		Parameter<int> arg1(1,"arg1");
+		REQUIRE_NOTHROW(arg1.Parse(cmd.argc,cmd.argv)); //just for safety
+		REQUIRE(arg1.Value() == -5); //check that value has been updated
+		
+		Parameter<std::string>arg2("none","arg2");
+		REQUIRE_NOTHROW(arg2.Parse(cmd.argc,cmd.argv)); //just for safety
+		REQUIRE(arg2.Value() == "chicken"); //check that value has been updated
+		Parameter<bool>arg3(true,"arg3");
+		REQUIRE_NOTHROW(arg3.Parse(cmd.argc,cmd.argv)); //just for safety
+		REQUIRE(arg3.Value() == false); //check that value has been updated
+	}
+
+	SECTION("Mutability - can read int-strings as doubles")
+	{
+		ArgSpoofer cmd(initialList);
+		Parameter<double>arg1Double(1,"arg1");
+		arg1Double.Parse(cmd.argc,cmd.argv);
+		REQUIRE_THAT(arg1Double.Value(),Catch::Matchers::WithinAbs(-5.0,1e-15));
+	}
+
+	SECTION("Boolean flag behaviour")
+	{
+		std::vector<std::string> boolList = {"spoofed_name","-bool1","0","-bool2","1","-flag"};
+		ArgSpoofer cmd(boolList);
+
+		Parameter<bool> bool1(true,"bool1",cmd.argc,cmd.argv);
+		Parameter<bool> bool2(false,"bool2",cmd.argc,cmd.argv);
+		Parameter<bool> flag(false,"flag",cmd.argc,cmd.argv);
+		Parameter<bool> unusuedflag(false,"unusedflag",cmd.argc,cmd.argv);
+
+		REQUIRE(bool1==false);
+		REQUIRE(bool2==true);
+		REQUIRE(flag==true);
+		REQUIRE(unusuedflag==false);
+	}
+
+	SECTION("Flag/trigger ordering")
+	{
+		std::vector<std::string> throwList = {"spoofed_name","-noargument","-int","1","-ender"};
+		ArgSpoofer cmd(throwList);
+		
+		REQUIRE_THROWS(Parameter<double>(1.0,"noargument",cmd.argc,cmd.argv));
+		REQUIRE_THROWS(Parameter<int>(1.0,"noargument",cmd.argc,cmd.argv));
+		REQUIRE_NOTHROW(Parameter<bool>(1.0,"noargument",cmd.argc,cmd.argv));
+
+		REQUIRE_THROWS(Parameter<std::string>("def","ender",cmd.argc,cmd.argv));
+		REQUIRE_NOTHROW(Parameter<bool>(1.0,"ender",cmd.argc,cmd.argv));
+	}
+
+	SECTION("Config files")
+	{
+		MockFile file;
+		file << "arg1 1\n";
+		file << "arg2 hello world\n";
+		file << "arg3 1 2 3 4\n";
+		file << "lonearg\n";
+		// SECTION("Basic parsing")
+		// {
+			Parameter<int> intTest(0,"arg1");
+			intTest.Configure(file.Path," ");
+			REQUIRE(intTest == 1);
+
+			Parameter<std::string> stringTest("null","arg2");
+			stringTest.Configure(file.Path," ");
+			REQUIRE(stringTest.Value() == "hello world");
+
+			{
+				Parameter<int> vecThrow(0,"arg3");
+				auto cout = capture_stdout([&](){REQUIRE_THROWS(vecThrow.Configure(file.Path," "));});
+				REQUIRE_THAT(cout,Catch::Matchers::ContainsSubstring("JSL Library Error"));
+			}
+			{
+				Parameter<std::vector<int>> vecTest({},"arg3"," ");
+				REQUIRE_NOTHROW(vecTest.Configure(file.Path," "));
+			}
+
+			Parameter<bool> failTest(0,"lonearg");
+			auto cout = capture_stdout([&](){REQUIRE_THROWS(failTest.Configure(file.Path," "));});
+
+	}
+}

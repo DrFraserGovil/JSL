@@ -1,15 +1,16 @@
 #pragma once
 #include <fstream>
+#include <string_view>
 #include "../Strings/Strings.h"
 #include "../utils/jsl_error.h"
 
 namespace JSL
     {
     template <typename Func>
-    void forLineIn(const std::string& fileName, Func lineProcessor) {
+    void forLineIn(const std::string & fileName, Func lineProcessor) {
         std::ifstream file(fileName);
         if (!file.is_open()) {
-            internal::FatalError("Could not open file") << "Could not find the file '" + fileName + "'.\nPlease provide a valid filepath.";
+            internal::FatalError("Could not open file") << "Could not find the file '" << fileName << "'.\nPlease provide a valid filepath.";
         }
 
         std::string fileLine;
@@ -20,7 +21,7 @@ namespace JSL
     }
 
     template <typename Func>
-    void forSplitLineIn(const std::string& fileName, std::string delimiter, Func vectorProcessor) 
+    void forSplitLineIn(const std::string & fileName, std::string_view delimiter, Func vectorProcessor) 
     {
         forLineIn(fileName,
             [&](std::string & line)
@@ -34,7 +35,7 @@ namespace JSL
 
 
     template <typename... Ts, typename Func>
-    void forLineTupleIn(const std::string& fileName, std::string_view delimiter, Func tupleProcessor)
+    void forLineTupleIn(const std::string & fileName, std::string_view delimiter, Func tupleProcessor)
     {
         forLineIn(fileName,
             // Important: `line` is taken by value here (`std::string line`).
