@@ -1,0 +1,4 @@
+SETTING(int, iterations, 10, "i", "Number of loops")
+SETTING(double, factor, 1.5, "f", "Scaling factor")
+SETTING_VECTOR(int, counts, (std::vector<int>{1, 2, 3}), "c", ",", "List of counts")
+SETTING(bool, flag, false, "b", "A boolean flag")

@@ -5,11 +5,33 @@
 #include <string_view>
 #include <cstring>
 #include "../utils/jsl_error.h"
-#include "Parsing.h"
-#include "../FileIO/FileIO.h"
 namespace JSL
 {
+    /* 
+        Utility functions
+    */
+    namespace 
+    {
+        //some help metafunctions to help identify vector types
+        template <typename T>
+        struct is_vector : std::false_type {};
+        template <typename U>
+        struct is_vector<std::vector<U>> : std::true_type {};
 
+        bool inline ElementIsValue(char * nextElement)
+        {
+            bool hasDash = (nextElement[0] == '-'); //dashes signify commands, but also negative nos.
+            bool isSingleCharacter = (std::strlen(nextElement) == 1);
+
+            if (!hasDash || isSingleCharacter)
+            {
+                return true; //entries that are not preceeded by a dash, or are a single character long, cannot be command triggers
+            }
+
+            return isdigit(nextElement[1]); //detect if the next string is a number, if so return true. This is the case of a negative no.
+            
+        }
+    }
 
     template<class T>
     class Parameter
@@ -25,7 +47,7 @@ namespace JSL
 
             Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter) : Parameter(defaultValue, argument)
             {
-                if constexpr (internal::is_vector<T>::value)
+                if constexpr (is_vector<T>::value)
                 {
                     hasParseDelimiter = true;
                     VectorParseDelimiter = (std::string)(vectorDelimiter);
@@ -40,18 +62,10 @@ namespace JSL
             {
                 Parse(argc, argv);
             }
-            Parameter(T defaultValue, std::string_view argument, const std::string & configFile, std::string_view configDelimiter) : Parameter(defaultValue, argument)
-            {
-                Configure(configFile,configDelimiter);
-            }
 
             Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter, int argc, char* argv[]) : Parameter(defaultValue, argument, vectorDelimiter)
             {
                 Parse(argc, argv);
-            }
-            Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter,  const std::string & configFile, std::string_view configDelimiter) : Parameter(defaultValue, argument, vectorDelimiter)
-            {
-                Configure(configFile,configDelimiter);
             }
 
             void SetValue(T value, bool confirmSafe = false)
@@ -106,7 +120,7 @@ namespace JSL
                 {
                     if (std::string_view(argv[idx]) == target)
                     {
-                        if (idx < argc - 1 && internal::ElementIsValue(argv[idx + 1]))
+                        if (idx < argc - 1 && ElementIsValue(argv[idx + 1]))
                         {
                             Convert(argv[idx + 1]);
                         }
@@ -157,7 +171,7 @@ namespace JSL
 
             void Convert(std::string_view sv)
             {
-                if constexpr (internal::is_vector<T>::value)
+                if constexpr (is_vector<T>::value)
                 {
                     InternalValue = hasParseDelimiter ? ParseTo<T>(sv, VectorParseDelimiter) : ParseTo<T>(sv);
                 }

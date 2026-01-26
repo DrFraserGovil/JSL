@@ -41,3 +41,5 @@ endif()
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 target_link_libraries(unit_test PRIVATE Threads::Threads)
+
+target_include_directories(unit_test PRIVATE ./resources/)
