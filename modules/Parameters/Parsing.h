@@ -29,80 +29,105 @@ namespace JSL
             return isdigit(nextElement[1]); //detect if the next string is a number, if so return true. This is the case of a negative no.
             
         }
-
-
-
+      } // namespace internal
+    
         struct HelpMessages
         {
-            std::string Name;
-            std::vector<std::tuple<std::string,std::string,std::string,std::string>> Messages;
+            std::vector<std::string> Category;
+            std::vector<std::tuple<int,std::string,std::string,std::string,std::string>> Messages;
 
             template<class T>
-            void AddMessage(std::string flag,T defaultValue,std::string name,std::string description)
+            void AddMessage(std::string cat,std::string flag, T defaultValue, std::string name, std::string description)
             {
-                Messages.push_back(std::make_tuple(flag,name,description,MakeString(defaultValue)));
-                // Messages.push_back(std::make_tuple<std::string,std::string,std::string,std::string>(flag,"","",MakeString(defaultValue)));	
+                int n = Category.size();
+                if (n == 0 || Category[n-1] != cat)
+                {
+                    Category.push_back(cat);
+                }
+                Messages.push_back(std::make_tuple(n,flag,name,description,MakeString(defaultValue)));
             }
 
-            void scanSizes(std::pair<int,int> & lengths)
+            void print()
             {
+                size_t maxKeyLength = 0;
+                size_t maxNameLength = 0;
                 for (auto message : Messages)
                 {
-                    int keyLength = std::get<0>(message).size();
-                    int nameLength = std::get<1>(message).size();
-
-                    if (keyLength > lengths.first)
-                    {
-                        lengths.first = keyLength;
-                    }
-                    if (nameLength > lengths.second)
-                    {
-                        lengths.second = nameLength;
-                    }
+                    maxNameLength = std::max(maxNameLength,std::get<2>(message).size());
+                    maxKeyLength= std::max(maxKeyLength,std::get<1>(message).size());
                 }
-            }
 
-            void print(std::pair<int,int> & lengths)
-            {
-                int maxKeyLength = lengths.first;
-                int maxNameLength = lengths.second;
-                
-
-                std::cout << Name << ":\n\n";
-
-                sort(Messages.begin(), Messages.end(),
-                [](const std::tuple<std::string,std::string,std::string,std::string>& a,
-                    const std::tuple<std::string,std::string,std::string,std::string>& b) {
-                    return std::get<0>(a) < std::get<0>(b);
+                std::sort(Messages.begin(), Messages.end(), [](const auto& a, const auto& b) 
+                {
+                    return std::tie(std::get<0>(a), std::get<1>(a)) < 
+                        std::tie(std::get<0>(b), std::get<1>(b));
                 });
+
 
                 
                 int bufferSpace = 4;
-                int minSize = 10;
+                size_t minSize = 10;
                 int nameStartPos = std::max(minSize,maxKeyLength + bufferSpace);
                 int descStartPos =  std::max(minSize,maxNameLength + bufferSpace);
                 auto newLineBuffer =  std::string(3+nameStartPos+descStartPos,' ');
                 for (auto message : Messages)
                 {
-                    auto key = std::get<0>(message);
-                    auto name = std::get<1>(message);
+                    auto key = std::get<1>(message);
+                    auto name = std::get<2>(message);
                     auto keyNameGap =  std::string(nameStartPos-key.size(),' '); 
                     auto nameDescGap = std::string(descStartPos-name.size(),' ');
                     std::cout << "  -" << key;
                     std::cout << keyNameGap << name;
 
-                    auto descLines = split(std::get<2>(message),"\n");
+                    auto descLines = split(std::get<3>(message),"\n");
                     std::cout << nameDescGap  << descLines[0] << "\n";
                     for (size_t i = 1; i < descLines.size(); ++i)
                     {
                         std::cout << newLineBuffer << descLines[i] << "\n";
                     }
 
-                    std::cout << newLineBuffer << "default(" << std::get<3>(message) << ")\n"; 
+                    std::cout << newLineBuffer << "default(" << std::get<4>(message) << ")\n"; 
                 }
             }
-        };
 
-    } // namespace internal
-    
+        };
+        
+
+        // struct HelpMessages
+        // {
+        //     std::string Name;
+        //     std::vector<std::tuple<std::string,std::string,std::string,std::string>> Messages;
+
+        //     template<class T>
+        //     void AddMessage(std::string flag,T defaultValue,std::string name,std::string description)
+        //     {
+        //         Messages.push_back(std::make_tuple(flag,name,description,MakeString(defaultValue)));
+        //         // Messages.push_back(std::make_tuple<std::string,std::string,std::string,std::string>(flag,"","",MakeString(defaultValue)));	
+        //     }
+
+        //     void scanSizes(std::pair<int,int> & lengths)
+        //     {
+        //         for (auto message : Messages)
+        //         {
+        //             int keyLength = std::get<0>(message).size();
+        //             int nameLength = std::get<1>(message).size();
+
+        //             if (keyLength > lengths.first)
+        //             {
+        //                 lengths.first = keyLength;
+        //             }
+        //             if (nameLength > lengths.second)
+        //             {
+        //                 lengths.second = nameLength;
+        //             }
+        //         }
+        //     }
+
+        //     void print(std::pair<int,int> & lengths)
+        //     {
+        //         int maxKeyLength = lengths.first;
+        //         int maxNameLength = lengths.second;
+          
+
+  
 }

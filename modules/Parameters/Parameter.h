@@ -4,6 +4,7 @@
 #include <string>
 #include <string_view>
 #include <cstring>
+#include <stdexcept>
 #include "../utils/jsl_error.h"
 #include "Parsing.h"
 #include "../FileIO/FileIO.h"

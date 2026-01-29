@@ -60,6 +60,6 @@ TEST_CASE("Settings Object Functionality", "[settings][macro]")
 
         JSL::Settings s(argc, argv);
         REQUIRE(s.iterations == 999);
-          JSL::rm("layered.txt");
+        JSL::rm("layered.txt");
     }
 }

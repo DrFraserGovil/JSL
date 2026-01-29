@@ -44,6 +44,22 @@ namespace JSL
         }
     };
 
+    //! Specialization for C-style strings (const char*)
+    template<>
+    struct MakeStringStruct<const char*, void> {
+        static std::string stringify(const char* value) {
+            return value ? std::string(value) : std::string("");
+        }
+    };
+
+    //! Specialization for mutable C-style strings (char*)
+    template<>
+    struct MakeStringStruct<char*, void> {
+        static std::string stringify(char* value) {
+            return value ? std::string(value) : std::string("");
+        }
+    };
+
     //! Specialization for `std::string` 
     //! @details This exists for performance reasons more than anything else - it's quicker than the streaming used for numerics.
     template<>
