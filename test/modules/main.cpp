@@ -10,5 +10,5 @@
 #include "files.h"
 #include "system.h"
 #include "parameter.h"
-#include "parameter_group.h"
+#include "plot.h"
 // no actual main function; catch2 constructs that automagically
