@@ -3,13 +3,13 @@
 #include <format>
 #include "../data/pipe.h"
 #include "PerAxis.h"
-namespace JSL::Plotting::Properties
+namespace JSL::Plotting::Color
 {
-    class Colorbar : public PerAxis
+    class Controller : public JSL::Plotting::Properties::PerAxis
     {
         friend class Display;
         public:
-            Colorbar() : PerAxis(false,"Colour") {};
+            Controller() : PerAxis(false,"Colour") {};
             bool Visible = false;
             bool Inverted = false;
             std::string Palette = "viridis";

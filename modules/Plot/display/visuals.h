@@ -27,7 +27,7 @@ namespace JSL::Plotting
             Properties::PerAxis X = Properties::PerAxis::Default("x");      
             Properties::PerAxis Y = Properties::PerAxis::Default("y"); 
             Properties::PerAxis Z = Properties::PerAxis::Dormant("z");    
-            Properties::Colorbar CB = Properties::Colorbar();
+            Color::Controller CB = Color::Controller();
 
             std::string Title;      
             bool ShowGrid = true;
