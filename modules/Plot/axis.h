@@ -1,10 +1,10 @@
 #pragma once
 
 #include <iostream>
-#include "curve.h"
 #include <algorithm>
-#include "pipe.h"
-#include "visuals.h"
+#include "data/curve.h"
+#include "data/pipe.h"
+#include "display/visuals.h"
 namespace JSL::Plotting
 {
     template <typename T>
@@ -25,6 +25,11 @@ namespace JSL::Plotting
                 {
                     Curves.emplace_back(Curve(x,y));
                 }
+
+                void CustomCommand(const std::string cmd)
+                {
+                    Visual.CustomCommand(cmd);
+                }
         };
 
         
@@ -32,10 +37,11 @@ namespace JSL::Plotting
 
     class Axis
     {
-        AxisMembers::Display S;
+        JSL::Plotting::Display S;
         AxisMembers::Data D;
         int Row;
         int Column;
+        
         
         public:
             bool IsDirty;
@@ -47,7 +53,7 @@ namespace JSL::Plotting
                 return D;
             }
 
-            AxisMembers::Display & Set()
+            JSL::Plotting::Display & Set()
             {
                 return S;
             }
@@ -75,7 +81,7 @@ namespace JSL::Plotting
                     {
                         pipe << "\nplot ";
                     }
-                    pipe << "$Data_Axis" << Row <<"x" << Column <<"_Curve" << i <<" with lines";
+                    pipe << "$Data_Axis" << Row <<"x" << Column <<"_Curve" << i <<" using 1:2 with lines";
                 }
                 pipe << "\n";
             }

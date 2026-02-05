@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "../Strings/Strings.h"
+#include "../../Strings/Strings.h"
 namespace JSL::Plotting
 {
     template <typename T>

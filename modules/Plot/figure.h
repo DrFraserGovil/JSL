@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "pipe.h"
+#include "data/pipe.h"
 #include "axis.h"
 #include <sstream>
 namespace JSL::Plotting
@@ -140,7 +140,7 @@ namespace JSL::Plotting
 
         Plotting::Axis& Active() {  return axis[active_row][active_col]; }
         Plotting::AxisMembers::Data &     Add() { return Active().Add(); };
-        Plotting::AxisMembers::Display &  Set() { return Active().Set(); };
+        Plotting::Display &  Set() { return Active().Set(); };
 
         private:
             void CheckAxisBounds(size_t row, size_t col)

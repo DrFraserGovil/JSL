@@ -28,6 +28,11 @@ namespace JSL::Plotting
                 _LowerAuto=false;
                 _UpperAuto=false;
             }
+            RangeObject(Bound bound, double value)
+            {
+                Auto();
+                Set(bound,value);
+            }
             void Auto()
             {
                 _LowerAuto=true;
