@@ -1,5 +1,7 @@
+#ignore test builds and outputs
 *.build
 test/.build
+*.tst
 
 *.DS_Store
 makefile
