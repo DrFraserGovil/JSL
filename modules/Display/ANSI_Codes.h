@@ -53,13 +53,13 @@ namespace JSL
         constexpr format Hide         = "\033[?25l";
         constexpr format Show         = "\033[?25h";
         constexpr format CursorUp     = "\033[A";
-        format MoveToColumn(uint32_t column)
+        inline format MoveToColumn(uint32_t column)
         {
             return "\033[" + std::to_string(column) + "G";
         }
         
         enum Direction {Up =0, Down=1,Right=2,Left=3};
-        format Move(Direction dir, unsigned int steps)
+        inline format Move(Direction dir, unsigned int steps)
         {
             return "\033[" + std::to_string(steps) + (char)(dir+65);
         }

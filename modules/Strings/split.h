@@ -12,7 +12,7 @@ namespace JSL
         @param delimiter The string which indicates a 'break'. Delimiters do not appear in the split output
         @returns A vector of windows into the original string, indicating which elements have been grouped together.
     */
-    std::vector<std::string_view> split(std::string_view string, std::string_view delimiter)
+    inline std::vector<std::string_view> split(std::string_view string, std::string_view delimiter)
     {
         if (delimiter.size() == 0)
         {
