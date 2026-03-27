@@ -66,7 +66,7 @@ namespace JSL::Log
                 StreamActive = false;
                 Level = level;
                 Insert = "";
-                if (Level <= 1)
+                if (Level == 0)
                 {
                     Insert = "Line " + std::to_string(callingLine) + " of " + callingFile + " in function " + callingFunction ;
                     Insert += "\n";
