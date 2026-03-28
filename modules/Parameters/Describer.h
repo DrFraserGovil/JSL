@@ -8,11 +8,12 @@ namespace JSL
         public:
         std::string Name;
         std::string Key;
+        std::string Type;
         std::string CurrentValue;
         std::string DefaultValue;
         std::string Description;
             template<class T>
-            ParameterDescription(std::string name, std::string key, T currentValue, T defaultValue, std::string description) : Name(name), Key(key), Description(description)
+            ParameterDescription(std::string name, std::string type, std::string key, T currentValue, T defaultValue, std::string description) : Name(name), Key(key), Description(description), Type(type)
             {
                 CurrentValue = MakeString(currentValue);
                 DefaultValue = MakeString(defaultValue);
