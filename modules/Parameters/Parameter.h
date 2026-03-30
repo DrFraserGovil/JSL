@@ -46,6 +46,12 @@ namespace JSL
                 Configure(configFile,configDelimiter);
             }
 
+            Parameter(T defaultValue, std::string_view argument, const std::vector<std::string> & splitString) : Parameter(defaultValue,argument)
+            {
+                
+                ParseSplitLine(splitString," ");
+            }
+
             Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter, int argc, char* argv[]) : Parameter(defaultValue, argument, vectorDelimiter)
             {
                 Parse(argc, argv);
@@ -80,21 +86,7 @@ namespace JSL
             {
                 forSplitLineIn(configFile, configDelimiter, [&](auto linevec)
                 {
-                    if (linevec.size() > 0 && linevec[0] == TriggerString)
-                    {
-                        if (linevec.size() == 1)
-                        {
-                              internal::FatalError("Parameter configuration error")  << "Config parameter " << TriggerString << " requires a value.";
-                        }
-
-                        // Reconstruct value if it contained the delimiter
-                        std::string concat(linevec[1]);
-                        for (size_t i = 2; i < linevec.size(); ++i)
-                        {
-                            concat += std::string(configDelimiter) + std::string(linevec[i]);
-                        }
-                        Convert(concat);
-                    }
+                   ParseSplitLine(linevec,configDelimiter);
                 });
               
             }
@@ -155,6 +147,26 @@ namespace JSL
             std::string TriggerString;
             mutable std::string CachedValueString;
             mutable bool CacheValid = false;
+
+            template<class U> //should work with either string or string_view
+            void ParseSplitLine(std::vector<U> linevec,U delim)
+            {
+                if (linevec.size() > 0 && linevec[0] == TriggerString)
+                {
+                    if (linevec.size() == 1)
+                    {
+                            internal::FatalError("Parameter configuration error")  << "Config parameter " << TriggerString << " requires a value.";
+                    }
+
+                    // Reconstruct value if it contained the delimiter
+                    std::string concat(linevec[1]);
+                    for (size_t i = 2; i < linevec.size(); ++i)
+                    {
+                        concat += std::string(delim) + std::string(linevec[i]);
+                    }
+                    Convert(concat);
+                }
+            }
 
             void Convert(std::string_view sv)
             {
