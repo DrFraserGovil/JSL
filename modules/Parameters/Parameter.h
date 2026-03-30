@@ -49,7 +49,7 @@ namespace JSL
             Parameter(T defaultValue, std::string_view argument, const std::vector<std::string> & splitString) : Parameter(defaultValue,argument)
             {
                 
-                ParseSplitLine(splitString,' ');
+                ParseSplitLine(splitString," ");
             }
 
             Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter, int argc, char* argv[]) : Parameter(defaultValue, argument, vectorDelimiter)
@@ -149,7 +149,7 @@ namespace JSL
             mutable bool CacheValid = false;
 
             template<class U> //should work with either string or string_view
-            void ParseSplitLine(std::vector<U> linevec,U delim)
+            void ParseSplitLine(std::vector<U> linevec,std::string_view delim)
             {
                 if (linevec.size() > 0 && linevec[0] == TriggerString)
                 {
