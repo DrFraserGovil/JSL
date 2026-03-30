@@ -49,7 +49,7 @@ namespace JSL
             Parameter(T defaultValue, std::string_view argument, const std::vector<std::string> & splitString) : Parameter(defaultValue,argument)
             {
                 
-                ParseSplitLine(splitString," ");
+                ParseSplitLine(splitString,' ');
             }
 
             Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter, int argc, char* argv[]) : Parameter(defaultValue, argument, vectorDelimiter)
