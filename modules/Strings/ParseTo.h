@@ -89,7 +89,7 @@ namespace JSL
         static std::string internalConvert(std::string_view sv) 
         {
 
-            return std::string(sv);
+            return std::string(JSL::trim(sv)); //we assume that conversion to strings does not preserve leading or trailing whitespace, as this is spurious for strings
         }
     };
 
