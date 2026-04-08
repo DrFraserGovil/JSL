@@ -189,6 +189,10 @@ namespace JSL::Log
                     case ERROR: fmt=Config.ErrorColour;label = "[ERROR] "; break;
                     default: throw std::runtime_error("Invalid logger argument");
                 } 
+                if (Config.ForceClear)
+                {
+                    Buffer << JSL::Cursor::ClearLine;
+                }
                 if (Config.TerminalOutput)
                 {
                     Buffer << fmt;

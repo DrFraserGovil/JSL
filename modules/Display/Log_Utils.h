@@ -62,6 +62,8 @@ namespace JSL::Log
 		//! Automatically detected at runtime-start. True if the output stream is a tty terminal capable of interpreting @ref ANSI commands.
 		bool TerminalOutput; 
 
+		bool ForceClear = false;
+
 		std::string WarnColour = (std::string)JSL::Text::Purple;
 		std::string ErrorColour = (std::string)JSL::Text::Red;
 		std::string InfoColour = (std::string)JSL::Text::White;
