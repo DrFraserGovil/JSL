@@ -180,13 +180,13 @@ namespace JSL::Log
             //! If Config.UseHeaders is true, this function generates headers (such as [ERROR]) for the log entry. 
             void Header()
             {
-                std::string label;
-                std::string fmt;
+                std::string_view label;
+                std::string_view fmt;
                 switch(Level) {
-                    case DEBUG: fmt = Config.DebugColor;label = "[DEBUG] "; break;
-                    case INFO: fmt=Config.InfoColor;label = "[INFO]  "; break;
-                    case WARN: fmt=Config.WarnColor;label = "[WARN]  "; break;
-                    case ERROR: fmt=Config.ErrorColor;label = "[ERROR] "; break;
+                    case DEBUG: fmt = Config.DebugColour;label = "[DEBUG] "; break;
+                    case INFO: fmt=Config.InfoColour;label = "[INFO]  "; break;
+                    case WARN: fmt=Config.WarnColour;label = "[WARN]  "; break;
+                    case ERROR: fmt=Config.ErrorColour;label = "[ERROR] "; break;
                     default: throw std::runtime_error("Invalid logger argument");
                 } 
                 if (Config.TerminalOutput)
@@ -208,7 +208,7 @@ namespace JSL::Log
             {
                 if (Config.TerminalOutput)
                 {
-                     Buffer <<Text::Reset; //reset the font colors for all subsequent data
+                     Buffer <<Text::Reset; //reset the font Colours for all subsequent data
                 }
 
 

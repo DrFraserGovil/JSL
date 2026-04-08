@@ -42,8 +42,8 @@ namespace JSL
             {
                 return os.write(c.buf, c.len);
             }
-            operator std::string_view() const {
-                return {buf, len};
+            operator std::string() const {
+                return std::string(buf,len);
             }
 
         };
