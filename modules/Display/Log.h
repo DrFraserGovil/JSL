@@ -11,7 +11,7 @@
 #include <sstream>
 #include <string_view>
 #include "Log_Utils.h"
-#include "ANSI_Codes.h"
+
 #include "../Strings/split.h"
 /*!
     @brief The main log interface. Pipe output to it as you would std::cout.
@@ -183,10 +183,10 @@ namespace JSL::Log
                 std::string label;
                 std::string fmt;
                 switch(Level) {
-                    case DEBUG: fmt = JSL::Text::Blue;label = "[DEBUG] "; break;
-                    case INFO: fmt=JSL::Text::White;label = "[INFO]  "; break;
-                    case WARN: fmt=JSL::Text::Purple;label = "[WARN]  "; break;
-                    case ERROR: fmt=JSL::Text::Red;label = "[ERROR] "; break;
+                    case DEBUG: fmt = Config.DebugColor;label = "[DEBUG] "; break;
+                    case INFO: fmt=Config.InfoColor;label = "[INFO]  "; break;
+                    case WARN: fmt=Config.WarnColor;label = "[WARN]  "; break;
+                    case ERROR: fmt=Config.ErrorColor;label = "[ERROR] "; break;
                     default: throw std::runtime_error("Invalid logger argument");
                 } 
                 if (Config.TerminalOutput)

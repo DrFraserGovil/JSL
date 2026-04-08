@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <unistd.h> // For isatty()
 #include <cstdio>   // For fileno() and stderr
-
+#include "ANSI_Codes.h"
 /*!
     An encoding for different levels of logs. Levels are hierarchical: WARN includes ERROR, and INFO includes WARN (and therefore, also ERROR).
 	
@@ -61,6 +61,12 @@ namespace JSL::Log
 
 		//! Automatically detected at runtime-start. True if the output stream is a tty terminal capable of interpreting @ref ANSI commands.
 		bool TerminalOutput; 
+
+		std::string_view WarnColor = JSL::Text::Purple;
+		std::string_view ErrorColor = JSL::Text::Red;
+		std::string_view InfoColor = JSL::Text::White;
+		std::string_view DebugColor = JSL::Text::Blue;
+
 
 		//! Default initialiser. Initialises TerminalOutput, and sets Level=INFO, ShowHeaders=true and AppendNewline=true.
 		ConfigObject()
