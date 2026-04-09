@@ -66,10 +66,18 @@ namespace JSL::Log
                 StreamActive = false;
                 Level = level;
                 Insert = "";
-                if (Level == 0)
+                if (Level == ERROR)
                 {
                     Insert = "Line " + std::to_string(callingLine) + " of " + callingFile + " in function " + callingFunction ;
                     Insert += "\n";
+                }
+                if (Level == DEBUG && Config.DebugLineShow)
+                {
+                    auto p = std::filesystem::path(callingFile).filename();
+                    Insert = "(" + p.string() + ", " + std::to_string(callingLine) + ") ";
+                    
+                    int remain = std::max((size_t)0,Config.DebugLineIndent - Insert.size());
+                    if (remain > 0) Insert += std::string(remain,' ');
                 }
             }
 
@@ -221,6 +229,13 @@ namespace JSL::Log
                 if (Config.ShowHeaders)
                 {
                     linebreak += "\t";
+                }
+                else
+                {
+                    if (Config.DebugLineShow && Level == DEBUG)
+                    {
+                        linebreak += std::string(Config.DebugLineIndent,' ');
+                    }
                 }
                 auto message = split(Buffer.view(),"\n");
                 std::string buffer = "";
