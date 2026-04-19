@@ -64,10 +64,10 @@ namespace JSL::Log
 
 		bool ForceClear = false;
 
-		std::string WarnColour = (std::string)JSL::Text::Purple;
-		std::string ErrorColour = (std::string)JSL::Text::Red;
-		std::string InfoColour = (std::string)JSL::Text::White;
-		std::string DebugColour = (std::string)JSL::Text::Blue;
+		TerminalFormat WarnColour = JSL::Text::Purple;
+		TerminalFormat ErrorColour = JSL::Text::Red;
+		TerminalFormat InfoColour = JSL::Text::White;
+		TerminalFormat DebugColour = JSL::Text::Blue;
 
 		bool DebugBoxing = true;
 		size_t DebugLineSize = 40;
@@ -100,6 +100,98 @@ namespace JSL::Log
             ShowHeaders = header;
         }
 	};
+
+
+	namespace detail
+	{
+		struct LineComponent
+		{
+			bool IsWhitespace = false;
+			int Start;
+			int End;
+			std::string_view * window;
+			size_t RealSize;
+			LineComponent(int idx)
+			{
+				Start = idx;
+			}
+			void Terminate(std::string_view line,int idx)
+			{
+				window = &line;
+				End = idx;
+				ComputeSize(line);
+			}
+			std::string_view Snippet()
+			{
+				return window->substr(Start,End-Start);
+			}
+			void ComputeSize(std::string_view line)
+			{
+				RealSize = 0;
+				bool inEscape = false;
+				for (int i = Start; i < End; ++i)
+				{
+					if (line[i] == '\x1b')
+					{
+						inEscape = true;
+						continue;
+					}
+
+					if (inEscape)
+					{
+						if (line[i] == 'm')
+						{
+							inEscape = false;
+						}
+					}
+					else
+					{
+						++RealSize;
+						if (line[i]=='\t')
+						{
+							RealSize += 3;
+						}
+					}
+				}
+			}
+			static std::vector<LineComponent> GetAll(std::string_view line)
+			{
+				std::vector<detail::LineComponent> bits;
+				char notWS = 'a';
+				char prevWhitespace = notWS;
+				detail::LineComponent current(0);
+				current.Start = 0;
+				for (int i = 0; i < line.size(); ++i)
+				{
+					bool isWhitespace = (line[i] == ' ') || (line[i] == '\t');
+					if (isWhitespace)
+					{
+						if (prevWhitespace != line[i]) //not repeated whitespace, or new whitespace
+						{
+							current.Terminate(line,i);
+							bits.push_back(current);
+							current = detail::LineComponent(i);
+							current.IsWhitespace = true;
+						}
+						prevWhitespace = line[i];
+					}
+					else
+					{
+						if (prevWhitespace != notWS)
+						{
+							current.Terminate(line,i);
+							bits.push_back(current);
+							current = detail::LineComponent(i);
+						}
+						prevWhitespace = notWS;
+					}
+				}
+				current.Terminate(line,line.size());
+				bits.push_back(current);
+				return bits;
+			}
+		};
+	}
 
 
 	//! The global ConfigObject used by @ref LOG and LoggerCore to determine what messages are printed, and any associated formatting 
