@@ -69,8 +69,8 @@ namespace JSL::Log
 		std::string InfoColour = (std::string)JSL::Text::White;
 		std::string DebugColour = (std::string)JSL::Text::Blue;
 
-		bool DebugLineShow = true;
-		size_t DebugLineIndent = 20;
+		bool DebugBoxing = true;
+		size_t DebugLineSize = 40;
 
 		//! Default initialiser. Initialises TerminalOutput, and sets Level=INFO, ShowHeaders=true and AppendNewline=true.
 		ConfigObject()

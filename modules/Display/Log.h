@@ -11,6 +11,7 @@
 #include <sstream>
 #include <string_view>
 #include "Log_Utils.h"
+#include <filesystem>
 
 #include "../Strings/split.h"
 /*!
@@ -71,13 +72,14 @@ namespace JSL::Log
                     Insert = "Line " + std::to_string(callingLine) + " of " + callingFile + " in function " + callingFunction ;
                     Insert += "\n";
                 }
-                if (Level == DEBUG && Config.DebugLineShow)
+                if (Level == DEBUG && Config.DebugBoxing)
                 {
                     auto p = std::filesystem::path(callingFile).filename();
-                    Insert = "(" + p.string() + ", " + std::to_string(callingLine) + ") ";
-                    
-                    int remain = std::max((size_t)0,Config.DebugLineIndent - Insert.size());
-                    if (remain > 0) Insert += std::string(remain,' ');
+                    LinePrefix = "| "; //"(" + p.string() + ":" + std::to_string(callingLine) + ") ";
+                    LineSuffix = "|";
+                    FirstLineSuffix = "| (" + p.string() + ": "+ std::to_string(callingLine) + ") ";
+                    // int remain = std::max((size_t)0,Config.DebugLineIndent - Insert.size());
+                    // if (remain > 0) Insert += std::string(remain,' ');
                 }
             }
 
@@ -175,6 +177,7 @@ namespace JSL::Log
         private:
             //! The internal Buffer to which LoggerCore::operator<< is streamed, and which is then output to terminal.
             std::stringstream Buffer;
+            std::stringstream BufferPreamble;
 
             //! The ::LogLevel of the log entry associated with this object. Used only to determine formatting.
             LogLevel Level;
@@ -184,6 +187,10 @@ namespace JSL::Log
             
             //! A string which holds the callingLine/Function/File data after the constructor is called, but before the stream is activated.
             std::string Insert;
+
+            std::string LinePrefix = "";
+            std::string LineSuffix = "";
+            std::string FirstLineSuffix = "";
 
             //! If Config.UseHeaders is true, this function generates headers (such as [ERROR]) for the log entry. 
             void Header()
@@ -199,15 +206,15 @@ namespace JSL::Log
                 } 
                 if (Config.ForceClear)
                 {
-                    Buffer << JSL::Cursor::ClearLine;
+                    BufferPreamble << JSL::Cursor::ClearLine;
                 }
                 if (Config.TerminalOutput)
                 {
-                    Buffer << fmt;
+                    BufferPreamble << fmt;
                 }
                 if (Config.ShowHeaders)
                 {
-                    Buffer << label;
+                    BufferPreamble << label;
                 }
             }
             
@@ -218,44 +225,56 @@ namespace JSL::Log
             */
             void endMessage()
             {
-                if (Config.TerminalOutput)
-                {
-                     Buffer <<Text::Reset; //reset the font Colours for all subsequent data
-                }
-
-
                 //now format the data so that linebreaks are suitably indented
                 std::string linebreak = "\n";
+                std::vector<int> lineSizes;
                 if (Config.ShowHeaders)
                 {
                     linebreak += "\t";
                 }
-                else
+                
+                std::vector<std::string_view> message = split(Buffer.view(),"\n");
+                const bool needBoxing = (Level == DEBUG && Config.DebugBoxing);
+                if (needBoxing)
                 {
-                    if (Config.DebugLineShow && Level == DEBUG)
-                    {
-                        linebreak += std::string(Config.DebugLineIndent,' ');
-                    }
+                    auto [out,counts] = debugBox(message);
+                    std::swap(out,message);
+                    std::swap(lineSizes,counts);
                 }
-                auto message = split(Buffer.view(),"\n");
                 std::string buffer = "";
 
                 //iterate across all lines in the entry 
                 {
                     std::unique_lock<std::mutex> lock(Log::StreamMutex); //lock the stream to prevent interleaving
 
+                    auto getPadding = +[](int i,std::vector<int> & sizes)->std::string{return "";};
+                    if (needBoxing)
+                    {
+                        getPadding = +[](int i,std::vector<int> & sizes)->std::string{
+                            int amount = Config.DebugLineSize - sizes[i];
+                            if (amount > 0)
+                            {
+                                return std::string(amount,' ') + std::to_string(sizes[i]) + Config.DebugColour;
+                            }
+                            return Config.DebugColour;  
+                        };
+                    }
+                    
                     //the first line automatically includes the correct indentation -- the header accounts for that
-                    std::cout << message[0]; 
+                    std::cout << BufferPreamble.view() <<  LinePrefix  << message[0]  << getPadding(0,lineSizes) << FirstLineSuffix; 
 
                     //subequent lines need to indent (or not) based on the presence of the header.
                     for (size_t i = 1; i < message.size(); ++i)
                     {
-                        std::cout << linebreak << message[i];
+                        std::cout << linebreak << LinePrefix << message[i] << getPadding(i,lineSizes) << LineSuffix;
                     }
-
                     if (Config.AppendNewline)
                     {
                         std::cout << "\n"; 
+                    }
+                    if (Config.TerminalOutput)
+                    {
+                        std::cout << Text::Reset;
                     }
 
                     //save the data to the 'erase' memory banks
@@ -266,6 +285,101 @@ namespace JSL::Log
                         Log::PreviousLines[i] += nlines; //do this inside the mutex so line ordering is correct
                     }
                 }
+            }
+
+            std::pair<std::vector<std::string_view>,std::vector<int>> debugBox(std::vector<std::string_view> initial)
+            {
+                std::vector<std::string_view> out;
+                std::vector<int> lineSizes;
+                for (auto line : initial)
+                {
+                    if (line.size() < Config.DebugLineSize)
+                    {
+                        out.push_back(line);
+                        int s = 0;
+                        bool inEscape = false;
+                        for (int i = 0; i < line.size(); ++i)
+                        {
+                            if (line[i] == '\x1b')
+                            {
+                                inEscape = true;
+                                continue;
+                            }
+                            if (!inEscape)
+                            {
+                                ++s;
+                                if (line[i] == '\t'){s+=3;}
+                            }
+                            else
+                            {
+                                if (line[i] == 'm')
+                                {
+                                    inEscape = false;
+                                }
+                            }
+                        }
+                        lineSizes.push_back(s);
+                        continue;
+                    }
+                    //otherwise have to break up the line into chunks (if possible) respecting whitespace
+                    int prev = 0;
+                    int scanIdx = 0;
+                    bool stillScanning = true;
+                    int lineSize = 0;
+                    bool inEscape = false;
+                    while (stillScanning)
+                    {
+                        bool isWhitespace;
+
+                        if (!inEscape)
+                        {
+                            switch(line[scanIdx])
+                            {
+                                case '\x1b':
+                                    inEscape = true;
+                                    break;
+                                case '\t':
+                                    lineSize += 4;
+                                    isWhitespace = true;
+                                    break;
+                                case ' ':
+                                    lineSize += 1;
+                                    isWhitespace = true;
+                                    break;
+                                default:
+                                    lineSize += 1;
+                                    isWhitespace = false;
+                                    break;
+                            }
+                            if (lineSize> Config.DebugLineSize && isWhitespace)
+                            {
+                                out.push_back(line.substr(prev,scanIdx-prev));
+                                lineSizes.push_back(lineSize);
+    
+                                lineSize = 0;
+                                prev = scanIdx + 1; //+1 so we don't insert the whitespace we just saw
+                            }
+                        }
+                        else
+                        {
+                            if (line[scanIdx] == 'm')
+                            {
+                                inEscape = false;
+                            }
+                        }
+                        ++scanIdx;
+                        if (scanIdx == line.size())
+                        {
+                            stillScanning = false;
+                            if (lineSize > 0)
+                            {
+                                out.push_back(line.substr(prev,scanIdx-prev));
+                                lineSizes.push_back(lineSize);
+                            }
+                        }
+                    }
+                }
+                return {out,lineSizes};
             }
     };
 }
