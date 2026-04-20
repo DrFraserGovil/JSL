@@ -76,7 +76,6 @@ namespace JSL::Log
 				if (Level == DEBUG && Config.DebugBoxing)
 				{
 					auto p = std::filesystem::path(callingFile).filename();
-					LinePrefix = "| "; //"(" + p.string() + ":" + std::to_string(callingLine) + ") ";
 					LineSuffix = "|";
 					FirstLineSuffix = "| (" + p.string() + ": "+ std::to_string(callingLine) + ") ";
 					// int remain = std::max((size_t)0,Config.DebugLineIndent - Insert.size());
@@ -199,7 +198,6 @@ namespace JSL::Log
 			//! A string which holds the callingLine/Function/File data after the constructor is called, but before the stream is activated.
 			std::string Insert;
 
-			std::string LinePrefix = "";
 			std::string LineSuffix = "";
 			std::string FirstLineSuffix = "";
 
@@ -274,12 +272,12 @@ namespace JSL::Log
 					}
 					
 					//the first line automatically includes the correct indentation -- the header accounts for that
-					std::cout << BufferPreamble.view() <<  LinePrefix  << message[0]  << getPadding(0,lineSizes) << FirstLineSuffix; 
+					std::cout << BufferPreamble.view()  << message[0]  << getPadding(0,lineSizes) << FirstLineSuffix; 
 
 					//subequent lines need to indent (or not) based on the presence of the header.
 					for (size_t i = 1; i < message.size(); ++i)
 					{
-						std::cout << linebreak << LinePrefix << CurrentFormat << message[i] << getPadding(i,lineSizes) << LineSuffix;
+						std::cout << linebreak << CurrentFormat << message[i] << getPadding(i,lineSizes) << LineSuffix;
 					}
 					if (Config.AppendNewline)
 					{
