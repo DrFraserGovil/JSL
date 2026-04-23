@@ -1,4 +1,5 @@
 #include <JSL/Strings/Manipulate.h>
+#include "../utils/jsl_error.h"
 #include <cctype>
 namespace JSL
 {
@@ -22,10 +23,10 @@ namespace JSL
             last--;
         }
 
-        return std::static_cast<T>(sv.substr(first, last - first));
+        return static_cast<T>(sv.substr(first, last - first));
     }
     template<class T>
-    T internalCommentStrip(std::string_view sv, std::string_view comment)
+    T internalCommentStrip(std::string_view sv, std::string_view commentIndicator)
     {
         auto commentStart = sv.find(commentIndicator);
         if (commentStart != std::string_view::npos)
