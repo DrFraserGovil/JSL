@@ -13,12 +13,10 @@ namespace JSL
 		\returns A human-readable string equal to the input
 	 */
 
-    namespace
-    {
-        constexpr std::string_view divisions[] = {"Year","Day", "Hour", "Minute", "Second","Millisecond"};
-        constexpr double duration[] = {86400*365,86400, 3600, 60, 1,1e-3};
-    }
-	inline std::string FormatDuration(double timeInSeconds)
+    constexpr std::string_view divisions[] = {"Year","Day", "Hour", "Minute", "Second","Millisecond"};
+    constexpr double duration[] = {86400*365,86400, 3600, 60, 1,1e-3};
+    
+	std::string FormatDuration(double timeInSeconds)
 	{
 		
         std::ostringstream output;
@@ -92,7 +90,7 @@ namespace JSL
 		return output.str();
 	}
 
-    inline std::string FormatDuration(std::chrono::time_point<std::chrono::system_clock> start, std::chrono::time_point<std::chrono::system_clock> end)
+    std::string FormatDuration(std::chrono::time_point<std::chrono::system_clock> start, std::chrono::time_point<std::chrono::system_clock> end)
 	{
 		std::chrono::duration<double> diff = end - start;
 		double seconds = diff.count();
