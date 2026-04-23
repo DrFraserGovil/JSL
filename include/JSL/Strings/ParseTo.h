@@ -3,8 +3,7 @@
 #include <string_view>
 #include <vector>
 #include <charconv>
-#include "trim.h"
-#include "split.h"
+#include "Manipulate.h"
 #include "equals.h"
 #include "../Display/ANSI_Codes.h"
 
@@ -44,7 +43,7 @@ namespace JSL
             */
             static T internalConvert(std::string_view sv)
             {
-                sv = trim(sv,"//");
+                sv = trim_view(sv,"//");
                 RejectEmpty(sv,typeid(T).name());
                 
                 //create an object and read from_chars into it. Some implicit type conversion is allowed here (i.e. if T is a bool)
@@ -101,7 +100,7 @@ namespace JSL
             */
             static std::vector<T_Inner> internalConvert(std::string_view sv, std::string_view element_delimiter,typename std::enable_if_t<!std::is_same_v<T_Inner, char>>* = nullptr) 
             {
-                sv = trim(sv,"//");
+                sv = trim_view(sv,"//");
                 if (sv.empty()) 
                 {
                     std::cout << JSL::Text::Red << "Empty-vectors can only be instantiated if they have enclosing braces -- empty strings are not valid." <<std::endl;

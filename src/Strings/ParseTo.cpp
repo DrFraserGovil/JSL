@@ -59,11 +59,11 @@ namespace JSL
 
         PROVIDE_SPECIALISATION(std::string,
              //we assume that conversion to strings does not preserve leading or trailing whitespace, as this is spurious for strings
-             return std::string(JSL::trim(sv));
+             return JSL::trim(sv);
         )
 
         PROVIDE_SPECIALISATION(bool,
-            auto snap = trim(sv,"//");
+            auto snap = trim_view(sv,"//");
             if (snap == "1" || insensitiveEquals(snap,"true"))
             {
                 return true;
@@ -79,7 +79,7 @@ namespace JSL
 
         PROVIDE_SPECIALISATION(char,
             // Trim whitespace first
-            sv = trim(sv,"//");
+            sv = trim_view(sv,"//");
             // A single char conversion should only accept a single character string_view
             if (sv.length() != 1) {
                 internal::FatalError("Cannot complete string-char conversion")  << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
@@ -90,7 +90,7 @@ namespace JSL
         #if defined(__clang__) && defined(__APPLE__)
             PROVIDE_SPECIALISATION(double,
             
-                sv = trim(sv,"//");
+                sv = trim_view(sv,"//");
                 if (sv.empty()) 
                 {
                     internal::FatalError("Cannot complete string-double conversion") << "Cannot convert an empty string to type double" 
