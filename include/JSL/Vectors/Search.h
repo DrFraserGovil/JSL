@@ -1,40 +1,54 @@
 #pragma once
 #include <numeric>      // std::iota
 #include <algorithm>  
-#include <math.h>
 #include <vector>
+#include <ranges>
+#include <concepts>
 namespace JSL
 {
-	//! A value used to indicate `not in array'
-    static const size_t NotFound = std::numeric_limits<size_t>::max();
-
-    //!Gets first id such that y[id] == x,  assuming that exact equality is well defined (see double override). \param x The value to be searched for \param y The vector to search through  \returns The index of the first element in the array which matches x. Returns JSL::NotFound (equivalent to string::npos) if no match found
-	template<class T>
-	inline size_t Find(T x, const std::vector<T> & y)
+	inline constexpr size_t NotFound = static_cast<size_t>(-1);
+	struct SearchResult
 	{
-		for (size_t j = 0; j < y.size(); ++j)
+		bool Found;
+		size_t Index;
+		explicit operator bool() const { return Found; } //can do if(SearchResult) and it works
+	};
+
+	namespace detail
+	{
+		template<typename T>
+		concept SearchableRange = std::ranges::input_range<T>;
+	}
+
+ 
+	
+	//!Gets first id such that y[id] == x,  assuming that exact equality is well defined (see double override). \param x The value to be searched for \param y The vector to search through  \returns A SearchResult indicating if the element has been found, and the index it can be found at
+
+	template<typename T, detail::SearchableRange R>
+    requires std::convertible_to<T, std::ranges::range_value_t<R>>
+	inline SearchResult find(const T & x, const R & y)
+	{
+		auto it = std::find(std::begin(y),std::end(y),x);
+
+		if (it != std::end(y))
 		{
-			if (y[j] == x)
-			{
-				return j; 
-			}
+			return {true,static_cast<size_t>(std::distance(std::begin(y),it))};
 		}
-		return NotFound;
+		else
+		{
+			return {false,NotFound};
+		}
 	}
 	
 
 	//!Gets first id such that (y[id]- x) < tolerance. \param x The value to be searched for \param y The vector to search through \param tolerance The fractional difference permitted between two double values for them to be declared "approximately equal" \returns The index of the first element in the array which matches x. Returns JSL::NotFound (equivalent to string::npos) if no match found
-	inline size_t Find(double x, const std::vector<double> & y, double tolerance)
-	{
-		for (size_t j = 0; j < y.size(); ++j)
-		{
-			if (std::abs(x - y[j]) <= tolerance)
-			{
-				return j; 
-			}
-		}
-		return NotFound;
-	}
+	SearchResult find(double x, const std::vector<double> & y, double tolerance);
 
+	template<typename T, detail::SearchableRange R>
+    requires std::convertible_to<T, std::ranges::range_value_t<R>>
+	inline bool contains(const T & x, const R & y)
+	{
+		return static_cast<bool>(find(x, y));
+	}
    
 }

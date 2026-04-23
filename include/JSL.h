@@ -11,10 +11,13 @@
 
 #define JSL_ACTIVE //define a preprocessor variable which allows other libraries to conditionally install off it
 
-#include "Vectors/Search.h"
-#include "Display/Display.h"
-#include "Strings/Strings.h"
-#include "FileIO/FileIO.h"
+
+#include <JSL/Strings.h>
+#include <JSL/Vectors.h>
+// #include "Vectors/Search.h"
+// #include "Display/Display.h"
+// #include "Strings/Strings.h"
+// #include "FileIO/FileIO.h"
 
 //Log adds some macros into the global namespace, so gate this behind explicitly asking for it
 #ifdef JSL_INCLUDE_LOG
