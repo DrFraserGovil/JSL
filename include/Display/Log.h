@@ -266,7 +266,7 @@ namespace JSL::Log
 							{
 								out << std::string(amount,' ');
 							}
-							out << Config.DebugColour;
+							out << "\033[0m" << Config.DebugColour;
 							return out.str();  
 						};
 					}

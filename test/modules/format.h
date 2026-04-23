@@ -12,23 +12,23 @@ TEST_CASE("Colour Testing","[display][colour]")
     namespace bg = JSL::Background;
     namespace crs = JSL::Cursor;
     
-    std::vector<std::string_view> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
+    std::vector<JSL::TerminalFormat> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
     SECTION("Foreground Colours")
     {
         for (size_t i = 0; i < cols.size(); ++i)
         {
             std::string expected = "\033[3"+std::to_string(i) + "m";
-            assert(cols[i] == expected);
+            assert((std::string)cols[i] == expected);
         }
     }
 
-    std::vector<std::string_view> backgrounds = {bg::Black,bg::Red,bg::Green,bg::Yellow,bg::Blue, bg::Purple,bg::Cyan,bg::White};
+    std::vector<JSL::TerminalFormat> backgrounds = {bg::Black,bg::Red,bg::Green,bg::Yellow,bg::Blue, bg::Purple,bg::Cyan,bg::White};
     SECTION("Background Colours")
     {
         for (size_t i = 0; i < backgrounds.size(); ++i)
         {
             std::string expected = "\033[4"+std::to_string(i) + "m";
-            assert(backgrounds[i] == expected);
+            assert((std::string)backgrounds[i] == expected);
         }
     }
 
