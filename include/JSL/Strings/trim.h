@@ -17,5 +17,5 @@ namespace JSL
     //! @param sv The original string_view
     //! @param commentIndicator The string after which all text is to be removed.
     //! @returns A modified string_view with no leading or trailing whitespace
-    std::string_view trim(std::string_view sv,const std::string & commentIndicator);
+    std::string_view trim(std::string_view sv,std::string_view commentIndicator);
 }

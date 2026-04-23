@@ -23,7 +23,7 @@ namespace JSL
     }
 
     
-    std::string_view trim(std::string_view sv,const std::string & commentIndicator)
+    std::string_view trim(std::string_view sv,std::string_view commentIndicator)
     {
         //snip out from the comment indicator; then run a normal trim
         auto commentStart = sv.find(commentIndicator);

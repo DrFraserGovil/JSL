@@ -3,10 +3,11 @@
 #include <string_view>
 #include <vector>
 #include <charconv>
-#include "../Strings/trim.h"
-#include "../Strings/split.h"
-#include "../Strings/equals.h"
-#include "../utils/jsl_error.h"
+#include "trim.h"
+#include "split.h"
+#include "equals.h"
+#include "../Display/ANSI_Codes.h"
+
 /*
     This file provides a robust return-value interface for converting string-views (and, implicitly, strings) into a candidate type
     This type can be any value accepted by std::from_chars, or those which can be implicitly converted to from that type
@@ -18,9 +19,13 @@
 
 namespace JSL
 {
-    namespace 
+    namespace detail
     {
-        
+        //helper functions for the template converter class
+        void CheckErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName);
+        void RejectEmpty(std::string_view sv,std::string_view typeName);
+        std::string_view StripEndCaps(std::string_view sv);
+
         /*!
             The backend structure for the convert function. 
             @details Required because functions are not able to undergo partial specialisation, whilst classes can. This therefore amounts to some compile-time wizardry.
@@ -33,158 +38,48 @@ namespace JSL
                 @details Specialisations (i.e. for new convert-types) must define their own version of this function
                 @param sv A string_view (implicitly converted from std::strings) representing a value to be converted
                 @returns A value of type T corresponding to the input string
+                @throws logic_error If the characters could not be converted into numerics (i.e. ab)
+                @throws logic_error If some, but not all, characters could be converted into numerics (i.e. 123ab)
+                @throws logic_error If the result is out of range (i.e. convert<int>(INT_MAX + 10))
             */
             static T internalConvert(std::string_view sv)
             {
                 sv = trim(sv,"//");
-                RejectEmpty(sv);
+                RejectEmpty(sv,typeid(T).name());
                 
                 //create an object and read from_chars into it. Some implicit type conversion is allowed here (i.e. if T is a bool)
                 T output;
                 auto result = std::from_chars(sv.data(), sv.data() + sv.size(),output);
 
-                CheckErrors(result,sv);		
+                CheckErrors(result,sv,typeid(T).name());		
                         
                 return output;
             }
 
-            private:
-            /*!Throws errors if the internalConvert reached some undesirable state
-            @throws logic_error If the characters could not be converted into numerics (i.e. ab)
-            @throws logic_error If some, but not all, characters could be converted into numerics (i.e. 123ab)
-            @throws logic_error If the result is out of range (i.e. convert<int>(INT_MAX + 10))
-            */
-            static void CheckErrors(std::from_chars_result & result,std::string_view sv)
-            {
-                if (result.ec == std::errc() &&  (result.ptr != sv.data() + sv.size()))
-                { 
-                    internal::FatalError("Could not complete conversion") << "Partial conversion of `" << sv << "` to type " << typeid(T).name() << " unconverted characters were: " << std::string_view(result.ptr, sv.data() + sv.size() - result.ptr);
-                }
-                else if (result.ec == std::errc::invalid_argument) 
-                {
-                    internal::FatalError("Could not complete conversion") <<  "Error: Invalid argument for conversion: '" << sv   << "` to type " << typeid(T).name()<< "\n";
-                    
-                } 
-                else if (result.ec == std::errc::result_out_of_range)
-                {
-                    internal::FatalError("Could not complete conversion") <<  "Error: Result out of range for conversion: '" << sv << "` to type " << typeid(T).name() << "\n";
-                }
-                return;
-            }
-
-            //! Check if converted string is empty @throws logic_error If target string is empty
-            static void RejectEmpty(std::string_view sv)
-            {
-                if (sv.empty()) 
-                {
-                    internal::FatalError("Could not complete conversion") << "Cannot convert an empty string to to type " << typeid(T).name();
-                } 
-            }
+            
         };
-        //! @brief Full specialization for std::string (because from_chars can't do strings!)
-    //! @details Could just rely on user to call this manually, but it's nicer to have a unified interface
-    template <>
-    struct Converter<std::string> {
-        //! Performs a basic string-initialisation.
-        static std::string internalConvert(std::string_view sv) 
-        {
-
-            return std::string(JSL::trim(sv)); //we assume that conversion to strings does not preserve leading or trailing whitespace, as this is spurious for strings
-        }
-    };
-
-    //!Full specialization for boolean (because from_chars can't do boolean)
-    template <>
-    struct Converter<bool> {
-        /*!
-            Checks if the input string is 1,0, true or false (case insensitive), and converts to the relevant bool
-            @throws runtime_error If the string is not in ["1","0", "true" ,"false"]
-        */
-        static bool internalConvert(std::string_view sv) 
-        {
-            auto snap = trim(sv,"//");
-            if (snap == "1" || insensitiveEquals(snap,"true"))
-            {
-                return true;
-            }
-            if (snap == "0" || insensitiveEquals(snap,"false"))
-            {
-                return false;
-            }
-
-           internal::FatalError("Cannot complete string-boolean conversion") << "Cannot convert string " << sv << "to boolean";
-           return false;
-        }
-    };
-
-    //! Full specialisation for single chars
-    //! @details Converting between strings and chars is notoriously more difficult than it feels it should be
-    template <>
-    struct Converter<char> {
-        /*! Converts a string into a char
-            @throws logic_error if the string is not a single character long
-        */
-        static char internalConvert(std::string_view sv)
-        {
-            // Trim whitespace first
-            sv = trim(sv,"//");
-            // A single char conversion should only accept a single character string_view
-            if (sv.length() != 1) {
-                internal::FatalError("Cannot complete string-char conversion")  << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
-            }
-            return sv[0];
-        }
-        // No need for CheckErrors or RejectEmpty for char, as the length check covers it.
-    };
-
-
-    /*! Specialization for double, activated on Apple-Clang compilers
-        @details For reasons unknown to me, Apple-Clang does not fully implement the C++ standard. std::from_chars does not work on non-integral types.
-        This is really, really annoying that this is necessary. 
-        Must therefore resort to using the (slower, worse) std::stod for Apple people (which includes me!)
-    */
-    #if defined(__clang__) && defined(__APPLE__)
-        template <>
-        struct Converter<double>
-        {
-            //! Performs a basic std::stod check, and then checks the validity of the argument. Has its own nested version of Converter<T>::RejectEmpty and Converter<T>::CheckErrors.
-            static double internalConvert(std::string_view sv)
-            {
-                sv = trim(sv,"//");
-
-                if (sv.empty()) 
-                {
-                    throw std::logic_error("Could not complete conversion");
-                     internal::FatalError("Cannot complete string-double conversion") << "Cannot convert an empty string to type double" 
-                } 
-
-                try
-                {
-                    std::string s_temp(sv);
-                    size_t pos = 0;
-                    double output = std::stod(s_temp, &pos);
-
-                    if (pos != s_temp.length())
-                    {
-                        internal::FatalError("Trailing characters in double parsing")  << "Partial conversion of `" << sv << "` to double; unconverted characters were: `" << s_temp.substr(pos) << "`";
-                    }
-                    return output;
-                }
-                catch (const std::out_of_range& e)
-                {
-                    internal::FatalError("Out-of-range error in double conversion") << "Error: Result out of range for conversion: '" << sv << "` to double\n";
-                    
-                }
-                catch (const std::invalid_argument& e)
-                {
-                    internal::FatalError("Could not complete conversion (invalid format).") "Error: Invalid argument for conversion: '" << sv << "` to double\n";
-                }
-            }
-        
-        };
-
     
-    #endif
+
+        //macro to provide specialisations without boilerplate muddling it all up
+        #define JSL_HAS_SPECIALISATION(type) \
+            template<> struct Converter<type>\
+            {\
+                static type internalConvert(std::string_view sv); \
+            };
+
+
+        JSL_HAS_SPECIALISATION(std::string);
+        JSL_HAS_SPECIALISATION(bool);
+        JSL_HAS_SPECIALISATION(char);
+        
+        
+        /*! For reasons unknown to me, Apple-Clang does not fully implement the C++ standard. std::from_chars does not work on non-integral types.
+            This is really, really annoying that this is necessary. 
+            Must therefore resort to using the (slower, worse) std::stod for Apple people 
+        */
+        #if defined(__clang__) && defined(__APPLE__)
+            JSL_HAS_SPECIALISATION(double);
+        #endif
 
 
 
@@ -209,8 +104,13 @@ namespace JSL
                 sv = trim(sv,"//");
                 if (sv.empty()) 
                 {
-                   internal::FatalError("Cannot parse empty string") << "Empty-vectors can only be instantiated if they have enclosing braces -- empty strings are not valid.";
+                    std::cout << JSL::Text::Red << "Empty-vectors can only be instantiated if they have enclosing braces -- empty strings are not valid." <<std::endl;
+                    throw std::runtime_error("Cannot parse empty string");
                 }
+
+
+                 //! We allow vectors to be wrapped in either [], {} or (). This function removes them for internal use.
+                //! @warning We do *not* do any form of parsing or checking to allow nested braces. End caps are purely for user readability.
                 sv = StripEndCaps(sv);
 
                 if (sv.empty()) 
@@ -224,39 +124,16 @@ namespace JSL
                 {
                     if (elem_sv.empty())
                     {
-                        internal::FatalError("Cannot parse empty string")  << "Element " << i << " of the vector " << sv << " is empty.\nVector-conversion does not accept empty strings (even if empty strings are allowed for base type";
+                        std::cout  << JSL::Text::Red << "Element " << i << " of the vector " << sv << " is empty.\nVector-conversion does not accept empty strings (even if empty strings are allowed for base type";
+                        throw std::runtime_error("Cannot parse empty string");
                     }
                     ++i;
                     result_vec.push_back(Converter<T_Inner>::internalConvert(elem_sv));
                 }
                 return result_vec;
-            }
-
-            //! We allow vectors to be wrapped in either [], {} or (). This function removes them for internal use.
-            //! @warning We do *not* do any form of parsing or checking to allow nested braces. End caps are purely for user readability.
-            static std::string_view StripEndCaps(std::string_view sv)
-            {
-                size_t start = 0;
-                size_t end = sv.size();
-                // Check for common opening brackets
-                if (sv[0] == '[' || sv[0] == '{' || sv[0] == '(')
-                {
-                    start = 1;
-                }
-                // Check for common closing brackets
-                if ( (sv[end - 1] == ']' || sv[end - 1] == '}' || sv[end - 1] == ')'))
-                {
-                    end -= 1;
-                }
-
-               
-                return sv.substr(start,end-start);
-            }
-            
-
+            }          
         };
 
-        
 
        
     }
@@ -270,26 +147,32 @@ namespace JSL
     template <typename T>
     T inline ParseTo(std::string_view sv)
     {
-        return Converter<T>::internalConvert(sv);
+        return detail::Converter<T>::internalConvert(sv);
     }
 
 
-    /*! A specialised converter for vector data types.
-    @details Has a lot of horrible template stuff in order to allow compile-time inference of `is this a vector', without std::strings also being caught. 
-    @param sv The string to be converted
-    @param delimiter The delimiter of individual data within the string
-    @returns A std::vector object corresponding to the input string
-    */
-    template <typename T> struct is_vector_specialization : std::false_type {};
-    template <typename U, typename Alloc> struct is_vector_specialization<std::vector<U, Alloc>> : std::true_type {};
-    template <typename T,typename = std::enable_if_t<is_vector_specialization<T>::value>>
+
+    //Define a nice C++20 concept which defines a 'vector type' as any std::vector<T>, but excludes std::string from being too eager
+        template<typename T>
+        struct is_vector : std::false_type {};
+        template<typename T, typename A>
+        struct is_vector<std::vector<T, A>> : std::true_type {};
+    template<typename T>
+    concept VectorType = is_vector<T>::value;
+    //end concept  
+
+    template<VectorType T>
     T inline ParseTo(std::string_view sv, std::string_view delimiter)
     {   
-        return Converter<T>::internalConvert(sv, delimiter);
+        return detail::Converter<T>::internalConvert(sv, delimiter);
     }
 
-    namespace{
-         // Helper function to create a tuple from a vector of string_views
+
+
+    //have to reopen namespace because this needs ParseTo to be visible
+    namespace detail
+    {
+        // Helper function to create a tuple from a vector of string_views
         // This uses std::index_sequence and a fold expression for compile-time unpacking
         template <typename... Ts, std::size_t... Is>
         std::tuple<Ts...> ImplicitTupleConverter(const std::vector<std::string_view>& sv_vec,std::index_sequence<Is...>)
@@ -304,7 +187,8 @@ namespace JSL
         constexpr std::size_t expected_size = sizeof...(Ts);
         if (sv_vec.size() != expected_size) 
         {
-            internal::FatalError("Tuple conversion: Incorrect token count.") << "Tuple conversion error: Token count in vector (" << sv_vec.size()<< ") does not equal tuple size (" << expected_size <<")";
+            std::cout << JSL::Text::Red << "Tuple conversion error: Token count in vector (" << sv_vec.size()<< ") does not equal tuple size (" << expected_size <<")";
+            throw std::runtime_error("Tuple conversion: Incorrect token count.");
         }
         
 
