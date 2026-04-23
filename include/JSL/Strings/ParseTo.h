@@ -81,7 +81,7 @@ namespace JSL
             JSL_HAS_SPECIALISATION(double);
         #endif
 
-
+        #undef JSL_HAS_SPECIALISATIOn
 
         /*! A partial specialisation of Converter<T> to allow the extraction of vectors.
             @details Functionally, this acts as a wrapper, iteratively calling Converter<T_Inner> on the values extracted
