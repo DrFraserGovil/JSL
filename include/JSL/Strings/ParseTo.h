@@ -4,7 +4,7 @@
 #include <vector>
 #include <charconv>
 #include "Manipulate.h"
-#include "equals.h"
+#include "Cases.h"
 #include "../Display/ANSI_Codes.h"
 
 /*

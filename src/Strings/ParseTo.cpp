@@ -64,11 +64,11 @@ namespace JSL
 
         PROVIDE_SPECIALISATION(bool,
             auto snap = trim_view(sv,"//");
-            if (snap == "1" || insensitiveEquals(snap,"true"))
+            if (snap == "1" || iEquals(snap,"true"))
             {
                 return true;
             }
-            if (snap == "0" || insensitiveEquals(snap,"false"))
+            if (snap == "0" || iEquals(snap,"false"))
             {
                 return false;
             }

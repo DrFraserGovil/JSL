@@ -1,7 +1,7 @@
-#include "split.h"
+#pragma once
 
-#include "MakeString.h"
-#include "split.h"
-#include "trim.h"
-#include "equals.h"
-#include "ParseTo.h"
+
+#include "Strings/MakeString.h"
+#include "Strings/ParseTo.h"
+#include "Strings/Cases.h"
+#include "Strings/Manipulate.h"
