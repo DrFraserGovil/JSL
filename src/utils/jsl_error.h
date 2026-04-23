@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 #include <string>
-#include "../Display/ANSI_Codes.h"
+#include "JSL/Display/ANSI_Codes.h"
 namespace JSL
 {
     namespace internal
@@ -13,7 +13,7 @@ namespace JSL
                 const std::string Summary;
             public:
                 FatalError(std::string msg) : Summary(msg){
-                    std::cout << Text::Red << Text::Bold << "\n\n***JSL Library Error***\n" << std::flush;
+                    std::cout << Text::Red << Text::Bold << "\n***JSL Library Error***\n" << std::flush;
                 }
 
                 template<class T>
