@@ -1,32 +1,31 @@
-#pragma once
+#include <JSL/FileIO/forLineIn.h>
 #include <fstream>
 #include <string_view>
-#include "../Strings/Strings.h"
+#include <JSL/Strings.h>
 #include "../utils/jsl_error.h"
-
 namespace JSL
+{
+    void forLineIn(const std::filesystem::path fileName, std::function<void(std::string_view)> lineProcessor)
     {
-    template <typename Func>
-    void forLineIn(const std::string & fileName, Func lineProcessor) {
         std::ifstream file(fileName);
         if (!file.is_open()) {
             internal::FatalError("Could not open file") << "Could not find the file '" << fileName << "'.\nPlease provide a valid filepath.";
         }
 
         std::string fileLine;
-        while (std::getline(file, fileLine)) {
+        while (std::getline(file, fileLine))
+        {
             lineProcessor(fileLine);
         }
         file.close();
     }
 
-    template <typename Func>
-    void forSplitLineIn(const std::string & fileName, std::string_view delimiter, Func vectorProcessor) 
+    void forSplitLineIn(const std::string & fileName, std::string_view delimiter,  std::function<void(std::vector<std::string_view>)> vectorProcessor) 
     {
         forLineIn(fileName,
-            [&](std::string & line)
+            [&](auto line)
             {
-                vectorProcessor(split(line,delimiter));
+                vectorProcessor(split_view(line,delimiter));
             }
         );
     }

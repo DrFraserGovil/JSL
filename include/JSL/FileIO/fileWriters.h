@@ -5,32 +5,23 @@
 #include <string>
 #include <iomanip>
 #include <string_view>
-#include "../utils/jsl_error.h" 
 
 namespace JSL
 {
-    /*!
-     * Helper to verify file stream state.
-     */
-    void inline checkFile(const std::ofstream& file, const std::filesystem::path& path)
+    namespace internal
     {
-        if (!file.is_open())
-        {
-            internal::FatalError("I/O Error") << "Could not open file: " << path.string();
-        }
-    }
+        /*!
+         * Helper to verify file stream state. Throws an error if the file does not exist
+         */
+        void checkFile(const std::ofstream& file, const std::filesystem::path& path);
 
+    }
 
     /*! 
 	 * Creates a blank file at the specified location, overwriting any other file at the given location
 	 * \param filename The file which the system will attempt to open
 	*/
-	void inline initialiseFile(const std::filesystem::path& filename)
-    {
-		std::ofstream file(filename, std::ios::out);
-        checkFile(file, filename);
-        file.close();
-	}
+    void initialiseFile(const std::filesystem::path& filename);
 
     /*!
 	 * Opens the provided file and appends the provided string to the file, before closing it. If the file does not exist, it creates it. 
@@ -38,18 +29,11 @@ namespace JSL
 	 * \param content The desired string to be appended to the file (accepts control characters)
      * \param mode The open-mode; defaults to append (existing file not deleted)
 	*/
-	void inline writeStringToFile(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode = std::ios::app)
-    {
-        std::ofstream file(filename, mode);
-        checkFile(file, filename);
-        file << content;
-        file.close();
-    }
-
+	void writeStringToFile(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode = std::ios::app);
 
     template<typename...Ts>
     void inline writeVectorToFile(const std::filesystem::path& filename, 
-                                    const std::string& delimiter, 
+                                    std::string_view delimiter, 
                                     const std::vector<Ts>&... vecs)
     {
         static_assert(sizeof...(vecs) > 0, "At least one vector must be provided to writeVectorToFile");
@@ -113,28 +97,5 @@ namespace JSL
         file.close();
     }
 
-    /*!
-	 * A function similar to writeMatrix, but customised to the dumb format required for gnuplot heatmaps with their additional weird linebreak everytime the x-value changes
-	*/
-	template<class T, class R, class S>
-	void inline writeHeatMapToFile( const std::filesystem::path& filename, 
-                                    std::string_view columnDelimiter, 
-                                    const std::vector<R> & x, 
-                                    const std::vector<S> & y, 
-                                    const std::vector<std::vector<T>> & z)
-	{
-        std::ofstream file(filename, std::ios::out);
-        checkFile(file, filename);
-        file << std::setprecision(10);
-		for (size_t i =0 ; i < x.size(); ++i)
-		{
-			for (size_t j = 0; j < y.size(); ++j)
-			{
-				file << x[i] << columnDelimiter << y[j] << columnDelimiter << z[j][i] << "\n";
-			}
-			file << "\n";
-		}
-		file.close();
-	}
 
 }

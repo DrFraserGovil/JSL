@@ -14,6 +14,7 @@
 
 #include <JSL/Strings.h>
 #include <JSL/Vectors.h>
+#include <JSL/Time.h>
 // #include "Vectors/Search.h"
 // #include "Display/Display.h"
 // #include "Strings/Strings.h"
