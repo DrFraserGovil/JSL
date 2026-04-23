@@ -1,7 +1,7 @@
-#include "Strings/trim.h"
+#include "JSL/Strings/trim.h"
+
 namespace JSL
 {
-
     
     std::string_view trim(std::string_view sv)
     {
@@ -22,8 +22,10 @@ namespace JSL
         return sv.substr(first, last - first);
     }
 
+    
     std::string_view trim(std::string_view sv,const std::string & commentIndicator)
     {
+        //snip out from the comment indicator; then run a normal trim
         auto commentStart = sv.find(commentIndicator);
         if (commentStart != std::string::npos)
         {
