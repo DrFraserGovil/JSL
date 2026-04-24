@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <unistd.h> // For isatty()
 #include <cstdio>   // For fileno() and stderr
-#include "ANSI_Codes.h"
+#include <JSL/Display/ANSI_Codes.h>
 /*!
     An encoding for different levels of logs. Levels are hierarchical: WARN includes ERROR, and INFO includes WARN (and therefore, also ERROR).
 	

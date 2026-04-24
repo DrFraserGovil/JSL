@@ -190,13 +190,6 @@ namespace JSL::Log
 				std::cout << Format::ResetAll;
 			}
 
-			//save the data to the 'erase' memory banks
-			auto nlines = message.size();
-			Log::PreviousLines[Level] =0;
-			for (int i = 0; i < LogLevel::MAXLEVEL; ++i)
-			{ 
-				Log::PreviousLines[i] += nlines; //do this inside the mutex so line ordering is correct
-			}
 		}
 	}
 }
