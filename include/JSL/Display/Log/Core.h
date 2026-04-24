@@ -85,7 +85,7 @@ namespace JSL::Log
 			//! The internal Buffer to which Core::operator<< is streamed, and which is then output to terminal.
 			std::stringstream Buffer;
 			std::stringstream BufferPreamble;
-
+			bool ManualFormat = false;
 			//! The ::LogLevel of the log entry associated with this object. Used only to determine formatting.
 			LogLevel Level;
 

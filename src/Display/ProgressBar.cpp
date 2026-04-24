@@ -1,31 +1,8 @@
-#pragma once
-
-namespace JSL::Progress
-{
-    namespace internal
-    {
-        class Generic
-        {
-            
-        };
-    }
-    class Bar : internal::Generic
-    {
-
-    };
-
-    class Static : internal::Generic
-    {
-
-    };
-};
-
-
 // #include <string>
 // #include <vector>
 // #include "ANSI_Codes.h"
-// #include <JSL/internal/error.h>
-// #include <JSL/Time/Timer.h>
+// #include "../utils/jsl_error.h"
+// #include "../Time/Timer.h"
 
 // namespace JSL
 // {
@@ -202,8 +179,8 @@ namespace JSL::Progress
 //                 buffer.str("");
 //                 if (WrittenToScreen)
 //                 {
-//                     buffer << JSL::Terminal::Move(Terminal::Direction::Up,Dimension);
-//                     buffer << JSL::Terminal::Move(Terminal::Direction::Left,1000);//move all the way left
+//                     buffer << JSL::Cursor::Move(Cursor::Direction::Up,Dimension);
+//                     buffer << JSL::Cursor::Move(Cursor::Direction::Left,1000);//move all the way left
 //                 }
 //                 else
 //                 {
@@ -214,7 +191,7 @@ namespace JSL::Progress
 //                 {
 //                     buffer << Prefix[i] << "[" << std::string(HashCount[i],Symbol) << std::string(Width-HashCount[i],' ') << "] " << Suffix[i] << "\n";
 //                 }
-//                 std::cout << JSL::Terminal::Hide << buffer.str() << JSL::Terminal::Show;
+//                 std::cout << JSL::Cursor::Hide << buffer.str() << JSL::Cursor::Show;
                
 //             }
 //             void StaticUpdate(size_t newHashes)

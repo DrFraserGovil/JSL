@@ -11,7 +11,7 @@ namespace JSL::Format
         len = 0;
     }
     
-    Command::Command(const std::string & input, Element kind)
+    Command::Command(const std::string & input, Element kind) : type(kind)
     {
         len = input.size();
         std::memcpy(buf, input.c_str(), len);
@@ -69,6 +69,7 @@ namespace JSL::Format
             FalseTransparent = false;
             if (cmd.type & Element::ForegroundColour)
             {
+
                 Foreground.first = false;
             }
             if (cmd.type & Element::BackgroundColour)
@@ -119,7 +120,7 @@ namespace JSL::Format
 
     std::ostream & operator<<(std::ostream& os, const FormatGroup& c)
     {
-        if (c.FalseTransparent)
+        if (!c.FalseTransparent)
         {
             os << ResetAll;
         }

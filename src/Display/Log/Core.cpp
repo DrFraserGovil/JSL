@@ -96,7 +96,16 @@ namespace JSL::Log
 		if (Global::Config.TerminalOutput)
 		{
 			CurrentFormat.Add(format);
-			Buffer << CurrentFormat;
+			
+			if (!StreamActive)
+			{
+				BufferPreamble << CurrentFormat;
+				ManualFormat = true;
+			}
+			else
+			{
+				Buffer << CurrentFormat;
+			}
 		}
 		return *this;
 	}
@@ -106,7 +115,15 @@ namespace JSL::Log
 		if (Global::Config.TerminalOutput)
 		{
 			CurrentFormat.Add(group);
-			Buffer << CurrentFormat;
+			if (!StreamActive)
+			{
+				BufferPreamble << CurrentFormat;
+				ManualFormat = true;
+			}
+			else
+			{
+				Buffer << CurrentFormat;
+			}
 		}
 		return *this;
 	}
@@ -126,9 +143,9 @@ namespace JSL::Log
 		{
 			BufferPreamble << JSL::Terminal::ClearLine;
 		}
-		if (Global::Config.TerminalOutput)
+		if (Global::Config.TerminalOutput && !ManualFormat)
 		{
-			BufferPreamble << fmt;
+			BufferPreamble << fmt << "a";
 		}
 		if (Global::Config.ShowHeaders)
 		{
