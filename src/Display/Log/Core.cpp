@@ -145,7 +145,7 @@ namespace JSL::Log
 		}
 		if (Global::Config.TerminalOutput && !ManualFormat)
 		{
-			BufferPreamble << fmt << "a";
+			BufferPreamble << fmt;
 		}
 		if (Global::Config.ShowHeaders)
 		{
