@@ -18,7 +18,7 @@
 
 namespace JSL
 {
-    namespace detail
+    namespace internal
     {
         //helper functions for the template converter class
         void CheckErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName);
@@ -144,7 +144,7 @@ namespace JSL
     template <typename T>
     T inline ParseTo(std::string_view sv)
     {
-        return detail::Converter<T>::internalConvert(sv);
+        return internal::Converter<T>::internalConvert(sv);
     }
 
 
@@ -161,7 +161,7 @@ namespace JSL
     template<VectorType T>
     T inline ParseTo(std::string_view sv, std::string_view delimiter)
     {   
-        return detail::Converter<T>::internalConvert(sv, delimiter);
+        return internal::Converter<T>::internalConvert(sv, delimiter);
     }
 
 

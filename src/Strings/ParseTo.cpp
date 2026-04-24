@@ -2,7 +2,7 @@
 #include <JSL/internal/error.h>
 namespace JSL
 {
-    namespace detail
+    namespace internal
     {
         
         void CheckErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName)

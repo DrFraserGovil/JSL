@@ -12,7 +12,7 @@
 
 namespace JSL
 {
-    namespace detail
+    namespace internal
     {
         enum FormatType{ForegroundColour,BackgroundColour,Style,Reset};
     }
@@ -21,19 +21,19 @@ namespace JSL
     {
         char buf[20];
         uint8_t len;
-        detail::FormatType type;
+        internal::FormatType type;
         TerminalFormat()
         {
             buf[0] = '\0';
             len = 0;
         }
-        TerminalFormat(std::string input,detail::FormatType kind) : type(kind) 
+        TerminalFormat(std::string input,internal::FormatType kind) : type(kind) 
         {
             len = input.size();
             std::memcpy(buf, input.c_str(), len);
             buf[len] = '\0';
         }
-        TerminalFormat(uint8_t r, uint8_t g, uint8_t b,const char* control,detail::FormatType kind) : type(kind)
+        TerminalFormat(uint8_t r, uint8_t g, uint8_t b,const char* control,internal::FormatType kind) : type(kind)
         {
             char* ptr = buf;
             auto write_str = [&](const char* s, size_t n)
@@ -72,24 +72,24 @@ namespace JSL
         void Add(TerminalFormat input)
         {
             IsEmpty = false;
-            if (input.type == detail::Reset)
+            if (input.type == internal::Reset)
             {
                 Foreground.first = false;
                 Background.first = false;
                 Style.first = false;
                 return;
             }
-            if (input.type == detail::ForegroundColour)
+            if (input.type == internal::ForegroundColour)
             {
                 Foreground = {true,input};
                 return;
             }
-            if (input.type == detail::BackgroundColour)
+            if (input.type == internal::BackgroundColour)
             {
                 Background = {true,input};
                 return;
             }
-            if (input.type == detail::Style)
+            if (input.type == internal::Style)
             {
                 Style = {true,input};
                 return;
@@ -131,46 +131,46 @@ namespace JSL
     namespace Text 
     {
 
-        const TerminalFormat Reset("\033[0m",detail::Reset);
-        const TerminalFormat Black("\033[30m",detail::ForegroundColour);
+        const TerminalFormat Reset("\033[0m",internal::Reset);
+        const TerminalFormat Black("\033[30m",internal::ForegroundColour);
         
-        const TerminalFormat Red("\033[31m",detail::ForegroundColour);
-        const TerminalFormat Green("\033[32m",detail::ForegroundColour);
-        const TerminalFormat Yellow("\033[33m",detail::ForegroundColour);
-        const TerminalFormat Blue("\033[34m",detail::ForegroundColour);
-        const TerminalFormat Purple("\033[35m",detail::ForegroundColour);
-        const TerminalFormat Cyan("\033[36m",detail::ForegroundColour);
-        const TerminalFormat White("\033[37m",detail::ForegroundColour);
+        const TerminalFormat Red("\033[31m",internal::ForegroundColour);
+        const TerminalFormat Green("\033[32m",internal::ForegroundColour);
+        const TerminalFormat Yellow("\033[33m",internal::ForegroundColour);
+        const TerminalFormat Blue("\033[34m",internal::ForegroundColour);
+        const TerminalFormat Purple("\033[35m",internal::ForegroundColour);
+        const TerminalFormat Cyan("\033[36m",internal::ForegroundColour);
+        const TerminalFormat White("\033[37m",internal::ForegroundColour);
         
        
-        const TerminalFormat Bold("\033[1m",detail::Style);
-        const TerminalFormat Faint("\033[2m",detail::Style);
-        const TerminalFormat Italics("\033[3m",detail::Style);
-        const TerminalFormat Underline("\033[4m",detail::Style);
-        const TerminalFormat Highlight("\033[7m",detail::Style);
-        const TerminalFormat Strike("\033[9m",detail::Style);
+        const TerminalFormat Bold("\033[1m",internal::Style);
+        const TerminalFormat Faint("\033[2m",internal::Style);
+        const TerminalFormat Italics("\033[3m",internal::Style);
+        const TerminalFormat Underline("\033[4m",internal::Style);
+        const TerminalFormat Highlight("\033[7m",internal::Style);
+        const TerminalFormat Strike("\033[9m",internal::Style);
 
 
         inline TerminalFormat Colour(uint8_t r,uint8_t g, uint8_t b)
         {
-            return TerminalFormat(r,g,b,"\033[38;2;",detail::ForegroundColour);
+            return TerminalFormat(r,g,b,"\033[38;2;",internal::ForegroundColour);
         }
         
     }
     namespace Background
     {
-        const TerminalFormat Black("\033[40m",detail::BackgroundColour);
-        const TerminalFormat Red("\033[41m",detail::BackgroundColour);
-        const TerminalFormat Green("\033[42m",detail::BackgroundColour);
-        const TerminalFormat Yellow("\033[43m",detail::BackgroundColour);
-        const TerminalFormat Blue("\033[44m",detail::BackgroundColour);
-        const TerminalFormat Purple("\033[45m",detail::BackgroundColour);
-        const TerminalFormat Cyan("\033[46m",detail::BackgroundColour);
-        const TerminalFormat White("\033[47m",detail::BackgroundColour);
+        const TerminalFormat Black("\033[40m",internal::BackgroundColour);
+        const TerminalFormat Red("\033[41m",internal::BackgroundColour);
+        const TerminalFormat Green("\033[42m",internal::BackgroundColour);
+        const TerminalFormat Yellow("\033[43m",internal::BackgroundColour);
+        const TerminalFormat Blue("\033[44m",internal::BackgroundColour);
+        const TerminalFormat Purple("\033[45m",internal::BackgroundColour);
+        const TerminalFormat Cyan("\033[46m",internal::BackgroundColour);
+        const TerminalFormat White("\033[47m",internal::BackgroundColour);
 
         inline TerminalFormat Colour(uint8_t r,uint8_t g, uint8_t b)
         {
-            return TerminalFormat(r,g,b,"\033[48;2;",detail::BackgroundColour);
+            return TerminalFormat(r,g,b,"\033[48;2;",internal::BackgroundColour);
         }
     }
 

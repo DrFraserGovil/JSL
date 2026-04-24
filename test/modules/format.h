@@ -1,6 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 
-#include <JSL/Display/Display.h>
+#include <JSL/Display.h>
 
 #include <chrono>
 #include <thread>
