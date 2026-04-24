@@ -9,11 +9,11 @@
 
 TEST_CASE("Colour Testing","[display][colour]")
 {
-    namespace txt = JSL::Text;
-    namespace bg = JSL::Background;
-    namespace crs = JSL::Cursor;
+    namespace txt = JSL::Format;
+    // namespace bg = JSL::Background;
+    namespace crs = JSL::Terminal;
     
-    std::vector<JSL::TerminalFormat> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
+    std::vector<JSL::Format::Command> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
     SECTION("Foreground Colours")
     {
         for (size_t i = 0; i < cols.size(); ++i)
@@ -23,7 +23,7 @@ TEST_CASE("Colour Testing","[display][colour]")
         }
     }
 
-    std::vector<JSL::TerminalFormat> backgrounds = {bg::Black,bg::Red,bg::Green,bg::Yellow,bg::Blue, bg::Purple,bg::Cyan,bg::White};
+    std::vector<JSL::Format::Command> backgrounds = {txt::BgBlack,txt::BgRed,txt::BgGreen,txt::BgYellow,txt::BgBlue, txt::BgPurple,txt::BgCyan,txt::BgWhite};
     SECTION("Background Colours")
     {
         for (size_t i = 0; i < backgrounds.size(); ++i)
@@ -43,7 +43,7 @@ TEST_CASE("Colour Testing","[display][colour]")
             uint8_t rb = rand() % 256;
             uint8_t gb = rand() % 256;
             uint8_t bb = rand() % 256;
-            REQUIRE_NOTHROW(std::cout << txt::Colour(r,g,b) << bg::Colour(rb,gb,bb) << "Testing colours"<<txt::Reset);
+            REQUIRE_NOTHROW(std::cout << txt::Colour(r,g,b) << txt::BgColour(rb,gb,bb) << "Testing colours"<<txt::Reset);
             std::cout << std::flush;
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
             REQUIRE_NOTHROW(std::cout << crs::ClearLine);
@@ -57,7 +57,7 @@ TEST_CASE("Colour Testing","[display][colour]")
         auto check_rgb = [](uint8_t r, uint8_t g, uint8_t b, std::string expected)
         {
             std::ostringstream oss;
-            oss << JSL::Text::Colour(r, g, b);
+            oss << JSL::Format::Colour(r, g, b);
             REQUIRE(oss.str() == expected);
         };
 

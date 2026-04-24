@@ -115,16 +115,26 @@ namespace JSL::Log
 				return *this;
 			} 
 
-			LoggerCore &operator<<(TerminalFormat format)
+			LoggerCore &operator<<(Format::Command format)
 			{
 				if (Config.TerminalOutput)
 				{
 					CurrentFormat.Add(format);
-					Buffer << format; //doesn't necessarily open the stream -- but does prime it
+					Buffer << CurrentFormat;
 				}
 				return *this;
 			}
-			FormatAggregator CurrentFormat;
+			LoggerCore &operator<<(Format::FormatGroup group)
+			{
+				if (Config.TerminalOutput)
+				{
+					CurrentFormat.Add(group);
+					Buffer << CurrentFormat;
+				}
+				return *this;
+			}
+
+			Format::FormatGroup CurrentFormat;
 			/*!
 				@brief Deletes the specified number of lines from the terminal
 
@@ -138,7 +148,7 @@ namespace JSL::Log
 				{	
 					for (int i = 0; i < nLines; ++i)
 					{
-						std::cout << Cursor::CursorUp << Cursor::ClearLine;
+						std::cout << Terminal::CursorUp << Terminal::ClearLine;
 					}
 					std::cout << std::flush;//only do because deletion is expected to be 'instant', not buffered
 					for (int i = 0; i < LogLevel::MAXLEVEL;++i)
@@ -205,7 +215,7 @@ namespace JSL::Log
 			void Header()
 			{
 				std::string_view label;
-				TerminalFormat fmt;
+				Format::Command fmt;
 				switch(Level) {
 					case DEBUG: fmt = Config.DebugColour;label = "[DEBUG] "; break;
 					case INFO: fmt=Config.InfoColour;label = "[INFO]  "; break;
@@ -215,7 +225,7 @@ namespace JSL::Log
 				} 
 				if (Config.ForceClear)
 				{
-					BufferPreamble << JSL::Cursor::ClearLine;
+					BufferPreamble << JSL::Terminal::ClearLine;
 				}
 				if (Config.TerminalOutput)
 				{
@@ -285,7 +295,7 @@ namespace JSL::Log
 					}
 					if (Config.TerminalOutput)
 					{
-						std::cout << Text::Reset;
+						std::cout << Format::ResetAll;
 					}
 
 					//save the data to the 'erase' memory banks

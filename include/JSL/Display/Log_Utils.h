@@ -64,10 +64,10 @@ namespace JSL::Log
 
 		bool ForceClear = false;
 
-		TerminalFormat WarnColour = JSL::Text::Purple;
-		TerminalFormat ErrorColour = JSL::Text::Red;
-		TerminalFormat InfoColour = JSL::Text::White;
-		TerminalFormat DebugColour = JSL::Text::Blue;
+		Format::Command WarnColour = JSL::Format::Purple;
+		Format::Command ErrorColour = JSL::Format::Red;
+		Format::Command InfoColour = JSL::Format::White;
+		Format::Command DebugColour = JSL::Format::Blue;
 
 		bool DebugBoxing = true;
 		size_t DebugLineSize = 40;

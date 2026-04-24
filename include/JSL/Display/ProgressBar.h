@@ -179,8 +179,8 @@ namespace JSL
                 buffer.str("");
                 if (WrittenToScreen)
                 {
-                    buffer << JSL::Cursor::Move(Cursor::Direction::Up,Dimension);
-                    buffer << JSL::Cursor::Move(Cursor::Direction::Left,1000);//move all the way left
+                    buffer << JSL::Terminal::Move(Terminal::Direction::Up,Dimension);
+                    buffer << JSL::Terminal::Move(Terminal::Direction::Left,1000);//move all the way left
                 }
                 else
                 {
@@ -191,7 +191,7 @@ namespace JSL
                 {
                     buffer << Prefix[i] << "[" << std::string(HashCount[i],Symbol) << std::string(Width-HashCount[i],' ') << "] " << Suffix[i] << "\n";
                 }
-                std::cout << JSL::Cursor::Hide << buffer.str() << JSL::Cursor::Show;
+                std::cout << JSL::Terminal::Hide << buffer.str() << JSL::Terminal::Show;
                
             }
             void StaticUpdate(size_t newHashes)

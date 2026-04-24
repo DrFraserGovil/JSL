@@ -1,178 +1,73 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <charconv>
 #include <cstdint>
-#include <cstring>
 #include <string_view> 
+#include <JSL/Display/Format.h>
 /*
     These are some display commands which  enable the user to shift the cursor around, delete items and otherwise alter the appearance of terminal output. 
 
 */
 
-namespace JSL
+namespace JSL::Terminal
 {
-    namespace internal
-    {
-        enum FormatType{ForegroundColour,BackgroundColour,Style,Reset};
-    }
-    //! A slightly over-engineered way to rapidly construct arbitrary rgb-colour codes
-    struct TerminalFormat
-    {
-        char buf[20];
-        uint8_t len;
-        internal::FormatType type;
-        TerminalFormat()
-        {
-            buf[0] = '\0';
-            len = 0;
-        }
-        TerminalFormat(std::string input,internal::FormatType kind) : type(kind) 
-        {
-            len = input.size();
-            std::memcpy(buf, input.c_str(), len);
-            buf[len] = '\0';
-        }
-        TerminalFormat(uint8_t r, uint8_t g, uint8_t b,const char* control,internal::FormatType kind) : type(kind)
-        {
-            char* ptr = buf;
-            auto write_str = [&](const char* s, size_t n)
-            {
-                for (size_t i = 0; i < n; ++i) *ptr++ = s[i];
-            };
-
-            // write_str("\033[38;2;", 7);
-            write_str(control, 7);
-            ptr = std::to_chars(ptr, ptr + 3, r).ptr;
-            *ptr++ = ';';
-            ptr = std::to_chars(ptr, ptr + 3, g).ptr;
-            *ptr++ = ';';
-            ptr = std::to_chars(ptr, ptr + 3, b).ptr;
-            *ptr++ = 'm';
-            len = static_cast<uint8_t>(ptr - buf);
-        }
-
-        friend std::ostream& operator<<(std::ostream& os, const TerminalFormat& c)
-        {
-            return os.write(c.buf, c.len);
-        }
-        operator std::string() const {
-            return std::string(buf,len);
-        }
-
-    };
+    using CursorCommand = std::string; //has to be string (not view) so the MoveTo command returns persist after being constructed
+    constexpr CursorCommand Hide         = "\033[?25l";
+    constexpr CursorCommand Show         = "\033[?25h";
+    constexpr CursorCommand CursorUp     = "\033[A";
+    constexpr CursorCommand Backspace    = "\b \b"; //\b on its own just moves cursor; this moves cursor, erases character, then moves it back again
+    constexpr CursorCommand EraseRight   = "\033[0K";
+    constexpr CursorCommand EraseLeft    = "\033[1K";
+    constexpr CursorCommand ClearLine    = "\033[2K\r";
+    constexpr CursorCommand ClearScreen  = "\033[2J\r";
     
-    struct FormatAggregator
-    {
-        std::pair<bool, TerminalFormat> Foreground = {false,TerminalFormat()};
-        std::pair<bool, TerminalFormat> Background= {false,TerminalFormat()};
-        std::pair<bool, TerminalFormat> Style= {false,TerminalFormat()};
-        bool IsEmpty = true;
-        FormatAggregator(){}
-        void Add(TerminalFormat input)
-        {
-            IsEmpty = false;
-            if (input.type == internal::Reset)
-            {
-                Foreground.first = false;
-                Background.first = false;
-                Style.first = false;
-                return;
-            }
-            if (input.type == internal::ForegroundColour)
-            {
-                Foreground = {true,input};
-                return;
-            }
-            if (input.type == internal::BackgroundColour)
-            {
-                Background = {true,input};
-                return;
-            }
-            if (input.type == internal::Style)
-            {
-                Style = {true,input};
-                return;
-            }
-        }
-        friend std::ostream& operator<<(std::ostream& os, const FormatAggregator& c)
-        {
-            if (c.Foreground.first){os << c.Foreground.second;}
-            if (c.Background.first){os << c.Background.second;}
-            if (c.Style.first){os << c.Style.second;}
-            return os;
-        }
-    };
-    using format = std::string_view;
+    enum Direction {Up =0, Down=1,Right=2,Left=3}; //numbers are fixed as we do some ASCI hackery
+    CursorCommand Move(Direction dir, unsigned int steps);
+    CursorCommand MoveToColumn(uint32_t column);
+}
 
-    namespace Cursor
-    {
 
-        constexpr format Hide         = "\033[?25l";
-        constexpr format Show         = "\033[?25h";
-        constexpr format CursorUp     = "\033[A";
-        inline format MoveToColumn(uint32_t column)
-        {
-            return "\033[" + std::to_string(column) + "G";
-        }
-        
-        enum Direction {Up =0, Down=1,Right=2,Left=3};
-        inline format Move(Direction dir, unsigned int steps)
-        {
-            return "\033[" + std::to_string(steps) + (char)(dir+65);
-        }
-        constexpr format Backspace    = "\b \b"; //\b on its own just moves cursor; this moves cursor, erases character, then moves it back again
-        constexpr format EraseRight   = "\033[0K";
-        constexpr format EraseLeft    = "\033[1K";
-        constexpr format ClearLine    = "\033[2K\r";
-        constexpr format ClearScreen  = "\033[2J\r";
+namespace JSL::Format
+{
+    const Command ResetAll("\033[0m",Element::Resetter);
+    //gets \033[0m, so resets all if passed straight to format; but otherwise can selectively clear from a FormatGroup
+    Command Reset(Element sections = Element::Resetter);
+    
+    const Command Black("\033[30m",ForegroundColour);
+    const Command Red("\033[31m",ForegroundColour);
+    const Command Green("\033[32m",ForegroundColour);
+    const Command Yellow("\033[33m",ForegroundColour);
+    const Command Blue("\033[34m",ForegroundColour);
+    const Command Purple("\033[35m",ForegroundColour);
+    const Command Cyan("\033[36m",ForegroundColour);
+    const Command White("\033[37m",ForegroundColour);
+
+
+    const Command Bold("\033[1m",Style);
+    const Command Faint("\033[2m",Style);
+    const Command Italics("\033[3m",Style);
+    const Command Underline("\033[4m",Style);
+    const Command Highlight("\033[7m",Style);
+    const Command Strike("\033[9m",Style);
+
+
+    inline Command Colour(uint8_t r,uint8_t g, uint8_t b)
+    {
+        return Command(r,g,b,"\033[38;2;",ForegroundColour);
     }
 
-    namespace Text 
+    const Command BgBlack("\033[40m",BackgroundColour);
+    const Command BgRed("\033[41m",BackgroundColour);
+    const Command BgGreen("\033[42m",BackgroundColour);
+    const Command BgYellow("\033[43m",BackgroundColour);
+    const Command BgBlue("\033[44m",BackgroundColour);
+    const Command BgPurple("\033[45m",BackgroundColour);
+    const Command BgCyan("\033[46m",BackgroundColour);
+    const Command BgWhite("\033[47m",BackgroundColour);
+
+    inline Command BgColour(uint8_t r,uint8_t g, uint8_t b)
     {
-
-        const TerminalFormat Reset("\033[0m",internal::Reset);
-        const TerminalFormat Black("\033[30m",internal::ForegroundColour);
-        
-        const TerminalFormat Red("\033[31m",internal::ForegroundColour);
-        const TerminalFormat Green("\033[32m",internal::ForegroundColour);
-        const TerminalFormat Yellow("\033[33m",internal::ForegroundColour);
-        const TerminalFormat Blue("\033[34m",internal::ForegroundColour);
-        const TerminalFormat Purple("\033[35m",internal::ForegroundColour);
-        const TerminalFormat Cyan("\033[36m",internal::ForegroundColour);
-        const TerminalFormat White("\033[37m",internal::ForegroundColour);
-        
-       
-        const TerminalFormat Bold("\033[1m",internal::Style);
-        const TerminalFormat Faint("\033[2m",internal::Style);
-        const TerminalFormat Italics("\033[3m",internal::Style);
-        const TerminalFormat Underline("\033[4m",internal::Style);
-        const TerminalFormat Highlight("\033[7m",internal::Style);
-        const TerminalFormat Strike("\033[9m",internal::Style);
-
-
-        inline TerminalFormat Colour(uint8_t r,uint8_t g, uint8_t b)
-        {
-            return TerminalFormat(r,g,b,"\033[38;2;",internal::ForegroundColour);
-        }
-        
+        return Command(r,g,b,"\033[48;2;",BackgroundColour);
     }
-    namespace Background
-    {
-        const TerminalFormat Black("\033[40m",internal::BackgroundColour);
-        const TerminalFormat Red("\033[41m",internal::BackgroundColour);
-        const TerminalFormat Green("\033[42m",internal::BackgroundColour);
-        const TerminalFormat Yellow("\033[43m",internal::BackgroundColour);
-        const TerminalFormat Blue("\033[44m",internal::BackgroundColour);
-        const TerminalFormat Purple("\033[45m",internal::BackgroundColour);
-        const TerminalFormat Cyan("\033[46m",internal::BackgroundColour);
-        const TerminalFormat White("\033[47m",internal::BackgroundColour);
-
-        inline TerminalFormat Colour(uint8_t r,uint8_t g, uint8_t b)
-        {
-            return TerminalFormat(r,g,b,"\033[48;2;",internal::BackgroundColour);
-        }
-    }
+}
+    
 
  
-}
