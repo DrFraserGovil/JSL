@@ -5,36 +5,64 @@
 #include <string>
 namespace JSL::Filesystem
 {
+    namespace fs = std::filesystem;
     class Structure
     {
         public:
-            std::filesystem::path Path;
+            fs::path Path;
             std::vector<Structure> Directories;
-            std::vector<std::filesystem::path> Files; 
-            std::vector<std::filesystem::path> Other; 
-            std::vector<std::filesystem::path> AllFiles();
+            std::vector<fs::path> Files; 
+            std::vector<fs::path> Other; 
+            std::vector<fs::path> ListFiles(bool includeOthers = false);
+            std::vector<fs::path> ListAll(bool includeOthers=false);
+            std::vector<fs::path> ListDirs();
 
              // /**
             //  * Filters a structure for files matching a glob pattern (e.g., "*.cpp")
             //  * \param pattern The glob pattern (supports * and ?)
             //  */
-            std::vector<std::filesystem::path> MatchingFiles(std::string matchPattern);
-            std::vector<std::filesystem::path> MatchingFiles(std::regex matchPattern);
+            std::vector<fs::path> MatchFiles(std::string matchPattern);
+            std::vector<fs::path> MatchFiles(std::regex matchPattern);
             
-            Structure(std::filesystem::path & target, bool recursive = false,int depth=0);
+            Structure(fs::path & target, bool recursive = false,int depth=0);
 
             
         private:
             bool IsRecursive;
     };
 
-    std::vector<std::filesystem::path> listFiles(std::filesystem::path & target, bool recursive = false);
+    std::vector<fs::path> list(fs::path & target, bool recursive = false);
     
-    std::vector<std::filesystem::path> matchFiles(std::filesystem::path & target, std::string matchPattern, bool recursive = false);
+    std::vector<fs::path> match(fs::path & target, std::string matchPattern, bool recursive = false);
+
+    struct report
+    {
+        bool Successful;
+        std::string Message;
+    };
+
+
+    enum Policy{
+        Strict,
+        Quiet
+    };
+
+    extern Policy DefaultPolicy;
+
+    report mkdir(const fs::path& directory,Policy policy = DefaultPolicy);
+
+    report remove(const fs::path & pathToFile, Policy polict = DefaultPolicy);
+
+    /*
+        An explicit function that forces a user to acknowledge they're deleting a whole directory and all its contents
+    */
+    report removeDirectory(const fs::path & pathToDirectory,Policy policy = DefaultPolicy);
+
+
     // struct DirectoryContents
     // {
     //     std::vector<
-    //     std::filesystem::path Path;
+    //     fs::path Path;
     //     PathStatus Status;
     // };
 
@@ -44,7 +72,7 @@ namespace JSL::Filesystem
     //  * \param recursive If true, performs a deep scan of all subdirectories.
     //  * \returns A vector of DirectoryEntry objects.
     //  */
-    // std::vector<DirectoryEntry> inline listFiles(const std::filesystem::path& target, bool recursive = false)
+    // std::vector<DirectoryEntry> inline listFiles(const fs::path& target, bool recursive = false)
     // {
     //     std::vector<DirectoryEntry> contents;
     //     std::error_code ec;
@@ -67,12 +95,12 @@ namespace JSL::Filesystem
 
     //     if (recursive)
     //     {
-    //         std::filesystem::recursive_directory_iterator it(target, ec);
+    //         fs::recursive_directory_iterator it(target, ec);
     //         scope(it);
     //     }
     //     else
     //     {
-    //         std::filesystem::directory_iterator it(target, ec);
+    //         fs::directory_iterator it(target, ec);
     //         scope(it);
     //     }
 
@@ -85,7 +113,7 @@ namespace JSL::Filesystem
     //  * \param pattern The glob pattern (supports * and ?)
     //  * \param recursive Whether to search subfolders
     //  */
-    // std::vector<DirectoryEntry> inline listFiles(const std::filesystem::path& target, 
+    // std::vector<DirectoryEntry> inline listFiles(const fs::path& target, 
     //                                         std::string pattern, 
     //                                         bool recursive = false)
     // {
