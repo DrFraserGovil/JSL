@@ -1,5 +1,5 @@
 #include <JSL/Strings/ParseTo.h>
-#include "../utils/jsl_error.h"
+#include <JSL/internal/error.h>
 namespace JSL
 {
     namespace detail

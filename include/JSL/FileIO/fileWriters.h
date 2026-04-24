@@ -5,7 +5,7 @@
 #include <string>
 #include <iomanip>
 #include <string_view>
-
+#include <JSL/internal/error.h>
 namespace JSL
 {
     namespace internal
@@ -50,7 +50,7 @@ namespace JSL
         }
 
         std::ofstream file(filename, std::ios::out);
-        checkFile(file, filename);
+        internal::checkFile(file, filename);
         file << std::setprecision(10);
 
         for (size_t i = 0; i < rowCount; ++i)
@@ -83,7 +83,7 @@ namespace JSL
                                     const std::string& rowDelimiter = "\n")
     {
         std::ofstream file(filename, std::ios::out);
-        checkFile(file, filename);
+        internal::checkFile(file, filename);
         file << std::setprecision(10);
         for (const auto& row : contentMatrix)
         {

@@ -1,5 +1,5 @@
 #include <JSL/Strings/Manipulate.h>
-#include "../utils/jsl_error.h"
+#include <JSL/internal/error.h>
 #include <cctype>
 namespace JSL
 {
