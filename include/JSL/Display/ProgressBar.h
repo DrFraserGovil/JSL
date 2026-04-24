@@ -1,8 +1,8 @@
 #include <string>
 #include <vector>
 #include "ANSI_Codes.h"
-#include "../utils/jsl_error.h"
-#include "../Time/Timer.h"
+#include <JSL/internal/error.h>
+#include <JSL/Time/Timer.h>
 
 namespace JSL
 {

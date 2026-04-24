@@ -7,6 +7,9 @@ namespace JSL
 
     #define PROVIDE_SPECIALISATION(type,...) \
         std::string MakeStringStruct<type>::stringify(const type & value){__VA_ARGS__} \
+
+    #define PROVIDE_SPECIALISATION_NOCONST(type,...) \
+        std::string MakeStringStruct<type>::stringify(type & value){__VA_ARGS__} \
  
         
         
@@ -14,7 +17,7 @@ namespace JSL
     #define NUMERIC_SPECIALISATION(type)\
         PROVIDE_SPECIALISATION(type,return std::to_string(value);)
     
-        NUMERIC_SPECIALISATION(int);
+    NUMERIC_SPECIALISATION(int);
     NUMERIC_SPECIALISATION(unsigned int);
     NUMERIC_SPECIALISATION(long);
     NUMERIC_SPECIALISATION(unsigned long);
@@ -35,6 +38,9 @@ namespace JSL
         return std::string(1, value); 
     );
     PROVIDE_SPECIALISATION(char*,
+        return value ? std::string(value) : std::string("");
+    );
+    PROVIDE_SPECIALISATION_NOCONST(const char*,
         return value ? std::string(value) : std::string("");
     );
     PROVIDE_SPECIALISATION(std::string,

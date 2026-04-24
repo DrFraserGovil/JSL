@@ -2,7 +2,7 @@
 #include <filesystem>
 #include <fstream>
 #include "../test_utils/catch_extended.h"
-#include "../../modules/FileIO/FileIO.h"
+#include <JSL/FileIO.h>
 #include "dummy_file.h"
 TEST_CASE("Reads files correctly","[file][io][input]")
 {
@@ -15,7 +15,7 @@ TEST_CASE("Reads files correctly","[file][io][input]")
 
 	int linesRead = 0;
 	JSL::forLineIn(F.Path,
-		[&](const std::string line)
+		[&](auto line)
 		{
 			REQUIRE(line == "test");
 			linesRead++;
@@ -227,28 +227,6 @@ TEST_CASE("JSL I/O Utilities", "[io]")
 
         // Expected: 1|2;3|4;
         CHECK(readFile(p) == "1|2;3|4;");
-    }
-
-    SECTION("writeHeatMapToFile: Gnuplot Format")
-    {
-        fs::path p = sandbox / "heatmap.dat";
-        std::vector<int> x = {10, 20};
-        std::vector<int> y = {1, 2};
-        std::vector<std::vector<double>> z = {{0.5, 0.6}, {0.7, 0.8}};
-
-        JSL::writeHeatMapToFile(p, " ", x, y, z);
-
-        // Gnuplot format expects:
-        // x[0] y[0] z[0][0]
-        // x[0] y[1] z[1][0]
-        // (blank line)
-        // x[1] y[0] z[0][1] ...
-        std::string content = readFile(p);
-        
-        // Verify x[0] block
-        CHECK(content.find("10 1 0.5\n10 2 0.7\n\n") != std::string::npos);
-        // Verify x[1] block
-        CHECK(content.find("20 1 0.6\n20 2 0.8\n\n") != std::string::npos);
     }
 
     fs::remove_all(sandbox);

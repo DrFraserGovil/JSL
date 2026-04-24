@@ -110,7 +110,7 @@ namespace JSL::Archiver{
 				{
 					ForLineIn([&](std::string_view line){
 						
-						auto row = ParseTo<ColumnTypes...>(split(line,delimiter));
+						auto row = ParseTo<ColumnTypes...>(split_view(line,delimiter));
 
 						perTupleFunction(row);
 

@@ -23,7 +23,10 @@ namespace JSL
 
     //macro to provide specialisations without boilerplate muddling it all up
     #define JSL_HAS_SPECIALISATION(type) \
-        template<> struct MakeStringStruct<type>{static std::string stringify (const type & value);}; \
+        template<> struct MakeStringStruct<type>{static std::string stringify (const type & value);}; 
+    
+    #define JSL_HAS_SPECIALISATION_NOCONST(type) \
+        template<> struct MakeStringStruct<type>{static std::string stringify ( type & value);};
 
 
     JSL_HAS_SPECIALISATION(bool);
@@ -42,6 +45,8 @@ namespace JSL
 
     JSL_HAS_SPECIALISATION(char);
     JSL_HAS_SPECIALISATION(char*);
+    JSL_HAS_SPECIALISATION_NOCONST(const char*);
+
     JSL_HAS_SPECIALISATION(std::string);
     JSL_HAS_SPECIALISATION(std::string_view);
 

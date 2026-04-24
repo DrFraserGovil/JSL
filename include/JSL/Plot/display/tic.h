@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cmath>
 #include <string>
 
 #define ADD(...) \

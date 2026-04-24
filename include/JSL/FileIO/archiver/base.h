@@ -6,7 +6,7 @@
 #include <fstream>
 #include <filesystem>
 #include "helpers.h"
-#include "../../utils/jsl_error.h"
+#include <JSL/internal/error.h>
 namespace JSL::Archiver
 {
     enum class Mode

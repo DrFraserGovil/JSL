@@ -2,13 +2,12 @@
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_vector.hpp>
 
-#include "../../modules/Strings/Strings.h"
-
+#include <JSL/Strings.h>
 TEST_CASE("Case-insensitive-equality testing","[string]")
 {
-    REQUIRE(JSL::insensitiveEquals("HELLO","Hello"));
-    REQUIRE(JSL::insensitiveEquals("HELLO miXing AND matching","Hello miXing anD mAtCHINg"));
-    REQUIRE(!JSL::insensitiveEquals("HELLO","Hello miXing anD mAtCHINg"));
+    REQUIRE(JSL::iEquals("HELLO","Hello"));
+    REQUIRE(JSL::iEquals("HELLO miXing AND matching","Hello miXing anD mAtCHINg"));
+    REQUIRE(!JSL::iEquals("HELLO","Hello miXing anD mAtCHINg"));
 }
 
 TEST_CASE("String Split functionality", "[JSL][string][split]")

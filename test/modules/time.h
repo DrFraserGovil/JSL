@@ -1,6 +1,6 @@
 #pragma once
 #include <catch2/catch_test_macros.hpp>
-#include "../../modules/Time/Time.h"
+#include <JSL/Time.h>
 #include <thread>
 
 using JSL::Timer;

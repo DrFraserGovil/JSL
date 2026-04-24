@@ -4,8 +4,7 @@
 // #include <catch2/matchers/catch_matchers_contains.hpp>
 
 #include "../test_utils/catch_extended.h"
-#include "../../modules/Display/Log.h"
-
+#include <JSL/Display/Log.h>
 Initialise_JSL_Log()
 
 using namespace Catch::Matchers;

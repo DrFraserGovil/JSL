@@ -161,7 +161,7 @@ namespace JSL::Log
 				char prevWhitespace = notWS;
 				detail::LineComponent current(0);
 				current.Start = 0;
-				for (int i = 0; i < line.size(); ++i)
+				for (size_t i = 0; i < line.size(); ++i)
 				{
 					bool isWhitespace = (line[i] == ' ') || (line[i] == '\t');
 					if (isWhitespace)

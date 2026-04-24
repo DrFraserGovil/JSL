@@ -14,7 +14,7 @@
 #include "Log_Utils.h"
 #include <filesystem>
 
-#include "../Strings/split.h"
+#include <JSL/Strings/Manipulate.h>
 /*!
 	@brief The main log interface. Pipe output to it as you would std::cout.
 	
@@ -242,7 +242,7 @@ namespace JSL::Log
 					linebreak += "\t";
 				}
 				
-				std::vector<std::string_view> message = split(Buffer.view(),"\n");
+				std::vector<std::string_view> message = split_view(Buffer.view(),"\n");
 				const bool needBoxing = (Level == DEBUG && Config.DebugBoxing);
 				if (needBoxing)
 				{
@@ -309,10 +309,10 @@ namespace JSL::Log
 					auto components = detail::LineComponent::GetAll(line);
 					int lineStart = 0;
 					int lineSize = components[0].RealSize;
-					for (int i = 1; i < components.size(); ++i)
+					for (size_t i = 1; i < components.size(); ++i)
 					{
 						auto & component = components[i];
-						int proposedLineSize=lineSize + component.RealSize;
+						size_t proposedLineSize=lineSize + component.RealSize;
 						if (proposedLineSize > Config.DebugLineSize)
 						{
 							int lineEnd = components[i-1].End;

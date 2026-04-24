@@ -3,8 +3,7 @@
 #include <catch2/matchers/catch_matchers_all.hpp>
 #include "../test_utils/catch_extended.h"
 
-#include "../../modules/Parameters/Parameter.h"
-
+#include <JSL/Parameters/Parameter.h>
 TEST_CASE("Basic Parameter behaviour","[parameter][settings]")
 {
 	using JSL::Parameter;

@@ -2,8 +2,8 @@
 #include <catch2/catch_test_macros.hpp>
 #include <string>
 #include <string_view>
-#include "../../modules/Strings/ParseTo.h"
-
+#include <JSL/Strings/ParseTo.h>
+#include <cmath>
 
 TEST_CASE("Edge case handling","[utility][ParseTo][edgecase]")
 {
@@ -52,8 +52,7 @@ TEST_CASE("Edge case handling","[utility][ParseTo][edgecase]")
 		REQUIRE_NOTHROW(JSL::ParseTo<double>("1 "));
 		REQUIRE_NOTHROW(JSL::ParseTo<std::vector<int>>("1 "));
 
-		//check that string does *not* trim!s
-		REQUIRE(JSL::ParseTo<std::string>(" hi") == " hi");
+		REQUIRE(JSL::ParseTo<std::string>(" hi\t") == "hi");
 	}
 }
 

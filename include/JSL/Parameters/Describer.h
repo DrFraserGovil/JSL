@@ -25,7 +25,7 @@ namespace JSL
 
             void Query(std::string string, std::vector<ParameterDescription> & vector)
             {
-                if (JSL::insensitiveEquals(string,Name) || JSL::insensitiveEquals(string,Key))
+                if (JSL::iEquals(string,Name) || JSL::iEquals(string,Key))
                 {
                     vector.push_back(*this);
                 }

@@ -5,7 +5,7 @@
 #include <charconv>
 #include "Manipulate.h"
 #include "Cases.h"
-#include "../Display/ANSI_Codes.h"
+#include <JSL/internal/error.h>
 
 /*
     This file provides a robust return-value interface for converting string-views (and, implicitly, strings) into a candidate type
@@ -47,7 +47,7 @@ namespace JSL
                 RejectEmpty(sv,typeid(T).name());
                 
                 //create an object and read from_chars into it. Some implicit type conversion is allowed here (i.e. if T is a bool)
-                T output;
+                T output{};
                 auto result = std::from_chars(sv.data(), sv.data() + sv.size(),output);
 
                 CheckErrors(result,sv,typeid(T).name());		
@@ -103,8 +103,7 @@ namespace JSL
                 sv = trim_view(sv,"//");
                 if (sv.empty()) 
                 {
-                    std::cout << JSL::Text::Red << "Empty-vectors can only be instantiated if they have enclosing braces -- empty strings are not valid." <<std::endl;
-                    throw std::runtime_error("Cannot parse empty string");
+                    internal::FatalError("Cannot parse empty string") << "Empty-vectors can only be instantiated if they have enclosing braces -- empty strings are not valid.";
                 }
 
 
@@ -117,14 +116,13 @@ namespace JSL
                     return std::vector<T_Inner>{};
                 } 
                 std::vector<T_Inner> result_vec;
-                std::vector<std::string_view> elements_sv = split(sv, element_delimiter);
+                std::vector<std::string_view> elements_sv = split_view(sv, element_delimiter);
                 int i = 0;
                 for (const auto& elem_sv : elements_sv)
                 {
                     if (elem_sv.empty())
                     {
-                        std::cout  << JSL::Text::Red << "Element " << i << " of the vector " << sv << " is empty.\nVector-conversion does not accept empty strings (even if empty strings are allowed for base type";
-                        throw std::runtime_error("Cannot parse empty string");
+                        internal::FatalError("Cannot parse empty string")<< "Element " << i << " of the vector " << sv << " is empty.\nVector-conversion does not accept empty strings (even if empty strings are allowed for base type";
                     }
                     ++i;
                     result_vec.push_back(Converter<T_Inner>::internalConvert(elem_sv));
@@ -169,7 +167,7 @@ namespace JSL
 
 
     //have to reopen namespace because this needs ParseTo to be visible
-    namespace detail
+    namespace internal
     {
         // Helper function to create a tuple from a vector of string_views
         // This uses std::index_sequence and a fold expression for compile-time unpacking
@@ -186,13 +184,12 @@ namespace JSL
         constexpr std::size_t expected_size = sizeof...(Ts);
         if (sv_vec.size() != expected_size) 
         {
-            std::cout << JSL::Text::Red << "Tuple conversion error: Token count in vector (" << sv_vec.size()<< ") does not equal tuple size (" << expected_size <<")";
-            throw std::runtime_error("Tuple conversion: Incorrect token count.");
+            internal::FatalError("Tuple conversion: Incorrect token count.") << "Tuple conversion error: Token count in vector (" << sv_vec.size()<< ") does not equal tuple size (" << expected_size <<")";
         }
         
 
         // Now, call the implementation which will do the actual conversions
-        return ImplicitTupleConverter<Ts...>(sv_vec, std::index_sequence_for<Ts...>{});
+        return internal::ImplicitTupleConverter<Ts...>(sv_vec, std::index_sequence_for<Ts...>{});
     }
 }
 

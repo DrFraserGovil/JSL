@@ -4,9 +4,8 @@
 #include <sstream>
 #include <string_view>
 
-#include "../Strings/Strings.h"
-#include "../utils/jsl_error.h"
-
+#include <JSL/Strings.h>
+#include <JSL/internal/error.h>
 
 #if defined(_WIN32) || defined(_WIN64)
     #include <io.h>
@@ -51,7 +50,7 @@ namespace JSL
     void forSplitLineInPipedInput(Func lineProcessor,std::string_view delimiter)
     {
         forLineInPipedInput([&](std::string_view line){
-            lineProcessor(JSL::split(line,delimiter));
+            lineProcessor(JSL::split_view(line,delimiter));
         });
     }
 

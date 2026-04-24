@@ -1,8 +1,7 @@
     #pragma once
     #include <string>
-    #include "../../Strings/split.h"
-    #include "../../Strings/equals.h"
-    #include "../data/pipe.h"
+    #include <JSL/Strings/Manipulate.h>
+    #include <JSL/Plot/data/pipe.h>
     namespace JSL::Plotting
     {
         class Display; //for friend purposes
@@ -57,12 +56,12 @@
                     
 
                     Position loc = Position::None;
-                    auto iterate = JSL::split(pos," ");
+                    auto iterate = JSL::split_view(pos," ");
                     for (auto el : iterate)
                     {
                         for (size_t j = 0; j < SearchVector.size(); ++j)
                         {
-                            if (JSL::insensitiveEquals(el,SearchVector[j].first))
+                            if (JSL::iEquals(el,SearchVector[j].first))
                             {
                                 loc = loc | SearchVector[j].second;
                             }

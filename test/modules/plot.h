@@ -1,7 +1,6 @@
-#include "../../modules/Plot/plot.h"
-
+#include <JSL/Plot/plot.h>
 #include <thread>
-#include "../../modules/Time/Timer.h"
+#include <JSL/Time/Timer.h>
 TEST_CASE("Plotting","[plot]")
 {
     JSL::Plotting::Figure P;

@@ -2,7 +2,7 @@
 #include "../test_utils/catch_extended.h"
 
 #define JSL_TEST_SPOOF_PIPE
-#include "../../modules/FileIO/FileIO.h"
+#include <JSL/FileIO.h>
 #include "dummy_file.h"
 
 TEST_CASE("Piped Input test","[pipe][input]")
