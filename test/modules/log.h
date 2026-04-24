@@ -54,13 +54,13 @@ TEST_CASE("Logger Core", "[log][utility]") {
 		SECTION("Check Logger Text (with newlines)") {
 
 			std::string output = capture_stdout([&]() {
-				(JSL::Log::LoggerCore(DEBUG,0,"mock-function","mock-file")) << "Debug message";
+				(JSL::Log::Core(DEBUG,0,"mock-function","mock-file")) << "Debug message";
 			});
 			REQUIRE(output == "Debug message\n");
 
 			JSL::Log::Config.AppendNewline = (false);
 			std::string noLinebreakOutput = capture_stdout([&]() {
-				(JSL::Log::LoggerCore(DEBUG,0,"mock-function","mock-file")) << "Debug message";
+				(JSL::Log::Core(DEBUG,0,"mock-function","mock-file")) << "Debug message";
 			});
 			REQUIRE(noLinebreakOutput == "Debug message"); // as above, but with no linebreak
 		}
@@ -72,14 +72,14 @@ TEST_CASE("Logger Core", "[log][utility]") {
 			{
 				JSL::Log::Config.TerminalOutput = true;
 				std::string terminalOutput = capture_stdout([&]() {
-					(JSL::Log::LoggerCore(level,0,"mock-function","mock-file")) << "Debug message";
+					(JSL::Log::Core(level,0,"mock-function","mock-file")) << "Debug message";
 				});
 				REQUIRE_THAT(terminalOutput,StartsWith("\033[")); //check that an ANSI codes is inserted at the beginning of input. We don't care which -- that's an implementation detail that can be changed
 				REQUIRE_THAT(terminalOutput, EndsWith("\033[0m\n"));  //check that the default ANSI code (white) is inserted at the end
 
 				JSL::Log::Config.TerminalOutput = false;
 				std::string fileOutput = capture_stdout([&]() {
-					(JSL::Log::LoggerCore(DEBUG,0,"mock-function","mock-file")) << "Debug message";
+					(JSL::Log::Core(DEBUG,0,"mock-function","mock-file")) << "Debug message";
 				});
 				REQUIRE_THAT(fileOutput,!StartsWith("\033[")); //check the above tests fail when terminal output deactivated
 				REQUIRE_THAT(fileOutput, !EndsWith("\033[0m\n"));
@@ -98,7 +98,7 @@ TEST_CASE("Logger Core", "[log][utility]") {
 				std::string name = "mock-" + names[i] + "-";
 				++i;
 				std::string variedLevelOutput = capture_stdout([&]() {
-					(JSL::Log::LoggerCore(level,398,name + "function",name+"file")) << "Debug message";
+					(JSL::Log::Core(level,398,name + "function",name+"file")) << "Debug message";
 				});
 				if (level <= 1)
 				{
@@ -127,7 +127,7 @@ TEST_CASE("Logger Core", "[log][utility]") {
 			{
 				JSL::Log::Config.ShowHeaders = (true);
 				std::string headerPresent = capture_stdout([&]() {
-					(JSL::Log::LoggerCore(level,0,"mock-function","mock-file")) << "Debug message";
+					(JSL::Log::Core(level,0,"mock-function","mock-file")) << "Debug message";
 				});
 				std::string search = "[" + names[i] + "]";
 				REQUIRE_THAT(headerPresent,ContainsSubstring(search));//check that the header successfully inserted when in true mode
@@ -135,7 +135,7 @@ TEST_CASE("Logger Core", "[log][utility]") {
 
 				JSL::Log::Config.ShowHeaders = (false);
 				std::string headerAbsent = capture_stdout([&]() {
-					(JSL::Log::LoggerCore(level,0,"mock-function","mock-file")) << "Debug message";
+					(JSL::Log::Core(level,0,"mock-function","mock-file")) << "Debug message";
 				});
 				REQUIRE_THAT(headerAbsent, !ContainsSubstring(search)); // check that it's absent in false mode
 			}
@@ -144,7 +144,7 @@ TEST_CASE("Logger Core", "[log][utility]") {
 		SECTION("Empty log")
 		{
 			std::string output = capture_stdout([&]() {
-				(JSL::Log::LoggerCore(DEBUG,0,"mock-function","mock-file"));
+				(JSL::Log::Core(DEBUG,0,"mock-function","mock-file"));
 			});
 			REQUIRE(output.empty());
 		}
