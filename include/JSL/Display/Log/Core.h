@@ -3,18 +3,11 @@
 
 	I have taken the view that Logging -- when active -- should never be performance-critical code, and so some of this is written in an idiomatic fashion, rather than an optimised one. 
 */
-
 #pragma once
-#include <unistd.h> // For isatty()
-#include <cstdio>   // For fileno() and stderr
-#include <iostream>
-#include <sstream>
-#include <cstring>
-#include <string_view>
-#include "Utils.h"
-#include <filesystem>
 
+#include <JSL/Display/Log/Config.h>
 #include <JSL/Strings/Manipulate.h>
+
 /*!
 	@brief The main log interface. Pipe output to it as you would std::cout.
 	
@@ -24,22 +17,13 @@
 	@returns If the level is suitable, a temporary Core object, which functions as a specialised Stream object, accepting values passed via '<<'. Otherwise, does nothing, and does not evaluate any subsequent pipe commands
 */
 #define LOG(level) \
-	if (!(level <= JSL::Log::Config.Level)) {} \
+	if (!(level <= JSL::Log::Global::Config.Level)) {} \
 	else (JSL::Log::Core(level,__LINE__,__func__,__FILE__))
-
-// Defines the externally-linked variables; has to be placed at file-scope 
-#define Initialise_JSL_Log()\
-	JSL::Log::ConfigObject JSL::Log::Config; \
-	std::mutex JSL::Log::StreamMutex; \
 
 
 namespace JSL::Log
 {
-	//! The global ConfigObject used by @ref LOG and Core to determine what messages are printed, and any associated formatting 
-	extern ConfigObject Config;
-
-	//! Used to prevent log-interleaving, and make the LOG (mostly) thread-safe
-	extern std::mutex StreamMutex;
+	
 
 	/*!
 		@brief Created during a \ref LOG call as a temporary object, and acts as a custom output stream

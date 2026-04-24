@@ -5,7 +5,6 @@
 
 #include "../test_utils/catch_extended.h"
 #include <JSL/Display/Log.h>
-Initialise_JSL_Log()
 
 using namespace Catch::Matchers;
 TEST_CASE("Logger Core", "[log][utility]") {
@@ -46,10 +45,10 @@ TEST_CASE("Logger Core", "[log][utility]") {
 	SECTION("Core Logger Output")
 	{
 		// Control the global config object for testing
-		auto originalConfig = JSL::Log::Config; // Save original config
-		JSL::Log::Config.AppendNewline = true; // Assume terminal for colored tests
-		JSL::Log::Config.TerminalOutput = false; // Assume terminal for colored tests
-		JSL::Log::Config.ShowHeaders = (false);
+		auto originalConfig = JSL::Log::Global::Config; // Save original config
+		JSL::Log::Global::Config.AppendNewline = true; // Assume terminal for colored tests
+		JSL::Log::Global::Config.TerminalOutput = false; // Assume terminal for colored tests
+		JSL::Log::Global::Config.ShowHeaders = (false);
 		
 		SECTION("Check Logger Text (with newlines)") {
 
@@ -58,7 +57,7 @@ TEST_CASE("Logger Core", "[log][utility]") {
 			});
 			REQUIRE(output == "Debug message\n");
 
-			JSL::Log::Config.AppendNewline = (false);
+			JSL::Log::Global::Config.AppendNewline = (false);
 			std::string noLinebreakOutput = capture_stdout([&]() {
 				(JSL::Log::Core(DEBUG,0,"mock-function","mock-file")) << "Debug message";
 			});
@@ -70,14 +69,14 @@ TEST_CASE("Logger Core", "[log][utility]") {
 			auto r = {DEBUG,INFO,WARN,ERROR};
 			for (LogLevel level: r)
 			{
-				JSL::Log::Config.TerminalOutput = true;
+				JSL::Log::Global::Config.TerminalOutput = true;
 				std::string terminalOutput = capture_stdout([&]() {
 					(JSL::Log::Core(level,0,"mock-function","mock-file")) << "Debug message";
 				});
 				REQUIRE_THAT(terminalOutput,StartsWith("\033[")); //check that an ANSI codes is inserted at the beginning of input. We don't care which -- that's an implementation detail that can be changed
 				REQUIRE_THAT(terminalOutput, EndsWith("\033[0m\n"));  //check that the default ANSI code (white) is inserted at the end
 
-				JSL::Log::Config.TerminalOutput = false;
+				JSL::Log::Global::Config.TerminalOutput = false;
 				std::string fileOutput = capture_stdout([&]() {
 					(JSL::Log::Core(DEBUG,0,"mock-function","mock-file")) << "Debug message";
 				});
@@ -93,8 +92,8 @@ TEST_CASE("Logger Core", "[log][utility]") {
 			int i = 0;
 			for (LogLevel level: r)
 			{
-				JSL::Log::Config.TerminalOutput = false;
-				JSL::Log::Config.AppendNewline= false;
+				JSL::Log::Global::Config.TerminalOutput = false;
+				JSL::Log::Global::Config.AppendNewline= false;
 				std::string name = "mock-" + names[i] + "-";
 				++i;
 				std::string variedLevelOutput = capture_stdout([&]() {
@@ -121,11 +120,11 @@ TEST_CASE("Logger Core", "[log][utility]") {
 			auto r = {DEBUG,INFO,WARN,ERROR};
 			std::vector<std::string> names = {"DEBUG","INFO","WARN","ERROR"};
 			int i = 0;
-			JSL::Log::Config.TerminalOutput = false;
-			JSL::Log::Config.AppendNewline= false;
+			JSL::Log::Global::Config.TerminalOutput = false;
+			JSL::Log::Global::Config.AppendNewline= false;
 			for (LogLevel level: r)
 			{
-				JSL::Log::Config.ShowHeaders = (true);
+				JSL::Log::Global::Config.ShowHeaders = (true);
 				std::string headerPresent = capture_stdout([&]() {
 					(JSL::Log::Core(level,0,"mock-function","mock-file")) << "Debug message";
 				});
@@ -133,7 +132,7 @@ TEST_CASE("Logger Core", "[log][utility]") {
 				REQUIRE_THAT(headerPresent,ContainsSubstring(search));//check that the header successfully inserted when in true mode
 				++i;
 
-				JSL::Log::Config.ShowHeaders = (false);
+				JSL::Log::Global::Config.ShowHeaders = (false);
 				std::string headerAbsent = capture_stdout([&]() {
 					(JSL::Log::Core(level,0,"mock-function","mock-file")) << "Debug message";
 				});
@@ -149,23 +148,23 @@ TEST_CASE("Logger Core", "[log][utility]") {
 			REQUIRE(output.empty());
 		}
 
-		JSL::Log::Config = originalConfig;
+		JSL::Log::Global::Config = originalConfig;
 	}	
 }
 
 TEST_CASE("Logger Macro","[log][utility]")
 {
-	JSL::Log::Config.ShowHeaders = (true);
-	JSL::Log::Config.AppendNewline = (false); //set these so no linebreaks in unit test output. Purely for human readability.
-	JSL::Log::Config.TerminalOutput = false; // Also supress ANSI codes.
+	JSL::Log::Global::Config.ShowHeaders = (true);
+	JSL::Log::Global::Config.AppendNewline = (false); //set these so no linebreaks in unit test output. Purely for human readability.
+	JSL::Log::Global::Config.TerminalOutput = false; // Also supress ANSI codes.
 	std::vector<std::string> names = {"ERROR","WARN","INFO","DEBUG"};
 	for (int trueLevel = 0; trueLevel < 4; ++trueLevel)
 	{
-		JSL::Log::Config.SetLevel(trueLevel);
+		JSL::Log::Global::Config.SetLevel(trueLevel);
 
 		for (int mockLevel = 0; mockLevel < 4; ++mockLevel)
 		{
-			auto mock = LogLevelConvert(mockLevel);
+			auto mock = JSL::Log::LogLevelConvert(mockLevel);
 			std::string logOutput = capture_stdout([&]() {
 				LOG(mock) << "Test log" << " secondary log" << "tertiary log"; // deliberately ruined spaces
 			});
@@ -184,5 +183,5 @@ TEST_CASE("Logger Macro","[log][utility]")
 		}
 	}
 
-	JSL::Log::Config.SetLevel(1);
+	JSL::Log::Global::Config.SetLevel(1);
 }

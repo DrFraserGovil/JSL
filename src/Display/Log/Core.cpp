@@ -1,6 +1,8 @@
 #include <JSL/Display/Log.h>
+#include <JSL/Display/Log/Core.h>
 
-
+#include "LineBreaker.h"
+#include <filesystem>
 
 
 namespace JSL::Log
@@ -14,14 +16,14 @@ namespace JSL::Log
 
 		for (auto line : initial)
 		{
-			auto components = detail::LineComponent::GetAll(line);
+			auto components = LineComponent::GetAll(line);
 			int lineStart = 0;
 			int lineSize = components[0].RealSize;
 			for (size_t i = 1; i < components.size(); ++i)
 			{
 				auto & component = components[i];
 				size_t proposedLineSize=lineSize + component.RealSize;
-				if (proposedLineSize > Config.DebugLineSize)
+				if (proposedLineSize > Global::Config.DebugLineSize)
 				{
 					int lineEnd = components[i-1].End;
 					out.push_back(line.substr(lineStart,lineEnd-lineStart));
@@ -71,7 +73,7 @@ namespace JSL::Log
 			Insert = "Line " + std::to_string(callingLine) + " of " + callingFile + " in function " + callingFunction ;
 			Insert += "\n";
 		}
-		if (Level == DEBUG && Config.DebugBoxing)
+		if (Level == DEBUG && Global::Config.DebugBoxing)
 		{
 			auto p = std::filesystem::path(callingFile).filename();
 			LineSuffix = "|";
@@ -91,7 +93,7 @@ namespace JSL::Log
 
 	Core & Core::operator<<(Format::Command format)
 	{
-		if (Config.TerminalOutput)
+		if (Global::Config.TerminalOutput)
 		{
 			CurrentFormat.Add(format);
 			Buffer << CurrentFormat;
@@ -101,7 +103,7 @@ namespace JSL::Log
 
 	Core &Core::operator<<(Format::FormatGroup group)
 	{
-		if (Config.TerminalOutput)
+		if (Global::Config.TerminalOutput)
 		{
 			CurrentFormat.Add(group);
 			Buffer << CurrentFormat;
@@ -114,21 +116,21 @@ namespace JSL::Log
 		std::string_view label;
 		Format::Command fmt;
 		switch(Level) {
-			case DEBUG: fmt = Config.DebugColour;label = "[DEBUG] "; break;
-			case INFO: fmt=Config.InfoColour;label = "[INFO]  "; break;
-			case WARN: fmt=Config.WarnColour;label = "[WARN]  "; break;
-			case ERROR: fmt=Config.ErrorColour;label = "[ERROR] "; break;
+			case DEBUG: fmt = Global::Config.DebugColour;label = "[DEBUG] "; break;
+			case INFO: fmt=Global::Config.InfoColour;label = "[INFO]  "; break;
+			case WARN: fmt=Global::Config.WarnColour;label = "[WARN]  "; break;
+			case ERROR: fmt=Global::Config.ErrorColour;label = "[ERROR] "; break;
 			default: throw std::runtime_error("Invalid logger argument");
 		} 
-		if (Config.ForceClear)
+		if (Global::Config.ForceClear)
 		{
 			BufferPreamble << JSL::Terminal::ClearLine;
 		}
-		if (Config.TerminalOutput)
+		if (Global::Config.TerminalOutput)
 		{
 			BufferPreamble << fmt;
 		}
-		if (Config.ShowHeaders)
+		if (Global::Config.ShowHeaders)
 		{
 			BufferPreamble << label;
 		}
@@ -139,13 +141,13 @@ namespace JSL::Log
 		//now format the data so that linebreaks are suitably indented
 		std::string linebreak = "\n";
 		std::vector<int> lineSizes;
-		if (Config.ShowHeaders)
+		if (Global::Config.ShowHeaders)
 		{
 			linebreak += "\t";
 		}
 		
 		std::vector<std::string_view> message = split_view(Buffer.view(),"\n");
-		const bool needBoxing = (Level == DEBUG && Config.DebugBoxing);
+		const bool needBoxing = (Level == DEBUG && Global::Config.DebugBoxing);
 		if (needBoxing)
 		{
 			auto [out,counts] = debugBox(message);
@@ -156,19 +158,19 @@ namespace JSL::Log
 
 		//iterate across all lines in the entry 
 		{
-			std::unique_lock<std::mutex> lock(Log::StreamMutex); //lock the stream to prevent interleaving
+			std::unique_lock<std::mutex> lock(Log::Global::StreamMutex); //lock the stream to prevent interleaving
 
 			auto getPadding = +[](int i,std::vector<int> & sizes)->std::string{return "";};
 			if (needBoxing)
 			{
 				getPadding = +[](int i,std::vector<int> & sizes)->std::string{
-					int amount = Config.DebugLineSize - sizes[i];
+					int amount = Global::Config.DebugLineSize - sizes[i];
 					std::ostringstream out;
 					if (amount > 0)
 					{
 						out << std::string(amount,' ');
 					}
-					out << "\033[0m" << Config.DebugColour;
+					out << "\033[0m" << Global::Config.DebugColour;
 					return out.str();  
 				};
 			}
@@ -181,11 +183,11 @@ namespace JSL::Log
 			{
 				std::cout << linebreak << CurrentFormat << message[i] << getPadding(i,lineSizes) << LineSuffix;
 			}
-			if (Config.AppendNewline)
+			if (Global::Config.AppendNewline)
 			{
 				std::cout << "\n"; 
 			}
-			if (Config.TerminalOutput)
+			if (Global::Config.TerminalOutput)
 			{
 				std::cout << Format::ResetAll;
 			}
