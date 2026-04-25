@@ -8,25 +8,27 @@ bool inline ElementIsFlag(char * nextElement)
     bool hasDash = (nextElement[0] == '-'); //dashes signify commands, but also negative nos.
     bool isSingleCharacter = (std::strlen(nextElement) == 1);
 
-    if (hasDash &&  !isSingleCharacter)
+    if (!hasDash || isSingleCharacter)
     {
-        return true; //entries that are not preceeded by a dash, or are a single character long, cannot be command triggers
+        return false; //entries that are not preceeded by a dash, or are a single character long, cannot be command triggers
     }
 
     return !isdigit(nextElement[1]); //negative numbers are not flags, even though they start with a dash. 
     
 }
 
-static std::string_view Normalize(std::string_view s) 
-{
-    const size_t start = s.find_first_not_of('-');
-    // If it's all dashes, return an empty view; otherwise, strip them.
-    return (start == std::string_view::npos) ? "" : s.substr(start);
-}
 
 
-namespace JSL
+namespace JSL::internal
 {
+    std::string_view Normalize(std::string_view s)
+    {
+        const size_t start = s.find_first_not_of('-');
+        // If it's all dashes, return an empty view; otherwise, strip them.
+        return (start == std::string_view::npos) ? "" : s.substr(start);
+    }
+
+
     Interface::Interface(int argc, char**argv)
     {
         Parse(argc, argv);
@@ -73,13 +75,16 @@ namespace JSL
                 }
                 else
                 {
-                    Options[static_cast<std::string>(narg)] = "1"; //a flag with no value is treated as a boolean true
+                    Options[static_cast<std::string>(narg)] = "__bool_tag__"; //a flag with no value is treated as a boolean true
                     ++idx;
                 }
             }
             else
             {
-                Commands.emplace_back(arg);
+                if (!cmdsFinished)
+                {
+                    Commands.emplace_back(arg);
+                }
                 ++idx;
             }
         }
@@ -94,6 +99,7 @@ namespace JSL
         {
             Configure(Options["config"], configDelim);
         }
+        Configured = true;
     }
 
     void Interface::Configure(std::filesystem::path configFile, std::string_view configDelimiter)
@@ -109,10 +115,5 @@ namespace JSL
     }
 
 
-
-    Interface & Interface::Get()
-    {
-        static Interface instance;
-        return instance;
-    }
+    
 }

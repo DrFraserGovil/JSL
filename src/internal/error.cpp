@@ -6,12 +6,12 @@
 namespace JSL::internal
 {
     FatalError::FatalError(std::string msg) : Summary(msg){
-        std::cout << Format::Red + Format::Bold << "\n***JSL Library Error***\n" << std::flush;
+        std::cout << Format::Red + Format::Bold << "\n***JSL Library Error***\n " << msg << "\n"<< std::flush;
     }
 
     FatalError::~FatalError() noexcept (false)
     {
-        std::cout << Format::Reset() << "\n" << std::endl;
+        std::cout << Format::Reset() << std::endl;
         throw std::runtime_error(Summary);
     }
         

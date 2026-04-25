@@ -28,6 +28,10 @@ namespace JSL
             {
                  internal::FatalError("Could not complete conversion") << "Cannot convert an empty string to to type " <<typeName;
             } 
+            if (sv == "__bool_tag__" && typeName != typeid(bool).name())
+            {
+                internal::FatalError("Could not complete conversion") << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type " << typeName;
+            }
         }   
 
 
@@ -53,7 +57,9 @@ namespace JSL
 
 
         #define PROVIDE_SPECIALISATION(type,...) \
-            type Converter<type>::internalConvert(std::string_view sv){__VA_ARGS__}
+            type Converter<type>::internalConvert(std::string_view sv){ \
+                RejectEmpty(sv,typeid(type).name()); __VA_ARGS__}
+
 
  
 
@@ -64,11 +70,11 @@ namespace JSL
 
         PROVIDE_SPECIALISATION(bool,
             auto snap = trim_view(sv,"//");
-            if (snap == "1" || iEquals(snap,"true"))
+            if (snap == "1" || iEquals(snap,"true") || iEquals(snap,"yes") || iEquals(snap,"on") || iEquals(snap,"__bool_tag__") )
             {
                 return true;
             }
-            if (snap == "0" || iEquals(snap,"false"))
+            if (snap == "0" || iEquals(snap,"false")    || iEquals(snap,"no") || iEquals(snap,"off") )
             {
                 return false;
             }

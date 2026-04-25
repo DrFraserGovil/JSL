@@ -1,3 +1,4 @@
 #pragma once
 
-#include <string>
+#include "Parameters/Parameter.h"
+#include "Parameters/Aggregator.h"
