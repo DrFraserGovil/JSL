@@ -15,6 +15,7 @@ namespace JSL
         std::string Description;
         void * RiskyPointer;
             ParameterDescription():Type(typeid(void)){RiskyPointer = nullptr;};
+            
             template<class T>
             ParameterDescription(std::string name, std::string type, std::string key, T & currentValue, T defaultValue, std::string description) : Name(name), Key(key), TypeString(type), Type(typeid(T)), Description(description)
             {

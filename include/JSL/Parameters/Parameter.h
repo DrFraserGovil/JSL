@@ -1,30 +1,65 @@
 #pragma once
-
-#include <vector>
+#include "Interface.h"
 #include <string>
 #include <string_view>
-#include <cstring>
-#include <stdexcept>
-#include <JSL/internal/error.h>
-#include "Parsing.h"
-#include "../FileIO.h"
 namespace JSL
 {
-
 
     template<class T>
     class Parameter
     {
         public:
-
-            bool hasParseDelimiter = false;
-            std::string VectorParseDelimiter;
-
-            Parameter(T defaultValue, std::string_view argument) : InternalValue(defaultValue), TriggerString(argument)
+            template<class U>//anything that can be converted to a vector of string is a valid trigger type; this allows for multiple triggers to be passed in as a vector, or a single trigger as a string
+            Parameter(T defaultValue, U triggers) : InternalValue(defaultValue), TriggerList(std::vector<std::string>{triggers})
             {
             }
+            template<class U>
+            Parameter(T defaultValue, U triggers, int argc, char** argv) : InternalValue(defaultValue), TriggerList(std::vector<std::string>{triggers})
+            {
+                Parse(argc, argv);
+            }
 
-            Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter) : Parameter(defaultValue, argument)
+            static Parameter<bool> Toggle(std::string_view trigger)
+            {
+                return Parameter<bool>(false,trigger);
+            }
+            static Parameter<bool> Toggle(std::string_view trigger, int argc, char** argv)
+            {
+                return Parameter<bool>(false,trigger,argc,argv);
+            }
+
+
+            const T& Value() const
+            {
+                return InternalValue;
+            }
+            operator T() const
+            {
+                return InternalValue;
+            }
+        
+            void Parse(int argc, char** argv)
+            {
+                auto instance = Interface::Get();
+                if (!instance.IsConfigured())
+                {
+                    instance.Parse(argc, argv);
+                }
+                Reparse();
+            }
+            void Reparse()
+            {
+                auto instance = Interface::Get();
+                for (auto trigger : TriggerList)
+                {
+                    if (instance.Contains(trigger))
+                    {
+                        Convert(instance.GetOption(trigger));
+                        break;
+                    }
+                }
+            }
+            void SetDelimiter(std::string_view vectorDelimiter)
             {
                 if constexpr (internal::is_vector<T>::value)
                 {
@@ -35,138 +70,31 @@ namespace JSL
                 {
                     internal::FatalError("Parameter parsing error") << "You cannot pass a vector-delimiter to a non-vector Parameter";
                 }
+                Reparse();
             }
 
-            Parameter(T defaultValue, std::string_view argument, int argc, char* argv[]) : Parameter(defaultValue, argument)
+            std::string ValueString() const
             {
-                Parse(argc, argv);
+                return MakeString(InternalValue);
             }
-            Parameter(T defaultValue, std::string_view argument, const std::string & configFile, std::string_view configDelimiter) : Parameter(defaultValue, argument)
+            std::string TriggerString(bool withDash = true) const
             {
-                Configure(configFile,configDelimiter);
-            }
-
-            Parameter(T defaultValue, std::string_view argument, const std::vector<std::string> & splitString) : Parameter(defaultValue,argument)
-            {
-                
-                ParseSplitLine(splitString," ");
-            }
-
-            Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter, int argc, char* argv[]) : Parameter(defaultValue, argument, vectorDelimiter)
-            {
-                Parse(argc, argv);
-            }
-            Parameter(T defaultValue, std::string_view argument, std::string_view vectorDelimiter,  const std::string & configFile, std::string_view configDelimiter) : Parameter(defaultValue, argument, vectorDelimiter)
-            {
-                Configure(configFile,configDelimiter);
-            }
-
-            void SetValue(T value, bool confirmSafe = false)
-            {
-                if (!confirmSafe)
+                std::string dash = withDash ? "-" : "";
+                std::ostringstream os;
+                os << dash << TriggerList[0];
+                for (size_t i = 1; i < TriggerList.size(); ++i)
                 {
-                    std::cout << "JSL WARNING: Parameter -" << TriggerString << " modified to " << MakeString(value) << " outside of standard parsing.";
+                    os << ", " << dash << TriggerList[i];
                 }
-                InternalValue = value;
-                CacheValid = false;
-            }
-
-            const T& Value() const
-            {
-                return InternalValue;
-            }
-
-            operator T() const
-            {
-                return InternalValue;
-            }
-
-            //!Iterate through a configuration file, extracting Name/InternalValue pairs and calling Parse() in them. Each Name/InternalValue pair should be on a new line in the file, and separated by the *configDelimiter*. \param configFile The path to the file to open and parse for configuration data \param configDelimiter The delimiter used to separate Name/InternalValue pairs in the cofiguration file
-            void Configure(const std::string & configFile, std::string_view configDelimiter)
-            {
-                forSplitLineIn(configFile, configDelimiter, [&](auto linevec)
-                {
-                   ParseSplitLine(linevec,configDelimiter);
-                });
-              
-            }
-
-            //!Iterate through the provided commandline args, extracting Name/InternalValue pairs and calling Parse() on them. \param argc The number of arguments passed to the program \param argv[] The argument list (argv[0] is assumed to be the the name of the program, and is ignored)
-            void Parse(int argc, char* argv[])
-            {
-                std::string target = "-" + TriggerString;
-                for (int idx = 0; idx < argc; ++idx)
-                {
-                    if (std::string_view(argv[idx]) == target)
-                    {
-                        if (idx < argc - 1 && internal::ElementIsValue(argv[idx + 1]))
-                        {
-                            Convert(argv[idx + 1]);
-                        }
-                        else if constexpr (std::is_same_v<bool, T>)
-                        {
-                            InternalValue = true;
-                            CacheValid = false;
-                        }
-                        else
-                        {
-                            throw std::runtime_error("The parameter " + TriggerString + " requires an accompanying value.");
-                        }
-                        return;
-                    }
-                }
-               
-            }
-
-            std::string ToString(std::string_view argDelimiter = "") const
-            {
-                 if (!CacheValid)
-                {
-                    CachedValueString = MakeString(InternalValue);
-                    CacheValid = true;
-                }
-                if (argDelimiter.length() == 0)
-                {
-                    return CachedValueString;
-                }
-                else
-                {
-                    return TriggerString + std::string(argDelimiter) +CachedValueString;
-                }
-            }
-
-
-            std::string GetTrigger() const
-            {
-                return TriggerString;
+                return os.str();
             }
 
         private:
-
+            std::vector<std::string> TriggerList;
             T InternalValue;
-            std::string TriggerString;
-            mutable std::string CachedValueString;
-            mutable bool CacheValid = false;
+            std::string VectorParseDelimiter;
+            bool hasParseDelimiter = false;
 
-            template<class U> //should work with either string or string_view
-            void ParseSplitLine(std::vector<U> linevec,std::string_view delim)
-            {
-                if (linevec.size() > 0 && linevec[0] == TriggerString)
-                {
-                    if (linevec.size() == 1)
-                    {
-                            internal::FatalError("Parameter configuration error")  << "Config parameter " << TriggerString << " requires a value.";
-                    }
-
-                    // Reconstruct value if it contained the delimiter
-                    std::string concat(linevec[1]);
-                    for (size_t i = 2; i < linevec.size(); ++i)
-                    {
-                        concat += std::string(delim) + std::string(linevec[i]);
-                    }
-                    Convert(concat);
-                }
-            }
 
             void Convert(std::string_view sv)
             {
@@ -182,10 +110,5 @@ namespace JSL
             }
     };
 
-    class Toggle : public Parameter<bool>
-    {
-        public:
-            Toggle(std::string_view argument) : Parameter<bool>(false,argument){};
-            Toggle(std::string_view argument, int argc, char* argv[]) : Parameter<bool>(false,argument,argc,argv){};
-    };
+
 }

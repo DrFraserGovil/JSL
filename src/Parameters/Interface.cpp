@@ -1,0 +1,118 @@
+#include <JSL/Parameters/Interface.h>
+#include <JSL/FileIO.h>
+#include <JSL/Strings/Join.h>
+#include <cstring>
+#include <cctype>
+bool inline ElementIsFlag(char * nextElement)
+{
+    bool hasDash = (nextElement[0] == '-'); //dashes signify commands, but also negative nos.
+    bool isSingleCharacter = (std::strlen(nextElement) == 1);
+
+    if (hasDash &&  !isSingleCharacter)
+    {
+        return true; //entries that are not preceeded by a dash, or are a single character long, cannot be command triggers
+    }
+
+    return !isdigit(nextElement[1]); //negative numbers are not flags, even though they start with a dash. 
+    
+}
+
+static std::string_view Normalize(std::string_view s) 
+{
+    const size_t start = s.find_first_not_of('-');
+    // If it's all dashes, return an empty view; otherwise, strip them.
+    return (start == std::string_view::npos) ? "" : s.substr(start);
+}
+
+
+namespace JSL
+{
+    Interface::Interface(int argc, char**argv)
+    {
+        Parse(argc, argv);
+    }
+    void Interface::Reset()
+    {
+        Configured = false;
+        Commands.clear();
+        Options.clear();
+    }
+    bool Interface::IsConfigured()
+    {
+        return Configured;
+    }
+    std::string_view Interface::GetOption(std::string_view key) const
+    {
+        //trust the user to have already run contains
+        std::string skey = static_cast<std::string>(Normalize(key));
+        return Options.at(skey);
+    }
+    bool Interface::Contains(std::string_view option) const
+    {
+        return Options.contains(static_cast<std::string>(Normalize(option)));
+    }
+    void Interface::Parse(int argc, char**argv)
+    {
+        Reset();
+        //start at 1 to skip the executable name
+        int idx = 1;
+        bool cmdsFinished = false;
+        while (idx < argc)
+        {
+            std::string_view arg(argv[idx]);
+            
+            if (arg.starts_with("-"))
+            {
+                cmdsFinished = true;
+                auto narg = Normalize(arg);
+                if (idx < argc-1 && !ElementIsFlag(argv[idx+1]))
+                {
+
+                    Options[static_cast<std::string>(narg)] = argv[idx+1];
+                    idx += 2;
+                }
+                else
+                {
+                    Options[static_cast<std::string>(narg)] = "1"; //a flag with no value is treated as a boolean true
+                    ++idx;
+                }
+            }
+            else
+            {
+                Commands.emplace_back(arg);
+                ++idx;
+            }
+        }
+
+        std::string configDelim = " ";
+
+        if (Options.contains("config-delim"))
+        {
+            configDelim = Options["config-delim"];
+        }
+        if (Options.contains("config"))
+        {
+            Configure(Options["config"], configDelim);
+        }
+    }
+
+    void Interface::Configure(std::filesystem::path configFile, std::string_view configDelimiter)
+    {
+        forSplitLineIn(configFile, configDelimiter, [&](auto linevec)
+        {
+           if (linevec.size() >= 2)
+           {
+                //treat the first element as the key, and the rest of the line as the value, rejoining with the configDelimiter in case the value itself contained the delimiter
+                Options[static_cast<std::string>(Normalize(linevec[0]))] = JSL::join(linevec, 1, linevec.size(), configDelimiter);
+           }
+        });
+    }
+
+
+
+    Interface & Interface::Get()
+    {
+        static Interface instance;
+        return instance;
+    }
+}
