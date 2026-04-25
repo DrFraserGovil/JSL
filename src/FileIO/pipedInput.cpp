@@ -1,5 +1,4 @@
-#pragma once
-#include <JSL/FileIO/forLineIn.h>
+#include <JSL/FileIO/pipedInput.h>
 #include <cstdio>
 #include <iostream>
 #include <sstream>

@@ -7,6 +7,8 @@
 #include <cstdint>
 namespace JSL::Archiver::internal
 {
+
+
     //! A magic number associated with the tar block size. DO NOT CHANGE!
     inline constexpr size_t BLOCK_SIZE = 512;
     inline constexpr char END_OF_ARCHIVE[2*internal::BLOCK_SIZE]{0};
@@ -50,7 +52,7 @@ namespace JSL::Archiver::internal
         TarHeader headerBlock;
         std::string data;
         size_t padding;
-    };
+    };    
 
     /*
 		A container for recording the location of files in an archive stream

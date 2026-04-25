@@ -12,7 +12,7 @@ TEST_CASE("Piped Input test","[pipe][input]")
 
     std::vector<std::string> expected = {"hello","world"};
     int i = 0;
-    JSL::forLineInPipedInput([&](std::string_view line) {
+    JSL::Input::forLineInPipe([&](std::string_view line) {
         REQUIRE(expected[i] == std::string(line));
         ++i;
     });
