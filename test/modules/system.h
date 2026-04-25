@@ -30,44 +30,18 @@ TEST_CASE("Path and Directory Utilities", "[io][system]")
     fs::remove_all(sandbox); // Start fresh
 	
 
-    SECTION("pathStatus: Correctly identifies types")
-    {
-        // Test non-existent
-        auto statusNone = JSL::pathStatus(sandbox.string());
-        REQUIRE_FALSE(statusNone.exists);
-        REQUIRE(statusNone.type == JSL::PathType::NotFound);
-
-        // Create directory and test
-        fs::create_directories(sandbox);
-        auto statusDir = JSL::pathStatus(sandbox.string());
-        REQUIRE(statusDir.exists);
-        REQUIRE(statusDir.isDirectory());
-        REQUIRE_FALSE(statusDir.isFile());
-
-        // Create file and test
-        fs::path filePath = sandbox / "test.txt";
-        {
-            std::ofstream ofs(filePath);
-            ofs << "dummy data";
-        }
-        auto statusFile = JSL::pathStatus(filePath.string());
-        REQUIRE(statusFile.exists);
-        REQUIRE(statusFile.isFile());
-        REQUIRE(statusFile.type == JSL::PathType::File);
-    }
-
     SECTION("mkdir: Creation and Recursion")
     {
         fs::path deepPath = sandbox / "level1" / "level2" / "level3";
         
         // Test initial creation
-        auto result = JSL::mkdir(deepPath);
+        auto result = JSL::Filesystem::mkdir(deepPath);
         REQUIRE(result.Successful);
         REQUIRE(fs::exists(deepPath));
         REQUIRE(fs::is_directory(deepPath));
 
         // Test calling it again (should ignore and be successful)
-        auto resultRepeat = JSL::mkdir(deepPath);
+        auto resultRepeat = JSL::Filesystem::mkdir(deepPath);
         REQUIRE(resultRepeat.Successful);
         REQUIRE(resultRepeat.Message.find("already exists") != std::string::npos);
     }
@@ -79,7 +53,7 @@ TEST_CASE("Path and Directory Utilities", "[io][system]")
        
 		create_dummy_file(filePath);
         // Try to mkdir where a file already exists
-        auto result = JSL::mkdir(filePath);
+        auto result = JSL::Filesystem::mkdir(filePath);
         REQUIRE_FALSE(result.Successful);
         REQUIRE(result.Message.find("ERROR") != std::string::npos);
         REQUIRE(result.Message.find("is not a directory") != std::string::npos);
@@ -103,7 +77,7 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
             ofs << "gone soon";
         }
 
-        auto result = JSL::rm(target);
+        auto result = JSL::Filesystem::remove(target);
         CHECK(result.Successful);
         CHECK_FALSE(fs::exists(target));
         CHECK(result.Message.find("Successfully removed") != std::string::npos);
@@ -112,7 +86,7 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
     SECTION("rm: Non-existent path handling")
     {
         fs::path ghost = sandbox / "not_there.txt";
-        auto result = JSL::rm(ghost);
+        auto result = JSL::Filesystem::remove(ghost);
 
         // Should be successful (nothing to do) but note it didn't exist
         CHECK(result.Successful);
@@ -122,10 +96,10 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
     SECTION("rm: Directory safety check")
     {
         fs::path folder = sandbox / "safe_folder";
-        JSL::mkdir(folder);
+        JSL::Filesystem::mkdir(folder);
 
         // Try to delete directory without recursive flag
-        auto result = JSL::rm(folder, false);
+        auto result = JSL::Filesystem::remove(folder);
         CHECK_FALSE(result.Successful);
         CHECK(fs::exists(folder));
         CHECK(result.Message.find("without recursive flag") != std::string::npos);
@@ -142,7 +116,7 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
             ofs << "payload";
         }
 
-        auto result = JSL::rm(folder, true);
+        auto result = JSL::Filesystem::remove(folder);
         CHECK(result.Successful);
         CHECK_FALSE(fs::exists(folder));
         // Verify the message reports multiple items (folder + inner + deep + data.txt)

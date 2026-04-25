@@ -6,7 +6,7 @@
 namespace JSL::Filesystem
 {
     namespace fs = std::filesystem;
-    Structure::Structure(fs::path & target, bool recursive,int depth) : Path(target), IsRecursive(recursive)
+    Structure::Structure(fs::path target, bool recursive,int depth) : Path(target), IsRecursive(recursive)
     {
         std::error_code ec;
         auto walk = [&](auto& it) 
@@ -113,12 +113,12 @@ namespace JSL::Filesystem
         return out;
     }
 
-    std::vector<std::filesystem::path> list(std::filesystem::path & target, bool recursive)
+    std::vector<std::filesystem::path> list(std::filesystem::path target, bool recursive)
     {
         auto top = Structure(target,recursive);
         return top.ListAll();
     }
-    std::vector<std::filesystem::path> match(std::filesystem::path & target, std::string matchPattern, bool recursive)
+    std::vector<std::filesystem::path> match(std::filesystem::path target, std::string matchPattern, bool recursive)
     {
         auto top = Structure(target,recursive);
         return top.MatchFiles(matchPattern);
@@ -130,7 +130,7 @@ namespace JSL::Filesystem
 
 
 
-    report mkdir(const std::filesystem::path& directory,Policy policy)
+    report mkdir(const std::filesystem::path directory,Policy policy)
     {
         if (fs::exists(directory))
         {
@@ -155,7 +155,7 @@ namespace JSL::Filesystem
 
     }
 
-    report internalErase(const std::filesystem::path& path,Policy policy)
+    report internalErase(const std::filesystem::path path,Policy policy)
     {
         if (!fs::exists(path))
         {
@@ -178,7 +178,7 @@ namespace JSL::Filesystem
         return {true,""};
     }
 
-    report remove(const std::filesystem::path & pathToFile,Policy policy)
+    report remove(const std::filesystem::path pathToFile,Policy policy)
     {
         if (fs::is_directory(pathToFile))
         {
@@ -187,7 +187,7 @@ namespace JSL::Filesystem
         return internalErase(pathToFile,policy); //removeDirectory is just an aggressive delete, so we can duplicate here
     }
 
-    report removeDirectory(const std::filesystem::path & pathToDirectory,Policy policy)
+    report removeDirectory(const std::filesystem::path pathToDirectory,Policy policy)
     {
         if(!fs::is_directory(pathToDirectory) && policy == Strict)
         {

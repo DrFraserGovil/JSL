@@ -24,16 +24,16 @@ namespace JSL::Filesystem
             std::vector<fs::path> MatchFiles(std::string matchPattern);
             std::vector<fs::path> MatchFiles(std::regex matchPattern);
             
-            Structure(fs::path & target, bool recursive = false,int depth=0);
+            Structure(fs::path target, bool recursive = false,int depth=0);
 
             
         private:
             bool IsRecursive;
     };
 
-    std::vector<fs::path> list(fs::path & target, bool recursive = false);
+    std::vector<fs::path> list(fs::path target, bool recursive = false);
     
-    std::vector<fs::path> match(fs::path & target, std::string matchPattern, bool recursive = false);
+    std::vector<fs::path> match(fs::path target, std::string matchPattern, bool recursive = false);
 
     struct report
     {
@@ -49,14 +49,14 @@ namespace JSL::Filesystem
 
     extern Policy DefaultPolicy;
 
-    report mkdir(const fs::path& directory,Policy policy = DefaultPolicy);
+    report mkdir(const fs::path directory,Policy policy = DefaultPolicy);
 
-    report remove(const fs::path & pathToFile, Policy polict = DefaultPolicy);
+    report remove(const fs::path pathToFile, Policy polict = DefaultPolicy);
 
     /*
         An explicit function that forces a user to acknowledge they're deleting a whole directory and all its contents
     */
-    report removeDirectory(const fs::path & pathToDirectory,Policy policy = DefaultPolicy);
+    report removeDirectory(const fs::path pathToDirectory,Policy policy = DefaultPolicy);
 
 
     // struct DirectoryContents

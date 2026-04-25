@@ -112,7 +112,7 @@ TEST_CASE("File System Utilities: listFiles and Globbing", "[files][io][system]"
 
 	SECTION("Non-recursive listing")
     {
-        auto results = JSL::listFiles(sandbox, false);
+        auto results = JSL::Filesystem::list(sandbox, false);
         
         // Should find test1, test2, README, and subdir (4 items total)
         // Note: we don't assume order, so we REQUIRE size and presence
@@ -121,10 +121,9 @@ TEST_CASE("File System Utilities: listFiles and Globbing", "[files][io][system]"
         bool foundSubdir = false;
         for (const auto& entry : results)
         {
-            if (entry.Path.filename() == "subdir") 
+            if (entry.filename() == "subdir") 
             {
                 foundSubdir = true;
-                REQUIRE(entry.Status.isDirectory());
             }
         }
         REQUIRE(foundSubdir);
@@ -132,7 +131,7 @@ TEST_CASE("File System Utilities: listFiles and Globbing", "[files][io][system]"
 
 	SECTION("Recursive listing")
     {
-        auto results = JSL::listFiles(sandbox, true);
+        auto results = JSL::Filesystem::list(sandbox, true);
         
         // 4 items from root + 2 from subdir = 6
         REQUIRE(results.size() == 6);
@@ -141,31 +140,31 @@ TEST_CASE("File System Utilities: listFiles and Globbing", "[files][io][system]"
 	SECTION("Globbing with wildcards (*.txt)")
     {
         // Non-recursive glob
-        auto txtFiles = JSL::listFiles(sandbox, "*.tXt", false);
+        auto txtFiles = JSL::Filesystem::match(sandbox, "*.tXt", false);
         REQUIRE(txtFiles.size() == 1);
-        REQUIRE(txtFiles[0].Path.filename() == "test1.txt");
+        REQUIRE(txtFiles[0].filename() == "test1.txt");
 
         // Recursive glob
-        auto allTxtFiles = JSL::listFiles(sandbox, "*.txt", true);
+        auto allTxtFiles = JSL::Filesystem::match(sandbox, "*.txt", true);
         REQUIRE(allTxtFiles.size() == 2);
     }
 	SECTION("Globbing with single character (?)")
     {
-        auto match = JSL::listFiles(sandbox, "test?.txt", false);
+        auto match = JSL::Filesystem::match(sandbox, "test?.txt", false);
         REQUIRE(match.size() == 1);
-        REQUIRE(match[0].Path.filename() == "test1.txt");
+        REQUIRE(match[0].filename() == "test1.txt");
     }
 
     SECTION("Case Insensitivity")
     {
-        auto match = JSL::listFiles(sandbox, "readme.*", false);
+        auto match = JSL::Filesystem::match(sandbox, "readme.*", false);
         REQUIRE(match.size() == 1);
-        REQUIRE(match[0].Path.filename() == "README.md");
+        REQUIRE(match[0].filename() == "README.md");
     }
 
     SECTION("Invalid Directory Handling")
     {
-        auto results = JSL::listFiles(sandbox / "non_existent_path", false);
+        auto results = JSL::Filesystem::list(sandbox / "non_existent_path", false);
         REQUIRE(results.empty());
     }
 
