@@ -20,7 +20,7 @@ namespace JSL
         file.close();
     }
 
-    void forSplitLineIn(const std::string & fileName, std::string_view delimiter,  std::function<void(std::vector<std::string_view>)> vectorProcessor) 
+    void forSplitLineIn(const std::filesystem::path fileName, std::string_view delimiter,  std::function<void(std::vector<std::string_view>)> vectorProcessor) 
     {
         forLineIn(fileName,
             [&](auto line)

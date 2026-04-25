@@ -8,13 +8,13 @@ namespace JSL
     void forLineIn(const std::filesystem::path fileName, std::function<void(std::string_view)> lineProcessor);
     
 
-    void forSplitLineIn(const std::string & fileName, std::string_view delimiter,  std::function<void(std::vector<std::string_view>)> vectorProcessor);
+    void forSplitLineIn(const std::filesystem::path fileName, std::string_view delimiter,  std::function<void(std::vector<std::string_view>)> vectorProcessor);
 
 
 
 
     template <typename... Ts, typename Func>
-    void forLineTupleIn(const std::string & fileName, std::string_view delimiter, Func tupleProcessor)
+    void forLineTupleIn(const std::filesystem::path fileName, std::string_view delimiter, Func tupleProcessor)
     {
         forLineIn(fileName,
             [&, delimiter](auto  line)

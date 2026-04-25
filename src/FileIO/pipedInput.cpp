@@ -1,11 +1,12 @@
 #pragma once
+#include <JSL/FileIO/forLineIn.h>
 #include <cstdio>
 #include <iostream>
 #include <sstream>
 #include <string_view>
 
-#include "../Strings/Strings.h"
-#include "../utils/jsl_error.h"
+#include <JSL/Strings.h>
+#include <JSL/internal/error.h>
 
 
 #if defined(_WIN32) || defined(_WIN64)
@@ -15,10 +16,10 @@
 #endif
 
 
-namespace JSL
+namespace JSL::Input
 {
     //! A compile-time resolve alias for the platform specific isatty command \returns True if the program called with piped input (either via | or <). 
-	bool inline PipedInputFound()
+	bool IsPiped()
 	{
         #ifdef JSL_TEST_SPOOF_PIPE
             return true;
@@ -30,12 +31,26 @@ namespace JSL
         #endif
 	}
 
-
-    //! A similar macro to forLineIn, but this one iterates through piped input (either from explit pipes "|" or from directed files "<") line by line, exposing the variable PIPE_LINE for further manipulation
-    template <typename Func>
-    void forLineInPipedInput(Func lineProcessor)
+    // !Performs the most basic readin --> saves the piped input to a string, and returns it
+	std::string savePipe()
     {
-        if (!PipedInputFound())
+        std::ostringstream out;
+        int i = 0;
+        forLineInPipe([&](std::string_view line){
+            if (i > 0)
+            {
+                out << "\n";
+            }
+            out << line;
+            ++i; 
+        });
+        return out.str();
+    }
+
+
+   void forLineInPipe(std::function<void(std::string_view)>lineProcessor)
+    {
+        if (!IsPiped())
         {
             internal::FatalError("I/O Error") << "No piped input detected";
         }
@@ -47,11 +62,11 @@ namespace JSL
         }
     }
 
-    template <typename Func>
-    void forSplitLineInPipedInput(Func lineProcessor,std::string_view delimiter)
+
+   void forSplitLineInPipe(std::function<void(std::vector<std::string_view>)>lineProcessor,std::string_view delimiter)
     {
-        forLineInPipedInput([&](std::string_view line){
-            lineProcessor(JSL::split(line,delimiter));
+        forLineInPipe([&](std::string_view line){
+            lineProcessor(JSL::split_view(line,delimiter));
         });
     }
 
@@ -61,7 +76,7 @@ namespace JSL
     {
         std::ostringstream out;
         int i = 0;
-        forLineInPipedInput([&](std::string_view line){
+        forLineInPipe([&](std::string_view line){
             if (i > 0)
             {
                 out << "\n";
