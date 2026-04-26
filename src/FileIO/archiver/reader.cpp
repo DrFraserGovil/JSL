@@ -52,7 +52,7 @@ namespace JSL::Archiver
 
 		if (zeroBlockCount != 2)
 		{
-			JSL::internal::FatalError("Archive Scan did not locate null termination sequence. The Archive " + Name + " is corrupted or incomplete");
+			JSL::internal::FatalError("Archive Scan did not locate null termination sequence. The Archive " + Name + " is corrupted or incomplete", JSL_LOCATION) ;
 		}
 	}
 	
@@ -84,7 +84,7 @@ namespace JSL::Archiver
 		FileStream.open(Name,std::ios::in|std::ios::binary);
 		if (!FileStream.is_open())
 		{
-			JSL::internal::FatalError("Could not open archive file " + Name);
+			JSL::internal::FatalError("Could not open archive file " + Name, JSL_LOCATION) ;
 		}
 		BuildIndex();
 		Initialised = true;
@@ -112,7 +112,7 @@ namespace JSL::Archiver
 		auto it = FileIndex.find(file);
 		if (it == FileIndex.end())
 		{
-			JSL::internal::FatalError("File `" + file + "` is not in archive " + Name);
+			JSL::internal::FatalError("File `" + file + "` is not in archive " + Name, JSL_LOCATION) ;
 		}
 		
 		return it->second;

@@ -51,7 +51,7 @@ namespace JSL::Input
     {
         if (!IsPiped())
         {
-            internal::FatalError("I/O Error") << "No piped input detected";
+            internal::FatalError("I/O Error", JSL_LOCATION)  << "No piped input detected";
         }
 
         std::string pipe_line;

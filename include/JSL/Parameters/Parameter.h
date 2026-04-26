@@ -128,7 +128,7 @@ namespace JSL
                 {
                     if (hasParseDelimiter)
                     {
-                        internal::FatalError("Parameter parsing error") << "You cannot pass a vector-delimiter to a non-vector Parameter";
+                        internal::FatalError("Parameter parsing error",JSL_LOCATION) << "You cannot pass a vector-delimiter to a non-vector Parameter";
                     }
                     InternalValue = ParseTo<T>(sv);
                 }

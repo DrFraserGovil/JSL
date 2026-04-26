@@ -9,7 +9,7 @@ namespace JSL
     {
         std::ifstream file(fileName);
         if (!file.is_open()) {
-            internal::FatalError("Could not open file") << "Could not find the file '" << fileName << "'.\nPlease provide a valid filepath.";
+            internal::FatalError("Could not open file", JSL_LOCATION)  << "Could not find the file '" << fileName << "'.\nPlease provide a valid filepath.";
         }
 
         std::string fileLine;

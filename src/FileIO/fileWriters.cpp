@@ -8,7 +8,7 @@ namespace JSL
         {
             if (!file.is_open())
             {
-                FatalError("I/O Error") << "Could not open file: " << path.string();
+                FatalError("I/O Error",JSL_LOCATION) << "Could not open file: " << path.string();
             }
         }
     }

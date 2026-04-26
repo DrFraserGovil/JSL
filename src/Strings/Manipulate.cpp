@@ -67,7 +67,7 @@ namespace JSL
     {
         if (delimiter.size() == 0)
         {
-            internal::FatalError("Split called with empty delimiter");
+            internal::FatalError("Split called with empty delimiter", JSL_LOCATION) ;
         }
         std::vector<T> tokens;
         size_t start = 0;

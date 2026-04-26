@@ -53,22 +53,22 @@ namespace JSL
             
             if (trigger.empty())
             {
-                internal::FatalError("Parameter trigger cannot be empty");
+                internal::FatalError("Parameter trigger cannot be empty", JSL_LOCATION) ;
             }
             if (isdigit(trigger[0]))
             {
-                internal::FatalError("Parameter trigger cannot start with a digit: " + trigger);
+                internal::FatalError("Parameter trigger cannot start with a digit: " + trigger, JSL_LOCATION) ;
             }
             int nonAlpha = std::count_if(trigger.begin(),trigger.end(),[](char c){ return !(std::isalnum(c) || (c == '-') || (c == '_')); });
             if (nonAlpha > 0)
             {
-                internal::FatalError("Parameter trigger cannot contain non-alphanumeric characters: " + trigger);
+                internal::FatalError("Parameter trigger cannot contain non-alphanumeric characters: " + trigger, JSL_LOCATION) ;
             }
 
             auto & registered = Register();
             if (contains(trigger,registered))
             {
-                internal::FatalError("Parameter trigger " + trigger + " is already in use by another Parameter");
+                internal::FatalError("Parameter trigger " + trigger + " is already in use by another Parameter", JSL_LOCATION) ;
             }
             registered.push_back(trigger);
         }

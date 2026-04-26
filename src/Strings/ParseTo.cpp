@@ -9,16 +9,16 @@ namespace JSL
         {
             if (result.ec == std::errc() &&  (result.ptr != sv.data() + sv.size()))
             { 
-                internal::FatalError("Could not complete conversion") << "Partial conversion of `" << sv << "` to type " << typeName << " unconverted characters were: " << std::string_view(result.ptr, sv.data() + sv.size() - result.ptr);
+                internal::FatalError("Could not complete conversion", JSL_LOCATION) << "Partial conversion of `" << sv << "` to type " << typeName << " unconverted characters were: " << std::string_view(result.ptr, sv.data() + sv.size() - result.ptr);
             }
             else if (result.ec == std::errc::invalid_argument) 
             {
-                internal::FatalError("Could not complete conversion") <<  "Error: Invalid argument for conversion: '" << sv   << "` to type " << typeName<< "\n";
+                internal::FatalError("Could not complete conversion", JSL_LOCATION) <<  "Error: Invalid argument for conversion: '" << sv   << "` to type " << typeName<< "\n";
                 
             } 
             else if (result.ec == std::errc::result_out_of_range)
             {
-                internal::FatalError("Could not complete conversion") <<  "Error: Result out of range for conversion: '" << sv << "` to type " << typeName << "\n";
+                internal::FatalError("Could not complete conversion", JSL_LOCATION) <<  "Error: Result out of range for conversion: '" << sv << "` to type " << typeName << "\n";
             }
         }
 
@@ -26,11 +26,11 @@ namespace JSL
         {
             if (sv.empty()) 
             {
-                 internal::FatalError("Could not complete conversion") << "Cannot convert an empty string to to type " <<typeName;
+                 internal::FatalError("Could not complete conversion", JSL_LOCATION) << "Cannot convert an empty string to to type " <<typeName;
             } 
             if (sv == "__bool_tag__" && typeName != typeid(bool).name())
             {
-                internal::FatalError("Could not complete conversion") << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type " << typeName;
+                internal::FatalError("Could not complete conversion", JSL_LOCATION) << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type " << typeName;
             }
         }   
 
@@ -79,7 +79,7 @@ namespace JSL
                 return false;
             }
 
-           internal::FatalError("Cannot complete string-boolean conversion") << "Cannot convert string " << sv << "to boolean";
+           internal::FatalError("Cannot complete string-boolean conversion", JSL_LOCATION) << "Cannot convert string " << sv << "to boolean";
            return false;
         );
 
@@ -88,7 +88,7 @@ namespace JSL
             sv = trim_view(sv,"//");
             // A single char conversion should only accept a single character string_view
             if (sv.length() != 1) {
-                internal::FatalError("Cannot complete string-char conversion")  << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
+                internal::FatalError("Cannot complete string-char conversion",JSL_LOCATION)  << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
             }
             return sv[0];
         )
@@ -99,7 +99,7 @@ namespace JSL
                 sv = trim_view(sv,"//");
                 if (sv.empty()) 
                 {
-                    internal::FatalError("Cannot complete string-double conversion") << "Cannot convert an empty string to type double" 
+                    internal::FatalError("Cannot complete string-double conversion",JSL_LOCATION) << "Cannot convert an empty string to type double" 
                 } 
 
                 try
@@ -110,18 +110,18 @@ namespace JSL
 
                     if (pos != s_temp.length())
                     {
-                        internal::FatalError("Trailing characters in double parsing")  << "Partial conversion of `" << sv << "` to double; unconverted characters were: `" << s_temp.substr(pos) << "`";
+                        internal::FatalError("Trailing characters in double parsing",JSL_LOCATION)  << "Partial conversion of `" << sv << "` to double; unconverted characters were: `" << s_temp.substr(pos) << "`";
                     }
                     return output;
                 }
                 catch (const std::out_of_range& e)
                 {
-                    internal::FatalError("Out-of-range error in double conversion") << "Error: Result out of range for conversion: '" << sv << "` to double\n";
+                    internal::FatalError("Out-of-range error in double conversion",JSL_LOCATION) << "Error: Result out of range for conversion: '" << sv << "` to double\n";
                     
                 }
                 catch (const std::invalid_argument& e)
                 {
-                    internal::FatalError("Could not complete conversion (invalid format).") << "Error: Invalid argument for conversion: '" << sv << "` to double\n";
+                    internal::FatalError("Could not complete conversion (invalid format).",JSL_LOCATION) << "Error: Invalid argument for conversion: '" << sv << "` to double\n";
                 }
             
             )

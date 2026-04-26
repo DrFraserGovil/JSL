@@ -14,7 +14,7 @@ LogLevel JSL::Log::LogLevelConvert(int level)
         case 3:
             return DEBUG;break;
         default:
-            internal::FatalError(std::to_string(level) + "is not a valid logging level");
+            internal::FatalError(std::to_string(level) + "is not a valid logging level",JSL_LOCATION);
             return ERROR;
             break;
     }

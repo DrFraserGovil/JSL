@@ -5,6 +5,17 @@
 
 namespace JSL
 {
+    void TryConvert(internal::ParameterBase* parameter, std::string_view value,std::string_view activeTrigger)
+    {
+        try
+        {
+            parameter->Convert(value);
+        }
+        catch (const std::exception & e)
+        {
+            internal::FatalError("Parameter conversion error", JSL_LOCATION) << "Failed to convert value '" << value << "' for parameter -" << activeTrigger;
+        }
+    }
     void ParameterAggregator::Parse(int argc, char** argv)
     {
         //only parse once!
@@ -16,7 +27,7 @@ namespace JSL
             auto found = FindParameter(key);
             if (found)
             {
-                found->Convert(value);
+                TryConvert(found, value, key);
             }
             else
             {
@@ -48,9 +59,10 @@ namespace JSL
                 return false; //if any parameter in the cluster is not found, the whole cluster fails
             }
         }
-        for (auto parameter : clusterableParameters)
+        for (size_t i = 0; i < clusterableParameters.size(); ++i)
         {
-            parameter->Convert(value); //set all parameters in the cluster to true
+            std::string trigger(1,key[i]);
+            TryConvert(clusterableParameters[i], value, trigger); 
         }
         return true;
     }

@@ -45,7 +45,7 @@ namespace JSL
             const bool allEqual = ((vecs.size() == rowCount) && ...);
             if (!allEqual)
             {
-                internal::FatalError("Vector length mismatch") << "All vectors must be same length when writing simultaneously to file";
+                internal::FatalError("Vector length mismatch",JSL_LOCATION) << "All vectors must be same length when writing simultaneously to file";
             }
         }
 

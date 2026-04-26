@@ -44,7 +44,6 @@ namespace JSL
 
             internal::ParameterBase* FindParameter(const std::string & key);
             bool TryCluster(std::string_view key, std::string_view value);
-            void TryConvert(internal::ParameterBase* parameter, std::string_view value);
         };
         
     class RootParameterAggregator : public ParameterAggregator

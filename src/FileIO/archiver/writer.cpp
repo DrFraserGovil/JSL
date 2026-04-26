@@ -47,14 +47,14 @@ namespace JSL::Archiver
 			bool fileExists = std::filesystem::exists(Name);
 			if (fileExists)
 			{
-				JSL::internal::FatalError("StrictMode interrupt: a file with the name `" + Name + "` exists at that location.\nChange the file names, or disable StrictMode if you wish to overwrite the file");
+				JSL::internal::FatalError("StrictMode interrupt: a file with the name `" + Name + "` exists at that location.\nChange the file names, or disable StrictMode if you wish to overwrite the file", JSL_LOCATION) ;
 			}
 		}
 
 		OutputWriter.open(TempName, std::ios::out | std::ios::binary);
 		if (!OutputWriter.is_open())
 		{
-			JSL::internal::FatalError("Failed to open archive " + TempName + " in write mode");
+			JSL::internal::FatalError("Failed to open archive " + TempName + " in write mode", JSL_LOCATION) ;
 		}
 		Initialised = true;
 		MostRecentStream = nullptr;
@@ -117,14 +117,14 @@ namespace JSL::Archiver
 	{
 		if (!Initialised)
 		{
-			JSL::internal::FatalError("Cannot get streams until the archive has been opened");
+			JSL::internal::FatalError("Cannot get streams until the archive has been opened", JSL_LOCATION) ;
 		}
 		auto it = Streams.find(streamName);
 		if (it == Streams.end())
 		{
 			if (StrictMode)
 			{
-				JSL::internal::FatalError("Whilst in strict mode, a vault attempted to write to a non-existent file: " + streamName);
+				JSL::internal::FatalError("Whilst in strict mode, a vault attempted to write to a non-existent file: " + streamName, JSL_LOCATION) ;
 			}
 			it = Streams.try_emplace(streamName, streamName).first;
 		}

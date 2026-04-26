@@ -36,7 +36,7 @@ namespace JSL::Archiver
 			{
 				if (!MostRecentStream)
 				{
-					JSL::internal::FatalError("Attempting to write to an archive before a write stream has been opened");
+					JSL::internal::FatalError("Attempting to write to an archive before a write stream has been opened",JSL_LOCATION);
 				}
 				MostRecentStream->Feed(msg);
 				return *this;
