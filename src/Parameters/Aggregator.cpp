@@ -1,6 +1,7 @@
 #include <JSL/Parameters/Aggregator.h>
 #include <JSL/Parameters/Parameter.h>
 #include <JSL/Parameters/Interface.h>
+#include <JSL/Vectors/Search.h>
 #include <JSL/Display/Log.h>
 
 namespace JSL
@@ -164,5 +165,26 @@ namespace JSL
         }
         internal::FatalError("Not found",JSL_LOCATION);
         return ParameterDescription();
+    }
+
+    RootParameterAggregator::RootParameterAggregator()
+    {
+        Connect(HelpToggle,Help);
+        Set(Help, HelpToggle,false,{"h","help"},"Help","Activates the helper function routine");   
+    }
+    void RootParameterAggregator::Parse(int argc, char **argv)
+    {
+        ParameterAggregator::Parse(argc, argv);
+        auto cmds = GetCommands();
+        if (Help || JSL::contains("help",cmds))
+        {
+            PrintHelp();
+            std::exit(0);
+        }
+    }
+
+    void RootParameterAggregator::PrintHelp()
+    {
+        LOG(WARN) << "";
     }
 }

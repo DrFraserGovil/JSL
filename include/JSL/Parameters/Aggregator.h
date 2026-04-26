@@ -102,27 +102,15 @@ namespace JSL
     class RootParameterAggregator : public ParameterAggregator
     {
         public:
-         void Parse(int argc, char** argv)
-            {
-                ParameterAggregator::Parse(argc, argv);
-                if (Help)
-                {
-                    std::cout << "Uh oh!\n";
-                    // HelpMessages.print();
-                    std::exit(0);
-                }
-            }
+         void Parse(int argc, char** argv);
 
+        RootParameterAggregator();
+            
         protected:
-            RootParameterAggregator()
-            {
-                Connect(HelpToggle,Help);
-            }
-
            
             bool Help;
-            JSL::Parameter<bool> HelpToggle = Parameter<bool>(false,{"help","h"});
-
+            JSL::Parameter<bool> HelpToggle;
+            void PrintHelp();
     };
  
 }
