@@ -1,17 +1,21 @@
 #include <JSL/internal/error.h>
 
-#include "JSL/Display/ANSI_Codes.h"
+#include "JSL/Display/Log.h"
+
 #include <stdexcept>
+
+
 
 namespace JSL::internal
 {
-    FatalError::FatalError(std::string msg) : Summary(msg){
-        std::cout << Format::Red + Format::Bold << "\n***JSL Library Error***\n " << msg << "\n"<< std::flush;
+    FatalError::FatalError(std::string msg,int callingLine,const std::string & callingFunction,std::string callingFile) : Summary(msg){
+        // Log::Global::Config.
+
+        JSL::Log::Core(ERROR,callingLine,callingFunction,callingFile) << "JSL Library Error:" << msg << "\n";
     }
 
     FatalError::~FatalError() noexcept (false)
     {
-        std::cout << Format::Reset() << std::endl;
         throw std::runtime_error(Summary);
     }
         

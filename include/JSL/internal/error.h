@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#define JSL_LOCATION __FILE__,__func,__LINE__
 namespace JSL::internal
 {
     class FatalError
@@ -8,7 +9,7 @@ namespace JSL::internal
         private:
             const std::string Summary;
         public:
-            FatalError(std::string msg);
+            FatalError(std::string msg,int callingLine,const std::string & callingFunction,std::string callingFile);
 
             template<class T>
             FatalError & operator<<(const T & input)

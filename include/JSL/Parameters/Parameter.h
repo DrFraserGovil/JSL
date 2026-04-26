@@ -57,6 +57,7 @@ namespace JSL
     class Parameter : public internal::ParameterBase
     {
         public:
+            Parameter() = default;
             Parameter(T defaultValue, std::initializer_list<std::string> triggers) : InternalValue(defaultValue)
             {
                 SetTriggers(triggers);

@@ -20,10 +20,39 @@ namespace JSL
             }
             else
             {
-                //option was not registered to any parameter, but was still passed in; this is probably a user error, so we warn about it
-                LOG(WARN) << "Warning: unrecognized option -" << key << " with value " << value;
+
+                if (!TryCluster(key, value))
+                {
+                    LOG(WARN) << "Warning: unrecognized option -" << key << " with value " << value;
+                }
             }
         }
+    }
+
+    
+
+    bool ParameterAggregator::TryCluster(std::string_view key, std::string_view value)
+    {
+
+        std::vector<internal::ParameterBase*> clusterableParameters;
+        for (char c : key)
+        {
+            std::string trigger(1,c);
+            auto found = FindParameter(trigger);
+            if (found)
+            {
+                clusterableParameters.push_back(found);
+            }
+            else
+            {
+                return false; //if any parameter in the cluster is not found, the whole cluster fails
+            }
+        }
+        for (auto parameter : clusterableParameters)
+        {
+            parameter->Convert(value); //set all parameters in the cluster to true
+        }
+        return true;
     }
  
     std::vector<std::string> ParameterAggregator::GetCommands()

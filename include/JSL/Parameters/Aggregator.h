@@ -25,13 +25,26 @@ namespace JSL
                 NestedAggregators.push_back(&aggregator);
             }
 
+            template<class T, class U>
+            void Set(T & value,Parameter<T> & configurer, U defaultValue, std::initializer_list<std::string> triggers)
+            {
+                configurer = Parameter<T>(static_cast<T>(defaultValue),triggers);
+                Connect(configurer, value);
+            }
+            template<class T, class U, class V>
+            void Set(T & value,Parameter<T> & configurer, V defaultValue, U triggers)
+            {
+                configurer = Parameter<T>(static_cast<T>(defaultValue),std::forward<U>(triggers));
+                Connect(configurer, value);
+            }
+
         protected:
-            // std::vector<internal::ParameterBase*> RegisteredParameters;
             std::map<std::string,internal::ParameterBase*> RegisteredParameters;
             std::vector<ParameterAggregator*> NestedAggregators;
 
             internal::ParameterBase* FindParameter(const std::string & key);
-            
+            bool TryCluster(std::string_view key, std::string_view value);
+            void TryConvert(internal::ParameterBase* parameter, std::string_view value);
         };
         
     class RootParameterAggregator : public ParameterAggregator
