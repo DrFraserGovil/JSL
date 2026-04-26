@@ -1,6 +1,8 @@
 #pragma once
-#include <typeindex>
-#include "../Strings/Strings.h"
+#include <string>
+#include <string_view>
+#include <JSL/Parameters/Parameter.h>
+
 namespace JSL
 {
     class ParameterDescription
@@ -9,28 +11,21 @@ namespace JSL
         std::string Name;
         std::string Key;
         std::string TypeString;
-        std::type_index Type;
         std::string CurrentValue;
         std::string DefaultValue;
         std::string Description;
-        void * RiskyPointer;
-            ParameterDescription():Type(typeid(void)){RiskyPointer = nullptr;};
-            
-            template<class T>
-            ParameterDescription(std::string name, std::string type, std::string key, T & currentValue, T defaultValue, std::string description) : Name(name), Key(key), TypeString(type), Type(typeid(T)), Description(description)
-            {
-                CurrentValue = MakeString(currentValue);
-                DefaultValue = MakeString(defaultValue);
-                RiskyPointer = &currentValue;
-            }
+        bool Found=false;
 
-            void Query(std::string string, std::vector<ParameterDescription> & vector)
-            {
-                if (JSL::iEquals(string,Name) || JSL::iEquals(string,Key))
-                {
-                    vector.push_back(*this);
-                }
-            }
+        ParameterDescription(){}
+        template<class T>
+        ParameterDescription(Parameter<T> & parameter, std::string_view description, std::string_view name) : Name(name),Description(description) 
+        {
+            Key = parameter.TriggerString();
+            TypeString = typeid(T).name();
+            DefaultValue = MakeString(parameter.Value());
+            CurrentValue = DefaultValue;
+            Found = true;
+        }
 
     };
 }

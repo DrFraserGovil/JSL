@@ -13,6 +13,17 @@ namespace JSL
         ParseFromCache();
     }
 
+    void internal::ParameterBase::SetTriggers(std::initializer_list<std::string> triggers)
+    {
+        TriggerList = std::vector<std::string>{triggers};
+        ValidateTriggers();
+    }
+
+    std::vector<std::string> internal::ParameterBase::GetTriggers() const
+    {
+        return TriggerList;
+    }
+
     void internal::ParameterBase::ParseFromCache()
     {
         auto & instance = Interface::Get();

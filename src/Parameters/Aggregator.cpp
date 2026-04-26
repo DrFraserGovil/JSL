@@ -24,23 +24,40 @@ namespace JSL
         
         for (auto [key,value] : instance.Options)
         {
-            auto found = FindParameter(key);
-            if (found)
-            {
-                TryConvert(found, value, key);
-            }
-            else
-            {
+            SetParameter(key, value);
+        }
+    }
 
-                if (!TryCluster(key, value))
-                {
-                    LOG(WARN) << "Warning: unrecognized option -" << key << " with value " << value;
-                }
+    void ParameterAggregator::SetParameter(std::string_view trigger, std::string_view value)
+    {
+        auto found = FindParameter(static_cast<std::string>(trigger));
+        if (found)
+        {
+            TryConvert(found, value, trigger);
+        }
+        else
+        {
+            if (!TryCluster(trigger, value))
+            {
+                LOG(WARN) << "Unrecognized option -" << trigger << " with value " << value;
             }
         }
     }
 
-    
+    std::string ParameterAggregator::GetParameter(std::string_view trigger)
+    {
+        auto found = FindParameter(static_cast<std::string>(trigger));
+        if (found)
+        {
+            return found->ValueString();
+        }
+        else
+        {
+            internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+            return ""; //unreachable, but silences compiler warning
+        }
+    }
+
 
     bool ParameterAggregator::TryCluster(std::string_view key, std::string_view value)
     {
@@ -89,5 +106,63 @@ namespace JSL
             }
         }
         return nullptr;
+    }
+
+    void ParameterAggregator::push(std::string_view trigger, std::string_view value)
+    {
+        auto found = FindParameter(static_cast<std::string>(trigger));
+        if (found)
+        {
+            found->push(value);
+        }
+        else
+        {
+            internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+        }
+    }
+    void ParameterAggregator::join(std::string_view trigger, std::string_view value)
+    {
+        auto found = FindParameter(static_cast<std::string>(trigger));
+        if (found)
+        {
+            found->join(value);
+        }
+        else
+        {
+            internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+        }
+    }
+    void ParameterAggregator::remove(std::string_view trigger, std::string_view value)
+    {
+        auto found = FindParameter(static_cast<std::string>(trigger));
+        if (found)
+        {
+            found->remove(value);
+        }
+        else
+        {
+            internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+        }
+    }
+    void ParameterAggregator::erase(std::string_view trigger, int pos)
+    {
+        auto found = FindParameter(static_cast<std::string>(trigger));
+        if (found)
+        {
+            found->erase(pos);  
+        }
+    }
+
+    ParameterDescription ParameterAggregator::GetDescription(std::string_view key)
+    {
+        auto found = FindParameter(static_cast<std::string>(key));
+        if (found)
+        {
+            auto r = Information[found->GetTriggers()[0]];
+            r.CurrentValue = found->ValueString();
+            return r;
+        }
+        internal::FatalError("Not found",JSL_LOCATION);
+        return ParameterDescription();
     }
 }
