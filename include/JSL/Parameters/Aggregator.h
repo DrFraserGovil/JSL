@@ -11,6 +11,9 @@ namespace JSL::Parameter
     class Aggregator
     {
         public:
+            //default spaceship operator
+            auto operator<=>(const Aggregator&) const = default;
+
             std::string Name = "Unnamed Settings Group";
             void Parse(int argc, char** argv);
             std::vector<std::string> GetCommands();
