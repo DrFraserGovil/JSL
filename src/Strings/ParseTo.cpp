@@ -79,7 +79,7 @@ namespace JSL
                 return false;
             }
 
-           internal::FatalError("Cannot complete string-boolean conversion", JSL_LOCATION) << "Cannot convert string " << sv << "to boolean";
+           internal::FatalError("Cannot complete string-boolean conversion", JSL_LOCATION) << "Cannot convert string " << sv << " to boolean";
            return false;
         );
 

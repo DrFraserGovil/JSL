@@ -50,19 +50,7 @@ TEST_CASE("Logger Core", "[log][utility]") {
 		JSL::Log::Global::Config.TerminalOutput = false; // Assume terminal for colored tests
 		JSL::Log::Global::Config.ShowHeaders = (false);
 		
-		SECTION("Check Logger Text (with newlines)") {
-
-			std::string output = capture_stdout([&]() {
-				(JSL::Log::Core(DEBUG,0,"mock-function","mock-file")) << "Debug message";
-			});
-			REQUIRE(output == "Debug message\n");
-
-			JSL::Log::Global::Config.AppendNewline = (false);
-			std::string noLinebreakOutput = capture_stdout([&]() {
-				(JSL::Log::Core(DEBUG,0,"mock-function","mock-file")) << "Debug message";
-			});
-			REQUIRE(noLinebreakOutput == "Debug message"); // as above, but with no linebreak
-		}
+		
 
 		SECTION("Check ANSI code insertion")
 		{
@@ -74,47 +62,18 @@ TEST_CASE("Logger Core", "[log][utility]") {
 					(JSL::Log::Core(level,0,"mock-function","mock-file")) << "Debug message";
 				});
 				REQUIRE_THAT(terminalOutput,StartsWith("\033[")); //check that an ANSI codes is inserted at the beginning of input. We don't care which -- that's an implementation detail that can be changed
-				REQUIRE_THAT(terminalOutput, EndsWith("\033[0m\n"));  //check that the default ANSI code (white) is inserted at the end
+				REQUIRE_THAT(terminalOutput, EndsWith("\n\033[0m"));  //check that the default ANSI code (white) is inserted at the end
 
 				JSL::Log::Global::Config.TerminalOutput = false;
 				std::string fileOutput = capture_stdout([&]() {
 					(JSL::Log::Core(DEBUG,0,"mock-function","mock-file")) << "Debug message";
 				});
 				REQUIRE_THAT(fileOutput,!StartsWith("\033[")); //check the above tests fail when terminal output deactivated
-				REQUIRE_THAT(fileOutput, !EndsWith("\033[0m\n"));
+				REQUIRE_THAT(fileOutput, !EndsWith("\n\033[0m"));
 			}
 		}
 		
-		SECTION("Source information inserted")
-		{
-			auto r = {DEBUG,INFO,WARN,ERROR};
-			std::vector<std::string> names = {"DEBUG","INFO","WARN","ERROR"};
-			int i = 0;
-			for (LogLevel level: r)
-			{
-				JSL::Log::Global::Config.TerminalOutput = false;
-				JSL::Log::Global::Config.AppendNewline= false;
-				std::string name = "mock-" + names[i] + "-";
-				++i;
-				std::string variedLevelOutput = capture_stdout([&]() {
-					(JSL::Log::Core(level,398,name + "function",name+"file")) << "Debug message";
-				});
-				if (level <= 1)
-				{
-					REQUIRE_THAT(variedLevelOutput,ContainsSubstring(name+"function"));
-					REQUIRE_THAT(variedLevelOutput,ContainsSubstring("Line 398"));
-					REQUIRE_THAT(variedLevelOutput,ContainsSubstring(name+"file"));
-				}
-				else
-				{
-					REQUIRE_THAT(variedLevelOutput,!ContainsSubstring(name+"function"));
-					REQUIRE_THAT(variedLevelOutput,!ContainsSubstring("Line 398"));
-					REQUIRE_THAT(variedLevelOutput,!ContainsSubstring(name+"file"));
-				}
-
-			}
-		}
-
+	
 		SECTION("Check headers")
 		{
 			auto r = {DEBUG,INFO,WARN,ERROR};

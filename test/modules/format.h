@@ -43,7 +43,7 @@ TEST_CASE("Colour Testing","[display][colour]")
             uint8_t rb = rand() % 256;
             uint8_t gb = rand() % 256;
             uint8_t bb = rand() % 256;
-            REQUIRE_NOTHROW(std::cout << txt::Colour(r,g,b) << txt::BgColour(rb,gb,bb) << "Testing colours"<<txt::Reset);
+            REQUIRE_NOTHROW(std::cout << txt::Colour(r,g,b) << txt::BgColour(rb,gb,bb) << "Testing colours"<<txt::ResetAll);
             std::cout << std::flush;
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
             REQUIRE_NOTHROW(std::cout << crs::ClearLine);

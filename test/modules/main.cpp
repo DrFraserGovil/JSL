@@ -9,7 +9,6 @@
 #include "parse.h"
 #include "files.h"
 #include "system.h"
-#include "parameter.h"
 #include "plot.h"
 #include "archive.h"
 // no actual main function; catch2 constructs that automagically

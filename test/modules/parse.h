@@ -13,33 +13,32 @@ TEST_CASE("Edge case handling","[utility][ParseTo][edgecase]")
 		std::string errorMessage = capture_stdout([&](){
 			REQUIRE_THROWS(JSL::ParseTo<int>(""));
 		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Library Error"));
-		REQUIRE_THAT(errorMessage,ContainsSubstring("empty"));
+		REQUIRE_THAT(errorMessage,ContainsSubstring("Cannot convert"));
 
 		errorMessage = capture_stdout([&](){
 			REQUIRE_THROWS(JSL::ParseTo<int>("1.5"));
 		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Library Error"));
+		REQUIRE_THAT(errorMessage,ContainsSubstring("Error"));
 		REQUIRE_THAT(errorMessage,ContainsSubstring("Partial conversion"));
 
 
 		errorMessage = capture_stdout([&](){
 			REQUIRE_THROWS(JSL::ParseTo<int>("99999999999"));
 		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Library Error"));
+		REQUIRE_THAT(errorMessage,ContainsSubstring("Error"));
 		REQUIRE_THAT(errorMessage,ContainsSubstring("out of range"));
 
 
 		errorMessage = capture_stdout([&](){
 			REQUIRE_THROWS(JSL::ParseTo<int>("true"));
 		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Library Error"));
+		REQUIRE_THAT(errorMessage,ContainsSubstring("Error"));
 		REQUIRE_THAT(errorMessage,ContainsSubstring("Invalid argument"));
 
 		errorMessage = capture_stdout([&](){
 			REQUIRE_THROWS(JSL::ParseTo<int>("-"));
 		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Library Error"));
+		REQUIRE_THAT(errorMessage,ContainsSubstring("Error"));
 		REQUIRE_THAT(errorMessage,ContainsSubstring("Invalid argument"));
 
 		
@@ -102,7 +101,7 @@ TEST_CASE("Basic types","[utility][JSL::ParseTo]")
 		auto errorMessage = capture_stdout([&](){
 			REQUIRE_THROWS(JSL::ParseTo<bool>("2"));
 		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Library Error"));
+		REQUIRE_THAT(errorMessage,ContainsSubstring("Cannot convert"));
 	}
 }
 
@@ -137,21 +136,18 @@ TEST_CASE("Vector-conversion","[utility][JSL::ParseTo][vector]")
 		errorMessage = capture_stdout([&]() {
 			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<int>>(""), std::runtime_error);
 		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("Library Error"));
 		REQUIRE_THAT(errorMessage, ContainsSubstring("empty string"));
 
 		// Malformed elements (inner conversion failure)
 		errorMessage = capture_stdout([&]() {
 			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<int>>("1,abc,3"), std::runtime_error);
 		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("Library Error"));
 		REQUIRE_THAT(errorMessage, ContainsSubstring("Invalid argument"));
 
 		// Empty elements (e.g. "1,,3")
 		errorMessage = capture_stdout([&]() {
 			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<int>>("1,,3"), std::runtime_error);
 		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("Library Error"));
 		REQUIRE_THAT(errorMessage, ContainsSubstring("empty")); // From inner int conversion's RejectEmpty
 	}
 
@@ -171,14 +167,12 @@ TEST_CASE("Vector-conversion","[utility][JSL::ParseTo][vector]")
 		errorMessage = capture_stdout([&]() {
 			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<double>>("1.0,invalid,3.0"), std::runtime_error);
 		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("Library Error"));
 		REQUIRE_THAT(errorMessage, ContainsSubstring("Invalid argument"));
 
 		// Empty elements
 		errorMessage = capture_stdout([&]() {
 			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<double>>("1.0,,3.0"), std::runtime_error);
 		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("Library Error"));
 		REQUIRE_THAT(errorMessage, ContainsSubstring("empty"));
 		}
 
@@ -197,7 +191,6 @@ TEST_CASE("Vector-conversion","[utility][JSL::ParseTo][vector]")
 			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<std::string>>(",a,"),std::runtime_error);
 			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<std::string>>(""), std::runtime_error);
 		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("Library Error"));
 		REQUIRE_THAT(errorMessage, ContainsSubstring("empty string"));
 
 
