@@ -85,6 +85,9 @@ namespace JSL::Parameter
             void PrintStructure(int indent,std::string runningTitle);
             void AddCommand(std::string name, std::string result);
             void DefaultCommand(std::string name, std::string result);
+
+            std::pair<std::set<std::string>, std::set<std::string>> ParseCommands();
+
         protected:
             static std::map<std::string,std::string> & RegisteredCommands();
              std::string & GetDefaultCommand();

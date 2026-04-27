@@ -117,6 +117,27 @@ namespace JSL::Parameter
     {
         RegisteredCommands().try_emplace(name,function);
     }
+
+    std::pair<std::set<std::string>, std::set<std::string>>  Parameter::Aggregator::ParseCommands()
+    {
+        std::set<std::string> registered;
+        std::set<std::string> unregistered;
+
+        auto expected = RegisteredCommands();
+        for (auto cmd : GetCommands())
+        {
+            if (expected.contains(cmd))
+            {
+                registered.insert(cmd);
+            }
+            else
+            {
+                unregistered.insert(cmd);
+            }
+        }
+        return {registered,unregistered};
+    }
+
     void Parameter::Aggregator::DefaultCommand(std::string name, std::string function)
     {
         AddCommand(name,function);

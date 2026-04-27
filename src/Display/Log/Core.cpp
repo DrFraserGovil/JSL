@@ -160,7 +160,7 @@ namespace JSL::Log
 		std::vector<int> lineSizes;
 		if (Global::Config.ShowHeaders)
 		{
-			linebreak += "\t";
+			linebreak += "\t\t";
 		}
 		
 		std::vector<std::string_view> message = split_view(Buffer.view(),"\n");
@@ -204,7 +204,7 @@ namespace JSL::Log
 			{
 				std::cout << "\n"; 
 			}
-			
+
 			if (Global::Config.TerminalOutput)
 			{
 				std::cout << Format::ResetAll;

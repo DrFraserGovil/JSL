@@ -5,7 +5,8 @@
 #include <type_traits> // For std::is_arithmetic_v, std::enable_if_t, etc.
 #include <sstream>     // For std::stringstream for more controlled numeric to_string
 #include <string_view> // For delimiter in vector case
-
+ #include <concepts>
+#include <ranges>
 namespace JSL
 {
     /*! @brief Internal interface for MakeString. 
@@ -53,32 +54,47 @@ namespace JSL
     #undef JSL_HAS_SPECIALISATION
 
 
-    template<typename T_Inner>
-    struct MakeStringStruct<std::vector<T_Inner>>
+    namespace internal
+    {
+        template<typename T>
+        concept StringifiableRange = std::ranges::range<T> && 
+                    !std::convertible_to<T, std::string_view>;
+    }
+
+    template<internal::StringifiableRange T>
+    struct MakeStringStruct<T>
     {
         //! @brief Specialization for `std::vector<T_Inner>`
         //! @details Calls with default delimiter
-        static std::string stringify(const std::vector<T_Inner>& vec)
+        static std::string stringify(const T& container)
         {
-            return stringify(vec,", ");
+            return stringify(container,", ");
         }
         
         //! @brief Specialization for `std::vector<T_Inner>`
         //! @details Calls with custom delimiter
-        static std::string stringify(const std::vector<T_Inner>& vec, std::string_view delimiter_str)
+        static std::string stringify(const T& container, std::string_view delimiter)
         {
-            std::string result = "["; // A default endcap
+            std::ostringstream result;
+            result << "["; // A default endcap
 
-            for (size_t i = 0; i < vec.size(); ++i)
+            bool first = true;
+            for (const auto& item : container)
             {
-                result += MakeStringStruct<T_Inner>::stringify(vec[i]);
-                if (i < vec.size() - 1)
+                if (!first)
                 {
-                    result += delimiter_str;
+                    result << delimiter;
                 }
+                
+                // Extract the inner type and recurse
+                using InnerType = std::remove_cvref_t<decltype(item)>;
+                result << MakeStringStruct<InnerType>::stringify(item);
+                
+                first = false;
             }
-            result += "]";
-            return result;
+
+            result << "]";
+            return result.str();
         }
     };
 
