@@ -204,6 +204,7 @@ namespace JSL::Log
 			{
 				std::cout << "\n"; 
 			}
+			
 			if (Global::Config.TerminalOutput)
 			{
 				std::cout << Format::ResetAll;
