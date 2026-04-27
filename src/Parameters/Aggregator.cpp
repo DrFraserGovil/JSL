@@ -103,6 +103,11 @@ namespace JSL::Parameter
         auto & instance = internal::Parameter::Interface::Get();
         return instance.Commands;
     }
+    std::string & Parameter::Aggregator::GetDefaultCommand()
+    {
+        static std::string instance = "";
+        return instance;
+    }
     std::map<std::string,std::string> & Parameter::Aggregator::RegisteredCommands()
     {
         static auto instance = std::map<std::string,std::string>{};
@@ -111,6 +116,12 @@ namespace JSL::Parameter
     void Parameter::Aggregator::AddCommand(std::string name, std::string function)
     {
         RegisteredCommands().try_emplace(name,function);
+    }
+    void Parameter::Aggregator::DefaultCommand(std::string name, std::string function)
+    {
+        AddCommand(name,function);
+        auto & r = GetDefaultCommand();
+        r = name;
     }
 
     internal::Parameter::ParameterBase* Parameter::Aggregator::FindParameter(const std::string & key)
@@ -204,6 +215,7 @@ namespace JSL::Parameter
 
     void Parameter::Aggregator::printAsTitle(std::string_view input,Format::Command fg, Format::Command bg)
     {
+        
         if (Terminal::IsANSICapable()) //piggyback off the terminal checking if formatting can be used
         {
             auto titleCol =  fg + Format::Italics + bg;
@@ -212,7 +224,7 @@ namespace JSL::Parameter
         }
         else
         {
-            std::cout << input << "\n";
+            std::cout << "\n-- " << input << " --\n\n";
         }
         
     }
@@ -221,10 +233,12 @@ namespace JSL::Parameter
     {
         if (!RegisteredParameters.empty())
         {
+            
             printAsTitle(assignedName);
 
             for (auto & [name,param] : RegisteredParameters)
             {
+                
                 bool repeated = false;
                 auto keys = param->GetTriggers();
                 for (auto key : keys)

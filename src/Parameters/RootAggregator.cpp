@@ -28,7 +28,20 @@ namespace JSL::Parameter
         }
     }
 
-    
+    template<class T, class U>
+    std::string fmtwrap(T prefix, std::string text, U suffix)
+    {
+        if (!Terminal::IsANSICapable()){return text;}
+        
+        return (std::string)prefix + text + suffix;
+    }
+    template<class T>
+    std::string fmtwrap(T prefix, std::string text)
+    {
+        if (!Terminal::IsANSICapable()){return text;}
+        
+        return (std::string)prefix + text + Format::Reset();
+    }
 
     void RootAggregator::MainPrintHelp()
     {
@@ -45,9 +58,16 @@ namespace JSL::Parameter
         if (!cmds.empty())
         {
             printAsTitle("Available Commands");
+            auto defaulter = GetDefaultCommand();
             for (auto &[name,txt] : cmds)
             {
-                columnPrint({Format::Bold + Format::Blue + name + Format::Reset(),txt},{lw,mw+rw}," ");
+                std::string suffix="";
+                if (name == defaulter)
+                {
+                    suffix = fmtwrap(Format::Colour(50,50,50)," (default)");
+                }
+                std::string title = fmtwrap(Format::Bold + Format::Blue, name);
+                columnPrint({title+suffix,txt},{lw,mw+rw}," ");
             }
         }
 

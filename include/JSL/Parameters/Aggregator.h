@@ -17,6 +17,7 @@ namespace JSL::Parameter
             std::string Name = "Unnamed Settings Group";
             void Parse(int argc, char** argv);
             std::vector<std::string> GetCommands();
+           
 
             template<class T>
             void Connect(Setting<T> & parameter, T & variable)
@@ -83,8 +84,10 @@ namespace JSL::Parameter
             
             void PrintStructure(int indent,std::string runningTitle);
             void AddCommand(std::string name, std::string result);
+            void DefaultCommand(std::string name, std::string result);
         protected:
             static std::map<std::string,std::string> & RegisteredCommands();
+             std::string & GetDefaultCommand();
             void PrintHelp(std::string_view assignedName);
             std::map<std::string,internal::Parameter::ParameterBase*> RegisteredParameters;
             std::map<std::string, Aggregator*> NestedAggregators;
