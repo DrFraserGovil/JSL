@@ -1,6 +1,6 @@
-#include <JSL/Strings/FoldLine.h>
-#include <JSL/Strings/Manipulate.h>
-
+#include <JSL/Strings.h>
+#include <JSL/internal/error.h>
+#include <JSL/Vectors/Join.h>
 namespace JSL
 {
     size_t trueSize(std::string_view str,size_t tabSize)
@@ -50,9 +50,13 @@ namespace JSL
         const char notWS = 'a'; //guaranteed to not be a whitespace character!
         char prevWhitespace = notWS;
 
-        for (size_t i = 0; i < str.size(); ++i)
+        for (size_t i = 0; i <= str.size(); ++i)
         {
-            char c = str[i];
+            char c = ' '; //we pretend there's an extra space on the end...
+            if (i < str.size())
+            {
+                c = str[i];
+            }
             if (std::isspace(c) )
             {
                 if (prevWhitespace != c) //not repeated whitespace, or new whitespace
@@ -65,9 +69,18 @@ namespace JSL
                         //have to do this way round as characters like tabs have varying sizes depending on what came before!
                         if (currentSize + wordSize > width)
                         {
-                            lines.push_back(str.substr(currentLineStart, chunkStart - currentLineStart));
-                            currentLineStart = chunkStart;
-                            currentSize = wordSize;
+                            if (chunkStart > currentLineStart)
+                            {
+                                lines.push_back(str.substr(currentLineStart, chunkStart - currentLineStart));
+                                currentLineStart = chunkStart;
+                                currentSize = wordSize;
+                            }
+                            else
+                            {
+                                lines.push_back(str.substr(currentLineStart,i-currentLineStart));
+                                currentLineStart = i;
+                                currentSize = 0;
+                            }
                         }
                         else
                         {
@@ -94,7 +107,6 @@ namespace JSL
         {
             lines.push_back(finalLine);
         }
-
         std::vector<std::string> out;
         for (auto & line : lines)
         {
@@ -124,5 +136,49 @@ namespace JSL
     }
 
 
+
+    void columnPrint(std::vector<std::string_view> input, size_t width, std::string_view delimiter)
+    {
+        columnPrint(input, std::vector<size_t>(input.size(),width),delimiter);
+    }
+
+    void columnPrint(std::vector<std::string_view> input, std::vector<size_t> widths, std::string_view delimiter)
+    {
+        if (input.size() != widths.size())
+        {
+            internal::FatalError("Size mismatch",JSL_LOCATION) << "Input size (" << input.size() << ") must match widths (" << widths.size() <<") for column splitting";
+        }
+        std::vector<std::vector<std::string>> linesplitInputs;
+        size_t maxL = 0;
+        for (size_t i = 0; i < input.size(); ++i)
+        {
+            std::vector<std::string> foldedColumn;
+            auto lines = split_view(input[i], "\n");
+            for (auto split : lines)
+            {
+                auto folded = foldToWidth(split,widths[i]);
+                JSL::append(foldedColumn, folded);
+            }
+            linesplitInputs.push_back(foldedColumn);
+            maxL = std::max(maxL,foldedColumn.size());
+        }
+
+        for (size_t i = 0; i < maxL; ++i)
+        {
+            for (size_t c = 0; c < input.size(); ++c)
+            {
+                if (i < linesplitInputs[c].size())
+                {
+                    std::cout << linesplitInputs[c][i];
+                }
+                else
+                {
+                    std::cout << std::string(widths[c],' ');
+                }
+                if (c > 0){std::cout << delimiter;}
+            }
+            std::cout << "\n";
+        }
+    }
 
 }

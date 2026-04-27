@@ -5,9 +5,10 @@
 #include <string>
 #include <map>
 #include <set>
-namespace JSL
+namespace JSL::Parameter
 {
-    class ParameterAggregator
+   
+    class Aggregator
     {
         public:
             std::string Name = "Unnamed Settings Group";
@@ -15,7 +16,7 @@ namespace JSL
             std::vector<std::string> GetCommands();
 
             template<class T>
-            void Connect(Parameter<T> & parameter, T & variable)
+            void Connect(Setting<T> & parameter, T & variable)
             {
                 parameter.Connect(variable);
                 for (auto trigger : parameter.GetTriggers())
@@ -23,22 +24,19 @@ namespace JSL
                     RegisteredParameters[trigger] = &parameter;
                 }
             }
-            void Connect(ParameterAggregator & aggregator)
-            {
-                NestedAggregators.push_back(&aggregator);
-            }
+            void NestGroup(Aggregator & aggregator,std::string name);
 
             template<class T, class U>
-            void Set(T & value,Parameter<T> & configurer, U defaultValue, std::initializer_list<std::string> triggers,std::string name, std::string description)
+            void Set(T & value,Setting<T> & configurer, U defaultValue, std::initializer_list<std::string> triggers,std::string name, std::string description)
             {
-                configurer = Parameter<T>(static_cast<T>(defaultValue),triggers);
+                configurer = Setting<T>(static_cast<T>(defaultValue),triggers);
                 Connect(configurer, value);
                 SetInfo(configurer,name,description);
             }
             template<class T, class U, class V>
-            void Set(T & value,Parameter<T> & configurer, V defaultValue, U triggers,std::string name, std::string description)
+            void Set(T & value,Setting<T> & configurer, V defaultValue, U triggers,std::string name, std::string description)
             {
-                configurer = Parameter<T>(static_cast<T>(defaultValue),std::forward<U>(triggers));
+                configurer = Setting<T>(static_cast<T>(defaultValue),std::forward<U>(triggers));
                 Connect(configurer, value);
                 SetInfo(configurer,name,description);
             }
@@ -47,7 +45,7 @@ namespace JSL
 
             void SetParameter(std::string_view trigger, std::string_view value);
 
-            std::string GetParameter(std::string_view trigger);
+            std::string ShowParameter(std::string_view trigger);
             
             template<class T>
             T & GetParameter(std::string_view trigger)
@@ -55,19 +53,19 @@ namespace JSL
                 auto found = FindParameter(static_cast<std::string>(trigger));
                 if (found)
                 {
-                    Parameter<T>* typedFound = dynamic_cast<Parameter<T>*>(found);
+                    Setting<T>* typedFound = dynamic_cast<Setting<T>*>(found);
                     if (typedFound)
                     {
                         return typedFound->Value();
                     }
                     else
                     {
-                        internal::FatalError("Parameter type error", JSL_LOCATION) << "Parameter -" << trigger << " exists but is not of the requested type";
+                        JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "Parameter -" << trigger << " exists but is not of the requested type";
                     }
                 }
                 else
                 {
-                    internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+                    JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
                 }
                 auto dummy = new T(); //unreachable, but silences compiler warning about missing return
                 return *dummy;
@@ -78,39 +76,35 @@ namespace JSL
             void remove(std::string_view trigger, std::string_view value);
             void erase(std::string_view trigger, int pos);
 
-            ParameterDescription GetDescription(std::string_view key);
-
+            Description GetDescription(std::string_view key);
+            
+            void PrintStructure(int indent,std::string runningTitle);
+            void AddCommand(std::string name, std::string result);
         protected:
-            std::map<std::string,internal::ParameterBase*> RegisteredParameters;
-            std::vector<ParameterAggregator*> NestedAggregators;
-            std::map<std::string,ParameterDescription> Information;
+            static std::map<std::string,std::string> & RegisteredCommands();
+            void PrintHelp(std::string_view assignedName);
+            std::map<std::string,internal::Parameter::ParameterBase*> RegisteredParameters;
+            std::map<std::string, Aggregator*> NestedAggregators;
+            std::map<std::string,Description> Information;
 
-            internal::ParameterBase* FindParameter(const std::string & key);
+            internal::Parameter::ParameterBase* FindParameter(const std::string & key);
             bool TryCluster(std::string_view key, std::string_view value);
 
+            static void printAsTitle(std::string_view input,Format::Command fg =Format::Black, Format::Command bg = Format::BgWhite);//
+
             template<class T>
-            void SetInfo(Parameter<T> & target, std::string_view name, std::string_view description)
+            void SetInfo(Setting<T> & target, std::string_view name, std::string_view description)
             {
                 auto key = target.GetTriggers()[0];
-                // Information[key].emplace(target,description,name);
-                // Information.emplace({key,{description,name}});
-                ParameterDescription d(target,description,name);
+                Description d(target,description,name);
                 Information[key] = d;
             }
+            static const size_t lineLength = 80;
+            static const size_t lw = 20;
+            static const size_t mw = 15;
+            static const size_t rw = lineLength -lw - mw;
         };
         
-    class RootParameterAggregator : public ParameterAggregator
-    {
-        public:
-         void Parse(int argc, char** argv);
-
-        RootParameterAggregator();
-            
-        protected:
-           
-            bool Help;
-            JSL::Parameter<bool> HelpToggle;
-            void PrintHelp();
-    };
+   
  
 }

@@ -18,4 +18,16 @@ namespace JSL
         @warning This function makes the assumption that the tab size used by the output renderer, and all control sequences are of the form \x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution.
     */
     std::vector<std::string> foldToWidth(std::string_view str, size_t width);
+
+
+    /*
+        Prints the lines side-by-side, folding them all to fit to the corresponding width
+    */
+    void columnPrint(std::vector<std::string_view> input, std::vector<size_t> widths, std::string_view delimiter);
+    
+    /*
+        As with columnPrint, but all the columns are the same width
+    */
+    void columnPrint(std::vector<std::string_view> input, size_t width, std::string_view delimiter);
+
 }

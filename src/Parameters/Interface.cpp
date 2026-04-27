@@ -19,7 +19,7 @@ bool inline ElementIsFlag(char * nextElement)
 
 
 
-namespace JSL::internal
+namespace JSL::internal::Parameter
 {
     std::string_view Normalize(std::string_view s)
     {

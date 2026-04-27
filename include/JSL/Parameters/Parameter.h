@@ -5,95 +5,94 @@
 #include <string>
 #include <string_view>
 #include <algorithm>
-namespace JSL
+namespace JSL::internal::Parameter
 {
-    namespace internal
+
+    inline std::vector<std::string> & Register()
     {
-
-        inline std::vector<std::string> & Register()
-        {
-            static std::vector<std::string> RegisteredSymbols = {"config","config-delim"}; //default symbols that are reserved by the interface
-            return RegisteredSymbols;
-        }
-
-        class ParameterBase
-        {
-            public:
-                virtual ~ParameterBase() = default;
-                void Parse(int argc, char** argv);
-                void ParseFromCache();
-
-                void SetTriggers(std::initializer_list<std::string> triggers);
-                
-                template<class U> //anything that can be converted to a vector of string is a valid trigger type; this allows for multiple triggers to be passed in as a vector, or a single trigger as a string
-                void SetTriggers(U && triggers)
-                {
-                    TriggerList = std::vector<std::string>{std::forward<U>(triggers)};
-                    ValidateTriggers();
-                }
-                
-                std::vector<std::string> GetTriggers() const;
-
-                void SetDelimiter(std::string_view vectorDelimiter);
-                std::string TriggerString(bool withDash = true) const;
-                virtual std::string ValueString() const = 0;
-
-                virtual void Convert(std::string_view sv) = 0;
-                virtual void erase(int pos) = 0;
-                virtual void remove(std::string_view value) = 0;
-                virtual void push(std::string_view value) = 0;
-                virtual void join(std::string_view value) = 0;
-            protected:
-                std::vector<std::string> TriggerList;
-                bool hasParseDelimiter = false;
-                std::string VectorParseDelimiter= " ";
-                void ValidateTriggers();
-
-        };
-
-
+        static std::vector<std::string> RegisteredSymbols = {"config","config-delim"}; //default symbols that are reserved by the interface
+        return RegisteredSymbols;
     }
-    template<class T>
-    class Parameter : public internal::ParameterBase
+
+    class ParameterBase
     {
         public:
-            Parameter() = default;
-            Parameter(T defaultValue, std::initializer_list<std::string> triggers) : InternalValue(defaultValue)
+            virtual ~ParameterBase() = default;
+            void Parse(int argc, char** argv);
+            void ParseFromCache();
+
+            void SetTriggers(std::initializer_list<std::string> triggers);
+            
+            template<class U> //anything that can be converted to a vector of string is a valid trigger type; this allows for multiple triggers to be passed in as a vector, or a single trigger as a string
+            void SetTriggers(U && triggers)
+            {
+                TriggerList = std::vector<std::string>{std::forward<U>(triggers)};
+                ValidateTriggers();
+            }
+            
+            std::vector<std::string> GetTriggers() const;
+
+            void SetDelimiter(std::string_view vectorDelimiter);
+            std::string TriggerString(bool withDash = true) const;
+            virtual std::string ValueString() const = 0;
+
+            virtual void Convert(std::string_view sv) = 0;
+            virtual void erase(int pos) = 0;
+            virtual void remove(std::string_view value) = 0;
+            virtual void push(std::string_view value) = 0;
+            virtual void join(std::string_view value) = 0;
+        protected:
+            std::vector<std::string> TriggerList;
+            bool hasParseDelimiter = false;
+            std::string VectorParseDelimiter= " ";
+            void ValidateTriggers();
+
+    };
+}
+
+namespace JSL::Parameter
+{
+    template<class T>
+    class Setting : public internal::Parameter::ParameterBase
+    {
+        public:
+            Setting() = default;
+            Setting(T defaultValue, std::initializer_list<std::string> triggers) : InternalValue(defaultValue)
             {
                 SetTriggers(triggers);
             }
 
-            Parameter(T defaultValue, std::initializer_list<std::string> triggers, int argc, char** argv) : Parameter(defaultValue, triggers)
+            Setting(T defaultValue, std::initializer_list<std::string> triggers, int argc, char** argv) : Setting(defaultValue, triggers)
             {
                 Parse(argc, argv);
             }
 
             template<class U>
-            Parameter(T defaultValue, U && triggers) : InternalValue(defaultValue)
+            Setting(T defaultValue, U && triggers) : InternalValue(defaultValue)
             {
                 SetTriggers(triggers);
             }
 
             template<class U>
-            Parameter(T defaultValue, U && triggers, int argc, char** argv) : Parameter(defaultValue,triggers)
+            Setting(T defaultValue, U && triggers, int argc, char** argv) : Setting(defaultValue,triggers)
             {
                 Parse(argc, argv);
             }
 
             template<class U>
-            static Parameter<bool> Toggle(U && triggers)
+            static Setting<bool> Toggle(U && triggers)
             {
-                return Parameter<bool>(false,triggers);
+                return Setting<bool>(false,triggers);
             }
-            static Parameter<bool> Toggle(std::initializer_list<std::string> triggers)
+            static Setting<bool> Toggle(std::initializer_list<std::string> triggers)
             {
-                return Parameter<bool>(false,triggers);
+                return Setting<bool>(false,triggers);
             }
             
             template<class U>
-            static Parameter<bool> Toggle(U && trigger, int argc, char** argv)
+            static Setting<bool> Toggle(U && trigger, int argc, char** argv)
             {
-                return Parameter<bool>(false,trigger,argc,argv);
+                return Setting<bool>(false,trigger,argc,argv);
             }
 
             void Connect(T & variable) //reference means we can only connect to a real variable
@@ -120,7 +119,7 @@ namespace JSL
             
             void Convert(std::string_view sv)
             {
-                if constexpr (internal::is_vector<T>::value)
+                if constexpr (JSL::internal::is_vector<T>::value)
                 {
                     InternalValue = hasParseDelimiter ? ParseTo<T>(sv, VectorParseDelimiter) : ParseTo<T>(sv);
                 }
@@ -128,7 +127,7 @@ namespace JSL
                 {
                     if (hasParseDelimiter)
                     {
-                        internal::FatalError("Parameter parsing error",JSL_LOCATION) << "You cannot pass a vector-delimiter to a non-vector Parameter";
+                        JSL::internal::FatalError("Parameter parsing error",JSL_LOCATION) << "You cannot pass a vector-delimiter to a non-vector Parameter";
                     }
                     InternalValue = ParseTo<T>(sv);
                 }
@@ -140,7 +139,7 @@ namespace JSL
 
             void push(std::string_view value)
             {
-                if constexpr (internal::is_vector<T>::value)
+                if constexpr (JSL::internal::is_vector<T>::value)
                 {
                     InternalValue.push_back(ParseTo<typename T::value_type>(value));
                     if (ConnectedValue)
@@ -150,12 +149,12 @@ namespace JSL
                 }
                 else
                 {
-                    internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot push to a non-vector Parameter";
+                    JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot push to a non-vector Parameter";
                 }
             }
             void join(std::string_view value)
             {
-                if constexpr (internal::is_vector<T>::value)
+                if constexpr (JSL::internal::is_vector<T>::value)
                 {
                     auto parsed = ParseTo<T>(value);
                     InternalValue.insert(InternalValue.end(), parsed.begin(), parsed.end());
@@ -167,12 +166,12 @@ namespace JSL
                 }
                 else
                 {
-                    internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot push to a non-vector Parameter";
+                    JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot push to a non-vector Parameter";
                 }
             }
             void remove(std::string_view value)
             {
-                if constexpr (internal::is_vector<T>::value)
+                if constexpr (JSL::internal::is_vector<T>::value)
                 {
                     // InternalValue.push_back(ParseTo<typename T::value_type>(value));
                     auto dvalue = ParseTo<typename T::value_type>(value);
@@ -184,16 +183,16 @@ namespace JSL
                 }
                 else
                 {
-                    internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot remove from a non-vector Parameter";
+                    JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot remove from a non-vector Parameter";
                 }
             }
             void erase(int pos)
             {
-                if constexpr (internal::is_vector<T>::value)
+                if constexpr (JSL::internal::is_vector<T>::value)
                 {
                     if (InternalValue.empty())
                     {
-                        internal::FatalError("Parameter error", JSL_LOCATION) << "Cannot erase from an empty vector Parameter";
+                        JSL::internal::FatalError("Parameter error", JSL_LOCATION) << "Cannot erase from an empty vector Parameter";
                     }
                     while (pos < 0)
                     {
@@ -208,7 +207,7 @@ namespace JSL
                 }
                 else
                 {
-                    internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot erase from a non-vector Parameter";
+                    JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot erase from a non-vector Parameter";
                 }
             }
 

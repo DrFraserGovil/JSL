@@ -7,8 +7,16 @@
 
 */
 
+
 namespace JSL::Terminal
 {
+
+     /*
+        Returns true if the output is capable of interpreting format commands (i.e. a terminal)
+        False if the terminal is plaintext (i.e. a file)
+    */
+    bool IsANSICapable();
+
     using CursorCommand = std::string; //has to be string (not view) so the MoveTo command returns persist after being constructed
     constexpr CursorCommand Hide         = "\033[?25l";
     constexpr CursorCommand Show         = "\033[?25h";

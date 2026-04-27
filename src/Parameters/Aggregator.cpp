@@ -1,12 +1,15 @@
 #include <JSL/Parameters/Aggregator.h>
 #include <JSL/Parameters/Parameter.h>
 #include <JSL/Parameters/Interface.h>
+#include <JSL/internal/error.h>
 #include <JSL/Vectors/Search.h>
 #include <JSL/Display/Log.h>
 
-namespace JSL
+
+
+namespace JSL::Parameter
 {
-    void TryConvert(internal::ParameterBase* parameter, std::string_view value,std::string_view activeTrigger)
+    void TryConvert(internal::Parameter::ParameterBase* parameter, std::string_view value,std::string_view activeTrigger)
     {
         try
         {
@@ -14,13 +17,13 @@ namespace JSL
         }
         catch (const std::exception & e)
         {
-            internal::FatalError("Parameter conversion error", JSL_LOCATION) << "Failed to convert value '" << value << "' for parameter -" << activeTrigger;
+            JSL::internal::FatalError("Parameter conversion error", JSL_LOCATION) << "Failed to convert value '" << value << "' for parameter -" << activeTrigger;
         }
     }
-    void ParameterAggregator::Parse(int argc, char** argv)
+    void Parameter::Aggregator::Parse(int argc, char** argv)
     {
         //only parse once!
-        auto & instance = internal::Interface::Get();
+        auto & instance = internal::Parameter::Interface::Get();
         instance.Parse(argc, argv);
         
         for (auto [key,value] : instance.Options)
@@ -29,7 +32,7 @@ namespace JSL
         }
     }
 
-    void ParameterAggregator::SetParameter(std::string_view trigger, std::string_view value)
+    void Parameter::Aggregator::SetParameter(std::string_view trigger, std::string_view value)
     {
         auto found = FindParameter(static_cast<std::string>(trigger));
         if (found)
@@ -45,7 +48,7 @@ namespace JSL
         }
     }
 
-    std::string ParameterAggregator::GetParameter(std::string_view trigger)
+    std::string Parameter::Aggregator::ShowParameter(std::string_view trigger)
     {
         auto found = FindParameter(static_cast<std::string>(trigger));
         if (found)
@@ -54,16 +57,16 @@ namespace JSL
         }
         else
         {
-            internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+            JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
             return ""; //unreachable, but silences compiler warning
         }
     }
 
 
-    bool ParameterAggregator::TryCluster(std::string_view key, std::string_view value)
+    bool Parameter::Aggregator::TryCluster(std::string_view key, std::string_view value)
     {
 
-        std::vector<internal::ParameterBase*> clusterableParameters;
+        std::vector<internal::Parameter::ParameterBase*> clusterableParameters;
         for (char c : key)
         {
             std::string trigger(1,c);
@@ -85,13 +88,32 @@ namespace JSL
         return true;
     }
  
-    std::vector<std::string> ParameterAggregator::GetCommands()
+    void Parameter::Aggregator::NestGroup(Parameter::Aggregator & aggregator,std::string name)
     {
-        auto & instance = internal::Interface::Get();
-        return instance.Commands;
+        if (NestedAggregators.contains(name))
+        {
+            JSL::internal::FatalError("Duplicate aggregator name",JSL_LOCATION) << "A settings aggregator with the name '" << name << "' already exists at this level";
+        }
+
+        NestedAggregators[name] = (&aggregator);
     }
 
-    internal::ParameterBase* ParameterAggregator::FindParameter(const std::string & key)
+    std::vector<std::string> Parameter::Aggregator::GetCommands()
+    {
+        auto & instance = internal::Parameter::Interface::Get();
+        return instance.Commands;
+    }
+    std::map<std::string,std::string> & Parameter::Aggregator::RegisteredCommands()
+    {
+        static auto instance = std::map<std::string,std::string>{};
+        return instance;
+    }
+    void Parameter::Aggregator::AddCommand(std::string name, std::string function)
+    {
+        RegisteredCommands().try_emplace(name,function);
+    }
+
+    internal::Parameter::ParameterBase* Parameter::Aggregator::FindParameter(const std::string & key)
     {
         auto it = RegisteredParameters.find(key);
         if (it != RegisteredParameters.end())
@@ -100,7 +122,7 @@ namespace JSL
         }
         for (auto nested : NestedAggregators)
         {
-            auto result = nested->FindParameter(key);
+            auto result = nested.second->FindParameter(key);
             if (result)
             {
                 return result;
@@ -109,7 +131,7 @@ namespace JSL
         return nullptr;
     }
 
-    void ParameterAggregator::push(std::string_view trigger, std::string_view value)
+    void Parameter::Aggregator::push(std::string_view trigger, std::string_view value)
     {
         auto found = FindParameter(static_cast<std::string>(trigger));
         if (found)
@@ -118,10 +140,10 @@ namespace JSL
         }
         else
         {
-            internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+            JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
         }
     }
-    void ParameterAggregator::join(std::string_view trigger, std::string_view value)
+    void Parameter::Aggregator::join(std::string_view trigger, std::string_view value)
     {
         auto found = FindParameter(static_cast<std::string>(trigger));
         if (found)
@@ -130,10 +152,10 @@ namespace JSL
         }
         else
         {
-            internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+            JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
         }
     }
-    void ParameterAggregator::remove(std::string_view trigger, std::string_view value)
+    void Parameter::Aggregator::remove(std::string_view trigger, std::string_view value)
     {
         auto found = FindParameter(static_cast<std::string>(trigger));
         if (found)
@@ -142,10 +164,10 @@ namespace JSL
         }
         else
         {
-            internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+            JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
         }
     }
-    void ParameterAggregator::erase(std::string_view trigger, int pos)
+    void Parameter::Aggregator::erase(std::string_view trigger, int pos)
     {
         auto found = FindParameter(static_cast<std::string>(trigger));
         if (found)
@@ -154,7 +176,7 @@ namespace JSL
         }
     }
 
-    ParameterDescription ParameterAggregator::GetDescription(std::string_view key)
+    Description Parameter::Aggregator::GetDescription(std::string_view key)
     {
         auto found = FindParameter(static_cast<std::string>(key));
         if (found)
@@ -163,28 +185,70 @@ namespace JSL
             r.CurrentValue = found->ValueString();
             return r;
         }
-        internal::FatalError("Not found",JSL_LOCATION);
-        return ParameterDescription();
+        JSL::internal::FatalError("Not found",JSL_LOCATION);
+        return Description();
     }
-
-    RootParameterAggregator::RootParameterAggregator()
+    void Parameter::Aggregator::PrintStructure(int indent,std::string runningTitle)
     {
-        Connect(HelpToggle,Help);
-        Set(Help, HelpToggle,false,{"h","help"},"Help","Activates the helper function routine");   
-    }
-    void RootParameterAggregator::Parse(int argc, char **argv)
-    {
-        ParameterAggregator::Parse(argc, argv);
-        auto cmds = GetCommands();
-        if (Help || JSL::contains("help",cmds))
+        std::string buffer(indent,'\t');
+         for (auto & nest : NestedAggregators)
         {
-            PrintHelp();
-            std::exit(0);
+            std::string newRun = runningTitle + "." + nest.first;
+            std::cout << buffer << "- " <<newRun <<"\n";
+            nest.second->PrintStructure(indent+1,newRun);
         }
     }
 
-    void RootParameterAggregator::PrintHelp()
+
+    
+
+    void Parameter::Aggregator::printAsTitle(std::string_view input,Format::Command fg, Format::Command bg)
     {
-        LOG(WARN) << "";
+        if (Terminal::IsANSICapable()) //piggyback off the terminal checking if formatting can be used
+        {
+            auto titleCol =  fg + Format::Italics + bg;
+            std::string buffer = (input.size() < lineLength) ? std::string(lineLength - input.size(),' ') : "";
+            std::cout << titleCol << input << buffer << Format::ResetAll << "\n";
+        }
+        else
+        {
+            std::cout << input << "\n";
+        }
+        
     }
+
+    void Parameter::Aggregator::PrintHelp(std::string_view assignedName)
+    {
+        if (!RegisteredParameters.empty())
+        {
+            printAsTitle(assignedName);
+
+            for (auto & [name,param] : RegisteredParameters)
+            {
+                bool repeated = false;
+                auto keys = param->GetTriggers();
+                for (auto key : keys)
+                {
+                    if (key < name) {repeated = true;break;} //we already processed this
+                }
+                if (!repeated)
+                {
+                    auto r = Information[keys[0]];
+                    r.CurrentValue = param->ValueString();
+
+                    r.HelpPrint(lw,mw,rw);
+                }
+            }
+        }
+
+        for (auto &[key,nest] : NestedAggregators)
+        {
+            std::string name = (std::string)assignedName + "." + key;
+            nest->PrintHelp(name);
+        }
+
+
+    }
+
+  
 }

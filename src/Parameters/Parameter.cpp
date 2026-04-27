@@ -1,9 +1,10 @@
 #include <JSL/Parameters/Parameter.h>
 #include <JSL/Vectors/Search.h>
 #include <JSL/Strings/Cases.h>
-namespace JSL
+#include <JSL/internal/error.h>
+namespace JSL::internal::Parameter
 {
-    void internal::ParameterBase::Parse(int argc, char** argv)
+    void ParameterBase::Parse(int argc, char** argv)
     {
         Interface & instance = Interface::Get();
         if (!instance.IsConfigured())
@@ -13,18 +14,18 @@ namespace JSL
         ParseFromCache();
     }
 
-    void internal::ParameterBase::SetTriggers(std::initializer_list<std::string> triggers)
+    void ParameterBase::SetTriggers(std::initializer_list<std::string> triggers)
     {
         TriggerList = std::vector<std::string>{triggers};
         ValidateTriggers();
     }
 
-    std::vector<std::string> internal::ParameterBase::GetTriggers() const
+    std::vector<std::string> ParameterBase::GetTriggers() const
     {
         return TriggerList;
     }
 
-    void internal::ParameterBase::ParseFromCache()
+    void ParameterBase::ParseFromCache()
     {
         auto & instance = Interface::Get();
         
@@ -38,13 +39,13 @@ namespace JSL
         }
     }
 
-    void internal::ParameterBase::SetDelimiter(std::string_view vectorDelimiter)
+    void ParameterBase::SetDelimiter(std::string_view vectorDelimiter)
     {
         hasParseDelimiter = true;
         VectorParseDelimiter = (std::string)(vectorDelimiter);
     }
 
-    std::string internal::ParameterBase::TriggerString(bool withDash) const
+    std::string ParameterBase::TriggerString(bool withDash) const
     {
         std::string dash = withDash ? "-" : "";
         std::ostringstream os;
@@ -56,7 +57,7 @@ namespace JSL
         return os.str();
     }
 
-    void internal::ParameterBase::ValidateTriggers()
+    void ParameterBase::ValidateTriggers()
     {
         for (auto & trigger : TriggerList)
         {
@@ -64,22 +65,22 @@ namespace JSL
             
             if (trigger.empty())
             {
-                internal::FatalError("Parameter trigger cannot be empty", JSL_LOCATION) ;
+                JSL::internal::FatalError("Parameter trigger cannot be empty", JSL_LOCATION) ;
             }
             if (isdigit(trigger[0]))
             {
-                internal::FatalError("Parameter trigger cannot start with a digit: " + trigger, JSL_LOCATION) ;
+                JSL::internal::FatalError("Parameter trigger cannot start with a digit: " + trigger, JSL_LOCATION) ;
             }
             int nonAlpha = std::count_if(trigger.begin(),trigger.end(),[](char c){ return !(std::isalnum(c) || (c == '-') || (c == '_')); });
             if (nonAlpha > 0)
             {
-                internal::FatalError("Parameter trigger cannot contain non-alphanumeric characters: " + trigger, JSL_LOCATION) ;
+                JSL::internal::FatalError("Parameter trigger cannot contain non-alphanumeric characters: " + trigger, JSL_LOCATION) ;
             }
 
             auto & registered = Register();
             if (contains(trigger,registered))
             {
-                internal::FatalError("Parameter trigger " + trigger + " is already in use by another Parameter", JSL_LOCATION) ;
+                JSL::internal::FatalError("Parameter trigger " + trigger + " is already in use by another Parameter", JSL_LOCATION) ;
             }
             registered.push_back(trigger);
         }

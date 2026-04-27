@@ -1,5 +1,6 @@
 #include <JSL/Display/Log/Config.h>
 #include <JSL/Display/Log/Levels.h>
+#include <JSL/Display/ANSI_Codes.h>
 
 namespace JSL::Log
 {
@@ -8,7 +9,7 @@ namespace JSL::Log
         SetLevel(INFO);
         ShowHeaders = true;
         AppendNewline = true;
-        TerminalOutput = isatty(fileno(stdout));
+        TerminalOutput = Terminal::IsANSICapable();
     }
 
     void ConfigObject::SetLevel(int level)

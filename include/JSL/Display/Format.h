@@ -7,6 +7,8 @@
 #include <sstream>
 namespace JSL::Format
 {
+    
+
     enum Element{
         ForegroundColour=1<<0,
         BackgroundColour=1<<1,
@@ -46,12 +48,26 @@ namespace JSL::Format
     FormatGroup operator+(const Command & a,const Command & b);
 
     //handle addition for any types convertible into format groups
-    template<class T, class U>
-    FormatGroup operator+(const T & a, const T & b)
+
+    template<typename T>
+    concept Formattable = std::is_constructible_v<FormatGroup, T>;
+
+    template<Formattable T, Formattable U>
+    FormatGroup operator+(const T & a, const U & b)
     {
         FormatGroup out(a);
         out.Add(b);
         return out;
+    }
+    template<Formattable T>
+    std::string operator+(const T & a, std::string_view && b)
+    {
+        return ((std::string)FormatGroup(a)) + std::string{b};
+    }
+    template<Formattable T>
+    std::string operator+(std::string_view && b, const T & a)
+    {
+        return std::string{b} + ((std::string)FormatGroup(a));
     }
         
 }
