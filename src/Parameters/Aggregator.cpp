@@ -1,104 +1,80 @@
 #include <JSL/Parameters/Aggregator.h>
-#include <JSL/Parameters/Parameter.h>
-#include <JSL/Parameters/Interface.h>
-#include <JSL/internal/error.h>
 #include <JSL/Vectors/Search.h>
-#include <JSL/Display/Log.h>
-
-
-
+#include <JSL/Display.h>
+#include <JSL/FileIO/pipedInput.h>
 namespace JSL::Parameter
 {
-    void TryConvert(internal::Parameter::ParameterBase* parameter, std::string_view value,std::string_view activeTrigger)
+
+    std::string cmdCapture;
+    Aggregator::Aggregator()
     {
-        try
+        Connect(HelpToggle,Help);
+        Set(Help, HelpToggle,false,{"h","help"},"Help","Equivalent to the help command");   
+        AddCommand("help","Activates the helper function, prints out usage, commands and options, then exits without further computation.");
+    }
+    Aggregator::Aggregator(std::string_view name) : Aggregator()
+    {
+        Name = static_cast<std::string>(name);
+    }
+    void Aggregator::Parse(int argc, char **argv)
+    {
+        cmdCapture = std::string{argv[0]};
+        Parameter::NestedAggregator::Parse(argc, argv);
+        auto cmds = InvokedCommands();
+        if (Help || JSL::contains("help",cmds))
         {
-            parameter->Convert(value);
-        }
-        catch (const std::exception & e)
-        {
-            JSL::internal::FatalError("Parameter conversion error", JSL_LOCATION) << "Failed to convert value '" << value << "' for parameter -" << activeTrigger;
+            MainPrintHelp();
+            std::exit(0);
         }
     }
-    void Parameter::Aggregator::Parse(int argc, char** argv)
+
+    template<class T, class U>
+    std::string fmtwrap(T prefix, std::string text, U suffix)
     {
-        //only parse once!
-        auto & instance = internal::Parameter::Interface::Get();
-        instance.Parse(argc, argv);
+        if (!Terminal::IsANSICapable()){return text;}
         
-        for (auto [key,value] : instance.Options)
-        {
-            SetParameter(key, value);
-        }
+        return (std::string)prefix + text + suffix;
+    }
+    template<class T>
+    std::string fmtwrap(T prefix, std::string text)
+    {
+        if (!Terminal::IsANSICapable()){return text;}
+        
+        return (std::string)prefix + text + Format::Reset();
     }
 
-    void Parameter::Aggregator::SetParameter(std::string_view trigger, std::string_view value)
+    void Aggregator::MainPrintHelp()
     {
-        auto found = FindParameter(static_cast<std::string>(trigger));
-        if (found)
+        std::cout << "Usage:\n";
+        std::cout << "\t" << cmdCapture  << " [commands] [options]\n";
+        if (Terminal::IsANSICapable())
         {
-            TryConvert(found, value, trigger);
+            std::cout << Format::Colour(40,40,40) << Format::Italics;
         }
-        else
+        std::cout << "Commands are any space separated commands before the first option\nOptions must be indicated by at least one dash\n";
+        
+        //commands are printed only once
+        auto cmds = RegisteredCommands();
+        if (!cmds.empty())
         {
-            if (!TryCluster(trigger, value))
+            printAsTitle("Available Commands");
+            auto defaulter = GetDefaultCommand();
+            for (auto &[name,txt] : cmds)
             {
-                LOG(WARN) << "Unrecognized option -" << trigger << " with value " << value;
+                std::string suffix="";
+                if (name == defaulter)
+                {
+                    suffix = fmtwrap(Format::Colour(50,50,50)," (default)");
+                }
+                std::string title = fmtwrap(Format::Bold + Format::Blue, name);
+                columnPrint({title+suffix,txt},{lw,mw+rw}," ");
             }
         }
+
+        PrintHelp(Name);
+
     }
-
-    std::string Parameter::Aggregator::ShowParameter(std::string_view trigger)
-    {
-        auto found = FindParameter(static_cast<std::string>(trigger));
-        if (found)
-        {
-            return found->ValueString();
-        }
-        else
-        {
-            JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
-            return ""; //unreachable, but silences compiler warning
-        }
-    }
-
-
-    bool Parameter::Aggregator::TryCluster(std::string_view key, std::string_view value)
-    {
-
-        std::vector<internal::Parameter::ParameterBase*> clusterableParameters;
-        for (char c : key)
-        {
-            std::string trigger(1,c);
-            auto found = FindParameter(trigger);
-            if (found)
-            {
-                clusterableParameters.push_back(found);
-            }
-            else
-            {
-                return false; //if any parameter in the cluster is not found, the whole cluster fails
-            }
-        }
-        for (size_t i = 0; i < clusterableParameters.size(); ++i)
-        {
-            std::string trigger(1,key[i]);
-            TryConvert(clusterableParameters[i], value, trigger); 
-        }
-        return true;
-    }
- 
-    void Parameter::Aggregator::NestGroup(Parameter::Aggregator & aggregator,std::string name)
-    {
-        if (NestedAggregators.contains(name))
-        {
-            JSL::internal::FatalError("Duplicate aggregator name",JSL_LOCATION) << "A settings aggregator with the name '" << name << "' already exists at this level";
-        }
-
-        NestedAggregators[name] = (&aggregator);
-    }
-
-    std::vector<std::string> Parameter::Aggregator::GetCommands()
+     std::vector<std::string> Parameter::Aggregator::InvokedCommands()
     {
         auto & instance = internal::Parameter::Interface::Get();
         return instance.Commands;
@@ -113,6 +89,12 @@ namespace JSL::Parameter
         static auto instance = std::map<std::string,std::string>{};
         return instance;
     }
+    void Parameter::Aggregator::DefaultCommand(std::string name, std::string function)
+    {
+        AddCommand(name,function);
+        auto & r = GetDefaultCommand();
+        r = name;
+    }
     void Parameter::Aggregator::AddCommand(std::string name, std::string function)
     {
         RegisteredCommands().try_emplace(name,function);
@@ -124,7 +106,7 @@ namespace JSL::Parameter
         std::set<std::string> unregistered;
 
         auto expected = RegisteredCommands();
-        for (auto cmd : GetCommands())
+        for (auto cmd : InvokedCommands())
         {
             if (expected.contains(cmd))
             {
@@ -138,152 +120,4 @@ namespace JSL::Parameter
         return {registered,unregistered};
     }
 
-    void Parameter::Aggregator::DefaultCommand(std::string name, std::string function)
-    {
-        AddCommand(name,function);
-        auto & r = GetDefaultCommand();
-        r = name;
-    }
-
-    internal::Parameter::ParameterBase* Parameter::Aggregator::FindParameter(const std::string & key)
-    {
-        auto it = RegisteredParameters.find(key);
-        if (it != RegisteredParameters.end())
-        {
-            return it->second;
-        }
-        for (auto nested : NestedAggregators)
-        {
-            auto result = nested.second->FindParameter(key);
-            if (result)
-            {
-                return result;
-            }
-        }
-        return nullptr;
-    }
-
-    void Parameter::Aggregator::push(std::string_view trigger, std::string_view value)
-    {
-        auto found = FindParameter(static_cast<std::string>(trigger));
-        if (found)
-        {
-            found->push(value);
-        }
-        else
-        {
-            JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
-        }
-    }
-    void Parameter::Aggregator::join(std::string_view trigger, std::string_view value)
-    {
-        auto found = FindParameter(static_cast<std::string>(trigger));
-        if (found)
-        {
-            found->join(value);
-        }
-        else
-        {
-            JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
-        }
-    }
-    void Parameter::Aggregator::remove(std::string_view trigger, std::string_view value)
-    {
-        auto found = FindParameter(static_cast<std::string>(trigger));
-        if (found)
-        {
-            found->remove(value);
-        }
-        else
-        {
-            JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
-        }
-    }
-    void Parameter::Aggregator::erase(std::string_view trigger, int pos)
-    {
-        auto found = FindParameter(static_cast<std::string>(trigger));
-        if (found)
-        {
-            found->erase(pos);  
-        }
-    }
-
-    Description Parameter::Aggregator::GetDescription(std::string_view key)
-    {
-        auto found = FindParameter(static_cast<std::string>(key));
-        if (found)
-        {
-            auto r = Information[found->GetTriggers()[0]];
-            r.CurrentValue = found->ValueString();
-            return r;
-        }
-        JSL::internal::FatalError("Not found",JSL_LOCATION);
-        return Description();
-    }
-    void Parameter::Aggregator::PrintStructure(int indent,std::string runningTitle)
-    {
-        std::string buffer(indent,'\t');
-         for (auto & nest : NestedAggregators)
-        {
-            std::string newRun = runningTitle + "." + nest.first;
-            std::cout << buffer << "- " <<newRun <<"\n";
-            nest.second->PrintStructure(indent+1,newRun);
-        }
-    }
-
-
-    
-
-    void Parameter::Aggregator::printAsTitle(std::string_view input,Format::Command fg, Format::Command bg)
-    {
-        
-        if (Terminal::IsANSICapable()) //piggyback off the terminal checking if formatting can be used
-        {
-            auto titleCol =  fg + Format::Italics + bg;
-            std::string buffer = (input.size() < lineLength) ? std::string(lineLength - input.size(),' ') : "";
-            std::cout << titleCol << input << buffer << Format::ResetAll << "\n";
-        }
-        else
-        {
-            std::cout << "\n-- " << input << " --\n\n";
-        }
-        
-    }
-
-    void Parameter::Aggregator::PrintHelp(std::string_view assignedName)
-    {
-        if (!RegisteredParameters.empty())
-        {
-            
-            printAsTitle(assignedName);
-
-            for (auto & [name,param] : RegisteredParameters)
-            {
-                
-                bool repeated = false;
-                auto keys = param->GetTriggers();
-                for (auto key : keys)
-                {
-                    if (key < name) {repeated = true;break;} //we already processed this
-                }
-                if (!repeated)
-                {
-                    auto r = Information[keys[0]];
-                    r.CurrentValue = param->ValueString();
-
-                    r.HelpPrint(lw,mw,rw);
-                }
-            }
-        }
-
-        for (auto &[key,nest] : NestedAggregators)
-        {
-            std::string name = (std::string)assignedName + "." + key;
-            nest->PrintHelp(name);
-        }
-
-
-    }
-
-  
 }

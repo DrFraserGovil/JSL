@@ -1,7 +1,7 @@
 #pragma once
 #include <functional>
 #include <filesystem>
-
+#include <vector>
 
 namespace JSL
 {
@@ -10,7 +10,9 @@ namespace JSL
 
     void forSplitLineIn(const std::filesystem::path fileName, std::string_view delimiter,  std::function<void(std::vector<std::string_view>)> vectorProcessor);
 
-
+    std::vector<std::string> getFileLines(const std::filesystem::path fileName);
+    
+    std::vector<std::vector<std::string>> getFileWords(const std::filesystem::path fileName,std::string_view delimiter);
 
 
     template <typename... Ts, typename Func>

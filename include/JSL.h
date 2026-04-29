@@ -26,7 +26,7 @@
 
 //Log adds a macro into the global namespace
 // We undef it here unless explicitly asked for; this prevents pollution but allows us to use logging in our library
-#ifndef JSL_INCLUDE_LOG
+#ifdef JSL_REMOVE_LOG
     #undef LOG
 #endif
 
