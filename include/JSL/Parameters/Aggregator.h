@@ -15,16 +15,14 @@ namespace JSL::Parameter
 
         Aggregator();
 
-        //expose the protected command to public
-        using NestedAggregator::Parse;
 
         std::vector<std::string> InvokedCommands();
-        std::string & GetDefaultCommand();
-        static std::map<std::string,std::string> & RegisteredCommands();
         std::pair<std::set<std::string>, std::set<std::string>> ParseCommands();
-        void AddCommand(std::string name, std::string result);
-        void DefaultCommand(std::string name, std::string result);
         protected:
+            static std::map<std::string,std::string> & RegisteredCommands();
+            std::string & GetDefaultCommand();
+            void AddCommand(std::string name, std::string result);
+            void DefaultCommand(std::string name, std::string result);
             std::string Name = "Root";
             bool Help;
             Setting<bool> HelpToggle;

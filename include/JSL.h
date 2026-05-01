@@ -18,6 +18,7 @@
 #include <JSL/Strings.h>
 #include <JSL/Time.h>
 #include <JSL/Vectors.h>
+#include <JSL/Async.h>
 
 // #include "Vectors/Search.h"
 // #include "Display/Display.h"

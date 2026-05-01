@@ -15,7 +15,8 @@ namespace JSL::Parameter
         INSERT(char),
         INSERT(std::vector<int>),
         INSERT(std::vector<std::string>),
-        INSERT(std::vector<double>)
+        INSERT(std::vector<double>),
+        INSERT(size_t)
     };
 
     class Description

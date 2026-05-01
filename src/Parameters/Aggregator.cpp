@@ -66,7 +66,7 @@ namespace JSL::Parameter
                 {
                     suffix = fmtwrap(Format::Colour(50,50,50)," (default)");
                 }
-                std::string title = fmtwrap(Format::Bold + Format::Blue, name);
+                std::string title = fmtwrap(Format::Bold + Format::Green, name);
                 columnPrint({title+suffix,txt},{lw,mw+rw}," ");
             }
         }

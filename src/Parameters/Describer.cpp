@@ -8,12 +8,12 @@ namespace JSL::Parameter
         auto left_text = Key;
         
         auto mid_text = "<" + TypeString + ">";
-        mid_text = std::regex_replace(mid_text, std::regex("std::"),"");
+        mid_text = Format::Colour(0,155,185) +  Name + Format::Reset() + "\n" + std::regex_replace(mid_text, std::regex("std::"),"");
 
         auto right_text = TextDescription;
         if (Terminal::IsANSICapable())
         {
-            right_text += Format::Italics + Format::Colour(50,50,50) +  "\n[Default: " + DefaultValue + "]" + Format::Reset();
+            right_text += "\n" + Format::Italics + Format::Colour(50,50,50) +  "[Default: " + DefaultValue + "]" + Format::Reset();
         }
         else
         {
