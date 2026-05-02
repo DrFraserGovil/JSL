@@ -47,9 +47,9 @@ namespace JSL
             void Message(std::string_view msg);
         private:
             bool BlockNewAdds = false;
-            Watcher(Socket && socketIn);
-            Socket Receiver;
-            std::optional<Socket> Sender;
+            Watcher(Antenna && socketIn);
+            Antenna Receiver;
+            Antenna::Hotline Sender;
             std::vector<pollfd> PollCatchers;
             std::map<int,std::function<void()>> Callbacks;
 

@@ -209,6 +209,10 @@ namespace JSL::Log
 			{
 				std::cout << Format::ResetAll;
 			}
+			if (Global::Config.IncludePrompt)
+			{
+				std::cout << Global::Config.Prompt << std::flush;
+			}
 
 		}
 	}

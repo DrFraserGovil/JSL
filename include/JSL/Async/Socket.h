@@ -12,69 +12,100 @@
 #include <optional>
 namespace JSL
 {
-	class Socket
+
+	namespace internal
+	{
+		//this is a wrapper with a rule-of-5 that ensures move semantics work etc. 
+		struct FileDescriptor
+		{
+			int FD =-1;
+			std::filesystem::path Path;
+			bool IsClient = false;
+			FileDescriptor() = default;
+			FileDescriptor(int fd, std::filesystem::path path) : FD(fd), Path(path), IsClient(false){};
+			~FileDescriptor();
+			FileDescriptor& operator=(const FileDescriptor&) = delete;
+			FileDescriptor(FileDescriptor && other) noexcept : FD(other.FD), Path(other.Path), IsClient(other.IsClient){other.FD = -1; other.Path = "";};
+			FileDescriptor & operator=(FileDescriptor && other) noexcept { FD = other.FD; Path = other.Path; IsClient = other.IsClient; other.FD = -1; other.Path = "";return *this;};
+			operator int() const { return FD; }
+			operator std::filesystem::path() const {return Path;};
+			operator std::string() const {return Path.string();};
+		};
+	}
+
+	class Antenna
 	{
 		public:
-		
-			//constructors & factories
-			Socket(std::string_view path, double timeout=2);
-			static std::optional<Socket> Broadcaster(std::string_view path, double timeout=2);
-			static std::optional<Socket> Antenna(std::string_view path, double timeout=2,bool forceAcquire = false,size_t gracePeriod = 50);
-			static Socket Null();
-			
-			//modify behaviour
-			void Initialise(std::string_view path, double timeout=2);
-			void SetTimeout(double seconds);
-			void SetTimeout(timeval time);
-			
+
+			/*!	@brief Construct a persistent antenna which listens for incoming messages
+				@param identifier A string which identifies the object; those wanting to send messages to this socket need to know this name in order to communicate. The socket is hosted at a location on disk (usually /tmp/[identifier]). If an Antenna with this name already exists, the system will check if there is an active process using it: if so, returns nullopt. If the socket is 'stale', it is taken over by this object. 
+				@param forceAcquire If true, does not return nullopt on encountering an occupied socket. Instead, issues a 'shutdown' command to the existing socket, and then takes over.
+				@param gracePeriod The time (in ms) allowed for a process to shutdown before the forceAcquire protocol takes place 
+			*/
+			static std::optional<Antenna> Create(std::string_view identifier, bool forceAcquire = false,std::chrono::milliseconds gracePeriod = std::chrono::milliseconds(50));
+
+
+			/*!
+				@brief Sends a message to an Antenna with matching identifier
+				@param identifier The name of the Antenna which is being reached. If no matching antenna (or external process) is found, an error is thrown
+				@param msg The message to be communicated
+				@param timeout The time to wait for an acknowledgement from the reciever that the message was returned. 
+				@returns True if the message was acknowledged, false otherwise
+			*/
+			static bool Transmit(std::string_view identifier, std::string_view msg, double timeout=2);
+
+
 			//state queries
 			bool IsActive();
-			int Descriptor();
+			int GetDescriptor(){return Resources;}
+			std::filesystem::path GetPath(){return Resources;}
+			std::string GetID(){return Identifier;}
 			
 			//comms functions
-			void Send(std::string_view msg);
-			std::string SendAndReply(std::string_view msg, double timeout=2);
 			std::string Read();
-			std::pair<std::string,Socket> ReadAndReply();
-			
-			//rule of 5
-			~Socket();
-			Socket(const Socket &) = delete;
-			Socket & operator=(const Socket &) = delete;
-			Socket(Socket&& other) noexcept;
-			Socket& operator=(Socket&& other) noexcept;		
-			std::filesystem::path GetPath(){return Path;};
-			
-			void Sync(Socket & pair);
-		private:
-			Socket();
 
+			/*!
+				@brief This is mostly just a wrapper for the Socket::Hotline  function without needing to keep the identifier around. 
+			*/
+			class Hotline
+			{
+				public:
+					static std::optional<Hotline> Create(std::string_view identifier, double timeout);
+					Hotline(const Antenna & host);
+
+					bool Send(std::string_view msg);
+					double Timeout;// intentionally public so the user can change it
+					Hotline() = default;
+				private:
+				std::string ID; //private since the user shouldn't change this
+				
+
+				
+			};
+			void SetTimeout(double seconds);
+		private:
+			Antenna();
+			double Timeout = 2;
+			void Connect(std::string_view path);
+
+			std::string Identifier;
 			sockaddr_un Address;
-			int FileDescriptor;
-			std::filesystem::path Path;
-			
+			internal::FileDescriptor Resources;
 
 			//Indicates that the socket file existed at initialisation time (i.e. an active process is monitoring messages to the socket)
-			bool SocketMonitored=false;
-
-			//Indicates that we are responsible for the socket file, and are responsible for closing it 
-			bool OwnsFile = false;
+			bool AlreadyMonitored=false;
 
 			//Indicates that the socket is in a valid state and has not recieved a shutdown order. 
 			bool Active = false;
-
-			//Indicates that the socket has been placed into a state where it can be bound to a socket file (used as a proxy for temporary sockets)
-			bool Bindable=false;
-
-			timeval Timeout;
 			
-			static Socket Client(int filedescriptior, std::filesystem::path path);
+			static Antenna TransmitClient(std::string_view identifier);
+			static Antenna ReadClient(int filedescriptior);
+
 			std::string GetMessage();
-			void UniqueBind();
-			void Listen();
 			void Bind();
-			void Close();
-			void Unbind();
-			const size_t Buffer = 4096;
+			bool Send(std::string_view msg);
+			static constexpr size_t Buffer = 4096;		
 	};
+
+
 }

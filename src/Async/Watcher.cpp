@@ -9,23 +9,27 @@ namespace JSL
 {
 	std::optional<Watcher> Watcher::Create(std::string_view socketName,double timeout, bool forceAcquire)
 	{
-		auto r = Socket::Antenna(socketName,timeout,forceAcquire);
+		auto r = Antenna::Create(socketName,forceAcquire);
+		
 		if (!r)
 		{
 			return std::nullopt;
 			// internal::FatalError("Bad Socket",JSL_LOCATION) << "Could not launch Watcher process: socket could not initialise";
 		}
+		r->SetTimeout(timeout);
 		// auto s = Socket::Broadcaster(socketName);
 		// if (!s)
 		// {
 		// 	internal::FatalError("Bad Socket",JSL_LOCATION) << "Could not launch Watcher process: socket could not initialise";
 		// }
+
 		return Watcher(std::move(r.value()));//,std::move(s.value()));
 	}
 
-	Watcher::Watcher(Socket && socketIn) : Receiver(std::move(socketIn))
+	Watcher::Watcher(Antenna && socketIn) : Receiver(std::move(socketIn))
 	{
 		SetMaxRuntime(-1);	
+		Sender = Antenna::Hotline(Receiver);
 	}
 
 	using clock = std::chrono::steady_clock;
@@ -99,23 +103,18 @@ namespace JSL
 	void Watcher::SetSocketTimeout(double seconds)
 	{
 		Receiver.SetTimeout(seconds);
-		if (Sender)
-		{
-			Sender.value().SetTimeout(seconds);
-		}
+		Sender.Timeout = seconds;
+	
 	}
 
 
 	void Watcher::Message(std::string_view msg)
 	{
-		if (!Sender)
+		//spawning a detached thread prevents internal deadlock as the message awaits a reponse that can't come until the Watcher hits its next poll cycle
+		std::thread([this, m = std::string(msg)]()
 		{
-			Sender = Socket::Broadcaster(Receiver.GetPath().string());
-			Receiver.Sync(Sender.value());
-		}
-
-		Sender->Send(msg);
-		// return Sender.SendAndReply(msg);
+			Sender.Send(m);
+		}).detach();
 	}
 	
 	void Watcher::SetMaxRuntime(double minutes)
@@ -167,7 +166,7 @@ namespace JSL
 
 	void Watcher::SetSocketCallback(std::function<void(std::string_view)> callback)
 	{
-		int fd = Receiver.Descriptor();
+		int fd = Receiver.GetDescriptor();
 		if (!Callbacks.contains(fd))
 		{
 			LOG(DEBUG) << "Socket callback initialised";
@@ -180,12 +179,11 @@ namespace JSL
 		}
 		Callbacks.insert_or_assign(fd, [this,callback]()
 		{
-			auto [msg,client] = Receiver.ReadAndReply();
+			auto msg = Receiver.Read();
 			
 			if (!msg.empty())
 			{
 				callback(msg);
-				client.Send("Acknowledge " + msg);
 			}
 		});
 	}

@@ -5,19 +5,37 @@
 #include <chrono>
 namespace JSL
 {
-	//this should only be 
-	Socket::Socket()
+	namespace fs = std::filesystem;
+
+	internal::FileDescriptor::~FileDescriptor()
 	{
-		FileDescriptor = -1;
-		SocketMonitored = false;
-		Bindable = false; // this method is only used by temporaries, who cannot be bound 
-		SetTimeout(2);
+		if (FD != -1)
+		{
+			close(FD);
+		}
+		if (!IsClient)
+		{
+			unlink(Path.string().c_str());
+		}	
 	}
 
-	void Socket::Initialise(std::string_view path, double timeout)
+	//this should only be used by the internal methods
+	Antenna::Antenna()
 	{
-		Path = path;
-		Bindable = true;
+		Resources = internal::FileDescriptor();
+		AlreadyMonitored = false;
+	}
+
+	void Antenna::Connect(std::string_view identifier)
+	{
+		if (Resources.FD != -1)
+		{
+			close(Resources.FD);
+			Resources.FD = -1; //in case socket fails 
+		}
+		Resources.Path = (fs::temp_directory_path() / identifier);
+		auto path  = Resources.Path.string();
+		Identifier = identifier;
 		Address = {};
 		Address.sun_family = AF_UNIX;
 		if (path.length() < sizeof(Address.sun_path)-1)
@@ -29,158 +47,121 @@ namespace JSL
 			throw std::runtime_error(static_cast<std::string>(path) + "too long for a Unix Domain Socket");
 		}
 
-		FileDescriptor = socket(AF_UNIX,SOCK_SEQPACKET,0); //use STREAM not SEQPACKET for windows compatibility 
-		OwnsFile = false;
-		bool pathExists = std::filesystem::exists(path);
-		SocketMonitored = (connect(FileDescriptor, (struct sockaddr*)&Address, sizeof(Address)) == 0);
+		Resources.FD = socket(AF_UNIX,SOCK_SEQPACKET,0); //use STREAM not SEQPACKET for windows compatibility 
+
+		bool pathExists = std::filesystem::exists(Resources.Path);
+
+		if (pathExists)
+		{
+			AlreadyMonitored = (connect(Resources.FD, (struct sockaddr*)&Address, sizeof(Address)) == 0);
+			
+			if (AlreadyMonitored)
+			{
+				LOG(DEBUG) << "Connection established to existing socket";
+			}
+			else
+			{
+				LOG(DEBUG) << "Detected and took-over a stale socket file";
+			}
+		}
+		else
+		{
+			AlreadyMonitored = false;
+			LOG(DEBUG) << "No socket file detected";
+		}	
+	}
+
+	std::optional<Antenna> Antenna::Create(std::string_view identifier, bool forceAcquire, std::chrono::milliseconds gracePeriod)
+	{
 		
-		if (pathExists && !SocketMonitored)
-		{
-			LOG(DEBUG) << "Detected a stale socket file: inheritance complete";
-		}
-		SetTimeout(timeout);
-	}
-
-	Socket::Socket(std::string_view path, double timeout)
-	{
-		Initialise(path,timeout);
-	}
-
-	std::optional<Socket> Socket::Broadcaster(std::string_view path, double timeout)
-	{
-		Socket out(path,timeout);
-		if (out.SocketMonitored)
-		{
-			return std::move(out);
-		}
-		return std::nullopt;
-	}
-	std::optional<Socket> Socket::Antenna(std::string_view path,  double timeout, bool forceAcquire, size_t gracePeriod)
-	{
-		Socket out(path,timeout);
-		if (out.SocketMonitored && !forceAcquire)
+		Antenna out;
+		out.Connect(identifier);
+		if (out.AlreadyMonitored && !forceAcquire)
 		{
 			return std::nullopt;
 
 		}
 
-		if (out.SocketMonitored)
+		if (out.AlreadyMonitored)
 		{
 			//send a message that we're taking over
 			LOG(DEBUG) << "Attempting hostile takeover";
-			out.Send("exit");
+			Transmit(identifier,"exit");
 			using namespace std::literals::chrono_literals;
-			std::this_thread::sleep_for(static_cast<std::chrono::milliseconds>(gracePeriod));
-			out.Initialise(path,timeout); //try again!
+			std::this_thread::sleep_for(gracePeriod);
+			out.Connect(identifier); //try again!
 		}
-		out.UniqueBind();
-		out.Listen();
+		out.Bind();
+		out.Active = true;
 		return std::move(out);
 	}
 
-	Socket::Socket(Socket&& other) noexcept :  Address(other.Address),FileDescriptor(other.FileDescriptor),Path(std::move(other.Path)),SocketMonitored(other.SocketMonitored), OwnsFile(other.OwnsFile), Active(other.Active), Bindable(other.Bindable), Timeout(other.Timeout) 
-    {
-        other.FileDescriptor = -1; // Mark as "moved out"
-		other.Bindable = false;
-    }
-
-	// Move Assignment Operator
-    Socket& Socket::operator=(Socket&& other) noexcept
-    {
-        if (this != &other) 
-        {
-            Close(); // Close our current FD before taking the new one
-            
-            FileDescriptor = other.FileDescriptor;
-            SocketMonitored = other.SocketMonitored;
-            Address = other.Address;
-            Path = std::move(other.Path);
-			Timeout = other.Timeout;
-			
-            other.FileDescriptor = -1; // Mark as "moved out"
-			other.Bindable = false;
-        }
-        return *this;
-    }
-
-	Socket::~Socket()
-	{
-		if (FileDescriptor != -1)
-		{
-			Close();
-		}
-		if (OwnsFile)
-		{
-			Unbind();
-		}
-	}
-
-	bool Socket::IsActive()
+	bool Antenna::IsActive()
 	{
 		return Active;
 	}
 
-	void Socket::Bind()
+	void Antenna::Bind()
 	{
-		if (!Bindable)
+
+		if (fs::exists(Resources.Path))
 		{
-			internal::FatalError("Attempt to bind non-bindable socket",JSL_LOCATION) << "This socket (" << FileDescriptor << ", " << Path.string() << ") is a  non-bindable temporary";
+			unlink(Resources.Path.string().c_str());
 		}
-		int result = bind(FileDescriptor,reinterpret_cast<const sockaddr*>(&Address), sizeof(Address));
-		if (result == -1)
+
+		
+		if (bind(Resources.FD,reinterpret_cast<const sockaddr*>(&Address), sizeof(Address)) == -1)
 		{
-			internal::FatalError("Bad socket bind",JSL_LOCATION) << "Could not bind socket " << Path.string();
+			internal::FatalError("Bad socket bind",JSL_LOCATION) << "Could not bind socket " << Resources.Path.string();
 		}
-		SocketMonitored = true;
-		OwnsFile = true;
-		Active = true;
-		LOG(DEBUG) << "Socket bind complete: " << SocketMonitored << OwnsFile << Active;
-	}
-
-	void Socket::UniqueBind()
-	{
-		Unbind();
-		Bind();
-	}
-
-	void Socket::Unbind()
-	{
-		unlink(Path.string().c_str());
-		SocketMonitored = false;
-	}
-
-	void Socket::Close()
-	{
-		if (FileDescriptor != -1)
+		if (listen(Resources.FD,5) == -1) // 5 is standard for interfaces not expecting heavy loads
 		{
-			close(FileDescriptor);
-			FileDescriptor = -1;
-			Bindable = false;
+			internal::FatalError("Bad socket listen", JSL_LOCATION) << "Could not listen to socket (although could bind)" << Resources.Path.string();
 		}
+		
+		LOG(DEBUG) << "Antenna-Socket bind complete";
 	}
 
-	void Socket::Listen()
+	
+
+
+	void Antenna::SetTimeout(double seconds)
 	{
-		listen(FileDescriptor,5); // 5 is standard for interfaces not expecting heavy loads
+		Timeout = seconds;
+		timeval t;
+		t.tv_sec = (int)seconds;  // Seconds
+		t.tv_usec = (seconds - (int)seconds)*1000000; // Microseconds
+
+		setsockopt(Resources.FD, SOL_SOCKET, SO_RCVTIMEO, (const char*)&t, sizeof(t));
 	}
 
-	void Socket::SetTimeout(double seconds)
-	{
-		Timeout.tv_sec = (int)seconds;  // Seconds
-		Timeout.tv_usec = (seconds - (int)seconds)*1000000;; // Microseconds
 
-		setsockopt(FileDescriptor, SOL_SOCKET, SO_RCVTIMEO, (const char*)&Timeout, sizeof(Timeout));
+	bool Antenna::Transmit(std::string_view identifier, std::string_view msg, double timeoutSeconds)
+	{
+		auto client = Antenna::TransmitClient(identifier);
+
+		if (!client.AlreadyMonitored)
+		{
+			return false;
+		}
+
+		client.SetTimeout(timeoutSeconds);
+
+		bool success = client.Send(msg);
+		if (!success) {return false;}
+
+		//await response
+		std::string response = client.GetMessage();
+
+		return !response.empty();
+
 	}
-	void Socket::SetTimeout(timeval time)
-	{
- 		Timeout = time;
 
-		setsockopt(FileDescriptor, SOL_SOCKET, SO_RCVTIMEO, (const char*)&Timeout, sizeof(Timeout));
-	}
 
-	void Socket::Send(std::string_view msg)
+
+	bool Antenna::Send(std::string_view msg)
 	{
-		if (FileDescriptor == -1) internal::FatalError("Bad socket",JSL_LOCATION) << "Cannot write to an expired socket";
+		if (Resources.FD == -1) internal::FatalError("Bad socket",JSL_LOCATION) << "Cannot write to an expired socket";
 		//two stage send for SOCK_STREAM
 		
 		if (msg.length() > UINT32_MAX)
@@ -188,68 +169,59 @@ namespace JSL
 			internal::FatalError("Message length exceeded",JSL_LOCATION) << "Message exceeds buffer size";
 		}
 		
-		uint32_t length = static_cast<uint32_t>(msg.length());
     
-		std::string copy(msg); //need to make a copy for c_str()
-
 		//send the actual message
-         if (write(FileDescriptor, copy.c_str(),length) == -1)
+		if (write(Resources.FD, msg.data(),msg.length()) == -1)
         {
-            internal::FatalError("Failed to send message",JSL_LOCATION) << "Command '" << msg << "' not sent";
+           LOG(WARN) << "Failed to send message " << msg;
+		   return false;
         }
-	}
-	std::string Socket::SendAndReply(std::string_view msg, double timeout)
-	{
-		SetTimeout(timeout);
-		Send(msg);
-
-		return GetMessage();
+		return true;
 	}
 
-	std::string Socket::Read()
-	{
-		auto [msg,client] = ReadAndReply(); 
-		client.Close();
-		return msg;
-	}
 
-	std::pair<std::string,Socket> Socket::ReadAndReply()
+	std::string Antenna::Read()
 	{
 		LOG(DEBUG) << "Attempting to read from socket";
-		if (FileDescriptor == -1) internal::FatalError("Bad socket",JSL_LOCATION) << "Cannot read from an expired socket";
-		int fd = accept(FileDescriptor,nullptr,nullptr);
-
-		auto client = Client(fd,Path);
+		if (Resources.FD == -1) internal::FatalError("Bad socket",JSL_LOCATION) << "Cannot read from an expired socket";
+		
+		int fd = accept(Resources.FD,nullptr,nullptr);
+		auto client = ReadClient(fd);
 		client.SetTimeout(Timeout);
 		client.Active = true;
 		std::string msg = client.GetMessage();
 		Active = client.Active;
-		return {msg,std::move(client)};
+		client.Send("Acknowledge " + msg);
+
+		return msg;
 	}
 
-	void Socket::Sync(Socket & pair)
+
+	Antenna Antenna::TransmitClient(std::string_view identifier)
 	{
-		pair.SetTimeout(Timeout);	
-	}
-	Socket Socket::Client(int filedescriptior, std::filesystem::path path)
-	{
-		Socket out;
-		out.FileDescriptor = filedescriptior;
-		out.Path = path;
+		Antenna out;
+		out.Connect(identifier);
+		out.Resources.IsClient = true;
 		return out;
 	}
 
-	int Socket::Descriptor()
+	Antenna Antenna::ReadClient(int filedescriptior)
 	{
-		return FileDescriptor;
+		Antenna out;
+		out.Resources.FD = filedescriptior;
+		out.Resources.IsClient = true;
+		LOG(DEBUG) << "Read client generated";
+		return out;
 	}
 
-	std::string Socket::GetMessage()
+
+
+	std::string Antenna::GetMessage()
 	{
 	
 
 		std::vector<char> buffer(Buffer, 0);
-		ssize_t nbytes = read(FileDescriptor, buffer.data(), buffer.size());
+		ssize_t nbytes = read(Resources.FD, buffer.data(), buffer.size());
 		
 		if (nbytes == 0)
 		{
@@ -261,8 +233,8 @@ namespace JSL
                 return ""; 
             }
 			internal::FatalError("Socket read error", JSL_LOCATION) 
-				<< "Failed to read from socket " << FileDescriptor 
-				<< " at " << Path.string();
+				<< "Failed to read from socket " << Resources.FD 
+				<< " at " << Resources.Path.string();
 		}
 
 
@@ -273,5 +245,37 @@ namespace JSL
 			Active = false;
 		}
 		return msg;
+	}
+
+
+	std::optional<Antenna::Hotline> Antenna::Hotline::Create(std::string_view identifier, double timeout)
+	{
+		Antenna::Hotline out;
+		out.ID = identifier;
+		out.Timeout = timeout;
+
+		fs::path p = fs::temp_directory_path() / identifier;
+
+		//we don't call `connect' here, because we don't want to trigger an unwanted 'ping' on the poll. 
+		// instead we implicitly lazily connect in the TransmitClient 
+		if (!fs::exists(p))
+		{
+			return std::nullopt;
+		}
+		
+		return out;
+	}
+
+	Antenna::Hotline::Hotline(const Antenna & host)
+	{
+		ID = host.Identifier;
+		Timeout = host.Timeout;
+		//no further checks -- the face we have a host means they'd guarantee to pass
+	}
+
+	bool Antenna::Hotline::Send(std::string_view msg)
+	{
+		LOG(DEBUG) << "Hotline transmitting " << msg << " to " << ID;
+		return Antenna::Transmit(ID,msg,Timeout);
 	}
 }

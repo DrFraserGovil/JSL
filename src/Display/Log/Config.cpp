@@ -24,6 +24,25 @@ namespace JSL::Log
         ShowHeaders = header;
     }
 
+    void ConfigObject::SetPrompt(std::string_view prompt)
+    {
+        if (prompt.empty())
+        {
+            IncludePrompt = false;
+        }
+        else
+        {
+            IncludePrompt = true;
+            AppendNewline = true;
+            ForceClear = true;
+            Prompt = static_cast<std::string>(prompt);
+        }
+    }
+    void ConfigObject::ResetPrompt()
+    {
+        IncludePrompt = false;
+    }
+
     namespace Global
     {
         ConfigObject Config;
