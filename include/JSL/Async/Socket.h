@@ -20,7 +20,7 @@ namespace JSL
 		{
 			int FD =-1;
 			std::filesystem::path Path;
-			bool IsClient = false;
+			bool IsClient = true; 
 			FileDescriptor() = default;
 			FileDescriptor(int fd, std::filesystem::path path) : FD(fd), Path(path), IsClient(false){};
 			~FileDescriptor();

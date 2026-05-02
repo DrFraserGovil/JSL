@@ -47,13 +47,13 @@ namespace JSL
 			throw std::runtime_error(static_cast<std::string>(path) + "too long for a Unix Domain Socket");
 		}
 
-		Resources.FD = socket(AF_UNIX,SOCK_SEQPACKET,0); //use STREAM not SEQPACKET for windows compatibility 
+		int fd = socket(AF_UNIX,SOCK_SEQPACKET,0); //use STREAM not SEQPACKET for windows compatibility 
 
 		bool pathExists = std::filesystem::exists(Resources.Path);
 
 		if (pathExists)
 		{
-			AlreadyMonitored = (connect(Resources.FD, (struct sockaddr*)&Address, sizeof(Address)) == 0);
+			AlreadyMonitored = (connect(fd, (struct sockaddr*)&Address, sizeof(Address)) == 0);
 			
 			if (AlreadyMonitored)
 			{
@@ -62,13 +62,16 @@ namespace JSL
 			else
 			{
 				LOG(DEBUG) << "Detected and took-over a stale socket file";
+				Resources.IsClient = false;
 			}
 		}
 		else
 		{
 			AlreadyMonitored = false;
 			LOG(DEBUG) << "No socket file detected";
+			Resources.IsClient = false;
 		}	
+		Resources.FD = fd;
 	}
 
 	std::optional<Antenna> Antenna::Create(std::string_view identifier, bool forceAcquire, std::chrono::milliseconds gracePeriod)
@@ -191,7 +194,14 @@ namespace JSL
 		client.Active = true;
 		std::string msg = client.GetMessage();
 		Active = client.Active;
-		client.Send("Acknowledge " + msg);
+		if (!msg.empty())
+		{ 	//empty messages are usually connect attempts that require no response
+			client.Send("Acknowledge " + msg);
+		}
+		else
+		{
+			LOG(WARN) << "Empty message recieved. \nLikely an attempt to claim the socket";
+		}
 
 		return msg;
 	}
