@@ -27,7 +27,7 @@ namespace JSL
     {
         public:
             //only way to create the object is through a factory function that ensures all the relevant objectsd exist (and throws if not)
-            static std::optional<Watcher> Create(const std::string & socketName,double timeout=2, bool forceAcquire=false);
+            static std::optional<Watcher> Create(std::string_view socketName,double timeout=2, bool forceAcquire=false);
 
             void Run();
             void SetSocketTimeout(double seconds);
@@ -44,7 +44,7 @@ namespace JSL
             int Watch(std::filesystem::path path,uint32_t watchFlags = IN_MODIFY | IN_CREATE | IN_DELETE | IN_MOVE);
             void Unwatch(int id);
             void Unwatch(std::filesystem::path path);
-            void Message(const std::string & msg);
+            void Message(std::string_view msg);
         private:
             bool BlockNewAdds = false;
             Watcher(Socket && socketIn);

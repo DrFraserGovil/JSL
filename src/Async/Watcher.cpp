@@ -7,7 +7,7 @@
 
 namespace JSL
 {
-	std::optional<Watcher> Watcher::Create(const std::string & socketName,double timeout, bool forceAcquire)
+	std::optional<Watcher> Watcher::Create(std::string_view socketName,double timeout, bool forceAcquire)
 	{
 		auto r = Socket::Antenna(socketName,timeout,forceAcquire);
 		if (!r)
@@ -68,7 +68,6 @@ namespace JSL
 			}
 
 			bool withinTime = (clock::now() - launch) < Timeout || Timeout <= 0ms; 
-			LOG(DEBUG) << std::chrono::duration_cast<std::chrono::seconds>(clock::now() - launch) << " " << std::chrono::duration_cast<std::chrono::seconds>(Timeout);
 			if (!withinTime)
 			{
 				LOG(INFO) << "Session has timed out.";
@@ -107,11 +106,11 @@ namespace JSL
 	}
 
 
-	void Watcher::Message(const std::string & msg)
+	void Watcher::Message(std::string_view msg)
 	{
 		if (!Sender)
 		{
-			Sender = Socket::Broadcaster(Receiver.GetPath());
+			Sender = Socket::Broadcaster(Receiver.GetPath().string());
 			Receiver.Sync(Sender.value());
 		}
 

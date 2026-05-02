@@ -17,13 +17,13 @@ namespace JSL
 		public:
 		
 			//constructors & factories
-			Socket(const std::string & path, double timeout=2);
-			static std::optional<Socket> Broadcaster(const std::string & path, double timeout=2);
-			static std::optional<Socket> Antenna(const std::string & path, double timeout=2,bool forceAcquire = false,size_t gracePeriod = 50);
+			Socket(std::string_view path, double timeout=2);
+			static std::optional<Socket> Broadcaster(std::string_view path, double timeout=2);
+			static std::optional<Socket> Antenna(std::string_view path, double timeout=2,bool forceAcquire = false,size_t gracePeriod = 50);
 			static Socket Null();
 			
 			//modify behaviour
-			void Initialise(const std::string & path, double timeout=2);
+			void Initialise(std::string_view path, double timeout=2);
 			void SetTimeout(double seconds);
 			void SetTimeout(timeval time);
 			
@@ -32,8 +32,8 @@ namespace JSL
 			int Descriptor();
 			
 			//comms functions
-			void Send(const std::string & msg);
-			std::string SendAndReply(const std::string & msg, double timeout=2);
+			void Send(std::string_view msg);
+			std::string SendAndReply(std::string_view msg, double timeout=2);
 			std::string Read();
 			std::pair<std::string,Socket> ReadAndReply();
 			

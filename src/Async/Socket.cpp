@@ -14,7 +14,7 @@ namespace JSL
 		SetTimeout(2);
 	}
 
-	void Socket::Initialise(const std::string & path, double timeout)
+	void Socket::Initialise(std::string_view path, double timeout)
 	{
 		Path = path;
 		Bindable = true;
@@ -26,7 +26,7 @@ namespace JSL
 		}
 		else
 		{
-			throw std::runtime_error(path + "too long for a Unix Domain Socket");
+			throw std::runtime_error(static_cast<std::string>(path) + "too long for a Unix Domain Socket");
 		}
 
 		FileDescriptor = socket(AF_UNIX,SOCK_SEQPACKET,0); //use STREAM not SEQPACKET for windows compatibility 
@@ -41,12 +41,12 @@ namespace JSL
 		SetTimeout(timeout);
 	}
 
-	Socket::Socket(const std::string & path, double timeout)
+	Socket::Socket(std::string_view path, double timeout)
 	{
 		Initialise(path,timeout);
 	}
 
-	std::optional<Socket> Socket::Broadcaster(const std::string & path, double timeout)
+	std::optional<Socket> Socket::Broadcaster(std::string_view path, double timeout)
 	{
 		Socket out(path,timeout);
 		if (out.SocketMonitored)
@@ -55,7 +55,7 @@ namespace JSL
 		}
 		return std::nullopt;
 	}
-	std::optional<Socket> Socket::Antenna(const std::string & path,  double timeout, bool forceAcquire, size_t gracePeriod)
+	std::optional<Socket> Socket::Antenna(std::string_view path,  double timeout, bool forceAcquire, size_t gracePeriod)
 	{
 		Socket out(path,timeout);
 		if (out.SocketMonitored && !forceAcquire)
@@ -178,7 +178,7 @@ namespace JSL
 		setsockopt(FileDescriptor, SOL_SOCKET, SO_RCVTIMEO, (const char*)&Timeout, sizeof(Timeout));
 	}
 
-	void Socket::Send(const std::string & msg)
+	void Socket::Send(std::string_view msg)
 	{
 		if (FileDescriptor == -1) internal::FatalError("Bad socket",JSL_LOCATION) << "Cannot write to an expired socket";
 		//two stage send for SOCK_STREAM
@@ -190,15 +190,15 @@ namespace JSL
 		
 		uint32_t length = static_cast<uint32_t>(msg.length());
     
-
+		std::string copy(msg); //need to make a copy for c_str()
 
 		//send the actual message
-         if (write(FileDescriptor, msg.c_str(),length) == -1)
+         if (write(FileDescriptor, copy.c_str(),length) == -1)
         {
             internal::FatalError("Failed to send message",JSL_LOCATION) << "Command '" << msg << "' not sent";
         }
 	}
-	std::string Socket::SendAndReply(const std::string & msg, double timeout)
+	std::string Socket::SendAndReply(std::string_view msg, double timeout)
 	{
 		SetTimeout(timeout);
 		Send(msg);
