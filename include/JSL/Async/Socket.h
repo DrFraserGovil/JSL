@@ -83,6 +83,7 @@ namespace JSL
 				
 			};
 			void SetTimeout(double seconds);
+			void Deactivate(){Active = false;}
 		private:
 			Antenna();
 			double Timeout = 2;

@@ -5,8 +5,12 @@
 #include <set>
 #include <thread>
 
+
+#include <JSL.h>
+
 namespace JSL
 {
+	namespace fs = std::filesystem;
 	std::optional<Watcher> Watcher::Create(std::string_view socketName,double timeout, bool forceAcquire)
 	{
 		auto r = Antenna::Create(socketName,forceAcquire);
@@ -37,7 +41,7 @@ namespace JSL
 	void Watcher::Run()
 	{
 		BlockNewAdds = true;
-		
+		InitialiseTime = clock::now();
 		//do some checks to see if running is a good idea
 		if (INotifyID != -1 && !Callbacks.contains(INotifyID))
 		{
@@ -49,34 +53,37 @@ namespace JSL
 			return;
 		}
 
-		
 		bool Running = true;
-		clock::time_point launch = clock::now(); 
+		clock::time_point lastPing = clock::now(); 
 		while (Running)
 		{
 			int currentBlock = BlockingTime;
-			if (!DebounceQueue.empty())
+		
+			if (AwaitingDebounce)
 			{
 				//wow this is verbose
-				int remainingMilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(DebounceQueue.front().ActivationTime - clock::now()).count();
+				int remainingMilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(Wakeup - clock::now()).count();
 				currentBlock = std::max(0, (int)std::min(currentBlock, remainingMilliseconds));
 			}
-			int pollresult = poll(PollCatchers.data(),PollCatchers.size(),currentBlock);
 
-			while (!DebounceQueue.empty() && clock::now() >= DebounceQueue.front().ActivationTime)
+			int pollresult = poll(PollCatchers.data(),PollCatchers.size(),currentBlock);
+			if (AwaitingDebounce && clock::now() >= Wakeup)
 			{
-				auto & obj = DebounceQueue.front();
-				CurrentDebounce.erase(obj.ID);
-				obj.Function();
-				DebounceQueue.pop();
+				for (auto file : FileCache)
+				{
+					CachedCallback(file);
+				}
+				FileCache.clear();
+				AwaitingDebounce = false;
 			}
 
-			bool withinTime = (clock::now() - launch) < Timeout || Timeout <= 0ms; 
+			bool withinTime = (clock::now() - lastPing) < Timeout || Timeout <= 0ms; 
 			if (!withinTime)
 			{
 				LOG(INFO) << "Session has timed out.";
 				Running = false;
 			}
+			
 			if (pollresult <= 0)
 			{
 				if (errno == EINTR || pollresult == 0) continue; //no wakeup, just a timeout
@@ -96,6 +103,7 @@ namespace JSL
 
 			//do the runtime checks
 			Running &= Receiver.IsActive();
+			lastPing = clock::now();
 		}
 		BlockNewAdds = false;
 	}
@@ -164,6 +172,32 @@ namespace JSL
 
 	}
 
+	void Watcher::Shutdown()
+	{
+		Receiver.Deactivate();
+	}
+
+	std::set<fs::path> Watcher::GetWatchedFiles()
+	{
+		std::set<fs::path> out;
+		for (auto [k,v] : WatchMap)
+		{
+			out.insert(v);
+		}
+		return out;
+	}
+	std::chrono::steady_clock::duration Watcher::GetRuntime()
+	{
+		if (InitialiseTime)
+		{
+			return clock::now() - InitialiseTime.value(); 
+		}
+		else
+		{
+			return std::chrono::nanoseconds(0);
+		}
+	}
+
 	void Watcher::SetSocketCallback(std::function<void(std::string_view)> callback)
 	{
 		int fd = Receiver.GetDescriptor();
@@ -188,7 +222,7 @@ namespace JSL
 		});
 	}
 
-	namespace fs = std::filesystem;
+	
 	int Watcher::Watch(fs::path path,uint32_t watchFlags)
 	{
 		if (!fs::exists(path))
@@ -209,11 +243,10 @@ namespace JSL
 
 	alignas(struct inotify_event) thread_local char buffer[4096]; //cstyle buffer array
 
-	std::set<FileChange> Watcher::GetFileBatch()
+	void Watcher::UpdateFileBatch()
 	{
 		int length = read(INotifyID, buffer,sizeof(buffer));
 		int i = 0;
-		std::set<FileChange> batch;
 		
 		while (i < length)
 		{
@@ -233,23 +266,22 @@ namespace JSL
 				
 				auto report = FileChange(path, event->mask);
 
-				auto loc = batch.find(report);
-				if (loc == batch.end())
+				auto loc = FileCache.find(report);
+				if (loc == FileCache.end())
 				{
-					batch.insert(report);
+					FileCache.insert(report);
 				}
 				else
 				{
-					auto old = batch.extract(loc);
+					auto old = FileCache.extract(loc);
 					old.value().Mask |= report.Mask;
-					batch.insert(std::move(old));
+					FileCache.insert(std::move(old));
 				}
 			}
 		
 
 			i += sizeof(struct inotify_event) + event->len;
 		}
-		return batch;
 	}
 
 	void Watcher::SetInotifyCallback(std::function<void(const FileChange &)> callback)
@@ -269,26 +301,25 @@ namespace JSL
 
 		}
 		
+		CachedCallback = [this,callback](auto file)
+		{
+			callback(file);
+		};
+
 		Callbacks[INotifyID] = [this,callback]()
 		{
-
-			if (!CurrentDebounce.contains(INotifyID))
+			if (!AwaitingDebounce)
 			{
-				CurrentDebounce.insert(INotifyID);
-				DebounceQueue.emplace(INotifyID,clock::now() + std::chrono::milliseconds(DebounceMS),
-				[this,callback]()
-				{
-					auto batch = GetFileBatch();
-					for (auto & file : batch)
-					{
-						callback(file);
-					}
-				}
-			);
+				AwaitingDebounce = true;
+				Wakeup = clock::now() + std::chrono::milliseconds(DebounceMS);
 			}
+			UpdateFileBatch();
 		};
 	}
-
+	void Watcher::SetDebounce(size_t milliseconds)
+	{
+		DebounceMS = milliseconds;
+	}
 	void Watcher::Unwatch(int id)
 	{
 		if (!WatchMap.contains(id))
@@ -296,11 +327,11 @@ namespace JSL
 			return; //unwatching a nonwatched file is not an error
 		}
 
-		int attempt = inotify_rm_watch(INotifyID,id);
-		if (attempt <0)
-		{
-			internal::FatalError("Bad inotify_rm",JSL_LOCATION) << "Could not unwatch " << WatchMap[id].string() << " inotify has crashed";
-		}
+		inotify_rm_watch(INotifyID,id);
+		// if (attempt <0)
+		// {
+		// 	internal::FatalError("Bad inotify_rm",JSL_LOCATION) << "Could not unwatch " << WatchMap[id].string() << " inotify has crashed";
+		// }
 		WatchMap.erase(id);
 	}
 	void Watcher::Unwatch(fs::path file)

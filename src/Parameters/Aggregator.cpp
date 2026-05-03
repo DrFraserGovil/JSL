@@ -23,7 +23,7 @@ namespace JSL::Parameter
         auto cmds = InvokedCommands();
         if (Help || JSL::contains("help",cmds))
         {
-            MainPrintHelp();
+            HelpMenu();
             std::exit(0);
         }
     }
@@ -43,7 +43,7 @@ namespace JSL::Parameter
         return (std::string)prefix + text + Format::Reset();
     }
 
-    void Aggregator::MainPrintHelp()
+    void Aggregator::HelpMenu()
     {
         std::cout << "Usage:\n";
         std::cout << "\t" << cmdCapture  << " [commands] [options]\n";

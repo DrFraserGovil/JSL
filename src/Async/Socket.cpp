@@ -246,15 +246,7 @@ namespace JSL
 				<< "Failed to read from socket " << Resources.FD 
 				<< " at " << Resources.Path.string();
 		}
-
-
-		
-		std::string msg(buffer.data(),nbytes);
-		if (JSL::iEquals(msg,"exit") || JSL::iEquals(msg,"shutdown"))
-		{
-			Active = false;
-		}
-		return msg;
+		return std::string(buffer.data(),nbytes);
 	}
 
 

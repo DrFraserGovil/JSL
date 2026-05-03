@@ -18,6 +18,7 @@ namespace JSL::Parameter
 
         std::vector<std::string> InvokedCommands();
         std::pair<std::set<std::string>, std::set<std::string>> ParseCommands();
+        void HelpMenu();
         protected:
             static std::map<std::string,std::string> & RegisteredCommands();
             std::string & GetDefaultCommand();
@@ -26,6 +27,6 @@ namespace JSL::Parameter
             std::string Name = "Root";
             bool Help;
             Setting<bool> HelpToggle;
-            void MainPrintHelp();
+            
     };
 }

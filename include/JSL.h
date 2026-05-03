@@ -19,7 +19,7 @@
 #include <JSL/Time.h>
 #include <JSL/Vectors.h>
 #include <JSL/Async.h>
-
+#include <JSL/Plot.h>
 // #include "Vectors/Search.h"
 // #include "Display/Display.h"
 // #include "Strings/Strings.h"

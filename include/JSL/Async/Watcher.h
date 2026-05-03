@@ -33,7 +33,7 @@ namespace JSL
             void SetSocketTimeout(double seconds);
             void SetMaxRuntime(double minutes);
             void SetBlockingTime(double seconds);
-
+            void SetDebounce(size_t milliseconds);
 
             void SetSocketCallback(std::function<void(std::string_view)> callback);
 
@@ -41,10 +41,13 @@ namespace JSL
             
             void SetCInCallback(std::function<void(std::string_view)> callback);
 
-            int Watch(std::filesystem::path path,uint32_t watchFlags = IN_MODIFY | IN_CREATE | IN_DELETE | IN_MOVE);
+            int Watch(std::filesystem::path path,uint32_t watchFlags = IN_MODIFY | IN_CREATE | IN_DELETE | IN_MOVE | IN_IGNORED);
             void Unwatch(int id);
+            void Shutdown();
             void Unwatch(std::filesystem::path path);
             void Message(std::string_view msg);
+            std::set<std::filesystem::path> GetWatchedFiles();
+            std::chrono::steady_clock::duration GetRuntime();
         private:
             bool BlockNewAdds = false;
             Watcher(Antenna && socketIn);
@@ -52,27 +55,21 @@ namespace JSL
             Antenna::Hotline Sender;
             std::vector<pollfd> PollCatchers;
             std::map<int,std::function<void()>> Callbacks;
-
             std::chrono::steady_clock::duration Timeout; // maximum runtime before exit
             int BlockingTime = 50; //milliseconds
             int INotifyID = -1;
             void InitialiseINotify();
             std::map<int, std::filesystem::path> WatchMap;
-            std::set<FileChange> GetFileBatch();
+            void UpdateFileBatch();
             size_t DebounceMS = 50;
+            std::optional<std::chrono::steady_clock::time_point> InitialiseTime;
 
-            std::set<int> CurrentDebounce;
+            //special treatment for the inotify debounce
+            bool AwaitingDebounce;
+            std::chrono::steady_clock::time_point Wakeup;
+            std::function<void(FileChange)> CachedCallback; //pass by copy so can do async without needing a mutex
+            std::set<FileChange> FileCache = {};
 
-            struct debouncer
-            {
-                int ID;
-                std::chrono::steady_clock::time_point ActivationTime;
-                std::function<void()> Function;
-                debouncer(int id, std::chrono::steady_clock::time_point time,  std::function<void()> func): ID(id), ActivationTime(time), Function(func)
-                {};
-            };
-
-            std::queue<debouncer> DebounceQueue;
 
 
     };

@@ -34,7 +34,7 @@ namespace JSL::Log
 			Format::Command DebugColour = JSL::Format::Blue;
 
 			bool DebugBoxing = true;
-			size_t DebugLineSize = 40;
+			size_t DebugLineSize = 80;
 
 			//! Default initialiser. Initialises TerminalOutput, and sets Level=INFO, ShowHeaders=true and AppendNewline=true.
 			ConfigObject();
