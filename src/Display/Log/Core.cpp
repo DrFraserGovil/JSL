@@ -200,15 +200,15 @@ namespace JSL::Log
 			{
 				std::cout << linebreak << CurrentFormat << message[i] << getPadding(i,lineSizes) << LineSuffix;
 			}
+			if (Global::Config.TerminalOutput)
+			{
+				std::cout << Format::ResetAll;
+			}
 			if (Global::Config.AppendNewline)
 			{
 				std::cout << "\n"; 
 			}
 
-			if (Global::Config.TerminalOutput)
-			{
-				std::cout << Format::ResetAll;
-			}
 			if (Global::Config.IncludePrompt)
 			{
 				std::cout << Global::Config.Prompt << std::flush;

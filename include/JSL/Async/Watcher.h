@@ -10,6 +10,7 @@
 #include <sys/inotify.h>
 #include <queue>
 #include <set>
+#include <atomic>
 namespace JSL
 {
 
@@ -48,7 +49,10 @@ namespace JSL
             void Message(std::string_view msg);
             std::set<std::filesystem::path> GetWatchedFiles();
             std::chrono::steady_clock::duration GetRuntime();
+            bool Running(){return *LoopRunning;};
+            void PrepRun();
         private:
+            std::unique_ptr<std::atomic<bool>> LoopRunning = std::make_unique<std::atomic<bool>>(false);
             bool BlockNewAdds = false;
             Watcher(Antenna && socketIn);
             Antenna Receiver;

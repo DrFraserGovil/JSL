@@ -38,7 +38,7 @@ namespace JSL
 
 	using clock = std::chrono::steady_clock;
 	using namespace std::literals::chrono_literals;
-	void Watcher::Run()
+	void Watcher::PrepRun()
 	{
 		BlockNewAdds = true;
 		InitialiseTime = clock::now();
@@ -53,9 +53,14 @@ namespace JSL
 			return;
 		}
 
-		bool Running = true;
+		*LoopRunning = true;
+		
+	}
+	void Watcher::Run()
+	{
+		PrepRun();
 		clock::time_point lastPing = clock::now(); 
-		while (Running)
+		while (*LoopRunning)
 		{
 			int currentBlock = BlockingTime;
 		
@@ -81,7 +86,7 @@ namespace JSL
 			if (!withinTime)
 			{
 				LOG(INFO) << "Session has timed out.";
-				Running = false;
+				*LoopRunning = false;
 			}
 			
 			if (pollresult <= 0)
@@ -102,7 +107,7 @@ namespace JSL
 
 
 			//do the runtime checks
-			Running &= Receiver.IsActive();
+			*LoopRunning = *LoopRunning && Receiver.IsActive();
 			lastPing = clock::now();
 		}
 		BlockNewAdds = false;
@@ -175,6 +180,7 @@ namespace JSL
 	void Watcher::Shutdown()
 	{
 		Receiver.Deactivate();
+		*LoopRunning = false;
 	}
 
 	std::set<fs::path> Watcher::GetWatchedFiles()
