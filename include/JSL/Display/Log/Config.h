@@ -43,6 +43,7 @@ namespace JSL::Log
 			//! Convenient interface for setting Level from integer values
 			void SetLevel(int level);
 			void SetPrompt(std::string_view prompt);
+			void AlignSize(size_t debugReserve = 30);
 			void ResetPrompt();
 			bool IncludePrompt = false;
 			std::string Prompt = "";

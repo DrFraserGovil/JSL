@@ -1,6 +1,7 @@
 #include <JSL/Display/Log/Config.h>
 #include <JSL/Display/Log/Levels.h>
 #include <JSL/Display/ANSI_Codes.h>
+#include <JSL/Display/Size.h>
 
 namespace JSL::Log
 {
@@ -10,6 +11,7 @@ namespace JSL::Log
         ShowHeaders = true;
         AppendNewline = true;
         TerminalOutput = Terminal::IsANSICapable();
+        AlignSize();
     }
 
     void ConfigObject::SetLevel(int level)
@@ -43,6 +45,12 @@ namespace JSL::Log
         IncludePrompt = false;
     }
 
+    void ConfigObject::AlignSize(size_t debugReserve)
+    {
+        auto S = Terminal::GetDimensions();
+        DebugLineSize = std::max(debugReserve, S.Columns - debugReserve);
+    }
+    
     namespace Global
     {
         ConfigObject Config;
