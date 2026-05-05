@@ -9,6 +9,7 @@ namespace JSL::Terminal
 		size_t Rows;
 	};
 
+	//! Gets the character-dimensions of the terminal
 	Size GetDimensions();
 
 }
