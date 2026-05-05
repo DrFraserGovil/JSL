@@ -1,5 +1,6 @@
 #pragma once
 #include <JSL.h>
+#include <JSL/Async/ManagerBase.h>
 #include <condition_variable>
 #include <mutex>
 #include <queue>
@@ -7,74 +8,31 @@
 #include <functional>
 namespace JSL
 {
-	namespace Task
-	{
-		enum Origin
-		{
-			CIN,
-			FILE,
-			SOCKET,
-			SHUTDOWN,
-		};
-		struct Instruction
-		{
-			Origin origin;
-			std::variant<std::string, JSL::FileChange> payload;
-			Instruction(Origin in, std::string_view msg)
-			{
-				origin = in;
-				payload = static_cast<std::string>(msg);
-			}
-			Instruction(Origin in, FileChange msg)
-			{
-				origin = in;
-				payload = msg;
-			}
-			static Instruction Shutdown()
-			{
-				return Instruction(Origin::SHUTDOWN,"");
-			}
-		};
-	}
+	
 
-	class EventManager
+	class SerialEventManager: public internal::HandlerBase
 	{
 		public:
-			static std::unique_ptr<EventManager> Create(std::string_view identifier);	
-			EventManager(Watcher && w);
+			SerialEventManager(std::string_view identifier);
 			
-			void Run();
+			void AddTask(Task::Instruction job);
+			
+			void Synchroniser(){}; //does nothing!
+	};
 
-			void SetCinCallback(std::function<void(std::string_view)> callback);
-			void SetSocketCallback(std::function<void(std::string_view)> callback);
-			void SetTextCallback(std::function<void(std::string_view)> callback);
-			void SetFileCallback(std::function<void(JSL::FileChange)> callback);
+
+	class ParallelEventManager : public internal::HandlerBase
+	{
+		public:
+			ParallelEventManager(size_t ncores, std::string_view identifier);
+
+			void SerialTask(Task::Instruction job); //adds jobs into the Dispatcher queue, which execute in serial, whilst no other threads active
+
 			void AddTask(Task::Instruction job);
 
-			std::set<std::string,std::less<>> ShutdownCommands;
-
-			// Delete copy and move to be explicit
-			EventManager(const EventManager&) = delete;
-			EventManager& operator=(const EventManager&) = delete;
-			EventManager(EventManager&&) = delete;
-			EventManager& operator=(EventManager&&) = delete;
+			void Synchroniser();
 		private:
-			
-			void Exit();
-
-			std::queue<Task::Instruction> TaskQueue;
-
-			Watcher Watch;
-
-			std::function<void(std::string_view)> callback_cin;
-			std::function<void(std::string_view)> callback_socket;
-			std::function<void(JSL::FileChange)> callback_file;
-			
-			void Process(Task::Instruction job);
-			//these are pointers to make the class movable
-			std::mutex Sync;
-			std::condition_variable CV;
-
-			
+			Parallel::Pool Workers;
 	};
+
 }
