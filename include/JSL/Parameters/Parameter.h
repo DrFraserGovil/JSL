@@ -114,7 +114,7 @@ namespace JSL::Parameter
 
             std::string ValueString() const
             {
-                return MakeString(InternalValue);
+                return String::represent(InternalValue);
             }
             
             void Convert(std::string_view sv)
@@ -129,7 +129,7 @@ namespace JSL::Parameter
                     {
                         JSL::internal::FatalError("Parameter parsing error",JSL_LOCATION) << "You cannot pass a vector-delimiter to a non-vector Parameter";
                     }
-                    InternalValue = ParseTo<T>(sv);
+                    InternalValue = String::ParseTo<T>(sv);
                 }
                 if (ConnectedValue)
                 {

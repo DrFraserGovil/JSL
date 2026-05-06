@@ -2,7 +2,7 @@
 #include <vector>
 #include <string_view>
 #include <string>
-namespace JSL
+namespace JSL::String
 {
     
     /*! @brief Splits a string into a vector, with each element indicated by the delimiter string

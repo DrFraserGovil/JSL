@@ -16,7 +16,7 @@
     Special overloads are provided that allow direct stringview->string conversion.
 */
 
-namespace JSL
+namespace JSL::String
 {
     namespace internal
     {
@@ -103,7 +103,7 @@ namespace JSL
                 sv = trim_view(sv,"//");
                 if (sv.empty()) 
                 {
-                    internal::FatalError("Cannot parse empty string",JSL_LOCATION) << "Empty-vectors can only be instantiated if they have enclosing braces -- empty strings are not valid.";
+                    JSL::internal::FatalError("Cannot parse empty string",JSL_LOCATION) << "Empty-vectors can only be instantiated if they have enclosing braces -- empty strings are not valid.";
                 }
 
 
@@ -122,7 +122,7 @@ namespace JSL
                 {
                     if (elem_sv.empty())
                     {
-                        internal::FatalError("Cannot parse empty string",JSL_LOCATION)<< "Element " << i << " of the vector " << sv << " is empty.\nVector-conversion does not accept empty strings (even if empty strings are allowed for base type";
+                        JSL::internal::FatalError("Cannot parse empty string",JSL_LOCATION)<< "Element " << i << " of the vector " << sv << " is empty.\nVector-conversion does not accept empty strings (even if empty strings are allowed for base type";
                     }
                     ++i;
                     result_vec.push_back(Converter<T_Inner>::internalConvert(elem_sv));
@@ -184,7 +184,7 @@ namespace JSL
         constexpr std::size_t expected_size = sizeof...(Ts);
         if (sv_vec.size() != expected_size) 
         {
-            internal::FatalError("Tuple conversion: Incorrect token count.",JSL_LOCATION) << "Tuple conversion error: Token count in vector (" << sv_vec.size()<< ") does not equal tuple size (" << expected_size <<")";
+            JSL::internal::FatalError("Tuple conversion: Incorrect token count.",JSL_LOCATION) << "Tuple conversion error: Token count in vector (" << sv_vec.size()<< ") does not equal tuple size (" << expected_size <<")";
         }
         
 

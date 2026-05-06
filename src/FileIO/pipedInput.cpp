@@ -65,7 +65,7 @@ namespace JSL::Input
    void forSplitLineInPipe(std::function<void(std::vector<std::string_view>)>lineProcessor,std::string_view delimiter)
     {
         forLineInPipe([&](std::string_view line){
-            lineProcessor(JSL::split_view(line,delimiter));
+            lineProcessor(JSL::String::split_view(line,delimiter));
         });
     }
 

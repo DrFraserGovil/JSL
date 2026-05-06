@@ -79,7 +79,7 @@ namespace JSL
                     std::cout << "  -" << key;
                     std::cout << keyNameGap << name;
 
-                    auto descLines = split_view(std::get<3>(message),"\n");
+                    auto descLines = String::split_view(std::get<3>(message),"\n");
                     std::cout << nameDescGap  << descLines[0] << "\n";
                     for (size_t i = 1; i < descLines.size(); ++i)
                     {

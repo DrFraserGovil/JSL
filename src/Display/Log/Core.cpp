@@ -163,7 +163,7 @@ namespace JSL::Log
 			linebreak += "\t\t";
 		}
 		
-		std::vector<std::string_view> message = split_view(Buffer.view(),"\n");
+		std::vector<std::string_view> message = String::split_view(Buffer.view(),"\n");
 		const bool needBoxing = (Level == DEBUG && Global::Config.DebugBoxing);
 		if (needBoxing)
 		{

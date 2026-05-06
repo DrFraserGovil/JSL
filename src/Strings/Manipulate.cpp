@@ -1,7 +1,7 @@
 #include <JSL/Strings/Manipulate.h>
 #include <JSL/internal/error.h>
 #include <cctype>
-namespace JSL
+namespace JSL::String
 {
     /*
         Trimming functions

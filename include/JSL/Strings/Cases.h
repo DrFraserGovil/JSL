@@ -3,7 +3,7 @@
 #include <string>
 #include <string_view>
 
-namespace JSL
+namespace JSL::String
 {
     void toUpper(std::string & input);
     std::string getUpper(std::string_view input);

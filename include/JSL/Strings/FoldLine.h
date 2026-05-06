@@ -3,7 +3,7 @@
 #include <string_view>
 #include <vector>
 
-namespace JSL
+namespace JSL::String
 {
     
     /*!

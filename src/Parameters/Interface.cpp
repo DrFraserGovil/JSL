@@ -109,7 +109,7 @@ namespace JSL::internal::Parameter
            if (linevec.size() >= 2)
            {
                 //treat the first element as the key, and the rest of the line as the value, rejoining with the configDelimiter in case the value itself contained the delimiter
-                Options[static_cast<std::string>(Normalize(linevec[0]))] = JSL::join(linevec, 1, linevec.size(), configDelimiter);
+                Options[static_cast<std::string>(Normalize(linevec[0]))] = JSL::String::join(linevec, 1, linevec.size(), configDelimiter);
            }
         });
     }

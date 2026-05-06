@@ -77,7 +77,7 @@ namespace JSL::Event::internal
 		if (ShutdownCommands.empty())
 		{
 			ShutdownCommands = {"exit"};
-			LOG(WARN) << "No ShutdownCommand(s) assigned. Default inserted to prevent hardlocking:\n" << JSL::MakeString(ShutdownCommands);
+			LOG(WARN) << "No ShutdownCommand(s) assigned. Default inserted to prevent hardlocking:\n" << JSL::String::represent(ShutdownCommands);
 		}
 
 

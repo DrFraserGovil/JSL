@@ -25,7 +25,7 @@ namespace JSL
         forLineIn(fileName,
             [&](auto line)
             {
-                vectorProcessor(split_view(line,delimiter));
+                vectorProcessor(String::split_view(line,delimiter));
             }
         );
     }

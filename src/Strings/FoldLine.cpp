@@ -1,7 +1,7 @@
 #include <JSL/Strings.h>
 #include <JSL/internal/error.h>
 #include <JSL/Vectors/Join.h>
-namespace JSL
+namespace JSL::String
 {
     size_t trueSize(std::string_view str,size_t tabSize)
     {
@@ -146,7 +146,7 @@ namespace JSL
     {
         if (input.size() != widths.size())
         {
-            internal::FatalError("Size mismatch",JSL_LOCATION) << "Input size (" << input.size() << ") must match widths (" << widths.size() <<") for column splitting";
+            JSL::internal::FatalError("Size mismatch",JSL_LOCATION) << "Input size (" << input.size() << ") must match widths (" << widths.size() <<") for column splitting";
         }
         std::vector<std::vector<std::string>> linesplitInputs;
         size_t maxL = 0;
