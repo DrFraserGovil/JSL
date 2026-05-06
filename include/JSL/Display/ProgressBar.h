@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include <vector>
-namespace JSL::Progress
+namespace JSL::Display::Progress
 {
     namespace internal
     {

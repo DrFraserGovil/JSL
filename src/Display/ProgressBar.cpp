@@ -3,7 +3,7 @@
 #include <JSL/Display/Log.h>
 #include <sstream>
 
-namespace JSL::Progress
+namespace JSL::Display::Progress
 {
     namespace internal
     {

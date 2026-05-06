@@ -157,7 +157,7 @@ namespace JSL
             for (auto split : lines)
             {
                 auto folded = foldToWidth(split,widths[i]);
-                JSL::append(foldedColumn, folded);
+                JSL::Vector::append(foldedColumn, folded);
             }
             linesplitInputs.push_back(foldedColumn);
             maxL = std::max(maxL,foldedColumn.size());

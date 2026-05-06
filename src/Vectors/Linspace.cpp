@@ -1,6 +1,6 @@
 #include <JSL/Vectors/Linspace.h>
 
-std::vector<double> JSL::Linspace(double begin, double end, size_t resolution)
+std::vector<double> JSL::Vector::Linspace(double begin, double end, size_t resolution)
 {
     double delta = (end - begin)/(resolution-1);
     std::vector<double> out(resolution);

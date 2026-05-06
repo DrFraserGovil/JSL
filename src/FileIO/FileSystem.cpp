@@ -37,13 +37,13 @@ namespace JSL::Filesystem
     std::vector<std::filesystem::path> Structure::ListFiles(bool includeOthers)
     {
         auto out = Files;
-        if (includeOthers){JSL::append(out,Other);};
+        if (includeOthers){JSL::Vector::append(out,Other);};
 
         if (IsRecursive)
         {
             for (auto & dir : Directories)
             {
-                JSL::append(out,dir.ListFiles());
+                JSL::Vector::append(out,dir.ListFiles());
             }
         }
         return out;
@@ -57,14 +57,14 @@ namespace JSL::Filesystem
 
             if (IsRecursive)
             {       
-                JSL::append(out,dir.ListDirs());    
+                JSL::Vector::append(out,dir.ListDirs());    
             }
         }
         return out;
     }
     std::vector<std::filesystem::path> Structure::ListAll(bool includeOthers)
     {
-        return JSL::concat(ListFiles(includeOthers),ListDirs());
+        return JSL::Vector::concat(ListFiles(includeOthers),ListDirs());
     }
 
     std::vector<std::filesystem::path> Structure::MatchFiles(std::string regexString)
@@ -101,7 +101,7 @@ namespace JSL::Filesystem
 
         for (auto & dir : Directories)
         {
-            JSL::append(out,dir.MatchFiles(regexFilter));
+            JSL::Vector::append(out,dir.MatchFiles(regexFilter));
         }
         return out;
     }

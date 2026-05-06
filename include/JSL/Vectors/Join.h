@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-namespace JSL
+namespace JSL::Vector
 {
     template <class T>
     inline void append(std::vector<T> & a, const std::vector<T> & b)

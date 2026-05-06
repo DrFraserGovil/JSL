@@ -21,7 +21,7 @@ namespace JSL::Parameter
         cmdCapture = std::string{argv[0]};
         Parameter::NestedAggregator::Parse(argc, argv);
         auto cmds = InvokedCommands();
-        if (Help || JSL::contains("help",cmds))
+        if (Help || JSL::Vector::contains("help",cmds))
         {
             HelpMenu();
             std::exit(0);

@@ -4,7 +4,7 @@
 #include <vector>
 #include <ranges>
 #include <concepts>
-namespace JSL
+namespace JSL::Vector
 {
 	inline constexpr size_t NotFound = static_cast<size_t>(-1);
 	struct SearchResult

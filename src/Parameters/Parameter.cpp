@@ -78,7 +78,7 @@ namespace JSL::internal::Parameter
             }
 
             auto & registered = Register();
-            if (contains(trigger,registered))
+            if (Vector::contains(trigger,registered))
             {
                 JSL::internal::FatalError("Parameter trigger " + trigger + " is already in use by another Parameter", JSL_LOCATION) ;
             }
