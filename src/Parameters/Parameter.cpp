@@ -6,7 +6,7 @@ namespace JSL::internal::Parameter
 {
     void ParameterBase::Parse(int argc, char** argv)
     {
-        Interface & instance = Interface::Get();
+        CommandLineReader & instance = CommandLineReader::Get();
         if (!instance.IsConfigured())
         {
             instance.Parse(argc, argv);
@@ -27,7 +27,7 @@ namespace JSL::internal::Parameter
 
     void ParameterBase::ParseFromCache()
     {
-        auto & instance = Interface::Get();
+        auto & instance = CommandLineReader::Get();
         
         for (auto trigger : TriggerList)
         {

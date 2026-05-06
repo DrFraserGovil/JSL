@@ -1,5 +1,6 @@
 #include <JSL/Parameters/Aggregator.h>
 #include <JSL/Vectors/Search.h>
+#include <JSL/Strings/FoldLine.h>
 #include <JSL/Display.h>
 #include <JSL/FileIO/pipedInput.h>
 namespace JSL::Parameter
@@ -76,7 +77,7 @@ namespace JSL::Parameter
     }
      std::vector<std::string> Parameter::Aggregator::InvokedCommands()
     {
-        auto & instance = internal::Parameter::Interface::Get();
+        auto & instance = internal::Parameter::CommandLineReader::Get();
         return instance.Commands;
     }
     std::string & Parameter::Aggregator::GetDefaultCommand()

@@ -1,7 +1,9 @@
 #pragma once
-#include "Interface.h"
+#include <JSL/internal/concepts.h>
+#include <JSL/Strings/Represent.h>
+#include <JSL/Strings/ParseTo.h>
+#include "CLI_Reader.h"
 #include <algorithm>
-#include "Parsing.h"
 #include <string>
 #include <string_view>
 #include <algorithm>
@@ -121,7 +123,7 @@ namespace JSL::Parameter
             {
                 if constexpr (JSL::internal::is_vector<T>::value)
                 {
-                    InternalValue = hasParseDelimiter ? ParseTo<T>(sv, VectorParseDelimiter) : ParseTo<T>(sv);
+                    InternalValue = hasParseDelimiter ? String::ParseTo<T>(sv, VectorParseDelimiter) : String::ParseTo<T>(sv);
                 }
                 else
                 {
@@ -141,7 +143,7 @@ namespace JSL::Parameter
             {
                 if constexpr (JSL::internal::is_vector<T>::value)
                 {
-                    InternalValue.push_back(ParseTo<typename T::value_type>(value));
+                    InternalValue.push_back(String::ParseTo<typename T::value_type>(value));
                     if (ConnectedValue)
                     {
                         *ConnectedValue = InternalValue;
@@ -156,7 +158,7 @@ namespace JSL::Parameter
             {
                 if constexpr (JSL::internal::is_vector<T>::value)
                 {
-                    auto parsed = ParseTo<T>(value);
+                    auto parsed = String::ParseTo<T>(value);
                     InternalValue.insert(InternalValue.end(), parsed.begin(), parsed.end());
 
                     if (ConnectedValue)
@@ -173,8 +175,8 @@ namespace JSL::Parameter
             {
                 if constexpr (JSL::internal::is_vector<T>::value)
                 {
-                    // InternalValue.push_back(ParseTo<typename T::value_type>(value));
-                    auto dvalue = ParseTo<typename T::value_type>(value);
+                    // InternalValue.push_back(String::ParseTo<typename T::value_type>(value));
+                    auto dvalue = String::ParseTo<typename T::value_type>(value);
                     std::erase(InternalValue,dvalue);
                     if (ConnectedValue)
                     {

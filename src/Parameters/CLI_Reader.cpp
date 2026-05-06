@@ -1,4 +1,4 @@
-#include <JSL/Parameters/Interface.h>
+#include <JSL/Parameters/CLI_Reader.h>
 #include <JSL/FileIO.h>
 #include <JSL/Strings/Join.h>
 #include <cstring>
@@ -29,31 +29,31 @@ namespace JSL::internal::Parameter
     }
 
 
-    Interface::Interface(int argc, char**argv)
+    CommandLineReader::CommandLineReader(int argc, char**argv)
     {
         Parse(argc, argv);
     }
-    void Interface::Reset()
+    void CommandLineReader::Reset()
     {
         Configured = false;
         Commands.clear();
         Options.clear();
     }
-    bool Interface::IsConfigured()
+    bool CommandLineReader::IsConfigured()
     {
         return Configured;
     }
-    std::string_view Interface::GetOption(std::string_view key) const
+    std::string_view CommandLineReader::GetOption(std::string_view key) const
     {
         //trust the user to have already run contains
         std::string skey = static_cast<std::string>(Normalize(key));
         return Options.at(skey);
     }
-    bool Interface::Contains(std::string_view option) const
+    bool CommandLineReader::Contains(std::string_view option) const
     {
         return Options.contains(static_cast<std::string>(Normalize(option)));
     }
-    void Interface::Parse(int argc, char**argv)
+    void CommandLineReader::Parse(int argc, char**argv)
     {
         Reset();
         //start at 1 to skip the executable name
@@ -102,7 +102,7 @@ namespace JSL::internal::Parameter
         Configured = true;
     }
 
-    void Interface::Configure(std::filesystem::path configFile, std::string_view configDelimiter)
+    void CommandLineReader::Configure(std::filesystem::path configFile, std::string_view configDelimiter)
     {
         forSplitLineIn(configFile, configDelimiter, [&](auto linevec)
         {

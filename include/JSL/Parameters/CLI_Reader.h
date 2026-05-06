@@ -10,16 +10,16 @@ namespace JSL::internal::Parameter
         std::string_view Normalize(std::string_view s); 
 
 
-    class Interface
+    class CommandLineReader
     {
         public:
-            static Interface & Get()
+            static CommandLineReader & Get()
             {
-                static Interface instance;
+                static CommandLineReader instance;
                 return instance;
             }
-            Interface() = default;
-            Interface(int argc, char**argv);
+            CommandLineReader() = default;
+            CommandLineReader(int argc, char**argv);
             void Parse(int argc, char**argv);
             void Configure(std::filesystem::path configFile, std::string_view configDelimiter);
             void Reset();

@@ -6,6 +6,7 @@
 #include "Manipulate.h"
 #include "Cases.h"
 #include <JSL/internal/error.h>
+#include <JSL/internal/concepts.h>
 
 /*
     This file provides a robust return-value interface for converting string-views (and, implicitly, strings) into a candidate type
@@ -149,16 +150,8 @@ namespace JSL::String
 
 
 
-    //Define a nice C++20 concept which defines a 'vector type' as any std::vector<T>, but excludes std::string from being too eager
-        template<typename T>
-        struct is_vector : std::false_type {};
-        template<typename T, typename A>
-        struct is_vector<std::vector<T, A>> : std::true_type {};
-    template<typename T>
-    concept VectorType = is_vector<T>::value;
-    //end concept  
 
-    template<VectorType T>
+    template<JSL::internal::VectorType T>
     T inline ParseTo(std::string_view sv, std::string_view delimiter)
     {   
         return internal::Converter<T>::internalConvert(sv, delimiter);

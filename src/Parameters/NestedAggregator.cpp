@@ -1,6 +1,6 @@
 #include <JSL/Parameters/NestedAggregator.h>
 #include <JSL/Parameters/Parameter.h>
-#include <JSL/Parameters/Interface.h>
+#include <JSL/Parameters/CLI_Reader.h>
 #include <JSL/internal/error.h>
 #include <JSL/Vectors/Search.h>
 #include <JSL/Display/Log.h>
@@ -23,7 +23,7 @@ namespace JSL::Parameter
     void Parameter::NestedAggregator::Parse(int argc, char** argv)
     {
         //only parse once!
-        auto & instance = internal::Parameter::Interface::Get();
+        auto & instance = internal::Parameter::CommandLineReader::Get();
         instance.Parse(argc, argv);
         
         for (auto [key,value] : instance.Options)
