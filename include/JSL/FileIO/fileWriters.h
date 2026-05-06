@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <string_view>
 #include <JSL/internal/error.h>
-namespace JSL
+namespace JSL::IO
 {
     namespace internal
     {
@@ -21,7 +21,7 @@ namespace JSL
 	 * Creates a blank file at the specified location, overwriting any other file at the given location
 	 * \param filename The file which the system will attempt to open
 	*/
-    void initialiseFile(const std::filesystem::path& filename);
+    void initialise(const std::filesystem::path& filename);
 
     /*!
 	 * Opens the provided file and appends the provided string to the file, before closing it. If the file does not exist, it creates it. 
@@ -29,10 +29,10 @@ namespace JSL
 	 * \param content The desired string to be appended to the file (accepts control characters)
      * \param mode The open-mode; defaults to append (existing file not deleted)
 	*/
-	void writeStringToFile(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode = std::ios::app);
+	void writeString(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode = std::ios::app);
 
     template<typename...Ts>
-    void inline writeVectorToFile(const std::filesystem::path& filename, 
+    void inline writeVector(const std::filesystem::path& filename, 
                                     std::string_view delimiter, 
                                     const std::vector<Ts>&... vecs)
     {
@@ -45,7 +45,7 @@ namespace JSL
             const bool allEqual = ((vecs.size() == rowCount) && ...);
             if (!allEqual)
             {
-                internal::FatalError("Vector length mismatch",JSL_LOCATION) << "All vectors must be same length when writing simultaneously to file";
+                JSL::internal::FatalError("Vector length mismatch",JSL_LOCATION) << "All vectors must be same length when writing simultaneously to file";
             }
         }
 
@@ -77,7 +77,7 @@ namespace JSL
 	 * \param rowRelimiter The character(s) to be written at the end of each row *including* the final row. This will probably be a linebreak!
 	*/
     template<class T>
-    void inline writeMatrixToFile(  const std::filesystem::path& filename, 
+    void inline writeMatrix(  const std::filesystem::path& filename, 
                                     const std::string& columnDelimiter, 
                                     const std::vector<std::vector<T>>& contentMatrix,
                                     const std::string& rowDelimiter = "\n")

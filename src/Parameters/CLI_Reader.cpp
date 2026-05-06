@@ -104,7 +104,7 @@ namespace JSL::internal::Parameter
 
     void CommandLineReader::Configure(std::filesystem::path configFile, std::string_view configDelimiter)
     {
-        forSplitLineIn(configFile, configDelimiter, [&](auto linevec)
+        IO::forSplitLineIn(configFile, configDelimiter, [&](auto linevec)
         {
            if (linevec.size() >= 2)
            {

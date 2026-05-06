@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <filesystem>
 
-namespace JSL::Filesystem
+namespace JSL::IO::FileSystem
 {
     namespace fs = std::filesystem;
     Structure::Structure(fs::path target, bool recursive,int depth) : Path(target), IsRecursive(recursive)

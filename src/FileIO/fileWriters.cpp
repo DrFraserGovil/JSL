@@ -1,6 +1,6 @@
 #include <JSL/FileIO/fileWriters.h>
 
-namespace JSL
+namespace JSL::IO
 {
     namespace internal
     {
@@ -8,12 +8,12 @@ namespace JSL
         {
             if (!file.is_open())
             {
-                FatalError("I/O Error",JSL_LOCATION) << "Could not open file: " << path.string();
+                JSL::internal::FatalError("I/O Error",JSL_LOCATION) << "Could not open file: " << path.string();
             }
         }
     }
 
-    void initialiseFile(const std::filesystem::path& filename)
+    void initialise(const std::filesystem::path& filename)
     {
 		std::ofstream file(filename, std::ios::out);
         internal::checkFile(file, filename);
@@ -21,7 +21,7 @@ namespace JSL
 	}
 
 
-    void writeStringToFile(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode)
+    void writeString(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode)
     {
         std::ofstream file(filename, mode);
         internal::checkFile(file, filename);

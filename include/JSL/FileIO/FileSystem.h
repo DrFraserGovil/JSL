@@ -3,7 +3,7 @@
 #include <filesystem>
 #include <regex>
 #include <string>
-namespace JSL::Filesystem
+namespace JSL::IO::FileSystem
 {
     namespace fs = std::filesystem;
     class Structure

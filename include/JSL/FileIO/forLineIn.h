@@ -3,16 +3,16 @@
 #include <filesystem>
 #include <vector>
 
-namespace JSL
+namespace JSL::IO
 {
     void forLineIn(const std::filesystem::path fileName, std::function<void(std::string_view)> lineProcessor);
     
 
     void forSplitLineIn(const std::filesystem::path fileName, std::string_view delimiter,  std::function<void(std::vector<std::string_view>)> vectorProcessor);
 
-    std::vector<std::string> getFileLines(const std::filesystem::path fileName);
+    std::vector<std::string> getLines(const std::filesystem::path fileName);
     
-    std::vector<std::vector<std::string>> getFileWords(const std::filesystem::path fileName,std::string_view delimiter);
+    std::vector<std::vector<std::string>> getWords(const std::filesystem::path fileName,std::string_view delimiter);
 
 
     template <typename... Ts, typename Func>

@@ -3,7 +3,7 @@
 #include <string_view>
 #include <JSL/Strings.h>
 #include <JSL/internal/error.h>
-namespace JSL
+namespace JSL::IO
 {
     void forLineIn(const std::filesystem::path fileName, std::function<void(std::string_view)> lineProcessor)
     {

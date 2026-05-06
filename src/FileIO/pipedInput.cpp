@@ -15,7 +15,7 @@
 #endif
 
 
-namespace JSL::Input
+namespace JSL::IO::Pipe
 {
     //! A compile-time resolve alias for the platform specific isatty command \returns True if the program called with piped input (either via | or <). 
 	bool IsPiped()
@@ -31,11 +31,11 @@ namespace JSL::Input
 	}
 
     // !Performs the most basic readin --> saves the piped input to a string, and returns it
-	std::string savePipe()
+	std::string save()
     {
         std::ostringstream out;
         int i = 0;
-        forLineInPipe([&](std::string_view line){
+        forLineIn([&](std::string_view line){
             if (i > 0)
             {
                 out << "\n";
@@ -47,7 +47,7 @@ namespace JSL::Input
     }
 
 
-   void forLineInPipe(std::function<void(std::string_view)>lineProcessor)
+   void forLineIn(std::function<void(std::string_view)>lineProcessor)
     {
         if (!IsPiped())
         {
@@ -62,28 +62,13 @@ namespace JSL::Input
     }
 
 
-   void forSplitLineInPipe(std::function<void(std::vector<std::string_view>)>lineProcessor,std::string_view delimiter)
+   void forSplitLineIn(std::function<void(std::vector<std::string_view>)>lineProcessor,std::string_view delimiter)
     {
-        forLineInPipe([&](std::string_view line){
+        forLineIn([&](std::string_view line){
             lineProcessor(JSL::String::split_view(line,delimiter));
         });
     }
 
-	
-	// !Performs the most basic readin --> saves the piped input to a string, and returns it
-	std::string inline getPipedInput()
-    {
-        std::ostringstream out;
-        int i = 0;
-        forLineInPipe([&](std::string_view line){
-            if (i > 0)
-            {
-                out << "\n";
-            }
-            out << line;
-            ++i; 
-        });
-        return out.str();
-    }
+
 
 }
