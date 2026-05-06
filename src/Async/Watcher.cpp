@@ -8,7 +8,7 @@
 
 #include <JSL.h>
 
-namespace JSL::Async
+namespace JSL::Event
 {
 	using namespace JSL::internal;
 	namespace fs = std::filesystem;

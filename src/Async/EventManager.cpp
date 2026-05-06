@@ -1,17 +1,17 @@
 #include <JSL.h>
 
-namespace JSL::Async
+namespace JSL::Event::Serial
 {
-	SerialEventManager::SerialEventManager(std::string_view id) : HandlerBase(id)
+	Manager::Manager(std::string_view id) : HandlerBase(id)
 	{
 	}
-	SerialEventManager::SerialEventManager(Watcher & watch) : HandlerBase(watch)
+	Manager::Manager(Watcher & watch) : HandlerBase(watch)
 	{
 	}
 
 	
 	
-	void SerialEventManager::AddTask(Task::Instruction job)
+	void Manager::AddTask(Task::Instruction job)
 	{
 		ProtectAdd();
 		std::lock_guard lock(Sync);
@@ -19,20 +19,23 @@ namespace JSL::Async
 		CV.notify_one();
 		//lock released when guard goes out of scope
 	}
+}
 
-	ParallelEventManager::ParallelEventManager(size_t ncores, std::string_view id) : internal::HandlerBase(id), Workers(ncores)
+namespace JSL::Event::Async
+{
+	Manager::Manager(size_t ncores, std::string_view id) : internal::HandlerBase(id), Workers(ncores)
 	{
 	}
 
 	
-	ParallelEventManager::ParallelEventManager(size_t ncores, Watcher & watch) : internal::HandlerBase(watch), Workers(ncores)
+	Manager::Manager(size_t ncores, Watcher & watch) : internal::HandlerBase(watch), Workers(ncores)
 	{
 
 	}
 
 
 
-	void ParallelEventManager::AddTask(Task::Instruction job)
+	void Manager::AddTask(Task::Instruction job)
 	{
 		ProtectAdd();
 		bool serialQueued;
@@ -52,14 +55,14 @@ namespace JSL::Async
 		}
 	}
 
-	void ParallelEventManager::SerialTask(Task::Instruction job)
+	void Manager::SerialTask(Task::Instruction job)
 	{
 		std::lock_guard lock(Sync);
 		TaskQueue.push(std::move(job));
 		CV.notify_one();
 	}
 
-	void ParallelEventManager::Synchroniser()
+	void Manager::Synchroniser()
 	{
 		Workers.Synchronise();
 	}

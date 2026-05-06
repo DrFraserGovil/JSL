@@ -8,7 +8,7 @@
 #include <memory>
 #include <future>
 
-namespace JSL::Async
+namespace JSL::Parallel
 {
 	
 	template<typename T>

@@ -3,7 +3,7 @@
 #include <JSL/internal/error.h>
 #include <thread>
 #include <chrono>
-namespace JSL::Async
+namespace JSL::Event
 {
 	using namespace JSL::internal; //for errors
 

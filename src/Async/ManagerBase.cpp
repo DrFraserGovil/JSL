@@ -1,6 +1,6 @@
 // #include <JSL/Async/ManagerBase.h>
 #include <JSL.h>
-namespace JSL::Async::internal
+namespace JSL::Event::internal
 {
 	using namespace JSL::internal;
 	Watcher MakeWatcher(std::string_view id)
@@ -57,7 +57,7 @@ namespace JSL::Async::internal
 			}
 		});
 	}
-	void HandlerBase::SetInotifyCallback(std::function<void(JSL::Async::FileChange)> callback)
+	void HandlerBase::SetInotifyCallback(std::function<void(JSL::Event::FileChange)> callback)
 	{
 		callback_file = callback;
 		Watch.SetInotifyCallback([this](auto file)
@@ -149,7 +149,7 @@ namespace JSL::Async::internal
 		}
 	}
 
-	JSL::Async::Watcher * HandlerBase::GetWatcher()
+	JSL::Event::Watcher * HandlerBase::GetWatcher()
 	{
 		return & Watch;
 	}

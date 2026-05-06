@@ -1,7 +1,7 @@
 #include <JSL.h>
 #include <JSL/Display/Log.h>
 
-namespace JSL::Async
+namespace JSL::Parallel
 {
 	Pool::Pool(size_t ncores)
 	{

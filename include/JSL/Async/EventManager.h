@@ -7,27 +7,29 @@
 #include <queue>
 #include <string_view>
 #include <functional>
-namespace JSL::Async
+namespace JSL::Event::Serial
 {
 	
 
-	class SerialEventManager: public internal::HandlerBase
+	class Manager: public internal::HandlerBase
 	{
 		public:
-			SerialEventManager(std::string_view identifier);
-			SerialEventManager(Watcher & watcher);
+			Manager(std::string_view identifier);
+			Manager(Watcher & watcher);
 			
 			void AddTask(Task::Instruction job);
 			
 			void Synchroniser(){}; //does nothing!
 	};
+}
 
-
-	class ParallelEventManager : public internal::HandlerBase
+namespace JSL::Event::Async
+{
+	class Manager : public internal::HandlerBase
 	{
 		public:
-			ParallelEventManager(size_t ncores, std::string_view identifier);
-			ParallelEventManager(size_t ncores, Watcher & watcher);
+			Manager(size_t ncores, std::string_view identifier);
+			Manager(size_t ncores, Watcher & watcher);
 
 			void SerialTask(Task::Instruction job); //adds jobs into the Dispatcher queue, which execute in serial, whilst no other threads active
 
@@ -35,7 +37,7 @@ namespace JSL::Async
 
 			void Synchroniser();
 		private:
-			Pool Workers;
+			JSL::Parallel::Pool Workers;
 	};
 
 }

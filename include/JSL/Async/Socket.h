@@ -10,7 +10,7 @@
 #include <filesystem>
 #include <string>
 #include <optional>
-namespace JSL::Async
+namespace JSL::Event
 {
 
 	namespace internal

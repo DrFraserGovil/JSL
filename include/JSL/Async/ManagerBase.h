@@ -5,7 +5,7 @@
 #include <queue>
 #include <string_view>
 #include <functional>
-namespace JSL::Async
+namespace JSL::Event
 {
 	namespace Task
 	{
@@ -25,7 +25,7 @@ namespace JSL::Async
 		{
 			Origin origin;
 			Priority priority;
-			std::variant<std::string, JSL::Async::FileChange> payload;
+			std::variant<std::string, JSL::Event::FileChange> payload;
 			Instruction(Origin in, std::string_view msg, Priority order = Priority::NORMAL)
 			{
 				origin = in;
@@ -67,12 +67,12 @@ namespace JSL::Async
 				HandlerBase& operator=(const HandlerBase&) = delete;
 				HandlerBase(HandlerBase&&) = delete;
 				HandlerBase& operator=(HandlerBase&&) = delete;
-				JSL::Async::Watcher * GetWatcher();
+				JSL::Event::Watcher * GetWatcher();
 			protected:
 			
 				std::function<void(std::string_view)> callback_cin;
 				std::function<void(std::string_view)> callback_socket;
-				std::function<void(JSL::Async::FileChange)> callback_file;
+				std::function<void(JSL::Event::FileChange)> callback_file;
 				Watcher Watch;
 				virtual void Synchroniser() = 0;
 				std::mutex Sync;
