@@ -1,7 +1,7 @@
 #pragma once
 #include <chrono>
 
-namespace JSL
+namespace JSL::Time
 {
     class Timer
     {

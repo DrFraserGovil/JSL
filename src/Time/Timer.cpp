@@ -2,7 +2,7 @@
 #include <JSL/Time/TimeFormatter.h>
 #include <chrono>
 #include <exception>
-namespace JSL
+namespace JSL::Time
 {
 
 
