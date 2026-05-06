@@ -3,8 +3,10 @@
 #include <JSL/internal/error.h>
 #include <thread>
 #include <chrono>
-namespace JSL
+namespace JSL::Async
 {
+	using namespace JSL::internal; //for errors
+
 	namespace fs = std::filesystem;
 
 	internal::FileDescriptor::~FileDescriptor()
@@ -115,11 +117,11 @@ namespace JSL
 		
 		if (bind(Resources.FD,reinterpret_cast<const sockaddr*>(&Address), sizeof(Address)) == -1)
 		{
-			internal::FatalError("Bad socket bind",JSL_LOCATION) << "Could not bind socket " << Resources.Path.string();
+			FatalError("Bad socket bind",JSL_LOCATION) << "Could not bind socket " << Resources.Path.string();
 		}
 		if (listen(Resources.FD,5) == -1) // 5 is standard for interfaces not expecting heavy loads
 		{
-			internal::FatalError("Bad socket listen", JSL_LOCATION) << "Could not listen to socket (although could bind)" << Resources.Path.string();
+			FatalError("Bad socket listen", JSL_LOCATION) << "Could not listen to socket (although could bind)" << Resources.Path.string();
 		}
 		
 		LOG(DEBUG) << "Antenna-Socket bind complete";
@@ -164,12 +166,12 @@ namespace JSL
 
 	bool Antenna::Send(std::string_view msg)
 	{
-		if (Resources.FD == -1) internal::FatalError("Bad socket",JSL_LOCATION) << "Cannot write to an expired socket";
+		if (Resources.FD == -1) FatalError("Bad socket",JSL_LOCATION) << "Cannot write to an expired socket";
 		//two stage send for SOCK_STREAM
 		
 		if (msg.length() > UINT32_MAX)
 		{
-			internal::FatalError("Message length exceeded",JSL_LOCATION) << "Message exceeds buffer size";
+			FatalError("Message length exceeded",JSL_LOCATION) << "Message exceeds buffer size";
 		}
 		
     
@@ -186,7 +188,7 @@ namespace JSL
 	std::string Antenna::Read()
 	{
 		LOG(DEBUG) << "Attempting to read from socket";
-		if (Resources.FD == -1) internal::FatalError("Bad socket",JSL_LOCATION) << "Cannot read from an expired socket";
+		if (Resources.FD == -1) FatalError("Bad socket",JSL_LOCATION) << "Cannot read from an expired socket";
 		
 		int fd = accept(Resources.FD,nullptr,nullptr);
 		auto client = ReadClient(fd);
@@ -242,7 +244,7 @@ namespace JSL
 			if (errno == EAGAIN || errno == EWOULDBLOCK || errno == EINTR) {
                 return ""; 
             }
-			internal::FatalError("Socket read error", JSL_LOCATION) 
+			FatalError("Socket read error", JSL_LOCATION) 
 				<< "Failed to read from socket " << Resources.FD 
 				<< " at " << Resources.Path.string();
 		}

@@ -1,7 +1,7 @@
 #include <JSL.h>
 #include <JSL/Display/Log.h>
 
-namespace JSL::Parallel
+namespace JSL::Async
 {
 	Pool::Pool(size_t ncores)
 	{
@@ -133,7 +133,7 @@ namespace JSL::Parallel
 
 			default:
 			{
-				internal::FatalError("Unknown policy",JSL_LOCATION) << "Unknown loop distribution policy";
+				JSL::internal::FatalError("Unknown policy",JSL_LOCATION) << "Unknown loop distribution policy";
 			}
 
 		}

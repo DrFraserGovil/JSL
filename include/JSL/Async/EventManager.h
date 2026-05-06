@@ -1,12 +1,13 @@
 #pragma once
-#include <JSL.h>
-#include <JSL/Async/ManagerBase.h>
+#include "ManagerBase.h"
+#include <JSL/Async/ParallelPool.h>
+// #include <JSL.h>
 #include <condition_variable>
 #include <mutex>
 #include <queue>
 #include <string_view>
 #include <functional>
-namespace JSL
+namespace JSL::Async
 {
 	
 
@@ -14,6 +15,7 @@ namespace JSL
 	{
 		public:
 			SerialEventManager(std::string_view identifier);
+			SerialEventManager(Watcher & watcher);
 			
 			void AddTask(Task::Instruction job);
 			
@@ -25,6 +27,7 @@ namespace JSL
 	{
 		public:
 			ParallelEventManager(size_t ncores, std::string_view identifier);
+			ParallelEventManager(size_t ncores, Watcher & watcher);
 
 			void SerialTask(Task::Instruction job); //adds jobs into the Dispatcher queue, which execute in serial, whilst no other threads active
 
@@ -32,7 +35,7 @@ namespace JSL
 
 			void Synchroniser();
 		private:
-			Parallel::Pool Workers;
+			Pool Workers;
 	};
 
 }

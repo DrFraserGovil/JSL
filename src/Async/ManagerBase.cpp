@@ -1,29 +1,31 @@
-#include <JSL/Async/ManagerBase.h>
-
-namespace JSL::internal
+// #include <JSL/Async/ManagerBase.h>
+#include <JSL.h>
+namespace JSL::Async::internal
 {
-	Watcher GetWatcher(std::string_view id)
+	using namespace JSL::internal;
+	Watcher MakeWatcher(std::string_view id)
 	{
 		auto r = Watcher::Create(id);
 		if (!r)
 		{
-			internal::FatalError("Bad watcher",JSL_LOCATION) << "Could not initialise a watcher: EventManager initialisation failed";
+			FatalError("Bad watcher",JSL_LOCATION) << "Could not initialise a watcher: EventManager initialisation failed";
 		}
 		return std::move(r.value());
 	}
 
 
-	HandlerBase::HandlerBase(std::string_view id): Watch(std::move(GetWatcher(id)))
+	HandlerBase::HandlerBase(std::string_view id): Watch(std::move(MakeWatcher(id)))
 	{
-
+	}
+	HandlerBase::HandlerBase(Watcher & watch) : Watch(std::move(watch)){
 	}
 
 	void HandlerBase::SetTextCallback(std::function<void(std::string_view)> callback)
 	{
-		SetCinCallback(callback);
+		SetCInCallback(callback);
 		SetSocketCallback(callback);
 	}
-	void HandlerBase::SetCinCallback(std::function<void(std::string_view)> callback)
+	void HandlerBase::SetCInCallback(std::function<void(std::string_view)> callback)
 	{
 		callback_cin = callback;
 
@@ -55,7 +57,7 @@ namespace JSL::internal
 			}
 		});
 	}
-	void HandlerBase::SetFileCallback(std::function<void(JSL::FileChange)> callback)
+	void HandlerBase::SetInotifyCallback(std::function<void(JSL::Async::FileChange)> callback)
 	{
 		callback_file = callback;
 		Watch.SetInotifyCallback([this](auto file)
@@ -84,6 +86,8 @@ namespace JSL::internal
 		std::thread([this](){
 			Watch.Run();
 		}).detach();
+
+		Running = true;
 	}
 
 	void HandlerBase::Process(Task::Instruction job)
@@ -103,13 +107,14 @@ namespace JSL::internal
 				callback_file(std::get<FileChange>(job.payload));
 				break;
 			default:
-				internal::FatalError("Unknown jobtype",JSL_LOCATION) << "Could not process job of type " << job.origin;
+				FatalError("Unknown jobtype",JSL_LOCATION) << "Could not process job of type " << job.origin;
 		}
 	}
 
 	void HandlerBase::Run()
 	{
 		InitialiseRun(); // common functions
+		LOG(INFO) << "Running " << Running;
 
 		while (Watch.Running())
 		{
@@ -135,6 +140,18 @@ namespace JSL::internal
 
 			}
 		}
+	}
+	void HandlerBase::ProtectAdd()
+	{
+		if (!Running)
+		{
+			FatalError("Add before Run",JSL_LOCATION) << "Cannot add a task to an EventHandler before it is running";
+		}
+	}
+
+	JSL::Async::Watcher * HandlerBase::GetWatcher()
+	{
+		return & Watch;
 	}
 	
 }

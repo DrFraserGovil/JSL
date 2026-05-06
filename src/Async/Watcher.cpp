@@ -8,26 +8,20 @@
 
 #include <JSL.h>
 
-namespace JSL
+namespace JSL::Async
 {
+	using namespace JSL::internal;
 	namespace fs = std::filesystem;
 	std::optional<Watcher> Watcher::Create(std::string_view socketName,double timeout, bool forceAcquire)
 	{
-		auto r = Antenna::Create(socketName,forceAcquire);
-		
+		auto r = Antenna::Create(socketName,forceAcquire);		
 		if (!r)
 		{
 			return std::nullopt;
-			// internal::FatalError("Bad Socket",JSL_LOCATION) << "Could not launch Watcher process: socket could not initialise";
 		}
 		r->SetTimeout(timeout);
-		// auto s = Socket::Broadcaster(socketName);
-		// if (!s)
-		// {
-		// 	internal::FatalError("Bad Socket",JSL_LOCATION) << "Could not launch Watcher process: socket could not initialise";
-		// }
 
-		return Watcher(std::move(r.value()));//,std::move(s.value()));
+		return Watcher(std::move(r.value()));
 	}
 
 	Watcher::Watcher(Antenna && socketIn) : Receiver(std::move(socketIn))
@@ -163,7 +157,7 @@ namespace JSL
 			w.fd = STDIN_FILENO;
 			w.events = POLLIN;
 			PollCatchers.push_back(w);
-			if (BlockNewAdds) internal::FatalError("Bad watch call",JSL_LOCATION) << "Cannot add new watch iterations whilst Watcher is running";
+			if (BlockNewAdds) FatalError("Bad watch call",JSL_LOCATION) << "Cannot add new watch iterations whilst Watcher is running";
 
 		}
 		
@@ -215,7 +209,7 @@ namespace JSL
 			w.events = POLLIN;
 			
 			PollCatchers.push_back(w);
-			if (BlockNewAdds) internal::FatalError("Bad watch call",JSL_LOCATION) << "Cannot add new watch iterations whilst Watcher is running";
+			if (BlockNewAdds) FatalError("Bad watch call",JSL_LOCATION) << "Cannot add new watch iterations whilst Watcher is running";
 		}
 		Callbacks.insert_or_assign(fd, [this,callback]()
 		{
@@ -233,7 +227,7 @@ namespace JSL
 	{
 		if (!fs::exists(path))
 		{
-			internal::FatalError("File Does not Exist",JSL_LOCATION) << "Cannot watch " << path.string() << " as it does not exist";
+			FatalError("File Does not Exist",JSL_LOCATION) << "Cannot watch " << path.string() << " as it does not exist";
 		}
 
 		if (INotifyID == -1)
@@ -303,7 +297,7 @@ namespace JSL
 			w.fd = INotifyID;
 			w.events = POLLIN;
 			PollCatchers.push_back(w);
-			if (BlockNewAdds) internal::FatalError("Bad watch call",JSL_LOCATION) << "Cannot add new watch iterations whilst Watcher is running";
+			if (BlockNewAdds) FatalError("Bad watch call",JSL_LOCATION) << "Cannot add new watch iterations whilst Watcher is running";
 
 		}
 		
@@ -336,7 +330,7 @@ namespace JSL
 		inotify_rm_watch(INotifyID,id);
 		// if (attempt <0)
 		// {
-		// 	internal::FatalError("Bad inotify_rm",JSL_LOCATION) << "Could not unwatch " << WatchMap[id].string() << " inotify has crashed";
+		// 	FatalError("Bad inotify_rm",JSL_LOCATION) << "Could not unwatch " << WatchMap[id].string() << " inotify has crashed";
 		// }
 		WatchMap.erase(id);
 	}
@@ -358,7 +352,7 @@ namespace JSL
 		INotifyID = inotify_init();
 		if (INotifyID < 0)
 		{
-			internal::FatalError("Bad inotify", JSL_LOCATION) << "Could not establish inotify process\nReason: " << std::strerror(errno);
+			FatalError("Bad inotify", JSL_LOCATION) << "Could not establish inotify process\nReason: " << std::strerror(errno);
 		}		
 	}
 };

@@ -1,5 +1,5 @@
 #pragma once
-#include <JSL/Async.h>
+#include <JSL/Async/Socket.h>
 #include <string>
 #include <poll.h>
 #include <functional>
@@ -11,7 +11,7 @@
 #include <queue>
 #include <set>
 #include <atomic>
-namespace JSL
+namespace JSL::Async
 {
 
     struct FileChange

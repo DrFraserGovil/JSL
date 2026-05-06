@@ -5,7 +5,7 @@
 #include <queue>
 #include <string_view>
 #include <functional>
-namespace JSL
+namespace JSL::Async
 {
 	namespace Task
 	{
@@ -25,7 +25,7 @@ namespace JSL
 		{
 			Origin origin;
 			Priority priority;
-			std::variant<std::string, JSL::FileChange> payload;
+			std::variant<std::string, JSL::Async::FileChange> payload;
 			Instruction(Origin in, std::string_view msg, Priority order = Priority::NORMAL)
 			{
 				origin = in;
@@ -52,10 +52,10 @@ namespace JSL
 		{
 			public:
 
-				void SetCinCallback(std::function<void(std::string_view)> callback);
+				void SetCInCallback(std::function<void(std::string_view)> callback);
 				void SetSocketCallback(std::function<void(std::string_view)> callback);
 				void SetTextCallback(std::function<void(std::string_view)> callback);
-				void SetFileCallback(std::function<void(JSL::FileChange)> callback);
+				void SetInotifyCallback(std::function<void(FileChange)> callback);
 
 				std::set<std::string,std::less<>> ShutdownCommands;
 
@@ -67,21 +67,29 @@ namespace JSL
 				HandlerBase& operator=(const HandlerBase&) = delete;
 				HandlerBase(HandlerBase&&) = delete;
 				HandlerBase& operator=(HandlerBase&&) = delete;
+				JSL::Async::Watcher * GetWatcher();
 			protected:
-				HandlerBase(std::string_view id);
-				void Process(Task::Instruction job);
-				void Exit();
-				void InitialiseRun();
-
+			
 				std::function<void(std::string_view)> callback_cin;
 				std::function<void(std::string_view)> callback_socket;
-				std::function<void(JSL::FileChange)> callback_file;
-
+				std::function<void(JSL::Async::FileChange)> callback_file;
 				Watcher Watch;
 				virtual void Synchroniser() = 0;
 				std::mutex Sync;
 				std::condition_variable CV;
 				std::queue<Task::Instruction> TaskQueue;
+			
+				bool Running = false;
+				void ProtectAdd();
+				HandlerBase(std::string_view id);
+				HandlerBase(Watcher & watcher);
+				void Process(Task::Instruction job);
+				
+			private:
+				void Exit();
+				void InitialiseRun();
+				
+				
 		};
 	}
 }

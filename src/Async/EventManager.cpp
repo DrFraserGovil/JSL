@@ -1,16 +1,19 @@
 #include <JSL.h>
 
-namespace JSL
+namespace JSL::Async
 {
 	SerialEventManager::SerialEventManager(std::string_view id) : HandlerBase(id)
 	{
-
+	}
+	SerialEventManager::SerialEventManager(Watcher & watch) : HandlerBase(watch)
+	{
 	}
 
 	
 	
 	void SerialEventManager::AddTask(Task::Instruction job)
 	{
+		ProtectAdd();
 		std::lock_guard lock(Sync);
 		TaskQueue.push(std::move(job));
 		CV.notify_one();
@@ -19,12 +22,19 @@ namespace JSL
 
 	ParallelEventManager::ParallelEventManager(size_t ncores, std::string_view id) : internal::HandlerBase(id), Workers(ncores)
 	{
+	}
+
+	
+	ParallelEventManager::ParallelEventManager(size_t ncores, Watcher & watch) : internal::HandlerBase(watch), Workers(ncores)
+	{
 
 	}
 
 
+
 	void ParallelEventManager::AddTask(Task::Instruction job)
 	{
+		ProtectAdd();
 		bool serialQueued;
 		{
 			std::lock_guard lock(Sync);
@@ -53,4 +63,6 @@ namespace JSL
 	{
 		Workers.Synchronise();
 	}
+
+
 }

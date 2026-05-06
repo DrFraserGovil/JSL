@@ -8,7 +8,7 @@
 #include <memory>
 #include <future>
 
-namespace JSL::Parallel
+namespace JSL::Async
 {
 	
 	template<typename T>
@@ -20,6 +20,7 @@ namespace JSL::Parallel
 	class Pool
 	{
 		public:
+
 			Pool(size_t ncores);
 			~Pool();
 
