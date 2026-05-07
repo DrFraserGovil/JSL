@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['target_0',['Target',['../namespaceJSL_1_1Fonts.html#a7a55fcb9c82e5a8c7f98ce1c803d08ee',1,'JSL::Fonts']]]
+  ['mode_0',['Mode',['../namespaceJSL_1_1Archiver.html#aeeb3e5dd16147fd2dcdc870080838e3b',1,'JSL::Archiver']]]
 ];

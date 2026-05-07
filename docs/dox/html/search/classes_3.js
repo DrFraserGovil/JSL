@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['matrix_0',['Matrix',['../classJSL_1_1Matrix.html',1,'JSL']]],
-  ['matrixtest_1',['MatrixTest',['../classJSL__Testing_1_1MatrixTest.html',1,'JSL_Testing']]],
-  ['metatest_2',['MetaTest',['../classJSL__Testing_1_1MetaTest.html',1,'JSL_Testing']]],
-  ['mkdirreturn_3',['mkdirReturn',['../structJSL_1_1mkdirReturn.html',1,'JSL']]]
+  ['data_0',['Data',['../classJSL_1_1Plotting_1_1AxisMembers_1_1Data.html',1,'JSL::Plotting::AxisMembers']]],
+  ['description_1',['Description',['../classJSL_1_1Parameter_1_1Description.html',1,'JSL::Parameter']]],
+  ['display_2',['Display',['../classJSL_1_1Plotting_1_1Display.html',1,'JSL::Plotting']]],
+  ['dual_3',['Dual',['../classDual.html',1,'']]],
+  ['dualadd_4',['DualAdd',['../structDualAdd.html',1,'']]],
+  ['dualexpression_5',['DualExpression',['../structDualExpression.html',1,'']]],
+  ['dualexpression_3c_20binaryexpression_20_3e_6',['DualExpression&lt; BinaryExpression &gt;',['../structDualExpression.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vector_0',['Vector',['../classJSL_1_1Vector.html',1,'JSL']]],
-  ['vectortest_1',['VectorTest',['../classJSL__Testing_1_1VectorTest.html',1,'JSL_Testing']]]
+  ['manager_0',['manager',['../classJSL_1_1Event_1_1Async_1_1Manager.html',1,'JSL::Event::Async::Manager'],['../classJSL_1_1Event_1_1Serial_1_1Manager.html',1,'JSL::Event::Serial::Manager']]],
+  ['mempool_1',['Mempool',['../classMempool.html',1,'']]]
 ];

@@ -29,6 +29,7 @@ namespace JSL::Format
 
 
 
+   
     class FormatGroup
     {
         private:
@@ -45,26 +46,34 @@ namespace JSL::Format
             operator std::string() const;
     };
 
-    FormatGroup operator+(const Command & a,const Command & b);
+
+    /*
+        Defines a `format-like' concept: objects that are constructible in to a FormatGroup, and otherwise behave like them
+    */
+    template<typename T>
+    concept FormatType = std::is_constructible_v<FormatGroup, T> ||requires(FormatGroup& g, T&& t) 
+    {
+        g.Add(std::forward<T>(t));
+    };
+
+
 
     //handle addition for any types convertible into format groups
+    FormatGroup operator+(const Command & a,const Command & b);
 
-    template<typename T>
-    concept Formattable = std::is_constructible_v<FormatGroup, T>;
-
-    template<Formattable T, Formattable U>
+    template<FormatType T, FormatType U>
     FormatGroup operator+(const T & a, const U & b)
     {
         FormatGroup out(a);
         out.Add(b);
         return out;
     }
-    template<Formattable T>
+    template<FormatType T>
     std::string operator+(const T & a, std::string_view && b)
     {
         return ((std::string)FormatGroup(a)) + std::string{b};
     }
-    template<Formattable T>
+    template<FormatType T>
     std::string operator+(std::string_view && b, const T & a)
     {
         return std::string{b} + ((std::string)FormatGroup(a));

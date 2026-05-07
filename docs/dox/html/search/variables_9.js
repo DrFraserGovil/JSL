@@ -1,6 +1,22 @@
 var searchData=
 [
-  ['legend_0',['legend',['../classJSL_1_1PlotData.html#a17ce4f8c1648a676421b39a204b0a37d',1,'JSL::PlotData']]],
-  ['legendactive_1',['legendActive',['../classJSL_1_1Axis.html#a16738eebad49e0faf3c883e1550d2d04',1,'JSL::Axis']]],
-  ['legendfontsize_2',['legendFontSize',['../classJSL_1_1Axis.html#aa5c155153ea1a6caaaf555955bb1cd29',1,'JSL::Axis']]]
+  ['id_0',['id',['../classJSL_1_1Plotting_1_1Curve.html#aab65e8f32bb84ad268ce8c6cbdd2b591',1,'JSL::Plotting::Curve::ID'],['../classJSL_1_1Event_1_1Antenna_1_1Hotline.html#a91274e76bfb226d41d935a178da641a9',1,'JSL::Event::Antenna::Hotline::ID']]],
+  ['identifier_1',['Identifier',['../classJSL_1_1Event_1_1Antenna.html#ab8a99d3333ace53bd5ff0f40f7454936',1,'JSL::Event::Antenna']]],
+  ['includeprompt_2',['IncludePrompt',['../classJSL_1_1Log_1_1ConfigObject.html#aa64529e44fb41115a9b889ae4cde335a',1,'JSL::Log::ConfigObject']]],
+  ['index_3',['index',['../structSparseElement.html#a46e6a5b547c037b0471ff10667597c9a',1,'SparseElement::Index'],['../structJSL_1_1Vector_1_1SearchResult.html#a7f81ec7a22ed523f1e11365cb097bcf1',1,'JSL::Vector::SearchResult::Index']]],
+  ['infinitesimal_4',['Infinitesimal',['../classDual.html#a69a984cabc52d0a750aab28fcbeab0c2',1,'Dual']]],
+  ['infocolour_5',['InfoColour',['../classJSL_1_1Log_1_1ConfigObject.html#aaedf5c66aec116cc19e7e2897e4fb374',1,'JSL::Log::ConfigObject']]],
+  ['information_6',['Information',['../classJSL_1_1Parameter_1_1NestedAggregator.html#afdc6a53bc22401751a4b5dc3ca871730',1,'JSL::Parameter::NestedAggregator']]],
+  ['initialised_7',['Initialised',['../classJSL_1_1Archiver_1_1internal_1_1VaultBase.html#a764ccd653391211ecf29cf741b95f2a1',1,'JSL::Archiver::internal::VaultBase']]],
+  ['initialisetime_8',['InitialiseTime',['../classJSL_1_1Event_1_1Watcher.html#a50a144cff897caf59ec883aab3d5f481',1,'JSL::Event::Watcher']]],
+  ['inotifyid_9',['INotifyID',['../classJSL_1_1Event_1_1Watcher.html#a04141d9392a2206de1a75ceadfe520aa',1,'JSL::Event::Watcher']]],
+  ['insert_10',['Insert',['../classJSL_1_1Log_1_1Core.html#a22c33e7c11c9cdadc053bb29c0cc668c',1,'JSL::Log::Core']]],
+  ['internalvalue_11',['InternalValue',['../classJSL_1_1Parameter_1_1Setting.html#a9515c1c5f3902c0eee27fa154d706c37',1,'JSL::Parameter::Setting']]],
+  ['interval_12',['Interval',['../classJSL_1_1Plotting_1_1TicProperties.html#a7b5eccdb0d7c55917a32c42222565361',1,'JSL::Plotting::TicProperties']]],
+  ['inverted_13',['Inverted',['../classJSL_1_1Plotting_1_1Color_1_1Controller.html#ab0137837d8b03f2df5c88c1b3faef0d6',1,'JSL::Plotting::Color::Controller']]],
+  ['isclient_14',['IsClient',['../structJSL_1_1Event_1_1internal_1_1FileDescriptor.html#a41ebe32891553a1fa51847b9070fb465',1,'JSL::Event::internal::FileDescriptor']]],
+  ['isdense_15',['isdense',['../structGradientHolder.html#a82f339ceb0fafface8065db4e92d47b8',1,'GradientHolder::IsDense'],['../classVectorDual.html#abc7753ebd3898e9f0b332bf2c5e4ad74',1,'VectorDual::IsDense']]],
+  ['isdirty_16',['IsDirty',['../classJSL_1_1Plotting_1_1Axis.html#a96ae1898323c3a567ae786a179a418df',1,'JSL::Plotting::Axis']]],
+  ['islarge_17',['IsLarge',['../classJSL_1_1Archiver_1_1WriteStream.html#ac88ffb0e6637fd34f98bf3022eec9eba',1,'JSL::Archiver::WriteStream']]],
+  ['isrecursive_18',['IsRecursive',['../classJSL_1_1IO_1_1FileSystem_1_1Structure.html#a3bc17d30bc3b62cc5f84f21e02437016',1,'JSL::IO::FileSystem::Structure']]]
 ];

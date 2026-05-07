@@ -1,35 +1,31 @@
-\hypertarget{error_8h}{}\doxysection{/\+Users/jf20/\+Documents/\+JSL/\+System/error.h File Reference}
-\label{error_8h}\index{/Users/jf20/Documents/JSL/System/error.h@{/Users/jf20/Documents/JSL/System/error.h}}
+\doxysection{include/\+JSL/internal/error.h File Reference}
+\hypertarget{error_8h}{}\label{error_8h}\index{include/JSL/internal/error.h@{include/JSL/internal/error.h}}
 {\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include $<$stdexcept$>$}\newline
-{\ttfamily \#include $<$vector$>$}\newline
-\doxysubsection*{Namespaces}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$JSL/\+Display/\+Log.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{JSL\+::internal\+::\+Fatal\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1internal}{JSL\+::internal}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Enumerations}
+\doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{JSL\+::\+Error\+Code}} \{ \newline
-\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSL\+::\+JSLError}}
-, \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30}{JSL\+::\+System\+Error}}
-, \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702}{JSL\+::\+Overrun\+Error}}
-, \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443}{JSL\+::\+Failed\+Assertion}}
-, \newline
-\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{JSL\+::\+IOError}}
-, \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973}{JSL\+::\+Plotting\+Error}}
- \}
-\begin{DoxyCompactList}\small\item\em A list of recognised \mbox{\hyperlink{namespaceJSL}{JSL}} errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{JSL\+::\+Error}} (Error\+Code code, const std\+::string \&message)
-\item 
-void \mbox{\hyperlink{namespaceJSL_a0241a3cc1fa4dd4d319ab8686d1cfaa3}{JSL\+::\+Error}} (const std\+::string \&message)
-\begin{DoxyCompactList}\small\item\em The default version of \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error(\+Error\+Code code, const std\+::string \& message)}}, throwing \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSL\+::\+JSLError}} as the identifier code. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_a606f5a286ccd4cf3d860d2efde2eac82}{JSL\+::\+Error\+Names}} = \{\char`\"{}ERROR\char`\"{}, \char`\"{}SYSTEM ERROR\char`\"{}, \char`\"{}OVERRUN ERROR\char`\"{}, \char`\"{}FAILED ASSERTION\char`\"{},\char`\"{}IOError\char`\"{}, \char`\"{}GNUPLOT ERROR\char`\"{}\}
+\#define \mbox{\hyperlink{error_8h_a10df267978926d975df8f95b4e3a3583}{JSL\+\_\+\+LOCATION}}~\+\_\+\+\_\+\+LINE\+\_\+\+\_\+,\+\_\+\+\_\+func\+\_\+\+\_\+,\+\_\+\+\_\+\+FILE\+\_\+\+\_\+
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{error_8h_a10df267978926d975df8f95b4e3a3583}\label{error_8h_a10df267978926d975df8f95b4e3a3583} 
+\index{error.h@{error.h}!JSL\_LOCATION@{JSL\_LOCATION}}
+\index{JSL\_LOCATION@{JSL\_LOCATION}!error.h@{error.h}}
+\doxysubsubsection{\texorpdfstring{JSL\_LOCATION}{JSL\_LOCATION}}
+{\footnotesize\ttfamily \#define JSL\+\_\+\+LOCATION~\+\_\+\+\_\+\+LINE\+\_\+\+\_\+,\+\_\+\+\_\+func\+\_\+\+\_\+,\+\_\+\+\_\+\+FILE\+\_\+\+\_\+}
+

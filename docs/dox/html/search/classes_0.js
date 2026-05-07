@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['argument_0',['Argument',['../classJSL_1_1Argument.html',1,'JSL']]],
-  ['argumentinterface_1',['ArgumentInterface',['../classJSL_1_1ArgumentInterface.html',1,'JSL']]],
-  ['argumenttest_2',['ArgumentTest',['../classJSL__Testing_1_1ArgumentTest.html',1,'JSL_Testing']]],
-  ['axis_3',['Axis',['../classJSL_1_1Axis.html',1,'JSL']]]
+  ['aggregator_0',['Aggregator',['../classJSL_1_1Parameter_1_1Aggregator.html',1,'JSL::Parameter']]],
+  ['antenna_1',['Antenna',['../classJSL_1_1Event_1_1Antenna.html',1,'JSL::Event']]],
+  ['axis_2',['Axis',['../classJSL_1_1Plotting_1_1Axis.html',1,'JSL::Plotting']]]
 ];

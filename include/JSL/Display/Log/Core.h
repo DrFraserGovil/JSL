@@ -7,17 +7,18 @@
 
 #include <JSL/Display/Log/Config.h>
 #include <JSL/Strings/Manipulate.h>
+#include <JSL/Display/Format.h>
 
 /*!
 	@brief The main log interface. Pipe output to it as you would std::cout.
 	
-	@details LOG is a specialised macro-interface to the Core object.  If the level check evaluates to false, then the <<'d inputs are completely ignored and are not executed, useful for skipping `expensive' operations during a ::DEBUG run. Defined in @fileinfo{path}
+	@details LOG is a specialised macro-interface to the Core object.  If the level check evaluates to false, then the <<'d inputs are completely ignored and are not executed, useful for skipping `expensive' operations during a ::DEBUG run.
 
 	@param level A ::LogLevel object, if greater than the LogConfig::Level value, nothing happens (and the expansion is ignored) 
 	@returns If the level is suitable, a temporary Core object, which functions as a specialised Stream object, accepting values passed via '<<'. Otherwise, does nothing, and does not evaluate any subsequent pipe commands
 */
 #define LOG(level) \
-	if (!(level <= JSL::Log::Global::Config.Level)) {} \
+	if (!(level <= JSL::Log::Global::Config().Level)) {} \
 	else (JSL::Log::Core(level,__LINE__,__func__,__FILE__))
 
 
@@ -72,20 +73,45 @@ namespace JSL::Log
 				return *this;
 			} 
 
-			/*
-				Enables the logger to have a persistent and selective formatting options
+			/*!
+				Overloads the stream operator for JSL::Format objects, allowing peristent formatting across linebreaks and in the pregenerated headers.
 			*/
-			Core &operator<<(Format::Command format);
-			Core &operator<<(Format::FormatGroup group);
+			template<Format::FormatType T>
+			Core &operator<<(T format)
+			{
+				if (Global::Config().TerminalOutput)
+				{
+					CurrentFormat.Add(group);
+					if (!StreamActive)
+					{
+						BufferPreamble << CurrentFormat;
+						ManualFormat = true;
+					}
+					else
+					{
+						Buffer << CurrentFormat;
+					}
+				}
+				return *this;
+			}
 
-			Format::FormatGroup CurrentFormat;
+
 			
-		
+			
 		private:
+			//! Tracks if a format is passed into the stream before it is active (and hence if the preamble needs to inherit)
+			bool ManualFormat = false;
+
+			//! The current format of the line, enabling selective reset calls. 
+			Format::FormatGroup CurrentFormat;
+
 			//! The internal Buffer to which Core::operator<< is streamed, and which is then output to terminal.
 			std::stringstream Buffer;
+			
+			
+			//! A distinct buffer for the preamble (i.e. [WARN]), in case differential formatting is required
 			std::stringstream BufferPreamble;
-			bool ManualFormat = false;
+
 			//! The ::LogLevel of the log entry associated with this object. Used only to determine formatting.
 			LogLevel Level;
 
@@ -95,7 +121,10 @@ namespace JSL::Log
 			//! A string which holds the callingLine/Function/File data after the constructor is called, but before the stream is activated.
 			std::string Insert;
 
+			//! A suffix which is inserted at the end of the line, if the boxing mode is active
 			std::string LineSuffix = "";
+
+			//! A suffix used at the first line of long messages, containing additional information
 			std::string FirstLineSuffix = "";
 
 			//! If Config.UseHeaders is true, this function generates headers (such as [ERROR]) for the log entry. 
@@ -108,6 +137,8 @@ namespace JSL::Log
 			*/
 			void EndMessage();
 		
+			//! Used to prevent log-interleaving, and make the LOG (mostly) thread-safe. Must be declared static to make it shared across different instances.
+			static std::mutex StreamMutex;
 			
 	};
 }

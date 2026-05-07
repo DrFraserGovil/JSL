@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['colour_0',['Colour',['../namespaceJSL.html#ad5aeae8cb562d6f38c724cbdc51d81f8ae7660181e67b34cc8012e44899358c0a',1,'JSL']]],
-  ['cross_1',['Cross',['../namespaceJSL.html#a086efb36ddb107d45961a6b46932c526af2349f50039f930d90a39a689282aaf8',1,'JSL']]]
+  ['append_0',['Append',['../namespaceJSL_1_1Archiver.html#aeeb3e5dd16147fd2dcdc870080838e3ba3ac4692f3935a49a0b243eecf529faa9',1,'JSL::Archiver']]],
+  ['auto_1',['Auto',['../namespaceJSL_1_1Plotting.html#ac714c2f6e352a8383ae9b9b819f16eeca06b9281e396db002010bde1de57262eb',1,'JSL::Plotting']]]
 ];

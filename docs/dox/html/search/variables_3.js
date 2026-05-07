@@ -1,10 +1,24 @@
 var searchData=
 [
-  ['dashtype_0',['dashType',['../classJSL_1_1PlotData.html#ab84555b21166659535d130f84ac74b42',1,'JSL::PlotData']]],
-  ['data_1',['Data',['../classJSL_1_1Axis.html#a493f7f5899d5e867ade59af8e10e95bd',1,'JSL::Axis::Data()'],['../classJSL_1_1Matrix.html#a446d23ba93238f3e2dfc79a3a4d5eb7e',1,'JSL::Matrix::Data()'],['../classJSL_1_1Vector.html#aec102ab8391080ddaedeb4605ef40c5c',1,'JSL::Vector::Data()']]],
-  ['datadir_2',['DataDir',['../classJSL_1_1Axis.html#a01db63a8d0674c821172dd3bc720fc7e',1,'JSL::Axis']]],
-  ['dataidx_3',['DataIdx',['../classJSL_1_1Axis.html#acca070c88101d07fd42e35a606849e1f',1,'JSL::Axis']]],
-  ['datalocation_4',['DataLocation',['../classJSL_1_1PlotData.html#a59b333717ba98216efcd19499eacc6d9',1,'JSL::PlotData']]],
-  ['defaultsize_5',['defaultSize',['../classJSL_1_1gnuplot.html#a2426c9fb055e1c69503166958602e2de',1,'JSL::gnuplot']]],
-  ['dirname_6',['DirName',['../classJSL_1_1gnuplot.html#a200e2b9b95ccd38d4f8e019c594b318f',1,'JSL::gnuplot']]]
+  ['cachedcallback_0',['CachedCallback',['../classJSL_1_1Event_1_1Watcher.html#a009b0593374f5d9e833d90efacb4f4e1',1,'JSL::Event::Watcher']]],
+  ['callback_5fcin_1',['callback_cin',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a563c79882f71efa5db4900b5b87444c2',1,'JSL::Event::internal::HandlerBase']]],
+  ['callback_5ffile_2',['callback_file',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#aca3715dd44106a33de169598998e22c0',1,'JSL::Event::internal::HandlerBase']]],
+  ['callback_5fsocket_3',['callback_socket',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#af3331568c05a08d5cddc76c93e19ac32',1,'JSL::Event::internal::HandlerBase']]],
+  ['callbacks_4',['Callbacks',['../classJSL_1_1Event_1_1Watcher.html#a83489ca06d64c4ef9c8a749003e6194e',1,'JSL::Event::Watcher']]],
+  ['cb_5',['CB',['../classJSL_1_1Plotting_1_1Display.html#afcce714dba883b62b77d5a5f01c4da8c',1,'JSL::Plotting::Display']]],
+  ['chksum_6',['chksum',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#a01d8e5da136b5a05e11f774aa0308163',1,'JSL::Archiver::internal::TarHeader']]],
+  ['clearline_7',['ClearLine',['../namespaceJSL_1_1Terminal.html#a12e5d7058c5c2e930abe5d863c46480f',1,'JSL::Terminal']]],
+  ['clearscreen_8',['ClearScreen',['../namespaceJSL_1_1Terminal.html#a986dfc10f3bd4ed46338a33a20e9478e',1,'JSL::Terminal']]],
+  ['column_9',['column',['../classJSL_1_1Plotting_1_1Axis.html#ab351dce5d08feb280d929beb0353c274',1,'JSL::Plotting::Axis::Column'],['../classJSL_1_1Plotting_1_1Curve.html#a020fc5ecf1380f3fcddfc753c26aad4d',1,'JSL::Plotting::Curve::Column']]],
+  ['columns_10',['columns',['../structJSL_1_1Terminal_1_1Size.html#a3215a2bc8d49bc6af86f8c8c4a1eb237',1,'JSL::Terminal::Size::Columns'],['../classJSL_1_1Plotting_1_1Figure.html#a7945556bca874b7c9cb5cae3bf87d18b',1,'JSL::Plotting::Figure::Columns']]],
+  ['commands_11',['Commands',['../classJSL_1_1internal_1_1Parameter_1_1CommandLineReader.html#afbf6da0790d6e45217f87cea2c2a69bc',1,'JSL::internal::Parameter::CommandLineReader']]],
+  ['commontypes_12',['CommonTypes',['../namespaceJSL_1_1Parameter.html#a0fbd2f8e48d60654fca6165c20c494e8',1,'JSL::Parameter']]],
+  ['configured_13',['Configured',['../classJSL_1_1internal_1_1Parameter_1_1CommandLineReader.html#aa0e5c9fd9d77d9751327631b497f9a2a',1,'JSL::internal::Parameter::CommandLineReader']]],
+  ['connectedvalue_14',['ConnectedValue',['../classJSL_1_1Parameter_1_1Setting.html#a4e152291a23e2cccf2b940aa54c4b249',1,'JSL::Parameter::Setting']]],
+  ['currentformat_15',['CurrentFormat',['../classJSL_1_1Log_1_1Core.html#a1de05c38db8951ea2d5b7412e79c877d',1,'JSL::Log::Core']]],
+  ['currentvalue_16',['CurrentValue',['../classJSL_1_1Parameter_1_1Description.html#a7696bd6045fde9dd852c33d71916246e',1,'JSL::Parameter::Description']]],
+  ['cursorup_17',['CursorUp',['../namespaceJSL_1_1Terminal.html#a64ba8389d7e03a6aea8d1ca5fd070b7d',1,'JSL::Terminal']]],
+  ['curves_18',['Curves',['../classJSL_1_1Plotting_1_1AxisMembers_1_1Data.html#a51880d125ca2de3dce0bf4e213327654',1,'JSL::Plotting::AxisMembers::Data']]],
+  ['customlines_19',['CustomLines',['../classJSL_1_1Plotting_1_1Display.html#af3bf9b95609f46f05e7bedf13af695e3',1,'JSL::Plotting::Display']]],
+  ['cv_20',['CV',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a0504c458a47770bb4ebf7174720675e1',1,'JSL::Event::internal::HandlerBase']]]
 ];

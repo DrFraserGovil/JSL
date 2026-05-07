@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['plotdata_0',['PlotData',['../classJSL_1_1PlotData.html',1,'JSL']]],
-  ['progressbar_1',['ProgressBar',['../classJSL_1_1ProgressBar.html',1,'JSL']]]
+  ['gnuplotpipe_0',['GnuplotPipe',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html',1,'JSL::Plotting::internal']]],
+  ['gradientholder_1',['GradientHolder',['../structGradientHolder.html',1,'']]]
 ];

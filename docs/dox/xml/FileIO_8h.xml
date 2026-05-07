@@ -1,167 +1,198 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="FileIO_8h" kind="file" language="C++">
     <compoundname>FileIO.h</compoundname>
-    <includes refid="LineReader_8h" local="yes">LineReader.h</includes>
-    <includes refid="mkdir_8h" local="yes">mkdir.h</includes>
-    <includes refid="locationExists_8h" local="yes">locationExists.h</includes>
-    <includes refid="fileWriter_8h" local="yes">fileWriter.h</includes>
-    <includedby refid="Argument_8h" local="yes">/Users/jf20/Documents/JSL/CommandArgs/Argument.h</includedby>
-    <includedby refid="JSL_8h" local="yes">/Users/jf20/Documents/JSL/JSL.h</includedby>
-    <includedby refid="axis_8h" local="yes">/Users/jf20/Documents/JSL/gnuplot/axis.h</includedby>
-    <includedby refid="gnuplotMain_8h" local="yes">/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h</includedby>
+    <includes refid="forLineIn_8h" local="yes">FileIO/forLineIn.h</includes>
+    <includes refid="FileSystem_8h" local="yes">FileIO/FileSystem.h</includes>
+    <includes refid="fileWriters_8h" local="yes">FileIO/fileWriters.h</includes>
+    <includes refid="pipedInput_8h" local="yes">FileIO/pipedInput.h</includes>
+    <includedby refid="JSL_8h" local="no">include/JSL.h</includedby>
     <incdepgraph>
-      <node id="1">
-        <label>/Users/jf20/Documents/JSL/FileIO/FileIO.h</label>
-        <link refid="FileIO_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
+      <node id="19">
+        <label>JSL/Display/ANSI_Codes.h</label>
+        <link refid="ANSI__Codes_8h"/>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>LineReader.h</label>
-        <link refid="LineReader_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
       <node id="21">
-        <label>fileWriter.h</label>
-        <link refid="fileWriter_8h"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>../FileIO/locationExists.h</label>
-        <link refid="locationExists_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>mkdir.h</label>
-        <link refid="mkdir_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>../Strings/split.h</label>
-        <link refid="split_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>../System/System.h</label>
-        <link refid="System_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
+        <label>JSL/Display/Format.h</label>
+        <link refid="Format_8h"/>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-      </node>
-      <node id="16">
-        <label>assert.h</label>
-        <link refid="assert_8h"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="15">
-        <label>error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="4" relation="include">
+        <label>JSL/Display/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="17">
-        <label>readPipe.h</label>
-        <link refid="readPipe_8h"/>
+        <label>JSL/Display/Log/Config.h</label>
+        <link refid="Config_8h"/>
         <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
         </childnode>
       </node>
-      <node id="9">
-        <label>rm.h</label>
-        <link refid="rm_8h"/>
-        <childnode refid="10" relation="include">
+      <node id="16">
+        <label>Log/Core.h</label>
+        <link refid="Core_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>JSL/Display/Log/Levels.h</label>
+        <link refid="Levels_8h"/>
+      </node>
+      <node id="1">
+        <label>include/JSL/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>FileIO/FileSystem.h</label>
+        <link refid="FileSystem_8h"/>
+        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>FileIO/fileWriters.h</label>
+        <link refid="fileWriters_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
         <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+      </node>
+      <node id="2">
+        <label>FileIO/forLineIn.h</label>
+        <link refid="forLineIn_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>systemCall.h</label>
-        <link refid="systemCall_8h"/>
+      <node id="29">
+        <label>FileIO/pipedInput.h</label>
+        <link refid="pipedInput_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>JSL/Strings/Manipulate.h</label>
+        <link refid="Manipulate_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>JSL/internal/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
         <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="10">
-        <label>dirent.h</label>
+      <node id="22">
+        <label>charconv</label>
       </node>
-      <node id="3">
-        <label>fstream</label>
+      <node id="20">
+        <label>cstdint</label>
       </node>
-      <node id="19">
-        <label>iostream</label>
+      <node id="26">
+        <label>cstdio</label>
       </node>
-      <node id="7">
-        <label>sstream</label>
-      </node>
-      <node id="13">
-        <label>stdexcept</label>
+      <node id="23">
+        <label>cstring</label>
       </node>
       <node id="4">
+        <label>filesystem</label>
+      </node>
+      <node id="10">
+        <label>fstream</label>
+      </node>
+      <node id="3">
+        <label>functional</label>
+      </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="14">
+        <label>iostream</label>
+      </node>
+      <node id="27">
+        <label>mutex</label>
+      </node>
+      <node id="7">
+        <label>regex</label>
+      </node>
+      <node id="24">
+        <label>sstream</label>
+      </node>
+      <node id="8">
         <label>string</label>
       </node>
-      <node id="22">
-        <label>string.h</label>
-      </node>
       <node id="12">
-        <label>sys/stat.h</label>
+        <label>string_view</label>
       </node>
-      <node id="18">
+      <node id="25">
         <label>unistd.h</label>
       </node>
       <node id="5">
@@ -170,63 +201,27 @@
     </incdepgraph>
     <invincdepgraph>
       <node id="2">
-        <label>/Users/jf20/Documents/JSL/CommandArgs/Argument.h</label>
-        <link refid="Argument_8h"/>
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>/Users/jf20/Documents/JSL/CommandArgs/CommandArgs.h</label>
-        <link refid="CommandArgs_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
       <node id="1">
-        <label>/Users/jf20/Documents/JSL/FileIO/FileIO.h</label>
+        <label>include/JSL/FileIO.h</label>
         <link refid="FileIO_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
       </node>
       <node id="4">
-        <label>/Users/jf20/Documents/JSL/JSL.h</label>
-        <link refid="JSL_8h"/>
-        <childnode refid="5" relation="include">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>/Users/jf20/Documents/JSL/Testing/Testing.h</label>
-        <link refid="Testing_8h"/>
-      </node>
-      <node id="5">
-        <label>/Users/jf20/Documents/JSL/Testing/Testing_UnitTests.h</label>
-        <link refid="Testing__UnitTests_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>/Users/jf20/Documents/JSL/gnuplot/axis.h</label>
-        <link refid="axis_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>/Users/jf20/Documents/JSL/gnuplot/gnuplot.h</label>
-        <link refid="gnuplot_8h"/>
+      <node id="3">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
         <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>/Users/jf20/Documents/JSL/gnuplot/gnuplotMain.h</label>
-        <link refid="gnuplotMain_8h"/>
-        <childnode refid="8" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -235,13 +230,11 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="LineReader_8h" kindref="compound">LineReader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mkdir_8h" kindref="compound">mkdir.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="locationExists_8h" kindref="compound">locationExists.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fileWriter_8h" kindref="compound">fileWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="forLineIn_8h" kindref="compound">FileIO/forLineIn.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="FileSystem_8h" kindref="compound">FileIO/FileSystem.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fileWriters_8h" kindref="compound">FileIO/fileWriters.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pipedInput_8h" kindref="compound">FileIO/pipedInput.h</ref>&quot;</highlight></codeline>
     </programlisting>
-    <location file="/Users/jf20/Documents/JSL/FileIO/FileIO.h"/>
+    <location file="include/JSL/FileIO.h"/>
   </compounddef>
 </doxygen>

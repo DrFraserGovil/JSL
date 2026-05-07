@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['_7egnuplot_0',['~gnuplot',['../classJSL_1_1gnuplot.html#a1654a89612515dc3cd3c2a45c60dc733',1,'JSL::gnuplot']]]
+  ['w_5fl_0',['w_l',['../structBinaryExpression.html#ad0beb7be091ad24f7a055eb9d443a02b',1,'BinaryExpression']]],
+  ['w_5fr_1',['w_r',['../structBinaryExpression.html#ae539329468a28d29b6cf010367497425',1,'BinaryExpression']]],
+  ['wakeup_2',['Wakeup',['../classJSL_1_1Event_1_1Watcher.html#af4ebc1a0d41c58faab9dd1a43a585a8a',1,'JSL::Event::Watcher']]],
+  ['warn_3',['WARN',['../Levels_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'Levels.h']]],
+  ['warncolour_4',['WarnColour',['../classJSL_1_1Log_1_1ConfigObject.html#a9cf563f2a604c6d1d62e36c7b221a71c',1,'JSL::Log::ConfigObject']]],
+  ['watch_5',['watch',['../classJSL_1_1Event_1_1Watcher.html#a03c5979d0461db1e384d9389adbe5332',1,'JSL::Event::Watcher::Watch()'],['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a7180e31000a1edd37ef55866a3099141',1,'JSL::Event::internal::HandlerBase::Watch']]],
+  ['watcher_6',['watcher',['../classJSL_1_1Event_1_1Watcher.html',1,'JSL::Event::Watcher'],['../classJSL_1_1Event_1_1Watcher.html#abac357b31d076af5e85254c956316d7e',1,'JSL::Event::Watcher::Watcher()']]],
+  ['watcher_2eh_7',['Watcher.h',['../Watcher_8h.html',1,'']]],
+  ['watchmap_8',['WatchMap',['../classJSL_1_1Event_1_1Watcher.html#abaccd16a308cbec3c4d8e37c011c97cf',1,'JSL::Event::Watcher']]],
+  ['white_9',['White',['../namespaceJSL_1_1Format.html#a08d06db733a345807a8fd58f9c779e46',1,'JSL::Format']]],
+  ['workerfunction_10',['WorkerFunction',['../classJSL_1_1Parallel_1_1Pool.html#a6eff6460eb46df0bb8ed5fb46eaf3ba6',1,'JSL::Parallel::Pool']]],
+  ['workers_11',['workers',['../classJSL_1_1Event_1_1Async_1_1Manager.html#a1f27920906d54b3b139e71f60ad5c873',1,'JSL::Event::Async::Manager::Workers'],['../classJSL_1_1Parallel_1_1Pool.html#a65b3103ac8eb5ec96515ac6545be5357',1,'JSL::Parallel::Pool::Workers']]],
+  ['workersrunning_12',['WorkersRunning',['../classJSL_1_1Parallel_1_1Pool.html#ab28f85de6082c8467aff4363f29389b7',1,'JSL::Parallel::Pool']]],
+  ['write_13',['Write',['../namespaceJSL_1_1Archiver.html#aeeb3e5dd16147fd2dcdc870080838e3ba1129c0e4d43f2d121652a7302712cff6',1,'JSL::Archiver']]],
+  ['writeexporter_14',['WriteExporter',['../structJSL_1_1Archiver_1_1internal_1_1WriteExporter.html',1,'JSL::Archiver::internal']]],
+  ['writeformatting_15',['WriteFormatting',['../classJSL_1_1Plotting_1_1Display.html#acca0833b14048d53e8e6c0c800cfa492',1,'JSL::Plotting::Display']]],
+  ['writematrix_16',['writeMatrix',['../namespaceJSL_1_1IO.html#adeb068f89831e474eba432f9fe7b288a',1,'JSL::IO']]],
+  ['writer_2eh_17',['writer.h',['../writer_8h.html',1,'']]],
+  ['writestream_18',['writestream',['../classJSL_1_1Archiver_1_1WriteStream.html#a0d5dc94298daf8ee59ad3151cbb65117',1,'JSL::Archiver::WriteStream::WriteStream()'],['../classJSL_1_1Archiver_1_1WriteStream.html',1,'JSL::Archiver::WriteStream']]],
+  ['writestream_2eh_19',['writeStream.h',['../writeStream_8h.html',1,'']]],
+  ['writestring_20',['writeString',['../namespaceJSL_1_1IO.html#ac60def7c09d0396f410c78e58a9dbe80',1,'JSL::IO']]],
+  ['writetopipe_21',['writeToPipe',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#aa4af6f31dc75008e948e6810f5b29549',1,'JSL::Plotting::internal::GnuplotPipe']]],
+  ['writevector_22',['writeVector',['../namespaceJSL_1_1IO.html#af8d986267b68041be15cf67493d32f7a',1,'JSL::IO']]]
 ];

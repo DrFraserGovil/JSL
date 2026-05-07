@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['axes_0',['Axes',['../classJSL_1_1gnuplot.html#ae989349518a66a36b8003506b7af48ea',1,'JSL::gnuplot']]],
-  ['axis_5fx_1',['axis_x',['../classJSL_1_1gnuplot.html#a102660ecaaece0b2b35e311b530e8b73',1,'JSL::gnuplot']]],
-  ['axis_5fx_5fmax_2',['axis_x_max',['../classJSL_1_1gnuplot.html#a4cb279032f4f688412bea6fb3c2e7289',1,'JSL::gnuplot']]],
-  ['axis_5fy_3',['axis_y',['../classJSL_1_1gnuplot.html#acf4f664ab476e047cdbf7f6dd1bfa74e',1,'JSL::gnuplot']]],
-  ['axis_5fy_5fmax_4',['axis_y_max',['../classJSL_1_1gnuplot.html#af0aefa22a2dcb30ff3f3b794e3b2749d',1,'JSL::gnuplot']]],
-  ['axiscount_5',['axisCount',['../classJSL_1_1gnuplot.html#a666ddb205d0cb9c76813e2f8075c1b65',1,'JSL::gnuplot']]],
-  ['axisfontsize_6',['axisFontSize',['../classJSL_1_1Axis.html#a99a36f25ce02c490762a34a536c373f1',1,'JSL::Axis']]]
+  ['_5flower_0',['_Lower',['../classJSL_1_1Plotting_1_1RangeObject.html#a0943d8a596434d9f673f429302160857',1,'JSL::Plotting::RangeObject']]],
+  ['_5flowerauto_1',['_LowerAuto',['../classJSL_1_1Plotting_1_1RangeObject.html#aca2a3491dd7fc67526d8668527560ca6',1,'JSL::Plotting::RangeObject']]],
+  ['_5fupper_2',['_Upper',['../classJSL_1_1Plotting_1_1RangeObject.html#ababcfad7332afec3889fab5ec8309b31',1,'JSL::Plotting::RangeObject']]],
+  ['_5fupperauto_3',['_UpperAuto',['../classJSL_1_1Plotting_1_1RangeObject.html#ac83375098a7536bb153eeb8ab052ea28',1,'JSL::Plotting::RangeObject']]]
 ];

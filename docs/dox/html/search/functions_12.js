@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['unittest_0',['UnitTest',['../classJSL_1_1UnitTest.html#aa3bc8d5c99696d5bc6e63b8da358a0ed',1,'JSL::UnitTest']]],
-  ['unpacktargets_1',['UnpackTargets',['../classJSL_1_1ProgressBar.html#a7088deecfe936d4eaba784cff05270f4',1,'JSL::ProgressBar']]],
-  ['unrollpositions_2',['UnrollPositions',['../classJSL_1_1ProgressBar.html#a73c79e8e00905454aa2853b39d8143b6',1,'JSL::ProgressBar']]],
-  ['update_3',['Update',['../classJSL_1_1ProgressBar.html#ac7d924894ea76344ec2b1540d329a05f',1,'JSL::ProgressBar']]],
-  ['upperboundlocator_4',['UpperBoundLocator',['../namespaceJSL.html#a6e3dd386e7ab4be6fae6e0bdf8c98e91',1,'JSL']]]
+  ['underline_0',['Underline',['../namespaceJSL_1_1Format.html#ac6a414a59d7fb0376a225b34eb9dcba9',1,'JSL::Format']]],
+  ['unwatch_1',['unwatch',['../classJSL_1_1Event_1_1Watcher.html#a686a74cea9f8b181526a324d6ff9ae35',1,'JSL::Event::Watcher::Unwatch(int id)'],['../classJSL_1_1Event_1_1Watcher.html#a05e4e0d34a211d799305d330829801be',1,'JSL::Event::Watcher::Unwatch(std::filesystem::path path)']]],
+  ['update_2',['update',['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#a13d585bb4d997366654d85045a9d3ad6',1,'JSL::Display::Progress::internal::ProgressEngine::Update(std::vector&lt; int &gt; &amp;&amp;positions)'],['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#acc41078889abc1db1785fb20b3511566',1,'JSL::Display::Progress::internal::ProgressEngine::Update(int position)']]],
+  ['updatefilebatch_3',['UpdateFileBatch',['../classJSL_1_1Event_1_1Watcher.html#a131716f0e6d44fba44fcf18c4ea8210f',1,'JSL::Event::Watcher']]],
+  ['upper_4',['Upper',['../classJSL_1_1Plotting_1_1RangeObject.html#a92602b855909c9216c0cb85a21067e0c',1,'JSL::Plotting::RangeObject']]]
 ];

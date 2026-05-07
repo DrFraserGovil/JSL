@@ -1,35 +1,33 @@
-\hypertarget{error_8h_source}{}\doxysection{error.\+h}
-\label{error_8h_source}\index{/Users/jf20/Documents/JSL/System/error.h@{/Users/jf20/Documents/JSL/System/error.h}}
+\doxysection{error.\+h}
+\hypertarget{error_8h_source}{}\label{error_8h_source}\index{include/JSL/internal/error.h@{include/JSL/internal/error.h}}
 \mbox{\hyperlink{error_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <stdexcept>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
-\DoxyCodeLine{6 \{}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 }
-\DoxyCodeLine{10     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{ErrorCode}} \{\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSLError}}, }
-\DoxyCodeLine{11         \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ab2e398994d8ffbb8c17109c9ec85ed30}{SystemError}}, }
-\DoxyCodeLine{12         \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61afec2ceb4545826a8594a9dc7a7b1c702}{OverrunError}}, }
-\DoxyCodeLine{13         \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a007fec64442c721c18380cb70c51a443}{FailedAssertion}}, }
-\DoxyCodeLine{14         \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a7da39e712d8960d161fbef3305d793a4}{IOError}}, }
-\DoxyCodeLine{15         \mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973}{PlottingError}} }
-\DoxyCodeLine{16     \};}
-\DoxyCodeLine{17     \textcolor{keyword}{const} std::vector<std::string> \mbox{\hyperlink{namespaceJSL_a606f5a286ccd4cf3d860d2efde2eac82}{ErrorNames}} = \{\textcolor{stringliteral}{"{}ERROR"{}}, \textcolor{stringliteral}{"{}SYSTEM ERROR"{}}, \textcolor{stringliteral}{"{}OVERRUN ERROR"{}}, \textcolor{stringliteral}{"{}FAILED ASSERTION"{}},\textcolor{stringliteral}{"{}IOError"{}}, \textcolor{stringliteral}{"{}GNUPLOT ERROR"{}}\};}
-\DoxyCodeLine{18     }
-\DoxyCodeLine{22     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61}{ErrorCode}} code, \textcolor{keyword}{const} std::string \& message)}
-\DoxyCodeLine{23     \{}
-\DoxyCodeLine{24         std::string newmessage = \textcolor{stringliteral}{"{}\(\backslash\)nJSL "{}} + \mbox{\hyperlink{namespaceJSL_a606f5a286ccd4cf3d860d2efde2eac82}{ErrorNames}}[code] + \textcolor{stringliteral}{"{}: "{}} + message + \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{25         \textcolor{keywordflow}{throw} std::runtime\_error(newmessage);}
-\DoxyCodeLine{26     \}}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{29     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\textcolor{keyword}{const} std::string \& message)}
-\DoxyCodeLine{30     \{}
-\DoxyCodeLine{31         \mbox{\hyperlink{namespaceJSL_a5783bc90550deca94c1790e581fb707d}{Error}}(\mbox{\hyperlink{namespaceJSL_a5059dbafa288b9b3beac1746f4acae61a0a229ef32833c9a64ed38080ba87b196}{JSLError}},message);}
-\DoxyCodeLine{32     \}}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34 \}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Log_8h}{JSL/Display/Log.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ JSL\_LOCATION\ \_\_LINE\_\_,\_\_func\_\_,\_\_FILE\_\_}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1internal}{JSL::internal}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{FatalError}}}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a3feec25381fbd470218ac1b97c6cf4b5}{Summary}};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a1b64518cb312d0fe269d1e86a5fa4ed6}{Buffer}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a0aedcd8d9a609d98c61e86c28c2b4b4a}{line}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a17b761192dd180bd59be16a5ccb80611}{function}};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_ad8a3d8a87fd75bdeeb950b3b36781f7a}{file}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a53ab722ac615fd0ffaa9bee25d95e7d6}{FatalError}}(std::string\ msg,\textcolor{keywordtype}{int}\ callingLine,\textcolor{keyword}{const}\ std::string\ \&\ callingFunction,std::string\ callingFile);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{FatalError}}\ \&\ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a0361e1d66936aca0a035ad22c70cdd43}{operator<<}}(\textcolor{keyword}{const}\ T\ \&\ input)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a1b64518cb312d0fe269d1e86a5fa4ed6}{Buffer}}\ <<\ input;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a95c0e10171c62c97c28d4c5404245c14}{\string~FatalError}}()\ noexcept\ (false);}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \}}
 
 \end{DoxyCode}

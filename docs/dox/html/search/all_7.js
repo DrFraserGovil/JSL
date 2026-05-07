@@ -1,5 +1,31 @@
 var searchData=
 [
-  ['hadamard_0',['Hadamard',['../namespaceJSL.html#a6fd4487b0a8ac5713df4a37079287913',1,'JSL']]],
-  ['hashes_1',['Hashes',['../classJSL_1_1ProgressBar.html#a0798094501860753307f92eafa464b4f',1,'JSL::ProgressBar']]]
+  ['get_0',['Get',['../classJSL_1_1internal_1_1Parameter_1_1CommandLineReader.html#abf69cf1cf49154acf48c8d193f70b501',1,'JSL::internal::Parameter::CommandLineReader']]],
+  ['getdefaultcommand_1',['GetDefaultCommand',['../classJSL_1_1Parameter_1_1Aggregator.html#ae36958fb62d56849d4c76f63f728e33c',1,'JSL::Parameter::Aggregator']]],
+  ['getdescription_2',['GetDescription',['../classJSL_1_1Parameter_1_1NestedAggregator.html#a43f76ed6e5e015b3274410fbb4dc44d2',1,'JSL::Parameter::NestedAggregator']]],
+  ['getdescriptor_3',['GetDescriptor',['../classJSL_1_1Event_1_1Antenna.html#ad23d1c807ba626f8573d56453c945729',1,'JSL::Event::Antenna']]],
+  ['getdimensions_4',['GetDimensions',['../namespaceJSL_1_1Terminal.html#a6a4e1219775f952cca3c2762e4989f01',1,'JSL::Terminal']]],
+  ['getgrad_5',['GetGrad',['../structBinaryExpression.html#aebcfee3202417b4f0f77d7e7cac89f99',1,'BinaryExpression']]],
+  ['getid_6',['GetID',['../classJSL_1_1Event_1_1Antenna.html#afd8383e6395754ece43ef506f00b6e01',1,'JSL::Event::Antenna']]],
+  ['getlines_7',['getLines',['../namespaceJSL_1_1IO.html#ab1c1b73d4d75c7ba6d8c919daf595c46',1,'JSL::IO']]],
+  ['getlower_8',['getLower',['../namespaceJSL_1_1String.html#a9aee7c56dfeac6a7882a558cc3d6a280',1,'JSL::String']]],
+  ['getmessage_9',['GetMessage',['../classJSL_1_1Event_1_1Antenna.html#a26948bd606eba606d5fcf22bb26a6fb8',1,'JSL::Event::Antenna']]],
+  ['getmode_10',['GetMode',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#af61ccf05fc9bdec2e6ed0a6f1827e023',1,'JSL::Plotting::internal::GnuplotPipe']]],
+  ['getoption_11',['GetOption',['../classJSL_1_1internal_1_1Parameter_1_1CommandLineReader.html#a2d75ebec4650be7b6acbf28d81addf09',1,'JSL::internal::Parameter::CommandLineReader']]],
+  ['getparameter_12',['GetParameter',['../classJSL_1_1Parameter_1_1NestedAggregator.html#a41df8bde8803a9ea7069139fff912846',1,'JSL::Parameter::NestedAggregator']]],
+  ['getpath_13',['GetPath',['../classJSL_1_1Event_1_1Antenna.html#ae74e92fb4350d72c55986deecb7fdfd4',1,'JSL::Event::Antenna']]],
+  ['getpid_14',['GETPID',['../pipe_8h.html#a7619c450d37a313aec4406af35c363ac',1,'pipe.h']]],
+  ['getruntime_15',['GetRuntime',['../classJSL_1_1Event_1_1Watcher.html#a584c86957090390289a7eebaede8146b',1,'JSL::Event::Watcher']]],
+  ['getscalar_16',['getscalar',['../structDualExpression.html#a023fa62849bd00161d8b27574243c90b',1,'DualExpression::GetScalar()'],['../structDualAdd.html#a2d4160808905c375683955c019da7606',1,'DualAdd::GetScalar()'],['../classVectorDual.html#a9575aaefeabe21642b09bcdb225e9898',1,'VectorDual::GetScalar()']]],
+  ['gettriggers_17',['GetTriggers',['../classJSL_1_1internal_1_1Parameter_1_1ParameterBase.html#af996744b0befea389f77004f23fcfad8',1,'JSL::internal::Parameter::ParameterBase']]],
+  ['getupper_18',['getUpper',['../namespaceJSL_1_1String.html#af9f2ebc9f818714158617ecf43f4a6c1',1,'JSL::String']]],
+  ['getwatchedfiles_19',['GetWatchedFiles',['../classJSL_1_1Event_1_1Watcher.html#af2402909acdf5b368ec161351cbd0e59',1,'JSL::Event::Watcher']]],
+  ['getwatcher_20',['GetWatcher',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#ace0463f720ee896fc203aa969d47a162',1,'JSL::Event::internal::HandlerBase']]],
+  ['getwords_21',['getWords',['../namespaceJSL_1_1IO.html#a962bab2b0dcff9021d5890f538240de9',1,'JSL::IO']]],
+  ['gid_22',['gid',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#a810b5c91392a9aacd5b4b53aaa991836',1,'JSL::Archiver::internal::TarHeader::gid'],['../structJSL_1_1Archiver_1_1internal_1_1Security.html#a4dde8993590947d8a925086056e0cf5a',1,'JSL::Archiver::internal::Security::GID']]],
+  ['gname_23',['gname',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#af643c87488d20bcc49c881b35a0ab595',1,'JSL::Archiver::internal::TarHeader::gname'],['../structJSL_1_1Archiver_1_1internal_1_1Security.html#a431100978f1b5f948291ae22d433eced',1,'JSL::Archiver::internal::Security::GName']]],
+  ['gnuplotpipe_24',['gnuplotpipe',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a6b4039dd3fb17f900df917147d301b5f',1,'JSL::Plotting::internal::GnuplotPipe::GnuplotPipe()'],['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html',1,'JSL::Plotting::internal::GnuplotPipe']]],
+  ['gradient_25',['Gradient',['../classJSL_1_1Plotting_1_1Color_1_1Controller.html#ac62aa878a37129f0aaa3dd7262c2e3ae',1,'JSL::Plotting::Color::Controller']]],
+  ['gradientholder_26',['GradientHolder',['../structGradientHolder.html',1,'']]],
+  ['green_27',['Green',['../namespaceJSL_1_1Format.html#aca4adf51e196a330791d94688f827cf9',1,'JSL::Format']]]
 ];

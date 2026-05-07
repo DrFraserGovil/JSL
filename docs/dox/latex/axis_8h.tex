@@ -1,40 +1,28 @@
-\hypertarget{axis_8h}{}\doxysection{/\+Users/jf20/\+Documents/\+JSL/gnuplot/axis.h File Reference}
-\label{axis_8h}\index{/Users/jf20/Documents/JSL/gnuplot/axis.h@{/Users/jf20/Documents/JSL/gnuplot/axis.h}}
-{\ttfamily \#include $<$string$>$}\newline
+\doxysection{include/\+JSL/\+Plot/axis.h File Reference}
+\hypertarget{axis_8h}{}\label{axis_8h}\index{include/JSL/Plot/axis.h@{include/JSL/Plot/axis.h}}
 {\ttfamily \#include $<$iostream$>$}\newline
-{\ttfamily \#include \char`\"{}../\+File\+IO/\+File\+IO.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Plot\+Data.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+System/\+System.\+h\char`\"{}}\newline
-\doxysubsection*{Data Structures}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}data/curve.\+h"{}}\newline
+{\ttfamily \#include "{}data/pipe.\+h"{}}\newline
+{\ttfamily \#include "{}display/visuals.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classJSL_1_1Axis}{JSL\+::\+Axis}}
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1AxisMembers_1_1Data}{JSL\+::\+Plotting\+::\+Axis\+Members\+::\+Data}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{JSL\+::\+Plotting\+::\+Axis}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
 \item 
-namespace \mbox{\hyperlink{namespaceJSL_1_1Fonts}{JSL\+::\+Fonts}}
+namespace \mbox{\hyperlink{namespaceJSL_1_1Plotting}{JSL\+::\+Plotting}}
 \item 
-namespace \mbox{\hyperlink{namespaceJSL_1_1internal}{JSL\+::internal}}
+namespace \mbox{\hyperlink{namespaceJSL_1_1Plotting_1_1AxisMembers}{JSL\+::\+Plotting\+::\+Axis\+Members}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Enumerations}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08ee}{JSL\+::\+Fonts\+::\+Target}} \{ \newline
-\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eead0545c4e33d28a3450f2d7fda228303e}{JSL\+::\+Fonts\+::\+Global}}
-, \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eea43877ae65c82a120f36e34052714b182}{JSL\+::\+Fonts\+::\+Super\+Title}}
-, \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eeacdacd74f88fa721134ee5813ca56b0e3}{JSL\+::\+Fonts\+::\+Title}}
-, \mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eea4a13f624c089b0f1d3c7e68db34da8a2}{JSL\+::\+Fonts\+::\+Label}}
-, \newline
-\mbox{\hyperlink{namespaceJSL_1_1Fonts_a7a55fcb9c82e5a8c7f98ce1c803d08eeab031025a82ff39f9a9183b2ee36c6b25}{JSL\+::\+Fonts\+::\+Legend}}
- \}
-\begin{DoxyCompactList}\small\item\em A Font\+::\+Target enumerates the possible fontsizes which can be set by the gnuplot regime. Used in either the Axis\+::\+Set\+Font\+Size function or gnuplot\+::\+Set\+Font\+Size. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-std\+::string \mbox{\hyperlink{namespaceJSL_1_1Fonts_a916d4546aed69a1f4da72a0f172dc4a7}{JSL\+::\+Fonts\+::\+Size\+String}} (int size)
-\begin{DoxyCompactList}\small\item\em Generates the appropriate font-\/resizing string (if size \texorpdfstring{$<$}{<} 0, uses the default Global value) \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{namespaceJSL_1_1internal_ad9e3cb9332be17eb5344432eb2a58570}{JSL\+::internal\+::signifier}} (const double \&x, int significance)
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceJSL_1_1Plotting_aa72d0385bd8eeed098ca4a036bccde11}{JSL\+::\+Plotting\+::\+Vec}} = const std\+::vector$<$ T $>$ \&
 \end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scattertype_0',['ScatterType',['../namespaceJSL.html#a086efb36ddb107d45961a6b46932c526',1,'JSL']]]
+  ['loglevel_0',['LogLevel',['../Levels_8h.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'Levels.h']]]
 ];

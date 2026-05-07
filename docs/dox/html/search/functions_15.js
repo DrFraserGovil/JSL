@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7egnuplot_0',['~gnuplot',['../classJSL_1_1gnuplot.html#a1654a89612515dc3cd3c2a45c60dc733',1,'JSL::gnuplot']]]
+  ['yellow_0',['Yellow',['../namespaceJSL_1_1Format.html#aaeaa6f8b854fe2f38e404f5c4ccd863f',1,'JSL::Format']]]
 ];

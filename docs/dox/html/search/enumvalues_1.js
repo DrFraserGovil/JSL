@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['dash_0',['Dash',['../namespaceJSL.html#acbabfae0b320d418d49485b7c50bc355a5d77703e9d097677886b897d9a2eeb62',1,'JSL']]],
-  ['dashdot_1',['DashDot',['../namespaceJSL.html#acbabfae0b320d418d49485b7c50bc355af0b887cb0d75c330317bc843146bfc92',1,'JSL']]],
-  ['dashdotdot_2',['DashDotDot',['../namespaceJSL.html#acbabfae0b320d418d49485b7c50bc355a48afd9609abb3d990c826b2c74850d3e',1,'JSL']]],
-  ['dot_3',['Dot',['../namespaceJSL.html#a086efb36ddb107d45961a6b46932c526a7d6491e51b0151fad51114bdc9fe0006',1,'JSL']]],
-  ['dotted_4',['Dotted',['../namespaceJSL.html#acbabfae0b320d418d49485b7c50bc355ac3cd9b153ce73b7d8dd0485ae186379d',1,'JSL']]]
+  ['backgroundcolour_0',['BackgroundColour',['../namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c',1,'JSL::Format']]],
+  ['balanced_1',['Balanced',['../classJSL_1_1Parallel_1_1Pool.html#ad1d5ed1a19ad4dc032cf4f5bf93a9933ac6589f5236c0c434d0c63dc5f9a856f2',1,'JSL::Parallel::Pool']]],
+  ['bottom_2',['Bottom',['../namespaceJSL_1_1Plotting.html#ac714c2f6e352a8383ae9b9b819f16eeca2ad9d63b69c4a10a5cc9cad923133bc4',1,'JSL::Plotting']]]
 ];

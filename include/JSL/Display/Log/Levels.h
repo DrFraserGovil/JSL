@@ -18,7 +18,7 @@ enum LogLevel
 namespace JSL::Log
 {
     //! Convert integers to LogLevels. @param level an integer between 0 and 3 @throws runtime_error if level is out of bounds @returns The corresponding LogLevel 
-    LogLevel LogLevelConvert(int level);
+    LogLevel MakeLevel(int level);
    
 }
 

@@ -1,8 +1,17 @@
 var searchData=
 [
-  ['legend_0',['Legend',['../namespaceJSL_1_1LineProperties.html#a6f09486f21ae83a4a69f0a18d0023a73',1,'JSL::LineProperties']]],
-  ['linspace_1',['linspace',['../classJSL_1_1Vector.html#a46fc3e1d5ee9bdb66844aa5e2e5112e9',1,'JSL::Vector']]],
-  ['listparse_2',['ListParse',['../classJSL_1_1ArgumentInterface.html#a256b5bd88b5f6638353f108c48f3ee65',1,'JSL::ArgumentInterface::ListParse()'],['../classJSL_1_1Argument.html#aa2b18bb35e90f91e224a06d60835053a',1,'JSL::Argument::ListParse()']]],
-  ['locationexists_3',['locationExists',['../namespaceJSL.html#a1752cd7c6e1134da51e9307527e0d788',1,'JSL']]],
-  ['logsetter_4',['LogSetter',['../classJSL_1_1Axis.html#a666da7ba874d1e4c6926536918e7c8cc',1,'JSL::Axis']]]
+  ['lap_0',['Lap',['../classJSL_1_1Time_1_1Timer.html#a39a0f37f73ae80e8a73b71b3a54c6223',1,'JSL::Time::Timer']]],
+  ['linspace_1',['Linspace',['../namespaceJSL_1_1Vector.html#a73680c15e114ade4829ed7b318618049',1,'JSL::Vector']]],
+  ['list_2',['list',['../namespaceJSL_1_1IO_1_1FileSystem.html#ac5e0a91fe7251af07ec60661a8fcc610',1,'JSL::IO::FileSystem']]],
+  ['listall_3',['ListAll',['../classJSL_1_1IO_1_1FileSystem_1_1Structure.html#a8cfa62a5fa9a1951223bdef438ffb7eb',1,'JSL::IO::FileSystem::Structure']]],
+  ['listdirs_4',['ListDirs',['../classJSL_1_1IO_1_1FileSystem_1_1Structure.html#acfb190fd42fc85c4ff3da4c87141990d',1,'JSL::IO::FileSystem::Structure']]],
+  ['listfiles_5',['listfiles',['../classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Read_01_4.html#a40ae4d19626d335d33cc4e13f7c2dc23',1,'JSL::Archiver::Vault&lt; Mode::Read &gt;::ListFiles()'],['../classJSL_1_1IO_1_1FileSystem_1_1Structure.html#a441c53dc67622ee4c236e2fcb93f2d07',1,'JSL::IO::FileSystem::Structure::ListFiles()']]],
+  ['log_6',['log',['../scalardual_8h.html#a92639f5b3f3a4278106a62b3b8fee531',1,'scalardual.h']]],
+  ['log10_7',['log10',['../scalardual_8h.html#a7f5f947613e56aa65b08f6749a6dd224',1,'scalardual.h']]],
+  ['log1p_8',['log1p',['../scalardual_8h.html#a3dedf941c4cbcb63b868c13413aad5f4',1,'scalardual.h']]],
+  ['loglevelconvert_9',['LogLevelConvert',['../namespaceJSL_1_1Log.html#aed21cdb152342ae4d25f952c1a5871f4',1,'JSL::Log']]],
+  ['logscale_10',['LogScale',['../classJSL_1_1Plotting_1_1Properties_1_1PerAxis.html#a3cdc87e540963aa2138886f3ada38e20',1,'JSL::Plotting::Properties::PerAxis']]],
+  ['loopreturn_11',['loopreturn',['../classJSL_1_1Parallel_1_1Pool.html#ab6a3292a7205f68febe7dbf6f76ad033',1,'JSL::Parallel::Pool::LoopReturn(size_t nLoop, std::function&lt; T(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)'],['../classJSL_1_1Parallel_1_1Pool.html#a38d3fde31abafeef1802eeb4c1b5df0c',1,'JSL::Parallel::Pool::LoopReturn(std::vector&lt; T &gt; &amp;holder, std::function&lt; T(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)']]],
+  ['looptask_12',['LoopTask',['../classJSL_1_1Parallel_1_1Pool.html#a7f30d84b2a5de792e60b10ff42a756f0',1,'JSL::Parallel::Pool']]],
+  ['lower_13',['Lower',['../classJSL_1_1Plotting_1_1RangeObject.html#a01a9a67d0d0542bad20d0fd7abcb8ce4',1,'JSL::Plotting::RangeObject']]]
 ];

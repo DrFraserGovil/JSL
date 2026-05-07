@@ -16,7 +16,7 @@ namespace JSL::Log
 
     void ConfigObject::SetLevel(int level)
     {
-        Level = LogLevelConvert(level);
+        Level = MakeLevel(level);
     }
     
     void ConfigObject::Initialise(int level, bool header)
@@ -26,35 +26,22 @@ namespace JSL::Log
         ShowHeaders = header;
     }
 
-    void ConfigObject::SetPrompt(std::string_view prompt)
-    {
-        if (prompt.empty())
-        {
-            IncludePrompt = false;
-        }
-        else
-        {
-            IncludePrompt = true;
-            AppendNewline = true;
-            ForceClear = true;
-            Prompt = static_cast<std::string>(prompt);
-        }
-    }
-    void ConfigObject::ResetPrompt()
-    {
-        IncludePrompt = false;
-    }
+
 
     void ConfigObject::AlignSize(size_t debugReserve)
     {
         auto S = Terminal::GetDimensions();
-        DebugLineSize = std::max(debugReserve, S.Columns - debugReserve);
+        LineSize = std::max(debugReserve, S.Columns - debugReserve);
     }
     
     namespace Global
     {
-        ConfigObject Config;
-        std::mutex StreamMutex;
+        ConfigObject & Config()
+        {
+            static ConfigObject config;
+            return config;
+        }
+
     }
 
 } // namespace JSL::Log

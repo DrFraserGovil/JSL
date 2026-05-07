@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['title_0',['Title',['../namespaceJSL_1_1Fonts.html#a7a55fcb9c82e5a8c7f98ce1c803d08eeacdacd74f88fa721134ee5813ca56b0e3',1,'JSL::Fonts']]]
+  ['out_0',['Out',['../namespaceJSL_1_1Plotting.html#a15ee95e4fa132d3c5c6b2c140ed8b9d5a7c147cda9e49590f6abe83d118b7353b',1,'JSL::Plotting']]],
+  ['outside_1',['Outside',['../namespaceJSL_1_1Plotting.html#ac714c2f6e352a8383ae9b9b819f16eeca76fbf0ccd7fcd64879c2ff2119dc15a4',1,'JSL::Plotting']]]
 ];

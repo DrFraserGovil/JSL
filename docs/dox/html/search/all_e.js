@@ -1,23 +1,13 @@
 var searchData=
 [
-  ['parse_0',['Parse',['../classJSL_1_1ArgumentInterface.html#a28b487f7a4fa6e721ed6629abe2073f2',1,'JSL::ArgumentInterface::Parse()'],['../classJSL_1_1Argument.html#a8984e7ce23155259d90a3e98170f36e0',1,'JSL::Argument::Parse()']]],
-  ['parseloop_1',['ParseLoop',['../classJSL_1_1PlotData.html#a0cb1885e91da9457fd684a60547e66d0',1,'JSL::PlotData']]],
-  ['parsenvpair_2',['ParseNVPair',['../classJSL_1_1PlotData.html#a2e57942c52c4ec76436bd3179e4ee2cd',1,'JSL::PlotData']]],
-  ['passed_3',['Passed',['../classJSL_1_1UnitTest.html#afac1f363a8406fad39316ee772a837a9',1,'JSL::UnitTest']]],
-  ['pensize_4',['penSize',['../classJSL_1_1PlotData.html#a91bf6edbf9d8a28cf5255aa1ed74948c',1,'JSL::PlotData']]],
-  ['pensize_5',['PenSize',['../namespaceJSL.html#ad5aeae8cb562d6f38c724cbdc51d81f8a22d189b48d50314bdd20b34e9a40e4a5',1,'JSL::PenSize()'],['../namespaceJSL_1_1LineProperties.html#a01e508bb8a1d683fcf8771c08dc53dfb',1,'JSL::LineProperties::PenSize()']]],
-  ['pentype_6',['PenType',['../namespaceJSL.html#ad5aeae8cb562d6f38c724cbdc51d81f8ab516e098813c27967b8e649b94f98db8',1,'JSL::PenType()'],['../namespaceJSL_1_1LineProperties.html#ab079b176b53f91602a34c241f06f70f9',1,'JSL::LineProperties::PenType()']]],
-  ['pipedinputfound_7',['PipedInputFound',['../namespaceJSL.html#addbf4a35e1d5a856d7c301e1e5829c2f',1,'JSL']]],
-  ['plot_8',['Plot',['../classJSL_1_1Axis.html#a95b78211cb09e6c6f0834fd353890a1d',1,'JSL::Axis::Plot()'],['../classJSL_1_1gnuplot.html#ad7759efccfffa13d51620a3a695823ea',1,'JSL::gnuplot::Plot(const std::vector&lt; T &gt; &amp;x, const std::vector&lt; S &gt; &amp;y, NameValuePair&lt; Ts &gt;... args)'],['../classJSL_1_1gnuplot.html#aff8f871df4ddbbbf519572dd1f717588',1,'JSL::gnuplot::Plot(const T &amp;x, const S &amp;y, NameValuePair&lt; Ts &gt;... args)']]],
-  ['plotdata_9',['PlotData',['../classJSL_1_1PlotData.html',1,'JSL::PlotData'],['../classJSL_1_1PlotData.html#acefcd21025b95d2f76313dfd578bb25f',1,'JSL::PlotData::PlotData()']]],
-  ['plotdata_2eh_10',['PlotData.h',['../PlotData_8h.html',1,'']]],
-  ['plottingerror_11',['PlottingError',['../namespaceJSL.html#a5059dbafa288b9b3beac1746f4acae61ae87e52367d118ac8a793c78a53ec9973',1,'JSL']]],
-  ['plottype_12',['PlotType',['../namespaceJSL.html#a871354b683a8bee0151dbfbbde49beda',1,'JSL']]],
-  ['plus_13',['Plus',['../namespaceJSL.html#a086efb36ddb107d45961a6b46932c526ac54fadde63eae4fbfb5090af9e2c8c68',1,'JSL']]],
-  ['prevhashes_14',['prevHashes',['../classJSL_1_1ProgressBar.html#a3439198bd34393a92cfbc9067247be4a',1,'JSL::ProgressBar']]],
-  ['printpositions_5fdeletemode_15',['PrintPositions_DeleteMode',['../classJSL_1_1ProgressBar.html#af3353e136ef9636dc81d401fdc6276f6',1,'JSL::ProgressBar']]],
-  ['printpositions_5fretainmode_16',['PrintPositions_RetainMode',['../classJSL_1_1ProgressBar.html#a5dba8513809faf0a0f9a315b1f527314',1,'JSL::ProgressBar']]],
-  ['progressbar_17',['ProgressBar',['../classJSL_1_1ProgressBar.html',1,'JSL::ProgressBar&lt; Dimension, DeleteMode, Symbol, MaxHashes &gt;'],['../classJSL_1_1ProgressBar.html#a387540b26d9e8cef6ef694e78ca21d05',1,'JSL::ProgressBar::ProgressBar()']]],
-  ['progressbar_2eh_18',['ProgressBar.h',['../ProgressBar_8h.html',1,'']]],
-  ['property_19',['Property',['../namespaceJSL.html#ad5aeae8cb562d6f38c724cbdc51d81f8',1,'JSL']]]
+  ['name_0',['name',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#a284232d0a8b9a7105ba15c6beae9269e',1,'JSL::Archiver::internal::TarHeader::name'],['../classJSL_1_1Archiver_1_1internal_1_1VaultBase.html#a74dc7adf228a6bbad5e365ea0ffd0838',1,'JSL::Archiver::internal::VaultBase::Name'],['../classJSL_1_1Archiver_1_1WriteStream.html#a8ed4dd42cdd4741b387cba6b8daa1b0e',1,'JSL::Archiver::WriteStream::Name'],['../classJSL_1_1Parameter_1_1Aggregator.html#a736803fa79619d680023786fba39e8a2',1,'JSL::Parameter::Aggregator::Name'],['../classJSL_1_1Parameter_1_1Description.html#ae123f52fe908b1bac54f2b3cdec77287',1,'JSL::Parameter::Description::Name'],['../classJSL_1_1Parameter_1_1NestedAggregator.html#ae5286f16206344d7df44ae7024993f95',1,'JSL::Parameter::NestedAggregator::Name'],['../classJSL_1_1Plotting_1_1TicLabel.html#a7ddd63eaa5babe941a7d0bae6a67dddf',1,'JSL::Plotting::TicLabel::Name']]],
+  ['needswriting_1',['NeedsWriting',['../classJSL_1_1Archiver_1_1WriteStream.html#ab3935fc1cf1bde19632ab294c14ca79f',1,'JSL::Archiver::WriteStream']]],
+  ['nestedaggregator_2',['NestedAggregator',['../classJSL_1_1Parameter_1_1NestedAggregator.html',1,'JSL::Parameter']]],
+  ['nestedaggregator_2eh_3',['NestedAggregator.h',['../NestedAggregator_8h.html',1,'']]],
+  ['nestedaggregators_4',['NestedAggregators',['../classJSL_1_1Parameter_1_1NestedAggregator.html#ac18c11a6ef9530a78a749831d45cfcc1',1,'JSL::Parameter::NestedAggregator']]],
+  ['nestgroup_5',['NestGroup',['../classJSL_1_1Parameter_1_1NestedAggregator.html#a437853feebfe2b0a5a4252d65d26f9d4',1,'JSL::Parameter::NestedAggregator']]],
+  ['none_6',['None',['../namespaceJSL_1_1Plotting.html#ac714c2f6e352a8383ae9b9b819f16eeca6adf97f83acf6453d4a6a4b1070f3754',1,'JSL::Plotting']]],
+  ['normal_7',['NORMAL',['../namespaceJSL_1_1Event_1_1Task.html#afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8',1,'JSL::Event::Task']]],
+  ['normalize_8',['Normalize',['../namespaceJSL_1_1internal_1_1Parameter.html#a147d6637d68e8a5a22c1942061f79b6d',1,'JSL::internal::Parameter']]],
+  ['notfound_9',['NotFound',['../namespaceJSL_1_1Vector.html#af6f84650334cef1d4a9ca7f47f1b18f8',1,'JSL::Vector']]]
 ];

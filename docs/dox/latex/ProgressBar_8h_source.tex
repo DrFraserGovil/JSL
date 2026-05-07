@@ -1,173 +1,53 @@
-\hypertarget{ProgressBar_8h_source}{}\doxysection{Progress\+Bar.\+h}
-\label{ProgressBar_8h_source}\index{/Users/jf20/Documents/JSL/Display/ProgressBar.h@{/Users/jf20/Documents/JSL/Display/ProgressBar.h}}
+\doxysection{Progress\+Bar.\+h}
+\hypertarget{ProgressBar_8h_source}{}\label{ProgressBar_8h_source}\index{include/JSL/Display/ProgressBar.h@{include/JSL/Display/ProgressBar.h}}
 \mbox{\hyperlink{ProgressBar_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{2 }
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{clearScreen_8h}{clearScreen.h}}"{}}}
-\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceJSL}{JSL}}}
-\DoxyCodeLine{7 \{}
-\DoxyCodeLine{15     \textcolor{keyword}{template}<\textcolor{keywordtype}{int} Dimension = 1, \textcolor{keywordtype}{bool} DeleteMode = true, \textcolor{keywordtype}{char} Symbol = '\#',\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} MaxHashes =20>}
-\DoxyCodeLine{16     \textcolor{keyword}{class }\mbox{\hyperlink{classJSL_1_1ProgressBar}{ProgressBar}}}
-\DoxyCodeLine{17     \{}
-\DoxyCodeLine{18         \textcolor{keyword}{private}:}
-\DoxyCodeLine{19             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1ProgressBar_a7354c455382575329326bedfd210957e}{firstPrint}} = \textcolor{keyword}{true}; }
-\DoxyCodeLine{20             std::vector<int> \mbox{\hyperlink{classJSL_1_1ProgressBar_a4fabdafceac14f4fbbb3e364578f6e1c}{BarTargets}}; }
-\DoxyCodeLine{21             std::vector<double> \mbox{\hyperlink{classJSL_1_1ProgressBar_a8ab0aeecd87eaa2754a5a58aea3cca51}{BarProgress}}; }
-\DoxyCodeLine{22             std::vector<int> \mbox{\hyperlink{classJSL_1_1ProgressBar_a0798094501860753307f92eafa464b4f}{Hashes}}; }
-\DoxyCodeLine{23             std::vector<std::string> \mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}}; }
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classJSL_1_1ProgressBar_a913055a04bad40dbbf66f0f8247bb8b0}{reprintNeeded}}; }
-\DoxyCodeLine{26             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}} = 10; }
-\DoxyCodeLine{27             \textcolor{keywordtype}{int} \mbox{\hyperlink{classJSL_1_1ProgressBar_a3439198bd34393a92cfbc9067247be4a}{prevHashes}} = 0; }
-\DoxyCodeLine{28 }
-\DoxyCodeLine{30             \textcolor{keyword}{template}<\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{31             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_a7088deecfe936d4eaba784cff05270f4}{UnpackTargets}}(\textcolor{keywordtype}{int} target, Ts... targets)}
-\DoxyCodeLine{32             \{}
-\DoxyCodeLine{33                 }
-\DoxyCodeLine{34                 \mbox{\hyperlink{classJSL_1_1ProgressBar_a4fabdafceac14f4fbbb3e364578f6e1c}{BarTargets}}.push\_back(target);}
-\DoxyCodeLine{35                 \mbox{\hyperlink{classJSL_1_1ProgressBar_a8ab0aeecd87eaa2754a5a58aea3cca51}{BarProgress}}.push\_back(0);}
-\DoxyCodeLine{36                 \mbox{\hyperlink{classJSL_1_1ProgressBar_a0798094501860753307f92eafa464b4f}{Hashes}}.push\_back(0);}
-\DoxyCodeLine{37                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{sizeof}...(targets) > 0)}
-\DoxyCodeLine{38                 \{}
-\DoxyCodeLine{39                     \mbox{\hyperlink{classJSL_1_1ProgressBar_a7088deecfe936d4eaba784cff05270f4}{UnpackTargets}}(targets...);}
-\DoxyCodeLine{40                 \}}
-\DoxyCodeLine{41             \}}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{44             \textcolor{keyword}{template}<\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{45             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_a73c79e8e00905454aa2853b39d8143b6}{UnrollPositions}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} idx,\textcolor{keywordtype}{int} pos, Ts... remainder)}
-\DoxyCodeLine{46             \{}
-\DoxyCodeLine{47                 \mbox{\hyperlink{classJSL_1_1ProgressBar_a8ab0aeecd87eaa2754a5a58aea3cca51}{BarProgress}}[idx]  = (double)pos/(\mbox{\hyperlink{classJSL_1_1ProgressBar_a4fabdafceac14f4fbbb3e364578f6e1c}{BarTargets}}[idx]-\/1);}
-\DoxyCodeLine{48                 \textcolor{keywordtype}{int} newHashes = std::min(\mbox{\hyperlink{classJSL_1_1ProgressBar_a8ab0aeecd87eaa2754a5a58aea3cca51}{BarProgress}}[idx],1.0) * MaxHashes;}
-\DoxyCodeLine{49                 }
-\DoxyCodeLine{50                 \textcolor{keywordflow}{if} (newHashes != \mbox{\hyperlink{classJSL_1_1ProgressBar_a0798094501860753307f92eafa464b4f}{Hashes}}[idx])}
-\DoxyCodeLine{51                 \{}
-\DoxyCodeLine{52                     \mbox{\hyperlink{classJSL_1_1ProgressBar_a3439198bd34393a92cfbc9067247be4a}{prevHashes}} = \mbox{\hyperlink{classJSL_1_1ProgressBar_a0798094501860753307f92eafa464b4f}{Hashes}}[idx];}
-\DoxyCodeLine{53                     \mbox{\hyperlink{classJSL_1_1ProgressBar_a913055a04bad40dbbf66f0f8247bb8b0}{reprintNeeded}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{54                     \mbox{\hyperlink{classJSL_1_1ProgressBar_a0798094501860753307f92eafa464b4f}{Hashes}}[idx] = newHashes;}
-\DoxyCodeLine{55                 \}}
-\DoxyCodeLine{56                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr}( \textcolor{keyword}{sizeof}...(remainder)>0)}
-\DoxyCodeLine{57                 \{}
-\DoxyCodeLine{58                     \mbox{\hyperlink{classJSL_1_1ProgressBar_a73c79e8e00905454aa2853b39d8143b6}{UnrollPositions}}(idx+1,remainder...);}
-\DoxyCodeLine{59                 \}}
-\DoxyCodeLine{60                 }
-\DoxyCodeLine{61                 }
-\DoxyCodeLine{62             \}}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{65             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_adafc5d517ac0dc23b9761bce1d68f953}{ClearScreen}}()}
-\DoxyCodeLine{66             \{}
-\DoxyCodeLine{67                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < Dimension; ++i)}
-\DoxyCodeLine{68                 \{}
-\DoxyCodeLine{69                     \mbox{\hyperlink{namespaceJSL_a405f53748ca024b70694b0534cfcf4a3}{jumpLineUp}}();}
-\DoxyCodeLine{70                     \mbox{\hyperlink{namespaceJSL_ae38780f94d60045b904b289eb3ab8eda}{deleteLine}}();}
-\DoxyCodeLine{71                 \}}
-\DoxyCodeLine{72             \}}
-\DoxyCodeLine{74             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_af3353e136ef9636dc81d401fdc6276f6}{PrintPositions\_DeleteMode}}()}
-\DoxyCodeLine{75             \{}
-\DoxyCodeLine{76                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classJSL_1_1ProgressBar_a7354c455382575329326bedfd210957e}{firstPrint}})}
-\DoxyCodeLine{77                 \{}
-\DoxyCodeLine{78                     \mbox{\hyperlink{classJSL_1_1ProgressBar_adafc5d517ac0dc23b9761bce1d68f953}{ClearScreen}}();}
-\DoxyCodeLine{79                 \}}
-\DoxyCodeLine{80                 \mbox{\hyperlink{classJSL_1_1ProgressBar_a7354c455382575329326bedfd210957e}{firstPrint}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{81                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < Dimension; ++i)}
-\DoxyCodeLine{82                 \{}
-\DoxyCodeLine{83                     \textcolor{keywordtype}{int} newHashes = \mbox{\hyperlink{classJSL_1_1ProgressBar_a0798094501860753307f92eafa464b4f}{Hashes}}[i];}
-\DoxyCodeLine{84                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}}.size() > 0)}
-\DoxyCodeLine{85                     \{}
-\DoxyCodeLine{86                         std::cout << std::setw(\mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}})  << \mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}}[i]<< \textcolor{stringliteral}{"{} "{}};}
-\DoxyCodeLine{87                     \}}
-\DoxyCodeLine{88                     std::cout << \textcolor{stringliteral}{"{}["{}} << std::string(newHashes,Symbol) << std::string(MaxHashes -\/ newHashes,\textcolor{charliteral}{' '}) << \textcolor{stringliteral}{"{}]\(\backslash\)n"{}};}
-\DoxyCodeLine{89                 \}}
-\DoxyCodeLine{90             \}}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{93             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_a5dba8513809faf0a0f9a315b1f527314}{PrintPositions\_RetainMode}}()}
-\DoxyCodeLine{94             \{}
-\DoxyCodeLine{95         }
-\DoxyCodeLine{96                 \textcolor{keywordtype}{int} newHashes = \mbox{\hyperlink{classJSL_1_1ProgressBar_a0798094501860753307f92eafa464b4f}{Hashes}}[0] -\/ \mbox{\hyperlink{classJSL_1_1ProgressBar_a3439198bd34393a92cfbc9067247be4a}{prevHashes}};}
-\DoxyCodeLine{97                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1ProgressBar_a3439198bd34393a92cfbc9067247be4a}{prevHashes}} == 0)}
-\DoxyCodeLine{98                 \{}
-\DoxyCodeLine{99                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}}.size() == 1)}
-\DoxyCodeLine{100                     \{}
-\DoxyCodeLine{101                         std::cout << std::setw(\mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}})  << \mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}}[0]<< \textcolor{stringliteral}{"{} "{}};}
-\DoxyCodeLine{102                     \}}
-\DoxyCodeLine{103                     std::cout << \textcolor{stringliteral}{"{}["{}};}
-\DoxyCodeLine{104                 \}}
-\DoxyCodeLine{105                 std::cout << std::string(newHashes,Symbol);}
-\DoxyCodeLine{106                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1ProgressBar_a0798094501860753307f92eafa464b4f}{Hashes}}[0] == MaxHashes)}
-\DoxyCodeLine{107                 \{}
-\DoxyCodeLine{108                     std::cout << \textcolor{stringliteral}{"{}]"{}};}
-\DoxyCodeLine{109                 \}}
-\DoxyCodeLine{110                 std::cout << std::flush;}
-\DoxyCodeLine{111             \}}
-\DoxyCodeLine{112         \textcolor{keyword}{public}:}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{118             \textcolor{keyword}{template}<\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{119             \mbox{\hyperlink{classJSL_1_1ProgressBar_a387540b26d9e8cef6ef694e78ca21d05}{ProgressBar}}(Ts... targetCounts) }
-\DoxyCodeLine{120             \{}
-\DoxyCodeLine{121                 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}...(targetCounts) == Dimension);}
-\DoxyCodeLine{122                 \textcolor{keyword}{static\_assert}(Dimension > 0);}
-\DoxyCodeLine{123                 \textcolor{keyword}{static\_assert}(MaxHashes > 1);}
-\DoxyCodeLine{124                 \mbox{\hyperlink{classJSL_1_1ProgressBar_a7088deecfe936d4eaba784cff05270f4}{UnpackTargets}}(targetCounts...);}
-\DoxyCodeLine{125             \}}
-\DoxyCodeLine{126 }
-\DoxyCodeLine{131             \textcolor{keyword}{template}<\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{132             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_ac7d924894ea76344ec2b1540d329a05f}{Update}}(Ts... positions)}
-\DoxyCodeLine{133             \{}
-\DoxyCodeLine{134                 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}...(positions) == Dimension);}
-\DoxyCodeLine{135                 \mbox{\hyperlink{classJSL_1_1ProgressBar_a913055a04bad40dbbf66f0f8247bb8b0}{reprintNeeded}}  = \textcolor{keyword}{false};}
-\DoxyCodeLine{136                 \mbox{\hyperlink{classJSL_1_1ProgressBar_a73c79e8e00905454aa2853b39d8143b6}{UnrollPositions}}(0,positions...);}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{138                 \textcolor{comment}{//only reprint the bar if something has changed}}
-\DoxyCodeLine{139                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1ProgressBar_a913055a04bad40dbbf66f0f8247bb8b0}{reprintNeeded}})}
-\DoxyCodeLine{140                 \{}
-\DoxyCodeLine{141                     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (DeleteMode)}
-\DoxyCodeLine{142                     \{}
-\DoxyCodeLine{143                         \mbox{\hyperlink{classJSL_1_1ProgressBar_af3353e136ef9636dc81d401fdc6276f6}{PrintPositions\_DeleteMode}}();}
-\DoxyCodeLine{144                     \}}
-\DoxyCodeLine{145                     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{146                     \{}
-\DoxyCodeLine{147                         \mbox{\hyperlink{classJSL_1_1ProgressBar_a5dba8513809faf0a0f9a315b1f527314}{PrintPositions\_RetainMode}}();}
-\DoxyCodeLine{148                     \}}
-\DoxyCodeLine{149                 \}}
-\DoxyCodeLine{150             \}}
-\DoxyCodeLine{151 }
-\DoxyCodeLine{152             }
-\DoxyCodeLine{153 }
-\DoxyCodeLine{155             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_ade149b634fe82923f5a284ba34045fbc}{SetName}}(\textcolor{keyword}{const} std::vector<std::string> \& names)}
-\DoxyCodeLine{156             \{}
-\DoxyCodeLine{157                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}Name vector must be same size as bar count"{}},names.size() == Dimension);}
-\DoxyCodeLine{158                 \mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}} = names;}
-\DoxyCodeLine{159                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < Dimension; ++i)}
-\DoxyCodeLine{160                 \{}
-\DoxyCodeLine{161                     \mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}} = std::max(\mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}},(\textcolor{keywordtype}{int})names[i].length());}
-\DoxyCodeLine{162                 \}}
-\DoxyCodeLine{163             \}}
-\DoxyCodeLine{164 }
-\DoxyCodeLine{166             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_ad02946ede96408489d672d15ab200958}{SetName}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, \textcolor{keyword}{const} std::string \& name)}
-\DoxyCodeLine{167             \{}
-\DoxyCodeLine{168                 \mbox{\hyperlink{namespaceJSL_a1a7afe30fd764dc4151982a2631f08d3}{Assert}}(\textcolor{stringliteral}{"{}Assign name to bar between 0 and BarCount-\/1"{}}, idx < Dimension);}
-\DoxyCodeLine{169                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}}.size() < Dimension)}
-\DoxyCodeLine{170                 \{}
-\DoxyCodeLine{171                     \mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}} = std::vector<std::string>(Dimension,\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{172                 \}}
-\DoxyCodeLine{173                 \mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}}[idx] = name;}
-\DoxyCodeLine{174                 \mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}} = std::max(\mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}},(\textcolor{keywordtype}{int})name.length());}
-\DoxyCodeLine{175             \}}
-\DoxyCodeLine{176             }
-\DoxyCodeLine{178             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_ac434128522cfdfe01a2d9c791188c8ec}{SetName}}(\textcolor{keyword}{const} std::string \& name)}
-\DoxyCodeLine{179             \{}
-\DoxyCodeLine{180                 \textcolor{keyword}{static\_assert}(Dimension == 1);}
-\DoxyCodeLine{181                 \mbox{\hyperlink{classJSL_1_1ProgressBar_ab85ccf4638d649d88becf47e2af83525}{Names}} = \{name\};}
-\DoxyCodeLine{182                 \mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}} = std::max(\mbox{\hyperlink{classJSL_1_1ProgressBar_ae3160fd31be03fadd4c92a0906f64f79}{bufferWidth}},(\textcolor{keywordtype}{int})name.length());}
-\DoxyCodeLine{183             \}}
-\DoxyCodeLine{184 }
-\DoxyCodeLine{186             \textcolor{keywordtype}{void} \mbox{\hyperlink{classJSL_1_1ProgressBar_a5fa7f8ced9592b0cea5a366157332eff}{Clear}}()}
-\DoxyCodeLine{187             \{}
-\DoxyCodeLine{188                 \mbox{\hyperlink{classJSL_1_1ProgressBar_adafc5d517ac0dc23b9761bce1d68f953}{ClearScreen}}();}
-\DoxyCodeLine{189             \}}
-\DoxyCodeLine{190     \};}
-\DoxyCodeLine{191 \}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Display_1_1Progress}{JSL::Display::Progress}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{namespace\ }internal}
+\DoxyCodeLine{00007\ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine}{ProgressEngine}}}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a4c09ca0ad8590d797aff91bed15064f1}{Symbol}}\ =\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<size\_t>\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_aa2a145fe4aa3153031ecfd10165789aa}{Dimension}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_ab7e7f98b4042f1eb206659497610d86d}{Depth}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a0736ec4655e8aa0434355af681d62161}{ProgressEngine}}(std::vector<size\_t>\ \&\&\ Dimensions);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a1932d40a5886d0f2975a064b347c3a27}{Tick}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a13d585bb4d997366654d85045a9d3ad6}{Update}}(std::vector<int>\ \&\&\ positions);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_acc41078889abc1db1785fb20b3511566}{Update}}(\textcolor{keywordtype}{int}\ position);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_af412c289ce5b2f720325b2748a4a28ce}{CheckMarks}}(\textcolor{keywordtype}{int}\ idx);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<size\_t>\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a8c20fc559ebe672bf4488be6220984ff}{MarkCount}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<size\_t>\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a7b75ef4d7afc825baca63b7489803f34}{Progress}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a6bc951680d4ab9e3087824c2f83c5045}{Render}}()\{\};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a1738a229e53df6a3614eba8689730ebb}{RenderLength}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a5560b7cc21d8668fb2b3c73e5937cff5}{Finished}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Bar}{Bar}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine}{internal::ProgressEngine}}}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Bar_a8bf65e0f507638ece3d47e9006229d75}{Bar}}(\textcolor{keywordtype}{size\_t}\ duration,\ \textcolor{keywordtype}{size\_t}\ barLength=20);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Bar_a68300746bbc4d796617325765d354668}{Bar}}(std::vector<size\_t>\ \&\&\ durations,\ \textcolor{keywordtype}{size\_t}\ barLength=20);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Bar_a850dcf28274737db2ae48b900486a1d1}{Render}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Bar_af47bb520e2c5244099a56ec4917dec52}{hasRendered}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Static}{Static}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine}{internal::ProgressEngine}}}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Static_a4193042980f3f50cccbe7fcfd0f8efcb}{Static}}(\textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{size\_t}\ barLength\ =\ 20);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Static_af04c3fc6855c19ebf74478feb9eff96c}{Render}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Static_a532a8d7d42229ee93ca6a378912b04da}{LastRender}}=0;}
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
 
 \end{DoxyCode}
