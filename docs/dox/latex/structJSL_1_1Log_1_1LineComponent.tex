@@ -1,0 +1,109 @@
+\doxysection{JSL\+::Log\+::Line\+Component Struct Reference}
+\hypertarget{structJSL_1_1Log_1_1LineComponent}{}\label{structJSL_1_1Log_1_1LineComponent}\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+
+
+{\ttfamily \#include $<$Line\+Breaker.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_a736bb6d0dbf960389dd1f5c77d558563}{Line\+Component}} (int idx)
+\item 
+void \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_a0ee703e3788b269319d502a6275fbc29}{Terminate}} (std\+::string\+\_\+view line, int idx)
+\item 
+std\+::string\+\_\+view \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_a34c24ae6fba638ae3263b7e9b2dab99d}{Snippet}} ()
+\item 
+void \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_a009011f453bb3c04d3b08b14a45e819a}{Compute\+Size}} (std\+::string\+\_\+view line)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent}{Line\+Component}} $>$ \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_aac0973ac843c1f48ce80868df92882a4}{Get\+All}} (std\+::string\+\_\+view line)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_a04e393f6421c07f3a9a6c40d10b6a1d9}{Is\+Whitespace}} = false
+\item 
+int \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_a690bbb3cf5fe754d70eb0ba31396b117}{Start}}
+\item 
+int \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_adcee2acf5d4ce01c30fcc4827df96691}{End}}
+\item 
+std\+::string\+\_\+view \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_aa6da156bff1d471edc700c846e2dacfa}{window}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent_ad3b30ab01d839fb43445b463223758a1}{Real\+Size}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_a736bb6d0dbf960389dd1f5c77d558563}\label{structJSL_1_1Log_1_1LineComponent_a736bb6d0dbf960389dd1f5c77d558563} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!LineComponent@{LineComponent}}
+\index{LineComponent@{LineComponent}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{LineComponent()}{LineComponent()}}
+{\footnotesize\ttfamily JSL\+::\+Log\+::\+Line\+Component\+::\+Line\+Component (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_a009011f453bb3c04d3b08b14a45e819a}\label{structJSL_1_1Log_1_1LineComponent_a009011f453bb3c04d3b08b14a45e819a} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!ComputeSize@{ComputeSize}}
+\index{ComputeSize@{ComputeSize}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{ComputeSize()}{ComputeSize()}}
+{\footnotesize\ttfamily void JSL\+::\+Log\+::\+Line\+Component\+::\+Compute\+Size (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_aac0973ac843c1f48ce80868df92882a4}\label{structJSL_1_1Log_1_1LineComponent_aac0973ac843c1f48ce80868df92882a4} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{structJSL_1_1Log_1_1LineComponent}{Line\+Component}} $>$ JSL\+::\+Log\+::\+Line\+Component\+::\+Get\+All (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_a34c24ae6fba638ae3263b7e9b2dab99d}\label{structJSL_1_1Log_1_1LineComponent_a34c24ae6fba638ae3263b7e9b2dab99d} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!Snippet@{Snippet}}
+\index{Snippet@{Snippet}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{Snippet()}{Snippet()}}
+{\footnotesize\ttfamily std\+::string\+\_\+view JSL\+::\+Log\+::\+Line\+Component\+::\+Snippet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_a0ee703e3788b269319d502a6275fbc29}\label{structJSL_1_1Log_1_1LineComponent_a0ee703e3788b269319d502a6275fbc29} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{Terminate()}{Terminate()}}
+{\footnotesize\ttfamily void JSL\+::\+Log\+::\+Line\+Component\+::\+Terminate (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{line,  }\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_adcee2acf5d4ce01c30fcc4827df96691}\label{structJSL_1_1Log_1_1LineComponent_adcee2acf5d4ce01c30fcc4827df96691} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!End@{End}}
+\index{End@{End}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{End}{End}}
+{\footnotesize\ttfamily int JSL\+::\+Log\+::\+Line\+Component\+::\+End}
+
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_a04e393f6421c07f3a9a6c40d10b6a1d9}\label{structJSL_1_1Log_1_1LineComponent_a04e393f6421c07f3a9a6c40d10b6a1d9} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!IsWhitespace@{IsWhitespace}}
+\index{IsWhitespace@{IsWhitespace}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{IsWhitespace}{IsWhitespace}}
+{\footnotesize\ttfamily bool JSL\+::\+Log\+::\+Line\+Component\+::\+Is\+Whitespace = false}
+
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_ad3b30ab01d839fb43445b463223758a1}\label{structJSL_1_1Log_1_1LineComponent_ad3b30ab01d839fb43445b463223758a1} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!RealSize@{RealSize}}
+\index{RealSize@{RealSize}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{RealSize}{RealSize}}
+{\footnotesize\ttfamily size\+\_\+t JSL\+::\+Log\+::\+Line\+Component\+::\+Real\+Size}
+
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_a690bbb3cf5fe754d70eb0ba31396b117}\label{structJSL_1_1Log_1_1LineComponent_a690bbb3cf5fe754d70eb0ba31396b117} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!Start@{Start}}
+\index{Start@{Start}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{Start}{Start}}
+{\footnotesize\ttfamily int JSL\+::\+Log\+::\+Line\+Component\+::\+Start}
+
+\Hypertarget{structJSL_1_1Log_1_1LineComponent_aa6da156bff1d471edc700c846e2dacfa}\label{structJSL_1_1Log_1_1LineComponent_aa6da156bff1d471edc700c846e2dacfa} 
+\index{JSL::Log::LineComponent@{JSL::Log::LineComponent}!window@{window}}
+\index{window@{window}!JSL::Log::LineComponent@{JSL::Log::LineComponent}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily std\+::string\+\_\+view\texorpdfstring{$\ast$}{*} JSL\+::\+Log\+::\+Line\+Component\+::window}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/jfg/\+Code\+Projects/\+JSL/src/\+Display/\+Log/\mbox{\hyperlink{LineBreaker_8h}{Line\+Breaker.\+h}}\end{DoxyCompactItemize}

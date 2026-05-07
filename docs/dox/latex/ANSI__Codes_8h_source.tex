@@ -1,0 +1,87 @@
+\doxysection{ANSI\+\_\+\+Codes.\+h}
+\hypertarget{ANSI__Codes_8h_source}{}\label{ANSI__Codes_8h_source}\index{include/JSL/Display/ANSI\_Codes.h@{include/JSL/Display/ANSI\_Codes.h}}
+\mbox{\hyperlink{ANSI__Codes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string\_view>}\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Format_8h}{JSL/Display/Format.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ \ \ These\ are\ some\ display\ commands\ which\ \ enable\ the\ user\ to\ shift\ the\ cursor\ around,\ delete\ items\ and\ otherwise\ alter\ the\ appearance\ of\ terminal\ output.\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Terminal}{JSL::Terminal}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ \ \ \ Returns\ true\ if\ the\ output\ is\ capable\ of\ interpreting\ format\ commands\ (i.e.\ a\ terminal)}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ \ \ \ False\ if\ the\ terminal\ is\ plaintext\ (i.e.\ a\ file)}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a194d7176d034555e7008938ed071f9f8}{IsANSICapable}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ =\ std::string;\ \textcolor{comment}{//has\ to\ be\ string\ (not\ view)\ so\ the\ MoveTo\ command\ returns\ persist\ after\ being\ constructed}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}{Hide}}\ \ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[?25l"{}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}{Show}}\ \ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[?25h"{}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}{CursorUp}}\ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[A"{}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}{Backspace}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)b\ \(\backslash\)b"{}};\ \textcolor{comment}{//\(\backslash\)b\ on\ its\ own\ just\ moves\ cursor;\ this\ moves\ cursor,\ erases\ character,\ then\ moves\ it\ back\ again}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375}{EraseRight}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[0K"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed}{EraseLeft}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[1K"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}{ClearLine}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[2K\(\backslash\)r"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}{ClearScreen}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)033[2J\(\backslash\)r"{}};}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}}\ \{\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3}{Up}}\ =0,\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48}{Down}}=1,\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26}{Right}}=2,\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908}{Left}}=3\};\ \textcolor{comment}{//numbers\ are\ fixed\ as\ we\ do\ some\ ASCI\ hackery}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}{Move}}(\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}}\ dir,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ steps);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{CursorCommand}}\ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}{MoveToColumn}}(uint32\_t\ column);}
+\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Format}{JSL::Format}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a0310aceb1276f364edf89ea449e2a8d5}{ResetAll}}(\textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element::Resetter}});}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//gets\ \(\backslash\)033[0m,\ so\ resets\ all\ if\ passed\ straight\ to\ format;\ but\ otherwise\ can\ selectively\ clear\ from\ a\ FormatGroup}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a72f9735a888543e7e1b5cb07ae7ad10b}{Reset}}(\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{Element}}\ sections\ =\ \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element::Resetter}});}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a564e38f310ecc9f0982f40e18590164d}{Black}}(\textcolor{stringliteral}{"{}\(\backslash\)033[30m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_ae70c4e93b38e7e6d3d4a4587bdeca2d8}{Red}}(\textcolor{stringliteral}{"{}\(\backslash\)033[31m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_aca4adf51e196a330791d94688f827cf9}{Green}}(\textcolor{stringliteral}{"{}\(\backslash\)033[32m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_aaeaa6f8b854fe2f38e404f5c4ccd863f}{Yellow}}(\textcolor{stringliteral}{"{}\(\backslash\)033[33m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_ac7e4db410a5d82647350de18a9400356}{Blue}}(\textcolor{stringliteral}{"{}\(\backslash\)033[34m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a10c116dab0dbf18d5b10741f0ac8b8b2}{Purple}}(\textcolor{stringliteral}{"{}\(\backslash\)033[35m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_ab57e30d39f562e4b735405a4c3685d57}{Cyan}}(\textcolor{stringliteral}{"{}\(\backslash\)033[36m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a08d06db733a345807a8fd58f9c779e46}{White}}(\textcolor{stringliteral}{"{}\(\backslash\)033[37m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a2a29d497acaa067b570f6d852f40a93a}{Bold}}(\textcolor{stringliteral}{"{}\(\backslash\)033[1m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}});}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a0827ebc4850da2e12f0b368cb3face90}{Faint}}(\textcolor{stringliteral}{"{}\(\backslash\)033[2m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}});}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_aa979ec2b6fefa52dfd126dde4b9f7ff5}{Italics}}(\textcolor{stringliteral}{"{}\(\backslash\)033[3m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}});}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_ac6a414a59d7fb0376a225b34eb9dcba9}{Underline}}(\textcolor{stringliteral}{"{}\(\backslash\)033[4m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}});}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a04fd686ba5a0458ded6b2de07a93d263}{Highlight}}(\textcolor{stringliteral}{"{}\(\backslash\)033[7m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}});}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a2f7953035dfe2593afa916fdfae9ec3c}{Strike}}(\textcolor{stringliteral}{"{}\(\backslash\)033[9m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a1320a97711cbad9c50f9588e48876a53}{Colour}}(uint8\_t\ r,uint8\_t\ g,\ uint8\_t\ b)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}(r,g,b,\textcolor{stringliteral}{"{}\(\backslash\)033[38;2;"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{ForegroundColour}});}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a1fa23969dab620f3d9b56ef68082766b}{BgBlack}}(\textcolor{stringliteral}{"{}\(\backslash\)033[40m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_afd273f5fb30815ebe8befcc36d9a60b4}{BgRed}}(\textcolor{stringliteral}{"{}\(\backslash\)033[41m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_ad2d9099b79b7b1b370d5902a21baaee1}{BgGreen}}(\textcolor{stringliteral}{"{}\(\backslash\)033[42m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a1583018a288e946c518d84e0339b2386}{BgYellow}}(\textcolor{stringliteral}{"{}\(\backslash\)033[43m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_a99ad159e7ebe52d597e4c83783b8e259}{BgBlue}}(\textcolor{stringliteral}{"{}\(\backslash\)033[44m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_acf947df1b26f461bd72a8de4f4a13b56}{BgPurple}}(\textcolor{stringliteral}{"{}\(\backslash\)033[45m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_ad0a98bcd9348a1133ab06cfe41beb5ed}{BgCyan}}(\textcolor{stringliteral}{"{}\(\backslash\)033[46m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_add9c1bf1296670a8b34fb32c47cfe0c8}{BgWhite}}(\textcolor{stringliteral}{"{}\(\backslash\)033[47m"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}\ \mbox{\hyperlink{namespaceJSL_1_1Format_aadd84caae79d82316f117f2b4230e644}{BgColour}}(uint8\_t\ r,uint8\_t\ g,\ uint8\_t\ b)}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}(r,g,b,\textcolor{stringliteral}{"{}\(\backslash\)033[48;2;"{}},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{BackgroundColour}});}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ }
+
+\end{DoxyCode}

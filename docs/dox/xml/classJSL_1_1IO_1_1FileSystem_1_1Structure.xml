@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1IO_1_1FileSystem_1_1Structure" kind="class" language="C++" prot="public">
+    <compoundname>JSL::IO::FileSystem::Structure</compoundname>
+    <includes refid="FileSystem_8h" local="no">FileSystem.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" prot="public" static="no" mutable="no">
+        <type>fs::path</type>
+        <definition>fs::path JSL::IO::FileSystem::Structure::Path</definition>
+        <argsstring></argsstring>
+        <name>Path</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::Path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="12" column="22" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a48048df0916a1a510a2af2cd45028a1c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure" kindref="compound">Structure</ref> &gt;</type>
+        <definition>std::vector&lt;Structure&gt; JSL::IO::FileSystem::Structure::Directories</definition>
+        <argsstring></argsstring>
+        <name>Directories</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::Directories</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="13" column="25" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1ab342a9b4b5582804ed8a52c4394ab425" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt;fs::path&gt; JSL::IO::FileSystem::Structure::Files</definition>
+        <argsstring></argsstring>
+        <name>Files</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::Files</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="14" column="25" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a1967540e65385ab47e905557921a665d" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt;fs::path&gt; JSL::IO::FileSystem::Structure::Other</definition>
+        <argsstring></argsstring>
+        <name>Other</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::Other</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="15" column="25" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a3bc17d30bc3b62cc5f84f21e02437016" prot="private" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" kindref="member">bool</ref></type>
+        <definition>bool JSL::IO::FileSystem::Structure::IsRecursive</definition>
+        <argsstring></argsstring>
+        <name>IsRecursive</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::IsRecursive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="31" column="18" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a441c53dc67622ee4c236e2fcb93f2d07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt; fs::path &gt; JSL::IO::FileSystem::Structure::ListFiles</definition>
+        <argsstring>(bool includeOthers=false)</argsstring>
+        <name>ListFiles</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::ListFiles</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" kindref="member">bool</ref></type>
+          <declname>includeOthers</declname>
+          <defval><ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" kindref="member">false</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="16" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a8cfa62a5fa9a1951223bdef438ffb7eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt; fs::path &gt; JSL::IO::FileSystem::Structure::ListAll</definition>
+        <argsstring>(bool includeOthers=false)</argsstring>
+        <name>ListAll</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::ListAll</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" kindref="member">bool</ref></type>
+          <declname>includeOthers</declname>
+          <defval><ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" kindref="member">false</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="17" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1acfb190fd42fc85c4ff3da4c87141990d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt; fs::path &gt; JSL::IO::FileSystem::Structure::ListDirs</definition>
+        <argsstring>()</argsstring>
+        <name>ListDirs</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::ListDirs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="18" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a961f4defd9c65c05260ac0e3afcf6081" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt; fs::path &gt; JSL::IO::FileSystem::Structure::MatchFiles</definition>
+        <argsstring>(std::string matchPattern)</argsstring>
+        <name>MatchFiles</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::MatchFiles</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>matchPattern</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="24" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a7e256b5564d9ea84b3a8b852a9011b8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt; fs::path &gt; JSL::IO::FileSystem::Structure::MatchFiles</definition>
+        <argsstring>(std::regex matchPattern)</argsstring>
+        <name>MatchFiles</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::MatchFiles</qualifiedname>
+        <param>
+          <type>std::regex</type>
+          <declname>matchPattern</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="25" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a13df422097236d57d21ca2c5e3debc31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::IO::FileSystem::Structure::Structure</definition>
+        <argsstring>(fs::path target, bool recursive=false, int depth=0)</argsstring>
+        <name>Structure</name>
+        <qualifiedname>JSL::IO::FileSystem::Structure::Structure</qualifiedname>
+        <param>
+          <type>fs::path</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" kindref="member">bool</ref></type>
+          <declname>recursive</declname>
+          <defval><ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" kindref="member">false</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" kindref="member">int</ref></type>
+          <declname>depth</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="27" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/FileIO/FileSystem.h" line="9" column="5" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="10" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a48048df0916a1a510a2af2cd45028a1c" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>Directories</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1ab342a9b4b5582804ed8a52c4394ab425" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>Files</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a3bc17d30bc3b62cc5f84f21e02437016" prot="private" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>IsRecursive</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a8cfa62a5fa9a1951223bdef438ffb7eb" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>ListAll</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1acfb190fd42fc85c4ff3da4c87141990d" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>ListDirs</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a441c53dc67622ee4c236e2fcb93f2d07" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>ListFiles</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a961f4defd9c65c05260ac0e3afcf6081" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>MatchFiles</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a7e256b5564d9ea84b3a8b852a9011b8c" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>MatchFiles</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a1967540e65385ab47e905557921a665d" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>Other</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1af87ba02284e382fa7ef1b2ba65d45224" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>Path</name></member>
+      <member refid="classJSL_1_1IO_1_1FileSystem_1_1Structure_1a13df422097236d57d21ca2c5e3debc31" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::Structure</scope><name>Structure</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

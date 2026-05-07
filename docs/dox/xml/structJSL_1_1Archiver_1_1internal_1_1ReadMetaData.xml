@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::Archiver::internal::ReadMetaData</compoundname>
+    <includes refid="helpers_8h" local="no">helpers.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1a5566f797235225d78227940e370ee0a2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Archiver::internal::ReadMetaData::filename</definition>
+        <argsstring></argsstring>
+        <name>filename</name>
+        <qualifiedname>JSL::Archiver::internal::ReadMetaData::filename</qualifiedname>
+        <briefdescription>
+<para>The name of the file - for comparing to user requests. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/helpers.h" line="62" column="13" bodyfile="include/JSL/FileIO/archiver/helpers.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1a1988f5fdbd3b8dbdc3151ee03b04fcf9" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t JSL::Archiver::internal::ReadMetaData::file_size</definition>
+        <argsstring></argsstring>
+        <name>file_size</name>
+        <qualifiedname>JSL::Archiver::internal::ReadMetaData::file_size</qualifiedname>
+        <briefdescription>
+<para>The size of the file (in bytes) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/helpers.h" line="63" column="8" bodyfile="include/JSL/FileIO/archiver/helpers.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1af0ce088aaa02611955b4ee0037c760ab" prot="public" static="no" mutable="no">
+        <type>std::streampos</type>
+        <definition>std::streampos JSL::Archiver::internal::ReadMetaData::data_offset</definition>
+        <argsstring></argsstring>
+        <name>data_offset</name>
+        <qualifiedname>JSL::Archiver::internal::ReadMetaData::data_offset</qualifiedname>
+        <briefdescription>
+<para>Byte offset to the file&apos;s data in the archive. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/helpers.h" line="64" column="16" bodyfile="include/JSL/FileIO/archiver/helpers.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/FileIO/archiver/helpers.h" line="60" column="1" bodyfile="include/JSL/FileIO/archiver/helpers.h" bodystart="61" bodyend="65"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1af0ce088aaa02611955b4ee0037c760ab" prot="public" virt="non-virtual"><scope>JSL::Archiver::internal::ReadMetaData</scope><name>data_offset</name></member>
+      <member refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1a1988f5fdbd3b8dbdc3151ee03b04fcf9" prot="public" virt="non-virtual"><scope>JSL::Archiver::internal::ReadMetaData</scope><name>file_size</name></member>
+      <member refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1a5566f797235225d78227940e370ee0a2" prot="public" virt="non-virtual"><scope>JSL::Archiver::internal::ReadMetaData</scope><name>filename</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

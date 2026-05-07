@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structGradientHolder" kind="struct" language="C++" prot="public">
+    <compoundname>GradientHolder</compoundname>
+    <includes refid="expressions_8h" local="no">expressions.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structGradientHolder_1abaae4178d9b01e0b995ed066fae8c3a0" prot="public" static="no" mutable="no">
+        <type>double *</type>
+        <definition>double* GradientHolder::DenseGrad</definition>
+        <argsstring></argsstring>
+        <name>DenseGrad</name>
+        <qualifiedname>GradientHolder::DenseGrad</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/expressions.h" line="18" column="17" bodyfile="include/JSL/Optimiser/expressions.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGradientHolder_1a49277a016da0536a4a437bd12e12c87b" prot="public" static="no" mutable="no">
+        <type><ref refid="structSparseElement" kindref="compound">SparseElement</ref></type>
+        <definition>SparseElement GradientHolder::SparseGrad[SGO_THRESHOLD]</definition>
+        <argsstring>[SGO_THRESHOLD]</argsstring>
+        <name>SparseGrad</name>
+        <qualifiedname>GradientHolder::SparseGrad</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/expressions.h" line="19" column="23" bodyfile="include/JSL/Optimiser/expressions.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGradientHolder_1a47c8d337e7baedad0a98c2dceb8f68bc" prot="public" static="no" mutable="no">
+        <type>union <ref refid="structGradientHolder" kindref="compound">GradientHolder</ref></type>
+        <definition>union GradientHolder GradientHolder</definition>
+        <argsstring></argsstring>
+        <name></name>
+        <qualifiedname>GradientHolder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/expressions.h" line="20" column="5"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGradientHolder_1a82f339ceb0fafface8065db4e92d47b8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GradientHolder::IsDense</definition>
+        <argsstring></argsstring>
+        <name>IsDense</name>
+        <qualifiedname>GradientHolder::IsDense</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/expressions.h" line="21" column="10" bodyfile="include/JSL/Optimiser/expressions.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGradientHolder_1a4d8fe2c4a25e551fa55651a9f0fbdc43" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t GradientHolder::ActiveCount</definition>
+        <argsstring></argsstring>
+        <name>ActiveCount</name>
+        <qualifiedname>GradientHolder::ActiveCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/expressions.h" line="22" column="12" bodyfile="include/JSL/Optimiser/expressions.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structGradientHolder_1ac3c7e34d3645b847bc58847b44ce59bb" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double GradientHolder::ScaleFactor</definition>
+        <argsstring></argsstring>
+        <name>ScaleFactor</name>
+        <qualifiedname>GradientHolder::ScaleFactor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/expressions.h" line="23" column="12" bodyfile="include/JSL/Optimiser/expressions.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structGradientHolder_1a9510fe689a78676404dc397e42d31685" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GradientHolder::Promote</definition>
+        <argsstring>()</argsstring>
+        <name>Promote</name>
+        <qualifiedname>GradientHolder::Promote</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/expressions.h" line="25" column="10" bodyfile="include/JSL/Optimiser/expressions.h" bodystart="25" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="structGradientHolder_1a41d961b1618616832969866445082b73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GradientHolder::Promote</definition>
+        <argsstring>(SparseElement storage[2 *SGO_THRESHOLD], int n)</argsstring>
+        <name>Promote</name>
+        <qualifiedname>GradientHolder::Promote</qualifiedname>
+        <param>
+          <type><ref refid="structSparseElement" kindref="compound">SparseElement</ref></type>
+          <declname>storage</declname>
+          <array>[2 *SGO_THRESHOLD]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/expressions.h" line="35" column="10" bodyfile="include/JSL/Optimiser/expressions.h" bodystart="35" bodyend="42"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>GradientHolder</label>
+        <link refid="structGradientHolder"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>SparseGrad</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SparseElement</label>
+        <link refid="structSparseElement"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/Optimiser/expressions.h" line="14" column="1" bodyfile="include/JSL/Optimiser/expressions.h" bodystart="15" bodyend="43"/>
+    <listofallmembers>
+      <member refid="structGradientHolder_1a4d8fe2c4a25e551fa55651a9f0fbdc43" prot="public" virt="non-virtual"><scope>GradientHolder</scope><name>ActiveCount</name></member>
+      <member refid="structGradientHolder_1abaae4178d9b01e0b995ed066fae8c3a0" prot="public" virt="non-virtual"><scope>GradientHolder</scope><name>DenseGrad</name></member>
+      <member refid="structGradientHolder_1a82f339ceb0fafface8065db4e92d47b8" prot="public" virt="non-virtual"><scope>GradientHolder</scope><name>IsDense</name></member>
+      <member refid="structGradientHolder_1a9510fe689a78676404dc397e42d31685" prot="public" virt="non-virtual"><scope>GradientHolder</scope><name>Promote</name></member>
+      <member refid="structGradientHolder_1a41d961b1618616832969866445082b73" prot="public" virt="non-virtual"><scope>GradientHolder</scope><name>Promote</name></member>
+      <member refid="structGradientHolder_1ac3c7e34d3645b847bc58847b44ce59bb" prot="public" virt="non-virtual"><scope>GradientHolder</scope><name>ScaleFactor</name></member>
+      <member refid="structGradientHolder_1a49277a016da0536a4a437bd12e12c87b" prot="public" virt="non-virtual"><scope>GradientHolder</scope><name>SparseGrad</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

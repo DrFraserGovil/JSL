@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Log_8h" kind="file" language="C++">
+    <compoundname>Log.h</compoundname>
+    <includes refid="Core_8h" local="yes">Log/Core.h</includes>
+    <includes refid="Config_8h" local="yes">Log/Config.h</includes>
+    <includes refid="Levels_8h" local="yes">Log/Levels.h</includes>
+    <includedby refid="Display_8h" local="no">include/JSL/Display.h</includedby>
+    <includedby refid="textplot_8h" local="no">include/JSL/Plot/textplot.h</includedby>
+    <includedby refid="error_8h" local="no">include/JSL/internal/error.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>JSL/Display/ANSI_Codes.h</label>
+        <link refid="ANSI__Codes_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>JSL/Display/Format.h</label>
+        <link refid="Format_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Display/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL/Display/Log/Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Log/Core.h</label>
+        <link refid="Core_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>JSL/Display/Log/Levels.h</label>
+        <link refid="Levels_8h"/>
+      </node>
+      <node id="17">
+        <label>JSL/Strings/Manipulate.h</label>
+        <link refid="Manipulate_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>charconv</label>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="15">
+        <label>cstdio</label>
+      </node>
+      <node id="12">
+        <label>cstring</label>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="16">
+        <label>mutex</label>
+      </node>
+      <node id="13">
+        <label>sstream</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>string_view</label>
+      </node>
+      <node id="14">
+        <label>unistd.h</label>
+      </node>
+      <node id="18">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Display.h</label>
+        <link refid="Display_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Display/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>include/JSL/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>include/JSL/FileIO/archiver.h</label>
+        <link refid="archiver_8h"/>
+      </node>
+      <node id="7">
+        <label>include/JSL/FileIO/archiver/writer.h</label>
+        <link refid="writer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>include/JSL/FileIO/fileWriters.h</label>
+        <link refid="fileWriters_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>include/JSL/Parameters.h</label>
+        <link refid="Parameters_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>include/JSL/Parameters/Aggregator.h</label>
+        <link refid="Aggregator_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>include/JSL/Parameters/Describer.h</label>
+        <link refid="Describer_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>include/JSL/Parameters/NestedAggregator.h</label>
+        <link refid="NestedAggregator_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>include/JSL/Parameters/Parameter.h</label>
+        <link refid="Parameter_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>include/JSL/Plot/axis.h</label>
+        <link refid="axis_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>include/JSL/Plot/data/curve.h</label>
+        <link refid="curve_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>include/JSL/Plot/figure.h</label>
+        <link refid="figure_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>include/JSL/Plot/plot.h</label>
+        <link refid="plot_8h"/>
+      </node>
+      <node id="4">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>include/JSL/Strings.h</label>
+        <link refid="Strings_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>include/JSL/Strings/ParseTo.h</label>
+        <link refid="ParseTo_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/JSL/internal/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Core_8h" kindref="compound">Log/Core.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Config_8h" kindref="compound">Log/Config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Levels_8h" kindref="compound">Log/Levels.h</ref>&quot;</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Display/Log.h"/>
+  </compounddef>
+</doxygen>

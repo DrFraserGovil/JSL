@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>JSL::internal::Parameter::ParameterBase</compoundname>
+    <derivedcompoundref refid="classJSL_1_1Parameter_1_1Setting" prot="public" virt="non-virtual">JSL::Parameter::Setting&lt; bool &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classJSL_1_1Parameter_1_1Setting" prot="public" virt="non-virtual">JSL::Parameter::Setting&lt; T &gt;</derivedcompoundref>
+    <includes refid="Parameter_8h" local="no">Parameter.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ab51442bfdff4216747b68acf098c105c" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; JSL::internal::Parameter::ParameterBase::TriggerList</definition>
+        <argsstring></argsstring>
+        <name>TriggerList</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::TriggerList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="47" column="25" bodyfile="include/JSL/Parameters/Parameter.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ae83cc27be18ceb07190d32e84c632705" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::internal::Parameter::ParameterBase::hasParseDelimiter</definition>
+        <argsstring></argsstring>
+        <name>hasParseDelimiter</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::hasParseDelimiter</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="48" column="18" bodyfile="include/JSL/Parameters/Parameter.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1abba377dd8a65b0bcc8e355fee33ae165" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::internal::Parameter::ParameterBase::VectorParseDelimiter</definition>
+        <argsstring></argsstring>
+        <name>VectorParseDelimiter</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::VectorParseDelimiter</qualifiedname>
+        <initializer>= &quot; &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="49" column="25" bodyfile="include/JSL/Parameters/Parameter.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ab211decbcf7db77ae381353e6a2d0ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual JSL::internal::Parameter::ParameterBase::~ParameterBase</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ParameterBase</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::~ParameterBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="22" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1aa5f8896c7e72bbd64025cf713d59be8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::ParameterBase::Parse</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>Parse</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::Parse</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="23" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a24a45b0023466bb94145d179150269c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::ParameterBase::ParseFromCache</definition>
+        <argsstring>()</argsstring>
+        <name>ParseFromCache</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::ParseFromCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="24" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a7be1a818f479e8088b5f04a81097daee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::ParameterBase::SetTriggers</definition>
+        <argsstring>(std::initializer_list&lt; std::string &gt; triggers)</argsstring>
+        <name>SetTriggers</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::SetTriggers</qualifiedname>
+        <param>
+          <type>std::initializer_list&lt; std::string &gt;</type>
+          <declname>triggers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="26" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a724128ab524acc691cb9a5ded83a8eda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::ParameterBase::SetTriggers</definition>
+        <argsstring>(U &amp;&amp;triggers)</argsstring>
+        <name>SetTriggers</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::SetTriggers</qualifiedname>
+        <param>
+          <type>U &amp;&amp;</type>
+          <declname>triggers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="29" column="18" bodyfile="include/JSL/Parameters/Parameter.h" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1af996744b0befea389f77004f23fcfad8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; JSL::internal::Parameter::ParameterBase::GetTriggers</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTriggers</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::GetTriggers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="35" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a962e71226098ca92345dc2019dc2eeb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::ParameterBase::SetDelimiter</definition>
+        <argsstring>(std::string_view vectorDelimiter)</argsstring>
+        <name>SetDelimiter</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::SetDelimiter</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>vectorDelimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="37" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a58a64e0db1f981cb302665c325aa73f2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::internal::Parameter::ParameterBase::TriggerString</definition>
+        <argsstring>(bool withDash=true) const</argsstring>
+        <name>TriggerString</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::TriggerString</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>withDash</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="38" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ad2f0b0cabb284c8af0480a1d2fc1926c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string JSL::internal::Parameter::ParameterBase::ValueString</definition>
+        <argsstring>() const =0</argsstring>
+        <name>ValueString</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::ValueString</qualifiedname>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1abd35958319904b8fd4de901a64206cad">ValueString</reimplementedby>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1abd35958319904b8fd4de901a64206cad">ValueString</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="39" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a3f16e20280743447e5477b59dbfac5e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void JSL::internal::Parameter::ParameterBase::Convert</definition>
+        <argsstring>(std::string_view sv)=0</argsstring>
+        <name>Convert</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::Convert</qualifiedname>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1aa2c517911f2cced3467b9dc18b507f12">Convert</reimplementedby>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1aa2c517911f2cced3467b9dc18b507f12">Convert</reimplementedby>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="41" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ae38f71cf9ec027e4feb0e8a46cd3489b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void JSL::internal::Parameter::ParameterBase::erase</definition>
+        <argsstring>(int pos)=0</argsstring>
+        <name>erase</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::erase</qualifiedname>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1a1f9e624a6247bacab5d18929114b2a9f">erase</reimplementedby>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1a1f9e624a6247bacab5d18929114b2a9f">erase</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="42" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a88f033d1dc5b949d0a59cd084cf03959" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void JSL::internal::Parameter::ParameterBase::remove</definition>
+        <argsstring>(std::string_view value)=0</argsstring>
+        <name>remove</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::remove</qualifiedname>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1ab58ddd2903b4766bc217c3bd9d4ab8ce">remove</reimplementedby>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1ab58ddd2903b4766bc217c3bd9d4ab8ce">remove</reimplementedby>
+        <param>
+          <type>std::string_view</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="43" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a311bffa06dd414a2d1732fad99075ce3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void JSL::internal::Parameter::ParameterBase::push</definition>
+        <argsstring>(std::string_view value)=0</argsstring>
+        <name>push</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::push</qualifiedname>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1a98068cf081f9b7a23495b918ed338e54">push</reimplementedby>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1a98068cf081f9b7a23495b918ed338e54">push</reimplementedby>
+        <param>
+          <type>std::string_view</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="44" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1af89f60aa5b5ec60a8c798252495c6a68" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void JSL::internal::Parameter::ParameterBase::join</definition>
+        <argsstring>(std::string_view value)=0</argsstring>
+        <name>join</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::join</qualifiedname>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1ade0ce385eec4e43e6e46d6d5f8547115">join</reimplementedby>
+        <reimplementedby refid="classJSL_1_1Parameter_1_1Setting_1ade0ce385eec4e43e6e46d6d5f8547115">join</reimplementedby>
+        <param>
+          <type>std::string_view</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="45" column="26"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ac9337011a4636e553fdef5ac3ee3ab69" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::ParameterBase::ValidateTriggers</definition>
+        <argsstring>()</argsstring>
+        <name>ValidateTriggers</name>
+        <qualifiedname>JSL::internal::Parameter::ParameterBase::ValidateTriggers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="50" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>JSL::Parameter::Setting&lt; T &gt;</label>
+        <link refid="classJSL_1_1Parameter_1_1Setting"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>JSL::internal::Parameter::ParameterBase</label>
+        <link refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase"/>
+      </node>
+      <node id="2">
+        <label>JSL::Parameter::Setting&lt; bool &gt;</label>
+        <link refid="classJSL_1_1Parameter_1_1Setting"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/JSL/Parameters/Parameter.h" line="19" column="5" bodyfile="include/JSL/Parameters/Parameter.h" bodystart="20" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a3f16e20280743447e5477b59dbfac5e6" prot="public" virt="pure-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>Convert</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ae38f71cf9ec027e4feb0e8a46cd3489b" prot="public" virt="pure-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>erase</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1af996744b0befea389f77004f23fcfad8" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>GetTriggers</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ae83cc27be18ceb07190d32e84c632705" prot="protected" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>hasParseDelimiter</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1af89f60aa5b5ec60a8c798252495c6a68" prot="public" virt="pure-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>join</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1aa5f8896c7e72bbd64025cf713d59be8f" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>Parse</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a24a45b0023466bb94145d179150269c0" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>ParseFromCache</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a311bffa06dd414a2d1732fad99075ce3" prot="public" virt="pure-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>push</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a88f033d1dc5b949d0a59cd084cf03959" prot="public" virt="pure-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>remove</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a962e71226098ca92345dc2019dc2eeb4" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>SetDelimiter</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a7be1a818f479e8088b5f04a81097daee" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>SetTriggers</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a724128ab524acc691cb9a5ded83a8eda" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>SetTriggers</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ab51442bfdff4216747b68acf098c105c" prot="protected" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>TriggerList</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1a58a64e0db1f981cb302665c325aa73f2" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>TriggerString</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ac9337011a4636e553fdef5ac3ee3ab69" prot="protected" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>ValidateTriggers</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ad2f0b0cabb284c8af0480a1d2fc1926c" prot="public" virt="pure-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>ValueString</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1abba377dd8a65b0bcc8e355fee33ae165" prot="protected" virt="non-virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>VectorParseDelimiter</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1ab211decbcf7db77ae381353e6a2d0ad2" prot="public" virt="virtual"><scope>JSL::internal::Parameter::ParameterBase</scope><name>~ParameterBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

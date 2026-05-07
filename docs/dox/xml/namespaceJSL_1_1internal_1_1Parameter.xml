@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1internal_1_1Parameter" kind="namespace" language="C++">
+    <compoundname>JSL::internal::Parameter</compoundname>
+    <innerclass refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader" prot="public">JSL::internal::Parameter::CommandLineReader</innerclass>
+    <innerclass refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase" prot="public">JSL::internal::Parameter::ParameterBase</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1internal_1_1Parameter_1a147d6637d68e8a5a22c1942061f79b6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view JSL::internal::Parameter::Normalize</definition>
+        <argsstring>(std::string_view s)</argsstring>
+        <name>Normalize</name>
+        <qualifiedname>JSL::internal::Parameter::Normalize</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="10" column="26" declfile="include/JSL/Parameters/CLI_Reader.h" declline="10" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1internal_1_1Parameter_1a0dbe66d4ebfff8125363b9a9aff81a72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt; &amp;</type>
+        <definition>std::vector&lt; std::string &gt; &amp; JSL::internal::Parameter::Register</definition>
+        <argsstring>()</argsstring>
+        <name>Register</name>
+        <qualifiedname>JSL::internal::Parameter::Register</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Parameter.h" line="13" column="25" bodyfile="include/JSL/Parameters/Parameter.h" bodystart="13" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Parameters/CLI_Reader.h" line="8" column="1"/>
+  </compounddef>
+</doxygen>

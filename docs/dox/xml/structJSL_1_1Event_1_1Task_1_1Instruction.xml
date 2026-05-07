@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structJSL_1_1Event_1_1Task_1_1Instruction" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::Event::Task::Instruction</compoundname>
+    <includes refid="ManagerBase_8h" local="no">ManagerBase.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structJSL_1_1Event_1_1Task_1_1Instruction_1aa51ef34332637045a1744e168a263f2e" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" kindref="member">Origin</ref></type>
+        <definition>Origin JSL::Event::Task::Instruction::origin</definition>
+        <argsstring></argsstring>
+        <name>origin</name>
+        <qualifiedname>JSL::Event::Task::Instruction::origin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ManagerBase.h" line="26" column="8" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1Event_1_1Task_1_1Instruction_1a5e25abf350d7daa140c0df00eb846945" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" kindref="member">Priority</ref></type>
+        <definition>Priority JSL::Event::Task::Instruction::priority</definition>
+        <argsstring></argsstring>
+        <name>priority</name>
+        <qualifiedname>JSL::Event::Task::Instruction::priority</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ManagerBase.h" line="27" column="10" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1Event_1_1Task_1_1Instruction_1a2dee564e760e98b57bc4e20d1adba577" prot="public" static="no" mutable="no">
+        <type>std::variant&lt; std::string, <ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">JSL::Event::FileChange</ref> &gt;</type>
+        <definition>std::variant&lt;std::string, JSL::Event::FileChange&gt; JSL::Event::Task::Instruction::payload</definition>
+        <argsstring></argsstring>
+        <name>payload</name>
+        <qualifiedname>JSL::Event::Task::Instruction::payload</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ManagerBase.h" line="28" column="14" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structJSL_1_1Event_1_1Task_1_1Instruction_1ae691f9e7b9746455be37b68c79a48656" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Event::Task::Instruction::Instruction</definition>
+        <argsstring>(Origin in, std::string_view msg, Priority order=Priority::NORMAL)</argsstring>
+        <name>Instruction</name>
+        <qualifiedname>JSL::Event::Task::Instruction::Instruction</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" kindref="member">Origin</ref></type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" kindref="member">Priority</ref></type>
+          <declname>order</declname>
+          <defval><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8" kindref="member">Priority::NORMAL</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ManagerBase.h" line="29" column="1" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="29" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="structJSL_1_1Event_1_1Task_1_1Instruction_1ae136e8c65292c0bd73d8b7c036c3af9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Event::Task::Instruction::Instruction</definition>
+        <argsstring>(Origin in, FileChange msg, Priority order=Priority::NORMAL)</argsstring>
+        <name>Instruction</name>
+        <qualifiedname>JSL::Event::Task::Instruction::Instruction</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" kindref="member">Origin</ref></type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type><ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">FileChange</ref></type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" kindref="member">Priority</ref></type>
+          <declname>order</declname>
+          <defval><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8" kindref="member">Priority::NORMAL</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ManagerBase.h" line="35" column="1" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="35" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structJSL_1_1Event_1_1Task_1_1Instruction_1a13255a134db12d8dc0d16bdbe49ef395" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction" kindref="compound">Instruction</ref></type>
+        <definition>static Instruction JSL::Event::Task::Instruction::Shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown</name>
+        <qualifiedname>JSL::Event::Task::Instruction::Shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ManagerBase.h" line="41" column="20" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="41" bodyend="44"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Async/ManagerBase.h" line="24" column="1" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="25" bodyend="45"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1Event_1_1Task_1_1Instruction_1ae691f9e7b9746455be37b68c79a48656" prot="public" virt="non-virtual"><scope>JSL::Event::Task::Instruction</scope><name>Instruction</name></member>
+      <member refid="structJSL_1_1Event_1_1Task_1_1Instruction_1ae136e8c65292c0bd73d8b7c036c3af9b" prot="public" virt="non-virtual"><scope>JSL::Event::Task::Instruction</scope><name>Instruction</name></member>
+      <member refid="structJSL_1_1Event_1_1Task_1_1Instruction_1aa51ef34332637045a1744e168a263f2e" prot="public" virt="non-virtual"><scope>JSL::Event::Task::Instruction</scope><name>origin</name></member>
+      <member refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a2dee564e760e98b57bc4e20d1adba577" prot="public" virt="non-virtual"><scope>JSL::Event::Task::Instruction</scope><name>payload</name></member>
+      <member refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a5e25abf350d7daa140c0df00eb846945" prot="public" virt="non-virtual"><scope>JSL::Event::Task::Instruction</scope><name>priority</name></member>
+      <member refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a13255a134db12d8dc0d16bdbe49ef395" prot="public" virt="non-virtual"><scope>JSL::Event::Task::Instruction</scope><name>Shutdown</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

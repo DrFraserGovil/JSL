@@ -1,0 +1,677 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Event_1_1Watcher" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Event::Watcher</compoundname>
+    <includes refid="Watcher_8h" local="no">Watcher.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1ad799e0a57cd5bed89296921aade77a76" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; std::atomic&lt; bool &gt; &gt;</type>
+        <definition>std::unique_ptr&lt;std::atomic&lt;bool&gt; &gt; JSL::Event::Watcher::LoopRunning</definition>
+        <argsstring></argsstring>
+        <name>LoopRunning</name>
+        <qualifiedname>JSL::Event::Watcher::LoopRunning</qualifiedname>
+        <initializer>= std::make_unique&lt;std::atomic&lt;bool&gt;&gt;(false)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="55" column="29" bodyfile="include/JSL/Async/Watcher.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1ab9b0bf565d99b2a39d4f83946bf0128f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Event::Watcher::BlockNewAdds</definition>
+        <argsstring></argsstring>
+        <name>BlockNewAdds</name>
+        <qualifiedname>JSL::Event::Watcher::BlockNewAdds</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="56" column="18" bodyfile="include/JSL/Async/Watcher.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1ae62ac7eaed0b0e06f8a9533d7736d360" prot="private" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Event_1_1Antenna" kindref="compound">Antenna</ref></type>
+        <definition>Antenna JSL::Event::Watcher::Receiver</definition>
+        <argsstring></argsstring>
+        <name>Receiver</name>
+        <qualifiedname>JSL::Event::Watcher::Receiver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="58" column="21" bodyfile="include/JSL/Async/Watcher.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1a79001fba1a52d6821bb3f500dac55504" prot="private" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Event_1_1Antenna_1_1Hotline" kindref="compound">Antenna::Hotline</ref></type>
+        <definition>Antenna::Hotline JSL::Event::Watcher::Sender</definition>
+        <argsstring></argsstring>
+        <name>Sender</name>
+        <qualifiedname>JSL::Event::Watcher::Sender</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="59" column="30" bodyfile="include/JSL/Async/Watcher.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1ac5943bb4c35d63ca5cd970ccd3dc3bd7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; pollfd &gt;</type>
+        <definition>std::vector&lt;pollfd&gt; JSL::Event::Watcher::PollCatchers</definition>
+        <argsstring></argsstring>
+        <name>PollCatchers</name>
+        <qualifiedname>JSL::Event::Watcher::PollCatchers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="60" column="25" bodyfile="include/JSL/Async/Watcher.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1a83489ca06d64c4ef9c8a749003e6194e" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, std::function&lt; void()&gt; &gt;</type>
+        <definition>std::map&lt;int,std::function&lt;void()&gt; &gt; JSL::Event::Watcher::Callbacks</definition>
+        <argsstring></argsstring>
+        <name>Callbacks</name>
+        <qualifiedname>JSL::Event::Watcher::Callbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="61" column="22" bodyfile="include/JSL/Async/Watcher.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1ac2e4fa5b21819c5b3bc1cf9f976392e3" prot="private" static="no" mutable="no">
+        <type>std::chrono::steady_clock::duration</type>
+        <definition>std::chrono::steady_clock::duration JSL::Event::Watcher::Timeout</definition>
+        <argsstring></argsstring>
+        <name>Timeout</name>
+        <qualifiedname>JSL::Event::Watcher::Timeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="62" column="49" bodyfile="include/JSL/Async/Watcher.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1ad92fdae00e944f4d6aff245d2738ec13" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::Event::Watcher::BlockingTime</definition>
+        <argsstring></argsstring>
+        <name>BlockingTime</name>
+        <qualifiedname>JSL::Event::Watcher::BlockingTime</qualifiedname>
+        <initializer>= 50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="63" column="17" bodyfile="include/JSL/Async/Watcher.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1a04141d9392a2206de1a75ceadfe520aa" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::Event::Watcher::INotifyID</definition>
+        <argsstring></argsstring>
+        <name>INotifyID</name>
+        <qualifiedname>JSL::Event::Watcher::INotifyID</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="64" column="17" bodyfile="include/JSL/Async/Watcher.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1abaccd16a308cbec3c4d8e37c011c97cf" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, std::filesystem::path &gt;</type>
+        <definition>std::map&lt;int, std::filesystem::path&gt; JSL::Event::Watcher::WatchMap</definition>
+        <argsstring></argsstring>
+        <name>WatchMap</name>
+        <qualifiedname>JSL::Event::Watcher::WatchMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="66" column="22" bodyfile="include/JSL/Async/Watcher.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1ac1c0304f4f8d76d74ea6602a094f792e" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t JSL::Event::Watcher::DebounceMS</definition>
+        <argsstring></argsstring>
+        <name>DebounceMS</name>
+        <qualifiedname>JSL::Event::Watcher::DebounceMS</qualifiedname>
+        <initializer>= 50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="68" column="20" bodyfile="include/JSL/Async/Watcher.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1a50a144cff897caf59ec883aab3d5f481" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::chrono::steady_clock::time_point &gt;</type>
+        <definition>std::optional&lt;std::chrono::steady_clock::time_point&gt; JSL::Event::Watcher::InitialiseTime</definition>
+        <argsstring></argsstring>
+        <name>InitialiseTime</name>
+        <qualifiedname>JSL::Event::Watcher::InitialiseTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="69" column="27" bodyfile="include/JSL/Async/Watcher.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1a4659a8671c7f13d32c1e51061ba7b00e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Event::Watcher::AwaitingDebounce</definition>
+        <argsstring></argsstring>
+        <name>AwaitingDebounce</name>
+        <qualifiedname>JSL::Event::Watcher::AwaitingDebounce</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="72" column="18" bodyfile="include/JSL/Async/Watcher.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1af4ebc1a0d41c58faab9dd1a43a585a8a" prot="private" static="no" mutable="no">
+        <type>std::chrono::steady_clock::time_point</type>
+        <definition>std::chrono::steady_clock::time_point JSL::Event::Watcher::Wakeup</definition>
+        <argsstring></argsstring>
+        <name>Wakeup</name>
+        <qualifiedname>JSL::Event::Watcher::Wakeup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="73" column="51" bodyfile="include/JSL/Async/Watcher.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1a009b0593374f5d9e833d90efacb4f4e1" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(<ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">FileChange</ref>)&gt;</type>
+        <definition>std::function&lt;void(FileChange)&gt; JSL::Event::Watcher::CachedCallback</definition>
+        <argsstring></argsstring>
+        <name>CachedCallback</name>
+        <qualifiedname>JSL::Event::Watcher::CachedCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="74" column="27" bodyfile="include/JSL/Async/Watcher.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Watcher_1ab7f6832c4fc1e55fe40239febb9d131d" prot="private" static="no" mutable="no">
+        <type>std::set&lt; <ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">FileChange</ref> &gt;</type>
+        <definition>std::set&lt;FileChange&gt; JSL::Event::Watcher::FileCache</definition>
+        <argsstring></argsstring>
+        <name>FileCache</name>
+        <qualifiedname>JSL::Event::Watcher::FileCache</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="75" column="22" bodyfile="include/JSL/Async/Watcher.h" bodystart="75" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a43896128655c8b423505610aba9f34d1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classJSL_1_1Event_1_1Watcher" kindref="compound">Watcher</ref> &gt;</type>
+        <definition>static std::optional&lt; Watcher &gt; JSL::Event::Watcher::Create</definition>
+        <argsstring>(std::string_view socketName, double timeout=2, bool forceAcquire=false)</argsstring>
+        <name>Create</name>
+        <qualifiedname>JSL::Event::Watcher::Create</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>socketName</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>timeout</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>forceAcquire</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="31" column="34"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a02df29879a0b5f9ad69af5fe14ac77b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <qualifiedname>JSL::Event::Watcher::Run</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="33" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a480e71f1b1cc58e3c7e71444c283ba1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::SetSocketTimeout</definition>
+        <argsstring>(double seconds)</argsstring>
+        <name>SetSocketTimeout</name>
+        <qualifiedname>JSL::Event::Watcher::SetSocketTimeout</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>seconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="34" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a1fc60257d0bf9798f3f73aa3f08735df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::SetMaxRuntime</definition>
+        <argsstring>(double minutes)</argsstring>
+        <name>SetMaxRuntime</name>
+        <qualifiedname>JSL::Event::Watcher::SetMaxRuntime</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>minutes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="35" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1acd0a6fe4af54e562336087ecb1994315" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::SetBlockingTime</definition>
+        <argsstring>(double seconds)</argsstring>
+        <name>SetBlockingTime</name>
+        <qualifiedname>JSL::Event::Watcher::SetBlockingTime</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>seconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="36" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a474ddc4b81b8f58b9259b1997f301d26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::SetDebounce</definition>
+        <argsstring>(size_t milliseconds)</argsstring>
+        <name>SetDebounce</name>
+        <qualifiedname>JSL::Event::Watcher::SetDebounce</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>milliseconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="37" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a3a427b5a6768319a011c0543dead06b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::SetSocketCallback</definition>
+        <argsstring>(std::function&lt; void(std::string_view)&gt; callback)</argsstring>
+        <name>SetSocketCallback</name>
+        <qualifiedname>JSL::Event::Watcher::SetSocketCallback</qualifiedname>
+        <param>
+          <type>std::function&lt; void(std::string_view)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="39" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a1edf19052bdbf3b2d41ee792b2b9d89b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::SetInotifyCallback</definition>
+        <argsstring>(std::function&lt; void(const FileChange &amp;)&gt; callback)</argsstring>
+        <name>SetInotifyCallback</name>
+        <qualifiedname>JSL::Event::Watcher::SetInotifyCallback</qualifiedname>
+        <param>
+          <type>std::function&lt; void(const <ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">FileChange</ref> &amp;)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="41" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a0a5d1e07ce77897a6960add6883374b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::SetCInCallback</definition>
+        <argsstring>(std::function&lt; void(std::string_view)&gt; callback)</argsstring>
+        <name>SetCInCallback</name>
+        <qualifiedname>JSL::Event::Watcher::SetCInCallback</qualifiedname>
+        <param>
+          <type>std::function&lt; void(std::string_view)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="43" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a03c5979d0461db1e384d9389adbe5332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int JSL::Event::Watcher::Watch</definition>
+        <argsstring>(std::filesystem::path path, uint32_t watchFlags=IN_MODIFY|IN_CREATE|IN_DELETE|IN_MOVE|IN_IGNORED)</argsstring>
+        <name>Watch</name>
+        <qualifiedname>JSL::Event::Watcher::Watch</qualifiedname>
+        <param>
+          <type>std::filesystem::path</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>watchFlags</declname>
+          <defval>IN_MODIFY|IN_CREATE|IN_DELETE|IN_MOVE|IN_IGNORED</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="45" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a686a74cea9f8b181526a324d6ff9ae35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::Unwatch</definition>
+        <argsstring>(int id)</argsstring>
+        <name>Unwatch</name>
+        <qualifiedname>JSL::Event::Watcher::Unwatch</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="46" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a7004b42acde29a1b4238a86c8872db87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::Shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>Shutdown</name>
+        <qualifiedname>JSL::Event::Watcher::Shutdown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="47" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a05e4e0d34a211d799305d330829801be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::Unwatch</definition>
+        <argsstring>(std::filesystem::path path)</argsstring>
+        <name>Unwatch</name>
+        <qualifiedname>JSL::Event::Watcher::Unwatch</qualifiedname>
+        <param>
+          <type>std::filesystem::path</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="48" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a0d0b75d2f25e60bd23b7b164d2c5e806" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::Message</definition>
+        <argsstring>(std::string_view msg)</argsstring>
+        <name>Message</name>
+        <qualifiedname>JSL::Event::Watcher::Message</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="49" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1af2402909acdf5b368ec161351cbd0e59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::set&lt; std::filesystem::path &gt;</type>
+        <definition>std::set&lt; std::filesystem::path &gt; JSL::Event::Watcher::GetWatchedFiles</definition>
+        <argsstring>()</argsstring>
+        <name>GetWatchedFiles</name>
+        <qualifiedname>JSL::Event::Watcher::GetWatchedFiles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="50" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a584c86957090390289a7eebaede8146b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::chrono::steady_clock::duration</type>
+        <definition>std::chrono::steady_clock::duration JSL::Event::Watcher::GetRuntime</definition>
+        <argsstring>()</argsstring>
+        <name>GetRuntime</name>
+        <qualifiedname>JSL::Event::Watcher::GetRuntime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="51" column="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a2c7eec875133775a69822b648e668def" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::Event::Watcher::Running</definition>
+        <argsstring>()</argsstring>
+        <name>Running</name>
+        <qualifiedname>JSL::Event::Watcher::Running</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="52" column="18" bodyfile="include/JSL/Async/Watcher.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a6bf764361bbddbd1e9a0fa607466acd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::PrepRun</definition>
+        <argsstring>()</argsstring>
+        <name>PrepRun</name>
+        <qualifiedname>JSL::Event::Watcher::PrepRun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="53" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1abac357b31d076af5e85254c956316d7e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Event::Watcher::Watcher</definition>
+        <argsstring>(Antenna &amp;&amp;socketIn)</argsstring>
+        <name>Watcher</name>
+        <qualifiedname>JSL::Event::Watcher::Watcher</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Event_1_1Antenna" kindref="compound">Antenna</ref> &amp;&amp;</type>
+          <declname>socketIn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="57" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a29d9dcadfa0f004bc485b0dca463ef54" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::InitialiseINotify</definition>
+        <argsstring>()</argsstring>
+        <name>InitialiseINotify</name>
+        <qualifiedname>JSL::Event::Watcher::InitialiseINotify</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="65" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Watcher_1a131716f0e6d44fba44fcf18c4ea8210f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Watcher::UpdateFileBatch</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateFileBatch</name>
+        <qualifiedname>JSL::Event::Watcher::UpdateFileBatch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="67" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>JSL::Event::Antenna</label>
+        <link refid="classJSL_1_1Event_1_1Antenna"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Resources</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>JSL::Event::Antenna::Hotline</label>
+        <link refid="classJSL_1_1Event_1_1Antenna_1_1Hotline"/>
+      </node>
+      <node id="1">
+        <label>JSL::Event::Watcher</label>
+        <link refid="classJSL_1_1Event_1_1Watcher"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Receiver</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Sender</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL::Event::internal::FileDescriptor</label>
+        <link refid="structJSL_1_1Event_1_1internal_1_1FileDescriptor"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/Async/Watcher.h" line="27" column="5" bodyfile="include/JSL/Async/Watcher.h" bodystart="28" bodyend="79"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a4659a8671c7f13d32c1e51061ba7b00e" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>AwaitingDebounce</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1ad92fdae00e944f4d6aff245d2738ec13" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>BlockingTime</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1ab9b0bf565d99b2a39d4f83946bf0128f" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>BlockNewAdds</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a009b0593374f5d9e833d90efacb4f4e1" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>CachedCallback</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a83489ca06d64c4ef9c8a749003e6194e" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Callbacks</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a43896128655c8b423505610aba9f34d1" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Create</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1ac1c0304f4f8d76d74ea6602a094f792e" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>DebounceMS</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1ab7f6832c4fc1e55fe40239febb9d131d" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>FileCache</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a584c86957090390289a7eebaede8146b" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>GetRuntime</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1af2402909acdf5b368ec161351cbd0e59" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>GetWatchedFiles</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a29d9dcadfa0f004bc485b0dca463ef54" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>InitialiseINotify</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a50a144cff897caf59ec883aab3d5f481" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>InitialiseTime</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a04141d9392a2206de1a75ceadfe520aa" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>INotifyID</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1ad799e0a57cd5bed89296921aade77a76" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>LoopRunning</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a0d0b75d2f25e60bd23b7b164d2c5e806" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Message</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1ac5943bb4c35d63ca5cd970ccd3dc3bd7" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>PollCatchers</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a6bf764361bbddbd1e9a0fa607466acd5" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>PrepRun</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1ae62ac7eaed0b0e06f8a9533d7736d360" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Receiver</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a02df29879a0b5f9ad69af5fe14ac77b4" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Run</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a2c7eec875133775a69822b648e668def" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Running</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a79001fba1a52d6821bb3f500dac55504" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Sender</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1acd0a6fe4af54e562336087ecb1994315" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>SetBlockingTime</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a0a5d1e07ce77897a6960add6883374b1" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>SetCInCallback</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a474ddc4b81b8f58b9259b1997f301d26" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>SetDebounce</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a1edf19052bdbf3b2d41ee792b2b9d89b" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>SetInotifyCallback</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a1fc60257d0bf9798f3f73aa3f08735df" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>SetMaxRuntime</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a3a427b5a6768319a011c0543dead06b5" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>SetSocketCallback</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a480e71f1b1cc58e3c7e71444c283ba1f" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>SetSocketTimeout</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a7004b42acde29a1b4238a86c8872db87" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Shutdown</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1ac2e4fa5b21819c5b3bc1cf9f976392e3" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Timeout</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a686a74cea9f8b181526a324d6ff9ae35" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Unwatch</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a05e4e0d34a211d799305d330829801be" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Unwatch</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a131716f0e6d44fba44fcf18c4ea8210f" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>UpdateFileBatch</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1af4ebc1a0d41c58faab9dd1a43a585a8a" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Wakeup</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1a03c5979d0461db1e384d9389adbe5332" prot="public" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Watch</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1abac357b31d076af5e85254c956316d7e" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>Watcher</name></member>
+      <member refid="classJSL_1_1Event_1_1Watcher_1abaccd16a308cbec3c4d8e37c011c97cf" prot="private" virt="non-virtual"><scope>JSL::Event::Watcher</scope><name>WatchMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

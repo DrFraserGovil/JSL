@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1Archiver" kind="namespace" language="C++">
+    <compoundname>JSL::Archiver</compoundname>
+    <innerclass refid="classJSL_1_1Archiver_1_1ReadStream" prot="public">JSL::Archiver::ReadStream</innerclass>
+    <innerclass refid="classJSL_1_1Archiver_1_1Vault" prot="public">JSL::Archiver::Vault</innerclass>
+    <innerclass refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Read_01_4" prot="public">JSL::Archiver::Vault&lt; Mode::Read &gt;</innerclass>
+    <innerclass refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4" prot="public">JSL::Archiver::Vault&lt; Mode::Write &gt;</innerclass>
+    <innerclass refid="classJSL_1_1Archiver_1_1WriteStream" prot="public">JSL::Archiver::WriteStream</innerclass>
+    <innernamespace refid="namespaceJSL_1_1Archiver_1_1internal">JSL::Archiver::internal</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceJSL_1_1Archiver_1aeeb3e5dd16147fd2dcdc870080838e3b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Mode</name>
+        <qualifiedname>JSL::Archiver::Mode</qualifiedname>
+        <enumvalue id="namespaceJSL_1_1Archiver_1aeeb3e5dd16147fd2dcdc870080838e3ba7a1a5f3e79fdc91edf2f5ead9d66abb4" prot="public">
+          <name>Read</name>
+          <briefdescription>
+<para>Puts the Archive into read mode. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Archiver_1aeeb3e5dd16147fd2dcdc870080838e3ba1129c0e4d43f2d121652a7302712cff6" prot="public">
+          <name>Write</name>
+          <briefdescription>
+<para>Puts the Archive in write mode. If a file exists with the archive name, it is replaced by a blank archive. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Archiver_1aeeb3e5dd16147fd2dcdc870080838e3ba3ac4692f3935a49a0b243eecf529faa9" prot="public">
+          <name>Append</name>
+          <briefdescription>
+<para>Puts the Archive in write mode. If a file exists with the archive name, it is read as an archive, and the contents copied across. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/base.h" line="5" column="5" bodyfile="include/JSL/FileIO/archiver/base.h" bodystart="6" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/FileIO/archiver/base.h" line="3" column="1"/>
+  </compounddef>
+</doxygen>

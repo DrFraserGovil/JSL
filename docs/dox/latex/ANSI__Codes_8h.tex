@@ -1,0 +1,108 @@
+\doxysection{include/\+JSL/\+Display/\+ANSI\+\_\+\+Codes.h File Reference}
+\hypertarget{ANSI__Codes_8h}{}\label{ANSI__Codes_8h}\index{include/JSL/Display/ANSI\_Codes.h@{include/JSL/Display/ANSI\_Codes.h}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$JSL/\+Display/\+Format.\+h$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Terminal}{JSL\+::\+Terminal}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Format}{JSL\+::\+Format}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{JSL\+::\+Terminal\+::\+Cursor\+Command}} = std\+::string
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{JSL\+::\+Terminal\+::\+Direction}} \{ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3}{JSL\+::\+Terminal\+::\+Up}} =0
+, \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48}{JSL\+::\+Terminal\+::\+Down}} =1
+, \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26}{JSL\+::\+Terminal\+::\+Right}} =2
+, \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908}{JSL\+::\+Terminal\+::\+Left}} =3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceJSL_1_1Terminal_a194d7176d034555e7008938ed071f9f8}{JSL\+::\+Terminal\+::\+Is\+ANSICapable}} ()
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}{JSL\+::\+Terminal\+::\+Move}} (\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}} dir, unsigned int steps)
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}{JSL\+::\+Terminal\+::\+Move\+To\+Column}} (uint32\+\_\+t column)
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a0310aceb1276f364edf89ea449e2a8d5}{JSL\+::\+Format\+::\+Reset\+All}} ("{}\textbackslash{}033\mbox{[}0m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}})
+\item 
+\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a72f9735a888543e7e1b5cb07ae7ad10b}{JSL\+::\+Format\+::\+Reset}} (\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{Element}} sections=\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a564e38f310ecc9f0982f40e18590164d}{JSL\+::\+Format\+::\+Black}} ("{}\textbackslash{}033\mbox{[}30m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ae70c4e93b38e7e6d3d4a4587bdeca2d8}{JSL\+::\+Format\+::\+Red}} ("{}\textbackslash{}033\mbox{[}31m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aca4adf51e196a330791d94688f827cf9}{JSL\+::\+Format\+::\+Green}} ("{}\textbackslash{}033\mbox{[}32m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aaeaa6f8b854fe2f38e404f5c4ccd863f}{JSL\+::\+Format\+::\+Yellow}} ("{}\textbackslash{}033\mbox{[}33m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ac7e4db410a5d82647350de18a9400356}{JSL\+::\+Format\+::\+Blue}} ("{}\textbackslash{}033\mbox{[}34m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a10c116dab0dbf18d5b10741f0ac8b8b2}{JSL\+::\+Format\+::\+Purple}} ("{}\textbackslash{}033\mbox{[}35m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ab57e30d39f562e4b735405a4c3685d57}{JSL\+::\+Format\+::\+Cyan}} ("{}\textbackslash{}033\mbox{[}36m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a08d06db733a345807a8fd58f9c779e46}{JSL\+::\+Format\+::\+White}} ("{}\textbackslash{}033\mbox{[}37m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2a29d497acaa067b570f6d852f40a93a}{JSL\+::\+Format\+::\+Bold}} ("{}\textbackslash{}033\mbox{[}1m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a0827ebc4850da2e12f0b368cb3face90}{JSL\+::\+Format\+::\+Faint}} ("{}\textbackslash{}033\mbox{[}2m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aa979ec2b6fefa52dfd126dde4b9f7ff5}{JSL\+::\+Format\+::\+Italics}} ("{}\textbackslash{}033\mbox{[}3m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ac6a414a59d7fb0376a225b34eb9dcba9}{JSL\+::\+Format\+::\+Underline}} ("{}\textbackslash{}033\mbox{[}4m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a04fd686ba5a0458ded6b2de07a93d263}{JSL\+::\+Format\+::\+Highlight}} ("{}\textbackslash{}033\mbox{[}7m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2f7953035dfe2593afa916fdfae9ec3c}{JSL\+::\+Format\+::\+Strike}} ("{}\textbackslash{}033\mbox{[}9m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1320a97711cbad9c50f9588e48876a53}{JSL\+::\+Format\+::\+Colour}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1fa23969dab620f3d9b56ef68082766b}{JSL\+::\+Format\+::\+Bg\+Black}} ("{}\textbackslash{}033\mbox{[}40m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_afd273f5fb30815ebe8befcc36d9a60b4}{JSL\+::\+Format\+::\+Bg\+Red}} ("{}\textbackslash{}033\mbox{[}41m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ad2d9099b79b7b1b370d5902a21baaee1}{JSL\+::\+Format\+::\+Bg\+Green}} ("{}\textbackslash{}033\mbox{[}42m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1583018a288e946c518d84e0339b2386}{JSL\+::\+Format\+::\+Bg\+Yellow}} ("{}\textbackslash{}033\mbox{[}43m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a99ad159e7ebe52d597e4c83783b8e259}{JSL\+::\+Format\+::\+Bg\+Blue}} ("{}\textbackslash{}033\mbox{[}44m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_acf947df1b26f461bd72a8de4f4a13b56}{JSL\+::\+Format\+::\+Bg\+Purple}} ("{}\textbackslash{}033\mbox{[}45m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ad0a98bcd9348a1133ab06cfe41beb5ed}{JSL\+::\+Format\+::\+Bg\+Cyan}} ("{}\textbackslash{}033\mbox{[}46m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_add9c1bf1296670a8b34fb32c47cfe0c8}{JSL\+::\+Format\+::\+Bg\+White}} ("{}\textbackslash{}033\mbox{[}47m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aadd84caae79d82316f117f2b4230e644}{JSL\+::\+Format\+::\+Bg\+Colour}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}{JSL\+::\+Terminal\+::\+Hide}} = "{}\textbackslash{}033\mbox{[}?25l"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}{JSL\+::\+Terminal\+::\+Show}} = "{}\textbackslash{}033\mbox{[}?25h"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}{JSL\+::\+Terminal\+::\+Cursor\+Up}} = "{}\textbackslash{}033\mbox{[}A"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}{JSL\+::\+Terminal\+::\+Backspace}} = "{}\textbackslash{}b \textbackslash{}b"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375}{JSL\+::\+Terminal\+::\+Erase\+Right}} = "{}\textbackslash{}033\mbox{[}0\+K"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed}{JSL\+::\+Terminal\+::\+Erase\+Left}} = "{}\textbackslash{}033\mbox{[}1K"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}{JSL\+::\+Terminal\+::\+Clear\+Line}} = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}{JSL\+::\+Terminal\+::\+Clear\+Screen}} = "{}\textbackslash{}033\mbox{[}2J\textbackslash{}r"{}
+\end{DoxyCompactItemize}

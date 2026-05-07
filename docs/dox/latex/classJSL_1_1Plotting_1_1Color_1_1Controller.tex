@@ -1,0 +1,163 @@
+\doxysection{JSL\+::Plotting\+::Color\+::Controller Class Reference}
+\hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller}{}\label{classJSL_1_1Plotting_1_1Color_1_1Controller}\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+
+
+{\ttfamily \#include $<$Colorbar.\+h$>$}
+
+Inheritance diagram for JSL\+::Plotting\+::Color\+::Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classJSL_1_1Plotting_1_1Color_1_1Controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_a32412203add522ae194d27070abcede6}{Controller}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_a30e15c4bd60235079263ed4553db78d9}{operator()}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_a4c3e06bdb84ed46603af0f9693428189}{Show}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_adb87b2c4b33f6215c8d8ac8a3fd3ef67}{Invert}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_a31ea11216230d9fb9d63edf16b00bd31}{Scheme}} (std\+::string gnuplt\+\_\+cmd)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_ac62aa878a37129f0aaa3dd7262c2e3ae}{Gradient}} (std\+::string color1, std\+::string color2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis}{JSL\+::\+Plotting\+::\+Properties\+::\+Per\+Axis}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_a3cdc87e540963aa2138886f3ada38e20}{Log\+Scale}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_a1f41cf552e3949e73d9242d3903b3e2c}{Mirror}} ()
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_a9c238fdde4b40525e682077e9b2bfd0b}{Per\+Axis}} (bool default\+Active, std\+::string name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_a8c47899c4668e57c57c531c0d708586e}{Visible}} = false
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_ab0137837d8b03f2df5c88c1b3faef0d6}{Inverted}} = false
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_aeed8c1c564eb2519a7cae714762164d8}{Palette}} = "{}viridis"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis}{JSL\+::\+Plotting\+::\+Properties\+::\+Per\+Axis}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_a6e151523f0812dd0eb4bb8d05b592ffa}{Active}}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_a8096e1822460815fdf6c2c8bbe67bd05}{Label}} = "{}"{}
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject}{JSL\+::\+Plotting\+::\+Range\+Object}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_a327ce0f7e4271f150e4c1821b15fcf06}{Range}}
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties}{JSL\+::\+Plotting\+::\+Tic\+Properties}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_a02fc34ec143c51c713076f1094e73356}{Tics}}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_ad220add5ca055bda40342ddaaf6346bd}{Time\+Parsing\+Format}} = "{}\%s"{}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_aa582b4efd967f3134a335eab6bc8e1c2}{Log}} = false
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_ab1432038cf03aa01d15855d1226ed44c}{Mirrored}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_a09fa2a3469cb616f1b518d8c1b5c36b5}{To\+Pipe}} (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal\+::\+Gnuplot\+Pipe}} pipe)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1Color_1_1Controller_a97af53b9a9ff09603a3dbcbe7074ad11}{Display}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis}{JSL\+::\+Plotting\+::\+Properties\+::\+Per\+Axis}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis}{Per\+Axis}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_a0d98d32df4ee68e34b7af72291447ce9}{Default}} (std\+::string name)
+\item 
+static \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis}{Per\+Axis}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Properties_1_1PerAxis_aa9acdacf4b810e8c92cb5382caa56f8a}{Dormant}} (std\+::string name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_a32412203add522ae194d27070abcede6}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_a32412203add522ae194d27070abcede6} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_ac62aa878a37129f0aaa3dd7262c2e3ae}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_ac62aa878a37129f0aaa3dd7262c2e3ae} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Gradient@{Gradient}}
+\index{Gradient@{Gradient}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Gradient()}{Gradient()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+Gradient (\begin{DoxyParamCaption}\item[{std\+::string}]{color1,  }\item[{std\+::string}]{color2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_adb87b2c4b33f6215c8d8ac8a3fd3ef67}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_adb87b2c4b33f6215c8d8ac8a3fd3ef67} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Invert@{Invert}}
+\index{Invert@{Invert}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Invert()}{Invert()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+Invert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_a30e15c4bd60235079263ed4553db78d9}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_a30e15c4bd60235079263ed4553db78d9} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!operator()@{operator()}}
+\index{operator()@{operator()}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_a31ea11216230d9fb9d63edf16b00bd31}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_a31ea11216230d9fb9d63edf16b00bd31} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Scheme@{Scheme}}
+\index{Scheme@{Scheme}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Scheme()}{Scheme()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+Scheme (\begin{DoxyParamCaption}\item[{std\+::string}]{gnuplt\+\_\+cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_a4c3e06bdb84ed46603af0f9693428189}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_a4c3e06bdb84ed46603af0f9693428189} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Show@{Show}}
+\index{Show@{Show}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_a09fa2a3469cb616f1b518d8c1b5c36b5}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_a09fa2a3469cb616f1b518d8c1b5c36b5} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!ToPipe@{ToPipe}}
+\index{ToPipe@{ToPipe}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{ToPipe()}{ToPipe()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+To\+Pipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal\+::\+Gnuplot\+Pipe}}}]{pipe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_a97af53b9a9ff09603a3dbcbe7074ad11}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_a97af53b9a9ff09603a3dbcbe7074ad11} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Display@{Display}}
+\index{Display@{Display}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Display}{Display}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classJSL_1_1Plotting_1_1Display}{Display}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_ab0137837d8b03f2df5c88c1b3faef0d6}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_ab0137837d8b03f2df5c88c1b3faef0d6} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Inverted@{Inverted}}
+\index{Inverted@{Inverted}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Inverted}{Inverted}}
+{\footnotesize\ttfamily bool JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+Inverted = false}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_aeed8c1c564eb2519a7cae714762164d8}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_aeed8c1c564eb2519a7cae714762164d8} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Palette@{Palette}}
+\index{Palette@{Palette}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Palette}{Palette}}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+Palette = "{}viridis"{}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Color_1_1Controller_a8c47899c4668e57c57c531c0d708586e}\label{classJSL_1_1Plotting_1_1Color_1_1Controller_a8c47899c4668e57c57c531c0d708586e} 
+\index{JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}!Visible@{Visible}}
+\index{Visible@{Visible}!JSL::Plotting::Color::Controller@{JSL::Plotting::Color::Controller}}
+\doxysubsubsection{\texorpdfstring{Visible}{Visible}}
+{\footnotesize\ttfamily bool JSL\+::\+Plotting\+::\+Color\+::\+Controller\+::\+Visible = false}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Plot/display/\mbox{\hyperlink{Colorbar_8h}{Colorbar.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,127 @@
+\doxysection{JSL\+::Vector Namespace Reference}
+\hypertarget{namespaceJSL_1_1Vector}{}\label{namespaceJSL_1_1Vector}\index{JSL::Vector@{JSL::Vector}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Vector_1_1internal}{internal}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structJSL_1_1Vector_1_1SearchResult}{Search\+Result}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceJSL_1_1Vector_a909cb1220801f40b404f51f6ded9f150}{append}} (std\+::vector$<$ T $>$ \&a, const std\+::vector$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceJSL_1_1Vector_ae9eb64d166ab8dc0e838ac58121ec654}{prepend}} (std\+::vector$<$ T $>$ \&a, const std\+::vector$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::vector$<$ T $>$ \mbox{\hyperlink{namespaceJSL_1_1Vector_a19caad9fa8f55726b61d8284e175c6f4}{concat}} (const std\+::vector$<$ T $>$ \&a, const std\+::vector$<$ T $>$ \&b)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{namespaceJSL_1_1Vector_a73680c15e114ade4829ed7b318618049}{Linspace}} (double begin, double end, size\+\_\+t resolution=100)
+\item 
+{\footnotesize template$<$typename T , internal\+::\+Searchable\+Range R$>$ \newline
+requires std\+::convertible\+\_\+to$<$T, std\+::ranges\+::range\+\_\+value\+\_\+t$<$R$>$$>$}\\\mbox{\hyperlink{structJSL_1_1Vector_1_1SearchResult}{Search\+Result}} \mbox{\hyperlink{namespaceJSL_1_1Vector_a8d27d8e326fcee699835a82e4289af83}{find}} (const T \&x, const R \&y)
+\begin{DoxyCompactList}\small\item\em Gets first id such that y\mbox{[}id\mbox{]} == x, assuming that exact equality is well defined (see double override). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structJSL_1_1Vector_1_1SearchResult}{Search\+Result}} \mbox{\hyperlink{namespaceJSL_1_1Vector_aafea3c06f0cdf246f5828d145c4b05a1}{find}} (double x, const std\+::vector$<$ double $>$ \&y, double tolerance)
+\begin{DoxyCompactList}\small\item\em Gets first id such that (y\mbox{[}id\mbox{]}-\/ x) \texorpdfstring{$<$}{<} tolerance. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , internal\+::\+Searchable\+Range R$>$ \newline
+requires std\+::convertible\+\_\+to$<$T, std\+::ranges\+::range\+\_\+value\+\_\+t$<$R$>$$>$}\\bool \mbox{\hyperlink{namespaceJSL_1_1Vector_a8a88f249d6218f5b0cc6327ff88b948d}{contains}} (const T \&x, const R \&y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespaceJSL_1_1Vector_af6f84650334cef1d4a9ca7f47f1b18f8}{Not\+Found}} = static\+\_\+cast$<$size\+\_\+t$>$(-\/1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceJSL_1_1Vector_a909cb1220801f40b404f51f6ded9f150}\label{namespaceJSL_1_1Vector_a909cb1220801f40b404f51f6ded9f150} 
+\index{JSL::Vector@{JSL::Vector}!append@{append}}
+\index{append@{append}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void JSL\+::\+Vector\+::append (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{const std\+::vector$<$ T $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceJSL_1_1Vector_a19caad9fa8f55726b61d8284e175c6f4}\label{namespaceJSL_1_1Vector_a19caad9fa8f55726b61d8284e175c6f4} 
+\index{JSL::Vector@{JSL::Vector}!concat@{concat}}
+\index{concat@{concat}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{concat()}{concat()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::vector$<$ T $>$ JSL\+::\+Vector\+::concat (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{a,  }\item[{const std\+::vector$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Vector_a8a88f249d6218f5b0cc6327ff88b948d}\label{namespaceJSL_1_1Vector_a8a88f249d6218f5b0cc6327ff88b948d} 
+\index{JSL::Vector@{JSL::Vector}!contains@{contains}}
+\index{contains@{contains}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$typename T , internal\+::\+Searchable\+Range R$>$ \newline
+requires std\+::convertible\+\_\+to$<$T, std\+::ranges\+::range\+\_\+value\+\_\+t$<$R$>$$>$\\
+bool JSL\+::\+Vector\+::contains (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const R \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceJSL_1_1Vector_a8d27d8e326fcee699835a82e4289af83}\label{namespaceJSL_1_1Vector_a8d27d8e326fcee699835a82e4289af83} 
+\index{JSL::Vector@{JSL::Vector}!find@{find}}
+\index{find@{find}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , internal\+::\+Searchable\+Range R$>$ \newline
+requires std\+::convertible\+\_\+to$<$T, std\+::ranges\+::range\+\_\+value\+\_\+t$<$R$>$$>$\\
+\mbox{\hyperlink{structJSL_1_1Vector_1_1SearchResult}{Search\+Result}} JSL\+::\+Vector\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const R \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets first id such that y\mbox{[}id\mbox{]} == x, assuming that exact equality is well defined (see double override). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The value to be searched for\\
+\hline
+{\em y} & The vector to search through \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{structJSL_1_1Vector_1_1SearchResult}{Search\+Result} indicating if the element has been found, and the index it can be found at 
+\end{DoxyReturn}
+\Hypertarget{namespaceJSL_1_1Vector_aafea3c06f0cdf246f5828d145c4b05a1}\label{namespaceJSL_1_1Vector_aafea3c06f0cdf246f5828d145c4b05a1} 
+\index{JSL::Vector@{JSL::Vector}!find@{find}}
+\index{find@{find}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Vector_1_1SearchResult}{Search\+Result}} JSL\+::\+Vector\+::find (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{const std\+::vector$<$ double $>$ \&}]{y,  }\item[{double}]{tolerance }\end{DoxyParamCaption})}
+
+
+
+Gets first id such that (y\mbox{[}id\mbox{]}-\/ x) \texorpdfstring{$<$}{<} tolerance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The value to be searched for\\
+\hline
+{\em y} & The vector to search through\\
+\hline
+{\em tolerance} & The fractional difference permitted between two double values for them to be declared "{}approximately equal"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the first element in the array which matches x. Returns JSL\+::\+Not\+Found (equivalent to string\+::npos) if no match found 
+\end{DoxyReturn}
+\Hypertarget{namespaceJSL_1_1Vector_a73680c15e114ade4829ed7b318618049}\label{namespaceJSL_1_1Vector_a73680c15e114ade4829ed7b318618049} 
+\index{JSL::Vector@{JSL::Vector}!Linspace@{Linspace}}
+\index{Linspace@{Linspace}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{Linspace()}{Linspace()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ JSL\+::\+Vector\+::\+Linspace (\begin{DoxyParamCaption}\item[{double}]{begin,  }\item[{double}]{end,  }\item[{size\+\_\+t}]{resolution = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Vector_ae9eb64d166ab8dc0e838ac58121ec654}\label{namespaceJSL_1_1Vector_ae9eb64d166ab8dc0e838ac58121ec654} 
+\index{JSL::Vector@{JSL::Vector}!prepend@{prepend}}
+\index{prepend@{prepend}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{prepend()}{prepend()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void JSL\+::\+Vector\+::prepend (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{const std\+::vector$<$ T $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceJSL_1_1Vector_af6f84650334cef1d4a9ca7f47f1b18f8}\label{namespaceJSL_1_1Vector_af6f84650334cef1d4a9ca7f47f1b18f8} 
+\index{JSL::Vector@{JSL::Vector}!NotFound@{NotFound}}
+\index{NotFound@{NotFound}!JSL::Vector@{JSL::Vector}}
+\doxysubsubsection{\texorpdfstring{NotFound}{NotFound}}
+{\footnotesize\ttfamily constexpr size\+\_\+t JSL\+::\+Vector\+::\+Not\+Found = static\+\_\+cast$<$size\+\_\+t$>$(-\/1)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+

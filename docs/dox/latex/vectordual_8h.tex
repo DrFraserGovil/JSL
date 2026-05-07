@@ -1,0 +1,57 @@
+\doxysection{include/\+JSL/\+Optimiser/vectordual.h File Reference}
+\hypertarget{vectordual_8h}{}\label{vectordual_8h}\index{include/JSL/Optimiser/vectordual.h@{include/JSL/Optimiser/vectordual.h}}
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include "{}mempool.\+h"{}}\newline
+{\ttfamily \#include "{}expressions.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classVectorDual}{Vector\+Dual}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vectordual_8h_a7277b649a660b3bc121fd265bf576792}{AUTODIFF\+\_\+\+MEMPOOL}}
+\item 
+\#define \mbox{\hyperlink{vectordual_8h_a5b1bb775d10ddb3692f6c345989e8d98}{INITIALISE\+\_\+\+VECTOR}}~Dense\+Grad = \mbox{\hyperlink{mempool_8h_aee4c7a8eab09c56eb6a9dcf5e3643912}{mempool}}().allocate();
+\item 
+\#define \mbox{\hyperlink{vectordual_8h_a82601c0428f02b469a555a5f0ae95784}{RELEASE\+\_\+\+VECTOR}}~\mbox{\hyperlink{mempool_8h_aee4c7a8eab09c56eb6a9dcf5e3643912}{mempool}}().free(Dense\+Grad);
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{vectordual_8h_a1a48edb0ebca460a0143fef5004d2ccd}{vectype}} = double \texorpdfstring{$\ast$}{*}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{vectordual_8h_a7277b649a660b3bc121fd265bf576792}\label{vectordual_8h_a7277b649a660b3bc121fd265bf576792} 
+\index{vectordual.h@{vectordual.h}!AUTODIFF\_MEMPOOL@{AUTODIFF\_MEMPOOL}}
+\index{AUTODIFF\_MEMPOOL@{AUTODIFF\_MEMPOOL}!vectordual.h@{vectordual.h}}
+\doxysubsubsection{\texorpdfstring{AUTODIFF\_MEMPOOL}{AUTODIFF\_MEMPOOL}}
+{\footnotesize\ttfamily \#define AUTODIFF\+\_\+\+MEMPOOL}
+
+\Hypertarget{vectordual_8h_a5b1bb775d10ddb3692f6c345989e8d98}\label{vectordual_8h_a5b1bb775d10ddb3692f6c345989e8d98} 
+\index{vectordual.h@{vectordual.h}!INITIALISE\_VECTOR@{INITIALISE\_VECTOR}}
+\index{INITIALISE\_VECTOR@{INITIALISE\_VECTOR}!vectordual.h@{vectordual.h}}
+\doxysubsubsection{\texorpdfstring{INITIALISE\_VECTOR}{INITIALISE\_VECTOR}}
+{\footnotesize\ttfamily \#define INITIALISE\+\_\+\+VECTOR~Dense\+Grad = \mbox{\hyperlink{mempool_8h_aee4c7a8eab09c56eb6a9dcf5e3643912}{mempool}}().allocate();}
+
+\Hypertarget{vectordual_8h_a82601c0428f02b469a555a5f0ae95784}\label{vectordual_8h_a82601c0428f02b469a555a5f0ae95784} 
+\index{vectordual.h@{vectordual.h}!RELEASE\_VECTOR@{RELEASE\_VECTOR}}
+\index{RELEASE\_VECTOR@{RELEASE\_VECTOR}!vectordual.h@{vectordual.h}}
+\doxysubsubsection{\texorpdfstring{RELEASE\_VECTOR}{RELEASE\_VECTOR}}
+{\footnotesize\ttfamily \#define RELEASE\+\_\+\+VECTOR~\mbox{\hyperlink{mempool_8h_aee4c7a8eab09c56eb6a9dcf5e3643912}{mempool}}().free(Dense\+Grad);}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{vectordual_8h_a1a48edb0ebca460a0143fef5004d2ccd}\label{vectordual_8h_a1a48edb0ebca460a0143fef5004d2ccd} 
+\index{vectordual.h@{vectordual.h}!vectype@{vectype}}
+\index{vectype@{vectype}!vectordual.h@{vectordual.h}}
+\doxysubsubsection{\texorpdfstring{vectype}{vectype}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{vectordual_8h_a1a48edb0ebca460a0143fef5004d2ccd}{vectype}} =  double\texorpdfstring{$\ast$}{*}}
+

@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Time_1_1Timer" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Time::Timer</compoundname>
+    <includes refid="Timer_8h" local="no">Timer.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Time_1_1Timer_1a4358173181d42a2ffe6d4b9b1c4c1fd2" prot="private" static="no" mutable="no">
+        <type>std::chrono::high_resolution_clock::time_point</type>
+        <definition>std::chrono::high_resolution_clock::time_point JSL::Time::Timer::start_time</definition>
+        <argsstring></argsstring>
+        <name>start_time</name>
+        <qualifiedname>JSL::Time::Timer::start_time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="9" column="60" bodyfile="include/JSL/Time/Timer.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Time_1_1Timer_1a2a8866aa125b593119fbca2f36ca02f8" prot="private" static="no" mutable="no">
+        <type>std::chrono::high_resolution_clock::time_point</type>
+        <definition>std::chrono::high_resolution_clock::time_point JSL::Time::Timer::stop_time</definition>
+        <argsstring></argsstring>
+        <name>stop_time</name>
+        <qualifiedname>JSL::Time::Timer::stop_time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="10" column="60" bodyfile="include/JSL/Time/Timer.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Time_1_1Timer_1ac08a2a650a5ed040f05643a854b1139a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Time::Timer::startCalled</definition>
+        <argsstring></argsstring>
+        <name>startCalled</name>
+        <qualifiedname>JSL::Time::Timer::startCalled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="11" column="18" bodyfile="include/JSL/Time/Timer.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Time_1_1Timer_1a886b75eecec0f254d60f82925226f08b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Time::Timer::stopCalled</definition>
+        <argsstring></argsstring>
+        <name>stopCalled</name>
+        <qualifiedname>JSL::Time::Timer::stopCalled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="12" column="18" bodyfile="include/JSL/Time/Timer.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Time_1_1Timer_1a51d49c9076222897197b6ac6a580087b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Time::Timer::Timer</definition>
+        <argsstring>()</argsstring>
+        <name>Timer</name>
+        <qualifiedname>JSL::Time::Timer::Timer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="15" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Time_1_1Timer_1afd0542c897bcaecea0417a6efc6d45cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Time::Timer::Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>JSL::Time::Timer::Start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="17" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Time_1_1Timer_1abc0e1e4cd06b46154fce27b72541c58e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Time::Timer::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <qualifiedname>JSL::Time::Timer::Stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="19" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Time_1_1Timer_1a39a0f37f73ae80e8a73b71b3a54c6223" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double JSL::Time::Timer::Lap</definition>
+        <argsstring>()</argsstring>
+        <name>Lap</name>
+        <qualifiedname>JSL::Time::Timer::Lap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="21" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Time_1_1Timer_1a1bfd7e318b745dc1fdbc53e924c12130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double JSL::Time::Timer::Measure</definition>
+        <argsstring>()</argsstring>
+        <name>Measure</name>
+        <qualifiedname>JSL::Time::Timer::Measure</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="23" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Time_1_1Timer_1ad38008ae5364d45f86d6a6cd9c1b8a63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::Time::Timer::Display</definition>
+        <argsstring>()</argsstring>
+        <name>Display</name>
+        <qualifiedname>JSL::Time::Timer::Display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Time/Timer.h" line="25" column="25"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Time/Timer.h" line="6" column="5" bodyfile="include/JSL/Time/Timer.h" bodystart="7" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Time_1_1Timer_1ad38008ae5364d45f86d6a6cd9c1b8a63" prot="public" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>Display</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1a39a0f37f73ae80e8a73b71b3a54c6223" prot="public" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>Lap</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1a1bfd7e318b745dc1fdbc53e924c12130" prot="public" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>Measure</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1afd0542c897bcaecea0417a6efc6d45cd" prot="public" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>Start</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1a4358173181d42a2ffe6d4b9b1c4c1fd2" prot="private" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>start_time</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1ac08a2a650a5ed040f05643a854b1139a" prot="private" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>startCalled</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1abc0e1e4cd06b46154fce27b72541c58e" prot="public" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>Stop</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1a2a8866aa125b593119fbca2f36ca02f8" prot="private" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>stop_time</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1a886b75eecec0f254d60f82925226f08b" prot="private" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>stopCalled</name></member>
+      <member refid="classJSL_1_1Time_1_1Timer_1a51d49c9076222897197b6ac6a580087b" prot="public" virt="non-virtual"><scope>JSL::Time::Timer</scope><name>Timer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

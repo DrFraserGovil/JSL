@@ -1,0 +1,24 @@
+\doxysection{piped\+Input.\+h}
+\hypertarget{pipedInput_8h_source}{}\label{pipedInput_8h_source}\index{include/JSL/FileIO/pipedInput.h@{include/JSL/FileIO/pipedInput.h}}
+\mbox{\hyperlink{pipedInput_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe}{JSL::IO::Pipe}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe_abbdcdedcbcc1c1e6a11e935da3ec5390}{IsPiped}}();}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe_a39a12933a49bc89340f09fcc7fb16f65}{forLineIn}}(std::function<\textcolor{keywordtype}{void}(std::string\_view)>lineProcessor);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe_a639f80b52675e421237bc39fc6ae3f60}{forSplitLineIn}}(std::function<\textcolor{keywordtype}{void}(std::vector<std::string\_view>)>lineProcessor,std::string\_view\ delimiter);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ !Performs\ the\ most\ basic\ readin\ -\/-\/>\ saves\ the\ piped\ input\ to\ a\ string,\ and\ returns\ it}}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe_aec87933465246f0edbf1381531939d37}{save}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,36 @@
+\doxysection{Join.\+h}
+\hypertarget{Strings_2Join_8h_source}{}\label{Strings_2Join_8h_source}\index{include/JSL/Strings/Join.h@{include/JSL/Strings/Join.h}}
+\mbox{\hyperlink{Strings_2Join_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Represent_8h}{JSL/Strings/Represent.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1String}{JSL::String}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00009\ \ \ \ \ std::string\ \mbox{\hyperlink{namespaceJSL_1_1String_a5fc2ce21c9c2f5d0e9ce8a9865ea9914}{join}}(\textcolor{keyword}{const}\ std::vector<T>\ \&\ vec,\ \textcolor{keywordtype}{size\_t}\ begin,\ \textcolor{keywordtype}{size\_t}\ end,\ std::string\_view\ delim)}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (begin\ >=\ end\ ||\ begin\ >=\ vec.size())}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::ostringstream\ os;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ os\ <<\ \mbox{\hyperlink{namespaceJSL_1_1String_ab1c8a308edab64113712073d530a8005}{represent}}(vec[begin]);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ begin\ +\ 1;\ i\ <\ end\ \&\&\ i\ <\ vec.size();\ ++i)}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ delim\ <<\ \mbox{\hyperlink{namespaceJSL_1_1String_ab1c8a308edab64113712073d530a8005}{represent}}(vec[i]);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os.str();}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{namespaceJSL_1_1String_a5fc2ce21c9c2f5d0e9ce8a9865ea9914}{join}}(\textcolor{keyword}{const}\ std::vector<T>\ \&\ vec,\ std::string\_view\ delim)}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceJSL_1_1String_a5fc2ce21c9c2f5d0e9ce8a9865ea9914}{join}}(vec,\ 0,\ vec.size(),\ delim);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}

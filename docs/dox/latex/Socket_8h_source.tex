@@ -1,0 +1,102 @@
+\doxysection{Socket.\+h}
+\hypertarget{Socket_8h_source}{}\label{Socket_8h_source}\index{include/JSL/Async/Socket.h@{include/JSL/Async/Socket.h}}
+\mbox{\hyperlink{Socket_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ ||\ defined(\_WIN64)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\ \ \ \ \#include\ <sys/socket.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \ \ \#include\ <sys/un.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Event}{JSL::Event}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{namespace\ }internal}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//this\ is\ a\ wrapper\ with\ a\ rule-\/of-\/5\ that\ ensures\ move\ semantics\ work\ etc.\ }}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{FileDescriptor}}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137}{FD}}\ =-\/1;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{Path}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a41ebe32891553a1fa51847b9070fb465}{IsClient}}\ =\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a63b84bd9488a807cd3c5efa0093438b0}{FileDescriptor}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_adc6099d6868ec2f4400cb030813d9572}{FileDescriptor}}(\textcolor{keywordtype}{int}\ fd,\ std::filesystem::path\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a47b15f0708b831c6363f2e1bd501c2d6}{path}})\ :\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137}{FD}}(fd),\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{Path}}(\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a47b15f0708b831c6363f2e1bd501c2d6}{path}}),\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a41ebe32891553a1fa51847b9070fb465}{IsClient}}(false)\{\};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_ac4217e664e3cc5a3384ecb9bcc56602a}{\string~FileDescriptor}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{FileDescriptor}}\&\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_abb4e19080f9d15585c8dd76dd152c02d}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{FileDescriptor}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a30c7e6681a150441e464d5097c63552b}{FileDescriptor}}(\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{FileDescriptor}}\ \&\&\ other)\ noexcept\ :\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137}{FD}}(other.FD),\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{Path}}(other.Path),\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a41ebe32891553a1fa51847b9070fb465}{IsClient}}(other.IsClient)\{other.FD\ =\ -\/1;\ other.Path\ =\ \textcolor{stringliteral}{"{}"{}};\};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{FileDescriptor}}\ \&\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a62efc153e143eabe70b47d836410cf28}{operator=}}(\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{FileDescriptor}}\ \&\&\ other)\ \textcolor{keyword}{noexcept}\ \{\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137}{FD}}\ =\ other.\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137}{FD}};\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{Path}}\ =\ other.Path;\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a41ebe32891553a1fa51847b9070fb465}{IsClient}}\ =\ other.IsClient;\ other.FD\ =\ -\/1;\ other.Path\ =\ \textcolor{stringliteral}{"{}"{}};\textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ int()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137}{FD}};\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::filesystem::path()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{Path}};\};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{Path}}.string();\};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Event_1_1Antenna}{Antenna}}}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::optional<Antenna>\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a58b54577045176c78400746681079e8c}{Create}}(std::string\_view\ identifier,\ \textcolor{keywordtype}{bool}\ forceAcquire\ =\ \textcolor{keyword}{false},std::chrono::milliseconds\ gracePeriod\ =\ std::chrono::milliseconds(50));}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_af17bb1bd4c544794ab413586231cf386}{Transmit}}(std::string\_view\ identifier,\ std::string\_view\ msg,\ \textcolor{keywordtype}{double}\ timeout=2);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//state\ queries}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a14d4a6e0975e48f0057da3385618cf66}{IsActive}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_ad23d1c807ba626f8573d56453c945729}{GetDescriptor}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a89ab33be2f7410f3eb416a17525be0f9}{Resources}};\}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_ae74e92fb4350d72c55986deecb7fdfd4}{GetPath}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a89ab33be2f7410f3eb416a17525be0f9}{Resources}};\}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_afd8383e6395754ece43ef506f00b6e01}{GetID}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_ab8a99d3333ace53bd5ff0f40f7454936}{Identifier}};\}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//comms\ functions}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_aa82514258cfb94e9ff5635a0745e04a3}{Read}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline}{Hotline}}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::optional<Hotline>\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline_ab2773cef68de037d34369b4062ea570b}{Create}}(std::string\_view\ identifier,\ \textcolor{keywordtype}{double}\ timeout);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline_ae420e3696c7529c2db90a605a38b4041}{Hotline}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna}{Antenna}}\ \&\ host);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline_a20cfad05b02ce4b7de98f44961cb8cec}{Send}}(std::string\_view\ msg);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline_a7bafafcde64c9660227935babff2489a}{Timeout}};\textcolor{comment}{//\ intentionally\ public\ so\ the\ user\ can\ change\ it}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline_a0625710434817be77b0051c7b6c8b58c}{Hotline}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline_a91274e76bfb226d41d935a178da641a9}{ID}};\ \textcolor{comment}{//private\ since\ the\ user\ shouldn't\ change\ this}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a8d42f85f8ccecb107e0177359bce2183}{SetTimeout}}(\textcolor{keywordtype}{double}\ seconds);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_acb14bcd7e567c8d4a0d66bd479ce31d0}{Deactivate}}()\{\mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a3fcded08d4ea58a12c39892fd81d5f6f}{Active}}\ =\ \textcolor{keyword}{false};\}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a42b3415026d96d084994fee1d07cda19}{Antenna}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a698cb453b6e61c76b0f988e1144fb363}{Timeout}}\ =\ 2;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a30f1eac91022fd12b7734eaecfe3e85b}{Connect}}(std::string\_view\ path);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_ab8a99d3333ace53bd5ff0f40f7454936}{Identifier}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ sockaddr\_un\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a64777db038103225add9510bc748ddfb}{Address}};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{internal::FileDescriptor}}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a89ab33be2f7410f3eb416a17525be0f9}{Resources}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Indicates\ that\ the\ socket\ file\ existed\ at\ initialisation\ time\ (i.e.\ an\ active\ process\ is\ monitoring\ messages\ to\ the\ socket)}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_aed7bd6a13c78e315b6fc553a3835c64a}{AlreadyMonitored}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Indicates\ that\ the\ socket\ is\ in\ a\ valid\ state\ and\ has\ not\ recieved\ a\ shutdown\ order.\ }}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a3fcded08d4ea58a12c39892fd81d5f6f}{Active}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna}{Antenna}}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_af32301a983c34d15f85beae9030a094e}{TransmitClient}}(std::string\_view\ identifier);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna}{Antenna}}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a2d5b1ddf91864601411150a8501ed538}{ReadClient}}(\textcolor{keywordtype}{int}\ filedescriptior);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a26948bd606eba606d5fcf22bb26a6fb8}{GetMessage}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a625f767c179d2541a4ebea445543727c}{Bind}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a273b37228b3f6eaa5eeafa281dead07f}{Send}}(std::string\_view\ msg);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_a28e359a1feda723bec317120d3553b5e}{Buffer}}\ =\ 4096;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}

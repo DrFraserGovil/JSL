@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Display::Progress::internal::ProgressEngine</compoundname>
+    <derivedcompoundref refid="classJSL_1_1Display_1_1Progress_1_1Bar" prot="public" virt="non-virtual">JSL::Display::Progress::Bar</derivedcompoundref>
+    <derivedcompoundref refid="classJSL_1_1Display_1_1Progress_1_1Static" prot="public" virt="non-virtual">JSL::Display::Progress::Static</derivedcompoundref>
+    <includes refid="ProgressBar_8h" local="no">ProgressBar.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a4c09ca0ad8590d797aff91bed15064f1" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char JSL::Display::Progress::internal::ProgressEngine::Symbol</definition>
+        <argsstring></argsstring>
+        <name>Symbol</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Symbol</qualifiedname>
+        <initializer>= &apos;#&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="11" column="22" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1aa2a145fe4aa3153031ecfd10165789aa" prot="public" static="no" mutable="no">
+        <type>const std::vector&lt; size_t &gt;</type>
+        <definition>const std::vector&lt;size_t&gt; JSL::Display::Progress::internal::ProgressEngine::Dimension</definition>
+        <argsstring></argsstring>
+        <name>Dimension</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Dimension</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="12" column="35" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1ab7e7f98b4042f1eb206659497610d86d" prot="public" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t JSL::Display::Progress::internal::ProgressEngine::Depth</definition>
+        <argsstring></argsstring>
+        <name>Depth</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Depth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="13" column="30" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a8c20fc559ebe672bf4488be6220984ff" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; size_t &gt;</type>
+        <definition>std::vector&lt;size_t&gt; JSL::Display::Progress::internal::ProgressEngine::MarkCount</definition>
+        <argsstring></argsstring>
+        <name>MarkCount</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::MarkCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="20" column="29" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a7b75ef4d7afc825baca63b7489803f34" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; size_t &gt;</type>
+        <definition>std::vector&lt;size_t&gt; JSL::Display::Progress::internal::ProgressEngine::Progress</definition>
+        <argsstring></argsstring>
+        <name>Progress</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Progress</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="21" column="29" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a1738a229e53df6a3614eba8689730ebb" prot="protected" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t JSL::Display::Progress::internal::ProgressEngine::RenderLength</definition>
+        <argsstring></argsstring>
+        <name>RenderLength</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::RenderLength</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="23" column="24" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a5560b7cc21d8668fb2b3c73e5937cff5" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Display::Progress::internal::ProgressEngine::Finished</definition>
+        <argsstring></argsstring>
+        <name>Finished</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Finished</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="24" column="22" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a0736ec4655e8aa0434355af681d62161" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Display::Progress::internal::ProgressEngine::ProgressEngine</definition>
+        <argsstring>(std::vector&lt; size_t &gt; &amp;&amp;Dimensions)</argsstring>
+        <name>ProgressEngine</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::ProgressEngine</qualifiedname>
+        <param>
+          <type>std::vector&lt; size_t &gt; &amp;&amp;</type>
+          <declname>Dimensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="14" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a1932d40a5886d0f2975a064b347c3a27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Display::Progress::internal::ProgressEngine::Tick</definition>
+        <argsstring>()</argsstring>
+        <name>Tick</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="15" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a13d585bb4d997366654d85045a9d3ad6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Display::Progress::internal::ProgressEngine::Update</definition>
+        <argsstring>(std::vector&lt; int &gt; &amp;&amp;positions)</argsstring>
+        <name>Update</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Update</qualifiedname>
+        <param>
+          <type>std::vector&lt; int &gt; &amp;&amp;</type>
+          <declname>positions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="16" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1acc41078889abc1db1785fb20b3511566" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Display::Progress::internal::ProgressEngine::Update</definition>
+        <argsstring>(int position)</argsstring>
+        <name>Update</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Update</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="17" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1af412c289ce5b2f720325b2748a4a28ce" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Display::Progress::internal::ProgressEngine::CheckMarks</definition>
+        <argsstring>(int idx)</argsstring>
+        <name>CheckMarks</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::CheckMarks</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="19" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a6bc951680d4ab9e3087824c2f83c5045" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void JSL::Display::Progress::internal::ProgressEngine::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <qualifiedname>JSL::Display::Progress::internal::ProgressEngine::Render</qualifiedname>
+        <reimplementedby refid="classJSL_1_1Display_1_1Progress_1_1Bar_1a850dcf28274737db2ae48b900486a1d1">Render</reimplementedby>
+        <reimplementedby refid="classJSL_1_1Display_1_1Progress_1_1Static_1af04c3fc6855c19ebf74478feb9eff96c">Render</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ProgressBar.h" line="22" column="30" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>JSL::Display::Progress::Bar</label>
+        <link refid="classJSL_1_1Display_1_1Progress_1_1Bar"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL::Display::Progress::Static</label>
+        <link refid="classJSL_1_1Display_1_1Progress_1_1Static"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>JSL::Display::Progress::internal::ProgressEngine</label>
+        <link refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/JSL/Display/ProgressBar.h" line="8" column="9" bodyfile="include/JSL/Display/ProgressBar.h" bodystart="9" bodyend="25"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1af412c289ce5b2f720325b2748a4a28ce" prot="protected" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>CheckMarks</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1ab7e7f98b4042f1eb206659497610d86d" prot="public" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Depth</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1aa2a145fe4aa3153031ecfd10165789aa" prot="public" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Dimension</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a5560b7cc21d8668fb2b3c73e5937cff5" prot="protected" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Finished</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a8c20fc559ebe672bf4488be6220984ff" prot="protected" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>MarkCount</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a7b75ef4d7afc825baca63b7489803f34" prot="protected" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Progress</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a0736ec4655e8aa0434355af681d62161" prot="public" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>ProgressEngine</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a6bc951680d4ab9e3087824c2f83c5045" prot="protected" virt="virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Render</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a1738a229e53df6a3614eba8689730ebb" prot="protected" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>RenderLength</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a4c09ca0ad8590d797aff91bed15064f1" prot="public" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Symbol</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a1932d40a5886d0f2975a064b347c3a27" prot="public" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Tick</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1a13d585bb4d997366654d85045a9d3ad6" prot="public" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Update</name></member>
+      <member refid="classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_1acc41078889abc1db1785fb20b3511566" prot="public" virt="non-virtual"><scope>JSL::Display::Progress::internal::ProgressEngine</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

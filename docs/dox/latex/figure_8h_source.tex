@@ -1,0 +1,185 @@
+\doxysection{figure.\+h}
+\hypertarget{figure_8h_source}{}\label{figure_8h_source}\index{include/JSL/Plot/figure.h@{include/JSL/Plot/figure.h}}
+\mbox{\hyperlink{figure_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pipe_8h}{data/pipe.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{axis_8h}{axis.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Plotting}{JSL::Plotting}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ =\ size\_t;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure}{Figure}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:\ \textcolor{comment}{//members}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<Plotting::Axis>>\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a63370336251a8dfadcca9c25ae12381a}{active\_row}}\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_af4f6adf9712bae9378ab03fe87c3c19d}{active\_col}}\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal::GnuplotPipe}}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a15a22374910dbc3236a761cfc75bd3bd}{ScriptFramePause}}\ =\ 0.05;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7e201b907be4319f1b4dc9f0926181eb}{Figure}}()}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad26695360f9e6e2611c44befbdf4d8ca}{SetMultiplot}}(1);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad05486bf35b85ef6fbc0737057a4a9e0}{Persist}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ level)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ >2)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}Persistence\ ids\ must\ be\ in\ [0,1,2]."{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad05486bf35b85ef6fbc0737057a4a9e0}{Persist}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}}\textcolor{keyword}{>}(level));}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a11e3db4b1a90043e10092324861b7062}{Persist}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}}\ level)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}.\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa717f7f9922bbfc396d4e7370e119c0a}{SetPersistence}}(level);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad42e2d4e99c78dc69248ab4a8997e95f}{ScriptPath}}(std::string\ path)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}.\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a32bda93d7d73093dba3d6ca32748b272}{SetScriptPath}}(path);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aaf66a6d9d2c90033ee59413d52118bf8}{ClearAll}}()}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ r\ =\ 0;\ r\ <\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}};\ ++r)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ c\ =\ 0;\ c\ <\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}};\ ++c)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}[r][c].Clear();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7a3d6f6f9967325f62f7dfdd1e89b51c}{Clear}}()}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7a3d6f6f9967325f62f7dfdd1e89b51c}{Clear}}(\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a63370336251a8dfadcca9c25ae12381a}{active\_row}},\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_af4f6adf9712bae9378ab03fe87c3c19d}{active\_col}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad77b319e6a9f8d144cc15faaff527b4b}{Clear}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [row,col]\ =\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad6ea7f265c7d7901564caa90e586bd46}{IdToCoord}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7a3d6f6f9967325f62f7dfdd1e89b51c}{Clear}}(row,col);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad0731a34e5bbebdabbecf77cfc0eb5ae}{Clear}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}[row][col].Clear();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a131799cb68a35d455532ba1fa6f682c5}{Show}}()}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}\ <<\ \textcolor{stringliteral}{"{}\#\ New\ show\ called\(\backslash\)n"{}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ r\ =\ 0;\ r\ <\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}};\ ++r)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ c\ =\ 0;\ c\ <\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}};\ ++c)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}[r][c].SaveData(\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}},r,c);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a5e911a654418b65c8c29be8b14160d16}{MultiplotPrint}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ r\ =\ 0;\ r\ <\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}};\ ++r)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ c\ =\ 0;\ c\ <\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}};\ ++c)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}[r][c].Show(\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}}\ *\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}}\ >\ 1)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}\ <<\ \textcolor{stringliteral}{"{}unset\ multiplot\(\backslash\)n"{}};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}.\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_af61ccf05fc9bdec2e6ed0a6f1827e023}{GetMode}}()\ ==\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Output::Scripted}})}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}\ <<\ \textcolor{stringliteral}{"{}pause\ "{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a15a22374910dbc3236a761cfc75bd3bd}{ScriptFramePause}}\ <<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}.\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_adeb0f2da7ef84f2b89c6979888d787aa}{flush}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ac861fbb26c5b3737b9c384b688c07d10}{Close}}()}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}.\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a651a568e367207ebb8b29c4dc457dd0e}{Close}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad26695360f9e6e2611c44befbdf4d8ca}{SetMultiplot}}(\textcolor{keywordtype}{size\_t}\ rowCount,\ \textcolor{keywordtype}{size\_t}\ columnCount=1)}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//size\ 0\ is\ meaningless;\ so\ buffer\ up}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ rowCount\ =\ std::max((\textcolor{keywordtype}{size\_t})1,rowCount);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ columnCount\ =\ std::max((\textcolor{keywordtype}{size\_t})1,columnCount);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//resize\ the\ internal\ arrays,\ leaving\ the\ existing\ data\ intact}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}.resize(rowCount);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ j\ =\ 0;\ j\ <\ rowCount;\ ++j)}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}[j].resize(columnCount);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ k\ =\ 0;\ k\ <\ rowCount;\ ++k)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}[j][k].IsDirty\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ touch\ it\ and\ make\ it\ dirty}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}}\ =\ rowCount;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}}\ =\ columnCount;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_addc2270502ac927e8f3b5d22998c05e6}{MoveTo}}(\textcolor{keywordtype}{size\_t}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [row,col]\ =\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad6ea7f265c7d7901564caa90e586bd46}{IdToCoord}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_addc2270502ac927e8f3b5d22998c05e6}{MoveTo}}(row,col);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ab3277855fe9a33de896ca5f729fe80ca}{MoveTo}}(\textcolor{keywordtype}{size\_t}\ row,\ \textcolor{keywordtype}{size\_t}\ col)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a59ee2b72f6b5352e0ef5111c43762c8a}{CheckAxisBounds}}(row,col);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_af4f6adf9712bae9378ab03fe87c3c19d}{active\_col}}\ =\ col;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a63370336251a8dfadcca9c25ae12381a}{active\_row}}\ =\ row;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ std::vector<Axis>\ \&\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a3911f233b044a42e16b27c4e5fc7c235}{operator[]}}(\textcolor{keywordtype}{size\_t}\ row)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a59ee2b72f6b5352e0ef5111c43762c8a}{CheckAxisBounds}}(row,0);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}[row];}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{Plotting::Axis}}\&\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8f5937e7e623cb0a4bbb31340a7b0cba}{Active}}()\ \{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}[\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a63370336251a8dfadcca9c25ae12381a}{active\_row}}][\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_af4f6adf9712bae9378ab03fe87c3c19d}{active\_col}}];\ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1AxisMembers_1_1Data}{Plotting::AxisMembers::Data}}\ \&\ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ae191e51e6efba1888f1d32818ccf084d}{Add}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8f5937e7e623cb0a4bbb31340a7b0cba}{Active}}().\mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis_a9b5abecd60909a2c651ce1a5ed3270bc}{Add}}();\ \};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Display}{Plotting::Display}}\ \&\ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a5796dc9fc1293839549fb363456685e2}{Set}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8f5937e7e623cb0a4bbb31340a7b0cba}{Active}}().\mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis_a3298b2acacd09903b97d3f1bc8690eed}{Set}}();\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a59ee2b72f6b5352e0ef5111c43762c8a}{CheckAxisBounds}}(\textcolor{keywordtype}{size\_t}\ row,\ \textcolor{keywordtype}{size\_t}\ col)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ >=\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}})}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ access\ row\ "{}}\ \ \ \ \ \ \ +\ std::to\_string(row)\ +\ \textcolor{stringliteral}{"{}:\ out\ of\ bounds."{}});}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col\ >=\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}})}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ access\ column\ "{}}\ \ \ \ +\ std::to\_string(row)\ +\ \textcolor{stringliteral}{"{}:\ out\ of\ bounds."{}});}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a5e911a654418b65c8c29be8b14160d16}{MultiplotPrint}}()}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}}\ *\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}}\ >\ 1)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}\ <<\ \textcolor{stringliteral}{"{}set\ multiplot\ layout\ "{}};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}}\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}.\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_adeb0f2da7ef84f2b89c6979888d787aa}{flush}}();}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<int,int>\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad6ea7f265c7d7901564caa90e586bd46}{IdToCoord}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ >=\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}}\ *\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}})}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ access\ axis\ "{}}\ +\ std::to\_string(\textcolor{keywordtype}{id})\ +\ \textcolor{stringliteral}{"{}:\ out\ of\ bounds."{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col\ =\ \textcolor{keywordtype}{id}\ \%\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ row\ =\ (\textcolor{keywordtype}{id}\ -\/\ col)/\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{row,col\};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \};}
+\DoxyCodeLine{00179\ \}}
+
+\end{DoxyCode}

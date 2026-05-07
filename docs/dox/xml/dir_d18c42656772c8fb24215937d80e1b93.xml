@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_d18c42656772c8fb24215937d80e1b93" kind="dir">
+    <compoundname>include/JSL/FileIO/archiver</compoundname>
+    <innerfile refid="base_8h">base.h</innerfile>
+    <innerfile refid="helpers_8h">helpers.h</innerfile>
+    <innerfile refid="reader_8h">reader.h</innerfile>
+    <innerfile refid="readStream_8h">readStream.h</innerfile>
+    <innerfile refid="writer_8h">writer.h</innerfile>
+    <innerfile refid="writeStream_8h">writeStream.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/FileIO/archiver/"/>
+  </compounddef>
+</doxygen>

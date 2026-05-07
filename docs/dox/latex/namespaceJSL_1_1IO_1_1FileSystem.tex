@@ -1,0 +1,95 @@
+\doxysection{JSL\+::IO\+::File\+System Namespace Reference}
+\hypertarget{namespaceJSL_1_1IO_1_1FileSystem}{}\label{namespaceJSL_1_1IO_1_1FileSystem}\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure}{Structure}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} \{ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5a6b8b2f7573f60535583f11c8144cd11e}{Strict}}
+, \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5a5fcfafd8772226ce2651844725aea7ef}{Quiet}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac5e0a91fe7251af07ec60661a8fcc610}{list}} (fs\+::path target, bool recursive=false)
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_aebd147770a298a84ec2357daf1b87fc5}{match}} (fs\+::path target, std\+::string match\+Pattern, bool recursive=false)
+\item 
+\mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a9820000a501d1b411742be586096fb17}{mkdir}} (const fs\+::path directory, \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} policy=\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}})
+\item 
+\mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a5e637d24af45325ccae2917c78ca0dca}{remove}} (const fs\+::path path\+To\+File, \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} polict=\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}})
+\item 
+\mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a63f7f9281b0d1b6a8b920eafe586d379}{remove\+Directory}} (const fs\+::path path\+To\+Directory, \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} policy=\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}\label{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5} 
+\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!Policy@{Policy}}
+\index{Policy@{Policy}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}
+\doxysubsubsection{\texorpdfstring{Policy}{Policy}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{JSL\+::\+IO\+::\+File\+System\+::\+Policy}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Strict@{Strict}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!Strict@{Strict}}}\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5a6b8b2f7573f60535583f11c8144cd11e}\label{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5a6b8b2f7573f60535583f11c8144cd11e} 
+Strict&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quiet@{Quiet}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!Quiet@{Quiet}}}\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5a5fcfafd8772226ce2651844725aea7ef}\label{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5a5fcfafd8772226ce2651844725aea7ef} 
+Quiet&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_ac5e0a91fe7251af07ec60661a8fcc610}\label{namespaceJSL_1_1IO_1_1FileSystem_ac5e0a91fe7251af07ec60661a8fcc610} 
+\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!list@{list}}
+\index{list@{list}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}}
+{\footnotesize\ttfamily std\+::vector$<$ fs\+::path $>$ JSL\+::\+IO\+::\+File\+System\+::list (\begin{DoxyParamCaption}\item[{fs\+::path}]{target,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_aebd147770a298a84ec2357daf1b87fc5}\label{namespaceJSL_1_1IO_1_1FileSystem_aebd147770a298a84ec2357daf1b87fc5} 
+\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!match@{match}}
+\index{match@{match}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}
+\doxysubsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily std\+::vector$<$ fs\+::path $>$ JSL\+::\+IO\+::\+File\+System\+::match (\begin{DoxyParamCaption}\item[{fs\+::path}]{target,  }\item[{std\+::string}]{match\+Pattern,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_a9820000a501d1b411742be586096fb17}\label{namespaceJSL_1_1IO_1_1FileSystem_a9820000a501d1b411742be586096fb17} 
+\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}
+\doxysubsubsection{\texorpdfstring{mkdir()}{mkdir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} JSL\+::\+IO\+::\+File\+System\+::mkdir (\begin{DoxyParamCaption}\item[{const fs\+::path}]{directory,  }\item[{\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}}}]{policy = {\ttfamily \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_a5e637d24af45325ccae2917c78ca0dca}\label{namespaceJSL_1_1IO_1_1FileSystem_a5e637d24af45325ccae2917c78ca0dca} 
+\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!remove@{remove}}
+\index{remove@{remove}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} JSL\+::\+IO\+::\+File\+System\+::remove (\begin{DoxyParamCaption}\item[{const fs\+::path}]{path\+To\+File,  }\item[{\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}}}]{polict = {\ttfamily \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_a63f7f9281b0d1b6a8b920eafe586d379}\label{namespaceJSL_1_1IO_1_1FileSystem_a63f7f9281b0d1b6a8b920eafe586d379} 
+\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!removeDirectory@{removeDirectory}}
+\index{removeDirectory@{removeDirectory}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}
+\doxysubsubsection{\texorpdfstring{removeDirectory()}{removeDirectory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} JSL\+::\+IO\+::\+File\+System\+::remove\+Directory (\begin{DoxyParamCaption}\item[{const fs\+::path}]{path\+To\+Directory,  }\item[{\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}}}]{policy = {\ttfamily \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}\label{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51} 
+\index{JSL::IO::FileSystem@{JSL::IO::FileSystem}!DefaultPolicy@{DefaultPolicy}}
+\index{DefaultPolicy@{DefaultPolicy}!JSL::IO::FileSystem@{JSL::IO::FileSystem}}
+\doxysubsubsection{\texorpdfstring{DefaultPolicy}{DefaultPolicy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} JSL\+::\+IO\+::\+File\+System\+::\+Default\+Policy\hspace{0.3cm}{\ttfamily [extern]}}
+

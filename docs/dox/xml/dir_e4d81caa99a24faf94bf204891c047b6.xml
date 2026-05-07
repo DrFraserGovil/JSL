@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_e4d81caa99a24faf94bf204891c047b6" kind="dir">
+    <compoundname>include/JSL/Display</compoundname>
+    <innerdir refid="dir_e0bfdd7261b7a5e1c7ddbdd8517bb012">include/JSL/Display/Log</innerdir>
+    <innerfile refid="ANSI__Codes_8h">ANSI_Codes.h</innerfile>
+    <innerfile refid="Format_8h">Format.h</innerfile>
+    <innerfile refid="Log_8h">Log.h</innerfile>
+    <innerfile refid="ProgressBar_8h">ProgressBar.h</innerfile>
+    <innerfile refid="Size_8h">Size.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Display/"/>
+  </compounddef>
+</doxygen>

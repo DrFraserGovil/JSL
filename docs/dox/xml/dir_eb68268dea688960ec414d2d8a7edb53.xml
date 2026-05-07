@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_eb68268dea688960ec414d2d8a7edb53" kind="dir">
+    <compoundname>include/JSL/Parameters</compoundname>
+    <innerfile refid="Aggregator_8h">Aggregator.h</innerfile>
+    <innerfile refid="CLI__Reader_8h">CLI_Reader.h</innerfile>
+    <innerfile refid="Describer_8h">Describer.h</innerfile>
+    <innerfile refid="NestedAggregator_8h">NestedAggregator.h</innerfile>
+    <innerfile refid="Parameter_8h">Parameter.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Parameters/"/>
+  </compounddef>
+</doxygen>

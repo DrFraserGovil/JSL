@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Linspace_8h" kind="file" language="C++">
+    <compoundname>Linspace.h</compoundname>
+    <includes local="no">vector</includes>
+    <includedby refid="Vectors_8h" local="yes">include/JSL/Vectors.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/JSL/Vectors/Linspace.h</label>
+        <link refid="Linspace_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Vectors.h</label>
+        <link refid="Vectors_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Vectors/Linspace.h</label>
+        <link refid="Linspace_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Vector">JSL::Vector</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Vector" kindref="compound">JSL::Vector</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6" refid="namespaceJSL_1_1Vector_1a73680c15e114ade4829ed7b318618049" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="namespaceJSL_1_1Vector_1a73680c15e114ade4829ed7b318618049" kindref="member">Linspace</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>begin,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>end,</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>resolution<sp/>=<sp/>100);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Vectors/Linspace.h"/>
+  </compounddef>
+</doxygen>

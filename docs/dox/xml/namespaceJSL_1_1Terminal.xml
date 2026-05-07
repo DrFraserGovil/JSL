@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1Terminal" kind="namespace" language="C++">
+    <compoundname>JSL::Terminal</compoundname>
+    <innerclass refid="structJSL_1_1Terminal_1_1Size" prot="public">JSL::Terminal::Size</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Direction</name>
+        <qualifiedname>JSL::Terminal::Direction</qualifiedname>
+        <enumvalue id="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3" prot="public">
+          <name>Up</name>
+          <initializer>=0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48" prot="public">
+          <name>Down</name>
+          <initializer>=1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26" prot="public">
+          <name>Right</name>
+          <initializer>=2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908" prot="public">
+          <name>Left</name>
+          <initializer>=3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="30" column="5" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" prot="public" static="no">
+        <type>std::string</type>
+        <definition>using JSL::Terminal::CursorCommand = typedef std::string</definition>
+        <argsstring></argsstring>
+        <name>CursorCommand</name>
+        <qualifiedname>JSL::Terminal::CursorCommand</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="20" column="5" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a8f3aa972b7912fa7ae6a8a2b0279a0d2" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::Hide</definition>
+        <argsstring></argsstring>
+        <name>Hide</name>
+        <qualifiedname>JSL::Terminal::Hide</qualifiedname>
+        <initializer>= &quot;\033[?25l&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="21" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a59a71e08694f6b984d67e0bc8291c547" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::Show</definition>
+        <argsstring></argsstring>
+        <name>Show</name>
+        <qualifiedname>JSL::Terminal::Show</qualifiedname>
+        <initializer>= &quot;\033[?25h&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="22" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a64ba8389d7e03a6aea8d1ca5fd070b7d" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::CursorUp</definition>
+        <argsstring></argsstring>
+        <name>CursorUp</name>
+        <qualifiedname>JSL::Terminal::CursorUp</qualifiedname>
+        <initializer>= &quot;\033[A&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="23" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a048b91568fba346ab22cb4d3c7079160" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::Backspace</definition>
+        <argsstring></argsstring>
+        <name>Backspace</name>
+        <qualifiedname>JSL::Terminal::Backspace</qualifiedname>
+        <initializer>= &quot;\b \b&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="24" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a83b3890f3fe3f5d4736e64d68c34c375" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::EraseRight</definition>
+        <argsstring></argsstring>
+        <name>EraseRight</name>
+        <qualifiedname>JSL::Terminal::EraseRight</qualifiedname>
+        <initializer>= &quot;\033[0K&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="25" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1af5fb5ff136a484d9edbec874c96f77ed" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::EraseLeft</definition>
+        <argsstring></argsstring>
+        <name>EraseLeft</name>
+        <qualifiedname>JSL::Terminal::EraseLeft</qualifiedname>
+        <initializer>= &quot;\033[1K&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="26" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a12e5d7058c5c2e930abe5d863c46480f" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::ClearLine</definition>
+        <argsstring></argsstring>
+        <name>ClearLine</name>
+        <qualifiedname>JSL::Terminal::ClearLine</qualifiedname>
+        <initializer>= &quot;\033[2K\r&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="27" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a986dfc10f3bd4ed46338a33a20e9478e" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::ClearScreen</definition>
+        <argsstring></argsstring>
+        <name>ClearScreen</name>
+        <qualifiedname>JSL::Terminal::ClearScreen</qualifiedname>
+        <initializer>= &quot;\033[2J\r&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="28" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1Terminal_1a194d7176d034555e7008938ed071f9f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::Terminal::IsANSICapable</definition>
+        <argsstring>()</argsstring>
+        <name>IsANSICapable</name>
+        <qualifiedname>JSL::Terminal::IsANSICapable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="18" column="10" declfile="include/JSL/Display/ANSI_Codes.h" declline="18" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Terminal_1aa8c9732f0eedc19c5863c5872c8cdc37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>CursorCommand JSL::Terminal::Move</definition>
+        <argsstring>(Direction dir, unsigned int steps)</argsstring>
+        <name>Move</name>
+        <qualifiedname>JSL::Terminal::Move</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76" kindref="member">Direction</ref></type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>steps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="31" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="31" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Terminal_1a6d2c4659008eccb4578721aa18cbcafb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <definition>CursorCommand JSL::Terminal::MoveToColumn</definition>
+        <argsstring>(uint32_t column)</argsstring>
+        <name>MoveToColumn</name>
+        <qualifiedname>JSL::Terminal::MoveToColumn</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="32" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="32" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Terminal_1a6a4e1219775f952cca3c2762e4989f01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structJSL_1_1Terminal_1_1Size" kindref="compound">Size</ref></type>
+        <definition>Size JSL::Terminal::GetDimensions</definition>
+        <argsstring>()</argsstring>
+        <name>GetDimensions</name>
+        <qualifiedname>JSL::Terminal::GetDimensions</qualifiedname>
+        <briefdescription>
+<para>Gets the character-dimensions of the terminal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Size.h" line="13" column="6" declfile="include/JSL/Display/Size.h" declline="13" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Display/ANSI_Codes.h" line="11" column="1"/>
+  </compounddef>
+</doxygen>

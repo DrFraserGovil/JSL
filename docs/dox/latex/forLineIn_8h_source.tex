@@ -1,0 +1,37 @@
+\doxysection{for\+Line\+In.\+h}
+\hypertarget{forLineIn_8h_source}{}\label{forLineIn_8h_source}\index{include/JSL/FileIO/forLineIn.h@{include/JSL/FileIO/forLineIn.h}}
+\mbox{\hyperlink{forLineIn_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1IO}{JSL::IO}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceJSL_1_1IO_a186384d5b529087bfbf51adc3ca0c9f5}{forLineIn}}(\textcolor{keyword}{const}\ std::filesystem::path\ fileName,\ std::function<\textcolor{keywordtype}{void}(std::string\_view)>\ lineProcessor);}
+\DoxyCodeLine{00009\ \ \ \ \ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceJSL_1_1IO_a802750a0cb15660113de232360e3d844}{forSplitLineIn}}(\textcolor{keyword}{const}\ std::filesystem::path\ fileName,\ std::string\_view\ delimiter,\ \ std::function<\textcolor{keywordtype}{void}(std::vector<std::string\_view>)>\ vectorProcessor);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{namespaceJSL_1_1IO_ab1c1b73d4d75c7ba6d8c919daf595c46}{getLines}}(\textcolor{keyword}{const}\ std::filesystem::path\ fileName);}
+\DoxyCodeLine{00014\ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ std::vector<std::vector<std::string>>\ \mbox{\hyperlink{namespaceJSL_1_1IO_a962bab2b0dcff9021d5890f538240de9}{getWords}}(\textcolor{keyword}{const}\ std::filesystem::path\ fileName,std::string\_view\ delimiter);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts,\ \textcolor{keyword}{typename}\ Func>}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceJSL_1_1IO_a1e739534d511698e075441b5d9c56083}{forLineTupleIn}}(\textcolor{keyword}{const}\ std::filesystem::path\ fileName,\ std::string\_view\ delimiter,\ Func\ tupleProcessor)}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1IO_a186384d5b529087bfbf51adc3ca0c9f5}{forLineIn}}(fileName,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ [\&,\ delimiter](\textcolor{keyword}{auto}\ \ line)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sv\_vec\ =\ split\_view(line,\ delimiter);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ vector\ of\ string\_views\ into\ the\ desired\ tuple}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::tuple<Ts...>\ parsed\_tuple\ =\ ParseTo<Ts...>(sv\_vec);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tupleProcessor(parsed\_tuple);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}

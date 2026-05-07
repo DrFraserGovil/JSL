@@ -1,0 +1,217 @@
+\doxysection{JSL\+::Parameter\+::Aggregator Class Reference}
+\hypertarget{classJSL_1_1Parameter_1_1Aggregator}{}\label{classJSL_1_1Parameter_1_1Aggregator}\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+
+
+{\ttfamily \#include $<$Aggregator.\+h$>$}
+
+Inheritance diagram for JSL\+::Parameter\+::Aggregator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classJSL_1_1Parameter_1_1Aggregator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a22b8c708078ebf21583b16525515fe4e}{Aggregator}} (std\+::string\+\_\+view name)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_ab9629893dd9896c0fa9f6f535dd93ad1}{Parse}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\item 
+\mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a238a95d3f6b3df700bb3fff17672732d}{Aggregator}} ()
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a89a6c0b5ed09ebc15d5b110b1f41aab7}{Invoked\+Commands}} ()
+\item 
+std\+::pair$<$ std\+::set$<$ std\+::string $>$, std\+::set$<$ std\+::string $>$ $>$ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a85f0d49ffa420bf7db810adc92a7799e}{Parse\+Commands}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a828332958937f00c6caa6ea095feff88}{Help\+Menu}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{JSL\+::\+Parameter\+::\+Nested\+Aggregator}}}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a785246b82eee77fa153fa227da848800}{operator$<$=$>$}} (const \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{Nested\+Aggregator}} \&) const =default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \& \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_ae36958fb62d56849d4c76f63f728e33c}{Get\+Default\+Command}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a57558dacf78a036ef281b1f70d2313f8}{Add\+Command}} (std\+::string name, std\+::string result)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a83d3472fa8c6de09686c4c735d09aff0}{Default\+Command}} (std\+::string name, std\+::string result)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{JSL\+::\+Parameter\+::\+Nested\+Aggregator}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_abdc791dc23bc063afd80635e6b50c8aa}{Parse}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a13b6c508fde37e4257dff59e6221d7d8}{Set\+Parameter}} (std\+::string\+\_\+view trigger, std\+::string\+\_\+view value)
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a3618fb8d9531b524f32a56bbc10fd1b4}{Show\+Parameter}} (std\+::string\+\_\+view trigger)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \& \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a41df8bde8803a9ea7069139fff912846}{Get\+Parameter}} (std\+::string\+\_\+view trigger)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_acae59cbc059ef5c1df213e5cc5e84133}{push}} (std\+::string\+\_\+view trigger, std\+::string\+\_\+view value)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a9cd7e32f6a8ce8074bc4645deffd58c9}{join}} (std\+::string\+\_\+view trigger, std\+::string\+\_\+view value)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_aa5e04444760661a7198f67ed214c1e46}{remove}} (std\+::string\+\_\+view trigger, std\+::string\+\_\+view value)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_acd4f03a79003d09d90d46dce409148b1}{erase}} (std\+::string\+\_\+view trigger, int pos)
+\item 
+\mbox{\hyperlink{classJSL_1_1Parameter_1_1Description}{Description}} \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a43f76ed6e5e015b3274410fbb4dc44d2}{Get\+Description}} (std\+::string\+\_\+view key)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_ae8151366e1228dc0412cb93a3cdb760e}{Print\+Structure}} (int indent, std\+::string running\+Title)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a2753815649914da9b6edde96f447f4de}{Connect}} (\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}$<$ T $>$ \&parameter, T \&variable)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a437853feebfe2b0a5a4252d65d26f9d4}{Nest\+Group}} (\mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{Nested\+Aggregator}} \&aggregator, std\+::string name)
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_aff08b3ca2e2fd9b29231b8fbe8ef00b4}{Set}} (T \&value, \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}$<$ T $>$ \&configurer, U default\+Value, std\+::initializer\+\_\+list$<$ std\+::string $>$ triggers, std\+::string name, std\+::string description)
+\item 
+{\footnotesize template$<$class T , class U , class V $>$ }\\void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a02c74a14865cb89027cec1d9bb8f990e}{Set}} (T \&value, \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}$<$ T $>$ \&configurer, V default\+Value, U triggers, std\+::string name, std\+::string description)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a8693e07ddfd7c0e05515bf8f6ccaa423}{Print\+Help}} (std\+::string\+\_\+view assigned\+Name)
+\item 
+\mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase}{internal\+::\+Parameter\+::\+Parameter\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a77028e0ab3bc45c485b51cc060323101}{Find\+Parameter}} (const std\+::string \&key)
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a8e383c2f0250781d8b1eac7dfda06cbd}{Try\+Cluster}} (std\+::string\+\_\+view key, std\+::string\+\_\+view value)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a3c61c4006a35f3fe57a439e20f5365c7}{Set\+Info}} (\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}$<$ T $>$ \&target, std\+::string\+\_\+view name, std\+::string\+\_\+view description)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ std\+::string, std\+::string $>$ \& \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a1866dccd1693479b4df3b311cefc51f4}{Registered\+Commands}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{JSL\+::\+Parameter\+::\+Nested\+Aggregator}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a5d51a521c773afd306901a25bd063cba}{print\+As\+Title}} (std\+::string\+\_\+view input, \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format\+::\+Command}} fg=\mbox{\hyperlink{namespaceJSL_1_1Format_a564e38f310ecc9f0982f40e18590164d}{Format\+::\+Black}}, \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format\+::\+Command}} bg=\mbox{\hyperlink{namespaceJSL_1_1Format_add9c1bf1296670a8b34fb32c47cfe0c8}{Format\+::\+Bg\+White}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a736803fa79619d680023786fba39e8a2}{Name}} = "{}Root"{}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a930ac3e469b22c4c32b1b0c7092f06b8}{Help}}
+\item 
+\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}$<$ bool $>$ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Aggregator_a8cdc9f8b8f814313552137dd979aa07e}{Help\+Toggle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{JSL\+::\+Parameter\+::\+Nested\+Aggregator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase}{internal\+::\+Parameter\+::\+Parameter\+Base}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a336af42fc978a4256969e3ecc226f9e9}{Registered\+Parameters}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{Nested\+Aggregator}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_ac18c11a6ef9530a78a749831d45cfcc1}{Nested\+Aggregators}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classJSL_1_1Parameter_1_1Description}{Description}} $>$ \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_afdc6a53bc22401751a4b5dc3ca871730}{Information}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{JSL\+::\+Parameter\+::\+Nested\+Aggregator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_ae5286f16206344d7df44ae7024993f95}{Name}} = "{}Unnamed Settings Group"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator}{JSL\+::\+Parameter\+::\+Nested\+Aggregator}}}
+\begin{DoxyCompactItemize}
+\item 
+static const size\+\_\+t \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a74dd6af3e3eef08444f86d5a8aeb2a30}{line\+Length}} = 80
+\item 
+static const size\+\_\+t \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_abb61053812d7ef85241857d4b0682c12}{lw}} = 20
+\item 
+static const size\+\_\+t \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_adb76c921d7dc55bedcab758439a6a36c}{mw}} = 15
+\item 
+static const size\+\_\+t \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a16b74939ed39c25ea438d5e41ad29c71}{rw}} = \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_a74dd6af3e3eef08444f86d5a8aeb2a30}{line\+Length}} -\/\mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_abb61053812d7ef85241857d4b0682c12}{lw}} -\/ \mbox{\hyperlink{classJSL_1_1Parameter_1_1NestedAggregator_adb76c921d7dc55bedcab758439a6a36c}{mw}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a22b8c708078ebf21583b16525515fe4e}\label{classJSL_1_1Parameter_1_1Aggregator_a22b8c708078ebf21583b16525515fe4e} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!Aggregator@{Aggregator}}
+\index{Aggregator@{Aggregator}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{Aggregator()}{Aggregator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily JSL\+::\+Parameter\+::\+Aggregator\+::\+Aggregator (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a238a95d3f6b3df700bb3fff17672732d}\label{classJSL_1_1Parameter_1_1Aggregator_a238a95d3f6b3df700bb3fff17672732d} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!Aggregator@{Aggregator}}
+\index{Aggregator@{Aggregator}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{Aggregator()}{Aggregator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily JSL\+::\+Parameter\+::\+Aggregator\+::\+Aggregator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a57558dacf78a036ef281b1f70d2313f8}\label{classJSL_1_1Parameter_1_1Aggregator_a57558dacf78a036ef281b1f70d2313f8} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!AddCommand@{AddCommand}}
+\index{AddCommand@{AddCommand}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{AddCommand()}{AddCommand()}}
+{\footnotesize\ttfamily void JSL\+::\+Parameter\+::\+Aggregator\+::\+Add\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a83d3472fa8c6de09686c4c735d09aff0}\label{classJSL_1_1Parameter_1_1Aggregator_a83d3472fa8c6de09686c4c735d09aff0} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!DefaultCommand@{DefaultCommand}}
+\index{DefaultCommand@{DefaultCommand}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{DefaultCommand()}{DefaultCommand()}}
+{\footnotesize\ttfamily void JSL\+::\+Parameter\+::\+Aggregator\+::\+Default\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_ae36958fb62d56849d4c76f63f728e33c}\label{classJSL_1_1Parameter_1_1Aggregator_ae36958fb62d56849d4c76f63f728e33c} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!GetDefaultCommand@{GetDefaultCommand}}
+\index{GetDefaultCommand@{GetDefaultCommand}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{GetDefaultCommand()}{GetDefaultCommand()}}
+{\footnotesize\ttfamily std\+::string \& JSL\+::\+Parameter\+::\+Aggregator\+::\+Get\+Default\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a828332958937f00c6caa6ea095feff88}\label{classJSL_1_1Parameter_1_1Aggregator_a828332958937f00c6caa6ea095feff88} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!HelpMenu@{HelpMenu}}
+\index{HelpMenu@{HelpMenu}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{HelpMenu()}{HelpMenu()}}
+{\footnotesize\ttfamily void JSL\+::\+Parameter\+::\+Aggregator\+::\+Help\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a89a6c0b5ed09ebc15d5b110b1f41aab7}\label{classJSL_1_1Parameter_1_1Aggregator_a89a6c0b5ed09ebc15d5b110b1f41aab7} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!InvokedCommands@{InvokedCommands}}
+\index{InvokedCommands@{InvokedCommands}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{InvokedCommands()}{InvokedCommands()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ JSL\+::\+Parameter\+::\+Aggregator\+::\+Invoked\+Commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_ab9629893dd9896c0fa9f6f535dd93ad1}\label{classJSL_1_1Parameter_1_1Aggregator_ab9629893dd9896c0fa9f6f535dd93ad1} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!Parse@{Parse}}
+\index{Parse@{Parse}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily void JSL\+::\+Parameter\+::\+Aggregator\+::\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a85f0d49ffa420bf7db810adc92a7799e}\label{classJSL_1_1Parameter_1_1Aggregator_a85f0d49ffa420bf7db810adc92a7799e} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!ParseCommands@{ParseCommands}}
+\index{ParseCommands@{ParseCommands}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{ParseCommands()}{ParseCommands()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::set$<$ std\+::string $>$, std\+::set$<$ std\+::string $>$ $>$ JSL\+::\+Parameter\+::\+Aggregator\+::\+Parse\+Commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a1866dccd1693479b4df3b311cefc51f4}\label{classJSL_1_1Parameter_1_1Aggregator_a1866dccd1693479b4df3b311cefc51f4} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!RegisteredCommands@{RegisteredCommands}}
+\index{RegisteredCommands@{RegisteredCommands}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{RegisteredCommands()}{RegisteredCommands()}}
+{\footnotesize\ttfamily static std\+::map$<$ std\+::string, std\+::string $>$ \& JSL\+::\+Parameter\+::\+Aggregator\+::\+Registered\+Commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a930ac3e469b22c4c32b1b0c7092f06b8}\label{classJSL_1_1Parameter_1_1Aggregator_a930ac3e469b22c4c32b1b0c7092f06b8} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!Help@{Help}}
+\index{Help@{Help}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{Help}{Help}}
+{\footnotesize\ttfamily bool JSL\+::\+Parameter\+::\+Aggregator\+::\+Help\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a8cdc9f8b8f814313552137dd979aa07e}\label{classJSL_1_1Parameter_1_1Aggregator_a8cdc9f8b8f814313552137dd979aa07e} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!HelpToggle@{HelpToggle}}
+\index{HelpToggle@{HelpToggle}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{HelpToggle}{HelpToggle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}$<$bool$>$ JSL\+::\+Parameter\+::\+Aggregator\+::\+Help\+Toggle\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classJSL_1_1Parameter_1_1Aggregator_a736803fa79619d680023786fba39e8a2}\label{classJSL_1_1Parameter_1_1Aggregator_a736803fa79619d680023786fba39e8a2} 
+\index{JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}!Name@{Name}}
+\index{Name@{Name}!JSL::Parameter::Aggregator@{JSL::Parameter::Aggregator}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Parameter\+::\+Aggregator\+::\+Name = "{}Root"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Parameters/\mbox{\hyperlink{Aggregator_8h}{Aggregator.\+h}}\end{DoxyCompactItemize}

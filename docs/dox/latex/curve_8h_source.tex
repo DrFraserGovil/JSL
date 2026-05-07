@@ -1,0 +1,80 @@
+\doxysection{curve.\+h}
+\hypertarget{curve_8h_source}{}\label{curve_8h_source}\index{include/JSL/Plot/data/curve.h@{include/JSL/Plot/data/curve.h}}
+\mbox{\hyperlink{curve_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Strings_8h}{JSL/Strings.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Plotting}{JSL::Plotting}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceJSL_1_1Plotting_aa72d0385bd8eeed098ca4a036bccde11}{Vec}}\ =\ \textcolor{keyword}{const}\ std::vector<T>\&;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve}{Curve}}}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a656c1a6448e0899e8feb9b5f7fff0208}{Curve}}()\{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a56b488c87997065f7434503f34e6eed8}{X}}.resize(0);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a4a65a502fc9ea75ea43a23e4070e6675}{Y}}.resize(0);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a728dd63b769af887de1353e13447f0e7}{Z}}.resize(0);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ S>}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a6b44c798e4d9760a6135121942086078}{Curve}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_aa72d0385bd8eeed098ca4a036bccde11}{Vec<T>}}\ x,\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_aa72d0385bd8eeed098ca4a036bccde11}{Vec<S>}}\ y)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ x.size();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a929f1be844b9fa10235b001bd7970fdf}{CurveAssert}}(\textcolor{stringliteral}{"{}x\ and\ y\ vectors\ must\ be\ of\ equal\ length"{}},n==y.size());}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a56b488c87997065f7434503f34e6eed8}{X}}.resize(n);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a4a65a502fc9ea75ea43a23e4070e6675}{Y}}.resize(n);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a728dd63b769af887de1353e13447f0e7}{Z}}.resize(0);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =0;\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a56b488c87997065f7434503f34e6eed8}{X}}[i]\ =\ MakeString(x[i]);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a4a65a502fc9ea75ea43a23e4070e6675}{Y}}[i]\ =\ MakeString(y[i]);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a2fc45d6dd0d8f498aab5651b13ba667e}{SaveData}}(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal::GnuplotPipe}}\ \&\ pipe,\ \textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ forceWrite)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ alreadyWritten\ =\ \ (row==\mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a9ab5a41c9ed945fcfb942f4f694ea3f1}{Row}})\ \&\&\ (col\ ==\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a020fc5ecf1380f3fcddfc753c26aad4d}{Column}})\ \&\&(\mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_aab65e8f32bb84ad268ce8c6cbdd2b591}{ID}}\ ==\ id);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (forceWrite\ ||\ !alreadyWritten)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pipe\ <<\ \textcolor{stringliteral}{"{}\$Data\_Axis"{}}\ <<row\ <<\textcolor{stringliteral}{"{}x"{}}\ <<\ col\ <<\textcolor{stringliteral}{"{}\_Curve"{}}\ <<\ \textcolor{keywordtype}{id}\ <<\ \textcolor{stringliteral}{"{}\ <<\ EOD\(\backslash\)n"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a56b488c87997065f7434503f34e6eed8}{X}}.size();\ ++i)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pipe\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a56b488c87997065f7434503f34e6eed8}{X}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a4a65a502fc9ea75ea43a23e4070e6675}{Y}}[i];}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a728dd63b769af887de1353e13447f0e7}{Z}}.size()\ >\ 0)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pipe\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a728dd63b769af887de1353e13447f0e7}{Z}}[i];}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pipe\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pipe\ <<\ \textcolor{stringliteral}{"{}EOD\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a9ab5a41c9ed945fcfb942f4f694ea3f1}{Row}}\ =\ row;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_aab65e8f32bb84ad268ce8c6cbdd2b591}{ID}}\ =\ id;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a020fc5ecf1380f3fcddfc753c26aad4d}{Column}}\ =\ col;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a56b488c87997065f7434503f34e6eed8}{X}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a4a65a502fc9ea75ea43a23e4070e6675}{Y}};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a728dd63b769af887de1353e13447f0e7}{Z}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a9ab5a41c9ed945fcfb942f4f694ea3f1}{Row}}\ =-\/1;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a020fc5ecf1380f3fcddfc753c26aad4d}{Column}}\ =-\/1;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_aab65e8f32bb84ad268ce8c6cbdd2b591}{ID}}\ =\ -\/1;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve_a929f1be844b9fa10235b001bd7970fdf}{CurveAssert}}(\textcolor{keyword}{const}\ std::string\ \&\ message,\ \textcolor{keywordtype}{bool}\ assertion)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!assertion)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ message\ <<\ std::endl;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \};}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}

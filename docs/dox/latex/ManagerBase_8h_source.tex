@@ -1,0 +1,101 @@
+\doxysection{Manager\+Base.\+h}
+\hypertarget{ManagerBase_8h_source}{}\label{ManagerBase_8h_source}\index{include/JSL/Async/ManagerBase.h@{include/JSL/Async/ManagerBase.h}}
+\mbox{\hyperlink{ManagerBase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Watcher_8h}{JSL/Async/Watcher.h}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Event}{JSL::Event}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{namespace\ }Task}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3f}{Origin}}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3fa947eb58edb07e7158fd3d39bc1af7454}{CIN}},}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3faa7c402887c2241b76063c1f3b85ba93b}{FILE}},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3fa99e14e74a6516ee02e935c6997a5786d}{SOCKET}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3fae6760a9d72ea3150c859183d95bb3ea4}{SHUTDOWN}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087ca}{Priority}}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8}{NORMAL}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087caaf8cd9fd54d09a9d423cc9d3bd66ef84e}{LOCKING}}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Instruction}}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3f}{Origin}}\ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_aa51ef34332637045a1744e168a263f2e}{origin}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087ca}{Priority}}\ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_a5e25abf350d7daa140c0df00eb846945}{priority}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::variant<std::string,\ JSL::Event::FileChange>\ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_a2dee564e760e98b57bc4e20d1adba577}{payload}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_ae691f9e7b9746455be37b68c79a48656}{Instruction}}(\mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3f}{Origin}}\ in,\ std::string\_view\ msg,\ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087ca}{Priority}}\ order\ =\ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8}{Priority::NORMAL}})}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_aa51ef34332637045a1744e168a263f2e}{origin}}\ =\ in;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_a5e25abf350d7daa140c0df00eb846945}{priority}}\ =\ order;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_a2dee564e760e98b57bc4e20d1adba577}{payload}}\ =\ \textcolor{keyword}{static\_cast<}std::string\textcolor{keyword}{>}(msg);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_ae136e8c65292c0bd73d8b7c036c3af9b}{Instruction}}(\mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3f}{Origin}}\ in,\ \mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{FileChange}}\ msg,\ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087ca}{Priority}}\ order\ =\ \mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8}{Priority::NORMAL}})}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_aa51ef34332637045a1744e168a263f2e}{origin}}\ =\ in;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_a5e25abf350d7daa140c0df00eb846945}{priority}}\ =\ order;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_a2dee564e760e98b57bc4e20d1adba577}{payload}}\ =\ msg;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Instruction}}\ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction_a13255a134db12d8dc0d16bdbe49ef395}{Shutdown}}()}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Instruction}}(\mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_a8d616708dc07315da62b04616881cc3fae6760a9d72ea3150c859183d95bb3ea4}{Origin::SHUTDOWN}},\textcolor{stringliteral}{"{}"{}},\mbox{\hyperlink{namespaceJSL_1_1Event_1_1Task_afaa17d2dfe3c02ae632e8b17bea087caaf8cd9fd54d09a9d423cc9d3bd66ef84e}{Priority::LOCKING}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{namespace\ }internal}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{HandlerBase}}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_ab9e2039751b1ac3c051cb5d537bda0a5}{SetCInCallback}}(std::function<\textcolor{keywordtype}{void}(std::string\_view)>\ callback);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a1ca400818f0a74774a3848d781dc33da}{SetSocketCallback}}(std::function<\textcolor{keywordtype}{void}(std::string\_view)>\ callback);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a8f2bfb2b698e8057598be31cb65cf29f}{SetTextCallback}}(std::function<\textcolor{keywordtype}{void}(std::string\_view)>\ callback);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a7d6c692b0828b1b972d098cc7473c041}{SetInotifyCallback}}(std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{FileChange}})>\ callback);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::set<std::string,std::less<>>\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_af145b4407be9df4d166a03ef0679c306}{ShutdownCommands}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a360d18e30de22ea90a6d89b5051b8373}{AddTask}}(\mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Task::Instruction}}\ job)\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_ac763fc108d11caa4da43a5992fef51c7}{Run}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Delete\ copy\ and\ move\ to\ be\ explicit}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_ab8e364638504a1a9e8b10becfa351a51}{HandlerBase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{HandlerBase}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{HandlerBase}}\&\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_af6d298ca51fb7aefc3f394300cbb1869}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{HandlerBase}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_adcecc953a692bfc64eeeb0b1f0fb2bfd}{HandlerBase}}(\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{HandlerBase}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{HandlerBase}}\&\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a57eea3f9049114000f76c8329f18777d}{operator=}}(\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{HandlerBase}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{JSL::Event::Watcher}}\ *\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_ace0463f720ee896fc203aa969d47a162}{GetWatcher}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(std::string\_view)>\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a563c79882f71efa5db4900b5b87444c2}{callback\_cin}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(std::string\_view)>\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_af3331568c05a08d5cddc76c93e19ac32}{callback\_socket}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(\mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{JSL::Event::FileChange}})>\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_aca3715dd44106a33de169598998e22c0}{callback\_file}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{Watcher}}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a7180e31000a1edd37ef55866a3099141}{Watch}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a3aebc122d6f0c389e0d266d1c01ca605}{Synchroniser}}()\ =\ 0;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::mutex\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a80a3184165d34eca4957f7a82b7342a2}{Sync}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::condition\_variable\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a0504c458a47770bb4ebf7174720675e1}{CV}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::queue<Task::Instruction>\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a2ab7fc28af66c1fa55c8c143f9750b9f}{TaskQueue}};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a79af047abaabaaeaa709315014412ddd}{Running}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a59d5ac117b9b78e5b854bdefa443be65}{ProtectAdd}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a68ff3c529f4c67c658a0252db0fdea93}{HandlerBase}}(std::string\_view\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a3e7a47d5b605c592f478be4ba38343bb}{HandlerBase}}(\mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{Watcher}}\ \&\ watcher);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_aa8b3e185b5a61aee6d145a891a2062ef}{Process}}(\mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Task::Instruction}}\ job);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a828df233e0fa7ff98764875a84d19366}{Exit}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_af84af0dbb9f81df903e1086733c4b36d}{InitialiseRun}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \}}
+
+\end{DoxyCode}

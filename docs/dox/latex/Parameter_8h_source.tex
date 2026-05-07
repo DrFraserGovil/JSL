@@ -1,0 +1,232 @@
+\doxysection{Parameter.\+h}
+\hypertarget{Parameter_8h_source}{}\label{Parameter_8h_source}\index{include/JSL/Parameters/Parameter.h@{include/JSL/Parameters/Parameter.h}}
+\mbox{\hyperlink{Parameter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{concepts_8h}{JSL/internal/concepts.h}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Represent_8h}{JSL/Strings/Represent.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{ParseTo_8h}{JSL/Strings/ParseTo.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CLI__Reader_8h}{CLI\_Reader.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1internal_1_1Parameter}{JSL::internal::Parameter}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<std::string>\ \&\ \mbox{\hyperlink{namespaceJSL_1_1internal_1_1Parameter_a0dbe66d4ebfff8125363b9a9aff81a72}{Register}}()}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::vector<std::string>\ RegisteredSymbols\ =\ \{\textcolor{stringliteral}{"{}config"{}},\textcolor{stringliteral}{"{}config-\/delim"{}}\};\ \textcolor{comment}{//default\ symbols\ that\ are\ reserved\ by\ the\ interface}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ RegisteredSymbols;}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase}{ParameterBase}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ab211decbcf7db77ae381353e6a2d0ad2}{\string~ParameterBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_aa5f8896c7e72bbd64025cf713d59be8f}{Parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a24a45b0023466bb94145d179150269c0}{ParseFromCache}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a7be1a818f479e8088b5f04a81097daee}{SetTriggers}}(std::initializer\_list<std::string>\ triggers);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U>\ \textcolor{comment}{//anything\ that\ can\ be\ converted\ to\ a\ vector\ of\ string\ is\ a\ valid\ trigger\ type;\ this\ allows\ for\ multiple\ triggers\ to\ be\ passed\ in\ as\ a\ vector,\ or\ a\ single\ trigger\ as\ a\ string}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a724128ab524acc691cb9a5ded83a8eda}{SetTriggers}}(U\ \&\&\ triggers)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ab51442bfdff4216747b68acf098c105c}{TriggerList}}\ =\ std::vector<std::string>\{std::forward<U>(triggers)\};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ac9337011a4636e553fdef5ac3ee3ab69}{ValidateTriggers}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_af996744b0befea389f77004f23fcfad8}{GetTriggers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a962e71226098ca92345dc2019dc2eeb4}{SetDelimiter}}(std::string\_view\ vectorDelimiter);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a58a64e0db1f981cb302665c325aa73f2}{TriggerString}}(\textcolor{keywordtype}{bool}\ withDash\ =\ \textcolor{keyword}{true})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ad2f0b0cabb284c8af0480a1d2fc1926c}{ValueString}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a3f16e20280743447e5477b59dbfac5e6}{Convert}}(std::string\_view\ sv)\ =\ 0;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ae38f71cf9ec027e4feb0e8a46cd3489b}{erase}}(\textcolor{keywordtype}{int}\ pos)\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a88f033d1dc5b949d0a59cd084cf03959}{remove}}(std::string\_view\ value)\ =\ 0;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a311bffa06dd414a2d1732fad99075ce3}{push}}(std::string\_view\ value)\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_af89f60aa5b5ec60a8c798252495c6a68}{join}}(std::string\_view\ value)\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ab51442bfdff4216747b68acf098c105c}{TriggerList}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ae83cc27be18ceb07190d32e84c632705}{hasParseDelimiter}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_abba377dd8a65b0bcc8e355fee33ae165}{VectorParseDelimiter}}=\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ac9337011a4636e553fdef5ac3ee3ab69}{ValidateTriggers}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Parameter}{JSL::Parameter}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase}{internal::Parameter::ParameterBase}}}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a2d8ae4480c2ea7afae1d751b686efb6d}{Setting}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a12e6e040f0acefef5f08b0b68ca92e5e}{Setting}}(T\ defaultValue,\ std::initializer\_list<std::string>\ triggers)\ :\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}(defaultValue)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a7be1a818f479e8088b5f04a81097daee}{SetTriggers}}(triggers);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a3e2a7a8654ab4d00db7b728c66f6bf5b}{Setting}}(T\ defaultValue,\ std::initializer\_list<std::string>\ triggers,\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv)\ :\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}(defaultValue,\ triggers)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_aa5f8896c7e72bbd64025cf713d59be8f}{Parse}}(argc,\ argv);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a1e2630a42d38eb7fa91b19e571910b10}{Setting}}(T\ defaultValue,\ U\ \&\&\ triggers)\ :\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}(defaultValue)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_a7be1a818f479e8088b5f04a81097daee}{SetTriggers}}(triggers);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_aaf045743fe02ec7d7d2970642b40a09b}{Setting}}(T\ defaultValue,\ U\ \&\&\ triggers,\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv)\ :\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting}}(defaultValue,triggers)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_aa5f8896c7e72bbd64025cf713d59be8f}{Parse}}(argc,\ argv);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting<bool>}}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4aa9a2df7757b7f029af4fe343c4efe5}{Toggle}}(U\ \&\&\ triggers)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting<bool>}}(\textcolor{keyword}{false},triggers);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting<bool>}}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a508631bdd8606c5f8777102d9bd2f528}{Toggle}}(std::initializer\_list<std::string>\ triggers)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting<bool>}}(\textcolor{keyword}{false},triggers);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting<bool>}}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a121c34500c2263911057f8e79d1a2d9d}{Toggle}}(U\ \&\&\ trigger,\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting}{Setting<bool>}}(\textcolor{keyword}{false},trigger,argc,argv);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a350043299a0f258dedeb64afed97ca44}{Connect}}(T\ \&\ variable)\ \textcolor{comment}{//reference\ means\ we\ can\ only\ connect\ to\ a\ real\ variable}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}}\ =\ \&variable;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}}\ =\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ T\&\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a0a59c6a5d6334d849894e4b7c2937cc7}{Value}}()}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ T()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00111\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_abd35958319904b8fd4de901a64206cad}{ValueString}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceJSL_1_1String_ab1c8a308edab64113712073d530a8005}{String::represent}}(\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}});}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_aa2c517911f2cced3467b9dc18b507f12}{Convert}}(std::string\_view\ sv)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{structJSL_1_1internal_1_1is__vector}{JSL::internal::is\_vector<T>::value}})}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}\ =\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ae83cc27be18ceb07190d32e84c632705}{hasParseDelimiter}}\ ?\ String::ParseTo<T>(sv,\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_abba377dd8a65b0bcc8e355fee33ae165}{VectorParseDelimiter}})\ :\ String::ParseTo<T>(sv);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1ParameterBase_ae83cc27be18ceb07190d32e84c632705}{hasParseDelimiter}})}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{JSL::internal::FatalError}}(\textcolor{stringliteral}{"{}Parameter\ parsing\ error"{}},\mbox{\hyperlink{error_8h_a10df267978926d975df8f95b4e3a3583}{JSL\_LOCATION}})\ <<\ \textcolor{stringliteral}{"{}You\ cannot\ pass\ a\ vector-\/delimiter\ to\ a\ non-\/vector\ Parameter"{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}\ =\ String::ParseTo<T>(sv);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}})}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}}\ =\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a98068cf081f9b7a23495b918ed338e54}{push}}(std::string\_view\ value)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{structJSL_1_1internal_1_1is__vector}{JSL::internal::is\_vector<T>::value}})}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}.push\_back(String::ParseTo<typename\ T::value\_type>(value));}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}})}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}}\ =\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{JSL::internal::FatalError}}(\textcolor{stringliteral}{"{}Parameter\ type\ error"{}},\ \mbox{\hyperlink{error_8h_a10df267978926d975df8f95b4e3a3583}{JSL\_LOCATION}})\ <<\ \textcolor{stringliteral}{"{}You\ cannot\ push\ to\ a\ non-\/vector\ Parameter"{}};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_ade0ce385eec4e43e6e46d6d5f8547115}{join}}(std::string\_view\ value)}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{structJSL_1_1internal_1_1is__vector}{JSL::internal::is\_vector<T>::value}})}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ parsed\ =\ String::ParseTo<T>(value);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}.insert(\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}.end(),\ parsed.begin(),\ parsed.end());}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}})}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}}\ =\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{JSL::internal::FatalError}}(\textcolor{stringliteral}{"{}Parameter\ type\ error"{}},\ \mbox{\hyperlink{error_8h_a10df267978926d975df8f95b4e3a3583}{JSL\_LOCATION}})\ <<\ \textcolor{stringliteral}{"{}You\ cannot\ push\ to\ a\ non-\/vector\ Parameter"{}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_ab58ddd2903b4766bc217c3bd9d4ab8ce}{remove}}(std::string\_view\ value)}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{structJSL_1_1internal_1_1is__vector}{JSL::internal::is\_vector<T>::value}})}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ InternalValue.push\_back(String::ParseTo<typename\ T::value\_type>(value));}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dvalue\ =\ String::ParseTo<typename\ T::value\_type>(value);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::erase(\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}},dvalue);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}})}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}}\ =\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{JSL::internal::FatalError}}(\textcolor{stringliteral}{"{}Parameter\ type\ error"{}},\ \mbox{\hyperlink{error_8h_a10df267978926d975df8f95b4e3a3583}{JSL\_LOCATION}})\ <<\ \textcolor{stringliteral}{"{}You\ cannot\ remove\ from\ a\ non-\/vector\ Parameter"{}};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a1f9e624a6247bacab5d18929114b2a9f}{erase}}(\textcolor{keywordtype}{int}\ pos)}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{structJSL_1_1internal_1_1is__vector}{JSL::internal::is\_vector<T>::value}})}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}.empty())}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{JSL::internal::FatalError}}(\textcolor{stringliteral}{"{}Parameter\ error"{}},\ \mbox{\hyperlink{error_8h_a10df267978926d975df8f95b4e3a3583}{JSL\_LOCATION}})\ <<\ \textcolor{stringliteral}{"{}Cannot\ erase\ from\ an\ empty\ vector\ Parameter"{}};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (pos\ <\ 0)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ +=\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}.size();}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ pos\ \%\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}.size();\ \textcolor{comment}{//allow\ for\ wrap-\/around\ indexing}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}.erase(\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}}.begin()\ +\ pos);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}})}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}}\ =\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{JSL::internal::FatalError}}(\textcolor{stringliteral}{"{}Parameter\ type\ error"{}},\ \mbox{\hyperlink{error_8h_a10df267978926d975df8f95b4e3a3583}{JSL\_LOCATION}})\ <<\ \textcolor{stringliteral}{"{}You\ cannot\ erase\ from\ a\ non-\/vector\ Parameter"{}};}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a9515c1c5f3902c0eee27fa154d706c37}{InternalValue}};}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ T*\ \mbox{\hyperlink{classJSL_1_1Parameter_1_1Setting_a4e152291a23e2cccf2b940aa54c4b249}{ConnectedValue}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00223\ \ \ \ \ \};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \}}
+
+\end{DoxyCode}

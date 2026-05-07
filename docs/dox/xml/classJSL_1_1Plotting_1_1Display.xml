@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Plotting_1_1Display" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Plotting::Display</compoundname>
+    <includes refid="visuals_8h" local="no">visuals.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Display_1a89723b18e6794e6aa37620cbecd90cc5" prot="public" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis" kindref="compound">Properties::PerAxis</ref></type>
+        <definition>Properties::PerAxis JSL::Plotting::Display::X</definition>
+        <argsstring></argsstring>
+        <name>X</name>
+        <qualifiedname>JSL::Plotting::Display::X</qualifiedname>
+        <initializer>= <ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a0d98d32df4ee68e34b7af72291447ce9" kindref="member">Properties::PerAxis::Default</ref>(&quot;x&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="27" column="33" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Display_1a7baf2b41cb1bb58edbd566eb211dbe29" prot="public" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis" kindref="compound">Properties::PerAxis</ref></type>
+        <definition>Properties::PerAxis JSL::Plotting::Display::Y</definition>
+        <argsstring></argsstring>
+        <name>Y</name>
+        <qualifiedname>JSL::Plotting::Display::Y</qualifiedname>
+        <initializer>= <ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a0d98d32df4ee68e34b7af72291447ce9" kindref="member">Properties::PerAxis::Default</ref>(&quot;y&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="28" column="33" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Display_1aeeec0b93eef7000fa5831577c5885527" prot="public" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis" kindref="compound">Properties::PerAxis</ref></type>
+        <definition>Properties::PerAxis JSL::Plotting::Display::Z</definition>
+        <argsstring></argsstring>
+        <name>Z</name>
+        <qualifiedname>JSL::Plotting::Display::Z</qualifiedname>
+        <initializer>= <ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1aa9acdacf4b810e8c92cb5382caa56f8a" kindref="member">Properties::PerAxis::Dormant</ref>(&quot;z&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="29" column="33" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Display_1afcce714dba883b62b77d5a5f01c4da8c" prot="public" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Plotting_1_1Color_1_1Controller" kindref="compound">Color::Controller</ref></type>
+        <definition>Color::Controller JSL::Plotting::Display::CB</definition>
+        <argsstring></argsstring>
+        <name>CB</name>
+        <qualifiedname>JSL::Plotting::Display::CB</qualifiedname>
+        <initializer>= <ref refid="classJSL_1_1Plotting_1_1Color_1_1Controller" kindref="compound">Color::Controller</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="30" column="31" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Display_1a95bdecb885684ce1744fe9c0dbc9af50" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Plotting::Display::Title</definition>
+        <argsstring></argsstring>
+        <name>Title</name>
+        <qualifiedname>JSL::Plotting::Display::Title</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="32" column="25" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Display_1af34853a9d67947c603d347df0ab3b38a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Plotting::Display::ShowGrid</definition>
+        <argsstring></argsstring>
+        <name>ShowGrid</name>
+        <qualifiedname>JSL::Plotting::Display::ShowGrid</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="33" column="18" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Display_1a3c1df7ee7f3d62bae9388b2ed5b3312d" prot="public" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Plotting_1_1LegendObject" kindref="compound">LegendObject</ref></type>
+        <definition>LegendObject JSL::Plotting::Display::Legend</definition>
+        <argsstring></argsstring>
+        <name>Legend</name>
+        <qualifiedname>JSL::Plotting::Display::Legend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="34" column="26" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Display_1af3bf9b95609f46f05e7bedf13af695e3" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; JSL::Plotting::Display::CustomLines</definition>
+        <argsstring></argsstring>
+        <name>CustomLines</name>
+        <qualifiedname>JSL::Plotting::Display::CustomLines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="35" column="25" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classJSL_1_1Plotting_1_1Display_1a6df5e0ada923d73b2264378f3eacef02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class JSL::Plotting::Axis</definition>
+        <argsstring></argsstring>
+        <name>JSL::Plotting::Axis</name>
+        <qualifiedname>JSL::Plotting::Display::Axis</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Plotting_1_1Axis" kindref="compound">JSL::Plotting::Axis</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="36" column="22" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Display_1aa8e1ae85cfbc2c8ef6003d629deb9962" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Display::CustomCommand</definition>
+        <argsstring>(const std::string &amp;cmd)</argsstring>
+        <name>CustomCommand</name>
+        <qualifiedname>JSL::Plotting::Display::CustomCommand</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="38" column="18" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="38" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Display_1acca0833b14048d53e8e6c0c800cfa492" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Display::WriteFormatting</definition>
+        <argsstring>(internal::GnuplotPipe &amp;pipe)</argsstring>
+        <name>WriteFormatting</name>
+        <qualifiedname>JSL::Plotting::Display::WriteFormatting</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe" kindref="compound">internal::GnuplotPipe</ref> &amp;</type>
+          <declname>pipe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="43" column="18" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="43" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Display_1a84672f45394709164796e00d69282338" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Display::MemberToPipe</definition>
+        <argsstring>(Properties::PerAxis &amp;axis, const std::string &amp;axisName, internal::GnuplotPipe &amp;pipe)</argsstring>
+        <name>MemberToPipe</name>
+        <qualifiedname>JSL::Plotting::Display::MemberToPipe</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis" kindref="compound">Properties::PerAxis</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>axisName</declname>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe" kindref="compound">internal::GnuplotPipe</ref> &amp;</type>
+          <declname>pipe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/visuals.h" line="67" column="18" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="67" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>JSL::Plotting::Color::Controller</label>
+        <link refid="classJSL_1_1Plotting_1_1Color_1_1Controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>JSL::Plotting::Display</label>
+        <link refid="classJSL_1_1Plotting_1_1Display"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>X</edgelabel>
+          <edgelabel>Y</edgelabel>
+          <edgelabel>Z</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>CB</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>Legend</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>JSL::Plotting::LegendObject</label>
+        <link refid="classJSL_1_1Plotting_1_1LegendObject"/>
+      </node>
+      <node id="2">
+        <label>JSL::Plotting::Properties::PerAxis</label>
+        <link refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Range</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Tics</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL::Plotting::RangeObject</label>
+        <link refid="classJSL_1_1Plotting_1_1RangeObject"/>
+      </node>
+      <node id="4">
+        <label>JSL::Plotting::TicProperties</label>
+        <link refid="classJSL_1_1Plotting_1_1TicProperties"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/Plot/display/visuals.h" line="24" column="5" bodyfile="include/JSL/Plot/display/visuals.h" bodystart="25" bodyend="85"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Plotting_1_1Display_1afcce714dba883b62b77d5a5f01c4da8c" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>CB</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1aa8e1ae85cfbc2c8ef6003d629deb9962" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>CustomCommand</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1af3bf9b95609f46f05e7bedf13af695e3" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>CustomLines</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1a6df5e0ada923d73b2264378f3eacef02" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>JSL::Plotting::Axis</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1a3c1df7ee7f3d62bae9388b2ed5b3312d" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>Legend</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1a84672f45394709164796e00d69282338" prot="private" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>MemberToPipe</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1af34853a9d67947c603d347df0ab3b38a" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>ShowGrid</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1a95bdecb885684ce1744fe9c0dbc9af50" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>Title</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1acca0833b14048d53e8e6c0c800cfa492" prot="private" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>WriteFormatting</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1a89723b18e6794e6aa37620cbecd90cc5" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>X</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1a7baf2b41cb1bb58edbd566eb211dbe29" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>Y</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Display_1aeeec0b93eef7000fa5831577c5885527" prot="public" virt="non-virtual"><scope>JSL::Plotting::Display</scope><name>Z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

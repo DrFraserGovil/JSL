@@ -1,0 +1,27 @@
+\doxysection{include/\+JSL/\+Strings/\+Manipulate.h File Reference}
+\hypertarget{Manipulate_8h}{}\label{Manipulate_8h}\index{include/JSL/Strings/Manipulate.h@{include/JSL/Strings/Manipulate.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1String}{JSL\+::\+String}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string\+\_\+view $>$ \mbox{\hyperlink{namespaceJSL_1_1String_aff8fdefe9d0ac40692ee9b9fd61f9408}{JSL\+::\+String\+::split\+\_\+view}} (std\+::string\+\_\+view input, std\+::string\+\_\+view delimiter)
+\begin{DoxyCompactList}\small\item\em Splits a string into a vector, with each element indicated by the delimiter string. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_1_1String_a99f2cac3cfcb0d8b1055f8344eff8a6d}{JSL\+::\+String\+::split}} (std\+::string\+\_\+view input, std\+::string\+\_\+view delimiter)
+\begin{DoxyCompactList}\small\item\em As with split\+\_\+view, with the exception that the values are cast to strings, and hence persist after the original input has passed out of scope. \end{DoxyCompactList}\item 
+std\+::string\+\_\+view \mbox{\hyperlink{namespaceJSL_1_1String_af0705f1e561897f876fea449eefd8f4b}{JSL\+::\+String\+::trim\+\_\+view}} (std\+::string\+\_\+view sv)
+\item 
+std\+::string \mbox{\hyperlink{namespaceJSL_1_1String_a326b63985df61bfce502fecfce468dd9}{JSL\+::\+String\+::trim}} (std\+::string\+\_\+view sv)
+\item 
+std\+::string\+\_\+view \mbox{\hyperlink{namespaceJSL_1_1String_a3d2b0e0246a58cf32890e2dcfb7cd90b}{JSL\+::\+String\+::trim\+\_\+view}} (std\+::string\+\_\+view sv, std\+::string\+\_\+view comment\+Indicator)
+\item 
+std\+::string \mbox{\hyperlink{namespaceJSL_1_1String_abd71da5456e279fb25fcf8650c0d5856}{JSL\+::\+String\+::trim}} (std\+::string\+\_\+view sv, std\+::string\+\_\+view comment\+Indicator)
+\end{DoxyCompactItemize}

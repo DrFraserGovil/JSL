@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::String::internal::Converter&lt; std::vector&lt; T_Inner &gt; &gt;</compoundname>
+    <includes refid="ParseTo_8h" local="no">ParseTo.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T_Inner</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_1a53e915d7fc1bf95cba48d62f1a233215" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; T_Inner &gt;</type>
+        <definition>static std::vector&lt; T_Inner &gt; JSL::String::internal::Converter&lt; std::vector&lt; T_Inner &gt; &gt;::internalConvert</definition>
+        <argsstring>(std::string_view sv, typename std::enable_if_t&lt;!std::is_same_v&lt; T_Inner, char &gt; &gt; *=nullptr)</argsstring>
+        <name>internalConvert</name>
+        <qualifiedname>JSL::String::internal::Converter&lt; std::vector&lt; T_Inner &gt; &gt;::internalConvert</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <param>
+          <type>typename std::enable_if_t&lt;!std::is_same_v&lt; T_Inner, char &gt; &gt; *</type>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Calls internalConvert(std::string_view, std::string_view,typename) with the default delimiter (a comma) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/ParseTo.h" line="93" column="32" bodyfile="include/JSL/Strings/ParseTo.h" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_1a3a8c59421f9a75d09536334879f6e4cb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; T_Inner &gt;</type>
+        <definition>static std::vector&lt; T_Inner &gt; JSL::String::internal::Converter&lt; std::vector&lt; T_Inner &gt; &gt;::internalConvert</definition>
+        <argsstring>(std::string_view sv, std::string_view element_delimiter, typename std::enable_if_t&lt;!std::is_same_v&lt; T_Inner, char &gt; &gt; *=nullptr)</argsstring>
+        <name>internalConvert</name>
+        <qualifiedname>JSL::String::internal::Converter&lt; std::vector&lt; T_Inner &gt; &gt;::internalConvert</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>element_delimiter</declname>
+        </param>
+        <param>
+          <type>typename std::enable_if_t&lt;!std::is_same_v&lt; T_Inner, char &gt; &gt; *</type>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>The iterative converter for vector types <ndash/> loops over the split-vector and converts the internal types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput>typename</computeroutput> argument allows the function to disable itself at compile time if T_Inner is a char, thus inducing a Substitution Failure. Through SFINAE principles, this allows std::string (internally a std::vector&lt;char&gt; in many ways) to be ignored by this, and thus picked up by the standard converter </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>We allow vectors to be wrapped in either [], {} or (). This function removes them for internal use.</para>
+<para><simplesect kind="warning"><para>We do <emphasis>not</emphasis> do any form of parsing or checking to allow nested braces. End caps are purely for user readability.</para>
+</simplesect>
+</para>
+        </inbodydescription>
+        <location file="include/JSL/Strings/ParseTo.h" line="102" column="32" bodyfile="include/JSL/Strings/ParseTo.h" bodystart="102" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>For reasons unknown to me, Apple-Clang does not fully implement the C++ standard. std::from_chars does not work on non-integral types. This is really, really annoying that this is necessary. Must therefore resort to using the (slower, worse) std::stod for Apple people</para>
+<para>A partial specialisation of Converter&lt;T&gt; to allow the extraction of vectors.</para>
+<para>Functionally, this acts as a wrapper, iteratively calling Converter&lt;T_Inner&gt; on the values extracted </para>
+    </detaileddescription>
+    <location file="include/JSL/Strings/ParseTo.h" line="90" column="9" bodyfile="include/JSL/Strings/ParseTo.h" bodystart="91" bodyend="133"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_1a53e915d7fc1bf95cba48d62f1a233215" prot="public" virt="non-virtual"><scope>JSL::String::internal::Converter&lt; std::vector&lt; T_Inner &gt; &gt;</scope><name>internalConvert</name></member>
+      <member refid="structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_1a3a8c59421f9a75d09536334879f6e4cb" prot="public" virt="non-virtual"><scope>JSL::String::internal::Converter&lt; std::vector&lt; T_Inner &gt; &gt;</scope><name>internalConvert</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

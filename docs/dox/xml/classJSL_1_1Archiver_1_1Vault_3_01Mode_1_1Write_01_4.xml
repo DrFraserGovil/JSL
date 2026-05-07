@@ -1,0 +1,378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Archiver::Vault&lt; Mode::Write &gt;</compoundname>
+    <basecompoundref refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase" prot="public" virt="non-virtual">JSL::Archiver::internal::VaultBase</basecompoundref>
+    <includes refid="writer_8h" local="no">writer.h</includes>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ad1cb1395587502dc1c0fb24a2df324c5" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="classJSL_1_1Archiver_1_1WriteStream" kindref="compound">WriteStream</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string,WriteStream&gt; JSL::Archiver::Vault&lt; Mode::Write &gt;::Streams</definition>
+        <argsstring></argsstring>
+        <name>Streams</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::Streams</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="13" column="20" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a861d0fd7d2e2e291a8570fd6469f692e" prot="private" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Archiver_1_1WriteStream" kindref="compound">WriteStream</ref> *</type>
+        <definition>WriteStream* JSL::Archiver::Vault&lt; Mode::Write &gt;::MostRecentStream</definition>
+        <argsstring></argsstring>
+        <name>MostRecentStream</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::MostRecentStream</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="14" column="14" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1aa03496667856c6945f09cceb6add7483" prot="private" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Archiver_1_1WriteStream" kindref="compound">WriteStream</ref> *</type>
+        <definition>WriteStream* JSL::Archiver::Vault&lt; Mode::Write &gt;::LargeFile</definition>
+        <argsstring></argsstring>
+        <name>LargeFile</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::LargeFile</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="15" column="14" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a3bcb993dbc1d21712b204308889d9b4e" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream JSL::Archiver::Vault&lt; Mode::Write &gt;::OutputWriter</definition>
+        <argsstring></argsstring>
+        <name>OutputWriter</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::OutputWriter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="16" column="15" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a845df657151df3a52e4bb68f8ded179d" prot="private" static="no" mutable="no">
+        <type><ref refid="structJSL_1_1Archiver_1_1internal_1_1Security" kindref="compound">internal::Security</ref></type>
+        <definition>internal::Security JSL::Archiver::Vault&lt; Mode::Write &gt;::Security</definition>
+        <argsstring></argsstring>
+        <name>Security</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::Security</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="17" column="20" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ab8abae42b6b3108d7c75b0dfa13a30fb" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Archiver::Vault&lt; Mode::Write &gt;::TempName</definition>
+        <argsstring></argsstring>
+        <name>TempName</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::TempName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="18" column="13" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a51e99d85c7bb809cb0b1b9349b9c85a5" prot="private" static="no" mutable="no">
+        <type>std::streampos</type>
+        <definition>std::streampos JSL::Archiver::Vault&lt; Mode::Write &gt;::LargeFileHeaderPos</definition>
+        <argsstring></argsstring>
+        <name>LargeFileHeaderPos</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::LargeFileHeaderPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="19" column="16" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ae5f006bd1944a54d457b6a2e299a6cc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Archiver::Vault&lt; Mode::Write &gt;::Vault</definition>
+        <argsstring>()</argsstring>
+        <name>Vault</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::Vault</qualifiedname>
+        <briefdescription>
+<para>Default initialiser, which places the object into an Uninitialised state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a02335db4d7ec6fb208cb73921ae5fa2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Archiver::Vault&lt; Mode::Write &gt;::Vault</definition>
+        <argsstring>(const std::string &amp;archivePath, bool strictMode=false)</argsstring>
+        <name>Vault</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::Vault</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>archivePath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>strictMode</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Initialises the object and immediately calls <ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a896a6b92c16bd1a9c6027b59c9471f7b" kindref="member">Open()</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>archivePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the archive on disk</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="namespaceJSL_1_1Archiver_1aeeb3e5dd16147fd2dcdc870080838e3b" kindref="member">Mode</ref> assigned to the object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a4952628bb8ca224a95642393b31e9322" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Archiver::Vault&lt; Mode::Write &gt;::~Vault</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>~Vault</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::~Vault</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="27" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a896a6b92c16bd1a9c6027b59c9471f7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Archiver::Vault&lt; Mode::Write &gt;::Open</definition>
+        <argsstring>(std::string_view path)</argsstring>
+        <name>Open</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::Open</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="29" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a6b4aca10c123590be7a09b5caf05a2f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Archiver::Vault&lt; Mode::Write &gt;::Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::Close</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="31" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a19ac071a789fc8eb687e3fc11db33bb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Archiver_1_1WriteStream" kindref="compound">WriteStream</ref> &amp;</type>
+        <definition>WriteStream &amp; JSL::Archiver::Vault&lt; Mode::Write &gt;::operator[]</definition>
+        <argsstring>(const std::string &amp;streamName)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::operator[]</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>streamName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="32" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ab6608a9d4c74980ca6b9cb93a284a7be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classJSL_1_1Archiver_1_1Vault" kindref="compound">Vault</ref> &amp;</type>
+        <definition>Vault &amp; JSL::Archiver::Vault&lt; Mode::Write &gt;::operator&lt;&lt;</definition>
+        <argsstring>(T msg)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="35" column="1" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="35" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1abebb567b98bf27b1d9f890387513ad96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Archiver::Vault&lt; Mode::Write &gt;::SetWritePermissions</definition>
+        <argsstring>(uint32_t uid=1000, uint32_t gid=1000, std::string uname=&quot;user&quot;, std::string gname=&quot;user&quot;)</argsstring>
+        <name>SetWritePermissions</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::SetWritePermissions</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>uid</declname>
+          <defval>1000</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>gid</declname>
+          <defval>1000</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>uname</declname>
+          <defval>&quot;user&quot;</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>gname</declname>
+          <defval>&quot;user&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="45" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a29a03624270759e504fd479eaf53bca1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Archiver::Vault&lt; Mode::Write &gt;::SetLargeFile</definition>
+        <argsstring>(const std::string &amp;file)</argsstring>
+        <name>SetLargeFile</name>
+        <qualifiedname>JSL::Archiver::Vault&lt; Mode::Write &gt;::SetLargeFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/writer.h" line="46" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>JSL::Archiver::Vault&lt; Mode::Write &gt;</label>
+        <link refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::Archiver::internal::VaultBase</label>
+        <link refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>JSL::Archiver::Vault&lt; Mode::Write &gt;</label>
+        <link refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>LargeFile</edgelabel>
+          <edgelabel>MostRecentStream</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Security</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL::Archiver::WriteStream</label>
+        <link refid="classJSL_1_1Archiver_1_1WriteStream"/>
+      </node>
+      <node id="4">
+        <label>JSL::Archiver::internal::Security</label>
+        <link refid="structJSL_1_1Archiver_1_1internal_1_1Security"/>
+      </node>
+      <node id="2">
+        <label>JSL::Archiver::internal::VaultBase</label>
+        <link refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/FileIO/archiver/writer.h" line="10" column="1" bodyfile="include/JSL/FileIO/archiver/writer.h" bodystart="11" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a6b4aca10c123590be7a09b5caf05a2f5" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>Close</name></member>
+      <member refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase_1abd424415b4f222834fb6a511f036f674" prot="protected" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>FileMode</name></member>
+      <member refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase_1a764ccd653391211ecf29cf741b95f2a1" prot="protected" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>Initialised</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1aa03496667856c6945f09cceb6add7483" prot="private" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>LargeFile</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a51e99d85c7bb809cb0b1b9349b9c85a5" prot="private" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>LargeFileHeaderPos</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a861d0fd7d2e2e291a8570fd6469f692e" prot="private" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>MostRecentStream</name></member>
+      <member refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase_1a74dc7adf228a6bbad5e365ea0ffd0838" prot="protected" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>Name</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a896a6b92c16bd1a9c6027b59c9471f7b" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>Open</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ab6608a9d4c74980ca6b9cb93a284a7be" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a19ac071a789fc8eb687e3fc11db33bb7" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>operator[]</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a3bcb993dbc1d21712b204308889d9b4e" prot="private" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>OutputWriter</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a845df657151df3a52e4bb68f8ded179d" prot="private" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>Security</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a29a03624270759e504fd479eaf53bca1" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>SetLargeFile</name></member>
+      <member refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase_1a38e3a02053e84b9b21d1262293563b5c" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>SetStrictMode</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1abebb567b98bf27b1d9f890387513ad96" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>SetWritePermissions</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ad1cb1395587502dc1c0fb24a2df324c5" prot="private" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>Streams</name></member>
+      <member refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase_1ad2ec62af123651d13f2ba6e6ef23621c" prot="protected" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>StrictMode</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ab8abae42b6b3108d7c75b0dfa13a30fb" prot="private" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>TempName</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ae5f006bd1944a54d457b6a2e299a6cc2" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>Vault</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a02335db4d7ec6fb208cb73921ae5fa2e" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>Vault</name></member>
+      <member refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase_1ae1e5a163870ab3a18591c9118ea3d7ff" prot="protected" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>VaultBase</name></member>
+      <member refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a4952628bb8ca224a95642393b31e9322" prot="public" virt="non-virtual"><scope>JSL::Archiver::Vault&lt; Mode::Write &gt;</scope><name>~Vault</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

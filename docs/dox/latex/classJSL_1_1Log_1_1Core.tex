@@ -1,0 +1,260 @@
+\doxysection{JSL\+::Log\+::Core Class Reference}
+\hypertarget{classJSL_1_1Log_1_1Core}{}\label{classJSL_1_1Log_1_1Core}\index{JSL::Log::Core@{JSL::Log::Core}}
+
+
+Created during a \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG} call as a temporary object, and acts as a custom output stream.  
+
+
+
+
+{\ttfamily \#include $<$Core.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Log_1_1Core_a5c3af7e2fe5dcdf937b93651d4f9bda6}{Core}} (\mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} level, int calling\+Line, const std\+::string \&calling\+Function, std\+::string calling\+File)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classJSL_1_1Log_1_1Core}{Core}, initialises an entry in the output log. Should never be called outside \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Log_1_1Core_a9e69c76e9f7796e69841f2667d4e8a76}{\texorpdfstring{$\sim$}{\string~}\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Custom destructor which performs the actual output to the terminal. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}} \& \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a0648680698230ce5d8979c7ee960d366}{operator$<$$<$}} (const T \&msg)
+\begin{DoxyCompactList}\small\item\em The streaming operator, allowing data to be piped into the stream just as if it were std\+::cout. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}} \& \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a57fb03e27585853f46e1d0cfae5a6cdc}{operator$<$$<$}} (\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format\+::\+Command}} format)
+\item 
+\mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}} \& \mbox{\hyperlink{classJSL_1_1Log_1_1Core_ab00581b608e7afc876d653de92a84231}{operator$<$$<$}} (\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+::\+Format\+Group}} group)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a2187c6090f06ce4b55220b06233fba9d}{Header}} ()
+\begin{DoxyCompactList}\small\item\em If Config.\+Use\+Headers is true, this function generates headers (such as \mbox{[}ERROR\mbox{]}) for the log entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a952d14b7b6715a38902e632f6053c46b}{End\+Message}} ()
+\begin{DoxyCompactList}\small\item\em The point at which the Buffer is added to the output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6fc302f13ed1875ed2a48dae5dd689a1}{Manual\+Format}} = false
+\begin{DoxyCompactList}\small\item\em Tracks if a format is passed into the stream before it is active (and hence if the preamble needs to inherit) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+::\+Format\+Group}} \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a1de05c38db8951ea2d5b7412e79c877d}{Current\+Format}}
+\begin{DoxyCompactList}\small\item\em The current format of the line, enabling selective reset calls. \end{DoxyCompactList}\item 
+std\+::stringstream \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}{Buffer}}
+\begin{DoxyCompactList}\small\item\em The internal Buffer to which \doxylink{classJSL_1_1Log_1_1Core_a0648680698230ce5d8979c7ee960d366}{Core\+::operator$<$$<$} is streamed, and which is then output to terminal. \end{DoxyCompactList}\item 
+std\+::stringstream \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a8bc82b6e56a5fecff382b08edbfe8d65}{Buffer\+Preamble}}
+\begin{DoxyCompactList}\small\item\em A distinct buffer for the preamble (i.\+e. \mbox{[}WARN\mbox{]}), in case differential formatting is required. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a931f76811d5f282e39c39979ad1284f2}{Level}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level} of the log entry associated with this object. Used only to determine formatting. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}{Stream\+Active}}
+\begin{DoxyCompactList}\small\item\em An internal flag which checks if anything was actually streamed to the object. If this is true, then the destructor calls end\+Message() and outputs the Buffer to stream. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a22c33e7c11c9cdadc053bb29c0cc668c}{Insert}}
+\begin{DoxyCompactList}\small\item\em A string which holds the calling\+Line/\+Function/\+File data after the constructor is called, but before the stream is activated. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Log_1_1Core_ae5c042d3719c209373bef3ac3ab8c0f2}{Line\+Suffix}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em A suffix which is inserted at the end of the line, if the boxing mode is active. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Log_1_1Core_ada70368a1dec8c6d0743020bc45ea7b2}{First\+Line\+Suffix}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em A suffix used at the first line of long messages, containing additional information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::mutex \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a26913d8e4e9549471250ae7174050367}{Stream\+Mutex}}
+\begin{DoxyCompactList}\small\item\em Used to prevent log-\/interleaving, and make the LOG (mostly) thread-\/safe. Must be declared static to make it shared across different instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Created during a \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG} call as a temporary object, and acts as a custom output stream. 
+
+Each \doxylink{classJSL_1_1Log_1_1Core}{Log\+::\+Core} object is associated with a single \textquotesingle{}log entry\textquotesingle{}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1Log_1_1Core_a5c3af7e2fe5dcdf937b93651d4f9bda6}\label{classJSL_1_1Log_1_1Core_a5c3af7e2fe5dcdf937b93651d4f9bda6} 
+\index{JSL::Log::Core@{JSL::Log::Core}!Core@{Core}}
+\index{Core@{Core}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{Core()}{Core()}}
+{\footnotesize\ttfamily JSL\+::\+Log\+::\+Core\+::\+Core (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}}]{level,  }\item[{int}]{calling\+Line,  }\item[{const std\+::string \&}]{calling\+Function,  }\item[{std\+::string}]{calling\+File }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classJSL_1_1Log_1_1Core}{Core}, initialises an entry in the output log. Should never be called outside \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG}. 
+
+Note that the Level is used purely for formatting purposes\+: a \doxylink{classJSL_1_1Log_1_1Core}{Core} object {\itshape always} outputs a stream. The `log suppression checks' are performed by \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG}. The three \textquotesingle{}calling\textquotesingle{} parameters are used to locate the origin of a LOG; they are provided by compile-\/time flags, but are only used by ERROR and WARN output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The Log\+Level that the associated entry will be on. Determines formatting. \\
+\hline
+{\em calling\+Line} & This is the ƒile line on which the \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG} call appears \\
+\hline
+{\em calling\+Function} & The function in which the LOG call occurred. Provides a pseudo-\/stack-\/unwinding. \\
+\hline
+{\em calling\+File} & The file in which the calling\+Function is found. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classJSL_1_1Log_1_1Core_a9e69c76e9f7796e69841f2667d4e8a76}\label{classJSL_1_1Log_1_1Core_a9e69c76e9f7796e69841f2667d4e8a76} 
+\index{JSL::Log::Core@{JSL::Log::Core}!````~Core@{\texorpdfstring{$\sim$}{\string~}Core}}
+\index{````~Core@{\texorpdfstring{$\sim$}{\string~}Core}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Core()}{\string~Core()}}
+{\footnotesize\ttfamily JSL\+::\+Log\+::\+Core\+::\texorpdfstring{$\sim$}{\string~}\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Custom destructor which performs the actual output to the terminal. 
+
+Under normal usage, the \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG(\+LEVEL)} call will cause the temporary object to almost instantly go out of scope. Therefore this destructor will usually be called as soon as the last element is streamed into the object, however there may sometimes be a delay. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Log_1_1Core_a952d14b7b6715a38902e632f6053c46b}\label{classJSL_1_1Log_1_1Core_a952d14b7b6715a38902e632f6053c46b} 
+\index{JSL::Log::Core@{JSL::Log::Core}!EndMessage@{EndMessage}}
+\index{EndMessage@{EndMessage}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{EndMessage()}{EndMessage()}}
+{\footnotesize\ttfamily void JSL\+::\+Log\+::\+Core\+::\+End\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The point at which the Buffer is added to the output stream. 
+
+Called by the destructor if the Buffer contains data. This function tidies up the buffer and formats it for output, before adding it to the output stream. \Hypertarget{classJSL_1_1Log_1_1Core_a2187c6090f06ce4b55220b06233fba9d}\label{classJSL_1_1Log_1_1Core_a2187c6090f06ce4b55220b06233fba9d} 
+\index{JSL::Log::Core@{JSL::Log::Core}!Header@{Header}}
+\index{Header@{Header}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{Header()}{Header()}}
+{\footnotesize\ttfamily void JSL\+::\+Log\+::\+Core\+::\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If Config.\+Use\+Headers is true, this function generates headers (such as \mbox{[}ERROR\mbox{]}) for the log entry. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_a0648680698230ce5d8979c7ee960d366}\label{classJSL_1_1Log_1_1Core_a0648680698230ce5d8979c7ee960d366} 
+\index{JSL::Log::Core@{JSL::Log::Core}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}} \& JSL\+::\+Log\+::\+Core\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const T \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The streaming operator, allowing data to be piped into the stream just as if it were std\+::cout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The data to be added to the stream. Must be convertible to a stringstream object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the object, allowing for \textquotesingle{}chaining\textquotesingle{} the stream; stream \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} a \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} b \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} c 
+\end{DoxyReturn}
+\Hypertarget{classJSL_1_1Log_1_1Core_a57fb03e27585853f46e1d0cfae5a6cdc}\label{classJSL_1_1Log_1_1Core_a57fb03e27585853f46e1d0cfae5a6cdc} 
+\index{JSL::Log::Core@{JSL::Log::Core}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}} \& JSL\+::\+Log\+::\+Core\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format\+::\+Command}}}]{format }\end{DoxyParamCaption})}
+
+Overloads the stream operator for \doxylink{structJSL_1_1Format_1_1Command}{JSL\+::\+Format\+::\+Command} objects, allowing peristent formatting across linebreaks and in the pregenerated headers. \Hypertarget{classJSL_1_1Log_1_1Core_ab00581b608e7afc876d653de92a84231}\label{classJSL_1_1Log_1_1Core_ab00581b608e7afc876d653de92a84231} 
+\index{JSL::Log::Core@{JSL::Log::Core}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}} \& JSL\+::\+Log\+::\+Core\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+::\+Format\+Group}}}]{group }\end{DoxyParamCaption})}
+
+Overloads the stream operator for \doxylink{structJSL_1_1Format_1_1Command}{JSL\+::\+Format\+::\+Command} objects, allowing peristent formatting across linebreaks and in the pregenerated headers. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}\label{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9} 
+\index{JSL::Log::Core@{JSL::Log::Core}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{Buffer}{Buffer}}
+{\footnotesize\ttfamily std\+::stringstream JSL\+::\+Log\+::\+Core\+::\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The internal Buffer to which \doxylink{classJSL_1_1Log_1_1Core_a0648680698230ce5d8979c7ee960d366}{Core\+::operator$<$$<$} is streamed, and which is then output to terminal. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_a8bc82b6e56a5fecff382b08edbfe8d65}\label{classJSL_1_1Log_1_1Core_a8bc82b6e56a5fecff382b08edbfe8d65} 
+\index{JSL::Log::Core@{JSL::Log::Core}!BufferPreamble@{BufferPreamble}}
+\index{BufferPreamble@{BufferPreamble}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{BufferPreamble}{BufferPreamble}}
+{\footnotesize\ttfamily std\+::stringstream JSL\+::\+Log\+::\+Core\+::\+Buffer\+Preamble\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A distinct buffer for the preamble (i.\+e. \mbox{[}WARN\mbox{]}), in case differential formatting is required. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_a1de05c38db8951ea2d5b7412e79c877d}\label{classJSL_1_1Log_1_1Core_a1de05c38db8951ea2d5b7412e79c877d} 
+\index{JSL::Log::Core@{JSL::Log::Core}!CurrentFormat@{CurrentFormat}}
+\index{CurrentFormat@{CurrentFormat}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{CurrentFormat}{CurrentFormat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+::\+Format\+Group}} JSL\+::\+Log\+::\+Core\+::\+Current\+Format\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current format of the line, enabling selective reset calls. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_ada70368a1dec8c6d0743020bc45ea7b2}\label{classJSL_1_1Log_1_1Core_ada70368a1dec8c6d0743020bc45ea7b2} 
+\index{JSL::Log::Core@{JSL::Log::Core}!FirstLineSuffix@{FirstLineSuffix}}
+\index{FirstLineSuffix@{FirstLineSuffix}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{FirstLineSuffix}{FirstLineSuffix}}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Log\+::\+Core\+::\+First\+Line\+Suffix = "{}"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A suffix used at the first line of long messages, containing additional information. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_a22c33e7c11c9cdadc053bb29c0cc668c}\label{classJSL_1_1Log_1_1Core_a22c33e7c11c9cdadc053bb29c0cc668c} 
+\index{JSL::Log::Core@{JSL::Log::Core}!Insert@{Insert}}
+\index{Insert@{Insert}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{Insert}{Insert}}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Log\+::\+Core\+::\+Insert\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A string which holds the calling\+Line/\+Function/\+File data after the constructor is called, but before the stream is activated. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_a931f76811d5f282e39c39979ad1284f2}\label{classJSL_1_1Log_1_1Core_a931f76811d5f282e39c39979ad1284f2} 
+\index{JSL::Log::Core@{JSL::Log::Core}!Level@{Level}}
+\index{Level@{Level}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{Level}{Level}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} JSL\+::\+Log\+::\+Core\+::\+Level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \doxylink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level} of the log entry associated with this object. Used only to determine formatting. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_ae5c042d3719c209373bef3ac3ab8c0f2}\label{classJSL_1_1Log_1_1Core_ae5c042d3719c209373bef3ac3ab8c0f2} 
+\index{JSL::Log::Core@{JSL::Log::Core}!LineSuffix@{LineSuffix}}
+\index{LineSuffix@{LineSuffix}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{LineSuffix}{LineSuffix}}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Log\+::\+Core\+::\+Line\+Suffix = "{}"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A suffix which is inserted at the end of the line, if the boxing mode is active. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_a6fc302f13ed1875ed2a48dae5dd689a1}\label{classJSL_1_1Log_1_1Core_a6fc302f13ed1875ed2a48dae5dd689a1} 
+\index{JSL::Log::Core@{JSL::Log::Core}!ManualFormat@{ManualFormat}}
+\index{ManualFormat@{ManualFormat}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{ManualFormat}{ManualFormat}}
+{\footnotesize\ttfamily bool JSL\+::\+Log\+::\+Core\+::\+Manual\+Format = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tracks if a format is passed into the stream before it is active (and hence if the preamble needs to inherit) 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}\label{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069} 
+\index{JSL::Log::Core@{JSL::Log::Core}!StreamActive@{StreamActive}}
+\index{StreamActive@{StreamActive}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{StreamActive}{StreamActive}}
+{\footnotesize\ttfamily bool JSL\+::\+Log\+::\+Core\+::\+Stream\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+An internal flag which checks if anything was actually streamed to the object. If this is true, then the destructor calls end\+Message() and outputs the Buffer to stream. 
+
+\Hypertarget{classJSL_1_1Log_1_1Core_a26913d8e4e9549471250ae7174050367}\label{classJSL_1_1Log_1_1Core_a26913d8e4e9549471250ae7174050367} 
+\index{JSL::Log::Core@{JSL::Log::Core}!StreamMutex@{StreamMutex}}
+\index{StreamMutex@{StreamMutex}!JSL::Log::Core@{JSL::Log::Core}}
+\doxysubsubsection{\texorpdfstring{StreamMutex}{StreamMutex}}
+{\footnotesize\ttfamily std\+::mutex JSL\+::\+Log\+::\+Core\+::\+Stream\+Mutex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Used to prevent log-\/interleaving, and make the LOG (mostly) thread-\/safe. Must be declared static to make it shared across different instances. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Display/\+Log/\mbox{\hyperlink{Core_8h}{Core.\+h}}\end{DoxyCompactItemize}

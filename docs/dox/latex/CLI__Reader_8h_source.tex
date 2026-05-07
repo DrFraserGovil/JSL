@@ -1,0 +1,39 @@
+\doxysection{CLI\+\_\+\+Reader.\+h}
+\hypertarget{CLI__Reader_8h_source}{}\label{CLI__Reader_8h_source}\index{include/JSL/Parameters/CLI\_Reader.h@{include/JSL/Parameters/CLI\_Reader.h}}
+\mbox{\hyperlink{CLI__Reader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1internal_1_1Parameter}{JSL::internal::Parameter}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ std::string\_view\ \mbox{\hyperlink{namespaceJSL_1_1internal_1_1Parameter_a147d6637d68e8a5a22c1942061f79b6d}{Normalize}}(std::string\_view\ s);\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader}{CommandLineReader}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader}{CommandLineReader}}\ \&\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_abf69cf1cf49154acf48c8d193f70b501}{Get}}()}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader}{CommandLineReader}}\ instance;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_af38a7f0d77ad09b6abca2bb23b9a5e0e}{CommandLineReader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_aafa2ec02011d30242516f49e20a34b5b}{CommandLineReader}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**argv);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a4dedd5d68e70e58872110eaf6325a413}{Parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**argv);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a1828f1863f245af71d4677edca4581ad}{Configure}}(std::filesystem::path\ configFile,\ std::string\_view\ configDelimiter);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a2b457be98a4a6953d602efc954916688}{Reset}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_ad5676cfc202a7b86f7df9c1ef6521cee}{IsConfigured}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a7fd4814df17cf3191eda6897cd304347}{Contains}}(std::string\_view\ option)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\_view\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a2d75ebec4650be7b6acbf28d81addf09}{GetOption}}(std::string\_view\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_afbf6da0790d6e45217f87cea2c2a69bc}{Commands}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,std::string>\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a5c1f1abd87d0db00b8e9421a1b361d33}{Options}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_aa0e5c9fd9d77d9751327631b497f9a2a}{Configured}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ \ \ \ \ \};}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}

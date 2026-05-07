@@ -1,0 +1,125 @@
+\doxysection{JSL\+::Event\+::Serial\+::Manager Class Reference}
+\hypertarget{classJSL_1_1Event_1_1Serial_1_1Manager}{}\label{classJSL_1_1Event_1_1Serial_1_1Manager}\index{JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}}
+
+
+{\ttfamily \#include $<$Event\+Manager.\+h$>$}
+
+Inheritance diagram for JSL\+::Event\+::Serial\+::Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classJSL_1_1Event_1_1Serial_1_1Manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1Serial_1_1Manager_ae464ebe5a5a70d2801fae3e3e48d63eb}{Manager}} (std\+::string\+\_\+view identifier)
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1Serial_1_1Manager_a54c61e81ebf36dc4e5185a2bb5acfeb4}{Manager}} (\mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{Watcher}} \&watcher)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Serial_1_1Manager_a29ab481b01fcb1069fd7f535d0d6e297}{Add\+Task}} (\mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Task\+::\+Instruction}} job)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Serial_1_1Manager_ab474c86de5890133e97f49480701a77b}{Synchroniser}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{JSL\+::\+Event\+::internal\+::\+Handler\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_ab9e2039751b1ac3c051cb5d537bda0a5}{Set\+CIn\+Callback}} (std\+::function$<$ void(std\+::string\+\_\+view)$>$ callback)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a1ca400818f0a74774a3848d781dc33da}{Set\+Socket\+Callback}} (std\+::function$<$ void(std\+::string\+\_\+view)$>$ callback)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a8f2bfb2b698e8057598be31cb65cf29f}{Set\+Text\+Callback}} (std\+::function$<$ void(std\+::string\+\_\+view)$>$ callback)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a7d6c692b0828b1b972d098cc7473c041}{Set\+Inotify\+Callback}} (std\+::function$<$ void(\mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{File\+Change}})$>$ callback)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_ac763fc108d11caa4da43a5992fef51c7}{Run}} ()
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_ab8e364638504a1a9e8b10becfa351a51}{Handler\+Base}} (const \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{Handler\+Base}} \&)=delete
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{Handler\+Base}} \& \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_af6d298ca51fb7aefc3f394300cbb1869}{operator=}} (const \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{Handler\+Base}} \&)=delete
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_adcecc953a692bfc64eeeb0b1f0fb2bfd}{Handler\+Base}} (\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{Handler\+Base}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{Handler\+Base}} \& \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a57eea3f9049114000f76c8329f18777d}{operator=}} (\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{Handler\+Base}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{JSL\+::\+Event\+::\+Watcher}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_ace0463f720ee896fc203aa969d47a162}{Get\+Watcher}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{JSL\+::\+Event\+::internal\+::\+Handler\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::set$<$ std\+::string, std\+::less$<$$>$ $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_af145b4407be9df4d166a03ef0679c306}{Shutdown\+Commands}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{JSL\+::\+Event\+::internal\+::\+Handler\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a59d5ac117b9b78e5b854bdefa443be65}{Protect\+Add}} ()
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a68ff3c529f4c67c658a0252db0fdea93}{Handler\+Base}} (std\+::string\+\_\+view id)
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a3e7a47d5b605c592f478be4ba38343bb}{Handler\+Base}} (\mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{Watcher}} \&watcher)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_aa8b3e185b5a61aee6d145a891a2062ef}{Process}} (\mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Task\+::\+Instruction}} job)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase}{JSL\+::\+Event\+::internal\+::\+Handler\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ void(std\+::string\+\_\+view)$>$ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a563c79882f71efa5db4900b5b87444c2}{callback\+\_\+cin}}
+\item 
+std\+::function$<$ void(std\+::string\+\_\+view)$>$ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_af3331568c05a08d5cddc76c93e19ac32}{callback\+\_\+socket}}
+\item 
+std\+::function$<$ void(\mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{JSL\+::\+Event\+::\+File\+Change}})$>$ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_aca3715dd44106a33de169598998e22c0}{callback\+\_\+file}}
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{Watcher}} \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a7180e31000a1edd37ef55866a3099141}{Watch}}
+\item 
+std\+::mutex \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a80a3184165d34eca4957f7a82b7342a2}{Sync}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a0504c458a47770bb4ebf7174720675e1}{CV}}
+\item 
+std\+::queue$<$ \mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Task\+::\+Instruction}} $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a2ab7fc28af66c1fa55c8c143f9750b9f}{Task\+Queue}}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a79af047abaabaaeaa709315014412ddd}{Running}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1Event_1_1Serial_1_1Manager_ae464ebe5a5a70d2801fae3e3e48d63eb}\label{classJSL_1_1Event_1_1Serial_1_1Manager_ae464ebe5a5a70d2801fae3e3e48d63eb} 
+\index{JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}}
+\doxysubsubsection{\texorpdfstring{Manager()}{Manager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily JSL\+::\+Event\+::\+Serial\+::\+Manager\+::\+Manager (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{identifier }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Serial_1_1Manager_a54c61e81ebf36dc4e5185a2bb5acfeb4}\label{classJSL_1_1Event_1_1Serial_1_1Manager_a54c61e81ebf36dc4e5185a2bb5acfeb4} 
+\index{JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}}
+\doxysubsubsection{\texorpdfstring{Manager()}{Manager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily JSL\+::\+Event\+::\+Serial\+::\+Manager\+::\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{Watcher}} \&}]{watcher }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Event_1_1Serial_1_1Manager_a29ab481b01fcb1069fd7f535d0d6e297}\label{classJSL_1_1Event_1_1Serial_1_1Manager_a29ab481b01fcb1069fd7f535d0d6e297} 
+\index{JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}!AddTask@{AddTask}}
+\index{AddTask@{AddTask}!JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}}
+\doxysubsubsection{\texorpdfstring{AddTask()}{AddTask()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Serial\+::\+Manager\+::\+Add\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structJSL_1_1Event_1_1Task_1_1Instruction}{Task\+::\+Instruction}}}]{job }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a360d18e30de22ea90a6d89b5051b8373}{JSL\+::\+Event\+::internal\+::\+Handler\+Base}}.
+
+\Hypertarget{classJSL_1_1Event_1_1Serial_1_1Manager_ab474c86de5890133e97f49480701a77b}\label{classJSL_1_1Event_1_1Serial_1_1Manager_ab474c86de5890133e97f49480701a77b} 
+\index{JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}!Synchroniser@{Synchroniser}}
+\index{Synchroniser@{Synchroniser}!JSL::Event::Serial::Manager@{JSL::Event::Serial::Manager}}
+\doxysubsubsection{\texorpdfstring{Synchroniser()}{Synchroniser()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Serial\+::\+Manager\+::\+Synchroniser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classJSL_1_1Event_1_1internal_1_1HandlerBase_a3aebc122d6f0c389e0d266d1c01ca605}{JSL\+::\+Event\+::internal\+::\+Handler\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Async/\mbox{\hyperlink{EventManager_8h}{Event\+Manager.\+h}}\end{DoxyCompactItemize}

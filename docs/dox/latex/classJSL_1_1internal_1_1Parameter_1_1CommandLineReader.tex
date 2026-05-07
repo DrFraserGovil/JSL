@@ -1,0 +1,125 @@
+\doxysection{JSL\+::internal\+::Parameter\+::Command\+Line\+Reader Class Reference}
+\hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader}{}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader}\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+
+
+{\ttfamily \#include $<$CLI\+\_\+\+Reader.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_af38a7f0d77ad09b6abca2bb23b9a5e0e}{Command\+Line\+Reader}} ()=default
+\item 
+\mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_aafa2ec02011d30242516f49e20a34b5b}{Command\+Line\+Reader}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\item 
+void \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a4dedd5d68e70e58872110eaf6325a413}{Parse}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\item 
+void \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a1828f1863f245af71d4677edca4581ad}{Configure}} (std\+::filesystem\+::path config\+File, std\+::string\+\_\+view config\+Delimiter)
+\item 
+void \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a2b457be98a4a6953d602efc954916688}{Reset}} ()
+\item 
+bool \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_ad5676cfc202a7b86f7df9c1ef6521cee}{Is\+Configured}} ()
+\item 
+bool \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a7fd4814df17cf3191eda6897cd304347}{Contains}} (std\+::string\+\_\+view option) const
+\item 
+std\+::string\+\_\+view \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a2d75ebec4650be7b6acbf28d81addf09}{Get\+Option}} (std\+::string\+\_\+view key) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader}{Command\+Line\+Reader}} \& \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_abf69cf1cf49154acf48c8d193f70b501}{Get}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_afbf6da0790d6e45217f87cea2c2a69bc}{Commands}}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a5c1f1abd87d0db00b8e9421a1b361d33}{Options}}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_aa0e5c9fd9d77d9751327631b497f9a2a}{Configured}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_af38a7f0d77ad09b6abca2bb23b9a5e0e}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_af38a7f0d77ad09b6abca2bb23b9a5e0e} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!CommandLineReader@{CommandLineReader}}
+\index{CommandLineReader@{CommandLineReader}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{CommandLineReader()}{CommandLineReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Command\+Line\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_aafa2ec02011d30242516f49e20a34b5b}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_aafa2ec02011d30242516f49e20a34b5b} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!CommandLineReader@{CommandLineReader}}
+\index{CommandLineReader@{CommandLineReader}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{CommandLineReader()}{CommandLineReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Command\+Line\+Reader (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a1828f1863f245af71d4677edca4581ad}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a1828f1863f245af71d4677edca4581ad} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!Configure@{Configure}}
+\index{Configure@{Configure}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{Configure()}{Configure()}}
+{\footnotesize\ttfamily void JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Configure (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{config\+File,  }\item[{std\+::string\+\_\+view}]{config\+Delimiter }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a7fd4814df17cf3191eda6897cd304347}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a7fd4814df17cf3191eda6897cd304347} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!Contains@{Contains}}
+\index{Contains@{Contains}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Contains (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{option }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_abf69cf1cf49154acf48c8d193f70b501}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_abf69cf1cf49154acf48c8d193f70b501} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!Get@{Get}}
+\index{Get@{Get}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader}{Command\+Line\+Reader}} \& JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a2d75ebec4650be7b6acbf28d81addf09}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a2d75ebec4650be7b6acbf28d81addf09} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!GetOption@{GetOption}}
+\index{GetOption@{GetOption}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{GetOption()}{GetOption()}}
+{\footnotesize\ttfamily std\+::string\+\_\+view JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Get\+Option (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_ad5676cfc202a7b86f7df9c1ef6521cee}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_ad5676cfc202a7b86f7df9c1ef6521cee} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!IsConfigured@{IsConfigured}}
+\index{IsConfigured@{IsConfigured}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{IsConfigured()}{IsConfigured()}}
+{\footnotesize\ttfamily bool JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Is\+Configured (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a4dedd5d68e70e58872110eaf6325a413}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a4dedd5d68e70e58872110eaf6325a413} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!Parse@{Parse}}
+\index{Parse@{Parse}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily void JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a2b457be98a4a6953d602efc954916688}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a2b457be98a4a6953d602efc954916688} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!Reset@{Reset}}
+\index{Reset@{Reset}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_afbf6da0790d6e45217f87cea2c2a69bc}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_afbf6da0790d6e45217f87cea2c2a69bc} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!Commands@{Commands}}
+\index{Commands@{Commands}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{Commands}{Commands}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Commands}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_aa0e5c9fd9d77d9751327631b497f9a2a}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_aa0e5c9fd9d77d9751327631b497f9a2a} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!Configured@{Configured}}
+\index{Configured@{Configured}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{Configured}{Configured}}
+{\footnotesize\ttfamily bool JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Configured = false}
+
+\Hypertarget{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a5c1f1abd87d0db00b8e9421a1b361d33}\label{classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_a5c1f1abd87d0db00b8e9421a1b361d33} 
+\index{JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}!Options@{Options}}
+\index{Options@{Options}!JSL::internal::Parameter::CommandLineReader@{JSL::internal::Parameter::CommandLineReader}}
+\doxysubsubsection{\texorpdfstring{Options}{Options}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string,std\+::string$>$ JSL\+::internal\+::\+Parameter\+::\+Command\+Line\+Reader\+::\+Options}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Parameters/\mbox{\hyperlink{CLI__Reader_8h}{CLI\+\_\+\+Reader.\+h}}\end{DoxyCompactItemize}

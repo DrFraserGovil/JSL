@@ -1,0 +1,568 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1Format" kind="namespace" language="C++">
+    <compoundname>JSL::Format</compoundname>
+    <innerclass refid="structJSL_1_1Format_1_1Command" prot="public">JSL::Format::Command</innerclass>
+    <innerclass refid="classJSL_1_1Format_1_1FormatGroup" prot="public">JSL::Format::FormatGroup</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Element</name>
+        <qualifiedname>JSL::Format::Element</qualifiedname>
+        <enumvalue id="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8" prot="public">
+          <name>ForegroundColour</name>
+          <initializer>=1&lt;&lt;0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c" prot="public">
+          <name>BackgroundColour</name>
+          <initializer>=1&lt;&lt;1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961" prot="public">
+          <name>Style</name>
+          <initializer>=1&lt;&lt;2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535" prot="public">
+          <name>Resetter</name>
+          <initializer>=1&lt;&lt;3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="12" column="5" bodyfile="include/JSL/Display/Format.h" bodystart="12" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a0310aceb1276f364edf89ea449e2a8d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::ResetAll</definition>
+        <argsstring>(&quot;\033[0m&quot;, Element::Resetter)</argsstring>
+        <name>ResetAll</name>
+        <qualifiedname>JSL::Format::ResetAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="38" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="38" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a72f9735a888543e7e1b5cb07ae7ad10b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>Command JSL::Format::Reset</definition>
+        <argsstring>(Element sections=Element::Resetter)</argsstring>
+        <name>Reset</name>
+        <qualifiedname>JSL::Format::Reset</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622" kindref="member">Element</ref></type>
+          <declname>sections</declname>
+          <defval><ref refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535" kindref="member">Element::Resetter</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="40" column="13" declfile="include/JSL/Display/ANSI_Codes.h" declline="40" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a564e38f310ecc9f0982f40e18590164d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Black</definition>
+        <argsstring>(&quot;\033[30m&quot;, ForegroundColour)</argsstring>
+        <name>Black</name>
+        <qualifiedname>JSL::Format::Black</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="42" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="42" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1ae70c4e93b38e7e6d3d4a4587bdeca2d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Red</definition>
+        <argsstring>(&quot;\033[31m&quot;, ForegroundColour)</argsstring>
+        <name>Red</name>
+        <qualifiedname>JSL::Format::Red</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="43" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="43" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1aca4adf51e196a330791d94688f827cf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Green</definition>
+        <argsstring>(&quot;\033[32m&quot;, ForegroundColour)</argsstring>
+        <name>Green</name>
+        <qualifiedname>JSL::Format::Green</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="44" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="44" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1aaeaa6f8b854fe2f38e404f5c4ccd863f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Yellow</definition>
+        <argsstring>(&quot;\033[33m&quot;, ForegroundColour)</argsstring>
+        <name>Yellow</name>
+        <qualifiedname>JSL::Format::Yellow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="45" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="45" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1ac7e4db410a5d82647350de18a9400356" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Blue</definition>
+        <argsstring>(&quot;\033[34m&quot;, ForegroundColour)</argsstring>
+        <name>Blue</name>
+        <qualifiedname>JSL::Format::Blue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="46" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="46" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a10c116dab0dbf18d5b10741f0ac8b8b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Purple</definition>
+        <argsstring>(&quot;\033[35m&quot;, ForegroundColour)</argsstring>
+        <name>Purple</name>
+        <qualifiedname>JSL::Format::Purple</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="47" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="47" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1ab57e30d39f562e4b735405a4c3685d57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Cyan</definition>
+        <argsstring>(&quot;\033[36m&quot;, ForegroundColour)</argsstring>
+        <name>Cyan</name>
+        <qualifiedname>JSL::Format::Cyan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="48" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="48" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a08d06db733a345807a8fd58f9c779e46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::White</definition>
+        <argsstring>(&quot;\033[37m&quot;, ForegroundColour)</argsstring>
+        <name>White</name>
+        <qualifiedname>JSL::Format::White</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="49" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="49" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a2a29d497acaa067b570f6d852f40a93a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Bold</definition>
+        <argsstring>(&quot;\033[1m&quot;, Style)</argsstring>
+        <name>Bold</name>
+        <qualifiedname>JSL::Format::Bold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="52" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="52" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a0827ebc4850da2e12f0b368cb3face90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Faint</definition>
+        <argsstring>(&quot;\033[2m&quot;, Style)</argsstring>
+        <name>Faint</name>
+        <qualifiedname>JSL::Format::Faint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="53" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="53" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1aa979ec2b6fefa52dfd126dde4b9f7ff5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Italics</definition>
+        <argsstring>(&quot;\033[3m&quot;, Style)</argsstring>
+        <name>Italics</name>
+        <qualifiedname>JSL::Format::Italics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="54" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="54" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1ac6a414a59d7fb0376a225b34eb9dcba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Underline</definition>
+        <argsstring>(&quot;\033[4m&quot;, Style)</argsstring>
+        <name>Underline</name>
+        <qualifiedname>JSL::Format::Underline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="55" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="55" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a04fd686ba5a0458ded6b2de07a93d263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Highlight</definition>
+        <argsstring>(&quot;\033[7m&quot;, Style)</argsstring>
+        <name>Highlight</name>
+        <qualifiedname>JSL::Format::Highlight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="56" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="56" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a2f7953035dfe2593afa916fdfae9ec3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::Strike</definition>
+        <argsstring>(&quot;\033[9m&quot;, Style)</argsstring>
+        <name>Strike</name>
+        <qualifiedname>JSL::Format::Strike</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="57" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="57" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a1320a97711cbad9c50f9588e48876a53" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>Command JSL::Format::Colour</definition>
+        <argsstring>(uint8_t r, uint8_t g, uint8_t b)</argsstring>
+        <name>Colour</name>
+        <qualifiedname>JSL::Format::Colour</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="60" column="20" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a1fa23969dab620f3d9b56ef68082766b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::BgBlack</definition>
+        <argsstring>(&quot;\033[40m&quot;, BackgroundColour)</argsstring>
+        <name>BgBlack</name>
+        <qualifiedname>JSL::Format::BgBlack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="65" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="65" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1afd273f5fb30815ebe8befcc36d9a60b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::BgRed</definition>
+        <argsstring>(&quot;\033[41m&quot;, BackgroundColour)</argsstring>
+        <name>BgRed</name>
+        <qualifiedname>JSL::Format::BgRed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="66" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="66" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1ad2d9099b79b7b1b370d5902a21baaee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::BgGreen</definition>
+        <argsstring>(&quot;\033[42m&quot;, BackgroundColour)</argsstring>
+        <name>BgGreen</name>
+        <qualifiedname>JSL::Format::BgGreen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="67" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="67" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a1583018a288e946c518d84e0339b2386" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::BgYellow</definition>
+        <argsstring>(&quot;\033[43m&quot;, BackgroundColour)</argsstring>
+        <name>BgYellow</name>
+        <qualifiedname>JSL::Format::BgYellow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="68" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="68" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a99ad159e7ebe52d597e4c83783b8e259" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::BgBlue</definition>
+        <argsstring>(&quot;\033[44m&quot;, BackgroundColour)</argsstring>
+        <name>BgBlue</name>
+        <qualifiedname>JSL::Format::BgBlue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="69" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="69" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1acf947df1b26f461bd72a8de4f4a13b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::BgPurple</definition>
+        <argsstring>(&quot;\033[45m&quot;, BackgroundColour)</argsstring>
+        <name>BgPurple</name>
+        <qualifiedname>JSL::Format::BgPurple</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="70" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="70" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1ad0a98bcd9348a1133ab06cfe41beb5ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::BgCyan</definition>
+        <argsstring>(&quot;\033[46m&quot;, BackgroundColour)</argsstring>
+        <name>BgCyan</name>
+        <qualifiedname>JSL::Format::BgCyan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="71" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="71" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1add9c1bf1296670a8b34fb32c47cfe0c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>const Command JSL::Format::BgWhite</definition>
+        <argsstring>(&quot;\033[47m&quot;, BackgroundColour)</argsstring>
+        <name>BgWhite</name>
+        <qualifiedname>JSL::Format::BgWhite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="72" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="72" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1aadd84caae79d82316f117f2b4230e644" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref></type>
+        <definition>Command JSL::Format::BgColour</definition>
+        <argsstring>(uint8_t r, uint8_t g, uint8_t b)</argsstring>
+        <name>BgColour</name>
+        <qualifiedname>JSL::Format::BgColour</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="74" column="20" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a4ceaac6cd5f7128e3e9df76c3d0bb12a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Format_1_1FormatGroup" kindref="compound">FormatGroup</ref></type>
+        <definition>FormatGroup JSL::Format::operator+</definition>
+        <argsstring>(const Command &amp;a, const Command &amp;b)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>JSL::Format::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="48" column="17" declfile="include/JSL/Display/Format.h" declline="48" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1aacd2ff5e6d7269ff57079a640a82c1d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Formattable</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+          <param>
+            <type>Formattable</type>
+            <declname>U</declname>
+            <defname>U</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classJSL_1_1Format_1_1FormatGroup" kindref="compound">FormatGroup</ref></type>
+        <definition>FormatGroup JSL::Format::operator+</definition>
+        <argsstring>(const T &amp;a, const U &amp;b)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>JSL::Format::operator+</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const U &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="56" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1abd540e54d1fdcf980ae9cd2afda7a6a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Formattable</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string JSL::Format::operator+</definition>
+        <argsstring>(const T &amp;a, std::string_view &amp;&amp;b)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>JSL::Format::operator+</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>std::string_view &amp;&amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="63" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Format_1a5ea7eba7218414414f6379cc99ce8f41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Formattable</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string JSL::Format::operator+</definition>
+        <argsstring>(std::string_view &amp;&amp;b, const T &amp;a)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>JSL::Format::operator+</qualifiedname>
+        <param>
+          <type>std::string_view &amp;&amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="68" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="68" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Display/ANSI_Codes.h" line="36" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1Event_1_1Task" kind="namespace" language="C++">
+    <compoundname>JSL::Event::Task</compoundname>
+    <innerclass refid="structJSL_1_1Event_1_1Task_1_1Instruction" prot="public">JSL::Event::Task::Instruction</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Origin</name>
+        <qualifiedname>JSL::Event::Task::Origin</qualifiedname>
+        <enumvalue id="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fa947eb58edb07e7158fd3d39bc1af7454" prot="public">
+          <name>CIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3faa7c402887c2241b76063c1f3b85ba93b" prot="public">
+          <name>FILE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fa99e14e74a6516ee02e935c6997a5786d" prot="public">
+          <name>SOCKET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fae6760a9d72ea3150c859183d95bb3ea4" prot="public">
+          <name>SHUTDOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ManagerBase.h" line="12" column="1" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="13" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Priority</name>
+        <qualifiedname>JSL::Event::Task::Priority</qualifiedname>
+        <enumvalue id="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8" prot="public">
+          <name>NORMAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caaf8cd9fd54d09a9d423cc9d3bd66ef84e" prot="public">
+          <name>LOCKING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ManagerBase.h" line="19" column="1" bodyfile="include/JSL/Async/ManagerBase.h" bodystart="20" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Async/ManagerBase.h" line="10" column="1"/>
+  </compounddef>
+</doxygen>

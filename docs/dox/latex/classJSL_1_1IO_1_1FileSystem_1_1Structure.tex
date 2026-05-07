@@ -1,0 +1,117 @@
+\doxysection{JSL\+::IO\+::File\+System\+::Structure Class Reference}
+\hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure}{}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure}\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+
+
+{\ttfamily \#include $<$File\+System.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_a441c53dc67622ee4c236e2fcb93f2d07}{List\+Files}} (\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{bool}} \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{include\+Others}}=\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{false}})
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_a8cfa62a5fa9a1951223bdef438ffb7eb}{List\+All}} (\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{bool}} \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{include\+Others}}=\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{false}})
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_acfb190fd42fc85c4ff3da4c87141990d}{List\+Dirs}} ()
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_a961f4defd9c65c05260ac0e3afcf6081}{Match\+Files}} (std\+::string \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{match\+Pattern}})
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_a7e256b5564d9ea84b3a8b852a9011b8c}{Match\+Files}} (std\+::regex \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{match\+Pattern}})
+\item 
+\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_a13df422097236d57d21ca2c5e3debc31}{Structure}} (fs\+::path \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{target}}, \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{bool}} \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{recursive}}=\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{false}}, \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{int}} \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{depth}}=0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+fs\+::path \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{Path}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure}{Structure}} $>$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_a48048df0916a1a510a2af2cd45028a1c}{Directories}}
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_ab342a9b4b5582804ed8a52c4394ab425}{Files}}
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_a1967540e65385ab47e905557921a665d}{Other}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{bool}} \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_a3bc17d30bc3b62cc5f84f21e02437016}{Is\+Recursive}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_a13df422097236d57d21ca2c5e3debc31}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_a13df422097236d57d21ca2c5e3debc31} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!Structure@{Structure}}
+\index{Structure@{Structure}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{Structure()}{Structure()}}
+{\footnotesize\ttfamily JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+Structure (\begin{DoxyParamCaption}\item[{fs\+::path}]{target,  }\item[{\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{bool}}}]{recursive = {\ttfamily \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{false}}},  }\item[{\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{int}}}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_a8cfa62a5fa9a1951223bdef438ffb7eb}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_a8cfa62a5fa9a1951223bdef438ffb7eb} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!ListAll@{ListAll}}
+\index{ListAll@{ListAll}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{ListAll()}{ListAll()}}
+{\footnotesize\ttfamily std\+::vector$<$ fs\+::path $>$ JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+List\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{bool}}}]{include\+Others = {\ttfamily \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{false}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_acfb190fd42fc85c4ff3da4c87141990d}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_acfb190fd42fc85c4ff3da4c87141990d} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!ListDirs@{ListDirs}}
+\index{ListDirs@{ListDirs}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{ListDirs()}{ListDirs()}}
+{\footnotesize\ttfamily std\+::vector$<$ fs\+::path $>$ JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+List\+Dirs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_a441c53dc67622ee4c236e2fcb93f2d07}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_a441c53dc67622ee4c236e2fcb93f2d07} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!ListFiles@{ListFiles}}
+\index{ListFiles@{ListFiles}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{ListFiles()}{ListFiles()}}
+{\footnotesize\ttfamily std\+::vector$<$ fs\+::path $>$ JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+List\+Files (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{bool}}}]{include\+Others = {\ttfamily \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{false}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_a7e256b5564d9ea84b3a8b852a9011b8c}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_a7e256b5564d9ea84b3a8b852a9011b8c} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!MatchFiles@{MatchFiles}}
+\index{MatchFiles@{MatchFiles}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{MatchFiles()}{MatchFiles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ fs\+::path $>$ JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+Match\+Files (\begin{DoxyParamCaption}\item[{std\+::regex}]{match\+Pattern }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_a961f4defd9c65c05260ac0e3afcf6081}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_a961f4defd9c65c05260ac0e3afcf6081} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!MatchFiles@{MatchFiles}}
+\index{MatchFiles@{MatchFiles}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{MatchFiles()}{MatchFiles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ fs\+::path $>$ JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+Match\+Files (\begin{DoxyParamCaption}\item[{std\+::string}]{match\+Pattern }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_a48048df0916a1a510a2af2cd45028a1c}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_a48048df0916a1a510a2af2cd45028a1c} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!Directories@{Directories}}
+\index{Directories@{Directories}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{Directories}{Directories}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure}{Structure}}$>$ JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+Directories}
+
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_ab342a9b4b5582804ed8a52c4394ab425}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_ab342a9b4b5582804ed8a52c4394ab425} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!Files@{Files}}
+\index{Files@{Files}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{Files}{Files}}
+{\footnotesize\ttfamily std\+::vector$<$fs\+::path$>$ JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+Files}
+
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_a3bc17d30bc3b62cc5f84f21e02437016}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_a3bc17d30bc3b62cc5f84f21e02437016} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!IsRecursive@{IsRecursive}}
+\index{IsRecursive@{IsRecursive}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{IsRecursive}{IsRecursive}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}{bool}} JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+Is\+Recursive\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_a1967540e65385ab47e905557921a665d}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_a1967540e65385ab47e905557921a665d} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!Other@{Other}}
+\index{Other@{Other}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{Other}{Other}}
+{\footnotesize\ttfamily std\+::vector$<$fs\+::path$>$ JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+Other}
+
+\Hypertarget{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224}\label{classJSL_1_1IO_1_1FileSystem_1_1Structure_af87ba02284e382fa7ef1b2ba65d45224} 
+\index{JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}!Path@{Path}}
+\index{Path@{Path}!JSL::IO::FileSystem::Structure@{JSL::IO::FileSystem::Structure}}
+\doxysubsubsection{\texorpdfstring{Path}{Path}}
+{\footnotesize\ttfamily fs\+::path JSL\+::\+IO\+::\+File\+System\+::\+Structure\+::\+Path}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+File\+IO/\mbox{\hyperlink{FileSystem_8h}{File\+System.\+h}}\end{DoxyCompactItemize}

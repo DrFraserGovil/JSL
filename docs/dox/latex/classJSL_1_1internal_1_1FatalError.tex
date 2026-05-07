@@ -1,0 +1,91 @@
+\doxysection{JSL\+::internal\+::Fatal\+Error Class Reference}
+\hypertarget{classJSL_1_1internal_1_1FatalError}{}\label{classJSL_1_1internal_1_1FatalError}\index{JSL::internal::FatalError@{JSL::internal::FatalError}}
+
+
+{\ttfamily \#include $<$error.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a53ab722ac615fd0ffaa9bee25d95e7d6}{Fatal\+Error}} (std\+::string msg, int calling\+Line, const std\+::string \&calling\+Function, std\+::string calling\+File)
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{Fatal\+Error}} \& \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a0361e1d66936aca0a035ad22c70cdd43}{operator$<$$<$}} (const T \&input)
+\item 
+\mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a95c0e10171c62c97c28d4c5404245c14}{\texorpdfstring{$\sim$}{\string~}\+Fatal\+Error}} () noexcept(false)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a3feec25381fbd470218ac1b97c6cf4b5}{Summary}}
+\item 
+std\+::ostringstream \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a1b64518cb312d0fe269d1e86a5fa4ed6}{Buffer}}
+\item 
+int \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a0aedcd8d9a609d98c61e86c28c2b4b4a}{line}}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_a17b761192dd180bd59be16a5ccb80611}{function}}
+\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError_ad8a3d8a87fd75bdeeb950b3b36781f7a}{file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1internal_1_1FatalError_a53ab722ac615fd0ffaa9bee25d95e7d6}\label{classJSL_1_1internal_1_1FatalError_a53ab722ac615fd0ffaa9bee25d95e7d6} 
+\index{JSL::internal::FatalError@{JSL::internal::FatalError}!FatalError@{FatalError}}
+\index{FatalError@{FatalError}!JSL::internal::FatalError@{JSL::internal::FatalError}}
+\doxysubsubsection{\texorpdfstring{FatalError()}{FatalError()}}
+{\footnotesize\ttfamily JSL\+::internal\+::\+Fatal\+Error\+::\+Fatal\+Error (\begin{DoxyParamCaption}\item[{std\+::string}]{msg,  }\item[{int}]{calling\+Line,  }\item[{const std\+::string \&}]{calling\+Function,  }\item[{std\+::string}]{calling\+File }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1internal_1_1FatalError_a95c0e10171c62c97c28d4c5404245c14}\label{classJSL_1_1internal_1_1FatalError_a95c0e10171c62c97c28d4c5404245c14} 
+\index{JSL::internal::FatalError@{JSL::internal::FatalError}!````~FatalError@{\texorpdfstring{$\sim$}{\string~}FatalError}}
+\index{````~FatalError@{\texorpdfstring{$\sim$}{\string~}FatalError}!JSL::internal::FatalError@{JSL::internal::FatalError}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FatalError()}{\string~FatalError()}}
+{\footnotesize\ttfamily JSL\+::internal\+::\+Fatal\+Error\+::\texorpdfstring{$\sim$}{\string~}\+Fatal\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1internal_1_1FatalError_a0361e1d66936aca0a035ad22c70cdd43}\label{classJSL_1_1internal_1_1FatalError_a0361e1d66936aca0a035ad22c70cdd43} 
+\index{JSL::internal::FatalError@{JSL::internal::FatalError}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!JSL::internal::FatalError@{JSL::internal::FatalError}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{Fatal\+Error}} \& JSL\+::internal\+::\+Fatal\+Error\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const T \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1internal_1_1FatalError_a1b64518cb312d0fe269d1e86a5fa4ed6}\label{classJSL_1_1internal_1_1FatalError_a1b64518cb312d0fe269d1e86a5fa4ed6} 
+\index{JSL::internal::FatalError@{JSL::internal::FatalError}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!JSL::internal::FatalError@{JSL::internal::FatalError}}
+\doxysubsubsection{\texorpdfstring{Buffer}{Buffer}}
+{\footnotesize\ttfamily std\+::ostringstream JSL\+::internal\+::\+Fatal\+Error\+::\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1internal_1_1FatalError_ad8a3d8a87fd75bdeeb950b3b36781f7a}\label{classJSL_1_1internal_1_1FatalError_ad8a3d8a87fd75bdeeb950b3b36781f7a} 
+\index{JSL::internal::FatalError@{JSL::internal::FatalError}!file@{file}}
+\index{file@{file}!JSL::internal::FatalError@{JSL::internal::FatalError}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily std\+::string JSL\+::internal\+::\+Fatal\+Error\+::file\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1internal_1_1FatalError_a17b761192dd180bd59be16a5ccb80611}\label{classJSL_1_1internal_1_1FatalError_a17b761192dd180bd59be16a5ccb80611} 
+\index{JSL::internal::FatalError@{JSL::internal::FatalError}!function@{function}}
+\index{function@{function}!JSL::internal::FatalError@{JSL::internal::FatalError}}
+\doxysubsubsection{\texorpdfstring{function}{function}}
+{\footnotesize\ttfamily std\+::string JSL\+::internal\+::\+Fatal\+Error\+::function\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1internal_1_1FatalError_a0aedcd8d9a609d98c61e86c28c2b4b4a}\label{classJSL_1_1internal_1_1FatalError_a0aedcd8d9a609d98c61e86c28c2b4b4a} 
+\index{JSL::internal::FatalError@{JSL::internal::FatalError}!line@{line}}
+\index{line@{line}!JSL::internal::FatalError@{JSL::internal::FatalError}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily int JSL\+::internal\+::\+Fatal\+Error\+::line\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1internal_1_1FatalError_a3feec25381fbd470218ac1b97c6cf4b5}\label{classJSL_1_1internal_1_1FatalError_a3feec25381fbd470218ac1b97c6cf4b5} 
+\index{JSL::internal::FatalError@{JSL::internal::FatalError}!Summary@{Summary}}
+\index{Summary@{Summary}!JSL::internal::FatalError@{JSL::internal::FatalError}}
+\doxysubsubsection{\texorpdfstring{Summary}{Summary}}
+{\footnotesize\ttfamily const std\+::string JSL\+::internal\+::\+Fatal\+Error\+::\+Summary\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/internal/\mbox{\hyperlink{error_8h}{error.\+h}}\end{DoxyCompactItemize}

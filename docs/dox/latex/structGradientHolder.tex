@@ -1,0 +1,87 @@
+\doxysection{Gradient\+Holder Struct Reference}
+\hypertarget{structGradientHolder}{}\label{structGradientHolder}\index{GradientHolder@{GradientHolder}}
+
+
+{\ttfamily \#include $<$expressions.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structGradientHolder_a9510fe689a78676404dc397e42d31685}{Promote}} ()
+\item 
+void \mbox{\hyperlink{structGradientHolder_a41d961b1618616832969866445082b73}{Promote}} (\mbox{\hyperlink{structSparseElement}{Sparse\+Element}} storage\mbox{[}2 \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{expressions_8h_a4dc71e1c366df032c26654158df88e28}{SGO\+\_\+\+THRESHOLD}}\mbox{]}, int n)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGradientHolder_abaae4178d9b01e0b995ed066fae8c3a0}{DenseGrad}}\\
+\>\mbox{\hyperlink{structSparseElement}{SparseElement}} \mbox{\hyperlink{structGradientHolder_a49277a016da0536a4a437bd12e12c87b}{SparseGrad}} \mbox{[}\mbox{\hyperlink{expressions_8h_a4dc71e1c366df032c26654158df88e28}{SGO\_THRESHOLD}}\mbox{]}\\
+\}; \\
+
+\end{tabbing}\item 
+bool \mbox{\hyperlink{structGradientHolder_a82f339ceb0fafface8065db4e92d47b8}{Is\+Dense}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structGradientHolder_a4d8fe2c4a25e551fa55651a9f0fbdc43}{Active\+Count}}
+\item 
+double \mbox{\hyperlink{structGradientHolder_ac3c7e34d3645b847bc58847b44ce59bb}{Scale\+Factor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structGradientHolder_a9510fe689a78676404dc397e42d31685}\label{structGradientHolder_a9510fe689a78676404dc397e42d31685} 
+\index{GradientHolder@{GradientHolder}!Promote@{Promote}}
+\index{Promote@{Promote}!GradientHolder@{GradientHolder}}
+\doxysubsubsection{\texorpdfstring{Promote()}{Promote()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Gradient\+Holder\+::\+Promote (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structGradientHolder_a41d961b1618616832969866445082b73}\label{structGradientHolder_a41d961b1618616832969866445082b73} 
+\index{GradientHolder@{GradientHolder}!Promote@{Promote}}
+\index{Promote@{Promote}!GradientHolder@{GradientHolder}}
+\doxysubsubsection{\texorpdfstring{Promote()}{Promote()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Gradient\+Holder\+::\+Promote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSparseElement}{Sparse\+Element}}}]{storage\mbox{[}2 \texorpdfstring{$\ast$}{*}\+SGO\+\_\+\+THRESHOLD\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structGradientHolder_a47c8d337e7baedad0a98c2dceb8f68bc}\label{structGradientHolder_a47c8d337e7baedad0a98c2dceb8f68bc} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{structGradientHolder}{Gradient\+Holder}}}
+
+\Hypertarget{structGradientHolder_a4d8fe2c4a25e551fa55651a9f0fbdc43}\label{structGradientHolder_a4d8fe2c4a25e551fa55651a9f0fbdc43} 
+\index{GradientHolder@{GradientHolder}!ActiveCount@{ActiveCount}}
+\index{ActiveCount@{ActiveCount}!GradientHolder@{GradientHolder}}
+\doxysubsubsection{\texorpdfstring{ActiveCount}{ActiveCount}}
+{\footnotesize\ttfamily size\+\_\+t Gradient\+Holder\+::\+Active\+Count}
+
+\Hypertarget{structGradientHolder_abaae4178d9b01e0b995ed066fae8c3a0}\label{structGradientHolder_abaae4178d9b01e0b995ed066fae8c3a0} 
+\index{GradientHolder@{GradientHolder}!DenseGrad@{DenseGrad}}
+\index{DenseGrad@{DenseGrad}!GradientHolder@{GradientHolder}}
+\doxysubsubsection{\texorpdfstring{DenseGrad}{DenseGrad}}
+{\footnotesize\ttfamily double\texorpdfstring{$\ast$}{*} Gradient\+Holder\+::\+Dense\+Grad}
+
+\Hypertarget{structGradientHolder_a82f339ceb0fafface8065db4e92d47b8}\label{structGradientHolder_a82f339ceb0fafface8065db4e92d47b8} 
+\index{GradientHolder@{GradientHolder}!IsDense@{IsDense}}
+\index{IsDense@{IsDense}!GradientHolder@{GradientHolder}}
+\doxysubsubsection{\texorpdfstring{IsDense}{IsDense}}
+{\footnotesize\ttfamily bool Gradient\+Holder\+::\+Is\+Dense}
+
+\Hypertarget{structGradientHolder_ac3c7e34d3645b847bc58847b44ce59bb}\label{structGradientHolder_ac3c7e34d3645b847bc58847b44ce59bb} 
+\index{GradientHolder@{GradientHolder}!ScaleFactor@{ScaleFactor}}
+\index{ScaleFactor@{ScaleFactor}!GradientHolder@{GradientHolder}}
+\doxysubsubsection{\texorpdfstring{ScaleFactor}{ScaleFactor}}
+{\footnotesize\ttfamily double Gradient\+Holder\+::\+Scale\+Factor}
+
+\Hypertarget{structGradientHolder_a49277a016da0536a4a437bd12e12c87b}\label{structGradientHolder_a49277a016da0536a4a437bd12e12c87b} 
+\index{GradientHolder@{GradientHolder}!SparseGrad@{SparseGrad}}
+\index{SparseGrad@{SparseGrad}!GradientHolder@{GradientHolder}}
+\doxysubsubsection{\texorpdfstring{SparseGrad}{SparseGrad}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSparseElement}{Sparse\+Element}} Gradient\+Holder\+::\+Sparse\+Grad\mbox{[}\mbox{\hyperlink{expressions_8h_a4dc71e1c366df032c26654158df88e28}{SGO\+\_\+\+THRESHOLD}}\mbox{]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Optimiser/\mbox{\hyperlink{expressions_8h}{expressions.\+h}}\end{DoxyCompactItemize}

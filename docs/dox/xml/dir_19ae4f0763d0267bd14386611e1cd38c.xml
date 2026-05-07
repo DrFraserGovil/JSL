@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_19ae4f0763d0267bd14386611e1cd38c" kind="dir">
+    <compoundname>include/JSL/Strings</compoundname>
+    <innerfile refid="Cases_8h">Cases.h</innerfile>
+    <innerfile refid="FoldLine_8h">FoldLine.h</innerfile>
+    <innerfile refid="Strings_2Join_8h">Join.h</innerfile>
+    <innerfile refid="Manipulate_8h">Manipulate.h</innerfile>
+    <innerfile refid="ParseTo_8h">ParseTo.h</innerfile>
+    <innerfile refid="Represent_8h">Represent.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Strings/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1IO" kind="namespace" language="C++">
+    <compoundname>JSL::IO</compoundname>
+    <innernamespace refid="namespaceJSL_1_1IO_1_1FileSystem">JSL::IO::FileSystem</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1IO_1_1internal">JSL::IO::internal</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1IO_1_1Pipe">JSL::IO::Pipe</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1ac465ba0881a9bf040e865af7b7faae14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::IO::initialise</definition>
+        <argsstring>(const std::filesystem::path &amp;filename)</argsstring>
+        <name>initialise</name>
+        <qualifiedname>JSL::IO::initialise</qualifiedname>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a blank file at the specified location, overwriting any other file at the given location <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file which the system will attempt to open </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/fileWriters.h" line="24" column="10" declfile="include/JSL/FileIO/fileWriters.h" declline="24" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1ac60def7c09d0396f410c78e58a9dbe80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::IO::writeString</definition>
+        <argsstring>(const std::filesystem::path &amp;filename, std::string_view content, std::ios_base::openmode mode=std::ios::app)</argsstring>
+        <name>writeString</name>
+        <qualifiedname>JSL::IO::writeString</qualifiedname>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type>std::ios_base::openmode</type>
+          <declname>mode</declname>
+          <defval>std::ios::app</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens the provided file and appends the provided string to the file, before closing it. If the file does not exist, it creates it. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target file location </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired string to be appended to the file (accepts control characters) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The open-mode; defaults to append (existing file not deleted) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/fileWriters.h" line="32" column="6" declfile="include/JSL/FileIO/fileWriters.h" declline="32" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1af8d986267b68041be15cf67493d32f7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::IO::writeVector</definition>
+        <argsstring>(const std::filesystem::path &amp;filename, std::string_view delimiter, const std::vector&lt; Ts &gt; &amp;... vecs)</argsstring>
+        <name>writeVector</name>
+        <qualifiedname>JSL::IO::writeVector</qualifiedname>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; Ts &gt; &amp;...</type>
+          <declname>vecs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/fileWriters.h" line="35" column="17" bodyfile="include/JSL/FileIO/fileWriters.h" bodystart="35" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1adeb068f89831e474eba432f9fe7b288a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::IO::writeMatrix</definition>
+        <argsstring>(const std::filesystem::path &amp;filename, const std::string &amp;columnDelimiter, const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;contentMatrix, const std::string &amp;rowDelimiter=&quot;\n&quot;)</argsstring>
+        <name>writeMatrix</name>
+        <qualifiedname>JSL::IO::writeMatrix</qualifiedname>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>columnDelimiter</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;</type>
+          <declname>contentMatrix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>rowDelimiter</declname>
+          <defval>&quot;\n&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>As with writeStringToFile and writeVectorToFile, but accepts a vector&lt;vector&gt; of templated entities. The writing loops over the outer vector (the rows), and then at each step, the inner vectors(the columns). Writing them one at a time, separated by the delimiter objects. Objects need not be square matrices to be successfully written. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target file location </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columnDelimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character(s) to be written after every individual entry <emphasis>except</emphasis> the final entry in each row </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contentMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector&lt;vector&gt; of templated objects to be written to file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rowRelimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character(s) to be written at the end of each row <emphasis>including</emphasis> the final row. This will probably be a linebreak! </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/fileWriters.h" line="80" column="17" bodyfile="include/JSL/FileIO/fileWriters.h" bodystart="80" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1a186384d5b529087bfbf51adc3ca0c9f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::IO::forLineIn</definition>
+        <argsstring>(const std::filesystem::path fileName, std::function&lt; void(std::string_view)&gt; lineProcessor)</argsstring>
+        <name>forLineIn</name>
+        <qualifiedname>JSL::IO::forLineIn</qualifiedname>
+        <param>
+          <type>const std::filesystem::path</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(std::string_view)&gt;</type>
+          <declname>lineProcessor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/forLineIn.h" line="8" column="10" declfile="include/JSL/FileIO/forLineIn.h" declline="8" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1a802750a0cb15660113de232360e3d844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::IO::forSplitLineIn</definition>
+        <argsstring>(const std::filesystem::path fileName, std::string_view delimiter, std::function&lt; void(std::vector&lt; std::string_view &gt;)&gt; vectorProcessor)</argsstring>
+        <name>forSplitLineIn</name>
+        <qualifiedname>JSL::IO::forSplitLineIn</qualifiedname>
+        <param>
+          <type>const std::filesystem::path</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(std::vector&lt; std::string_view &gt;)&gt;</type>
+          <declname>vectorProcessor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/forLineIn.h" line="11" column="10" declfile="include/JSL/FileIO/forLineIn.h" declline="11" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1ab1c1b73d4d75c7ba6d8c919daf595c46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; JSL::IO::getLines</definition>
+        <argsstring>(const std::filesystem::path fileName)</argsstring>
+        <name>getLines</name>
+        <qualifiedname>JSL::IO::getLines</qualifiedname>
+        <param>
+          <type>const std::filesystem::path</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/forLineIn.h" line="13" column="17" declfile="include/JSL/FileIO/forLineIn.h" declline="13" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1a962bab2b0dcff9021d5890f538240de9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::vector&lt; std::string &gt; &gt;</type>
+        <definition>std::vector&lt; std::vector&lt; std::string &gt; &gt; JSL::IO::getWords</definition>
+        <argsstring>(const std::filesystem::path fileName, std::string_view delimiter)</argsstring>
+        <name>getWords</name>
+        <qualifiedname>JSL::IO::getWords</qualifiedname>
+        <param>
+          <type>const std::filesystem::path</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/forLineIn.h" line="15" column="17" declfile="include/JSL/FileIO/forLineIn.h" declline="15" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1a1e739534d511698e075441b5d9c56083" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::IO::forLineTupleIn</definition>
+        <argsstring>(const std::filesystem::path fileName, std::string_view delimiter, Func tupleProcessor)</argsstring>
+        <name>forLineTupleIn</name>
+        <qualifiedname>JSL::IO::forLineTupleIn</qualifiedname>
+        <param>
+          <type>const std::filesystem::path</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>Func</type>
+          <declname>tupleProcessor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/forLineIn.h" line="19" column="10" bodyfile="include/JSL/FileIO/forLineIn.h" bodystart="19" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/FileIO/FileSystem.h" line="6" column="1"/>
+  </compounddef>
+</doxygen>

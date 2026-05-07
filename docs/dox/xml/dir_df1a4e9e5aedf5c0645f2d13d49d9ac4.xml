@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_df1a4e9e5aedf5c0645f2d13d49d9ac4" kind="dir">
+    <compoundname>include/JSL/Plot/display</compoundname>
+    <innerfile refid="Colorbar_8h">Colorbar.h</innerfile>
+    <innerfile refid="colorwheel_8h">colorwheel.h</innerfile>
+    <innerfile refid="legend_8h">legend.h</innerfile>
+    <innerfile refid="PerAxis_8h">PerAxis.h</innerfile>
+    <innerfile refid="Range_8h">Range.h</innerfile>
+    <innerfile refid="tic_8h">tic.h</innerfile>
+    <innerfile refid="visuals_8h">visuals.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Plot/display/"/>
+  </compounddef>
+</doxygen>

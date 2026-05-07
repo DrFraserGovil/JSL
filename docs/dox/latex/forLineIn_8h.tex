@@ -1,0 +1,25 @@
+\doxysection{include/\+JSL/\+File\+IO/for\+Line\+In.h File Reference}
+\hypertarget{forLineIn_8h}{}\label{forLineIn_8h}\index{include/JSL/FileIO/forLineIn.h@{include/JSL/FileIO/forLineIn.h}}
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1IO}{JSL\+::\+IO}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceJSL_1_1IO_a186384d5b529087bfbf51adc3ca0c9f5}{JSL\+::\+IO\+::for\+Line\+In}} (const std\+::filesystem\+::path file\+Name, std\+::function$<$ void(std\+::string\+\_\+view)$>$ line\+Processor)
+\item 
+void \mbox{\hyperlink{namespaceJSL_1_1IO_a802750a0cb15660113de232360e3d844}{JSL\+::\+IO\+::for\+Split\+Line\+In}} (const std\+::filesystem\+::path file\+Name, std\+::string\+\_\+view delimiter, std\+::function$<$ void(std\+::vector$<$ std\+::string\+\_\+view $>$)$>$ vector\+Processor)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceJSL_1_1IO_ab1c1b73d4d75c7ba6d8c919daf595c46}{JSL\+::\+IO\+::get\+Lines}} (const std\+::filesystem\+::path file\+Name)
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{namespaceJSL_1_1IO_a962bab2b0dcff9021d5890f538240de9}{JSL\+::\+IO\+::get\+Words}} (const std\+::filesystem\+::path file\+Name, std\+::string\+\_\+view delimiter)
+\item 
+{\footnotesize template$<$typename... Ts, typename Func $>$ }\\void \mbox{\hyperlink{namespaceJSL_1_1IO_a1e739534d511698e075441b5d9c56083}{JSL\+::\+IO\+::for\+Line\+Tuple\+In}} (const std\+::filesystem\+::path file\+Name, std\+::string\+\_\+view delimiter, Func tuple\+Processor)
+\end{DoxyCompactItemize}

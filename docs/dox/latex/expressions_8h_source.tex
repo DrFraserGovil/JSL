@@ -1,0 +1,91 @@
+\doxysection{expressions.\+h}
+\hypertarget{expressions_8h_source}{}\label{expressions_8h_source}\index{include/JSL/Optimiser/expressions.h@{include/JSL/Optimiser/expressions.h}}
+\mbox{\hyperlink{expressions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mempool_8h}{mempool.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSparseElement}{SparseElement}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structSparseElement_a46e6a5b547c037b0471ff10667597c9a}{Index}};}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structSparseElement_a862f6810e7bfdd3648741f3c5a01ef4d}{Value}};}
+\DoxyCodeLine{00009\ \};}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ SGO\_THRESHOLD}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#define\ SGO\_THRESHOLD\ 4}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGradientHolder}{GradientHolder}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ *\ \mbox{\hyperlink{structGradientHolder_abaae4178d9b01e0b995ed066fae8c3a0}{DenseGrad}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSparseElement}{SparseElement}}\ \mbox{\hyperlink{structGradientHolder_a49277a016da0536a4a437bd12e12c87b}{SparseGrad}}[\mbox{\hyperlink{expressions_8h_a4dc71e1c366df032c26654158df88e28}{SGO\_THRESHOLD}}];}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGradientHolder_a82f339ceb0fafface8065db4e92d47b8}{IsDense}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structGradientHolder_a4d8fe2c4a25e551fa55651a9f0fbdc43}{ActiveCount}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structGradientHolder_ac3c7e34d3645b847bc58847b44ce59bb}{ScaleFactor}};}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGradientHolder_a9510fe689a78676404dc397e42d31685}{Promote}}()}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&\ mp\ =\ \mbox{\hyperlink{mempool_8h_aee4c7a8eab09c56eb6a9dcf5e3643912}{mempool}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structGradientHolder_abaae4178d9b01e0b995ed066fae8c3a0}{DenseGrad}}\ =mp.allocate();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ mp.size();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structGradientHolder_abaae4178d9b01e0b995ed066fae8c3a0}{DenseGrad}}[i]\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGradientHolder_a41d961b1618616832969866445082b73}{Promote}}(\mbox{\hyperlink{structSparseElement}{SparseElement}}\ storage[2*\mbox{\hyperlink{expressions_8h_a4dc71e1c366df032c26654158df88e28}{SGO\_THRESHOLD}}],\ \textcolor{keywordtype}{int}\ n)}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structGradientHolder_a9510fe689a78676404dc397e42d31685}{Promote}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =0;\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structGradientHolder_abaae4178d9b01e0b995ed066fae8c3a0}{DenseGrad}}[storage[i].Index]\ =\ storage[i].Value;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDualExpression}{DualExpression}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structDualExpression_a6b81b7ee6c04b259742686750ed0ea79}{self}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }T\&\textcolor{keyword}{>}(*this);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structDualExpression_a023fa62849bd00161d8b27574243c90b}{GetScalar}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structDualExpression_a6b81b7ee6c04b259742686750ed0ea79}{self}}().scalar();}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structDualExpression_a5b85e0296b9aeb8261d61b327aa29653}{accumulate}}(\textcolor{keywordtype}{double}\ *\ out,\ \textcolor{keywordtype}{double}\ weight)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structDualExpression_a6b81b7ee6c04b259742686750ed0ea79}{self}}().accumulate(out,weight);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ L,\ \textcolor{keyword}{typename}\ R>}
+\DoxyCodeLine{00063\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBinaryExpression}{BinaryExpression}}\ :\ \mbox{\hyperlink{structDualExpression}{DualExpression}}<BinaryExpression>}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ L\ \mbox{\hyperlink{structBinaryExpression_a1dda076ef667d2e6a3e47a48f2001e5f}{LHS}};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ R\ \mbox{\hyperlink{structBinaryExpression_afa414292c5572026827022a18272598b}{RHS}};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structBinaryExpression_ad0beb7be091ad24f7a055eb9d443a02b}{w\_l}};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structBinaryExpression_ae539329468a28d29b6cf010367497425}{w\_r}};}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{structBinaryExpression_a1fc996b520dcb6fa35f947fed0780def}{BinaryExpression}}(\textcolor{keyword}{const}\ L\ \&\ lhs,\ \textcolor{keyword}{const}\ R\ \&\ rhs)\ :\ \mbox{\hyperlink{structBinaryExpression_a1dda076ef667d2e6a3e47a48f2001e5f}{LHS}}(lhs),\ \mbox{\hyperlink{structBinaryExpression_afa414292c5572026827022a18272598b}{RHS}}(rhs)\{\}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structGradientHolder}{GradientHolder}}\ \mbox{\hyperlink{structBinaryExpression_aebcfee3202417b4f0f77d7e7cac89f99}{GetGrad}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structBinaryExpression_ad0beb7be091ad24f7a055eb9d443a02b}{w\_l}}\ *\ \mbox{\hyperlink{structBinaryExpression_a1dda076ef667d2e6a3e47a48f2001e5f}{LHS}}.GetGrad()\ +\ \mbox{\hyperlink{structBinaryExpression_ae539329468a28d29b6cf010367497425}{w\_r}}\ *\ \mbox{\hyperlink{structBinaryExpression_afa414292c5572026827022a18272598b}{RHS}}.GetGrad();}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ L,\ \textcolor{keyword}{typename}\ R>}
+\DoxyCodeLine{00079\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDualAdd}{DualAdd}}\ :\ \mbox{\hyperlink{structBinaryExpression}{BinaryExpression}}<L,R>}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{structDualAdd_acadd42cbbd571b57569e7f871cdf06b0}{DualAdd}}(\textcolor{keyword}{const}\ L\ \&\ lhs,\ \textcolor{keyword}{const}\ R\ \&\ rhs)\ :\ \mbox{\hyperlink{structBinaryExpression}{BinaryExpression}}(lhs,rhs,1,1)\ \{\};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structDualAdd_a2d4160808905c375683955c019da7606}{GetScalar}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lhs.GetScalar()\ +\ rhs.GetScalar();}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \};}
+
+\end{DoxyCode}

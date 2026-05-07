@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structJSL_1_1String_1_1RepresentStruct" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::String::RepresentStruct</compoundname>
+    <includes refid="Represent_8h" local="no">Represent.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Internal interface for Represent. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>As with ParseTo we have to provide a wrapper struct to allow vector partial specialisation. Default struct only applies to numeric types. Overloads handle the others </para>
+    </detaileddescription>
+    <location file="include/JSL/Strings/Represent.h" line="20" column="5" bodyfile="include/JSL/Strings/Represent.h" bodystart="21" bodyend="22"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

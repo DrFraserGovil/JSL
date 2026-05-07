@@ -1,0 +1,14 @@
+\doxysection{JSL\+::String\+::internal\+::Stringifiable\+Range Concept Reference}
+\hypertarget{conceptJSL_1_1String_1_1internal_1_1StringifiableRange}{}\label{conceptJSL_1_1String_1_1internal_1_1StringifiableRange}\index{JSL::String::internal::StringifiableRange@{JSL::String::internal::StringifiableRange}}
+
+
+{\ttfamily \#include $<$Represent.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptJSL_1_1String_1_1internal_1_1StringifiableRange}{JSL::String::internal::StringifiableRange}}\ =\ \ std::ranges::range<T>\ \&\&\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !std::convertible\_to<T,\ std::string\_view>}
+
+\end{DoxyCode}

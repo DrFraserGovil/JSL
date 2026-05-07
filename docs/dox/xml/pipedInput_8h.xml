@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="pipedInput_8h" kind="file" language="C++">
+    <compoundname>pipedInput.h</compoundname>
+    <includes local="no">string_view</includes>
+    <includes local="no">functional</includes>
+    <includedby refid="FileIO_8h" local="yes">include/JSL/FileIO.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/JSL/FileIO/pipedInput.h</label>
+        <link refid="pipedInput_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>functional</label>
+      </node>
+      <node id="2">
+        <label>string_view</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/FileIO/pipedInput.h</label>
+        <link refid="pipedInput_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1IO">JSL::IO</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1IO_1_1Pipe">JSL::IO::Pipe</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="namespaceJSL_1_1IO_1_1Pipe" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1IO_1_1Pipe" kindref="compound">JSL::IO::Pipe</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="namespaceJSL_1_1IO_1_1Pipe_1abbdcdedcbcc1c1e6a11e935da3ec5390" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1IO_1_1Pipe_1abbdcdedcbcc1c1e6a11e935da3ec5390" kindref="member">IsPiped</ref>();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespaceJSL_1_1IO_1_1Pipe_1a39a12933a49bc89340f09fcc7fb16f65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1IO_1_1Pipe_1a39a12933a49bc89340f09fcc7fb16f65" kindref="member">forLineIn</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(std::string_view)&gt;lineProcessor);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="namespaceJSL_1_1IO_1_1Pipe_1a639f80b52675e421237bc39fc6ae3f60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1IO_1_1Pipe_1a639f80b52675e421237bc39fc6ae3f60" kindref="member">forSplitLineIn</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(std::vector&lt;std::string_view&gt;)&gt;lineProcessor,std::string_view<sp/>delimiter);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>!Performs<sp/>the<sp/>most<sp/>basic<sp/>readin<sp/>--&gt;<sp/>saves<sp/>the<sp/>piped<sp/>input<sp/>to<sp/>a<sp/>string,<sp/>and<sp/>returns<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="namespaceJSL_1_1IO_1_1Pipe_1aec87933465246f0edbf1381531939d37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="namespaceJSL_1_1IO_1_1Pipe_1aec87933465246f0edbf1381531939d37" kindref="member">save</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/FileIO/pipedInput.h"/>
+  </compounddef>
+</doxygen>

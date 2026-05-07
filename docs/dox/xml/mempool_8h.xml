@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mempool_8h" kind="file" language="C++">
+    <compoundname>mempool.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">stdexcept</includes>
+    <includes local="no">iostream</includes>
+    <includedby refid="expressions_8h" local="yes">include/JSL/Optimiser/expressions.h</includedby>
+    <includedby refid="vectordual_8h" local="yes">include/JSL/Optimiser/vectordual.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/JSL/Optimiser/mempool.h</label>
+        <link refid="mempool_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>stdexcept</label>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/JSL/Optimiser/expressions.h</label>
+        <link refid="expressions_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Optimiser/mempool.h</label>
+        <link refid="mempool_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/JSL/Optimiser/vectordual.h</label>
+        <link refid="vectordual_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMempool" prot="public">Mempool</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="mempool_8h_1a6ee23697f89cc6c050ed227917087441" prot="public" static="no">
+        <name>MEMPOOL_BUFFER_SIZE_MB</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/mempool.h" line="88" column="13" bodyfile="include/JSL/Optimiser/mempool.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mempool_8h_1aee4c7a8eab09c56eb6a9dcf5e3643912" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classMempool" kindref="compound">Mempool</ref> &amp;</type>
+        <definition>Mempool &amp; mempool</definition>
+        <argsstring>()</argsstring>
+        <name>mempool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Optimiser/mempool.h" line="91" column="17" bodyfile="include/JSL/Optimiser/mempool.h" bodystart="91" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>ACTIVE_DUAL_COUNT<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classMempool" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMempool" kindref="compound">Mempool</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9" refid="classMempool_1a20cbc82e5dcdcf8304e656e62e1ec840" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="classMempool_1a20cbc82e5dcdcf8304e656e62e1ec840" kindref="member">Buffer</ref>;</highlight></codeline>
+<codeline lineno="10" refid="classMempool_1a0d4df654ac1a893203105f778d169e10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="classMempool_1a0d4df654ac1a893203105f778d169e10" kindref="member">References</ref>;</highlight></codeline>
+<codeline lineno="11" refid="classMempool_1a8b117dbbb38a3c45f8c5c8ea2c0c7598" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMempool_1a8b117dbbb38a3c45f8c5c8ea2c0c7598" kindref="member">MaxDuals</ref>;</highlight></codeline>
+<codeline lineno="12" refid="classMempool_1a30654608a1fc085853a9c303d4484e35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref>=0;</highlight></codeline>
+<codeline lineno="13" refid="classMempool_1add998f863885a8458bc13fa6288f903e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMempool_1add998f863885a8458bc13fa6288f903e" kindref="member">L</ref>;</highlight></codeline>
+<codeline lineno="14" refid="classMempool_1adc8738c1d5895c986125d52ab4c92c64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classMempool_1adc8738c1d5895c986125d52ab4c92c64" kindref="member">hasWarned</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16" refid="classMempool_1a00422defc3a640b1094a42c1a371efb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMempool_1a00422defc3a640b1094a42c1a371efb6" kindref="member">Mempool</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufferSize)<sp/>:<sp/><ref refid="classMempool_1a20cbc82e5dcdcf8304e656e62e1ec840" kindref="member">Buffer</ref>(bufferSize){<ref refid="classMempool_1a9499ffd5705ad094140d8f4ea5aa2790" kindref="member">reset</ref>(0);};</highlight></codeline>
+<codeline lineno="17" refid="classMempool_1a90afd16fbdd654111c64141517690f7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/><ref refid="classMempool_1a90afd16fbdd654111c64141517690f7b" kindref="member">allocate</ref>()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMempool_1adc8738c1d5895c986125d52ab4c92c64" kindref="member">hasWarned</ref>)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>orig<sp/>=<sp/><ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//we<sp/>hope<sp/>and<sp/>pray<sp/>that<sp/>there&apos;s<sp/>approximately<sp/>a<sp/>1-in-1-out<sp/>policy,<sp/>which<sp/>means<sp/>the<sp/>tail<sp/>empties<sp/>out<sp/>as<sp/>the<sp/>head<sp/>moves.<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//i.e.<sp/>if<sp/>early-used<sp/>blocks<sp/>expire,<sp/>then<sp/>this<sp/>is<sp/>just<sp/>another<sp/>stepwise<sp/>assignment<sp/>with<sp/>+1<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<ref refid="classMempool_1a0d4df654ac1a893203105f778d169e10" kindref="member">References</ref>[<ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref>]<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref><sp/>=<sp/>(<ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref><sp/>+<sp/>1)<sp/>%<sp/><ref refid="classMempool_1a8b117dbbb38a3c45f8c5c8ea2c0c7598" kindref="member">MaxDuals</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref><sp/>==<sp/>orig)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Pool<sp/>Exhausted:<sp/>too<sp/>much<sp/>memory<sp/>consumed.<sp/>This<sp/>requires<sp/>recompiling<sp/>with<sp/>a<sp/>higher<sp/>buffer<sp/>size.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>=<sp/>&amp;<ref refid="classMempool_1a20cbc82e5dcdcf8304e656e62e1ec840" kindref="member">Buffer</ref>[<ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref>*<ref refid="classMempool_1add998f863885a8458bc13fa6288f903e" kindref="member">L</ref>];</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classMempool_1a0d4df654ac1a893203105f778d169e10" kindref="member">References</ref>[<ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref>];</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref><sp/>&gt;=<sp/><ref refid="classMempool_1a8b117dbbb38a3c45f8c5c8ea2c0c7598" kindref="member">MaxDuals</ref>)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classMempool_1adc8738c1d5895c986125d52ab4c92c64" kindref="member">hasWarned</ref>)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMempool_1adc8738c1d5895c986125d52ab4c92c64" kindref="member">hasWarned</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>DUAL<sp/>WARNING:<sp/>Contiguous<sp/>memory-reserve<sp/>depleted<sp/>at<sp/>dimension<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classMempool_1add998f863885a8458bc13fa6288f903e" kindref="member">L</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.<sp/>Code<sp/>may<sp/>experience<sp/>slowdown.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ptr;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50" refid="classMempool_1a21c1cc78f94f81b837fbbd2ebc52e6bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMempool_1a21c1cc78f94f81b837fbbd2ebc52e6bc" kindref="member">free</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>ref)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//doesn&apos;t<sp/>do<sp/>anything<sp/>aside<sp/>from<sp/>update<sp/>the<sp/>referemces,<sp/>indicating<sp/>to<sp/>the<sp/>allocator<sp/>that<sp/>the<sp/>block<sp/>is<sp/>/(might<sp/>be)<sp/>free<sp/>for<sp/>reallocation<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>(ref<sp/>-<sp/>&amp;<ref refid="classMempool_1a20cbc82e5dcdcf8304e656e62e1ec840" kindref="member">Buffer</ref>[0])/<ref refid="classMempool_1add998f863885a8458bc13fa6288f903e" kindref="member">L</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--<ref refid="classMempool_1a0d4df654ac1a893203105f778d169e10" kindref="member">References</ref>[pos];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56" refid="classMempool_1ad52d94638ce275fd288fa41e84ccbc1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMempool_1ad52d94638ce275fd288fa41e84ccbc1c" kindref="member">touch</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>ref)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//called<sp/>when<sp/>a<sp/>copy<sp/>is<sp/>made<sp/>of<sp/>a<sp/>vector,<sp/>indicating<sp/>that<sp/>it<sp/>can&apos;t<sp/>be<sp/>deleted</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>(ref<sp/>-<sp/>&amp;<ref refid="classMempool_1a20cbc82e5dcdcf8304e656e62e1ec840" kindref="member">Buffer</ref>[0])/<ref refid="classMempool_1add998f863885a8458bc13fa6288f903e" kindref="member">L</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classMempool_1a0d4df654ac1a893203105f778d169e10" kindref="member">References</ref>[pos];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62" refid="classMempool_1aa6b4303902687611b8e259e6fc15b391" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classMempool_1aa6b4303902687611b8e259e6fc15b391" kindref="member">can_mutate</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>ref)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>allow<sp/>in-place<sp/>modifcation<sp/>of<sp/>arrays<sp/>only<sp/>if<sp/>no<sp/>other<sp/>duals<sp/>are<sp/>using<sp/>this<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>(ref<sp/>-<sp/>&amp;<ref refid="classMempool_1a20cbc82e5dcdcf8304e656e62e1ec840" kindref="member">Buffer</ref>[0])/<ref refid="classMempool_1add998f863885a8458bc13fa6288f903e" kindref="member">L</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="classMempool_1a0d4df654ac1a893203105f778d169e10" kindref="member">References</ref>[pos]<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classMempool_1a9499ffd5705ad094140d8f4ea5aa2790" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMempool_1a9499ffd5705ad094140d8f4ea5aa2790" kindref="member">reset</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>paramsPerDual)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMempool_1add998f863885a8458bc13fa6288f903e" kindref="member">L</ref><sp/>=<sp/>paramsPerDual;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMempool_1a8b117dbbb38a3c45f8c5c8ea2c0c7598" kindref="member">MaxDuals</ref><sp/>=<sp/><ref refid="classMempool_1a20cbc82e5dcdcf8304e656e62e1ec840" kindref="member">Buffer</ref>.size()<sp/>/<sp/>paramsPerDual;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classMempool_1a8b117dbbb38a3c45f8c5c8ea2c0c7598" kindref="member">MaxDuals</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Dual-dimension<sp/>is<sp/>larger<sp/>than<sp/>the<sp/>pool<sp/>allocation.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMempool_1a0d4df654ac1a893203105f778d169e10" kindref="member">References</ref>.assign(<ref refid="classMempool_1a8b117dbbb38a3c45f8c5c8ea2c0c7598" kindref="member">MaxDuals</ref>,0);<sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMempool_1a30654608a1fc085853a9c303d4484e35" kindref="member">offset</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80" refid="classMempool_1a62834663837660b49751d14c4772da83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classMempool_1a62834663837660b49751d14c4772da83" kindref="member">size</ref>()</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMempool_1add998f863885a8458bc13fa6288f903e" kindref="member">L</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MEMPOOL_BUFFER_SIZE_MB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="mempool_8h_1a6ee23697f89cc6c050ed227917087441" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MEMPOOL_BUFFER_SIZE_MB<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="mempool_8h_1aee4c7a8eab09c56eb6a9dcf5e3643912" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classMempool" kindref="compound">Mempool</ref><sp/>&amp;<sp/><ref refid="mempool_8h_1aee4c7a8eab09c56eb6a9dcf5e3643912" kindref="member">mempool</ref>()</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">thread_local</highlight><highlight class="normal"><sp/><ref refid="classMempool" kindref="compound">Mempool</ref><sp/>pool(1024<sp/>*<sp/>1024<sp/><sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>*<sp/><ref refid="mempool_8h_1a6ee23697f89cc6c050ed227917087441" kindref="member">MEMPOOL_BUFFER_SIZE_MB</ref>);<sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pool;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Optimiser/mempool.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="FoldLine_8h" kind="file" language="C++">
+    <compoundname>FoldLine.h</compoundname>
+    <includes local="no">string_view</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="Strings_8h" local="yes">include/JSL/Strings.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/JSL/Strings/FoldLine.h</label>
+        <link refid="FoldLine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string_view</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/JSL/Plot/axis.h</label>
+        <link refid="axis_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/JSL/Plot/data/curve.h</label>
+        <link refid="curve_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>include/JSL/Plot/figure.h</label>
+        <link refid="figure_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>include/JSL/Plot/plot.h</label>
+        <link refid="plot_8h"/>
+      </node>
+      <node id="4">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Strings.h</label>
+        <link refid="Strings_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Strings/FoldLine.h</label>
+        <link refid="FoldLine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1String">JSL::String</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1String" kindref="compound">JSL::String</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13" refid="namespaceJSL_1_1String_1aa84630ebf544675bec63dd85e85a6e33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1String_1aa84630ebf544675bec63dd85e85a6e33" kindref="member">trueSize</ref>(std::string_view<sp/>str,</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>tabSize<sp/>=<sp/>4);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="namespaceJSL_1_1String_1afdd15a72becdf5cb35a2aed43102d3b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="namespaceJSL_1_1String_1afdd15a72becdf5cb35a2aed43102d3b9" kindref="member">foldToWidth</ref>(std::string_view<sp/>str,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Prints<sp/>the<sp/>lines<sp/>side-by-side,<sp/>folding<sp/>them<sp/>all<sp/>to<sp/>fit<sp/>to<sp/>the<sp/>corresponding<sp/>width</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="namespaceJSL_1_1String_1ac111823a3c49f5a7d3127bdfa43f4a54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1String_1ac111823a3c49f5a7d3127bdfa43f4a54" kindref="member">columnPrint</ref>(std::vector&lt;std::string_view&gt;<sp/>input,<sp/>std::vector&lt;size_t&gt;<sp/>widths,<sp/>std::string_view<sp/>delimiter);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>As<sp/>with<sp/>columnPrint,<sp/>but<sp/>all<sp/>the<sp/>columns<sp/>are<sp/>the<sp/>same<sp/>width</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="namespaceJSL_1_1String_1a27dbc7d7363d6a688f638508a22f647b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1String_1ac111823a3c49f5a7d3127bdfa43f4a54" kindref="member">columnPrint</ref>(std::vector&lt;std::string_view&gt;<sp/>input,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>width,<sp/>std::string_view<sp/>delimiter);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Strings/FoldLine.h"/>
+  </compounddef>
+</doxygen>

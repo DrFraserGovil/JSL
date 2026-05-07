@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="conceptJSL_1_1internal_1_1Plottable" kind="concept">
+    <compoundname>JSL::internal::Plottable</compoundname>
+    <includes refid="textplot_8h" local="no">textplot.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename T&gt;
+concept <ref refid="conceptJSL_1_1internal_1_1Plottable" kindref="compound">JSL::internal::Plottable</ref> =  std::ranges::range&lt;T&gt; &amp;&amp; 
+						requires(T t) {
+						{ t.size() } -&gt; std::integral;
+					} &amp;&amp;
+					std::convertible_to&lt;std::ranges::range_value_t&lt;T&gt;, double&gt;    </initializer>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Plot/textplot.h" line="10" column="1"/>
+  </compounddef>
+</doxygen>

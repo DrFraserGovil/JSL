@@ -1,0 +1,113 @@
+\doxysection{Range.\+h}
+\hypertarget{Range_8h_source}{}\label{Range_8h_source}\index{include/JSL/Plot/display/Range.h@{include/JSL/Plot/display/Range.h}}
+\mbox{\hyperlink{Range_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Plotting}{JSL::Plotting}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}{Bound}}}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5ba19de5b94f7b83900d4b296d9fa491aec}{Upper}},}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5bab75fcdd2d72d9e000beab48622402d93}{Lower}}}
+\DoxyCodeLine{00011\ \ \ \ \ \};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject}{RangeObject}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aca2a3491dd7fc67526d8668527560ca6}{\_LowerAuto}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ac83375098a7536bb153eeb8ab052ea28}{\_UpperAuto}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a0943d8a596434d9f673f429302160857}{\_Lower}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ababcfad7332afec3889fab5ec8309b31}{\_Upper}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a5f277ef06fa9827adbc6c6ab0f52888a}{RangeObject}}()}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aca2a3491dd7fc67526d8668527560ca6}{\_LowerAuto}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ac83375098a7536bb153eeb8ab052ea28}{\_UpperAuto}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ab469b7be5934572ea229bc1a9f5a8036}{RangeObject}}(\textcolor{keywordtype}{double}\ low,\ \textcolor{keywordtype}{double}\ high)\ :\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a0943d8a596434d9f673f429302160857}{\_Lower}}(low),\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ababcfad7332afec3889fab5ec8309b31}{\_Upper}}(high)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aca2a3491dd7fc67526d8668527560ca6}{\_LowerAuto}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ac83375098a7536bb153eeb8ab052ea28}{\_UpperAuto}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ae840c8595afc7d649dbdb541f4788861}{RangeObject}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}{Bound}}\ bound,\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a82d8b050a80d5041cb2aa0a9e384fbf7}{Auto}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a5e654180f2b29b9de904ff9bf8494def}{Set}}(bound,value);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a82d8b050a80d5041cb2aa0a9e384fbf7}{Auto}}()}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aca2a3491dd7fc67526d8668527560ca6}{\_LowerAuto}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ac83375098a7536bb153eeb8ab052ea28}{\_UpperAuto}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aabb773b19df684a3889e216157e2ddcc}{Auto}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}{Bound}}\ bound)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bound\ ==\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5bab75fcdd2d72d9e000beab48622402d93}{Bound::Lower}})}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aca2a3491dd7fc67526d8668527560ca6}{\_LowerAuto}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ac83375098a7536bb153eeb8ab052ea28}{\_UpperAuto}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<bool,bool>\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a17a705b6a6ad3c5a3c13a18eeaa8d743}{IsAuto}}()}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aca2a3491dd7fc67526d8668527560ca6}{\_LowerAuto}},\mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ac83375098a7536bb153eeb8ab052ea28}{\_UpperAuto}}\};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a5e654180f2b29b9de904ff9bf8494def}{Set}}()}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a82d8b050a80d5041cb2aa0a9e384fbf7}{Auto}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a2f69a2a9fae1ec56f0d77e42c83884aa}{Set}}(\textcolor{keywordtype}{double}\ low,\ \textcolor{keywordtype}{double}\ high)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a5f941892339a65cd55750662acccb5b7}{SetLower}}(low);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a63b85add488aaebeda34b9290ce11bdf}{SetUpper}}(high);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ad092bafb4fecaf7e350cd8eb45003517}{Set}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}{Bound}}\ bound)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a82d8b050a80d5041cb2aa0a9e384fbf7}{Auto}}(bound);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a71b34bf1c85b9da575ca3c7e156cdce5}{Set}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}{Bound}}\ bound,\ \textcolor{keywordtype}{double}\ val)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bound\ ==\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5bab75fcdd2d72d9e000beab48622402d93}{Bound::Lower}})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a5f941892339a65cd55750662acccb5b7}{SetLower}}(val);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a63b85add488aaebeda34b9290ce11bdf}{SetUpper}}(val);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_acc5b526957a35c0a4153823963bdd26f}{operator()}}(\textcolor{keywordtype}{double}\ low,\ \textcolor{keywordtype}{double}\ high)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a5e654180f2b29b9de904ff9bf8494def}{Set}}(low,high);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aa837c3c00dbe2a45c886712ab76c404d}{operator()}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}{Bound}}\ bound,\ \textcolor{keywordtype}{double}\ val)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a5e654180f2b29b9de904ff9bf8494def}{Set}}(bound,val);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a92602b855909c9216c0cb85a21067e0c}{Upper}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ababcfad7332afec3889fab5ec8309b31}{\_Upper}};\}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a63b85add488aaebeda34b9290ce11bdf}{SetUpper}}(\textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ac83375098a7536bb153eeb8ab052ea28}{\_UpperAuto}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ababcfad7332afec3889fab5ec8309b31}{\_Upper}}\ =\ value;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a01a9a67d0d0542bad20d0fd7abcb8ce4}{Lower}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a0943d8a596434d9f673f429302160857}{\_Lower}};\}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a5f941892339a65cd55750662acccb5b7}{SetLower}}(\textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aca2a3491dd7fc67526d8668527560ca6}{\_LowerAuto}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a0943d8a596434d9f673f429302160857}{\_Lower}}\ =\ value;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a0ac1f7ea0fbf1b83d0a1600ef04472fa}{ToString}}()}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cvt\ =\ [](\textcolor{keywordtype}{bool}\ check,\ \textcolor{keywordtype}{double}\ val)\{\textcolor{keywordflow}{return}\ check\ ?\ \textcolor{stringliteral}{"{}*"{}}\ :\ std::to\_string(val);\};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::format(\textcolor{stringliteral}{"{}[\{\}:\{\}]"{}},cvt(\mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_aca2a3491dd7fc67526d8668527560ca6}{\_LowerAuto}},\mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_a0943d8a596434d9f673f429302160857}{\_Lower}}),cvt(\mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ac83375098a7536bb153eeb8ab052ea28}{\_UpperAuto}},\mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject_ababcfad7332afec3889fab5ec8309b31}{\_Upper}}));}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \};}
+\DoxyCodeLine{00107\ \}}
+
+\end{DoxyCode}

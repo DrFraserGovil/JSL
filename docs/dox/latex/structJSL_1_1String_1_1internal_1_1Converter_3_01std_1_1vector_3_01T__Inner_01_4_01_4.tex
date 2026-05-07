@@ -1,0 +1,57 @@
+\doxysection{JSL\+::String\+::internal\+::Converter\texorpdfstring{$<$}{<} std\+::vector\texorpdfstring{$<$}{<} T\+\_\+\+Inner \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4}{}\label{structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4}\index{JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$@{JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$}}
+
+
+{\ttfamily \#include $<$Parse\+To.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ T\+\_\+\+Inner $>$ \mbox{\hyperlink{structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_a53e915d7fc1bf95cba48d62f1a233215}{internal\+Convert}} (std\+::string\+\_\+view sv, typename std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+same\+\_\+v$<$ T\+\_\+\+Inner, char $>$ $>$ \texorpdfstring{$\ast$}{*}=nullptr)
+\begin{DoxyCompactList}\small\item\em Calls internal\+Convert(std\+::string\+\_\+view, std\+::string\+\_\+view,typename) with the default delimiter (a comma) \end{DoxyCompactList}\item 
+static std\+::vector$<$ T\+\_\+\+Inner $>$ \mbox{\hyperlink{structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_a3a8c59421f9a75d09536334879f6e4cb}{internal\+Convert}} (std\+::string\+\_\+view sv, std\+::string\+\_\+view element\+\_\+delimiter, typename std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+same\+\_\+v$<$ T\+\_\+\+Inner, char $>$ $>$ \texorpdfstring{$\ast$}{*}=nullptr)
+\begin{DoxyCompactList}\small\item\em The iterative converter for vector types -- loops over the split-\/vector and converts the internal types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T\+\_\+\+Inner$>$\newline
+struct JSL\+::\+String\+::internal\+::\+Converter$<$ std\+::vector$<$ T\+\_\+\+Inner $>$ $>$}
+For reasons unknown to me, Apple-\/\+Clang does not fully implement the C++ standard. std\+::from\+\_\+chars does not work on non-\/integral types. This is really, really annoying that this is necessary. Must therefore resort to using the (slower, worse) std\+::stod for Apple people
+
+A partial specialisation of Converter$<$\+T$>$ to allow the extraction of vectors.
+
+Functionally, this acts as a wrapper, iteratively calling Converter$<$\+T\+\_\+\+Inner$>$ on the values extracted 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_a3a8c59421f9a75d09536334879f6e4cb}\label{structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_a3a8c59421f9a75d09536334879f6e4cb} 
+\index{JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$@{JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$}!internalConvert@{internalConvert}}
+\index{internalConvert@{internalConvert}!JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$@{JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{internalConvert()}{internalConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T\+\_\+\+Inner $>$ \\
+static std\+::vector$<$ T\+\_\+\+Inner $>$ \mbox{\hyperlink{structJSL_1_1String_1_1internal_1_1Converter}{JSL\+::\+String\+::internal\+::\+Converter}}$<$ std\+::vector$<$ T\+\_\+\+Inner $>$ $>$\+::internal\+Convert (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{sv,  }\item[{std\+::string\+\_\+view}]{element\+\_\+delimiter,  }\item[{typename std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+same\+\_\+v$<$ T\+\_\+\+Inner, char $>$ $>$ \texorpdfstring{$\ast$}{*}}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The iterative converter for vector types -- loops over the split-\/vector and converts the internal types. 
+
+The {\ttfamily typename} argument allows the function to disable itself at compile time if T\+\_\+\+Inner is a char, thus inducing a Substitution Failure. Through SFINAE principles, this allows std\+::string (internally a std\+::vector$<$char$>$ in many ways) to be ignored by this, and thus picked up by the standard converter We allow vectors to be wrapped in either \mbox{[}\mbox{]}, \{\} or (). This function removes them for internal use.
+
+\begin{DoxyWarning}{Warning}
+We do {\itshape not} do any form of parsing or checking to allow nested braces. End caps are purely for user readability.
+\end{DoxyWarning}
+\Hypertarget{structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_a53e915d7fc1bf95cba48d62f1a233215}\label{structJSL_1_1String_1_1internal_1_1Converter_3_01std_1_1vector_3_01T__Inner_01_4_01_4_a53e915d7fc1bf95cba48d62f1a233215} 
+\index{JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$@{JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$}!internalConvert@{internalConvert}}
+\index{internalConvert@{internalConvert}!JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$@{JSL::String::internal::Converter$<$ std::vector$<$ T\_Inner $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{internalConvert()}{internalConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T\+\_\+\+Inner $>$ \\
+static std\+::vector$<$ T\+\_\+\+Inner $>$ \mbox{\hyperlink{structJSL_1_1String_1_1internal_1_1Converter}{JSL\+::\+String\+::internal\+::\+Converter}}$<$ std\+::vector$<$ T\+\_\+\+Inner $>$ $>$\+::internal\+Convert (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{sv,  }\item[{typename std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+same\+\_\+v$<$ T\+\_\+\+Inner, char $>$ $>$ \texorpdfstring{$\ast$}{*}}]{ = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calls internal\+Convert(std\+::string\+\_\+view, std\+::string\+\_\+view,typename) with the default delimiter (a comma) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Strings/\mbox{\hyperlink{ParseTo_8h}{Parse\+To.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,47 @@
+\doxysection{JSL\+::Log Namespace Reference}
+\hypertarget{namespaceJSL_1_1Log}{}\label{namespaceJSL_1_1Log}\index{JSL::Log@{JSL::Log}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Log_1_1detail}{detail}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Log_1_1Global}{Global}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject}{Config\+Object}}
+\begin{DoxyCompactList}\small\item\em A packager for globally accessible variables for the Logger\+Core object to refer to. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}}
+\begin{DoxyCompactList}\small\item\em Created during a \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG} call as a temporary object, and acts as a custom output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \mbox{\hyperlink{namespaceJSL_1_1Log_aed21cdb152342ae4d25f952c1a5871f4}{Log\+Level\+Convert}} (int level)
+\begin{DoxyCompactList}\small\item\em Convert integers to Log\+Levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceJSL_1_1Log_aed21cdb152342ae4d25f952c1a5871f4}\label{namespaceJSL_1_1Log_aed21cdb152342ae4d25f952c1a5871f4} 
+\index{JSL::Log@{JSL::Log}!LogLevelConvert@{LogLevelConvert}}
+\index{LogLevelConvert@{LogLevelConvert}!JSL::Log@{JSL::Log}}
+\doxysubsubsection{\texorpdfstring{LogLevelConvert()}{LogLevelConvert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} JSL\+::\+Log\+::\+Log\+Level\+Convert (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Convert integers to Log\+Levels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & an integer between 0 and 3 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & if level is out of bounds \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+The corresponding Log\+Level 
+\end{DoxyReturn}

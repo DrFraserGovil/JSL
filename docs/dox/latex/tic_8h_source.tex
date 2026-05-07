@@ -1,0 +1,120 @@
+\doxysection{tic.\+h}
+\hypertarget{tic_8h_source}{}\label{tic_8h_source}\index{include/JSL/Plot/display/tic.h@{include/JSL/Plot/display/tic.h}}
+\mbox{\hyperlink{tic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ ADD(...)\ \(\backslash\)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\ \ \ \ pipe\ <<\ \_\_VA\_ARGS\_\_\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ IF\_ELSE\_ADD(condition,\ trueline,\ falseline)\ \(\backslash\)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ if\ (condition)\ \{ADD(trueline);\}\ else\ \{ADD(falseline);\}\}\ while(0)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IF\_ADD(condition,\ trueline)\ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ if\ (condition)\ \{ADD(trueline);\}\}\ while(0)}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Plotting}{JSL::Plotting}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36}{TicType}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36a7a1920d61156abc05a60135aefe8bc67}{Default}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36aa76d4ef5f3f6a672bbfab2865563e530}{Time}},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36add4fe0cc913f704600b97d1f5dd285de}{Power}},}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5}{TicDirection}}}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5aefeb369cccbd560588a756610865664c}{In}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5a7c147cda9e49590f6abe83d118b7353b}{Out}}}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel}{TicLabel}}}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a7ddd63eaa5babe941a7d0bae6a67dddf}{Name}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a76ddf6a03cab94b4624c4b01eb046f8c}{Position}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_aed0e734dbc8f3d350789729f4d0e6ba5}{AssignedPos}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a7554199048443829de53e83cd7e2484c}{TicLabel}}(\textcolor{keyword}{const}\ T\ \&\ nameOnly):\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a7ddd63eaa5babe941a7d0bae6a67dddf}{Name}}(MakeString(nameOnly))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_aed0e734dbc8f3d350789729f4d0e6ba5}{AssignedPos}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a4ed526880914ba563333945ac24a579f}{TicLabel}}(\textcolor{keyword}{const}\ T\ \&\ name,\ \textcolor{keywordtype}{double}\ pos)\ :\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a7ddd63eaa5babe941a7d0bae6a67dddf}{Name}}(MakeString(name)),\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}}(pos)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_aed0e734dbc8f3d350789729f4d0e6ba5}{AssignedPos}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a02834341af2101d726bdf2f3aa35700c}{ToPipe}}(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{JSL::Plotting::internal::GnuplotPipe}}\ \&\ pipe,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pipe\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a7ddd63eaa5babe941a7d0bae6a67dddf}{Name}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ "{}}\ <<\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_aed0e734dbc8f3d350789729f4d0e6ba5}{AssignedPos}}\ ?\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel_a76ddf6a03cab94b4624c4b01eb046f8c}{Position}}\ :\ id)\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{class\ }Display;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties}{TicProperties}}}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a48e4bd091b7780968f0941fe86e5a61d}{Rotate}}\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a7b5eccdb0d7c55917a32c42222565361}{Interval}}\ =\ 0;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36}{TicType}}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a52566d66b338580aff75aa081321ca5b}{Format}}\ =\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36a7a1920d61156abc05a60135aefe8bc67}{TicType::Default}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a7525e7e5b59da9b0890175c04f68b5f9}{TimeFormat}}\ =\ \textcolor{stringliteral}{"{}\%H:\%M:\%S"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<TicLabel>\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_aca568c87a44f53c9d36fb1758e35a10c}{Labels}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_aaf3f4d7b32a56c4351323f698ddad5de}{FormatAsTime}}()}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a52566d66b338580aff75aa081321ca5b}{Format}}\ =\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36aa76d4ef5f3f6a672bbfab2865563e530}{TicType::Time}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_acb767626192cd691b80324dbefbb9329}{FormatAsPower}}()}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a52566d66b338580aff75aa081321ca5b}{Format}}\ =\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36add4fe0cc913f704600b97d1f5dd285de}{TicType::Power}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Plotting_1_1Display}{JSL::Plotting::Display}};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_aa59a1ce82f04d3d73d7892e799c0c9ef}{ToPipe}}(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal::GnuplotPipe}}\ \&\ pipe,\textcolor{keyword}{const}\ std::string\ \&\ axisName,\textcolor{keyword}{const}\ std::string\ \&\ timeParse)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a52566d66b338580aff75aa081321ca5b}{Format}})}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36a7a1920d61156abc05a60135aefe8bc67}{TicType::Default}}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(\textcolor{stringliteral}{"{}set\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}data"{}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36add4fe0cc913f704600b97d1f5dd285de}{TicType::Power}}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(\textcolor{stringliteral}{"{}set\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}data\(\backslash\)n"{}}<<}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}set\ format\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}10\string^\{\%T\}\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36aa76d4ef5f3f6a672bbfab2865563e530}{TicType::Time}}:}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(\textcolor{stringliteral}{"{}set\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}data\ time\(\backslash\)n"{}}<<}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}set\ timefmt\ \(\backslash\)"{}"{}}\ <<\ timeParse\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}set\ format\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}\ \(\backslash\)"{}"{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a7525e7e5b59da9b0890175c04f68b5f9}{TimeFormat}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tic_8h_a0e87337f23a00a16181c4e905e38d2f4}{IF\_ELSE\_ADD}}(\mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a48e4bd091b7780968f0941fe86e5a61d}{Rotate}}\ >\ 0,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}set\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}tics\ rotate\ by\ "{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a48e4bd091b7780968f0941fe86e5a61d}{Rotate}}\ <<\ \textcolor{stringliteral}{"{}\ offset\ "{}}\ <<\ -\/2\ *\ std::cos(3.141592654/180\ *\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a48e4bd091b7780968f0941fe86e5a61d}{Rotate}})<<\ \textcolor{stringliteral}{"{},"{}}\ <<\ -\/2*\ std::sin(3.141592654/180\ *\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a48e4bd091b7780968f0941fe86e5a61d}{Rotate}}),}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}set\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}tics\ rotate\ by\ 0\ offset\ 0,0"{}}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tic_8h_a0e87337f23a00a16181c4e905e38d2f4}{IF\_ELSE\_ADD}}(\mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a7b5eccdb0d7c55917a32c42222565361}{Interval}}\ !=\ 0,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}set\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}tics\ "{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_a7b5eccdb0d7c55917a32c42222565361}{Interval}},}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}set\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}tics\ autofreq"{}}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tic_8h_ac74687fea3839bb854ec4114b26daf30}{IF\_ADD}}(\mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_aca568c87a44f53c9d36fb1758e35a10c}{Labels}}.size()\ >\ 0,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}set\ "{}}\ <<\ axisName\ <<\ \textcolor{stringliteral}{"{}tics\ ("{}};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_aca568c87a44f53c9d36fb1758e35a10c}{Labels}}.size();\ ++i)}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties_aca568c87a44f53c9d36fb1758e35a10c}{Labels}}[i].ToPipe(pipe,i);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pipe\ <<\ \textcolor{stringliteral}{"{})"{}}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \};}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#undef\ ADD}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#undef\ IF\_ELSE\_ADD}}
+
+\end{DoxyCode}

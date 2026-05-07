@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="writer_8h" kind="file" language="C++">
+    <compoundname>writer.h</compoundname>
+    <includes refid="base_8h" local="no">JSL/FileIO/archiver/base.h</includes>
+    <includes refid="writeStream_8h" local="no">JSL/FileIO/archiver/writeStream.h</includes>
+    <includes refid="error_8h" local="no">JSL/internal/error.h</includes>
+    <includes local="no">unordered_map</includes>
+    <includedby refid="archiver_8h" local="yes">include/JSL/FileIO/archiver.h</includedby>
+    <incdepgraph>
+      <node id="22">
+        <label>JSL/Display/ANSI_Codes.h</label>
+        <link refid="ANSI__Codes_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>JSL/Display/Format.h</label>
+        <link refid="Format_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>JSL/Display/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>JSL/Display/Log/Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Log/Core.h</label>
+        <link refid="Core_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>JSL/Display/Log/Levels.h</label>
+        <link refid="Levels_8h"/>
+      </node>
+      <node id="2">
+        <label>JSL/FileIO/archiver/base.h</label>
+        <link refid="base_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>helpers.h</label>
+        <link refid="helpers_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>JSL/FileIO/archiver/writeStream.h</label>
+        <link refid="writeStream_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/FileIO/archiver/writer.h</label>
+        <link refid="writer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>JSL/Strings/Manipulate.h</label>
+        <link refid="Manipulate_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>JSL/internal/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>algorithm</label>
+      </node>
+      <node id="6">
+        <label>array</label>
+      </node>
+      <node id="13">
+        <label>charconv</label>
+      </node>
+      <node id="9">
+        <label>cstddef</label>
+      </node>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="7">
+        <label>cstdio</label>
+      </node>
+      <node id="25">
+        <label>cstring</label>
+      </node>
+      <node id="14">
+        <label>fstream</label>
+      </node>
+      <node id="17">
+        <label>iostream</label>
+      </node>
+      <node id="15">
+        <label>memory</label>
+      </node>
+      <node id="27">
+        <label>mutex</label>
+      </node>
+      <node id="8">
+        <label>span</label>
+      </node>
+      <node id="11">
+        <label>sstream</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="23">
+        <label>string_view</label>
+      </node>
+      <node id="26">
+        <label>unistd.h</label>
+      </node>
+      <node id="30">
+        <label>unordered_map</label>
+      </node>
+      <node id="29">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/JSL/FileIO/archiver.h</label>
+        <link refid="archiver_8h"/>
+      </node>
+      <node id="1">
+        <label>include/JSL/FileIO/archiver/writer.h</label>
+        <link refid="writer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4" prot="public">JSL::Archiver::Vault&lt; Mode::Write &gt;</innerclass>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Archiver">JSL::Archiver</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="base_8h" kindref="compound">JSL/FileIO/archiver/base.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="writeStream_8h" kindref="compound">JSL/FileIO/archiver/writeStream.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="error_8h" kindref="compound">JSL/internal/error.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Archiver" kindref="compound">JSL::Archiver</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//templte<sp/>specialisation<sp/>for<sp/>the<sp/>vault-writer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="10" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classJSL_1_1Archiver_1_1Vault" kindref="compound">Vault</ref>&lt;<ref refid="namespaceJSL_1_1Archiver_1aeeb3e5dd16147fd2dcdc870080838e3b" kindref="member">Mode</ref>::<ref refid="namespaceJSL_1_1Archiver_1aeeb3e5dd16147fd2dcdc870080838e3ba1129c0e4d43f2d121652a7302712cff6" kindref="member">Write</ref>&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Archiver_1_1internal_1_1VaultBase" kindref="compound">internal::VaultBase</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ad1cb1395587502dc1c0fb24a2df324c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,WriteStream&gt;<sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ad1cb1395587502dc1c0fb24a2df324c5" kindref="member">Streams</ref>;</highlight></codeline>
+<codeline lineno="14" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a861d0fd7d2e2e291a8570fd6469f692e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Archiver_1_1WriteStream" kindref="compound">WriteStream</ref><sp/>*<sp/>MostRecentStream<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1aa03496667856c6945f09cceb6add7483" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Archiver_1_1WriteStream" kindref="compound">WriteStream</ref><sp/>*<sp/>LargeFile<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a3bcb993dbc1d21712b204308889d9b4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ofstream<sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a3bcb993dbc1d21712b204308889d9b4e" kindref="member">OutputWriter</ref>;</highlight></codeline>
+<codeline lineno="17" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a845df657151df3a52e4bb68f8ded179d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1Security" kindref="compound">internal::Security</ref><sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a845df657151df3a52e4bb68f8ded179d" kindref="member">Security</ref>;</highlight></codeline>
+<codeline lineno="18" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ab8abae42b6b3108d7c75b0dfa13a30fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ab8abae42b6b3108d7c75b0dfa13a30fb" kindref="member">TempName</ref>;</highlight></codeline>
+<codeline lineno="19" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a51e99d85c7bb809cb0b1b9349b9c85a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::streampos<sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a51e99d85c7bb809cb0b1b9349b9c85a5" kindref="member">LargeFileHeaderPos</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ae5f006bd1944a54d457b6a2e299a6cc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ae5f006bd1944a54d457b6a2e299a6cc2" kindref="member">Vault</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a02335db4d7ec6fb208cb73921ae5fa2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a02335db4d7ec6fb208cb73921ae5fa2e" kindref="member">Vault</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>archivePath,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>strictMode<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a4952628bb8ca224a95642393b31e9322" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a4952628bb8ca224a95642393b31e9322" kindref="member">~Vault</ref><sp/>()<sp/>noexcept;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a896a6b92c16bd1a9c6027b59c9471f7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Open(std::string_view<sp/>path);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a6b4aca10c123590be7a09b5caf05a2f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Close();</highlight></codeline>
+<codeline lineno="32" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a19ac071a789fc8eb687e3fc11db33bb7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Archiver_1_1WriteStream" kindref="compound">WriteStream</ref><sp/>&amp;<sp/>operator[](const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;<sp/>streamName);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline lineno="35" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1ab6608a9d4c74980ca6b9cb93a284a7be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Archiver_1_1Vault" kindref="compound">Vault</ref><sp/>&amp;<sp/>operator&lt;&lt;(T<sp/>msg)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!MostRecentStream)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1internal_1_1FatalError" kindref="compound">JSL::internal::FatalError</ref>(</highlight><highlight class="stringliteral">&quot;Attempting<sp/>to<sp/>write<sp/>to<sp/>an<sp/>archive<sp/>before<sp/>a<sp/>write<sp/>stream<sp/>has<sp/>been<sp/>opened&quot;</highlight><highlight class="normal">,<ref refid="error_8h_1a10df267978926d975df8f95b4e3a3583" kindref="member">JSL_LOCATION</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MostRecentStream-&gt;<ref refid="classJSL_1_1Archiver_1_1WriteStream_1a8a7a063c7a982cd144438a67c93bf19c" kindref="member">Feed</ref>(msg);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1abebb567b98bf27b1d9f890387513ad96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1abebb567b98bf27b1d9f890387513ad96" kindref="member">SetWritePermissions</ref>(uint32_t<sp/>uid=1000,<sp/>uint32_t<sp/>gid=1000,<sp/>std::string<sp/>uname=</highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal">,<sp/>std::string<sp/>gname=</highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46" refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a29a03624270759e504fd479eaf53bca1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4_1a29a03624270759e504fd479eaf53bca1" kindref="member">SetLargeFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>file);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/FileIO/archiver/writer.h"/>
+  </compounddef>
+</doxygen>

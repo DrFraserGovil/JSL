@@ -1,0 +1,24 @@
+\doxysection{include/\+JSL/\+File\+IO/piped\+Input.h File Reference}
+\hypertarget{pipedInput_8h}{}\label{pipedInput_8h}\index{include/JSL/FileIO/pipedInput.h@{include/JSL/FileIO/pipedInput.h}}
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1IO}{JSL\+::\+IO}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe}{JSL\+::\+IO\+::\+Pipe}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe_abbdcdedcbcc1c1e6a11e935da3ec5390}{JSL\+::\+IO\+::\+Pipe\+::\+Is\+Piped}} ()
+\begin{DoxyCompactList}\small\item\em A compile-\/time resolve alias for the platform specific isatty command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe_a39a12933a49bc89340f09fcc7fb16f65}{JSL\+::\+IO\+::\+Pipe\+::for\+Line\+In}} (std\+::function$<$ void(std\+::string\+\_\+view)$>$line\+Processor)
+\begin{DoxyCompactList}\small\item\em A similar function to for\+Line\+In, but this one iterates through piped input (either from explit pipes "{}\texorpdfstring{$\vert$}{|}"{} or from directed files "{}$<$"{}) line by line, calling the provided function for each line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe_a639f80b52675e421237bc39fc6ae3f60}{JSL\+::\+IO\+::\+Pipe\+::for\+Split\+Line\+In}} (std\+::function$<$ void(std\+::vector$<$ std\+::string\+\_\+view $>$)$>$line\+Processor, std\+::string\+\_\+view delimiter)
+\item 
+std\+::string \mbox{\hyperlink{namespaceJSL_1_1IO_1_1Pipe_aec87933465246f0edbf1381531939d37}{JSL\+::\+IO\+::\+Pipe\+::save}} ()
+\end{DoxyCompactItemize}

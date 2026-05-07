@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Plotting_1_1Color_1_1Controller" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Plotting::Color::Controller</compoundname>
+    <basecompoundref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis" prot="public" virt="non-virtual">JSL::Plotting::Properties::PerAxis</basecompoundref>
+    <includes refid="Colorbar_8h" local="no">Colorbar.h</includes>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1a97af53b9a9ff09603a3dbcbe7074ad11" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Display</definition>
+        <argsstring></argsstring>
+        <name>Display</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Display</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Plotting_1_1Display" kindref="compound">Display</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="10" column="22" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1a8c47899c4668e57c57c531c0d708586e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Plotting::Color::Controller::Visible</definition>
+        <argsstring></argsstring>
+        <name>Visible</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Visible</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="13" column="18" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1ab0137837d8b03f2df5c88c1b3faef0d6" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Plotting::Color::Controller::Inverted</definition>
+        <argsstring></argsstring>
+        <name>Inverted</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Inverted</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="14" column="18" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1aeed8c1c564eb2519a7cae714762164d8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Plotting::Color::Controller::Palette</definition>
+        <argsstring></argsstring>
+        <name>Palette</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Palette</qualifiedname>
+        <initializer>= &quot;viridis&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="15" column="25" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1a32412203add522ae194d27070abcede6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Plotting::Color::Controller::Controller</definition>
+        <argsstring>()</argsstring>
+        <name>Controller</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Controller</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="12" column="13" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1a30e15c4bd60235079263ed4553db78d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Color::Controller::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::operator()</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="16" column="18" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1a4c3e06bdb84ed46603af0f9693428189" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Color::Controller::Show</definition>
+        <argsstring>()</argsstring>
+        <name>Show</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Show</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="20" column="18" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1adb87b2c4b33f6215c8d8ac8a3fd3ef67" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Color::Controller::Invert</definition>
+        <argsstring>()</argsstring>
+        <name>Invert</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Invert</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="24" column="18" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1a31ea11216230d9fb9d63edf16b00bd31" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Color::Controller::Scheme</definition>
+        <argsstring>(std::string gnuplt_cmd)</argsstring>
+        <name>Scheme</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Scheme</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>gnuplt_cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="29" column="18" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1ac62aa878a37129f0aaa3dd7262c2e3ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Color::Controller::Gradient</definition>
+        <argsstring>(std::string color1, std::string color2)</argsstring>
+        <name>Gradient</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::Gradient</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>color1</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>color2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="33" column="18" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="33" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Color_1_1Controller_1a09fa2a3469cb616f1b518d8c1b5c36b5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Color::Controller::ToPipe</definition>
+        <argsstring>(internal::GnuplotPipe pipe)</argsstring>
+        <name>ToPipe</name>
+        <qualifiedname>JSL::Plotting::Color::Controller::ToPipe</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe" kindref="compound">internal::GnuplotPipe</ref></type>
+          <declname>pipe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/Colorbar.h" line="38" column="18" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="38" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>JSL::Plotting::Color::Controller</label>
+        <link refid="classJSL_1_1Plotting_1_1Color_1_1Controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::Plotting::Properties::PerAxis</label>
+        <link refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>JSL::Plotting::Color::Controller</label>
+        <link refid="classJSL_1_1Plotting_1_1Color_1_1Controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::Plotting::Properties::PerAxis</label>
+        <link refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Range</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Tics</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL::Plotting::RangeObject</label>
+        <link refid="classJSL_1_1Plotting_1_1RangeObject"/>
+      </node>
+      <node id="4">
+        <label>JSL::Plotting::TicProperties</label>
+        <link refid="classJSL_1_1Plotting_1_1TicProperties"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/Plot/display/Colorbar.h" line="8" column="5" bodyfile="include/JSL/Plot/display/Colorbar.h" bodystart="9" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a6e151523f0812dd0eb4bb8d05b592ffa" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Active</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1a32412203add522ae194d27070abcede6" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Controller</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a0d98d32df4ee68e34b7af72291447ce9" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Default</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1a97af53b9a9ff09603a3dbcbe7074ad11" prot="private" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Display</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1aa9acdacf4b810e8c92cb5382caa56f8a" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Dormant</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1ac62aa878a37129f0aaa3dd7262c2e3ae" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Gradient</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1adb87b2c4b33f6215c8d8ac8a3fd3ef67" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Invert</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1ab0137837d8b03f2df5c88c1b3faef0d6" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Inverted</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a8096e1822460815fdf6c2c8bbe67bd05" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Label</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1aa582b4efd967f3134a335eab6bc8e1c2" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Log</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a3cdc87e540963aa2138886f3ada38e20" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>LogScale</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a1f41cf552e3949e73d9242d3903b3e2c" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Mirror</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1ab1432038cf03aa01d15855d1226ed44c" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Mirrored</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1a30e15c4bd60235079263ed4553db78d9" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>operator()</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1aeed8c1c564eb2519a7cae714762164d8" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Palette</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a9c238fdde4b40525e682077e9b2bfd0b" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>PerAxis</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a327ce0f7e4271f150e4c1821b15fcf06" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Range</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1a31ea11216230d9fb9d63edf16b00bd31" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Scheme</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1a4c3e06bdb84ed46603af0f9693428189" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Show</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a02fc34ec143c51c713076f1094e73356" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Tics</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1ad220add5ca055bda40342ddaaf6346bd" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>TimeParsingFormat</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1a09fa2a3469cb616f1b518d8c1b5c36b5" prot="private" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>ToPipe</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1a8c47899c4668e57c57c531c0d708586e" prot="public" virt="non-virtual"><scope>JSL::Plotting::Color::Controller</scope><name>Visible</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

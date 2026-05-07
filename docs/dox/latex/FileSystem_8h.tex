@@ -1,0 +1,47 @@
+\doxysection{include/\+JSL/\+File\+IO/\+File\+System.h File Reference}
+\hypertarget{FileSystem_8h}{}\label{FileSystem_8h}\index{include/JSL/FileIO/FileSystem.h@{include/JSL/FileIO/FileSystem.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJSL_1_1IO_1_1FileSystem_1_1Structure}{JSL\+::\+IO\+::\+File\+System\+::\+Structure}}
+\item 
+struct \mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{JSL\+::\+IO\+::\+File\+System\+::report}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1IO}{JSL\+::\+IO}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem}{JSL\+::\+IO\+::\+File\+System}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{JSL\+::\+IO\+::\+File\+System\+::\+Policy}} \{ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5a6b8b2f7573f60535583f11c8144cd11e}{JSL\+::\+IO\+::\+File\+System\+::\+Strict}}
+, \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5a5fcfafd8772226ce2651844725aea7ef}{JSL\+::\+IO\+::\+File\+System\+::\+Quiet}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac5e0a91fe7251af07ec60661a8fcc610}{JSL\+::\+IO\+::\+File\+System\+::list}} (fs\+::path target, bool recursive=false)
+\item 
+std\+::vector$<$ fs\+::path $>$ \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_aebd147770a298a84ec2357daf1b87fc5}{JSL\+::\+IO\+::\+File\+System\+::match}} (fs\+::path target, std\+::string match\+Pattern, bool recursive=false)
+\item 
+\mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a9820000a501d1b411742be586096fb17}{JSL\+::\+IO\+::\+File\+System\+::mkdir}} (const fs\+::path directory, \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} policy=\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}})
+\item 
+\mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a5e637d24af45325ccae2917c78ca0dca}{JSL\+::\+IO\+::\+File\+System\+::remove}} (const fs\+::path path\+To\+File, \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} polict=\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}})
+\item 
+\mbox{\hyperlink{structJSL_1_1IO_1_1FileSystem_1_1report}{report}} \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a63f7f9281b0d1b6a8b920eafe586d379}{JSL\+::\+IO\+::\+File\+System\+::remove\+Directory}} (const fs\+::path path\+To\+Directory, \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} policy=\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{Default\+Policy}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_ac0c88ca2aa5188e80f6b33f44b2a51d5}{Policy}} \mbox{\hyperlink{namespaceJSL_1_1IO_1_1FileSystem_a039bbb94ae914fd43051443b4ddade51}{JSL\+::\+IO\+::\+File\+System\+::\+Default\+Policy}}
+\end{DoxyCompactItemize}

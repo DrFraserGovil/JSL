@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_f20fa2bc746bf55ab8c27d710664d2f5" kind="dir">
+    <compoundname>include/JSL/Optimiser</compoundname>
+    <innerfile refid="expressions_8h">expressions.h</innerfile>
+    <innerfile refid="mempool_8h">mempool.h</innerfile>
+    <innerfile refid="optimiser_8h">optimiser.h</innerfile>
+    <innerfile refid="scalardual_8h">scalardual.h</innerfile>
+    <innerfile refid="vectordual_8h">vectordual.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Optimiser/"/>
+  </compounddef>
+</doxygen>

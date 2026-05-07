@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="concepts_8h" kind="file" language="C++">
+    <compoundname>concepts.h</compoundname>
+    <includes local="no">vector</includes>
+    <includedby refid="Parameter_8h" local="no">include/JSL/Parameters/Parameter.h</includedby>
+    <includedby refid="ParseTo_8h" local="no">include/JSL/Strings/ParseTo.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/JSL/internal/concepts.h</label>
+        <link refid="concepts_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/JSL/Parameters.h</label>
+        <link refid="Parameters_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/JSL/Parameters/Aggregator.h</label>
+        <link refid="Aggregator_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>include/JSL/Parameters/Describer.h</label>
+        <link refid="Describer_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>include/JSL/Parameters/NestedAggregator.h</label>
+        <link refid="NestedAggregator_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Parameters/Parameter.h</label>
+        <link refid="Parameter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>include/JSL/Plot/axis.h</label>
+        <link refid="axis_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>include/JSL/Plot/data/curve.h</label>
+        <link refid="curve_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>include/JSL/Plot/figure.h</label>
+        <link refid="figure_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>include/JSL/Plot/plot.h</label>
+        <link refid="plot_8h"/>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>include/JSL/Strings.h</label>
+        <link refid="Strings_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>include/JSL/Strings/ParseTo.h</label>
+        <link refid="ParseTo_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/internal/concepts.h</label>
+        <link refid="concepts_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structJSL_1_1internal_1_1is__vector" prot="public">JSL::internal::is_vector</innerclass>
+    <innerclass refid="structJSL_1_1internal_1_1is__vector_3_01std_1_1vector_3_01T_00_01A_01_4_01_4" prot="public">JSL::internal::is_vector&lt; std::vector&lt; T, A &gt; &gt;</innerclass>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1internal">JSL::internal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//some<sp/>help<sp/>metafunctions<sp/>to<sp/>help<sp/>identify<sp/>vector<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="namespaceJSL_1_1internal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1internal" kindref="compound">JSL::internal</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Define<sp/>a<sp/>nice<sp/>C++20<sp/>concept<sp/>which<sp/>defines<sp/>a<sp/>&apos;vector<sp/>type&apos;<sp/>as<sp/>any<sp/>std::vector&lt;T&gt;,<sp/>but<sp/>excludes<sp/>std::string<sp/>from<sp/>being<sp/>too<sp/>eager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="9" refid="structJSL_1_1internal_1_1is__vector" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structJSL_1_1internal_1_1is__vector" kindref="compound">is_vector</ref><sp/>:<sp/>std::false_type<sp/>{};</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>A&gt;</highlight></codeline>
+<codeline lineno="11" refid="structJSL_1_1internal_1_1is__vector_3_01std_1_1vector_3_01T_00_01A_01_4_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structJSL_1_1internal_1_1is__vector" kindref="compound">is_vector</ref>&lt;std::vector&lt;T,<sp/>A&gt;&gt;<sp/>:<sp/>std::true_type<sp/>{};</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="13" refid="conceptJSL_1_1internal_1_1VectorType" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal"><ref refid="conceptJSL_1_1internal_1_1VectorType" kindref="compound">VectorType</ref><sp/>=<sp/>is_vector&lt;T&gt;::value;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//end<sp/>concept<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/internal/concepts.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structJSL_1_1String_1_1RepresentStruct_3_01T_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::String::RepresentStruct&lt; T &gt;</compoundname>
+    <includes refid="Represent_8h" local="no">Represent.h</includes>
+    <templateparamlist>
+      <param>
+        <type>internal::StringifiableRange</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structJSL_1_1String_1_1RepresentStruct_3_01T_01_4_1a0b0f2e549583082a3756641b3a844b52" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string JSL::String::RepresentStruct&lt; T &gt;::stringify</definition>
+        <argsstring>(const T &amp;container)</argsstring>
+        <name>stringify</name>
+        <qualifiedname>JSL::String::RepresentStruct&lt; T &gt;::stringify</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+<para>Specialization for <computeroutput>std::vector&lt;T_Inner&gt;</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calls with default delimiter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="69" column="28" bodyfile="include/JSL/Strings/Represent.h" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="structJSL_1_1String_1_1RepresentStruct_3_01T_01_4_1ac84969945e9b2c1a2dc299243d60b2ab" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string JSL::String::RepresentStruct&lt; T &gt;::stringify</definition>
+        <argsstring>(const T &amp;container, std::string_view delimiter)</argsstring>
+        <name>stringify</name>
+        <qualifiedname>JSL::String::RepresentStruct&lt; T &gt;::stringify</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+<para>Specialization for <computeroutput>std::vector&lt;T_Inner&gt;</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calls with custom delimiter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="76" column="28" bodyfile="include/JSL/Strings/Represent.h" bodystart="76" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Strings/Represent.h" line="65" column="5" bodyfile="include/JSL/Strings/Represent.h" bodystart="66" bodyend="99"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1String_1_1RepresentStruct_3_01T_01_4_1a0b0f2e549583082a3756641b3a844b52" prot="public" virt="non-virtual"><scope>JSL::String::RepresentStruct&lt; T &gt;</scope><name>stringify</name></member>
+      <member refid="structJSL_1_1String_1_1RepresentStruct_3_01T_01_4_1ac84969945e9b2c1a2dc299243d60b2ab" prot="public" virt="non-virtual"><scope>JSL::String::RepresentStruct&lt; T &gt;</scope><name>stringify</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

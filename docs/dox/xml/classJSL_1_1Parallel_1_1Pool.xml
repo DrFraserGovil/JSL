@@ -1,0 +1,460 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Parallel_1_1Pool" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Parallel::Pool</compoundname>
+    <includes refid="ParallelPool_8h" local="no">ParallelPool.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>DistributionPolicy</name>
+        <qualifiedname>JSL::Parallel::Pool::DistributionPolicy</qualifiedname>
+        <enumvalue id="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933aa7e82daa7280af25afbaa076ac16eb1e" prot="public">
+          <name>Sequential</name>
+          <briefdescription>
+<para>Interleaved assignment; best for tight loops where execution time is independent of index. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933ac6589f5236c0c434d0c63dc5f9a856f2" prot="public">
+          <name>Balanced</name>
+          <briefdescription>
+<para>Atomic sequential assignment; best for slower loops, where execution time can vary. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="44" column="1" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="45" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Parallel_1_1Pool_1a65b3103ac8eb5ec96515ac6545be5357" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::thread &gt;</type>
+        <definition>std::vector&lt;std::thread&gt; JSL::Parallel::Pool::Workers</definition>
+        <argsstring></argsstring>
+        <name>Workers</name>
+        <qualifiedname>JSL::Parallel::Pool::Workers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="88" column="13" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parallel_1_1Pool_1a43c49ce1d4de322f7851ff4a6db42f51" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::function&lt; void()&gt; &gt;</type>
+        <definition>std::queue&lt;std::function&lt;void()&gt; &gt; JSL::Parallel::Pool::TaskQueue</definition>
+        <argsstring></argsstring>
+        <name>TaskQueue</name>
+        <qualifiedname>JSL::Parallel::Pool::TaskQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="89" column="12" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parallel_1_1Pool_1a4c54e19ae66dad8de4e38b8a46e71471" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable JSL::Parallel::Pool::TaskComplete</definition>
+        <argsstring></argsstring>
+        <name>TaskComplete</name>
+        <qualifiedname>JSL::Parallel::Pool::TaskComplete</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="90" column="25" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parallel_1_1Pool_1a5a606f544162d61342920301fdd45f07" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable JSL::Parallel::Pool::TaskReady</definition>
+        <argsstring></argsstring>
+        <name>TaskReady</name>
+        <qualifiedname>JSL::Parallel::Pool::TaskReady</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="91" column="25" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parallel_1_1Pool_1a285a2f9facae85f88b24a001726c3a05" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex JSL::Parallel::Pool::Queue</definition>
+        <argsstring></argsstring>
+        <name>Queue</name>
+        <qualifiedname>JSL::Parallel::Pool::Queue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="93" column="12" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parallel_1_1Pool_1ac4c1d6c06c8eedc168a481457ef3817c" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex JSL::Parallel::Pool::Sync</definition>
+        <argsstring></argsstring>
+        <name>Sync</name>
+        <qualifiedname>JSL::Parallel::Pool::Sync</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="94" column="12" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parallel_1_1Pool_1ac015d278ca722d3c97214efc88d60ade" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; JSL::Parallel::Pool::PendingTasks</definition>
+        <argsstring></argsstring>
+        <name>PendingTasks</name>
+        <qualifiedname>JSL::Parallel::Pool::PendingTasks</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="95" column="13" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parallel_1_1Pool_1ab28f85de6082c8467aff4363f29389b7" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; JSL::Parallel::Pool::WorkersRunning</definition>
+        <argsstring></argsstring>
+        <name>WorkersRunning</name>
+        <qualifiedname>JSL::Parallel::Pool::WorkersRunning</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="96" column="13" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a8066d038a773e3a7f2388c8816d83176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Parallel::Pool::Pool</definition>
+        <argsstring>(size_t ncores)</argsstring>
+        <name>Pool</name>
+        <qualifiedname>JSL::Parallel::Pool::Pool</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>ncores</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1ae4676cf6c573919e4a8cd3c61f8c3fcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Parallel::Pool::~Pool</definition>
+        <argsstring>()</argsstring>
+        <name>~Pool</name>
+        <qualifiedname>JSL::Parallel::Pool::~Pool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a43ac45de3eade3092fb8e3f4602f3cdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parallel::Pool::AsyncTask</definition>
+        <argsstring>(std::function&lt; void()&gt; func)</argsstring>
+        <name>AsyncTask</name>
+        <qualifiedname>JSL::Parallel::Pool::AsyncTask</qualifiedname>
+        <param>
+          <type>std::function&lt; void()&gt;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Adds the task into a queue to be executed by asynchronous threads. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Manages their own internal memory safety, but any mutable variables passed by the user should be considered unsafe unless manually mutex-guarded </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="29" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1aa15d911a5aa815eca4e53d79e72c2a70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::future&lt; T &gt;</type>
+        <definition>std::future&lt; T &gt; JSL::Parallel::Pool::AsyncReturn</definition>
+        <argsstring>(std::function&lt; T()&gt; func)</argsstring>
+        <name>AsyncReturn</name>
+        <qualifiedname>JSL::Parallel::Pool::AsyncReturn</qualifiedname>
+        <param>
+          <type>std::function&lt; T()&gt;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Adds a task into the queue and establishes an std::future pointing towards the returned value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="33" column="13" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="33" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a7f30d84b2a5de792e60b10ff42a756f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parallel::Pool::LoopTask</definition>
+        <argsstring>(size_t nLoop, std::function&lt; void(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)</argsstring>
+        <name>LoopTask</name>
+        <qualifiedname>JSL::Parallel::Pool::LoopTask</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>nLoop</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(size_t)&gt;</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933" kindref="member">DistributionPolicy</ref></type>
+          <declname>policy</declname>
+          <defval><ref refid="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933aa7e82daa7280af25afbaa076ac16eb1e" kindref="member">DistributionPolicy::Sequential</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="49" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1ab6a3292a7205f68febe7dbf6f76ad033" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>VectorStorable</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt; T &gt; JSL::Parallel::Pool::LoopReturn</definition>
+        <argsstring>(size_t nLoop, std::function&lt; T(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)</argsstring>
+        <name>LoopReturn</name>
+        <qualifiedname>JSL::Parallel::Pool::LoopReturn</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>nLoop</declname>
+        </param>
+        <param>
+          <type>std::function&lt; T(size_t)&gt;</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933" kindref="member">DistributionPolicy</ref></type>
+          <declname>policy</declname>
+          <defval><ref refid="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933aa7e82daa7280af25afbaa076ac16eb1e" kindref="member">DistributionPolicy::Sequential</ref></defval>
+        </param>
+        <briefdescription>
+<para>A blocking function that asychronously fills the elements of a vector with the output types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="54" column="13" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="54" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a38d3fde31abafeef1802eeb4c1b5df0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>VectorStorable</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Parallel::Pool::LoopReturn</definition>
+        <argsstring>(std::vector&lt; T &gt; &amp;holder, std::function&lt; T(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)</argsstring>
+        <name>LoopReturn</name>
+        <qualifiedname>JSL::Parallel::Pool::LoopReturn</qualifiedname>
+        <param>
+          <type>std::vector&lt; T &gt; &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <param>
+          <type>std::function&lt; T(size_t)&gt;</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933" kindref="member">DistributionPolicy</ref></type>
+          <declname>policy</declname>
+          <defval><ref refid="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933aa7e82daa7280af25afbaa076ac16eb1e" kindref="member">DistributionPolicy::Sequential</ref></defval>
+        </param>
+        <briefdescription>
+<para>A blocking function that asychronously fills the elements of a vector with the output types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="64" column="6" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="64" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a3d83e78234c6b2317cb7460c1eb4194e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parallel::Pool::Synchronise</definition>
+        <argsstring>()</argsstring>
+        <name>Synchronise</name>
+        <qualifiedname>JSL::Parallel::Pool::Synchronise</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="77" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a169ebae9029c35ad48c1399f34cdb7d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Parallel::Pool::Pool</definition>
+        <argsstring>(const Pool &amp;)=delete</argsstring>
+        <name>Pool</name>
+        <qualifiedname>JSL::Parallel::Pool::Pool</qualifiedname>
+        <param>
+          <type>const <ref refid="classJSL_1_1Parallel_1_1Pool" kindref="compound">Pool</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a86785d9b335f0ebeb77e82300ffd977d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Parallel_1_1Pool" kindref="compound">Pool</ref> &amp;</type>
+        <definition>Pool &amp; JSL::Parallel::Pool::operator=</definition>
+        <argsstring>(const Pool &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>JSL::Parallel::Pool::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classJSL_1_1Parallel_1_1Pool" kindref="compound">Pool</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="81" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a528995019d5b9b45195d0e6253ae8a91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Parallel::Pool::Pool</definition>
+        <argsstring>(Pool &amp;&amp;)=delete</argsstring>
+        <name>Pool</name>
+        <qualifiedname>JSL::Parallel::Pool::Pool</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Parallel_1_1Pool" kindref="compound">Pool</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a226d0251583bbb78ead3d78f32c1eb18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Parallel_1_1Pool" kindref="compound">Pool</ref> &amp;</type>
+        <definition>Pool &amp; JSL::Parallel::Pool::operator=</definition>
+        <argsstring>(Pool &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>JSL::Parallel::Pool::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Parallel_1_1Pool" kindref="compound">Pool</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="83" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classJSL_1_1Parallel_1_1Pool_1a6eff6460eb46df0bb8ed5fb46eaf3ba6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parallel::Pool::WorkerFunction</definition>
+        <argsstring>(int id)</argsstring>
+        <name>WorkerFunction</name>
+        <qualifiedname>JSL::Parallel::Pool::WorkerFunction</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/ParallelPool.h" line="97" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Spins up a bunch of workers which wait for new asynchronous tasks to be given to them. </para>
+    </detaileddescription>
+    <location file="include/JSL/Async/ParallelPool.h" line="20" column="1" bodyfile="include/JSL/Async/ParallelPool.h" bodystart="21" bodyend="98"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1aa15d911a5aa815eca4e53d79e72c2a70" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>AsyncReturn</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a43ac45de3eade3092fb8e3f4602f3cdd" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>AsyncTask</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1ad1d5ed1a19ad4dc032cf4f5bf93a9933" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>DistributionPolicy</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1ab6a3292a7205f68febe7dbf6f76ad033" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>LoopReturn</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a38d3fde31abafeef1802eeb4c1b5df0c" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>LoopReturn</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a7f30d84b2a5de792e60b10ff42a756f0" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>LoopTask</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a86785d9b335f0ebeb77e82300ffd977d" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>operator=</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a226d0251583bbb78ead3d78f32c1eb18" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>operator=</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1ac015d278ca722d3c97214efc88d60ade" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>PendingTasks</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a8066d038a773e3a7f2388c8816d83176" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>Pool</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a169ebae9029c35ad48c1399f34cdb7d5" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>Pool</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a528995019d5b9b45195d0e6253ae8a91" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>Pool</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a285a2f9facae85f88b24a001726c3a05" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>Queue</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1ac4c1d6c06c8eedc168a481457ef3817c" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>Sync</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a3d83e78234c6b2317cb7460c1eb4194e" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>Synchronise</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a4c54e19ae66dad8de4e38b8a46e71471" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>TaskComplete</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a43c49ce1d4de322f7851ff4a6db42f51" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>TaskQueue</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a5a606f544162d61342920301fdd45f07" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>TaskReady</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a6eff6460eb46df0bb8ed5fb46eaf3ba6" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>WorkerFunction</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1a65b3103ac8eb5ec96515ac6545be5357" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>Workers</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1ab28f85de6082c8467aff4363f29389b7" prot="private" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>WorkersRunning</name></member>
+      <member refid="classJSL_1_1Parallel_1_1Pool_1ae4676cf6c573919e4a8cd3c61f8c3fcb" prot="public" virt="non-virtual"><scope>JSL::Parallel::Pool</scope><name>~Pool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

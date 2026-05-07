@@ -1,0 +1,964 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1String" kind="namespace" language="C++">
+    <compoundname>JSL::String</compoundname>
+    <innerclass refid="structJSL_1_1String_1_1RepresentStruct" prot="public">JSL::String::RepresentStruct</innerclass>
+    <innerclass refid="structJSL_1_1String_1_1RepresentStruct_3_01T_01_4" prot="public">JSL::String::RepresentStruct&lt; T &gt;</innerclass>
+    <innernamespace refid="namespaceJSL_1_1String_1_1internal">JSL::String::internal</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a4138b6f43abd624969825bd51e029d50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::String::toUpper</definition>
+        <argsstring>(std::string &amp;input)</argsstring>
+        <name>toUpper</name>
+        <qualifiedname>JSL::String::toUpper</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Converts a string in-place to all UPPERCASE. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Cases.h" line="10" column="10" declfile="include/JSL/Strings/Cases.h" declline="10" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1af9f2ebc9f818714158617ecf43f4a6c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::String::getUpper</definition>
+        <argsstring>(std::string_view input)</argsstring>
+        <name>getUpper</name>
+        <qualifiedname>JSL::String::getUpper</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Cases.h" line="11" column="17" declfile="include/JSL/Strings/Cases.h" declline="11" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a03ff391bdf795bd064db5228cf5164b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::String::toLower</definition>
+        <argsstring>(std::string &amp;input)</argsstring>
+        <name>toLower</name>
+        <qualifiedname>JSL::String::toLower</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Cases.h" line="12" column="10" declfile="include/JSL/Strings/Cases.h" declline="12" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a9aee7c56dfeac6a7882a558cc3d6a280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::String::getLower</definition>
+        <argsstring>(std::string_view input)</argsstring>
+        <name>getLower</name>
+        <qualifiedname>JSL::String::getLower</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Cases.h" line="13" column="17" declfile="include/JSL/Strings/Cases.h" declline="13" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1ace8aae4742c7567ac79fbedd14a9c72c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::String::iEquals</definition>
+        <argsstring>(std::string_view a, std::string_view b)</argsstring>
+        <name>iEquals</name>
+        <qualifiedname>JSL::String::iEquals</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs a case-insensitive equality check on two strings <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A view of a string to be compared </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A view of a string to be compared </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if a and b are (aside from cases) equal strings </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Cases.h" line="20" column="10" declfile="include/JSL/Strings/Cases.h" declline="20" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1aa84630ebf544675bec63dd85e85a6e33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t JSL::String::trueSize</definition>
+        <argsstring>(std::string_view str, size_t tabSize=4)</argsstring>
+        <name>trueSize</name>
+        <qualifiedname>JSL::String::trueSize</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>tabSize</declname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+<para>Returns the true width of a string, taking into account tab characters and escape sequences. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>This function makes the assumption that the tab size used by the output renderer, and all control sequences are of the form \x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/FoldLine.h" line="13" column="12" declfile="include/JSL/Strings/FoldLine.h" declline="13" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1afdd15a72becdf5cb35a2aed43102d3b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; JSL::String::foldToWidth</definition>
+        <argsstring>(std::string_view str, size_t width)</argsstring>
+        <name>foldToWidth</name>
+        <qualifiedname>JSL::String::foldToWidth</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+<para>Folds a string to a specified width, taking into account tab characters and escape sequences. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Lines shorter than the width are padded with spaces to ensure they are meet this minimum width. Lines will only be folded at whitespace characters, so if a single word is longer than the width, it will be placed on a line by itself and exceed the width limit. The returned vector contains views into the original string, so no copying of the string data is performed. <simplesect kind="warning"><para>This function makes the assumption that the tab size used by the output renderer, and all control sequences are of the form \x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/FoldLine.h" line="20" column="17" declfile="include/JSL/Strings/FoldLine.h" declline="20" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1ac111823a3c49f5a7d3127bdfa43f4a54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::String::columnPrint</definition>
+        <argsstring>(std::vector&lt; std::string_view &gt; input, std::vector&lt; size_t &gt; widths, std::string_view delimiter)</argsstring>
+        <name>columnPrint</name>
+        <qualifiedname>JSL::String::columnPrint</qualifiedname>
+        <param>
+          <type>std::vector&lt; std::string_view &gt;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; size_t &gt;</type>
+          <declname>widths</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/FoldLine.h" line="26" column="10" declfile="include/JSL/Strings/FoldLine.h" declline="26" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a27dbc7d7363d6a688f638508a22f647b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::String::columnPrint</definition>
+        <argsstring>(std::vector&lt; std::string_view &gt; input, size_t width, std::string_view delimiter)</argsstring>
+        <name>columnPrint</name>
+        <qualifiedname>JSL::String::columnPrint</qualifiedname>
+        <param>
+          <type>std::vector&lt; std::string_view &gt;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/FoldLine.h" line="31" column="10" declfile="include/JSL/Strings/FoldLine.h" declline="31" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a5fc2ce21c9c2f5d0e9ce8a9865ea9914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string JSL::String::join</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;vec, size_t begin, size_t end, std::string_view delim)</argsstring>
+        <name>join</name>
+        <qualifiedname>JSL::String::join</qualifiedname>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Join.h" line="9" column="17" bodyfile="include/JSL/Strings/Join.h" bodystart="9" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1ac749d7055a28bab96cb589a8ea9ccd2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string JSL::String::join</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;vec, std::string_view delim)</argsstring>
+        <name>join</name>
+        <qualifiedname>JSL::String::join</qualifiedname>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Join.h" line="25" column="17" bodyfile="include/JSL/Strings/Join.h" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1aff8fdefe9d0ac40692ee9b9fd61f9408" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string_view &gt;</type>
+        <definition>std::vector&lt; std::string_view &gt; JSL::String::split_view</definition>
+        <argsstring>(std::string_view input, std::string_view delimiter)</argsstring>
+        <name>split_view</name>
+        <qualifiedname>JSL::String::split_view</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+<para>Splits a string into a vector, with each element indicated by the delimiter string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>The output is a vector of string_views - references to the original string. This has the limitation that the output is only meaningful so long as the original string survives. Copies out of the string_view do persist </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A (view) of a string to be split </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string which indicates a &apos;break&apos;. Delimiters do not appear in the split output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of windows into the original string, indicating which elements have been grouped together. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Manipulate.h" line="14" column="17" declfile="include/JSL/Strings/Manipulate.h" declline="14" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a99f2cac3cfcb0d8b1055f8344eff8a6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; JSL::String::split</definition>
+        <argsstring>(std::string_view input, std::string_view delimiter)</argsstring>
+        <name>split</name>
+        <qualifiedname>JSL::String::split</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+<para>As with split_view, with the exception that the values are cast to strings, and hence persist after the original input has passed out of scope. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A (view) of a string to be split </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string which indicates a &apos;break&apos;. Delimiters do not appear in the split output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of strings </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Manipulate.h" line="21" column="17" declfile="include/JSL/Strings/Manipulate.h" declline="21" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1af0705f1e561897f876fea449eefd8f4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view JSL::String::trim_view</definition>
+        <argsstring>(std::string_view sv)</argsstring>
+        <name>trim_view</name>
+        <qualifiedname>JSL::String::trim_view</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes leading or trailing whitespace from a string_view <simplesect kind="warning"><para>The output a string_view - references to the original string. This has the limitation that the output is only meaningful so long as the original string survives. Copies out of the string_view do persist, or use trim. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The original string_view </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A modified string_view with no leading or trailing whitespace </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Manipulate.h" line="28" column="22" declfile="include/JSL/Strings/Manipulate.h" declline="28" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a326b63985df61bfce502fecfce468dd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::String::trim</definition>
+        <argsstring>(std::string_view sv)</argsstring>
+        <name>trim</name>
+        <qualifiedname>JSL::String::trim</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes leading or trailing whitespace from a string_view <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The original string_view </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A modified string_view with no leading or trailing whitespace </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Manipulate.h" line="35" column="17" declfile="include/JSL/Strings/Manipulate.h" declline="35" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a3d2b0e0246a58cf32890e2dcfb7cd90b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view JSL::String::trim_view</definition>
+        <argsstring>(std::string_view sv, std::string_view commentIndicator)</argsstring>
+        <name>trim_view</name>
+        <qualifiedname>JSL::String::trim_view</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>commentIndicator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes leading or trailing whitespace from a string_view and trims any &apos;comments&apos; from the string. <simplesect kind="warning"><para>The output a string_view - references to the original string. This has the limitation that the output is only meaningful so long as the original string survives. Copies out of the string_view do persist, or use trim.</para>
+</simplesect>
+Comments are signified by the &apos;commentIndicator&apos;, and all text after the indicator is removed. With indicator &apos;#&apos;, the string &quot;hello, my name is #Put your name here&quot; would be trimmed to &quot;hello, my name is&quot;; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The original string_view </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>commentIndicator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string after which all text is to be removed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A modified string_view with no leading or trailing whitespace and no comments </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Manipulate.h" line="46" column="22" declfile="include/JSL/Strings/Manipulate.h" declline="46" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1abd71da5456e279fb25fcf8650c0d5856" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::String::trim</definition>
+        <argsstring>(std::string_view sv, std::string_view commentIndicator)</argsstring>
+        <name>trim</name>
+        <qualifiedname>JSL::String::trim</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>commentIndicator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes leading or trailing whitespace from a string_view and trims any &apos;comments&apos; from the string.</para>
+<para>Comments are signified by the &apos;commentIndicator&apos;, and all text after the indicator is removed. With indicator &apos;#&apos;, the string &quot;hello, my name is #Put your name here&quot; would be trimmed to &quot;hello my name is&quot;; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The original string_view </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>commentIndicator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string after which all text is to be removed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A modified string with no leading or trailing whitespace and no comments </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Manipulate.h" line="56" column="17" declfile="include/JSL/Strings/Manipulate.h" declline="56" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a6d636bbdd7a04b386c12ffb59108c50d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T JSL::String::ParseTo</definition>
+        <argsstring>(std::string_view sv)</argsstring>
+        <name>ParseTo</name>
+        <qualifiedname>JSL::String::ParseTo</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <briefdescription>
+<para>Converts input strings into values of different types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides a larger wrapper for the std::from_chars, and extends the functionality to more data types <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string_view (implicitly converted from std::strings) representing a value to be converted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A value of type T corresponding to the input string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/ParseTo.h" line="146" column="14" bodyfile="include/JSL/Strings/ParseTo.h" bodystart="146" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a762c7030c5d3067f0f6da3278a825b61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="conceptJSL_1_1internal_1_1VectorType" kindref="compound">JSL::internal::VectorType</ref></type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T JSL::String::ParseTo</definition>
+        <argsstring>(std::string_view sv, std::string_view delimiter)</argsstring>
+        <name>ParseTo</name>
+        <qualifiedname>JSL::String::ParseTo</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/ParseTo.h" line="155" column="14" bodyfile="include/JSL/Strings/ParseTo.h" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1aaa96fabeae588d42517d2538f5d9629d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>std::tuple&lt; Ts... &gt;</type>
+        <definition>std::tuple&lt; Ts... &gt; JSL::String::ParseTo</definition>
+        <argsstring>(const std::vector&lt; std::string_view &gt; &amp;sv_vec)</argsstring>
+        <name>ParseTo</name>
+        <qualifiedname>JSL::String::ParseTo</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string_view &gt; &amp;</type>
+          <declname>sv_vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/ParseTo.h" line="175" column="23" bodyfile="include/JSL/Strings/ParseTo.h" bodystart="175" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a9f9bd6539637f2af6ba360fbfcf1bc8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(bool)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="33" column="5" declfile="include/JSL/Strings/Represent.h" declline="33" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a5337d94cfeeac52375a4c1ef206d9b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(int)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="37" column="5" declfile="include/JSL/Strings/Represent.h" declline="37" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1ac1ab4981d131a5dce06afbaba8c1bf62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(float)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>float</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="38" column="5" declfile="include/JSL/Strings/Represent.h" declline="38" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1af8e0d4ca261ba9cf1dc0c3080b914200" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(double)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>double</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="39" column="5" declfile="include/JSL/Strings/Represent.h" declline="39" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a01f96b30b874552ff8e6787ed55bae7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(long)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>long</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="40" column="5" declfile="include/JSL/Strings/Represent.h" declline="40" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a852fc3bbb812adc4e63b00353b83ebfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(long long)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>long long</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="41" column="5" declfile="include/JSL/Strings/Represent.h" declline="41" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a95ba5bbb0ca7d888164c6b2488c427c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(long double)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>long double</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="42" column="5" declfile="include/JSL/Strings/Represent.h" declline="42" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a462813fe4b0e1f98b289cfb3b75f0383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(unsigned long long)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>unsigned long long</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="43" column="5" declfile="include/JSL/Strings/Represent.h" declline="43" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a06769ed268b2d3e6ae096c048bd2d5c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(unsigned long)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>unsigned long</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="44" column="5" declfile="include/JSL/Strings/Represent.h" declline="44" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a97884e11925f57ae17cc8434123f353e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(unsigned int)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="45" column="5" declfile="include/JSL/Strings/Represent.h" declline="45" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a29a0c1ba00780d05a5dcb1ec33d6b816" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(char)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>char</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="47" column="5" declfile="include/JSL/Strings/Represent.h" declline="47" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1aac7b3f8b1f377163b774c237510c1b02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(char *)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="48" column="5" declfile="include/JSL/Strings/Represent.h" declline="48" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1ac54bd97be06bf37abb1fc75b3aaf956e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION_NOCONST</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>JSL_HAS_SPECIALISATION_NOCONST</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION_NOCONST</qualifiedname>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="49" column="5" declfile="include/JSL/Strings/Represent.h" declline="49" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1aa58db1ae3664c8946c38de39cd36e62a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(std::string)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>std::string</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="51" column="5" declfile="include/JSL/Strings/Represent.h" declline="51" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a9fd24ac754b9d25479520fe7cec8011c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::String::JSL_HAS_SPECIALISATION</definition>
+        <argsstring>(std::string_view)</argsstring>
+        <name>JSL_HAS_SPECIALISATION</name>
+        <qualifiedname>JSL::String::JSL_HAS_SPECIALISATION</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="52" column="5" declfile="include/JSL/Strings/Represent.h" declline="52" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1ab1c8a308edab64113712073d530a8005" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string JSL::String::represent</definition>
+        <argsstring>(T obj)</argsstring>
+        <name>represent</name>
+        <qualifiedname>JSL::String::represent</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Converts the object into a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the object is a vector, the default delimiter - &quot;,&quot; - is used. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object (usually a numeric, boolean or vector) to be converted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A string representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="107" column="24" bodyfile="include/JSL/Strings/Represent.h" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1String_1a5a7c2399dc9981dd82b75efac381fe49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string JSL::String::represent</definition>
+        <argsstring>(T obj, std::string delimiter)</argsstring>
+        <name>represent</name>
+        <qualifiedname>JSL::String::represent</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+<para>Converts a vector into a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object (usually a numeric, boolean or vector) to be converted </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character(s) which delimit the elements of the vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A string representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Strings/Represent.h" line="118" column="24" bodyfile="include/JSL/Strings/Represent.h" bodystart="118" bodyend="121"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Strings/Cases.h" line="6" column="1"/>
+  </compounddef>
+</doxygen>

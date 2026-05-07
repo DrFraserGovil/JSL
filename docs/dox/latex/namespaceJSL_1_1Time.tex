@@ -1,0 +1,37 @@
+\doxysection{JSL\+::Time Namespace Reference}
+\hypertarget{namespaceJSL_1_1Time}{}\label{namespaceJSL_1_1Time}\index{JSL::Time@{JSL::Time}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Time_1_1Timer}{Timer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespaceJSL_1_1Time_ae1e5bf9b5710f0a6f1e65baa9ec4e98e}{Format\+Duration}} (double time\+In\+Seconds)
+\item 
+std\+::string \mbox{\hyperlink{namespaceJSL_1_1Time_a89edf541c527306dd1cf78d3052d2893}{Format\+Duration}} (std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ start, std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ end)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceJSL_1_1Time_ae1e5bf9b5710f0a6f1e65baa9ec4e98e}\label{namespaceJSL_1_1Time_ae1e5bf9b5710f0a6f1e65baa9ec4e98e} 
+\index{JSL::Time@{JSL::Time}!FormatDuration@{FormatDuration}}
+\index{FormatDuration@{FormatDuration}!JSL::Time@{JSL::Time}}
+\doxysubsubsection{\texorpdfstring{FormatDuration()}{FormatDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Time\+::\+Format\+Duration (\begin{DoxyParamCaption}\item[{double}]{time\+In\+Seconds }\end{DoxyParamCaption})}
+
+Given a duration in seconds, convert it into standard Day/\+Hour/\+Minute/\+Second formatted string. Times are restricted to a one-\/unit contrast (i.\+e. day + hour, hour + minute), with the final element being reported to 1 decimal accuracy 
+\begin{DoxyParams}{Parameters}
+{\em time\+In\+Seconds} & The time to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A human-\/readable string equal to the input 
+\end{DoxyReturn}
+\Hypertarget{namespaceJSL_1_1Time_a89edf541c527306dd1cf78d3052d2893}\label{namespaceJSL_1_1Time_a89edf541c527306dd1cf78d3052d2893} 
+\index{JSL::Time@{JSL::Time}!FormatDuration@{FormatDuration}}
+\index{FormatDuration@{FormatDuration}!JSL::Time@{JSL::Time}}
+\doxysubsubsection{\texorpdfstring{FormatDuration()}{FormatDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Time\+::\+Format\+Duration (\begin{DoxyParamCaption}\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$}]{start,  }\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$}]{end }\end{DoxyParamCaption})}
+

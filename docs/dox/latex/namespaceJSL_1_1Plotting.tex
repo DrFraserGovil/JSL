@@ -1,0 +1,231 @@
+\doxysection{JSL\+::Plotting Namespace Reference}
+\hypertarget{namespaceJSL_1_1Plotting}{}\label{namespaceJSL_1_1Plotting}\index{JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Plotting_1_1AxisMembers}{Axis\+Members}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Plotting_1_1Color}{Color}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Plotting_1_1internal}{internal}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Plotting_1_1Properties}{Properties}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{Axis}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1Curve}{Curve}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1Display}{Display}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure}{Figure}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject}{Legend\+Object}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1RangeObject}{Range\+Object}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicLabel}{Tic\+Label}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1TicProperties}{Tic\+Properties}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceJSL_1_1Plotting_aa72d0385bd8eeed098ca4a036bccde11}{Vec}} = const std\+::vector$<$ T $>$ \&
+\item 
+using \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} = size\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}} \{ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2bab1f023eff9a6b5308d6024e4c6b3d475}{Transient}} = 0
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba5fe7b9358c9cb1b9eaa8d5aec000def4}{Persistent}} = 1
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Scripted}} = 2
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} \+: unsigned short int \{ \newline
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca6adf97f83acf6453d4a6a4b1070f3754}{None}} = 0
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eecaa4ffdcf0dc1f31b9acaf295d75b51d00}{Top}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca2ad9d63b69c4a10a5cc9cad923133bc4}{Bottom}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca4f1f6016fc9f3f2353c0cc7c67b292bd}{Center}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca945d5e233cf7d6240f6b783b36a374ff}{Left}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca92b09c7c48c520c3c55e497875da437c}{Right}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eecab1ca34f82e83c52b010f86955f264e05}{Middle}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca76fbf0ccd7fcd64879c2ff2119dc15a4}{Outside}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \newline
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca06b9281e396db002010bde1de57262eb}{Auto}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}{Bound}} \{ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5ba19de5b94f7b83900d4b296d9fa491aec}{Upper}}
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5bab75fcdd2d72d9e000beab48622402d93}{Lower}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36}{Tic\+Type}} \{ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36a7a1920d61156abc05a60135aefe8bc67}{Default}}
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36aa76d4ef5f3f6a672bbfab2865563e530}{Time}}
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36add4fe0cc913f704600b97d1f5dd285de}{Power}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5}{Tic\+Direction}} \{ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5aefeb369cccbd560588a756610865664c}{In}}
+, \mbox{\hyperlink{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5a7c147cda9e49590f6abe83d118b7353b}{Out}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} \mbox{\hyperlink{namespaceJSL_1_1Plotting_af8affbe47dc05b6c37530e77fce7bff5}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} lhs, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} rhs)
+\item 
+bool \mbox{\hyperlink{namespaceJSL_1_1Plotting_aaead5a17e0bf16485eb78774c0adef75}{operator\&}} (\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} lhs, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}\label{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef} 
+\index{JSL::Plotting@{JSL::Plotting}!szt@{szt}}
+\index{szt@{szt}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{szt}{szt}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{JSL\+::\+Plotting\+::szt}} = typedef size\+\_\+t}
+
+\Hypertarget{namespaceJSL_1_1Plotting_aa72d0385bd8eeed098ca4a036bccde11}\label{namespaceJSL_1_1Plotting_aa72d0385bd8eeed098ca4a036bccde11} 
+\index{JSL::Plotting@{JSL::Plotting}!Vec@{Vec}}
+\index{Vec@{Vec}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{Vec}{Vec}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{namespaceJSL_1_1Plotting_aa72d0385bd8eeed098ca4a036bccde11}{JSL\+::\+Plotting\+::\+Vec}} = typedef const std\+::vector$<$T$>$\&}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}\label{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b} 
+\index{JSL::Plotting@{JSL::Plotting}!Bound@{Bound}}
+\index{Bound@{Bound}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{Bound}{Bound}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5b}{JSL\+::\+Plotting\+::\+Bound}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Upper@{Upper}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Upper@{Upper}}}\Hypertarget{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5ba19de5b94f7b83900d4b296d9fa491aec}\label{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5ba19de5b94f7b83900d4b296d9fa491aec} 
+Upper&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lower@{Lower}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Lower@{Lower}}}\Hypertarget{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5bab75fcdd2d72d9e000beab48622402d93}\label{namespaceJSL_1_1Plotting_a29a307a9914b8d90c28e11872a255f5bab75fcdd2d72d9e000beab48622402d93} 
+Lower&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}\label{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b} 
+\index{JSL::Plotting@{JSL::Plotting}!Output@{Output}}
+\index{Output@{Output}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{Output}{Output}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{JSL\+::\+Plotting\+::\+Output}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Transient@{Transient}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Transient@{Transient}}}\Hypertarget{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2bab1f023eff9a6b5308d6024e4c6b3d475}\label{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2bab1f023eff9a6b5308d6024e4c6b3d475} 
+Transient&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Persistent@{Persistent}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Persistent@{Persistent}}}\Hypertarget{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba5fe7b9358c9cb1b9eaa8d5aec000def4}\label{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba5fe7b9358c9cb1b9eaa8d5aec000def4} 
+Persistent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scripted@{Scripted}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Scripted@{Scripted}}}\Hypertarget{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}\label{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7} 
+Scripted&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec} 
+\index{JSL::Plotting@{JSL::Plotting}!Position@{Position}}
+\index{Position@{Position}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{JSL\+::\+Plotting\+::\+Position}} \+: unsigned short int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!None@{None}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca6adf97f83acf6453d4a6a4b1070f3754}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Top@{Top}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Top@{Top}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eecaa4ffdcf0dc1f31b9acaf295d75b51d00}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eecaa4ffdcf0dc1f31b9acaf295d75b51d00} 
+Top&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bottom@{Bottom}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Bottom@{Bottom}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca2ad9d63b69c4a10a5cc9cad923133bc4}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca2ad9d63b69c4a10a5cc9cad923133bc4} 
+Bottom&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Center@{Center}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Center@{Center}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca4f1f6016fc9f3f2353c0cc7c67b292bd}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca4f1f6016fc9f3f2353c0cc7c67b292bd} 
+Center&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Left@{Left}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca945d5e233cf7d6240f6b783b36a374ff}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca945d5e233cf7d6240f6b783b36a374ff} 
+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Right@{Right}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca92b09c7c48c520c3c55e497875da437c}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca92b09c7c48c520c3c55e497875da437c} 
+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Middle@{Middle}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eecab1ca34f82e83c52b010f86955f264e05}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eecab1ca34f82e83c52b010f86955f264e05} 
+Middle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Outside@{Outside}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Outside@{Outside}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca76fbf0ccd7fcd64879c2ff2119dc15a4}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca76fbf0ccd7fcd64879c2ff2119dc15a4} 
+Outside&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Auto@{Auto}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Auto@{Auto}}}\Hypertarget{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca06b9281e396db002010bde1de57262eb}\label{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca06b9281e396db002010bde1de57262eb} 
+Auto&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5}\label{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5} 
+\index{JSL::Plotting@{JSL::Plotting}!TicDirection@{TicDirection}}
+\index{TicDirection@{TicDirection}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{TicDirection}{TicDirection}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5}{JSL\+::\+Plotting\+::\+Tic\+Direction}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{In@{In}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!In@{In}}}\Hypertarget{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5aefeb369cccbd560588a756610865664c}\label{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5aefeb369cccbd560588a756610865664c} 
+In&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Out@{Out}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Out@{Out}}}\Hypertarget{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5a7c147cda9e49590f6abe83d118b7353b}\label{namespaceJSL_1_1Plotting_a15ee95e4fa132d3c5c6b2c140ed8b9d5a7c147cda9e49590f6abe83d118b7353b} 
+Out&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36}\label{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36} 
+\index{JSL::Plotting@{JSL::Plotting}!TicType@{TicType}}
+\index{TicType@{TicType}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{TicType}{TicType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36}{JSL\+::\+Plotting\+::\+Tic\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Default@{Default}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Default@{Default}}}\Hypertarget{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36a7a1920d61156abc05a60135aefe8bc67}\label{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36a7a1920d61156abc05a60135aefe8bc67} 
+Default&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Time@{Time}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Time@{Time}}}\Hypertarget{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36aa76d4ef5f3f6a672bbfab2865563e530}\label{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36aa76d4ef5f3f6a672bbfab2865563e530} 
+Time&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Power@{Power}!JSL::Plotting@{JSL::Plotting}}\index{JSL::Plotting@{JSL::Plotting}!Power@{Power}}}\Hypertarget{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36add4fe0cc913f704600b97d1f5dd285de}\label{namespaceJSL_1_1Plotting_a83934a8306c5acd0b5846bd7639b2d36add4fe0cc913f704600b97d1f5dd285de} 
+Power&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceJSL_1_1Plotting_aaead5a17e0bf16485eb78774c0adef75}\label{namespaceJSL_1_1Plotting_aaead5a17e0bf16485eb78774c0adef75} 
+\index{JSL::Plotting@{JSL::Plotting}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily bool JSL\+::\+Plotting\+::operator\& (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}}}]{lhs,  }\item[{\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceJSL_1_1Plotting_af8affbe47dc05b6c37530e77fce7bff5}\label{namespaceJSL_1_1Plotting_af8affbe47dc05b6c37530e77fce7bff5} 
+\index{JSL::Plotting@{JSL::Plotting}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!JSL::Plotting@{JSL::Plotting}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} JSL\+::\+Plotting\+::operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}}}]{lhs,  }\item[{\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

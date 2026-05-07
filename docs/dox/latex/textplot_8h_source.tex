@@ -1,0 +1,52 @@
+\doxysection{textplot.\+h}
+\hypertarget{textplot_8h_source}{}\label{textplot_8h_source}\index{include/JSL/Plot/textplot.h@{include/JSL/Plot/textplot.h}}
+\mbox{\hyperlink{textplot_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{JSL_8h}{JSL.h}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Log_8h}{JSL/Display/Log.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <ranges>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL}{JSL}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{namespace\ }internal}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptJSL_1_1internal_1_1Plottable}{Plottable}}\ =\ std::ranges::range<T>\ \&\&\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(T\ t)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ t.size()\ \}\ -\/>\ std::integral;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \&\&}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::convertible\_to<std::ranges::range\_value\_t<T>,\ \textcolor{keywordtype}{double}>;;}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1Coordinate}{Coordinate}}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structJSL_1_1Coordinate_a317df6fcde1be50276fccede95982c3f}{X}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structJSL_1_1Coordinate_a4d38c6321d60b860a3b67d8dba4811ac}{Y}};}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceJSL_a7d459ecd0ae883637e075c9665477640}{TextPlot}}(std::vector<Coordinate>\ coordinates);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}ernal::Plottable\ T,\ \textcolor{keywordtype}{int}ernal::Plottable\ U>}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceJSL_a7d459ecd0ae883637e075c9665477640}{TextPlot}}(\textcolor{keyword}{const}\ T\ \&\ x,\ \textcolor{keyword}{const}\ U\ \&\ y)}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.size()\ !=\ y.size())}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1internal_1_1FatalError}{internal::FatalError}}(\textcolor{stringliteral}{"{}Size\ mismatch\ in\ plot"{}},\mbox{\hyperlink{error_8h_a10df267978926d975df8f95b4e3a3583}{JSL\_LOCATION}})\ <<\ \textcolor{stringliteral}{"{}x\ ("{}}\ <<\ x.size()\ <<\ \textcolor{stringliteral}{"{})\ and\ y\ ("{}}\ <<\ y.size()\ <<\ \textcolor{stringliteral}{"{})\ are\ of\ different\ sizes"{}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::vector<Coordinate>\ coords;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ coords.reserve(x.size());}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ y\_it\ =\ std::begin(y);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ xv\ :\ x)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ coords.emplace\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(xv),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(*y\_it));}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ ++y\_it;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_a7d459ecd0ae883637e075c9665477640}{TextPlot}}(coords);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}

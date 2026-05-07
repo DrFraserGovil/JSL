@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="ManagerBase_8h" kind="file" language="C++">
+    <compoundname>ManagerBase.h</compoundname>
+    <includes refid="Watcher_8h" local="no">JSL/Async/Watcher.h</includes>
+    <includes local="no">condition_variable</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">string_view</includes>
+    <includes local="no">functional</includes>
+    <includedby refid="EventManager_8h" local="yes">include/JSL/Async/EventManager.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/JSL/Async/ManagerBase.h</label>
+        <link refid="ManagerBase_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL/Async/Socket.h</label>
+        <link refid="Socket_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL/Async/Watcher.h</label>
+        <link refid="Watcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>atomic</label>
+      </node>
+      <node id="13">
+        <label>chrono</label>
+      </node>
+      <node id="18">
+        <label>condition_variable</label>
+      </node>
+      <node id="6">
+        <label>filesystem</label>
+      </node>
+      <node id="10">
+        <label>functional</label>
+      </node>
+      <node id="12">
+        <label>map</label>
+      </node>
+      <node id="19">
+        <label>mutex</label>
+      </node>
+      <node id="8">
+        <label>optional</label>
+      </node>
+      <node id="9">
+        <label>poll.h</label>
+      </node>
+      <node id="15">
+        <label>queue</label>
+      </node>
+      <node id="16">
+        <label>set</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="11">
+        <label>string_view</label>
+      </node>
+      <node id="14">
+        <label>sys/inotify.h</label>
+      </node>
+      <node id="4">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="5">
+        <label>sys/un.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/JSL/Async.h</label>
+        <link refid="Async_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Async/EventManager.h</label>
+        <link refid="EventManager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Async/ManagerBase.h</label>
+        <link refid="ManagerBase_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structJSL_1_1Event_1_1Task_1_1Instruction" prot="public">JSL::Event::Task::Instruction</innerclass>
+    <innerclass refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" prot="public">JSL::Event::internal::HandlerBase</innerclass>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Event">JSL::Event</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Event_1_1Task">JSL::Event::Task</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Event_1_1internal">JSL::Event::internal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Watcher_8h" kindref="compound">JSL/Async/Watcher.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;condition_variable&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Event" kindref="compound">JSL::Event</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10" refid="namespaceJSL_1_1Event_1_1Task" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Task</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12" refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" kindref="member">Origin</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14" refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fa947eb58edb07e7158fd3d39bc1af7454" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fa947eb58edb07e7158fd3d39bc1af7454" kindref="member">CIN</ref>,</highlight></codeline>
+<codeline lineno="15" refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3faa7c402887c2241b76063c1f3b85ba93b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3faa7c402887c2241b76063c1f3b85ba93b" kindref="member">FILE</ref>,</highlight></codeline>
+<codeline lineno="16" refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fa99e14e74a6516ee02e935c6997a5786d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fa99e14e74a6516ee02e935c6997a5786d" kindref="member">SOCKET</ref>,</highlight></codeline>
+<codeline lineno="17" refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fae6760a9d72ea3150c859183d95bb3ea4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fae6760a9d72ea3150c859183d95bb3ea4" kindref="member">SHUTDOWN</ref>,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="19" refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" kindref="member">Priority</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21" refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8" kindref="member">NORMAL</ref>,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caaf8cd9fd54d09a9d423cc9d3bd66ef84e" kindref="member">LOCKING</ref></highlight></codeline>
+<codeline lineno="23" refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caaf8cd9fd54d09a9d423cc9d3bd66ef84e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="24" refid="structJSL_1_1Event_1_1Task_1_1Instruction" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction" kindref="compound">Instruction</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26" refid="structJSL_1_1Event_1_1Task_1_1Instruction_1aa51ef34332637045a1744e168a263f2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" kindref="member">Origin</ref><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1aa51ef34332637045a1744e168a263f2e" kindref="member">origin</ref>;</highlight></codeline>
+<codeline lineno="27" refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a5e25abf350d7daa140c0df00eb846945" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" kindref="member">Priority</ref><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a5e25abf350d7daa140c0df00eb846945" kindref="member">priority</ref>;</highlight></codeline>
+<codeline lineno="28" refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a2dee564e760e98b57bc4e20d1adba577" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::variant&lt;std::string,<sp/>JSL::Event::FileChange&gt;<sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a2dee564e760e98b57bc4e20d1adba577" kindref="member">payload</ref>;</highlight></codeline>
+<codeline lineno="29" refid="structJSL_1_1Event_1_1Task_1_1Instruction_1ae691f9e7b9746455be37b68c79a48656" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1ae691f9e7b9746455be37b68c79a48656" kindref="member">Instruction</ref>(<ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" kindref="member">Origin</ref><sp/>in,<sp/>std::string_view<sp/>msg,<sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" kindref="member">Priority</ref><sp/>order<sp/>=<sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8" kindref="member">Priority::NORMAL</ref>)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1aa51ef34332637045a1744e168a263f2e" kindref="member">origin</ref><sp/>=<sp/>in;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a5e25abf350d7daa140c0df00eb846945" kindref="member">priority</ref><sp/>=<sp/>order;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a2dee564e760e98b57bc4e20d1adba577" kindref="member">payload</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::string</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(msg);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35" refid="structJSL_1_1Event_1_1Task_1_1Instruction_1ae136e8c65292c0bd73d8b7c036c3af9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1ae136e8c65292c0bd73d8b7c036c3af9b" kindref="member">Instruction</ref>(<ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3f" kindref="member">Origin</ref><sp/>in,<sp/><ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">FileChange</ref><sp/>msg,<sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087ca" kindref="member">Priority</ref><sp/>order<sp/>=<sp/><ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caa11ac8e68eee06dde5ebb15abd9ee2cc8" kindref="member">Priority::NORMAL</ref>)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1aa51ef34332637045a1744e168a263f2e" kindref="member">origin</ref><sp/>=<sp/>in;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a5e25abf350d7daa140c0df00eb846945" kindref="member">priority</ref><sp/>=<sp/>order;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a2dee564e760e98b57bc4e20d1adba577" kindref="member">payload</ref><sp/>=<sp/>msg;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41" refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a13255a134db12d8dc0d16bdbe49ef395" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction" kindref="compound">Instruction</ref><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction_1a13255a134db12d8dc0d16bdbe49ef395" kindref="member">Shutdown</ref>()</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction" kindref="compound">Instruction</ref>(<ref refid="namespaceJSL_1_1Event_1_1Task_1a8d616708dc07315da62b04616881cc3fae6760a9d72ea3150c859183d95bb3ea4" kindref="member">Origin::SHUTDOWN</ref>,</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<ref refid="namespaceJSL_1_1Event_1_1Task_1afaa17d2dfe3c02ae632e8b17bea087caaf8cd9fd54d09a9d423cc9d3bd66ef84e" kindref="member">Priority::LOCKING</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="namespaceJSL_1_1Event_1_1internal" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">internal</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" kindref="compound">HandlerBase</ref></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ab9e2039751b1ac3c051cb5d537bda0a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ab9e2039751b1ac3c051cb5d537bda0a5" kindref="member">SetCInCallback</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(std::string_view)&gt;<sp/>callback);</highlight></codeline>
+<codeline lineno="56" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a1ca400818f0a74774a3848d781dc33da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a1ca400818f0a74774a3848d781dc33da" kindref="member">SetSocketCallback</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(std::string_view)&gt;<sp/>callback);</highlight></codeline>
+<codeline lineno="57" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a8f2bfb2b698e8057598be31cb65cf29f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a8f2bfb2b698e8057598be31cb65cf29f" kindref="member">SetTextCallback</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(std::string_view)&gt;<sp/>callback);</highlight></codeline>
+<codeline lineno="58" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a7d6c692b0828b1b972d098cc7473c041" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a7d6c692b0828b1b972d098cc7473c041" kindref="member">SetInotifyCallback</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(<ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">FileChange</ref>)&gt;<sp/>callback);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af145b4407be9df4d166a03ef0679c306" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::set&lt;std::string,std::less&lt;&gt;&gt;<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af145b4407be9df4d166a03ef0679c306" kindref="member">ShutdownCommands</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a360d18e30de22ea90a6d89b5051b8373" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a360d18e30de22ea90a6d89b5051b8373" kindref="member">AddTask</ref>(<ref refid="structJSL_1_1Event_1_1Task_1_1Instruction" kindref="compound">Task::Instruction</ref><sp/>job)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ac763fc108d11caa4da43a5992fef51c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ac763fc108d11caa4da43a5992fef51c7" kindref="member">Run</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Delete<sp/>copy<sp/>and<sp/>move<sp/>to<sp/>be<sp/>explicit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ab8e364638504a1a9e8b10becfa351a51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ab8e364638504a1a9e8b10becfa351a51" kindref="member">HandlerBase</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" kindref="compound">HandlerBase</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af6d298ca51fb7aefc3f394300cbb1869" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" kindref="compound">HandlerBase</ref>&amp;<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af6d298ca51fb7aefc3f394300cbb1869" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" kindref="compound">HandlerBase</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1adcecc953a692bfc64eeeb0b1f0fb2bfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1adcecc953a692bfc64eeeb0b1f0fb2bfd" kindref="member">HandlerBase</ref>(<ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" kindref="compound">HandlerBase</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a57eea3f9049114000f76c8329f18777d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" kindref="compound">HandlerBase</ref>&amp;<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a57eea3f9049114000f76c8329f18777d" kindref="member">operator=</ref>(<ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" kindref="compound">HandlerBase</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ace0463f720ee896fc203aa969d47a162" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Event_1_1Watcher" kindref="compound">JSL::Event::Watcher</ref><sp/>*<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ace0463f720ee896fc203aa969d47a162" kindref="member">GetWatcher</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a563c79882f71efa5db4900b5b87444c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;void(std::string_view)&gt;<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a563c79882f71efa5db4900b5b87444c2" kindref="member">callback_cin</ref>;</highlight></codeline>
+<codeline lineno="74" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af3331568c05a08d5cddc76c93e19ac32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;void(std::string_view)&gt;<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af3331568c05a08d5cddc76c93e19ac32" kindref="member">callback_socket</ref>;</highlight></codeline>
+<codeline lineno="75" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1aca3715dd44106a33de169598998e22c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;void(<ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">JSL::Event::FileChange</ref>)&gt;<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1aca3715dd44106a33de169598998e22c0" kindref="member">callback_file</ref>;</highlight></codeline>
+<codeline lineno="76" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a7180e31000a1edd37ef55866a3099141" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Event_1_1Watcher" kindref="compound">Watcher</ref><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a7180e31000a1edd37ef55866a3099141" kindref="member">Watch</ref>;</highlight></codeline>
+<codeline lineno="77" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a3aebc122d6f0c389e0d266d1c01ca605" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a3aebc122d6f0c389e0d266d1c01ca605" kindref="member">Synchroniser</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="78" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a80a3184165d34eca4957f7a82b7342a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mutex<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a80a3184165d34eca4957f7a82b7342a2" kindref="member">Sync</ref>;</highlight></codeline>
+<codeline lineno="79" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a0504c458a47770bb4ebf7174720675e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::condition_variable<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a0504c458a47770bb4ebf7174720675e1" kindref="member">CV</ref>;</highlight></codeline>
+<codeline lineno="80" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a2ab7fc28af66c1fa55c8c143f9750b9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::queue&lt;Task::Instruction&gt;<sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a2ab7fc28af66c1fa55c8c143f9750b9f" kindref="member">TaskQueue</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a79af047abaabaaeaa709315014412ddd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a79af047abaabaaeaa709315014412ddd" kindref="member">Running</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a59d5ac117b9b78e5b854bdefa443be65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a59d5ac117b9b78e5b854bdefa443be65" kindref="member">ProtectAdd</ref>();</highlight></codeline>
+<codeline lineno="84" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a68ff3c529f4c67c658a0252db0fdea93" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a68ff3c529f4c67c658a0252db0fdea93" kindref="member">HandlerBase</ref>(std::string_view<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a3e7a47d5b605c592f478be4ba38343bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a3e7a47d5b605c592f478be4ba38343bb" kindref="member">HandlerBase</ref>(<ref refid="classJSL_1_1Event_1_1Watcher" kindref="compound">Watcher</ref><sp/>&amp;<sp/>watcher);</highlight></codeline>
+<codeline lineno="86" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1aa8b3e185b5a61aee6d145a891a2062ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1aa8b3e185b5a61aee6d145a891a2062ef" kindref="member">Process</ref>(<ref refid="structJSL_1_1Event_1_1Task_1_1Instruction" kindref="compound">Task::Instruction</ref><sp/>job);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a828df233e0fa7ff98764875a84d19366" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a828df233e0fa7ff98764875a84d19366" kindref="member">Exit</ref>();</highlight></codeline>
+<codeline lineno="90" refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af84af0dbb9f81df903e1086733c4b36d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af84af0dbb9f81df903e1086733c4b36d" kindref="member">InitialiseRun</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Async/ManagerBase.h"/>
+  </compounddef>
+</doxygen>

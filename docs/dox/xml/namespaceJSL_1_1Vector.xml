@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1Vector" kind="namespace" language="C++">
+    <compoundname>JSL::Vector</compoundname>
+    <innerclass refid="structJSL_1_1Vector_1_1SearchResult" prot="public">JSL::Vector::SearchResult</innerclass>
+    <innernamespace refid="namespaceJSL_1_1Vector_1_1internal">JSL::Vector::internal</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceJSL_1_1Vector_1af6f84650334cef1d4a9ca7f47f1b18f8" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t JSL::Vector::NotFound</definition>
+        <argsstring></argsstring>
+        <name>NotFound</name>
+        <qualifiedname>JSL::Vector::NotFound</qualifiedname>
+        <initializer>= static_cast&lt;size_t&gt;(-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Vectors/Search.h" line="9" column="25" bodyfile="include/JSL/Vectors/Search.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1Vector_1a909cb1220801f40b404f51f6ded9f150" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Vector::append</definition>
+        <argsstring>(std::vector&lt; T &gt; &amp;a, const std::vector&lt; T &gt; &amp;b)</argsstring>
+        <name>append</name>
+        <qualifiedname>JSL::Vector::append</qualifiedname>
+        <param>
+          <type>std::vector&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Vectors/Join.h" line="7" column="17" bodyfile="include/JSL/Vectors/Join.h" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Vector_1ae9eb64d166ab8dc0e838ac58121ec654" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Vector::prepend</definition>
+        <argsstring>(std::vector&lt; T &gt; &amp;a, const std::vector&lt; T &gt; &amp;b)</argsstring>
+        <name>prepend</name>
+        <qualifiedname>JSL::Vector::prepend</qualifiedname>
+        <param>
+          <type>std::vector&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Vectors/Join.h" line="14" column="17" bodyfile="include/JSL/Vectors/Join.h" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Vector_1a19caad9fa8f55726b61d8284e175c6f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt; T &gt; JSL::Vector::concat</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;a, const std::vector&lt; T &gt; &amp;b)</argsstring>
+        <name>concat</name>
+        <qualifiedname>JSL::Vector::concat</qualifiedname>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Vectors/Join.h" line="21" column="17" bodyfile="include/JSL/Vectors/Join.h" bodystart="21" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Vector_1a73680c15e114ade4829ed7b318618049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; JSL::Vector::Linspace</definition>
+        <argsstring>(double begin, double end, size_t resolution=100)</argsstring>
+        <name>Linspace</name>
+        <qualifiedname>JSL::Vector::Linspace</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>resolution</declname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Vectors/Linspace.h" line="6" column="17" declfile="include/JSL/Vectors/Linspace.h" declline="6" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Vector_1a8d27d8e326fcee699835a82e4289af83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>internal::SearchableRange</type>
+            <declname>R</declname>
+            <defname>R</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structJSL_1_1Vector_1_1SearchResult" kindref="compound">SearchResult</ref></type>
+        <definition>SearchResult JSL::Vector::find</definition>
+        <argsstring>(const T &amp;x, const R &amp;y)</argsstring>
+        <name>find</name>
+        <qualifiedname>JSL::Vector::find</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const R &amp;</type>
+          <declname>y</declname>
+        </param>
+    <requiresclause>std::convertible_to&lt;T, std::ranges::range_value_t&lt;R&gt;&gt;    </requiresclause>
+        <briefdescription>
+<para>Gets first id such that y[id] == x, assuming that exact equality is well defined (see double override). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be searched for</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to search through </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="structJSL_1_1Vector_1_1SearchResult" kindref="compound">SearchResult</ref> indicating if the element has been found, and the index it can be found at </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Vectors/Search.h" line="29" column="21" bodyfile="include/JSL/Vectors/Search.h" bodystart="29" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Vector_1aafea3c06f0cdf246f5828d145c4b05a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structJSL_1_1Vector_1_1SearchResult" kindref="compound">SearchResult</ref></type>
+        <definition>SearchResult JSL::Vector::find</definition>
+        <argsstring>(double x, const std::vector&lt; double &gt; &amp;y, double tolerance)</argsstring>
+        <name>find</name>
+        <qualifiedname>JSL::Vector::find</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tolerance</declname>
+        </param>
+        <briefdescription>
+<para>Gets first id such that (y[id]- x) &lt; tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be searched for</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to search through</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fractional difference permitted between two double values for them to be declared &quot;approximately equal&quot; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the first element in the array which matches x. Returns JSL::NotFound (equivalent to string::npos) if no match found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Vectors/Search.h" line="45" column="14" declfile="include/JSL/Vectors/Search.h" declline="45" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1Vector_1a8a88f249d6218f5b0cc6327ff88b948d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>internal::SearchableRange</type>
+            <declname>R</declname>
+            <defname>R</defname>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool JSL::Vector::contains</definition>
+        <argsstring>(const T &amp;x, const R &amp;y)</argsstring>
+        <name>contains</name>
+        <qualifiedname>JSL::Vector::contains</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const R &amp;</type>
+          <declname>y</declname>
+        </param>
+    <requiresclause>std::convertible_to&lt;T, std::ranges::range_value_t&lt;R&gt;&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Vectors/Search.h" line="49" column="13" bodyfile="include/JSL/Vectors/Search.h" bodystart="49" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Vectors/Join.h" line="4" column="1"/>
+  </compounddef>
+</doxygen>

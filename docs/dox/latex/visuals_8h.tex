@@ -1,0 +1,51 @@
+\doxysection{include/\+JSL/\+Plot/display/visuals.h File Reference}
+\hypertarget{visuals_8h}{}\label{visuals_8h}\index{include/JSL/Plot/display/visuals.h@{include/JSL/Plot/display/visuals.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include "{}../data/pipe.\+h"{}}\newline
+{\ttfamily \#include "{}../modules/string.\+h"{}}\newline
+{\ttfamily \#include "{}Per\+Axis.\+h"{}}\newline
+{\ttfamily \#include "{}Colorbar.\+h"{}}\newline
+{\ttfamily \#include "{}legend.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Plotting_1_1Display}{JSL\+::\+Plotting\+::\+Display}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Plotting}{JSL\+::\+Plotting}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{visuals_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(...)~    pipe $<$$<$ \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+ $<$$<$ "{}\textbackslash{}n"{};
+\item 
+\#define \mbox{\hyperlink{visuals_8h_a0e87337f23a00a16181c4e905e38d2f4}{IF\+\_\+\+ELSE\+\_\+\+ADD}}(condition,  trueline,  falseline)~    do \{ if (condition) \{\mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(trueline);\} else \{\mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(falseline);\}\} while(0)
+\item 
+\#define \mbox{\hyperlink{visuals_8h_ac74687fea3839bb854ec4114b26daf30}{IF\+\_\+\+ADD}}(condition,  trueline)~    do \{ if (condition) \{\mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(trueline);\}\} while(0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{visuals_8h_a64be21dea386f7637a37c111c081b04a}\label{visuals_8h_a64be21dea386f7637a37c111c081b04a} 
+\index{visuals.h@{visuals.h}!ADD@{ADD}}
+\index{ADD@{ADD}!visuals.h@{visuals.h}}
+\doxysubsubsection{\texorpdfstring{ADD}{ADD}}
+{\footnotesize\ttfamily \#define ADD(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~    pipe $<$$<$ \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+ $<$$<$ "{}\textbackslash{}n"{};}
+
+\Hypertarget{visuals_8h_ac74687fea3839bb854ec4114b26daf30}\label{visuals_8h_ac74687fea3839bb854ec4114b26daf30} 
+\index{visuals.h@{visuals.h}!IF\_ADD@{IF\_ADD}}
+\index{IF\_ADD@{IF\_ADD}!visuals.h@{visuals.h}}
+\doxysubsubsection{\texorpdfstring{IF\_ADD}{IF\_ADD}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+ADD(\begin{DoxyParamCaption}\item[{}]{condition,  }\item[{}]{trueline }\end{DoxyParamCaption})~    do \{ if (condition) \{\mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(trueline);\}\} while(0)}
+
+\Hypertarget{visuals_8h_a0e87337f23a00a16181c4e905e38d2f4}\label{visuals_8h_a0e87337f23a00a16181c4e905e38d2f4} 
+\index{visuals.h@{visuals.h}!IF\_ELSE\_ADD@{IF\_ELSE\_ADD}}
+\index{IF\_ELSE\_ADD@{IF\_ELSE\_ADD}!visuals.h@{visuals.h}}
+\doxysubsubsection{\texorpdfstring{IF\_ELSE\_ADD}{IF\_ELSE\_ADD}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+ELSE\+\_\+\+ADD(\begin{DoxyParamCaption}\item[{}]{condition,  }\item[{}]{trueline,  }\item[{}]{falseline }\end{DoxyParamCaption})~    do \{ if (condition) \{\mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(trueline);\} else \{\mbox{\hyperlink{tic_8h_a64be21dea386f7637a37c111c081b04a}{ADD}}(falseline);\}\} while(0)}
+

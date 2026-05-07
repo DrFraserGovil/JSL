@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader" kind="class" language="C++" prot="public">
+    <compoundname>JSL::internal::Parameter::CommandLineReader</compoundname>
+    <includes refid="CLI__Reader_8h" local="no">CLI_Reader.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1afbf6da0790d6e45217f87cea2c2a69bc" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; JSL::internal::Parameter::CommandLineReader::Commands</definition>
+        <argsstring></argsstring>
+        <name>Commands</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::Commands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="29" column="25" bodyfile="include/JSL/Parameters/CLI_Reader.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a5c1f1abd87d0db00b8e9421a1b361d33" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string,std::string&gt; JSL::internal::Parameter::CommandLineReader::Options</definition>
+        <argsstring></argsstring>
+        <name>Options</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::Options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="30" column="22" bodyfile="include/JSL/Parameters/CLI_Reader.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1aa0e5c9fd9d77d9751327631b497f9a2a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::internal::Parameter::CommandLineReader::Configured</definition>
+        <argsstring></argsstring>
+        <name>Configured</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::Configured</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="31" column="18" bodyfile="include/JSL/Parameters/CLI_Reader.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1abf69cf1cf49154acf48c8d193f70b501" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader" kindref="compound">CommandLineReader</ref> &amp;</type>
+        <definition>static CommandLineReader &amp; JSL::internal::Parameter::CommandLineReader::Get</definition>
+        <argsstring>()</argsstring>
+        <name>Get</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::Get</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="16" column="39" bodyfile="include/JSL/Parameters/CLI_Reader.h" bodystart="16" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1af38a7f0d77ad09b6abca2bb23b9a5e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::internal::Parameter::CommandLineReader::CommandLineReader</definition>
+        <argsstring>()=default</argsstring>
+        <name>CommandLineReader</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::CommandLineReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="21" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1aafa2ec02011d30242516f49e20a34b5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::internal::Parameter::CommandLineReader::CommandLineReader</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>CommandLineReader</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::CommandLineReader</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="22" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a4dedd5d68e70e58872110eaf6325a413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::CommandLineReader::Parse</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>Parse</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::Parse</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="23" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a1828f1863f245af71d4677edca4581ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::CommandLineReader::Configure</definition>
+        <argsstring>(std::filesystem::path configFile, std::string_view configDelimiter)</argsstring>
+        <name>Configure</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::Configure</qualifiedname>
+        <param>
+          <type>std::filesystem::path</type>
+          <declname>configFile</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>configDelimiter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="24" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a2b457be98a4a6953d602efc954916688" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::internal::Parameter::CommandLineReader::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::Reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="25" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1ad5676cfc202a7b86f7df9c1ef6521cee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::internal::Parameter::CommandLineReader::IsConfigured</definition>
+        <argsstring>()</argsstring>
+        <name>IsConfigured</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::IsConfigured</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="26" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a7fd4814df17cf3191eda6897cd304347" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::internal::Parameter::CommandLineReader::Contains</definition>
+        <argsstring>(std::string_view option) const</argsstring>
+        <name>Contains</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::Contains</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>option</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="27" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a2d75ebec4650be7b6acbf28d81addf09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view JSL::internal::Parameter::CommandLineReader::GetOption</definition>
+        <argsstring>(std::string_view key) const</argsstring>
+        <name>GetOption</name>
+        <qualifiedname>JSL::internal::Parameter::CommandLineReader::GetOption</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/CLI_Reader.h" line="28" column="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Parameters/CLI_Reader.h" line="13" column="5" bodyfile="include/JSL/Parameters/CLI_Reader.h" bodystart="14" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1af38a7f0d77ad09b6abca2bb23b9a5e0e" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>CommandLineReader</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1aafa2ec02011d30242516f49e20a34b5b" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>CommandLineReader</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1afbf6da0790d6e45217f87cea2c2a69bc" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>Commands</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a1828f1863f245af71d4677edca4581ad" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>Configure</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1aa0e5c9fd9d77d9751327631b497f9a2a" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>Configured</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a7fd4814df17cf3191eda6897cd304347" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>Contains</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1abf69cf1cf49154acf48c8d193f70b501" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>Get</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a2d75ebec4650be7b6acbf28d81addf09" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>GetOption</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1ad5676cfc202a7b86f7df9c1ef6521cee" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>IsConfigured</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a5c1f1abd87d0db00b8e9421a1b361d33" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>Options</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a4dedd5d68e70e58872110eaf6325a413" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>Parse</name></member>
+      <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a2b457be98a4a6953d602efc954916688" prot="public" virt="non-virtual"><scope>JSL::internal::Parameter::CommandLineReader</scope><name>Reset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

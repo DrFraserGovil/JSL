@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Plotting_1_1LegendObject" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Plotting::LegendObject</compoundname>
+    <includes refid="legend_8h" local="no">legend.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1LegendObject_1a54b01edbdbfc3dcd7ee75aa9e7a5c8ea" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Plotting::LegendObject::Active</definition>
+        <argsstring></argsstring>
+        <name>Active</name>
+        <qualifiedname>JSL::Plotting::LegendObject::Active</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="44" column="22" bodyfile="include/JSL/Plot/display/legend.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1LegendObject_1a88f48f8c52e9c3f5ec10f9e0f112ac06" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JSL::Plotting::LegendObject::MaxColumns</definition>
+        <argsstring></argsstring>
+        <name>MaxColumns</name>
+        <qualifiedname>JSL::Plotting::LegendObject::MaxColumns</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="45" column="21" bodyfile="include/JSL/Plot/display/legend.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1LegendObject_1a4b9460071c7e2d80b1dca5412d345ce7" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceJSL_1_1Plotting_1ac714c2f6e352a8383ae9b9b819f16eec" kindref="member">Position</ref></type>
+        <definition>Position JSL::Plotting::LegendObject::Location</definition>
+        <argsstring></argsstring>
+        <name>Location</name>
+        <qualifiedname>JSL::Plotting::LegendObject::Location</qualifiedname>
+        <initializer>= <ref refid="namespaceJSL_1_1Plotting_1ac714c2f6e352a8383ae9b9b819f16eeca06b9281e396db002010bde1de57262eb" kindref="member">Position::Auto</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="46" column="26" bodyfile="include/JSL/Plot/display/legend.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1LegendObject_1a880bdbeeac59d05ec55deca17dff0e01" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; std::string, <ref refid="namespaceJSL_1_1Plotting_1ac714c2f6e352a8383ae9b9b819f16eec" kindref="member">Position</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;std::string,Position&gt; &gt; JSL::Plotting::LegendObject::SearchVector</definition>
+        <argsstring></argsstring>
+        <name>SearchVector</name>
+        <qualifiedname>JSL::Plotting::LegendObject::SearchVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="48" column="29" bodyfile="include/JSL/Plot/display/legend.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1LegendObject_1a4a37a088de8a3f155ec9423ab01f6628" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::LegendObject::SetLocation</definition>
+        <argsstring>(std::string pos)</argsstring>
+        <name>SetLocation</name>
+        <qualifiedname>JSL::Plotting::LegendObject::SetLocation</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="49" column="22" bodyfile="include/JSL/Plot/display/legend.h" bodystart="49" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1LegendObject_1aaeb24bfb7cc9915af9f51efed9b8554e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::LegendObject::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <qualifiedname>JSL::Plotting::LegendObject::operator()</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="73" column="22" bodyfile="include/JSL/Plot/display/legend.h" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1LegendObject_1ae7962eff6a36e07d30082250882453b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::LegendObject::operator()</definition>
+        <argsstring>(Position loc)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>JSL::Plotting::LegendObject::operator()</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Plotting_1ac714c2f6e352a8383ae9b9b819f16eec" kindref="member">Position</ref></type>
+          <declname>loc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="77" column="22" bodyfile="include/JSL/Plot/display/legend.h" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1LegendObject_1a43078e1751443c050e52e9a29267a70f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::LegendObject::operator()</definition>
+        <argsstring>(std::string loc)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>JSL::Plotting::LegendObject::operator()</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>loc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="82" column="22" bodyfile="include/JSL/Plot/display/legend.h" bodystart="82" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1LegendObject_1a1fd55aa8d3119cef60bef42e87b40aca" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::LegendObject::InitialiseSearch</definition>
+        <argsstring>()</argsstring>
+        <name>InitialiseSearch</name>
+        <qualifiedname>JSL::Plotting::LegendObject::InitialiseSearch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="88" column="22" bodyfile="include/JSL/Plot/display/legend.h" bodystart="88" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1LegendObject_1a486d42edc93fe9780a9d38536ff70e58" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::LegendObject::ToPipe</definition>
+        <argsstring>(internal::GnuplotPipe &amp;pipe)</argsstring>
+        <name>ToPipe</name>
+        <qualifiedname>JSL::Plotting::LegendObject::ToPipe</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe" kindref="compound">internal::GnuplotPipe</ref> &amp;</type>
+          <declname>pipe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/legend.h" line="105" column="22" bodyfile="include/JSL/Plot/display/legend.h" bodystart="105" bodyend="133"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Plot/display/legend.h" line="40" column="9" bodyfile="include/JSL/Plot/display/legend.h" bodystart="41" bodyend="134"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1a54b01edbdbfc3dcd7ee75aa9e7a5c8ea" prot="public" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>Active</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1a1fd55aa8d3119cef60bef42e87b40aca" prot="private" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>InitialiseSearch</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1a4b9460071c7e2d80b1dca5412d345ce7" prot="public" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>Location</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1a88f48f8c52e9c3f5ec10f9e0f112ac06" prot="public" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>MaxColumns</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1aaeb24bfb7cc9915af9f51efed9b8554e" prot="public" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>operator()</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1ae7962eff6a36e07d30082250882453b2" prot="public" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>operator()</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1a43078e1751443c050e52e9a29267a70f" prot="public" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>operator()</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1a880bdbeeac59d05ec55deca17dff0e01" prot="public" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>SearchVector</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1a4a37a088de8a3f155ec9423ab01f6628" prot="public" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>SetLocation</name></member>
+      <member refid="classJSL_1_1Plotting_1_1LegendObject_1a486d42edc93fe9780a9d38536ff70e58" prot="private" virt="non-virtual"><scope>JSL::Plotting::LegendObject</scope><name>ToPipe</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

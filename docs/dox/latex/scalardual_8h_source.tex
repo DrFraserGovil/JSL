@@ -1,0 +1,300 @@
+\doxysection{scalardual.\+h}
+\hypertarget{scalardual_8h_source}{}\label{scalardual_8h_source}\index{include/JSL/Optimiser/scalardual.h@{include/JSL/Optimiser/scalardual.h}}
+\mbox{\hyperlink{scalardual_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <math.h>}\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ This\ is\ the\ algebra\ of\ the\ dual\ field\ RxR\ used\ for\ automatic\ differentiation.\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ \ \ The\ templating\ is\ designed\ to\ minimise\ the\ need\ for\ dual-\/promotion\ of\ scalars,\ whilst\ allowing\ an\ intuitive\ algebra\ (i.e.\ 2\ *\ dual)}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDual}{Dual}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ =\ 0;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//some\ basic\ constructors}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a342de7e68c852736620fde2c2e53bad2}{Dual}}(\textcolor{keywordtype}{double}\ scalar,\textcolor{keywordtype}{double}\ infinitesimal)\ :\ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}(scalar),\ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}(infinitesimal)\{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a68fba40655eb58f6bb8f26ca0635a4a2}{Dual}}()\ :\ \mbox{\hyperlink{classDual}{Dual}}(0,0)\{\};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a896e0e1b089e42e30743b7db65e9cc59}{Dual}}(\textcolor{keywordtype}{double}\ x):\ \mbox{\hyperlink{classDual}{Dual}}(x,0)\{\};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Now\ define\ the\ in-\/place\ operations...}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ADDITION}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDual_a85b0b0fd0dc9557bbbe6d1143c0947ef}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ +=\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ +=\ x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDual_aabecaf3a86de9f1a4fb83e4b25a5a7f6}{operator+=}}(\textcolor{keyword}{const}\ T\ x)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ +=\ x;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//SUBTRACTION}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDual_a4c0b166183cadd06f682617bcf649b75}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ -\/=\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ -\/=\ x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDual_ad954ee9a8d32d58cab2dcffcfaa91d2e}{operator-\/=}}(\textcolor{keyword}{const}\ T\ x)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ -\/=\ x;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//MULTIPLICATION}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDual_a4ddb0fcfad8b9c25fd0f84e383f04b90}{operator*=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ =\ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}*x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ +\ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *=\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}};\ \textcolor{comment}{//update\ second!}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDual_a39540be68ecfe33883a9d53c9b26572f}{operator*=}}(\textcolor{keyword}{const}\ T\ x)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *=\ x;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *=\ x;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//DIVISION}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDual_a76dd1a0a4160be31cbe7a097669b1805}{operator/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ xs\ =\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ =\ (\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ xs-\/\ x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}})/(xs*xs);\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ /=\ xs;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDual_a42b8a9b7b827681eed1572d60d11b869}{operator/=}}(\textcolor{keyword}{const}\ T\ x)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ /=\ x;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ /=\ x;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//LOGIC\ (only\ checks\ scalar\ components)}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//spaceship\ operator\ generates\ <,<=,\ >\ etc.\ }}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classDual_a1e4929f9271f462b78792b7897379581}{operator<=>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ compare)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Scalar\ <=>\ compare.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDual_aa61c2c4a37c9d01d01d901fdc23e864d}{operator<=>}}(\textcolor{keyword}{const}\ T\ compare)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Scalar\ <=>\ compare;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ \ \ \ Dual\ functional\ library}}
+\DoxyCodeLine{00082\ \textcolor{comment}{}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ This\ is\ the\ magic\ which\ makes\ the\ automatic\ differentiation\ work.\ }}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ \ \ \ By\ defining\ dual-\/overloads\ of\ common\ functions,\ we\ enable\ the\ duals\ to\ automatically\ accumulate\ their\ derivatives\ without\ the\ author\ having\ to\ know\ if\ they're\ using\ duals\ or\ not.\ }}
+\DoxyCodeLine{00085\ \textcolor{comment}{}}
+\DoxyCodeLine{00086\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{//ADDITION\ }}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a669c6f920d5efdda487235a6b5c62c05}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ y)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ +\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ +\ y.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a669c6f920d5efdda487235a6b5c62c05}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x,\ T\ y)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ +\ y,x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a669c6f920d5efdda487235a6b5c62c05}{operator+}}(T\ y,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ +\ y,x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//SUBTRACTION}}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a1d97b9d09b9d4b7c49f9648debeb340a}{operator-\/}}(\mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(-\/x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},-\/x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a1d97b9d09b9d4b7c49f9648debeb340a}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ y)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ -\/\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ -\/\ y.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a1d97b9d09b9d4b7c49f9648debeb340a}{operator-\/}}(T\ y,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(y\ -\/\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},-\/1*x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a1d97b9d09b9d4b7c49f9648debeb340a}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x,\ T\ y)}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ -\/\ y,x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \textcolor{comment}{//MULTIPLICATION}}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_ad454562ccbc7b0d0cdf4a5938e847720}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ y)}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ y.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ +\ x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}});}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_ad454562ccbc7b0d0cdf4a5938e847720}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x,\ T\ y)}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}*y,x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}*y);}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_ad454562ccbc7b0d0cdf4a5938e847720}{operator*}}(T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}*y,x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}*y);}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \textcolor{comment}{//DIVISION}}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a4e4c4d72f92d465f019fe106dd53760a}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ y)}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ /\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},\ (x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ -\/\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ y.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}})/(y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a4e4c4d72f92d465f019fe106dd53760a}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x,\ T\ y)}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ /\ y,\ x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/y);}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a4e4c4d72f92d465f019fe106dd53760a}{operator/}}(T\ y,\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(y/x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},\ -\/y*x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//EXPONENTIATION\ \&\ LOGS}}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_aa9432a12ec4680a2bbbe082bfddd58e6}{exp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ex\ =\ std::exp(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}});}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{classDual}{Dual}}(ex,ex*x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a92639f5b3f3a4278106a62b3b8fee531}{log}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00151\ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::log(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}});}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a7f5f947613e56aa65b08f6749a6dd224}{log10}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::log10(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/(std::log(10)*x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_aa46d0654259ed858dadb9de6b200f9ae}{exp1m}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00159\ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ex\ =\ std::expm1(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}});}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(ex,x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}*(ex+1));}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a3dedf941c4cbcb63b868c13413aad5f4}{log1p}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00164\ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::log1p(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/(1.0\ +\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00166\ \ \ \ \ \}\ }
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ POWERS}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_abaf7b4cd190ef5413817569bdb75e6ee}{pow}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x,\ \textcolor{keyword}{const}\ T\ power)}
+\DoxyCodeLine{00169\ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (power\ ==\ 0)}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(1,0);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ oneBelow\ =\ std::pow(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},power-\/1);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(oneBelow*x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},power\ *\ oneBelow\ *\ x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}});}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_abaf7b4cd190ef5413817569bdb75e6ee}{pow}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ power)}
+\DoxyCodeLine{00178\ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{scalardual_8h_aa9432a12ec4680a2bbbe082bfddd58e6}{exp}}(power\ *\ \mbox{\hyperlink{scalardual_8h_a92639f5b3f3a4278106a62b3b8fee531}{log}}(x));}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a216f12639e955dff593204c38fddbd34}{sqrt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sq\ =\ std::sqrt(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}});}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(sq,x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ 0.5/sq);}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a551f284765a563a2cfc19bed5b60e937}{abs}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00187\ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::abs(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ (x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ >=\ 0\ ?\ 1\ :\ -\/1));}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \textcolor{comment}{//Trigonometry}}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a8fa3f0ac9e79ea394d313ab51667267c}{sin}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00192\ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::sin(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ std::cos(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a0c796945cb0f3822ea4d6a217b51628f}{cos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::cos(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ -\/std::sin(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_aef62e60e6f5112f11bb08af44d3a2706}{tan}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ \ x)}
+\DoxyCodeLine{00200\ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cx\ =\ std::cos(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}});}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::tan(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/(cx*cx));}
+\DoxyCodeLine{00203\ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a52562989acb6cca5c833efff77837894}{asin}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00205\ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::asin(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/std::sqrt(1.0\ -\/\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_add02ef84b211e05680cac4efad64da34}{acos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00209\ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::acos(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),-\/x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/std::sqrt(1.0\ -\/\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a992192a6b6a20358f388e092e6bf55b6}{atan}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00213\ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::atan(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}/(1.0\ +\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}));}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_ab206e22fe89b56a5a433d8af0a464841}{atan2}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ y,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x)}
+\DoxyCodeLine{00217\ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ inv\ =\ 1.0/(y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}*y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ +\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}});}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(std::atan2(y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}),x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ -\/y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}*inv\ +\ y.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ *inv);}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_a1bfb0a3106c7278385836d89f7ce5253}{hypot}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ y)}
+\DoxyCodeLine{00222\ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ h\ =\ std::hypot(x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}},y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (h\ ==\ 0)\{\textcolor{keywordflow}{return}\ 0;\};}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(h,(x.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ +\ y.\mbox{\hyperlink{classDual_a69a984cabc52d0a750aab28fcbeab0c2}{Infinitesimal}}\ *\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}})\ /\ h);}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{comment}{//\ DISCONTINUOUS\ -\/-\/\ these\ are\ a\ bit\ of\ a\ mess\ when\ x=y,\ but\ they're\ here\ for\ completeness}}
+\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_afd4f6df07ece93170351dee3c4e3d8d9}{max}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ y)}
+\DoxyCodeLine{00230\ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ x\ >\ y)}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_afd4f6df07ece93170351dee3c4e3d8d9}{max}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x,\ \textcolor{keyword}{const}\ T\ y)}
+\DoxyCodeLine{00241\ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ >\ y)}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(y,0);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_afd4f6df07ece93170351dee3c4e3d8d9}{max}}(\textcolor{keyword}{const}\ T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ y)}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ x\ >\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}})}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x,0);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_acefea306d21f2f52241cf1c4449ca7a0}{min}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ y)}
+\DoxyCodeLine{00263\ \ \ \ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ x\ <=\ y)}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_acefea306d21f2f52241cf1c4449ca7a0}{min}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ x,\ \textcolor{keyword}{const}\ T\ y)}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ x.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}}\ <=\ y)}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(y,0);}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \mbox{\hyperlink{classDual}{Dual}}\ \mbox{\hyperlink{scalardual_8h_acefea306d21f2f52241cf1c4449ca7a0}{min}}(\textcolor{keyword}{const}\ T\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDual}{Dual}}\ y)}
+\DoxyCodeLine{00285\ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ x\ <=\ y.\mbox{\hyperlink{classDual_a02da029cad9fa6e363625ee264258dc8}{Scalar}})}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDual}{Dual}}(x,0);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \}}
+
+\end{DoxyCode}

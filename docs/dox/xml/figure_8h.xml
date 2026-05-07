@@ -1,0 +1,566 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="figure_8h" kind="file" language="C++">
+    <compoundname>figure.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes refid="pipe_8h" local="yes">data/pipe.h</includes>
+    <includes refid="axis_8h" local="yes">axis.h</includes>
+    <includes local="no">sstream</includes>
+    <includedby refid="plot_8h" local="yes">include/JSL/Plot/plot.h</includedby>
+    <incdepgraph>
+      <node id="40">
+        <label>../modules/string.h</label>
+      </node>
+      <node id="29">
+        <label>JSL/Display/ANSI_Codes.h</label>
+        <link refid="ANSI__Codes_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>JSL/Display/Format.h</label>
+        <link refid="Format_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>JSL/Display/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>JSL/Display/Log/Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Log/Core.h</label>
+        <link refid="Core_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>JSL/Display/Log/Levels.h</label>
+        <link refid="Levels_8h"/>
+      </node>
+      <node id="9">
+        <label>axis.h</label>
+        <link refid="axis_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>data/curve.h</label>
+        <link refid="curve_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>data/pipe.h</label>
+        <link refid="pipe_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>Colorbar.h</label>
+        <link refid="Colorbar_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>PerAxis.h</label>
+        <link refid="PerAxis_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Range.h</label>
+        <link refid="Range_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>legend.h</label>
+        <link refid="legend_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>tic.h</label>
+        <link refid="tic_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>display/visuals.h</label>
+        <link refid="visuals_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Plot/figure.h</label>
+        <link refid="figure_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>JSL/Strings.h</label>
+        <link refid="Strings_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Cases.h</label>
+        <link refid="Cases_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Strings/FoldLine.h</label>
+        <link refid="FoldLine_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>Strings/Join.h</label>
+        <link refid="Strings_2Join_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Manipulate.h</label>
+        <link refid="Manipulate_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Strings/ParseTo.h</label>
+        <link refid="ParseTo_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Strings/Represent.h</label>
+        <link refid="Represent_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>JSL/internal/concepts.h</label>
+        <link refid="concepts_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>JSL/internal/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>algorithm</label>
+      </node>
+      <node id="21">
+        <label>charconv</label>
+      </node>
+      <node id="45">
+        <label>cmath</label>
+      </node>
+      <node id="18">
+        <label>concepts</label>
+      </node>
+      <node id="30">
+        <label>cstdint</label>
+      </node>
+      <node id="33">
+        <label>cstdio</label>
+      </node>
+      <node id="32">
+        <label>cstring</label>
+      </node>
+      <node id="7">
+        <label>filesystem</label>
+      </node>
+      <node id="42">
+        <label>format</label>
+      </node>
+      <node id="39">
+        <label>functional</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="34">
+        <label>mutex</label>
+      </node>
+      <node id="19">
+        <label>ranges</label>
+      </node>
+      <node id="6">
+        <label>sstream</label>
+      </node>
+      <node id="5">
+        <label>stdexcept</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="13">
+        <label>string</label>
+      </node>
+      <node id="17">
+        <label>string_view</label>
+      </node>
+      <node id="16">
+        <label>type_traits</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/JSL/Plot/figure.h</label>
+        <link refid="figure_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Plot/plot.h</label>
+        <link refid="plot_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classJSL_1_1Plotting_1_1Figure" prot="public">JSL::Plotting::Figure</innerclass>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Plotting">JSL::Plotting</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pipe_8h" kindref="compound">data/pipe.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="axis_8h" kindref="compound">axis.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Plotting" kindref="compound">JSL::Plotting</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>=<sp/>size_t;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="11" refid="classJSL_1_1Plotting_1_1Figure" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classJSL_1_1Plotting_1_1Figure" kindref="compound">Figure</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//members</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;Plotting::Axis&gt;&gt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>;</highlight></codeline>
+<codeline lineno="15" refid="classJSL_1_1Plotting_1_1Figure_1a63370336251a8dfadcca9c25ae12381a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a63370336251a8dfadcca9c25ae12381a" kindref="member">active_row</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16" refid="classJSL_1_1Plotting_1_1Figure_1af4f6adf9712bae9378ab03fe87c3c19d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1af4f6adf9712bae9378ab03fe87c3c19d" kindref="member">active_col</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17" refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe" kindref="compound">internal::GnuplotPipe</ref><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>;</highlight></codeline>
+<codeline lineno="18" refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref>;</highlight></codeline>
+<codeline lineno="19" refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22" refid="classJSL_1_1Plotting_1_1Figure_1a15a22374910dbc3236a761cfc75bd3bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a15a22374910dbc3236a761cfc75bd3bd" kindref="member">ScriptFramePause</ref><sp/>=<sp/>0.05;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classJSL_1_1Plotting_1_1Figure_1a7e201b907be4319f1b4dc9f0926181eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7e201b907be4319f1b4dc9f0926181eb" kindref="member">Figure</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad26695360f9e6e2611c44befbdf4d8ca" kindref="member">SetMultiplot</ref>(1);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classJSL_1_1Plotting_1_1Figure_1ad05486bf35b85ef6fbc0737057a4a9e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad05486bf35b85ef6fbc0737057a4a9e0" kindref="member">Persist</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>&gt;2)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::logic_error(</highlight><highlight class="stringliteral">&quot;Persistence<sp/>ids<sp/>must<sp/>be<sp/>in<sp/>[0,1,2].&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad05486bf35b85ef6fbc0737057a4a9e0" kindref="member">Persist</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Plotting_1a121deb506d5958d9b611ecbce9cf9b2b" kindref="member">Output</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(level));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37" refid="classJSL_1_1Plotting_1_1Figure_1a11e3db4b1a90043e10092324861b7062" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a11e3db4b1a90043e10092324861b7062" kindref="member">Persist</ref>(<ref refid="namespaceJSL_1_1Plotting_1a121deb506d5958d9b611ecbce9cf9b2b" kindref="member">Output</ref><sp/>level)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>.<ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_1aa717f7f9922bbfc396d4e7370e119c0a" kindref="member">SetPersistence</ref>(level);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41" refid="classJSL_1_1Plotting_1_1Figure_1ad42e2d4e99c78dc69248ab4a8997e95f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad42e2d4e99c78dc69248ab4a8997e95f" kindref="member">ScriptPath</ref>(std::string<sp/>path)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>.<ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_1a32bda93d7d73093dba3d6ca32748b272" kindref="member">SetScriptPath</ref>(path);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45" refid="classJSL_1_1Plotting_1_1Figure_1aaf66a6d9d2c90033ee59413d52118bf8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aaf66a6d9d2c90033ee59413d52118bf8" kindref="member">ClearAll</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>r<sp/>=<sp/>0;<sp/>r<sp/>&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref>;<sp/>++r)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>c<sp/>=<sp/>0;<sp/>c<sp/>&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref>;<sp/>++c)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>[r][c].Clear();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55" refid="classJSL_1_1Plotting_1_1Figure_1a7a3d6f6f9967325f62f7dfdd1e89b51c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7a3d6f6f9967325f62f7dfdd1e89b51c" kindref="member">Clear</ref>()</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7a3d6f6f9967325f62f7dfdd1e89b51c" kindref="member">Clear</ref>(<ref refid="classJSL_1_1Plotting_1_1Figure_1a63370336251a8dfadcca9c25ae12381a" kindref="member">active_row</ref>,<ref refid="classJSL_1_1Plotting_1_1Figure_1af4f6adf9712bae9378ab03fe87c3c19d" kindref="member">active_col</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59" refid="classJSL_1_1Plotting_1_1Figure_1ad77b319e6a9f8d144cc15faaff527b4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad77b319e6a9f8d144cc15faaff527b4b" kindref="member">Clear</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>[row,col]<sp/>=<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad6ea7f265c7d7901564caa90e586bd46" kindref="member">IdToCoord</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7a3d6f6f9967325f62f7dfdd1e89b51c" kindref="member">Clear</ref>(row,col);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64" refid="classJSL_1_1Plotting_1_1Figure_1ad0731a34e5bbebdabbecf77cfc0eb5ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad0731a34e5bbebdabbecf77cfc0eb5ae" kindref="member">Clear</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>col)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>[row][col].Clear();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classJSL_1_1Plotting_1_1Figure_1a131799cb68a35d455532ba1fa6f682c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a131799cb68a35d455532ba1fa6f682c5" kindref="member">Show</ref>()</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>New<sp/>show<sp/>called\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>r<sp/>=<sp/>0;<sp/>r<sp/>&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref>;<sp/>++r)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>c<sp/>=<sp/>0;<sp/>c<sp/>&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref>;<sp/>++c)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>[r][c].SaveData(<ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>,r,c);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a5e911a654418b65c8c29be8b14160d16" kindref="member">MultiplotPrint</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>r<sp/>=<sp/>0;<sp/>r<sp/>&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref>;<sp/>++r)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>c<sp/>=<sp/>0;<sp/>c<sp/>&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref>;<sp/>++c)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>[r][c].Show(<ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref><sp/>*<ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref><sp/>&gt;<sp/>1)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;unset<sp/>multiplot\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>.<ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_1af61ccf05fc9bdec2e6ed0a6f1827e023" kindref="member">GetMode</ref>()<sp/>==<sp/><ref refid="namespaceJSL_1_1Plotting_1a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7" kindref="member">Output::Scripted</ref>)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;pause<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a15a22374910dbc3236a761cfc75bd3bd" kindref="member">ScriptFramePause</ref><sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>.<ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_1adeb0f2da7ef84f2b89c6979888d787aa" kindref="member">flush</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98" refid="classJSL_1_1Plotting_1_1Figure_1ac861fbb26c5b3737b9c384b688c07d10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ac861fbb26c5b3737b9c384b688c07d10" kindref="member">Close</ref>()</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>.<ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_1a651a568e367207ebb8b29c4dc457dd0e" kindref="member">Close</ref>();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classJSL_1_1Plotting_1_1Figure_1ad26695360f9e6e2611c44befbdf4d8ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad26695360f9e6e2611c44befbdf4d8ca" kindref="member">SetMultiplot</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>rowCount,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>columnCount=1)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//size<sp/>0<sp/>is<sp/>meaningless;<sp/>so<sp/>buffer<sp/>up</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rowCount<sp/>=<sp/>std::max((</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)1,rowCount);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>columnCount<sp/>=<sp/>std::max((</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)1,columnCount);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//resize<sp/>the<sp/>internal<sp/>arrays,<sp/>leaving<sp/>the<sp/>existing<sp/>data<sp/>intact</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>.resize(rowCount);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>rowCount;<sp/>++j)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>[j].resize(columnCount);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>rowCount;<sp/>++k)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>[j][k].IsDirty<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>touch<sp/>it<sp/>and<sp/>make<sp/>it<sp/>dirty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref><sp/>=<sp/>rowCount;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref><sp/>=<sp/>columnCount;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="classJSL_1_1Plotting_1_1Figure_1addc2270502ac927e8f3b5d22998c05e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1addc2270502ac927e8f3b5d22998c05e6" kindref="member">MoveTo</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>[row,col]<sp/>=<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad6ea7f265c7d7901564caa90e586bd46" kindref="member">IdToCoord</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1addc2270502ac927e8f3b5d22998c05e6" kindref="member">MoveTo</ref>(row,col);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128" refid="classJSL_1_1Plotting_1_1Figure_1ab3277855fe9a33de896ca5f729fe80ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ab3277855fe9a33de896ca5f729fe80ca" kindref="member">MoveTo</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>row,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>col)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a59ee2b72f6b5352e0ef5111c43762c8a" kindref="member">CheckAxisBounds</ref>(row,col);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1af4f6adf9712bae9378ab03fe87c3c19d" kindref="member">active_col</ref><sp/>=<sp/>col;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a63370336251a8dfadcca9c25ae12381a" kindref="member">active_row</ref><sp/>=<sp/>row;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134" refid="classJSL_1_1Plotting_1_1Figure_1a3911f233b044a42e16b27c4e5fc7c235" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Axis&gt;<sp/>&amp;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a3911f233b044a42e16b27c4e5fc7c235" kindref="member">operator[]</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>row)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a59ee2b72f6b5352e0ef5111c43762c8a" kindref="member">CheckAxisBounds</ref>(row,0);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>[row];</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="classJSL_1_1Plotting_1_1Figure_1a8f5937e7e623cb0a4bbb31340a7b0cba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Axis" kindref="compound">Plotting::Axis</ref>&amp;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8f5937e7e623cb0a4bbb31340a7b0cba" kindref="member">Active</ref>()<sp/>{<sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1acfd2eba200a4a7aaffa22ef204dcd1d7" kindref="member">axis</ref>[<ref refid="classJSL_1_1Plotting_1_1Figure_1a63370336251a8dfadcca9c25ae12381a" kindref="member">active_row</ref>][<ref refid="classJSL_1_1Plotting_1_1Figure_1af4f6adf9712bae9378ab03fe87c3c19d" kindref="member">active_col</ref>];<sp/>}</highlight></codeline>
+<codeline lineno="142" refid="classJSL_1_1Plotting_1_1Figure_1ae191e51e6efba1888f1d32818ccf084d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1AxisMembers_1_1Data" kindref="compound">Plotting::AxisMembers::Data</ref><sp/>&amp;<sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ae191e51e6efba1888f1d32818ccf084d" kindref="member">Add</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8f5937e7e623cb0a4bbb31340a7b0cba" kindref="member">Active</ref>().<ref refid="classJSL_1_1Plotting_1_1Axis_1a9b5abecd60909a2c651ce1a5ed3270bc" kindref="member">Add</ref>();<sp/>};</highlight></codeline>
+<codeline lineno="143" refid="classJSL_1_1Plotting_1_1Figure_1a5796dc9fc1293839549fb363456685e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Display" kindref="compound">Plotting::Display</ref><sp/>&amp;<sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a5796dc9fc1293839549fb363456685e2" kindref="member">Set</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8f5937e7e623cb0a4bbb31340a7b0cba" kindref="member">Active</ref>().<ref refid="classJSL_1_1Plotting_1_1Axis_1a3298b2acacd09903b97d3f1bc8690eed" kindref="member">Set</ref>();<sp/>};</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="146" refid="classJSL_1_1Plotting_1_1Figure_1a59ee2b72f6b5352e0ef5111c43762c8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a59ee2b72f6b5352e0ef5111c43762c8a" kindref="member">CheckAxisBounds</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>row,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>col)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(row<sp/>&gt;=<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref>)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>access<sp/>row<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::to_string(row)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>out<sp/>of<sp/>bounds.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(col<sp/>&gt;=<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref>)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>access<sp/>column<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>+<sp/>std::to_string(row)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>out<sp/>of<sp/>bounds.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="classJSL_1_1Plotting_1_1Figure_1a5e911a654418b65c8c29be8b14160d16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a5e911a654418b65c8c29be8b14160d16" kindref="member">MultiplotPrint</ref>()</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref><sp/>*<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref><sp/>&gt;<sp/>1)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;set<sp/>multiplot<sp/>layout<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref><sp/>&lt;&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1aa7d2f3541df8290b6dd3fcad623b23ab" kindref="member">pipe</ref>.<ref refid="classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_1adeb0f2da7ef84f2b89c6979888d787aa" kindref="member">flush</ref>();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="classJSL_1_1Plotting_1_1Figure_1ad6ea7f265c7d7901564caa90e586bd46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;int,int&gt;<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1ad6ea7f265c7d7901564caa90e586bd46" kindref="member">IdToCoord</ref>(<ref refid="namespaceJSL_1_1Plotting_1a684d348f66a6b0df3f404d8c6cd13cef" kindref="member">szt</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&gt;=<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref><sp/>*<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a8af9694fd78363f9eb685b14a3b85f4e" kindref="member">Rows</ref>)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>access<sp/>axis<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>out<sp/>of<sp/>bounds.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>col<sp/>=<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>%<sp/><ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row<sp/>=<sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>-<sp/>col)/<ref refid="classJSL_1_1Plotting_1_1Figure_1a7945556bca874b7c9cb5cae3bf87d18b" kindref="member">Columns</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{row,col};</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Plot/figure.h"/>
+  </compounddef>
+</doxygen>

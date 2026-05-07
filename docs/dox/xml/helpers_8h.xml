@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="helpers_8h" kind="file" language="C++">
+    <compoundname>helpers.h</compoundname>
+    <includes local="no">array</includes>
+    <includes local="no">cstdio</includes>
+    <includes local="no">string</includes>
+    <includes local="no">span</includes>
+    <includes local="no">cstddef</includes>
+    <includes local="no">cstdint</includes>
+    <includedby refid="readStream_8h" local="yes">include/JSL/FileIO/archiver/readStream.h</includedby>
+    <includedby refid="writeStream_8h" local="yes">include/JSL/FileIO/archiver/writeStream.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/JSL/FileIO/archiver/helpers.h</label>
+        <link refid="helpers_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>array</label>
+      </node>
+      <node id="6">
+        <label>cstddef</label>
+      </node>
+      <node id="7">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>cstdio</label>
+      </node>
+      <node id="5">
+        <label>span</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>include/JSL/FileIO/archiver.h</label>
+        <link refid="archiver_8h"/>
+      </node>
+      <node id="1">
+        <label>include/JSL/FileIO/archiver/helpers.h</label>
+        <link refid="helpers_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/FileIO/archiver/readStream.h</label>
+        <link refid="readStream_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/JSL/FileIO/archiver/reader.h</label>
+        <link refid="reader_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/JSL/FileIO/archiver/writeStream.h</label>
+        <link refid="writeStream_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/JSL/FileIO/archiver/writer.h</label>
+        <link refid="writer_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader" prot="public">JSL::Archiver::internal::TarHeader</innerclass>
+    <innerclass refid="structJSL_1_1Archiver_1_1internal_1_1Security" prot="public">JSL::Archiver::internal::Security</innerclass>
+    <innerclass refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter" prot="public">JSL::Archiver::internal::WriteExporter</innerclass>
+    <innerclass refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData" prot="public">JSL::Archiver::internal::ReadMetaData</innerclass>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Archiver">JSL::Archiver</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Archiver_1_1internal">JSL::Archiver::internal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdio&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;span&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Archiver_1_1internal" kindref="compound">JSL::Archiver::internal</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="namespaceJSL_1_1Archiver_1_1internal_1af1192c0f73871f34b2e3378dc3a4eefe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1Archiver_1_1internal_1af1192c0f73871f34b2e3378dc3a4eefe" kindref="member">BLOCK_SIZE</ref><sp/>=<sp/>512;</highlight></codeline>
+<codeline lineno="14" refid="namespaceJSL_1_1Archiver_1_1internal_1a7fbcb25825f2262c92de701d8f54680a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1Archiver_1_1internal_1a7fbcb25825f2262c92de701d8f54680a" kindref="member">END_OF_ARCHIVE</ref>[2*<ref refid="namespaceJSL_1_1Archiver_1_1internal_1af1192c0f73871f34b2e3378dc3a4eefe" kindref="member">internal::BLOCK_SIZE</ref>]{0};</highlight></codeline>
+<codeline lineno="15" refid="namespaceJSL_1_1Archiver_1_1internal_1a5fad90d70cf64a5f65c759668ae32a39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="namespaceJSL_1_1Archiver_1_1internal_1a5fad90d70cf64a5f65c759668ae32a39" kindref="member">zeroBuffer</ref>[512]{0};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//A<sp/>struct<sp/>for<sp/>holding<sp/>the<sp/>header<sp/>metadata<sp/>for<sp/>the<sp/>overall<sp/>tar<sp/>structure<sp/>--<sp/>constrained<sp/>to<sp/>be<sp/>exactly<sp/>512<sp/>bytes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Forgive<sp/>the<sp/>magic<sp/>numbers:<sp/>they<sp/>are<sp/>defined<sp/>by<sp/>the<sp/>tar<sp/>specification</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader" kindref="compound">TarHeader</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="20" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a284232d0a8b9a7105ba15c6beae9269e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>100&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a284232d0a8b9a7105ba15c6beae9269e" kindref="member">name</ref>{};</highlight></codeline>
+<codeline lineno="21" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ad96e293a8009accfbf6156a645f51893" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>8&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ad96e293a8009accfbf6156a645f51893" kindref="member">mode</ref>{};</highlight></codeline>
+<codeline lineno="22" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a6443a342cdb999dfc3ebdfc0acafb3ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>8&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a6443a342cdb999dfc3ebdfc0acafb3ad" kindref="member">uid</ref>{};</highlight></codeline>
+<codeline lineno="23" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a810b5c91392a9aacd5b4b53aaa991836" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>8&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a810b5c91392a9aacd5b4b53aaa991836" kindref="member">gid</ref>{};</highlight></codeline>
+<codeline lineno="24" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a6593fcae9e8918eb6505c5d8d8ebd0fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>12&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a6593fcae9e8918eb6505c5d8d8ebd0fb" kindref="member">size</ref>{};</highlight></codeline>
+<codeline lineno="25" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1aed780339b11eb8db8c1ba69c118f92fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>12&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1aed780339b11eb8db8c1ba69c118f92fe" kindref="member">mtime</ref>{};</highlight></codeline>
+<codeline lineno="26" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a01d8e5da136b5a05e11f774aa0308163" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>8&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a01d8e5da136b5a05e11f774aa0308163" kindref="member">chksum</ref>{</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a747d6406c974dfa3a3eaba897956d31d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a747d6406c974dfa3a3eaba897956d31d" kindref="member">typeflag</ref>{</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ac4b934cdbe27dec2e2e5bc8d08845d86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>100&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ac4b934cdbe27dec2e2e5bc8d08845d86" kindref="member">linkname</ref>{};</highlight></codeline>
+<codeline lineno="29" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a565ae53ccb78f717ae39688da64e24bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>6&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a565ae53ccb78f717ae39688da64e24bf" kindref="member">magic</ref>{</highlight><highlight class="charliteral">&apos;u&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;t&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;r&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ad0e2984bb1adde8f2738903e6ea0d73c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>2&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ad0e2984bb1adde8f2738903e6ea0d73c" kindref="member">version</ref>{</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a01dde248cdb61b902b6bc2a18f08a67d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>32&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a01dde248cdb61b902b6bc2a18f08a67d" kindref="member">uname</ref>{};</highlight></codeline>
+<codeline lineno="32" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1af643c87488d20bcc49c881b35a0ab595" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>32&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1af643c87488d20bcc49c881b35a0ab595" kindref="member">gname</ref>{};</highlight></codeline>
+<codeline lineno="33" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ac2e86d7daaf1374cf99a3046dca05392" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>8&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ac2e86d7daaf1374cf99a3046dca05392" kindref="member">devmajor</ref>{};</highlight></codeline>
+<codeline lineno="34" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a04af2d3c97e17fa2f4a97a021fb37c41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>8&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a04af2d3c97e17fa2f4a97a021fb37c41" kindref="member">devminor</ref>{};</highlight></codeline>
+<codeline lineno="35" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ae665609fa3feb9c37d4d0561d2692d7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>155&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1ae665609fa3feb9c37d4d0561d2692d7f" kindref="member">prefix</ref>{};</highlight></codeline>
+<codeline lineno="36" refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a09ea043a84f46045415f48204195062f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;char,<sp/>12&gt;<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader_1a09ea043a84f46045415f48204195062f" kindref="member">padding</ref>{};<sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(TarHeader)<sp/>==<sp/>512,<sp/></highlight><highlight class="stringliteral">&quot;TarHeader<sp/>must<sp/>be<sp/>exactly<sp/>512<sp/>bytes&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structJSL_1_1Archiver_1_1internal_1_1Security" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structJSL_1_1Archiver_1_1internal_1_1Security" kindref="compound">Security</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42" refid="structJSL_1_1Archiver_1_1internal_1_1Security_1aaa073b27adf9a939e8fe9763539b053b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1Security_1aaa073b27adf9a939e8fe9763539b053b" kindref="member">UID</ref><sp/>=<sp/>1000;<sp/></highlight><highlight class="comment">//<sp/>uid<sp/>of<sp/>first<sp/>normal<sp/>human<sp/>user.<sp/>A<sp/>good<sp/>default<sp/>as<sp/>tar<sp/>doesn&apos;t<sp/>*really*<sp/>need<sp/>a<sp/>uid<sp/>(it&apos;s<sp/>discarded<sp/>when<sp/>tar<sp/>runs)<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structJSL_1_1Archiver_1_1internal_1_1Security_1a4dde8993590947d8a925086056e0cf5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1Security_1a4dde8993590947d8a925086056e0cf5a" kindref="member">GID</ref><sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="44" refid="structJSL_1_1Archiver_1_1internal_1_1Security_1a740655d2dfbcdc71f6c279a5e97a1556" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1Security_1a740655d2dfbcdc71f6c279a5e97a1556" kindref="member">UName</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45" refid="structJSL_1_1Archiver_1_1internal_1_1Security_1a431100978f1b5f948291ae22d433eced" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1Security_1a431100978f1b5f948291ae22d433eced" kindref="member">GName</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46" refid="structJSL_1_1Archiver_1_1internal_1_1Security_1a50c6587e5936a1724afe4fa7d1442636" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1Security_1a50c6587e5936a1724afe4fa7d1442636" kindref="member">Permission</ref><sp/>=<sp/>0644;<sp/></highlight><highlight class="comment">//standard<sp/>linux<sp/>-rw-r--r--<sp/>permission</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter" kindref="compound">WriteExporter</ref></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52" refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter_1a30828f056fd4c223329fa7acb2b8e659" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1TarHeader" kindref="compound">TarHeader</ref><sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter_1a30828f056fd4c223329fa7acb2b8e659" kindref="member">headerBlock</ref>;</highlight></codeline>
+<codeline lineno="53" refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter_1aa868373e55ef610ef3c0d26b3af3271e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter_1aa868373e55ef610ef3c0d26b3af3271e" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="54" refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter_1af3abc38dc55937069754e8335bc5bd47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1WriteExporter_1af3abc38dc55937069754e8335bc5bd47" kindref="member">padding</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>};<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>container<sp/>for<sp/>recording<sp/>the<sp/>location<sp/>of<sp/>files<sp/>in<sp/>an<sp/>archive<sp/>stream</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData" kindref="compound">ReadMetaData</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62" refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1a5566f797235225d78227940e370ee0a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1a5566f797235225d78227940e370ee0a2" kindref="member">filename</ref>;<sp/></highlight></codeline>
+<codeline lineno="63" refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1a1988f5fdbd3b8dbdc3151ee03b04fcf9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1a1988f5fdbd3b8dbdc3151ee03b04fcf9" kindref="member">file_size</ref>;<sp/></highlight></codeline>
+<codeline lineno="64" refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1af0ce088aaa02611955b4ee0037c760ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::streampos<sp/><ref refid="structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_1af0ce088aaa02611955b4ee0037c760ab" kindref="member">data_offset</ref>;<sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/FileIO/archiver/helpers.h"/>
+  </compounddef>
+</doxygen>

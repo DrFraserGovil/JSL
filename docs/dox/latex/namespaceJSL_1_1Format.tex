@@ -1,0 +1,299 @@
+\doxysection{JSL\+::Format Namespace Reference}
+\hypertarget{namespaceJSL_1_1Format}{}\label{namespaceJSL_1_1Format}\index{JSL::Format@{JSL::Format}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+Group}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Concepts}
+\begin{DoxyCompactItemize}
+\item 
+concept \mbox{\hyperlink{conceptJSL_1_1Format_1_1Formattable}{Formattable}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{Element}} \{ \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}} =1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}0
+, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}} =1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}1
+, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}} =1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}2
+, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Resetter}} =1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a0310aceb1276f364edf89ea449e2a8d5}{Reset\+All}} ("{}\textbackslash{}033\mbox{[}0m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}})
+\item 
+\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a72f9735a888543e7e1b5cb07ae7ad10b}{Reset}} (\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{Element}} sections=\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a564e38f310ecc9f0982f40e18590164d}{Black}} ("{}\textbackslash{}033\mbox{[}30m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ae70c4e93b38e7e6d3d4a4587bdeca2d8}{Red}} ("{}\textbackslash{}033\mbox{[}31m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aca4adf51e196a330791d94688f827cf9}{Green}} ("{}\textbackslash{}033\mbox{[}32m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aaeaa6f8b854fe2f38e404f5c4ccd863f}{Yellow}} ("{}\textbackslash{}033\mbox{[}33m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ac7e4db410a5d82647350de18a9400356}{Blue}} ("{}\textbackslash{}033\mbox{[}34m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a10c116dab0dbf18d5b10741f0ac8b8b2}{Purple}} ("{}\textbackslash{}033\mbox{[}35m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ab57e30d39f562e4b735405a4c3685d57}{Cyan}} ("{}\textbackslash{}033\mbox{[}36m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a08d06db733a345807a8fd58f9c779e46}{White}} ("{}\textbackslash{}033\mbox{[}37m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2a29d497acaa067b570f6d852f40a93a}{Bold}} ("{}\textbackslash{}033\mbox{[}1m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a0827ebc4850da2e12f0b368cb3face90}{Faint}} ("{}\textbackslash{}033\mbox{[}2m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aa979ec2b6fefa52dfd126dde4b9f7ff5}{Italics}} ("{}\textbackslash{}033\mbox{[}3m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ac6a414a59d7fb0376a225b34eb9dcba9}{Underline}} ("{}\textbackslash{}033\mbox{[}4m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a04fd686ba5a0458ded6b2de07a93d263}{Highlight}} ("{}\textbackslash{}033\mbox{[}7m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2f7953035dfe2593afa916fdfae9ec3c}{Strike}} ("{}\textbackslash{}033\mbox{[}9m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\item 
+\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1320a97711cbad9c50f9588e48876a53}{Colour}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1fa23969dab620f3d9b56ef68082766b}{Bg\+Black}} ("{}\textbackslash{}033\mbox{[}40m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_afd273f5fb30815ebe8befcc36d9a60b4}{Bg\+Red}} ("{}\textbackslash{}033\mbox{[}41m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ad2d9099b79b7b1b370d5902a21baaee1}{Bg\+Green}} ("{}\textbackslash{}033\mbox{[}42m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1583018a288e946c518d84e0339b2386}{Bg\+Yellow}} ("{}\textbackslash{}033\mbox{[}43m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a99ad159e7ebe52d597e4c83783b8e259}{Bg\+Blue}} ("{}\textbackslash{}033\mbox{[}44m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_acf947df1b26f461bd72a8de4f4a13b56}{Bg\+Purple}} ("{}\textbackslash{}033\mbox{[}45m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ad0a98bcd9348a1133ab06cfe41beb5ed}{Bg\+Cyan}} ("{}\textbackslash{}033\mbox{[}46m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_add9c1bf1296670a8b34fb32c47cfe0c8}{Bg\+White}} ("{}\textbackslash{}033\mbox{[}47m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aadd84caae79d82316f117f2b4230e644}{Bg\+Colour}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\item 
+\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+Group}} \mbox{\hyperlink{namespaceJSL_1_1Format_a4ceaac6cd5f7128e3e9df76c3d0bb12a}{operator+}} (const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \&a, const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \&b)
+\item 
+{\footnotesize template$<$Formattable T, Formattable U$>$ }\\\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+Group}} \mbox{\hyperlink{namespaceJSL_1_1Format_aacd2ff5e6d7269ff57079a640a82c1d6}{operator+}} (const T \&a, const U \&b)
+\item 
+{\footnotesize template$<$Formattable T$>$ }\\std\+::string \mbox{\hyperlink{namespaceJSL_1_1Format_abd540e54d1fdcf980ae9cd2afda7a6a9}{operator+}} (const T \&a, std\+::string\+\_\+view \&\&b)
+\item 
+{\footnotesize template$<$Formattable T$>$ }\\std\+::string \mbox{\hyperlink{namespaceJSL_1_1Format_a5ea7eba7218414414f6379cc99ce8f41}{operator+}} (std\+::string\+\_\+view \&\&b, const T \&a)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}\label{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622} 
+\index{JSL::Format@{JSL::Format}!Element@{Element}}
+\index{Element@{Element}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Element}{Element}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{JSL\+::\+Format\+::\+Element}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ForegroundColour@{ForegroundColour}!JSL::Format@{JSL::Format}}\index{JSL::Format@{JSL::Format}!ForegroundColour@{ForegroundColour}}}\Hypertarget{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}\label{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8} 
+Foreground\+Colour&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BackgroundColour@{BackgroundColour}!JSL::Format@{JSL::Format}}\index{JSL::Format@{JSL::Format}!BackgroundColour@{BackgroundColour}}}\Hypertarget{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}\label{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c} 
+Background\+Colour&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Style@{Style}!JSL::Format@{JSL::Format}}\index{JSL::Format@{JSL::Format}!Style@{Style}}}\Hypertarget{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}\label{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961} 
+Style&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Resetter@{Resetter}!JSL::Format@{JSL::Format}}\index{JSL::Format@{JSL::Format}!Resetter@{Resetter}}}\Hypertarget{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}\label{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535} 
+Resetter&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceJSL_1_1Format_a1fa23969dab620f3d9b56ef68082766b}\label{namespaceJSL_1_1Format_a1fa23969dab620f3d9b56ef68082766b} 
+\index{JSL::Format@{JSL::Format}!BgBlack@{BgBlack}}
+\index{BgBlack@{BgBlack}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgBlack()}{BgBlack()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+Black (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a99ad159e7ebe52d597e4c83783b8e259}\label{namespaceJSL_1_1Format_a99ad159e7ebe52d597e4c83783b8e259} 
+\index{JSL::Format@{JSL::Format}!BgBlue@{BgBlue}}
+\index{BgBlue@{BgBlue}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgBlue()}{BgBlue()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+Blue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_aadd84caae79d82316f117f2b4230e644}\label{namespaceJSL_1_1Format_aadd84caae79d82316f117f2b4230e644} 
+\index{JSL::Format@{JSL::Format}!BgColour@{BgColour}}
+\index{BgColour@{BgColour}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgColour()}{BgColour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+Colour (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r,  }\item[{uint8\+\_\+t}]{g,  }\item[{uint8\+\_\+t}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceJSL_1_1Format_ad0a98bcd9348a1133ab06cfe41beb5ed}\label{namespaceJSL_1_1Format_ad0a98bcd9348a1133ab06cfe41beb5ed} 
+\index{JSL::Format@{JSL::Format}!BgCyan@{BgCyan}}
+\index{BgCyan@{BgCyan}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgCyan()}{BgCyan()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+Cyan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_ad2d9099b79b7b1b370d5902a21baaee1}\label{namespaceJSL_1_1Format_ad2d9099b79b7b1b370d5902a21baaee1} 
+\index{JSL::Format@{JSL::Format}!BgGreen@{BgGreen}}
+\index{BgGreen@{BgGreen}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgGreen()}{BgGreen()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+Green (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_acf947df1b26f461bd72a8de4f4a13b56}\label{namespaceJSL_1_1Format_acf947df1b26f461bd72a8de4f4a13b56} 
+\index{JSL::Format@{JSL::Format}!BgPurple@{BgPurple}}
+\index{BgPurple@{BgPurple}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgPurple()}{BgPurple()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+Purple (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_afd273f5fb30815ebe8befcc36d9a60b4}\label{namespaceJSL_1_1Format_afd273f5fb30815ebe8befcc36d9a60b4} 
+\index{JSL::Format@{JSL::Format}!BgRed@{BgRed}}
+\index{BgRed@{BgRed}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgRed()}{BgRed()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+Red (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_add9c1bf1296670a8b34fb32c47cfe0c8}\label{namespaceJSL_1_1Format_add9c1bf1296670a8b34fb32c47cfe0c8} 
+\index{JSL::Format@{JSL::Format}!BgWhite@{BgWhite}}
+\index{BgWhite@{BgWhite}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgWhite()}{BgWhite()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+White (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a1583018a288e946c518d84e0339b2386}\label{namespaceJSL_1_1Format_a1583018a288e946c518d84e0339b2386} 
+\index{JSL::Format@{JSL::Format}!BgYellow@{BgYellow}}
+\index{BgYellow@{BgYellow}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{BgYellow()}{BgYellow()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bg\+Yellow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a564e38f310ecc9f0982f40e18590164d}\label{namespaceJSL_1_1Format_a564e38f310ecc9f0982f40e18590164d} 
+\index{JSL::Format@{JSL::Format}!Black@{Black}}
+\index{Black@{Black}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Black()}{Black()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Black (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_ac7e4db410a5d82647350de18a9400356}\label{namespaceJSL_1_1Format_ac7e4db410a5d82647350de18a9400356} 
+\index{JSL::Format@{JSL::Format}!Blue@{Blue}}
+\index{Blue@{Blue}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Blue()}{Blue()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Blue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a2a29d497acaa067b570f6d852f40a93a}\label{namespaceJSL_1_1Format_a2a29d497acaa067b570f6d852f40a93a} 
+\index{JSL::Format@{JSL::Format}!Bold@{Bold}}
+\index{Bold@{Bold}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Bold()}{Bold()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Bold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a1320a97711cbad9c50f9588e48876a53}\label{namespaceJSL_1_1Format_a1320a97711cbad9c50f9588e48876a53} 
+\index{JSL::Format@{JSL::Format}!Colour@{Colour}}
+\index{Colour@{Colour}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Colour()}{Colour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Colour (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r,  }\item[{uint8\+\_\+t}]{g,  }\item[{uint8\+\_\+t}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceJSL_1_1Format_ab57e30d39f562e4b735405a4c3685d57}\label{namespaceJSL_1_1Format_ab57e30d39f562e4b735405a4c3685d57} 
+\index{JSL::Format@{JSL::Format}!Cyan@{Cyan}}
+\index{Cyan@{Cyan}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Cyan()}{Cyan()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Cyan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a0827ebc4850da2e12f0b368cb3face90}\label{namespaceJSL_1_1Format_a0827ebc4850da2e12f0b368cb3face90} 
+\index{JSL::Format@{JSL::Format}!Faint@{Faint}}
+\index{Faint@{Faint}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Faint()}{Faint()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Faint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_aca4adf51e196a330791d94688f827cf9}\label{namespaceJSL_1_1Format_aca4adf51e196a330791d94688f827cf9} 
+\index{JSL::Format@{JSL::Format}!Green@{Green}}
+\index{Green@{Green}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Green()}{Green()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Green (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a04fd686ba5a0458ded6b2de07a93d263}\label{namespaceJSL_1_1Format_a04fd686ba5a0458ded6b2de07a93d263} 
+\index{JSL::Format@{JSL::Format}!Highlight@{Highlight}}
+\index{Highlight@{Highlight}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Highlight()}{Highlight()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Highlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_aa979ec2b6fefa52dfd126dde4b9f7ff5}\label{namespaceJSL_1_1Format_aa979ec2b6fefa52dfd126dde4b9f7ff5} 
+\index{JSL::Format@{JSL::Format}!Italics@{Italics}}
+\index{Italics@{Italics}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Italics()}{Italics()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Italics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a4ceaac6cd5f7128e3e9df76c3d0bb12a}\label{namespaceJSL_1_1Format_a4ceaac6cd5f7128e3e9df76c3d0bb12a} 
+\index{JSL::Format@{JSL::Format}!operator+@{operator+}}
+\index{operator+@{operator+}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+Group}} JSL\+::\+Format\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \&}]{a,  }\item[{const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \&}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_aacd2ff5e6d7269ff57079a640a82c1d6}\label{namespaceJSL_1_1Format_aacd2ff5e6d7269ff57079a640a82c1d6} 
+\index{JSL::Format@{JSL::Format}!operator+@{operator+}}
+\index{operator+@{operator+}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$Formattable T, Formattable U$>$ \\
+\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+Group}} JSL\+::\+Format\+::operator+ (\begin{DoxyParamCaption}\item[{const T \&}]{a,  }\item[{const U \&}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_abd540e54d1fdcf980ae9cd2afda7a6a9}\label{namespaceJSL_1_1Format_abd540e54d1fdcf980ae9cd2afda7a6a9} 
+\index{JSL::Format@{JSL::Format}!operator+@{operator+}}
+\index{operator+@{operator+}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$Formattable T$>$ \\
+std\+::string JSL\+::\+Format\+::operator+ (\begin{DoxyParamCaption}\item[{const T \&}]{a,  }\item[{std\+::string\+\_\+view \&\&}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a5ea7eba7218414414f6379cc99ce8f41}\label{namespaceJSL_1_1Format_a5ea7eba7218414414f6379cc99ce8f41} 
+\index{JSL::Format@{JSL::Format}!operator+@{operator+}}
+\index{operator+@{operator+}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$Formattable T$>$ \\
+std\+::string JSL\+::\+Format\+::operator+ (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view \&\&}]{b,  }\item[{const T \&}]{a }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a10c116dab0dbf18d5b10741f0ac8b8b2}\label{namespaceJSL_1_1Format_a10c116dab0dbf18d5b10741f0ac8b8b2} 
+\index{JSL::Format@{JSL::Format}!Purple@{Purple}}
+\index{Purple@{Purple}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Purple()}{Purple()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Purple (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_ae70c4e93b38e7e6d3d4a4587bdeca2d8}\label{namespaceJSL_1_1Format_ae70c4e93b38e7e6d3d4a4587bdeca2d8} 
+\index{JSL::Format@{JSL::Format}!Red@{Red}}
+\index{Red@{Red}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Red()}{Red()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Red (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a72f9735a888543e7e1b5cb07ae7ad10b}\label{namespaceJSL_1_1Format_a72f9735a888543e7e1b5cb07ae7ad10b} 
+\index{JSL::Format@{JSL::Format}!Reset@{Reset}}
+\index{Reset@{Reset}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{Element}}}]{sections = {\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a0310aceb1276f364edf89ea449e2a8d5}\label{namespaceJSL_1_1Format_a0310aceb1276f364edf89ea449e2a8d5} 
+\index{JSL::Format@{JSL::Format}!ResetAll@{ResetAll}}
+\index{ResetAll@{ResetAll}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{ResetAll()}{ResetAll()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Reset\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a2f7953035dfe2593afa916fdfae9ec3c}\label{namespaceJSL_1_1Format_a2f7953035dfe2593afa916fdfae9ec3c} 
+\index{JSL::Format@{JSL::Format}!Strike@{Strike}}
+\index{Strike@{Strike}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Strike()}{Strike()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Strike (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_ac6a414a59d7fb0376a225b34eb9dcba9}\label{namespaceJSL_1_1Format_ac6a414a59d7fb0376a225b34eb9dcba9} 
+\index{JSL::Format@{JSL::Format}!Underline@{Underline}}
+\index{Underline@{Underline}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Underline()}{Underline()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Underline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_a08d06db733a345807a8fd58f9c779e46}\label{namespaceJSL_1_1Format_a08d06db733a345807a8fd58f9c779e46} 
+\index{JSL::Format@{JSL::Format}!White@{White}}
+\index{White@{White}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{White()}{White()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+White (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Format_aaeaa6f8b854fe2f38e404f5c4ccd863f}\label{namespaceJSL_1_1Format_aaeaa6f8b854fe2f38e404f5c4ccd863f} 
+\index{JSL::Format@{JSL::Format}!Yellow@{Yellow}}
+\index{Yellow@{Yellow}!JSL::Format@{JSL::Format}}
+\doxysubsubsection{\texorpdfstring{Yellow()}{Yellow()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} JSL\+::\+Format\+::\+Yellow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

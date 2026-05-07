@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_2539ef6f62597d5b15e9aecc396f2e68" kind="dir">
+    <compoundname>include/JSL/Plot</compoundname>
+    <innerdir refid="dir_3d92b5da0ceaefaa9e124c4d855639ef">include/JSL/Plot/data</innerdir>
+    <innerdir refid="dir_df1a4e9e5aedf5c0645f2d13d49d9ac4">include/JSL/Plot/display</innerdir>
+    <innerfile refid="axis_8h">axis.h</innerfile>
+    <innerfile refid="figure_8h">figure.h</innerfile>
+    <innerfile refid="plot_8h">plot.h</innerfile>
+    <innerfile refid="textplot_8h">textplot.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Plot/"/>
+  </compounddef>
+</doxygen>

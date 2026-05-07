@@ -1,0 +1,17 @@
+\doxysection{JSL\+::internal\+::Plottable Concept Reference}
+\hypertarget{conceptJSL_1_1internal_1_1Plottable}{}\label{conceptJSL_1_1internal_1_1Plottable}\index{JSL::internal::Plottable@{JSL::internal::Plottable}}
+
+
+{\ttfamily \#include $<$textplot.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptJSL_1_1internal_1_1Plottable}{JSL::internal::Plottable}}\ =\ \ std::ranges::range<T>\ \&\&\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(T\ t)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ t.size()\ \}\ -\/>\ std::integral;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::convertible\_to<std::ranges::range\_value\_t<T>,\ \textcolor{keywordtype}{double}>}
+
+\end{DoxyCode}

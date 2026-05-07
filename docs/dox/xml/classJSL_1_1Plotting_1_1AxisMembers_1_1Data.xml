@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Plotting_1_1AxisMembers_1_1Data" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Plotting::AxisMembers::Data</compoundname>
+    <includes refid="axis_8h" local="no">axis.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1a498ba3789e0480efd444c939cf453600" prot="private" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Plotting_1_1Display" kindref="compound">Display</ref> &amp;</type>
+        <definition>Display&amp; JSL::Plotting::AxisMembers::Data::Visual</definition>
+        <argsstring></argsstring>
+        <name>Visual</name>
+        <qualifiedname>JSL::Plotting::AxisMembers::Data::Visual</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/axis.h" line="19" column="26" bodyfile="include/JSL/Plot/axis.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1a51880d125ca2de3dce0bf4e213327654" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classJSL_1_1Plotting_1_1Curve" kindref="compound">Curve</ref> &gt;</type>
+        <definition>std::vector&lt;Curve&gt; JSL::Plotting::AxisMembers::Data::Curves</definition>
+        <argsstring></argsstring>
+        <name>Curves</name>
+        <qualifiedname>JSL::Plotting::AxisMembers::Data::Curves</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/axis.h" line="22" column="29" bodyfile="include/JSL/Plot/axis.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1a67bdc65f59f020205c1eb51328977a29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Plotting::AxisMembers::Data::Data</definition>
+        <argsstring>(Display &amp;disp)</argsstring>
+        <name>Data</name>
+        <qualifiedname>JSL::Plotting::AxisMembers::Data::Data</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Plotting_1_1Display" kindref="compound">Display</ref> &amp;</type>
+          <declname>disp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/axis.h" line="21" column="17" bodyfile="include/JSL/Plot/axis.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1aa5b08b5ab3db4be6dc1de8ccab805fb8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class S</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Plotting::AxisMembers::Data::Plot</definition>
+        <argsstring>(Vec&lt; T &gt; x, Vec&lt; S &gt; y)</argsstring>
+        <name>Plot</name>
+        <qualifiedname>JSL::Plotting::AxisMembers::Data::Plot</qualifiedname>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Plotting_1aa72d0385bd8eeed098ca4a036bccde11" kindref="member">Vec</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Plotting_1aa72d0385bd8eeed098ca4a036bccde11" kindref="member">Vec</ref>&lt; S &gt;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/axis.h" line="24" column="22" bodyfile="include/JSL/Plot/axis.h" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1a09fa2096906c4a3cb05ea146df652a42" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::AxisMembers::Data::CustomCommand</definition>
+        <argsstring>(const std::string cmd)</argsstring>
+        <name>CustomCommand</name>
+        <qualifiedname>JSL::Plotting::AxisMembers::Data::CustomCommand</qualifiedname>
+        <param>
+          <type>const std::string</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/axis.h" line="29" column="22" bodyfile="include/JSL/Plot/axis.h" bodystart="29" bodyend="32"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>JSL::Plotting::AxisMembers::Data</label>
+        <link refid="classJSL_1_1Plotting_1_1AxisMembers_1_1Data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Visual</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>JSL::Plotting::Color::Controller</label>
+        <link refid="classJSL_1_1Plotting_1_1Color_1_1Controller"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::Plotting::Display</label>
+        <link refid="classJSL_1_1Plotting_1_1Display"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>X</edgelabel>
+          <edgelabel>Y</edgelabel>
+          <edgelabel>Z</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>CB</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>Legend</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>JSL::Plotting::LegendObject</label>
+        <link refid="classJSL_1_1Plotting_1_1LegendObject"/>
+      </node>
+      <node id="3">
+        <label>JSL::Plotting::Properties::PerAxis</label>
+        <link refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Range</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>Tics</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>JSL::Plotting::RangeObject</label>
+        <link refid="classJSL_1_1Plotting_1_1RangeObject"/>
+      </node>
+      <node id="5">
+        <label>JSL::Plotting::TicProperties</label>
+        <link refid="classJSL_1_1Plotting_1_1TicProperties"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/Plot/axis.h" line="16" column="9" bodyfile="include/JSL/Plot/axis.h" bodystart="17" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1a51880d125ca2de3dce0bf4e213327654" prot="public" virt="non-virtual"><scope>JSL::Plotting::AxisMembers::Data</scope><name>Curves</name></member>
+      <member refid="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1a09fa2096906c4a3cb05ea146df652a42" prot="public" virt="non-virtual"><scope>JSL::Plotting::AxisMembers::Data</scope><name>CustomCommand</name></member>
+      <member refid="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1a67bdc65f59f020205c1eb51328977a29" prot="public" virt="non-virtual"><scope>JSL::Plotting::AxisMembers::Data</scope><name>Data</name></member>
+      <member refid="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1aa5b08b5ab3db4be6dc1de8ccab805fb8" prot="public" virt="non-virtual"><scope>JSL::Plotting::AxisMembers::Data</scope><name>Plot</name></member>
+      <member refid="classJSL_1_1Plotting_1_1AxisMembers_1_1Data_1a498ba3789e0480efd444c939cf453600" prot="private" virt="non-virtual"><scope>JSL::Plotting::AxisMembers::Data</scope><name>Visual</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

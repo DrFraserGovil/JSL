@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Format_1_1FormatGroup" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Format::FormatGroup</compoundname>
+    <includes refid="Format_8h" local="no">Format.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Format_1_1FormatGroup_1a5b16b77f0e8f983942dafcac958c33b1" prot="private" static="no" mutable="no">
+        <type>std::pair&lt; bool, <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &gt;</type>
+        <definition>std::pair&lt;bool, Command&gt; JSL::Format::FormatGroup::Foreground</definition>
+        <argsstring></argsstring>
+        <name>Foreground</name>
+        <qualifiedname>JSL::Format::FormatGroup::Foreground</qualifiedname>
+        <initializer>= {false,<ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref>()}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="35" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Format_1_1FormatGroup_1ab400d7095a490bacd612ebffb54f5bad" prot="private" static="no" mutable="no">
+        <type>std::pair&lt; bool, <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &gt;</type>
+        <definition>std::pair&lt;bool, Command&gt; JSL::Format::FormatGroup::Background</definition>
+        <argsstring></argsstring>
+        <name>Background</name>
+        <qualifiedname>JSL::Format::FormatGroup::Background</qualifiedname>
+        <initializer>= {false,<ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref>()}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="36" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Format_1_1FormatGroup_1a40f2f352e97845fff7818b16987cf3b6" prot="private" static="no" mutable="no">
+        <type>std::pair&lt; bool, <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &gt;</type>
+        <definition>std::pair&lt;bool, Command&gt; JSL::Format::FormatGroup::Style</definition>
+        <argsstring></argsstring>
+        <name>Style</name>
+        <qualifiedname>JSL::Format::FormatGroup::Style</qualifiedname>
+        <initializer>= {false,<ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref>()}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="37" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Format_1_1FormatGroup_1a9c963b3b9c3d13c36bef9a686609af3e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Format::FormatGroup::FalseTransparent</definition>
+        <argsstring></argsstring>
+        <name>FalseTransparent</name>
+        <qualifiedname>JSL::Format::FormatGroup::FalseTransparent</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="38" column="18" bodyfile="include/JSL/Display/Format.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1a4ade7b37424476ff989e85263d00cba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Format::FormatGroup::Add</definition>
+        <argsstring>(const Command &amp;cmd)</argsstring>
+        <name>Add</name>
+        <qualifiedname>JSL::Format::FormatGroup::Add</qualifiedname>
+        <param>
+          <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="40" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1a2e1eade7253112a6e19d8a0a45cca7d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Format::FormatGroup::Add</definition>
+        <argsstring>(const FormatGroup &amp;cmd)</argsstring>
+        <name>Add</name>
+        <qualifiedname>JSL::Format::FormatGroup::Add</qualifiedname>
+        <param>
+          <type>const <ref refid="classJSL_1_1Format_1_1FormatGroup" kindref="compound">FormatGroup</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="41" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1a719342d50d0da8e98a5e71db0de35a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Format::FormatGroup::FormatGroup</definition>
+        <argsstring>()</argsstring>
+        <name>FormatGroup</name>
+        <qualifiedname>JSL::Format::FormatGroup::FormatGroup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="42" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1ac195f1f15846d1799f9db8210b572e27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Format::FormatGroup::FormatGroup</definition>
+        <argsstring>(const Command &amp;a)</argsstring>
+        <name>FormatGroup</name>
+        <qualifiedname>JSL::Format::FormatGroup::FormatGroup</qualifiedname>
+        <param>
+          <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="43" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1a7c720804b1673b0f760f649ea7c7e4be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Format::FormatGroup::operator std::string</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::string</name>
+        <qualifiedname>JSL::Format::FormatGroup::string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="45" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classJSL_1_1Format_1_1FormatGroup_1a8e8f984ab5651ad23129d5cb2ff16266" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const FormatGroup &amp;c)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>JSL::Format::FormatGroup::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classJSL_1_1Format_1_1FormatGroup" kindref="compound">FormatGroup</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="44" column="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Display/Format.h" line="32" column="5" bodyfile="include/JSL/Display/Format.h" bodystart="33" bodyend="46"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1a4ade7b37424476ff989e85263d00cba9" prot="public" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>Add</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1a2e1eade7253112a6e19d8a0a45cca7d6" prot="public" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>Add</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1ab400d7095a490bacd612ebffb54f5bad" prot="private" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>Background</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1a9c963b3b9c3d13c36bef9a686609af3e" prot="private" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>FalseTransparent</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1a5b16b77f0e8f983942dafcac958c33b1" prot="private" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>Foreground</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1a719342d50d0da8e98a5e71db0de35a70" prot="public" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>FormatGroup</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1ac195f1f15846d1799f9db8210b572e27" prot="public" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>FormatGroup</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1a7c720804b1673b0f760f649ea7c7e4be" prot="public" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>operator std::string</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1a8e8f984ab5651ad23129d5cb2ff16266" prot="public" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classJSL_1_1Format_1_1FormatGroup_1a40f2f352e97845fff7818b16987cf3b6" prot="private" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>Style</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

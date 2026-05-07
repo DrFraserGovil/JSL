@@ -1,0 +1,37 @@
+\doxysection{base.\+h}
+\hypertarget{base_8h_source}{}\label{base_8h_source}\index{include/JSL/FileIO/archiver/base.h@{include/JSL/FileIO/archiver/base.h}}
+\mbox{\hyperlink{base_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Archiver}{JSL::Archiver}}}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceJSL_1_1Archiver_aeeb3e5dd16147fd2dcdc870080838e3b}{Mode}}}
+\DoxyCodeLine{00006\ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Archiver_aeeb3e5dd16147fd2dcdc870080838e3ba7a1a5f3e79fdc91edf2f5ead9d66abb4}{Read}},}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Archiver_aeeb3e5dd16147fd2dcdc870080838e3ba1129c0e4d43f2d121652a7302712cff6}{Write}},}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Archiver_aeeb3e5dd16147fd2dcdc870080838e3ba3ac4692f3935a49a0b243eecf529faa9}{Append}},}
+\DoxyCodeLine{00013\ \ \ \ \ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{namespace\ }internal}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase}{VaultBase}}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase_a74dc7adf228a6bbad5e365ea0ffd0838}{Name}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Archiver_aeeb3e5dd16147fd2dcdc870080838e3b}{Mode}}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase_abd424415b4f222834fb6a511f036f674}{FileMode}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase_ad2ec62af123651d13f2ba6e6ef23621c}{StrictMode}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase_a764ccd653391211ecf29cf741b95f2a1}{Initialised}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase_ae1e5a163870ab3a18591c9118ea3d7ff}{VaultBase}}(\mbox{\hyperlink{namespaceJSL_1_1Archiver_aeeb3e5dd16147fd2dcdc870080838e3b}{Mode}}\ mode)\ :\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase_abd424415b4f222834fb6a511f036f674}{FileMode}}(mode)\{\};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase_a38e3a02053e84b9b21d1262293563b5c}{SetStrictMode}}(\textcolor{keywordtype}{bool}\ enabled)\ \{\mbox{\hyperlink{classJSL_1_1Archiver_1_1internal_1_1VaultBase_ad2ec62af123651d13f2ba6e6ef23621c}{StrictMode}}\ =\ enabled;\};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//forward\ declaration\ of\ the\ base\ class}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{template}\ <Mode\ M>}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Archiver_1_1Vault}{Vault}};}
+\DoxyCodeLine{00034\ \};}
+
+\end{DoxyCode}

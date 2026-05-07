@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_2f0d7faaa0548f53282bdfd1d20d3332" kind="dir">
+    <compoundname>include/JSL/internal</compoundname>
+    <innerfile refid="concepts_8h">concepts.h</innerfile>
+    <innerfile refid="error_8h">error.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/internal/"/>
+  </compounddef>
+</doxygen>

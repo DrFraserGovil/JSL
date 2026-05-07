@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Plotting::Properties::PerAxis</compoundname>
+    <derivedcompoundref refid="classJSL_1_1Plotting_1_1Color_1_1Controller" prot="public" virt="non-virtual">JSL::Plotting::Color::Controller</derivedcompoundref>
+    <includes refid="PerAxis_8h" local="no">PerAxis.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a6e151523f0812dd0eb4bb8d05b592ffa" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Plotting::Properties::PerAxis::Active</definition>
+        <argsstring></argsstring>
+        <name>Active</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="13" column="18" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a8096e1822460815fdf6c2c8bbe67bd05" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Plotting::Properties::PerAxis::Label</definition>
+        <argsstring></argsstring>
+        <name>Label</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Label</qualifiedname>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="14" column="25" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a327ce0f7e4271f150e4c1821b15fcf06" prot="public" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Plotting_1_1RangeObject" kindref="compound">JSL::Plotting::RangeObject</ref></type>
+        <definition>JSL::Plotting::RangeObject JSL::Plotting::Properties::PerAxis::Range</definition>
+        <argsstring></argsstring>
+        <name>Range</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Range</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="15" column="40" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a02fc34ec143c51c713076f1094e73356" prot="public" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Plotting_1_1TicProperties" kindref="compound">JSL::Plotting::TicProperties</ref></type>
+        <definition>JSL::Plotting::TicProperties JSL::Plotting::Properties::PerAxis::Tics</definition>
+        <argsstring></argsstring>
+        <name>Tics</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Tics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="16" column="42" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1ad220add5ca055bda40342ddaaf6346bd" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Plotting::Properties::PerAxis::TimeParsingFormat</definition>
+        <argsstring></argsstring>
+        <name>TimeParsingFormat</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::TimeParsingFormat</qualifiedname>
+        <initializer>= &quot;%s&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="17" column="25" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1aa582b4efd967f3134a335eab6bc8e1c2" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Plotting::Properties::PerAxis::Log</definition>
+        <argsstring></argsstring>
+        <name>Log</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Log</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="18" column="18" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1ab1432038cf03aa01d15855d1226ed44c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Plotting::Properties::PerAxis::Mirrored</definition>
+        <argsstring></argsstring>
+        <name>Mirrored</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Mirrored</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="19" column="18" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a3cdc87e540963aa2138886f3ada38e20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Properties::PerAxis::LogScale</definition>
+        <argsstring>()</argsstring>
+        <name>LogScale</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::LogScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="20" column="18" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a1f41cf552e3949e73d9242d3903b3e2c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Plotting::Properties::PerAxis::Mirror</definition>
+        <argsstring>()</argsstring>
+        <name>Mirror</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Mirror</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="21" column="18" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a9c238fdde4b40525e682077e9b2bfd0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Plotting::Properties::PerAxis::PerAxis</definition>
+        <argsstring>(bool defaultActive, std::string name)</argsstring>
+        <name>PerAxis</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::PerAxis</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>defaultActive</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="22" column="13" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a0d98d32df4ee68e34b7af72291447ce9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis" kindref="compound">PerAxis</ref></type>
+        <definition>static PerAxis JSL::Plotting::Properties::PerAxis::Default</definition>
+        <argsstring>(std::string name)</argsstring>
+        <name>Default</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Default</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="24" column="28" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1aa9acdacf4b810e8c92cb5382caa56f8a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis" kindref="compound">PerAxis</ref></type>
+        <definition>static PerAxis JSL::Plotting::Properties::PerAxis::Dormant</definition>
+        <argsstring>(std::string name)</argsstring>
+        <name>Dormant</name>
+        <qualifiedname>JSL::Plotting::Properties::PerAxis::Dormant</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Plot/display/PerAxis.h" line="28" column="28" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="28" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>JSL::Plotting::Color::Controller</label>
+        <link refid="classJSL_1_1Plotting_1_1Color_1_1Controller"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>JSL::Plotting::Properties::PerAxis</label>
+        <link refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>JSL::Plotting::Properties::PerAxis</label>
+        <link refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Range</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Tics</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::Plotting::RangeObject</label>
+        <link refid="classJSL_1_1Plotting_1_1RangeObject"/>
+      </node>
+      <node id="3">
+        <label>JSL::Plotting::TicProperties</label>
+        <link refid="classJSL_1_1Plotting_1_1TicProperties"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/Plot/display/PerAxis.h" line="10" column="5" bodyfile="include/JSL/Plot/display/PerAxis.h" bodystart="11" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a6e151523f0812dd0eb4bb8d05b592ffa" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Active</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a0d98d32df4ee68e34b7af72291447ce9" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Default</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1aa9acdacf4b810e8c92cb5382caa56f8a" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Dormant</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a8096e1822460815fdf6c2c8bbe67bd05" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Label</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1aa582b4efd967f3134a335eab6bc8e1c2" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Log</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a3cdc87e540963aa2138886f3ada38e20" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>LogScale</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a1f41cf552e3949e73d9242d3903b3e2c" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Mirror</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1ab1432038cf03aa01d15855d1226ed44c" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Mirrored</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a9c238fdde4b40525e682077e9b2bfd0b" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>PerAxis</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a327ce0f7e4271f150e4c1821b15fcf06" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Range</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1a02fc34ec143c51c713076f1094e73356" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>Tics</name></member>
+      <member refid="classJSL_1_1Plotting_1_1Properties_1_1PerAxis_1ad220add5ca055bda40342ddaaf6346bd" prot="public" virt="non-virtual"><scope>JSL::Plotting::Properties::PerAxis</scope><name>TimeParsingFormat</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

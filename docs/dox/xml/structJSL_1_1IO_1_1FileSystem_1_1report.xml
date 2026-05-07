@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structJSL_1_1IO_1_1FileSystem_1_1report" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::IO::FileSystem::report</compoundname>
+    <includes refid="FileSystem_8h" local="no">FileSystem.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structJSL_1_1IO_1_1FileSystem_1_1report_1aec7c718af9a17cb65db696e947b19f86" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::IO::FileSystem::report::Successful</definition>
+        <argsstring></argsstring>
+        <name>Successful</name>
+        <qualifiedname>JSL::IO::FileSystem::report::Successful</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="40" column="14" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1IO_1_1FileSystem_1_1report_1a6a361101b956a7bac0a75f24696a031a" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::IO::FileSystem::report::Message</definition>
+        <argsstring></argsstring>
+        <name>Message</name>
+        <qualifiedname>JSL::IO::FileSystem::report::Message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="41" column="21" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/FileIO/FileSystem.h" line="38" column="5" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="39" bodyend="42"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1IO_1_1FileSystem_1_1report_1a6a361101b956a7bac0a75f24696a031a" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::report</scope><name>Message</name></member>
+      <member refid="structJSL_1_1IO_1_1FileSystem_1_1report_1aec7c718af9a17cb65db696e947b19f86" prot="public" virt="non-virtual"><scope>JSL::IO::FileSystem::report</scope><name>Successful</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

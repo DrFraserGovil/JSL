@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1IO_1_1FileSystem" kind="namespace" language="C++">
+    <compoundname>JSL::IO::FileSystem</compoundname>
+    <innerclass refid="structJSL_1_1IO_1_1FileSystem_1_1report" prot="public">JSL::IO::FileSystem::report</innerclass>
+    <innerclass refid="classJSL_1_1IO_1_1FileSystem_1_1Structure" prot="public">JSL::IO::FileSystem::Structure</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceJSL_1_1IO_1_1FileSystem_1ac0c88ca2aa5188e80f6b33f44b2a51d5" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Policy</name>
+        <qualifiedname>JSL::IO::FileSystem::Policy</qualifiedname>
+        <enumvalue id="namespaceJSL_1_1IO_1_1FileSystem_1ac0c88ca2aa5188e80f6b33f44b2a51d5a6b8b2f7573f60535583f11c8144cd11e" prot="public">
+          <name>Strict</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceJSL_1_1IO_1_1FileSystem_1ac0c88ca2aa5188e80f6b33f44b2a51d5a5fcfafd8772226ce2651844725aea7ef" prot="public">
+          <name>Quiet</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="45" column="5" bodyfile="include/JSL/FileIO/FileSystem.h" bodystart="45" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceJSL_1_1IO_1_1FileSystem_1a039bbb94ae914fd43051443b4ddade51" prot="public" static="no" extern="yes" mutable="no">
+        <type><ref refid="namespaceJSL_1_1IO_1_1FileSystem_1ac0c88ca2aa5188e80f6b33f44b2a51d5" kindref="member">Policy</ref></type>
+        <definition>Policy JSL::IO::FileSystem::DefaultPolicy</definition>
+        <argsstring></argsstring>
+        <name>DefaultPolicy</name>
+        <qualifiedname>JSL::IO::FileSystem::DefaultPolicy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="50" column="19" declfile="include/JSL/FileIO/FileSystem.h" declline="50" declcolumn="19"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1_1FileSystem_1ac5e0a91fe7251af07ec60661a8fcc610" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt; fs::path &gt; JSL::IO::FileSystem::list</definition>
+        <argsstring>(fs::path target, bool recursive=false)</argsstring>
+        <name>list</name>
+        <qualifiedname>JSL::IO::FileSystem::list</qualifiedname>
+        <param>
+          <type>fs::path</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>recursive</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="34" column="17" declfile="include/JSL/FileIO/FileSystem.h" declline="34" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1_1FileSystem_1aebd147770a298a84ec2357daf1b87fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; fs::path &gt;</type>
+        <definition>std::vector&lt; fs::path &gt; JSL::IO::FileSystem::match</definition>
+        <argsstring>(fs::path target, std::string matchPattern, bool recursive=false)</argsstring>
+        <name>match</name>
+        <qualifiedname>JSL::IO::FileSystem::match</qualifiedname>
+        <param>
+          <type>fs::path</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>matchPattern</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>recursive</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="36" column="17" declfile="include/JSL/FileIO/FileSystem.h" declline="36" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1_1FileSystem_1a9820000a501d1b411742be586096fb17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structJSL_1_1IO_1_1FileSystem_1_1report" kindref="compound">report</ref></type>
+        <definition>report JSL::IO::FileSystem::mkdir</definition>
+        <argsstring>(const fs::path directory, Policy policy=DefaultPolicy)</argsstring>
+        <name>mkdir</name>
+        <qualifiedname>JSL::IO::FileSystem::mkdir</qualifiedname>
+        <param>
+          <type>const fs::path</type>
+          <declname>directory</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceJSL_1_1IO_1_1FileSystem_1ac0c88ca2aa5188e80f6b33f44b2a51d5" kindref="member">Policy</ref></type>
+          <declname>policy</declname>
+          <defval><ref refid="namespaceJSL_1_1IO_1_1FileSystem_1a039bbb94ae914fd43051443b4ddade51" kindref="member">DefaultPolicy</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="52" column="12" declfile="include/JSL/FileIO/FileSystem.h" declline="52" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1_1FileSystem_1a5e637d24af45325ccae2917c78ca0dca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structJSL_1_1IO_1_1FileSystem_1_1report" kindref="compound">report</ref></type>
+        <definition>report JSL::IO::FileSystem::remove</definition>
+        <argsstring>(const fs::path pathToFile, Policy polict=DefaultPolicy)</argsstring>
+        <name>remove</name>
+        <qualifiedname>JSL::IO::FileSystem::remove</qualifiedname>
+        <param>
+          <type>const fs::path</type>
+          <declname>pathToFile</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceJSL_1_1IO_1_1FileSystem_1ac0c88ca2aa5188e80f6b33f44b2a51d5" kindref="member">Policy</ref></type>
+          <declname>polict</declname>
+          <defval><ref refid="namespaceJSL_1_1IO_1_1FileSystem_1a039bbb94ae914fd43051443b4ddade51" kindref="member">DefaultPolicy</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="54" column="12" declfile="include/JSL/FileIO/FileSystem.h" declline="54" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceJSL_1_1IO_1_1FileSystem_1a63f7f9281b0d1b6a8b920eafe586d379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structJSL_1_1IO_1_1FileSystem_1_1report" kindref="compound">report</ref></type>
+        <definition>report JSL::IO::FileSystem::removeDirectory</definition>
+        <argsstring>(const fs::path pathToDirectory, Policy policy=DefaultPolicy)</argsstring>
+        <name>removeDirectory</name>
+        <qualifiedname>JSL::IO::FileSystem::removeDirectory</qualifiedname>
+        <param>
+          <type>const fs::path</type>
+          <declname>pathToDirectory</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceJSL_1_1IO_1_1FileSystem_1ac0c88ca2aa5188e80f6b33f44b2a51d5" kindref="member">Policy</ref></type>
+          <declname>policy</declname>
+          <defval><ref refid="namespaceJSL_1_1IO_1_1FileSystem_1a039bbb94ae914fd43051443b4ddade51" kindref="member">DefaultPolicy</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/FileSystem.h" line="59" column="12" declfile="include/JSL/FileIO/FileSystem.h" declline="59" declcolumn="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/FileIO/FileSystem.h" line="6" column="1"/>
+  </compounddef>
+</doxygen>

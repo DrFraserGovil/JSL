@@ -1,0 +1,72 @@
+\doxysection{Dual\+Add\texorpdfstring{$<$}{<} L, R \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structDualAdd}{}\label{structDualAdd}\index{DualAdd$<$ L, R $>$@{DualAdd$<$ L, R $>$}}
+
+
+{\ttfamily \#include $<$expressions.\+h$>$}
+
+Inheritance diagram for Dual\+Add\texorpdfstring{$<$}{<} L, R \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structDualAdd}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structDualAdd_acadd42cbbd571b57569e7f871cdf06b0}{Dual\+Add}} (const L \&lhs, const R \&rhs)
+\item 
+double \mbox{\hyperlink{structDualAdd_a2d4160808905c375683955c019da7606}{Get\+Scalar}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structBinaryExpression}{Binary\+Expression$<$ L, R $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structBinaryExpression_a1fc996b520dcb6fa35f947fed0780def}{Binary\+Expression}} (const L \&lhs, const R \&rhs)
+\item 
+\mbox{\hyperlink{structGradientHolder}{Gradient\+Holder}} \mbox{\hyperlink{structBinaryExpression_aebcfee3202417b4f0f77d7e7cac89f99}{Get\+Grad}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structDualExpression}{Dual\+Expression$<$ Binary\+Expression $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structBinaryExpression}{Binary\+Expression}} \& \mbox{\hyperlink{structDualExpression_a6b81b7ee6c04b259742686750ed0ea79}{self}} () const
+\item 
+double \mbox{\hyperlink{structDualExpression_a023fa62849bd00161d8b27574243c90b}{Get\+Scalar}} () const
+\item 
+void \mbox{\hyperlink{structDualExpression_a5b85e0296b9aeb8261d61b327aa29653}{accumulate}} (double \texorpdfstring{$\ast$}{*}out, double weight) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{structBinaryExpression}{Binary\+Expression$<$ L, R $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+const L \mbox{\hyperlink{structBinaryExpression_a1dda076ef667d2e6a3e47a48f2001e5f}{LHS}}
+\item 
+const R \mbox{\hyperlink{structBinaryExpression_afa414292c5572026827022a18272598b}{RHS}}
+\item 
+double \mbox{\hyperlink{structBinaryExpression_ad0beb7be091ad24f7a055eb9d443a02b}{w\+\_\+l}}
+\item 
+double \mbox{\hyperlink{structBinaryExpression_ae539329468a28d29b6cf010367497425}{w\+\_\+r}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structDualAdd_acadd42cbbd571b57569e7f871cdf06b0}\label{structDualAdd_acadd42cbbd571b57569e7f871cdf06b0} 
+\index{DualAdd$<$ L, R $>$@{DualAdd$<$ L, R $>$}!DualAdd@{DualAdd}}
+\index{DualAdd@{DualAdd}!DualAdd$<$ L, R $>$@{DualAdd$<$ L, R $>$}}
+\doxysubsubsection{\texorpdfstring{DualAdd()}{DualAdd()}}
+{\footnotesize\ttfamily template$<$typename L , typename R $>$ \\
+\mbox{\hyperlink{structDualAdd}{Dual\+Add}}$<$ L, R $>$\mbox{\hyperlink{structDualAdd}{\+::\+Dual\+Add}} (\begin{DoxyParamCaption}\item[{const L \&}]{lhs,  }\item[{const R \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structDualAdd_a2d4160808905c375683955c019da7606}\label{structDualAdd_a2d4160808905c375683955c019da7606} 
+\index{DualAdd$<$ L, R $>$@{DualAdd$<$ L, R $>$}!GetScalar@{GetScalar}}
+\index{GetScalar@{GetScalar}!DualAdd$<$ L, R $>$@{DualAdd$<$ L, R $>$}}
+\doxysubsubsection{\texorpdfstring{GetScalar()}{GetScalar()}}
+{\footnotesize\ttfamily template$<$typename L , typename R $>$ \\
+double \mbox{\hyperlink{structDualAdd}{Dual\+Add}}$<$ L, R $>$\+::\+Get\+Scalar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Optimiser/\mbox{\hyperlink{expressions_8h}{expressions.\+h}}\end{DoxyCompactItemize}

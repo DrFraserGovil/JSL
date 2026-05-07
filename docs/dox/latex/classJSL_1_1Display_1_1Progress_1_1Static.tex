@@ -1,0 +1,100 @@
+\doxysection{JSL\+::Display\+::Progress\+::Static Class Reference}
+\hypertarget{classJSL_1_1Display_1_1Progress_1_1Static}{}\label{classJSL_1_1Display_1_1Progress_1_1Static}\index{JSL::Display::Progress::Static@{JSL::Display::Progress::Static}}
+
+
+{\ttfamily \#include $<$Progress\+Bar.\+h$>$}
+
+Inheritance diagram for JSL\+::Display\+::Progress\+::Static\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classJSL_1_1Display_1_1Progress_1_1Static}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Static_a4193042980f3f50cccbe7fcfd0f8efcb}{Static}} (size\+\_\+t length, size\+\_\+t bar\+Length=20)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine}{JSL\+::\+Display\+::\+Progress\+::internal\+::\+Progress\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a0736ec4655e8aa0434355af681d62161}{Progress\+Engine}} (std\+::vector$<$ size\+\_\+t $>$ \&\&Dimensions)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a1932d40a5886d0f2975a064b347c3a27}{Tick}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a13d585bb4d997366654d85045a9d3ad6}{Update}} (std\+::vector$<$ int $>$ \&\&positions)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_acc41078889abc1db1785fb20b3511566}{Update}} (int position)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Static_af04c3fc6855c19ebf74478feb9eff96c}{Render}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1Static_a532a8d7d42229ee93ca6a378912b04da}{Last\+Render}} =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine}{JSL\+::\+Display\+::\+Progress\+::internal\+::\+Progress\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a4c09ca0ad8590d797aff91bed15064f1}{Symbol}} = \textquotesingle{}\#\textquotesingle{}
+\item 
+const std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_aa2a145fe4aa3153031ecfd10165789aa}{Dimension}}
+\item 
+const size\+\_\+t \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_ab7e7f98b4042f1eb206659497610d86d}{Depth}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine}{JSL\+::\+Display\+::\+Progress\+::internal\+::\+Progress\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_af412c289ce5b2f720325b2748a4a28ce}{Check\+Marks}} (int idx)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine}{JSL\+::\+Display\+::\+Progress\+::internal\+::\+Progress\+Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a8c20fc559ebe672bf4488be6220984ff}{Mark\+Count}}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a7b75ef4d7afc825baca63b7489803f34}{Progress}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a1738a229e53df6a3614eba8689730ebb}{Render\+Length}}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a5560b7cc21d8668fb2b3c73e5937cff5}{Finished}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1Display_1_1Progress_1_1Static_a4193042980f3f50cccbe7fcfd0f8efcb}\label{classJSL_1_1Display_1_1Progress_1_1Static_a4193042980f3f50cccbe7fcfd0f8efcb} 
+\index{JSL::Display::Progress::Static@{JSL::Display::Progress::Static}!Static@{Static}}
+\index{Static@{Static}!JSL::Display::Progress::Static@{JSL::Display::Progress::Static}}
+\doxysubsubsection{\texorpdfstring{Static()}{Static()}}
+{\footnotesize\ttfamily JSL\+::\+Display\+::\+Progress\+::\+Static\+::\+Static (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{length,  }\item[{size\+\_\+t}]{bar\+Length = {\ttfamily 20} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Display_1_1Progress_1_1Static_af04c3fc6855c19ebf74478feb9eff96c}\label{classJSL_1_1Display_1_1Progress_1_1Static_af04c3fc6855c19ebf74478feb9eff96c} 
+\index{JSL::Display::Progress::Static@{JSL::Display::Progress::Static}!Render@{Render}}
+\index{Render@{Render}!JSL::Display::Progress::Static@{JSL::Display::Progress::Static}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void JSL\+::\+Display\+::\+Progress\+::\+Static\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine_a6bc951680d4ab9e3087824c2f83c5045}{JSL\+::\+Display\+::\+Progress\+::internal\+::\+Progress\+Engine}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1Display_1_1Progress_1_1Static_a532a8d7d42229ee93ca6a378912b04da}\label{classJSL_1_1Display_1_1Progress_1_1Static_a532a8d7d42229ee93ca6a378912b04da} 
+\index{JSL::Display::Progress::Static@{JSL::Display::Progress::Static}!LastRender@{LastRender}}
+\index{LastRender@{LastRender}!JSL::Display::Progress::Static@{JSL::Display::Progress::Static}}
+\doxysubsubsection{\texorpdfstring{LastRender}{LastRender}}
+{\footnotesize\ttfamily int JSL\+::\+Display\+::\+Progress\+::\+Static\+::\+Last\+Render =0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Display/\mbox{\hyperlink{ProgressBar_8h}{Progress\+Bar.\+h}}\end{DoxyCompactItemize}

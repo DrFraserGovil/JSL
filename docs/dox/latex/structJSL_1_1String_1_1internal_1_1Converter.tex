@@ -1,0 +1,52 @@
+\doxysection{JSL\+::String\+::internal\+::Converter\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structJSL_1_1String_1_1internal_1_1Converter}{}\label{structJSL_1_1String_1_1internal_1_1Converter}\index{JSL::String::internal::Converter$<$ T $>$@{JSL::String::internal::Converter$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Parse\+To.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T \mbox{\hyperlink{structJSL_1_1String_1_1internal_1_1Converter_a054037ea4d6f48cee99130d53452c8a2}{internal\+Convert}} (std\+::string\+\_\+view sv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct JSL\+::\+String\+::internal\+::\+Converter$<$ T $>$}
+The backend structure for the convert function.
+
+Required because functions are not able to undergo partial specialisation, whilst classes can. This therefore amounts to some compile-\/time wizardry. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structJSL_1_1String_1_1internal_1_1Converter_a054037ea4d6f48cee99130d53452c8a2}\label{structJSL_1_1String_1_1internal_1_1Converter_a054037ea4d6f48cee99130d53452c8a2} 
+\index{JSL::String::internal::Converter$<$ T $>$@{JSL::String::internal::Converter$<$ T $>$}!internalConvert@{internalConvert}}
+\index{internalConvert@{internalConvert}!JSL::String::internal::Converter$<$ T $>$@{JSL::String::internal::Converter$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{internalConvert()}{internalConvert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static T \mbox{\hyperlink{structJSL_1_1String_1_1internal_1_1Converter}{JSL\+::\+String\+::internal\+::\+Converter}}$<$ T $>$\+::internal\+Convert (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+The default conversion operator -- where the actual conversion happens.
+
+Specialisations (i.\+e. for new convert-\/types) must define their own version of this function 
+\begin{DoxyParams}{Parameters}
+{\em sv} & A string\+\_\+view (implicitly converted from std\+::strings) representing a value to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A value of type T corresponding to the input string 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em logic\+\_\+error} & If the characters could not be converted into numerics (i.\+e. ab) \\
+\hline
+{\em logic\+\_\+error} & If some, but not all, characters could be converted into numerics (i.\+e. 123ab) \\
+\hline
+{\em logic\+\_\+error} & If the result is out of range (i.\+e. convert$<$int$>$(INT\+\_\+\+MAX + 10)) \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Strings/\mbox{\hyperlink{ParseTo_8h}{Parse\+To.\+h}}\end{DoxyCompactItemize}

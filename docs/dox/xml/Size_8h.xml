@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Size_8h" kind="file" language="C++">
+    <compoundname>Size.h</compoundname>
+    <includes local="no">cmath</includes>
+    <includedby refid="Display_8h" local="no">include/JSL/Display.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/JSL/Display/Size.h</label>
+        <link refid="Size_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cmath</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Display.h</label>
+        <link refid="Display_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Display/Size.h</label>
+        <link refid="Size_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structJSL_1_1Terminal_1_1Size" prot="public">JSL::Terminal::Size</innerclass>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Terminal">JSL::Terminal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//for<sp/>size_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Terminal" kindref="compound">JSL::Terminal</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6" refid="structJSL_1_1Terminal_1_1Size" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structJSL_1_1Terminal_1_1Size" kindref="compound">Size</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="8" refid="structJSL_1_1Terminal_1_1Size_1a3215a2bc8d49bc6af86f8c8c4a1eb237" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structJSL_1_1Terminal_1_1Size_1a3215a2bc8d49bc6af86f8c8c4a1eb237" kindref="member">Columns</ref>;</highlight></codeline>
+<codeline lineno="9" refid="structJSL_1_1Terminal_1_1Size_1abc846ec60d851df72479e5efe39d8b5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structJSL_1_1Terminal_1_1Size_1abc846ec60d851df72479e5efe39d8b5f" kindref="member">Rows</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="namespaceJSL_1_1Terminal_1a6a4e1219775f952cca3c2762e4989f01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structJSL_1_1Terminal_1_1Size" kindref="compound">Size</ref><sp/><ref refid="namespaceJSL_1_1Terminal_1a6a4e1219775f952cca3c2762e4989f01" kindref="member">GetDimensions</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Display/Size.h"/>
+  </compounddef>
+</doxygen>

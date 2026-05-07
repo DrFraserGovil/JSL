@@ -1,0 +1,169 @@
+\doxysection{JSL\+::Terminal Namespace Reference}
+\hypertarget{namespaceJSL_1_1Terminal}{}\label{namespaceJSL_1_1Terminal}\index{JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structJSL_1_1Terminal_1_1Size}{Size}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} = std\+::string
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}} \{ \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3}{Up}} =0
+, \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48}{Down}} =1
+, \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26}{Right}} =2
+, \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908}{Left}} =3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceJSL_1_1Terminal_a194d7176d034555e7008938ed071f9f8}{Is\+ANSICapable}} ()
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}{Move}} (\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}} dir, unsigned int steps)
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}{Move\+To\+Column}} (uint32\+\_\+t column)
+\item 
+\mbox{\hyperlink{structJSL_1_1Terminal_1_1Size}{Size}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6a4e1219775f952cca3c2762e4989f01}{Get\+Dimensions}} ()
+\begin{DoxyCompactList}\small\item\em Gets the character-\/dimensions of the terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}{Hide}} = "{}\textbackslash{}033\mbox{[}?25l"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}{Show}} = "{}\textbackslash{}033\mbox{[}?25h"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}{Cursor\+Up}} = "{}\textbackslash{}033\mbox{[}A"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}{Backspace}} = "{}\textbackslash{}b \textbackslash{}b"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375}{Erase\+Right}} = "{}\textbackslash{}033\mbox{[}0\+K"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed}{Erase\+Left}} = "{}\textbackslash{}033\mbox{[}1K"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}{Clear\+Line}} = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}
+\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}{Clear\+Screen}} = "{}\textbackslash{}033\mbox{[}2J\textbackslash{}r"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}\label{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a} 
+\index{JSL::Terminal@{JSL::Terminal}!CursorCommand@{CursorCommand}}
+\index{CursorCommand@{CursorCommand}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{CursorCommand}{CursorCommand}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{JSL\+::\+Terminal\+::\+Cursor\+Command}} = typedef std\+::string}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}\label{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76} 
+\index{JSL::Terminal@{JSL::Terminal}!Direction@{Direction}}
+\index{Direction@{Direction}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{JSL\+::\+Terminal\+::\+Direction}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!JSL::Terminal@{JSL::Terminal}}\index{JSL::Terminal@{JSL::Terminal}!Up@{Up}}}\Hypertarget{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3}\label{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3} 
+Up&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Down@{Down}!JSL::Terminal@{JSL::Terminal}}\index{JSL::Terminal@{JSL::Terminal}!Down@{Down}}}\Hypertarget{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48}\label{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48} 
+Down&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!JSL::Terminal@{JSL::Terminal}}\index{JSL::Terminal@{JSL::Terminal}!Right@{Right}}}\Hypertarget{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26}\label{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26} 
+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!JSL::Terminal@{JSL::Terminal}}\index{JSL::Terminal@{JSL::Terminal}!Left@{Left}}}\Hypertarget{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908}\label{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908} 
+Left&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceJSL_1_1Terminal_a6a4e1219775f952cca3c2762e4989f01}\label{namespaceJSL_1_1Terminal_a6a4e1219775f952cca3c2762e4989f01} 
+\index{JSL::Terminal@{JSL::Terminal}!GetDimensions@{GetDimensions}}
+\index{GetDimensions@{GetDimensions}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{GetDimensions()}{GetDimensions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Terminal_1_1Size}{Size}} JSL\+::\+Terminal\+::\+Get\+Dimensions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the character-\/dimensions of the terminal. 
+
+\Hypertarget{namespaceJSL_1_1Terminal_a194d7176d034555e7008938ed071f9f8}\label{namespaceJSL_1_1Terminal_a194d7176d034555e7008938ed071f9f8} 
+\index{JSL::Terminal@{JSL::Terminal}!IsANSICapable@{IsANSICapable}}
+\index{IsANSICapable@{IsANSICapable}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{IsANSICapable()}{IsANSICapable()}}
+{\footnotesize\ttfamily bool JSL\+::\+Terminal\+::\+Is\+ANSICapable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}\label{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37} 
+\index{JSL::Terminal@{JSL::Terminal}!Move@{Move}}
+\index{Move@{Move}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}}}]{dir,  }\item[{unsigned int}]{steps }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}\label{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb} 
+\index{JSL::Terminal@{JSL::Terminal}!MoveToColumn@{MoveToColumn}}
+\index{MoveToColumn@{MoveToColumn}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{MoveToColumn()}{MoveToColumn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Move\+To\+Column (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{column }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}\label{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160} 
+\index{JSL::Terminal@{JSL::Terminal}!Backspace@{Backspace}}
+\index{Backspace@{Backspace}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{Backspace}{Backspace}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Backspace = "{}\textbackslash{}b \textbackslash{}b"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}\label{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f} 
+\index{JSL::Terminal@{JSL::Terminal}!ClearLine@{ClearLine}}
+\index{ClearLine@{ClearLine}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{ClearLine}{ClearLine}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Clear\+Line = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}\label{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e} 
+\index{JSL::Terminal@{JSL::Terminal}!ClearScreen@{ClearScreen}}
+\index{ClearScreen@{ClearScreen}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{ClearScreen}{ClearScreen}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Clear\+Screen = "{}\textbackslash{}033\mbox{[}2J\textbackslash{}r"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}\label{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d} 
+\index{JSL::Terminal@{JSL::Terminal}!CursorUp@{CursorUp}}
+\index{CursorUp@{CursorUp}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{CursorUp}{CursorUp}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Cursor\+Up = "{}\textbackslash{}033\mbox{[}A"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed}\label{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed} 
+\index{JSL::Terminal@{JSL::Terminal}!EraseLeft@{EraseLeft}}
+\index{EraseLeft@{EraseLeft}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{EraseLeft}{EraseLeft}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Erase\+Left = "{}\textbackslash{}033\mbox{[}1K"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375}\label{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375} 
+\index{JSL::Terminal@{JSL::Terminal}!EraseRight@{EraseRight}}
+\index{EraseRight@{EraseRight}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{EraseRight}{EraseRight}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Erase\+Right = "{}\textbackslash{}033\mbox{[}0\+K"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}\label{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2} 
+\index{JSL::Terminal@{JSL::Terminal}!Hide@{Hide}}
+\index{Hide@{Hide}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{Hide}{Hide}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Hide = "{}\textbackslash{}033\mbox{[}?25l"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}\label{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547} 
+\index{JSL::Terminal@{JSL::Terminal}!Show@{Show}}
+\index{Show@{Show}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{Show}{Show}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Show = "{}\textbackslash{}033\mbox{[}?25h"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+

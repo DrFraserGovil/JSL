@@ -1,0 +1,184 @@
+\doxysection{pipe.\+h}
+\hypertarget{pipe_8h_source}{}\label{pipe_8h_source}\index{include/JSL/Plot/data/pipe.h@{include/JSL/Plot/data/pipe.h}}
+\mbox{\hyperlink{pipe_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ ||\ defined(\_WIN64)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \ \ \ \#include\ <process.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \#define\ GETPID\ \_getpid}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#include\ <unistd.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \#define\ GETPID\ getpid}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Plotting}{JSL::Plotting}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2bab1f023eff9a6b5308d6024e4c6b3d475}{Transient}}\ \ \ =\ 0,\ \ \ \ \textcolor{comment}{//\ Live\ updates,\ closes\ with\ app}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba5fe7b9358c9cb1b9eaa8d5aec000def4}{Persistent}}\ \ =\ 1,\ \ \ \ \textcolor{comment}{//\ Live\ updates,\ stays\ open\ (multiplot\ issues)}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Scripted}}\ \ \ \ =\ 2,\ \ \ \ \textcolor{comment}{//\ Generates\ .gp\ file}}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{namespace\ }internal\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_1_1internal_afd6f87be520b72d7dbae32e96bb63520}{makeSafePath}}()}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tmpDir\ =\ std::filesystem::temp\_directory\_path();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ now\ =\ std::chrono::steady\_clock::now().time\_since\_epoch().count();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pid\ =\ \mbox{\hyperlink{pipe_8h_a7619c450d37a313aec4406af35c363ac}{GETPID}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (tmpDir\ /\ std::format(\textcolor{stringliteral}{"{}gnuplot\_\{\}\_\{\}.gp"{}},\ pid,now)).string();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{GnuplotPipe}}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FILE*\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a5079f3698e0ccc5ce99899b24df1a9b6}{PipeOpen}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_ab14394f9695a3cb75a184aa10be3f6ad}{Buffer}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}}\ =\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba5fe7b9358c9cb1b9eaa8d5aec000def4}{Output::Persistent}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a8099c8337b448df6a30c75276e3a73ce}{BufferEmpty}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa4af6f31dc75008e948e6810f5b29549}{writeToPipe}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ cmd)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a5079f3698e0ccc5ce99899b24df1a9b6}{PipeOpen}})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a7e5f4cb4c9aa6302fcbd4ea2bbe15099}{OpenPipe}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}},\ \textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ cmd);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fflush(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}});\ \textcolor{comment}{//\ forces\ gnuplot\ to\ read\ the\ command\ immediately}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa99a91c7b1502eb76a805e9320a4fcad}{ScriptPath}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a6b4039dd3fb17f900df917147d301b5f}{GnuplotPipe}}()\{\}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a7e5f4cb4c9aa6302fcbd4ea2bbe15099}{OpenPipe}}()}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/persist\ keeps\ the\ window\ open\ after\ the\ pipe\ closes}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cmd;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}}\ ==\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba5fe7b9358c9cb1b9eaa8d5aec000def4}{Output::Persistent}})}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}}\ =\ popen(\textcolor{stringliteral}{"{}gnuplot\ -\/persist"{}},\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//we\ do\ this\ even\ with\ scripted\ mode,\ just\ to\ check\ that\ gnuplot\ exists!}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}}\ =\ popen(\textcolor{stringliteral}{"{}gnuplot"{}},\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Gnuplot\ not\ found!"{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a5079f3698e0ccc5ce99899b24df1a9b6}{PipeOpen}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}}\ ==\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Output::Scripted}})}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}}\ =\ fopen(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa99a91c7b1502eb76a805e9320a4fcad}{ScriptPath}}.string().c\_str(),\textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}})}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Could\ not\ open\ script\ file\ '"{}}\ +\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa99a91c7b1502eb76a805e9320a4fcad}{ScriptPath}}.string()\ +\ \textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a7b9594f1cea2bd4ffc17522c241eb794}{\string~GnuplotPipe}}()}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a651a568e367207ebb8b29c4dc457dd0e}{Close}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa717f7f9922bbfc396d4e7370e119c0a}{SetPersistence}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}}\ level)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a5079f3698e0ccc5ce99899b24df1a9b6}{PipeOpen}})}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a651a568e367207ebb8b29c4dc457dd0e}{Close}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Output::Scripted}}\ \&\&\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}}\ !=\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Output::Scripted}})}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa99a91c7b1502eb76a805e9320a4fcad}{ScriptPath}}\ =\mbox{\hyperlink{namespaceJSL_1_1Plotting_1_1internal_afd6f87be520b72d7dbae32e96bb63520}{makeSafePath}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_ab14394f9695a3cb75a184aa10be3f6ad}{Buffer}}\ <<\ \textcolor{stringliteral}{"{}\#\ This\ gnuplot\ file\ was\ autogenerated\ by\ the\ JSL::Plotting\ library.\(\backslash\)n\#\(\backslash\)tIt\ can\ be\ invoked\ by\ calling\ \(\backslash\)"{}gnuplot\ -\/p\ "{}}\ <<\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa99a91c7b1502eb76a805e9320a4fcad}{ScriptPath}}.string()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ on\ the\ command\ line.\(\backslash\)n"{}};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}}\ =\ level;\ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a32bda93d7d73093dba3d6ca32748b272}{SetScriptPath}}(std::string\ path)}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}}\ !=\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Output::Scripted}})}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa717f7f9922bbfc396d4e7370e119c0a}{SetPersistence}}(\mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Output::Scripted}});}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa99a91c7b1502eb76a805e9320a4fcad}{ScriptPath}}\ =\ path;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_af61ccf05fc9bdec2e6ed0a6f1827e023}{GetMode}}()}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a651a568e367207ebb8b29c4dc457dd0e}{Close}}()}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a5079f3698e0ccc5ce99899b24df1a9b6}{PipeOpen}})}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a401db36a92dd5920d8603e693854f3cf}{send}}(\textcolor{stringliteral}{"{}exit"{}});}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}}\ ==\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Output::Scripted}})}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fclose(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}});}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pclose(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}});}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a5079f3698e0ccc5ce99899b24df1a9b6}{PipeOpen}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a4756d53537369f4e88370f05e9153896}{Pipe}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa2a907cb827193a76d1f0db2397e10eb}{Mode}}\ ==\ \mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2ba599c4da5aade4937fda5e1320fbc76e7}{Output::Scripted}})}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cmd\ =\ \textcolor{stringliteral}{"{}gnuplot\ -\/p\ "{}}\ +\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa99a91c7b1502eb76a805e9320a4fcad}{ScriptPath}}.string()\ +\ \textcolor{stringliteral}{"{}\ \&"{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ret\ =\ system(cmd.c\_str());}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (void)ret;\ \textcolor{comment}{//\ purely\ to\ suppress\ compiler\ warnings\ -\/-\/\ we\ can't\ meaningfully\ check\ the\ return\ value\ because\ we've\ detached\ the\ process}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a401db36a92dd5920d8603e693854f3cf}{send}}(\textcolor{keyword}{const}\ std::string\&\ command)}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_adeb0f2da7ef84f2b89c6979888d787aa}{flush}}();\ \textcolor{comment}{//flush\ anything\ in\ the\ buffer\ first}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa4af6f31dc75008e948e6810f5b29549}{writeToPipe}}(command.c\_str());}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_adeb0f2da7ef84f2b89c6979888d787aa}{flush}}()}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a8099c8337b448df6a30c75276e3a73ce}{BufferEmpty}})}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_aa4af6f31dc75008e948e6810f5b29549}{writeToPipe}}(\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_ab14394f9695a3cb75a184aa10be3f6ad}{Buffer}}.str().c\_str());}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a5f7c9688f7d39f838df183a2095d89ae}{EmptyBuffer}}();}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a5f7c9688f7d39f838df183a2095d89ae}{EmptyBuffer}}()}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_ab14394f9695a3cb75a184aa10be3f6ad}{Buffer}}.str(std::string());}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_ab14394f9695a3cb75a184aa10be3f6ad}{Buffer}}.clear();}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a8099c8337b448df6a30c75276e3a73ce}{BufferEmpty}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{GnuplotPipe}}\ \&\ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_af288ed85879ab64f7949e54e39c402c5}{operator<<}}(T\ input)}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_ab14394f9695a3cb75a184aa10be3f6ad}{Buffer}}\ <<\ input;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe_a8099c8337b448df6a30c75276e3a73ce}{BufferEmpty}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \};\ \textcolor{comment}{//end\ pipe\ class}}
+\DoxyCodeLine{00176\ \ \ \ \ \}\ \textcolor{comment}{//\ end\ internal}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \}\ \textcolor{comment}{//\ end\ plotting}}
+
+\end{DoxyCode}

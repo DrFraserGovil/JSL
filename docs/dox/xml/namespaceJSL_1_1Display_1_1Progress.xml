@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceJSL_1_1Display_1_1Progress" kind="namespace" language="C++">
+    <compoundname>JSL::Display::Progress</compoundname>
+    <innerclass refid="classJSL_1_1Display_1_1Progress_1_1Bar" prot="public">JSL::Display::Progress::Bar</innerclass>
+    <innerclass refid="classJSL_1_1Display_1_1Progress_1_1Static" prot="public">JSL::Display::Progress::Static</innerclass>
+    <innernamespace refid="namespaceJSL_1_1Display_1_1Progress_1_1internal">JSL::Display::Progress::internal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Display/ProgressBar.h" line="4" column="1"/>
+  </compounddef>
+</doxygen>

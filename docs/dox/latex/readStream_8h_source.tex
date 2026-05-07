@@ -1,0 +1,60 @@
+\doxysection{read\+Stream.\+h}
+\hypertarget{readStream_8h_source}{}\label{readStream_8h_source}\index{include/JSL/FileIO/archiver/readStream.h@{include/JSL/FileIO/archiver/readStream.h}}
+\mbox{\hyperlink{readStream_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Manipulate_8h}{JSL/Strings/Manipulate.h}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{helpers_8h}{helpers.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Archiver}{JSL::Archiver}}\{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream}{ReadStream}}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a3dc1fed75001b6f04dc5cff5e95af148}{Size}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ std::streampos\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_aba88193d5c05ecb7b35aa6e2d4656ae0}{data\_offset}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ std::ifstream\ \&\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a7b8c70a0cebbc50cd1c52b252fd3ed4a}{StreamCopy}};\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_ab0fa26982f01fc99d079e4537aa370cc}{StreamBlocks}}(std::function<\textcolor{keywordtype}{void}(std::string\_view)>\ callback);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_af931cbe7098d169bd7b89166350a1f28}{ReadStream}}(\textcolor{keywordtype}{size\_t}\ size,\ std::streampos\ offset,\ std::ifstream\ \&\ stream);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a091b8c42f0e26c15a2a5593833b20c95}{ForLineIn}}(std::function<\textcolor{keywordtype}{void}(std::string\_view)>\ perLineFunction);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...ColumnTypes,\ \textcolor{keyword}{typename}\ TupleFunctor>}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_ad0049850c5118f4355f6f858130df8b3}{ForTabularLineIn}}(std::string\ delimiter,TupleFunctor\ perTupleFunction)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a091b8c42f0e26c15a2a5593833b20c95}{ForLineIn}}([\&](std::string\_view\ line)\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ row\ =\ ParseTo<ColumnTypes...>(\mbox{\hyperlink{namespaceJSL_1_1String_aff8fdefe9d0ac40692ee9b9fd61f9408}{String::split\_view}}(line,delimiter));}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ perTupleFunction(row);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a23a6d4d3060811ea9fcf2699347e161c}{AsText}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...ColumnTypes>}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::tuple<ColumnTypes...>>\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a45d1c8390469d4950e05c8734bc4b05a}{AsTable}}(\textcolor{keyword}{const}\ std::string\ \&\ delimiter\ =\textcolor{stringliteral}{"{}\ "{}})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::tuple<ColumnTypes...>>\ rows;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_ad0049850c5118f4355f6f858130df8b3}{ForTabularLineIn}}<ColumnTypes...>(delimiter,[\&](\textcolor{keyword}{auto}\ row)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rows.push\_back(row);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rows;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}

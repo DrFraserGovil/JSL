@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Event_1_1Antenna_1_1Hotline" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Event::Antenna::Hotline</compoundname>
+    <includes refid="Socket_8h" local="no">Socket.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Antenna_1_1Hotline_1a7bafafcde64c9660227935babff2489a" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double JSL::Event::Antenna::Hotline::Timeout</definition>
+        <argsstring></argsstring>
+        <name>Timeout</name>
+        <qualifiedname>JSL::Event::Antenna::Hotline::Timeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Socket.h" line="77" column="8" bodyfile="include/JSL/Async/Socket.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Antenna_1_1Hotline_1a91274e76bfb226d41d935a178da641a9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Event::Antenna::Hotline::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>JSL::Event::Antenna::Hotline::ID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Socket.h" line="80" column="13" bodyfile="include/JSL/Async/Socket.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Antenna_1_1Hotline_1ab2773cef68de037d34369b4062ea570b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classJSL_1_1Event_1_1Antenna_1_1Hotline" kindref="compound">Hotline</ref> &gt;</type>
+        <definition>static std::optional&lt; Hotline &gt; JSL::Event::Antenna::Hotline::Create</definition>
+        <argsstring>(std::string_view identifier, double timeout)</argsstring>
+        <name>Create</name>
+        <qualifiedname>JSL::Event::Antenna::Hotline::Create</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>identifier</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Socket.h" line="73" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Antenna_1_1Hotline_1ae420e3696c7529c2db90a605a38b4041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Event::Antenna::Hotline::Hotline</definition>
+        <argsstring>(const Antenna &amp;host)</argsstring>
+        <name>Hotline</name>
+        <qualifiedname>JSL::Event::Antenna::Hotline::Hotline</qualifiedname>
+        <param>
+          <type>const <ref refid="classJSL_1_1Event_1_1Antenna" kindref="compound">Antenna</ref> &amp;</type>
+          <declname>host</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Socket.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Antenna_1_1Hotline_1a20cfad05b02ce4b7de98f44961cb8cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::Event::Antenna::Hotline::Send</definition>
+        <argsstring>(std::string_view msg)</argsstring>
+        <name>Send</name>
+        <qualifiedname>JSL::Event::Antenna::Hotline::Send</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Socket.h" line="76" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Antenna_1_1Hotline_1a0625710434817be77b0051c7b6c8b58c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Event::Antenna::Hotline::Hotline</definition>
+        <argsstring>()=default</argsstring>
+        <name>Hotline</name>
+        <qualifiedname>JSL::Event::Antenna::Hotline::Hotline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Socket.h" line="78" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This is mostly just a wrapper for the Socket::Hotline function without needing to keep the identifier around. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Async/Socket.h" line="70" column="1" bodyfile="include/JSL/Async/Socket.h" bodystart="71" bodyend="84"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Event_1_1Antenna_1_1Hotline_1ab2773cef68de037d34369b4062ea570b" prot="public" virt="non-virtual"><scope>JSL::Event::Antenna::Hotline</scope><name>Create</name></member>
+      <member refid="classJSL_1_1Event_1_1Antenna_1_1Hotline_1ae420e3696c7529c2db90a605a38b4041" prot="public" virt="non-virtual"><scope>JSL::Event::Antenna::Hotline</scope><name>Hotline</name></member>
+      <member refid="classJSL_1_1Event_1_1Antenna_1_1Hotline_1a0625710434817be77b0051c7b6c8b58c" prot="public" virt="non-virtual"><scope>JSL::Event::Antenna::Hotline</scope><name>Hotline</name></member>
+      <member refid="classJSL_1_1Event_1_1Antenna_1_1Hotline_1a91274e76bfb226d41d935a178da641a9" prot="private" virt="non-virtual"><scope>JSL::Event::Antenna::Hotline</scope><name>ID</name></member>
+      <member refid="classJSL_1_1Event_1_1Antenna_1_1Hotline_1a20cfad05b02ce4b7de98f44961cb8cec" prot="public" virt="non-virtual"><scope>JSL::Event::Antenna::Hotline</scope><name>Send</name></member>
+      <member refid="classJSL_1_1Event_1_1Antenna_1_1Hotline_1a7bafafcde64c9660227935babff2489a" prot="public" virt="non-virtual"><scope>JSL::Event::Antenna::Hotline</scope><name>Timeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

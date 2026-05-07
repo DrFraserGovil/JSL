@@ -1,0 +1,63 @@
+\doxysection{write\+Stream.\+h}
+\hypertarget{writeStream_8h_source}{}\label{writeStream_8h_source}\index{include/JSL/FileIO/archiver/writeStream.h@{include/JSL/FileIO/archiver/writeStream.h}}
+\mbox{\hyperlink{writeStream_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{base.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{helpers_8h}{helpers.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <charconv>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Archiver}{JSL::Archiver}}\{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{template}<Mode\ T>}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }Vault;\ \textcolor{comment}{//forward\ declaration\ for\ friend\ to\ latch\ onto}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream}{WriteStream}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<std::stringstream>\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a683c1da12bf165101b259a4c1de1d5d8}{MemoryBuffer}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostream*\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a068ce92faf9f0ab4cb1e8aa3e9785337}{ActiveStream}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a8ed4dd42cdd4741b387cba6b8daa1b0e}{Name}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <Mode\ T>}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Archiver_1_1Vault}{Vault}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1WriteExporter}{internal::WriteExporter}}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a71142cfe0fafddd48108a786eff3c894}{Export}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1Security}{internal::Security}}\ \&\ security);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_ac88ffb0e6637fd34f98bf3022eec9eba}{IsLarge}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_ad0d135314e9170d161a4bd79bd511404}{LargeWriteCount}}\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a97a3ea2a240e78a0771b12daf026a1e3}{SetLarge}}(std::ostream\ \&\ diskStream);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostream\&\mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a8a7a063c7a982cd144438a67c93bf19c}{Feed}}(\textcolor{keyword}{const}\ T\ \&\ msg)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_ac88ffb0e6637fd34f98bf3022eec9eba}{IsLarge}})}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a068ce92faf9f0ab4cb1e8aa3e9785337}{ActiveStream}}-\/>tellp();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*ActiveStream)\ <<\ msg;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_ad0d135314e9170d161a4bd79bd511404}{LargeWriteCount}}\ +=\ (\mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a068ce92faf9f0ab4cb1e8aa3e9785337}{ActiveStream}}-\/>tellp()\ -\/\ start);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \ (*ActiveStream)\ <<\ msg;\ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a068ce92faf9f0ab4cb1e8aa3e9785337}{ActiveStream}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_ab3935fc1cf1bde19632ab294c14ca79f}{NeedsWriting}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a0d5dc94298daf8ee59ad3151cbb65117}{WriteStream}}(std::string\_view\ name);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostream\&\mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a2b1449bfeaa8de31b4810cbf3c3a9ce8}{operator<<}}(\textcolor{keyword}{const}\ T\ \&\ msg)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJSL_1_1Archiver_1_1WriteStream_a8a7a063c7a982cd144438a67c93bf19c}{Feed}}(msg);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ \}\ \textcolor{comment}{//end\ namespace}}
+
+\end{DoxyCode}

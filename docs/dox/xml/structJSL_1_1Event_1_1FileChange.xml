@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structJSL_1_1Event_1_1FileChange" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::Event::FileChange</compoundname>
+    <includes refid="Watcher_8h" local="no">Watcher.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structJSL_1_1Event_1_1FileChange_1a0f0c604f75498900eec3c67bb4bf6649" prot="public" static="no" mutable="no">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path JSL::Event::FileChange::Path</definition>
+        <argsstring></argsstring>
+        <name>Path</name>
+        <qualifiedname>JSL::Event::FileChange::Path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="19" column="31" bodyfile="include/JSL/Async/Watcher.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1Event_1_1FileChange_1a446f848a54de07e7c1867a7262f25503" prot="public" static="no" mutable="no">
+        <type><ref refid="structJSL_1_1Event_1_1FileChange_1a0f0c604f75498900eec3c67bb4bf6649" kindref="member">uint32_t</ref></type>
+        <definition>uint32_t JSL::Event::FileChange::Mask</definition>
+        <argsstring></argsstring>
+        <name>Mask</name>
+        <qualifiedname>JSL::Event::FileChange::Mask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="20" column="18" bodyfile="include/JSL/Async/Watcher.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structJSL_1_1Event_1_1FileChange_1a412ebedc11e6da21be9f1abbc78997d5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::strong_ordering</type>
+        <definition>std::strong_ordering JSL::Event::FileChange::operator&lt;=&gt;</definition>
+        <argsstring>(const FileChange &amp;other) const</argsstring>
+        <name>operator&lt;=&gt;</name>
+        <qualifiedname>JSL::Event::FileChange::operator&lt;=&gt;</qualifiedname>
+        <param>
+          <type><ref refid="structJSL_1_1Event_1_1FileChange_1a0f0c604f75498900eec3c67bb4bf6649" kindref="member">const</ref> <ref refid="structJSL_1_1Event_1_1FileChange" kindref="compound">FileChange</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/Watcher.h" line="21" column="9" bodyfile="include/JSL/Async/Watcher.h" bodystart="21" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Async/Watcher.h" line="17" column="5" bodyfile="include/JSL/Async/Watcher.h" bodystart="18" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1Event_1_1FileChange_1a446f848a54de07e7c1867a7262f25503" prot="public" virt="non-virtual"><scope>JSL::Event::FileChange</scope><name>Mask</name></member>
+      <member refid="structJSL_1_1Event_1_1FileChange_1a412ebedc11e6da21be9f1abbc78997d5" prot="public" virt="non-virtual"><scope>JSL::Event::FileChange</scope><name>operator&lt;=&gt;</name></member>
+      <member refid="structJSL_1_1Event_1_1FileChange_1a0f0c604f75498900eec3c67bb4bf6649" prot="public" virt="non-virtual"><scope>JSL::Event::FileChange</scope><name>Path</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

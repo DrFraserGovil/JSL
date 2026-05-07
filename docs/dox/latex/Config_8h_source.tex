@@ -1,0 +1,57 @@
+\doxysection{Config.\+h}
+\hypertarget{Config_8h_source}{}\label{Config_8h_source}\index{include/JSL/Display/Log/Config.h@{include/JSL/Display/Log/Config.h}}
+\mbox{\hyperlink{Config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Levels_8h}{JSL/Display/Log/Levels.h}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{ANSI__Codes_8h}{JSL/Display/ANSI\_Codes.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unistd.h>}\ \textcolor{comment}{//\ For\ isatty()}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdio>}\ \ \ \textcolor{comment}{//\ For\ fileno()\ and\ stderr}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Log}{JSL::Log}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject}{ConfigObject}}}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_ace0317e6aaace3f36bf4bb137acc6e2a}{AppendNewline}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a18240a633488c5da502c3b10ee3f6e64}{ShowHeaders}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a83537d75fcf5f01c342329f06dc63d04}{Level}};\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a7b0c3e1a196e20d2e08723bfe3e28cff}{TerminalOutput}};\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_acc4e4aedfcaa25df279ad62c4fc5ea42}{ForceClear}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format::Command}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a9cf563f2a604c6d1d62e36c7b221a71c}{WarnColour}}\ =\ \mbox{\hyperlink{namespaceJSL_1_1Format_a10c116dab0dbf18d5b10741f0ac8b8b2}{JSL::Format::Purple}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format::Command}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a689fb454d474ca5cd7f46cd4287d3221}{ErrorColour}}\ =\ \mbox{\hyperlink{namespaceJSL_1_1Format_ae70c4e93b38e7e6d3d4a4587bdeca2d8}{JSL::Format::Red}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format::Command}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_aaedf5c66aec116cc19e7e2897e4fb374}{InfoColour}}\ =\ \mbox{\hyperlink{namespaceJSL_1_1Format_a08d06db733a345807a8fd58f9c779e46}{JSL::Format::White}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format::Command}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_acb7a76703029b91c8a08e3b685297074}{DebugColour}}\ =\ \mbox{\hyperlink{namespaceJSL_1_1Format_ac7e4db410a5d82647350de18a9400356}{JSL::Format::Blue}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a8076d2170879e122bd39dda18f4bb279}{DebugBoxing}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a2259f2b8cf7dc58ea47d82c32cf8182e}{DebugLineSize}}\ =\ 80;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a2d110199bb66f96e9b9e24d1c57df766}{ConfigObject}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_ac55b323629d5d013887e1c4e883c5a53}{SetLevel}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a0e4b9db5326668fcd6f7673c3a1bebbf}{SetPrompt}}(std::string\_view\ prompt);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_aa85de8ceb6f56b9e9a64e450d979a8ce}{AlignSize}}(\textcolor{keywordtype}{size\_t}\ debugReserve\ =\ 30);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_af34ab434b7e0714bce9dbf2f154f2671}{ResetPrompt}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_aa64529e44fb41115a9b889ae4cde335a}{IncludePrompt}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_afd2eaa94c90525f9aed050a55cfa90b4}{Prompt}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject_a05f5f56246f2f80b6eaa5701acf8c9d8}{Initialise}}(\textcolor{keywordtype}{int}\ level,\textcolor{keywordtype}{bool}\ header);}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{namespace\ }Global}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1ConfigObject}{ConfigObject}}\ \&\ \mbox{\hyperlink{namespaceJSL_1_1Log_1_1Global_a514bd1673249e579436eedecc3f56540}{Config}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \}}
+
+\end{DoxyCode}

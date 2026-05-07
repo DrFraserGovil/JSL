@@ -1,0 +1,122 @@
+\doxysection{JSL\+::Event\+::internal\+::File\+Descriptor Struct Reference}
+\hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor}\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+
+
+{\ttfamily \#include $<$Socket.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a63b84bd9488a807cd3c5efa0093438b0}{File\+Descriptor}} ()=\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{default}}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_adc6099d6868ec2f4400cb030813d9572}{File\+Descriptor}} (\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{int}} \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{fd}}, std\+::filesystem\+::path \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a47b15f0708b831c6363f2e1bd501c2d6}{path}})
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_ac4217e664e3cc5a3384ecb9bcc56602a}{\texorpdfstring{$\sim$}{\string~}\+File\+Descriptor}} ()
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \& \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_abb4e19080f9d15585c8dd76dd152c02d}{operator=}} (\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{const}} \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \&)=\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{delete}}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a30c7e6681a150441e464d5097c63552b}{File\+Descriptor}} (\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \&\&\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{other}}) \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{noexcept}}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \& \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a62efc153e143eabe70b47d836410cf28}{operator=}} (\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \&\&\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{other}}) \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{noexcept}}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_aea003a63a2bf375e5de4a99bad1e5bbe}{operator int}} () \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{const}}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a47b15f0708b831c6363f2e1bd501c2d6}{operator std\+::filesystem\+::path}} () \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{const}}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a348ff957674d6980327fa0ca44581114}{operator std\+::string}} () \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{int}} \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137}{FD}} =-\/1
+\item 
+std\+::filesystem\+::path \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{Path}}
+\item 
+\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{bool}} \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a41ebe32891553a1fa51847b9070fb465}{Is\+Client}} = \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{true}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a63b84bd9488a807cd3c5efa0093438b0}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a63b84bd9488a807cd3c5efa0093438b0} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!FileDescriptor@{FileDescriptor}}
+\index{FileDescriptor@{FileDescriptor}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{FileDescriptor()}{FileDescriptor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::\+File\+Descriptor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_adc6099d6868ec2f4400cb030813d9572}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_adc6099d6868ec2f4400cb030813d9572} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!FileDescriptor@{FileDescriptor}}
+\index{FileDescriptor@{FileDescriptor}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{FileDescriptor()}{FileDescriptor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::\+File\+Descriptor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{int}}}]{fd,  }\item[{std\+::filesystem\+::path}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_ac4217e664e3cc5a3384ecb9bcc56602a}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_ac4217e664e3cc5a3384ecb9bcc56602a} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!````~FileDescriptor@{\texorpdfstring{$\sim$}{\string~}FileDescriptor}}
+\index{````~FileDescriptor@{\texorpdfstring{$\sim$}{\string~}FileDescriptor}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FileDescriptor()}{\string~FileDescriptor()}}
+{\footnotesize\ttfamily JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::\texorpdfstring{$\sim$}{\string~}\+File\+Descriptor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a30c7e6681a150441e464d5097c63552b}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a30c7e6681a150441e464d5097c63552b} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!FileDescriptor@{FileDescriptor}}
+\index{FileDescriptor@{FileDescriptor}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{FileDescriptor()}{FileDescriptor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::\+File\+Descriptor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_aea003a63a2bf375e5de4a99bad1e5bbe}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_aea003a63a2bf375e5de4a99bad1e5bbe} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!operator int@{operator int}}
+\index{operator int@{operator int}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{operator int()}{operator int()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::operator}} \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{int}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a47b15f0708b831c6363f2e1bd501c2d6}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a47b15f0708b831c6363f2e1bd501c2d6} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!operator std::filesystem::path@{operator std::filesystem::path}}
+\index{operator std::filesystem::path@{operator std::filesystem::path}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{operator std::filesystem::path()}{operator std::filesystem::path()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::operator}} std\+::filesystem\+::path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a348ff957674d6980327fa0ca44581114}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a348ff957674d6980327fa0ca44581114} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::operator}} std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_abb4e19080f9d15585c8dd76dd152c02d}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_abb4e19080f9d15585c8dd76dd152c02d} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!operator=@{operator=}}
+\index{operator=@{operator=}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \& \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::operator}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{const}} \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a62efc153e143eabe70b47d836410cf28}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a62efc153e143eabe70b47d836410cf28} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!operator=@{operator=}}
+\index{operator=@{operator=}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \& \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::operator}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor}{File\+Descriptor}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a205b9ae4c996abd10d0b6789ab9c5137} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!FD@{FD}}
+\index{FD@{FD}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{FD}{FD}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{int}} JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::\+FD =-\/1}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a41ebe32891553a1fa51847b9070fb465}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a41ebe32891553a1fa51847b9070fb465} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!IsClient@{IsClient}}
+\index{IsClient@{IsClient}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{IsClient}{IsClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{bool}} JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::\+Is\+Client = \mbox{\hyperlink{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}{true}}}
+
+\Hypertarget{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab}\label{structJSL_1_1Event_1_1internal_1_1FileDescriptor_a55778f91cf4f50e6b23e1f7f37f4d4ab} 
+\index{JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}!Path@{Path}}
+\index{Path@{Path}!JSL::Event::internal::FileDescriptor@{JSL::Event::internal::FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{Path}{Path}}
+{\footnotesize\ttfamily std\+::filesystem\+::path JSL\+::\+Event\+::internal\+::\+File\+Descriptor\+::\+Path}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Async/\mbox{\hyperlink{Socket_8h}{Socket.\+h}}\end{DoxyCompactItemize}

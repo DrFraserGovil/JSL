@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_076853fa4f3e28166dfb5f7da2330dea" kind="dir">
+    <compoundname>include/JSL</compoundname>
+    <innerdir refid="dir_2036fd0ffee4d81cc18364ca73697fc7">include/JSL/Async</innerdir>
+    <innerdir refid="dir_e4d81caa99a24faf94bf204891c047b6">include/JSL/Display</innerdir>
+    <innerdir refid="dir_0c7b675ee897071121aa368101e998e4">include/JSL/FileIO</innerdir>
+    <innerdir refid="dir_2f0d7faaa0548f53282bdfd1d20d3332">include/JSL/internal</innerdir>
+    <innerdir refid="dir_f20fa2bc746bf55ab8c27d710664d2f5">include/JSL/Optimiser</innerdir>
+    <innerdir refid="dir_eb68268dea688960ec414d2d8a7edb53">include/JSL/Parameters</innerdir>
+    <innerdir refid="dir_2539ef6f62597d5b15e9aecc396f2e68">include/JSL/Plot</innerdir>
+    <innerdir refid="dir_19ae4f0763d0267bd14386611e1cd38c">include/JSL/Strings</innerdir>
+    <innerdir refid="dir_a7c098c0865d7abe9ff0d493dc6db4d3">include/JSL/Time</innerdir>
+    <innerdir refid="dir_34fc53a2d5189ee523238a94ea51250b">include/JSL/Vectors</innerdir>
+    <innerfile refid="Async_8h">Async.h</innerfile>
+    <innerfile refid="Display_8h">Display.h</innerfile>
+    <innerfile refid="FileIO_8h">FileIO.h</innerfile>
+    <innerfile refid="Parameters_8h">Parameters.h</innerfile>
+    <innerfile refid="Plot_8h">Plot.h</innerfile>
+    <innerfile refid="Strings_8h">Strings.h</innerfile>
+    <innerfile refid="Time_8h">Time.h</innerfile>
+    <innerfile refid="Vectors_8h">Vectors.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/"/>
+  </compounddef>
+</doxygen>

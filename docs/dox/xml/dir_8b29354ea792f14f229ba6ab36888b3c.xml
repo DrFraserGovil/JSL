@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_8b29354ea792f14f229ba6ab36888b3c" kind="dir">
+    <compoundname>/home/jfg/CodeProjects/JSL/src/Display</compoundname>
+    <innerdir refid="dir_abf97a39644728c7960c94ed70e43ab8">/home/jfg/CodeProjects/JSL/src/Display/Log</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jfg/CodeProjects/JSL/src/Display/"/>
+  </compounddef>
+</doxygen>

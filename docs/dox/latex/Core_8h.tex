@@ -1,0 +1,50 @@
+\doxysection{include/\+JSL/\+Display/\+Log/\+Core.h File Reference}
+\hypertarget{Core_8h}{}\label{Core_8h}\index{include/JSL/Display/Log/Core.h@{include/JSL/Display/Log/Core.h}}
+{\ttfamily \#include $<$JSL/\+Display/\+Log/\+Config.\+h$>$}\newline
+{\ttfamily \#include $<$JSL/\+Strings/\+Manipulate.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{JSL\+::\+Log\+::\+Core}}
+\begin{DoxyCompactList}\small\item\em Created during a \doxylink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG} call as a temporary object, and acts as a custom output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL}{JSL}}
+\item 
+namespace \mbox{\hyperlink{namespaceJSL_1_1Log}{JSL\+::\+Log}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}{LOG}}(level)
+\begin{DoxyCompactList}\small\item\em The main log interface. Pipe output to it as you would std\+::cout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff}\label{Core_8h_aba7b09d6e8fbe414c23705ad24dde6ff} 
+\index{Core.h@{Core.h}!LOG@{LOG}}
+\index{LOG@{LOG}!Core.h@{Core.h}}
+\doxysubsubsection{\texorpdfstring{LOG}{LOG}}
+{\footnotesize\ttfamily \#define LOG(\begin{DoxyParamCaption}\item[{}]{level }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!(level\ <=\ \mbox{\hyperlink{namespaceJSL_1_1Log_1_1Global_a514bd1673249e579436eedecc3f56540}{JSL::Log::Global::Config}}().Level))\ \{\}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ else\ (\mbox{\hyperlink{classJSL_1_1Log_1_1Core}{JSL::Log::Core}}(level,\_\_LINE\_\_,\_\_func\_\_,\_\_FILE\_\_))}
+
+\end{DoxyCode}
+
+
+The main log interface. Pipe output to it as you would std\+::cout. 
+
+LOG is a specialised macro-\/interface to the Core object. If the level check evaluates to false, then the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}\textquotesingle{}d inputs are completely ignored and are not executed, useful for skipping `expensive' operations during a \doxylink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f}{DEBUG} run.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & A \doxylink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level} object, if greater than the Log\+Config\+::\+Level value, nothing happens (and the expansion is ignored) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the level is suitable, a temporary Core object, which functions as a specialised Stream object, accepting values passed via \textquotesingle{}\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}\textquotesingle{}. Otherwise, does nothing, and does not evaluate any subsequent pipe commands 
+\end{DoxyReturn}

@@ -1,0 +1,106 @@
+\doxysection{JSL\+::Plotting\+::Legend\+Object Class Reference}
+\hypertarget{classJSL_1_1Plotting_1_1LegendObject}{}\label{classJSL_1_1Plotting_1_1LegendObject}\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+
+
+{\ttfamily \#include $<$legend.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_a4a37a088de8a3f155ec9423ab01f6628}{Set\+Location}} (std\+::string pos)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_aaeb24bfb7cc9915af9f51efed9b8554e}{operator()}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_ae7962eff6a36e07d30082250882453b2}{operator()}} (\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} loc)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_a43078e1751443c050e52e9a29267a70f}{operator()}} (std\+::string loc)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_a54b01edbdbfc3dcd7ee75aa9e7a5c8ea}{Active}} = false
+\item 
+int \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_a88f48f8c52e9c3f5ec10f9e0f112ac06}{Max\+Columns}} = 1
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_a4b9460071c7e2d80b1dca5412d345ce7}{Location}} = \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca06b9281e396db002010bde1de57262eb}{Position\+::\+Auto}}
+\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} $>$ $>$ \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_a880bdbeeac59d05ec55deca17dff0e01}{Search\+Vector}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_a1fd55aa8d3119cef60bef42e87b40aca}{Initialise\+Search}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1LegendObject_a486d42edc93fe9780a9d38536ff70e58}{To\+Pipe}} (\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal\+::\+Gnuplot\+Pipe}} \&pipe)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_a1fd55aa8d3119cef60bef42e87b40aca}\label{classJSL_1_1Plotting_1_1LegendObject_a1fd55aa8d3119cef60bef42e87b40aca} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!InitialiseSearch@{InitialiseSearch}}
+\index{InitialiseSearch@{InitialiseSearch}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{InitialiseSearch()}{InitialiseSearch()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Legend\+Object\+::\+Initialise\+Search (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_aaeb24bfb7cc9915af9f51efed9b8554e}\label{classJSL_1_1Plotting_1_1LegendObject_aaeb24bfb7cc9915af9f51efed9b8554e} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!operator()@{operator()}}
+\index{operator()@{operator()}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Legend\+Object\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_ae7962eff6a36e07d30082250882453b2}\label{classJSL_1_1Plotting_1_1LegendObject_ae7962eff6a36e07d30082250882453b2} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!operator()@{operator()}}
+\index{operator()@{operator()}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Legend\+Object\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}}}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_a43078e1751443c050e52e9a29267a70f}\label{classJSL_1_1Plotting_1_1LegendObject_a43078e1751443c050e52e9a29267a70f} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!operator()@{operator()}}
+\index{operator()@{operator()}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Legend\+Object\+::operator() (\begin{DoxyParamCaption}\item[{std\+::string}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_a4a37a088de8a3f155ec9423ab01f6628}\label{classJSL_1_1Plotting_1_1LegendObject_a4a37a088de8a3f155ec9423ab01f6628} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!SetLocation@{SetLocation}}
+\index{SetLocation@{SetLocation}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{SetLocation()}{SetLocation()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Legend\+Object\+::\+Set\+Location (\begin{DoxyParamCaption}\item[{std\+::string}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_a486d42edc93fe9780a9d38536ff70e58}\label{classJSL_1_1Plotting_1_1LegendObject_a486d42edc93fe9780a9d38536ff70e58} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!ToPipe@{ToPipe}}
+\index{ToPipe@{ToPipe}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{ToPipe()}{ToPipe()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Legend\+Object\+::\+To\+Pipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal\+::\+Gnuplot\+Pipe}} \&}]{pipe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_a54b01edbdbfc3dcd7ee75aa9e7a5c8ea}\label{classJSL_1_1Plotting_1_1LegendObject_a54b01edbdbfc3dcd7ee75aa9e7a5c8ea} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!Active@{Active}}
+\index{Active@{Active}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{Active}{Active}}
+{\footnotesize\ttfamily bool JSL\+::\+Plotting\+::\+Legend\+Object\+::\+Active = false}
+
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_a4b9460071c7e2d80b1dca5412d345ce7}\label{classJSL_1_1Plotting_1_1LegendObject_a4b9460071c7e2d80b1dca5412d345ce7} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!Location@{Location}}
+\index{Location@{Location}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{Location}{Location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}} JSL\+::\+Plotting\+::\+Legend\+Object\+::\+Location = \mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eeca06b9281e396db002010bde1de57262eb}{Position\+::\+Auto}}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_a88f48f8c52e9c3f5ec10f9e0f112ac06}\label{classJSL_1_1Plotting_1_1LegendObject_a88f48f8c52e9c3f5ec10f9e0f112ac06} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!MaxColumns@{MaxColumns}}
+\index{MaxColumns@{MaxColumns}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{MaxColumns}{MaxColumns}}
+{\footnotesize\ttfamily int JSL\+::\+Plotting\+::\+Legend\+Object\+::\+Max\+Columns = 1}
+
+\Hypertarget{classJSL_1_1Plotting_1_1LegendObject_a880bdbeeac59d05ec55deca17dff0e01}\label{classJSL_1_1Plotting_1_1LegendObject_a880bdbeeac59d05ec55deca17dff0e01} 
+\index{JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}!SearchVector@{SearchVector}}
+\index{SearchVector@{SearchVector}!JSL::Plotting::LegendObject@{JSL::Plotting::LegendObject}}
+\doxysubsubsection{\texorpdfstring{SearchVector}{SearchVector}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$std\+::string,\mbox{\hyperlink{namespaceJSL_1_1Plotting_ac714c2f6e352a8383ae9b9b819f16eec}{Position}}$>$ $>$ JSL\+::\+Plotting\+::\+Legend\+Object\+::\+Search\+Vector}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Plot/display/\mbox{\hyperlink{legend_8h}{legend.\+h}}\end{DoxyCompactItemize}

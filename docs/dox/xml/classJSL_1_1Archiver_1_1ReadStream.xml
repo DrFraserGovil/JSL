@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Archiver_1_1ReadStream" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Archiver::ReadStream</compoundname>
+    <includes refid="readStream_8h" local="no">readStream.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1ReadStream_1a3dc1fed75001b6f04dc5cff5e95af148" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t JSL::Archiver::ReadStream::Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <qualifiedname>JSL::Archiver::ReadStream::Size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="15" column="8" bodyfile="include/JSL/FileIO/archiver/readStream.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1ReadStream_1aba88193d5c05ecb7b35aa6e2d4656ae0" prot="private" static="no" mutable="no">
+        <type>std::streampos</type>
+        <definition>std::streampos JSL::Archiver::ReadStream::data_offset</definition>
+        <argsstring></argsstring>
+        <name>data_offset</name>
+        <qualifiedname>JSL::Archiver::ReadStream::data_offset</qualifiedname>
+        <briefdescription>
+<para>Byte offset to the file&apos;s data in the archive. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="16" column="16" bodyfile="include/JSL/FileIO/archiver/readStream.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Archiver_1_1ReadStream_1a7b8c70a0cebbc50cd1c52b252fd3ed4a" prot="private" static="no" mutable="no">
+        <type>std::ifstream &amp;</type>
+        <definition>std::ifstream&amp; JSL::Archiver::ReadStream::StreamCopy</definition>
+        <argsstring></argsstring>
+        <name>StreamCopy</name>
+        <qualifiedname>JSL::Archiver::ReadStream::StreamCopy</qualifiedname>
+        <briefdescription>
+<para>A copy of the stream so it can read by itself. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="17" column="16" bodyfile="include/JSL/FileIO/archiver/readStream.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1ReadStream_1ab0fa26982f01fc99d079e4537aa370cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Archiver::ReadStream::StreamBlocks</definition>
+        <argsstring>(std::function&lt; void(std::string_view)&gt; callback)</argsstring>
+        <name>StreamBlocks</name>
+        <qualifiedname>JSL::Archiver::ReadStream::StreamBlocks</qualifiedname>
+        <param>
+          <type>std::function&lt; void(std::string_view)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="19" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1ReadStream_1af931cbe7098d169bd7b89166350a1f28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Archiver::ReadStream::ReadStream</definition>
+        <argsstring>(size_t size, std::streampos offset, std::ifstream &amp;stream)</argsstring>
+        <name>ReadStream</name>
+        <qualifiedname>JSL::Archiver::ReadStream::ReadStream</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::streampos</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>std::ifstream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="23" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1ReadStream_1a091b8c42f0e26c15a2a5593833b20c95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Archiver::ReadStream::ForLineIn</definition>
+        <argsstring>(std::function&lt; void(std::string_view)&gt; perLineFunction)</argsstring>
+        <name>ForLineIn</name>
+        <qualifiedname>JSL::Archiver::ReadStream::ForLineIn</qualifiedname>
+        <param>
+          <type>std::function&lt; void(std::string_view)&gt;</type>
+          <declname>perLineFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="25" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1ReadStream_1ad0049850c5118f4355f6f858130df8b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>ColumnTypes</declname>
+            <defname>ColumnTypes</defname>
+          </param>
+          <param>
+            <type>typename TupleFunctor</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Archiver::ReadStream::ForTabularLineIn</definition>
+        <argsstring>(std::string delimiter, TupleFunctor perTupleFunction)</argsstring>
+        <name>ForTabularLineIn</name>
+        <qualifiedname>JSL::Archiver::ReadStream::ForTabularLineIn</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>TupleFunctor</type>
+          <declname>perTupleFunction</declname>
+        </param>
+        <briefdescription>
+<para>Parse the datafile and convert each line into a tuple of datatypes based on an assumed regular tabular. Then performs a callback function on each line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each line is converted into a tuple of types specified by the ColumnTypes parameter (i.e. ForTabularLineIn&lt;int,int,int&gt; attempts to read the file as a set of three integers). Tuples are then accessed via std::get&lt;i&gt; to get the ith element of the tuple. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ColumnTypes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An (arbitrary) number of typenames, representing the converted types of each element. typenames must have an associated convert() function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TupleFunctor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional <ndash/> usually compiler-inferred) template parameter for the type of the per-tuple callback function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string delimiter between ColumnTypes in the file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>perTupleFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to be called on</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the columns of the file cannot be interpreted as a regular grid of len(ColumnTypes) with consistent data types with the specified delimiter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If a datatype in a column cannot be converted into the specified typr </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>logic_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>when called whilst in write mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>logic_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>when fileName not in the archive </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="42" column="6" bodyfile="include/JSL/FileIO/archiver/readStream.h" bodystart="42" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1ReadStream_1a23a6d4d3060811ea9fcf2699347e161c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::Archiver::ReadStream::AsText</definition>
+        <argsstring>()</argsstring>
+        <name>AsText</name>
+        <qualifiedname>JSL::Archiver::ReadStream::AsText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="52" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Archiver_1_1ReadStream_1a45d1c8390469d4950e05c8734bc4b05a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>ColumnTypes</declname>
+            <defname>ColumnTypes</defname>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; std::tuple&lt; ColumnTypes... &gt; &gt;</type>
+        <definition>std::vector&lt; std::tuple&lt; ColumnTypes... &gt; &gt; JSL::Archiver::ReadStream::AsTable</definition>
+        <argsstring>(const std::string &amp;delimiter=&quot; &quot;)</argsstring>
+        <name>AsTable</name>
+        <qualifiedname>JSL::Archiver::ReadStream::AsTable</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>delimiter</declname>
+          <defval>&quot; &quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/FileIO/archiver/readStream.h" line="54" column="13" bodyfile="include/JSL/FileIO/archiver/readStream.h" bodystart="54" bodyend="62"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/FileIO/archiver/readStream.h" line="12" column="1" bodyfile="include/JSL/FileIO/archiver/readStream.h" bodystart="13" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1a45d1c8390469d4950e05c8734bc4b05a" prot="public" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>AsTable</name></member>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1a23a6d4d3060811ea9fcf2699347e161c" prot="public" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>AsText</name></member>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1aba88193d5c05ecb7b35aa6e2d4656ae0" prot="private" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>data_offset</name></member>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1a091b8c42f0e26c15a2a5593833b20c95" prot="public" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>ForLineIn</name></member>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1ad0049850c5118f4355f6f858130df8b3" prot="public" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>ForTabularLineIn</name></member>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1af931cbe7098d169bd7b89166350a1f28" prot="public" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>ReadStream</name></member>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1a3dc1fed75001b6f04dc5cff5e95af148" prot="private" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>Size</name></member>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1ab0fa26982f01fc99d079e4537aa370cc" prot="private" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>StreamBlocks</name></member>
+      <member refid="classJSL_1_1Archiver_1_1ReadStream_1a7b8c70a0cebbc50cd1c52b252fd3ed4a" prot="private" virt="non-virtual"><scope>JSL::Archiver::ReadStream</scope><name>StreamCopy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

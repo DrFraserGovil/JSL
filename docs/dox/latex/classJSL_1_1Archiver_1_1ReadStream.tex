@@ -1,0 +1,137 @@
+\doxysection{JSL\+::Archiver\+::Read\+Stream Class Reference}
+\hypertarget{classJSL_1_1Archiver_1_1ReadStream}{}\label{classJSL_1_1Archiver_1_1ReadStream}\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+
+
+{\ttfamily \#include $<$read\+Stream.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_af931cbe7098d169bd7b89166350a1f28}{Read\+Stream}} (size\+\_\+t size, std\+::streampos offset, std\+::ifstream \&stream)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a091b8c42f0e26c15a2a5593833b20c95}{For\+Line\+In}} (std\+::function$<$ void(std\+::string\+\_\+view)$>$ per\+Line\+Function)
+\item 
+{\footnotesize template$<$typename... Column\+Types, typename Tuple\+Functor $>$ }\\void \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_ad0049850c5118f4355f6f858130df8b3}{For\+Tabular\+Line\+In}} (std\+::string delimiter, Tuple\+Functor per\+Tuple\+Function)
+\begin{DoxyCompactList}\small\item\em Parse the datafile and convert each line into a tuple of datatypes based on an assumed regular tabular. Then performs a callback function on each line. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a23a6d4d3060811ea9fcf2699347e161c}{As\+Text}} ()
+\item 
+{\footnotesize template$<$typename... Column\+Types$>$ }\\std\+::vector$<$ std\+::tuple$<$ Column\+Types... $>$ $>$ \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a45d1c8390469d4950e05c8734bc4b05a}{As\+Table}} (const std\+::string \&delimiter="{} "{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_ab0fa26982f01fc99d079e4537aa370cc}{Stream\+Blocks}} (std\+::function$<$ void(std\+::string\+\_\+view)$>$ callback)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a3dc1fed75001b6f04dc5cff5e95af148}{Size}}
+\item 
+std\+::streampos \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_aba88193d5c05ecb7b35aa6e2d4656ae0}{data\+\_\+offset}}
+\begin{DoxyCompactList}\small\item\em Byte offset to the file\textquotesingle{}s data in the archive. \end{DoxyCompactList}\item 
+std\+::ifstream \& \mbox{\hyperlink{classJSL_1_1Archiver_1_1ReadStream_a7b8c70a0cebbc50cd1c52b252fd3ed4a}{Stream\+Copy}}
+\begin{DoxyCompactList}\small\item\em A copy of the stream so it can read by itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_af931cbe7098d169bd7b89166350a1f28}\label{classJSL_1_1Archiver_1_1ReadStream_af931cbe7098d169bd7b89166350a1f28} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!ReadStream@{ReadStream}}
+\index{ReadStream@{ReadStream}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{ReadStream()}{ReadStream()}}
+{\footnotesize\ttfamily JSL\+::\+Archiver\+::\+Read\+Stream\+::\+Read\+Stream (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{std\+::streampos}]{offset,  }\item[{std\+::ifstream \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_a45d1c8390469d4950e05c8734bc4b05a}\label{classJSL_1_1Archiver_1_1ReadStream_a45d1c8390469d4950e05c8734bc4b05a} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!AsTable@{AsTable}}
+\index{AsTable@{AsTable}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{AsTable()}{AsTable()}}
+{\footnotesize\ttfamily template$<$typename... Column\+Types$>$ \\
+std\+::vector$<$ std\+::tuple$<$ Column\+Types... $>$ $>$ JSL\+::\+Archiver\+::\+Read\+Stream\+::\+As\+Table (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{delimiter = {\ttfamily "{}~"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_a23a6d4d3060811ea9fcf2699347e161c}\label{classJSL_1_1Archiver_1_1ReadStream_a23a6d4d3060811ea9fcf2699347e161c} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!AsText@{AsText}}
+\index{AsText@{AsText}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{AsText()}{AsText()}}
+{\footnotesize\ttfamily std\+::string JSL\+::\+Archiver\+::\+Read\+Stream\+::\+As\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_a091b8c42f0e26c15a2a5593833b20c95}\label{classJSL_1_1Archiver_1_1ReadStream_a091b8c42f0e26c15a2a5593833b20c95} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!ForLineIn@{ForLineIn}}
+\index{ForLineIn@{ForLineIn}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{ForLineIn()}{ForLineIn()}}
+{\footnotesize\ttfamily void JSL\+::\+Archiver\+::\+Read\+Stream\+::\+For\+Line\+In (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(std\+::string\+\_\+view)$>$}]{per\+Line\+Function }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_ad0049850c5118f4355f6f858130df8b3}\label{classJSL_1_1Archiver_1_1ReadStream_ad0049850c5118f4355f6f858130df8b3} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!ForTabularLineIn@{ForTabularLineIn}}
+\index{ForTabularLineIn@{ForTabularLineIn}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{ForTabularLineIn()}{ForTabularLineIn()}}
+{\footnotesize\ttfamily template$<$typename... Column\+Types, typename Tuple\+Functor $>$ \\
+void JSL\+::\+Archiver\+::\+Read\+Stream\+::\+For\+Tabular\+Line\+In (\begin{DoxyParamCaption}\item[{std\+::string}]{delimiter,  }\item[{Tuple\+Functor}]{per\+Tuple\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parse the datafile and convert each line into a tuple of datatypes based on an assumed regular tabular. Then performs a callback function on each line. 
+
+Each line is converted into a tuple of types specified by the Column\+Types parameter (i.\+e. For\+Tabular\+Line\+In$<$int,int,int$>$ attempts to read the file as a set of three integers). Tuples are then accessed via std\+::get$<$i$>$ to get the ith element of the tuple. 
+\begin{DoxyParams}{Parameters}
+{\em Column\+Types} & An (arbitrary) number of typenames, representing the converted types of each element. typenames must have an associated convert() function. \\
+\hline
+{\em Tuple\+Functor} & (optional -- usually compiler-\/inferred) template parameter for the type of the per-\/tuple callback function \\
+\hline
+{\em delimiter} & The string delimiter between Column\+Types in the file \\
+\hline
+{\em per\+Tuple\+Function} & The function to be called on\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & If the columns of the file cannot be interpreted as a regular grid of len(\+Column\+Types) with consistent data types with the specified delimiter \\
+\hline
+{\em runtime\+\_\+error} & If a datatype in a column cannot be converted into the specified typr \\
+\hline
+{\em logic\+\_\+error} & when called whilst in write mode \\
+\hline
+{\em logic\+\_\+error} & when file\+Name not in the archive \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_ab0fa26982f01fc99d079e4537aa370cc}\label{classJSL_1_1Archiver_1_1ReadStream_ab0fa26982f01fc99d079e4537aa370cc} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!StreamBlocks@{StreamBlocks}}
+\index{StreamBlocks@{StreamBlocks}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{StreamBlocks()}{StreamBlocks()}}
+{\footnotesize\ttfamily void JSL\+::\+Archiver\+::\+Read\+Stream\+::\+Stream\+Blocks (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(std\+::string\+\_\+view)$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_aba88193d5c05ecb7b35aa6e2d4656ae0}\label{classJSL_1_1Archiver_1_1ReadStream_aba88193d5c05ecb7b35aa6e2d4656ae0} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!data\_offset@{data\_offset}}
+\index{data\_offset@{data\_offset}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{data\_offset}{data\_offset}}
+{\footnotesize\ttfamily std\+::streampos JSL\+::\+Archiver\+::\+Read\+Stream\+::data\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Byte offset to the file\textquotesingle{}s data in the archive. 
+
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_a3dc1fed75001b6f04dc5cff5e95af148}\label{classJSL_1_1Archiver_1_1ReadStream_a3dc1fed75001b6f04dc5cff5e95af148} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!Size@{Size}}
+\index{Size@{Size}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily size\+\_\+t JSL\+::\+Archiver\+::\+Read\+Stream\+::\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Archiver_1_1ReadStream_a7b8c70a0cebbc50cd1c52b252fd3ed4a}\label{classJSL_1_1Archiver_1_1ReadStream_a7b8c70a0cebbc50cd1c52b252fd3ed4a} 
+\index{JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}!StreamCopy@{StreamCopy}}
+\index{StreamCopy@{StreamCopy}!JSL::Archiver::ReadStream@{JSL::Archiver::ReadStream}}
+\doxysubsubsection{\texorpdfstring{StreamCopy}{StreamCopy}}
+{\footnotesize\ttfamily std\+::ifstream\& JSL\+::\+Archiver\+::\+Read\+Stream\+::\+Stream\+Copy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A copy of the stream so it can read by itself. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+File\+IO/archiver/\mbox{\hyperlink{readStream_8h}{read\+Stream.\+h}}\end{DoxyCompactItemize}

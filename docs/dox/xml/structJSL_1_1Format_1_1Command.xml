@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structJSL_1_1Format_1_1Command" kind="struct" language="C++" prot="public">
+    <compoundname>JSL::Format::Command</compoundname>
+    <includes refid="Format_8h" local="no">Format.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structJSL_1_1Format_1_1Command_1aee938d34db7c7943437d1fc69baa476f" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char JSL::Format::Command::buf[20]</definition>
+        <argsstring>[20]</argsstring>
+        <name>buf</name>
+        <qualifiedname>JSL::Format::Command::buf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="20" column="14" bodyfile="include/JSL/Display/Format.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1Format_1_1Command_1a5292a3d8f3204333be5342bc001b77ee" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t JSL::Format::Command::len</definition>
+        <argsstring></argsstring>
+        <name>len</name>
+        <qualifiedname>JSL::Format::Command::len</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="21" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structJSL_1_1Format_1_1Command_1af8f2827e74b26856ca241b2424cdbac8" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622" kindref="member">Element</ref></type>
+        <definition>Element JSL::Format::Command::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>JSL::Format::Command::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="22" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structJSL_1_1Format_1_1Command_1a1c1db5c15c3a274def003f7f73981180" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Format::Command::Command</definition>
+        <argsstring>()</argsstring>
+        <name>Command</name>
+        <qualifiedname>JSL::Format::Command::Command</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="23" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structJSL_1_1Format_1_1Command_1a2de44753f8facc18bc0df8d55eeac793" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Format::Command::Command</definition>
+        <argsstring>(const std::string &amp;input, Element kind)</argsstring>
+        <name>Command</name>
+        <qualifiedname>JSL::Format::Command::Command</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622" kindref="member">Element</ref></type>
+          <declname>kind</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="24" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structJSL_1_1Format_1_1Command_1ab87eccbefde1280c5710d1bb203c5368" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Format::Command::Command</definition>
+        <argsstring>(uint8_t r, uint8_t g, uint8_t b, const char *control, Element kind)</argsstring>
+        <name>Command</name>
+        <qualifiedname>JSL::Format::Command::Command</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>control</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622" kindref="member">Element</ref></type>
+          <declname>kind</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="25" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structJSL_1_1Format_1_1Command_1ad6cb6ddabba5f7fac592eaa11e45299a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Format::Command::operator std::string</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::string</name>
+        <qualifiedname>JSL::Format::Command::string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="27" column="9"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="structJSL_1_1Format_1_1Command_1aa2d50968a240034f963af25d17275cf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Command &amp;c)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>JSL::Format::Command::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Format.h" line="26" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Display/Format.h" line="18" column="5" bodyfile="include/JSL/Display/Format.h" bodystart="19" bodyend="28"/>
+    <listofallmembers>
+      <member refid="structJSL_1_1Format_1_1Command_1aee938d34db7c7943437d1fc69baa476f" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>buf</name></member>
+      <member refid="structJSL_1_1Format_1_1Command_1a1c1db5c15c3a274def003f7f73981180" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>Command</name></member>
+      <member refid="structJSL_1_1Format_1_1Command_1a2de44753f8facc18bc0df8d55eeac793" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>Command</name></member>
+      <member refid="structJSL_1_1Format_1_1Command_1ab87eccbefde1280c5710d1bb203c5368" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>Command</name></member>
+      <member refid="structJSL_1_1Format_1_1Command_1a5292a3d8f3204333be5342bc001b77ee" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>len</name></member>
+      <member refid="structJSL_1_1Format_1_1Command_1ad6cb6ddabba5f7fac592eaa11e45299a" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>operator std::string</name></member>
+      <member refid="structJSL_1_1Format_1_1Command_1aa2d50968a240034f963af25d17275cf6" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>operator&lt;&lt;</name></member>
+      <member refid="structJSL_1_1Format_1_1Command_1af8f2827e74b26856ca241b2424cdbac8" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

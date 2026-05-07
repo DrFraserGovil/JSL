@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="NestedAggregator_8h" kind="file" language="C++">
+    <compoundname>NestedAggregator.h</compoundname>
+    <includes refid="Parameter_8h" local="no">JSL/Parameters/Parameter.h</includes>
+    <includes refid="Describer_8h" local="no">JSL/Parameters/Describer.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includes local="no">map</includes>
+    <includes local="no">set</includes>
+    <includedby refid="Aggregator_8h" local="no">include/JSL/Parameters/Aggregator.h</includedby>
+    <incdepgraph>
+      <node id="22">
+        <label>JSL/Display/ANSI_Codes.h</label>
+        <link refid="ANSI__Codes_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>JSL/Display/Format.h</label>
+        <link refid="Format_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>JSL/Display/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>JSL/Display/Log/Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Log/Core.h</label>
+        <link refid="Core_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>JSL/Display/Log/Levels.h</label>
+        <link refid="Levels_8h"/>
+      </node>
+      <node id="29">
+        <label>CLI_Reader.h</label>
+        <link refid="CLI__Reader_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>JSL/Parameters/Describer.h</label>
+        <link refid="Describer_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Parameters/NestedAggregator.h</label>
+        <link refid="NestedAggregator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL/Parameters/Parameter.h</label>
+        <link refid="Parameter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>Cases.h</label>
+        <link refid="Cases_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Manipulate.h</label>
+        <link refid="Manipulate_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>JSL/Strings/ParseTo.h</label>
+        <link refid="ParseTo_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>JSL/Strings/Represent.h</label>
+        <link refid="Represent_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL/internal/concepts.h</label>
+        <link refid="concepts_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>JSL/internal/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>algorithm</label>
+      </node>
+      <node id="14">
+        <label>charconv</label>
+      </node>
+      <node id="10">
+        <label>concepts</label>
+      </node>
+      <node id="23">
+        <label>cstdint</label>
+      </node>
+      <node id="27">
+        <label>cstdio</label>
+      </node>
+      <node id="25">
+        <label>cstring</label>
+      </node>
+      <node id="30">
+        <label>filesystem</label>
+      </node>
+      <node id="13">
+        <label>iostream</label>
+      </node>
+      <node id="31">
+        <label>map</label>
+      </node>
+      <node id="28">
+        <label>mutex</label>
+      </node>
+      <node id="11">
+        <label>ranges</label>
+      </node>
+      <node id="35">
+        <label>set</label>
+      </node>
+      <node id="8">
+        <label>sstream</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>string_view</label>
+      </node>
+      <node id="7">
+        <label>type_traits</label>
+      </node>
+      <node id="26">
+        <label>unistd.h</label>
+      </node>
+      <node id="34">
+        <label>unordered_map</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/JSL/Parameters.h</label>
+        <link refid="Parameters_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Parameters/Aggregator.h</label>
+        <link refid="Aggregator_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Parameters/NestedAggregator.h</label>
+        <link refid="NestedAggregator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classJSL_1_1Parameter_1_1NestedAggregator" prot="public">JSL::Parameter::NestedAggregator</innerclass>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Parameter">JSL::Parameter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Parameter_8h" kindref="compound">JSL/Parameters/Parameter.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Describer_8h" kindref="compound">JSL/Parameters/Describer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Parameter" kindref="compound">JSL::Parameter</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="11" refid="classJSL_1_1Parameter_1_1NestedAggregator" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classJSL_1_1Parameter_1_1NestedAggregator" kindref="compound">NestedAggregator</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//default<sp/>spaceship<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a785246b82eee77fa153fa227da848800" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a785246b82eee77fa153fa227da848800" kindref="member">operator&lt;=&gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator" kindref="compound">NestedAggregator</ref>&amp;)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classJSL_1_1Parameter_1_1NestedAggregator_1ae5286f16206344d7df44ae7024993f95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1ae5286f16206344d7df44ae7024993f95" kindref="member">Name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Unnamed<sp/>Settings<sp/>Group&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19" refid="classJSL_1_1Parameter_1_1NestedAggregator_1abdc791dc23bc063afd80635e6b50c8aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1abdc791dc23bc063afd80635e6b50c8aa" kindref="member">Parse</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a13b6c508fde37e4257dff59e6221d7d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a13b6c508fde37e4257dff59e6221d7d8" kindref="member">SetParameter</ref>(std::string_view<sp/>trigger,<sp/>std::string_view<sp/>value);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3618fb8d9531b524f32a56bbc10fd1b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3618fb8d9531b524f32a56bbc10fd1b4" kindref="member">ShowParameter</ref>(std::string_view<sp/>trigger);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="31" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a41df8bde8803a9ea7069139fff912846" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>&amp;<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a41df8bde8803a9ea7069139fff912846" kindref="member">GetParameter</ref>(std::string_view<sp/>trigger)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>found<sp/>=<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a77028e0ab3bc45c485b51cc060323101" kindref="member">FindParameter</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::string</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(trigger));</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(found)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting&lt;T&gt;</ref>*<sp/>typedFound<sp/>=<sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal"><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting&lt;T&gt;</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(found);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(typedFound)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>typedFound-&gt;<ref refid="classJSL_1_1Parameter_1_1Setting_1a0a59c6a5d6334d849894e4b7c2937cc7" kindref="member">Value</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1internal_1_1FatalError" kindref="compound">JSL::internal::FatalError</ref>(</highlight><highlight class="stringliteral">&quot;Parameter<sp/>type<sp/>error&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1a10df267978926d975df8f95b4e3a3583" kindref="member">JSL_LOCATION</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Parameter<sp/>-&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>trigger<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>exists<sp/>but<sp/>is<sp/>not<sp/>of<sp/>the<sp/>requested<sp/>type&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1internal_1_1FatalError" kindref="compound">JSL::internal::FatalError</ref>(</highlight><highlight class="stringliteral">&quot;Parameter<sp/>not<sp/>found&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1a10df267978926d975df8f95b4e3a3583" kindref="member">JSL_LOCATION</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>parameter<sp/>found<sp/>for<sp/>trigger<sp/>-&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>trigger;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dummy<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>T();<sp/></highlight><highlight class="comment">//unreachable,<sp/>but<sp/>silences<sp/>compiler<sp/>warning<sp/>about<sp/>missing<sp/>return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*dummy;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classJSL_1_1Parameter_1_1NestedAggregator_1acae59cbc059ef5c1df213e5cc5e84133" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1acae59cbc059ef5c1df213e5cc5e84133" kindref="member">push</ref>(std::string_view<sp/>trigger,<sp/>std::string_view<sp/>value);</highlight></codeline>
+<codeline lineno="55" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a9cd7e32f6a8ce8074bc4645deffd58c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a9cd7e32f6a8ce8074bc4645deffd58c9" kindref="member">join</ref>(std::string_view<sp/>trigger,<sp/>std::string_view<sp/>value);</highlight></codeline>
+<codeline lineno="56" refid="classJSL_1_1Parameter_1_1NestedAggregator_1aa5e04444760661a7198f67ed214c1e46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1aa5e04444760661a7198f67ed214c1e46" kindref="member">remove</ref>(std::string_view<sp/>trigger,<sp/>std::string_view<sp/>value);</highlight></codeline>
+<codeline lineno="57" refid="classJSL_1_1Parameter_1_1NestedAggregator_1acd4f03a79003d09d90d46dce409148b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1acd4f03a79003d09d90d46dce409148b1" kindref="member">erase</ref>(std::string_view<sp/>trigger,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a43f76ed6e5e015b3274410fbb4dc44d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1Description" kindref="compound">Description</ref><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a43f76ed6e5e015b3274410fbb4dc44d2" kindref="member">GetDescription</ref>(std::string_view<sp/>key);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="classJSL_1_1Parameter_1_1NestedAggregator_1ae8151366e1228dc0412cb93a3cdb760e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1ae8151366e1228dc0412cb93a3cdb760e" kindref="member">PrintStructure</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indent,std::string<sp/>runningTitle);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="68" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a2753815649914da9b6edde96f447f4de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a2753815649914da9b6edde96f447f4de" kindref="member">Connect</ref>(<ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting&lt;T&gt;</ref><sp/>&amp;<sp/>parameter,<sp/>T<sp/>&amp;<sp/>variable)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parameter.<ref refid="classJSL_1_1Parameter_1_1Setting_1a350043299a0f258dedeb64afed97ca44" kindref="member">Connect</ref>(variable);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>trigger<sp/>:<sp/>parameter.<ref refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1af996744b0befea389f77004f23fcfad8" kindref="member">GetTriggers</ref>())</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a336af42fc978a4256969e3ecc226f9e9" kindref="member">RegisteredParameters</ref>[trigger]<sp/>=<sp/>&amp;parameter;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a437853feebfe2b0a5a4252d65d26f9d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a437853feebfe2b0a5a4252d65d26f9d4" kindref="member">NestGroup</ref>(<ref refid="classJSL_1_1Parameter_1_1NestedAggregator" kindref="compound">NestedAggregator</ref><sp/>&amp;<sp/>aggregator,std::string<sp/>name);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="79" refid="classJSL_1_1Parameter_1_1NestedAggregator_1aff08b3ca2e2fd9b29231b8fbe8ef00b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1aff08b3ca2e2fd9b29231b8fbe8ef00b4" kindref="member">Set</ref>(T<sp/>&amp;<sp/>value,<ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting&lt;T&gt;</ref><sp/>&amp;<sp/>configurer,<sp/>U<sp/>defaultValue,<sp/>std::initializer_list&lt;std::string&gt;<sp/>triggers,std::string<sp/>name,<sp/>std::string<sp/>description)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>configurer<sp/>=<sp/><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting&lt;T&gt;</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(defaultValue),triggers);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a2753815649914da9b6edde96f447f4de" kindref="member">Connect</ref>(configurer,<sp/>value);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3c61c4006a35f3fe57a439e20f5365c7" kindref="member">SetInfo</ref>(configurer,name,description);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>U,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>V&gt;</highlight></codeline>
+<codeline lineno="86" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a02c74a14865cb89027cec1d9bb8f990e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a02c74a14865cb89027cec1d9bb8f990e" kindref="member">Set</ref>(T<sp/>&amp;<sp/>value,<ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting&lt;T&gt;</ref><sp/>&amp;<sp/>configurer,<sp/>V<sp/>defaultValue,<sp/>U<sp/>triggers,std::string<sp/>name,<sp/>std::string<sp/>description)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>configurer<sp/>=<sp/><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting&lt;T&gt;</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(defaultValue),std::forward&lt;U&gt;(triggers));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a2753815649914da9b6edde96f447f4de" kindref="member">Connect</ref>(configurer,<sp/>value);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3c61c4006a35f3fe57a439e20f5365c7" kindref="member">SetInfo</ref>(configurer,name,description);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a8693e07ddfd7c0e05515bf8f6ccaa423" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a8693e07ddfd7c0e05515bf8f6ccaa423" kindref="member">PrintHelp</ref>(std::string_view<sp/>assignedName);</highlight></codeline>
+<codeline lineno="98" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a336af42fc978a4256969e3ecc226f9e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,internal::Parameter::ParameterBase*&gt;<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a336af42fc978a4256969e3ecc226f9e9" kindref="member">RegisteredParameters</ref>;</highlight></codeline>
+<codeline lineno="99" refid="classJSL_1_1Parameter_1_1NestedAggregator_1ac18c11a6ef9530a78a749831d45cfcc1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>NestedAggregator*&gt;<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1ac18c11a6ef9530a78a749831d45cfcc1" kindref="member">NestedAggregators</ref>;</highlight></codeline>
+<codeline lineno="100" refid="classJSL_1_1Parameter_1_1NestedAggregator_1afdc6a53bc22401751a4b5dc3ca871730" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,Description&gt;<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1afdc6a53bc22401751a4b5dc3ca871730" kindref="member">Information</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a77028e0ab3bc45c485b51cc060323101" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase" kindref="compound">internal::Parameter::ParameterBase</ref>*<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a77028e0ab3bc45c485b51cc060323101" kindref="member">FindParameter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="103" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a8e383c2f0250781d8b1eac7dfda06cbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a8e383c2f0250781d8b1eac7dfda06cbd" kindref="member">TryCluster</ref>(std::string_view<sp/>key,<sp/>std::string_view<sp/>value);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a5d51a521c773afd306901a25bd063cba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a5d51a521c773afd306901a25bd063cba" kindref="member">printAsTitle</ref>(std::string_view<sp/>input,<ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref><sp/>fg<sp/>=<ref refid="namespaceJSL_1_1Format_1a564e38f310ecc9f0982f40e18590164d" kindref="member">Format::Black</ref>,<sp/><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref><sp/>bg<sp/>=<sp/><ref refid="namespaceJSL_1_1Format_1add9c1bf1296670a8b34fb32c47cfe0c8" kindref="member">Format::BgWhite</ref>);</highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="108" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3c61c4006a35f3fe57a439e20f5365c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3c61c4006a35f3fe57a439e20f5365c7" kindref="member">SetInfo</ref>(<ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting&lt;T&gt;</ref><sp/>&amp;<sp/>target,<sp/>std::string_view<sp/>name,<sp/>std::string_view<sp/>description)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>key<sp/>=<sp/>target.<ref refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase_1af996744b0befea389f77004f23fcfad8" kindref="member">GetTriggers</ref>()[0];</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1Description" kindref="compound">Description</ref><sp/>d(target,description,name);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1afdc6a53bc22401751a4b5dc3ca871730" kindref="member">Information</ref>[key]<sp/>=<sp/>d;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a74dd6af3e3eef08444f86d5a8aeb2a30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a74dd6af3e3eef08444f86d5a8aeb2a30" kindref="member">lineLength</ref><sp/>=<sp/>80;</highlight></codeline>
+<codeline lineno="115" refid="classJSL_1_1Parameter_1_1NestedAggregator_1abb61053812d7ef85241857d4b0682c12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1abb61053812d7ef85241857d4b0682c12" kindref="member">lw</ref><sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="116" refid="classJSL_1_1Parameter_1_1NestedAggregator_1adb76c921d7dc55bedcab758439a6a36c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1adb76c921d7dc55bedcab758439a6a36c" kindref="member">mw</ref><sp/>=<sp/>15;</highlight></codeline>
+<codeline lineno="117" refid="classJSL_1_1Parameter_1_1NestedAggregator_1a16b74939ed39c25ea438d5e41ad29c71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a16b74939ed39c25ea438d5e41ad29c71" kindref="member">rw</ref><sp/>=<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a74dd6af3e3eef08444f86d5a8aeb2a30" kindref="member">lineLength</ref><sp/>-<ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1abb61053812d7ef85241857d4b0682c12" kindref="member">lw</ref><sp/>-<sp/><ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1adb76c921d7dc55bedcab758439a6a36c" kindref="member">mw</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Parameters/NestedAggregator.h"/>
+  </compounddef>
+</doxygen>

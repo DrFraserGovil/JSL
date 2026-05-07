@@ -1,0 +1,248 @@
+\doxysection{JSL\+::Plotting\+::Figure Class Reference}
+\hypertarget{classJSL_1_1Plotting_1_1Figure}{}\label{classJSL_1_1Plotting_1_1Figure}\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+
+
+{\ttfamily \#include $<$figure.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7e201b907be4319f1b4dc9f0926181eb}{Figure}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad05486bf35b85ef6fbc0737057a4a9e0}{Persist}} (unsigned int level)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a11e3db4b1a90043e10092324861b7062}{Persist}} (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}} level)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad42e2d4e99c78dc69248ab4a8997e95f}{Script\+Path}} (std\+::string path)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aaf66a6d9d2c90033ee59413d52118bf8}{Clear\+All}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7a3d6f6f9967325f62f7dfdd1e89b51c}{Clear}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad77b319e6a9f8d144cc15faaff527b4b}{Clear}} (int id)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad0731a34e5bbebdabbecf77cfc0eb5ae}{Clear}} (int row, int col)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a131799cb68a35d455532ba1fa6f682c5}{Show}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ac861fbb26c5b3737b9c384b688c07d10}{Close}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad26695360f9e6e2611c44befbdf4d8ca}{Set\+Multiplot}} (size\+\_\+t row\+Count, size\+\_\+t column\+Count=1)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_addc2270502ac927e8f3b5d22998c05e6}{Move\+To}} (size\+\_\+t id)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ab3277855fe9a33de896ca5f729fe80ca}{Move\+To}} (size\+\_\+t row, size\+\_\+t col)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{Axis}} $>$ \& \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a3911f233b044a42e16b27c4e5fc7c235}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t row)
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{Plotting\+::\+Axis}} \& \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8f5937e7e623cb0a4bbb31340a7b0cba}{Active}} ()
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1AxisMembers_1_1Data}{Plotting\+::\+Axis\+Members\+::\+Data}} \& \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ae191e51e6efba1888f1d32818ccf084d}{Add}} ()
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1Display}{Plotting\+::\+Display}} \& \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a5796dc9fc1293839549fb363456685e2}{Set}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a15a22374910dbc3236a761cfc75bd3bd}{Script\+Frame\+Pause}} = 0.\+05
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a59ee2b72f6b5352e0ef5111c43762c8a}{Check\+Axis\+Bounds}} (size\+\_\+t row, size\+\_\+t col)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a5e911a654418b65c8c29be8b14160d16}{Multiplot\+Print}} ()
+\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_ad6ea7f265c7d7901564caa90e586bd46}{Id\+To\+Coord}} (\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{Plotting\+::\+Axis}} $>$ $>$ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}{axis}}
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a63370336251a8dfadcca9c25ae12381a}{active\+\_\+row}} = 0
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_af4f6adf9712bae9378ab03fe87c3c19d}{active\+\_\+col}} = 0
+\item 
+\mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal\+::\+Gnuplot\+Pipe}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}{pipe}}
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}{Rows}}
+\item 
+\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} \mbox{\hyperlink{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}{Columns}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a7e201b907be4319f1b4dc9f0926181eb}\label{classJSL_1_1Plotting_1_1Figure_a7e201b907be4319f1b4dc9f0926181eb} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Figure@{Figure}}
+\index{Figure@{Figure}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Figure()}{Figure()}}
+{\footnotesize\ttfamily JSL\+::\+Plotting\+::\+Figure\+::\+Figure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a8f5937e7e623cb0a4bbb31340a7b0cba}\label{classJSL_1_1Plotting_1_1Figure_a8f5937e7e623cb0a4bbb31340a7b0cba} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Active@{Active}}
+\index{Active@{Active}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Active()}{Active()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{Plotting\+::\+Axis}} \& JSL\+::\+Plotting\+::\+Figure\+::\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ae191e51e6efba1888f1d32818ccf084d}\label{classJSL_1_1Plotting_1_1Figure_ae191e51e6efba1888f1d32818ccf084d} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Add@{Add}}
+\index{Add@{Add}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Plotting_1_1AxisMembers_1_1Data}{Plotting\+::\+Axis\+Members\+::\+Data}} \& JSL\+::\+Plotting\+::\+Figure\+::\+Add (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a59ee2b72f6b5352e0ef5111c43762c8a}\label{classJSL_1_1Plotting_1_1Figure_a59ee2b72f6b5352e0ef5111c43762c8a} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!CheckAxisBounds@{CheckAxisBounds}}
+\index{CheckAxisBounds@{CheckAxisBounds}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{CheckAxisBounds()}{CheckAxisBounds()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Check\+Axis\+Bounds (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row,  }\item[{size\+\_\+t}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a7a3d6f6f9967325f62f7dfdd1e89b51c}\label{classJSL_1_1Plotting_1_1Figure_a7a3d6f6f9967325f62f7dfdd1e89b51c} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Clear@{Clear}}
+\index{Clear@{Clear}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ad77b319e6a9f8d144cc15faaff527b4b}\label{classJSL_1_1Plotting_1_1Figure_ad77b319e6a9f8d144cc15faaff527b4b} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Clear@{Clear}}
+\index{Clear@{Clear}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Clear (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ad0731a34e5bbebdabbecf77cfc0eb5ae}\label{classJSL_1_1Plotting_1_1Figure_ad0731a34e5bbebdabbecf77cfc0eb5ae} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Clear@{Clear}}
+\index{Clear@{Clear}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Clear (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_aaf66a6d9d2c90033ee59413d52118bf8}\label{classJSL_1_1Plotting_1_1Figure_aaf66a6d9d2c90033ee59413d52118bf8} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!ClearAll@{ClearAll}}
+\index{ClearAll@{ClearAll}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{ClearAll()}{ClearAll()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Clear\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ac861fbb26c5b3737b9c384b688c07d10}\label{classJSL_1_1Plotting_1_1Figure_ac861fbb26c5b3737b9c384b688c07d10} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Close@{Close}}
+\index{Close@{Close}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ad6ea7f265c7d7901564caa90e586bd46}\label{classJSL_1_1Plotting_1_1Figure_ad6ea7f265c7d7901564caa90e586bd46} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!IdToCoord@{IdToCoord}}
+\index{IdToCoord@{IdToCoord}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{IdToCoord()}{IdToCoord()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ JSL\+::\+Plotting\+::\+Figure\+::\+Id\+To\+Coord (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_addc2270502ac927e8f3b5d22998c05e6}\label{classJSL_1_1Plotting_1_1Figure_addc2270502ac927e8f3b5d22998c05e6} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!MoveTo@{MoveTo}}
+\index{MoveTo@{MoveTo}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{MoveTo()}{MoveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Move\+To (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ab3277855fe9a33de896ca5f729fe80ca}\label{classJSL_1_1Plotting_1_1Figure_ab3277855fe9a33de896ca5f729fe80ca} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!MoveTo@{MoveTo}}
+\index{MoveTo@{MoveTo}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{MoveTo()}{MoveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Move\+To (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row,  }\item[{size\+\_\+t}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a5e911a654418b65c8c29be8b14160d16}\label{classJSL_1_1Plotting_1_1Figure_a5e911a654418b65c8c29be8b14160d16} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!MultiplotPrint@{MultiplotPrint}}
+\index{MultiplotPrint@{MultiplotPrint}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{MultiplotPrint()}{MultiplotPrint()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Multiplot\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a3911f233b044a42e16b27c4e5fc7c235}\label{classJSL_1_1Plotting_1_1Figure_a3911f233b044a42e16b27c4e5fc7c235} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{Axis}} $>$ \& JSL\+::\+Plotting\+::\+Figure\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a11e3db4b1a90043e10092324861b7062}\label{classJSL_1_1Plotting_1_1Figure_a11e3db4b1a90043e10092324861b7062} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Persist@{Persist}}
+\index{Persist@{Persist}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Persist()}{Persist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Persist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Plotting_a121deb506d5958d9b611ecbce9cf9b2b}{Output}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ad05486bf35b85ef6fbc0737057a4a9e0}\label{classJSL_1_1Plotting_1_1Figure_ad05486bf35b85ef6fbc0737057a4a9e0} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Persist@{Persist}}
+\index{Persist@{Persist}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Persist()}{Persist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Persist (\begin{DoxyParamCaption}\item[{unsigned int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ad42e2d4e99c78dc69248ab4a8997e95f}\label{classJSL_1_1Plotting_1_1Figure_ad42e2d4e99c78dc69248ab4a8997e95f} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!ScriptPath@{ScriptPath}}
+\index{ScriptPath@{ScriptPath}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{ScriptPath()}{ScriptPath()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Script\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a5796dc9fc1293839549fb363456685e2}\label{classJSL_1_1Plotting_1_1Figure_a5796dc9fc1293839549fb363456685e2} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Set@{Set}}
+\index{Set@{Set}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Plotting_1_1Display}{Plotting\+::\+Display}} \& JSL\+::\+Plotting\+::\+Figure\+::\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_ad26695360f9e6e2611c44befbdf4d8ca}\label{classJSL_1_1Plotting_1_1Figure_ad26695360f9e6e2611c44befbdf4d8ca} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!SetMultiplot@{SetMultiplot}}
+\index{SetMultiplot@{SetMultiplot}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{SetMultiplot()}{SetMultiplot()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Set\+Multiplot (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row\+Count,  }\item[{size\+\_\+t}]{column\+Count = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a131799cb68a35d455532ba1fa6f682c5}\label{classJSL_1_1Plotting_1_1Figure_a131799cb68a35d455532ba1fa6f682c5} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Show@{Show}}
+\index{Show@{Show}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily void JSL\+::\+Plotting\+::\+Figure\+::\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_af4f6adf9712bae9378ab03fe87c3c19d}\label{classJSL_1_1Plotting_1_1Figure_af4f6adf9712bae9378ab03fe87c3c19d} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!active\_col@{active\_col}}
+\index{active\_col@{active\_col}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{active\_col}{active\_col}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} JSL\+::\+Plotting\+::\+Figure\+::active\+\_\+col = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a63370336251a8dfadcca9c25ae12381a}\label{classJSL_1_1Plotting_1_1Figure_a63370336251a8dfadcca9c25ae12381a} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!active\_row@{active\_row}}
+\index{active\_row@{active\_row}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{active\_row}{active\_row}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} JSL\+::\+Plotting\+::\+Figure\+::active\+\_\+row = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7}\label{classJSL_1_1Plotting_1_1Figure_acfd2eba200a4a7aaffa22ef204dcd1d7} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!axis@{axis}}
+\index{axis@{axis}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{axis}{axis}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{classJSL_1_1Plotting_1_1Axis}{Plotting\+::\+Axis}}$>$ $>$ JSL\+::\+Plotting\+::\+Figure\+::axis\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b}\label{classJSL_1_1Plotting_1_1Figure_a7945556bca874b7c9cb5cae3bf87d18b} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Columns@{Columns}}
+\index{Columns@{Columns}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Columns}{Columns}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} JSL\+::\+Plotting\+::\+Figure\+::\+Columns\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab}\label{classJSL_1_1Plotting_1_1Figure_aa7d2f3541df8290b6dd3fcad623b23ab} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!pipe@{pipe}}
+\index{pipe@{pipe}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{pipe}{pipe}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe}{internal\+::\+Gnuplot\+Pipe}} JSL\+::\+Plotting\+::\+Figure\+::pipe\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e}\label{classJSL_1_1Plotting_1_1Figure_a8af9694fd78363f9eb685b14a3b85f4e} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!Rows@{Rows}}
+\index{Rows@{Rows}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{Rows}{Rows}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Plotting_a684d348f66a6b0df3f404d8c6cd13cef}{szt}} JSL\+::\+Plotting\+::\+Figure\+::\+Rows\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Plotting_1_1Figure_a15a22374910dbc3236a761cfc75bd3bd}\label{classJSL_1_1Plotting_1_1Figure_a15a22374910dbc3236a761cfc75bd3bd} 
+\index{JSL::Plotting::Figure@{JSL::Plotting::Figure}!ScriptFramePause@{ScriptFramePause}}
+\index{ScriptFramePause@{ScriptFramePause}!JSL::Plotting::Figure@{JSL::Plotting::Figure}}
+\doxysubsubsection{\texorpdfstring{ScriptFramePause}{ScriptFramePause}}
+{\footnotesize\ttfamily double JSL\+::\+Plotting\+::\+Figure\+::\+Script\+Frame\+Pause = 0.\+05}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Plot/\mbox{\hyperlink{figure_8h}{figure.\+h}}\end{DoxyCompactItemize}

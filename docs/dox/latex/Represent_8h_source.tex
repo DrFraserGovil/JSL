@@ -1,0 +1,107 @@
+\doxysection{Represent.\+h}
+\hypertarget{Represent_8h_source}{}\label{Represent_8h_source}\index{include/JSL/Strings/Represent.h@{include/JSL/Strings/Represent.h}}
+\mbox{\hyperlink{Represent_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <type\_traits>}\ \textcolor{comment}{//\ For\ std::is\_arithmetic\_v,\ std::enable\_if\_t,\ etc.}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}\ \ \ \ \ \textcolor{comment}{//\ For\ std::stringstream\ for\ more\ controlled\ numeric\ to\_string}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string\_view>}\ \textcolor{comment}{//\ For\ delimiter\ in\ vector\ case}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \#include\ <concepts>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <ranges>}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1String}{JSL::String}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1String_1_1RepresentStruct}{RepresentStruct}}}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//macro\ to\ provide\ specialisations\ without\ boilerplate\ muddling\ it\ all\ up}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \#define\ JSL\_HAS\_SPECIALISATION(type)\ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ template<>\ struct\ RepresentStruct<type>\{static\ std::string\ stringify\ (const\ type\ \&\ value);\};\ }}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ \#define\ JSL\_HAS\_SPECIALISATION\_NOCONST(type)\ \(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ template<>\ struct\ RepresentStruct<type>\{static\ std::string\ stringify\ (\ type\ \&\ value);\};}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//a\ whole\ bunch\ of\ specialisations}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{float});}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{long});}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double});}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{char});}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(\textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{Represent_8h_a85361d43c5e5ad9a0d39105bf119496b}{JSL\_HAS\_SPECIALISATION\_NOCONST}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(std::string);}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{ParseTo_8h_a06aeeac20eef8d49170e57c3dd3d56a8}{JSL\_HAS\_SPECIALISATION}}(std::string\_view);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \#undef\ JSL\_HAS\_SPECIALISATION}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{namespace\ }internal}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptJSL_1_1String_1_1internal_1_1StringifiableRange}{StringifiableRange}}\ =\ std::ranges::range<T>\ \&\&\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !std::convertible\_to<T,\ std::string\_view>;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}ernal::StringifiableRange\ T>}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1String_1_1RepresentStruct}{RepresentStruct}}<T>}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{structJSL_1_1String_1_1RepresentStruct_3_01T_01_4_a0b0f2e549583082a3756641b3a844b52}{stringify}}(\textcolor{keyword}{const}\ T\&\ container)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ stringify(container,\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{structJSL_1_1String_1_1RepresentStruct_3_01T_01_4_ac84969945e9b2c1a2dc299243d60b2ab}{stringify}}(\textcolor{keyword}{const}\ T\&\ container,\ std::string\_view\ delimiter)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ result;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}["{}};\ \textcolor{comment}{//\ A\ default\ endcap}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ first\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ item\ :\ container)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!first)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ delimiter;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extract\ the\ inner\ type\ and\ recurse}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }InnerType\ =\ std::remove\_cvref\_t<\textcolor{keyword}{decltype}(item)>;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ RepresentStruct<InnerType>::stringify(item);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ first\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00107\ \ \ \ \ std::string\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceJSL_1_1String_ab1c8a308edab64113712073d530a8005}{represent}}(T\ obj)}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structJSL_1_1String_1_1RepresentStruct}{RepresentStruct<T>::stringify}}(obj);}
+\DoxyCodeLine{00110\ \ \ \ \ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00118\ \ \ \ \ std::string\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceJSL_1_1String_ab1c8a308edab64113712073d530a8005}{represent}}(T\ obj,std::string\ delimiter)}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structJSL_1_1String_1_1RepresentStruct}{RepresentStruct<T>::stringify}}(obj,delimiter);}
+\DoxyCodeLine{00121\ \ \ \ \ \};}
+\DoxyCodeLine{00122\ \}}
+
+\end{DoxyCode}

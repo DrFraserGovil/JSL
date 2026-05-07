@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Event_1_1Async_1_1Manager" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Event::Async::Manager</compoundname>
+    <basecompoundref refid="classJSL_1_1Event_1_1internal_1_1HandlerBase" prot="public" virt="non-virtual">JSL::Event::internal::HandlerBase</basecompoundref>
+    <includes refid="EventManager_8h" local="no">EventManager.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Event_1_1Async_1_1Manager_1a1f27920906d54b3b139e71f60ad5c873" prot="private" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Parallel_1_1Pool" kindref="compound">JSL::Parallel::Pool</ref></type>
+        <definition>JSL::Parallel::Pool JSL::Event::Async::Manager::Workers</definition>
+        <argsstring></argsstring>
+        <name>Workers</name>
+        <qualifiedname>JSL::Event::Async::Manager::Workers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/EventManager.h" line="40" column="21" bodyfile="include/JSL/Async/EventManager.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Async_1_1Manager_1a937f1b92fa3b011d16f7d350178397fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Event::Async::Manager::Manager</definition>
+        <argsstring>(size_t ncores, std::string_view identifier)</argsstring>
+        <name>Manager</name>
+        <qualifiedname>JSL::Event::Async::Manager::Manager</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>ncores</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>identifier</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/EventManager.h" line="31" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Async_1_1Manager_1afd013cc4008baa4da7d45556593784d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Event::Async::Manager::Manager</definition>
+        <argsstring>(size_t ncores, Watcher &amp;watcher)</argsstring>
+        <name>Manager</name>
+        <qualifiedname>JSL::Event::Async::Manager::Manager</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>ncores</declname>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1Event_1_1Watcher" kindref="compound">Watcher</ref> &amp;</type>
+          <declname>watcher</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/EventManager.h" line="32" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Async_1_1Manager_1a8fa8e4c7c5b90fb838a67ef69c587901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Async::Manager::SerialTask</definition>
+        <argsstring>(Task::Instruction job)</argsstring>
+        <name>SerialTask</name>
+        <qualifiedname>JSL::Event::Async::Manager::SerialTask</qualifiedname>
+        <param>
+          <type><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction" kindref="compound">Task::Instruction</ref></type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/EventManager.h" line="34" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Async_1_1Manager_1ac0720e83e2f3aeada9c8b55ce721d79e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Async::Manager::AddTask</definition>
+        <argsstring>(Task::Instruction job)</argsstring>
+        <name>AddTask</name>
+        <qualifiedname>JSL::Event::Async::Manager::AddTask</qualifiedname>
+        <reimplements refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a360d18e30de22ea90a6d89b5051b8373">AddTask</reimplements>
+        <param>
+          <type><ref refid="structJSL_1_1Event_1_1Task_1_1Instruction" kindref="compound">Task::Instruction</ref></type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/EventManager.h" line="36" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Event_1_1Async_1_1Manager_1ac06d9ac653b3361d2390b92ed48312d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void JSL::Event::Async::Manager::Synchroniser</definition>
+        <argsstring>()</argsstring>
+        <name>Synchroniser</name>
+        <qualifiedname>JSL::Event::Async::Manager::Synchroniser</qualifiedname>
+        <reimplements refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a3aebc122d6f0c389e0d266d1c01ca605">Synchroniser</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Async/EventManager.h" line="38" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>JSL::Event::Async::Manager</label>
+        <link refid="classJSL_1_1Event_1_1Async_1_1Manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::Event::internal::HandlerBase</label>
+        <link refid="classJSL_1_1Event_1_1internal_1_1HandlerBase"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>JSL::Event::Antenna</label>
+        <link refid="classJSL_1_1Event_1_1Antenna"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>Resources</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>JSL::Event::Antenna::Hotline</label>
+        <link refid="classJSL_1_1Event_1_1Antenna_1_1Hotline"/>
+      </node>
+      <node id="1">
+        <label>JSL::Event::Async::Manager</label>
+        <link refid="classJSL_1_1Event_1_1Async_1_1Manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>Workers</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL::Event::Watcher</label>
+        <link refid="classJSL_1_1Event_1_1Watcher"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Receiver</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>Sender</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>JSL::Event::internal::FileDescriptor</label>
+        <link refid="structJSL_1_1Event_1_1internal_1_1FileDescriptor"/>
+      </node>
+      <node id="2">
+        <label>JSL::Event::internal::HandlerBase</label>
+        <link refid="classJSL_1_1Event_1_1internal_1_1HandlerBase"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Watch</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>JSL::Parallel::Pool</label>
+        <link refid="classJSL_1_1Parallel_1_1Pool"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/Async/EventManager.h" line="28" column="1" bodyfile="include/JSL/Async/EventManager.h" bodystart="29" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Event_1_1Async_1_1Manager_1ac0720e83e2f3aeada9c8b55ce721d79e" prot="public" virt="virtual"><scope>JSL::Event::Async::Manager</scope><name>AddTask</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a563c79882f71efa5db4900b5b87444c2" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>callback_cin</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1aca3715dd44106a33de169598998e22c0" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>callback_file</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af3331568c05a08d5cddc76c93e19ac32" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>callback_socket</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a0504c458a47770bb4ebf7174720675e1" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>CV</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a828df233e0fa7ff98764875a84d19366" prot="private" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Exit</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ace0463f720ee896fc203aa969d47a162" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>GetWatcher</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ab8e364638504a1a9e8b10becfa351a51" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>HandlerBase</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1adcecc953a692bfc64eeeb0b1f0fb2bfd" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>HandlerBase</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a68ff3c529f4c67c658a0252db0fdea93" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>HandlerBase</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a3e7a47d5b605c592f478be4ba38343bb" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>HandlerBase</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af84af0dbb9f81df903e1086733c4b36d" prot="private" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>InitialiseRun</name></member>
+      <member refid="classJSL_1_1Event_1_1Async_1_1Manager_1a937f1b92fa3b011d16f7d350178397fa" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Manager</name></member>
+      <member refid="classJSL_1_1Event_1_1Async_1_1Manager_1afd013cc4008baa4da7d45556593784d1" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Manager</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af6d298ca51fb7aefc3f394300cbb1869" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>operator=</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a57eea3f9049114000f76c8329f18777d" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>operator=</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1aa8b3e185b5a61aee6d145a891a2062ef" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Process</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a59d5ac117b9b78e5b854bdefa443be65" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>ProtectAdd</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ac763fc108d11caa4da43a5992fef51c7" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Run</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a79af047abaabaaeaa709315014412ddd" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Running</name></member>
+      <member refid="classJSL_1_1Event_1_1Async_1_1Manager_1a8fa8e4c7c5b90fb838a67ef69c587901" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>SerialTask</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1ab9e2039751b1ac3c051cb5d537bda0a5" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>SetCInCallback</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a7d6c692b0828b1b972d098cc7473c041" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>SetInotifyCallback</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a1ca400818f0a74774a3848d781dc33da" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>SetSocketCallback</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a8f2bfb2b698e8057598be31cb65cf29f" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>SetTextCallback</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1af145b4407be9df4d166a03ef0679c306" prot="public" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>ShutdownCommands</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a80a3184165d34eca4957f7a82b7342a2" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Sync</name></member>
+      <member refid="classJSL_1_1Event_1_1Async_1_1Manager_1ac06d9ac653b3361d2390b92ed48312d6" prot="public" virt="virtual"><scope>JSL::Event::Async::Manager</scope><name>Synchroniser</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a2ab7fc28af66c1fa55c8c143f9750b9f" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>TaskQueue</name></member>
+      <member refid="classJSL_1_1Event_1_1internal_1_1HandlerBase_1a7180e31000a1edd37ef55866a3099141" prot="protected" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Watch</name></member>
+      <member refid="classJSL_1_1Event_1_1Async_1_1Manager_1a1f27920906d54b3b139e71f60ad5c873" prot="private" virt="non-virtual"><scope>JSL::Event::Async::Manager</scope><name>Workers</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

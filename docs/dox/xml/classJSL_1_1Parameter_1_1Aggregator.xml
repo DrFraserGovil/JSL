@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Parameter_1_1Aggregator" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Parameter::Aggregator</compoundname>
+    <basecompoundref refid="classJSL_1_1Parameter_1_1NestedAggregator" prot="public" virt="non-virtual">JSL::Parameter::NestedAggregator</basecompoundref>
+    <includes refid="Aggregator_8h" local="no">Aggregator.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1Aggregator_1a736803fa79619d680023786fba39e8a2" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Parameter::Aggregator::Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>JSL::Parameter::Aggregator::Name</qualifiedname>
+        <initializer>= &quot;Root&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="27" column="25" bodyfile="include/JSL/Parameters/Aggregator.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1Aggregator_1a930ac3e469b22c4c32b1b0c7092f06b8" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool JSL::Parameter::Aggregator::Help</definition>
+        <argsstring></argsstring>
+        <name>Help</name>
+        <qualifiedname>JSL::Parameter::Aggregator::Help</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="28" column="18" bodyfile="include/JSL/Parameters/Aggregator.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1Aggregator_1a8cdc9f8b8f814313552137dd979aa07e" prot="protected" static="no" mutable="no">
+        <type><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting</ref>&lt; bool &gt;</type>
+        <definition>Setting&lt;bool&gt; JSL::Parameter::Aggregator::HelpToggle</definition>
+        <argsstring></argsstring>
+        <name>HelpToggle</name>
+        <qualifiedname>JSL::Parameter::Aggregator::HelpToggle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="29" column="21" bodyfile="include/JSL/Parameters/Aggregator.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1a22b8c708078ebf21583b16525515fe4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Parameter::Aggregator::Aggregator</definition>
+        <argsstring>(std::string_view name)</argsstring>
+        <name>Aggregator</name>
+        <qualifiedname>JSL::Parameter::Aggregator::Aggregator</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="13" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1ab9629893dd9896c0fa9f6f535dd93ad1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::Aggregator::Parse</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>Parse</name>
+        <qualifiedname>JSL::Parameter::Aggregator::Parse</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="14" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1a238a95d3f6b3df700bb3fff17672732d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JSL::Parameter::Aggregator::Aggregator</definition>
+        <argsstring>()</argsstring>
+        <name>Aggregator</name>
+        <qualifiedname>JSL::Parameter::Aggregator::Aggregator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="16" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1a89a6c0b5ed09ebc15d5b110b1f41aab7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; JSL::Parameter::Aggregator::InvokedCommands</definition>
+        <argsstring>()</argsstring>
+        <name>InvokedCommands</name>
+        <qualifiedname>JSL::Parameter::Aggregator::InvokedCommands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="19" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1a85f0d49ffa420bf7db810adc92a7799e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; std::set&lt; std::string &gt;, std::set&lt; std::string &gt; &gt;</type>
+        <definition>std::pair&lt; std::set&lt; std::string &gt;, std::set&lt; std::string &gt; &gt; JSL::Parameter::Aggregator::ParseCommands</definition>
+        <argsstring>()</argsstring>
+        <name>ParseCommands</name>
+        <qualifiedname>JSL::Parameter::Aggregator::ParseCommands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="20" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1a828332958937f00c6caa6ea095feff88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::Aggregator::HelpMenu</definition>
+        <argsstring>()</argsstring>
+        <name>HelpMenu</name>
+        <qualifiedname>JSL::Parameter::Aggregator::HelpMenu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="21" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1a1866dccd1693479b4df3b311cefc51f4" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, std::string &gt; &amp;</type>
+        <definition>static std::map&lt; std::string, std::string &gt; &amp; JSL::Parameter::Aggregator::RegisteredCommands</definition>
+        <argsstring>()</argsstring>
+        <name>RegisteredCommands</name>
+        <qualifiedname>JSL::Parameter::Aggregator::RegisteredCommands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="23" column="30"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1ae36958fb62d56849d4c76f63f728e33c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string &amp;</type>
+        <definition>std::string &amp; JSL::Parameter::Aggregator::GetDefaultCommand</definition>
+        <argsstring>()</argsstring>
+        <name>GetDefaultCommand</name>
+        <qualifiedname>JSL::Parameter::Aggregator::GetDefaultCommand</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="24" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1a57558dacf78a036ef281b1f70d2313f8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::Aggregator::AddCommand</definition>
+        <argsstring>(std::string name, std::string result)</argsstring>
+        <name>AddCommand</name>
+        <qualifiedname>JSL::Parameter::Aggregator::AddCommand</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="25" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1Aggregator_1a83d3472fa8c6de09686c4c735d09aff0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::Aggregator::DefaultCommand</definition>
+        <argsstring>(std::string name, std::string result)</argsstring>
+        <name>DefaultCommand</name>
+        <qualifiedname>JSL::Parameter::Aggregator::DefaultCommand</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/Aggregator.h" line="26" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>JSL::Parameter::Aggregator</label>
+        <link refid="classJSL_1_1Parameter_1_1Aggregator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::Parameter::NestedAggregator</label>
+        <link refid="classJSL_1_1Parameter_1_1NestedAggregator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>JSL::Parameter::Aggregator</label>
+        <link refid="classJSL_1_1Parameter_1_1Aggregator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>HelpToggle</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL::Parameter::NestedAggregator</label>
+        <link refid="classJSL_1_1Parameter_1_1NestedAggregator"/>
+      </node>
+      <node id="4">
+        <label>JSL::internal::Parameter::ParameterBase</label>
+        <link refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase"/>
+      </node>
+      <node id="3">
+        <label>JSL::Parameter::Setting&lt; bool &gt;</label>
+        <link refid="classJSL_1_1Parameter_1_1Setting"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/JSL/Parameters/Aggregator.h" line="10" column="5" bodyfile="include/JSL/Parameters/Aggregator.h" bodystart="11" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a57558dacf78a036ef281b1f70d2313f8" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>AddCommand</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a22b8c708078ebf21583b16525515fe4e" prot="public" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Aggregator</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a238a95d3f6b3df700bb3fff17672732d" prot="public" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Aggregator</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a2753815649914da9b6edde96f447f4de" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Connect</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a83d3472fa8c6de09686c4c735d09aff0" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>DefaultCommand</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1acd4f03a79003d09d90d46dce409148b1" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>erase</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a77028e0ab3bc45c485b51cc060323101" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>FindParameter</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1ae36958fb62d56849d4c76f63f728e33c" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>GetDefaultCommand</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a43f76ed6e5e015b3274410fbb4dc44d2" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>GetDescription</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a41df8bde8803a9ea7069139fff912846" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>GetParameter</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a930ac3e469b22c4c32b1b0c7092f06b8" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Help</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a828332958937f00c6caa6ea095feff88" prot="public" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>HelpMenu</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a8cdc9f8b8f814313552137dd979aa07e" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>HelpToggle</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1afdc6a53bc22401751a4b5dc3ca871730" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Information</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a89a6c0b5ed09ebc15d5b110b1f41aab7" prot="public" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>InvokedCommands</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a9cd7e32f6a8ce8074bc4645deffd58c9" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>join</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a74dd6af3e3eef08444f86d5a8aeb2a30" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>lineLength</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1abb61053812d7ef85241857d4b0682c12" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>lw</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1adb76c921d7dc55bedcab758439a6a36c" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>mw</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a736803fa79619d680023786fba39e8a2" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Name</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1ac18c11a6ef9530a78a749831d45cfcc1" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>NestedAggregators</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a437853feebfe2b0a5a4252d65d26f9d4" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>NestGroup</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a785246b82eee77fa153fa227da848800" prot="public" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>operator&lt;=&gt;</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1ab9629893dd9896c0fa9f6f535dd93ad1" prot="public" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Parse</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a85f0d49ffa420bf7db810adc92a7799e" prot="public" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>ParseCommands</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a5d51a521c773afd306901a25bd063cba" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>printAsTitle</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a8693e07ddfd7c0e05515bf8f6ccaa423" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>PrintHelp</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1ae8151366e1228dc0412cb93a3cdb760e" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>PrintStructure</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1acae59cbc059ef5c1df213e5cc5e84133" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>push</name></member>
+      <member refid="classJSL_1_1Parameter_1_1Aggregator_1a1866dccd1693479b4df3b311cefc51f4" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>RegisteredCommands</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a336af42fc978a4256969e3ecc226f9e9" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>RegisteredParameters</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1aa5e04444760661a7198f67ed214c1e46" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>remove</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a16b74939ed39c25ea438d5e41ad29c71" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>rw</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1aff08b3ca2e2fd9b29231b8fbe8ef00b4" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Set</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a02c74a14865cb89027cec1d9bb8f990e" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>Set</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3c61c4006a35f3fe57a439e20f5365c7" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>SetInfo</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a13b6c508fde37e4257dff59e6221d7d8" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>SetParameter</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3618fb8d9531b524f32a56bbc10fd1b4" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>ShowParameter</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a8e383c2f0250781d8b1eac7dfda06cbd" prot="protected" virt="non-virtual"><scope>JSL::Parameter::Aggregator</scope><name>TryCluster</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

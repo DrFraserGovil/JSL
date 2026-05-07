@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_2036fd0ffee4d81cc18364ca73697fc7" kind="dir">
+    <compoundname>include/JSL/Async</compoundname>
+    <innerfile refid="EventManager_8h">EventManager.h</innerfile>
+    <innerfile refid="ManagerBase_8h">ManagerBase.h</innerfile>
+    <innerfile refid="ParallelPool_8h">ParallelPool.h</innerfile>
+    <innerfile refid="Socket_8h">Socket.h</innerfile>
+    <innerfile refid="Watcher_8h">Watcher.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/JSL/Async/"/>
+  </compounddef>
+</doxygen>

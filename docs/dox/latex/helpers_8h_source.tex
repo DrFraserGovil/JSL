@@ -1,0 +1,71 @@
+\doxysection{helpers.\+h}
+\hypertarget{helpers_8h_source}{}\label{helpers_8h_source}\index{include/JSL/FileIO/archiver/helpers.h@{include/JSL/FileIO/archiver/helpers.h}}
+\mbox{\hyperlink{helpers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Archiver_1_1internal}{JSL::Archiver::internal}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceJSL_1_1Archiver_1_1internal_af1192c0f73871f34b2e3378dc3a4eefe}{BLOCK\_SIZE}}\ =\ 512;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{namespaceJSL_1_1Archiver_1_1internal_a7fbcb25825f2262c92de701d8f54680a}{END\_OF\_ARCHIVE}}[2*\mbox{\hyperlink{namespaceJSL_1_1Archiver_1_1internal_af1192c0f73871f34b2e3378dc3a4eefe}{internal::BLOCK\_SIZE}}]\{0\};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{namespaceJSL_1_1Archiver_1_1internal_a5fad90d70cf64a5f65c759668ae32a39}{zeroBuffer}}[512]\{0\};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//A\ struct\ for\ holding\ the\ header\ metadata\ for\ the\ overall\ tar\ structure\ -\/-\/\ constrained\ to\ be\ exactly\ 512\ bytes.}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Forgive\ the\ magic\ numbers:\ they\ are\ defined\ by\ the\ tar\ specification}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader}{TarHeader}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::array<char,\ 100>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a284232d0a8b9a7105ba15c6beae9269e}{name}}\{\};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::array<char,\ 8>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_ad96e293a8009accfbf6156a645f51893}{mode}}\{\};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::array<char,\ 8>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a6443a342cdb999dfc3ebdfc0acafb3ad}{uid}}\{\};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::array<char,\ 8>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a810b5c91392a9aacd5b4b53aaa991836}{gid}}\{\};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::array<char,\ 12>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a6593fcae9e8918eb6505c5d8d8ebd0fb}{size}}\{\};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::array<char,\ 12>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_aed780339b11eb8db8c1ba69c118f92fe}{mtime}}\{\};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::array<char,\ 8>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a01d8e5da136b5a05e11f774aa0308163}{chksum}}\{\textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\ '}\};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a747d6406c974dfa3a3eaba897956d31d}{typeflag}}\{\textcolor{charliteral}{'0'}\};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::array<char,\ 100>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_ac4b934cdbe27dec2e2e5bc8d08845d86}{linkname}}\{\};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::array<char,\ 6>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a565ae53ccb78f717ae39688da64e24bf}{magic}}\{\textcolor{charliteral}{'u'},\ \textcolor{charliteral}{'s'},\ \textcolor{charliteral}{'t'},\ \textcolor{charliteral}{'a'},\ \textcolor{charliteral}{'r'},\ \textcolor{charliteral}{'\(\backslash\)0'}\};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::array<char,\ 2>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_ad0e2984bb1adde8f2738903e6ea0d73c}{version}}\{\textcolor{charliteral}{'0'},\ \textcolor{charliteral}{'0'}\};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::array<char,\ 32>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a01dde248cdb61b902b6bc2a18f08a67d}{uname}}\{\};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::array<char,\ 32>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_af643c87488d20bcc49c881b35a0ab595}{gname}}\{\};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::array<char,\ 8>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_ac2e86d7daaf1374cf99a3046dca05392}{devmajor}}\{\};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::array<char,\ 8>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a04af2d3c97e17fa2f4a97a021fb37c41}{devminor}}\{\};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::array<char,\ 155>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_ae665609fa3feb9c37d4d0561d2692d7f}{prefix}}\{\};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::array<char,\ 12>\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader_a09ea043a84f46045415f48204195062f}{padding}}\{\};\ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(TarHeader)\ ==\ 512,\ \textcolor{stringliteral}{"{}TarHeader\ must\ be\ exactly\ 512\ bytes"{}});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1Security}{Security}}}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1Security_aaa073b27adf9a939e8fe9763539b053b}{UID}}\ =\ 1000;\ \textcolor{comment}{//\ uid\ of\ first\ normal\ human\ user.\ A\ good\ default\ as\ tar\ doesn't\ *really*\ need\ a\ uid\ (it's\ discarded\ when\ tar\ runs)\ }}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1Security_a4dde8993590947d8a925086056e0cf5a}{GID}}\ =\ 1000;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1Security_a740655d2dfbcdc71f6c279a5e97a1556}{UName}}\ =\ \textcolor{stringliteral}{"{}user"{}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1Security_a431100978f1b5f948291ae22d433eced}{GName}}\ =\ \textcolor{stringliteral}{"{}user"{}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1Security_a50c6587e5936a1724afe4fa7d1442636}{Permission}}\ =\ 0644;\ \textcolor{comment}{//standard\ linux\ -\/rw-\/r-\/-\/r-\/-\/\ permission}}
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1WriteExporter}{WriteExporter}}}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1TarHeader}{TarHeader}}\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1WriteExporter_a30828f056fd4c223329fa7acb2b8e659}{headerBlock}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1WriteExporter_aa868373e55ef610ef3c0d26b3af3271e}{data}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1WriteExporter_af3abc38dc55937069754e8335bc5bd47}{padding}};}
+\DoxyCodeLine{00055\ \ \ \ \ \};\ \ \ \ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ A\ container\ for\ recording\ the\ location\ of\ files\ in\ an\ archive\ stream}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1ReadMetaData}{ReadMetaData}}}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_a5566f797235225d78227940e370ee0a2}{filename}};\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_a1988f5fdbd3b8dbdc3151ee03b04fcf9}{file\_size}};\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::streampos\ \mbox{\hyperlink{structJSL_1_1Archiver_1_1internal_1_1ReadMetaData_af0ce088aaa02611955b4ee0037c760ab}{data\_offset}};\ }
+\DoxyCodeLine{00065\ \ \ \ \ \};}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

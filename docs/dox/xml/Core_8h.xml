@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Core_8h" kind="file" language="C++">
+    <compoundname>Core.h</compoundname>
+    <includes refid="Config_8h" local="no">JSL/Display/Log/Config.h</includes>
+    <includes refid="Manipulate_8h" local="no">JSL/Strings/Manipulate.h</includes>
+    <includedby refid="Log_8h" local="yes">include/JSL/Display/Log.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>JSL/Display/ANSI_Codes.h</label>
+        <link refid="ANSI__Codes_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>JSL/Display/Format.h</label>
+        <link refid="Format_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>JSL/Display/Log/Config.h</label>
+        <link refid="Config_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Display/Log/Core.h</label>
+        <link refid="Core_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>JSL/Display/Log/Levels.h</label>
+        <link refid="Levels_8h"/>
+      </node>
+      <node id="16">
+        <label>JSL/Strings/Manipulate.h</label>
+        <link refid="Manipulate_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>charconv</label>
+      </node>
+      <node id="5">
+        <label>cstdint</label>
+      </node>
+      <node id="14">
+        <label>cstdio</label>
+      </node>
+      <node id="11">
+        <label>cstring</label>
+      </node>
+      <node id="8">
+        <label>iostream</label>
+      </node>
+      <node id="15">
+        <label>mutex</label>
+      </node>
+      <node id="12">
+        <label>sstream</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>string_view</label>
+      </node>
+      <node id="13">
+        <label>unistd.h</label>
+      </node>
+      <node id="17">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>include/JSL.h</label>
+        <link refid="JSL_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/JSL/Display.h</label>
+        <link refid="Display_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/JSL/Display/Log.h</label>
+        <link refid="Log_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/JSL/Display/Log/Core.h</label>
+        <link refid="Core_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>include/JSL/FileIO.h</label>
+        <link refid="FileIO_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>include/JSL/FileIO/archiver.h</label>
+        <link refid="archiver_8h"/>
+      </node>
+      <node id="8">
+        <label>include/JSL/FileIO/archiver/writer.h</label>
+        <link refid="writer_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>include/JSL/FileIO/fileWriters.h</label>
+        <link refid="fileWriters_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>include/JSL/Parameters.h</label>
+        <link refid="Parameters_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>include/JSL/Parameters/Aggregator.h</label>
+        <link refid="Aggregator_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>include/JSL/Parameters/Describer.h</label>
+        <link refid="Describer_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>include/JSL/Parameters/NestedAggregator.h</label>
+        <link refid="NestedAggregator_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>include/JSL/Parameters/Parameter.h</label>
+        <link refid="Parameter_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/JSL/Plot.h</label>
+        <link refid="Plot_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>include/JSL/Plot/axis.h</label>
+        <link refid="axis_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>include/JSL/Plot/data/curve.h</label>
+        <link refid="curve_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>include/JSL/Plot/figure.h</label>
+        <link refid="figure_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>include/JSL/Plot/plot.h</label>
+        <link refid="plot_8h"/>
+      </node>
+      <node id="5">
+        <label>include/JSL/Plot/textplot.h</label>
+        <link refid="textplot_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>include/JSL/Strings.h</label>
+        <link refid="Strings_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>include/JSL/Strings/ParseTo.h</label>
+        <link refid="ParseTo_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/JSL/internal/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classJSL_1_1Log_1_1Core" prot="public">JSL::Log::Core</innerclass>
+    <innernamespace refid="namespaceJSL">JSL</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Log">JSL::Log</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="Core_8h_1aba7b09d6e8fbe414c23705ad24dde6ff" prot="public" static="no">
+        <name>LOG</name>
+        <param><defname>level</defname></param>
+        <initializer>	if (!(level &lt;= <ref refid="namespaceJSL_1_1Log_1_1Global_1a514bd1673249e579436eedecc3f56540" kindref="member">JSL::Log::Global::Config</ref>().Level)) {} \
+	else (<ref refid="classJSL_1_1Log_1_1Core" kindref="compound">JSL::Log::Core</ref>(level,__LINE__,__func__,__FILE__))</initializer>
+        <briefdescription>
+<para>The main log interface. Pipe output to it as you would std::cout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>LOG is a specialised macro-interface to the Core object. If the level check evaluates to false, then the &lt;&lt;&apos;d inputs are completely ignored and are not executed, useful for skipping <lsquo/>expensive<rsquo/> operations during a <ref refid="Levels_8h_1aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f" kindref="member">DEBUG</ref> run.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="Levels_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref> object, if greater than the LogConfig::Level value, nothing happens (and the expansion is ignored) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If the level is suitable, a temporary Core object, which functions as a specialised Stream object, accepting values passed via &apos;&lt;&lt;&apos;. Otherwise, does nothing, and does not evaluate any subsequent pipe commands </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Log/Core.h" line="19" column="9" bodyfile="include/JSL/Display/Log/Core.h" bodystart="19" bodyend="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>code<sp/>is<sp/>based<sp/>on<sp/>some<sp/>work<sp/>by<sp/>Alberto<sp/>Lepe<sp/>(dev@alepe.com),<sp/>heavily<sp/>modified<sp/>by<sp/>JFG</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>I<sp/>have<sp/>taken<sp/>the<sp/>view<sp/>that<sp/>Logging<sp/>--<sp/>when<sp/>active<sp/>--<sp/>should<sp/>never<sp/>be<sp/>performance-critical<sp/>code,<sp/>and<sp/>so<sp/>some<sp/>of<sp/>this<sp/>is<sp/>written<sp/>in<sp/>an<sp/>idiomatic<sp/>fashion,<sp/>rather<sp/>than<sp/>an<sp/>optimised<sp/>one.<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Config_8h" kindref="compound">JSL/Display/Log/Config.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Manipulate_8h" kindref="compound">JSL/Strings/Manipulate.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="Core_8h_1aba7b09d6e8fbe414c23705ad24dde6ff" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG(level)<sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!(level<sp/>&lt;=<sp/>JSL::Log::Global::Config().Level))<sp/>{}<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>(JSL::Log::Core(level,__LINE__,__func__,__FILE__))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceJSL_1_1Log" kindref="compound">JSL::Log</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classJSL_1_1Log_1_1Core" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classJSL_1_1Log_1_1Core" kindref="compound">Core</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46" refid="classJSL_1_1Log_1_1Core_1a5c3af7e2fe5dcdf937b93651d4f9bda6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core_1a5c3af7e2fe5dcdf937b93651d4f9bda6" kindref="member">Core</ref>(<ref refid="Levels_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref><sp/>level,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>callingLine,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>callingFunction,std::string<sp/>callingFile);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classJSL_1_1Log_1_1Core_1a9e69c76e9f7796e69841f2667d4e8a76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core_1a9e69c76e9f7796e69841f2667d4e8a76" kindref="member">~Core</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="63" refid="classJSL_1_1Log_1_1Core_1a0648680698230ce5d8979c7ee960d366" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core" kindref="compound">Core</ref><sp/>&amp;<ref refid="classJSL_1_1Log_1_1Core_1a0648680698230ce5d8979c7ee960d366" kindref="member">operator&lt;&lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;msg)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classJSL_1_1Log_1_1Core_1afc3c0a694ac697b8af9ebce469efe069" kindref="member">StreamActive</ref>)<sp/></highlight><highlight class="comment">//lazy<sp/>opening<sp/>of<sp/>the<sp/>steam</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core_1afc3c0a694ac697b8af9ebce469efe069" kindref="member">StreamActive</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core_1a2187c6090f06ce4b55220b06233fba9d" kindref="member">Header</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core_1a6e69ef78a7e4c5b9a3bf1f8186117ad9" kindref="member">Buffer</ref><sp/>&lt;&lt;<sp/><ref refid="classJSL_1_1Log_1_1Core_1a22c33e7c11c9cdadc053bb29c0cc668c" kindref="member">Insert</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core_1a6e69ef78a7e4c5b9a3bf1f8186117ad9" kindref="member">Buffer</ref><sp/>&lt;&lt;<sp/>msg;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classJSL_1_1Log_1_1Core_1a57fb03e27585853f46e1d0cfae5a6cdc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core" kindref="compound">Core</ref><sp/>&amp;<ref refid="classJSL_1_1Log_1_1Core_1a57fb03e27585853f46e1d0cfae5a6cdc" kindref="member">operator&lt;&lt;</ref>(<ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref><sp/>format);</highlight></codeline>
+<codeline lineno="82" refid="classJSL_1_1Log_1_1Core_1ab00581b608e7afc876d653de92a84231" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Log_1_1Core" kindref="compound">Core</ref><sp/>&amp;<ref refid="classJSL_1_1Log_1_1Core_1ab00581b608e7afc876d653de92a84231" kindref="member">operator&lt;&lt;</ref>(<ref refid="classJSL_1_1Format_1_1FormatGroup" kindref="compound">Format::FormatGroup</ref><sp/>group);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="88" refid="classJSL_1_1Log_1_1Core_1a6fc302f13ed1875ed2a48dae5dd689a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Log_1_1Core_1a6fc302f13ed1875ed2a48dae5dd689a1" kindref="member">ManualFormat</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classJSL_1_1Log_1_1Core_1a1de05c38db8951ea2d5b7412e79c877d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classJSL_1_1Format_1_1FormatGroup" kindref="compound">Format::FormatGroup</ref><sp/><ref refid="classJSL_1_1Log_1_1Core_1a1de05c38db8951ea2d5b7412e79c877d" kindref="member">CurrentFormat</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classJSL_1_1Log_1_1Core_1a6e69ef78a7e4c5b9a3bf1f8186117ad9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/><ref refid="classJSL_1_1Log_1_1Core_1a6e69ef78a7e4c5b9a3bf1f8186117ad9" kindref="member">Buffer</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98" refid="classJSL_1_1Log_1_1Core_1a8bc82b6e56a5fecff382b08edbfe8d65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/><ref refid="classJSL_1_1Log_1_1Core_1a8bc82b6e56a5fecff382b08edbfe8d65" kindref="member">BufferPreamble</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="classJSL_1_1Log_1_1Core_1a931f76811d5f282e39c39979ad1284f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Levels_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref><sp/><ref refid="classJSL_1_1Log_1_1Core_1a931f76811d5f282e39c39979ad1284f2" kindref="member">Level</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="classJSL_1_1Log_1_1Core_1afc3c0a694ac697b8af9ebce469efe069" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Log_1_1Core_1afc3c0a694ac697b8af9ebce469efe069" kindref="member">StreamActive</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107" refid="classJSL_1_1Log_1_1Core_1a22c33e7c11c9cdadc053bb29c0cc668c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classJSL_1_1Log_1_1Core_1a22c33e7c11c9cdadc053bb29c0cc668c" kindref="member">Insert</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classJSL_1_1Log_1_1Core_1ae5c042d3719c209373bef3ac3ab8c0f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classJSL_1_1Log_1_1Core_1ae5c042d3719c209373bef3ac3ab8c0f2" kindref="member">LineSuffix</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classJSL_1_1Log_1_1Core_1ada70368a1dec8c6d0743020bc45ea7b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classJSL_1_1Log_1_1Core_1ada70368a1dec8c6d0743020bc45ea7b2" kindref="member">FirstLineSuffix</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classJSL_1_1Log_1_1Core_1a2187c6090f06ce4b55220b06233fba9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Log_1_1Core_1a2187c6090f06ce4b55220b06233fba9d" kindref="member">Header</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123" refid="classJSL_1_1Log_1_1Core_1a952d14b7b6715a38902e632f6053c46b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classJSL_1_1Log_1_1Core_1a952d14b7b6715a38902e632f6053c46b" kindref="member">EndMessage</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126" refid="classJSL_1_1Log_1_1Core_1a26913d8e4e9549471250ae7174050367" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::mutex<sp/><ref refid="classJSL_1_1Log_1_1Core_1a26913d8e4e9549471250ae7174050367" kindref="member">StreamMutex</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="include/JSL/Display/Log/Core.h"/>
+  </compounddef>
+</doxygen>

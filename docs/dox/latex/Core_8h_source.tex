@@ -1,0 +1,79 @@
+\doxysection{Core.\+h}
+\hypertarget{Core_8h_source}{}\label{Core_8h_source}\index{include/JSL/Display/Log/Core.h@{include/JSL/Display/Log/Core.h}}
+\mbox{\hyperlink{Core_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ This\ code\ is\ based\ on\ some\ work\ by\ Alberto\ Lepe\ (dev@alepe.com),\ heavily\ modified\ by\ JFG}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ I\ have\ taken\ the\ view\ that\ Logging\ -\/-\/\ when\ active\ -\/-\/\ should\ never\ be\ performance-\/critical\ code,\ and\ so\ some\ of\ this\ is\ written\ in\ an\ idiomatic\ fashion,\ rather\ than\ an\ optimised\ one.\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Config_8h}{JSL/Display/Log/Config.h}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Manipulate_8h}{JSL/Strings/Manipulate.h}}>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ LOG(level)\ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ if\ (!(level\ <=\ JSL::Log::Global::Config().Level))\ \{\}\ \(\backslash\)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ else\ (JSL::Log::Core(level,\_\_LINE\_\_,\_\_func\_\_,\_\_FILE\_\_))}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Log}{JSL::Log}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}}}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a5c3af7e2fe5dcdf937b93651d4f9bda6}{Core}}(\mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level,\textcolor{keywordtype}{int}\ callingLine,\textcolor{keyword}{const}\ std::string\ \&\ callingFunction,std::string\ callingFile);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a9e69c76e9f7796e69841f2667d4e8a76}{\string~Core}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}}\ \&\mbox{\hyperlink{classJSL_1_1Log_1_1Core_a0648680698230ce5d8979c7ee960d366}{operator<<}}(\textcolor{keyword}{const}\ T\ \&msg)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}{StreamActive}})\ \textcolor{comment}{//lazy\ opening\ of\ the\ steam}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}{StreamActive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a2187c6090f06ce4b55220b06233fba9d}{Header}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}{Buffer}}\ <<\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a22c33e7c11c9cdadc053bb29c0cc668c}{Insert}};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}{Buffer}}\ <<\ msg;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}}\ \&\mbox{\hyperlink{classJSL_1_1Log_1_1Core_a57fb03e27585853f46e1d0cfae5a6cdc}{operator<<}}(\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Format::Command}}\ format);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}}\ \&\mbox{\hyperlink{classJSL_1_1Log_1_1Core_ab00581b608e7afc876d653de92a84231}{operator<<}}(\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format::FormatGroup}}\ group);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6fc302f13ed1875ed2a48dae5dd689a1}{ManualFormat}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format::FormatGroup}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a1de05c38db8951ea2d5b7412e79c877d}{CurrentFormat}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}{Buffer}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a8bc82b6e56a5fecff382b08edbfe8d65}{BufferPreamble}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a931f76811d5f282e39c39979ad1284f2}{Level}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}{StreamActive}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a22c33e7c11c9cdadc053bb29c0cc668c}{Insert}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_ae5c042d3719c209373bef3ac3ab8c0f2}{LineSuffix}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_ada70368a1dec8c6d0743020bc45ea7b2}{FirstLineSuffix}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a2187c6090f06ce4b55220b06233fba9d}{Header}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a952d14b7b6715a38902e632f6053c46b}{EndMessage}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a26913d8e4e9549471250ae7174050367}{StreamMutex}};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \};}
+\DoxyCodeLine{00129\ \}}
+
+\end{DoxyCode}

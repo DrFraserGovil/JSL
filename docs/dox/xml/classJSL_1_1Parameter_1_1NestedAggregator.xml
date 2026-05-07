@@ -1,0 +1,675 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classJSL_1_1Parameter_1_1NestedAggregator" kind="class" language="C++" prot="public">
+    <compoundname>JSL::Parameter::NestedAggregator</compoundname>
+    <derivedcompoundref refid="classJSL_1_1Parameter_1_1Aggregator" prot="public" virt="non-virtual">JSL::Parameter::Aggregator</derivedcompoundref>
+    <includes refid="NestedAggregator_8h" local="no">NestedAggregator.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1NestedAggregator_1ae5286f16206344d7df44ae7024993f95" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JSL::Parameter::NestedAggregator::Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::Name</qualifiedname>
+        <initializer>= &quot;Unnamed Settings Group&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="17" column="25" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1NestedAggregator_1a336af42fc978a4256969e3ecc226f9e9" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase" kindref="compound">internal::Parameter::ParameterBase</ref> * &gt;</type>
+        <definition>std::map&lt;std::string,internal::Parameter::ParameterBase*&gt; JSL::Parameter::NestedAggregator::RegisteredParameters</definition>
+        <argsstring></argsstring>
+        <name>RegisteredParameters</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::RegisteredParameters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="98" column="22" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1NestedAggregator_1ac18c11a6ef9530a78a749831d45cfcc1" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="classJSL_1_1Parameter_1_1NestedAggregator" kindref="compound">NestedAggregator</ref> * &gt;</type>
+        <definition>std::map&lt;std::string, NestedAggregator*&gt; JSL::Parameter::NestedAggregator::NestedAggregators</definition>
+        <argsstring></argsstring>
+        <name>NestedAggregators</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::NestedAggregators</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="99" column="22" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1NestedAggregator_1afdc6a53bc22401751a4b5dc3ca871730" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="classJSL_1_1Parameter_1_1Description" kindref="compound">Description</ref> &gt;</type>
+        <definition>std::map&lt;std::string,Description&gt; JSL::Parameter::NestedAggregator::Information</definition>
+        <argsstring></argsstring>
+        <name>Information</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::Information</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="100" column="22" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1NestedAggregator_1a74dd6af3e3eef08444f86d5a8aeb2a30" prot="protected" static="yes" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t JSL::Parameter::NestedAggregator::lineLength</definition>
+        <argsstring></argsstring>
+        <name>lineLength</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::lineLength</qualifiedname>
+        <initializer>= 80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="114" column="33" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1NestedAggregator_1abb61053812d7ef85241857d4b0682c12" prot="protected" static="yes" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t JSL::Parameter::NestedAggregator::lw</definition>
+        <argsstring></argsstring>
+        <name>lw</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::lw</qualifiedname>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="115" column="33" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1NestedAggregator_1adb76c921d7dc55bedcab758439a6a36c" prot="protected" static="yes" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t JSL::Parameter::NestedAggregator::mw</definition>
+        <argsstring></argsstring>
+        <name>mw</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::mw</qualifiedname>
+        <initializer>= 15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="116" column="33" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJSL_1_1Parameter_1_1NestedAggregator_1a16b74939ed39c25ea438d5e41ad29c71" prot="protected" static="yes" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t JSL::Parameter::NestedAggregator::rw</definition>
+        <argsstring></argsstring>
+        <name>rw</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::rw</qualifiedname>
+        <initializer>= <ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1a74dd6af3e3eef08444f86d5a8aeb2a30" kindref="member">lineLength</ref> -<ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1abb61053812d7ef85241857d4b0682c12" kindref="member">lw</ref> - <ref refid="classJSL_1_1Parameter_1_1NestedAggregator_1adb76c921d7dc55bedcab758439a6a36c" kindref="member">mw</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="117" column="33" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a785246b82eee77fa153fa227da848800" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto JSL::Parameter::NestedAggregator::operator&lt;=&gt;</definition>
+        <argsstring>(const NestedAggregator &amp;) const =default</argsstring>
+        <name>operator&lt;=&gt;</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::operator&lt;=&gt;</qualifiedname>
+        <param>
+          <type>const <ref refid="classJSL_1_1Parameter_1_1NestedAggregator" kindref="compound">NestedAggregator</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="15" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1abdc791dc23bc063afd80635e6b50c8aa" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::Parse</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>Parse</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::Parse</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="19" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a13b6c508fde37e4257dff59e6221d7d8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::SetParameter</definition>
+        <argsstring>(std::string_view trigger, std::string_view value)</argsstring>
+        <name>SetParameter</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::SetParameter</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="26" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a3618fb8d9531b524f32a56bbc10fd1b4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string JSL::Parameter::NestedAggregator::ShowParameter</definition>
+        <argsstring>(std::string_view trigger)</argsstring>
+        <name>ShowParameter</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::ShowParameter</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>trigger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="28" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a41df8bde8803a9ea7069139fff912846" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T &amp;</type>
+        <definition>T &amp; JSL::Parameter::NestedAggregator::GetParameter</definition>
+        <argsstring>(std::string_view trigger)</argsstring>
+        <name>GetParameter</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::GetParameter</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>trigger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="31" column="16" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="31" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1acae59cbc059ef5c1df213e5cc5e84133" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::push</definition>
+        <argsstring>(std::string_view trigger, std::string_view value)</argsstring>
+        <name>push</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::push</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="54" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a9cd7e32f6a8ce8074bc4645deffd58c9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::join</definition>
+        <argsstring>(std::string_view trigger, std::string_view value)</argsstring>
+        <name>join</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::join</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="55" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1aa5e04444760661a7198f67ed214c1e46" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::remove</definition>
+        <argsstring>(std::string_view trigger, std::string_view value)</argsstring>
+        <name>remove</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::remove</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="56" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1acd4f03a79003d09d90d46dce409148b1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::erase</definition>
+        <argsstring>(std::string_view trigger, int pos)</argsstring>
+        <name>erase</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::erase</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>trigger</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="57" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a43f76ed6e5e015b3274410fbb4dc44d2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Parameter_1_1Description" kindref="compound">Description</ref></type>
+        <definition>Description JSL::Parameter::NestedAggregator::GetDescription</definition>
+        <argsstring>(std::string_view key)</argsstring>
+        <name>GetDescription</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::GetDescription</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="59" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1ae8151366e1228dc0412cb93a3cdb760e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::PrintStructure</definition>
+        <argsstring>(int indent, std::string runningTitle)</argsstring>
+        <name>PrintStructure</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::PrintStructure</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>indent</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>runningTitle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="61" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a2753815649914da9b6edde96f447f4de" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::Connect</definition>
+        <argsstring>(Setting&lt; T &gt; &amp;parameter, T &amp;variable)</argsstring>
+        <name>Connect</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::Connect</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting</ref>&lt; T &gt; &amp;</type>
+          <declname>parameter</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>variable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="68" column="18" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="68" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a437853feebfe2b0a5a4252d65d26f9d4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::NestGroup</definition>
+        <argsstring>(NestedAggregator &amp;aggregator, std::string name)</argsstring>
+        <name>NestGroup</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::NestGroup</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Parameter_1_1NestedAggregator" kindref="compound">NestedAggregator</ref> &amp;</type>
+          <declname>aggregator</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="76" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1aff08b3ca2e2fd9b29231b8fbe8ef00b4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::Set</definition>
+        <argsstring>(T &amp;value, Setting&lt; T &gt; &amp;configurer, U defaultValue, std::initializer_list&lt; std::string &gt; triggers, std::string name, std::string description)</argsstring>
+        <name>Set</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::Set</qualifiedname>
+        <param>
+          <type>T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting</ref>&lt; T &gt; &amp;</type>
+          <declname>configurer</declname>
+        </param>
+        <param>
+          <type>U</type>
+          <declname>defaultValue</declname>
+        </param>
+        <param>
+          <type>std::initializer_list&lt; std::string &gt;</type>
+          <declname>triggers</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="79" column="18" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="79" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a02c74a14865cb89027cec1d9bb8f990e" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+          <param>
+            <type>class V</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::Set</definition>
+        <argsstring>(T &amp;value, Setting&lt; T &gt; &amp;configurer, V defaultValue, U triggers, std::string name, std::string description)</argsstring>
+        <name>Set</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::Set</qualifiedname>
+        <param>
+          <type>T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting</ref>&lt; T &gt; &amp;</type>
+          <declname>configurer</declname>
+        </param>
+        <param>
+          <type>V</type>
+          <declname>defaultValue</declname>
+        </param>
+        <param>
+          <type>U</type>
+          <declname>triggers</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="86" column="18" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="86" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a8693e07ddfd7c0e05515bf8f6ccaa423" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::PrintHelp</definition>
+        <argsstring>(std::string_view assignedName)</argsstring>
+        <name>PrintHelp</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::PrintHelp</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>assignedName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="97" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a77028e0ab3bc45c485b51cc060323101" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classJSL_1_1internal_1_1Parameter_1_1ParameterBase" kindref="compound">internal::Parameter::ParameterBase</ref> *</type>
+        <definition>internal::Parameter::ParameterBase * JSL::Parameter::NestedAggregator::FindParameter</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>FindParameter</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::FindParameter</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="102" column="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a8e383c2f0250781d8b1eac7dfda06cbd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool JSL::Parameter::NestedAggregator::TryCluster</definition>
+        <argsstring>(std::string_view key, std::string_view value)</argsstring>
+        <name>TryCluster</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::TryCluster</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="103" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a3c61c4006a35f3fe57a439e20f5365c7" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void JSL::Parameter::NestedAggregator::SetInfo</definition>
+        <argsstring>(Setting&lt; T &gt; &amp;target, std::string_view name, std::string_view description)</argsstring>
+        <name>SetInfo</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::SetInfo</qualifiedname>
+        <param>
+          <type><ref refid="classJSL_1_1Parameter_1_1Setting" kindref="compound">Setting</ref>&lt; T &gt; &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="108" column="18" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="108" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classJSL_1_1Parameter_1_1NestedAggregator_1a5d51a521c773afd306901a25bd063cba" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void JSL::Parameter::NestedAggregator::printAsTitle</definition>
+        <argsstring>(std::string_view input, Format::Command fg=Format::Black, Format::Command bg=Format::BgWhite)</argsstring>
+        <name>printAsTitle</name>
+        <qualifiedname>JSL::Parameter::NestedAggregator::printAsTitle</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref></type>
+          <declname>fg</declname>
+          <defval><ref refid="namespaceJSL_1_1Format_1a564e38f310ecc9f0982f40e18590164d" kindref="member">Format::Black</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref></type>
+          <declname>bg</declname>
+          <defval><ref refid="namespaceJSL_1_1Format_1add9c1bf1296670a8b34fb32c47cfe0c8" kindref="member">Format::BgWhite</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Parameters/NestedAggregator.h" line="105" column="25"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>JSL::Parameter::Aggregator</label>
+        <link refid="classJSL_1_1Parameter_1_1Aggregator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>JSL::Parameter::NestedAggregator</label>
+        <link refid="classJSL_1_1Parameter_1_1NestedAggregator"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/JSL/Parameters/NestedAggregator.h" line="11" column="5" bodyfile="include/JSL/Parameters/NestedAggregator.h" bodystart="12" bodyend="118"/>
+    <listofallmembers>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a2753815649914da9b6edde96f447f4de" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>Connect</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1acd4f03a79003d09d90d46dce409148b1" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>erase</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a77028e0ab3bc45c485b51cc060323101" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>FindParameter</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a43f76ed6e5e015b3274410fbb4dc44d2" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>GetDescription</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a41df8bde8803a9ea7069139fff912846" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>GetParameter</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1afdc6a53bc22401751a4b5dc3ca871730" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>Information</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a9cd7e32f6a8ce8074bc4645deffd58c9" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>join</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a74dd6af3e3eef08444f86d5a8aeb2a30" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>lineLength</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1abb61053812d7ef85241857d4b0682c12" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>lw</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1adb76c921d7dc55bedcab758439a6a36c" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>mw</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1ae5286f16206344d7df44ae7024993f95" prot="public" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>Name</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1ac18c11a6ef9530a78a749831d45cfcc1" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>NestedAggregators</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a437853feebfe2b0a5a4252d65d26f9d4" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>NestGroup</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a785246b82eee77fa153fa227da848800" prot="public" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>operator&lt;=&gt;</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1abdc791dc23bc063afd80635e6b50c8aa" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>Parse</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a5d51a521c773afd306901a25bd063cba" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>printAsTitle</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a8693e07ddfd7c0e05515bf8f6ccaa423" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>PrintHelp</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1ae8151366e1228dc0412cb93a3cdb760e" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>PrintStructure</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1acae59cbc059ef5c1df213e5cc5e84133" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>push</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a336af42fc978a4256969e3ecc226f9e9" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>RegisteredParameters</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1aa5e04444760661a7198f67ed214c1e46" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>remove</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a16b74939ed39c25ea438d5e41ad29c71" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>rw</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1aff08b3ca2e2fd9b29231b8fbe8ef00b4" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>Set</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a02c74a14865cb89027cec1d9bb8f990e" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>Set</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3c61c4006a35f3fe57a439e20f5365c7" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>SetInfo</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a13b6c508fde37e4257dff59e6221d7d8" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>SetParameter</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a3618fb8d9531b524f32a56bbc10fd1b4" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>ShowParameter</name></member>
+      <member refid="classJSL_1_1Parameter_1_1NestedAggregator_1a8e383c2f0250781d8b1eac7dfda06cbd" prot="protected" virt="non-virtual"><scope>JSL::Parameter::NestedAggregator</scope><name>TryCluster</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

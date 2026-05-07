@@ -1,0 +1,328 @@
+\doxysection{JSL\+::Event\+::Watcher Class Reference}
+\hypertarget{classJSL_1_1Event_1_1Watcher}{}\label{classJSL_1_1Event_1_1Watcher}\index{JSL::Event::Watcher@{JSL::Event::Watcher}}
+
+
+{\ttfamily \#include $<$Watcher.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a02df29879a0b5f9ad69af5fe14ac77b4}{Run}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a480e71f1b1cc58e3c7e71444c283ba1f}{Set\+Socket\+Timeout}} (double seconds)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a1fc60257d0bf9798f3f73aa3f08735df}{Set\+Max\+Runtime}} (double minutes)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_acd0a6fe4af54e562336087ecb1994315}{Set\+Blocking\+Time}} (double seconds)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a474ddc4b81b8f58b9259b1997f301d26}{Set\+Debounce}} (size\+\_\+t milliseconds)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a3a427b5a6768319a011c0543dead06b5}{Set\+Socket\+Callback}} (std\+::function$<$ void(std\+::string\+\_\+view)$>$ callback)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a1edf19052bdbf3b2d41ee792b2b9d89b}{Set\+Inotify\+Callback}} (std\+::function$<$ void(const \mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{File\+Change}} \&)$>$ callback)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a0a5d1e07ce77897a6960add6883374b1}{Set\+CIn\+Callback}} (std\+::function$<$ void(std\+::string\+\_\+view)$>$ callback)
+\item 
+int \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a03c5979d0461db1e384d9389adbe5332}{Watch}} (std\+::filesystem\+::path path, uint32\+\_\+t watch\+Flags=IN\+\_\+\+MODIFY\texorpdfstring{$\vert$}{|}IN\+\_\+\+CREATE\texorpdfstring{$\vert$}{|}IN\+\_\+\+DELETE\texorpdfstring{$\vert$}{|}IN\+\_\+\+MOVE\texorpdfstring{$\vert$}{|}IN\+\_\+\+IGNORED)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a686a74cea9f8b181526a324d6ff9ae35}{Unwatch}} (int id)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a7004b42acde29a1b4238a86c8872db87}{Shutdown}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a05e4e0d34a211d799305d330829801be}{Unwatch}} (std\+::filesystem\+::path path)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a0d0b75d2f25e60bd23b7b164d2c5e806}{Message}} (std\+::string\+\_\+view msg)
+\item 
+std\+::set$<$ std\+::filesystem\+::path $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_af2402909acdf5b368ec161351cbd0e59}{Get\+Watched\+Files}} ()
+\item 
+std\+::chrono\+::steady\+\_\+clock\+::duration \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a584c86957090390289a7eebaede8146b}{Get\+Runtime}} ()
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a2c7eec875133775a69822b648e668def}{Running}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a6bf764361bbddbd1e9a0fa607466acd5}{Prep\+Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::optional$<$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{Watcher}} $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a43896128655c8b423505610aba9f34d1}{Create}} (std\+::string\+\_\+view socket\+Name, double timeout=2, bool force\+Acquire=false)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_abac357b31d076af5e85254c956316d7e}{Watcher}} (\mbox{\hyperlink{classJSL_1_1Event_1_1Antenna}{Antenna}} \&\&socket\+In)
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a29d9dcadfa0f004bc485b0dca463ef54}{Initialise\+INotify}} ()
+\item 
+void \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a131716f0e6d44fba44fcf18c4ea8210f}{Update\+File\+Batch}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::atomic$<$ bool $>$ $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_ad799e0a57cd5bed89296921aade77a76}{Loop\+Running}} = std\+::make\+\_\+unique$<$std\+::atomic$<$bool$>$$>$(false)
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_ab9b0bf565d99b2a39d4f83946bf0128f}{Block\+New\+Adds}} = false
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1Antenna}{Antenna}} \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_ae62ac7eaed0b0e06f8a9533d7736d360}{Receiver}}
+\item 
+\mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline}{Antenna\+::\+Hotline}} \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a79001fba1a52d6821bb3f500dac55504}{Sender}}
+\item 
+std\+::vector$<$ pollfd $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_ac5943bb4c35d63ca5cd970ccd3dc3bd7}{Poll\+Catchers}}
+\item 
+std\+::map$<$ int, std\+::function$<$ void()$>$ $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a83489ca06d64c4ef9c8a749003e6194e}{Callbacks}}
+\item 
+std\+::chrono\+::steady\+\_\+clock\+::duration \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_ac2e4fa5b21819c5b3bc1cf9f976392e3}{Timeout}}
+\item 
+int \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_ad92fdae00e944f4d6aff245d2738ec13}{Blocking\+Time}} = 50
+\item 
+int \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a04141d9392a2206de1a75ceadfe520aa}{INotify\+ID}} = -\/1
+\item 
+std\+::map$<$ int, std\+::filesystem\+::path $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_abaccd16a308cbec3c4d8e37c011c97cf}{Watch\+Map}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_ac1c0304f4f8d76d74ea6602a094f792e}{Debounce\+MS}} = 50
+\item 
+std\+::optional$<$ std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a50a144cff897caf59ec883aab3d5f481}{Initialise\+Time}}
+\item 
+bool \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a4659a8671c7f13d32c1e51061ba7b00e}{Awaiting\+Debounce}}
+\item 
+std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_af4ebc1a0d41c58faab9dd1a43a585a8a}{Wakeup}}
+\item 
+std\+::function$<$ void(\mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{File\+Change}})$>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_a009b0593374f5d9e833d90efacb4f4e1}{Cached\+Callback}}
+\item 
+std\+::set$<$ \mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{File\+Change}} $>$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher_ab7f6832c4fc1e55fe40239febb9d131d}{File\+Cache}} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJSL_1_1Event_1_1Watcher_abac357b31d076af5e85254c956316d7e}\label{classJSL_1_1Event_1_1Watcher_abac357b31d076af5e85254c956316d7e} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Watcher@{Watcher}}
+\index{Watcher@{Watcher}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Watcher()}{Watcher()}}
+{\footnotesize\ttfamily JSL\+::\+Event\+::\+Watcher\+::\+Watcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJSL_1_1Event_1_1Antenna}{Antenna}} \&\&}]{socket\+In }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a43896128655c8b423505610aba9f34d1}\label{classJSL_1_1Event_1_1Watcher_a43896128655c8b423505610aba9f34d1} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Create@{Create}}
+\index{Create@{Create}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily static std\+::optional$<$ \mbox{\hyperlink{classJSL_1_1Event_1_1Watcher}{Watcher}} $>$ JSL\+::\+Event\+::\+Watcher\+::\+Create (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{socket\+Name,  }\item[{double}]{timeout = {\ttfamily 2},  }\item[{bool}]{force\+Acquire = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a584c86957090390289a7eebaede8146b}\label{classJSL_1_1Event_1_1Watcher_a584c86957090390289a7eebaede8146b} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!GetRuntime@{GetRuntime}}
+\index{GetRuntime@{GetRuntime}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{GetRuntime()}{GetRuntime()}}
+{\footnotesize\ttfamily std\+::chrono\+::steady\+\_\+clock\+::duration JSL\+::\+Event\+::\+Watcher\+::\+Get\+Runtime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_af2402909acdf5b368ec161351cbd0e59}\label{classJSL_1_1Event_1_1Watcher_af2402909acdf5b368ec161351cbd0e59} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!GetWatchedFiles@{GetWatchedFiles}}
+\index{GetWatchedFiles@{GetWatchedFiles}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{GetWatchedFiles()}{GetWatchedFiles()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::filesystem\+::path $>$ JSL\+::\+Event\+::\+Watcher\+::\+Get\+Watched\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a29d9dcadfa0f004bc485b0dca463ef54}\label{classJSL_1_1Event_1_1Watcher_a29d9dcadfa0f004bc485b0dca463ef54} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!InitialiseINotify@{InitialiseINotify}}
+\index{InitialiseINotify@{InitialiseINotify}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{InitialiseINotify()}{InitialiseINotify()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Initialise\+INotify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a0d0b75d2f25e60bd23b7b164d2c5e806}\label{classJSL_1_1Event_1_1Watcher_a0d0b75d2f25e60bd23b7b164d2c5e806} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Message@{Message}}
+\index{Message@{Message}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Message (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{msg }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a6bf764361bbddbd1e9a0fa607466acd5}\label{classJSL_1_1Event_1_1Watcher_a6bf764361bbddbd1e9a0fa607466acd5} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!PrepRun@{PrepRun}}
+\index{PrepRun@{PrepRun}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{PrepRun()}{PrepRun()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Prep\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a02df29879a0b5f9ad69af5fe14ac77b4}\label{classJSL_1_1Event_1_1Watcher_a02df29879a0b5f9ad69af5fe14ac77b4} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Run@{Run}}
+\index{Run@{Run}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a2c7eec875133775a69822b648e668def}\label{classJSL_1_1Event_1_1Watcher_a2c7eec875133775a69822b648e668def} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Running@{Running}}
+\index{Running@{Running}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Running()}{Running()}}
+{\footnotesize\ttfamily bool JSL\+::\+Event\+::\+Watcher\+::\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_acd0a6fe4af54e562336087ecb1994315}\label{classJSL_1_1Event_1_1Watcher_acd0a6fe4af54e562336087ecb1994315} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!SetBlockingTime@{SetBlockingTime}}
+\index{SetBlockingTime@{SetBlockingTime}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{SetBlockingTime()}{SetBlockingTime()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Set\+Blocking\+Time (\begin{DoxyParamCaption}\item[{double}]{seconds }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a0a5d1e07ce77897a6960add6883374b1}\label{classJSL_1_1Event_1_1Watcher_a0a5d1e07ce77897a6960add6883374b1} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!SetCInCallback@{SetCInCallback}}
+\index{SetCInCallback@{SetCInCallback}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{SetCInCallback()}{SetCInCallback()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Set\+CIn\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(std\+::string\+\_\+view)$>$}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a474ddc4b81b8f58b9259b1997f301d26}\label{classJSL_1_1Event_1_1Watcher_a474ddc4b81b8f58b9259b1997f301d26} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!SetDebounce@{SetDebounce}}
+\index{SetDebounce@{SetDebounce}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{SetDebounce()}{SetDebounce()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Set\+Debounce (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{milliseconds }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a1edf19052bdbf3b2d41ee792b2b9d89b}\label{classJSL_1_1Event_1_1Watcher_a1edf19052bdbf3b2d41ee792b2b9d89b} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!SetInotifyCallback@{SetInotifyCallback}}
+\index{SetInotifyCallback@{SetInotifyCallback}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{SetInotifyCallback()}{SetInotifyCallback()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Set\+Inotify\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const \mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{File\+Change}} \&)$>$}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a1fc60257d0bf9798f3f73aa3f08735df}\label{classJSL_1_1Event_1_1Watcher_a1fc60257d0bf9798f3f73aa3f08735df} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!SetMaxRuntime@{SetMaxRuntime}}
+\index{SetMaxRuntime@{SetMaxRuntime}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{SetMaxRuntime()}{SetMaxRuntime()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Set\+Max\+Runtime (\begin{DoxyParamCaption}\item[{double}]{minutes }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a3a427b5a6768319a011c0543dead06b5}\label{classJSL_1_1Event_1_1Watcher_a3a427b5a6768319a011c0543dead06b5} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!SetSocketCallback@{SetSocketCallback}}
+\index{SetSocketCallback@{SetSocketCallback}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{SetSocketCallback()}{SetSocketCallback()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Set\+Socket\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(std\+::string\+\_\+view)$>$}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a480e71f1b1cc58e3c7e71444c283ba1f}\label{classJSL_1_1Event_1_1Watcher_a480e71f1b1cc58e3c7e71444c283ba1f} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!SetSocketTimeout@{SetSocketTimeout}}
+\index{SetSocketTimeout@{SetSocketTimeout}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{SetSocketTimeout()}{SetSocketTimeout()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Set\+Socket\+Timeout (\begin{DoxyParamCaption}\item[{double}]{seconds }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a7004b42acde29a1b4238a86c8872db87}\label{classJSL_1_1Event_1_1Watcher_a7004b42acde29a1b4238a86c8872db87} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a686a74cea9f8b181526a324d6ff9ae35}\label{classJSL_1_1Event_1_1Watcher_a686a74cea9f8b181526a324d6ff9ae35} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Unwatch@{Unwatch}}
+\index{Unwatch@{Unwatch}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Unwatch()}{Unwatch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Unwatch (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a05e4e0d34a211d799305d330829801be}\label{classJSL_1_1Event_1_1Watcher_a05e4e0d34a211d799305d330829801be} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Unwatch@{Unwatch}}
+\index{Unwatch@{Unwatch}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Unwatch()}{Unwatch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Unwatch (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{path }\end{DoxyParamCaption})}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a131716f0e6d44fba44fcf18c4ea8210f}\label{classJSL_1_1Event_1_1Watcher_a131716f0e6d44fba44fcf18c4ea8210f} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!UpdateFileBatch@{UpdateFileBatch}}
+\index{UpdateFileBatch@{UpdateFileBatch}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{UpdateFileBatch()}{UpdateFileBatch()}}
+{\footnotesize\ttfamily void JSL\+::\+Event\+::\+Watcher\+::\+Update\+File\+Batch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a03c5979d0461db1e384d9389adbe5332}\label{classJSL_1_1Event_1_1Watcher_a03c5979d0461db1e384d9389adbe5332} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Watch@{Watch}}
+\index{Watch@{Watch}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Watch()}{Watch()}}
+{\footnotesize\ttfamily int JSL\+::\+Event\+::\+Watcher\+::\+Watch (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{path,  }\item[{uint32\+\_\+t}]{watch\+Flags = {\ttfamily IN\+\_\+MODIFY\texorpdfstring{$\vert$}{|}IN\+\_\+CREATE\texorpdfstring{$\vert$}{|}IN\+\_\+DELETE\texorpdfstring{$\vert$}{|}IN\+\_\+MOVE\texorpdfstring{$\vert$}{|}IN\+\_\+IGNORED} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a4659a8671c7f13d32c1e51061ba7b00e}\label{classJSL_1_1Event_1_1Watcher_a4659a8671c7f13d32c1e51061ba7b00e} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!AwaitingDebounce@{AwaitingDebounce}}
+\index{AwaitingDebounce@{AwaitingDebounce}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{AwaitingDebounce}{AwaitingDebounce}}
+{\footnotesize\ttfamily bool JSL\+::\+Event\+::\+Watcher\+::\+Awaiting\+Debounce\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_ad92fdae00e944f4d6aff245d2738ec13}\label{classJSL_1_1Event_1_1Watcher_ad92fdae00e944f4d6aff245d2738ec13} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!BlockingTime@{BlockingTime}}
+\index{BlockingTime@{BlockingTime}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{BlockingTime}{BlockingTime}}
+{\footnotesize\ttfamily int JSL\+::\+Event\+::\+Watcher\+::\+Blocking\+Time = 50\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_ab9b0bf565d99b2a39d4f83946bf0128f}\label{classJSL_1_1Event_1_1Watcher_ab9b0bf565d99b2a39d4f83946bf0128f} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!BlockNewAdds@{BlockNewAdds}}
+\index{BlockNewAdds@{BlockNewAdds}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{BlockNewAdds}{BlockNewAdds}}
+{\footnotesize\ttfamily bool JSL\+::\+Event\+::\+Watcher\+::\+Block\+New\+Adds = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a009b0593374f5d9e833d90efacb4f4e1}\label{classJSL_1_1Event_1_1Watcher_a009b0593374f5d9e833d90efacb4f4e1} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!CachedCallback@{CachedCallback}}
+\index{CachedCallback@{CachedCallback}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{CachedCallback}{CachedCallback}}
+{\footnotesize\ttfamily std\+::function$<$void(\mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{File\+Change}})$>$ JSL\+::\+Event\+::\+Watcher\+::\+Cached\+Callback\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a83489ca06d64c4ef9c8a749003e6194e}\label{classJSL_1_1Event_1_1Watcher_a83489ca06d64c4ef9c8a749003e6194e} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Callbacks@{Callbacks}}
+\index{Callbacks@{Callbacks}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Callbacks}{Callbacks}}
+{\footnotesize\ttfamily std\+::map$<$int,std\+::function$<$void()$>$ $>$ JSL\+::\+Event\+::\+Watcher\+::\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_ac1c0304f4f8d76d74ea6602a094f792e}\label{classJSL_1_1Event_1_1Watcher_ac1c0304f4f8d76d74ea6602a094f792e} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!DebounceMS@{DebounceMS}}
+\index{DebounceMS@{DebounceMS}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{DebounceMS}{DebounceMS}}
+{\footnotesize\ttfamily size\+\_\+t JSL\+::\+Event\+::\+Watcher\+::\+Debounce\+MS = 50\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_ab7f6832c4fc1e55fe40239febb9d131d}\label{classJSL_1_1Event_1_1Watcher_ab7f6832c4fc1e55fe40239febb9d131d} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!FileCache@{FileCache}}
+\index{FileCache@{FileCache}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{FileCache}{FileCache}}
+{\footnotesize\ttfamily std\+::set$<$\mbox{\hyperlink{structJSL_1_1Event_1_1FileChange}{File\+Change}}$>$ JSL\+::\+Event\+::\+Watcher\+::\+File\+Cache = \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a50a144cff897caf59ec883aab3d5f481}\label{classJSL_1_1Event_1_1Watcher_a50a144cff897caf59ec883aab3d5f481} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!InitialiseTime@{InitialiseTime}}
+\index{InitialiseTime@{InitialiseTime}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{InitialiseTime}{InitialiseTime}}
+{\footnotesize\ttfamily std\+::optional$<$std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point$>$ JSL\+::\+Event\+::\+Watcher\+::\+Initialise\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a04141d9392a2206de1a75ceadfe520aa}\label{classJSL_1_1Event_1_1Watcher_a04141d9392a2206de1a75ceadfe520aa} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!INotifyID@{INotifyID}}
+\index{INotifyID@{INotifyID}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{INotifyID}{INotifyID}}
+{\footnotesize\ttfamily int JSL\+::\+Event\+::\+Watcher\+::\+INotify\+ID = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_ad799e0a57cd5bed89296921aade77a76}\label{classJSL_1_1Event_1_1Watcher_ad799e0a57cd5bed89296921aade77a76} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!LoopRunning@{LoopRunning}}
+\index{LoopRunning@{LoopRunning}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{LoopRunning}{LoopRunning}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$std\+::atomic$<$bool$>$ $>$ JSL\+::\+Event\+::\+Watcher\+::\+Loop\+Running = std\+::make\+\_\+unique$<$std\+::atomic$<$bool$>$$>$(false)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_ac5943bb4c35d63ca5cd970ccd3dc3bd7}\label{classJSL_1_1Event_1_1Watcher_ac5943bb4c35d63ca5cd970ccd3dc3bd7} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!PollCatchers@{PollCatchers}}
+\index{PollCatchers@{PollCatchers}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{PollCatchers}{PollCatchers}}
+{\footnotesize\ttfamily std\+::vector$<$pollfd$>$ JSL\+::\+Event\+::\+Watcher\+::\+Poll\+Catchers\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_ae62ac7eaed0b0e06f8a9533d7736d360}\label{classJSL_1_1Event_1_1Watcher_ae62ac7eaed0b0e06f8a9533d7736d360} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Receiver@{Receiver}}
+\index{Receiver@{Receiver}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Receiver}{Receiver}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna}{Antenna}} JSL\+::\+Event\+::\+Watcher\+::\+Receiver\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_a79001fba1a52d6821bb3f500dac55504}\label{classJSL_1_1Event_1_1Watcher_a79001fba1a52d6821bb3f500dac55504} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Sender@{Sender}}
+\index{Sender@{Sender}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Sender}{Sender}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJSL_1_1Event_1_1Antenna_1_1Hotline}{Antenna\+::\+Hotline}} JSL\+::\+Event\+::\+Watcher\+::\+Sender\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_ac2e4fa5b21819c5b3bc1cf9f976392e3}\label{classJSL_1_1Event_1_1Watcher_ac2e4fa5b21819c5b3bc1cf9f976392e3} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Timeout@{Timeout}}
+\index{Timeout@{Timeout}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Timeout}{Timeout}}
+{\footnotesize\ttfamily std\+::chrono\+::steady\+\_\+clock\+::duration JSL\+::\+Event\+::\+Watcher\+::\+Timeout\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_af4ebc1a0d41c58faab9dd1a43a585a8a}\label{classJSL_1_1Event_1_1Watcher_af4ebc1a0d41c58faab9dd1a43a585a8a} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!Wakeup@{Wakeup}}
+\index{Wakeup@{Wakeup}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{Wakeup}{Wakeup}}
+{\footnotesize\ttfamily std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point JSL\+::\+Event\+::\+Watcher\+::\+Wakeup\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classJSL_1_1Event_1_1Watcher_abaccd16a308cbec3c4d8e37c011c97cf}\label{classJSL_1_1Event_1_1Watcher_abaccd16a308cbec3c4d8e37c011c97cf} 
+\index{JSL::Event::Watcher@{JSL::Event::Watcher}!WatchMap@{WatchMap}}
+\index{WatchMap@{WatchMap}!JSL::Event::Watcher@{JSL::Event::Watcher}}
+\doxysubsubsection{\texorpdfstring{WatchMap}{WatchMap}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::filesystem\+::path$>$ JSL\+::\+Event\+::\+Watcher\+::\+Watch\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+JSL/\+Async/\mbox{\hyperlink{Watcher_8h}{Watcher.\+h}}\end{DoxyCompactItemize}
