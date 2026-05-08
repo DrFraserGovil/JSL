@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_7ecore_0',['~Core',['../classJSL_1_1Log_1_1Core.html#a9e69c76e9f7796e69841f2667d4e8a76',1,'JSL::Log::Core']]],
+  ['_7ecore_0',['~Core',['../classJSL_1_1Log_1_1internal_1_1Core.html#a291406831cab78a395b36d6e5bb677c2',1,'JSL::Log::internal::Core']]],
   ['_7efatalerror_1',['~FatalError',['../classJSL_1_1internal_1_1FatalError.html#a95c0e10171c62c97c28d4c5404245c14',1,'JSL::internal::FatalError']]],
   ['_7efiledescriptor_2',['~FileDescriptor',['../structJSL_1_1Event_1_1internal_1_1FileDescriptor.html#ac4217e664e3cc5a3384ecb9bcc56602a',1,'JSL::Event::internal::FileDescriptor']]],
   ['_7egnuplotpipe_3',['~GnuplotPipe',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a7b9594f1cea2bd4ffc17522c241eb794',1,'JSL::Plotting::internal::GnuplotPipe']]],

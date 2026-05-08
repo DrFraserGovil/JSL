@@ -1,7 +1,7 @@
 var searchData=
 [
   ['handlerbase_0',['handlerbase',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#ab8e364638504a1a9e8b10becfa351a51',1,'JSL::Event::internal::HandlerBase::HandlerBase(const HandlerBase &amp;)=delete'],['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#adcecc953a692bfc64eeeb0b1f0fb2bfd',1,'JSL::Event::internal::HandlerBase::HandlerBase(HandlerBase &amp;&amp;)=delete'],['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a68ff3c529f4c67c658a0252db0fdea93',1,'JSL::Event::internal::HandlerBase::HandlerBase(std::string_view id)'],['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a3e7a47d5b605c592f478be4ba38343bb',1,'JSL::Event::internal::HandlerBase::HandlerBase(Watcher &amp;watcher)']]],
-  ['header_1',['Header',['../classJSL_1_1Log_1_1Core.html#a2187c6090f06ce4b55220b06233fba9d',1,'JSL::Log::Core']]],
+  ['header_1',['Header',['../classJSL_1_1Log_1_1internal_1_1Core.html#af32f329d678bf72e75c525079ec72a3e',1,'JSL::Log::internal::Core']]],
   ['helpmenu_2',['HelpMenu',['../classJSL_1_1Parameter_1_1Aggregator.html#a828332958937f00c6caa6ea095feff88',1,'JSL::Parameter::Aggregator']]],
   ['helpprint_3',['HelpPrint',['../classJSL_1_1Parameter_1_1Description.html#adb73f0b1e8584d351d17f295ae915374',1,'JSL::Parameter::Description']]],
   ['highlight_4',['Highlight',['../namespaceJSL_1_1Format.html#a04fd686ba5a0458ded6b2de07a93d263',1,'JSL::Format']]],

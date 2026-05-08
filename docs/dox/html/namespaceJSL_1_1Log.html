@@ -85,23 +85,54 @@ $(function() {
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceJSL_1_1Log_1_1detail" id="r_namespaceJSL_1_1Log_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Log_1_1detail.html">detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceJSL_1_1Log_1_1internal" id="r_namespaceJSL_1_1Log_1_1internal"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Log_1_1internal.html">internal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Log_1_1Config.html">Config</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packager for globally accessible variables for the LoggerCore object to refer to.  <a href="classJSL_1_1Log_1_1Config.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Log_1_1Core.html">Core</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Created during a <a class="el" href="Core_8h.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a> call as a temporary object, and acts as a custom output stream.  <a href="classJSL_1_1Log_1_1Core.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad342d7bf4e80fd6cf0180e87392c700a" id="r_ad342d7bf4e80fd6cf0180e87392c700a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Log_1_1Config.html">Config</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Log.html#ad342d7bf4e80fd6cf0180e87392c700a">Global</a> ()</td></tr>
+<tr class="memdesc:ad342d7bf4e80fd6cf0180e87392c700a"><td class="mdescLeft">&#160;</td><td class="mdescRight">An alias for <a class="el" href="classJSL_1_1Log_1_1Config.html#a439f5c19d70d514fa5fbb6d0ec0f355d" title="A singleton for accessing the global ConfigObject used by LOG and Core to determine what messages are...">JSL::Log::Config::Global</a> that needs one less namespace indexing.  <br /></td></tr>
+<tr class="separator:ad342d7bf4e80fd6cf0180e87392c700a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa4ef103524af708dccd2a488aa07a8" id="r_a4aa4ef103524af708dccd2a488aa07a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Levels_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Log.html#a4aa4ef103524af708dccd2a488aa07a8">MakeLevel</a> (int level)</td></tr>
 <tr class="memdesc:a4aa4ef103524af708dccd2a488aa07a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert integers to LogLevels.  <br /></td></tr>
 <tr class="separator:a4aa4ef103524af708dccd2a488aa07a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ad342d7bf4e80fd6cf0180e87392c700a" name="ad342d7bf4e80fd6cf0180e87392c700a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad342d7bf4e80fd6cf0180e87392c700a">&#9670;&#160;</a></span>Global()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJSL_1_1Log_1_1Config.html">Config</a> &amp; JSL::Log::Global </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An alias for <a class="el" href="classJSL_1_1Log_1_1Config.html#a439f5c19d70d514fa5fbb6d0ec0f355d" title="A singleton for accessing the global ConfigObject used by LOG and Core to determine what messages are...">JSL::Log::Config::Global</a> that needs one less namespace indexing. </p>
+<p>We could have made <em>this</em> be the singleton, but by making it a static member (with 1 more namespace), we could make the constructor private and therefore have a guarantee of uniqueness. <br  />
+ </p>
+
+</div>
+</div>
 <a id="a4aa4ef103524af708dccd2a488aa07a8" name="a4aa4ef103524af708dccd2a488aa07a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4aa4ef103524af708dccd2a488aa07a8">&#9670;&#160;</a></span>MakeLevel()</h2>
 

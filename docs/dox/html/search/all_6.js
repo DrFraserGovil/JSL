@@ -23,7 +23,7 @@ var searchData=
   ['find_20',['find',['../namespaceJSL_1_1Vector.html#a8d27d8e326fcee699835a82e4289af83',1,'JSL::Vector::find(const T &amp;x, const R &amp;y)'],['../namespaceJSL_1_1Vector.html#aafea3c06f0cdf246f5828d145c4b05a1',1,'JSL::Vector::find(double x, const std::vector&lt; double &gt; &amp;y, double tolerance)']]],
   ['findparameter_21',['FindParameter',['../classJSL_1_1Parameter_1_1NestedAggregator.html#a77028e0ab3bc45c485b51cc060323101',1,'JSL::Parameter::NestedAggregator']]],
   ['finished_22',['Finished',['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#a5560b7cc21d8668fb2b3c73e5937cff5',1,'JSL::Display::Progress::internal::ProgressEngine']]],
-  ['firstlinesuffix_23',['FirstLineSuffix',['../classJSL_1_1Log_1_1Core.html#ada70368a1dec8c6d0743020bc45ea7b2',1,'JSL::Log::Core']]],
+  ['firstlinesuffix_23',['FirstLineSuffix',['../classJSL_1_1Log_1_1internal_1_1Core.html#a13b26382630346e45dcb4bde861e7e43',1,'JSL::Log::internal::Core']]],
   ['flush_24',['flush',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#adeb0f2da7ef84f2b89c6979888d787aa',1,'JSL::Plotting::internal::GnuplotPipe']]],
   ['foldline_2eh_25',['FoldLine.h',['../FoldLine_8h.html',1,'']]],
   ['foldtowidth_26',['foldToWidth',['../namespaceJSL_1_1String.html#afdd15a72becdf5cb35a2aed43102d3b9',1,'JSL::String']]],

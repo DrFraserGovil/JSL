@@ -100,7 +100,7 @@
     <member refid="classJSL_1_1Log_1_1Config_1a629f3d962143614f4b3e5770afae2109" kind="variable"><name>WarnColour</name></member>
     <member refid="classJSL_1_1Log_1_1Config_1a639c5a8efedee7752d2364d0d7204a96" kind="variable"><name>InfoColour</name></member>
     <member refid="classJSL_1_1Log_1_1Config_1a347fb3b0d664fe2ffa9200c9d69f8311" kind="variable"><name>DebugColour</name></member>
-    <member refid="classJSL_1_1Log_1_1Config_1a70cb295b93da56c1103fb05dc4ea280e" kind="friend"><name>JSL::Log::Core</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a7d729684ebbaca40452c72578fe0d238" kind="friend"><name>JSL::Log::internal::Core</name></member>
     <member refid="classJSL_1_1Log_1_1Config_1a07a28dfaaa0a55fcfd7fe114608a6a78" kind="variable"><name>TerminalOutput</name></member>
     <member refid="classJSL_1_1Log_1_1Config_1a9e2d62ee6d3ddb35c46845bd4bbb3e94" kind="variable"><name>LineSize</name></member>
     <member refid="classJSL_1_1Log_1_1Config_1a439f5c19d70d514fa5fbb6d0ec0f355d" kind="function"><name>Global</name></member>
@@ -137,23 +137,27 @@
     <member refid="structJSL_1_1Coordinate_1a317df6fcde1be50276fccede95982c3f" kind="variable"><name>X</name></member>
     <member refid="structJSL_1_1Coordinate_1a4d38c6321d60b860a3b67d8dba4811ac" kind="variable"><name>Y</name></member>
   </compound>
-  <compound refid="classJSL_1_1Log_1_1Core" kind="class"><name>JSL::Log::Core</name>
-    <member refid="classJSL_1_1Log_1_1Core_1a6fc302f13ed1875ed2a48dae5dd689a1" kind="variable"><name>ManualFormat</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a1de05c38db8951ea2d5b7412e79c877d" kind="variable"><name>CurrentFormat</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a6e69ef78a7e4c5b9a3bf1f8186117ad9" kind="variable"><name>Buffer</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a8bc82b6e56a5fecff382b08edbfe8d65" kind="variable"><name>BufferPreamble</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a931f76811d5f282e39c39979ad1284f2" kind="variable"><name>Level</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1afc3c0a694ac697b8af9ebce469efe069" kind="variable"><name>StreamActive</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a22c33e7c11c9cdadc053bb29c0cc668c" kind="variable"><name>Insert</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1ae5c042d3719c209373bef3ac3ab8c0f2" kind="variable"><name>LineSuffix</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1ada70368a1dec8c6d0743020bc45ea7b2" kind="variable"><name>FirstLineSuffix</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a26913d8e4e9549471250ae7174050367" kind="variable"><name>StreamMutex</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a5c3af7e2fe5dcdf937b93651d4f9bda6" kind="function"><name>Core</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a9e69c76e9f7796e69841f2667d4e8a76" kind="function"><name>~Core</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a0648680698230ce5d8979c7ee960d366" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1afe7e3c1957346120e6d5e459c33ef7d8" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a2187c6090f06ce4b55220b06233fba9d" kind="function"><name>Header</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a952d14b7b6715a38902e632f6053c46b" kind="function"><name>EndMessage</name></member>
+  <compound refid="classJSL_1_1Log_1_1internal_1_1Core" kind="class"><name>JSL::Log::internal::Core</name>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1acb923efc0a265a5fcbd7eda3fb7628c9" kind="variable"><name>ManualFormat</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a644c26f1d5bb02d6efdde41c5f46cfd2" kind="variable"><name>CurrentFormat</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1aa66e93ad34aa672231f303a3c95625bd" kind="variable"><name>Buffer</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a62a868a58381932b8a725b5fdfe2d9d5" kind="variable"><name>BufferPreamble</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1acb0881dcc4baf14855314d32b1c67ccd" kind="variable"><name>Level</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1acd43fbb35ddc61eb30fbb80d9933e20f" kind="variable"><name>StreamActive</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a81263e8bc114a254b52337ee74a6672c" kind="variable"><name>Insert</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1afef4e471a47cac270cd264b5483bf4b3" kind="variable"><name>LineSuffix</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a13b26382630346e45dcb4bde861e7e43" kind="variable"><name>FirstLineSuffix</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1adb9404e53cd3b2c31dd37495366d6483" kind="variable"><name>StreamMutex</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a9bb68a0262d41eaf2b4c3d4baccd8666" kind="function"><name>Core</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a291406831cab78a395b36d6e5bb677c2" kind="function"><name>~Core</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a7efbf85b4a52fbf5361f44d6e92f0913" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a7c4a2ea2db734eca44187dfb038d934f" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1af32f329d678bf72e75c525079ec72a3e" kind="function"><name>Header</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a00755fa2852d4655c297b43da91197af" kind="function"><name>EndMessage</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1ad0b3db59003709064493518c013fd950" kind="function"><name>Core</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1a09c23a5e7d8a84c32c6f849bcc82fe84" kind="function"><name>operator=</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1aafb6100f24546f0b75e08e2c45c6498a" kind="function"><name>Core</name></member>
+    <member refid="classJSL_1_1Log_1_1internal_1_1Core_1ae4f3a70e4d9b647768b1fd55df69dff1" kind="function"><name>operator=</name></member>
   </compound>
   <compound refid="classJSL_1_1Plotting_1_1Curve" kind="class"><name>JSL::Plotting::Curve</name>
     <member refid="classJSL_1_1Plotting_1_1Curve_1a56b488c87997065f7434503f34e6eed8" kind="variable"><name>X</name></member>
@@ -970,9 +974,12 @@
     <member refid="namespaceJSL_1_1IO_1_1Pipe_1aec87933465246f0edbf1381531939d37" kind="function"><name>save</name></member>
   </compound>
   <compound refid="namespaceJSL_1_1Log" kind="namespace"><name>JSL::Log</name>
+    <member refid="namespaceJSL_1_1Log_1ad342d7bf4e80fd6cf0180e87392c700a" kind="function"><name>Global</name></member>
     <member refid="namespaceJSL_1_1Log_1a4aa4ef103524af708dccd2a488aa07a8" kind="function"><name>MakeLevel</name></member>
   </compound>
   <compound refid="namespaceJSL_1_1Log_1_1detail" kind="namespace"><name>JSL::Log::detail</name>
+  </compound>
+  <compound refid="namespaceJSL_1_1Log_1_1internal" kind="namespace"><name>JSL::Log::internal</name>
   </compound>
   <compound refid="namespaceJSL_1_1Parallel" kind="namespace"><name>JSL::Parallel</name>
   </compound>

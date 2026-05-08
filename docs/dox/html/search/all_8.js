@@ -4,7 +4,7 @@ var searchData=
   ['hasparsedelimiter_1',['hasParseDelimiter',['../classJSL_1_1internal_1_1Parameter_1_1ParameterBase.html#ae83cc27be18ceb07190d32e84c632705',1,'JSL::internal::Parameter::ParameterBase']]],
   ['hasrendered_2',['hasRendered',['../classJSL_1_1Display_1_1Progress_1_1Bar.html#af47bb520e2c5244099a56ec4917dec52',1,'JSL::Display::Progress::Bar']]],
   ['haswarned_3',['hasWarned',['../classMempool.html#adc8738c1d5895c986125d52ab4c92c64',1,'Mempool']]],
-  ['header_4',['Header',['../classJSL_1_1Log_1_1Core.html#a2187c6090f06ce4b55220b06233fba9d',1,'JSL::Log::Core']]],
+  ['header_4',['Header',['../classJSL_1_1Log_1_1internal_1_1Core.html#af32f329d678bf72e75c525079ec72a3e',1,'JSL::Log::internal::Core']]],
   ['headerblock_5',['headerBlock',['../structJSL_1_1Archiver_1_1internal_1_1WriteExporter.html#a30828f056fd4c223329fa7acb2b8e659',1,'JSL::Archiver::internal::WriteExporter']]],
   ['help_6',['Help',['../classJSL_1_1Parameter_1_1Aggregator.html#a930ac3e469b22c4c32b1b0c7092f06b8',1,'JSL::Parameter::Aggregator']]],
   ['helpers_2eh_7',['helpers.h',['../helpers_8h.html',1,'']]],

@@ -6,7 +6,7 @@ LogLevel JSL::Log::MakeLevel(int level)
 {
     if (level > DEBUG || level < ERROR)
     {
-         internal::FatalError(std::to_string(level) + "is not a valid logging level",JSL_LOCATION);
+        JSL::internal::FatalError(std::to_string(level) + "is not a valid logging level",JSL_LOCATION);
         return ERROR;
     }
 

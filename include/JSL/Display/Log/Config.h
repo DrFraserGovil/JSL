@@ -103,4 +103,10 @@ namespace JSL::Log
 			
 	};
 
+	//! @brief An alias for JSL::Log::Config::Global that needs one less namespace indexing
+	//! @details We could have made *this* be the singleton, but by making it a static member (with 1 more namespace), we could make the constructor private and therefore have a guarantee of uniqueness. 
+	inline Config & Global()
+	{
+		return JSL::Log::Config::Global();
+	}
 }

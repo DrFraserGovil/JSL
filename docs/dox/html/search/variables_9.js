@@ -9,7 +9,7 @@ var searchData=
   ['initialised_6',['Initialised',['../classJSL_1_1Archiver_1_1internal_1_1VaultBase.html#a764ccd653391211ecf29cf741b95f2a1',1,'JSL::Archiver::internal::VaultBase']]],
   ['initialisetime_7',['InitialiseTime',['../classJSL_1_1Event_1_1Watcher.html#a50a144cff897caf59ec883aab3d5f481',1,'JSL::Event::Watcher']]],
   ['inotifyid_8',['INotifyID',['../classJSL_1_1Event_1_1Watcher.html#a04141d9392a2206de1a75ceadfe520aa',1,'JSL::Event::Watcher']]],
-  ['insert_9',['Insert',['../classJSL_1_1Log_1_1Core.html#a22c33e7c11c9cdadc053bb29c0cc668c',1,'JSL::Log::Core']]],
+  ['insert_9',['Insert',['../classJSL_1_1Log_1_1internal_1_1Core.html#a81263e8bc114a254b52337ee74a6672c',1,'JSL::Log::internal::Core']]],
   ['internalvalue_10',['InternalValue',['../classJSL_1_1Parameter_1_1Setting.html#a9515c1c5f3902c0eee27fa154d706c37',1,'JSL::Parameter::Setting']]],
   ['interval_11',['Interval',['../classJSL_1_1Plotting_1_1TicProperties.html#a7b5eccdb0d7c55917a32c42222565361',1,'JSL::Plotting::TicProperties']]],
   ['inverted_12',['Inverted',['../classJSL_1_1Plotting_1_1Color_1_1Controller.html#ab0137837d8b03f2df5c88c1b3faef0d6',1,'JSL::Plotting::Color::Controller']]],

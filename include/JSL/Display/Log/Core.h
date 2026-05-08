@@ -81,7 +81,7 @@ namespace JSL::Log::internal
 			{
 				if (Config::Global().TerminalOutput)
 				{
-					CurrentFormat.Add(group);
+					CurrentFormat.Add(format);
 					if (!StreamActive)
 					{
 						BufferPreamble << CurrentFormat;
@@ -121,7 +121,7 @@ namespace JSL::Log::internal
 			//! A string which holds the callingLine/Function/File data after the constructor is called, but before the stream is activated.
 			std::string Insert;
 
-			//! A suffix which is inserted at the end of the line, if the boxing mode is active
+			//! A suffix which is inserted at the end of the line, if the tracing-mode is active
 			std::string LineSuffix = "";
 
 			//! A suffix used at the first line of long messages, containing additional information
@@ -138,16 +138,16 @@ namespace JSL::Log::internal
 			void EndMessage();
 		
 			//! Used to prevent log-interleaving, and make the LOG (mostly) thread-safe. Must be declared static to make it shared across different instances.
-			static std::mutex StreamMutex;
+			inline static std::mutex StreamMutex;
 
 
-			//! @brief Deleted to ensure constructor is always call
+			//! @brief Deleted to ensure destructor is always called
 			Core(const Core& other) = delete;
-			//! @brief Deleted to enforce Singleton uniqueness
+			//! @brief Deleted to ensure destructor is always called
 			Core& operator=(const Core& other) = delete;
-			//! @brief Deleted to enforce Singleton uniqueness
+			//! @brief Deleted to ensure destructor is always called
 			Core(Core&& other) = delete;
-			//! @brief Deleted to enforce Singleton uniqueness
+			//! @brief Deleted to ensure destructor is always called
 			Core& operator=(Core&& other) = delete;
 			
 	};

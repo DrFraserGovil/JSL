@@ -14,49 +14,49 @@
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Format_8h}{JSL/Display/Format.h}}>}}
 \DoxyCodeLine{00011\ }
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ LOG(level)\ \(\backslash\)}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ if\ (!(level\ <=\ JSL::Log::Global::Config().Level))\ \{\}\ \(\backslash\)}}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ else\ (JSL::Log::Core(level,\_\_LINE\_\_,\_\_func\_\_,\_\_FILE\_\_))}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ if\ (!(level\ <=\ JSL::Log::Config::Global().Level))\ \{\}\ \(\backslash\)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ else\ (JSL::Log::internal::Core(level,\_\_LINE\_\_,\_\_func\_\_,\_\_FILE\_\_))}}
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Log}{JSL::Log}}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceJSL_1_1Log_1_1internal}{JSL::Log::internal}}}
 \DoxyCodeLine{00026\ \{}
 \DoxyCodeLine{00027\ \ \ \ \ }
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}}
 \DoxyCodeLine{00035\ \ \ \ \ \{}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a5c3af7e2fe5dcdf937b93651d4f9bda6}{Core}}(\mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level,\textcolor{keywordtype}{int}\ callingLine,\textcolor{keyword}{const}\ std::string\ \&\ callingFunction,std::string\ callingFile);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a9bb68a0262d41eaf2b4c3d4baccd8666}{Core}}(\mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level,\textcolor{keywordtype}{int}\ callingLine,\textcolor{keyword}{const}\ std::string\ \&\ callingFunction,std::string\ callingFile);}
 \DoxyCodeLine{00048\ }
 \DoxyCodeLine{00049\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a9e69c76e9f7796e69841f2667d4e8a76}{\string~Core}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a291406831cab78a395b36d6e5bb677c2}{\string~Core}}();}
 \DoxyCodeLine{00056\ }
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}}\ \&\mbox{\hyperlink{classJSL_1_1Log_1_1Core_a0648680698230ce5d8979c7ee960d366}{operator<<}}(\textcolor{keyword}{const}\ T\ \&msg)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}\ \&\mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a7efbf85b4a52fbf5361f44d6e92f0913}{operator<<}}(\textcolor{keyword}{const}\ T\ \&msg)}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}{StreamActive}})\ \textcolor{comment}{//lazy\ opening\ of\ the\ steam}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_acd43fbb35ddc61eb30fbb80d9933e20f}{StreamActive}})\ \textcolor{comment}{//lazy\ opening\ of\ the\ steam}}
 \DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}{StreamActive}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a2187c6090f06ce4b55220b06233fba9d}{Header}}();}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}{Buffer}}\ <<\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a22c33e7c11c9cdadc053bb29c0cc668c}{Insert}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_acd43fbb35ddc61eb30fbb80d9933e20f}{StreamActive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_af32f329d678bf72e75c525079ec72a3e}{Header}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_aa66e93ad34aa672231f303a3c95625bd}{Buffer}}\ <<\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a81263e8bc114a254b52337ee74a6672c}{Insert}};}
 \DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}{Buffer}}\ <<\ msg;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_aa66e93ad34aa672231f303a3c95625bd}{Buffer}}\ <<\ msg;}
 \DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
 \DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
 \DoxyCodeLine{00075\ }
 \DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<Format::FormatType\ T>}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core}{Core}}\ \&\mbox{\hyperlink{classJSL_1_1Log_1_1Core_afe7e3c1957346120e6d5e459c33ef7d8}{operator<<}}(T\ format)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}\ \&\mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a7c4a2ea2db734eca44187dfb038d934f}{operator<<}}(T\ format)}
 \DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Global::Config().TerminalOutput)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJSL_1_1Log_1_1Config_a439f5c19d70d514fa5fbb6d0ec0f355d}{Config::Global}}().TerminalOutput)}
 \DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a1de05c38db8951ea2d5b7412e79c877d}{CurrentFormat}}.\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup_a4ade7b37424476ff989e85263d00cba9}{Add}}(group);}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}{StreamActive}})}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a644c26f1d5bb02d6efdde41c5f46cfd2}{CurrentFormat}}.\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup_a4ade7b37424476ff989e85263d00cba9}{Add}}(format);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_acd43fbb35ddc61eb30fbb80d9933e20f}{StreamActive}})}
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a8bc82b6e56a5fecff382b08edbfe8d65}{BufferPreamble}}\ <<\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a1de05c38db8951ea2d5b7412e79c877d}{CurrentFormat}};}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6fc302f13ed1875ed2a48dae5dd689a1}{ManualFormat}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a62a868a58381932b8a725b5fdfe2d9d5}{BufferPreamble}}\ <<\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a644c26f1d5bb02d6efdde41c5f46cfd2}{CurrentFormat}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_acb923efc0a265a5fcbd7eda3fb7628c9}{ManualFormat}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}{Buffer}}\ <<\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a1de05c38db8951ea2d5b7412e79c877d}{CurrentFormat}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_aa66e93ad34aa672231f303a3c95625bd}{Buffer}}\ <<\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a644c26f1d5bb02d6efdde41c5f46cfd2}{CurrentFormat}};}
 \DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
@@ -66,32 +66,38 @@
 \DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6fc302f13ed1875ed2a48dae5dd689a1}{ManualFormat}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_acb923efc0a265a5fcbd7eda3fb7628c9}{ManualFormat}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00104\ }
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format::FormatGroup}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a1de05c38db8951ea2d5b7412e79c877d}{CurrentFormat}};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format::FormatGroup}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a644c26f1d5bb02d6efdde41c5f46cfd2}{CurrentFormat}};}
 \DoxyCodeLine{00107\ }
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a6e69ef78a7e4c5b9a3bf1f8186117ad9}{Buffer}};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_aa66e93ad34aa672231f303a3c95625bd}{Buffer}};}
 \DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a8bc82b6e56a5fecff382b08edbfe8d65}{BufferPreamble}};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a62a868a58381932b8a725b5fdfe2d9d5}{BufferPreamble}};}
 \DoxyCodeLine{00114\ }
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a931f76811d5f282e39c39979ad1284f2}{Level}};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Levels_8h_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_acb0881dcc4baf14855314d32b1c67ccd}{Level}};}
 \DoxyCodeLine{00117\ }
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_afc3c0a694ac697b8af9ebce469efe069}{StreamActive}};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_acd43fbb35ddc61eb30fbb80d9933e20f}{StreamActive}};}
 \DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a22c33e7c11c9cdadc053bb29c0cc668c}{Insert}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a81263e8bc114a254b52337ee74a6672c}{Insert}};}
 \DoxyCodeLine{00123\ }
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_ae5c042d3719c209373bef3ac3ab8c0f2}{LineSuffix}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_afef4e471a47cac270cd264b5483bf4b3}{LineSuffix}}\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{00126\ }
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_ada70368a1dec8c6d0743020bc45ea7b2}{FirstLineSuffix}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a13b26382630346e45dcb4bde861e7e43}{FirstLineSuffix}}\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{00129\ }
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a2187c6090f06ce4b55220b06233fba9d}{Header}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_af32f329d678bf72e75c525079ec72a3e}{Header}}();}
 \DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a952d14b7b6715a38902e632f6053c46b}{EndMessage}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a00755fa2852d4655c297b43da91197af}{EndMessage}}();}
 \DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ \mbox{\hyperlink{classJSL_1_1Log_1_1Core_a26913d8e4e9549471250ae7174050367}{StreamMutex}};}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00143\ \ \ \ \ \};}
-\DoxyCodeLine{00144\ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::mutex\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_adb9404e53cd3b2c31dd37495366d6483}{StreamMutex}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_ad0b3db59003709064493518c013fd950}{Core}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}\&\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_a09c23a5e7d8a84c32c6f849bcc82fe84}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_aafb6100f24546f0b75e08e2c45c6498a}{Core}}(\mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}\&\ \mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core_ae4f3a70e4d9b647768b1fd55df69dff1}{operator=}}(\mbox{\hyperlink{classJSL_1_1Log_1_1internal_1_1Core}{Core}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \};}
+\DoxyCodeLine{00154\ \}}
 
 \end{DoxyCode}

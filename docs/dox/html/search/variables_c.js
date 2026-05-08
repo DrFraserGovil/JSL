@@ -1,7 +1,7 @@
 var searchData=
 [
   ['magic_0',['magic',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#a565ae53ccb78f717ae39688da64e24bf',1,'JSL::Archiver::internal::TarHeader']]],
-  ['manualformat_1',['ManualFormat',['../classJSL_1_1Log_1_1Core.html#a6fc302f13ed1875ed2a48dae5dd689a1',1,'JSL::Log::Core']]],
+  ['manualformat_1',['ManualFormat',['../classJSL_1_1Log_1_1internal_1_1Core.html#acb923efc0a265a5fcbd7eda3fb7628c9',1,'JSL::Log::internal::Core']]],
   ['markcount_2',['MarkCount',['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#a8c20fc559ebe672bf4488be6220984ff',1,'JSL::Display::Progress::internal::ProgressEngine']]],
   ['mask_3',['Mask',['../structJSL_1_1Event_1_1FileChange.html#a446f848a54de07e7c1867a7262f25503',1,'JSL::Event::FileChange']]],
   ['maxcolumns_4',['MaxColumns',['../classJSL_1_1Plotting_1_1LegendObject.html#a88f48f8c52e9c3f5ec10f9e0f112ac06',1,'JSL::Plotting::LegendObject']]],

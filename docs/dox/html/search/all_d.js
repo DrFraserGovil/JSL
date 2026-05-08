@@ -8,7 +8,7 @@ var searchData=
   ['manager_5',['manager',['../classJSL_1_1Event_1_1Async_1_1Manager.html#a937f1b92fa3b011d16f7d350178397fa',1,'JSL::Event::Async::Manager::Manager()'],['../classJSL_1_1Event_1_1Async_1_1Manager.html',1,'JSL::Event::Async::Manager'],['../classJSL_1_1Event_1_1Async_1_1Manager.html#afd013cc4008baa4da7d45556593784d1',1,'JSL::Event::Async::Manager::Manager()'],['../classJSL_1_1Event_1_1Serial_1_1Manager.html#a54c61e81ebf36dc4e5185a2bb5acfeb4',1,'JSL::Event::Serial::Manager::Manager(Watcher &amp;watcher)'],['../classJSL_1_1Event_1_1Serial_1_1Manager.html#ae464ebe5a5a70d2801fae3e3e48d63eb',1,'JSL::Event::Serial::Manager::Manager(std::string_view identifier)'],['../classJSL_1_1Event_1_1Serial_1_1Manager.html',1,'JSL::Event::Serial::Manager']]],
   ['managerbase_2eh_6',['ManagerBase.h',['../ManagerBase_8h.html',1,'']]],
   ['manipulate_2eh_7',['Manipulate.h',['../Manipulate_8h.html',1,'']]],
-  ['manualformat_8',['ManualFormat',['../classJSL_1_1Log_1_1Core.html#a6fc302f13ed1875ed2a48dae5dd689a1',1,'JSL::Log::Core']]],
+  ['manualformat_8',['ManualFormat',['../classJSL_1_1Log_1_1internal_1_1Core.html#acb923efc0a265a5fcbd7eda3fb7628c9',1,'JSL::Log::internal::Core']]],
   ['markcount_9',['MarkCount',['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#a8c20fc559ebe672bf4488be6220984ff',1,'JSL::Display::Progress::internal::ProgressEngine']]],
   ['mask_10',['Mask',['../structJSL_1_1Event_1_1FileChange.html#a446f848a54de07e7c1867a7262f25503',1,'JSL::Event::FileChange']]],
   ['match_11',['match',['../namespaceJSL_1_1IO_1_1FileSystem.html#aebd147770a298a84ec2357daf1b87fc5',1,'JSL::IO::FileSystem']]],

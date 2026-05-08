@@ -4,7 +4,7 @@ Log Core
 ===========
 
 
-.. jsl-class:: JSL::Log::Core
+.. jsl-class:: JSL::Log::internal::Core
 	:file: JSL/Display/Log/Core.h
 	:namespace: JSL::Log
 

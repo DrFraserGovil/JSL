@@ -15,7 +15,7 @@ var searchData=
   ['commontypes_12',['CommonTypes',['../namespaceJSL_1_1Parameter.html#a0fbd2f8e48d60654fca6165c20c494e8',1,'JSL::Parameter']]],
   ['configured_13',['Configured',['../classJSL_1_1internal_1_1Parameter_1_1CommandLineReader.html#aa0e5c9fd9d77d9751327631b497f9a2a',1,'JSL::internal::Parameter::CommandLineReader']]],
   ['connectedvalue_14',['ConnectedValue',['../classJSL_1_1Parameter_1_1Setting.html#a4e152291a23e2cccf2b940aa54c4b249',1,'JSL::Parameter::Setting']]],
-  ['currentformat_15',['CurrentFormat',['../classJSL_1_1Log_1_1Core.html#a1de05c38db8951ea2d5b7412e79c877d',1,'JSL::Log::Core']]],
+  ['currentformat_15',['CurrentFormat',['../classJSL_1_1Log_1_1internal_1_1Core.html#a644c26f1d5bb02d6efdde41c5f46cfd2',1,'JSL::Log::internal::Core']]],
   ['currentvalue_16',['CurrentValue',['../classJSL_1_1Parameter_1_1Description.html#a7696bd6045fde9dd852c33d71916246e',1,'JSL::Parameter::Description']]],
   ['cursorup_17',['CursorUp',['../namespaceJSL_1_1Terminal.html#a64ba8389d7e03a6aea8d1ca5fd070b7d',1,'JSL::Terminal']]],
   ['curves_18',['Curves',['../classJSL_1_1Plotting_1_1AxisMembers_1_1Data.html#a51880d125ca2de3dce0bf4e213327654',1,'JSL::Plotting::AxisMembers::Data']]],

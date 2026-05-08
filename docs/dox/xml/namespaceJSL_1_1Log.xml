@@ -3,9 +3,26 @@
   <compounddef id="namespaceJSL_1_1Log" kind="namespace" language="C++">
     <compoundname>JSL::Log</compoundname>
     <innerclass refid="classJSL_1_1Log_1_1Config" prot="public">JSL::Log::Config</innerclass>
-    <innerclass refid="classJSL_1_1Log_1_1Core" prot="public">JSL::Log::Core</innerclass>
     <innernamespace refid="namespaceJSL_1_1Log_1_1detail">JSL::Log::detail</innernamespace>
+    <innernamespace refid="namespaceJSL_1_1Log_1_1internal">JSL::Log::internal</innernamespace>
     <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceJSL_1_1Log_1ad342d7bf4e80fd6cf0180e87392c700a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classJSL_1_1Log_1_1Config" kindref="compound">Config</ref> &amp;</type>
+        <definition>Config &amp; JSL::Log::Global</definition>
+        <argsstring>()</argsstring>
+        <name>Global</name>
+        <qualifiedname>JSL::Log::Global</qualifiedname>
+        <briefdescription>
+<para>An alias for <ref refid="classJSL_1_1Log_1_1Config_1a439f5c19d70d514fa5fbb6d0ec0f355d" kindref="member">JSL::Log::Config::Global</ref> that needs one less namespace indexing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>We could have made <emphasis>this</emphasis> be the singleton, but by making it a static member (with 1 more namespace), we could make the constructor private and therefore have a guarantee of uniqueness. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/Log/Config.h" line="108" column="16" bodyfile="include/JSL/Display/Log/Config.h" bodystart="108" bodyend="111"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1Log_1a4aa4ef103524af708dccd2a488aa07a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="Levels_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref></type>
         <definition>LogLevel JSL::Log::MakeLevel</definition>

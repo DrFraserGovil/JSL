@@ -3,7 +3,7 @@ var searchData=
   ['element_0',['Element',['../namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622',1,'JSL::Format']]],
   ['emptybuffer_1',['EmptyBuffer',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a5f7c9688f7d39f838df183a2095d89ae',1,'JSL::Plotting::internal::GnuplotPipe']]],
   ['end_5fof_5farchive_2',['END_OF_ARCHIVE',['../namespaceJSL_1_1Archiver_1_1internal.html#a7fbcb25825f2262c92de701d8f54680a',1,'JSL::Archiver::internal']]],
-  ['endmessage_3',['EndMessage',['../classJSL_1_1Log_1_1Core.html#a952d14b7b6715a38902e632f6053c46b',1,'JSL::Log::Core']]],
+  ['endmessage_3',['EndMessage',['../classJSL_1_1Log_1_1internal_1_1Core.html#a00755fa2852d4655c297b43da91197af',1,'JSL::Log::internal::Core']]],
   ['erase_4',['erase',['../classJSL_1_1Parameter_1_1NestedAggregator.html#acd4f03a79003d09d90d46dce409148b1',1,'JSL::Parameter::NestedAggregator::erase()'],['../classJSL_1_1internal_1_1Parameter_1_1ParameterBase.html#ae38f71cf9ec027e4feb0e8a46cd3489b',1,'JSL::internal::Parameter::ParameterBase::erase()'],['../classJSL_1_1Parameter_1_1Setting.html#a1f9e624a6247bacab5d18929114b2a9f',1,'JSL::Parameter::Setting::erase()']]],
   ['eraseleft_5',['EraseLeft',['../namespaceJSL_1_1Terminal.html#af5fb5ff136a484d9edbec874c96f77ed',1,'JSL::Terminal']]],
   ['eraseright_6',['EraseRight',['../namespaceJSL_1_1Terminal.html#a83b3890f3fe3f5d4736e64d68c34c375',1,'JSL::Terminal']]],

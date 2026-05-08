@@ -20,4 +20,12 @@ The Log::Config
 ----------------------
 
 .. jsl-class:: JSL::Log::Config
+	:file: JSL/Display/Log/Config.h
+	:namespace: JSL::Log
 
+Log::Global()
+------------------
+
+We also provide an alias:
+
+.. doxygenfunction:: JSL::Log::Global

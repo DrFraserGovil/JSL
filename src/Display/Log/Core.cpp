@@ -5,7 +5,7 @@
 #include <filesystem>
 
 
-namespace JSL::Log
+namespace JSL::Log::internal
 {
 	
 	Core::Core(LogLevel level,int callingLine,const std::string & callingFunction,std::string callingFile)
@@ -69,7 +69,7 @@ namespace JSL::Log
 		}
 		
 		std::vector<std::string_view> manualSplits = String::split_view(Buffer.view(),"\n");
-		std::vector<std::string_view> message;
+		std::vector<std::string> message; //have to be strings as the folding inserts spaces
 
 		for (auto line : manualSplits)
 		{
