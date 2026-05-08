@@ -27,7 +27,7 @@ var searchData=
   ['flush_24',['flush',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#adeb0f2da7ef84f2b89c6979888d787aa',1,'JSL::Plotting::internal::GnuplotPipe']]],
   ['foldline_2eh_25',['FoldLine.h',['../FoldLine_8h.html',1,'']]],
   ['foldtowidth_26',['foldToWidth',['../namespaceJSL_1_1String.html#afdd15a72becdf5cb35a2aed43102d3b9',1,'JSL::String']]],
-  ['forceclear_27',['ForceClear',['../classJSL_1_1Log_1_1ConfigObject.html#acc4e4aedfcaa25df279ad62c4fc5ea42',1,'JSL::Log::ConfigObject']]],
+  ['forceclear_27',['ForceClear',['../classJSL_1_1Log_1_1Config.html#a27f550f97a7b62528ac3de337f5e576f',1,'JSL::Log::Config']]],
   ['foreground_28',['Foreground',['../classJSL_1_1Format_1_1FormatGroup.html#a5b16b77f0e8f983942dafcac958c33b1',1,'JSL::Format::FormatGroup']]],
   ['foregroundcolour_29',['ForegroundColour',['../namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8',1,'JSL::Format']]],
   ['forlinein_30',['forlinein',['../namespaceJSL_1_1IO.html#a186384d5b529087bfbf51adc3ca0c9f5',1,'JSL::IO::forLineIn()'],['../namespaceJSL_1_1IO_1_1Pipe.html#a39a12933a49bc89340f09fcc7fb16f65',1,'JSL::IO::Pipe::forLineIn()'],['../classJSL_1_1Archiver_1_1ReadStream.html#a091b8c42f0e26c15a2a5593833b20c95',1,'JSL::Archiver::ReadStream::ForLineIn()'],['../classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Read_01_4.html#af25e155d8c2411f70d19a67470be71d9',1,'JSL::Archiver::Vault&lt; Mode::Read &gt;::ForLineIn()']]],

@@ -6,7 +6,7 @@ var searchData=
   ['taskqueue_3',['taskqueue',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a2ab7fc28af66c1fa55c8c143f9750b9f',1,'JSL::Event::internal::HandlerBase::TaskQueue'],['../classJSL_1_1Parallel_1_1Pool.html#a43c49ce1d4de322f7851ff4a6db42f51',1,'JSL::Parallel::Pool::TaskQueue']]],
   ['taskready_4',['TaskReady',['../classJSL_1_1Parallel_1_1Pool.html#a5a606f544162d61342920301fdd45f07',1,'JSL::Parallel::Pool']]],
   ['tempname_5',['TempName',['../classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4.html#ab8abae42b6b3108d7c75b0dfa13a30fb',1,'JSL::Archiver::Vault&lt; Mode::Write &gt;']]],
-  ['terminaloutput_6',['TerminalOutput',['../classJSL_1_1Log_1_1ConfigObject.html#a7b0c3e1a196e20d2e08723bfe3e28cff',1,'JSL::Log::ConfigObject']]],
+  ['terminaloutput_6',['TerminalOutput',['../classJSL_1_1Log_1_1Config.html#a07a28dfaaa0a55fcfd7fe114608a6a78',1,'JSL::Log::Config']]],
   ['textdescription_7',['TextDescription',['../classJSL_1_1Parameter_1_1Description.html#a54c420a1002c632ac49774e1146dff24',1,'JSL::Parameter::Description']]],
   ['textplot_8',['textplot',['../namespaceJSL.html#a7d459ecd0ae883637e075c9665477640',1,'JSL::TextPlot(std::vector&lt; Coordinate &gt; coordinates)'],['../namespaceJSL.html#acc6ecc77f7ccd0fd0d404cabd870fd90',1,'JSL::TextPlot(const T &amp;x, const U &amp;y)']]],
   ['textplot_2eh_9',['textplot.h',['../textplot_8h.html',1,'']]],

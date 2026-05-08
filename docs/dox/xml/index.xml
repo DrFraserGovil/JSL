@@ -91,26 +91,27 @@
     <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a7fd4814df17cf3191eda6897cd304347" kind="function"><name>Contains</name></member>
     <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1a2d75ebec4650be7b6acbf28d81addf09" kind="function"><name>GetOption</name></member>
   </compound>
-  <compound refid="classJSL_1_1Log_1_1ConfigObject" kind="class"><name>JSL::Log::ConfigObject</name>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1ace0317e6aaace3f36bf4bb137acc6e2a" kind="variable"><name>AppendNewline</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a18240a633488c5da502c3b10ee3f6e64" kind="variable"><name>ShowHeaders</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a83537d75fcf5f01c342329f06dc63d04" kind="variable"><name>Level</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a7b0c3e1a196e20d2e08723bfe3e28cff" kind="variable"><name>TerminalOutput</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1acc4e4aedfcaa25df279ad62c4fc5ea42" kind="variable"><name>ForceClear</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a9cf563f2a604c6d1d62e36c7b221a71c" kind="variable"><name>WarnColour</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a689fb454d474ca5cd7f46cd4287d3221" kind="variable"><name>ErrorColour</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1aaedf5c66aec116cc19e7e2897e4fb374" kind="variable"><name>InfoColour</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1acb7a76703029b91c8a08e3b685297074" kind="variable"><name>DebugColour</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a8076d2170879e122bd39dda18f4bb279" kind="variable"><name>DebugBoxing</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a2259f2b8cf7dc58ea47d82c32cf8182e" kind="variable"><name>DebugLineSize</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1aa64529e44fb41115a9b889ae4cde335a" kind="variable"><name>IncludePrompt</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1afd2eaa94c90525f9aed050a55cfa90b4" kind="variable"><name>Prompt</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a2d110199bb66f96e9b9e24d1c57df766" kind="function"><name>ConfigObject</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1ac55b323629d5d013887e1c4e883c5a53" kind="function"><name>SetLevel</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a0e4b9db5326668fcd6f7673c3a1bebbf" kind="function"><name>SetPrompt</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1aa85de8ceb6f56b9e9a64e450d979a8ce" kind="function"><name>AlignSize</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1af34ab434b7e0714bce9dbf2f154f2671" kind="function"><name>ResetPrompt</name></member>
-    <member refid="classJSL_1_1Log_1_1ConfigObject_1a05f5f56246f2f80b6eaa5701acf8c9d8" kind="function"><name>Initialise</name></member>
+  <compound refid="classJSL_1_1Log_1_1Config" kind="class"><name>JSL::Log::Config</name>
+    <member refid="classJSL_1_1Log_1_1Config_1af5080050478cdd9226a604dd839bdeaf" kind="variable"><name>Level</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a7c2c7e07d915247ab58b76d99b39e2d5" kind="variable"><name>AppendNewline</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a490fcbbde40c2623e9f5d2d6e28cb535" kind="variable"><name>ShowHeaders</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a27f550f97a7b62528ac3de337f5e576f" kind="variable"><name>ForceClear</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a807d2a09410f82dfd4c6beeb4e28930b" kind="variable"><name>ErrorColour</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a629f3d962143614f4b3e5770afae2109" kind="variable"><name>WarnColour</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a639c5a8efedee7752d2364d0d7204a96" kind="variable"><name>InfoColour</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a347fb3b0d664fe2ffa9200c9d69f8311" kind="variable"><name>DebugColour</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a70cb295b93da56c1103fb05dc4ea280e" kind="friend"><name>JSL::Log::Core</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a07a28dfaaa0a55fcfd7fe114608a6a78" kind="variable"><name>TerminalOutput</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a9e2d62ee6d3ddb35c46845bd4bbb3e94" kind="variable"><name>LineSize</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a439f5c19d70d514fa5fbb6d0ec0f355d" kind="function"><name>Global</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a06ceb5e9c960f5f5e527124a0a22fb80" kind="function"><name>SetLevel</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1aa70e0135f56ecc4717bb099a33f7f09d" kind="function"><name>DisableTerminal</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a02ec18bf175ddbd529ba9d217f18c095" kind="function"><name>AlignSize</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a3bfadf68cb9114b42f4379a41b76659b" kind="function"><name>Config</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1adba9876fadbf45b953202d06334899a7" kind="function"><name>Config</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a3a6671314bc72afc8d6c16932294408d" kind="function"><name>operator=</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1abedddc2b21c956603de73e3af9ca84ef" kind="function"><name>Config</name></member>
+    <member refid="classJSL_1_1Log_1_1Config_1a792a6b1c9eb890277b8c6f8bdfd91a51" kind="function"><name>operator=</name></member>
   </compound>
   <compound refid="classJSL_1_1Plotting_1_1Color_1_1Controller" kind="class"><name>JSL::Plotting::Color::Controller</name>
     <member refid="classJSL_1_1Plotting_1_1Color_1_1Controller_1a97af53b9a9ff09603a3dbcbe7074ad11" kind="friend"><name>Display</name></member>
@@ -150,8 +151,7 @@
     <member refid="classJSL_1_1Log_1_1Core_1a5c3af7e2fe5dcdf937b93651d4f9bda6" kind="function"><name>Core</name></member>
     <member refid="classJSL_1_1Log_1_1Core_1a9e69c76e9f7796e69841f2667d4e8a76" kind="function"><name>~Core</name></member>
     <member refid="classJSL_1_1Log_1_1Core_1a0648680698230ce5d8979c7ee960d366" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1a57fb03e27585853f46e1d0cfae5a6cdc" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classJSL_1_1Log_1_1Core_1ab00581b608e7afc876d653de92a84231" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classJSL_1_1Log_1_1Core_1afe7e3c1957346120e6d5e459c33ef7d8" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classJSL_1_1Log_1_1Core_1a2187c6090f06ce4b55220b06233fba9d" kind="function"><name>Header</name></member>
     <member refid="classJSL_1_1Log_1_1Core_1a952d14b7b6715a38902e632f6053c46b" kind="function"><name>EndMessage</name></member>
   </compound>
@@ -844,7 +844,7 @@
     <member refid="classJSL_1_1Archiver_1_1WriteStream_1a0d5dc94298daf8ee59ad3151cbb65117" kind="function"><name>WriteStream</name></member>
     <member refid="classJSL_1_1Archiver_1_1WriteStream_1a2b1449bfeaa8de31b4810cbf3c3a9ce8" kind="function"><name>operator&lt;&lt;</name></member>
   </compound>
-  <compound refid="conceptJSL_1_1Format_1_1Formattable" kind="concept"><name>JSL::Format::Formattable</name>
+  <compound refid="conceptJSL_1_1Format_1_1FormatType" kind="concept"><name>JSL::Format::FormatType</name>
   </compound>
   <compound refid="conceptJSL_1_1internal_1_1Plottable" kind="concept"><name>JSL::internal::Plottable</name>
   </compound>
@@ -970,12 +970,9 @@
     <member refid="namespaceJSL_1_1IO_1_1Pipe_1aec87933465246f0edbf1381531939d37" kind="function"><name>save</name></member>
   </compound>
   <compound refid="namespaceJSL_1_1Log" kind="namespace"><name>JSL::Log</name>
-    <member refid="namespaceJSL_1_1Log_1aed21cdb152342ae4d25f952c1a5871f4" kind="function"><name>LogLevelConvert</name></member>
+    <member refid="namespaceJSL_1_1Log_1a4aa4ef103524af708dccd2a488aa07a8" kind="function"><name>MakeLevel</name></member>
   </compound>
   <compound refid="namespaceJSL_1_1Log_1_1detail" kind="namespace"><name>JSL::Log::detail</name>
-  </compound>
-  <compound refid="namespaceJSL_1_1Log_1_1Global" kind="namespace"><name>JSL::Log::Global</name>
-    <member refid="namespaceJSL_1_1Log_1_1Global_1a514bd1673249e579436eedecc3f56540" kind="function"><name>Config</name></member>
   </compound>
   <compound refid="namespaceJSL_1_1Parallel" kind="namespace"><name>JSL::Parallel</name>
   </compound>

@@ -21,7 +21,8 @@ var searchData=
   ['getwatchedfiles_18',['GetWatchedFiles',['../classJSL_1_1Event_1_1Watcher.html#af2402909acdf5b368ec161351cbd0e59',1,'JSL::Event::Watcher']]],
   ['getwatcher_19',['GetWatcher',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#ace0463f720ee896fc203aa969d47a162',1,'JSL::Event::internal::HandlerBase']]],
   ['getwords_20',['getWords',['../namespaceJSL_1_1IO.html#a962bab2b0dcff9021d5890f538240de9',1,'JSL::IO']]],
-  ['gnuplotpipe_21',['GnuplotPipe',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a6b4039dd3fb17f900df917147d301b5f',1,'JSL::Plotting::internal::GnuplotPipe']]],
-  ['gradient_22',['Gradient',['../classJSL_1_1Plotting_1_1Color_1_1Controller.html#ac62aa878a37129f0aaa3dd7262c2e3ae',1,'JSL::Plotting::Color::Controller']]],
-  ['green_23',['Green',['../namespaceJSL_1_1Format.html#aca4adf51e196a330791d94688f827cf9',1,'JSL::Format']]]
+  ['global_21',['Global',['../classJSL_1_1Log_1_1Config.html#a439f5c19d70d514fa5fbb6d0ec0f355d',1,'JSL::Log::Config']]],
+  ['gnuplotpipe_22',['GnuplotPipe',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a6b4039dd3fb17f900df917147d301b5f',1,'JSL::Plotting::internal::GnuplotPipe']]],
+  ['gradient_23',['Gradient',['../classJSL_1_1Plotting_1_1Color_1_1Controller.html#ac62aa878a37129f0aaa3dd7262c2e3ae',1,'JSL::Plotting::Color::Controller']]],
+  ['green_24',['Green',['../namespaceJSL_1_1Format.html#aca4adf51e196a330791d94688f827cf9',1,'JSL::Format']]]
 ];

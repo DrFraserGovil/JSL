@@ -9,9 +9,8 @@ var searchData=
   ['log_6',['log',['../scalardual_8h.html#a92639f5b3f3a4278106a62b3b8fee531',1,'scalardual.h']]],
   ['log10_7',['log10',['../scalardual_8h.html#a7f5f947613e56aa65b08f6749a6dd224',1,'scalardual.h']]],
   ['log1p_8',['log1p',['../scalardual_8h.html#a3dedf941c4cbcb63b868c13413aad5f4',1,'scalardual.h']]],
-  ['loglevelconvert_9',['LogLevelConvert',['../namespaceJSL_1_1Log.html#aed21cdb152342ae4d25f952c1a5871f4',1,'JSL::Log']]],
-  ['logscale_10',['LogScale',['../classJSL_1_1Plotting_1_1Properties_1_1PerAxis.html#a3cdc87e540963aa2138886f3ada38e20',1,'JSL::Plotting::Properties::PerAxis']]],
-  ['loopreturn_11',['loopreturn',['../classJSL_1_1Parallel_1_1Pool.html#ab6a3292a7205f68febe7dbf6f76ad033',1,'JSL::Parallel::Pool::LoopReturn(size_t nLoop, std::function&lt; T(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)'],['../classJSL_1_1Parallel_1_1Pool.html#a38d3fde31abafeef1802eeb4c1b5df0c',1,'JSL::Parallel::Pool::LoopReturn(std::vector&lt; T &gt; &amp;holder, std::function&lt; T(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)']]],
-  ['looptask_12',['LoopTask',['../classJSL_1_1Parallel_1_1Pool.html#a7f30d84b2a5de792e60b10ff42a756f0',1,'JSL::Parallel::Pool']]],
-  ['lower_13',['Lower',['../classJSL_1_1Plotting_1_1RangeObject.html#a01a9a67d0d0542bad20d0fd7abcb8ce4',1,'JSL::Plotting::RangeObject']]]
+  ['logscale_9',['LogScale',['../classJSL_1_1Plotting_1_1Properties_1_1PerAxis.html#a3cdc87e540963aa2138886f3ada38e20',1,'JSL::Plotting::Properties::PerAxis']]],
+  ['loopreturn_10',['loopreturn',['../classJSL_1_1Parallel_1_1Pool.html#ab6a3292a7205f68febe7dbf6f76ad033',1,'JSL::Parallel::Pool::LoopReturn(size_t nLoop, std::function&lt; T(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)'],['../classJSL_1_1Parallel_1_1Pool.html#a38d3fde31abafeef1802eeb4c1b5df0c',1,'JSL::Parallel::Pool::LoopReturn(std::vector&lt; T &gt; &amp;holder, std::function&lt; T(size_t)&gt; func, DistributionPolicy policy=DistributionPolicy::Sequential)']]],
+  ['looptask_11',['LoopTask',['../classJSL_1_1Parallel_1_1Pool.html#a7f30d84b2a5de792e60b10ff42a756f0',1,'JSL::Parallel::Pool']]],
+  ['lower_12',['Lower',['../classJSL_1_1Plotting_1_1RangeObject.html#a01a9a67d0d0542bad20d0fd7abcb8ce4',1,'JSL::Plotting::RangeObject']]]
 ];

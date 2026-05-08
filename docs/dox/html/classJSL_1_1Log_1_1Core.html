@@ -99,10 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0648680698230ce5d8979c7ee960d366"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Log_1_1Core.html">Core</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1Log_1_1Core.html#a0648680698230ce5d8979c7ee960d366">operator&lt;&lt;</a> (const T &amp;msg)</td></tr>
 <tr class="memdesc:a0648680698230ce5d8979c7ee960d366"><td class="mdescLeft">&#160;</td><td class="mdescRight">The streaming operator, allowing data to be piped into the stream just as if it were std::cout.  <br /></td></tr>
 <tr class="separator:a0648680698230ce5d8979c7ee960d366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57fb03e27585853f46e1d0cfae5a6cdc" id="r_a57fb03e27585853f46e1d0cfae5a6cdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Log_1_1Core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Log_1_1Core.html#a57fb03e27585853f46e1d0cfae5a6cdc">operator&lt;&lt;</a> (<a class="el" href="structJSL_1_1Format_1_1Command.html">Format::Command</a> format)</td></tr>
-<tr class="separator:a57fb03e27585853f46e1d0cfae5a6cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab00581b608e7afc876d653de92a84231" id="r_ab00581b608e7afc876d653de92a84231"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Log_1_1Core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Log_1_1Core.html#ab00581b608e7afc876d653de92a84231">operator&lt;&lt;</a> (<a class="el" href="classJSL_1_1Format_1_1FormatGroup.html">Format::FormatGroup</a> group)</td></tr>
-<tr class="separator:ab00581b608e7afc876d653de92a84231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7e3c1957346120e6d5e459c33ef7d8" id="r_afe7e3c1957346120e6d5e459c33ef7d8"><td class="memTemplParams" colspan="2">template&lt;Format::FormatType T&gt; </td></tr>
+<tr class="memitem:afe7e3c1957346120e6d5e459c33ef7d8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Log_1_1Core.html">Core</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classJSL_1_1Log_1_1Core.html#afe7e3c1957346120e6d5e459c33ef7d8">operator&lt;&lt;</a> (T format)</td></tr>
+<tr class="separator:afe7e3c1957346120e6d5e459c33ef7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -282,7 +281,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a0648680698230ce5d8979c7ee960d366" name="a0648680698230ce5d8979c7ee960d366"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0648680698230ce5d8979c7ee960d366">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0648680698230ce5d8979c7ee960d366">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,41 +317,32 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a57fb03e27585853f46e1d0cfae5a6cdc" name="a57fb03e27585853f46e1d0cfae5a6cdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57fb03e27585853f46e1d0cfae5a6cdc">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/3]</span></h2>
+<a id="afe7e3c1957346120e6d5e459c33ef7d8" name="afe7e3c1957346120e6d5e459c33ef7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7e3c1957346120e6d5e459c33ef7d8">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;Format::FormatType T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classJSL_1_1Log_1_1Core.html">Core</a> &amp; JSL::Log::Core::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structJSL_1_1Format_1_1Command.html">Format::Command</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>format</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Overloads the stream operator for <a class="el" href="structJSL_1_1Format_1_1Command.html">JSL::Format::Command</a> objects, allowing peristent formatting across linebreaks and in the pregenerated headers. </p>
-
-</div>
-</div>
-<a id="ab00581b608e7afc876d653de92a84231" name="ab00581b608e7afc876d653de92a84231"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab00581b608e7afc876d653de92a84231">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classJSL_1_1Log_1_1Core.html">Core</a> &amp; JSL::Log::Core::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classJSL_1_1Format_1_1FormatGroup.html">Format::FormatGroup</a>&#160;</td>
-          <td class="paramname"><em>group</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Overloads the stream operator for <a class="el" href="structJSL_1_1Format_1_1Command.html">JSL::Format::Command</a> objects, allowing peristent formatting across linebreaks and in the pregenerated headers. </p>
+<p>Overloads the stream operator for <a class="el" href="namespaceJSL_1_1Format.html">JSL::Format</a> objects, allowing peristent formatting across linebreaks and in the pregenerated headers. </p>
 
 </div>
 </div>

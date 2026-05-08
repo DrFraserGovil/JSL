@@ -464,17 +464,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="48" column="17" declfile="include/JSL/Display/Format.h" declline="48" declcolumn="17"/>
+        <location file="include/JSL/Display/Format.h" line="62" column="17" declfile="include/JSL/Display/Format.h" declline="62" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1Format_1aacd2ff5e6d7269ff57079a640a82c1d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>Formattable</type>
+            <type>FormatType</type>
             <declname>T</declname>
             <defname>T</defname>
           </param>
           <param>
-            <type>Formattable</type>
+            <type>FormatType</type>
             <declname>U</declname>
             <defname>U</defname>
           </param>
@@ -498,12 +498,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="56" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="56" bodyend="61"/>
+        <location file="include/JSL/Display/Format.h" line="65" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="65" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1Format_1abd540e54d1fdcf980ae9cd2afda7a6a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>Formattable</type>
+            <type>FormatType</type>
             <declname>T</declname>
             <defname>T</defname>
           </param>
@@ -527,12 +527,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="63" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="63" bodyend="66"/>
+        <location file="include/JSL/Display/Format.h" line="72" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="72" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1Format_1a5ea7eba7218414414f6379cc99ce8f41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>Formattable</type>
+            <type>FormatType</type>
             <declname>T</declname>
             <defname>T</defname>
           </param>
@@ -556,7 +556,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="68" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="68" bodyend="71"/>
+        <location file="include/JSL/Display/Format.h" line="77" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="77" bodyend="80"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -3,7 +3,7 @@ var searchData=
   ['idtocoord_0',['IdToCoord',['../classJSL_1_1Plotting_1_1Figure.html#ad6ea7f265c7d7901564caa90e586bd46',1,'JSL::Plotting::Figure']]],
   ['iequals_1',['iEquals',['../namespaceJSL_1_1String.html#ace8aae4742c7567ac79fbedd14a9c72c',1,'JSL::String']]],
   ['implicittupleconverter_2',['ImplicitTupleConverter',['../namespaceJSL_1_1String_1_1internal.html#a194847705f1cd7c7a2e4a1cef393e232',1,'JSL::String::internal']]],
-  ['initialise_3',['initialise',['../classJSL_1_1Log_1_1ConfigObject.html#a05f5f56246f2f80b6eaa5701acf8c9d8',1,'JSL::Log::ConfigObject::Initialise()'],['../namespaceJSL_1_1IO.html#ac465ba0881a9bf040e865af7b7faae14',1,'JSL::IO::initialise()']]],
+  ['initialise_3',['initialise',['../namespaceJSL_1_1IO.html#ac465ba0881a9bf040e865af7b7faae14',1,'JSL::IO']]],
   ['initialiseinotify_4',['InitialiseINotify',['../classJSL_1_1Event_1_1Watcher.html#a29d9dcadfa0f004bc485b0dca463ef54',1,'JSL::Event::Watcher']]],
   ['initialiserun_5',['InitialiseRun',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#af84af0dbb9f81df903e1086733c4b36d',1,'JSL::Event::internal::HandlerBase']]],
   ['initialisesearch_6',['InitialiseSearch',['../classJSL_1_1Plotting_1_1LegendObject.html#a1fd55aa8d3119cef60bef42e87b40aca',1,'JSL::Plotting::LegendObject']]],

@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="88" column="6" bodyfile="include/JSL/Display/Log/Core.h" bodystart="88" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="103" column="6" bodyfile="include/JSL/Display/Log/Core.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Log_1_1Core_1a1de05c38db8951ea2d5b7412e79c877d" prot="private" static="no" mutable="no">
         <type><ref refid="classJSL_1_1Format_1_1FormatGroup" kindref="compound">Format::FormatGroup</ref></type>
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="91" column="21" bodyfile="include/JSL/Display/Log/Core.h" bodystart="91" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="106" column="21" bodyfile="include/JSL/Display/Log/Core.h" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Log_1_1Core_1a6e69ef78a7e4c5b9a3bf1f8186117ad9" prot="private" static="no" mutable="no">
         <type>std::stringstream</type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="94" column="19" bodyfile="include/JSL/Display/Log/Core.h" bodystart="94" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="109" column="19" bodyfile="include/JSL/Display/Log/Core.h" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Log_1_1Core_1a8bc82b6e56a5fecff382b08edbfe8d65" prot="private" static="no" mutable="no">
         <type>std::stringstream</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="98" column="19" bodyfile="include/JSL/Display/Log/Core.h" bodystart="98" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="113" column="19" bodyfile="include/JSL/Display/Log/Core.h" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Log_1_1Core_1a931f76811d5f282e39c39979ad1284f2" prot="private" static="no" mutable="no">
         <type><ref refid="Levels_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref></type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="101" column="10" bodyfile="include/JSL/Display/Log/Core.h" bodystart="101" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="116" column="10" bodyfile="include/JSL/Display/Log/Core.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Log_1_1Core_1afc3c0a694ac697b8af9ebce469efe069" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="104" column="6" bodyfile="include/JSL/Display/Log/Core.h" bodystart="104" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="119" column="6" bodyfile="include/JSL/Display/Log/Core.h" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Log_1_1Core_1a22c33e7c11c9cdadc053bb29c0cc668c" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="107" column="13" bodyfile="include/JSL/Display/Log/Core.h" bodystart="107" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="122" column="13" bodyfile="include/JSL/Display/Log/Core.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Log_1_1Core_1ae5c042d3719c209373bef3ac3ab8c0f2" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="110" column="13" bodyfile="include/JSL/Display/Log/Core.h" bodystart="110" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="125" column="13" bodyfile="include/JSL/Display/Log/Core.h" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Log_1_1Core_1ada70368a1dec8c6d0743020bc45ea7b2" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="113" column="13" bodyfile="include/JSL/Display/Log/Core.h" bodystart="113" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="128" column="13" bodyfile="include/JSL/Display/Log/Core.h" bodystart="128" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-static-attrib">
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="126" column="19" bodyfile="include/JSL/Display/Log/Core.h" bodystart="126" bodyend="-1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="141" column="19" bodyfile="include/JSL/Display/Log/Core.h" bodystart="141" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -225,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="46" column="1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="47" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Log_1_1Core_1a9e69c76e9f7796e69841f2667d4e8a76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -241,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="54" column="1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="55" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Log_1_1Core_1a0648680698230ce5d8979c7ee960d366" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -277,45 +277,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="63" column="1" bodyfile="include/JSL/Display/Log/Core.h" bodystart="63" bodyend="73"/>
+        <location file="include/JSL/Display/Log/Core.h" line="64" column="1" bodyfile="include/JSL/Display/Log/Core.h" bodystart="64" bodyend="74"/>
       </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Log_1_1Core_1a57fb03e27585853f46e1d0cfae5a6cdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classJSL_1_1Log_1_1Core_1afe7e3c1957346120e6d5e459c33ef7d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Format::FormatType</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
         <type><ref refid="classJSL_1_1Log_1_1Core" kindref="compound">Core</ref> &amp;</type>
         <definition>Core &amp; JSL::Log::Core::operator&lt;&lt;</definition>
-        <argsstring>(Format::Command format)</argsstring>
+        <argsstring>(T format)</argsstring>
         <name>operator&lt;&lt;</name>
         <qualifiedname>JSL::Log::Core::operator&lt;&lt;</qualifiedname>
         <param>
-          <type><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref></type>
+          <type>T</type>
           <declname>format</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Overloads the stream operator for <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">JSL::Format::Command</ref> objects, allowing peristent formatting across linebreaks and in the pregenerated headers. </para>
+<para>Overloads the stream operator for <ref refid="namespaceJSL_1_1Format" kindref="compound">JSL::Format</ref> objects, allowing peristent formatting across linebreaks and in the pregenerated headers. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="78" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="classJSL_1_1Log_1_1Core_1ab00581b608e7afc876d653de92a84231" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classJSL_1_1Log_1_1Core" kindref="compound">Core</ref> &amp;</type>
-        <definition>Core &amp; JSL::Log::Core::operator&lt;&lt;</definition>
-        <argsstring>(Format::FormatGroup group)</argsstring>
-        <name>operator&lt;&lt;</name>
-        <qualifiedname>JSL::Log::Core::operator&lt;&lt;</qualifiedname>
-        <param>
-          <type><ref refid="classJSL_1_1Format_1_1FormatGroup" kindref="compound">Format::FormatGroup</ref></type>
-          <declname>group</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Overloads the stream operator for <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">JSL::Format::Command</ref> objects, allowing peristent formatting across linebreaks and in the pregenerated headers. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="82" column="1"/>
+        <location file="include/JSL/Display/Log/Core.h" line="80" column="1" bodyfile="include/JSL/Display/Log/Core.h" bodystart="80" bodyend="96"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -332,7 +320,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="116" column="6"/>
+        <location file="include/JSL/Display/Log/Core.h" line="131" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Log_1_1Core_1a952d14b7b6715a38902e632f6053c46b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -348,7 +336,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Log/Core.h" line="123" column="6"/>
+        <location file="include/JSL/Display/Log/Core.h" line="138" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -370,7 +358,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/JSL/Display/Log/Core.h" line="33" column="1" bodyfile="include/JSL/Display/Log/Core.h" bodystart="34" bodyend="128"/>
+    <location file="include/JSL/Display/Log/Core.h" line="34" column="1" bodyfile="include/JSL/Display/Log/Core.h" bodystart="35" bodyend="143"/>
     <listofallmembers>
       <member refid="classJSL_1_1Log_1_1Core_1a6e69ef78a7e4c5b9a3bf1f8186117ad9" prot="private" virt="non-virtual"><scope>JSL::Log::Core</scope><name>Buffer</name></member>
       <member refid="classJSL_1_1Log_1_1Core_1a8bc82b6e56a5fecff382b08edbfe8d65" prot="private" virt="non-virtual"><scope>JSL::Log::Core</scope><name>BufferPreamble</name></member>
@@ -384,8 +372,7 @@
       <member refid="classJSL_1_1Log_1_1Core_1ae5c042d3719c209373bef3ac3ab8c0f2" prot="private" virt="non-virtual"><scope>JSL::Log::Core</scope><name>LineSuffix</name></member>
       <member refid="classJSL_1_1Log_1_1Core_1a6fc302f13ed1875ed2a48dae5dd689a1" prot="private" virt="non-virtual"><scope>JSL::Log::Core</scope><name>ManualFormat</name></member>
       <member refid="classJSL_1_1Log_1_1Core_1a0648680698230ce5d8979c7ee960d366" prot="public" virt="non-virtual"><scope>JSL::Log::Core</scope><name>operator&lt;&lt;</name></member>
-      <member refid="classJSL_1_1Log_1_1Core_1a57fb03e27585853f46e1d0cfae5a6cdc" prot="public" virt="non-virtual"><scope>JSL::Log::Core</scope><name>operator&lt;&lt;</name></member>
-      <member refid="classJSL_1_1Log_1_1Core_1ab00581b608e7afc876d653de92a84231" prot="public" virt="non-virtual"><scope>JSL::Log::Core</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classJSL_1_1Log_1_1Core_1afe7e3c1957346120e6d5e459c33ef7d8" prot="public" virt="non-virtual"><scope>JSL::Log::Core</scope><name>operator&lt;&lt;</name></member>
       <member refid="classJSL_1_1Log_1_1Core_1afc3c0a694ac697b8af9ebce469efe069" prot="private" virt="non-virtual"><scope>JSL::Log::Core</scope><name>StreamActive</name></member>
       <member refid="classJSL_1_1Log_1_1Core_1a26913d8e4e9549471250ae7174050367" prot="private" virt="non-virtual"><scope>JSL::Log::Core</scope><name>StreamMutex</name></member>
       <member refid="classJSL_1_1Log_1_1Core_1a9e69c76e9f7796e69841f2667d4e8a76" prot="public" virt="non-virtual"><scope>JSL::Log::Core</scope><name>~Core</name></member>

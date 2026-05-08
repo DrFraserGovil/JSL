@@ -5,44 +5,42 @@
 
 namespace JSL::Log
 {
-    ConfigObject::ConfigObject()
+
+    Config::Config()
     {
-        SetLevel(INFO);
-        ShowHeaders = true;
-        AppendNewline = true;
+        //do the basic configuration (default values set in header so they're visible to the docs)
         TerminalOutput = Terminal::IsANSICapable();
         AlignSize();
     }
 
-    void ConfigObject::SetLevel(int level)
+    void Config::SetLevel(int level)
     {
         Level = MakeLevel(level);
     }
     
-    void ConfigObject::Initialise(int level, bool header)
-    {
-        AppendNewline =true;
-        SetLevel(level);
-        ShowHeaders = header;
-    }
-
-
-
-    void ConfigObject::AlignSize(size_t debugReserve)
+    void Config::AlignSize(size_t debugReserve)
     {
         auto S = Terminal::GetDimensions();
-        LineSize = std::max(debugReserve, S.Columns - debugReserve);
+
+
+        //if debugReserve < 50% the line size, reserve it. Else the terminal is way too small, and we disable linefolding
+        LineSize = (S.Columns > 2*debugReserve) ? S.Columns - debugReserve : debugReserve;
     }
     
-    namespace Global
+    void Config::DisableTerminal()
     {
-        ConfigObject & Config()
-        {
-            static ConfigObject config;
-            return config;
-        }
-
+        TerminalOutput = false; //set it to false, no matter what
     }
+
+
+    //Meyers Singleton access pattern; lazy construction of a global variable
+    Config & Config::Global()
+    {
+        static Config config;
+        return config;
+    }
+
+    
 
 } // namespace JSL::Log
 

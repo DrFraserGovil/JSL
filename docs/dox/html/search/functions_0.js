@@ -8,7 +8,7 @@ var searchData=
   ['addcommand_5',['AddCommand',['../classJSL_1_1Parameter_1_1Aggregator.html#a57558dacf78a036ef281b1f70d2313f8',1,'JSL::Parameter::Aggregator']]],
   ['addtask_6',['addtask',['../classJSL_1_1Event_1_1Serial_1_1Manager.html#a29ab481b01fcb1069fd7f535d0d6e297',1,'JSL::Event::Serial::Manager::AddTask()'],['../classJSL_1_1Event_1_1Async_1_1Manager.html#ac0720e83e2f3aeada9c8b55ce721d79e',1,'JSL::Event::Async::Manager::AddTask()'],['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a360d18e30de22ea90a6d89b5051b8373',1,'JSL::Event::internal::HandlerBase::AddTask()']]],
   ['aggregator_7',['aggregator',['../classJSL_1_1Parameter_1_1Aggregator.html#a22b8c708078ebf21583b16525515fe4e',1,'JSL::Parameter::Aggregator::Aggregator(std::string_view name)'],['../classJSL_1_1Parameter_1_1Aggregator.html#a238a95d3f6b3df700bb3fff17672732d',1,'JSL::Parameter::Aggregator::Aggregator()']]],
-  ['alignsize_8',['AlignSize',['../classJSL_1_1Log_1_1ConfigObject.html#aa85de8ceb6f56b9e9a64e450d979a8ce',1,'JSL::Log::ConfigObject']]],
+  ['alignsize_8',['AlignSize',['../classJSL_1_1Log_1_1Config.html#a02ec18bf175ddbd529ba9d217f18c095',1,'JSL::Log::Config']]],
   ['allocate_9',['allocate',['../classMempool.html#a90afd16fbdd654111c64141517690f7b',1,'Mempool']]],
   ['antenna_10',['Antenna',['../classJSL_1_1Event_1_1Antenna.html#a42b3415026d96d084994fee1d07cda19',1,'JSL::Event::Antenna']]],
   ['append_11',['append',['../namespaceJSL_1_1Vector.html#a909cb1220801f40b404f51f6ded9f150',1,'JSL::Vector']]],

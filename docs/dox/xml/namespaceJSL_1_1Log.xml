@@ -2,17 +2,16 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespaceJSL_1_1Log" kind="namespace" language="C++">
     <compoundname>JSL::Log</compoundname>
-    <innerclass refid="classJSL_1_1Log_1_1ConfigObject" prot="public">JSL::Log::ConfigObject</innerclass>
+    <innerclass refid="classJSL_1_1Log_1_1Config" prot="public">JSL::Log::Config</innerclass>
     <innerclass refid="classJSL_1_1Log_1_1Core" prot="public">JSL::Log::Core</innerclass>
     <innernamespace refid="namespaceJSL_1_1Log_1_1detail">JSL::Log::detail</innernamespace>
-    <innernamespace refid="namespaceJSL_1_1Log_1_1Global">JSL::Log::Global</innernamespace>
     <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceJSL_1_1Log_1aed21cdb152342ae4d25f952c1a5871f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceJSL_1_1Log_1a4aa4ef103524af708dccd2a488aa07a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="Levels_8h_1aca1fd1d8935433e6ba2e3918214e07f9" kindref="member">LogLevel</ref></type>
-        <definition>LogLevel JSL::Log::LogLevelConvert</definition>
+        <definition>LogLevel JSL::Log::MakeLevel</definition>
         <argsstring>(int level)</argsstring>
-        <name>LogLevelConvert</name>
-        <qualifiedname>JSL::Log::LogLevelConvert</qualifiedname>
+        <name>MakeLevel</name>
+        <qualifiedname>JSL::Log::MakeLevel</qualifiedname>
         <param>
           <type>int</type>
           <declname>level</declname>

@@ -17,3 +17,8 @@ Each ``LOG`` macro creates a ``Log::Core`` object assigned one of the following 
    :project: JSL
 
 
+Conversion
+---------------
+
+.. doxygenfunction:: JSL::Log::MakeLevel
+

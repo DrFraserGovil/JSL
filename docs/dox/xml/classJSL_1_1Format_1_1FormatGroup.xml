@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="35" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="35" bodyend="35"/>
+        <location file="include/JSL/Display/Format.h" line="36" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="36" bodyend="36"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Format_1_1FormatGroup_1ab400d7095a490bacd612ebffb54f5bad" prot="private" static="no" mutable="no">
         <type>std::pair&lt; bool, <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &gt;</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="36" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="36" bodyend="36"/>
+        <location file="include/JSL/Display/Format.h" line="37" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="37" bodyend="37"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Format_1_1FormatGroup_1a40f2f352e97845fff7818b16987cf3b6" prot="private" static="no" mutable="no">
         <type>std::pair&lt; bool, <ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Command</ref> &gt;</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="37" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="37" bodyend="37"/>
+        <location file="include/JSL/Display/Format.h" line="38" column="23" bodyfile="include/JSL/Display/Format.h" bodystart="38" bodyend="38"/>
       </memberdef>
       <memberdef kind="variable" id="classJSL_1_1Format_1_1FormatGroup_1a9c963b3b9c3d13c36bef9a686609af3e" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="38" column="18" bodyfile="include/JSL/Display/Format.h" bodystart="38" bodyend="-1"/>
+        <location file="include/JSL/Display/Format.h" line="39" column="18" bodyfile="include/JSL/Display/Format.h" bodystart="39" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="40" column="18"/>
+        <location file="include/JSL/Display/Format.h" line="41" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1a2e1eade7253112a6e19d8a0a45cca7d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="41" column="18"/>
+        <location file="include/JSL/Display/Format.h" line="42" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1a719342d50d0da8e98a5e71db0de35a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="42" column="13"/>
+        <location file="include/JSL/Display/Format.h" line="43" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1ac195f1f15846d1799f9db8210b572e27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="43" column="13"/>
+        <location file="include/JSL/Display/Format.h" line="44" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classJSL_1_1Format_1_1FormatGroup_1a7c720804b1673b0f760f649ea7c7e4be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="45" column="13"/>
+        <location file="include/JSL/Display/Format.h" line="46" column="13"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="friend">
@@ -170,14 +170,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="44" column="20"/>
+        <location file="include/JSL/Display/Format.h" line="45" column="20"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/JSL/Display/Format.h" line="32" column="5" bodyfile="include/JSL/Display/Format.h" bodystart="33" bodyend="46"/>
+    <location file="include/JSL/Display/Format.h" line="33" column="5" bodyfile="include/JSL/Display/Format.h" bodystart="34" bodyend="47"/>
     <listofallmembers>
       <member refid="classJSL_1_1Format_1_1FormatGroup_1a4ade7b37424476ff989e85263d00cba9" prot="public" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>Add</name></member>
       <member refid="classJSL_1_1Format_1_1FormatGroup_1a2e1eade7253112a6e19d8a0a45cca7d6" prot="public" virt="non-virtual"><scope>JSL::Format::FormatGroup</scope><name>Add</name></member>

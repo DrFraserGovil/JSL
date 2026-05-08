@@ -12,7 +12,7 @@ var searchData=
   ['filestream_9',['FileStream',['../classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Read_01_4.html#a7a9147d799b3e13a4bbbd14853fc103f',1,'JSL::Archiver::Vault&lt; Mode::Read &gt;']]],
   ['finished_10',['Finished',['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#a5560b7cc21d8668fb2b3c73e5937cff5',1,'JSL::Display::Progress::internal::ProgressEngine']]],
   ['firstlinesuffix_11',['FirstLineSuffix',['../classJSL_1_1Log_1_1Core.html#ada70368a1dec8c6d0743020bc45ea7b2',1,'JSL::Log::Core']]],
-  ['forceclear_12',['ForceClear',['../classJSL_1_1Log_1_1ConfigObject.html#acc4e4aedfcaa25df279ad62c4fc5ea42',1,'JSL::Log::ConfigObject']]],
+  ['forceclear_12',['ForceClear',['../classJSL_1_1Log_1_1Config.html#a27f550f97a7b62528ac3de337f5e576f',1,'JSL::Log::Config']]],
   ['foreground_13',['Foreground',['../classJSL_1_1Format_1_1FormatGroup.html#a5b16b77f0e8f983942dafcac958c33b1',1,'JSL::Format::FormatGroup']]],
   ['format_14',['Format',['../classJSL_1_1Plotting_1_1TicProperties.html#a52566d66b338580aff75aa081321ca5b',1,'JSL::Plotting::TicProperties']]],
   ['found_15',['found',['../classJSL_1_1Parameter_1_1Description.html#a5605e4a1775b564f2424fd336885bc17',1,'JSL::Parameter::Description::Found'],['../structJSL_1_1Vector_1_1SearchResult.html#a1aa8506e6c7bf7b33a2151c8b999f8e7',1,'JSL::Vector::SearchResult::Found']]],

@@ -9,7 +9,7 @@ var searchData=
   ['eraseright_6',['EraseRight',['../namespaceJSL_1_1Terminal.html#a83b3890f3fe3f5d4736e64d68c34c375',1,'JSL::Terminal']]],
   ['error_7',['ERROR',['../Levels_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90',1,'Levels.h']]],
   ['error_2eh_8',['error.h',['../error_8h.html',1,'']]],
-  ['errorcolour_9',['ErrorColour',['../classJSL_1_1Log_1_1ConfigObject.html#a689fb454d474ca5cd7f46cd4287d3221',1,'JSL::Log::ConfigObject']]],
+  ['errorcolour_9',['ErrorColour',['../classJSL_1_1Log_1_1Config.html#a807d2a09410f82dfd4c6beeb4e28930b',1,'JSL::Log::Config']]],
   ['eventmanager_2eh_10',['EventManager.h',['../EventManager_8h.html',1,'']]],
   ['exit_11',['Exit',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a828df233e0fa7ff98764875a84d19366',1,'JSL::Event::internal::HandlerBase']]],
   ['exp_12',['exp',['../classVectorDual.html#a7e84aabeeb341ecc853451bc0d3c601a',1,'VectorDual::exp'],['../scalardual_8h.html#aa9432a12ec4680a2bbbe082bfddd58e6',1,'exp(const Dual x):&#160;scalardual.h']]],

@@ -8,7 +8,7 @@
 
 using namespace Catch::Matchers;
 TEST_CASE("Logger Core", "[log][utility]") {
-    JSL::Log::ConfigObject cfg;
+    JSL::Log::Config cfg;
 
     SECTION("Log Configuration Object") 
 	{

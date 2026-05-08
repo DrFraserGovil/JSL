@@ -4,7 +4,7 @@ var searchData=
   ['taskqueue_1',['taskqueue',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a2ab7fc28af66c1fa55c8c143f9750b9f',1,'JSL::Event::internal::HandlerBase::TaskQueue'],['../classJSL_1_1Parallel_1_1Pool.html#a43c49ce1d4de322f7851ff4a6db42f51',1,'JSL::Parallel::Pool::TaskQueue']]],
   ['taskready_2',['TaskReady',['../classJSL_1_1Parallel_1_1Pool.html#a5a606f544162d61342920301fdd45f07',1,'JSL::Parallel::Pool']]],
   ['tempname_3',['TempName',['../classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4.html#ab8abae42b6b3108d7c75b0dfa13a30fb',1,'JSL::Archiver::Vault&lt; Mode::Write &gt;']]],
-  ['terminaloutput_4',['TerminalOutput',['../classJSL_1_1Log_1_1ConfigObject.html#a7b0c3e1a196e20d2e08723bfe3e28cff',1,'JSL::Log::ConfigObject']]],
+  ['terminaloutput_4',['TerminalOutput',['../classJSL_1_1Log_1_1Config.html#a07a28dfaaa0a55fcfd7fe114608a6a78',1,'JSL::Log::Config']]],
   ['textdescription_5',['TextDescription',['../classJSL_1_1Parameter_1_1Description.html#a54c420a1002c632ac49774e1146dff24',1,'JSL::Parameter::Description']]],
   ['tics_6',['Tics',['../classJSL_1_1Plotting_1_1Properties_1_1PerAxis.html#a02fc34ec143c51c713076f1094e73356',1,'JSL::Plotting::Properties::PerAxis']]],
   ['timeformat_7',['TimeFormat',['../classJSL_1_1Plotting_1_1TicProperties.html#a7525e7e5b59da9b0890175c04f68b5f9',1,'JSL::Plotting::TicProperties']]],

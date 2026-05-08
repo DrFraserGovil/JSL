@@ -4,7 +4,7 @@ var searchData=
   ['w_5fr_1',['w_r',['../structBinaryExpression.html#ae539329468a28d29b6cf010367497425',1,'BinaryExpression']]],
   ['wakeup_2',['Wakeup',['../classJSL_1_1Event_1_1Watcher.html#af4ebc1a0d41c58faab9dd1a43a585a8a',1,'JSL::Event::Watcher']]],
   ['warn_3',['WARN',['../Levels_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'Levels.h']]],
-  ['warncolour_4',['WarnColour',['../classJSL_1_1Log_1_1ConfigObject.html#a9cf563f2a604c6d1d62e36c7b221a71c',1,'JSL::Log::ConfigObject']]],
+  ['warncolour_4',['WarnColour',['../classJSL_1_1Log_1_1Config.html#a629f3d962143614f4b3e5770afae2109',1,'JSL::Log::Config']]],
   ['watch_5',['watch',['../classJSL_1_1Event_1_1Watcher.html#a03c5979d0461db1e384d9389adbe5332',1,'JSL::Event::Watcher::Watch()'],['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a7180e31000a1edd37ef55866a3099141',1,'JSL::Event::internal::HandlerBase::Watch']]],
   ['watcher_6',['watcher',['../classJSL_1_1Event_1_1Watcher.html',1,'JSL::Event::Watcher'],['../classJSL_1_1Event_1_1Watcher.html#abac357b31d076af5e85254c956316d7e',1,'JSL::Event::Watcher::Watcher()']]],
   ['watcher_2eh_7',['Watcher.h',['../Watcher_8h.html',1,'']]],

@@ -7,7 +7,7 @@ var searchData=
   ['activestream_4',['ActiveStream',['../classJSL_1_1Archiver_1_1WriteStream.html#a068ce92faf9f0ab4cb1e8aa3e9785337',1,'JSL::Archiver::WriteStream']]],
   ['address_5',['Address',['../classJSL_1_1Event_1_1Antenna.html#a64777db038103225add9510bc748ddfb',1,'JSL::Event::Antenna']]],
   ['alreadymonitored_6',['AlreadyMonitored',['../classJSL_1_1Event_1_1Antenna.html#aed7bd6a13c78e315b6fc553a3835c64a',1,'JSL::Event::Antenna']]],
-  ['appendnewline_7',['AppendNewline',['../classJSL_1_1Log_1_1ConfigObject.html#ace0317e6aaace3f36bf4bb137acc6e2a',1,'JSL::Log::ConfigObject']]],
+  ['appendnewline_7',['AppendNewline',['../classJSL_1_1Log_1_1Config.html#a7c2c7e07d915247ab58b76d99b39e2d5',1,'JSL::Log::Config']]],
   ['assignedpos_8',['AssignedPos',['../classJSL_1_1Plotting_1_1TicLabel.html#aed0e734dbc8f3d350789729f4d0e6ba5',1,'JSL::Plotting::TicLabel']]],
   ['awaitingdebounce_9',['AwaitingDebounce',['../classJSL_1_1Event_1_1Watcher.html#a4659a8671c7f13d32c1e51061ba7b00e',1,'JSL::Event::Watcher']]],
   ['axis_10',['axis',['../classJSL_1_1Plotting_1_1Figure.html#acfd2eba200a4a7aaffa22ef204dcd1d7',1,'JSL::Plotting::Figure']]]

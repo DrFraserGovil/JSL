@@ -2,6 +2,7 @@
 \hypertarget{Core_8h}{}\label{Core_8h}\index{include/JSL/Display/Log/Core.h@{include/JSL/Display/Log/Core.h}}
 {\ttfamily \#include $<$JSL/\+Display/\+Log/\+Config.\+h$>$}\newline
 {\ttfamily \#include $<$JSL/\+Strings/\+Manipulate.\+h$>$}\newline
+{\ttfamily \#include $<$JSL/\+Display/\+Format.\+h$>$}\newline
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,7 +31,7 @@ namespace \mbox{\hyperlink{namespaceJSL_1_1Log}{JSL\+::\+Log}}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!(level\ <=\ \mbox{\hyperlink{namespaceJSL_1_1Log_1_1Global_a514bd1673249e579436eedecc3f56540}{JSL::Log::Global::Config}}().Level))\ \{\}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!(level\ <=\ JSL::Log::Global::Config().Level))\ \{\}\ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ else\ (\mbox{\hyperlink{classJSL_1_1Log_1_1Core}{JSL::Log::Core}}(level,\_\_LINE\_\_,\_\_func\_\_,\_\_FILE\_\_))}
 
 \end{DoxyCode}
