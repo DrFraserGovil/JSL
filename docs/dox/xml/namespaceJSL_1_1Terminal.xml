@@ -41,84 +41,43 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>Specify the direction of terminal movement. </para>
         </briefdescription>
         <detaileddescription>
+<para>The fixed numbers allow us to do some ASCII hackery, and convert the enums to relevant chars </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="30" column="5" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="30" bodyend="30"/>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="52" column="5" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="52" bodyend="52"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" prot="public" static="no">
+      <memberdef kind="typedef" id="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" prot="public" static="no">
         <type>std::string</type>
-        <definition>using JSL::Terminal::CursorCommand = typedef std::string</definition>
+        <definition>typedef std::string JSL::Terminal::CursorCommand</definition>
         <argsstring></argsstring>
         <name>CursorCommand</name>
         <qualifiedname>JSL::Terminal::CursorCommand</qualifiedname>
         <briefdescription>
+<para>A basic wrapper to make CursorCommands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="20" column="5" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="20" bodyend="-1"/>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="21" column="25" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="21" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
       <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a8f3aa972b7912fa7ae6a8a2b0279a0d2" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
         <definition>constexpr CursorCommand JSL::Terminal::Hide</definition>
         <argsstring></argsstring>
         <name>Hide</name>
         <qualifiedname>JSL::Terminal::Hide</qualifiedname>
         <initializer>= &quot;\033[?25l&quot;</initializer>
         <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="21" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="21" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a59a71e08694f6b984d67e0bc8291c547" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
-        <definition>constexpr CursorCommand JSL::Terminal::Show</definition>
-        <argsstring></argsstring>
-        <name>Show</name>
-        <qualifiedname>JSL::Terminal::Show</qualifiedname>
-        <initializer>= &quot;\033[?25h&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="22" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="22" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a64ba8389d7e03a6aea8d1ca5fd070b7d" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
-        <definition>constexpr CursorCommand JSL::Terminal::CursorUp</definition>
-        <argsstring></argsstring>
-        <name>CursorUp</name>
-        <qualifiedname>JSL::Terminal::CursorUp</qualifiedname>
-        <initializer>= &quot;\033[A&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="23" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="23" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a048b91568fba346ab22cb4d3c7079160" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
-        <definition>constexpr CursorCommand JSL::Terminal::Backspace</definition>
-        <argsstring></argsstring>
-        <name>Backspace</name>
-        <qualifiedname>JSL::Terminal::Backspace</qualifiedname>
-        <initializer>= &quot;\b \b&quot;</initializer>
-        <briefdescription>
+<para>Hides the cursor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -126,44 +85,15 @@
         </inbodydescription>
         <location file="include/JSL/Display/ANSI_Codes.h" line="24" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="24" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a83b3890f3fe3f5d4736e64d68c34c375" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
-        <definition>constexpr CursorCommand JSL::Terminal::EraseRight</definition>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a59a71e08694f6b984d67e0bc8291c547" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::Show</definition>
         <argsstring></argsstring>
-        <name>EraseRight</name>
-        <qualifiedname>JSL::Terminal::EraseRight</qualifiedname>
-        <initializer>= &quot;\033[0K&quot;</initializer>
+        <name>Show</name>
+        <qualifiedname>JSL::Terminal::Show</qualifiedname>
+        <initializer>= &quot;\033[?25h&quot;</initializer>
         <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="25" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="25" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1af5fb5ff136a484d9edbec874c96f77ed" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
-        <definition>constexpr CursorCommand JSL::Terminal::EraseLeft</definition>
-        <argsstring></argsstring>
-        <name>EraseLeft</name>
-        <qualifiedname>JSL::Terminal::EraseLeft</qualifiedname>
-        <initializer>= &quot;\033[1K&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="26" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="26" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a12e5d7058c5c2e930abe5d863c46480f" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
-        <definition>constexpr CursorCommand JSL::Terminal::ClearLine</definition>
-        <argsstring></argsstring>
-        <name>ClearLine</name>
-        <qualifiedname>JSL::Terminal::ClearLine</qualifiedname>
-        <initializer>= &quot;\033[2K\r&quot;</initializer>
-        <briefdescription>
+<para>Shows the cursor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -171,20 +101,118 @@
         </inbodydescription>
         <location file="include/JSL/Display/ANSI_Codes.h" line="27" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="27" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a986dfc10f3bd4ed46338a33a20e9478e" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
-        <definition>constexpr CursorCommand JSL::Terminal::ClearScreen</definition>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a64ba8389d7e03a6aea8d1ca5fd070b7d" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::CursorUp</definition>
         <argsstring></argsstring>
-        <name>ClearScreen</name>
-        <qualifiedname>JSL::Terminal::ClearScreen</qualifiedname>
-        <initializer>= &quot;\033[2J\r&quot;</initializer>
+        <name>CursorUp</name>
+        <qualifiedname>JSL::Terminal::CursorUp</qualifiedname>
+        <initializer>= &quot;\033[A&quot;</initializer>
         <briefdescription>
+<para>Moves the cursor up one line. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="28" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="28" bodyend="-1"/>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="30" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a048b91568fba346ab22cb4d3c7079160" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::Backspace</definition>
+        <argsstring></argsstring>
+        <name>Backspace</name>
+        <qualifiedname>JSL::Terminal::Backspace</qualifiedname>
+        <initializer>= &quot;\b \b&quot;</initializer>
+        <briefdescription>
+<para>Deletes the previous character (except newlines) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>\b on its own just moves cursor; this moves cursor, erases character, then moves it back again </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="34" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a48c09320455afe99d527a8febe6bfe2e" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::EraseAllRight</definition>
+        <argsstring></argsstring>
+        <name>EraseAllRight</name>
+        <qualifiedname>JSL::Terminal::EraseAllRight</qualifiedname>
+        <initializer>= &quot;\033[0K&quot;</initializer>
+        <briefdescription>
+<para>Erases all characters to the right of the cursor position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="37" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a1744d04effa6d43e49ed61ecb7907ab8" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::EraseAllLeft</definition>
+        <argsstring></argsstring>
+        <name>EraseAllLeft</name>
+        <qualifiedname>JSL::Terminal::EraseAllLeft</qualifiedname>
+        <initializer>= &quot;\033[1K&quot;</initializer>
+        <briefdescription>
+<para>Erases all characters to the left of the cursor position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="39" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a12e5d7058c5c2e930abe5d863c46480f" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::ClearLine</definition>
+        <argsstring></argsstring>
+        <name>ClearLine</name>
+        <qualifiedname>JSL::Terminal::ClearLine</qualifiedname>
+        <initializer>= &quot;\033[2K\r&quot;</initializer>
+        <briefdescription>
+<para>Clears the entire line (but does not move the cursor position) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="42" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a986dfc10f3bd4ed46338a33a20e9478e" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::ClearScreen</definition>
+        <argsstring></argsstring>
+        <name>ClearScreen</name>
+        <qualifiedname>JSL::Terminal::ClearScreen</qualifiedname>
+        <initializer>= &quot;\033[3J\r&quot;</initializer>
+        <briefdescription>
+<para>Clears the entire terminal (and scrollback buffer) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="45" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceJSL_1_1Terminal_1a1c19ebe7b6dd3ce1532fef1fc8f17e53" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
+        <definition>constexpr CursorCommand JSL::Terminal::ResetPosition</definition>
+        <argsstring></argsstring>
+        <name>ResetPosition</name>
+        <qualifiedname>JSL::Terminal::ResetPosition</qualifiedname>
+        <initializer>= &quot;\033[1;1\r&quot;</initializer>
+        <briefdescription>
+<para>Moves the cursor to position (1,1) (the top left of the screen) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="48" column="29" bodyfile="include/JSL/Display/ANSI_Codes.h" bodystart="48" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -195,15 +223,19 @@
         <name>IsANSICapable</name>
         <qualifiedname>JSL::Terminal::IsANSICapable</qualifiedname>
         <briefdescription>
+<para>Determine if the output stream can interpret ANSI escape sequences. </para>
         </briefdescription>
         <detaileddescription>
+<para>Uses isatty (and _isatty for windows) to determine if stdout can render ANSI commands. <simplesect kind="return"><para>True if the output is capable of interpreting format commands (i.e. a terminal) False if the terminal is plaintext (i.e. a file) </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="include/JSL/Display/ANSI_Codes.h" line="18" column="10" declfile="include/JSL/Display/ANSI_Codes.h" declline="18" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1Terminal_1aa8c9732f0eedc19c5863c5872c8cdc37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <type><ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
         <definition>CursorCommand JSL::Terminal::Move</definition>
         <argsstring>(Direction dir, unsigned int steps)</argsstring>
         <name>Move</name>
@@ -217,15 +249,16 @@
           <declname>steps</declname>
         </param>
         <briefdescription>
+<para>Move the cursor a specified number of steps in a given direction. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="31" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="31" declcolumn="19"/>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="55" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="55" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1Terminal_1a6d2c4659008eccb4578721aa18cbcafb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kindref="member">CursorCommand</ref></type>
+        <type><ref refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kindref="member">CursorCommand</ref></type>
         <definition>CursorCommand JSL::Terminal::MoveToColumn</definition>
         <argsstring>(uint32_t column)</argsstring>
         <name>MoveToColumn</name>
@@ -235,12 +268,15 @@
           <declname>column</declname>
         </param>
         <briefdescription>
+<para>Moves the cursor to the specified column in the current line (no other text is affected) </para>
         </briefdescription>
         <detaileddescription>
+<para>Columns are 1-indexed <linebreak/>
+ </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/ANSI_Codes.h" line="32" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="32" declcolumn="19"/>
+        <location file="include/JSL/Display/ANSI_Codes.h" line="59" column="19" declfile="include/JSL/Display/ANSI_Codes.h" declline="59" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceJSL_1_1Terminal_1a6a4e1219775f952cca3c2762e4989f01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structJSL_1_1Terminal_1_1Size" kindref="compound">Size</ref></type>
@@ -262,6 +298,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/JSL/Display/ANSI_Codes.h" line="11" column="1"/>
+    <location file="include/JSL/Display/ANSI_Codes.h" line="10" column="1"/>
   </compounddef>
 </doxygen>

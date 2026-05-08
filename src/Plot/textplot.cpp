@@ -70,13 +70,13 @@ namespace JSL
             auto [fx,fy] = lim.Fraction(point);
             int cx = fx * (width-1) + 0.49;  
             int cy = fy * (height-1) + 0.49;  
-            characterGrid[cy][cx] = JSL::Format::Cyan + "*";
+            characterGrid[cy][cx] = JSL::Format::Cyan() + "*";
         }
         LOG(INFO) << lim.Lower.X << " " << lim.Lower.Y << " " << lim.Upper.X << " " << lim.Upper.Y;
         //processing
         for (int r = height-1; r >=0; --r)
         {
-            std::cout << JSL::Format::White << "║";
+            std::cout << JSL::Format::White() << "║";
 
             for (int c = 0; c < width; ++c)
             {
@@ -85,7 +85,7 @@ namespace JSL
             
             std::cout << "\n";
         }
-        std::cout <<  JSL::Format::White << "╚";
+        std::cout <<  JSL::Format::White() << "╚";
         for (int c = 0; c < width; ++c)
         {
             std::cout << "═";

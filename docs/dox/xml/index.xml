@@ -67,15 +67,16 @@
     <member refid="structBinaryExpression_1a1fc996b520dcb6fa35f947fed0780def" kind="function"><name>BinaryExpression</name></member>
     <member refid="structBinaryExpression_1aebcfee3202417b4f0f77d7e7cac89f99" kind="function"><name>GetGrad</name></member>
   </compound>
-  <compound refid="structJSL_1_1Format_1_1Command" kind="struct"><name>JSL::Format::Command</name>
-    <member refid="structJSL_1_1Format_1_1Command_1aee938d34db7c7943437d1fc69baa476f" kind="variable"><name>buf</name></member>
-    <member refid="structJSL_1_1Format_1_1Command_1a5292a3d8f3204333be5342bc001b77ee" kind="variable"><name>len</name></member>
-    <member refid="structJSL_1_1Format_1_1Command_1af8f2827e74b26856ca241b2424cdbac8" kind="variable"><name>type</name></member>
-    <member refid="structJSL_1_1Format_1_1Command_1a1c1db5c15c3a274def003f7f73981180" kind="function"><name>Command</name></member>
-    <member refid="structJSL_1_1Format_1_1Command_1a2de44753f8facc18bc0df8d55eeac793" kind="function"><name>Command</name></member>
-    <member refid="structJSL_1_1Format_1_1Command_1ab87eccbefde1280c5710d1bb203c5368" kind="function"><name>Command</name></member>
-    <member refid="structJSL_1_1Format_1_1Command_1ad6cb6ddabba5f7fac592eaa11e45299a" kind="function"><name>operator std::string</name></member>
-    <member refid="structJSL_1_1Format_1_1Command_1aa2d50968a240034f963af25d17275cf6" kind="friend"><name>operator&lt;&lt;</name></member>
+  <compound refid="classJSL_1_1Format_1_1Command" kind="class"><name>JSL::Format::Command</name>
+    <member refid="classJSL_1_1Format_1_1Command_1a07675b66eecb510c2a4cc97913afd2cc" kind="friend"><name>FormatGroup</name></member>
+    <member refid="classJSL_1_1Format_1_1Command_1aa2d50968a240034f963af25d17275cf6" kind="friend"><name>operator&lt;&lt;</name></member>
+    <member refid="classJSL_1_1Format_1_1Command_1af8f2827e74b26856ca241b2424cdbac8" kind="variable"><name>type</name></member>
+    <member refid="classJSL_1_1Format_1_1Command_1aee938d34db7c7943437d1fc69baa476f" kind="variable"><name>buf</name></member>
+    <member refid="classJSL_1_1Format_1_1Command_1a5292a3d8f3204333be5342bc001b77ee" kind="variable"><name>len</name></member>
+    <member refid="classJSL_1_1Format_1_1Command_1a1c1db5c15c3a274def003f7f73981180" kind="function"><name>Command</name></member>
+    <member refid="classJSL_1_1Format_1_1Command_1a2de44753f8facc18bc0df8d55eeac793" kind="function"><name>Command</name></member>
+    <member refid="classJSL_1_1Format_1_1Command_1ab87eccbefde1280c5710d1bb203c5368" kind="function"><name>Command</name></member>
+    <member refid="classJSL_1_1Format_1_1Command_1ad6cb6ddabba5f7fac592eaa11e45299a" kind="function"><name>operator std::string</name></member>
   </compound>
   <compound refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader" kind="class"><name>JSL::internal::Parameter::CommandLineReader</name>
     <member refid="classJSL_1_1internal_1_1Parameter_1_1CommandLineReader_1afbf6da0790d6e45217f87cea2c2a69bc" kind="variable"><name>Commands</name></member>
@@ -905,31 +906,31 @@
     <member refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c" kind="enumvalue"><name>BackgroundColour</name></member>
     <member refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961" kind="enumvalue"><name>Style</name></member>
     <member refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535" kind="enumvalue"><name>Resetter</name></member>
-    <member refid="namespaceJSL_1_1Format_1a0310aceb1276f364edf89ea449e2a8d5" kind="function"><name>ResetAll</name></member>
+    <member refid="namespaceJSL_1_1Format_1a8d547b476769dfa6987877d8498b658f" kind="variable"><name>ResetAll</name></member>
+    <member refid="namespaceJSL_1_1Format_1acd912fde1be2e1c505d610d8488647d6" kind="variable"><name>Black</name></member>
+    <member refid="namespaceJSL_1_1Format_1a895f99fbde50e49b4400c8ad842770b8" kind="variable"><name>Red</name></member>
+    <member refid="namespaceJSL_1_1Format_1a00b5efe6432f62425eb87b355ecfdb90" kind="variable"><name>Green</name></member>
+    <member refid="namespaceJSL_1_1Format_1a20839fbb9bbc35ce427eb65bf777fdd0" kind="variable"><name>Yellow</name></member>
+    <member refid="namespaceJSL_1_1Format_1a2697ba70771715ff40f5c250ecad7a2b" kind="variable"><name>Blue</name></member>
+    <member refid="namespaceJSL_1_1Format_1a40a332519562e167aa25b95d857f1f2f" kind="variable"><name>Purple</name></member>
+    <member refid="namespaceJSL_1_1Format_1a75ab280e60ea833df18a428d9ca3e452" kind="variable"><name>Cyan</name></member>
+    <member refid="namespaceJSL_1_1Format_1a2d9a870a75971fcc151c0483bd4a7589" kind="variable"><name>White</name></member>
+    <member refid="namespaceJSL_1_1Format_1a0e4a11a4b7df053850899c56aa253011" kind="variable"><name>Bold</name></member>
+    <member refid="namespaceJSL_1_1Format_1a9f20935e92e8c288fac686494a44951d" kind="variable"><name>Faint</name></member>
+    <member refid="namespaceJSL_1_1Format_1a2b8c222c4ab8f252370acc6b2f6b8811" kind="variable"><name>Italics</name></member>
+    <member refid="namespaceJSL_1_1Format_1a362be96a7e27ff3ef242cd52d72ec257" kind="variable"><name>Underline</name></member>
+    <member refid="namespaceJSL_1_1Format_1a2c4c7b79031341ae4a9895a2e1c3f6bf" kind="variable"><name>Highlight</name></member>
+    <member refid="namespaceJSL_1_1Format_1a16da38e86c0ec88b03726fda96b41377" kind="variable"><name>Strike</name></member>
+    <member refid="namespaceJSL_1_1Format_1a09c367827ec5f1801940ccb797f7e38a" kind="variable"><name>BgBlack</name></member>
+    <member refid="namespaceJSL_1_1Format_1a6f9acf3eb7d8ec26afe33dcebc541d2c" kind="variable"><name>BgRed</name></member>
+    <member refid="namespaceJSL_1_1Format_1afb9e44a30a65398bf4cbcea990adf1e6" kind="variable"><name>BgGreen</name></member>
+    <member refid="namespaceJSL_1_1Format_1a48e68766bc914baa844751abc8e3419b" kind="variable"><name>BgYellow</name></member>
+    <member refid="namespaceJSL_1_1Format_1a1eb7878920cf7dea40283a4a480d5480" kind="variable"><name>BgBlue</name></member>
+    <member refid="namespaceJSL_1_1Format_1aaa5a9f10a7f3bc437c8bc09b7754ae5f" kind="variable"><name>BgPurple</name></member>
+    <member refid="namespaceJSL_1_1Format_1a2860ba4a510d497dcc3d91dfb2a176ea" kind="variable"><name>BgCyan</name></member>
+    <member refid="namespaceJSL_1_1Format_1ab7cdeb67d515a835bcbc7e2bf36c4cf3" kind="variable"><name>BgWhite</name></member>
     <member refid="namespaceJSL_1_1Format_1a72f9735a888543e7e1b5cb07ae7ad10b" kind="function"><name>Reset</name></member>
-    <member refid="namespaceJSL_1_1Format_1a564e38f310ecc9f0982f40e18590164d" kind="function"><name>Black</name></member>
-    <member refid="namespaceJSL_1_1Format_1ae70c4e93b38e7e6d3d4a4587bdeca2d8" kind="function"><name>Red</name></member>
-    <member refid="namespaceJSL_1_1Format_1aca4adf51e196a330791d94688f827cf9" kind="function"><name>Green</name></member>
-    <member refid="namespaceJSL_1_1Format_1aaeaa6f8b854fe2f38e404f5c4ccd863f" kind="function"><name>Yellow</name></member>
-    <member refid="namespaceJSL_1_1Format_1ac7e4db410a5d82647350de18a9400356" kind="function"><name>Blue</name></member>
-    <member refid="namespaceJSL_1_1Format_1a10c116dab0dbf18d5b10741f0ac8b8b2" kind="function"><name>Purple</name></member>
-    <member refid="namespaceJSL_1_1Format_1ab57e30d39f562e4b735405a4c3685d57" kind="function"><name>Cyan</name></member>
-    <member refid="namespaceJSL_1_1Format_1a08d06db733a345807a8fd58f9c779e46" kind="function"><name>White</name></member>
-    <member refid="namespaceJSL_1_1Format_1a2a29d497acaa067b570f6d852f40a93a" kind="function"><name>Bold</name></member>
-    <member refid="namespaceJSL_1_1Format_1a0827ebc4850da2e12f0b368cb3face90" kind="function"><name>Faint</name></member>
-    <member refid="namespaceJSL_1_1Format_1aa979ec2b6fefa52dfd126dde4b9f7ff5" kind="function"><name>Italics</name></member>
-    <member refid="namespaceJSL_1_1Format_1ac6a414a59d7fb0376a225b34eb9dcba9" kind="function"><name>Underline</name></member>
-    <member refid="namespaceJSL_1_1Format_1a04fd686ba5a0458ded6b2de07a93d263" kind="function"><name>Highlight</name></member>
-    <member refid="namespaceJSL_1_1Format_1a2f7953035dfe2593afa916fdfae9ec3c" kind="function"><name>Strike</name></member>
     <member refid="namespaceJSL_1_1Format_1a1320a97711cbad9c50f9588e48876a53" kind="function"><name>Colour</name></member>
-    <member refid="namespaceJSL_1_1Format_1a1fa23969dab620f3d9b56ef68082766b" kind="function"><name>BgBlack</name></member>
-    <member refid="namespaceJSL_1_1Format_1afd273f5fb30815ebe8befcc36d9a60b4" kind="function"><name>BgRed</name></member>
-    <member refid="namespaceJSL_1_1Format_1ad2d9099b79b7b1b370d5902a21baaee1" kind="function"><name>BgGreen</name></member>
-    <member refid="namespaceJSL_1_1Format_1a1583018a288e946c518d84e0339b2386" kind="function"><name>BgYellow</name></member>
-    <member refid="namespaceJSL_1_1Format_1a99ad159e7ebe52d597e4c83783b8e259" kind="function"><name>BgBlue</name></member>
-    <member refid="namespaceJSL_1_1Format_1acf947df1b26f461bd72a8de4f4a13b56" kind="function"><name>BgPurple</name></member>
-    <member refid="namespaceJSL_1_1Format_1ad0a98bcd9348a1133ab06cfe41beb5ed" kind="function"><name>BgCyan</name></member>
-    <member refid="namespaceJSL_1_1Format_1add9c1bf1296670a8b34fb32c47cfe0c8" kind="function"><name>BgWhite</name></member>
     <member refid="namespaceJSL_1_1Format_1aadd84caae79d82316f117f2b4230e644" kind="function"><name>BgColour</name></member>
     <member refid="namespaceJSL_1_1Format_1a4ceaac6cd5f7128e3e9df76c3d0bb12a" kind="function"><name>operator+</name></member>
     <member refid="namespaceJSL_1_1Format_1aacd2ff5e6d7269ff57079a640a82c1d6" kind="function"><name>operator+</name></member>
@@ -1081,15 +1082,16 @@
     <member refid="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48" kind="enumvalue"><name>Down</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26" kind="enumvalue"><name>Right</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908" kind="enumvalue"><name>Left</name></member>
-    <member refid="namespaceJSL_1_1Terminal_1a47b61984832b0a7952fcf4d6eb28b18a" kind="typedef"><name>CursorCommand</name></member>
+    <member refid="namespaceJSL_1_1Terminal_1a14aab5b78cbb911636b1a1eb7c982e0d" kind="typedef"><name>CursorCommand</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a8f3aa972b7912fa7ae6a8a2b0279a0d2" kind="variable"><name>Hide</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a59a71e08694f6b984d67e0bc8291c547" kind="variable"><name>Show</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a64ba8389d7e03a6aea8d1ca5fd070b7d" kind="variable"><name>CursorUp</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a048b91568fba346ab22cb4d3c7079160" kind="variable"><name>Backspace</name></member>
-    <member refid="namespaceJSL_1_1Terminal_1a83b3890f3fe3f5d4736e64d68c34c375" kind="variable"><name>EraseRight</name></member>
-    <member refid="namespaceJSL_1_1Terminal_1af5fb5ff136a484d9edbec874c96f77ed" kind="variable"><name>EraseLeft</name></member>
+    <member refid="namespaceJSL_1_1Terminal_1a48c09320455afe99d527a8febe6bfe2e" kind="variable"><name>EraseAllRight</name></member>
+    <member refid="namespaceJSL_1_1Terminal_1a1744d04effa6d43e49ed61ecb7907ab8" kind="variable"><name>EraseAllLeft</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a12e5d7058c5c2e930abe5d863c46480f" kind="variable"><name>ClearLine</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a986dfc10f3bd4ed46338a33a20e9478e" kind="variable"><name>ClearScreen</name></member>
+    <member refid="namespaceJSL_1_1Terminal_1a1c19ebe7b6dd3ce1532fef1fc8f17e53" kind="variable"><name>ResetPosition</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a194d7176d034555e7008938ed071f9f8" kind="function"><name>IsANSICapable</name></member>
     <member refid="namespaceJSL_1_1Terminal_1aa8c9732f0eedc19c5863c5872c8cdc37" kind="function"><name>Move</name></member>
     <member refid="namespaceJSL_1_1Terminal_1a6d2c4659008eccb4578721aa18cbcafb" kind="function"><name>MoveToColumn</name></member>

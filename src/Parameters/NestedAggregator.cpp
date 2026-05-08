@@ -197,7 +197,7 @@ namespace JSL::Parameter
         
         if (Terminal::IsANSICapable()) //piggyback off the terminal checking if formatting can be used
         {
-            auto titleCol =  fg + Format::Italics + bg;
+            auto titleCol =  fg + Format::Italics() + bg;
             std::string buffer = (input.size() < lineLength) ? std::string(lineLength - input.size(),' ') : "";
             std::cout << titleCol << input << buffer << Format::ResetAll << "\n";
         }

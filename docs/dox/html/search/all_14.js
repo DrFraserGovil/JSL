@@ -42,7 +42,7 @@ var searchData=
   ['trim_5fview_39',['trim_view',['../namespaceJSL_1_1String.html#af0705f1e561897f876fea449eefd8f4b',1,'JSL::String::trim_view(std::string_view sv)'],['../namespaceJSL_1_1String.html#a3d2b0e0246a58cf32890e2dcfb7cd90b',1,'JSL::String::trim_view(std::string_view sv, std::string_view commentIndicator)']]],
   ['truesize_40',['trueSize',['../namespaceJSL_1_1String.html#aa84630ebf544675bec63dd85e85a6e33',1,'JSL::String']]],
   ['trycluster_41',['TryCluster',['../classJSL_1_1Parameter_1_1NestedAggregator.html#a8e383c2f0250781d8b1eac7dfda06cbd',1,'JSL::Parameter::NestedAggregator']]],
-  ['type_42',['type',['../structJSL_1_1Format_1_1Command.html#af8f2827e74b26856ca241b2424cdbac8',1,'JSL::Format::Command']]],
+  ['type_42',['type',['../classJSL_1_1Format_1_1Command.html#af8f2827e74b26856ca241b2424cdbac8',1,'JSL::Format::Command']]],
   ['typeflag_43',['typeflag',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#a747d6406c974dfa3a3eaba897956d31d',1,'JSL::Archiver::internal::TarHeader']]],
   ['typestring_44',['TypeString',['../classJSL_1_1Parameter_1_1Description.html#ae3f7f38262265bab634572fadaaae1a6',1,'JSL::Parameter::Description']]]
 ];

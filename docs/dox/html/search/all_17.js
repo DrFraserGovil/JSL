@@ -9,7 +9,7 @@ var searchData=
   ['watcher_6',['watcher',['../classJSL_1_1Event_1_1Watcher.html',1,'JSL::Event::Watcher'],['../classJSL_1_1Event_1_1Watcher.html#abac357b31d076af5e85254c956316d7e',1,'JSL::Event::Watcher::Watcher()']]],
   ['watcher_2eh_7',['Watcher.h',['../Watcher_8h.html',1,'']]],
   ['watchmap_8',['WatchMap',['../classJSL_1_1Event_1_1Watcher.html#abaccd16a308cbec3c4d8e37c011c97cf',1,'JSL::Event::Watcher']]],
-  ['white_9',['White',['../namespaceJSL_1_1Format.html#a08d06db733a345807a8fd58f9c779e46',1,'JSL::Format']]],
+  ['white_9',['White',['../namespaceJSL_1_1Format.html#a2d9a870a75971fcc151c0483bd4a7589',1,'JSL::Format']]],
   ['workerfunction_10',['WorkerFunction',['../classJSL_1_1Parallel_1_1Pool.html#a6eff6460eb46df0bb8ed5fb46eaf3ba6',1,'JSL::Parallel::Pool']]],
   ['workers_11',['workers',['../classJSL_1_1Event_1_1Async_1_1Manager.html#a1f27920906d54b3b139e71f60ad5c873',1,'JSL::Event::Async::Manager::Workers'],['../classJSL_1_1Parallel_1_1Pool.html#a65b3103ac8eb5ec96515ac6545be5357',1,'JSL::Parallel::Pool::Workers']]],
   ['workersrunning_12',['WorkersRunning',['../classJSL_1_1Parallel_1_1Pool.html#ab28f85de6082c8467aff4363f29389b7',1,'JSL::Parallel::Pool']]],

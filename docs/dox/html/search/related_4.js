@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hypot_0',['hypot',['../classVectorDual.html#a36f1af76f9b47682da0fdafbebbb9bdc',1,'VectorDual']]]
+  ['formatgroup_0',['FormatGroup',['../classJSL_1_1Format_1_1Command.html#a07675b66eecb510c2a4cc97913afd2cc',1,'JSL::Format::Command']]]
 ];

@@ -19,7 +19,7 @@ var searchData=
   ['permission_16',['Permission',['../structJSL_1_1Archiver_1_1internal_1_1Security.html#a50c6587e5936a1724afe4fa7d1442636',1,'JSL::Archiver::internal::Security']]],
   ['persist_17',['persist',['../classJSL_1_1Plotting_1_1Figure.html#ad05486bf35b85ef6fbc0737057a4a9e0',1,'JSL::Plotting::Figure::Persist(unsigned int level)'],['../classJSL_1_1Plotting_1_1Figure.html#a11e3db4b1a90043e10092324861b7062',1,'JSL::Plotting::Figure::Persist(Output level)']]],
   ['persistent_18',['Persistent',['../namespaceJSL_1_1Plotting.html#a121deb506d5958d9b611ecbce9cf9b2ba5fe7b9358c9cb1b9eaa8d5aec000def4',1,'JSL::Plotting']]],
-  ['pipe_19',['pipe',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a4756d53537369f4e88370f05e9153896',1,'JSL::Plotting::internal::GnuplotPipe::Pipe'],['../classJSL_1_1Plotting_1_1Figure.html#aa7d2f3541df8290b6dd3fcad623b23ab',1,'JSL::Plotting::Figure::pipe']]],
+  ['pipe_19',['pipe',['../classJSL_1_1Plotting_1_1Figure.html#aa7d2f3541df8290b6dd3fcad623b23ab',1,'JSL::Plotting::Figure::pipe'],['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a4756d53537369f4e88370f05e9153896',1,'JSL::Plotting::internal::GnuplotPipe::Pipe']]],
   ['pipe_2eh_20',['pipe.h',['../pipe_8h.html',1,'']]],
   ['pipedinput_2eh_21',['pipedInput.h',['../pipedInput_8h.html',1,'']]],
   ['pipeopen_22',['PipeOpen',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a5079f3698e0ccc5ce99899b24df1a9b6',1,'JSL::Plotting::internal::GnuplotPipe']]],
@@ -44,6 +44,6 @@ var searchData=
   ['progressengine_41',['progressengine',['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#a0736ec4655e8aa0434355af681d62161',1,'JSL::Display::Progress::internal::ProgressEngine::ProgressEngine()'],['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html',1,'JSL::Display::Progress::internal::ProgressEngine']]],
   ['promote_42',['promote',['../structGradientHolder.html#a9510fe689a78676404dc397e42d31685',1,'GradientHolder::Promote()'],['../structGradientHolder.html#a41d961b1618616832969866445082b73',1,'GradientHolder::Promote(SparseElement storage[2 *SGO_THRESHOLD], int n)']]],
   ['protectadd_43',['ProtectAdd',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a59d5ac117b9b78e5b854bdefa443be65',1,'JSL::Event::internal::HandlerBase']]],
-  ['purple_44',['Purple',['../namespaceJSL_1_1Format.html#a10c116dab0dbf18d5b10741f0ac8b8b2',1,'JSL::Format']]],
+  ['purple_44',['Purple',['../namespaceJSL_1_1Format.html#a40a332519562e167aa25b95d857f1f2f',1,'JSL::Format']]],
   ['push_45',['push',['../classJSL_1_1Parameter_1_1Setting.html#a98068cf081f9b7a23495b918ed338e54',1,'JSL::Parameter::Setting::push()'],['../classJSL_1_1internal_1_1Parameter_1_1ParameterBase.html#a311bffa06dd414a2d1732fad99075ce3',1,'JSL::internal::Parameter::ParameterBase::push()'],['../classJSL_1_1Parameter_1_1NestedAggregator.html#acae59cbc059ef5c1df213e5cc5e84133',1,'JSL::Parameter::NestedAggregator::push()']]]
 ];

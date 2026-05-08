@@ -12,7 +12,7 @@ var searchData=
   ['helpprint_9',['HelpPrint',['../classJSL_1_1Parameter_1_1Description.html#adb73f0b1e8584d351d17f295ae915374',1,'JSL::Parameter::Description']]],
   ['helptoggle_10',['HelpToggle',['../classJSL_1_1Parameter_1_1Aggregator.html#a8cdc9f8b8f814313552137dd979aa07e',1,'JSL::Parameter::Aggregator']]],
   ['hide_11',['Hide',['../namespaceJSL_1_1Terminal.html#a8f3aa972b7912fa7ae6a8a2b0279a0d2',1,'JSL::Terminal']]],
-  ['highlight_12',['Highlight',['../namespaceJSL_1_1Format.html#a04fd686ba5a0458ded6b2de07a93d263',1,'JSL::Format']]],
+  ['highlight_12',['Highlight',['../namespaceJSL_1_1Format.html#a2c4c7b79031341ae4a9895a2e1c3f6bf',1,'JSL::Format']]],
   ['hotline_13',['hotline',['../classJSL_1_1Event_1_1Antenna_1_1Hotline.html',1,'JSL::Event::Antenna::Hotline'],['../classJSL_1_1Event_1_1Antenna_1_1Hotline.html#a0625710434817be77b0051c7b6c8b58c',1,'JSL::Event::Antenna::Hotline::Hotline()=default'],['../classJSL_1_1Event_1_1Antenna_1_1Hotline.html#ae420e3696c7529c2db90a605a38b4041',1,'JSL::Event::Antenna::Hotline::Hotline(const Antenna &amp;host)']]],
   ['hsv2rgb_14',['Hsv2Rgb',['../namespaceJSL_1_1Plotting_1_1Color.html#ac4c7f8034ce3823877fba34da0cf38ba',1,'JSL::Plotting::Color']]],
   ['hypot_15',['hypot',['../classVectorDual.html#a36f1af76f9b47682da0fdafbebbb9bdc',1,'VectorDual::hypot'],['../scalardual_8h.html#a1bfb0a3106c7278385836d89f7ce5253',1,'hypot():&#160;scalardual.h']]]

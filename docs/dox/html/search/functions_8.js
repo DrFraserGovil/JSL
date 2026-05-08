@@ -15,6 +15,5 @@ var searchData=
   ['isansicapable_12',['IsANSICapable',['../namespaceJSL_1_1Terminal.html#a194d7176d034555e7008938ed071f9f8',1,'JSL::Terminal']]],
   ['isauto_13',['IsAuto',['../classJSL_1_1Plotting_1_1RangeObject.html#a17a705b6a6ad3c5a3c13a18eeaa8d743',1,'JSL::Plotting::RangeObject']]],
   ['isconfigured_14',['IsConfigured',['../classJSL_1_1internal_1_1Parameter_1_1CommandLineReader.html#ad5676cfc202a7b86f7df9c1ef6521cee',1,'JSL::internal::Parameter::CommandLineReader']]],
-  ['ispiped_15',['IsPiped',['../namespaceJSL_1_1IO_1_1Pipe.html#abbdcdedcbcc1c1e6a11e935da3ec5390',1,'JSL::IO::Pipe']]],
-  ['italics_16',['Italics',['../namespaceJSL_1_1Format.html#aa979ec2b6fefa52dfd126dde4b9f7ff5',1,'JSL::Format']]]
+  ['ispiped_15',['IsPiped',['../namespaceJSL_1_1IO_1_1Pipe.html#abbdcdedcbcc1c1e6a11e935da3ec5390',1,'JSL::IO::Pipe']]]
 ];

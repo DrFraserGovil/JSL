@@ -9,7 +9,7 @@
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{JSL\+::\+Format\+::\+Command}}
+class \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{JSL\+::\+Format\+::\+Command}}
 \item 
 class \mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{JSL\+::\+Format\+::\+Format\+Group}}
 \end{DoxyCompactItemize}
@@ -33,11 +33,11 @@ enum \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{
 , \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{JSL\+::\+Format\+::\+Style}} =1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}2
 , \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{JSL\+::\+Format\+::\+Resetter}} =1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}3
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Elements are designed to act as bitmasks so {\ttfamily Foreground\+Colour \& Resetter} is interpreted as "{}\+Reset the foreground colour (but not the style)"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+Group}} \mbox{\hyperlink{namespaceJSL_1_1Format_a4ceaac6cd5f7128e3e9df76c3d0bb12a}{JSL\+::\+Format\+::operator+}} (const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \&a, const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \&b)
+\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+Group}} \mbox{\hyperlink{namespaceJSL_1_1Format_a4ceaac6cd5f7128e3e9df76c3d0bb12a}{JSL\+::\+Format\+::operator+}} (const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \&a, const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \&b)
 \item 
 {\footnotesize template$<$Format\+Type T, Format\+Type U$>$ }\\\mbox{\hyperlink{classJSL_1_1Format_1_1FormatGroup}{Format\+Group}} \mbox{\hyperlink{namespaceJSL_1_1Format_aacd2ff5e6d7269ff57079a640a82c1d6}{JSL\+::\+Format\+::operator+}} (const T \&a, const U \&b)
 \item 

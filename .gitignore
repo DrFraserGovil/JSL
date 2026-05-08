@@ -3,6 +3,8 @@
 test/.build
 *.tst
 
+docs/dox
+docs/__pycache__
 *.DS_Store
 makefile
 # Prerequisites

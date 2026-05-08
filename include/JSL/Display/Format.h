@@ -1,4 +1,6 @@
 #pragma once
+#include <deque>
+
 #include <iostream>
 #include <string>
 #include <charconv>
@@ -8,23 +10,64 @@
 namespace JSL::Format
 {
     
-
+    /*!
+        @brief Elements are designed to act as bitmasks so ``ForegroundColour & Resetter`` is interpreted as "Reset the foreground colour (but not the style)".
+    */
     enum Element{
-        ForegroundColour=1<<0,
-        BackgroundColour=1<<1,
-        Style=1<<2,
-        Resetter=1<<3
+        Foreground,
+        Background,
+        TextStyle,
     };
-    struct Command
+
+   
+    class Command
     {
-        char buf[20];
-        uint8_t len;
-        Element type;
+        public:
+
+        //! Null-command constructor. Sets len = 0 so it can be ignored.
         Command();
+
+        //! The constructor for the `basic' ANSI codes
+        //! @param input An ANSI escape code 
+        //! @param kind An indicator as to which of the foreground/background/style the code modifies
         Command(const std::string &input, Element kind);
-        Command(uint8_t r, uint8_t g, uint8_t b,const char* control,Element kind);
+
+        //! @brief A constructor for generating an ANSI command for 24 bit colours for either the Foreground or Background
+        //! @param r The red value in the range [0,255] 
+        //! @param g The green value in the range [0,255] 
+        //! @param b The blue value in the range [0,255] 
+        //! @param kind Either Element::Foreground or Element::Background, to indicate which element is to be coloured
+        //! @throws If kind = Element::Style, as this is meaningless 
+        Command(uint8_t r, uint8_t g, uint8_t b,Element kind);
+
+        //! Outputs the corresponding ANSI command string to the stream
         friend std::ostream& operator<<(std::ostream& os, const Command& c);
+
+        //! Casts the ANSI command to a string
         operator std::string() const;
+
+        //! An equality operator that  compares the internal resolved strings
+        bool operator==(const Command& other) const
+        {
+            return static_cast<std::string>(*this) == static_cast<std::string>(other);
+        }
+        
+        private:
+        //! Yay friends
+        friend class FormatGroup;
+        
+        //! Tells a FormatGroup which category of command this belongs to 
+        Element type;
+        //! @brief A c-style buffer for the ANSI sequence
+        char buf[20];
+        //! @brief The length of the data in the buffer
+        uint8_t len;
+
+        // auto operator<=>(const Command & other)
+        // {
+        //     return static_cast<std::string>(*this) <=> static_cast<std::string>(other);
+        // }
+        
     };
 
 
@@ -33,17 +76,18 @@ namespace JSL::Format
     class FormatGroup
     {
         private:
-            std::pair<bool, Command> Foreground = {false,Command()};
-            std::pair<bool, Command> Background= {false,Command()};
-            std::pair<bool, Command> Style= {false,Command()};
-            bool FalseTransparent = true; //elements set false do not force others
+        Command Foreground;
+        Command Background;
+        void AddBuffer(const Command & cmd);
         public:
+        std::deque<Command> StyleBuffer;
             void Add(const Command & cmd);
             void Add(const FormatGroup & cmd);
             FormatGroup();
             FormatGroup(const Command & a);
             friend std::ostream& operator<<(std::ostream& os, const FormatGroup& c);
             operator std::string() const;
+            size_t BufferSize = 10;
     };
 
 
@@ -79,4 +123,6 @@ namespace JSL::Format
         return std::string{b} + ((std::string)FormatGroup(a));
     }
         
+
+    
 }

@@ -11,12 +11,13 @@
         <name>buf</name>
         <qualifiedname>JSL::Format::Command::buf</qualifiedname>
         <briefdescription>
+<para>A c-style buffer for the ANSI sequence. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="20" column="14" bodyfile="include/JSL/Display/Format.h" bodystart="20" bodyend="-1"/>
+        <location file="include/JSL/Display/Format.h" line="23" column="14" bodyfile="include/JSL/Display/Format.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structJSL_1_1Format_1_1Command_1a5292a3d8f3204333be5342bc001b77ee" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -25,12 +26,13 @@
         <name>len</name>
         <qualifiedname>JSL::Format::Command::len</qualifiedname>
         <briefdescription>
+<para>The length of the data in the buffer. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="21" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="21" bodyend="-1"/>
+        <location file="include/JSL/Display/Format.h" line="25" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structJSL_1_1Format_1_1Command_1af8f2827e74b26856ca241b2424cdbac8" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceJSL_1_1Format_1a30c48b818792e1d9afcb8a00d3716622" kindref="member">Element</ref></type>
@@ -44,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="22" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="22" bodyend="-1"/>
+        <location file="include/JSL/Display/Format.h" line="28" column="17" bodyfile="include/JSL/Display/Format.h" bodystart="28" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -60,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="23" column="9"/>
+        <location file="include/JSL/Display/Format.h" line="29" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structJSL_1_1Format_1_1Command_1a2de44753f8facc18bc0df8d55eeac793" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -82,7 +84,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="24" column="9"/>
+        <location file="include/JSL/Display/Format.h" line="30" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structJSL_1_1Format_1_1Command_1ab87eccbefde1280c5710d1bb203c5368" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -116,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="25" column="9"/>
+        <location file="include/JSL/Display/Format.h" line="31" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structJSL_1_1Format_1_1Command_1ad6cb6ddabba5f7fac592eaa11e45299a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -130,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="27" column="9"/>
+        <location file="include/JSL/Display/Format.h" line="33" column="9"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="friend">
@@ -154,14 +156,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/JSL/Display/Format.h" line="26" column="16"/>
+        <location file="include/JSL/Display/Format.h" line="32" column="16"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/JSL/Display/Format.h" line="18" column="5" bodyfile="include/JSL/Display/Format.h" bodystart="19" bodyend="28"/>
+    <location file="include/JSL/Display/Format.h" line="20" column="5" bodyfile="include/JSL/Display/Format.h" bodystart="21" bodyend="34"/>
     <listofallmembers>
       <member refid="structJSL_1_1Format_1_1Command_1aee938d34db7c7943437d1fc69baa476f" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>buf</name></member>
       <member refid="structJSL_1_1Format_1_1Command_1a1c1db5c15c3a274def003f7f73981180" prot="public" virt="non-virtual"><scope>JSL::Format::Command</scope><name>Command</name></member>

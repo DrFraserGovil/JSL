@@ -41,7 +41,7 @@ namespace JSL::Parameter
     {
         if (!Terminal::IsANSICapable()){return text;}
         
-        return (std::string)prefix + text + Format::Reset();
+        return (std::string)prefix + text + Format::ResetAll;
     }
 
     void Aggregator::HelpMenu()
@@ -50,7 +50,7 @@ namespace JSL::Parameter
         std::cout << "\t" << cmdCapture  << " [commands] [options]\n";
         if (Terminal::IsANSICapable())
         {
-            std::cout << Format::Colour(40,40,40) << Format::Italics;
+            std::cout << Format::Colour(40,40,40) << Format::Italics();
         }
         std::cout << "Commands are any space separated commands before the first option\nOptions must be indicated by at least one dash\n";
         
@@ -67,7 +67,7 @@ namespace JSL::Parameter
                 {
                     suffix = fmtwrap(Format::Colour(50,50,50)," (default)");
                 }
-                std::string title = fmtwrap(Format::Bold + Format::Green, name);
+                std::string title = fmtwrap(Format::Bold() + Format::Green(), name);
                 String::columnPrint({title+suffix,txt},{lw,mw+rw}," ");
             }
         }

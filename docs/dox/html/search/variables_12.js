@@ -23,9 +23,10 @@ var searchData=
   ['streammutex_20',['StreamMutex',['../classJSL_1_1Log_1_1internal_1_1Core.html#adb9404e53cd3b2c31dd37495366d6483',1,'JSL::Log::internal::Core']]],
   ['streams_21',['Streams',['../classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4.html#ad1cb1395587502dc1c0fb24a2df324c5',1,'JSL::Archiver::Vault&lt; Mode::Write &gt;']]],
   ['strictmode_22',['StrictMode',['../classJSL_1_1Archiver_1_1internal_1_1VaultBase.html#ad2ec62af123651d13f2ba6e6ef23621c',1,'JSL::Archiver::internal::VaultBase']]],
-  ['style_23',['Style',['../classJSL_1_1Format_1_1FormatGroup.html#a40f2f352e97845fff7818b16987cf3b6',1,'JSL::Format::FormatGroup']]],
-  ['successful_24',['Successful',['../structJSL_1_1IO_1_1FileSystem_1_1report.html#aec7c718af9a17cb65db696e947b19f86',1,'JSL::IO::FileSystem::report']]],
-  ['summary_25',['Summary',['../classJSL_1_1internal_1_1FatalError.html#a3feec25381fbd470218ac1b97c6cf4b5',1,'JSL::internal::FatalError']]],
-  ['symbol_26',['Symbol',['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#a4c09ca0ad8590d797aff91bed15064f1',1,'JSL::Display::Progress::internal::ProgressEngine']]],
-  ['sync_27',['sync',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a80a3184165d34eca4957f7a82b7342a2',1,'JSL::Event::internal::HandlerBase::Sync'],['../classJSL_1_1Parallel_1_1Pool.html#ac4c1d6c06c8eedc168a481457ef3817c',1,'JSL::Parallel::Pool::Sync']]]
+  ['strike_23',['Strike',['../namespaceJSL_1_1Format.html#a16da38e86c0ec88b03726fda96b41377',1,'JSL::Format']]],
+  ['style_24',['Style',['../classJSL_1_1Format_1_1FormatGroup.html#a40f2f352e97845fff7818b16987cf3b6',1,'JSL::Format::FormatGroup']]],
+  ['successful_25',['Successful',['../structJSL_1_1IO_1_1FileSystem_1_1report.html#aec7c718af9a17cb65db696e947b19f86',1,'JSL::IO::FileSystem::report']]],
+  ['summary_26',['Summary',['../classJSL_1_1internal_1_1FatalError.html#a3feec25381fbd470218ac1b97c6cf4b5',1,'JSL::internal::FatalError']]],
+  ['symbol_27',['Symbol',['../classJSL_1_1Display_1_1Progress_1_1internal_1_1ProgressEngine.html#a4c09ca0ad8590d797aff91bed15064f1',1,'JSL::Display::Progress::internal::ProgressEngine']]],
+  ['sync_28',['sync',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a80a3184165d34eca4957f7a82b7342a2',1,'JSL::Event::internal::HandlerBase::Sync'],['../classJSL_1_1Parallel_1_1Pool.html#ac4c1d6c06c8eedc168a481457ef3817c',1,'JSL::Parallel::Pool::Sync']]]
 ];

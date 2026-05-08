@@ -20,5 +20,6 @@ var searchData=
   ['cursorup_17',['CursorUp',['../namespaceJSL_1_1Terminal.html#a64ba8389d7e03a6aea8d1ca5fd070b7d',1,'JSL::Terminal']]],
   ['curves_18',['Curves',['../classJSL_1_1Plotting_1_1AxisMembers_1_1Data.html#a51880d125ca2de3dce0bf4e213327654',1,'JSL::Plotting::AxisMembers::Data']]],
   ['customlines_19',['CustomLines',['../classJSL_1_1Plotting_1_1Display.html#af3bf9b95609f46f05e7bedf13af695e3',1,'JSL::Plotting::Display']]],
-  ['cv_20',['CV',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a0504c458a47770bb4ebf7174720675e1',1,'JSL::Event::internal::HandlerBase']]]
+  ['cv_20',['CV',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a0504c458a47770bb4ebf7174720675e1',1,'JSL::Event::internal::HandlerBase']]],
+  ['cyan_21',['Cyan',['../namespaceJSL_1_1Format.html#a75ab280e60ea833df18a428d9ca3e452',1,'JSL::Format']]]
 ];

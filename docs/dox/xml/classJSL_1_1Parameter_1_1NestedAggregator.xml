@@ -606,14 +606,14 @@
           <declname>input</declname>
         </param>
         <param>
-          <type><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref></type>
+          <type><ref refid="classJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref></type>
           <declname>fg</declname>
-          <defval><ref refid="namespaceJSL_1_1Format_1a564e38f310ecc9f0982f40e18590164d" kindref="member">Format::Black</ref></defval>
+          <defval><ref refid="namespaceJSL_1_1Format_1acd912fde1be2e1c505d610d8488647d6" kindref="member">Format::Black</ref></defval>
         </param>
         <param>
-          <type><ref refid="structJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref></type>
+          <type><ref refid="classJSL_1_1Format_1_1Command" kindref="compound">Format::Command</ref></type>
           <declname>bg</declname>
-          <defval><ref refid="namespaceJSL_1_1Format_1add9c1bf1296670a8b34fb32c47cfe0c8" kindref="member">Format::BgWhite</ref></defval>
+          <defval><ref refid="namespaceJSL_1_1Format_1ab7cdeb67d515a835bcbc7e2bf36c4cf3" kindref="member">Format::BgWhite</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>

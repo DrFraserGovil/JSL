@@ -6,6 +6,7 @@ var searchData=
   ['warncolour_3',['WarnColour',['../classJSL_1_1Log_1_1Config.html#a629f3d962143614f4b3e5770afae2109',1,'JSL::Log::Config']]],
   ['watch_4',['Watch',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#a7180e31000a1edd37ef55866a3099141',1,'JSL::Event::internal::HandlerBase']]],
   ['watchmap_5',['WatchMap',['../classJSL_1_1Event_1_1Watcher.html#abaccd16a308cbec3c4d8e37c011c97cf',1,'JSL::Event::Watcher']]],
-  ['workers_6',['workers',['../classJSL_1_1Event_1_1Async_1_1Manager.html#a1f27920906d54b3b139e71f60ad5c873',1,'JSL::Event::Async::Manager::Workers'],['../classJSL_1_1Parallel_1_1Pool.html#a65b3103ac8eb5ec96515ac6545be5357',1,'JSL::Parallel::Pool::Workers']]],
-  ['workersrunning_7',['WorkersRunning',['../classJSL_1_1Parallel_1_1Pool.html#ab28f85de6082c8467aff4363f29389b7',1,'JSL::Parallel::Pool']]]
+  ['white_6',['White',['../namespaceJSL_1_1Format.html#a2d9a870a75971fcc151c0483bd4a7589',1,'JSL::Format']]],
+  ['workers_7',['workers',['../classJSL_1_1Event_1_1Async_1_1Manager.html#a1f27920906d54b3b139e71f60ad5c873',1,'JSL::Event::Async::Manager::Workers'],['../classJSL_1_1Parallel_1_1Pool.html#a65b3103ac8eb5ec96515ac6545be5357',1,'JSL::Parallel::Pool::Workers']]],
+  ['workersrunning_8',['WorkersRunning',['../classJSL_1_1Parallel_1_1Pool.html#ab28f85de6082c8467aff4363f29389b7',1,'JSL::Parallel::Pool']]]
 ];

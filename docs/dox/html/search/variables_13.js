@@ -12,7 +12,7 @@ var searchData=
   ['timeparsingformat_9',['TimeParsingFormat',['../classJSL_1_1Plotting_1_1Properties_1_1PerAxis.html#ad220add5ca055bda40342ddaaf6346bd',1,'JSL::Plotting::Properties::PerAxis']]],
   ['title_10',['Title',['../classJSL_1_1Plotting_1_1Display.html#a95bdecb885684ce1744fe9c0dbc9af50',1,'JSL::Plotting::Display']]],
   ['triggerlist_11',['TriggerList',['../classJSL_1_1internal_1_1Parameter_1_1ParameterBase.html#ab51442bfdff4216747b68acf098c105c',1,'JSL::internal::Parameter::ParameterBase']]],
-  ['type_12',['type',['../structJSL_1_1Format_1_1Command.html#af8f2827e74b26856ca241b2424cdbac8',1,'JSL::Format::Command']]],
+  ['type_12',['type',['../classJSL_1_1Format_1_1Command.html#af8f2827e74b26856ca241b2424cdbac8',1,'JSL::Format::Command']]],
   ['typeflag_13',['typeflag',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#a747d6406c974dfa3a3eaba897956d31d',1,'JSL::Archiver::internal::TarHeader']]],
   ['typestring_14',['TypeString',['../classJSL_1_1Parameter_1_1Description.html#ae3f7f38262265bab634572fadaaae1a6',1,'JSL::Parameter::Description']]]
 ];

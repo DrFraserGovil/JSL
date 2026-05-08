@@ -77,14 +77,15 @@ $(function() {
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">JSL::Format Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSL_1_1Format_1_1FormatGroup.html">FormatGroup</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -101,63 +102,18 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a> =1&lt;&lt;2
 , <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535">Resetter</a> =1&lt;&lt;3
  }</td></tr>
+<tr class="memdesc:a30c48b818792e1d9afcb8a00d3716622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elements are designed to act as bitmasks so <code>ForegroundColour &amp; Resetter</code> is interpreted as "Reset the foreground colour (but not the style)".  <a href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622">More...</a><br /></td></tr>
 <tr class="separator:a30c48b818792e1d9afcb8a00d3716622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0310aceb1276f364edf89ea449e2a8d5" id="r_a0310aceb1276f364edf89ea449e2a8d5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a0310aceb1276f364edf89ea449e2a8d5">ResetAll</a> (&quot;\033[0m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535">Element::Resetter</a>)</td></tr>
-<tr class="separator:a0310aceb1276f364edf89ea449e2a8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72f9735a888543e7e1b5cb07ae7ad10b" id="r_a72f9735a888543e7e1b5cb07ae7ad10b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a72f9735a888543e7e1b5cb07ae7ad10b">Reset</a> (<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622">Element</a> sections=<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535">Element::Resetter</a>)</td></tr>
+<tr class="memitem:a72f9735a888543e7e1b5cb07ae7ad10b" id="r_a72f9735a888543e7e1b5cb07ae7ad10b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a72f9735a888543e7e1b5cb07ae7ad10b">Reset</a> (<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622">Element</a> sections=<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535">Element::Resetter</a>)</td></tr>
 <tr class="separator:a72f9735a888543e7e1b5cb07ae7ad10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a564e38f310ecc9f0982f40e18590164d" id="r_a564e38f310ecc9f0982f40e18590164d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a564e38f310ecc9f0982f40e18590164d">Black</a> (&quot;\033[30m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
-<tr class="separator:a564e38f310ecc9f0982f40e18590164d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae70c4e93b38e7e6d3d4a4587bdeca2d8" id="r_ae70c4e93b38e7e6d3d4a4587bdeca2d8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#ae70c4e93b38e7e6d3d4a4587bdeca2d8">Red</a> (&quot;\033[31m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
-<tr class="separator:ae70c4e93b38e7e6d3d4a4587bdeca2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca4adf51e196a330791d94688f827cf9" id="r_aca4adf51e196a330791d94688f827cf9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#aca4adf51e196a330791d94688f827cf9">Green</a> (&quot;\033[32m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
-<tr class="separator:aca4adf51e196a330791d94688f827cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeaa6f8b854fe2f38e404f5c4ccd863f" id="r_aaeaa6f8b854fe2f38e404f5c4ccd863f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#aaeaa6f8b854fe2f38e404f5c4ccd863f">Yellow</a> (&quot;\033[33m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
-<tr class="separator:aaeaa6f8b854fe2f38e404f5c4ccd863f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7e4db410a5d82647350de18a9400356" id="r_ac7e4db410a5d82647350de18a9400356"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#ac7e4db410a5d82647350de18a9400356">Blue</a> (&quot;\033[34m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
-<tr class="separator:ac7e4db410a5d82647350de18a9400356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10c116dab0dbf18d5b10741f0ac8b8b2" id="r_a10c116dab0dbf18d5b10741f0ac8b8b2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a10c116dab0dbf18d5b10741f0ac8b8b2">Purple</a> (&quot;\033[35m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
-<tr class="separator:a10c116dab0dbf18d5b10741f0ac8b8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab57e30d39f562e4b735405a4c3685d57" id="r_ab57e30d39f562e4b735405a4c3685d57"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#ab57e30d39f562e4b735405a4c3685d57">Cyan</a> (&quot;\033[36m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
-<tr class="separator:ab57e30d39f562e4b735405a4c3685d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d06db733a345807a8fd58f9c779e46" id="r_a08d06db733a345807a8fd58f9c779e46"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a08d06db733a345807a8fd58f9c779e46">White</a> (&quot;\033[37m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
-<tr class="separator:a08d06db733a345807a8fd58f9c779e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a29d497acaa067b570f6d852f40a93a" id="r_a2a29d497acaa067b570f6d852f40a93a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a2a29d497acaa067b570f6d852f40a93a">Bold</a> (&quot;\033[1m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
-<tr class="separator:a2a29d497acaa067b570f6d852f40a93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0827ebc4850da2e12f0b368cb3face90" id="r_a0827ebc4850da2e12f0b368cb3face90"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a0827ebc4850da2e12f0b368cb3face90">Faint</a> (&quot;\033[2m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
-<tr class="separator:a0827ebc4850da2e12f0b368cb3face90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa979ec2b6fefa52dfd126dde4b9f7ff5" id="r_aa979ec2b6fefa52dfd126dde4b9f7ff5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#aa979ec2b6fefa52dfd126dde4b9f7ff5">Italics</a> (&quot;\033[3m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
-<tr class="separator:aa979ec2b6fefa52dfd126dde4b9f7ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6a414a59d7fb0376a225b34eb9dcba9" id="r_ac6a414a59d7fb0376a225b34eb9dcba9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#ac6a414a59d7fb0376a225b34eb9dcba9">Underline</a> (&quot;\033[4m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
-<tr class="separator:ac6a414a59d7fb0376a225b34eb9dcba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04fd686ba5a0458ded6b2de07a93d263" id="r_a04fd686ba5a0458ded6b2de07a93d263"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a04fd686ba5a0458ded6b2de07a93d263">Highlight</a> (&quot;\033[7m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
-<tr class="separator:a04fd686ba5a0458ded6b2de07a93d263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f7953035dfe2593afa916fdfae9ec3c" id="r_a2f7953035dfe2593afa916fdfae9ec3c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a2f7953035dfe2593afa916fdfae9ec3c">Strike</a> (&quot;\033[9m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
-<tr class="separator:a2f7953035dfe2593afa916fdfae9ec3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1320a97711cbad9c50f9588e48876a53" id="r_a1320a97711cbad9c50f9588e48876a53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a1320a97711cbad9c50f9588e48876a53">Colour</a> (uint8_t r, uint8_t g, uint8_t b)</td></tr>
+<tr class="memitem:a1320a97711cbad9c50f9588e48876a53" id="r_a1320a97711cbad9c50f9588e48876a53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a1320a97711cbad9c50f9588e48876a53">Colour</a> (uint8_t r, uint8_t g, uint8_t b)</td></tr>
 <tr class="separator:a1320a97711cbad9c50f9588e48876a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fa23969dab620f3d9b56ef68082766b" id="r_a1fa23969dab620f3d9b56ef68082766b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a1fa23969dab620f3d9b56ef68082766b">BgBlack</a> (&quot;\033[40m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
-<tr class="separator:a1fa23969dab620f3d9b56ef68082766b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd273f5fb30815ebe8befcc36d9a60b4" id="r_afd273f5fb30815ebe8befcc36d9a60b4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#afd273f5fb30815ebe8befcc36d9a60b4">BgRed</a> (&quot;\033[41m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
-<tr class="separator:afd273f5fb30815ebe8befcc36d9a60b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2d9099b79b7b1b370d5902a21baaee1" id="r_ad2d9099b79b7b1b370d5902a21baaee1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#ad2d9099b79b7b1b370d5902a21baaee1">BgGreen</a> (&quot;\033[42m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
-<tr class="separator:ad2d9099b79b7b1b370d5902a21baaee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1583018a288e946c518d84e0339b2386" id="r_a1583018a288e946c518d84e0339b2386"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a1583018a288e946c518d84e0339b2386">BgYellow</a> (&quot;\033[43m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
-<tr class="separator:a1583018a288e946c518d84e0339b2386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99ad159e7ebe52d597e4c83783b8e259" id="r_a99ad159e7ebe52d597e4c83783b8e259"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a99ad159e7ebe52d597e4c83783b8e259">BgBlue</a> (&quot;\033[44m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
-<tr class="separator:a99ad159e7ebe52d597e4c83783b8e259"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf947df1b26f461bd72a8de4f4a13b56" id="r_acf947df1b26f461bd72a8de4f4a13b56"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#acf947df1b26f461bd72a8de4f4a13b56">BgPurple</a> (&quot;\033[45m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
-<tr class="separator:acf947df1b26f461bd72a8de4f4a13b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0a98bcd9348a1133ab06cfe41beb5ed" id="r_ad0a98bcd9348a1133ab06cfe41beb5ed"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#ad0a98bcd9348a1133ab06cfe41beb5ed">BgCyan</a> (&quot;\033[46m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
-<tr class="separator:ad0a98bcd9348a1133ab06cfe41beb5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add9c1bf1296670a8b34fb32c47cfe0c8" id="r_add9c1bf1296670a8b34fb32c47cfe0c8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#add9c1bf1296670a8b34fb32c47cfe0c8">BgWhite</a> (&quot;\033[47m&quot;, <a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
-<tr class="separator:add9c1bf1296670a8b34fb32c47cfe0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadd84caae79d82316f117f2b4230e644" id="r_aadd84caae79d82316f117f2b4230e644"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#aadd84caae79d82316f117f2b4230e644">BgColour</a> (uint8_t r, uint8_t g, uint8_t b)</td></tr>
+<tr class="memitem:aadd84caae79d82316f117f2b4230e644" id="r_aadd84caae79d82316f117f2b4230e644"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#aadd84caae79d82316f117f2b4230e644">BgColour</a> (uint8_t r, uint8_t g, uint8_t b)</td></tr>
 <tr class="separator:aadd84caae79d82316f117f2b4230e644"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ceaac6cd5f7128e3e9df76c3d0bb12a" id="r_a4ceaac6cd5f7128e3e9df76c3d0bb12a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Format_1_1FormatGroup.html">FormatGroup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a4ceaac6cd5f7128e3e9df76c3d0bb12a">operator+</a> (const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> &amp;a, const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> &amp;b)</td></tr>
+<tr class="memitem:a4ceaac6cd5f7128e3e9df76c3d0bb12a" id="r_a4ceaac6cd5f7128e3e9df76c3d0bb12a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Format_1_1FormatGroup.html">FormatGroup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a4ceaac6cd5f7128e3e9df76c3d0bb12a">operator+</a> (const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> &amp;a, const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> &amp;b)</td></tr>
 <tr class="separator:a4ceaac6cd5f7128e3e9df76c3d0bb12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacd2ff5e6d7269ff57079a640a82c1d6" id="r_aacd2ff5e6d7269ff57079a640a82c1d6"><td class="memTemplParams" colspan="2">template&lt;FormatType T, FormatType U&gt; </td></tr>
 <tr class="memitem:aacd2ff5e6d7269ff57079a640a82c1d6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classJSL_1_1Format_1_1FormatGroup.html">FormatGroup</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#aacd2ff5e6d7269ff57079a640a82c1d6">operator+</a> (const T &amp;a, const U &amp;b)</td></tr>
@@ -168,6 +124,69 @@ Functions</h2></td></tr>
 <tr class="memitem:a5ea7eba7218414414f6379cc99ce8f41" id="r_a5ea7eba7218414414f6379cc99ce8f41"><td class="memTemplParams" colspan="2">template&lt;FormatType T&gt; </td></tr>
 <tr class="memitem:a5ea7eba7218414414f6379cc99ce8f41"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a5ea7eba7218414414f6379cc99ce8f41">operator+</a> (std::string_view &amp;&amp;b, const T &amp;a)</td></tr>
 <tr class="separator:a5ea7eba7218414414f6379cc99ce8f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8d547b476769dfa6987877d8498b658f" id="r_a8d547b476769dfa6987877d8498b658f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a8d547b476769dfa6987877d8498b658f">ResetAll</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[0m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535">Element::Resetter</a>)</td></tr>
+<tr class="separator:a8d547b476769dfa6987877d8498b658f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd912fde1be2e1c505d610d8488647d6" id="r_acd912fde1be2e1c505d610d8488647d6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#acd912fde1be2e1c505d610d8488647d6">Black</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[30m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
+<tr class="memdesc:acd912fde1be2e1c505d610d8488647d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Black-coloured text.  <br /></td></tr>
+<tr class="separator:acd912fde1be2e1c505d610d8488647d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895f99fbde50e49b4400c8ad842770b8" id="r_a895f99fbde50e49b4400c8ad842770b8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a895f99fbde50e49b4400c8ad842770b8">Red</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[31m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
+<tr class="memdesc:a895f99fbde50e49b4400c8ad842770b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red-coloured text.  <br /></td></tr>
+<tr class="separator:a895f99fbde50e49b4400c8ad842770b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b5efe6432f62425eb87b355ecfdb90" id="r_a00b5efe6432f62425eb87b355ecfdb90"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a00b5efe6432f62425eb87b355ecfdb90">Green</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[32m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
+<tr class="memdesc:a00b5efe6432f62425eb87b355ecfdb90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green-coloured text.  <br /></td></tr>
+<tr class="separator:a00b5efe6432f62425eb87b355ecfdb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20839fbb9bbc35ce427eb65bf777fdd0" id="r_a20839fbb9bbc35ce427eb65bf777fdd0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a20839fbb9bbc35ce427eb65bf777fdd0">Yellow</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[33m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
+<tr class="memdesc:a20839fbb9bbc35ce427eb65bf777fdd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yellow-coloured text.  <br /></td></tr>
+<tr class="separator:a20839fbb9bbc35ce427eb65bf777fdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2697ba70771715ff40f5c250ecad7a2b" id="r_a2697ba70771715ff40f5c250ecad7a2b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a2697ba70771715ff40f5c250ecad7a2b">Blue</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[34m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
+<tr class="memdesc:a2697ba70771715ff40f5c250ecad7a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue-coloured text.  <br /></td></tr>
+<tr class="separator:a2697ba70771715ff40f5c250ecad7a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40a332519562e167aa25b95d857f1f2f" id="r_a40a332519562e167aa25b95d857f1f2f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a40a332519562e167aa25b95d857f1f2f">Purple</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[35m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
+<tr class="memdesc:a40a332519562e167aa25b95d857f1f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Purple-coloured text.  <br /></td></tr>
+<tr class="separator:a40a332519562e167aa25b95d857f1f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ab280e60ea833df18a428d9ca3e452" id="r_a75ab280e60ea833df18a428d9ca3e452"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a75ab280e60ea833df18a428d9ca3e452">Cyan</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[36m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
+<tr class="memdesc:a75ab280e60ea833df18a428d9ca3e452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cyan-coloured text.  <br /></td></tr>
+<tr class="separator:a75ab280e60ea833df18a428d9ca3e452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9a870a75971fcc151c0483bd4a7589" id="r_a2d9a870a75971fcc151c0483bd4a7589"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a2d9a870a75971fcc151c0483bd4a7589">White</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[37m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td></tr>
+<tr class="memdesc:a2d9a870a75971fcc151c0483bd4a7589"><td class="mdescLeft">&#160;</td><td class="mdescRight">White-coloured text.  <br /></td></tr>
+<tr class="separator:a2d9a870a75971fcc151c0483bd4a7589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4a11a4b7df053850899c56aa253011" id="r_a0e4a11a4b7df053850899c56aa253011"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a0e4a11a4b7df053850899c56aa253011">Bold</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[1m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
+<tr class="memdesc:a0e4a11a4b7df053850899c56aa253011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boldface text (or 'high intensity colour' in some terminals)  <br /></td></tr>
+<tr class="separator:a0e4a11a4b7df053850899c56aa253011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f20935e92e8c288fac686494a44951d" id="r_a9f20935e92e8c288fac686494a44951d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a9f20935e92e8c288fac686494a44951d">Faint</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[2m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
+<tr class="memdesc:a9f20935e92e8c288fac686494a44951d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low intensity colour.  <br /></td></tr>
+<tr class="separator:a9f20935e92e8c288fac686494a44951d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8c222c4ab8f252370acc6b2f6b8811" id="r_a2b8c222c4ab8f252370acc6b2f6b8811"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a2b8c222c4ab8f252370acc6b2f6b8811">Italics</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[3m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
+<tr class="memdesc:a2b8c222c4ab8f252370acc6b2f6b8811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Italics typeface.  <br /></td></tr>
+<tr class="separator:a2b8c222c4ab8f252370acc6b2f6b8811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362be96a7e27ff3ef242cd52d72ec257" id="r_a362be96a7e27ff3ef242cd52d72ec257"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a362be96a7e27ff3ef242cd52d72ec257">Underline</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[4m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
+<tr class="memdesc:a362be96a7e27ff3ef242cd52d72ec257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Underline text.  <br /></td></tr>
+<tr class="separator:a362be96a7e27ff3ef242cd52d72ec257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c4c7b79031341ae4a9895a2e1c3f6bf" id="r_a2c4c7b79031341ae4a9895a2e1c3f6bf"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a2c4c7b79031341ae4a9895a2e1c3f6bf">Highlight</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[7m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
+<tr class="memdesc:a2c4c7b79031341ae4a9895a2e1c3f6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts background and foreground colours.  <br /></td></tr>
+<tr class="separator:a2c4c7b79031341ae4a9895a2e1c3f6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16da38e86c0ec88b03726fda96b41377" id="r_a16da38e86c0ec88b03726fda96b41377"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a16da38e86c0ec88b03726fda96b41377">Strike</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[9m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td></tr>
+<tr class="memdesc:a16da38e86c0ec88b03726fda96b41377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strikethrough text.  <br /></td></tr>
+<tr class="separator:a16da38e86c0ec88b03726fda96b41377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c367827ec5f1801940ccb797f7e38a" id="r_a09c367827ec5f1801940ccb797f7e38a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a09c367827ec5f1801940ccb797f7e38a">BgBlack</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[40m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
+<tr class="separator:a09c367827ec5f1801940ccb797f7e38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9acf3eb7d8ec26afe33dcebc541d2c" id="r_a6f9acf3eb7d8ec26afe33dcebc541d2c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a6f9acf3eb7d8ec26afe33dcebc541d2c">BgRed</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[41m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
+<tr class="separator:a6f9acf3eb7d8ec26afe33dcebc541d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb9e44a30a65398bf4cbcea990adf1e6" id="r_afb9e44a30a65398bf4cbcea990adf1e6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#afb9e44a30a65398bf4cbcea990adf1e6">BgGreen</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[42m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
+<tr class="separator:afb9e44a30a65398bf4cbcea990adf1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e68766bc914baa844751abc8e3419b" id="r_a48e68766bc914baa844751abc8e3419b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a48e68766bc914baa844751abc8e3419b">BgYellow</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[43m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
+<tr class="separator:a48e68766bc914baa844751abc8e3419b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb7878920cf7dea40283a4a480d5480" id="r_a1eb7878920cf7dea40283a4a480d5480"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a1eb7878920cf7dea40283a4a480d5480">BgBlue</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[44m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
+<tr class="separator:a1eb7878920cf7dea40283a4a480d5480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa5a9f10a7f3bc437c8bc09b7754ae5f" id="r_aaa5a9f10a7f3bc437c8bc09b7754ae5f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#aaa5a9f10a7f3bc437c8bc09b7754ae5f">BgPurple</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[45m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
+<tr class="separator:aaa5a9f10a7f3bc437c8bc09b7754ae5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2860ba4a510d497dcc3d91dfb2a176ea" id="r_a2860ba4a510d497dcc3d91dfb2a176ea"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#a2860ba4a510d497dcc3d91dfb2a176ea">BgCyan</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[46m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
+<tr class="separator:a2860ba4a510d497dcc3d91dfb2a176ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7cdeb67d515a835bcbc7e2bf36c4cf3" id="r_ab7cdeb67d515a835bcbc7e2bf36c4cf3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Format.html#ab7cdeb67d515a835bcbc7e2bf36c4cf3">BgWhite</a> =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[47m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td></tr>
+<tr class="separator:ab7cdeb67d515a835bcbc7e2bf36c4cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a30c48b818792e1d9afcb8a00d3716622" name="a30c48b818792e1d9afcb8a00d3716622"></a>
@@ -181,6 +200,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Elements are designed to act as bitmasks so <code>ForegroundColour &amp; Resetter</code> is interpreted as "Reset the foreground colour (but not the style)". </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8" name="a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8"></a>ForegroundColour&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c" name="a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c"></a>BackgroundColour&#160;</td><td class="fielddoc"></td></tr>
@@ -191,40 +212,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a1fa23969dab620f3d9b56ef68082766b" name="a1fa23969dab620f3d9b56ef68082766b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fa23969dab620f3d9b56ef68082766b">&#9670;&#160;</a></span>BgBlack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgBlack </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a99ad159e7ebe52d597e4c83783b8e259" name="a99ad159e7ebe52d597e4c83783b8e259"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99ad159e7ebe52d597e4c83783b8e259">&#9670;&#160;</a></span>BgBlue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgBlue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aadd84caae79d82316f117f2b4230e644" name="aadd84caae79d82316f117f2b4230e644"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aadd84caae79d82316f117f2b4230e644">&#9670;&#160;</a></span>BgColour()</h2>
 
@@ -235,7 +222,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgColour </td>
+          <td class="memname"><a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgColour </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>r</em>, </td>
@@ -263,159 +250,6 @@ Functions</h2></td></tr>
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad0a98bcd9348a1133ab06cfe41beb5ed" name="ad0a98bcd9348a1133ab06cfe41beb5ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0a98bcd9348a1133ab06cfe41beb5ed">&#9670;&#160;</a></span>BgCyan()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgCyan </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad2d9099b79b7b1b370d5902a21baaee1" name="ad2d9099b79b7b1b370d5902a21baaee1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2d9099b79b7b1b370d5902a21baaee1">&#9670;&#160;</a></span>BgGreen()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgGreen </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acf947df1b26f461bd72a8de4f4a13b56" name="acf947df1b26f461bd72a8de4f4a13b56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf947df1b26f461bd72a8de4f4a13b56">&#9670;&#160;</a></span>BgPurple()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgPurple </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afd273f5fb30815ebe8befcc36d9a60b4" name="afd273f5fb30815ebe8befcc36d9a60b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd273f5fb30815ebe8befcc36d9a60b4">&#9670;&#160;</a></span>BgRed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgRed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="add9c1bf1296670a8b34fb32c47cfe0c8" name="add9c1bf1296670a8b34fb32c47cfe0c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add9c1bf1296670a8b34fb32c47cfe0c8">&#9670;&#160;</a></span>BgWhite()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgWhite </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1583018a288e946c518d84e0339b2386" name="a1583018a288e946c518d84e0339b2386"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1583018a288e946c518d84e0339b2386">&#9670;&#160;</a></span>BgYellow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgYellow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a564e38f310ecc9f0982f40e18590164d" name="a564e38f310ecc9f0982f40e18590164d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a564e38f310ecc9f0982f40e18590164d">&#9670;&#160;</a></span>Black()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Black </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac7e4db410a5d82647350de18a9400356" name="ac7e4db410a5d82647350de18a9400356"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7e4db410a5d82647350de18a9400356">&#9670;&#160;</a></span>Blue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Blue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2a29d497acaa067b570f6d852f40a93a" name="a2a29d497acaa067b570f6d852f40a93a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a29d497acaa067b570f6d852f40a93a">&#9670;&#160;</a></span>Bold()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Bold </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>
@@ -430,7 +264,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Colour </td>
+          <td class="memname"><a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Colour </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>r</em>, </td>
@@ -462,91 +296,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab57e30d39f562e4b735405a4c3685d57" name="ab57e30d39f562e4b735405a4c3685d57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab57e30d39f562e4b735405a4c3685d57">&#9670;&#160;</a></span>Cyan()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Cyan </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0827ebc4850da2e12f0b368cb3face90" name="a0827ebc4850da2e12f0b368cb3face90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0827ebc4850da2e12f0b368cb3face90">&#9670;&#160;</a></span>Faint()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Faint </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aca4adf51e196a330791d94688f827cf9" name="aca4adf51e196a330791d94688f827cf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca4adf51e196a330791d94688f827cf9">&#9670;&#160;</a></span>Green()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Green </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a04fd686ba5a0458ded6b2de07a93d263" name="a04fd686ba5a0458ded6b2de07a93d263"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04fd686ba5a0458ded6b2de07a93d263">&#9670;&#160;</a></span>Highlight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Highlight </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa979ec2b6fefa52dfd126dde4b9f7ff5" name="aa979ec2b6fefa52dfd126dde4b9f7ff5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa979ec2b6fefa52dfd126dde4b9f7ff5">&#9670;&#160;</a></span>Italics()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Italics </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a4ceaac6cd5f7128e3e9df76c3d0bb12a" name="a4ceaac6cd5f7128e3e9df76c3d0bb12a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ceaac6cd5f7128e3e9df76c3d0bb12a">&#9670;&#160;</a></span>operator+() <span class="overload">[1/4]</span></h2>
 
@@ -556,13 +305,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classJSL_1_1Format_1_1FormatGroup.html">FormatGroup</a> JSL::Format::operator+ </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -665,40 +414,6 @@ template&lt;FormatType T&gt; </div>
 
 </div>
 </div>
-<a id="a10c116dab0dbf18d5b10741f0ac8b8b2" name="a10c116dab0dbf18d5b10741f0ac8b8b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10c116dab0dbf18d5b10741f0ac8b8b2">&#9670;&#160;</a></span>Purple()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Purple </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae70c4e93b38e7e6d3d4a4587bdeca2d8" name="ae70c4e93b38e7e6d3d4a4587bdeca2d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae70c4e93b38e7e6d3d4a4587bdeca2d8">&#9670;&#160;</a></span>Red()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Red </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a72f9735a888543e7e1b5cb07ae7ad10b" name="a72f9735a888543e7e1b5cb07ae7ad10b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72f9735a888543e7e1b5cb07ae7ad10b">&#9670;&#160;</a></span>Reset()</h2>
 
@@ -706,7 +421,7 @@ template&lt;FormatType T&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Reset </td>
+          <td class="memname"><a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Reset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622">Element</a>&#160;</td>
           <td class="paramname"><em>sections</em> = <code><a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535">Element::Resetter</a></code></td><td>)</td>
@@ -717,88 +432,354 @@ template&lt;FormatType T&gt; </div>
 
 </div>
 </div>
-<a id="a0310aceb1276f364edf89ea449e2a8d5" name="a0310aceb1276f364edf89ea449e2a8d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0310aceb1276f364edf89ea449e2a8d5">&#9670;&#160;</a></span>ResetAll()</h2>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a09c367827ec5f1801940ccb797f7e38a" name="a09c367827ec5f1801940ccb797f7e38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c367827ec5f1801940ccb797f7e38a">&#9670;&#160;</a></span>BgBlack</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::ResetAll </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgBlack =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[40m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a2f7953035dfe2593afa916fdfae9ec3c" name="a2f7953035dfe2593afa916fdfae9ec3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f7953035dfe2593afa916fdfae9ec3c">&#9670;&#160;</a></span>Strike()</h2>
+<a id="a1eb7878920cf7dea40283a4a480d5480" name="a1eb7878920cf7dea40283a4a480d5480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eb7878920cf7dea40283a4a480d5480">&#9670;&#160;</a></span>BgBlue</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Strike </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgBlue =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[44m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ac6a414a59d7fb0376a225b34eb9dcba9" name="ac6a414a59d7fb0376a225b34eb9dcba9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6a414a59d7fb0376a225b34eb9dcba9">&#9670;&#160;</a></span>Underline()</h2>
+<a id="a2860ba4a510d497dcc3d91dfb2a176ea" name="a2860ba4a510d497dcc3d91dfb2a176ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2860ba4a510d497dcc3d91dfb2a176ea">&#9670;&#160;</a></span>BgCyan</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Underline </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgCyan =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[46m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a08d06db733a345807a8fd58f9c779e46" name="a08d06db733a345807a8fd58f9c779e46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08d06db733a345807a8fd58f9c779e46">&#9670;&#160;</a></span>White()</h2>
+<a id="afb9e44a30a65398bf4cbcea990adf1e6" name="afb9e44a30a65398bf4cbcea990adf1e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb9e44a30a65398bf4cbcea990adf1e6">&#9670;&#160;</a></span>BgGreen</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::White </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgGreen =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[42m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aaeaa6f8b854fe2f38e404f5c4ccd863f" name="aaeaa6f8b854fe2f38e404f5c4ccd863f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaeaa6f8b854fe2f38e404f5c4ccd863f">&#9670;&#160;</a></span>Yellow()</h2>
+<a id="aaa5a9f10a7f3bc437c8bc09b7754ae5f" name="aaa5a9f10a7f3bc437c8bc09b7754ae5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa5a9f10a7f3bc437c8bc09b7754ae5f">&#9670;&#160;</a></span>BgPurple</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Yellow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgPurple =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[45m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f9acf3eb7d8ec26afe33dcebc541d2c" name="a6f9acf3eb7d8ec26afe33dcebc541d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9acf3eb7d8ec26afe33dcebc541d2c">&#9670;&#160;</a></span>BgRed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgRed =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[41m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7cdeb67d515a835bcbc7e2bf36c4cf3" name="ab7cdeb67d515a835bcbc7e2bf36c4cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7cdeb67d515a835bcbc7e2bf36c4cf3">&#9670;&#160;</a></span>BgWhite</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgWhite =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[47m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48e68766bc914baa844751abc8e3419b" name="a48e68766bc914baa844751abc8e3419b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e68766bc914baa844751abc8e3419b">&#9670;&#160;</a></span>BgYellow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::BgYellow =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[43m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c">BackgroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd912fde1be2e1c505d610d8488647d6" name="acd912fde1be2e1c505d610d8488647d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd912fde1be2e1c505d610d8488647d6">&#9670;&#160;</a></span>Black</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Black =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[30m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Black-coloured text. </p>
+
+</div>
+</div>
+<a id="a2697ba70771715ff40f5c250ecad7a2b" name="a2697ba70771715ff40f5c250ecad7a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2697ba70771715ff40f5c250ecad7a2b">&#9670;&#160;</a></span>Blue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Blue =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[34m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Blue-coloured text. </p>
+
+</div>
+</div>
+<a id="a0e4a11a4b7df053850899c56aa253011" name="a0e4a11a4b7df053850899c56aa253011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e4a11a4b7df053850899c56aa253011">&#9670;&#160;</a></span>Bold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Bold =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[1m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boldface text (or 'high intensity colour' in some terminals) </p>
+
+</div>
+</div>
+<a id="a75ab280e60ea833df18a428d9ca3e452" name="a75ab280e60ea833df18a428d9ca3e452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ab280e60ea833df18a428d9ca3e452">&#9670;&#160;</a></span>Cyan</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Cyan =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[36m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cyan-coloured text. </p>
+
+</div>
+</div>
+<a id="a9f20935e92e8c288fac686494a44951d" name="a9f20935e92e8c288fac686494a44951d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f20935e92e8c288fac686494a44951d">&#9670;&#160;</a></span>Faint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Faint =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[2m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Low intensity colour. </p>
+
+</div>
+</div>
+<a id="a00b5efe6432f62425eb87b355ecfdb90" name="a00b5efe6432f62425eb87b355ecfdb90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b5efe6432f62425eb87b355ecfdb90">&#9670;&#160;</a></span>Green</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Green =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[32m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Green-coloured text. </p>
+
+</div>
+</div>
+<a id="a2c4c7b79031341ae4a9895a2e1c3f6bf" name="a2c4c7b79031341ae4a9895a2e1c3f6bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c4c7b79031341ae4a9895a2e1c3f6bf">&#9670;&#160;</a></span>Highlight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Highlight =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[7m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inverts background and foreground colours. </p>
+
+</div>
+</div>
+<a id="a2b8c222c4ab8f252370acc6b2f6b8811" name="a2b8c222c4ab8f252370acc6b2f6b8811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b8c222c4ab8f252370acc6b2f6b8811">&#9670;&#160;</a></span>Italics</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Italics =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[3m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Italics typeface. </p>
+
+</div>
+</div>
+<a id="a40a332519562e167aa25b95d857f1f2f" name="a40a332519562e167aa25b95d857f1f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40a332519562e167aa25b95d857f1f2f">&#9670;&#160;</a></span>Purple</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Purple =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[35m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Purple-coloured text. </p>
+
+</div>
+</div>
+<a id="a895f99fbde50e49b4400c8ad842770b8" name="a895f99fbde50e49b4400c8ad842770b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a895f99fbde50e49b4400c8ad842770b8">&#9670;&#160;</a></span>Red</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Red =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[31m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Red-coloured text. </p>
+
+</div>
+</div>
+<a id="a8d547b476769dfa6987877d8498b658f" name="a8d547b476769dfa6987877d8498b658f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d547b476769dfa6987877d8498b658f">&#9670;&#160;</a></span>ResetAll</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::ResetAll =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[0m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535">Element::Resetter</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16da38e86c0ec88b03726fda96b41377" name="a16da38e86c0ec88b03726fda96b41377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16da38e86c0ec88b03726fda96b41377">&#9670;&#160;</a></span>Strike</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Strike =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[9m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Strikethrough text. </p>
+
+</div>
+</div>
+<a id="a362be96a7e27ff3ef242cd52d72ec257" name="a362be96a7e27ff3ef242cd52d72ec257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362be96a7e27ff3ef242cd52d72ec257">&#9670;&#160;</a></span>Underline</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Underline =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[4m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961">Style</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Underline text. </p>
+
+</div>
+</div>
+<a id="a2d9a870a75971fcc151c0483bd4a7589" name="a2d9a870a75971fcc151c0483bd4a7589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d9a870a75971fcc151c0483bd4a7589">&#9670;&#160;</a></span>White</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::White =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[37m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>White-coloured text. </p>
+
+</div>
+</div>
+<a id="a20839fbb9bbc35ce427eb65bf777fdd0" name="a20839fbb9bbc35ce427eb65bf777fdd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20839fbb9bbc35ce427eb65bf777fdd0">&#9670;&#160;</a></span>Yellow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a> JSL::Format::Yellow =<a class="el" href="classJSL_1_1Format_1_1Command.html">Command</a>(&quot;\033[33m&quot;,<a class="el" href="namespaceJSL_1_1Format.html#a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8">ForegroundColour</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Yellow-coloured text. </p>
 
 </div>
 </div>

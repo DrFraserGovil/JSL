@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['faint_0',['Faint',['../namespaceJSL_1_1Format.html#a0827ebc4850da2e12f0b368cb3face90',1,'JSL::Format']]],
+  ['faint_0',['Faint',['../namespaceJSL_1_1Format.html#a9f20935e92e8c288fac686494a44951d',1,'JSL::Format']]],
   ['falsetransparent_1',['FalseTransparent',['../classJSL_1_1Format_1_1FormatGroup.html#a9c963b3b9c3d13c36bef9a686609af3e',1,'JSL::Format::FormatGroup']]],
   ['fatalerror_2',['fatalerror',['../classJSL_1_1internal_1_1FatalError.html',1,'JSL::internal::FatalError'],['../classJSL_1_1internal_1_1FatalError.html#a53ab722ac615fd0ffaa9bee25d95e7d6',1,'JSL::internal::FatalError::FatalError()']]],
   ['fd_3',['FD',['../structJSL_1_1Event_1_1internal_1_1FileDescriptor.html#a205b9ae4c996abd10d0b6789ab9c5137',1,'JSL::Event::internal::FileDescriptor']]],
@@ -38,7 +38,7 @@ var searchData=
   ['formataspower_35',['FormatAsPower',['../classJSL_1_1Plotting_1_1TicProperties.html#acb767626192cd691b80324dbefbb9329',1,'JSL::Plotting::TicProperties']]],
   ['formatastime_36',['FormatAsTime',['../classJSL_1_1Plotting_1_1TicProperties.html#aaf3f4d7b32a56c4351323f698ddad5de',1,'JSL::Plotting::TicProperties']]],
   ['formatduration_37',['formatduration',['../namespaceJSL_1_1Time.html#a89edf541c527306dd1cf78d3052d2893',1,'JSL::Time::FormatDuration(std::chrono::time_point&lt; std::chrono::system_clock &gt; start, std::chrono::time_point&lt; std::chrono::system_clock &gt; end)'],['../namespaceJSL_1_1Time.html#ae1e5bf9b5710f0a6f1e65baa9ec4e98e',1,'JSL::Time::FormatDuration(double timeInSeconds)']]],
-  ['formatgroup_38',['formatgroup',['../classJSL_1_1Format_1_1FormatGroup.html#a719342d50d0da8e98a5e71db0de35a70',1,'JSL::Format::FormatGroup::FormatGroup()'],['../classJSL_1_1Format_1_1FormatGroup.html#ac195f1f15846d1799f9db8210b572e27',1,'JSL::Format::FormatGroup::FormatGroup(const Command &amp;a)'],['../classJSL_1_1Format_1_1FormatGroup.html',1,'JSL::Format::FormatGroup']]],
+  ['formatgroup_38',['formatgroup',['../classJSL_1_1Format_1_1Command.html#a07675b66eecb510c2a4cc97913afd2cc',1,'JSL::Format::Command::FormatGroup'],['../classJSL_1_1Format_1_1FormatGroup.html#a719342d50d0da8e98a5e71db0de35a70',1,'JSL::Format::FormatGroup::FormatGroup()'],['../classJSL_1_1Format_1_1FormatGroup.html#ac195f1f15846d1799f9db8210b572e27',1,'JSL::Format::FormatGroup::FormatGroup(const Command &amp;a)'],['../classJSL_1_1Format_1_1FormatGroup.html',1,'JSL::Format::FormatGroup']]],
   ['forsplitlinein_39',['forsplitlinein',['../namespaceJSL_1_1IO.html#a802750a0cb15660113de232360e3d844',1,'JSL::IO::forSplitLineIn()'],['../namespaceJSL_1_1IO_1_1Pipe.html#a639f80b52675e421237bc39fc6ae3f60',1,'JSL::IO::Pipe::forSplitLineIn()']]],
   ['fortabularlinein_40',['fortabularlinein',['../classJSL_1_1Archiver_1_1ReadStream.html#ad0049850c5118f4355f6f858130df8b3',1,'JSL::Archiver::ReadStream::ForTabularLineIn()'],['../classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Read_01_4.html#ae2539188aa4351f405c7c06b1d48e67a',1,'JSL::Archiver::Vault&lt; Mode::Read &gt;::ForTabularLineIn()']]],
   ['found_41',['found',['../structJSL_1_1Vector_1_1SearchResult.html#a1aa8506e6c7bf7b33a2151c8b999f8e7',1,'JSL::Vector::SearchResult::Found'],['../classJSL_1_1Parameter_1_1Description.html#a5605e4a1775b564f2424fd336885bc17',1,'JSL::Parameter::Description::Found']]],

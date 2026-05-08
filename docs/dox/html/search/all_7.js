@@ -22,11 +22,11 @@ var searchData=
   ['getwatchedfiles_19',['GetWatchedFiles',['../classJSL_1_1Event_1_1Watcher.html#af2402909acdf5b368ec161351cbd0e59',1,'JSL::Event::Watcher']]],
   ['getwatcher_20',['GetWatcher',['../classJSL_1_1Event_1_1internal_1_1HandlerBase.html#ace0463f720ee896fc203aa969d47a162',1,'JSL::Event::internal::HandlerBase']]],
   ['getwords_21',['getWords',['../namespaceJSL_1_1IO.html#a962bab2b0dcff9021d5890f538240de9',1,'JSL::IO']]],
-  ['gid_22',['gid',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#a810b5c91392a9aacd5b4b53aaa991836',1,'JSL::Archiver::internal::TarHeader::gid'],['../structJSL_1_1Archiver_1_1internal_1_1Security.html#a4dde8993590947d8a925086056e0cf5a',1,'JSL::Archiver::internal::Security::GID']]],
+  ['gid_22',['gid',['../structJSL_1_1Archiver_1_1internal_1_1Security.html#a4dde8993590947d8a925086056e0cf5a',1,'JSL::Archiver::internal::Security::GID'],['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#a810b5c91392a9aacd5b4b53aaa991836',1,'JSL::Archiver::internal::TarHeader::gid']]],
   ['global_23',['global',['../namespaceJSL_1_1Log.html#ad342d7bf4e80fd6cf0180e87392c700a',1,'JSL::Log::Global()'],['../classJSL_1_1Log_1_1Config.html#a439f5c19d70d514fa5fbb6d0ec0f355d',1,'JSL::Log::Config::Global()']]],
   ['gname_24',['gname',['../structJSL_1_1Archiver_1_1internal_1_1Security.html#a431100978f1b5f948291ae22d433eced',1,'JSL::Archiver::internal::Security::GName'],['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#af643c87488d20bcc49c881b35a0ab595',1,'JSL::Archiver::internal::TarHeader::gname']]],
   ['gnuplotpipe_25',['gnuplotpipe',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#a6b4039dd3fb17f900df917147d301b5f',1,'JSL::Plotting::internal::GnuplotPipe::GnuplotPipe()'],['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html',1,'JSL::Plotting::internal::GnuplotPipe']]],
   ['gradient_26',['Gradient',['../classJSL_1_1Plotting_1_1Color_1_1Controller.html#ac62aa878a37129f0aaa3dd7262c2e3ae',1,'JSL::Plotting::Color::Controller']]],
   ['gradientholder_27',['GradientHolder',['../structGradientHolder.html',1,'']]],
-  ['green_28',['Green',['../namespaceJSL_1_1Format.html#aca4adf51e196a330791d94688f827cf9',1,'JSL::Format']]]
+  ['green_28',['Green',['../namespaceJSL_1_1Format.html#a00b5efe6432f62425eb87b355ecfdb90',1,'JSL::Format']]]
 ];

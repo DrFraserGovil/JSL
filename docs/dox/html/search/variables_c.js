@@ -9,7 +9,7 @@ var searchData=
   ['memorybuffer_6',['MemoryBuffer',['../classJSL_1_1Archiver_1_1WriteStream.html#a683c1da12bf165101b259a4c1de1d5d8',1,'JSL::Archiver::WriteStream']]],
   ['message_7',['Message',['../structJSL_1_1IO_1_1FileSystem_1_1report.html#a6a361101b956a7bac0a75f24696a031a',1,'JSL::IO::FileSystem::report']]],
   ['mirrored_8',['Mirrored',['../classJSL_1_1Plotting_1_1Properties_1_1PerAxis.html#ab1432038cf03aa01d15855d1226ed44c',1,'JSL::Plotting::Properties::PerAxis']]],
-  ['mode_9',['mode',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#ad96e293a8009accfbf6156a645f51893',1,'JSL::Archiver::internal::TarHeader::mode'],['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#aa2a907cb827193a76d1f0db2397e10eb',1,'JSL::Plotting::internal::GnuplotPipe::Mode']]],
+  ['mode_9',['mode',['../classJSL_1_1Plotting_1_1internal_1_1GnuplotPipe.html#aa2a907cb827193a76d1f0db2397e10eb',1,'JSL::Plotting::internal::GnuplotPipe::Mode'],['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#ad96e293a8009accfbf6156a645f51893',1,'JSL::Archiver::internal::TarHeader::mode']]],
   ['mostrecentstream_10',['MostRecentStream',['../classJSL_1_1Archiver_1_1Vault_3_01Mode_1_1Write_01_4.html#a861d0fd7d2e2e291a8570fd6469f692e',1,'JSL::Archiver::Vault&lt; Mode::Write &gt;']]],
   ['mtime_11',['mtime',['../structJSL_1_1Archiver_1_1internal_1_1TarHeader.html#aed780339b11eb8db8c1ba69c118f92fe',1,'JSL::Archiver::internal::TarHeader']]],
   ['mw_12',['mw',['../classJSL_1_1Parameter_1_1NestedAggregator.html#adb76c921d7dc55bedcab758439a6a36c',1,'JSL::Parameter::NestedAggregator']]]

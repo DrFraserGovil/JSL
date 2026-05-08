@@ -41,5 +41,5 @@ var searchData=
   ['islarge_38',['IsLarge',['../classJSL_1_1Archiver_1_1WriteStream.html#ac88ffb0e6637fd34f98bf3022eec9eba',1,'JSL::Archiver::WriteStream']]],
   ['ispiped_39',['IsPiped',['../namespaceJSL_1_1IO_1_1Pipe.html#abbdcdedcbcc1c1e6a11e935da3ec5390',1,'JSL::IO::Pipe']]],
   ['isrecursive_40',['IsRecursive',['../classJSL_1_1IO_1_1FileSystem_1_1Structure.html#a3bc17d30bc3b62cc5f84f21e02437016',1,'JSL::IO::FileSystem::Structure']]],
-  ['italics_41',['Italics',['../namespaceJSL_1_1Format.html#aa979ec2b6fefa52dfd126dde4b9f7ff5',1,'JSL::Format']]]
+  ['italics_41',['Italics',['../namespaceJSL_1_1Format.html#a2b8c222c4ab8f252370acc6b2f6b8811',1,'JSL::Format']]]
 ];

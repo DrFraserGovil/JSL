@@ -90,8 +90,9 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a47b61984832b0a7952fcf4d6eb28b18a" id="r_a47b61984832b0a7952fcf4d6eb28b18a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> = std::string</td></tr>
-<tr class="separator:a47b61984832b0a7952fcf4d6eb28b18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14aab5b78cbb911636b1a1eb7c982e0d" id="r_a14aab5b78cbb911636b1a1eb7c982e0d"><td class="memItemLeft" align="right" valign="top">typedef std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a></td></tr>
+<tr class="memdesc:a14aab5b78cbb911636b1a1eb7c982e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A basic wrapper to make CursorCommands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)  <br /></td></tr>
+<tr class="separator:a14aab5b78cbb911636b1a1eb7c982e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -100,15 +101,19 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceJSL_1_1Terminal.html#a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26">Right</a> =2
 , <a class="el" href="namespaceJSL_1_1Terminal.html#a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908">Left</a> =3
  }</td></tr>
+<tr class="memdesc:a06d88c0f36f73862572da7fd22a4ee76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the direction of terminal movement.  <a href="namespaceJSL_1_1Terminal.html#a06d88c0f36f73862572da7fd22a4ee76">More...</a><br /></td></tr>
 <tr class="separator:a06d88c0f36f73862572da7fd22a4ee76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a194d7176d034555e7008938ed071f9f8" id="r_a194d7176d034555e7008938ed071f9f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a194d7176d034555e7008938ed071f9f8">IsANSICapable</a> ()</td></tr>
+<tr class="memdesc:a194d7176d034555e7008938ed071f9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if the output stream can interpret ANSI escape sequences.  <br /></td></tr>
 <tr class="separator:a194d7176d034555e7008938ed071f9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8c9732f0eedc19c5863c5872c8cdc37" id="r_aa8c9732f0eedc19c5863c5872c8cdc37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#aa8c9732f0eedc19c5863c5872c8cdc37">Move</a> (<a class="el" href="namespaceJSL_1_1Terminal.html#a06d88c0f36f73862572da7fd22a4ee76">Direction</a> dir, unsigned int steps)</td></tr>
+<tr class="memitem:aa8c9732f0eedc19c5863c5872c8cdc37" id="r_aa8c9732f0eedc19c5863c5872c8cdc37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#aa8c9732f0eedc19c5863c5872c8cdc37">Move</a> (<a class="el" href="namespaceJSL_1_1Terminal.html#a06d88c0f36f73862572da7fd22a4ee76">Direction</a> dir, unsigned int steps)</td></tr>
+<tr class="memdesc:aa8c9732f0eedc19c5863c5872c8cdc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the cursor a specified number of steps in a given direction.  <br /></td></tr>
 <tr class="separator:aa8c9732f0eedc19c5863c5872c8cdc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d2c4659008eccb4578721aa18cbcafb" id="r_a6d2c4659008eccb4578721aa18cbcafb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a6d2c4659008eccb4578721aa18cbcafb">MoveToColumn</a> (uint32_t column)</td></tr>
+<tr class="memitem:a6d2c4659008eccb4578721aa18cbcafb" id="r_a6d2c4659008eccb4578721aa18cbcafb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a6d2c4659008eccb4578721aa18cbcafb">MoveToColumn</a> (uint32_t column)</td></tr>
+<tr class="memdesc:a6d2c4659008eccb4578721aa18cbcafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the cursor to the specified column in the current line (no other text is affected)  <br /></td></tr>
 <tr class="separator:a6d2c4659008eccb4578721aa18cbcafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a4e1219775f952cca3c2762e4989f01" id="r_a6a4e1219775f952cca3c2762e4989f01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSL_1_1Terminal_1_1Size.html">Size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a6a4e1219775f952cca3c2762e4989f01">GetDimensions</a> ()</td></tr>
 <tr class="memdesc:a6a4e1219775f952cca3c2762e4989f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the character-dimensions of the terminal.  <br /></td></tr>
@@ -116,35 +121,48 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8f3aa972b7912fa7ae6a8a2b0279a0d2" id="r_a8f3aa972b7912fa7ae6a8a2b0279a0d2"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a8f3aa972b7912fa7ae6a8a2b0279a0d2">Hide</a> = &quot;\033[?25l&quot;</td></tr>
+<tr class="memitem:a8f3aa972b7912fa7ae6a8a2b0279a0d2" id="r_a8f3aa972b7912fa7ae6a8a2b0279a0d2"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a8f3aa972b7912fa7ae6a8a2b0279a0d2">Hide</a> = &quot;\033[?25l&quot;</td></tr>
+<tr class="memdesc:a8f3aa972b7912fa7ae6a8a2b0279a0d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides the cursor.  <br /></td></tr>
 <tr class="separator:a8f3aa972b7912fa7ae6a8a2b0279a0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59a71e08694f6b984d67e0bc8291c547" id="r_a59a71e08694f6b984d67e0bc8291c547"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a59a71e08694f6b984d67e0bc8291c547">Show</a> = &quot;\033[?25h&quot;</td></tr>
+<tr class="memitem:a59a71e08694f6b984d67e0bc8291c547" id="r_a59a71e08694f6b984d67e0bc8291c547"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a59a71e08694f6b984d67e0bc8291c547">Show</a> = &quot;\033[?25h&quot;</td></tr>
+<tr class="memdesc:a59a71e08694f6b984d67e0bc8291c547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows the cursor.  <br /></td></tr>
 <tr class="separator:a59a71e08694f6b984d67e0bc8291c547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64ba8389d7e03a6aea8d1ca5fd070b7d" id="r_a64ba8389d7e03a6aea8d1ca5fd070b7d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a64ba8389d7e03a6aea8d1ca5fd070b7d">CursorUp</a> = &quot;\033[A&quot;</td></tr>
+<tr class="memitem:a64ba8389d7e03a6aea8d1ca5fd070b7d" id="r_a64ba8389d7e03a6aea8d1ca5fd070b7d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a64ba8389d7e03a6aea8d1ca5fd070b7d">CursorUp</a> = &quot;\033[A&quot;</td></tr>
+<tr class="memdesc:a64ba8389d7e03a6aea8d1ca5fd070b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the cursor up one line.  <br /></td></tr>
 <tr class="separator:a64ba8389d7e03a6aea8d1ca5fd070b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a048b91568fba346ab22cb4d3c7079160" id="r_a048b91568fba346ab22cb4d3c7079160"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a048b91568fba346ab22cb4d3c7079160">Backspace</a> = &quot;\b \b&quot;</td></tr>
+<tr class="memitem:a048b91568fba346ab22cb4d3c7079160" id="r_a048b91568fba346ab22cb4d3c7079160"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a048b91568fba346ab22cb4d3c7079160">Backspace</a> = &quot;\b \b&quot;</td></tr>
+<tr class="memdesc:a048b91568fba346ab22cb4d3c7079160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the previous character (except newlines)  <br /></td></tr>
 <tr class="separator:a048b91568fba346ab22cb4d3c7079160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83b3890f3fe3f5d4736e64d68c34c375" id="r_a83b3890f3fe3f5d4736e64d68c34c375"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a83b3890f3fe3f5d4736e64d68c34c375">EraseRight</a> = &quot;\033[0K&quot;</td></tr>
-<tr class="separator:a83b3890f3fe3f5d4736e64d68c34c375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5fb5ff136a484d9edbec874c96f77ed" id="r_af5fb5ff136a484d9edbec874c96f77ed"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#af5fb5ff136a484d9edbec874c96f77ed">EraseLeft</a> = &quot;\033[1K&quot;</td></tr>
-<tr class="separator:af5fb5ff136a484d9edbec874c96f77ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12e5d7058c5c2e930abe5d863c46480f" id="r_a12e5d7058c5c2e930abe5d863c46480f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a12e5d7058c5c2e930abe5d863c46480f">ClearLine</a> = &quot;\033[2K\r&quot;</td></tr>
+<tr class="memitem:a48c09320455afe99d527a8febe6bfe2e" id="r_a48c09320455afe99d527a8febe6bfe2e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a48c09320455afe99d527a8febe6bfe2e">EraseAllRight</a> = &quot;\033[0K&quot;</td></tr>
+<tr class="memdesc:a48c09320455afe99d527a8febe6bfe2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases all characters to the right of the cursor position.  <br /></td></tr>
+<tr class="separator:a48c09320455afe99d527a8febe6bfe2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1744d04effa6d43e49ed61ecb7907ab8" id="r_a1744d04effa6d43e49ed61ecb7907ab8"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a1744d04effa6d43e49ed61ecb7907ab8">EraseAllLeft</a> = &quot;\033[1K&quot;</td></tr>
+<tr class="memdesc:a1744d04effa6d43e49ed61ecb7907ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases all characters to the left of the cursor position.  <br /></td></tr>
+<tr class="separator:a1744d04effa6d43e49ed61ecb7907ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e5d7058c5c2e930abe5d863c46480f" id="r_a12e5d7058c5c2e930abe5d863c46480f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a12e5d7058c5c2e930abe5d863c46480f">ClearLine</a> = &quot;\033[2K\r&quot;</td></tr>
+<tr class="memdesc:a12e5d7058c5c2e930abe5d863c46480f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the entire line (but does not move the cursor position)  <br /></td></tr>
 <tr class="separator:a12e5d7058c5c2e930abe5d863c46480f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a986dfc10f3bd4ed46338a33a20e9478e" id="r_a986dfc10f3bd4ed46338a33a20e9478e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a986dfc10f3bd4ed46338a33a20e9478e">ClearScreen</a> = &quot;\033[2J\r&quot;</td></tr>
+<tr class="memitem:a986dfc10f3bd4ed46338a33a20e9478e" id="r_a986dfc10f3bd4ed46338a33a20e9478e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a986dfc10f3bd4ed46338a33a20e9478e">ClearScreen</a> = &quot;\033[3J\r&quot;</td></tr>
+<tr class="memdesc:a986dfc10f3bd4ed46338a33a20e9478e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the entire terminal (and scrollback buffer)  <br /></td></tr>
 <tr class="separator:a986dfc10f3bd4ed46338a33a20e9478e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c19ebe7b6dd3ce1532fef1fc8f17e53" id="r_a1c19ebe7b6dd3ce1532fef1fc8f17e53"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJSL_1_1Terminal.html#a1c19ebe7b6dd3ce1532fef1fc8f17e53">ResetPosition</a> = &quot;\033[1;1\r&quot;</td></tr>
+<tr class="memdesc:a1c19ebe7b6dd3ce1532fef1fc8f17e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the cursor to position (1,1) (the top left of the screen)  <br /></td></tr>
+<tr class="separator:a1c19ebe7b6dd3ce1532fef1fc8f17e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="a47b61984832b0a7952fcf4d6eb28b18a" name="a47b61984832b0a7952fcf4d6eb28b18a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47b61984832b0a7952fcf4d6eb28b18a">&#9670;&#160;</a></span>CursorCommand</h2>
+<a id="a14aab5b78cbb911636b1a1eb7c982e0d" name="a14aab5b78cbb911636b1a1eb7c982e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14aab5b78cbb911636b1a1eb7c982e0d">&#9670;&#160;</a></span>CursorCommand</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">JSL::Terminal::CursorCommand</a> = typedef std::string</td>
+          <td class="memname">typedef std::string <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">JSL::Terminal::CursorCommand</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>A basic wrapper to make CursorCommands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!) </p>
 
 </div>
 </div>
@@ -160,6 +178,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Specify the direction of terminal movement. </p>
+<p>The fixed numbers allow us to do some ASCII hackery, and convert the enums to relevant chars </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3" name="a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3"></a>Up&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48" name="a06d88c0f36f73862572da7fd22a4ee76a66696acf504d9b0a30199e5e2fc75f48"></a>Down&#160;</td><td class="fielddoc"></td></tr>
@@ -204,6 +225,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Determine if the output stream can interpret ANSI escape sequences. </p>
+<p>Uses isatty (and _isatty for windows) to determine if stdout can render ANSI commands. </p><dl class="section return"><dt>Returns</dt><dd>True if the output is capable of interpreting format commands (i.e. a terminal) False if the terminal is plaintext (i.e. a file) </dd></dl>
+
 </div>
 </div>
 <a id="aa8c9732f0eedc19c5863c5872c8cdc37" name="aa8c9732f0eedc19c5863c5872c8cdc37"></a>
@@ -213,7 +237,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::Move </td>
+          <td class="memname"><a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::Move </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceJSL_1_1Terminal.html#a06d88c0f36f73862572da7fd22a4ee76">Direction</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
@@ -232,6 +256,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Move the cursor a specified number of steps in a given direction. </p>
+
 </div>
 </div>
 <a id="a6d2c4659008eccb4578721aa18cbcafb" name="a6d2c4659008eccb4578721aa18cbcafb"></a>
@@ -241,7 +267,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::MoveToColumn </td>
+          <td class="memname"><a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::MoveToColumn </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -249,6 +275,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Moves the cursor to the specified column in the current line (no other text is affected) </p>
+<p>Columns are 1-indexed <br  />
+ </p>
 
 </div>
 </div>
@@ -263,7 +293,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::Backspace = &quot;\b \b&quot;</td>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::Backspace = &quot;\b \b&quot;</td>
         </tr>
       </table>
   </td>
@@ -272,6 +302,9 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Deletes the previous character (except newlines) </p>
+<p>\b on its own just moves cursor; this moves cursor, erases character, then moves it back again </p>
 
 </div>
 </div>
@@ -285,7 +318,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::ClearLine = &quot;\033[2K\r&quot;</td>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::ClearLine = &quot;\033[2K\r&quot;</td>
         </tr>
       </table>
   </td>
@@ -294,6 +327,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clears the entire line (but does not move the cursor position) </p>
 
 </div>
 </div>
@@ -307,7 +342,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::ClearScreen = &quot;\033[2J\r&quot;</td>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::ClearScreen = &quot;\033[3J\r&quot;</td>
         </tr>
       </table>
   </td>
@@ -316,6 +351,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clears the entire terminal (and scrollback buffer) </p>
 
 </div>
 </div>
@@ -329,7 +366,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::CursorUp = &quot;\033[A&quot;</td>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::CursorUp = &quot;\033[A&quot;</td>
         </tr>
       </table>
   </td>
@@ -339,10 +376,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Moves the cursor up one line. </p>
+
 </div>
 </div>
-<a id="af5fb5ff136a484d9edbec874c96f77ed" name="af5fb5ff136a484d9edbec874c96f77ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5fb5ff136a484d9edbec874c96f77ed">&#9670;&#160;</a></span>EraseLeft</h2>
+<a id="a1744d04effa6d43e49ed61ecb7907ab8" name="a1744d04effa6d43e49ed61ecb7907ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1744d04effa6d43e49ed61ecb7907ab8">&#9670;&#160;</a></span>EraseAllLeft</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,7 +390,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::EraseLeft = &quot;\033[1K&quot;</td>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::EraseAllLeft = &quot;\033[1K&quot;</td>
         </tr>
       </table>
   </td>
@@ -361,10 +400,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Erases all characters to the left of the cursor position. </p>
+
 </div>
 </div>
-<a id="a83b3890f3fe3f5d4736e64d68c34c375" name="a83b3890f3fe3f5d4736e64d68c34c375"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83b3890f3fe3f5d4736e64d68c34c375">&#9670;&#160;</a></span>EraseRight</h2>
+<a id="a48c09320455afe99d527a8febe6bfe2e" name="a48c09320455afe99d527a8febe6bfe2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c09320455afe99d527a8febe6bfe2e">&#9670;&#160;</a></span>EraseAllRight</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -373,7 +414,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::EraseRight = &quot;\033[0K&quot;</td>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::EraseAllRight = &quot;\033[0K&quot;</td>
         </tr>
       </table>
   </td>
@@ -382,6 +423,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Erases all characters to the right of the cursor position. </p>
 
 </div>
 </div>
@@ -395,7 +438,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::Hide = &quot;\033[?25l&quot;</td>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::Hide = &quot;\033[?25l&quot;</td>
         </tr>
       </table>
   </td>
@@ -404,6 +447,32 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Hides the cursor. </p>
+
+</div>
+</div>
+<a id="a1c19ebe7b6dd3ce1532fef1fc8f17e53" name="a1c19ebe7b6dd3ce1532fef1fc8f17e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c19ebe7b6dd3ce1532fef1fc8f17e53">&#9670;&#160;</a></span>ResetPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::ResetPosition = &quot;\033[1;1\r&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Moves the cursor to position (1,1) (the top left of the screen) </p>
 
 </div>
 </div>
@@ -417,7 +486,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a47b61984832b0a7952fcf4d6eb28b18a">CursorCommand</a> JSL::Terminal::Show = &quot;\033[?25h&quot;</td>
+          <td class="memname">constexpr <a class="el" href="namespaceJSL_1_1Terminal.html#a14aab5b78cbb911636b1a1eb7c982e0d">CursorCommand</a> JSL::Terminal::Show = &quot;\033[?25h&quot;</td>
         </tr>
       </table>
   </td>
@@ -426,6 +495,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Shows the cursor. </p>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['d_0',['D',['../classJSL_1_1Plotting_1_1Axis.html#a3ac57a71e1a04fa02107fcfd142ef296',1,'JSL::Plotting::Axis']]],
-  ['data_1',['data',['../classJSL_1_1Plotting_1_1AxisMembers_1_1Data.html',1,'JSL::Plotting::AxisMembers::Data'],['../structJSL_1_1Archiver_1_1internal_1_1WriteExporter.html#aa868373e55ef610ef3c0d26b3af3271e',1,'JSL::Archiver::internal::WriteExporter::data'],['../classJSL_1_1Plotting_1_1AxisMembers_1_1Data.html#a67bdc65f59f020205c1eb51328977a29',1,'JSL::Plotting::AxisMembers::Data::Data()']]],
+  ['data_1',['data',['../classJSL_1_1Plotting_1_1AxisMembers_1_1Data.html',1,'JSL::Plotting::AxisMembers::Data'],['../classJSL_1_1Plotting_1_1AxisMembers_1_1Data.html#a67bdc65f59f020205c1eb51328977a29',1,'JSL::Plotting::AxisMembers::Data::Data()'],['../structJSL_1_1Archiver_1_1internal_1_1WriteExporter.html#aa868373e55ef610ef3c0d26b3af3271e',1,'JSL::Archiver::internal::WriteExporter::data']]],
   ['data_5foffset_2',['data_offset',['../structJSL_1_1Archiver_1_1internal_1_1ReadMetaData.html#af0ce088aaa02611955b4ee0037c760ab',1,'JSL::Archiver::internal::ReadMetaData::data_offset'],['../classJSL_1_1Archiver_1_1ReadStream.html#aba88193d5c05ecb7b35aa6e2d4656ae0',1,'JSL::Archiver::ReadStream::data_offset']]],
   ['deactivate_3',['Deactivate',['../classJSL_1_1Event_1_1Antenna.html#acb14bcd7e567c8d4a0d66bd479ce31d0',1,'JSL::Event::Antenna']]],
   ['debouncems_4',['DebounceMS',['../classJSL_1_1Event_1_1Watcher.html#ac1c0304f4f8d76d74ea6602a094f792e',1,'JSL::Event::Watcher']]],

@@ -61,6 +61,7 @@ namespace JSL::Log::internal
 				@returns A reference to the object, allowing for 'chaining' the stream; stream << a << b << c
 			*/
 			template<class T>
+			requires (!Format::FormatType<T>) 
 			Core &operator<<(const T &msg)
 			{
 				if (!StreamActive) //lazy opening of the steam
@@ -76,8 +77,8 @@ namespace JSL::Log::internal
 			/*!
 				Overloads the stream operator for JSL::Format objects, allowing peristent formatting across linebreaks and in the pregenerated headers.
 			*/
-			template<Format::FormatType T>
-			Core &operator<<(T format)
+			template<Format::FormatType Q>
+			Core &operator<<(Q format)
 			{
 				if (Config::Global().TerminalOutput)
 				{

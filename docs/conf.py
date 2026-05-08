@@ -74,14 +74,17 @@ html_theme = 'cloud'
 html_static_path = []
 html_permalinks = False
 
-
+# Prefix each section label with the name of the document it is in
+autosectionlabel_prefix_document = True
 suppress_warnings = ['duplicate_declaration.cpp'] #to suppress miltiple definitions
 
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
-from custom_envs import JSLClassDirective
+from custom_envs import *
 
 def setup(app):
 	app.add_directive("jsl-class", JSLClassDirective)
+	app.add_directive("jsl-meta", JSLMetaDirective)
+	app.add_directive("jsl", JSLHandover)
 

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tan_0',['tan',['../classVectorDual.html#a6dd0a9db0722baa47a0c424d950c5fa3',1,'VectorDual']]]
+  ['sin_0',['sin',['../classVectorDual.html#a470879720182d664504b4a6862676f7f',1,'VectorDual']]],
+  ['sqrt_1',['sqrt',['../classVectorDual.html#a6ec66ea7646ca8276b977515b711e560',1,'VectorDual']]]
 ];

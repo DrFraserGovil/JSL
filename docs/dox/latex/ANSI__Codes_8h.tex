@@ -15,8 +15,8 @@ namespace \mbox{\hyperlink{namespaceJSL_1_1Format}{JSL\+::\+Format}}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{JSL\+::\+Terminal\+::\+Cursor\+Command}} = std\+::string
-\end{DoxyCompactItemize}
+typedef std\+::string \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{JSL\+::\+Terminal\+::\+Cursor\+Command}}
+\begin{DoxyCompactList}\small\item\em A basic wrapper to make Cursor\+Commands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-\/trivial (i.\+e. the length of these strings does not equate to their length on screen!) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,84 +25,86 @@ enum \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76
 , \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26}{JSL\+::\+Terminal\+::\+Right}} =2
 , \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908}{JSL\+::\+Terminal\+::\+Left}} =3
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Specify the direction of terminal movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{namespaceJSL_1_1Terminal_a194d7176d034555e7008938ed071f9f8}{JSL\+::\+Terminal\+::\+Is\+ANSICapable}} ()
+\begin{DoxyCompactList}\small\item\em Determine if the output stream can interpret ANSI escape sequences. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}{JSL\+::\+Terminal\+::\+Move}} (\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}} dir, unsigned int steps)
+\begin{DoxyCompactList}\small\item\em Move the cursor a specified number of steps in a given direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}{JSL\+::\+Terminal\+::\+Move\+To\+Column}} (uint32\+\_\+t column)
+\begin{DoxyCompactList}\small\item\em Moves the cursor to the specified column in the current line (no other text is affected) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a72f9735a888543e7e1b5cb07ae7ad10b}{JSL\+::\+Format\+::\+Reset}} (\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{Element}} sections=\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}})
 \item 
-\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}{JSL\+::\+Terminal\+::\+Move}} (\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}} dir, unsigned int steps)
+\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1320a97711cbad9c50f9588e48876a53}{JSL\+::\+Format\+::\+Colour}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
 \item 
-\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}{JSL\+::\+Terminal\+::\+Move\+To\+Column}} (uint32\+\_\+t column)
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a0310aceb1276f364edf89ea449e2a8d5}{JSL\+::\+Format\+::\+Reset\+All}} ("{}\textbackslash{}033\mbox{[}0m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}})
-\item 
-\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a72f9735a888543e7e1b5cb07ae7ad10b}{JSL\+::\+Format\+::\+Reset}} (\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622}{Element}} sections=\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a564e38f310ecc9f0982f40e18590164d}{JSL\+::\+Format\+::\+Black}} ("{}\textbackslash{}033\mbox{[}30m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ae70c4e93b38e7e6d3d4a4587bdeca2d8}{JSL\+::\+Format\+::\+Red}} ("{}\textbackslash{}033\mbox{[}31m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aca4adf51e196a330791d94688f827cf9}{JSL\+::\+Format\+::\+Green}} ("{}\textbackslash{}033\mbox{[}32m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aaeaa6f8b854fe2f38e404f5c4ccd863f}{JSL\+::\+Format\+::\+Yellow}} ("{}\textbackslash{}033\mbox{[}33m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ac7e4db410a5d82647350de18a9400356}{JSL\+::\+Format\+::\+Blue}} ("{}\textbackslash{}033\mbox{[}34m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a10c116dab0dbf18d5b10741f0ac8b8b2}{JSL\+::\+Format\+::\+Purple}} ("{}\textbackslash{}033\mbox{[}35m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ab57e30d39f562e4b735405a4c3685d57}{JSL\+::\+Format\+::\+Cyan}} ("{}\textbackslash{}033\mbox{[}36m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a08d06db733a345807a8fd58f9c779e46}{JSL\+::\+Format\+::\+White}} ("{}\textbackslash{}033\mbox{[}37m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2a29d497acaa067b570f6d852f40a93a}{JSL\+::\+Format\+::\+Bold}} ("{}\textbackslash{}033\mbox{[}1m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a0827ebc4850da2e12f0b368cb3face90}{JSL\+::\+Format\+::\+Faint}} ("{}\textbackslash{}033\mbox{[}2m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aa979ec2b6fefa52dfd126dde4b9f7ff5}{JSL\+::\+Format\+::\+Italics}} ("{}\textbackslash{}033\mbox{[}3m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ac6a414a59d7fb0376a225b34eb9dcba9}{JSL\+::\+Format\+::\+Underline}} ("{}\textbackslash{}033\mbox{[}4m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a04fd686ba5a0458ded6b2de07a93d263}{JSL\+::\+Format\+::\+Highlight}} ("{}\textbackslash{}033\mbox{[}7m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2f7953035dfe2593afa916fdfae9ec3c}{JSL\+::\+Format\+::\+Strike}} ("{}\textbackslash{}033\mbox{[}9m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
-\item 
-\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1320a97711cbad9c50f9588e48876a53}{JSL\+::\+Format\+::\+Colour}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1fa23969dab620f3d9b56ef68082766b}{JSL\+::\+Format\+::\+Bg\+Black}} ("{}\textbackslash{}033\mbox{[}40m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_afd273f5fb30815ebe8befcc36d9a60b4}{JSL\+::\+Format\+::\+Bg\+Red}} ("{}\textbackslash{}033\mbox{[}41m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ad2d9099b79b7b1b370d5902a21baaee1}{JSL\+::\+Format\+::\+Bg\+Green}} ("{}\textbackslash{}033\mbox{[}42m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1583018a288e946c518d84e0339b2386}{JSL\+::\+Format\+::\+Bg\+Yellow}} ("{}\textbackslash{}033\mbox{[}43m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a99ad159e7ebe52d597e4c83783b8e259}{JSL\+::\+Format\+::\+Bg\+Blue}} ("{}\textbackslash{}033\mbox{[}44m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_acf947df1b26f461bd72a8de4f4a13b56}{JSL\+::\+Format\+::\+Bg\+Purple}} ("{}\textbackslash{}033\mbox{[}45m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ad0a98bcd9348a1133ab06cfe41beb5ed}{JSL\+::\+Format\+::\+Bg\+Cyan}} ("{}\textbackslash{}033\mbox{[}46m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
-\item 
-const \mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_add9c1bf1296670a8b34fb32c47cfe0c8}{JSL\+::\+Format\+::\+Bg\+White}} ("{}\textbackslash{}033\mbox{[}47m"{}, \mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
-\item 
-\mbox{\hyperlink{structJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aadd84caae79d82316f117f2b4230e644}{JSL\+::\+Format\+::\+Bg\+Colour}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aadd84caae79d82316f117f2b4230e644}{JSL\+::\+Format\+::\+Bg\+Colour}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}{JSL\+::\+Terminal\+::\+Hide}} = "{}\textbackslash{}033\mbox{[}?25l"{}
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}{JSL\+::\+Terminal\+::\+Hide}} = "{}\textbackslash{}033\mbox{[}?25l"{}
+\begin{DoxyCompactList}\small\item\em Hides the cursor. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}{JSL\+::\+Terminal\+::\+Show}} = "{}\textbackslash{}033\mbox{[}?25h"{}
+\begin{DoxyCompactList}\small\item\em Shows the cursor. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}{JSL\+::\+Terminal\+::\+Cursor\+Up}} = "{}\textbackslash{}033\mbox{[}A"{}
+\begin{DoxyCompactList}\small\item\em Moves the cursor up one line. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}{JSL\+::\+Terminal\+::\+Backspace}} = "{}\textbackslash{}b \textbackslash{}b"{}
+\begin{DoxyCompactList}\small\item\em Deletes the previous character (except newlines) \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a48c09320455afe99d527a8febe6bfe2e}{JSL\+::\+Terminal\+::\+Erase\+All\+Right}} = "{}\textbackslash{}033\mbox{[}0\+K"{}
+\begin{DoxyCompactList}\small\item\em Erases all characters to the right of the cursor position. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a1744d04effa6d43e49ed61ecb7907ab8}{JSL\+::\+Terminal\+::\+Erase\+All\+Left}} = "{}\textbackslash{}033\mbox{[}1K"{}
+\begin{DoxyCompactList}\small\item\em Erases all characters to the left of the cursor position. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}{JSL\+::\+Terminal\+::\+Clear\+Line}} = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}
+\begin{DoxyCompactList}\small\item\em Clears the entire line (but does not move the cursor position) \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}{JSL\+::\+Terminal\+::\+Clear\+Screen}} = "{}\textbackslash{}033\mbox{[}3J\textbackslash{}r"{}
+\begin{DoxyCompactList}\small\item\em Clears the entire terminal (and scrollback buffer) \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a1c19ebe7b6dd3ce1532fef1fc8f17e53}{JSL\+::\+Terminal\+::\+Reset\+Position}} = "{}\textbackslash{}033\mbox{[}1;1\textbackslash{}r"{}
+\begin{DoxyCompactList}\small\item\em Moves the cursor to position (1,1) (the top left of the screen) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a8d547b476769dfa6987877d8498b658f}{JSL\+::\+Format\+::\+Reset\+All}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}0m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a78ceb2c663c064b485d091db33634535}{Element\+::\+Resetter}})
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}{JSL\+::\+Terminal\+::\+Show}} = "{}\textbackslash{}033\mbox{[}?25h"{}
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_acd912fde1be2e1c505d610d8488647d6}{JSL\+::\+Format\+::\+Black}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}30m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\begin{DoxyCompactList}\small\item\em Black-\/coloured text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a895f99fbde50e49b4400c8ad842770b8}{JSL\+::\+Format\+::\+Red}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}31m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\begin{DoxyCompactList}\small\item\em Red-\/coloured text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a00b5efe6432f62425eb87b355ecfdb90}{JSL\+::\+Format\+::\+Green}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}32m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\begin{DoxyCompactList}\small\item\em Green-\/coloured text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a20839fbb9bbc35ce427eb65bf777fdd0}{JSL\+::\+Format\+::\+Yellow}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}33m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\begin{DoxyCompactList}\small\item\em Yellow-\/coloured text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2697ba70771715ff40f5c250ecad7a2b}{JSL\+::\+Format\+::\+Blue}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}34m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\begin{DoxyCompactList}\small\item\em Blue-\/coloured text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a40a332519562e167aa25b95d857f1f2f}{JSL\+::\+Format\+::\+Purple}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}35m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\begin{DoxyCompactList}\small\item\em Purple-\/coloured text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a75ab280e60ea833df18a428d9ca3e452}{JSL\+::\+Format\+::\+Cyan}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}36m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\begin{DoxyCompactList}\small\item\em Cyan-\/coloured text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2d9a870a75971fcc151c0483bd4a7589}{JSL\+::\+Format\+::\+White}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}37m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622a01b0564a3a65f2db81d58dfab0cb3ab8}{Foreground\+Colour}})
+\begin{DoxyCompactList}\small\item\em White-\/coloured text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a0e4a11a4b7df053850899c56aa253011}{JSL\+::\+Format\+::\+Bold}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}1m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\begin{DoxyCompactList}\small\item\em Boldface text (or \textquotesingle{}high intensity colour\textquotesingle{} in some terminals) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a9f20935e92e8c288fac686494a44951d}{JSL\+::\+Format\+::\+Faint}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}2m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\begin{DoxyCompactList}\small\item\em Low intensity colour. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2b8c222c4ab8f252370acc6b2f6b8811}{JSL\+::\+Format\+::\+Italics}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}3m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\begin{DoxyCompactList}\small\item\em Italics typeface. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a362be96a7e27ff3ef242cd52d72ec257}{JSL\+::\+Format\+::\+Underline}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}4m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\begin{DoxyCompactList}\small\item\em Underline text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2c4c7b79031341ae4a9895a2e1c3f6bf}{JSL\+::\+Format\+::\+Highlight}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}7m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\begin{DoxyCompactList}\small\item\em Inverts background and foreground colours. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a16da38e86c0ec88b03726fda96b41377}{JSL\+::\+Format\+::\+Strike}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}9m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ad307501d87c4130525c81e164a22f961}{Style}})
+\begin{DoxyCompactList}\small\item\em Strikethrough text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a09c367827ec5f1801940ccb797f7e38a}{JSL\+::\+Format\+::\+Bg\+Black}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}40m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}{JSL\+::\+Terminal\+::\+Cursor\+Up}} = "{}\textbackslash{}033\mbox{[}A"{}
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a6f9acf3eb7d8ec26afe33dcebc541d2c}{JSL\+::\+Format\+::\+Bg\+Red}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}41m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}{JSL\+::\+Terminal\+::\+Backspace}} = "{}\textbackslash{}b \textbackslash{}b"{}
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_afb9e44a30a65398bf4cbcea990adf1e6}{JSL\+::\+Format\+::\+Bg\+Green}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}42m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375}{JSL\+::\+Terminal\+::\+Erase\+Right}} = "{}\textbackslash{}033\mbox{[}0\+K"{}
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a48e68766bc914baa844751abc8e3419b}{JSL\+::\+Format\+::\+Bg\+Yellow}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}43m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed}{JSL\+::\+Terminal\+::\+Erase\+Left}} = "{}\textbackslash{}033\mbox{[}1K"{}
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a1eb7878920cf7dea40283a4a480d5480}{JSL\+::\+Format\+::\+Bg\+Blue}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}44m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}{JSL\+::\+Terminal\+::\+Clear\+Line}} = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_aaa5a9f10a7f3bc437c8bc09b7754ae5f}{JSL\+::\+Format\+::\+Bg\+Purple}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}45m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}{JSL\+::\+Terminal\+::\+Clear\+Screen}} = "{}\textbackslash{}033\mbox{[}2J\textbackslash{}r"{}
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_a2860ba4a510d497dcc3d91dfb2a176ea}{JSL\+::\+Format\+::\+Bg\+Cyan}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}46m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
+\item 
+const \mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}} \mbox{\hyperlink{namespaceJSL_1_1Format_ab7cdeb67d515a835bcbc7e2bf36c4cf3}{JSL\+::\+Format\+::\+Bg\+White}} =\mbox{\hyperlink{classJSL_1_1Format_1_1Command}{Command}}("{}\textbackslash{}033\mbox{[}47m"{},\mbox{\hyperlink{namespaceJSL_1_1Format_a30c48b818792e1d9afcb8a00d3716622ab2e9840b961a2dfa0aac0147a135160c}{Background\+Colour}})
 \end{DoxyCompactItemize}

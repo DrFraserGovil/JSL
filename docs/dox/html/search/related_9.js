@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sin_0',['sin',['../classVectorDual.html#a470879720182d664504b4a6862676f7f',1,'VectorDual']]],
-  ['sqrt_1',['sqrt',['../classVectorDual.html#a6ec66ea7646ca8276b977515b711e560',1,'VectorDual']]]
+  ['pow_0',['pow',['../classVectorDual.html#a80d4ebbcdecabe541ccb5310f07dd2af',1,'VectorDual::pow'],['../classVectorDual.html#ae1d5722c934e962d241a70f5798da39a',1,'VectorDual::pow']]]
 ];

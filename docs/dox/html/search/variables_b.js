@@ -8,7 +8,7 @@ var searchData=
   ['largewritecount_5',['LargeWriteCount',['../classJSL_1_1Archiver_1_1WriteStream.html#ad0d135314e9170d161a4bd79bd511404',1,'JSL::Archiver::WriteStream']]],
   ['lastrender_6',['LastRender',['../classJSL_1_1Display_1_1Progress_1_1Static.html#a532a8d7d42229ee93ca6a378912b04da',1,'JSL::Display::Progress::Static']]],
   ['legend_7',['Legend',['../classJSL_1_1Plotting_1_1Display.html#a3c1df7ee7f3d62bae9388b2ed5b3312d',1,'JSL::Plotting::Display']]],
-  ['len_8',['len',['../structJSL_1_1Format_1_1Command.html#a5292a3d8f3204333be5342bc001b77ee',1,'JSL::Format::Command']]],
+  ['len_8',['len',['../classJSL_1_1Format_1_1Command.html#a5292a3d8f3204333be5342bc001b77ee',1,'JSL::Format::Command']]],
   ['level_9',['level',['../classJSL_1_1Log_1_1internal_1_1Core.html#acb0881dcc4baf14855314d32b1c67ccd',1,'JSL::Log::internal::Core::Level'],['../classJSL_1_1Log_1_1Config.html#af5080050478cdd9226a604dd839bdeaf',1,'JSL::Log::Config::Level']]],
   ['lhs_10',['LHS',['../structBinaryExpression.html#a1dda076ef667d2e6a3e47a48f2001e5f',1,'BinaryExpression']]],
   ['line_11',['line',['../classJSL_1_1internal_1_1FatalError.html#a0aedcd8d9a609d98c61e86c28c2b4b4a',1,'JSL::internal::FatalError']]],

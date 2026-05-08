@@ -17,5 +17,6 @@ var searchData=
   ['isdense_14',['isdense',['../structGradientHolder.html#a82f339ceb0fafface8065db4e92d47b8',1,'GradientHolder::IsDense'],['../classVectorDual.html#abc7753ebd3898e9f0b332bf2c5e4ad74',1,'VectorDual::IsDense']]],
   ['isdirty_15',['IsDirty',['../classJSL_1_1Plotting_1_1Axis.html#a96ae1898323c3a567ae786a179a418df',1,'JSL::Plotting::Axis']]],
   ['islarge_16',['IsLarge',['../classJSL_1_1Archiver_1_1WriteStream.html#ac88ffb0e6637fd34f98bf3022eec9eba',1,'JSL::Archiver::WriteStream']]],
-  ['isrecursive_17',['IsRecursive',['../classJSL_1_1IO_1_1FileSystem_1_1Structure.html#a3bc17d30bc3b62cc5f84f21e02437016',1,'JSL::IO::FileSystem::Structure']]]
+  ['isrecursive_17',['IsRecursive',['../classJSL_1_1IO_1_1FileSystem_1_1Structure.html#a3bc17d30bc3b62cc5f84f21e02437016',1,'JSL::IO::FileSystem::Structure']]],
+  ['italics_18',['Italics',['../namespaceJSL_1_1Format.html#a2b8c222c4ab8f252370acc6b2f6b8811',1,'JSL::Format']]]
 ];

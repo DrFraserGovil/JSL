@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['command_0',['Command',['../structJSL_1_1Format_1_1Command.html',1,'JSL::Format']]],
+  ['command_0',['Command',['../classJSL_1_1Format_1_1Command.html',1,'JSL::Format']]],
   ['commandlinereader_1',['CommandLineReader',['../classJSL_1_1internal_1_1Parameter_1_1CommandLineReader.html',1,'JSL::internal::Parameter']]],
   ['config_2',['Config',['../classJSL_1_1Log_1_1Config.html',1,'JSL::Log']]],
   ['controller_3',['Controller',['../classJSL_1_1Plotting_1_1Color_1_1Controller.html',1,'JSL::Plotting::Color']]],

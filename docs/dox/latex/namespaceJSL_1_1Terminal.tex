@@ -8,8 +8,8 @@ struct \mbox{\hyperlink{structJSL_1_1Terminal_1_1Size}{Size}}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} = std\+::string
-\end{DoxyCompactItemize}
+typedef std\+::string \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}}
+\begin{DoxyCompactList}\small\item\em A basic wrapper to make Cursor\+Commands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-\/trivial (i.\+e. the length of these strings does not equate to their length on screen!) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,45 +18,51 @@ enum \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76
 , \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76ad573393e821e05d8caa35a73dd4b2f26}{Right}} =2
 , \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a5e3ca1ee054dc8647ffa44bcf9e8e908}{Left}} =3
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Specify the direction of terminal movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{namespaceJSL_1_1Terminal_a194d7176d034555e7008938ed071f9f8}{Is\+ANSICapable}} ()
-\item 
-\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}{Move}} (\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}} dir, unsigned int steps)
-\item 
-\mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}{Move\+To\+Column}} (uint32\+\_\+t column)
-\item 
+\begin{DoxyCompactList}\small\item\em Determine if the output stream can interpret ANSI escape sequences. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}{Move}} (\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}} dir, unsigned int steps)
+\begin{DoxyCompactList}\small\item\em Move the cursor a specified number of steps in a given direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}{Move\+To\+Column}} (uint32\+\_\+t column)
+\begin{DoxyCompactList}\small\item\em Moves the cursor to the specified column in the current line (no other text is affected) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structJSL_1_1Terminal_1_1Size}{Size}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a6a4e1219775f952cca3c2762e4989f01}{Get\+Dimensions}} ()
 \begin{DoxyCompactList}\small\item\em Gets the character-\/dimensions of the terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}{Hide}} = "{}\textbackslash{}033\mbox{[}?25l"{}
-\item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}{Show}} = "{}\textbackslash{}033\mbox{[}?25h"{}
-\item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}{Cursor\+Up}} = "{}\textbackslash{}033\mbox{[}A"{}
-\item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}{Backspace}} = "{}\textbackslash{}b \textbackslash{}b"{}
-\item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375}{Erase\+Right}} = "{}\textbackslash{}033\mbox{[}0\+K"{}
-\item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed}{Erase\+Left}} = "{}\textbackslash{}033\mbox{[}1K"{}
-\item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}{Clear\+Line}} = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}
-\item 
-constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}{Clear\+Screen}} = "{}\textbackslash{}033\mbox{[}2J\textbackslash{}r"{}
-\end{DoxyCompactItemize}
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}{Hide}} = "{}\textbackslash{}033\mbox{[}?25l"{}
+\begin{DoxyCompactList}\small\item\em Hides the cursor. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}{Show}} = "{}\textbackslash{}033\mbox{[}?25h"{}
+\begin{DoxyCompactList}\small\item\em Shows the cursor. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}{Cursor\+Up}} = "{}\textbackslash{}033\mbox{[}A"{}
+\begin{DoxyCompactList}\small\item\em Moves the cursor up one line. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}{Backspace}} = "{}\textbackslash{}b \textbackslash{}b"{}
+\begin{DoxyCompactList}\small\item\em Deletes the previous character (except newlines) \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a48c09320455afe99d527a8febe6bfe2e}{Erase\+All\+Right}} = "{}\textbackslash{}033\mbox{[}0\+K"{}
+\begin{DoxyCompactList}\small\item\em Erases all characters to the right of the cursor position. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a1744d04effa6d43e49ed61ecb7907ab8}{Erase\+All\+Left}} = "{}\textbackslash{}033\mbox{[}1K"{}
+\begin{DoxyCompactList}\small\item\em Erases all characters to the left of the cursor position. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}{Clear\+Line}} = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}
+\begin{DoxyCompactList}\small\item\em Clears the entire line (but does not move the cursor position) \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}{Clear\+Screen}} = "{}\textbackslash{}033\mbox{[}3J\textbackslash{}r"{}
+\begin{DoxyCompactList}\small\item\em Clears the entire terminal (and scrollback buffer) \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} \mbox{\hyperlink{namespaceJSL_1_1Terminal_a1c19ebe7b6dd3ce1532fef1fc8f17e53}{Reset\+Position}} = "{}\textbackslash{}033\mbox{[}1;1\textbackslash{}r"{}
+\begin{DoxyCompactList}\small\item\em Moves the cursor to position (1,1) (the top left of the screen) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\Hypertarget{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}\label{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a} 
+\Hypertarget{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}\label{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d} 
 \index{JSL::Terminal@{JSL::Terminal}!CursorCommand@{CursorCommand}}
 \index{CursorCommand@{CursorCommand}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{CursorCommand}{CursorCommand}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{JSL\+::\+Terminal\+::\+Cursor\+Command}} = typedef std\+::string}
+{\footnotesize\ttfamily typedef std\+::string \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{JSL\+::\+Terminal\+::\+Cursor\+Command}}}
+
+
+
+A basic wrapper to make Cursor\+Commands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-\/trivial (i.\+e. the length of these strings does not equate to their length on screen!) 
 
 
 
@@ -67,7 +73,11 @@ constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb2
 \doxysubsubsection{\texorpdfstring{Direction}{Direction}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{JSL\+::\+Terminal\+::\+Direction}}}
 
-\begin{DoxyEnumFields}{Enumerator}
+
+
+Specify the direction of terminal movement. 
+
+The fixed numbers allow us to do some ASCII hackery, and convert the enums to relevant chars \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!JSL::Terminal@{JSL::Terminal}}\index{JSL::Terminal@{JSL::Terminal}!Up@{Up}}}\Hypertarget{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3}\label{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76a1703fe844a85172f5af48bed0590d2f3} 
 Up&\\
 \hline
@@ -104,66 +114,124 @@ Gets the character-\/dimensions of the terminal.
 \doxysubsubsection{\texorpdfstring{IsANSICapable()}{IsANSICapable()}}
 {\footnotesize\ttfamily bool JSL\+::\+Terminal\+::\+Is\+ANSICapable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Determine if the output stream can interpret ANSI escape sequences. 
+
+Uses isatty (and \+\_\+isatty for windows) to determine if stdout can render ANSI commands. \begin{DoxyReturn}{Returns}
+True if the output is capable of interpreting format commands (i.\+e. a terminal) False if the terminal is plaintext (i.\+e. a file) 
+\end{DoxyReturn}
 \Hypertarget{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37}\label{namespaceJSL_1_1Terminal_aa8c9732f0eedc19c5863c5872c8cdc37} 
 \index{JSL::Terminal@{JSL::Terminal}!Move@{Move}}
 \index{Move@{Move}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{Move()}{Move()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}}}]{dir,  }\item[{unsigned int}]{steps }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceJSL_1_1Terminal_a06d88c0f36f73862572da7fd22a4ee76}{Direction}}}]{dir,  }\item[{unsigned int}]{steps }\end{DoxyParamCaption})}
+
+
+
+Move the cursor a specified number of steps in a given direction. 
 
 \Hypertarget{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb}\label{namespaceJSL_1_1Terminal_a6d2c4659008eccb4578721aa18cbcafb} 
 \index{JSL::Terminal@{JSL::Terminal}!MoveToColumn@{MoveToColumn}}
 \index{MoveToColumn@{MoveToColumn}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{MoveToColumn()}{MoveToColumn()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Move\+To\+Column (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{column }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Move\+To\+Column (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{column }\end{DoxyParamCaption})}
 
 
+
+Moves the cursor to the specified column in the current line (no other text is affected) 
+
+Columns are 1-\/indexed ~\newline
+ 
 
 \doxysubsection{Variable Documentation}
 \Hypertarget{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160}\label{namespaceJSL_1_1Terminal_a048b91568fba346ab22cb4d3c7079160} 
 \index{JSL::Terminal@{JSL::Terminal}!Backspace@{Backspace}}
 \index{Backspace@{Backspace}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{Backspace}{Backspace}}
-{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Backspace = "{}\textbackslash{}b \textbackslash{}b"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Backspace = "{}\textbackslash{}b \textbackslash{}b"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\Hypertarget{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}\label{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f} 
+
+
+Deletes the previous character (except newlines) 
+
+\textbackslash{}b on its own just moves cursor; this moves cursor, erases character, then moves it back again \Hypertarget{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f}\label{namespaceJSL_1_1Terminal_a12e5d7058c5c2e930abe5d863c46480f} 
 \index{JSL::Terminal@{JSL::Terminal}!ClearLine@{ClearLine}}
 \index{ClearLine@{ClearLine}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{ClearLine}{ClearLine}}
-{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Clear\+Line = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Clear\+Line = "{}\textbackslash{}033\mbox{[}2K\textbackslash{}r"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Clears the entire line (but does not move the cursor position) 
 
 \Hypertarget{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e}\label{namespaceJSL_1_1Terminal_a986dfc10f3bd4ed46338a33a20e9478e} 
 \index{JSL::Terminal@{JSL::Terminal}!ClearScreen@{ClearScreen}}
 \index{ClearScreen@{ClearScreen}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{ClearScreen}{ClearScreen}}
-{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Clear\+Screen = "{}\textbackslash{}033\mbox{[}2J\textbackslash{}r"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Clear\+Screen = "{}\textbackslash{}033\mbox{[}3J\textbackslash{}r"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Clears the entire terminal (and scrollback buffer) 
 
 \Hypertarget{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d}\label{namespaceJSL_1_1Terminal_a64ba8389d7e03a6aea8d1ca5fd070b7d} 
 \index{JSL::Terminal@{JSL::Terminal}!CursorUp@{CursorUp}}
 \index{CursorUp@{CursorUp}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{CursorUp}{CursorUp}}
-{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Cursor\+Up = "{}\textbackslash{}033\mbox{[}A"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Cursor\+Up = "{}\textbackslash{}033\mbox{[}A"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\Hypertarget{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed}\label{namespaceJSL_1_1Terminal_af5fb5ff136a484d9edbec874c96f77ed} 
-\index{JSL::Terminal@{JSL::Terminal}!EraseLeft@{EraseLeft}}
-\index{EraseLeft@{EraseLeft}!JSL::Terminal@{JSL::Terminal}}
-\doxysubsubsection{\texorpdfstring{EraseLeft}{EraseLeft}}
-{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Erase\+Left = "{}\textbackslash{}033\mbox{[}1K"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\Hypertarget{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375}\label{namespaceJSL_1_1Terminal_a83b3890f3fe3f5d4736e64d68c34c375} 
-\index{JSL::Terminal@{JSL::Terminal}!EraseRight@{EraseRight}}
-\index{EraseRight@{EraseRight}!JSL::Terminal@{JSL::Terminal}}
-\doxysubsubsection{\texorpdfstring{EraseRight}{EraseRight}}
-{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Erase\+Right = "{}\textbackslash{}033\mbox{[}0\+K"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Moves the cursor up one line. 
+
+\Hypertarget{namespaceJSL_1_1Terminal_a1744d04effa6d43e49ed61ecb7907ab8}\label{namespaceJSL_1_1Terminal_a1744d04effa6d43e49ed61ecb7907ab8} 
+\index{JSL::Terminal@{JSL::Terminal}!EraseAllLeft@{EraseAllLeft}}
+\index{EraseAllLeft@{EraseAllLeft}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{EraseAllLeft}{EraseAllLeft}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Erase\+All\+Left = "{}\textbackslash{}033\mbox{[}1K"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Erases all characters to the left of the cursor position. 
+
+\Hypertarget{namespaceJSL_1_1Terminal_a48c09320455afe99d527a8febe6bfe2e}\label{namespaceJSL_1_1Terminal_a48c09320455afe99d527a8febe6bfe2e} 
+\index{JSL::Terminal@{JSL::Terminal}!EraseAllRight@{EraseAllRight}}
+\index{EraseAllRight@{EraseAllRight}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{EraseAllRight}{EraseAllRight}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Erase\+All\+Right = "{}\textbackslash{}033\mbox{[}0\+K"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Erases all characters to the right of the cursor position. 
 
 \Hypertarget{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2}\label{namespaceJSL_1_1Terminal_a8f3aa972b7912fa7ae6a8a2b0279a0d2} 
 \index{JSL::Terminal@{JSL::Terminal}!Hide@{Hide}}
 \index{Hide@{Hide}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{Hide}{Hide}}
-{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Hide = "{}\textbackslash{}033\mbox{[}?25l"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Hide = "{}\textbackslash{}033\mbox{[}?25l"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Hides the cursor. 
+
+\Hypertarget{namespaceJSL_1_1Terminal_a1c19ebe7b6dd3ce1532fef1fc8f17e53}\label{namespaceJSL_1_1Terminal_a1c19ebe7b6dd3ce1532fef1fc8f17e53} 
+\index{JSL::Terminal@{JSL::Terminal}!ResetPosition@{ResetPosition}}
+\index{ResetPosition@{ResetPosition}!JSL::Terminal@{JSL::Terminal}}
+\doxysubsubsection{\texorpdfstring{ResetPosition}{ResetPosition}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Reset\+Position = "{}\textbackslash{}033\mbox{[}1;1\textbackslash{}r"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Moves the cursor to position (1,1) (the top left of the screen) 
 
 \Hypertarget{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547}\label{namespaceJSL_1_1Terminal_a59a71e08694f6b984d67e0bc8291c547} 
 \index{JSL::Terminal@{JSL::Terminal}!Show@{Show}}
 \index{Show@{Show}!JSL::Terminal@{JSL::Terminal}}
 \doxysubsubsection{\texorpdfstring{Show}{Show}}
-{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a47b61984832b0a7952fcf4d6eb28b18a}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Show = "{}\textbackslash{}033\mbox{[}?25h"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceJSL_1_1Terminal_a14aab5b78cbb911636b1a1eb7c982e0d}{Cursor\+Command}} JSL\+::\+Terminal\+::\+Show = "{}\textbackslash{}033\mbox{[}?25h"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Shows the cursor. 
 
