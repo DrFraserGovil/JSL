@@ -18,11 +18,11 @@
 	@returns If the level is suitable, a temporary Core object, which functions as a specialised Stream object, accepting values passed via '<<'. Otherwise, does nothing, and does not evaluate any subsequent pipe commands
 */
 #define LOG(level) \
-	if (!(level <= JSL::Log::Global::Config().Level)) {} \
-	else (JSL::Log::Core(level,__LINE__,__func__,__FILE__))
+	if (!(level <= JSL::Log::Config::Global().Level)) {} \
+	else (JSL::Log::internal::Core(level,__LINE__,__func__,__FILE__))
 
 
-namespace JSL::Log
+namespace JSL::Log::internal
 {
 	
 
@@ -79,7 +79,7 @@ namespace JSL::Log
 			template<Format::FormatType T>
 			Core &operator<<(T format)
 			{
-				if (Global::Config().TerminalOutput)
+				if (Config::Global().TerminalOutput)
 				{
 					CurrentFormat.Add(group);
 					if (!StreamActive)
@@ -139,6 +139,16 @@ namespace JSL::Log
 		
 			//! Used to prevent log-interleaving, and make the LOG (mostly) thread-safe. Must be declared static to make it shared across different instances.
 			static std::mutex StreamMutex;
+
+
+			//! @brief Deleted to ensure constructor is always call
+			Core(const Core& other) = delete;
+			//! @brief Deleted to enforce Singleton uniqueness
+			Core& operator=(const Core& other) = delete;
+			//! @brief Deleted to enforce Singleton uniqueness
+			Core(Core&& other) = delete;
+			//! @brief Deleted to enforce Singleton uniqueness
+			Core& operator=(Core&& other) = delete;
 			
 	};
 }

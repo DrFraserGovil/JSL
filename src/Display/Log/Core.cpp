@@ -18,7 +18,7 @@ namespace JSL::Log
 			Insert = "Line " + std::to_string(callingLine) + " of " + callingFile + " in function " + callingFunction ;
 			Insert += "\n";
 		}
-		if (Global::Config().Level == DEBUG || Level <= WARN)
+		if (Config::Global().Level == DEBUG || Level <= WARN)
 		{
 			auto p = std::filesystem::path(callingFile).filename();
 			LineSuffix = "|";
@@ -39,21 +39,21 @@ namespace JSL::Log
 		std::string_view label;
 		Format::Command fmt;
 		switch(Level) {
-			case DEBUG: fmt = Global::Config().DebugColour;label = "[DEBUG] "; break;
-			case INFO: fmt=Global::Config().InfoColour;label = "[INFO]  "; break;
-			case WARN: fmt=Global::Config().WarnColour;label = "[WARN]  "; break;
-			case ERROR: fmt=Global::Config().ErrorColour;label = "[ERROR] "; break;
+			case DEBUG: fmt = Config::Global().DebugColour;label = "[DEBUG] "; break;
+			case INFO: fmt=Config::Global().InfoColour;label = "[INFO]  "; break;
+			case WARN: fmt=Config::Global().WarnColour;label = "[WARN]  "; break;
+			case ERROR: fmt=Config::Global().ErrorColour;label = "[ERROR] "; break;
 			default: throw std::runtime_error("Invalid logger argument");
 		} 
-		if (Global::Config().ForceClear)
+		if (Config::Global().ForceClear)
 		{
 			BufferPreamble << JSL::Terminal::ClearLine;
 		}
-		if (Global::Config().TerminalOutput && !ManualFormat)
+		if (Config::Global().TerminalOutput && !ManualFormat)
 		{
 			BufferPreamble << fmt;
 		}
-		if (Global::Config().ShowHeaders)
+		if (Config::Global().ShowHeaders)
 		{
 			BufferPreamble << label;
 		}
@@ -63,7 +63,7 @@ namespace JSL::Log
 	{
 		//now format the data so that linebreaks are suitably indented
 		std::string linebreak = "\n";
-		if (Global::Config().ShowHeaders)
+		if (Config::Global().ShowHeaders)
 		{
 			linebreak += std::string(8,' ');
 		}
@@ -73,7 +73,7 @@ namespace JSL::Log
 
 		for (auto line : manualSplits)
 		{
-			auto folded = JSL::String::foldToWidth(line,Global::Config().LineSize);
+			auto folded = JSL::String::foldToWidth(line,Config::Global().LineSize);
 			for (auto subline : folded)
 			{
 				message.push_back(subline);
@@ -93,12 +93,12 @@ namespace JSL::Log
 		}
 
 		//then terminate the message
-		if (Global::Config().TerminalOutput)
+		if (Config::Global().TerminalOutput)
 		{
 			std::cout << Format::ResetAll;
 		}
 
-		if (Global::Config().AppendNewline)
+		if (Config::Global().AppendNewline)
 		{
 			std::cout << "\n"; 
 		}

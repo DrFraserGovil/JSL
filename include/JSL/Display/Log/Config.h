@@ -6,7 +6,10 @@
 #include <mutex>
 namespace JSL::Log
 {
-	class Core; //forward declaration for friend
+	namespace internal
+	{
+		class Core; //forward declaration for friend
+	}
     /*!
 	\brief A packager for globally accessible variables for the LoggerCore object to refer to. 
 
@@ -71,7 +74,7 @@ namespace JSL::Log
 
 
 			//! The Core class needs to be able to reach inside the private members to access them. 
-			friend class JSL::Log::Core;
+			friend class JSL::Log::internal::Core;
 		private:
 			/*! 
 				@brief Initialises default values, calls Terminal::IsANSICapable() and AlignSize() to get the state of the terminal
