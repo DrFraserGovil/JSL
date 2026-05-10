@@ -17,7 +17,7 @@ namespace JSL::Terminal
 	*/
 	bool IsANSICapable();
 
-	//!@brief A basic wrapper to make CursorCommands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)
+	//!@brief A basic wrapper to make CursorCommands look more fancy than simple s, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)
 	typedef std::string CursorCommand; 
 	
 	//! @brief Hides the cursor
@@ -64,46 +64,93 @@ namespace JSL::Format
 {
 	//! Resets all formatting commands, restoring terminal to default state
 	const Command ResetAll=Command("\033[0m",static_cast<Element>(Foreground & Background & TextStyle));
+	//!@brief 
 	const Command ResetForeground = Command("\033[39m",Foreground);
+	//!@brief 
 	const Command ResetBackground = Command("\033[49m",Background);
 
-	  
 
+	//!@brief Set/unset 'boldface' format (rendered as 'high colour intensity' in some terminals)  
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
 	Command Bold(bool active = true);
+	
+	//!@brief Set/unset 'low intensity' format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
 	Command Faint(bool active = true);
+
+	//!@brief Set/unset Italic typeface 
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
 	Command Italics(bool active = true);
+
+	//!@brief Set/unset Underline format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
 	Command Underline(bool active = true);
+	
+	//!@brief Set/unset Highlight format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
 	Command Highlight(bool active = true);
+
+	//!@brief Set/unset Strikethrough format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
 	Command Strike(bool active = true);
+
+	//!@brief Set/unset Framed format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
 	Command Framed(bool active = true);
+
+	//!@brief Set/unset circled format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
 	Command Circled(bool active = true);
 
-
-
+	//!@brief Sets colour of foreground(background) if input is false(true). 
 	Command Black(bool targetBackgroundCol = false);
-	Command Blue(bool targetBackgroundCol = false);
-	Command Cyan(bool targetBackgroundCol = false);
-	Command Green(bool targetBackgroundCol = false);
-	Command Purple(bool targetBackgroundCol = false);
-	Command Red(bool targetBackgroundCol = false);
-	Command Yellow(bool targetBackgroundCol = false);
-	Command White(bool targetBackgroundCol = false);
-	Command DefaultColour(bool targetBackgroundCol = false);
 
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Command Blue(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Command Cyan(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Command Green(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Command Purple(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Command Red(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Command Yellow(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Command White(bool targetBackgroundCol = false);
+
+	//!@brief Set subsequent text to the *default terminal* colour. 
+	//!@param targetBackgroundCol if false (the default), the colour is used as the 'foreground' (text) colour. If true, the colour is assigned to the background. 
+	//!@returns The associated ANSI command
+	Command DefaultColour(bool targetBackgroundCol = false);
+	
+	//!@brief Sets the subsequent text to a colour specified by an 8-bit RGB colour code
+	//!@param r A [0,255] value indicating the *red* intensity
+	//!@param b A [0,255] value indicating the *blue* intensity
+	//!@param g A [0,255] value indicating the *green* intensity
+	//!@param targetBackgroundCol if false (the default), the colour is used as the 'foreground' (text) colour. If true, the colour is assigned to the background. 
+	//!@warning Terminals often try to ensure text is visible and may reject some combinations of foreground/background colours based on their own internal contrast measurements. This is implementation specific - but usually means it is impossible to make text that cannot be read. 
 	inline Command Colour(uint8_t r,uint8_t g, uint8_t b,bool targetBackgroundCol = false)
 	{
 		return Command(r,g,b,Foreground);
 	}
 
-	const Command BgBlack=Command("\033[40m",Background);
-	const Command BgRed=Command("\033[41m",Background);
-	const Command BgGreen=Command("\033[42m",Background);
-	const Command BgYellow=Command("\033[43m",Background);
-	const Command BgBlue=Command("\033[44m",Background);
-	const Command BgPurple=Command("\033[45m",Background);
-	const Command BgCyan=Command("\033[46m",Background);
-	const Command BgWhite=Command("\033[47m",Background);
-
+	
 }
 	
 

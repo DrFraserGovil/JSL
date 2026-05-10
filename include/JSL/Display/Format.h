@@ -11,15 +11,20 @@ namespace JSL::Format
 {
     
     /*!
-        @brief Elements are designed to act as bitmasks so ``ForegroundColour & Resetter`` is interpreted as "Reset the foreground colour (but not the style)".
+        @brief Describe which element of the terminal text is being modified
     */
     enum Element{
+        //! @brief The colour of the text itself
         Foreground,
+        //! @brief The colour of the negative space around the text
         Background,
+        //! @brief The style of the rendered text, such as bold, italics, underline etc. 
         TextStyle,
     };
 
-   
+    /*!
+        A wrapper around a c-style string for insertion into output streams and rendering ASCI control sequences.
+    */
     class Command
     {
         public:

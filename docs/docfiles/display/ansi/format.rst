@@ -3,15 +3,7 @@
 ANSI Formatting Commands
 ============================
 
-.. jsl-meta::
-	:file: Display/ANSI_Codes.h
-	:namespace: JSL::Display::Format
-
-Like the terminal commands, Formatting commands are -- at their heart -- strings of ANSI escape sequences. However, for JSL-aware stream managers (such as the :ref:`Logger <LOG>`), the structures below allow more fine grained control, such as resetting the font colour to default, whilst leaving the background colour untouched. 
-
-
-Creating & Combining Formats
-//////////////////////////////////
+Like the terminal commands, Formatting commands are -- at their heart -- strings of ANSI escape sequences. However, for JSL-aware stream managers (such as the :ref:`Logger <LOG>`), the structures below allow more fine grained control, such as resetting the font colour to default, whilst leaving the background colour untouched.
 
 As well as using the predefined format commands below, we provide an interface 
 
@@ -22,45 +14,54 @@ As well as using the predefined format commands below, we provide an interface
 	:maxdepth: 1
 
 
-Defined Commands
-/////////////////////////////
-
-.. warning:: 
-	Certain combinations of fore/background colour and style are rejected by the terminal as not being readable, in which case it defaults to normal whilst those commands persist. 
-
-	Which combinations of formats trigger this seems unpredictable and shell-dependent, but modifications to the background colour are the most commonly rejected. We recommend only changing the background colour if the Foreground colour is a predefined colour (i.e. not created via the RGB interface).
-
-
 
 Style
 --------------------
 
-.. doxygenvariable:: JSL::Format::Bold
-.. doxygenvariable:: JSL::Format::Faint
-.. doxygenvariable:: JSL::Format::Italics
-.. doxygenvariable:: JSL::Format::Underline
-.. doxygenvariable:: JSL::Format::Highlight
-.. doxygenvariable:: JSL::Format::Strike
+.. jsl-meta::
+	:file: Display/ANSI_Codes.h
+	:namespace: JSL::Display::Format
 
-Foreground Colour
---------------------
+.. doxygenfunction:: JSL::Format::Bold
+.. doxygenfunction:: JSL::Format::Faint
+.. doxygenfunction:: JSL::Format::Italics
+.. doxygenfunction:: JSL::Format::Underline
+.. doxygenfunction:: JSL::Format::Highlight
+.. doxygenfunction:: JSL::Format::Strike
 
-.. doxygenvariable:: JSL::Format::Black
-.. doxygenvariable:: JSL::Format::Blue
-.. doxygenvariable:: JSL::Format::Cyan
-.. doxygenvariable:: JSL::Format::Green
-.. doxygenvariable:: JSL::Format::Purple
-.. doxygenvariable:: JSL::Format::Red
-.. doxygenvariable:: JSL::Format::Yellow
-.. doxygenvariable:: JSL::Format::White
+Colours
+-----------------
 
-Background Colour
---------------------
+.. jsl-meta::
+	:file: Display/ANSI_Codes.h
+	:namespace: JSL::Display::Format
 
-Removing Formats
-////////////////////////
+.. cpp:function:: Command JSL::Format::COLNAME(bool targetBackgroundCol = false)
 
-The standard method of clearing the format is to call the reset command, which returns the terminal to its default:
+   .. note::
+      Substitute ``COLNAME`` with one of: :cpp:func:`Black`, :cpp:func:`Blue`,
+      :cpp:func:`Cyan`, :cpp:func:`Green`, :cpp:func:`Purple`, :cpp:func:`Red`,
+      :cpp:func:`Yellow`, :cpp:func:`White`.
 
-.. doxygenvariable:: JSL::Format::ResetAll
+   Set subsequent text to a 4-bit ANSI colour.
 
+   :param targetBackgroundCol: If false (the default), the colour is used as the
+       foreground colour. If true, it is assigned to the background.
+   :returns: The associated ANSI command
+
+.. dropdown:: 4-bit Colours
+	:color: secondary
+	:icon: paintbrush
+
+	.. doxygenfunction:: JSL::Format::Black
+	.. doxygenfunction:: JSL::Format::Blue
+	.. doxygenfunction:: JSL::Format::Cyan
+	.. doxygenfunction:: JSL::Format::Green
+	.. doxygenfunction:: JSL::Format::Purple
+	.. doxygenfunction:: JSL::Format::Red
+	.. doxygenfunction:: JSL::Format::Yellow
+	.. doxygenfunction:: JSL::Format::White
+
+.. doxygenfunction:: JSL::Format::DefaultColour
+
+.. doxygenfunction:: JSL::Format::Colour
