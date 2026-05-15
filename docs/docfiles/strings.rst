@@ -1,0 +1,4 @@
+.. _strings:
+
+String Manipulation
+============================
