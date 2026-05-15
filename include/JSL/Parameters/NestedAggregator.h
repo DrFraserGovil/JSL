@@ -102,7 +102,7 @@ namespace JSL::Parameter
             internal::Parameter::ParameterBase* FindParameter(const std::string & key);
             bool TryCluster(std::string_view key, std::string_view value);
 
-            static void printAsTitle(std::string_view input,Format::Command fg =Format::Black(), Format::Command bg = Format::BgWhite);//
+            static void printAsTitle(std::string_view input,Format::Command fg =Format::Black(), Format::Command bg = Format::White(true));//
 
             template<class T>
             void SetInfo(Setting<T> & target, std::string_view name, std::string_view description)

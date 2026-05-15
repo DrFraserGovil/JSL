@@ -38,7 +38,24 @@ namespace JSL::Terminal
 
 namespace JSL::Format
 {	
-  
+	inline std::string Reset(Element target)
+	{
+		switch (target)
+		{
+			case Foreground:
+				return "\033[39m";
+			case Background:
+				return "\033[49m";
+			case TextStyle:
+				return Bold(false) + Italics(false) + Underline(false) + Highlight(false) + Strike(false);
+			default:
+				return ResetAll();
+		}	
+	}
+	inline std::string ResetAll()
+	{
+		return "\033[0m";
+	}
 
 	inline Command Style(int style)
     {
@@ -74,64 +91,55 @@ namespace JSL::Format
 	{
 		return Style(9,active);
 	}
-	Command Framed(bool active)
+
+
+	//converts type + colour-specific offset into the actual ansi code
+	inline Command getCol(bool targetIsBackground, int offset)
 	{
-		return (active) ? Style(51) : Style(54);
+		if (targetIsBackground)
+		{
+			return Command("\033[" + std::to_string(40 + offset) + "m",Background);
+		}
+		else
+		{
+			return Command("\033[" + std::to_string(30 + offset) + "m",Foreground);
+		}
 	}
-	Command Circled(bool active)
+
+	Command Black(bool target)
 	{
-		return (active) ? Style(52) : Style(54);
+		return getCol(target,0);
 	}
-
-
-
-		//converts type + colour-specific offset into the actual ansi code
-		inline Command getCol(bool targetIsBackground, int offset)
-		{
-			if (targetIsBackground)
-			{
-				return Command("\033[" + std::to_string(40 + offset) + "m",Background);
-			}
-			else
-			{
-				return Command("\033[" + std::to_string(30 + offset) + "m",Foreground);
-			}
-		}
-
-		Command Black(bool target)
-		{
-			return getCol(target,0);
-		}
-		Command Blue(bool target)
-		{
-			return getCol(target,4);
-		}
-		Command Cyan(bool target)
-		{
-			return getCol(target,6);
-		}
-		Command Green(bool target)
-		{
-			return getCol(target,2);
-		}
-		Command Purple(bool target)
-		{
-			return getCol(target,5);
-		}
-		Command Red(bool target)
-		{
-			return getCol(target,1);
-		}
-		Command Yellow(bool target)
-		{
-			return getCol(target,3);
-		}
-		Command White(bool target)
-		{
-			return getCol(target,7);
-		}
-		Command DefaultColour(bool target)
-		{
-			return getCol(target,9);
-		}
+	Command Blue(bool target)
+	{
+		return getCol(target,4);
+	}
+	Command Cyan(bool target)
+	{
+		return getCol(target,6);
+	}
+	Command Green(bool target)
+	{
+		return getCol(target,2);
+	}
+	Command Purple(bool target)
+	{
+		return getCol(target,5);
+	}
+	Command Red(bool target)
+	{
+		return getCol(target,1);
+	}
+	Command Yellow(bool target)
+	{
+		return getCol(target,3);
+	}
+	Command White(bool target)
+	{
+		return getCol(target,7);
+	}
+	Command DefaultColour(bool target)
+	{
+		return getCol(target,9);
+	}
 }

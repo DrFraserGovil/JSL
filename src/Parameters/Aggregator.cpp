@@ -41,7 +41,7 @@ namespace JSL::Parameter
     {
         if (!Terminal::IsANSICapable()){return text;}
         
-        return (std::string)prefix + text + Format::ResetAll;
+        return (std::string)prefix + text + Format::ResetAll();
     }
 
     void Aggregator::HelpMenu()

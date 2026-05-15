@@ -95,7 +95,7 @@ namespace JSL::Log::internal
 		//then terminate the message
 		if (Config::Global().TerminalOutput)
 		{
-			std::cout << Format::ResetAll;
+			std::cout << Format::ResetAll();
 		}
 
 		if (Config::Global().AppendNewline)

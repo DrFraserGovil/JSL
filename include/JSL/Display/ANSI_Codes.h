@@ -23,6 +23,7 @@ namespace JSL::Terminal
 	//! @brief Hides the cursor
 	constexpr CursorCommand Hide         = "\033[?25l";
 	
+	
 	//! @brief Shows the cursor
 	constexpr CursorCommand Show         = "\033[?25h";
 	
@@ -62,13 +63,16 @@ namespace JSL::Terminal
 
 namespace JSL::Format
 {
-	//! Resets all formatting commands, restoring terminal to default state
-	const Command ResetAll=Command("\033[0m",static_cast<Element>(Foreground & Background & TextStyle));
-	//!@brief 
-	const Command ResetForeground = Command("\033[39m",Foreground);
-	//!@brief 
-	const Command ResetBackground = Command("\033[49m",Background);
+	/// @brief Returns the specified target back to its default state, as specified by the terminal settings
+	/// @param target The element to be reset to default (does not support bitmasking)
+	/// @return A string representing the ANSI sequence
+	/// @details This returns a string (and not a Command or FormatGroup) specifically because Resets don't play well with the Group infrastructure. A reset is to be applied separately from a FormatGroup
+	std::string Reset(Element target);
 
+	/// @brief Returns the terminal back to its default state, as specified by the terminal settings
+	/// @return A string representing the ANSI `default' sequence
+	/// @details This returns a string (and not a Command or FormatGroup) specifically because Resets don't play well with the Group infrastructure. A reset is to be applied separately from a FormatGroup
+	std::string ResetAll();
 
 	//!@brief Set/unset 'boldface' format (rendered as 'high colour intensity' in some terminals)  
 	//!@param active Toggles the command between activating the style (true) and deactivating (False)
@@ -99,16 +103,6 @@ namespace JSL::Format
 	//!@param active Toggles the command between activating the style (true) and deactivating (False)
 	//!@returns The relevant ANSI sequence 
 	Command Strike(bool active = true);
-
-	//!@brief Set/unset Framed format
-	//!@param active Toggles the command between activating the style (true) and deactivating (False)
-	//!@returns The relevant ANSI sequence 
-	Command Framed(bool active = true);
-
-	//!@brief Set/unset circled format
-	//!@param active Toggles the command between activating the style (true) and deactivating (False)
-	//!@returns The relevant ANSI sequence 
-	Command Circled(bool active = true);
 
 	//!@brief Sets colour of foreground(background) if input is false(true). 
 	Command Black(bool targetBackgroundCol = false);

@@ -199,7 +199,7 @@ namespace JSL::Parameter
         {
             auto titleCol =  fg + Format::Italics() + bg;
             std::string buffer = (input.size() < lineLength) ? std::string(lineLength - input.size(),' ') : "";
-            std::cout << titleCol << input << buffer << Format::ResetAll << "\n";
+            std::cout << titleCol << input << buffer << Format::ResetAll() << "\n";
         }
         else
         {

@@ -59,13 +59,6 @@ namespace JSL::Format
 		return os.write(c.buf, c.len);
 	}
 
-	FormatGroup operator+(const Command & a,const Command & b)
-	{
-		FormatGroup out(a);
-		out.Add(b);
-		return out;
-	}
-
 
 	FormatGroup::FormatGroup()
 	{
@@ -122,7 +115,7 @@ namespace JSL::Format
 
 	std::ostream & operator<<(std::ostream& os, const FormatGroup& c)
 	{
-		os << Format::ResetAll;
+		os << Format::ResetAll();
 		for (auto b : c.StyleBuffer)
 		{
 			os << b;
