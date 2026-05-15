@@ -2,7 +2,7 @@
 
 namespace JSL::Vector
 {
-    SearchResult find(double x, const std::vector<double> & y, double tolerance)
+    SearchResult find(const std::vector<double> & y, double x, double tolerance)
     {
         auto it = std::find_if(y.begin(), y.end(), [&](double a) {
                 return std::abs(x - a) <= tolerance;

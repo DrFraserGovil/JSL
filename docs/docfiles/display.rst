@@ -1,4 +1,4 @@
-.. display
+.. _display:
 
 ############
 Display
@@ -11,5 +11,6 @@ The ``JSL::Display`` module contains classes and objects which enable the user t
 	display/Log
 	display/ansi
 	display/terminalsize
+	display/progressbar
 	:maxdepth: 1
 	:caption: Contents:

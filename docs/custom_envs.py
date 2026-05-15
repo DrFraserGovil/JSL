@@ -86,17 +86,17 @@ class JSLMetaDirective(Directive):
 		defs = []
 		if file is not None:
 			defs += [
-				f"    #. Defined in: :file:`include/JSL/{file}`",
+				f"   :Defined In: ``include/JSL/{file}``",
 			] 
 		if nsp is not None:
 			defs += [
-				f"    #. Belongs to ``namespace {nsp}``",
+				f"   :Namespace: ``{nsp}``",
 			] 
 		if len(defs) > 0:
 			defs = ["",
 				f".. dropdown:: Metadata",
 				f"   :color: secondary",
-				f"   :icon: gear",""
+				f"   :icon: gear","",
 			] + defs
 
 		vl = ViewList()

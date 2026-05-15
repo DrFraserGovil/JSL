@@ -1,5 +1,6 @@
 #!/bin/bash
 
+make html
 doxygen doxy.config
 make html
 

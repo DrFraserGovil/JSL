@@ -2,15 +2,19 @@
 #include <JSL/Display/ANSI_Codes.h>
 #include <JSL/Display/Log.h>
 #include <sstream>
-
+#include <JSL/internal/error.h>
 namespace JSL::Display::Progress
 {
     namespace internal
     {
         
 
-        ProgressEngine::ProgressEngine(std::vector<size_t> && lengths) : Dimension(lengths), Depth(lengths.size())
+        ProgressEngine::ProgressEngine(std::vector<size_t> && lengths) : Length(std::move(lengths)), Depth(lengths.size())
         {
+            if (Depth == 0)
+            {
+                JSL::internal::FatalError("Bad progress bar",JSL_LOCATION) << "Depth cannot be 0!";
+            }
             Progress = std::vector<size_t>(Depth,0);
             MarkCount = std::vector<size_t>(Depth,0);
         }
@@ -22,7 +26,7 @@ namespace JSL::Display::Progress
             while (idx >= 0)
             {
                 ++Progress[idx];
-                if (Progress[idx] < Dimension[idx])
+                if (Progress[idx] < Length[idx])
                 {
                     CheckMarks(idx);
                     return;
@@ -35,8 +39,23 @@ namespace JSL::Display::Progress
             }
 
             Finished = true;
-            Progress = Dimension;
+            Progress = Length;
             CheckMarks(0);
+        }
+
+        void ProgressEngine::Update(size_t position)
+        {
+            // have to be a bit careful with 0, as it can underflow!
+            if (position > 0)
+            {
+                Progress[Depth-1] = position-1;
+                Tick();
+            }
+            else
+            {
+                Progress[Depth-1] = 0;
+                CheckMarks(0);
+            }
         }
 
         void ProgressEngine::CheckMarks(int idx)
@@ -44,7 +63,7 @@ namespace JSL::Display::Progress
             bool needsRender = false;
             for (size_t i = idx; i < Depth; ++i)
             {
-                size_t expected = std::min(RenderLength, (size_t)(0.5 + (Progress[i] * RenderLength) * 1.0/Dimension[i])); //old fashioned rounding
+                size_t expected = std::min(RenderLength, (size_t)(0.5 + (Progress[i] * RenderLength) * 1.0/Length[i])); //old fashioned rounding
                 if (expected != MarkCount[i])
                 {
                     MarkCount[i] = expected;
@@ -55,6 +74,10 @@ namespace JSL::Display::Progress
             {
                 Render();
             }
+        }
+        void ProgressEngine::ThrowSizeMismatch(size_t actual)
+        {
+            JSL::internal::FatalError("Vector size mismatch",JSL_LOCATION) << "Positions size (" << actual << ") does not match depth (" << Depth <<")";
         }
     }
 

@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-JSL's Documentation
+The JSL Library
 ===============================
 
 The JSL ('Jack Standard Library') is a set of tools developed by me (Jack Fraser-Govil) as a uniform, useful set of boilerplate code I found myself duplicating across numerous C++ projects. It is probably of no use to anyone else, but if you have found your way here, it is probably from one of the projects which utilised this library. 
@@ -11,7 +11,14 @@ The JSL ('Jack Standard Library') is a set of tools developed by me (Jack Fraser
 Even more likely, you are in fact me, reading this a year or two down the line wondering "what on Earth did you do?". If so, I am sorry. 
 
 .. toctree::
+	docfiles/async
 	docfiles/display
+	docfiles/fileio
+	docfiles/parameters
+	docfiles/plot
+	docfiles/strings
+	docfiles/time
+	docfiles/vectors
 	:maxdepth: 2
 	:caption: Contents:
 
