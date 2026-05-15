@@ -5,6 +5,9 @@ ANSI Formatting Commands
 
 Like the terminal commands, Formatting commands are -- at their heart -- strings of ANSI escape sequences. However, for JSL-aware stream managers (such as the :ref:`Logger <LOG>`), the structures below allow more fine grained control, such as resetting the font colour to default, whilst leaving the background colour untouched.
 
+Sequence Functions
+---------------------
+
 .. dropdown:: Styles
 	:color: primary
 	:icon: italic

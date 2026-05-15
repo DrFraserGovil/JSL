@@ -10,5 +10,6 @@ The ``JSL::Display`` module contains classes and objects which enable the user t
 .. toctree::
 	display/Log
 	display/ansi
+	display/terminalsize
 	:maxdepth: 1
 	:caption: Contents:
