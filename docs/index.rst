@@ -22,11 +22,4 @@ Even more likely, you are in fact me, reading this a year or two down the line w
 	:maxdepth: 2
 	:caption: Contents:
 
-
-
-Indices and tables
-==================
-
 * :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
