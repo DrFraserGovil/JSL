@@ -38,7 +38,7 @@ namespace JSL::String
         return size;
     }
 
-    std::vector<std::string> foldToWidth(std::string_view str, size_t width)
+    std::vector<std::string> wrapToWidth(std::string_view str, size_t width)
     {
         std::vector<std::string_view> lines;
 
@@ -137,12 +137,12 @@ namespace JSL::String
 
 
 
-    void columnPrint(std::vector<std::string_view> input, size_t width, std::string_view delimiter)
+    std::string tableFormat(std::vector<std::string_view> input, size_t width, std::string_view delimiter)
     {
-        columnPrint(input, std::vector<size_t>(input.size(),width),delimiter);
+        return tableFormat(input, std::vector<size_t>(input.size(),width),delimiter);
     }
 
-    void columnPrint(std::vector<std::string_view> input, std::vector<size_t> widths, std::string_view delimiter)
+    std::string tableFormat(std::vector<std::string_view> input, std::vector<size_t> widths, std::string_view delimiter)
     {
         if (input.size() != widths.size())
         {
@@ -156,29 +156,30 @@ namespace JSL::String
             auto lines = split_view(input[i], "\n");
             for (auto split : lines)
             {
-                auto folded = foldToWidth(split,widths[i]);
+                auto folded = wrapToWidth(split,widths[i]);
                 JSL::Vector::append(foldedColumn, folded);
             }
             linesplitInputs.push_back(foldedColumn);
             maxL = std::max(maxL,foldedColumn.size());
         }
-
+        std::ostringstream os;
         for (size_t i = 0; i < maxL; ++i)
         {
             for (size_t c = 0; c < input.size(); ++c)
             {
                 if (i < linesplitInputs[c].size())
                 {
-                    std::cout << linesplitInputs[c][i];
+                    os << linesplitInputs[c][i];
                 }
                 else
                 {
-                    std::cout << std::string(widths[c],' ');
+                    os << std::string(widths[c],' ');
                 }
-                if (c > 0){std::cout << delimiter;}
+                if (c > 0){os << delimiter;}
             }
-            std::cout << "\n";
+            os << "\n";
         }
+        return os.str();
     }
 
 }

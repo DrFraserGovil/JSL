@@ -3,4 +3,4 @@
 #include <JSL/Display/Log.h>
 #include <JSL/Display/ANSI_Codes.h>
 #include <JSL/Display/ProgressBar.h>
-#include <JSL/Display/Size.h>
+#include <JSL/Display/Terminal.h>

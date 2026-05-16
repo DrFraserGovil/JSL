@@ -38,7 +38,7 @@ namespace JSL::Terminal
 
 namespace JSL::Format
 {	
-	inline std::string Reset(Element target)
+	std::string Reset(Element target)
 	{
 		switch (target)
 		{
@@ -52,16 +52,16 @@ namespace JSL::Format
 				return ResetAll();
 		}	
 	}
-	inline std::string ResetAll()
+	std::string ResetAll()
 	{
 		return "\033[0m";
 	}
 
-	inline Command Style(int style)
+	Command Style(int style)
     {
         return Command("\033[" + std::to_string(style  ) + "m",TextStyle);
     }
-	inline Command Style(int style,bool active)
+	Command Style(int style,bool active)
     {
         return Style(style + ((active) ? 0 : 20));
     }
@@ -94,7 +94,7 @@ namespace JSL::Format
 
 
 	//converts type + colour-specific offset into the actual ansi code
-	inline Command getCol(bool targetIsBackground, int offset)
+	Command getCol(bool targetIsBackground, int offset)
 	{
 		if (targetIsBackground)
 		{

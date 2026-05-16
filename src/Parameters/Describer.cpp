@@ -23,6 +23,6 @@ namespace JSL::Parameter
         
         // + Format::Italics + "\n[Default: " + DefaultValue + "]";
 
-        String::columnPrint({left_text,mid_text,right_text},{left,mid,right}, " ");
+        std::cout << String::tableFormat({left_text,mid_text,right_text},{left,mid,right}, " ") << "\n";
     }
 }

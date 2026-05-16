@@ -3,7 +3,7 @@
 #include <JSL/Strings/Join.h>
 #include <cstring>
 #include <cctype>
-bool inline ElementIsFlag(char * nextElement)
+bool ElementIsFlag(char * nextElement)
 {
     bool hasDash = (nextElement[0] == '-'); //dashes signify commands, but also negative nos.
     bool isSingleCharacter = (std::strlen(nextElement) == 1);

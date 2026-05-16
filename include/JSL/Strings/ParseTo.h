@@ -107,7 +107,6 @@ namespace JSL::String
                     JSL::internal::FatalError("Cannot parse empty string",JSL_LOCATION) << "Empty-vectors can only be instantiated if they have enclosing braces -- empty strings are not valid.";
                 }
 
-
                  //! We allow vectors to be wrapped in either [], {} or (). This function removes them for internal use.
                 //! @warning We do *not* do any form of parsing or checking to allow nested braces. End caps are purely for user readability.
                 sv = StripEndCaps(sv);

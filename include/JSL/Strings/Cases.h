@@ -5,11 +5,22 @@
 
 namespace JSL::String
 {
-
-    //! Converts a string in-place to all UPPERCASE
+    /// @brief Mutate an input string in-place to all-capitals
+    /// @param input The string to be modified
     void toUpper(std::string & input);
+    
+    /// @brief Return a copy of an input string which is in all-capitals
+    /// @param input the string to copy & modify
+    /// @return A near-copy of ``input``, differing only by their cases
     std::string getUpper(std::string_view input);
+
+    /// @brief Mutate an input string in-place to all-lowercase
+    /// @param input The string to be modified
     void toLower(std::string & input);
+
+    /// @brief Return a copy of an input string which is in all-lowercase
+    /// @param input the string to copy & modify
+    /// @return A near-copy of ``input``, differing only by their cases
     std::string getLower(std::string_view input);
 
 
