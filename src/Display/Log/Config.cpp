@@ -21,7 +21,7 @@ namespace JSL::Log
     void Config::AlignSize(size_t debugReserve)
     {
         // auto S = Terminal::jjkGetDimensions();
-        auto T = Terminal::Global();
+        auto & T = Terminal::Global();
 
         //if debugReserve < 50% the line size, reserve it. Else the terminal is way too small, and we disable linefolding
         LineSize = (T.Columns() > 2*debugReserve) ? T.Columns() - debugReserve : debugReserve;

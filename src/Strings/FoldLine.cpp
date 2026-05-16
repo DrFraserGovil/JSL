@@ -1,6 +1,7 @@
 #include <JSL/Strings.h>
 #include <JSL/internal/error.h>
 #include <JSL/Vectors/Join.h>
+
 namespace JSL::String
 {
     size_t trueSize(std::string_view str,size_t tabSize)
@@ -38,9 +39,20 @@ namespace JSL::String
         return size;
     }
 
-    std::vector<std::string> wrapToWidth(std::string_view str, size_t width)
+    std::vector<std::string> wrap(std::string_view str, size_t width)
     {
         std::vector<std::string_view> lines;
+
+        if (str.find("\n")!=std::string_view::npos)
+        {
+            std::vector<std::string> out;
+            auto manuallines= split_view(str,"\n");
+            for (auto line : manuallines)
+            {
+                JSL::Vector::append(out,wrap(line,width));
+            }
+            return out;
+        }
 
         size_t currentLineStart = 0;
         
@@ -135,19 +147,35 @@ namespace JSL::String
         return out;
     }
 
+    std::string wrapToString(std::string_view str, size_t width,std::string_view delim)
+    {
+        return join(wrap(str,width),delim);
+    }
 
 
-    std::string tableFormat(std::vector<std::string_view> input, size_t width, std::string_view delimiter)
+    std::string tableFormat(std::vector<std::string_view> input, size_t width, std::string_view delimiter,std::string_view endCap)
     {
         return tableFormat(input, std::vector<size_t>(input.size(),width),delimiter);
     }
 
-    std::string tableFormat(std::vector<std::string_view> input, std::vector<size_t> widths, std::string_view delimiter)
+    std::string tableFormat(std::vector<std::string_view> input, std::vector<size_t> widths, std::string_view delimiter, std::string_view endCap)
     {
         if (input.size() != widths.size())
         {
             JSL::internal::FatalError("Size mismatch",JSL_LOCATION) << "Input size (" << input.size() << ") must match widths (" << widths.size() <<") for column splitting";
         }
+        size_t dsize = trueSize(delimiter);
+        size_t esize = trueSize(endCap);
+
+        //deduct the delimiter size from (n-1) cols
+        size_t Ne = widths.size() - 1;
+        for (size_t i = 0; i < Ne; ++i)
+        {
+            widths[i] = std::max(1ul,widths[i]-dsize);
+        }
+        //deduct the endcap size from the last cal
+        widths[Ne]= std::max(1ul,widths[Ne]-esize);
+
         std::vector<std::vector<std::string>> linesplitInputs;
         size_t maxL = 0;
         for (size_t i = 0; i < input.size(); ++i)
@@ -156,7 +184,7 @@ namespace JSL::String
             auto lines = split_view(input[i], "\n");
             for (auto split : lines)
             {
-                auto folded = wrapToWidth(split,widths[i]);
+                auto folded = wrap(split,widths[i]);
                 JSL::Vector::append(foldedColumn, folded);
             }
             linesplitInputs.push_back(foldedColumn);
@@ -167,6 +195,7 @@ namespace JSL::String
         {
             for (size_t c = 0; c < input.size(); ++c)
             {
+                if (c > 0){os << delimiter;}
                 if (i < linesplitInputs[c].size())
                 {
                     os << linesplitInputs[c][i];
@@ -175,9 +204,8 @@ namespace JSL::String
                 {
                     os << std::string(widths[c],' ');
                 }
-                if (c > 0){os << delimiter;}
             }
-            os << "\n";
+            os <<endCap << "\n";
         }
         return os.str();
     }

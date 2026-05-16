@@ -73,7 +73,7 @@ namespace JSL::Log::internal
 
 		for (auto line : manualSplits)
 		{
-			auto folded = JSL::String::wrapToWidth(line,Config::Global().LineSize);
+			auto folded = JSL::String::wrap(line,Config::Global().LineSize);
 			for (auto subline : folded)
 			{
 				message.push_back(subline);
