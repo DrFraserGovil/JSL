@@ -149,7 +149,7 @@ namespace JSL::String
 
     std::string wrapToString(std::string_view str, size_t width,std::string_view delim)
     {
-        return join(wrap(str,width),delim);
+        return stitch(wrap(str,width),delim);
     }
 
 

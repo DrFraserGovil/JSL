@@ -1,6 +1,6 @@
 #include <JSL/Parameters/Describer.h>
 #include <regex>
-#include <JSL/Strings/FoldLine.h>
+#include <JSL/Strings/Wrap.h>
 namespace JSL::Parameter
 {
     void Description::HelpPrint(size_t left, size_t mid, size_t right)

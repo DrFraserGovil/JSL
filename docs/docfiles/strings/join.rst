@@ -1,4 +1,6 @@
 .. _joinstring:
 
-String Joining
+String Stitching
 =====================
+
+

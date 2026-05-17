@@ -1,6 +1,6 @@
 #include <JSL/Parameters/Aggregator.h>
 #include <JSL/Vectors/Search.h>
-#include <JSL/Strings/FoldLine.h>
+#include <JSL/Strings/Wrap.h>
 #include <JSL/Display.h>
 #include <JSL/FileIO/pipedInput.h>
 namespace JSL::Parameter

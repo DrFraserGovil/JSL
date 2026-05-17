@@ -5,5 +5,5 @@
 #include "Strings/ParseTo.h"
 #include "Strings/Cases.h"
 #include "Strings/Manipulate.h"
-#include "Strings/Join.h"
-#include "Strings/FoldLine.h"
+#include "Strings/Stitch.h"
+#include "Strings/Wrap.h"

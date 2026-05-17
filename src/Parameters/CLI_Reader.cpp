@@ -1,6 +1,6 @@
 #include <JSL/Parameters/CLI_Reader.h>
 #include <JSL/FileIO.h>
-#include <JSL/Strings/Join.h>
+#include <JSL/Strings/Stitch.h>
 #include <cstring>
 #include <cctype>
 bool ElementIsFlag(char * nextElement)
@@ -109,7 +109,7 @@ namespace JSL::internal::Parameter
            if (linevec.size() >= 2)
            {
                 //treat the first element as the key, and the rest of the line as the value, rejoining with the configDelimiter in case the value itself contained the delimiter
-                Options[static_cast<std::string>(Normalize(linevec[0]))] = JSL::String::join(linevec, 1, linevec.size(), configDelimiter);
+                Options[static_cast<std::string>(Normalize(linevec[0]))] = JSL::String::stitch(linevec, 1, linevec.size(), configDelimiter);
            }
         });
     }

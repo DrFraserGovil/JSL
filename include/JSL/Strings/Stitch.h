@@ -8,7 +8,7 @@ namespace JSL::String
 {
     //we use this for containers which can be accessed using []
     template<JSL::internal::IndexableRange container>
-    std::string join(const container & vec, size_t begin, size_t end, std::string_view delim)
+    std::string stitch(const container & vec, size_t begin, size_t end, std::string_view delim)
     {
         if (begin >= end || begin >= vec.size())
         {
@@ -26,7 +26,7 @@ namespace JSL::String
 
     //this is a more generic one which just dumps everything in
     template<JSL::internal::SearchableRange container>
-    std::string join(const container & vec, std::string_view delim)
+    std::string stitch(const container & vec, std::string_view delim)
     {
         std::ostringstream os;
         
