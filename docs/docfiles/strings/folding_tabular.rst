@@ -6,8 +6,8 @@ Functions
 ---------------
 
 
-.. doxygenfunction:: JSL::String::tableFormat(std::vector<std::string_view> input, std::vector<size_t> widths, std::string_view delimiter,std::string_view endCap)
-.. doxygenfunction:: JSL::String::tableFormat(std::vector<std::string_view> input, size_t width, std::string_view delimiter,std::string_view endCap)
+.. doxygenfunction:: JSL::String::tableFormat(const std::vector<std::string_view> & input, std::vector<size_t> widths, std::string_view delimiter,std::string_view endCap)
+.. doxygenfunction:: JSL::String::tableFormat(const std::vector<std::string_view> & input, size_t width, std::string_view delimiter,std::string_view endCap)
 
 Usage
 ----------
@@ -39,17 +39,15 @@ Output
 .. code-block:: shell-session
 
 	Your terminal has:
-	    Columns: 50
-	    Tabsize: 4
-	This is a    | This is a short string  | This is a|)
-	long string, |                         | medium   |)
-	longer than  |                         | length   |)
-	the size of  |                         | string,  |)
-	the terminal |                         | to show  |)
-	We can       |                         | that     |)
-	manually     |                         | stringB  |)
-	linebreak    |                         | is still |)
-	    And have |                         | being    |)
-	indented text|                         | properly |)
-	             |                         | padded   |)
-	---------------------------------------------------^
+		Columns: 80
+		Tabsize: 4
+	This is a long string,| This is a short string                | This is a     |)
+	longer than the size  |                                       | medium length |)
+	of the terminal       |                                       | string, to    |)
+	We can manually       |                                       | show that     |)
+	linebreak             |                                       | stringB is    |)
+	    And have indented |                                       | still being   |)
+	text                  |                                       | properly      |)
+	                      |                                       | padded        |)
+	-------------------------------------------------------------------------------^
+	

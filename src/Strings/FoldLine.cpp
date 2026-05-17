@@ -153,12 +153,12 @@ namespace JSL::String
     }
 
 
-    std::string tableFormat(std::vector<std::string_view> input, size_t width, std::string_view delimiter,std::string_view endCap)
+    std::string tableFormat(const std::vector<std::string_view> & input, size_t width, std::string_view delimiter,std::string_view endCap)
     {
         return tableFormat(input, std::vector<size_t>(input.size(),width),delimiter);
     }
 
-    std::string tableFormat(std::vector<std::string_view> input, std::vector<size_t> widths, std::string_view delimiter, std::string_view endCap)
+    std::string tableFormat(const std::vector<std::string_view> & input, std::vector<size_t> widths, std::string_view delimiter, std::string_view endCap)
     {
         if (input.size() != widths.size())
         {
