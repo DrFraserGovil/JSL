@@ -10,6 +10,7 @@ Strings can be famously tricksy to work with - even more so that the lightweight
 	strings/cases
 	strings/folding
 	strings/manipulate
+	strings/makestring
 	strings/join
 	:maxdepth: 1
 	:caption: Contents:
