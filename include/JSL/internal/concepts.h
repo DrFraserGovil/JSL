@@ -11,5 +11,16 @@ namespace JSL::internal
         struct is_vector<std::vector<T, A>> : std::true_type {};
     template<typename T>
     concept VectorType = is_vector<T>::value;
-    //end concept  
+    //end concept 
+    
+    //A concept which defines objects that can be iterated through, and has a 'size' member
+    template<typename T>
+    concept SearchableRange = std::ranges::input_range<T> && requires(T t) {
+    { t.size() } -> std::integral;};
+
+    template<typename T>
+    concept IndexableRange = SearchableRange<T> && requires(T t, size_t index) {
+        t[index];
+    };
+
 }

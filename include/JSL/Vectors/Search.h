@@ -5,6 +5,7 @@
 #include <ranges>
 #include <concepts>
 #include <functional>
+#include <JSL/internal/concepts.h>
 namespace JSL::Vector
 {
 	/// @brief A signal that an element was not in the targeted array
@@ -27,12 +28,6 @@ namespace JSL::Vector
 		
 	};
 
-	namespace internal
-	{
-		template<typename T>
-		concept SearchableRange = std::ranges::input_range<T>;
-	}
-
 	/// @brief Gets the first id such that vec[id] == target
 	/// @details An index is returned even if the container cannot be indexed (i.e. a std::list or std::set). The meaning of this is left to the user.
 	/// @tparam T An object that can be stored in containers
@@ -40,7 +35,7 @@ namespace JSL::Vector
 	/// @param vec The container to be searched through
 	/// @param target The value to be searched for
 	/// @return A SearchResult indicating if the element has been found, and the index it can be found at
-	template<typename T, internal::SearchableRange R>
+	template<typename T, JSL::internal::SearchableRange R>
     requires std::convertible_to<T, std::ranges::range_value_t<R>>
 	inline SearchResult find(const R & vec,const T & target )
 	{

@@ -48,7 +48,19 @@ Coding Style
 
 #. **Bracing Style**.
     * Braces associated with namespaces, classes, functions, and control blocks must always reside on their own line (Allman style).
-    * An exception is permitted for extremely short control blocks, which may be inlined (i.e. ``if(x) {return;}``), but enclosing braces must still be used
+    * Some exceptions are permitted:
+    	* Extremely short control blocks may be inlined (i.e. ``if(x) {return;}``), but enclosing braces must still be used
+    	* ``std::function`` and lambdas declared inside another block may use K&R braces, so long as the opening brace is adjacent to the lambda declarator, and the closing brace is adjacent to the closing parenthesis. The following is permitted:
+		.. code-block:: cpp
+			
+			std::thread([&](){ //K&R permitted here
+				for (auto & x : X)
+				{ // back to Allman
+					longFunctionOn(x);
+				}
+			});
+
+
 
 #. **Header Integrity**.
     * Keep header declarations as clean and sparse as possible, isolating active implementation details inside companion source files. Generic templates are an explicit exception to this constraint.
