@@ -1,5 +1,6 @@
 #include <JSL/Strings/ParseTo.h>
 #include <JSL/internal/error.h>
+#include <JSL/Strings/Cases.h>
 namespace JSL::String
 {
 	using namespace JSL::internal; //for errors
@@ -53,6 +54,26 @@ namespace JSL::String
 
 			
 			return sv.substr(start,end-start);
+		}
+
+		std::vector<std::string_view> tokenize(std::string_view sv,std::string_view delimiter, std::string_view typeName)
+		{
+			sv=trim_view(sv);
+			RejectEmpty(sv,typeName);
+			//! We allow vectors to be wrapped in either [], {} or (). This function removes them for internal use.
+			sv = StripEndCaps(sv);
+
+			auto tokens = split_view(sv,delimiter);
+			std::vector<std::string_view> out;
+			for (auto & t : tokens)
+			{
+				auto r = trim_view(t);
+				if (!r.empty())
+				{
+					out.push_back(r);
+				}
+			}
+			return out;
 		}
 	}
 
