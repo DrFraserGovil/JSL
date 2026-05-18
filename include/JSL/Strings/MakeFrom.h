@@ -89,7 +89,6 @@ namespace JSL::String
 			std::numeric_limits<T>::max_digits10 + 9,
 			std::numeric_limits<T>::digits10 + 3
 		);
-		LOG(INFO) << reserved;
 		char buf[reserved]{};
 		std::to_chars_result result = std::to_chars(buf, buf + reserved, obj);
 
@@ -146,6 +145,26 @@ namespace JSL::String
 			os << makeFrom(v);
 		}
 		os << "]";
+		return os.str();
+	}
+
+	/*! @brief Converts a tuple into a string, recursively converting the contained objects	
+		@details The string has bracket endcaps ("()") and a comma delimiter. 
+		@tparam T Any std::tuple or std::pair object 
+		@param obj The value to be stringified
+		@return A string representing the input value
+		@throws std::runtime_error: If the value cannot be converted to a string
+	*/
+	template<JSL::Concept::TupleLike T>
+	std::string inline makeFrom(const T & obj)
+	{
+		std::ostringstream os;
+		os << "(";
+		std::apply([&os, first = true](const auto&... args) mutable
+		{
+			((os << (first ? first = false, "" : ", ") << makeFrom(args)), ...);
+		}, obj);
+		os << ")";
 		return os.str();
 	}
 }
