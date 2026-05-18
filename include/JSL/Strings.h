@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "Strings/Represent.h"
+#include "Strings/MakeFrom.h"
 #include "Strings/ParseTo.h"
 #include "Strings/Cases.h"
 #include "Strings/Manipulate.h"

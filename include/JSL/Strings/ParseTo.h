@@ -6,7 +6,7 @@
 #include "Manipulate.h"
 #include "Cases.h"
 #include <JSL/internal/error.h>
-#include <JSL/internal/concepts.h>
+#include <JSL/Concepts.h>
 
 /*
     This file provides a robust return-value interface for converting string-views (and, implicitly, strings) into a candidate type
@@ -150,7 +150,7 @@ namespace JSL::String
 
 
 
-    template<JSL::internal::VectorType T>
+    template<JSL::Concept::NonStringRange T>
     T inline ParseTo(std::string_view sv, std::string_view delimiter)
     {   
         return internal::Converter<T>::internalConvert(sv, delimiter);

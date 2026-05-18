@@ -1,6 +1,6 @@
 #pragma once
-#include <JSL/internal/concepts.h>
-#include <JSL/Strings/Represent.h>
+#include <JSL/Concepts.h>
+#include <JSL/Strings/MakeFrom.h>
 #include <JSL/Strings/ParseTo.h>
 #include "CLI_Reader.h"
 #include <algorithm>
@@ -121,7 +121,7 @@ namespace JSL::Parameter
             
             void Convert(std::string_view sv)
             {
-                if constexpr (JSL::internal::is_vector<T>::value)
+                if constexpr (JSL::Concept::is_vector<T>::value)
                 {
                     InternalValue = hasParseDelimiter ? String::ParseTo<T>(sv, VectorParseDelimiter) : String::ParseTo<T>(sv);
                 }
@@ -141,7 +141,7 @@ namespace JSL::Parameter
 
             void push(std::string_view value)
             {
-                if constexpr (JSL::internal::is_vector<T>::value)
+                if constexpr (JSL::Concept::is_vector<T>::value)
                 {
                     InternalValue.push_back(String::ParseTo<typename T::value_type>(value));
                     if (ConnectedValue)
@@ -156,7 +156,7 @@ namespace JSL::Parameter
             }
             void join(std::string_view value)
             {
-                if constexpr (JSL::internal::is_vector<T>::value)
+                if constexpr (JSL::Concept::is_vector<T>::value)
                 {
                     auto parsed = String::ParseTo<T>(value);
                     InternalValue.insert(InternalValue.end(), parsed.begin(), parsed.end());
@@ -173,7 +173,7 @@ namespace JSL::Parameter
             }
             void remove(std::string_view value)
             {
-                if constexpr (JSL::internal::is_vector<T>::value)
+                if constexpr (JSL::Concept::is_vector<T>::value)
                 {
                     // InternalValue.push_back(String::ParseTo<typename T::value_type>(value));
                     auto dvalue = String::ParseTo<typename T::value_type>(value);
@@ -190,7 +190,7 @@ namespace JSL::Parameter
             }
             void erase(int pos)
             {
-                if constexpr (JSL::internal::is_vector<T>::value)
+                if constexpr (JSL::Concept::is_vector<T>::value)
                 {
                     if (InternalValue.empty())
                     {

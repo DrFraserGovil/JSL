@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <JSL/Strings/Represent.h>
+#include <JSL/Strings/MakeFrom.h>
 #include <sstream>
-#include <JSL/internal/concepts.h>
+#include <JSL/Concepts.h>
 namespace JSL::String
 {
 	/*!
@@ -15,7 +15,7 @@ namespace JSL::String
 	 * @param delim The string which separates entries
 	 * @return A string representation of a subset of the input vector
 	 */
-	template<JSL::internal::IndexableRange container>
+	template<JSL::Concept::IndexableRange container>
 	std::string stitch(const container & vec, size_t begin, size_t end, std::string_view delim)
 	{
 		if (begin >= end || begin >= vec.size())
@@ -40,7 +40,7 @@ namespace JSL::String
 	 * @param delim The string which separates entries
 	 * @return A string representation of the input vector
 	 */
-	template<JSL::internal::SearchableRange container>
+	template<JSL::Concept::SearchableRange container>
 	std::string stitch(const container & vec, std::string_view delim)
 	{
 		std::ostringstream os;

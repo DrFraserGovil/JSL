@@ -5,7 +5,7 @@
 #include <ranges>
 #include <concepts>
 #include <functional>
-#include <JSL/internal/concepts.h>
+#include <JSL/Concepts.h>
 namespace JSL::Vector
 {
 	/// @brief A signal that an element was not in the targeted array
@@ -35,7 +35,7 @@ namespace JSL::Vector
 	/// @param vec The container to be searched through
 	/// @param target The value to be searched for
 	/// @return A SearchResult indicating if the element has been found, and the index it can be found at
-	template<typename T, JSL::internal::SearchableRange R>
+	template<typename T, JSL::Concept::SearchableRange R>
     requires std::convertible_to<T, std::ranges::range_value_t<R>>
 	inline SearchResult find(const R & vec,const T & target )
 	{
@@ -58,7 +58,7 @@ namespace JSL::Vector
 	/// @param vec The object to be search through
 	/// @param checker A predicate function which acts on each element of ``vec`` and returns either true or false
 	/// @return A SearchResult indicating where the first suitable element is, if one exists
-	template<internal::SearchableRange R, class Predicate>
+	template<Concept::SearchableRange R, class Predicate>
 	inline SearchResult findWhere(const R & vec, Predicate checker )
 	{
 		auto begin = std::begin(vec);
@@ -89,7 +89,7 @@ namespace JSL::Vector
 	/// @param vec The vector to be searched 
 	/// @param target The values to be matched
 	/// @return True if the value is found, false otherwise
-	template<typename T, internal::SearchableRange R>
+	template<typename T, Concept::SearchableRange R>
     requires std::convertible_to<T, std::ranges::range_value_t<R>>
 	inline bool contains(const R & vec, const T & target)
 	{
