@@ -102,6 +102,7 @@ namespace JSL::String
 			return std::string(buf, result.ptr - buf);
 		}
 	}
+	
 	/*! @brief Converts booleans into strings 
 	 * @param obj A boolean
 	 * @return Either "true" or "false"

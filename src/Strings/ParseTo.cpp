@@ -2,108 +2,101 @@
 #include <JSL/internal/error.h>
 namespace JSL::String
 {
-    using namespace JSL::internal; //for errors
-    namespace internal
-    {
-        
-        void CheckErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName)
-        {
-            if (result.ec == std::errc() &&  (result.ptr != sv.data() + sv.size()))
-            { 
-                FatalError("Could not complete conversion", JSL_LOCATION) << "Partial conversion of `" << sv << "` to type " << typeName << " unconverted characters were: " << std::string_view(result.ptr, sv.data() + sv.size() - result.ptr);
-            }
-            else if (result.ec == std::errc::invalid_argument) 
-            {
-                FatalError("Could not complete conversion", JSL_LOCATION) <<  "Error: Invalid argument for conversion: '" << sv   << "` to type " << typeName<< "\n";
-                
-            } 
-            else if (result.ec == std::errc::result_out_of_range)
-            {
-                FatalError("Could not complete conversion", JSL_LOCATION) <<  "Error: Result out of range for conversion: '" << sv << "` to type " << typeName << "\n";
-            }
-        }
+	using namespace JSL::internal; //for errors
+	namespace internal
+	{
+		
+		void CheckErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName)
+		{
+			if (result.ec == std::errc() &&  (result.ptr != sv.data() + sv.size()))
+			{ 
+				FatalError("Could not complete conversion", JSL_LOCATION) << "Partial conversion of `" << sv << "` to type " << typeName << " unconverted characters were: " << std::string_view(result.ptr, sv.data() + sv.size() - result.ptr);
+			}
+			else if (result.ec == std::errc::invalid_argument) 
+			{
+				FatalError("Could not complete conversion", JSL_LOCATION) <<  "Error: Invalid argument for conversion: '" << sv   << "` to type " << typeName<< "\n";
+				
+			} 
+			else if (result.ec == std::errc::result_out_of_range)
+			{
+				FatalError("Could not complete conversion", JSL_LOCATION) <<  "Error: Result out of range for conversion: '" << sv << "` to type " << typeName << "\n";
+			}
+		}
 
-        void RejectEmpty(std::string_view sv,std::string_view typeName)
-        {
-            if (sv.empty()) 
-            {
-                 FatalError("Could not complete conversion", JSL_LOCATION) << "Cannot convert an empty string to to type " <<typeName;
-            } 
-            if (sv == "__bool_tag__" && typeName != typeid(bool).name())
-            {
-                FatalError("Could not complete conversion", JSL_LOCATION) << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type " << typeName;
-            }
-        }   
-
-
-        std::string_view StripEndCaps(std::string_view sv)
-        {
-            size_t start = 0;
-            size_t end = sv.size();
-            // Check for common opening brackets
-            if (sv[0] == '[' || sv[0] == '{' || sv[0] == '(')
-            {
-                start = 1;
-            }
-            // Check for common closing brackets
-            if ( (sv[end - 1] == ']' || sv[end - 1] == '}' || sv[end - 1] == ')'))
-            {
-                end -= 1;
-            }
-
-            
-            return sv.substr(start,end-start);
-        }
-        
+		void RejectEmpty(std::string_view sv,std::string_view typeName)
+		{
+			if (sv.empty()) 
+			{
+				 FatalError("Could not complete conversion", JSL_LOCATION) << "Cannot convert an empty string to to type " <<typeName;
+			} 
+			if (sv == "__bool_tag__" && typeName != typeid(bool).name())
+			{
+				FatalError("Could not complete conversion", JSL_LOCATION) << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type " << typeName;
+			}
+		}   
 
 
-        #define PROVIDE_SPECIALISATION(type,...) \
-            type Converter<type>::internalConvert(std::string_view sv){ \
-                RejectEmpty(sv,typeid(type).name()); __VA_ARGS__}
+		std::string_view StripEndCaps(std::string_view sv)
+		{
+			size_t start = 0;
+			size_t end = sv.size();
+			// Check for common opening brackets
+			if (sv[0] == '[' || sv[0] == '{' || sv[0] == '(')
+			{
+				start = 1;
+			}
+			// Check for common closing brackets
+			if ( (sv[end - 1] == ']' || sv[end - 1] == '}' || sv[end - 1] == ')'))
+			{
+				end -= 1;
+			}
+
+			
+			return sv.substr(start,end-start);
+		}
+	}
 
 
- 
 
-        PROVIDE_SPECIALISATION(std::string,
-             //we assume that conversion to strings does not preserve leading or trailing whitespace, as this is spurious for strings
-             return trim(sv);
-        )
+	template<>
+	char ParseTo(std::string_view sv)
+	{
+		sv=trim_view(sv);
+		internal::RejectEmpty(sv,typeid(char).name());
+		if (sv.length() != 1) 
+		{
+			JSL::internal::FatalError("Cannot complete string-char conversion",JSL_LOCATION)  << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
+		}
+		return sv[0];
+	}
 
-        PROVIDE_SPECIALISATION(bool,
-            auto snap = trim_view(sv,"//");
-            if (snap == "1" || iEquals(snap,"true") || iEquals(snap,"yes") || iEquals(snap,"on") || iEquals(snap,"__bool_tag__") )
-            {
-                return true;
-            }
-            if (snap == "0" || iEquals(snap,"false")    || iEquals(snap,"no") || iEquals(snap,"off") )
-            {
-                return false;
-            }
+	template<>
+	bool ParseTo(std::string_view sv)
+	{
+		sv=trim_view(sv);
+		internal::RejectEmpty(sv, typeid(bool).name());
 
-           FatalError("Cannot complete string-boolean conversion", JSL_LOCATION) << "Cannot convert string " << sv << " to boolean";
-           return false;
-        );
+		if (sv == "1" || iEquals(sv,"true") || iEquals(sv,"yes") || iEquals(sv,"on") || iEquals(sv,"__bool_tag__"))
+		{
+			return true;
+		}
+		if (sv == "0" || iEquals(sv,"false")|| iEquals(sv,"no") || iEquals(sv,"off"))
+		{
+			return false;
+		}
+		JSL::internal::FatalError("Cannot complete string-boolean conversion", JSL_LOCATION) << "Cannot convert string " << sv << " to boolean";
+		return false;//dead code, but suppresses compiler warning
+	}
 
-        PROVIDE_SPECIALISATION(char,
-            // Trim whitespace first
-            sv = trim_view(sv,"//");
-            // A single char conversion should only accept a single character string_view
-            if (sv.length() != 1) {
-                FatalError("Cannot complete string-char conversion",JSL_LOCATION)  << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
-            }
-            return sv[0];
-        )
 
-        #if defined(__clang__) && defined(__APPLE__)
-            PROVIDE_SPECIALISATION(double,
-            
-                sv = trim_view(sv,"//");
-                if (sv.empty()) 
-                {
-                    FatalError("Cannot complete string-double conversion",JSL_LOCATION) << "Cannot convert an empty string to type double" 
-                } 
 
-                try
+	#if defined(__clang__) && defined(__APPLE__)
+		template<>
+		double inline ParseTo(std::string_view sv)
+		{
+			sv=trim_view(sv);
+			internal::RejectEmpty(sv, typeid(double).name());
+			 try
                 {
                     std::string s_temp(sv);
                     size_t pos = 0;
@@ -117,18 +110,17 @@ namespace JSL::String
                 }
                 catch (const std::out_of_range& e)
                 {
-                    FatalError("Out-of-range error in double conversion",JSL_LOCATION) << "Error: Result out of range for conversion: '" << sv << "` to double\n";
+                  	JSL::internal::FatalError("Out-of-range error in double conversion",JSL_LOCATION) << "Error: Result out of range for conversion: '" << sv << "` to double\n";
                     
                 }
                 catch (const std::invalid_argument& e)
                 {
-                    FatalError("Could not complete conversion (invalid format).",JSL_LOCATION) << "Error: Invalid argument for conversion: '" << sv << "` to double\n";
+                    JSL::internal::FatalError("Could not complete conversion (invalid format).",JSL_LOCATION) << "Error: Invalid argument for conversion: '" << sv << "` to double\n";
                 }
-            
-            )
-        #endif
+		}
+	#endif
 
-    }
 
+	#undef BOILERPLATE_PARSE
 }
 
