@@ -116,7 +116,7 @@ namespace JSL::Parameter
 
             std::string ValueString() const
             {
-                return String::represent(InternalValue);
+                return String::makeFrom(InternalValue);
             }
             
             void Convert(std::string_view sv)

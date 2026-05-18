@@ -1,124 +1,15 @@
 
 #pragma once
-#include <string>
-#include <vector>
-#include <type_traits> // For std::is_arithmetic_v, std::enable_if_t, etc.
-#include <sstream>     // For std::stringstream for more controlled numeric to_string
-#include <string_view> // For delimiter in vector case
- #include <concepts>
-#include <ranges>
 
 #include <charconv>
 #include <memory>
 #include <JSL/Concepts.h>
 #include <JSL/internal/error.h>
+#include <cmath>
 namespace JSL::String
 {
-	/*! @brief Internal interface for Represent. 
-		
-	@details As with ParseTo we have to provide a wrapper struct to allow vector partial specialisation. 
-		Default struct only applies to numeric types. Overloads handle the others
-	*/
 
 
-	template<typename T>
-	struct RepresentStruct
-	{
-	};
-
-
-	//macro to provide specialisations without boilerplate muddling it all up
-	#define JSL_HAS_SPECIALISATION(type) \
-		template<> struct RepresentStruct<type>{static std::string stringify (const type & value);}; 
-	
-	#define JSL_HAS_SPECIALISATION_NOCONST(type) \
-		template<> struct RepresentStruct<type>{static std::string stringify ( type & value);};
-
-
-	JSL_HAS_SPECIALISATION(bool);
-
-
-	//a whole bunch of specialisations
-	JSL_HAS_SPECIALISATION(int);
-	JSL_HAS_SPECIALISATION(float);
-	JSL_HAS_SPECIALISATION(double);
-	JSL_HAS_SPECIALISATION(long);
-	JSL_HAS_SPECIALISATION(long long);
-	JSL_HAS_SPECIALISATION(long double);
-	JSL_HAS_SPECIALISATION(unsigned long long);
-	JSL_HAS_SPECIALISATION(unsigned long);
-	JSL_HAS_SPECIALISATION(unsigned int);
-
-	JSL_HAS_SPECIALISATION(char);
-	JSL_HAS_SPECIALISATION(char*);
-	JSL_HAS_SPECIALISATION_NOCONST(const char*);
-
-	JSL_HAS_SPECIALISATION(std::string);
-	JSL_HAS_SPECIALISATION(std::string_view);
-
-	#undef JSL_HAS_SPECIALISATION
-
-
-	template<Concept::NonStringRange T>
-	struct RepresentStruct<T>
-	{
-		//! @brief Specialization for `std::vector<T_Inner>`
-		//! @details Calls with default delimiter
-		static std::string stringify(const T& container)
-		{
-			return stringify(container,", ");
-		}
-		
-		//! @brief Specialization for `std::vector<T_Inner>`
-		//! @details Calls with custom delimiter
-		static std::string stringify(const T& container, std::string_view delimiter)
-		{
-			std::ostringstream result;
-			result << "["; // A default endcap
-
-			bool first = true;
-			for (const auto& item : container)
-			{
-				if (!first)
-				{
-					result << delimiter;
-				}
-				
-				// Extract the inner type and recurse
-				using InnerType = std::remove_cvref_t<decltype(item)>;
-				result << RepresentStruct<InnerType>::stringify(item);
-				
-				first = false;
-			}
-
-			result << "]";
-			return result.str();
-		}
-	};
-
-	/*! @brief Converts the object into a string. 
-		@brief If the object is a vector, the default delimiter - "," - is used.
-		@param obj An object (usually a numeric, boolean or vector) to be converted
-		@returns A string representation
-	*/
-	template<typename T>
-	std::string inline represent(T obj)
-	{
-		return RepresentStruct<T>::stringify(obj);
-	};
-
-	/*! @brief Converts a vector into a string
-		@param obj An object (usually a numeric, boolean or vector) to be converted
-		@param delimiter The character(s) which delimit the elements of the vector
-		@returns A string representation
-	*/
-	template<typename T>
-	std::string inline represent(T obj,std::string delimiter)
-	{
-		return RepresentStruct<T>::stringify(obj,delimiter);
-	};
-
-	
 	/*! @brief Basic template for the makeFrom class of functions. 
 	 * @tparam T An arbitrary type 
 	 * @param obj An object to be stringified
@@ -142,35 +33,30 @@ namespace JSL::String
 	template<std::floating_point T>
 	std::string inline makeFrom(const T & obj, int precision, std::chars_format fmt = std::chars_format::general)
 	{
-		constexpr size_t reserved = 32; // 15 characters + extra characters like +/-, exps etc. 
-		const size_t needed = precision + 16;
-
-		char stackbuffer[reserved];
-
-		char * buf = nullptr;
-		std::unique_ptr<char[], void(*)(void*)> heap_guard(nullptr,std::free);
-		if (needed <= reserved)
+		const size_t needed = precision + 16; //16 is worst case scenario of required space for a  negative, hex with maximal radix
+		constexpr size_t stackLimit = 30;
+		if (needed < stackLimit)
 		{
-			buf = stackbuffer;
+			char buffer[stackLimit];
+			auto result = std::to_chars(buffer, buffer + needed, obj,fmt,precision);
+			if (result.ec == std::errc())
+			{
+				return std::string(buffer,result.ptr-buffer);
+			}
 		}
 		else
 		{
-			buf = (char*)malloc(needed*sizeof(char)); //shouldn't throw an error if the user makes a ludicrous demand, but will degrade performance to do this 
-			
-			heap_guard.reset(buf);
-		}
+			std::vector<char> buffer(needed);
+			auto result = std::to_chars(buffer.data(), buffer.data() + needed, obj,fmt,precision);
 
-		auto result = std::to_chars(buf, buf + needed, obj,fmt,precision);
+			if (result.ec == std::errc())
+			{
+				return std::string(buffer.data(),result.ptr-buffer.data());
+			}
+		}
+		JSL::internal::FatalError("Bad numeric conversion",JSL_LOCATION) << "Could not convert " << obj << " to string";
+		return ""; //stops compiler warnings; not used
 		
-		if (result.ec == std::errc()) //blank error = it worked
-		{
-			return std::string(buf,result.ptr-buf);
-		}
-		else
-		{
-			JSL::internal::FatalError("Bad numeric conversion",JSL_LOCATION) << "Could not convert " << obj << " to string";
-			return "";
-		} 
 	}
 
 	
@@ -199,13 +85,18 @@ namespace JSL::String
 	template<JSL::Concept::Numeric T>
 	std::string inline makeFrom(const T & obj)
 	{
-		constexpr size_t reserved = 24;
+		constexpr size_t reserved = std::max(
+			std::numeric_limits<T>::max_digits10 + 9,
+			std::numeric_limits<T>::digits10 + 3
+		);
+		LOG(INFO) << reserved;
 		char buf[reserved]{};
 		std::to_chars_result result = std::to_chars(buf, buf + reserved, obj);
 
 		if (result.ec != std::errc())
 		{
-			return makeFrom(obj,reserved);	
+			JSL::internal::FatalError("Bad numeric conversion",JSL_LOCATION) << "Could not convert " << obj << " to string";
+			return ""; //stops compiler warnings; not used
 		}
 		else
 		{
@@ -245,14 +136,14 @@ namespace JSL::String
 		std::ostringstream os;
 		os << "[";
 		bool first = true;
-		for (auto & v : obj)
+		for (const auto & v : obj)
 		{
 			if (!first)
 			{
 				os << ", ";
 			}
 			first = false;
-			os << v;
+			os << makeFrom(v);
 		}
 		os << "]";
 		return os.str();

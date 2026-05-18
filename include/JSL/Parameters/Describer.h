@@ -45,7 +45,7 @@ namespace JSL::Parameter
             {
                 TypeString = tname;
             }
-            DefaultValue = String::represent(parameter.Value());
+            DefaultValue = String::makeFrom(parameter.Value());
             CurrentValue = DefaultValue;
             Found = true;
         }

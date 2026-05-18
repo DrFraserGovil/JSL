@@ -24,10 +24,10 @@ namespace JSL::String
 		}
 		std::ostringstream os;
 		
-		os << represent(vec[begin]);
+		os << makeFrom(vec[begin]);
 		for (size_t i = begin + 1; i < end && i < vec.size(); ++i)
 		{
-			os << delim  << represent(vec[i]);
+			os << delim  << makeFrom(vec[i]);
 		}
 		return os.str();
 	}
@@ -56,7 +56,7 @@ namespace JSL::String
 			{
 				first = false;
 			}
-			os << represent(v);
+			os << makeFrom(v);
 		}
 		return os.str();
 	}
