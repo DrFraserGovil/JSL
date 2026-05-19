@@ -6,6 +6,9 @@
 #include <JSL/Concepts.h>
 #include <JSL/internal/error.h>
 #include <cmath>
+
+
+
 namespace JSL::String
 {
 
@@ -139,50 +142,6 @@ namespace JSL::String
 		return std::string(1,obj);
 	}
 
-	/*! @brief Converts an iterable range into a string, recursively converting the contained objects
-		@details The string has bracket endcaps ("[]") and a comma delimiter. For more fine grained control, see JSL::String::stitch
-	 * @tparam T An object supporting range-based iteration (but not strings)
-	 * @param obj The object to be converted
-	 * @return A string representing the input object 
-	 */
-	template<JSL::Concept::NonStringRange T>
-	std::string inline makeFrom(const T & obj)
-	{
-		std::ostringstream os;
-		os << "[";
-		bool first = true;
-		for (const auto & v : obj)
-		{
-			if (!first)
-			{
-				os << ", ";
-			}
-			first = false;
-			os << makeFrom(v);
-		}
-		os << "]";
-		return os.str();
-	}
-
-	/*! @brief Converts a tuple into a string, recursively converting the contained objects	
-		@details The string has bracket endcaps ("()") and a comma delimiter. 
-		@tparam T Any std::tuple or std::pair object 
-		@param obj The value to be stringified
-		@return A string representing the input value
-		@throws std::runtime_error: If the value cannot be converted to a string
-	*/
-	template<JSL::Concept::TupleLike T>
-	std::string inline makeFrom(const T & obj)
-	{
-		std::ostringstream os;
-		os << "(";
-		std::apply([&os, first = true](const auto&... args) mutable
-		{
-			((os << (first ? first = false, "" : ", ") << makeFrom(args)), ...);
-		}, obj);
-		os << ")";
-		return os.str();
-	}
 
 
 	/*! @brief Converts an optional-value into a string, returning either the value (if it exists), or the NULL STRING.	
@@ -200,7 +159,7 @@ namespace JSL::String
 	
 	/*! @brief Converts the value held by a smart pointer a into a string, returning either the value (if it exists), or the NULL STRING.	
 		@details This stringifies the object pointed to by the pointer, not the pointer itself
-		@tparam T Any std::unique_ptr or std::shared_ptr object 
+		@tparam T Any std::unique_ptr or std::shared_ptr objectj 
 		@param obj The pointer associated with the object to be stringified
 		@return A string representing the pointed-to value
 		@throws std::runtime_error: If the internal type is not supported, or cannot be converted to a string
@@ -213,3 +172,5 @@ namespace JSL::String
 	}
 
 }
+#include <JSL/Strings/Templates/make_containers.h>
+#include <JSL/Strings/Templates/make_tuple.h>

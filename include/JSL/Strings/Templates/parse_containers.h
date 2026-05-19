@@ -6,6 +6,10 @@
 #include <JSL/Strings/ParseTo.h>
 namespace JSL::String
 {
+	//forward declaration
+	template<JSL::Concept::NonStringRange T>
+	T ParseTo(std::string_view sv);
+
 	template<JSL::Concept::NonStringRange T>
 	T inline ParseTo(std::string_view sv,std::string_view delimiter)
 	{

@@ -2,6 +2,7 @@
 #include <JSL/internal/error.h>
 #include <JSL/Strings/Cases.h>
 #include <JSL/Concepts.h> //needed for the nullstring
+#include <JSL.h>
 namespace JSL::String
 {
 	using namespace JSL::internal; //for errors
@@ -42,42 +43,76 @@ namespace JSL::String
 		}   
 
 
-		std::string_view StripEndCaps(std::string_view sv)
+		std::string_view StripEndCaps(std::string_view sv,std::vector<std::pair<char,char>> endCaps)
 		{
-			size_t start = 0;
 			size_t end = sv.size();
-			// Check for common opening brackets
-			if (sv[0] == '[' || sv[0] == '{' || sv[0] == '(')
+			for (auto & pair : endCaps)
 			{
-				start = 1;
-			}
-			// Check for common closing brackets
-			if ( (sv[end - 1] == ']' || sv[end - 1] == '}' || sv[end - 1] == ')'))
-			{
-				end -= 1;
-			}
-
+				if (sv[0] == pair.first && sv[end-1] == pair.second)
+				{
+					return sv.substr(1,end-2);
+				}
+			}	
 			
-			return sv.substr(start,end-start);
+			return sv;
 		}
 
 		std::vector<std::string_view> tokenize(std::string_view sv,std::string_view delimiter, std::string_view typeName)
 		{
+			LOG(WARN) << "IN: " << sv;
 			sv=trim_view(sv);
-			RejectEmpty(sv,typeName);
-			//! We allow vectors to be wrapped in either [], {} or (). This function removes them for internal use.
-			sv = StripEndCaps(sv);
 
-			auto tokens = split_view(sv,delimiter);
+			const std::vector<std::pair<char,char>> caps{std::pair<char,char>{'[',']'},std::pair<char,char>{'(',')'},std::pair<char,char>{'{','}'}}; 
+
+			sv = StripEndCaps(sv,caps);
 			std::vector<std::string_view> out;
-			for (auto & t : tokens)
+			
+			std::stack<char> awaiting;
+			size_t grab = 0;
+			for (size_t i = 0; i < sv.size(); ++i)
 			{
-				auto r = trim_view(t);
-				if (!r.empty())
+				if (!awaiting.empty() && sv[i] == awaiting.top())
 				{
-					out.push_back(r);
+					awaiting.pop();
+					if (awaiting.empty())
+					{
+						out.emplace_back(sv.substr(grab,i+1-grab));
+					}
+					continue;
+				} 
+
+				for (auto & cap : caps)
+				{
+					if (sv[i] == cap.first)
+					{
+						if (awaiting.empty())
+						{
+							grab  = i;
+						}
+						awaiting.push(cap.second);
+					}
+				}
+
+			}
+
+			if (!awaiting.empty())
+			{
+				JSL::internal::FatalError("Mismatched brackets",JSL_LOCATION)<< "A missing  \"" << awaiting.top() << "\" prevents container parsing";
+			}
+
+			if (out.empty())
+			{
+				auto tokens = split_view(sv,delimiter);
+				for (auto & t : tokens)
+				{
+					auto r = trim_view(t);
+					if (!r.empty())
+					{
+						out.push_back(r);
+					}
 				}
 			}
+
 			return out;
 		}
 	}

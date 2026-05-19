@@ -3,7 +3,7 @@
 String Parsing
 ====================
 
-The inverse problem to representing a type as a string is *parsing*, converting an input string representing a value into a typed-instance containing that value. 
+The inverse problem to :ref:`representing a type as a string <makestring>` is *parsing*, converting an input string representing a value into a typed-instance containing that value. 
 
 .. warning::
 	Whilst it is guaranteed that all types which can be :ref:`parsed-to <parseto>` can be made-from, **the inverse is not true**, due to the support of a ``stringstream`` converter.
@@ -13,7 +13,7 @@ The inverse problem to representing a type as a string is *parsing*, converting 
 ``ParseTo()``
 ---------------
 
-
+.. cpp:function:: template<class T> T ParseTo(std::string_view sv)
 
 .. dropdown:: Template Overloads
 	:color: primary
