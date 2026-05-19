@@ -1,6 +1,7 @@
 #include <JSL/Strings/ParseTo.h>
 #include <JSL/internal/error.h>
 #include <JSL/Strings/Cases.h>
+#include <JSL/Concepts.h> //needed for the nullstring
 namespace JSL::String
 {
 	using namespace JSL::internal; //for errors
@@ -24,7 +25,7 @@ namespace JSL::String
 			}
 		}
 
-		void RejectEmpty(std::string_view sv,std::string_view typeName)
+		void RejectEmpty(std::string_view sv,std::string_view typeName, bool isOptional)
 		{
 			if (sv.empty()) 
 			{
@@ -33,6 +34,10 @@ namespace JSL::String
 			if (sv == "__bool_tag__" && typeName != typeid(bool).name())
 			{
 				FatalError("Could not complete conversion", JSL_LOCATION) << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type " << typeName;
+			}
+			if (sv == JSL_NULL_STRING && !isOptional)
+			{
+				FatalError("Could not complete conversion", JSL_LOCATION) << "String string `__none__` is reserved for std::optional types, and cannot be converted to type " << typeName;
 			}
 		}   
 

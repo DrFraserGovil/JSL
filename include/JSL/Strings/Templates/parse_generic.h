@@ -22,6 +22,7 @@ namespace JSL::String
 		}
 		catch (...)
 		{
+		
 			JSL::internal::FatalError("Bad conversion",JSL_LOCATION) << "Cannot convert " << sv << " to type " << typeid(T).name() << " using the default converter.";
 			return ""; //dead code, suppresses compiler warnings
 		}

@@ -7,6 +7,8 @@
 #include <JSL/Strings/Templates/parse_numeric.h>
 #include <JSL/Strings/Templates/parse_containers.h>
 #include <JSL/Strings/Templates/parse_tuples.h>
+#include <JSL/Strings/Templates/parse_optional.h>
+#include <JSL/Strings/Templates/parse_ptr.h>
 
 
 

@@ -11,12 +11,27 @@ namespace JSL::String
 
 
 	/*! @brief Basic template for the makeFrom class of functions. 
+		@details Pipe the result into an output stream, and hope that if all else fails, a pipe has been implemented
 	 * @tparam T An arbitrary type 
 	 * @param obj An object to be stringified
 	 * @throws template_errors if std::string not constructible from the object
 	 * @return A string representing the object
 	 */
 	template<class T>
+	std::string inline makeFrom(const T & obj)
+	{
+		std::ostringstream os;
+		os << obj;
+		return os.str();
+	}
+
+	/*! @brief A basic wrapper around a direct string-construction, simply to provide a unified interface 
+	 * @tparam T An arbitrary type 
+	 * @param obj An object to be stringified
+	 * @throws template_errors if std::string not constructible from the object
+	 * @return A string representing the object
+	 */
+	template<JSL::Concept::StringType T>
 	std::string inline makeFrom(const T & obj)
 	{
 		return std::string(obj);
@@ -168,4 +183,33 @@ namespace JSL::String
 		os << ")";
 		return os.str();
 	}
+
+
+	/*! @brief Converts an optional-value into a string, returning either the value (if it exists), or the NULL STRING.	
+		@tparam T Any std::optional object 
+		@param obj The value to be stringified
+		@return A string representing the input value
+		@throws std::runtime_error: If the internal type is not supported, or cannot be converted to a string
+	*/
+	template<JSL::Concept::OptionalLike T>
+	std::string inline makeFrom(const T & obj)
+	{
+		if (!obj){return JSL_NULL_STRING;}
+		else{return makeFrom(obj.value());}
+	}
+	
+	/*! @brief Converts the value held by a smart pointer a into a string, returning either the value (if it exists), or the NULL STRING.	
+		@details This stringifies the object pointed to by the pointer, not the pointer itself
+		@tparam T Any std::unique_ptr or std::shared_ptr object 
+		@param obj The pointer associated with the object to be stringified
+		@return A string representing the pointed-to value
+		@throws std::runtime_error: If the internal type is not supported, or cannot be converted to a string
+	*/
+	template<JSL::Concept::SmartPointer T>
+	std::string inline makeFrom(const T & obj)
+	{
+		if (!obj){return JSL_NULL_STRING;}
+		else{return makeFrom(*obj);}
+	}
+
 }

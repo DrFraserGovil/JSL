@@ -11,6 +11,8 @@ Strings can be famously tricksy to work with - even more so that the lightweight
 	strings/folding
 	strings/manipulate
 	strings/makestring
+	strings/parseto
 	strings/join
-	:maxdepth: 1
+	strings/null
+	:maxdepth: 2
 	:caption: Contents:
