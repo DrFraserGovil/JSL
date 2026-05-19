@@ -8,7 +8,7 @@ namespace JSL::String
 	using namespace JSL::internal; //for errors
 	namespace internal
 	{
-		
+		const std::vector<std::pair<char,char>> endCaps{std::pair<char,char>{'[',']'},std::pair<char,char>{'(',')'},std::pair<char,char>{'{','}'}}; 
 		void CheckErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName)
 		{
 			if (result.ec == std::errc() &&  (result.ptr != sv.data() + sv.size()))
@@ -43,75 +43,99 @@ namespace JSL::String
 		}   
 
 
-		std::string_view StripEndCaps(std::string_view sv,std::vector<std::pair<char,char>> endCaps)
+		size_t jumpToPartner(std::string_view sv, size_t idx,char ender)
+		{
+			char opener = sv[idx];
+			
+			int level = 1;	
+			for (size_t pos = idx + 1; pos < sv.size(); ++pos)
+			{
+				if (sv[pos] == opener)
+				{
+					++level;
+				}
+				if (sv[pos] == ender)
+				{
+					--level;
+					if (level == 0)
+					{
+						return pos;
+					}
+				}
+			}
+
+			JSL::internal::FatalError("Mismatched braces",JSL_LOCATION) << "Could not find " << ender << " character associated with the opener at position " << idx <<" in " << sv;
+			return idx;
+		}
+
+		std::string_view StripEndCaps(std::string_view sv)
 		{
 			size_t end = sv.size();
+
 			for (auto & pair : endCaps)
 			{
-				if (sv[0] == pair.first && sv[end-1] == pair.second)
+				if (sv[0] == pair.first)
 				{
-					return sv.substr(1,end-2);
+					auto idx = jumpToPartner(sv,0,pair.second);
+					if (idx == end-1) // i.e. if we've matched with the end character, then strip
+					{
+						return sv.substr(1,end-2);
+					}
+					else // this is the case where nestings get in the way
+					{
+						return sv;
+					}
 				}
 			}	
-			
-			return sv;
+			return sv; // this is no outer braces
 		}
+
+		std::vector<std::string_view> recursetokens(std::string_view sv)
+		{
+			sv=trim_view(sv);
+			RejectEmpty(sv,"vectortype");
+			
+			sv= StripEndCaps(sv);
+			std::vector<std::string_view> out;
+			
+			size_t grab = 0;
+			while (grab < sv.size())
+			{
+				for (auto & cap : endCaps)
+				{
+					if (sv[grab] == cap.first)
+					{
+						auto end = jumpToPartner(sv,grab,cap.second);
+						out.emplace_back(sv.substr(grab,end+1-grab));
+						grab = end;
+						break;
+					}
+				}
+				++grab;
+			}
+	
+
+			return out;
+		}
+
 
 		std::vector<std::string_view> tokenize(std::string_view sv,std::string_view delimiter, std::string_view typeName)
 		{
-			LOG(WARN) << "IN: " << sv;
 			sv=trim_view(sv);
-
-			const std::vector<std::pair<char,char>> caps{std::pair<char,char>{'[',']'},std::pair<char,char>{'(',')'},std::pair<char,char>{'{','}'}}; 
-
-			sv = StripEndCaps(sv,caps);
-			std::vector<std::string_view> out;
+			RejectEmpty(sv,"vectortype");
 			
-			std::stack<char> awaiting;
-			size_t grab = 0;
-			for (size_t i = 0; i < sv.size(); ++i)
+			sv = StripEndCaps(sv);
+			std::vector<std::string_view> out;
+			auto tokens = split_view(sv,delimiter);
+			for (auto & t : tokens)
 			{
-				if (!awaiting.empty() && sv[i] == awaiting.top())
+				auto r = trim_view(t);
+				if (!r.empty())
 				{
-					awaiting.pop();
-					if (awaiting.empty())
-					{
-						out.emplace_back(sv.substr(grab,i+1-grab));
-					}
-					continue;
-				} 
-
-				for (auto & cap : caps)
-				{
-					if (sv[i] == cap.first)
-					{
-						if (awaiting.empty())
-						{
-							grab  = i;
-						}
-						awaiting.push(cap.second);
-					}
-				}
-
-			}
-
-			if (!awaiting.empty())
-			{
-				JSL::internal::FatalError("Mismatched brackets",JSL_LOCATION)<< "A missing  \"" << awaiting.top() << "\" prevents container parsing";
-			}
-
-			if (out.empty())
-			{
-				auto tokens = split_view(sv,delimiter);
-				for (auto & t : tokens)
-				{
-					auto r = trim_view(t);
-					if (!r.empty())
-					{
-						out.push_back(r);
-					}
+					out.push_back(r);
 				}
 			}
+			
 
 			return out;
 		}

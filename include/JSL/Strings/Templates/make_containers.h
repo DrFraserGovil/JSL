@@ -14,7 +14,7 @@ namespace JSL::String
 	std::string inline makeFrom(const T & obj)
 	{
 		std::ostringstream os;
-		os << "[";
+ 		os << "[";
 		bool first = true;
 		for (const auto & v : obj)
 		{
