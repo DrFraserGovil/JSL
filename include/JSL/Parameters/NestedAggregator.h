@@ -41,12 +41,12 @@ namespace JSL::Parameter
                     }
                     else
                     {
-                        JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "Parameter -" << trigger << " exists but is not of the requested type";
+                        throw std::logic_error("Parameter -" + std::string(trigger) + " exists but is not of the requested type");
                     }
                 }
                 else
                 {
-                    JSL::internal::FatalError("Parameter not found", JSL_LOCATION) << "No parameter found for trigger -" << trigger;
+                    throw std::logic_error("Parameter -" + std::string(trigger) + "does not exist");
                 }
                 auto dummy = new T(); //unreachable, but silences compiler warning about missing return
                 return *dummy;

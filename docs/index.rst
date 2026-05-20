@@ -6,21 +6,30 @@
 The JSL Library
 ===============================
 
+
 The JSL ('Jack Standard Library') is a set of tools developed by me (Jack Fraser-Govil) as a uniform, useful set of boilerplate code I found myself duplicating across numerous C++ projects. It is probably of no use to anyone else, but if you have found your way here, it is probably from one of the projects which utilised this library. 
 
-Even more likely, you are in fact me, reading this a year or two down the line wondering "what on Earth did you do?". If so, I am sorry. 
+Overview
+--------------
 
-.. toctree::
-	docfiles/style
-	docfiles/async
-	docfiles/display
-	docfiles/fileio
-	docfiles/parameters
-	docfiles/plot
-	docfiles/strings
-	docfiles/time
-	docfiles/vectors
-	:maxdepth: 2
-	:caption: Contents:
+The JSL library is broken up into a series of smaller modules, each of which can be included individually if more precise control is desired. 
 
-* :ref:`genindex`
+	.. toctree::
+		docfiles/style
+		Async.h <docfiles/async>
+		Display.h <docfiles/display>
+		FileIO.h <docfiles/fileio>
+		Parameters.h <docfiles/parameters>
+		Strings.h <docfiles/strings>
+		Time.h <docfiles/time>
+		Vector.h <docfiles/vectors>
+		:maxdepth: 2
+
+	* :ref:`genindex`
+
+
+
+Internal Dependencies
+++++++++++++++++++++++
+
+.. image:: visualiser/network.png

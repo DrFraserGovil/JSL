@@ -4,6 +4,7 @@
 #include <string_view>
 #include <chrono>
 
+#include <JSL/Time/TimeFormatter.h>
 namespace JSL::Time
 {
     /*!

@@ -1,5 +1,5 @@
 #include <JSL/FileIO/fileWriters.h>
-
+#include <JSL/internal/error.h>
 namespace JSL::IO
 {
     namespace internal
@@ -10,6 +10,11 @@ namespace JSL::IO
             {
                 JSL::internal::FatalError("I/O Error",JSL_LOCATION) << "Could not open file: " << path.string();
             }
+        }
+
+        void mismatchError()
+        {
+            JSL::internal::FatalError("Vector length mismatch",JSL_LOCATION) << "All vectors must be same length when writing simultaneously to file";
         }
     }
 

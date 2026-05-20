@@ -122,7 +122,7 @@ namespace JSL::String
 		std::vector<std::string_view> tokenize(std::string_view sv,std::string_view delimiter, std::string_view typeName)
 		{
 			sv=trim_view(sv);
-			RejectEmpty(sv,"vectortype");
+			RejectEmpty(sv,typeName);
 			
 			sv = StripEndCaps(sv);
 			std::vector<std::string_view> out;

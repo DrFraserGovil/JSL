@@ -1,64 +1,112 @@
 .. _parseto:
 
-String Parsing
+Parsing Strings
 ====================
 
 The inverse problem to :ref:`representing a type as a string <makestring>` is *parsing*, converting an input string representing a value into a typed-instance containing that value. 
 
-
-``ParseTo<T>()``
------------------
-
-.. cpp:function:: template<class T> T ParseTo(std::string_view sv)
-	
-	The default template for parsing a string into a generic type
-
-	Attempts a naive string-native construction. We don't require that such a construction exists as this is also our gateway to error messages
-
-	:tparam T: A type which can be converted into a string 
-	:param sv: A string to be parsed 
-	:return: An object of type T represented by the input string
-
-Supported Types
------------------
-
-.. warning::
-	We guarantee that any inbuilt type supported by ``ParseTo`` is supported by ``makeFrom``, but the inverse is not true due to serialisation via the stream operator
-
-The following types have overloads and support in the :ref:`makestring` module to support full round-trip serialisation:
-
-
-* All string-like types (``string``, ``string_view``, ``char *``, ``char``) and objects which can implicitly cast-to-and-from strings (i.e. ``std::filesystem::path``)
-* All numeric types (``int``, ``short``, ``long``, ``double``, ``unsigned int`` and so on)
-* Booleans (as ``true/false``) 
-* All iterable containers (``vector``, ``set`` etc., provided their inner types are supported)
-* Tuple-likes (including ``pair``, provided their inner types are supported)
-* Nullable wrappers (``std::optional``, ``std::shared_ptr`` and ``std::unique_ptr`` wrappers of all supported types. 
-* Time durations of the form ``std::chrono::duration<T>`` 
-* Recursive nesting of containers (i.e. tuples-of-vectors-of-pairs), provided that all types in the stack are supported, and the compiler's recursion depth isn't hit. See below for more details.
-
-
-.. note:: 
-
-	Custom types can be fitted into the ``ParseTo`` paradigm either by adding a constructor which accepts a ``string_view`` as an argument.
-
-.. dropdown:: Template Overloads
-	:color: primary
-	:icon: plug
-
-Nested Parsing
----------------------
-
-Parsing of objects of the form ``vector<set<T>>`` or nested structures is fully supported, provided that all inner types are individually supported by the engine. Due to the structural tokenization required to parse nested hierarchies, the input string must adhere to the following layout rules:
-
-#. **Supported Endcaps:** Elements can be grouped using ``()``, ``[]``, or ``{}``. These delimiters must match perfectly; asymmetric pairings (e.g., ``(a,b}``) will trigger a runtime parsing failure.
-#. **Optional Outer Envelopes:** Top-level containers do not require an outermost wrapper. Both explicitly enveloped structures (e.g., ``[[a,b],[c,d]]``) and raw sibling sequences (e.g., ``[a,b],[c,d]``) are supported out-of-the-box.
-#. **Delimiter Propagation:** Outer layers are tokenized purely by evaluating balanced bracket boundaries. Any characters residing *outside* of a balanced bracket pair in an outer layer are skipped. Consequently, expressions like ``[[a,b] @ [c,d]]`` and ``[[a,b],[c,d]]`` yield identical results regardless of the provided delimiter sequence. Tokenization of the innermost values falls back to the specified ``delimiter`` sequence. For example:
-   
-   .. code-block:: cpp
-
-      // Passes the "-" delimiter directly down to the innermost integers
-      auto result = ParseTo<std::vector<std::vector<int>>>("[ [1-2-3], [4-5-6] ]", "-");
+.. toctree::
+	parseto_function
+	parseto_helpers
+	parseto_nesting
+	:maxdepth: 1
 
 Usage
 ------------
+
+.. code-block:: cpp
+	
+	#include <JSL.h>
+
+	template<class T>
+	void runTest(std::string_view target,std::string_view niceName)
+	{
+		std::cout << "<" << niceName << ">" << std::string(std::max(1,(int)(10-niceName.size())),' ') << "('" << target << "') = ";
+		try
+		{
+			T tmp = JSL::String::ParseTo<T>(target);
+			std::cout  << JSL::String::makeFrom(tmp) << std::endl;
+		}
+		catch (const std::exception & e)
+		{
+			std::cout << "ERROR: " << e.what() << std::endl;
+		}    
+	}
+
+	int main(int argc,char**argv)
+	{
+		std::cout << "NUMERICS\n-------------\n";
+		std::vector<std::string> numtests = {"0","1","18.76","-1e13"};
+
+		for (auto & test : numtests)
+		{
+			runTest<int>(test,"int");
+			runTest<double>(test,"double");
+			runTest<bool>(test,"bool");
+		}
+		std::cout << "\nSTRINGS\n-------------\n";
+		std::vector<std::string> stringtests = {"a","hello world"};
+		for (auto & test : stringtests)
+		{
+			runTest<char>(test,"char");
+			runTest<std::string>(test,"string");
+		} 
+		std::cout << "\nCONTAINERS\n-------------\n";
+		std::vector<std::string> containerTests = {"[1,2.2] (0,4)"};
+		for (auto & test : containerTests)
+		{
+			runTest<std::vector<std::pair<bool,double>>>(test,"vec<pair<>>");
+			using floatMicro = std::chrono::duration<double, std::ratio<1,1000000>>;
+			runTest<std::vector<std::vector<floatMicro>>>(test,"vec<vec<>>");
+		}
+		
+		std::cout << "\nOPTIONAL & POINTERS\n--------------\n";
+		std::vector<std::string> nullTests = {"", JSL_NULL_STRING, "10","1e17"};
+		for (auto & test : nullTests)
+		{
+			runTest<std::optional<double>>(test,"opt-double");
+			runTest<std::unique_ptr<int>>(test,"unique-int");
+		}
+	}
+
+Giving output:
+
+.. code-block:: shell-session
+
+	NUMERICS
+	-------------
+	<int>       ('0') = 0
+	<double>    ('0') = 0
+	<bool>      ('0') = false
+	<int>       ('1') = 1
+	<double>    ('1') = 1
+	<bool>      ('1') = true
+	<int>       ('18.76') = ERROR: Could not complete conversion    Partial conversion of `18.76` to type i unconverted characters were: .76
+	<double>    ('18.76') = 18.76
+	<bool>      ('18.76') = ERROR: Cannot complete string-boolean conversion    Cannot convert string 18.76 to boolean
+	<int>       ('-1e13') = ERROR: Could not complete conversion    Partial conversion of `-1e13` to type i unconverted characters were: e13
+	<double>    ('-1e13') = -1e+13
+	<bool>      ('-1e13') = ERROR: Cannot complete string-boolean conversion    Cannot convert string -1e13 to boolean
+
+	STRINGS
+	-------------
+	<char>      ('a') = a
+	<string>    ('a') = a
+	<char>      ('hello world') = ERROR: Cannot complete string-char conversion Cannot convert string_view 'hello world' to char: Expected a single character.
+	<string>    ('hello world') = hello world
+
+	CONTAINERS
+	-------------
+	<vec<pair<>>> ('[1,2.2] (0,4)') = [(true, 2.2), (false, 4)]
+	<vec<vec<>>> ('[1,2.2] (0,4)') = [[1us, 2.2us], [0us, 4us]]
+
+	OPTIONAL & POINTERS
+	--------------
+	<opt-double> ('') = -null-
+	<unique-int> ('') = -null-
+	<opt-double> ('-null-') = -null-
+	<unique-int> ('-null-') = -null-
+	<opt-double> ('10') = 10
+	<unique-int> ('10') = 10
+	<opt-double> ('1e17') = 1e+17
+	<unique-int> ('1e17') = ERROR: Could not complete conversion    Partial conversion of `1e17` to type i unconverted characters were: e17

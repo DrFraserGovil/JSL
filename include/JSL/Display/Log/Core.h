@@ -6,7 +6,6 @@
 #pragma once
 
 #include <JSL/Display/Log/Config.h>
-#include <JSL/Strings/Manipulate.h>
 #include <JSL/Display/Format.h>
 
 /*!

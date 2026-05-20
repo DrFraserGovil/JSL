@@ -1,7 +1,6 @@
 #pragma once
 #include <JSL/Concepts/ranges.h>
-#include <JSL/Strings/MakeFrom.h>
-#include <JSL/Strings/ParseTo.h>
+#include <JSL/Strings/Serialisers.h>
 #include "CLI_Reader.h"
 #include <algorithm>
 #include <string>
@@ -129,7 +128,7 @@ namespace JSL::Parameter
                 {
                     if (hasParseDelimiter)
                     {
-                        JSL::internal::FatalError("Parameter parsing error",JSL_LOCATION) << "You cannot pass a vector-delimiter to a non-vector Parameter";
+                        throw std::logic_error("You cannot pass a vector-delimiter to a non-vector Parameter");
                     }
                     InternalValue = String::ParseTo<T>(sv);
                 }
@@ -151,7 +150,7 @@ namespace JSL::Parameter
                 }
                 else
                 {
-                    JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot push to a non-vector Parameter";
+                    throw std::logic_error("Cannot push to a non-vector parameter");
                 }
             }
             void join(std::string_view value)
@@ -168,14 +167,13 @@ namespace JSL::Parameter
                 }
                 else
                 {
-                    JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot push to a non-vector Parameter";
+                    throw std::logic_error("Cannot join a non-vector parameter");
                 }
             }
             void remove(std::string_view value)
             {
                 if constexpr (JSL::Concept::is_vector<T>::value)
                 {
-                    // InternalValue.push_back(String::ParseTo<typename T::value_type>(value));
                     auto dvalue = String::ParseTo<typename T::value_type>(value);
                     std::erase(InternalValue,dvalue);
                     if (ConnectedValue)
@@ -185,7 +183,7 @@ namespace JSL::Parameter
                 }
                 else
                 {
-                    JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot remove from a non-vector Parameter";
+                    throw std::logic_error("Cannot remove from a non-vector parameter");
                 }
             }
             void erase(int pos)
@@ -194,7 +192,7 @@ namespace JSL::Parameter
                 {
                     if (InternalValue.empty())
                     {
-                        JSL::internal::FatalError("Parameter error", JSL_LOCATION) << "Cannot erase from an empty vector Parameter";
+                        throw std::logic_error("Cannot erase from an empty vector");
                     }
                     while (pos < 0)
                     {
@@ -209,7 +207,7 @@ namespace JSL::Parameter
                 }
                 else
                 {
-                    JSL::internal::FatalError("Parameter type error", JSL_LOCATION) << "You cannot erase from a non-vector Parameter";
+                    throw std::logic_error("Cannot erase from a non-vector parameter");
                 }
             }
 

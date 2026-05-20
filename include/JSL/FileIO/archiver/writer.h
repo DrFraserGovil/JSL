@@ -1,7 +1,6 @@
 #pragma once
 #include <JSL/FileIO/archiver/base.h>
 #include <JSL/FileIO/archiver/writeStream.h>
-#include <JSL/internal/error.h>
 #include <unordered_map>
 namespace JSL::Archiver
 {
@@ -36,7 +35,7 @@ namespace JSL::Archiver
 			{
 				if (!MostRecentStream)
 				{
-					JSL::internal::FatalError("Attempting to write to an archive before a write stream has been opened",JSL_LOCATION);
+					throw std::logic_error("Attemptng to write to an archive before write stream open");
 				}
 				MostRecentStream->Feed(msg);
 				return *this;

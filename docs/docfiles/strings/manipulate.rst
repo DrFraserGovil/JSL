@@ -1,6 +1,6 @@
 .. _manipulate:
 
-String Manipulation
+Splitting & Trimming
 =======================
 
 The ``string_view`` library is a modern extension to C++ strings, and are a great way to port around 'windows' into an underlying immutable string without needing to allocate large blocks of memory. 

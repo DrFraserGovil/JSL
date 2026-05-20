@@ -1,6 +1,6 @@
 #include <JSL.h>
 #include <JSL/Display/Log.h>
-
+#include <JSL/internal/error.h>
 namespace JSL::Parallel
 {
 	Pool::Pool(size_t ncores)

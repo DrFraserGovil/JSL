@@ -1,7 +1,7 @@
 .. _makestring:
 
-String Representation
-=======================
+Representating Objects as Strings
+===================================
 
 There are many different methods to convert types into strings - from direct ``static_cast<std::string>`` casting, to ``to_string()`` function calls. The aim of this module is to provide a consistent interface for converting the most common types into strings that represent their value. 
 

@@ -34,14 +34,11 @@ namespace JSL::internal
 		line = callingLine;
 		function = callingFunction;
 		file = shortFile;
-		// JSL::Log::Core(ERROR,callingLine,callingFunction,shortFile);  << msg;
 	}
 
 	FatalError::~FatalError() noexcept (false)
 	{
-		// JSL::Log::internal::Core(ERROR,line,function,file) << Summary << "\n" << Buffer.str() <<"\n";
-		
-		throw std::runtime_error(Summary);
+		throw std::runtime_error(Summary + "\t" +Buffer.str());
 	}
 		
 }

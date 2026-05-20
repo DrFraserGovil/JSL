@@ -5,7 +5,6 @@
 #include <string>
 #include <iomanip>
 #include <string_view>
-#include <JSL/internal/error.h>
 namespace JSL::IO
 {
     namespace internal
@@ -14,7 +13,7 @@ namespace JSL::IO
          * Helper to verify file stream state. Throws an error if the file does not exist
          */
         void checkFile(const std::ofstream& file, const std::filesystem::path& path);
-
+        void mismatchError();
     }
 
     /*! 
@@ -45,7 +44,7 @@ namespace JSL::IO
             const bool allEqual = ((vecs.size() == rowCount) && ...);
             if (!allEqual)
             {
-                JSL::internal::FatalError("Vector length mismatch",JSL_LOCATION) << "All vectors must be same length when writing simultaneously to file";
+                internal::mismatchError();
             }
         }
 

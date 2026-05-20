@@ -1,5 +1,6 @@
 // #include <JSL/Async/ManagerBase.h>
 #include <JSL.h>
+#include <JSL/internal/error.h>
 namespace JSL::Event::internal
 {
 	using namespace JSL::internal;
