@@ -1,8 +1,8 @@
 #pragma once
 #include <algorithm>
 #include <string_view>
-#include <JSL/Concepts.h>
-#include <JSL/Strings/Templates/helpers.h>
+#include <JSL/Concepts/ranges.h>
+#include <JSL/Strings/Templates/stringparsers.h>
 #include <JSL/Strings/ParseTo.h>
 namespace JSL::String
 {

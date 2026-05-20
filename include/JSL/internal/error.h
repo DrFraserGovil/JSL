@@ -1,7 +1,6 @@
 #pragma once
-#include <string>
-#include <iostream>
-#include <JSL/Display/Log.h>
+#include <string_view>
+#include <sstream>
 #define JSL_LOCATION __LINE__,__func__,__FILE__
 namespace JSL::internal
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include <concepts>
-
+#include <chrono>
 namespace JSL::Concept
 {
 	//! @brief Any integral type (excluding bools, or chars and extensions thereof)
@@ -17,5 +17,16 @@ namespace JSL::Concept
 
 	//! @brief Any primitive numeric type (excluding bools, or chars and extensions thereof)
 	template<typename T>
-	concept Numeric = ( Integer<T> || std::floating_point<T>);  
+	concept Numeric = ( Integer<T> || std::floating_point<T>); 
+	
+	
+
+	
+	namespace internal
+	{
+		template<typename T> struct is_time : std::false_type {};
+		template<typename...Args> struct is_time<std::chrono::duration<Args...>> : std::true_type  {};
+	}
+
+	template<typename T> concept ChronoDuration = internal::is_time<T>::value;
 }

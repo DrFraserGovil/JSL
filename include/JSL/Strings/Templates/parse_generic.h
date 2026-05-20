@@ -1,8 +1,8 @@
 #pragma once
-#include <JSL/Strings/Templates/helpers.h>
+#include <JSL/Strings/Templates/stringparsers.h>
 #include <JSL/Strings/Manipulate.h>
 #include <JSL/internal/error.h>
-#include <JSL/Concepts.h>
+#include <JSL/Concepts/numerics.h>
 #include <charconv>
 namespace JSL::String
 {

@@ -9,6 +9,14 @@ all:
 	@cmake -S . -B $(BUILD_DIR)
 	@make -C $(BUILD_DIR) --no-print-directory
 
+doc:
+	@cd docs && make html
+
+doc-full:
+	@cd docs && ./compileDocs
+
+graph:
+	@cd docs/visualiser && ./visualise
 
 # Clean up only the build artifacts
 purge:

@@ -3,7 +3,7 @@
 #include <vector>
 #include <JSL/Strings/MakeFrom.h>
 #include <sstream>
-#include <JSL/Concepts.h>
+#include <JSL/Concepts/ranges.h>
 namespace JSL::String
 {
 	/*!

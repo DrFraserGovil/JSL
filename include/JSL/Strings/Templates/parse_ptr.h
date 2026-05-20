@@ -1,7 +1,7 @@
 
 #pragma once
 #include <JSL/Strings/ParseTo.h>
-#include <JSL/Concepts.h>
+#include <JSL/Concepts/pointers.h>
 #include <memory>
 namespace JSL::String
 {

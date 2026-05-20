@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+name="network"
+cd $SCRIPT_DIR/../../include
+codeviz -r . -o $name.pdf 
+mv $name.* $SCRIPT_DIR/
+cd $SCRIPT_DIR
+
+python3 colouriser.py $name.dot
+fdp -Tpdf $name.dot -o $name.pdf
+fdp -Tpng $name.dot -o $name.png

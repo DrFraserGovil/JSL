@@ -19,11 +19,6 @@
 #include <JSL/Time.h>
 #include <JSL/Vectors.h>
 #include <JSL/Async.h>
-#include <JSL/Plot.h>
-// #include "Vectors/Search.h"
-// #include "Display/Display.h"
-// #include "Strings/Strings.h"
-// #include "FileIO/FileIO.h"
 
 //Log adds a macro into the global namespace
 // We undef it here unless explicitly asked for; this prevents pollution but allows us to use logging in our library

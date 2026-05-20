@@ -39,7 +39,8 @@ namespace JSL::internal
 
 	FatalError::~FatalError() noexcept (false)
 	{
-		JSL::Log::internal::Core(ERROR,line,function,file) << Summary << "\n" << Buffer.str() <<"\n";
+		// JSL::Log::internal::Core(ERROR,line,function,file) << Summary << "\n" << Buffer.str() <<"\n";
+		
 		throw std::runtime_error(Summary);
 	}
 		

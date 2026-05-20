@@ -26,7 +26,7 @@ namespace JSL::Concept
 		}                                                                                 \
 		template <typename T> concept name = internal::storage<T>::value;
 	//enddefine
-	
+
 
 	#ifndef JSL_NULL_STRING
 		//! The string value used to indicate that a string represents an std::optional or a smart pointer that does not contain a value (either std::nullopt or std::null) 
@@ -34,12 +34,7 @@ namespace JSL::Concept
 	#endif
 
 	WrapperConcept(OptionalLike, std::optional,is_optional )
-	WrapperConcept(ChronoDuration, std::chrono::duration, is_time)
-	WrapperConcept(UniquePtr, std::unique_ptr, is_unique_ptr)
-	WrapperConcept(SharedPtr, std::shared_ptr, is_shared_ptr)
 
-	template<typename T>
-	concept SmartPointer = UniquePtr<T> || SharedPtr<T>;
 
 	// template<typename T>
 	// concept ChronoDuration = requires(T t)

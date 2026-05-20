@@ -1,5 +1,5 @@
 #pragma once
-#include <JSL/Concepts.h>
+#include <JSL/Concepts/ranges.h>
 #include <JSL/Strings/MakeFrom.h>
 #include <JSL/Strings/ParseTo.h>
 #include "CLI_Reader.h"

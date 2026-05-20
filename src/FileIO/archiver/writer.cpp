@@ -3,6 +3,7 @@
 #include <JSL/internal/error.h>
 #include <JSL/FileIO/archiver/helpers.h>
 #include <filesystem>
+#include <JSL/Display/Log.h>
 namespace JSL::Archiver
 {
 	Vault<Mode::Write>::Vault() : internal::VaultBase(Mode::Write)
@@ -26,7 +27,7 @@ namespace JSL::Archiver
 			}
 			catch (...)
 			{
-				std::cout << "There was a fatal error in archive destructor -- data not written to file";
+				LOG(WARN) << "There was a fatal error in archive destructor -- data not written to file";
 			}
 		}
 	}

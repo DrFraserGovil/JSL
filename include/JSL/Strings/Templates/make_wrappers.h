@@ -1,6 +1,6 @@
 #pragma once
-#include <JSL/Strings/Templates/make_tuple.h>
 #include <JSL/Strings/MakeFrom.h>
+#include <JSL/Concepts/pointers.h>
 namespace JSL::String
 {
 	/*! @brief Converts an optional-value into a string, returning either the value (if it exists), or the NULL STRING.	
@@ -23,7 +23,7 @@ namespace JSL::String
 		@return A string representing the pointed-to value
 		@throws std::runtime_error: If the internal type is not supported, or cannot be converted to a string
 	*/
-	template<JSL::Concept::SmartPointer T>
+	template<JSL::Concept::SmartPtr T>
 	std::string inline makeFrom(const T & obj)
 	{
 		if (!obj){return JSL_NULL_STRING;}

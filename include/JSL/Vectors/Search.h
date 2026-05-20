@@ -5,7 +5,7 @@
 #include <ranges>
 #include <concepts>
 #include <functional>
-#include <JSL/Concepts.h>
+#include <JSL/Concepts/ranges.h>
 namespace JSL::Vector
 {
 	/// @brief A signal that an element was not in the targeted array
