@@ -3,17 +3,23 @@
 #include <string_view>
 #include <vector>
 #include <string>
-#include <JSL/Display/Terminal.h>
 namespace JSL::String
 {
 	
 	/*! @brief Returns the true width of a string, taking into account tab characters and escape sequences
 		@param str The string to be measured
-		@param tabSize the width (in characters) of a tab block (individual tab characters may occupy less space than this). The default value uses the JSL::Terminal::Environment object to query the tabsize used by the current output stream, if it is a tty console.
+		@param tabSize the width (in characters) of a tab block (individual tab characters may occupy less space than this). If this argument is ommitted, the overload uses the JSL::Terminal::Environment object to query the tabsize used by the current output stream, if it is a tty console.
 		@warning This function makes the assumption all control sequences are of the form \x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution.
 		@return An approximate calculation of the output size of the string, in characters
 	*/
-	size_t trueSize(std::string_view str, size_t tabSize = JSL::Terminal::Global().TabSize());
+	size_t trueSize(std::string_view str, size_t tabSize);
+
+	/*! @brief Returns the true width of a string, taking into account tab characters and escape sequences. The tab width is determined by JSL::Terminal::Environment.
+		@param str The string to be measured
+		@warning This function makes the assumption all control sequences are of the form \x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution.
+		@return An approximate calculation of the output size of the string, in characters
+	*/
+	size_t trueSize(std::string_view str);
 
 	/*!	@brief  Breaks a string up into chunks of a specified render size, breaking at whitespace
 		@details Lines shorter than the width are right-padded with spaces to ensure they meet this minimum width. Lines will only be wrapped at whitespace characters, so if a single word is longer than the width, it will be placed on a line by itself and exceed the width limit. 

@@ -13,7 +13,9 @@ digraph codeviz {
     node [fillcolor="#bebada", style=filled] "JSL/Async/Socket.h"                       [label = "Async/Socket.h"]
     node [fillcolor="#bebada", style=filled] "JSL/Async/Watcher.h"                      [label = "Async/Watcher.h"]
     node [fillcolor="#ffffb3", style=filled] "JSL/Concepts.h"                           [label = "Concepts.h"]
+    node [fillcolor="#fb8072", style=filled] "JSL/Concepts/nullstring.h"                [label = "Concepts/nullstring.h"]
     node [fillcolor="#fb8072", style=filled] "JSL/Concepts/numerics.h"                  [label = "Concepts/numerics.h"]
+    node [fillcolor="#fb8072", style=filled] "JSL/Concepts/optional.h"                  [label = "Concepts/optional.h"]
     node [fillcolor="#fb8072", style=filled] "JSL/Concepts/pointers.h"                  [label = "Concepts/pointers.h"]
     node [fillcolor="#fb8072", style=filled] "JSL/Concepts/ranges.h"                    [label = "Concepts/ranges.h"]
     node [fillcolor="#fb8072", style=filled] "JSL/Concepts/strings.h"                   [label = "Concepts/strings.h"]
@@ -90,6 +92,9 @@ digraph codeviz {
     "JSL/Concepts.h"                           -> "JSL/Concepts/numerics.h"
     "JSL/Concepts.h"                           -> "JSL/Concepts/strings.h"
     "JSL/Concepts.h"                           -> "JSL/Concepts/pointers.h"
+    "JSL/Concepts.h"                           -> "JSL/Concepts/optional.h"
+    "JSL/Concepts/optional.h"                  -> "JSL/Concepts/nullstring.h"
+    "JSL/Concepts/pointers.h"                  -> "JSL/Concepts/nullstring.h"
     "JSL/Display.h"                            -> "JSL/Display/Log.h"
     "JSL/Display.h"                            -> "JSL/Display/ANSI_Codes.h"
     "JSL/Display.h"                            -> "JSL/Display/ProgressBar.h"
@@ -139,7 +144,8 @@ digraph codeviz {
     "JSL/Strings.h"                            -> "JSL/Strings/Manipulate.h"
     "JSL/Strings.h"                            -> "JSL/Strings/Stitch.h"
     "JSL/Strings.h"                            -> "JSL/Strings/Wrap.h"
-    "JSL/Strings/MakeFrom.h"                   -> "JSL/Concepts.h"
+    "JSL/Strings/MakeFrom.h"                   -> "JSL/Concepts/strings.h"
+    "JSL/Strings/MakeFrom.h"                   -> "JSL/Concepts/numerics.h"
     "JSL/Strings/MakeFrom.h"                   -> "JSL/internal/error.h"
     "JSL/Strings/MakeFrom.h"                   -> "JSL/Strings/Templates/make_containers.h"
     "JSL/Strings/MakeFrom.h"                   -> "JSL/Strings/Templates/make_tuple.h"
@@ -152,9 +158,11 @@ digraph codeviz {
     "JSL/Strings/Stitch.h"                     -> "JSL/Strings/MakeFrom.h"
     "JSL/Strings/Stitch.h"                     -> "JSL/Concepts/ranges.h"
     "JSL/Strings/Templates/make_containers.h"  -> "JSL/Strings/MakeFrom.h"
+    "JSL/Strings/Templates/make_containers.h"  -> "JSL/Concepts/ranges.h"
     "JSL/Strings/Templates/make_tuple.h"       -> "JSL/Strings/MakeFrom.h"
     "JSL/Strings/Templates/make_wrappers.h"    -> "JSL/Strings/MakeFrom.h"
     "JSL/Strings/Templates/make_wrappers.h"    -> "JSL/Concepts/pointers.h"
+    "JSL/Strings/Templates/make_wrappers.h"    -> "JSL/Concepts/optional.h"
     "JSL/Strings/Templates/parse_containers.h" -> "JSL/Concepts/ranges.h"
     "JSL/Strings/Templates/parse_containers.h" -> "JSL/Strings/Templates/stringparsers.h"
     "JSL/Strings/Templates/parse_containers.h" -> "JSL/Strings/ParseTo.h"
@@ -163,13 +171,12 @@ digraph codeviz {
     "JSL/Strings/Templates/parse_generic.h"    -> "JSL/internal/error.h"
     "JSL/Strings/Templates/parse_generic.h"    -> "JSL/Concepts/numerics.h"
     "JSL/Strings/Templates/parse_optional.h"   -> "JSL/Strings/ParseTo.h"
-    "JSL/Strings/Templates/parse_optional.h"   -> "JSL/Concepts.h"
+    "JSL/Strings/Templates/parse_optional.h"   -> "JSL/Concepts/optional.h"
     "JSL/Strings/Templates/parse_ptr.h"        -> "JSL/Strings/ParseTo.h"
     "JSL/Strings/Templates/parse_ptr.h"        -> "JSL/Concepts/pointers.h"
     "JSL/Strings/Templates/parse_tuples.h"     -> "JSL/Concepts.h"
     "JSL/Strings/Templates/parse_tuples.h"     -> "JSL/Strings/Templates/stringparsers.h"
     "JSL/Strings/Templates/parse_tuples.h"     -> "JSL/Strings/ParseTo.h"
-    "JSL/Strings/Wrap.h"                       -> "JSL/Display/Terminal.h"
     "JSL/Time.h"                               -> "JSL/Time/Timer.h"
     "JSL/Time.h"                               -> "JSL/Time/TimeFormatter.h"
     "JSL/Vectors.h"                            -> "JSL/Vectors/Search.h"

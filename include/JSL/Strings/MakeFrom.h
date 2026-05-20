@@ -3,7 +3,8 @@
 
 #include <charconv>
 #include <memory>
-#include <JSL/Concepts.h>
+#include <JSL/Concepts/strings.h>
+#include <JSL/Concepts/numerics.h>
 #include <JSL/internal/error.h>
 #include <cmath>
 

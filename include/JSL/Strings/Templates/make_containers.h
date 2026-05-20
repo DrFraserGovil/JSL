@@ -1,6 +1,7 @@
 
 #pragma once
 #include <JSL/Strings/MakeFrom.h>
+#include <JSL/Concepts/ranges.h>
 namespace JSL::String
 {
 	/*! @brief Converts an iterable range into a string, recursively converting the contained objects

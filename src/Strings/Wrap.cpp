@@ -1,9 +1,13 @@
 #include <JSL/Strings.h>
 #include <JSL/internal/error.h>
 #include <JSL/Vectors/Join.h>
-
+#include <JSL/Display/Terminal.h>
 namespace JSL::String
 {
+    size_t trueSize(std::string_view str)
+    {
+        return trueSize(str,JSL::Terminal::Global().TabSize());
+    }
     size_t trueSize(std::string_view str,size_t tabSize)
     {
         size_t size = 0;

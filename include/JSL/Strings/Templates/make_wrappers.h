@@ -1,6 +1,7 @@
 #pragma once
 #include <JSL/Strings/MakeFrom.h>
 #include <JSL/Concepts/pointers.h>
+#include <JSL/Concepts/optional.h>
 namespace JSL::String
 {
 	/*! @brief Converts an optional-value into a string, returning either the value (if it exists), or the NULL STRING.	
