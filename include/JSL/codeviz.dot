@@ -1,0 +1,184 @@
+digraph codeviz {
+    splines=true
+    sep="+15,15"
+    overlap=scalexy
+
+    node [shape=Mrecord, fontsize=12]
+
+    node [fillcolor="#ccccff", style=filled] "Async.h"                              [label = "Async.h"]
+    node [fillcolor="#ccccff", style=filled] "Async/EventManager.h"                 [label = "Async/EventManager.h"]
+    node [fillcolor="#ccccff", style=filled] "Async/ManagerBase.h"                  [label = "Async/ManagerBase.h"]
+    node [fillcolor="#ccccff", style=filled] "Async/ParallelPool.h"                 [label = "Async/ParallelPool.h"]
+    node [fillcolor="#ccccff", style=filled] "Async/Socket.h"                       [label = "Async/Socket.h"]
+    node [fillcolor="#ccccff", style=filled] "Async/Watcher.h"                      [label = "Async/Watcher.h"]
+    node [fillcolor="#ccccff", style=filled] "Concepts.h"                           [label = "Concepts.h"]
+    node [fillcolor="#ccccff", style=filled] "Concepts/numerics.h"                  [label = "Concepts/numerics.h"]
+    node [fillcolor="#ccccff", style=filled] "Concepts/ranges.h"                    [label = "Concepts/ranges.h"]
+    node [fillcolor="#ccccff", style=filled] "Concepts/strings.h"                   [label = "Concepts/strings.h"]
+    node [fillcolor="#ccccff", style=filled] "Display.h"                            [label = "Display.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/ANSI_Codes.h"                 [label = "Display/ANSI_Codes.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/Format.h"                     [label = "Display/Format.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/Log.h"                        [label = "Display/Log.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/Log/Config.h"                 [label = "Display/Log/Config.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/Log/Core.h"                   [label = "Display/Log/Core.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/Log/Levels.h"                 [label = "Display/Log/Levels.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/Log/Utils.h"                  [label = "Display/Log/Utils.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/ProgressBar.h"                [label = "Display/ProgressBar.h"]
+    node [fillcolor="#ccccff", style=filled] "Display/Terminal.h"                   [label = "Display/Terminal.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO.h"                             [label = "FileIO.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/FileSystem.h"                  [label = "FileIO/FileSystem.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/archiver.h"                    [label = "FileIO/archiver.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/archiver/base.h"               [label = "FileIO/archiver/base.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/archiver/helpers.h"            [label = "FileIO/archiver/helpers.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/archiver/readStream.h"         [label = "FileIO/archiver/readStream.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/archiver/reader.h"             [label = "FileIO/archiver/reader.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/archiver/writeStream.h"        [label = "FileIO/archiver/writeStream.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/archiver/writer.h"             [label = "FileIO/archiver/writer.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/fileWriters.h"                 [label = "FileIO/fileWriters.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/forLineIn.h"                   [label = "FileIO/forLineIn.h"]
+    node [fillcolor="#ccccff", style=filled] "FileIO/pipedInput.h"                  [label = "FileIO/pipedInput.h"]
+    node [fillcolor="#ccccff", style=filled] "Optimiser/expressions.h"              [label = "Optimiser/expressions.h"]
+    node [fillcolor="#ccccff", style=filled] "Optimiser/mempool.h"                  [label = "Optimiser/mempool.h"]
+    node [fillcolor="#ccccff", style=filled] "Optimiser/optimiser.h"                [label = "Optimiser/optimiser.h"]
+    node [fillcolor="#ccccff", style=filled] "Optimiser/scalardual.h"               [label = "Optimiser/scalardual.h"]
+    node [fillcolor="#ccccff", style=filled] "Optimiser/vectordual.h"               [label = "Optimiser/vectordual.h"]
+    node [fillcolor="#ccccff", style=filled] "Parameters.h"                         [label = "Parameters.h"]
+    node [fillcolor="#ccccff", style=filled] "Parameters/Aggregator.h"              [label = "Parameters/Aggregator.h"]
+    node [fillcolor="#ccccff", style=filled] "Parameters/CLI_Reader.h"              [label = "Parameters/CLI_Reader.h"]
+    node [fillcolor="#ccccff", style=filled] "Parameters/Describer.h"               [label = "Parameters/Describer.h"]
+    node [fillcolor="#ccccff", style=filled] "Parameters/NestedAggregator.h"        [label = "Parameters/NestedAggregator.h"]
+    node [fillcolor="#ccccff", style=filled] "Parameters/Parameter.h"               [label = "Parameters/Parameter.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings.h"                            [label = "Strings.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Cases.h"                      [label = "Strings/Cases.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/MakeFrom.h"                   [label = "Strings/MakeFrom.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Manipulate.h"                 [label = "Strings/Manipulate.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/ParseTo.h"                    [label = "Strings/ParseTo.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Stitch.h"                     [label = "Strings/Stitch.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/helpers.h"          [label = "Strings/Templates/helpers.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/make_containers.h"  [label = "Strings/Templates/make_containers.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/make_tuple.h"       [label = "Strings/Templates/make_tuple.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/make_wrappers.h"    [label = "Strings/Templates/make_wrappers.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/parse_containers.h" [label = "Strings/Templates/parse_containers.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/parse_generic.h"    [label = "Strings/Templates/parse_generic.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/parse_optional.h"   [label = "Strings/Templates/parse_optional.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/parse_ptr.h"        [label = "Strings/Templates/parse_ptr.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Templates/parse_tuples.h"     [label = "Strings/Templates/parse_tuples.h"]
+    node [fillcolor="#ccccff", style=filled] "Strings/Wrap.h"                       [label = "Strings/Wrap.h"]
+    node [fillcolor="#ccccff", style=filled] "Time.h"                               [label = "Time.h"]
+    node [fillcolor="#ccccff", style=filled] "Time/TimeFormatter.h"                 [label = "Time/TimeFormatter.h"]
+    node [fillcolor="#ccccff", style=filled] "Time/Timer.h"                         [label = "Time/Timer.h"]
+    node [fillcolor="#ccccff", style=filled] "Vectors.h"                            [label = "Vectors.h"]
+    node [fillcolor="#ccccff", style=filled] "Vectors/Join.h"                       [label = "Vectors/Join.h"]
+    node [fillcolor="#ccccff", style=filled] "Vectors/Linspace.h"                   [label = "Vectors/Linspace.h"]
+    node [fillcolor="#ccccff", style=filled] "Vectors/Search.h"                     [label = "Vectors/Search.h"]
+    node [fillcolor="#ccccff", style=filled] "Vectors/SearchAll.h"                  [label = "Vectors/SearchAll.h"]
+    node [fillcolor="#ccccff", style=filled] "internal/error.h"                     [label = "internal/error.h"]
+
+    "Async.h"                              -> "Async/Socket.h"
+    "Async.h"                              -> "Async/Watcher.h"
+    "Async.h"                              -> "Async/EventManager.h"
+    "Async.h"                              -> "Async/ParallelPool.h"
+    "Async/EventManager.h"                 -> "Async/ManagerBase.h"
+    "Async/EventManager.h"                 -> "Async/ParallelPool.h"
+    "Async/ManagerBase.h"                  -> "Async/Watcher.h"
+    "Async/Watcher.h"                      -> "Async/Socket.h"
+    "Concepts.h"                           -> "Concepts/ranges.h"
+    "Concepts.h"                           -> "Concepts/numerics.h"
+    "Concepts.h"                           -> "Concepts/strings.h"
+    "Display.h"                            -> "Display/Log.h"
+    "Display.h"                            -> "Display/ANSI_Codes.h"
+    "Display.h"                            -> "Display/ProgressBar.h"
+    "Display.h"                            -> "Display/Terminal.h"
+    "Display/ANSI_Codes.h"                 -> "Display/Format.h"
+    "Display/Log.h"                        -> "Display/Log/Core.h"
+    "Display/Log.h"                        -> "Display/Log/Config.h"
+    "Display/Log.h"                        -> "Display/Log/Levels.h"
+    "Display/Log/Config.h"                 -> "Display/Log/Levels.h"
+    "Display/Log/Config.h"                 -> "Display/ANSI_Codes.h"
+    "Display/Log/Core.h"                   -> "Display/Log/Config.h"
+    "Display/Log/Core.h"                   -> "Strings/Manipulate.h"
+    "Display/Log/Core.h"                   -> "Display/Format.h"
+    "Display/Log/Utils.h"                  -> "Display/Log/Levels.h"
+    "FileIO.h"                             -> "FileIO/forLineIn.h"
+    "FileIO.h"                             -> "FileIO/FileSystem.h"
+    "FileIO.h"                             -> "FileIO/fileWriters.h"
+    "FileIO.h"                             -> "FileIO/pipedInput.h"
+    "FileIO/archiver.h"                    -> "FileIO/archiver/writer.h"
+    "FileIO/archiver.h"                    -> "FileIO/archiver/reader.h"
+    "FileIO/archiver/readStream.h"         -> "Strings/Manipulate.h"
+    "FileIO/archiver/readStream.h"         -> "FileIO/archiver/helpers.h" [style=dotted, label="?"]
+    "FileIO/archiver/readStream.h"         -> "Strings/Templates/helpers.h" [style=dotted, label="?"]
+    "FileIO/archiver/reader.h"             -> "FileIO/archiver/base.h"
+    "FileIO/archiver/reader.h"             -> "FileIO/archiver/readStream.h"
+    "FileIO/archiver/writeStream.h"        -> "FileIO/archiver/base.h"
+    "FileIO/archiver/writeStream.h"        -> "FileIO/archiver/helpers.h" [style=dotted, label="?"]
+    "FileIO/archiver/writeStream.h"        -> "Strings/Templates/helpers.h" [style=dotted, label="?"]
+    "FileIO/archiver/writer.h"             -> "FileIO/archiver/base.h"
+    "FileIO/archiver/writer.h"             -> "FileIO/archiver/writeStream.h"
+    "FileIO/archiver/writer.h"             -> "internal/error.h"
+    "FileIO/fileWriters.h"                 -> "internal/error.h"
+    "Optimiser/expressions.h"              -> "Optimiser/mempool.h"
+    "Optimiser/vectordual.h"               -> "Optimiser/mempool.h"
+    "Optimiser/vectordual.h"               -> "Optimiser/expressions.h"
+    "Parameters.h"                         -> "Parameters/Parameter.h"
+    "Parameters.h"                         -> "Parameters/Aggregator.h"
+    "Parameters/Aggregator.h"              -> "Parameters/NestedAggregator.h"
+    "Parameters/Aggregator.h"              -> "Parameters/Parameter.h"
+    "Parameters/Describer.h"               -> "Parameters/Parameter.h"
+    "Parameters/NestedAggregator.h"        -> "Parameters/Parameter.h"
+    "Parameters/NestedAggregator.h"        -> "Parameters/Describer.h"
+    "Parameters/Parameter.h"               -> "Concepts.h"
+    "Parameters/Parameter.h"               -> "Strings/MakeFrom.h"
+    "Parameters/Parameter.h"               -> "Strings/ParseTo.h"
+    "Parameters/Parameter.h"               -> "Parameters/CLI_Reader.h"
+    "Strings.h"                            -> "Strings/MakeFrom.h"
+    "Strings.h"                            -> "Strings/ParseTo.h"
+    "Strings.h"                            -> "Strings/Cases.h"
+    "Strings.h"                            -> "Strings/Manipulate.h"
+    "Strings.h"                            -> "Strings/Stitch.h"
+    "Strings.h"                            -> "Strings/Wrap.h"
+    "Strings/MakeFrom.h"                   -> "Concepts.h"
+    "Strings/MakeFrom.h"                   -> "internal/error.h"
+    "Strings/MakeFrom.h"                   -> "Strings/Templates/make_containers.h"
+    "Strings/MakeFrom.h"                   -> "Strings/Templates/make_tuple.h"
+    "Strings/MakeFrom.h"                   -> "Strings/Templates/make_wrappers.h"
+    "Strings/ParseTo.h"                    -> "Strings/Templates/parse_generic.h"
+    "Strings/ParseTo.h"                    -> "Strings/Templates/parse_containers.h"
+    "Strings/ParseTo.h"                    -> "Strings/Templates/parse_tuples.h"
+    "Strings/ParseTo.h"                    -> "Strings/Templates/parse_optional.h"
+    "Strings/ParseTo.h"                    -> "Strings/Templates/parse_ptr.h"
+    "Strings/Stitch.h"                     -> "Strings/MakeFrom.h"
+    "Strings/Stitch.h"                     -> "Concepts.h"
+    "Strings/Templates/make_containers.h"  -> "Strings/Templates/make_tuple.h"
+    "Strings/Templates/make_containers.h"  -> "Strings/MakeFrom.h"
+    "Strings/Templates/make_tuple.h"       -> "Strings/MakeFrom.h"
+    "Strings/Templates/make_wrappers.h"    -> "Strings/Templates/make_tuple.h"
+    "Strings/Templates/make_wrappers.h"    -> "Strings/MakeFrom.h"
+    "Strings/Templates/parse_containers.h" -> "Concepts.h"
+    "Strings/Templates/parse_containers.h" -> "FileIO/archiver/helpers.h" [style=dotted, label="?"]
+    "Strings/Templates/parse_containers.h" -> "Strings/Templates/helpers.h" [style=dotted, label="?"]
+    "Strings/Templates/parse_containers.h" -> "Strings/ParseTo.h"
+    "Strings/Templates/parse_generic.h"    -> "FileIO/archiver/helpers.h" [style=dotted, label="?"]
+    "Strings/Templates/parse_generic.h"    -> "Strings/Templates/helpers.h" [style=dotted, label="?"]
+    "Strings/Templates/parse_generic.h"    -> "Strings/Manipulate.h"
+    "Strings/Templates/parse_generic.h"    -> "internal/error.h"
+    "Strings/Templates/parse_generic.h"    -> "Concepts.h"
+    "Strings/Templates/parse_optional.h"   -> "Strings/ParseTo.h"
+    "Strings/Templates/parse_optional.h"   -> "Concepts.h"
+    "Strings/Templates/parse_ptr.h"        -> "Strings/ParseTo.h"
+    "Strings/Templates/parse_ptr.h"        -> "Concepts.h"
+    "Strings/Templates/parse_tuples.h"     -> "Concepts.h"
+    "Strings/Templates/parse_tuples.h"     -> "FileIO/archiver/helpers.h" [style=dotted, label="?"]
+    "Strings/Templates/parse_tuples.h"     -> "Strings/Templates/helpers.h" [style=dotted, label="?"]
+    "Strings/Templates/parse_tuples.h"     -> "Strings/ParseTo.h"
+    "Strings/Wrap.h"                       -> "Display/Terminal.h"
+    "Time.h"                               -> "Time/Timer.h"
+    "Time.h"                               -> "Time/TimeFormatter.h"
+    "Vectors.h"                            -> "Vectors/Search.h"
+    "Vectors.h"                            -> "Vectors/SearchAll.h"
+    "Vectors.h"                            -> "Vectors/Join.h"
+    "Vectors.h"                            -> "Vectors/Linspace.h"
+    "Vectors/Search.h"                     -> "Concepts.h"
+    "Vectors/SearchAll.h"                  -> "Vectors/Search.h"
+    "internal/error.h"                     -> "Display/Log.h"
+}
