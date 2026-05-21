@@ -1,5 +1,4 @@
 #pragma once
-#include <JSL/Strings/Manipulate.h>
 #include <JSL/Concepts.h>
 #include <charconv>
 namespace JSL::String
@@ -12,17 +11,19 @@ namespace JSL::String
 			@param sv The string being parsed
 			@param typeName The (possibly mangled) typeid name of the target type
 		*/	
-		void CheckErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName);
+		void checkErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName);
 
-		/*! @brief Check if the input string is empty, or a reserved sequence, and throw an error if true.  
-		 * @param sv The string to be parsed 
+
+		/*! @brief Trims the string, then checks if the input string is empty, or a reserved sequence, and throw an error if true.  
+		 * @param sv The string to be parsed - is mutated by a whitespace trimming
 		 * @param typeName THe name of the target type
+		 * @param rejectEmpty If true, strings that are empty after trimming throw an error
 		 * @param isOptional True if the target type is std::optional<T>, otherwise false
-		 * @throws std::logic_error if the string is empty
+		 * @throws std::logic_error if the string is empty and rejectEmpty is true
 		 * @throws std::logic_error if sv == "__bool_tag__" but the type is not bool 
 		 * @throws std::logic_error sv is the Null String, and isOptional is false 
 		 */
-		void RejectEmpty(std::string_view sv,std::string_view typeName,bool isOptional = false);
+		void processInput(std::string_view & sv, std::string_view type, bool rejectEmpty, bool isOptional=false);
 
 		/*! @brief Splits the innermost type of a container-parse into 'tokens' to be parsed 
 			@param sv The string to be tokenised
@@ -50,8 +51,7 @@ namespace JSL::String
 		template<class T>
 		T inline ParseTo(std::string_view sv)
 		{
-			sv=trim_view(sv);
-			internal::RejectEmpty(sv,typeid(T).name());
+			internal::processInput(sv,typeid(T).name(),true);
 			try 
 			{
 				return T{sv};
@@ -76,11 +76,10 @@ namespace JSL::String
 		template<JSL::Concept::Numeric T>
 		T inline ParseTo(std::string_view sv)
 		{
-			sv=trim_view(sv);
-			internal::RejectEmpty(sv,typeid(T).name());
+			internal::processInput(sv,typeid(T).name(),true);
 			T output{};
 			auto result = std::from_chars(sv.data(),sv.data() + sv.size(), output);
-			internal::CheckErrors(result,sv,typeid(T).name());
+			internal::checkErrors(result,sv,typeid(T).name());
 
 			return output;
 		}
@@ -218,7 +217,7 @@ namespace JSL::String
 		template<JSL::Concept::OptionalLike T>
 		T ParseTo(std::string_view sv)
 		{
-			sv=trim_view(sv);
+			internal::processInput(sv,typeid(T).name(),false);
 			//no reject empty as we allow an empty signal to also be a failure
 
 			if (sv.empty() || sv == JSL_NULL_STRING)

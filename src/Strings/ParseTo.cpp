@@ -2,14 +2,14 @@
 #include <JSL/internal/error.h>
 #include <JSL/Strings/Cases.h>
 #include <JSL/Concepts.h> //needed for the nullstring
-#include <JSL.h>
+#include <JSL/Strings/Manipulate.h>
 namespace JSL::String
 {
 	using namespace JSL::internal; //for errors
 	namespace internal
 	{
 		const std::vector<std::pair<char,char>> endCaps{std::pair<char,char>{'[',']'},std::pair<char,char>{'(',')'},std::pair<char,char>{'{','}'}}; 
-		void CheckErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName)
+		void checkErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName)
 		{
 			if (result.ec == std::errc() &&  (result.ptr != sv.data() + sv.size()))
 			{ 
@@ -41,6 +41,16 @@ namespace JSL::String
 				FatalError("Could not complete conversion", JSL_LOCATION) << "String string `__none__` is reserved for std::optional types, and cannot be converted to type " << typeName;
 			}
 		}   
+
+		void processInput(std::string_view & sv, std::string_view type, bool rejectEmpty, bool isOptional)
+		{
+			sv = String::trim_view(sv);
+			if (rejectEmpty)
+			{
+				RejectEmpty(sv,type, isOptional);
+			}
+		}
+
 
 
 		size_t jumpToPartner(std::string_view sv, size_t idx,char ender)
@@ -92,9 +102,7 @@ namespace JSL::String
 
 		std::vector<std::string_view> recursetokens(std::string_view sv)
 		{
-			sv=trim_view(sv);
-			RejectEmpty(sv,"vectortype");
-			
+			processInput(sv,"vector",true);	
 			sv= StripEndCaps(sv);
 			std::vector<std::string_view> out;
 			
@@ -121,9 +129,7 @@ namespace JSL::String
 
 		std::vector<std::string_view> tokenize(std::string_view sv,std::string_view delimiter, std::string_view typeName)
 		{
-			sv=trim_view(sv);
-			RejectEmpty(sv,typeName);
-			
+			processInput(sv,typeName,true);
 			sv = StripEndCaps(sv);
 			std::vector<std::string_view> out;
 			auto tokens = split_view(sv,delimiter);
@@ -146,8 +152,7 @@ namespace JSL::String
 	template<>
 	char ParseTo(std::string_view sv)
 	{
-		sv=trim_view(sv);
-		internal::RejectEmpty(sv,typeid(char).name());
+		internal::processInput(sv,"char",true);
 		if (sv.length() != 1) 
 		{
 			JSL::internal::FatalError("Cannot complete string-char conversion",JSL_LOCATION)  << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
@@ -158,9 +163,7 @@ namespace JSL::String
 	template<>
 	bool ParseTo(std::string_view sv)
 	{
-		sv=trim_view(sv);
-		internal::RejectEmpty(sv, typeid(bool).name());
-
+		internal::processInput(sv,"bool",true);
 		if (sv == "1" || iEquals(sv,"true") || iEquals(sv,"yes") || iEquals(sv,"on") || iEquals(sv,"__bool_tag__"))
 		{
 			return true;
@@ -179,8 +182,7 @@ namespace JSL::String
 		template<>
 		double inline ParseTo(std::string_view sv)
 		{
-			sv=trim_view(sv);
-			internal::RejectEmpty(sv, typeid(double).name());
+			internal::processInput(sv,"double",true);
 			 try
                 {
                     std::string s_temp(sv);
@@ -206,6 +208,5 @@ namespace JSL::String
 	#endif
 
 
-	#undef BOILERPLATE_PARSE
 }
 

@@ -134,7 +134,6 @@ digraph codeviz {
     "JSL/Strings.h"                     -> "JSL/Strings/Stitch.h"
     "JSL/Strings.h"                     -> "JSL/Strings/Wrap.h"
     "JSL/Strings/MakeFrom.h"            -> "JSL/Concepts.h"
-    "JSL/Strings/ParseTo.h"             -> "JSL/Strings/Manipulate.h"
     "JSL/Strings/ParseTo.h"             -> "JSL/Concepts.h"
     "JSL/Strings/Serialisers.h"         -> "JSL/Strings/MakeFrom.h"
     "JSL/Strings/Serialisers.h"         -> "JSL/Strings/ParseTo.h"
