@@ -2,3 +2,7 @@
 
 File I/O
 =================
+
+
+.. toctree::
+	fileio/directory

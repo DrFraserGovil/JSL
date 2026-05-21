@@ -7,7 +7,9 @@ edge = re.compile(r'\"(\S*)\"\s+->\s+\"(.*)\"')
 def extractData(file):
 	rawlines = []
 	data = []
-	troubleFiles = [[2,"JSL/Concepts/ranges.h"]]
+	troubleFiles = [[2,"JSL/Concepts/ranges.h","Concepts.h","[weight=0.3]"],
+				 	[2,"include/JSL/Concepts/ranges.h","Concepts.h","[weight=0.3]"],
+					[2,"include/JSL/Display/Log.h","Display.h",None]]
 	trouble = []
 	for id,line in enumerate(file):
 		rawlines.append(line.rstrip())
@@ -17,9 +19,14 @@ def extractData(file):
 			data.append([id,match.group(2).strip()])
 		match = edge.search(line)
 		if match:
-			for [g,file] in troubleFiles:
-				if match.group(g).strip() == file:
-					trouble.append([id,g])
+			for i in range(len(troubleFiles)):
+				g = troubleFiles[i][0]
+				f = troubleFiles[i][1]
+				safe = troubleFiles[i][2]
+				action = troubleFiles[i][3]
+				if match.group(g).strip() == f and (safe is None or  safe not in line):
+					trouble.append([id,g,match.group(1).strip(), match.group(2).strip(),action])
+	print(f"Extracted {len(rawlines)} lines, identified {len(data)} recolour points and {len(trouble)} node-modifications")
 	return data,rawlines,trouble
 def collateGroups(data):
 	cols = dict()
@@ -68,9 +75,18 @@ def interweave(file,reassign,trouble):
 		else:
 			
 			if tdx < len(trouble) and i == trouble[tdx][0]:
-				if (trouble[tdx][1] == 2):
-					file[i] = line + "[weight=0.3]"
-
+				target = trouble[tdx]
+				p = [f"\"{target[2]}\"",f"\"{target[3]}\""]
+				
+				
+				if target[4] is not None:
+					p[target[1]-1] += target[4]
+					
+					space = " "*(42-len(p[0]))
+					file[i] = f"    {p[0]}{space}-> {p[1]}"
+				else:
+					file[i] = ""
+				tdx += 1
 			dot = "[style=dotted, label=\"?\"]"
 			if str(line).count(dot) > 0:
 				file[i] = line.replace(dot,"")

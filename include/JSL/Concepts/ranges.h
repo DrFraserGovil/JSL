@@ -28,7 +28,8 @@ namespace JSL::Concept
 	
 	template<typename T>
 	concept NonStringRange = std::ranges::range<T> && 
-								!std::convertible_to<T,std::string_view>;
+								!std::convertible_to<T,std::string_view> && 
+								!std::convertible_to<T,std::string>;
 
 
 

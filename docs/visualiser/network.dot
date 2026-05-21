@@ -81,7 +81,7 @@ digraph codeviz {
     "JSL/Async/EventManager.h"          -> "JSL/Async/ParallelPool.h"
     "JSL/Async/ManagerBase.h"           -> "JSL/Async/Watcher.h"
     "JSL/Async/Watcher.h"               -> "JSL/Async/Socket.h"
-    "JSL/Concepts.h"                    -> "JSL/Concepts/ranges.h"[weight=0.3]
+    "JSL/Concepts.h"                    -> "JSL/Concepts/ranges.h"
     "JSL/Concepts.h"                    -> "JSL/Concepts/tuple.h"
     "JSL/Concepts.h"                    -> "JSL/Concepts/numerics.h"
     "JSL/Concepts.h"                    -> "JSL/Concepts/strings.h"
@@ -125,7 +125,7 @@ digraph codeviz {
     "JSL/Parameters/NestedAggregator.h" -> "JSL/Parameters/Parameter.h"
     "JSL/Parameters/NestedAggregator.h" -> "JSL/Display/ANSI_Codes.h"
     "JSL/Parameters/NestedAggregator.h" -> "JSL/Parameters/Describer.h"
-    "JSL/Parameters/Parameter.h"        -> "JSL/Concepts/ranges.h"
+    "JSL/Parameters/Parameter.h"              -> "JSL/Concepts/ranges.h"[weight=0.3]
     "JSL/Parameters/Parameter.h"        -> "JSL/Strings/Serialisers.h"
     "JSL/Parameters/Parameter.h"        -> "JSL/Parameters/CLI_Reader.h"
     "JSL/Strings.h"                     -> "JSL/Strings/Serialisers.h"
@@ -138,13 +138,13 @@ digraph codeviz {
     "JSL/Strings/Serialisers.h"         -> "JSL/Strings/MakeFrom.h"
     "JSL/Strings/Serialisers.h"         -> "JSL/Strings/ParseTo.h"
     "JSL/Strings/Stitch.h"              -> "JSL/Strings/MakeFrom.h"
-    "JSL/Strings/Stitch.h"              -> "JSL/Concepts/ranges.h"
+    "JSL/Strings/Stitch.h"                    -> "JSL/Concepts/ranges.h"[weight=0.3]
     "JSL/Time.h"                        -> "JSL/Time/Timer.h"
     "JSL/Time.h"                        -> "JSL/Time/TimeFormatter.h"
     "JSL/Vectors.h"                     -> "JSL/Vectors/Search.h"
     "JSL/Vectors.h"                     -> "JSL/Vectors/SearchAll.h"
     "JSL/Vectors.h"                     -> "JSL/Vectors/Join.h"
     "JSL/Vectors.h"                     -> "JSL/Vectors/Linspace.h"
-    "JSL/Vectors/Search.h"              -> "JSL/Concepts/ranges.h"
+    "JSL/Vectors/Search.h"                    -> "JSL/Concepts/ranges.h"[weight=0.3]
     "JSL/Vectors/SearchAll.h"           -> "JSL/Vectors/Search.h"
 }

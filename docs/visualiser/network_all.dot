@@ -159,7 +159,7 @@ digraph codeviz {
     "include/JSL/Parameters/NestedAggregator.h" -> "include/JSL/Parameters/Parameter.h"
     "include/JSL/Parameters/NestedAggregator.h" -> "include/JSL/Display/ANSI_Codes.h"
     "include/JSL/Parameters/NestedAggregator.h" -> "include/JSL/Parameters/Describer.h"
-    "include/JSL/Parameters/Parameter.h"        -> "include/JSL/Concepts/ranges.h"
+    "include/JSL/Parameters/Parameter.h"      -> "include/JSL/Concepts/ranges.h"[weight=0.3]
     "include/JSL/Parameters/Parameter.h"        -> "include/JSL/Strings/Serialisers.h"
     "include/JSL/Parameters/Parameter.h"        -> "include/JSL/Parameters/CLI_Reader.h"
     "include/JSL/Strings.h"                     -> "include/JSL/Strings/Serialisers.h"
@@ -172,24 +172,24 @@ digraph codeviz {
     "include/JSL/Strings/Serialisers.h"         -> "include/JSL/Strings/MakeFrom.h"
     "include/JSL/Strings/Serialisers.h"         -> "include/JSL/Strings/ParseTo.h"
     "include/JSL/Strings/Stitch.h"              -> "include/JSL/Strings/MakeFrom.h"
-    "include/JSL/Strings/Stitch.h"              -> "include/JSL/Concepts/ranges.h"
+    "include/JSL/Strings/Stitch.h"            -> "include/JSL/Concepts/ranges.h"[weight=0.3]
     "include/JSL/Time.h"                        -> "include/JSL/Time/Timer.h"
     "include/JSL/Time.h"                        -> "include/JSL/Time/TimeFormatter.h"
     "include/JSL/Vectors.h"                     -> "include/JSL/Vectors/Search.h"
     "include/JSL/Vectors.h"                     -> "include/JSL/Vectors/SearchAll.h"
     "include/JSL/Vectors.h"                     -> "include/JSL/Vectors/Join.h"
     "include/JSL/Vectors.h"                     -> "include/JSL/Vectors/Linspace.h"
-    "include/JSL/Vectors/Search.h"              -> "include/JSL/Concepts/ranges.h"
+    "include/JSL/Vectors/Search.h"            -> "include/JSL/Concepts/ranges.h"[weight=0.3]
     "include/JSL/Vectors/SearchAll.h"           -> "include/JSL/Vectors/Search.h"
     "src/Async/EventManager.cpp"                -> "include/JSL.h"
     "src/Async/ManagerBase.cpp"                 -> "include/JSL.h"
     "src/Async/ParallelPool.cpp"                -> "include/JSL.h"
-    "src/Async/ParallelPool.cpp"                -> "include/JSL/Display/Log.h"
+
     "src/Async/Socket.cpp"                      -> "include/JSL/Async.h"
     "src/Async/Socket.cpp"                      -> "include/JSL/Strings/Cases.h"
-    "src/Async/Socket.cpp"                      -> "include/JSL/Display/Log.h"
+
     "src/Async/Watcher.cpp"                     -> "include/JSL/Async.h"
-    "src/Async/Watcher.cpp"                     -> "include/JSL/Display/Log.h"
+
     "src/Async/Watcher.cpp"                     -> "include/JSL.h"
     "src/Display/ANSI_Codes.cpp"                -> "include/JSL/Display/ANSI_Codes.h"
     "src/Display/Format.cpp"                    -> "include/JSL/Display/Format.h"
@@ -198,24 +198,22 @@ digraph codeviz {
     "src/Display/Log/Config.cpp"                -> "include/JSL/Display/Log/Levels.h"
     "src/Display/Log/Config.cpp"                -> "include/JSL/Display/ANSI_Codes.h"
     "src/Display/Log/Config.cpp"                -> "include/JSL/Display/Terminal.h"
-    "src/Display/Log/Core.cpp"                  -> "include/JSL/Display/Log.h"
+
     "src/Display/Log/Core.cpp"                  -> "include/JSL/Strings.h"
     "src/Display/Log/Levels.cpp"                -> "include/JSL/Display/Log/Levels.h"
     "src/Display/ProgressBar.cpp"               -> "include/JSL/Display/ProgressBar.h"
     "src/Display/ProgressBar.cpp"               -> "include/JSL/Display/ANSI_Codes.h"
-    "src/Display/ProgressBar.cpp"               -> "include/JSL/Display/Log.h"
+
     "src/Display/Terminal.cpp"                  -> "include/JSL/Display/Terminal.h"
     "src/Display/Terminal.cpp"                  -> "include/JSL/Display/ANSI_Codes.h"
     "src/FileIO/FileSystem.cpp"                 -> "include/JSL/FileIO/FileSystem.h"
     "src/FileIO/FileSystem.cpp"                 -> "include/JSL/Vectors/Join.h"
-    "src/FileIO/FileSystem.cpp"                 -> "include/JSL/Display/Log.h"
+
     "src/FileIO/archiver/readStream.cpp"        -> "include/JSL/FileIO/archiver/readStream.h"
     "src/FileIO/archiver/reader.cpp"            -> "include/JSL/FileIO/archiver/reader.h"
     "src/FileIO/archiver/writeStream.cpp"       -> "include/JSL/FileIO/archiver/writeStream.h"
     "src/FileIO/archiver/writer.cpp"            -> "include/JSL/FileIO/archiver/writer.h"
-    "src/FileIO/archiver/writer.cpp"            -> "include/JSL/FileIO/archiver/writeStream.h"
-    "src/FileIO/archiver/writer.cpp"            -> "include/JSL/FileIO/archiver/helpers.h"
-    "src/FileIO/archiver/writer.cpp"            -> "include/JSL/Display/Log.h"
+
     "src/FileIO/fileWriters.cpp"                -> "include/JSL/FileIO/fileWriters.h"
     "src/FileIO/forLineIn.cpp"                  -> "include/JSL/FileIO/forLineIn.h"
     "src/FileIO/forLineIn.cpp"                  -> "include/JSL/Strings.h"
@@ -227,7 +225,7 @@ digraph codeviz {
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/Display.h"
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/FileIO/pipedInput.h"
     "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/Parameters/CLI_Reader.h"
-    "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/FileIO.h"
+    "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/FileIO/forLineIn.h"
     "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/Strings/Stitch.h"
     "src/Parameters/Describer.cpp"              -> "include/JSL/Parameters/Describer.h"
     "src/Parameters/Describer.cpp"              -> "include/JSL/Display/ANSI_Codes.h"
@@ -236,7 +234,7 @@ digraph codeviz {
     "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Parameters/Parameter.h"
     "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Parameters/CLI_Reader.h"
     "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Vectors/Search.h"
-    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Display/Log.h"
+
     "src/Parameters/Parameter.cpp"              -> "include/JSL/Parameters/Parameter.h"
     "src/Parameters/Parameter.cpp"              -> "include/JSL/Vectors/Search.h"
     "src/Parameters/Parameter.cpp"              -> "include/JSL/Strings/Cases.h"
@@ -254,5 +252,5 @@ digraph codeviz {
     "src/Time/Timer.cpp"                        -> "include/JSL/Time/TimeFormatter.h"
     "src/Vectors/Linspace.cpp"                  -> "include/JSL/Vectors/Linspace.h"
     "src/Vectors/Search.cpp"                    -> "include/JSL/Vectors/Search.h"
-    "src/internal/error.cpp"                    -> "include/JSL/Display/Log.h"
+
 }
