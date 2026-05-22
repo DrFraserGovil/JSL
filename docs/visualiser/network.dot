@@ -107,6 +107,7 @@ digraph codeviz {
     "JSL/FileIO.h"                      -> "JSL/FileIO/fileWriters.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/pipedInput.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/archiver.h"
+    "JSL/FileIO/FileSystem.h"           -> "JSL/Concepts/strings.h"
     "JSL/FileIO/archiver.h"             -> "JSL/FileIO/archiver/writer.h"
     "JSL/FileIO/archiver.h"             -> "JSL/FileIO/archiver/reader.h"
     "JSL/FileIO/archiver/readStream.h"  -> "JSL/Strings/Manipulate.h"

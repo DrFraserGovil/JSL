@@ -3,3 +3,4 @@
 #include "FileIO/fileWriters.h"
 #include "FileIO/pipedInput.h"
 #include "FileIO/archiver.h"
+#include "FileIO/glob.h"
