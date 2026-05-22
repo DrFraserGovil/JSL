@@ -28,8 +28,16 @@ namespace JSL::IO
 		 */
 		static Directory Snapshot(const std::filesystem::path &target, size_t maxDepth);
 
+		/*! @brief Constructs a Directory object representing a snapshot of a single directory and all its contents, automatically recursing up to a specified limit, and ignoring specified files
+		 * @param excludePattern a regular expression; matches are excluded from both the file list and further recursion
+		 * @param maxDepth The maximum number of sub-directories to visit. maxDepth = 0 is no recursion
+		 */
 		static Directory Snapshot(const std::filesystem::path &target, std::regex ExcludePattern, size_t maxDepth = -1);
 		
+		/*! @brief Constructs a Directory object representing a snapshot of a single directory and all its contents, automatically recursing up to a specified limit, and ignoring specified files
+		 * @param excludePattern a glob-expression for files and directories to ignore 
+		 * @param maxDepth The maximum number of sub-directories to visit. maxDepth = 0 is no recursion
+		 */
 		template<JSL::Concept::StringType T>
 		static Directory Snapshot(const std::filesystem::path &target, T & ExcludePattern, size_t maxDepth = -1)
 		{
@@ -46,8 +54,18 @@ namespace JSL::IO
 		 * @param maxDepth The maximum number of sub-directories to visit. This overrides the previous recursion parameter.
 		 */
 		void Rescan(size_t maxDepth);
+		/*!
+		 * @brief Resets the directory and re-initialises it with the new recursion directive
+		 * @param excludePattern a regular expression; matches are excluded from both the file list and further recursion
+		 * @param maxDepth The maximum number of sub-directories to visit. This overrides the previous recursion parameter.
+		 */
 		void Rescan(std::regex excludePattern, size_t maxDepth = -1);
 
+		/*!
+		 * @brief Resets the directory and re-initialises it with the new recursion directive
+		 * @param excludePattern a glob-expression for files and directories to ignore 
+		 * @param maxDepth The maximum number of sub-directories to visit. This overrides the previous recursion parameter.
+		 */
 		template<JSL::Concept::StringType T>
 		void Rescan(T & excludePattern, size_t maxDepth = -1)
 		{
@@ -89,18 +107,27 @@ namespace JSL::IO
 		 */
 		std::set<std::filesystem::path> ListDirs(bool useRecursion = true) const;
 
-		// /**
-		//  * Filters a structure for files matching a glob pattern (e.g., "*.cpp")
-		//  * \param pattern The glob pattern (supports * and ?)
-		//  */
-		std::set<std::filesystem::path> MatchFiles(std::string matchPattern) const;
+		/*! @brief Get a list of files matching the specified regex pattern
+			@param matchPattern A regular expression used to identify files to include
+			@returns A subset of the output of ListFiles, matching the regular expression
+		*/ 
 		std::set<std::filesystem::path> MatchFiles(std::regex matchPattern) const;
-
+		
+		/*! @brief Get a list of files matching the specified regex pattern
+			@param matchPattern A glob pattern used to identify files to include
+			@returns A subset of the output of ListFiles, matching the glob
+		*/ 
+		template<JSL::Concept::StringType T>
+		std::set<std::filesystem::path> MatchFiles(T matchPattern) const
+		{
+			return MatchFiles(globToRegex(matchPattern));
+		}
 		//! @brief A wrapper around ``Directory::Snapshot(target,recursive).ListFiles()``
 		static std::set<std::filesystem::path> list(std::filesystem::path target, bool recursive = false);
 
 
 		//! @brief A wrapper around ``Directory::Snapshot(target,recursive).MatchFiles(matchPattern)``
+		//! @details This is not a template (like the others) because there's no risk of a char* primitive silently decaying into a boolean, so we can just force a direct string-cast
 		static std::set<std::filesystem::path> match(std::filesystem::path target, std::string matchPattern, bool recursive = false);
 
 		//! @brief Spaceship operator which defines the ordering of Directory objects via their internal path. 

@@ -102,8 +102,7 @@ namespace JSL::IO
 		{
 			for (auto & dir : Directories)
 			{
-				std::set<fs::path> tmp = dir.ListFiles(listAllFiles, includeOthers);
-				out.merge(dir.ListFiles(includeOthers));
+				out.merge(dir.ListFiles(listAllFiles,includeOthers));
 			}
 		}
 		return out;
@@ -133,26 +132,7 @@ namespace JSL::IO
 		return out; 
 	}
 
-	std::set<std::filesystem::path> Directory::MatchFiles(std::string regexString) const
-	{
 
-		// Escape special regex characters: . + ^ $ | ( ) [ ] { }
-		// We use R"(\$0)" to mean "Put a backslash in front of whatever you matched"
-		static const std::regex esc(R"([\.\+\^\$\|\(\)\[\]\{\}\*\?])");
-		regexString = std::regex_replace(regexString, esc, R"(\$&)");
-
-		// Convert our escaped \* back into a regex wildcard .*
-		// Note: We match the literal backslash and asterisk we just created
-		regexString = std::regex_replace(regexString, std::regex(R"(\\\*)"), ".*");
-
-		// Convert our escaped \? back into a regex wildcard .
-		regexString = std::regex_replace(regexString, std::regex(R"(\\\?)"), ".");
-
-
-		std::regex filter(regexString,std::regex_constants::icase); // Case-insensitive often nicer for CLI
-
-		return MatchFiles(filter);
-	}
 	std::set<std::filesystem::path> Directory::MatchFiles(std::regex regexFilter) const
 	{
 		std::set<fs::path> out;
