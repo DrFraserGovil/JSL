@@ -118,7 +118,6 @@ digraph codeviz {
     "JSL/Parameters.h"                  -> "JSL/Parameters/Parameter.h"
     "JSL/Parameters.h"                  -> "JSL/Parameters/Aggregator.h"
     "JSL/Parameters/Aggregator.h"       -> "JSL/Parameters/NestedAggregator.h"
-    "JSL/Parameters/Aggregator.h"       -> "JSL/Parameters/Parameter.h"
     "JSL/Parameters/Describer.h"        -> "JSL/Parameters/Parameter.h"
     "JSL/Parameters/NestedAggregator.h" -> "JSL/Parameters/Parameter.h"
     "JSL/Parameters/NestedAggregator.h" -> "JSL/Display/ANSI_Codes.h"

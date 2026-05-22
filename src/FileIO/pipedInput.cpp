@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string_view>
 
-#include <JSL/Strings.h>
+#include <JSL/Strings/Manipulate.h>
 #include <JSL/internal/error.h>
 
 

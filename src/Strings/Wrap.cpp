@@ -1,4 +1,6 @@
-#include <JSL/Strings.h>
+#include <JSL/Strings/Wrap.h>
+#include <JSL/Strings/Stitch.h>
+#include <JSL/Strings/Manipulate.h>
 #include <JSL/internal/error.h>
 #include <JSL/Vectors/Join.h>
 #include <JSL/Display/Terminal.h>
