@@ -1,6 +1,4 @@
 #include <JSL/Display/Log/Config.h>
-#include <JSL/Display/Log/Levels.h>
-#include <JSL/Display/ANSI_Codes.h>
 #include <JSL/Display/Terminal.h>
 
 namespace JSL::Log
@@ -9,7 +7,7 @@ namespace JSL::Log
     Config::Config()
     {
         //do the basic configuration (default values set in header so they're visible to the docs)
-        TerminalOutput = Terminal::IsANSICapable();
+        TerminalOutput = Terminal::Global().IsANSICapable();
         AlignSize();
     }
 

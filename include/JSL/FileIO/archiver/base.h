@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "helpers.h"
 namespace JSL::Archiver
 {
     enum class Mode

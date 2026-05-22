@@ -23,6 +23,13 @@ namespace JSL::Terminal
 			//! Uses ioctl to query the current dimensions of the terminal, and cache them for future retrieval
  			void CacheSize(); 
 
+			void CacheANSI();
+			/*! @brief  Determine if the output stream can interpret ANSI escape sequences
+				@details Uses isatty (and _isatty for windows) to determine if stdout can render ANSI commands.
+				@returns True if the output is capable of interpreting format commands (i.e. a terminal)
+				False if the terminal is plaintext (i.e. a file)
+			*/
+			bool IsANSICapable();
 			// Declared friend so singleton can construct 
 			friend Environment & Global();
 		private:
@@ -34,6 +41,9 @@ namespace JSL::Terminal
 			size_t _Columns;
 			//! Internal tab cache
 			size_t _Tabsize;
+
+			//! ansi state
+			bool AnsiActive;
 
 			//! Default destructor; only here for Ro5 purposes really! 
 			~Environment() = default;

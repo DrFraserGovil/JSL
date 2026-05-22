@@ -12,14 +12,8 @@ namespace JSL::Parameter
         mid_text = Format::Colour(0,155,185) +  Name + Format::ResetAll() + "\n" + std::regex_replace(mid_text, std::regex("std::"),"");
 
         auto right_text = TextDescription;
-        if (Terminal::IsANSICapable())
-        {
-            right_text += "\n" + Format::Italics() + Format::Colour(50,50,50) +  "[Default: " + DefaultValue + "]" + Format::ResetAll();
-        }
-        else
-        {
-             right_text +="\n[Default: " + DefaultValue + "]";
-        }
+        
+        right_text += "\n" + Format::Italics() + Format::Colour(50,50,50) +  "[Default: " + DefaultValue + "]" + Format::ResetAll();
         
         
         // + Format::Italics + "\n[Default: " + DefaultValue + "]";

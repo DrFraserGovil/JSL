@@ -27,7 +27,6 @@ digraph codeviz {
     node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "JSL/Display/Log/Config.h"          [label = "Display/Log/Config.h"]
     node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "JSL/Display/Log/Core.h"            [label = "Display/Log/Core.h"]
     node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "JSL/Display/Log/Levels.h"          [label = "Display/Log/Levels.h"]
-    node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "JSL/Display/Log/Utils.h"           [label = "Display/Log/Utils.h"]
     node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "JSL/Display/ProgressBar.h"         [label = "Display/ProgressBar.h"]
     node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "JSL/Display/Terminal.h"            [label = "Display/Terminal.h"]
     node [fillcolor = "#b3de69", shape="folder", style = "filled"] "JSL/FileIO.h"                      [label = "FileIO.h"]
@@ -41,6 +40,7 @@ digraph codeviz {
     node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "JSL/FileIO/archiver/writer.h"      [label = "FileIO/archiver/writer.h"]
     node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "JSL/FileIO/fileWriters.h"          [label = "FileIO/fileWriters.h"]
     node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "JSL/FileIO/forLineIn.h"            [label = "FileIO/forLineIn.h"]
+    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "JSL/FileIO/glob.h"                 [label = "FileIO/glob.h"]
     node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "JSL/FileIO/pipedInput.h"           [label = "FileIO/pipedInput.h"]
     node [fillcolor = "#d9d9d9", shape="folder", style = "filled"] "JSL/Parameters.h"                  [label = "Parameters.h"]
     node [fillcolor = "#d9d9d9",shape="Mrecord", style = "filled"] "JSL/Parameters/Aggregator.h"       [label = "Parameters/Aggregator.h"]
@@ -96,28 +96,25 @@ digraph codeviz {
     "JSL/Display/ANSI_Codes.h"          -> "JSL/Display/Format.h"
     "JSL/Display/Log.h"                 -> "JSL/Display/Log/Core.h"
     "JSL/Display/Log.h"                 -> "JSL/Display/Log/Config.h"
-    "JSL/Display/Log.h"                 -> "JSL/Display/Log/Levels.h"
     "JSL/Display/Log/Config.h"          -> "JSL/Display/Log/Levels.h"
     "JSL/Display/Log/Config.h"          -> "JSL/Display/ANSI_Codes.h"
     "JSL/Display/Log/Core.h"            -> "JSL/Display/Log/Config.h"
-    "JSL/Display/Log/Core.h"            -> "JSL/Display/Format.h"
-    "JSL/Display/Log/Utils.h"           -> "JSL/Display/Log/Levels.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/forLineIn.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/FileSystem.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/fileWriters.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/pipedInput.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/archiver.h"
-    "JSL/FileIO/FileSystem.h"           -> "JSL/Concepts/strings.h"
+    "JSL/FileIO.h"                      -> "JSL/FileIO/glob.h"
+    "JSL/FileIO/FileSystem.h"           -> "JSL/FileIO/glob.h"
     "JSL/FileIO/archiver.h"             -> "JSL/FileIO/archiver/writer.h"
     "JSL/FileIO/archiver.h"             -> "JSL/FileIO/archiver/reader.h"
+    "JSL/FileIO/archiver/base.h"        -> "JSL/FileIO/archiver/helpers.h"
     "JSL/FileIO/archiver/readStream.h"  -> "JSL/Strings/Manipulate.h"
-    "JSL/FileIO/archiver/readStream.h"  -> "JSL/FileIO/archiver/helpers.h"
-    "JSL/FileIO/archiver/reader.h"      -> "JSL/FileIO/archiver/base.h"
+    "JSL/FileIO/archiver/readStream.h"  -> "JSL/FileIO/archiver/base.h"
     "JSL/FileIO/archiver/reader.h"      -> "JSL/FileIO/archiver/readStream.h"
     "JSL/FileIO/archiver/writeStream.h" -> "JSL/FileIO/archiver/base.h"
-    "JSL/FileIO/archiver/writeStream.h" -> "JSL/FileIO/archiver/helpers.h"
-    "JSL/FileIO/archiver/writer.h"      -> "JSL/FileIO/archiver/base.h"
     "JSL/FileIO/archiver/writer.h"      -> "JSL/FileIO/archiver/writeStream.h"
+    "JSL/FileIO/glob.h"                       -> "JSL/Concepts/strings.h"[weight=0.3]
     "JSL/Parameters.h"                  -> "JSL/Parameters/Parameter.h"
     "JSL/Parameters.h"                  -> "JSL/Parameters/Aggregator.h"
     "JSL/Parameters/Aggregator.h"       -> "JSL/Parameters/NestedAggregator.h"

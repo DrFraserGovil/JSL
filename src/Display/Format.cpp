@@ -3,6 +3,7 @@
 #include <JSL/internal/error.h>
 #include <sstream>
 #include <algorithm>
+#include <JSL/Display/Terminal.h>
 namespace JSL::Format
 {
 
@@ -51,12 +52,26 @@ namespace JSL::Format
 
 	Command::operator std::string() const
 	{
-		return std::string(buf,len);
+		if (Terminal::Global().IsANSICapable())
+		{
+			return std::string(buf,len);
+		}
+		else
+		{
+			return "";
+		}
 	}
 	
 	std::ostream& operator<<(std::ostream& os, const Command &c )
 	{
-		return os.write(c.buf, c.len);
+		if (Terminal::Global().IsANSICapable())
+		{
+			return os.write(c.buf, c.len);
+		}
+		else
+		{
+			return os;
+		}
 	}
 
 

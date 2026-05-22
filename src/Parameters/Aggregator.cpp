@@ -2,7 +2,6 @@
 #include <JSL/Vectors/Search.h>
 #include <JSL/Strings/Wrap.h>
 #include <JSL/Display.h>
-#include <JSL/FileIO/pipedInput.h>
 namespace JSL::Parameter
 {
 
@@ -32,14 +31,14 @@ namespace JSL::Parameter
     template<class T, class U>
     std::string fmtwrap(T prefix, std::string text, U suffix)
     {
-        if (!Terminal::IsANSICapable()){return text;}
+        if (!Terminal::Global().IsANSICapable()){return text;}
         
         return (std::string)prefix + text + suffix;
     }
     template<class T>
     std::string fmtwrap(T prefix, std::string text)
     {
-        if (!Terminal::IsANSICapable()){return text;}
+        if (!Terminal::Global().IsANSICapable()){return text;}
         
         return (std::string)prefix + text + Format::ResetAll();
     }
@@ -48,10 +47,7 @@ namespace JSL::Parameter
     {
         std::cout << "Usage:\n";
         std::cout << "\t" << cmdCapture  << " [commands] [options]\n";
-        if (Terminal::IsANSICapable())
-        {
-            std::cout << Format::Colour(40,40,40) << Format::Italics();
-        }
+        std::cout << Format::Colour(40,40,40) <<  Format::Italics();
         std::cout << "Commands are any space separated commands before the first option\nOptions must be indicated by at least one dash\n";
         
         //commands are printed only once

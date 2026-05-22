@@ -1,15 +1,20 @@
 #include <JSL/Display/Terminal.h>
-#include <JSL/Display/ANSI_Codes.h>
 
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <iostream>
 #include <termios.h>
+#if defined(_WIN32) || defined(_WIN64)
+	#include <io.h>
+#else
+	#include <unistd.h>
+#endif
 
 namespace JSL::Terminal
 {
 	Environment::Environment()
 	{
+        CacheANSI(); // do this first because it is needed elsewhere
 		CacheSize();
 		CacheTabs();
 	}
@@ -19,6 +24,20 @@ namespace JSL::Terminal
 		return instance;
 	}
 
+    void Environment::CacheANSI()
+    {
+        //have to do some preprocessor messiness to get the right function as it's platform dependent
+		 #ifdef _WIN32
+			AnsiActive = _isatty(_fileno(stdout));
+		#else
+			AnsiActive = isatty(fileno(stdout));
+		#endif
+    }
+    bool Environment::IsANSICapable()
+    {
+        return AnsiActive;
+        // return true;
+    }
 	size_t Environment::Rows()
 	{
 		return _Rows;
@@ -36,7 +55,7 @@ namespace JSL::Terminal
 	void Environment::CacheTabs()
 	{
 		size_t dtab = 8;
-		if (!Terminal::IsANSICapable())
+		if (!AnsiActive)
 		{
 			_Tabsize = dtab;
 			return;
@@ -84,7 +103,7 @@ namespace JSL::Terminal
 
         // 5. Instantly clear the line to wipe our test tracking text out of sight
         // \033[2K vaporizes the entire active line contents
-        std::cout << ClearLine << std::flush;
+        std::cout << "\r\033[2K" << std::flush;
 
         // 6. Instantly restore the terminal back to its original configuration state
         tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
@@ -114,7 +133,7 @@ namespace JSL::Terminal
 	void Environment::CacheSize()
 	{
 		struct winsize ws;
-		if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == -1) 
+		if (!AnsiActive || ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == -1) 
 		{
 			// Fallback or error handling if not a TTY
 			_Rows = 24;

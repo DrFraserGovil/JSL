@@ -5,7 +5,6 @@
 #include <string>
 #include <set>
 #include <optional>
-#include <JSL/Concepts/strings.h>
 #include "glob.h"
 namespace JSL::IO
 {

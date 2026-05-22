@@ -1,11 +1,7 @@
 #include <JSL/Display/ANSI_Codes.h>
+#include <JSL/Display/Terminal.h>
 #include <string>
 #include <JSL/internal/error.h>
-#if defined(_WIN32) || defined(_WIN64)
-	#include <io.h>
-#else
-	#include <unistd.h>
-#endif
 
 
 /*
@@ -14,16 +10,6 @@
 */
 namespace JSL::Terminal
 {
-	bool IsANSICapable()
-	{
-		//have to do some preprocessor messiness to get the right function as it's platform dependent
-		 #ifdef _WIN32
-			return _isatty(_fileno(stdout));
-		#else
-			return isatty(fileno(stdout));
-		#endif
-	}
-
 	CursorCommand MoveToColumn(uint32_t column)
 	{
 		column = column > 0 ? column : 1; //ensure that 0-indexing doesn't cause issues as columns are 1 indexed
@@ -40,6 +26,10 @@ namespace JSL::Format
 {	
 	std::string Reset(Element target)
 	{
+		if (!Terminal::Global().IsANSICapable())
+		{
+			return "";
+		}
 		switch (target)
 		{
 			case Foreground:
@@ -54,6 +44,10 @@ namespace JSL::Format
 	}
 	std::string ResetAll()
 	{
+		if (!Terminal::Global().IsANSICapable())
+		{
+			return "";
+		}
 		return "\033[0m";
 	}
 

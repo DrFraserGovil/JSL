@@ -48,7 +48,7 @@ namespace JSL::Log::internal
 		{
 			BufferPreamble << JSL::Terminal::ClearLine;
 		}
-		if (Config::Global().TerminalOutput && !ManualFormat)
+		if (!ManualFormat)
 		{
 			BufferPreamble << fmt;
 			CurrentFormat.Add(fmt);
@@ -93,11 +93,9 @@ namespace JSL::Log::internal
 			std::cout << linebreak << CurrentFormat << message[i] << LineSuffix;
 		}
 
-		//then terminate the message
-		if (Config::Global().TerminalOutput)
-		{
-			std::cout << Format::ResetAll();
-		}
+		
+		std::cout << Format::ResetAll();
+		
 
 		if (Config::Global().AppendNewline)
 		{

@@ -1,6 +1,5 @@
 #include <JSL/Parameters/NestedAggregator.h>
-#include <JSL/Parameters/Parameter.h>
-#include <JSL/Parameters/CLI_Reader.h>
+#include <JSL/Display/Terminal.h>
 #include <JSL/internal/error.h>
 #include <JSL/Vectors/Search.h>
 #include <JSL/Display/Log.h>
@@ -17,7 +16,7 @@ namespace JSL::Parameter
         }
         catch (const std::exception & e)
         {
-            JSL::internal::FatalError("Parameter conversion error", JSL_LOCATION) << "Failed to convert value '" << value << "' for parameter -" << activeTrigger;
+            JSL::internal::FatalError("Parameter conversion error", JSL_LOCATION) << "Failed to convert value '" << value << "' for parameter -" << activeTrigger << e.what();
         }
     }
     void Parameter::NestedAggregator::Parse(int argc, char** argv)
@@ -195,7 +194,7 @@ namespace JSL::Parameter
     void Parameter::NestedAggregator::printAsTitle(std::string_view input,Format::Command fg, Format::Command bg)
     {
         
-        if (Terminal::IsANSICapable()) //piggyback off the terminal checking if formatting can be used
+        if (Terminal::Global().IsANSICapable()) //piggyback off the terminal checking if formatting can be used
         {
             auto titleCol =  fg + Format::Italics() + bg;
             std::string buffer = (input.size() < lineLength) ? std::string(lineLength - input.size(),' ') : "";

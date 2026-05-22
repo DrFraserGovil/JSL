@@ -1,7 +1,6 @@
 #pragma once
 #include <regex>
 #include <JSL/Concepts/strings.h>
-#include <JSL/Display/Log.h>
 namespace JSL::IO
 {
 	template<JSL::Concept::StringType T>
@@ -29,7 +28,6 @@ namespace JSL::IO
 				default: result += c;
 			}			
 		}
-		LOG(INFO) << result + "$";
 		return result + "$";
 	}
 

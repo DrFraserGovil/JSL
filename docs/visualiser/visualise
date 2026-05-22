@@ -10,8 +10,6 @@ else
 	renderer=$1
 fi
 
-renderer=dot
-
 render () {
 	cd $SCRIPT_DIR/../../$3
 	codeviz -r $2 -o $1.pdf $4

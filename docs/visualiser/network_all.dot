@@ -27,7 +27,6 @@ digraph codeviz {
     node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "include/JSL/Display/Log/Config.h"          [label = "JSL/Display/Log/Config.h"]
     node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "include/JSL/Display/Log/Core.h"            [label = "JSL/Display/Log/Core.h"]
     node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "include/JSL/Display/Log/Levels.h"          [label = "JSL/Display/Log/Levels.h"]
-    node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "include/JSL/Display/Log/Utils.h"           [label = "JSL/Display/Log/Utils.h"]
     node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/ProgressBar.h"         [label = "JSL/Display/ProgressBar.h"]
     node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/Terminal.h"            [label = "JSL/Display/Terminal.h"]
     node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/FileIO.h"                      [label = "JSL/FileIO.h"]
@@ -41,6 +40,7 @@ digraph codeviz {
     node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/writer.h"      [label = "JSL/FileIO/archiver/writer.h"]
     node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/fileWriters.h"          [label = "JSL/FileIO/fileWriters.h"]
     node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/forLineIn.h"            [label = "JSL/FileIO/forLineIn.h"]
+    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/glob.h"                 [label = "JSL/FileIO/glob.h"]
     node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/pipedInput.h"           [label = "JSL/FileIO/pipedInput.h"]
     node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Parameters.h"                  [label = "JSL/Parameters.h"]
     node [fillcolor = "#d9d9d9",shape="Mrecord", style = "filled"] "include/JSL/Parameters/Aggregator.h"       [label = "JSL/Parameters/Aggregator.h"]
@@ -130,28 +130,25 @@ digraph codeviz {
     "include/JSL/Display/ANSI_Codes.h"          -> "include/JSL/Display/Format.h"
     "include/JSL/Display/Log.h"                 -> "include/JSL/Display/Log/Core.h"
     "include/JSL/Display/Log.h"                 -> "include/JSL/Display/Log/Config.h"
-    "include/JSL/Display/Log.h"                 -> "include/JSL/Display/Log/Levels.h"
     "include/JSL/Display/Log/Config.h"          -> "include/JSL/Display/Log/Levels.h"
     "include/JSL/Display/Log/Config.h"          -> "include/JSL/Display/ANSI_Codes.h"
     "include/JSL/Display/Log/Core.h"            -> "include/JSL/Display/Log/Config.h"
-    "include/JSL/Display/Log/Core.h"            -> "include/JSL/Display/Format.h"
-    "include/JSL/Display/Log/Utils.h"           -> "include/JSL/Display/Log/Levels.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/forLineIn.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/FileSystem.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/fileWriters.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/pipedInput.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/archiver.h"
-    "include/JSL/FileIO/FileSystem.h"           -> "include/JSL/Concepts/strings.h"
+    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/glob.h"
+    "include/JSL/FileIO/FileSystem.h"           -> "include/JSL/FileIO/glob.h"
     "include/JSL/FileIO/archiver.h"             -> "include/JSL/FileIO/archiver/writer.h"
     "include/JSL/FileIO/archiver.h"             -> "include/JSL/FileIO/archiver/reader.h"
+    "include/JSL/FileIO/archiver/base.h"        -> "include/JSL/FileIO/archiver/helpers.h"
     "include/JSL/FileIO/archiver/readStream.h"  -> "include/JSL/Strings/Manipulate.h"
-    "include/JSL/FileIO/archiver/readStream.h"  -> "include/JSL/FileIO/archiver/helpers.h"
-    "include/JSL/FileIO/archiver/reader.h"      -> "include/JSL/FileIO/archiver/base.h"
+    "include/JSL/FileIO/archiver/readStream.h"  -> "include/JSL/FileIO/archiver/base.h"
     "include/JSL/FileIO/archiver/reader.h"      -> "include/JSL/FileIO/archiver/readStream.h"
     "include/JSL/FileIO/archiver/writeStream.h" -> "include/JSL/FileIO/archiver/base.h"
-    "include/JSL/FileIO/archiver/writeStream.h" -> "include/JSL/FileIO/archiver/helpers.h"
-    "include/JSL/FileIO/archiver/writer.h"      -> "include/JSL/FileIO/archiver/base.h"
     "include/JSL/FileIO/archiver/writer.h"      -> "include/JSL/FileIO/archiver/writeStream.h"
+    "include/JSL/FileIO/glob.h"                 -> "include/JSL/Concepts/strings.h"
     "include/JSL/Parameters.h"                  -> "include/JSL/Parameters/Parameter.h"
     "include/JSL/Parameters.h"                  -> "include/JSL/Parameters/Aggregator.h"
     "include/JSL/Parameters/Aggregator.h"       -> "include/JSL/Parameters/NestedAggregator.h"
@@ -193,11 +190,11 @@ digraph codeviz {
 
     "src/Async/Watcher.cpp"                     -> "include/JSL.h"
     "src/Display/ANSI_Codes.cpp"                -> "include/JSL/Display/ANSI_Codes.h"
+    "src/Display/ANSI_Codes.cpp"                -> "include/JSL/Display/Terminal.h"
     "src/Display/Format.cpp"                    -> "include/JSL/Display/Format.h"
     "src/Display/Format.cpp"                    -> "include/JSL/Display/ANSI_Codes.h"
+    "src/Display/Format.cpp"                    -> "include/JSL/Display/Terminal.h"
     "src/Display/Log/Config.cpp"                -> "include/JSL/Display/Log/Config.h"
-    "src/Display/Log/Config.cpp"                -> "include/JSL/Display/Log/Levels.h"
-    "src/Display/Log/Config.cpp"                -> "include/JSL/Display/ANSI_Codes.h"
     "src/Display/Log/Config.cpp"                -> "include/JSL/Display/Terminal.h"
 
     "src/Display/Log/Core.cpp"                  -> "include/JSL/Strings.h"
@@ -206,10 +203,8 @@ digraph codeviz {
     "src/Display/ProgressBar.cpp"               -> "include/JSL/Display/ANSI_Codes.h"
 
     "src/Display/Terminal.cpp"                  -> "include/JSL/Display/Terminal.h"
-    "src/Display/Terminal.cpp"                  -> "include/JSL/Display/ANSI_Codes.h"
     "src/FileIO/FileSystem.cpp"                 -> "include/JSL/FileIO/FileSystem.h"
     "src/FileIO/FileSystem.cpp"                 -> "include/JSL/Vectors/Join.h"
-
     "src/FileIO/archiver/readStream.cpp"        -> "include/JSL/FileIO/archiver/readStream.h"
     "src/FileIO/archiver/reader.cpp"            -> "include/JSL/FileIO/archiver/reader.h"
     "src/FileIO/archiver/writeStream.cpp"       -> "include/JSL/FileIO/archiver/writeStream.h"
@@ -224,7 +219,6 @@ digraph codeviz {
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/Vectors/Search.h"
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/Strings/Wrap.h"
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/Display.h"
-    "src/Parameters/Aggregator.cpp"             -> "include/JSL/FileIO/pipedInput.h"
     "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/Parameters/CLI_Reader.h"
     "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/FileIO/forLineIn.h"
     "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/Strings/Stitch.h"
@@ -232,8 +226,7 @@ digraph codeviz {
     "src/Parameters/Describer.cpp"              -> "include/JSL/Display/ANSI_Codes.h"
     "src/Parameters/Describer.cpp"              -> "include/JSL/Strings/Wrap.h"
     "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Parameters/NestedAggregator.h"
-    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Parameters/Parameter.h"
-    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Parameters/CLI_Reader.h"
+    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Display/Terminal.h"
     "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Vectors/Search.h"
 
     "src/Parameters/Parameter.cpp"              -> "include/JSL/Parameters/Parameter.h"

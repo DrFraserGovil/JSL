@@ -1,6 +1,5 @@
 #include <JSL/FileIO/FileSystem.h>
 #include <JSL/Vectors/Join.h>
-#include <JSL/Display/Log.h>
 #include <regex>
 #include <algorithm>
 #include <filesystem>
@@ -43,16 +42,12 @@ namespace JSL::IO
 
 	void Directory::Rescan(bool recursive)
 	{
-		LOG(WARN) << "boolean";
 		Reset();
 		size_t limit = (recursive ? -1 : 0);
 		InternalScan(0,limit,std::nullopt);
 	}
 	void Directory::Rescan(size_t maxDepth)
 	{
-		LOG(WARN) << "size_t";
-
-
 		Reset();
 		InternalScan(0,maxDepth,std::nullopt);
 	}
@@ -72,7 +67,6 @@ namespace JSL::IO
 			auto entry = element.path();
 			if (!excluder || !std::regex_match(entry.string(),excluder.value()))
 			{
-				LOG(WARN) << entry.string() << " did not match ";
 				if(fs::is_regular_file(entry))
 				{
 					Files.insert(entry);
@@ -94,10 +88,6 @@ namespace JSL::IO
 				}
 
 				Others.insert(entry);
-			}
-			else
-			{
-				LOG(INFO) << entry.string() << " did match";
 			}
 		}
 		

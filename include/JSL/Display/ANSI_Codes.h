@@ -2,21 +2,12 @@
 #include <cstdint>
 #include <string_view> 
 #include <JSL/Display/Format.h>
-
 /*
 	These are some display commands which  enable the user to shift the cursor around, delete items and otherwise alter the appearance of terminal output. 
 
 */
 namespace JSL::Terminal
 {
-
-	/*! @brief  Determine if the output stream can interpret ANSI escape sequences
-		@details Uses isatty (and _isatty for windows) to determine if stdout can render ANSI commands.
-		@returns True if the output is capable of interpreting format commands (i.e. a terminal)
-		False if the terminal is plaintext (i.e. a file)
-	*/
-	bool IsANSICapable();
-
 	//!@brief A basic wrapper to make CursorCommands look more fancy than simple s, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)
 	typedef std::string CursorCommand; 
 	

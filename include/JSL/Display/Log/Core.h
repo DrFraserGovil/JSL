@@ -6,7 +6,7 @@
 #pragma once
 
 #include <JSL/Display/Log/Config.h>
-#include <JSL/Display/Format.h>
+// #include <JSL/Display/Format.h>
 
 /*!
 	@brief The main log interface. Pipe output to it as you would std::cout.
@@ -79,6 +79,7 @@ namespace JSL::Log::internal
 			template<Format::FormatType Q>
 			Core &operator<<(Q format)
 			{
+				//not strictly necessary as formats are suppresed; but this prevents triggering some complex logic that would be ultimately pointless
 				if (Config::Global().TerminalOutput)
 				{
 					CurrentFormat.Add(format);

@@ -7,7 +7,8 @@ edge = re.compile(r'\"(\S*)\"\s+->\s+\"(.*)\"')
 def extractData(file):
 	rawlines = []
 	data = []
-	troubleFiles = [[2,"JSL/Concepts/ranges.h","Concepts.h","[weight=0.3]"],
+	troubleFiles = [[2,"JSL/Concepts/ranges.h","Concepts.h","[weight=0.3]"] ,
+				 [2,"JSL/Concepts/strings.h","Concepts.h","[weight=0.3]"],
 				 	[2,"include/JSL/Concepts/ranges.h","Concepts.h","[weight=0.3]"],
 					[2,"include/JSL/Display/Log.h","Display.h",None]]
 	trouble = []

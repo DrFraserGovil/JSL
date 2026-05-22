@@ -32,9 +32,9 @@ namespace JSL::String
 			{
 				 FatalError("Could not complete conversion", JSL_LOCATION) << "Cannot convert an empty string to to type " <<typeName;
 			} 
-			if (sv == "__bool_tag__" && typeName != typeid(bool).name())
+			if (sv == "__bool_tag__" && (typeName != typeid(bool).name() && typeName != "bool"))
 			{
-				FatalError("Could not complete conversion", JSL_LOCATION) << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type " << typeName;
+				FatalError("Could not complete conversion", JSL_LOCATION) << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type '" << typeName << "' " << typeid(bool).name();
 			}
 			if (sv == JSL_NULL_STRING && !isOptional)
 			{
