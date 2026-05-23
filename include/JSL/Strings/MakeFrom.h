@@ -3,6 +3,7 @@
 #include <charconv>
 #include <memory>
 #include <JSL/Concepts.h>
+#include "nullstring.h"
 #include <cmath>
 
 namespace JSL::String

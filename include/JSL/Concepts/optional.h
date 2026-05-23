@@ -1,7 +1,6 @@
 #pragma once
 #include <concepts>
 #include <optional>
-#include "nullstring.h"
 namespace JSL::Concept
 {
 	namespace internal

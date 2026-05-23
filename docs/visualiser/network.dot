@@ -13,7 +13,6 @@ digraph codeviz {
     node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "JSL/Async/Socket.h"                [label = "Async/Socket.h"]
     node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "JSL/Async/Watcher.h"               [label = "Async/Watcher.h"]
     node [fillcolor = "#fb8072", shape="folder", style = "filled"] "JSL/Concepts.h"                    [label = "Concepts.h"]
-    node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "JSL/Concepts/nullstring.h"         [label = "Concepts/nullstring.h"]
     node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "JSL/Concepts/numerics.h"           [label = "Concepts/numerics.h"]
     node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "JSL/Concepts/optional.h"           [label = "Concepts/optional.h"]
     node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "JSL/Concepts/pointers.h"           [label = "Concepts/pointers.h"]
@@ -56,6 +55,7 @@ digraph codeviz {
     node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "JSL/Strings/Serialisers.h"         [label = "Strings/Serialisers.h"]
     node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "JSL/Strings/Stitch.h"              [label = "Strings/Stitch.h"]
     node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "JSL/Strings/Wrap.h"                [label = "Strings/Wrap.h"]
+    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "JSL/Strings/nullstring.h"          [label = "Strings/nullstring.h"]
     node [fillcolor = "#ccebc5", shape="folder", style = "filled"] "JSL/Time.h"                        [label = "Time.h"]
     node [fillcolor = "#ccebc5",shape="Mrecord", style = "filled"] "JSL/Time/TimeFormatter.h"          [label = "Time/TimeFormatter.h"]
     node [fillcolor = "#ccebc5",shape="Mrecord", style = "filled"] "JSL/Time/Timer.h"                  [label = "Time/Timer.h"]
@@ -87,8 +87,6 @@ digraph codeviz {
     "JSL/Concepts.h"                    -> "JSL/Concepts/strings.h"
     "JSL/Concepts.h"                    -> "JSL/Concepts/pointers.h"
     "JSL/Concepts.h"                    -> "JSL/Concepts/optional.h"
-    "JSL/Concepts/optional.h"           -> "JSL/Concepts/nullstring.h"
-    "JSL/Concepts/pointers.h"           -> "JSL/Concepts/nullstring.h"
     "JSL/Display.h"                     -> "JSL/Display/Log.h"
     "JSL/Display.h"                     -> "JSL/Display/ANSI_Codes.h"
     "JSL/Display.h"                     -> "JSL/Display/ProgressBar.h"
@@ -131,7 +129,9 @@ digraph codeviz {
     "JSL/Strings.h"                     -> "JSL/Strings/Stitch.h"
     "JSL/Strings.h"                     -> "JSL/Strings/Wrap.h"
     "JSL/Strings/MakeFrom.h"            -> "JSL/Concepts.h"
+    "JSL/Strings/MakeFrom.h"            -> "JSL/Strings/nullstring.h"
     "JSL/Strings/ParseTo.h"             -> "JSL/Concepts.h"
+    "JSL/Strings/ParseTo.h"             -> "JSL/Strings/nullstring.h"
     "JSL/Strings/Serialisers.h"         -> "JSL/Strings/MakeFrom.h"
     "JSL/Strings/Serialisers.h"         -> "JSL/Strings/ParseTo.h"
     "JSL/Strings/Stitch.h"              -> "JSL/Strings/MakeFrom.h"

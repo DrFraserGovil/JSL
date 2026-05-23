@@ -1,5 +1,6 @@
 #pragma once
 #include <JSL/Concepts.h>
+#include "nullstring.h"
 #include <charconv>
 namespace JSL::String
 {

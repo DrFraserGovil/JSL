@@ -13,7 +13,6 @@ digraph codeviz {
     node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "include/JSL/Async/Socket.h"                [label = "JSL/Async/Socket.h"]
     node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "include/JSL/Async/Watcher.h"               [label = "JSL/Async/Watcher.h"]
     node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Concepts.h"                    [label = "JSL/Concepts.h"]
-    node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/nullstring.h"         [label = "JSL/Concepts/nullstring.h"]
     node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/numerics.h"           [label = "JSL/Concepts/numerics.h"]
     node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/optional.h"           [label = "JSL/Concepts/optional.h"]
     node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/pointers.h"           [label = "JSL/Concepts/pointers.h"]
@@ -56,6 +55,7 @@ digraph codeviz {
     node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/Serialisers.h"         [label = "JSL/Strings/Serialisers.h"]
     node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/Stitch.h"              [label = "JSL/Strings/Stitch.h"]
     node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/Wrap.h"                [label = "JSL/Strings/Wrap.h"]
+    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/nullstring.h"          [label = "JSL/Strings/nullstring.h"]
     node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Time.h"                        [label = "JSL/Time.h"]
     node [fillcolor = "#ccebc5",shape="Mrecord", style = "filled"] "include/JSL/Time/TimeFormatter.h"          [label = "JSL/Time/TimeFormatter.h"]
     node [fillcolor = "#ccebc5",shape="Mrecord", style = "filled"] "include/JSL/Time/Timer.h"                  [label = "JSL/Time/Timer.h"]
@@ -121,8 +121,6 @@ digraph codeviz {
     "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/strings.h"
     "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/pointers.h"
     "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/optional.h"
-    "include/JSL/Concepts/optional.h"           -> "include/JSL/Concepts/nullstring.h"
-    "include/JSL/Concepts/pointers.h"           -> "include/JSL/Concepts/nullstring.h"
     "include/JSL/Display.h"                     -> "include/JSL/Display/Log.h"
     "include/JSL/Display.h"                     -> "include/JSL/Display/ANSI_Codes.h"
     "include/JSL/Display.h"                     -> "include/JSL/Display/ProgressBar.h"
@@ -165,7 +163,9 @@ digraph codeviz {
     "include/JSL/Strings.h"                     -> "include/JSL/Strings/Stitch.h"
     "include/JSL/Strings.h"                     -> "include/JSL/Strings/Wrap.h"
     "include/JSL/Strings/MakeFrom.h"            -> "include/JSL/Concepts.h"
+    "include/JSL/Strings/MakeFrom.h"            -> "include/JSL/Strings/nullstring.h"
     "include/JSL/Strings/ParseTo.h"             -> "include/JSL/Concepts.h"
+    "include/JSL/Strings/ParseTo.h"             -> "include/JSL/Strings/nullstring.h"
     "include/JSL/Strings/Serialisers.h"         -> "include/JSL/Strings/MakeFrom.h"
     "include/JSL/Strings/Serialisers.h"         -> "include/JSL/Strings/ParseTo.h"
     "include/JSL/Strings/Stitch.h"              -> "include/JSL/Strings/MakeFrom.h"
