@@ -30,7 +30,7 @@ digraph codeviz {
     node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "JSL/Display/ProgressBar.h"         [label = "Display/ProgressBar.h"]
     node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "JSL/Display/Terminal.h"            [label = "Display/Terminal.h"]
     node [fillcolor = "#b3de69", shape="folder", style = "filled"] "JSL/FileIO.h"                      [label = "FileIO.h"]
-    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "JSL/FileIO/FileSystem.h"           [label = "FileIO/FileSystem.h"]
+    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "JSL/FileIO/Directory.h"            [label = "FileIO/Directory.h"]
     node [fillcolor = "#fccde5", shape="folder", style = "filled"] "JSL/FileIO/archiver.h"             [label = "FileIO/archiver.h"]
     node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "JSL/FileIO/archiver/base.h"        [label = "FileIO/archiver/base.h"]
     node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "JSL/FileIO/archiver/helpers.h"     [label = "FileIO/archiver/helpers.h"]
@@ -100,12 +100,12 @@ digraph codeviz {
     "JSL/Display/Log/Config.h"          -> "JSL/Display/ANSI_Codes.h"
     "JSL/Display/Log/Core.h"            -> "JSL/Display/Log/Config.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/forLineIn.h"
-    "JSL/FileIO.h"                      -> "JSL/FileIO/FileSystem.h"
+    "JSL/FileIO.h"                      -> "JSL/FileIO/Directory.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/fileWriters.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/pipedInput.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/archiver.h"
     "JSL/FileIO.h"                      -> "JSL/FileIO/glob.h"
-    "JSL/FileIO/FileSystem.h"           -> "JSL/FileIO/glob.h"
+    "JSL/FileIO/Directory.h"            -> "JSL/FileIO/glob.h"
     "JSL/FileIO/archiver.h"             -> "JSL/FileIO/archiver/writer.h"
     "JSL/FileIO/archiver.h"             -> "JSL/FileIO/archiver/reader.h"
     "JSL/FileIO/archiver/base.h"        -> "JSL/FileIO/archiver/helpers.h"
@@ -117,10 +117,10 @@ digraph codeviz {
     "JSL/FileIO/glob.h"                       -> "JSL/Concepts/strings.h"[weight=0.3]
     "JSL/Parameters.h"                  -> "JSL/Parameters/Parameter.h"
     "JSL/Parameters.h"                  -> "JSL/Parameters/Aggregator.h"
+    "JSL/Parameters.h"                  -> "JSL/Parameters/CLI_Reader.h"
     "JSL/Parameters/Aggregator.h"       -> "JSL/Parameters/NestedAggregator.h"
     "JSL/Parameters/Describer.h"        -> "JSL/Parameters/Parameter.h"
     "JSL/Parameters/NestedAggregator.h" -> "JSL/Parameters/Parameter.h"
-    "JSL/Parameters/NestedAggregator.h" -> "JSL/Display/ANSI_Codes.h"
     "JSL/Parameters/NestedAggregator.h" -> "JSL/Parameters/Describer.h"
     "JSL/Parameters/Parameter.h"              -> "JSL/Concepts/ranges.h"[weight=0.3]
     "JSL/Parameters/Parameter.h"        -> "JSL/Strings/Serialisers.h"

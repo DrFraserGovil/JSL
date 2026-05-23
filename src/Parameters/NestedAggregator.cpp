@@ -3,7 +3,7 @@
 #include <JSL/internal/error.h>
 #include <JSL/Vectors/Search.h>
 #include <JSL/Display/Log.h>
-
+#include <JSL/Display/Format.h>
 
 
 namespace JSL::Parameter
@@ -191,9 +191,10 @@ namespace JSL::Parameter
 
     
 
-    void Parameter::NestedAggregator::printAsTitle(std::string_view input,Format::Command fg, Format::Command bg)
+    void Parameter::NestedAggregator::printAsTitle(std::string_view input)
     {
-        
+        auto fg = Format::Black();
+        auto bg = Format::White(true); 
         if (Terminal::Global().IsANSICapable()) //piggyback off the terminal checking if formatting can be used
         {
             auto titleCol =  fg + Format::Italics() + bg;

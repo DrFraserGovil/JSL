@@ -1,6 +1,5 @@
 #pragma once
 #include <JSL/Parameters/Parameter.h>
-#include <JSL/Display/ANSI_Codes.h>
 #include <JSL/Parameters/Describer.h>
 #include <vector>
 #include <string>
@@ -103,8 +102,8 @@ namespace JSL::Parameter
             internal::Parameter::ParameterBase* FindParameter(const std::string & key);
             bool TryCluster(std::string_view key, std::string_view value);
 
-            static void printAsTitle(std::string_view input,Format::Command fg =Format::Black(), Format::Command bg = Format::White(true));//
-
+            static void printAsTitle(std::string_view input);
+            
             template<class T>
             void SetInfo(Setting<T> & target, std::string_view name, std::string_view description)
             {

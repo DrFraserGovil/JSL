@@ -1,6 +1,6 @@
-#include "FileIO/forLineIn.h"
-#include "FileIO/FileSystem.h"
-#include "FileIO/fileWriters.h"
-#include "FileIO/pipedInput.h"
-#include "FileIO/archiver.h"
-#include "FileIO/glob.h"
+#include <JSL/FileIO/forLineIn.h>
+#include <JSL/FileIO/Directory.h>
+#include <JSL/FileIO/fileWriters.h>
+#include <JSL/FileIO/pipedInput.h>
+#include <JSL/FileIO/archiver.h>
+#include <JSL/FileIO/glob.h>

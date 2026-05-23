@@ -30,7 +30,7 @@ digraph codeviz {
     node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/ProgressBar.h"         [label = "JSL/Display/ProgressBar.h"]
     node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/Terminal.h"            [label = "JSL/Display/Terminal.h"]
     node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/FileIO.h"                      [label = "JSL/FileIO.h"]
-    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/FileSystem.h"           [label = "JSL/FileIO/FileSystem.h"]
+    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/Directory.h"            [label = "JSL/FileIO/Directory.h"]
     node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver.h"             [label = "JSL/FileIO/archiver.h"]
     node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/base.h"        [label = "JSL/FileIO/archiver/base.h"]
     node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/helpers.h"     [label = "JSL/FileIO/archiver/helpers.h"]
@@ -76,7 +76,7 @@ digraph codeviz {
     node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/Log/Levels.cpp"                [label = "Display/Log/Levels.cpp"]
     node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/ProgressBar.cpp"               [label = "Display/ProgressBar.cpp"]
     node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/Terminal.cpp"                  [label = "Display/Terminal.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/FileSystem.cpp"                 [label = "FileIO/FileSystem.cpp"]
+    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/Directory.cpp"                  [label = "FileIO/Directory.cpp"]
     node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/archiver/readStream.cpp"        [label = "FileIO/archiver/readStream.cpp"]
     node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/archiver/reader.cpp"            [label = "FileIO/archiver/reader.cpp"]
     node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/archiver/writeStream.cpp"       [label = "FileIO/archiver/writeStream.cpp"]
@@ -134,12 +134,12 @@ digraph codeviz {
     "include/JSL/Display/Log/Config.h"          -> "include/JSL/Display/ANSI_Codes.h"
     "include/JSL/Display/Log/Core.h"            -> "include/JSL/Display/Log/Config.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/forLineIn.h"
-    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/FileSystem.h"
+    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/Directory.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/fileWriters.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/pipedInput.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/archiver.h"
     "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/glob.h"
-    "include/JSL/FileIO/FileSystem.h"           -> "include/JSL/FileIO/glob.h"
+    "include/JSL/FileIO/Directory.h"            -> "include/JSL/FileIO/glob.h"
     "include/JSL/FileIO/archiver.h"             -> "include/JSL/FileIO/archiver/writer.h"
     "include/JSL/FileIO/archiver.h"             -> "include/JSL/FileIO/archiver/reader.h"
     "include/JSL/FileIO/archiver/base.h"        -> "include/JSL/FileIO/archiver/helpers.h"
@@ -151,10 +151,10 @@ digraph codeviz {
     "include/JSL/FileIO/glob.h"                 -> "include/JSL/Concepts/strings.h"
     "include/JSL/Parameters.h"                  -> "include/JSL/Parameters/Parameter.h"
     "include/JSL/Parameters.h"                  -> "include/JSL/Parameters/Aggregator.h"
+    "include/JSL/Parameters.h"                  -> "include/JSL/Parameters/CLI_Reader.h"
     "include/JSL/Parameters/Aggregator.h"       -> "include/JSL/Parameters/NestedAggregator.h"
     "include/JSL/Parameters/Describer.h"        -> "include/JSL/Parameters/Parameter.h"
     "include/JSL/Parameters/NestedAggregator.h" -> "include/JSL/Parameters/Parameter.h"
-    "include/JSL/Parameters/NestedAggregator.h" -> "include/JSL/Display/ANSI_Codes.h"
     "include/JSL/Parameters/NestedAggregator.h" -> "include/JSL/Parameters/Describer.h"
     "include/JSL/Parameters/Parameter.h"      -> "include/JSL/Concepts/ranges.h"[weight=0.3]
     "include/JSL/Parameters/Parameter.h"        -> "include/JSL/Strings/Serialisers.h"
@@ -202,8 +202,8 @@ digraph codeviz {
     "src/Display/ProgressBar.cpp"               -> "include/JSL/Display/ANSI_Codes.h"
 
     "src/Display/Terminal.cpp"                  -> "include/JSL/Display/Terminal.h"
-    "src/FileIO/FileSystem.cpp"                 -> "include/JSL/FileIO/FileSystem.h"
-    "src/FileIO/FileSystem.cpp"                 -> "include/JSL/Vectors/Join.h"
+    "src/FileIO/Directory.cpp"                  -> "include/JSL/FileIO/Directory.h"
+    "src/FileIO/Directory.cpp"                  -> "include/JSL/Vectors/Join.h"
     "src/FileIO/archiver/readStream.cpp"        -> "include/JSL/FileIO/archiver/readStream.h"
     "src/FileIO/archiver/reader.cpp"            -> "include/JSL/FileIO/archiver/reader.h"
     "src/FileIO/archiver/writeStream.cpp"       -> "include/JSL/FileIO/archiver/writeStream.h"
@@ -217,6 +217,7 @@ digraph codeviz {
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/Parameters/Aggregator.h"
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/Vectors/Search.h"
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/Strings/Wrap.h"
+    "src/Parameters/Aggregator.cpp"             -> "include/JSL/Display/ANSI_Codes.h"
     "src/Parameters/Aggregator.cpp"             -> "include/JSL/Display/Terminal.h"
     "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/Parameters/CLI_Reader.h"
     "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/FileIO/forLineIn.h"
@@ -228,6 +229,7 @@ digraph codeviz {
     "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Display/Terminal.h"
     "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Vectors/Search.h"
 
+    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Display/Format.h"
     "src/Parameters/Parameter.cpp"              -> "include/JSL/Parameters/Parameter.h"
     "src/Parameters/Parameter.cpp"              -> "include/JSL/Vectors/Search.h"
     "src/Parameters/Parameter.cpp"              -> "include/JSL/Strings/Cases.h"
