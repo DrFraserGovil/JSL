@@ -6,6 +6,7 @@
 #pragma once
 
 #include <JSL/Display/Log/Config.h>
+#include <JSL/Strings/MakeFrom.h>
 // #include <JSL/Display/Format.h>
 
 /*!
@@ -60,7 +61,7 @@ namespace JSL::Log::internal
 				@returns A reference to the object, allowing for 'chaining' the stream; stream << a << b << c
 			*/
 			template<class T>
-			requires (!Format::FormatType<T>) 
+			requires (!Format::FormatType<T> && requires(T t){std::cout << t;})
 			Core &operator<<(const T &msg)
 			{
 				if (!StreamActive) //lazy opening of the steam
@@ -71,8 +72,15 @@ namespace JSL::Log::internal
 				}
 				Buffer << msg;
 				return *this;
-			} 
-
+			}
+			
+			template<class T> 
+			requires (!Format::FormatType<T> && !requires(T t){std::cout << t;})
+			Core & operator<<(const T & msg)
+			{
+				this->operator<<(JSL::String::makeFrom(msg));
+				return *this;
+			}
 			/*!
 				Overloads the stream operator for JSL::Format objects, allowing peristent formatting across linebreaks and in the pregenerated headers.
 			*/

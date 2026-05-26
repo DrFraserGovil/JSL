@@ -28,7 +28,7 @@ namespace JSL::IO
 	 * \param content The desired string to be appended to the file (accepts control characters)
      * \param mode The open-mode; defaults to append (existing file not deleted)
 	*/
-	void writeString(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode = std::ios::app);
+	void writeString(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode = std::ios::out);
 
     template<typename...Ts>
     void inline writeVector(const std::filesystem::path& filename, 

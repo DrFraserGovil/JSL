@@ -1,253 +1,232 @@
-digraph codeviz {
-    splines=true
-    sep="+15,15"
-    overlap=false
+digraph codeviz{
+	concentrate=true
+	splines=true
+	sep="+15,+15"
+	overlap=false
 
-    node [shape=Mrecord, fontsize=12]
+	node[shape=Mrecord,fontsize=12]
 
-    node [fillcolor = "#8dd3c7",shape="Mrecord", style = "filled"] "include/JSL.h"                             [label = "JSL.h"]
-    node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Async.h"                       [label = "JSL/Async.h"]
-    node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "include/JSL/Async/EventManager.h"          [label = "JSL/Async/EventManager.h"]
-    node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "include/JSL/Async/ManagerBase.h"           [label = "JSL/Async/ManagerBase.h"]
-    node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "include/JSL/Async/ParallelPool.h"          [label = "JSL/Async/ParallelPool.h"]
-    node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "include/JSL/Async/Socket.h"                [label = "JSL/Async/Socket.h"]
-    node [fillcolor = "#bebada",shape="Mrecord", style = "filled"] "include/JSL/Async/Watcher.h"               [label = "JSL/Async/Watcher.h"]
-    node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Concepts.h"                    [label = "JSL/Concepts.h"]
-    node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/numerics.h"           [label = "JSL/Concepts/numerics.h"]
-    node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/optional.h"           [label = "JSL/Concepts/optional.h"]
-    node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/pointers.h"           [label = "JSL/Concepts/pointers.h"]
-    node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/ranges.h"             [label = "JSL/Concepts/ranges.h"]
-    node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/strings.h"            [label = "JSL/Concepts/strings.h"]
-    node [fillcolor = "#fb8072",shape="Mrecord", style = "filled"] "include/JSL/Concepts/tuple.h"              [label = "JSL/Concepts/tuple.h"]
-    node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Display.h"                     [label = "JSL/Display.h"]
-    node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/ANSI_Codes.h"          [label = "JSL/Display/ANSI_Codes.h"]
-    node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/Format.h"              [label = "JSL/Display/Format.h"]
-    node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/Log.h"                 [label = "JSL/Display/Log.h"]
-    node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "include/JSL/Display/Log/Config.h"          [label = "JSL/Display/Log/Config.h"]
-    node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "include/JSL/Display/Log/Core.h"            [label = "JSL/Display/Log/Core.h"]
-    node [fillcolor = "#fdb462",shape="Mrecord", style = "filled"] "include/JSL/Display/Log/Levels.h"          [label = "JSL/Display/Log/Levels.h"]
-    node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/ProgressBar.h"         [label = "JSL/Display/ProgressBar.h"]
-    node [fillcolor = "#80b1d3",shape="Mrecord", style = "filled"] "include/JSL/Display/Terminal.h"            [label = "JSL/Display/Terminal.h"]
-    node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/FileIO.h"                      [label = "JSL/FileIO.h"]
-    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/Directory.h"            [label = "JSL/FileIO/Directory.h"]
-    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver.h"             [label = "JSL/FileIO/archiver.h"]
-    node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/base.h"        [label = "JSL/FileIO/archiver/base.h"]
-    node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/helpers.h"     [label = "JSL/FileIO/archiver/helpers.h"]
-    node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/readStream.h"  [label = "JSL/FileIO/archiver/readStream.h"]
-    node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/reader.h"      [label = "JSL/FileIO/archiver/reader.h"]
-    node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/writeStream.h" [label = "JSL/FileIO/archiver/writeStream.h"]
-    node [fillcolor = "#fccde5",shape="Mrecord", style = "filled"] "include/JSL/FileIO/archiver/writer.h"      [label = "JSL/FileIO/archiver/writer.h"]
-    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/fileWriters.h"          [label = "JSL/FileIO/fileWriters.h"]
-    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/forLineIn.h"            [label = "JSL/FileIO/forLineIn.h"]
-    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/glob.h"                 [label = "JSL/FileIO/glob.h"]
-    node [fillcolor = "#b3de69",shape="Mrecord", style = "filled"] "include/JSL/FileIO/pipedInput.h"           [label = "JSL/FileIO/pipedInput.h"]
-    node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Parameters.h"                  [label = "JSL/Parameters.h"]
-    node [fillcolor = "#d9d9d9",shape="Mrecord", style = "filled"] "include/JSL/Parameters/Aggregator.h"       [label = "JSL/Parameters/Aggregator.h"]
-    node [fillcolor = "#d9d9d9",shape="Mrecord", style = "filled"] "include/JSL/Parameters/CLI_Reader.h"       [label = "JSL/Parameters/CLI_Reader.h"]
-    node [fillcolor = "#d9d9d9",shape="Mrecord", style = "filled"] "include/JSL/Parameters/Describer.h"        [label = "JSL/Parameters/Describer.h"]
-    node [fillcolor = "#d9d9d9",shape="Mrecord", style = "filled"] "include/JSL/Parameters/NestedAggregator.h" [label = "JSL/Parameters/NestedAggregator.h"]
-    node [fillcolor = "#d9d9d9",shape="Mrecord", style = "filled"] "include/JSL/Parameters/Parameter.h"        [label = "JSL/Parameters/Parameter.h"]
-    node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Strings.h"                     [label = "JSL/Strings.h"]
-    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/Cases.h"               [label = "JSL/Strings/Cases.h"]
-    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/MakeFrom.h"            [label = "JSL/Strings/MakeFrom.h"]
-    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/Manipulate.h"          [label = "JSL/Strings/Manipulate.h"]
-    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/ParseTo.h"             [label = "JSL/Strings/ParseTo.h"]
-    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/Serialisers.h"         [label = "JSL/Strings/Serialisers.h"]
-    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/Stitch.h"              [label = "JSL/Strings/Stitch.h"]
-    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/Wrap.h"                [label = "JSL/Strings/Wrap.h"]
-    node [fillcolor = "#bc80bd",shape="Mrecord", style = "filled"] "include/JSL/Strings/nullstring.h"          [label = "JSL/Strings/nullstring.h"]
-    node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Time.h"                        [label = "JSL/Time.h"]
-    node [fillcolor = "#ccebc5",shape="Mrecord", style = "filled"] "include/JSL/Time/TimeFormatter.h"          [label = "JSL/Time/TimeFormatter.h"]
-    node [fillcolor = "#ccebc5",shape="Mrecord", style = "filled"] "include/JSL/Time/Timer.h"                  [label = "JSL/Time/Timer.h"]
-    node [fillcolor = "#ffffb3",shape="Mrecord", style = "filled"] "include/JSL/Vectors.h"                     [label = "JSL/Vectors.h"]
-    node [fillcolor = "#ffed6f",shape="Mrecord", style = "filled"] "include/JSL/Vectors/Join.h"                [label = "JSL/Vectors/Join.h"]
-    node [fillcolor = "#ffed6f",shape="Mrecord", style = "filled"] "include/JSL/Vectors/Linspace.h"            [label = "JSL/Vectors/Linspace.h"]
-    node [fillcolor = "#ffed6f",shape="Mrecord", style = "filled"] "include/JSL/Vectors/Search.h"              [label = "JSL/Vectors/Search.h"]
-    node [fillcolor = "#ffed6f",shape="Mrecord", style = "filled"] "include/JSL/Vectors/SearchAll.h"           [label = "JSL/Vectors/SearchAll.h"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Async/EventManager.cpp"                [label = "Async/EventManager.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Async/ManagerBase.cpp"                 [label = "Async/ManagerBase.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Async/ParallelPool.cpp"                [label = "Async/ParallelPool.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Async/Socket.cpp"                      [label = "Async/Socket.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Async/Watcher.cpp"                     [label = "Async/Watcher.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/ANSI_Codes.cpp"                [label = "Display/ANSI_Codes.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/Format.cpp"                    [label = "Display/Format.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/Log/Config.cpp"                [label = "Display/Log/Config.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/Log/Core.cpp"                  [label = "Display/Log/Core.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/Log/Levels.cpp"                [label = "Display/Log/Levels.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/ProgressBar.cpp"               [label = "Display/ProgressBar.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Display/Terminal.cpp"                  [label = "Display/Terminal.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/Directory.cpp"                  [label = "FileIO/Directory.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/archiver/readStream.cpp"        [label = "FileIO/archiver/readStream.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/archiver/reader.cpp"            [label = "FileIO/archiver/reader.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/archiver/writeStream.cpp"       [label = "FileIO/archiver/writeStream.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/archiver/writer.cpp"            [label = "FileIO/archiver/writer.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/fileWriters.cpp"                [label = "FileIO/fileWriters.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/forLineIn.cpp"                  [label = "FileIO/forLineIn.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/FileIO/pipedInput.cpp"                 [label = "FileIO/pipedInput.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Parameters/Aggregator.cpp"             [label = "Parameters/Aggregator.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Parameters/CLI_Reader.cpp"             [label = "Parameters/CLI_Reader.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Parameters/Describer.cpp"              [label = "Parameters/Describer.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Parameters/NestedAggregator.cpp"       [label = "Parameters/NestedAggregator.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Parameters/Parameter.cpp"              [label = "Parameters/Parameter.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Strings/Cases.cpp"                     [label = "Strings/Cases.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Strings/Manipulate.cpp"                [label = "Strings/Manipulate.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Strings/ParseTo.cpp"                   [label = "Strings/ParseTo.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Strings/Wrap.cpp"                      [label = "Strings/Wrap.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Time/TimeFormatter.cpp"                [label = "Time/TimeFormatter.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Time/Timer.cpp"                        [label = "Time/Timer.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Vectors/Linspace.cpp"                  [label = "Vectors/Linspace.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/Vectors/Search.cpp"                    [label = "Vectors/Search.cpp"]
-    node [fillcolor = "#8B8B8B",style="", shape="note", color="#8c8c8c", fontcolor="#4b4b4b"] "src/internal/error.cpp"                    [label = "internal/error.cpp"]
-
-    "include/JSL.h"                             -> "include/JSL/Display.h"
-    "include/JSL.h"                             -> "include/JSL/FileIO.h"
-    "include/JSL.h"                             -> "include/JSL/Parameters.h"
-    "include/JSL.h"                             -> "include/JSL/Strings.h"
-    "include/JSL.h"                             -> "include/JSL/Time.h"
-    "include/JSL.h"                             -> "include/JSL/Vectors.h"
-    "include/JSL.h"                             -> "include/JSL/Async.h"
-    "include/JSL.h"                             -> "include/JSL/Concepts.h"
-    "include/JSL/Async.h"                       -> "include/JSL/Async/Socket.h"
-    "include/JSL/Async.h"                       -> "include/JSL/Async/Watcher.h"
-    "include/JSL/Async.h"                       -> "include/JSL/Async/EventManager.h"
-    "include/JSL/Async.h"                       -> "include/JSL/Async/ParallelPool.h"
-    "include/JSL/Async/EventManager.h"          -> "include/JSL/Async/ManagerBase.h"
-    "include/JSL/Async/EventManager.h"          -> "include/JSL/Async/ParallelPool.h"
-    "include/JSL/Async/ManagerBase.h"           -> "include/JSL/Async/Watcher.h"
-    "include/JSL/Async/Watcher.h"               -> "include/JSL/Async/Socket.h"
-    "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/ranges.h"
-    "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/tuple.h"
-    "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/numerics.h"
-    "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/strings.h"
-    "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/pointers.h"
-    "include/JSL/Concepts.h"                    -> "include/JSL/Concepts/optional.h"
-    "include/JSL/Display.h"                     -> "include/JSL/Display/Log.h"
-    "include/JSL/Display.h"                     -> "include/JSL/Display/ANSI_Codes.h"
-    "include/JSL/Display.h"                     -> "include/JSL/Display/ProgressBar.h"
-    "include/JSL/Display.h"                     -> "include/JSL/Display/Terminal.h"
-    "include/JSL/Display/ANSI_Codes.h"          -> "include/JSL/Display/Format.h"
-    "include/JSL/Display/Log.h"                 -> "include/JSL/Display/Log/Core.h"
-    "include/JSL/Display/Log.h"                 -> "include/JSL/Display/Log/Config.h"
-    "include/JSL/Display/Log/Config.h"          -> "include/JSL/Display/Log/Levels.h"
-    "include/JSL/Display/Log/Config.h"          -> "include/JSL/Display/ANSI_Codes.h"
-    "include/JSL/Display/Log/Core.h"            -> "include/JSL/Display/Log/Config.h"
-    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/forLineIn.h"
-    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/Directory.h"
-    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/fileWriters.h"
-    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/pipedInput.h"
-    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/archiver.h"
-    "include/JSL/FileIO.h"                      -> "include/JSL/FileIO/glob.h"
-    "include/JSL/FileIO/Directory.h"            -> "include/JSL/FileIO/glob.h"
-    "include/JSL/FileIO/archiver.h"             -> "include/JSL/FileIO/archiver/writer.h"
-    "include/JSL/FileIO/archiver.h"             -> "include/JSL/FileIO/archiver/reader.h"
-    "include/JSL/FileIO/archiver/base.h"        -> "include/JSL/FileIO/archiver/helpers.h"
-    "include/JSL/FileIO/archiver/readStream.h"  -> "include/JSL/Strings/Manipulate.h"
-    "include/JSL/FileIO/archiver/readStream.h"  -> "include/JSL/FileIO/archiver/base.h"
-    "include/JSL/FileIO/archiver/reader.h"      -> "include/JSL/FileIO/archiver/readStream.h"
-    "include/JSL/FileIO/archiver/writeStream.h" -> "include/JSL/FileIO/archiver/base.h"
-    "include/JSL/FileIO/archiver/writer.h"      -> "include/JSL/FileIO/archiver/writeStream.h"
-    "include/JSL/FileIO/glob.h"                 -> "include/JSL/Concepts/strings.h"
-    "include/JSL/Parameters.h"                  -> "include/JSL/Parameters/Parameter.h"
-    "include/JSL/Parameters.h"                  -> "include/JSL/Parameters/Aggregator.h"
-    "include/JSL/Parameters.h"                  -> "include/JSL/Parameters/CLI_Reader.h"
-    "include/JSL/Parameters/Aggregator.h"       -> "include/JSL/Parameters/NestedAggregator.h"
-    "include/JSL/Parameters/Describer.h"        -> "include/JSL/Parameters/Parameter.h"
-    "include/JSL/Parameters/NestedAggregator.h" -> "include/JSL/Parameters/Parameter.h"
-    "include/JSL/Parameters/NestedAggregator.h" -> "include/JSL/Parameters/Describer.h"
-    "include/JSL/Parameters/Parameter.h"      -> "include/JSL/Concepts/ranges.h"[weight=0.3]
-    "include/JSL/Parameters/Parameter.h"        -> "include/JSL/Strings/Serialisers.h"
-    "include/JSL/Parameters/Parameter.h"        -> "include/JSL/Parameters/CLI_Reader.h"
-    "include/JSL/Strings.h"                     -> "include/JSL/Strings/Serialisers.h"
-    "include/JSL/Strings.h"                     -> "include/JSL/Strings/Cases.h"
-    "include/JSL/Strings.h"                     -> "include/JSL/Strings/Manipulate.h"
-    "include/JSL/Strings.h"                     -> "include/JSL/Strings/Stitch.h"
-    "include/JSL/Strings.h"                     -> "include/JSL/Strings/Wrap.h"
-    "include/JSL/Strings/MakeFrom.h"            -> "include/JSL/Concepts.h"
-    "include/JSL/Strings/MakeFrom.h"            -> "include/JSL/Strings/nullstring.h"
-    "include/JSL/Strings/ParseTo.h"             -> "include/JSL/Concepts.h"
-    "include/JSL/Strings/ParseTo.h"             -> "include/JSL/Strings/nullstring.h"
-    "include/JSL/Strings/Serialisers.h"         -> "include/JSL/Strings/MakeFrom.h"
-    "include/JSL/Strings/Serialisers.h"         -> "include/JSL/Strings/ParseTo.h"
-    "include/JSL/Strings/Stitch.h"              -> "include/JSL/Strings/MakeFrom.h"
-    "include/JSL/Strings/Stitch.h"            -> "include/JSL/Concepts/ranges.h"[weight=0.3]
-    "include/JSL/Time.h"                        -> "include/JSL/Time/Timer.h"
-    "include/JSL/Time.h"                        -> "include/JSL/Time/TimeFormatter.h"
-    "include/JSL/Vectors.h"                     -> "include/JSL/Vectors/Search.h"
-    "include/JSL/Vectors.h"                     -> "include/JSL/Vectors/SearchAll.h"
-    "include/JSL/Vectors.h"                     -> "include/JSL/Vectors/Join.h"
-    "include/JSL/Vectors.h"                     -> "include/JSL/Vectors/Linspace.h"
-    "include/JSL/Vectors/Search.h"            -> "include/JSL/Concepts/ranges.h"[weight=0.3]
-    "include/JSL/Vectors/SearchAll.h"           -> "include/JSL/Vectors/Search.h"
-    "src/Async/EventManager.cpp"                -> "include/JSL.h"
-    "src/Async/ManagerBase.cpp"                 -> "include/JSL.h"
-    "src/Async/ParallelPool.cpp"                -> "include/JSL.h"
-
-    "src/Async/Socket.cpp"                      -> "include/JSL/Async.h"
-    "src/Async/Socket.cpp"                      -> "include/JSL/Strings/Cases.h"
-
-    "src/Async/Watcher.cpp"                     -> "include/JSL/Async.h"
-
-    "src/Async/Watcher.cpp"                     -> "include/JSL.h"
-    "src/Display/ANSI_Codes.cpp"                -> "include/JSL/Display/ANSI_Codes.h"
-    "src/Display/ANSI_Codes.cpp"                -> "include/JSL/Display/Terminal.h"
-    "src/Display/Format.cpp"                    -> "include/JSL/Display/Format.h"
-    "src/Display/Format.cpp"                    -> "include/JSL/Display/ANSI_Codes.h"
-    "src/Display/Format.cpp"                    -> "include/JSL/Display/Terminal.h"
-    "src/Display/Log/Config.cpp"                -> "include/JSL/Display/Log/Config.h"
-    "src/Display/Log/Config.cpp"                -> "include/JSL/Display/Terminal.h"
-
-    "src/Display/Log/Core.cpp"                  -> "include/JSL/Strings.h"
-    "src/Display/Log/Levels.cpp"                -> "include/JSL/Display/Log/Levels.h"
-    "src/Display/ProgressBar.cpp"               -> "include/JSL/Display/ProgressBar.h"
-    "src/Display/ProgressBar.cpp"               -> "include/JSL/Display/ANSI_Codes.h"
-
-    "src/Display/Terminal.cpp"                  -> "include/JSL/Display/Terminal.h"
-    "src/FileIO/Directory.cpp"                  -> "include/JSL/FileIO/Directory.h"
-    "src/FileIO/Directory.cpp"                  -> "include/JSL/Vectors/Join.h"
-    "src/FileIO/archiver/readStream.cpp"        -> "include/JSL/FileIO/archiver/readStream.h"
-    "src/FileIO/archiver/reader.cpp"            -> "include/JSL/FileIO/archiver/reader.h"
-    "src/FileIO/archiver/writeStream.cpp"       -> "include/JSL/FileIO/archiver/writeStream.h"
-    "src/FileIO/archiver/writer.cpp"            -> "include/JSL/FileIO/archiver/writer.h"
-
-    "src/FileIO/fileWriters.cpp"                -> "include/JSL/FileIO/fileWriters.h"
-    "src/FileIO/forLineIn.cpp"                  -> "include/JSL/FileIO/forLineIn.h"
-    "src/FileIO/forLineIn.cpp"                  -> "include/JSL/Strings/Manipulate.h"
-    "src/FileIO/pipedInput.cpp"                 -> "include/JSL/FileIO/pipedInput.h"
-    "src/FileIO/pipedInput.cpp"                 -> "include/JSL/Strings/Manipulate.h"
-    "src/Parameters/Aggregator.cpp"             -> "include/JSL/Parameters/Aggregator.h"
-    "src/Parameters/Aggregator.cpp"             -> "include/JSL/Vectors/Search.h"
-    "src/Parameters/Aggregator.cpp"             -> "include/JSL/Strings/Wrap.h"
-    "src/Parameters/Aggregator.cpp"             -> "include/JSL/Display/ANSI_Codes.h"
-    "src/Parameters/Aggregator.cpp"             -> "include/JSL/Display/Terminal.h"
-    "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/Parameters/CLI_Reader.h"
-    "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/FileIO/forLineIn.h"
-    "src/Parameters/CLI_Reader.cpp"             -> "include/JSL/Strings/Stitch.h"
-    "src/Parameters/Describer.cpp"              -> "include/JSL/Parameters/Describer.h"
-    "src/Parameters/Describer.cpp"              -> "include/JSL/Display/ANSI_Codes.h"
-    "src/Parameters/Describer.cpp"              -> "include/JSL/Strings/Wrap.h"
-    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Parameters/NestedAggregator.h"
-    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Display/Terminal.h"
-    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Vectors/Search.h"
-
-    "src/Parameters/NestedAggregator.cpp"       -> "include/JSL/Display/Format.h"
-    "src/Parameters/Parameter.cpp"              -> "include/JSL/Parameters/Parameter.h"
-    "src/Parameters/Parameter.cpp"              -> "include/JSL/Vectors/Search.h"
-    "src/Parameters/Parameter.cpp"              -> "include/JSL/Strings/Cases.h"
-    "src/Strings/Cases.cpp"                     -> "include/JSL/Strings/Cases.h"
-    "src/Strings/Manipulate.cpp"                -> "include/JSL/Strings/Manipulate.h"
-    "src/Strings/ParseTo.cpp"                   -> "include/JSL/Strings/ParseTo.h"
-    "src/Strings/ParseTo.cpp"                   -> "include/JSL/Strings/Cases.h"
-    "src/Strings/ParseTo.cpp"                   -> "include/JSL/Concepts.h"
-    "src/Strings/ParseTo.cpp"                   -> "include/JSL/Strings/Manipulate.h"
-    "src/Strings/Wrap.cpp"                      -> "include/JSL/Strings/Wrap.h"
-    "src/Strings/Wrap.cpp"                      -> "include/JSL/Strings/Stitch.h"
-    "src/Strings/Wrap.cpp"                      -> "include/JSL/Strings/Manipulate.h"
-    "src/Strings/Wrap.cpp"                      -> "include/JSL/Vectors/Join.h"
-    "src/Strings/Wrap.cpp"                      -> "include/JSL/Display/Terminal.h"
-    "src/Time/TimeFormatter.cpp"                -> "include/JSL/Time/TimeFormatter.h"
-    "src/Time/Timer.cpp"                        -> "include/JSL/Time/Timer.h"
-    "src/Time/Timer.cpp"                        -> "include/JSL/Time/TimeFormatter.h"
-    "src/Vectors/Linspace.cpp"                  -> "include/JSL/Vectors/Linspace.h"
-    "src/Vectors/Search.cpp"                    -> "include/JSL/Vectors/Search.h"
-
+	node [fillcolor="#8dd3c7", style=filled, shape=tripleoctagon,color="#000000"] "JSL.h"                           [label="Library Entry"]
+	node [fillcolor="#ffffb3", style=filled, shape=folder,color="#000000"] "Async.h"                         [label="Async.h"]
+	node [fillcolor="#ffffb3", style=filled, shape=Mrecord,color="#000000"] "Async/EventManager.h"            [label="Async/EventManager.h\nand .cpp"]
+	node [fillcolor="#ffffb3", style=filled, shape=Mrecord,color="#000000"] "Async/ManagerBase.h"             [label="Async/ManagerBase.h"]
+	node [fillcolor="#ffffb3", style=filled, shape=Mrecord,color="#000000"] "Async/ParallelPool.h"            [label="Async/ParallelPool.h\nand .cpp"]
+	node [fillcolor="#ffffb3", style=filled, shape=Mrecord,color="#000000"] "Async/Socket.h"                  [label="Async/Socket.h"]
+	node [fillcolor="#ffffb3", style=filled, shape=Mrecord,color="#000000"] "Async/Watcher.h"                 [label="Async/Watcher.h\nand .cpp"]
+	node [fillcolor="#bebada", style=filled, shape=folder,color="#000000"] "Concepts.h"                      [label="Concepts.h"]
+	node [fillcolor="#bebada", style=filled, shape=Mrecord,color="#000000"] "Concepts/numerics.h"             [label="Concepts/numerics.h"]
+	node [fillcolor="#bebada", style=filled, shape=Mrecord,color="#000000"] "Concepts/optional.h"             [label="Concepts/optional.h"]
+	node [fillcolor="#bebada", style=filled, shape=Mrecord,color="#000000"] "Concepts/pointers.h"             [label="Concepts/pointers.h"]
+	node [fillcolor="#bebada", style=filled, shape=Mrecord,color="#000000"] "Concepts/ranges.h"               [label="Concepts/ranges.h"]
+	node [fillcolor="#bebada", style=filled, shape=Mrecord,color="#000000"] "Concepts/strings.h"              [label="Concepts/strings.h"]
+	node [fillcolor="#bebada", style=filled, shape=Mrecord,color="#000000"] "Concepts/tuple.h"                [label="Concepts/tuple.h"]
+	node [fillcolor="#fb8072", style=filled, shape=folder,color="#000000"] "Display.h"                       [label="Display.h"]
+	node [fillcolor="#fb8072", style=filled, shape=Mrecord,color="#000000"] "Display/ANSI_Codes.h"            [label="Display/ANSI_Codes.h"]
+	node [fillcolor="#fb8072", style=filled, shape=Mrecord,color="#000000"] "Display/Format.h"                [label="Display/Format.h"]
+	node [fillcolor="#80b1d3", style=filled, shape=folder,color="#000000"] "Display/Log.h"                   [label="Display/Log.h"]
+	node [fillcolor="#80b1d3", style=filled, shape=Mrecord,color="#000000"] "Display/Log/Config.h"            [label="Display/Log/Config.h"]
+	node [fillcolor="#80b1d3", style=filled, shape=Mrecord,color="#000000"] "Display/Log/Core.h"              [label="Display/Log/Core.h"]
+	node [fillcolor="#80b1d3", style=filled, shape=Mrecord,color="#000000"] "Display/Log/Levels.h"            [label="Display/Log/Levels.h\nand .cpp"]
+	node [fillcolor="#fb8072", style=filled, shape=Mrecord,color="#000000"] "Display/ProgressBar.h"           [label="Display/ProgressBar.h"]
+	node [fillcolor="#fb8072", style=filled, shape=Mrecord,color="#000000"] "Display/Terminal.h"              [label="Display/Terminal.h\nand .cpp"]
+	node [fillcolor="#fdb462", style=filled, shape=folder,color="#000000"] "FileIO.h"                        [label="FileIO.h"]
+	node [fillcolor="#fdb462", style=filled, shape=Mrecord,color="#000000"] "FileIO/Directory.h"              [label="FileIO/Directory.h"]
+	node [fillcolor="#b3de69", style=filled, shape=folder,color="#000000"] "FileIO/archiver.h"               [label="FileIO/archiver.h"]
+	node [fillcolor="#b3de69", style=filled, shape=Mrecord,color="#000000"] "FileIO/archiver/base.h"          [label="FileIO/archiver/base.h"]
+	node [fillcolor="#b3de69", style=filled, shape=Mrecord,color="#000000"] "FileIO/archiver/helpers.h"       [label="FileIO/archiver/helpers.h"]
+	node [fillcolor="#b3de69", style=filled, shape=Mrecord,color="#000000"] "FileIO/archiver/readStream.h"    [label="FileIO/archiver/readStream.h\nand .cpp"]
+	node [fillcolor="#b3de69", style=filled, shape=Mrecord,color="#000000"] "FileIO/archiver/reader.h"        [label="FileIO/archiver/reader.h\nand .cpp"]
+	node [fillcolor="#b3de69", style=filled, shape=Mrecord,color="#000000"] "FileIO/archiver/writeStream.h"   [label="FileIO/archiver/writeStream.h\nand .cpp"]
+	node [fillcolor="#b3de69", style=filled, shape=Mrecord,color="#000000"] "FileIO/archiver/writer.h"        [label="FileIO/archiver/writer.h\nand .cpp"]
+	node [fillcolor="#fdb462", style=filled, shape=Mrecord,color="#000000"] "FileIO/fileWriters.h"            [label="FileIO/fileWriters.h\nand .cpp"]
+	node [fillcolor="#fdb462", style=filled, shape=Mrecord,color="#000000"] "FileIO/forLineIn.h"              [label="FileIO/forLineIn.h\nand .cpp"]
+	node [fillcolor="#fdb462", style=filled, shape=Mrecord,color="#000000"] "FileIO/glob.h"                   [label="FileIO/glob.h"]
+	node [fillcolor="#fdb462", style=filled, shape=Mrecord,color="#000000"] "FileIO/pipedInput.h"             [label="FileIO/pipedInput.h"]
+	node [fillcolor="#fccde5", style=filled, shape=folder,color="#000000"] "Parameters.h"                    [label="Parameters.h"]
+	node [fillcolor="#fccde5", style=filled, shape=Mrecord,color="#000000"] "Parameters/Aggregator.h"         [label="Parameters/Aggregator.h"]
+	node [fillcolor="#fccde5", style=filled, shape=Mrecord,color="#000000"] "Parameters/CLI_Reader.h"         [label="Parameters/CLI_Reader.h"]
+	node [fillcolor="#fccde5", style=filled, shape=Mrecord,color="#000000"] "Parameters/Describer.h"          [label="Parameters/Describer.h"]
+	node [fillcolor="#fccde5", style=filled, shape=Mrecord,color="#000000"] "Parameters/NestedAggregator.h"   [label="Parameters/NestedAggregator.h"]
+	node [fillcolor="#fccde5", style=filled, shape=Mrecord,color="#000000"] "Parameters/Parameter.h"          [label="Parameters/Parameter.h"]
+	node [fillcolor="#d9d9d9", style=filled, shape=folder,color="#000000"] "Strings.h"                       [label="Strings.h"]
+	node [fillcolor="#d9d9d9", style=filled, shape=Mrecord,color="#000000"] "Strings/Cases.h"                 [label="Strings/Cases.h\nand .cpp"]
+	node [fillcolor="#d9d9d9", style=filled, shape=Mrecord,color="#000000"] "Strings/MakeFrom.h"              [label="Strings/MakeFrom.h"]
+	node [fillcolor="#d9d9d9", style=filled, shape=Mrecord,color="#000000"] "Strings/Manipulate.h"            [label="Strings/Manipulate.h\nand .cpp"]
+	node [fillcolor="#d9d9d9", style=filled, shape=Mrecord,color="#000000"] "Strings/ParseTo.h"               [label="Strings/ParseTo.h"]
+	node [fillcolor="#d9d9d9", style=filled, shape=Mrecord,color="#000000"] "Strings/Serialisers.h"           [label="Strings/Serialisers.h"]
+	node [fillcolor="#d9d9d9", style=filled, shape=Mrecord,color="#000000"] "Strings/Stitch.h"                [label="Strings/Stitch.h"]
+	node [fillcolor="#d9d9d9", style=filled, shape=Mrecord,color="#000000"] "Strings/Wrap.h"                  [label="Strings/Wrap.h"]
+	node [fillcolor="#d9d9d9", style=filled, shape=Mrecord,color="#000000"] "Strings/nullstring.h"            [label="Strings/nullstring.h"]
+	node [fillcolor="#bc80bd", style=filled, shape=folder,color="#000000"] "Time.h"                          [label="Time.h"]
+	node [fillcolor="#bc80bd", style=filled, shape=Mrecord,color="#000000"] "Time/TimeFormatter.h"            [label="Time/TimeFormatter.h\nand .cpp"]
+	node [fillcolor="#bc80bd", style=filled, shape=Mrecord,color="#000000"] "Time/Timer.h"                    [label="Time/Timer.h"]
+	node [fillcolor="#ccebc5", style=filled, shape=folder,color="#000000"] "Vectors.h"                       [label="Vectors.h"]
+	node [fillcolor="#ccebc5", style=filled, shape=Mrecord,color="#000000"] "Vectors/Join.h"                  [label="Vectors/Join.h"]
+	node [fillcolor="#ccebc5", style=filled, shape=Mrecord,color="#000000"] "Vectors/Linspace.h"              [label="Vectors/Linspace.h\nand .cpp"]
+	node [fillcolor="#ccebc5", style=filled, shape=Mrecord,color="#000000"] "Vectors/Search.h"                [label="Vectors/Search.h\nand .cpp"]
+	node [fillcolor="#ccebc5", style=filled, shape=Mrecord,color="#000000"] "Vectors/SearchAll.h"             [label="Vectors/SearchAll.h"]
+	node [fillcolor="#ffffef", style=invis, shape=Mrecord,color="#ffffef"] "Async/EventManager.cpp"          [label="Async/EventManager.cpp"]
+	node [fillcolor="#ffffef", style=filled, shape=Mrecord,color="#ffffef"] "Async/ManagerBase.cpp"           [label="Async/ManagerBase.cpp"]
+	node [fillcolor="#ffffef", style=invis, shape=Mrecord,color="#ffffef"] "Async/ParallelPool.cpp"          [label="Async/ParallelPool.cpp"]
+	node [fillcolor="#ffffef", style=filled, shape=Mrecord,color="#ffffef"] "Async/Socket.cpp"                [label="Async/Socket.cpp"]
+	node [fillcolor="#ffffef", style=invis, shape=Mrecord,color="#ffffef"] "Async/Watcher.cpp"               [label="Async/Watcher.cpp"]
+	node [fillcolor="#fee5e2", style=filled, shape=Mrecord,color="#fee5e2"] "Display/ANSI_Codes.cpp"          [label="Display/ANSI_Codes.cpp"]
+	node [fillcolor="#fee5e2", style=filled, shape=Mrecord,color="#fee5e2"] "Display/Format.cpp"              [label="Display/Format.cpp"]
+	node [fillcolor="#e5eff6", style=filled, shape=Mrecord,color="#e5eff6"] "Display/Log/Config.cpp"          [label="Display/Log/Config.cpp"]
+	node [fillcolor="#e5eff6", style=filled, shape=Mrecord,color="#e5eff6"] "Display/Log/Core.cpp"            [label="Display/Log/Core.cpp"]
+	node [fillcolor="#e5eff6", style=invis, shape=Mrecord,color="#e5eff6"] "Display/Log/Levels.cpp"          [label="Display/Log/Levels.cpp"]
+	node [fillcolor="#fee5e2", style=filled, shape=Mrecord,color="#fee5e2"] "Display/ProgressBar.cpp"         [label="Display/ProgressBar.cpp"]
+	node [fillcolor="#fee5e2", style=invis, shape=Mrecord,color="#fee5e2"] "Display/Terminal.cpp"            [label="Display/Terminal.cpp"]
+	node [fillcolor="#fef0df", style=filled, shape=Mrecord,color="#fef0df"] "FileIO/Directory.cpp"            [label="FileIO/Directory.cpp"]
+	node [fillcolor="#eff8e1", style=invis, shape=Mrecord,color="#eff8e1"] "FileIO/archiver/readStream.cpp"  [label="FileIO/archiver/readStream.cpp"]
+	node [fillcolor="#eff8e1", style=invis, shape=Mrecord,color="#eff8e1"] "FileIO/archiver/reader.cpp"      [label="FileIO/archiver/reader.cpp"]
+	node [fillcolor="#eff8e1", style=invis, shape=Mrecord,color="#eff8e1"] "FileIO/archiver/writeStream.cpp" [label="FileIO/archiver/writeStream.cpp"]
+	node [fillcolor="#eff8e1", style=invis, shape=Mrecord,color="#eff8e1"] "FileIO/archiver/writer.cpp"      [label="FileIO/archiver/writer.cpp"]
+	node [fillcolor="#fef0df", style=invis, shape=Mrecord,color="#fef0df"] "FileIO/fileWriters.cpp"          [label="FileIO/fileWriters.cpp"]
+	node [fillcolor="#fef0df", style=invis, shape=Mrecord,color="#fef0df"] "FileIO/forLineIn.cpp"            [label="FileIO/forLineIn.cpp"]
+	node [fillcolor="#fef0df", style=filled, shape=Mrecord,color="#fef0df"] "FileIO/pipedInput.cpp"           [label="FileIO/pipedInput.cpp"]
+	node [fillcolor="#fef5f9", style=filled, shape=Mrecord,color="#fef5f9"] "Parameters/Aggregator.cpp"       [label="Parameters/Aggregator.cpp"]
+	node [fillcolor="#fef5f9", style=filled, shape=Mrecord,color="#fef5f9"] "Parameters/CLI_Reader.cpp"       [label="Parameters/CLI_Reader.cpp"]
+	node [fillcolor="#fef5f9", style=filled, shape=Mrecord,color="#fef5f9"] "Parameters/Describer.cpp"        [label="Parameters/Describer.cpp"]
+	node [fillcolor="#fef5f9", style=filled, shape=Mrecord,color="#fef5f9"] "Parameters/NestedAggregator.cpp" [label="Parameters/NestedAggregator.cpp"]
+	node [fillcolor="#fef5f9", style=filled, shape=Mrecord,color="#fef5f9"] "Parameters/Parameter.cpp"        [label="Parameters/Parameter.cpp"]
+	node [fillcolor="#f7f7f7", style=invis, shape=Mrecord,color="#f7f7f7"] "Strings/Cases.cpp"               [label="Strings/Cases.cpp"]
+	node [fillcolor="#f7f7f7", style=invis, shape=Mrecord,color="#f7f7f7"] "Strings/Manipulate.cpp"          [label="Strings/Manipulate.cpp"]
+	node [fillcolor="#f7f7f7", style=filled, shape=Mrecord,color="#f7f7f7"] "Strings/ParseTo.cpp"             [label="Strings/ParseTo.cpp"]
+	node [fillcolor="#f7f7f7", style=filled, shape=Mrecord,color="#f7f7f7"] "Strings/Wrap.cpp"                [label="Strings/Wrap.cpp"]
+	node [fillcolor="#f1e5f1", style=invis, shape=Mrecord,color="#f1e5f1"] "Time/TimeFormatter.cpp"          [label="Time/TimeFormatter.cpp"]
+	node [fillcolor="#f1e5f1", style=filled, shape=Mrecord,color="#f1e5f1"] "Time/Timer.cpp"                  [label="Time/Timer.cpp"]
+	node [fillcolor="#f4fbf3", style=invis, shape=Mrecord,color="#f4fbf3"] "Vectors/Linspace.cpp"            [label="Vectors/Linspace.cpp"]
+	node [fillcolor="#f4fbf3", style=invis, shape=Mrecord,color="#f4fbf3"] "Vectors/Search.cpp"              [label="Vectors/Search.cpp"]
+	node [fillcolor="#fffbe2", style=invis, shape=Mrecord,color="#fffbe2"] "internal/error.cpp"              [label="internal/error.cpp"]
+	"JSL.h"                           -> "Display.h"[weight=10]
+	"JSL.h"                           -> "FileIO.h"[weight=10]
+	"JSL.h"                           -> "Parameters.h"[weight=10]
+	"JSL.h"                           -> "Strings.h"[weight=10]
+	"JSL.h"                           -> "Time.h"[weight=10]
+	"JSL.h"                           -> "Vectors.h"[weight=10]
+	"JSL.h"                           -> "Async.h"[weight=10]
+	"JSL.h"                           -> "Concepts.h"[weight=10]
+	"Async.h"                         -> "Async/Socket.h"[weight=10]
+	"Async.h"                         -> "Async/Watcher.h"[weight=10]
+	"Async.h"                         -> "Async/EventManager.h"[weight=10]
+	"Async.h"                         -> "Async/ParallelPool.h"[weight=10]
+	"Async/EventManager.h"            -> "Async/ManagerBase.h"[weight=10]
+	"Async/EventManager.h"            -> "Async/ParallelPool.h"[weight=10]
+	"Async/ManagerBase.h"             -> "Async/Watcher.h"[weight=10]
+	"Async/Watcher.h"                 -> "Async/Socket.h"[weight=10]
+	"Concepts.h"                      -> "Concepts/ranges.h"[weight=10]
+	"Concepts.h"                      -> "Concepts/tuple.h"[weight=10]
+	"Concepts.h"                      -> "Concepts/numerics.h"[weight=10]
+	"Concepts.h"                      -> "Concepts/strings.h"[weight=10]
+	"Concepts.h"                      -> "Concepts/pointers.h"[weight=10]
+	"Concepts.h"                      -> "Concepts/optional.h"[weight=10]
+	"Display.h"                       -> "Display/Log.h"[weight=10]
+	"Display.h"                       -> "Display/ANSI_Codes.h"[weight=10]
+	"Display.h"                       -> "Display/ProgressBar.h"[weight=10]
+	"Display.h"                       -> "Display/Terminal.h"[weight=10]
+	"Display/ANSI_Codes.h"            -> "Display/Format.h"[weight=10]
+	"Display/Log.h"                   -> "Display/Log/Core.h"[weight=10]
+	"Display/Log/Config.h"            -> "Display/Log/Levels.h"[weight=10]
+	"Display/Log/Config.h"            -> "Display/ANSI_Codes.h"[style=dashed,color="#660000"]
+	"Display/Log/Core.h"              -> "Display/Log/Config.h"[weight=10]
+	"Display/Log/Core.h"              -> "Strings/MakeFrom.h"[style=dashed,color="#660000"]
+	"FileIO.h"                        -> "FileIO/forLineIn.h"[weight=10]
+	"FileIO.h"                        -> "FileIO/Directory.h"[weight=10]
+	"FileIO.h"                        -> "FileIO/fileWriters.h"[weight=10]
+	"FileIO.h"                        -> "FileIO/pipedInput.h"[weight=10]
+	"FileIO.h"                        -> "FileIO/archiver.h"[weight=10]
+	"FileIO.h"                        -> "FileIO/glob.h"[weight=10]
+	"FileIO/Directory.h"              -> "FileIO/glob.h"[weight=10]
+	"FileIO/archiver.h"               -> "FileIO/archiver/writer.h"[weight=10]
+	"FileIO/archiver.h"               -> "FileIO/archiver/reader.h"[weight=10]
+	"FileIO/archiver/base.h"          -> "FileIO/archiver/helpers.h"[weight=10]
+	"FileIO/archiver/readStream.h"    -> "Strings/Manipulate.h"[style=dashed,color="#660000"]
+	"FileIO/archiver/readStream.h"    -> "FileIO/archiver/base.h"[weight=10]
+	"FileIO/archiver/reader.h"        -> "FileIO/archiver/readStream.h"[weight=10]
+	"FileIO/archiver/writeStream.h"   -> "FileIO/archiver/base.h"[weight=10]
+	"FileIO/archiver/writer.h"        -> "FileIO/archiver/writeStream.h"[weight=10]
+	"FileIO/forLineIn.h"              -> "Strings/Manipulate.h"[style=dashed,color="#660000"]
+	"FileIO/forLineIn.h"              -> "Strings/ParseTo.h"[style=dashed,color="#660000"]
+	"FileIO/glob.h"                   -> "Concepts/strings.h"[style=dashed,color="#660000"]
+	"Parameters.h"                    -> "Parameters/Parameter.h"[weight=10]
+	"Parameters.h"                    -> "Parameters/Aggregator.h"[weight=10]
+	"Parameters.h"                    -> "Parameters/CLI_Reader.h"[weight=10]
+	"Parameters/Aggregator.h"         -> "Parameters/NestedAggregator.h"[weight=10]
+	"Parameters/Describer.h"          -> "Parameters/Parameter.h"[weight=10]
+	"Parameters/NestedAggregator.h"   -> "Parameters/Parameter.h"[weight=10]
+	"Parameters/NestedAggregator.h"   -> "Parameters/Describer.h"[weight=10]
+	"Parameters/Parameter.h"          -> "Concepts/ranges.h"[style=dashed,color="#660000"]
+	"Parameters/Parameter.h"          -> "Strings/Serialisers.h"[style=dashed,color="#660000"]
+	"Parameters/Parameter.h"          -> "Parameters/CLI_Reader.h"[weight=10]
+	"Strings.h"                       -> "Strings/Serialisers.h"[weight=10]
+	"Strings.h"                       -> "Strings/Cases.h"[weight=10]
+	"Strings.h"                       -> "Strings/Manipulate.h"[weight=10]
+	"Strings.h"                       -> "Strings/Stitch.h"[weight=10]
+	"Strings.h"                       -> "Strings/Wrap.h"[weight=10]
+	"Strings/MakeFrom.h"              -> "Concepts.h"[style=dashed,color="#660000"]
+	"Strings/MakeFrom.h"              -> "Strings/nullstring.h"[weight=10]
+	"Strings/ParseTo.h"               -> "Concepts.h"[style=dashed,color="#660000"]
+	"Strings/ParseTo.h"               -> "Strings/nullstring.h"[weight=10]
+	"Strings/Serialisers.h"           -> "Strings/MakeFrom.h"[weight=10]
+	"Strings/Serialisers.h"           -> "Strings/ParseTo.h"[weight=10]
+	"Strings/Stitch.h"                -> "Strings/MakeFrom.h"[weight=10]
+	"Strings/Stitch.h"                -> "Concepts/ranges.h"[style=dashed,color="#660000"]
+	"Time.h"                          -> "Time/Timer.h"[weight=10]
+	"Time.h"                          -> "Time/TimeFormatter.h"[weight=10]
+	"Vectors.h"                       -> "Vectors/Search.h"[weight=10]
+	"Vectors.h"                       -> "Vectors/SearchAll.h"[weight=10]
+	"Vectors.h"                       -> "Vectors/Join.h"[weight=10]
+	"Vectors.h"                       -> "Vectors/Linspace.h"[weight=10]
+	"Vectors/Search.h"                -> "Concepts/ranges.h"[style=dashed,color="#660000"]
+	"Vectors/SearchAll.h"             -> "Vectors/Search.h"[weight=10]
+	"Async/ManagerBase.cpp"           -> "Async/ManagerBase.h"[weight=10]
+	"Async/ManagerBase.cpp"           -> "Strings/Serialisers.h"[style=dashed,color="#660000"]
+	"Async/Socket.cpp"                -> "Async/Socket.h"[weight=10]
+	"Async/Socket.cpp"                -> "Strings/Cases.h"[style=dashed,color="#660000"]
+	"Display/ANSI_Codes.cpp"          -> "Display/ANSI_Codes.h"[weight=10]
+	"Display/ANSI_Codes.cpp"          -> "Display/Terminal.h"[weight=10]
+	"Display/Format.cpp"              -> "Display/Format.h"[weight=10]
+	"Display/Format.cpp"              -> "Display/ANSI_Codes.h"[weight=10]
+	"Display/Format.cpp"              -> "Display/Terminal.h"[weight=10]
+	"Display/Log/Config.cpp"          -> "Display/Log/Config.h"[weight=10]
+	"Display/Log/Config.cpp"          -> "Display/Terminal.h"[style=dashed,color="#660000"]
+	"Display/Log/Core.cpp"            -> "Display/Log/Core.h"[weight=10]
+	"Display/Log/Core.cpp"            -> "Strings/Manipulate.h"[style=dashed,color="#660000"]
+	"Display/Log/Core.cpp"            -> "Strings/Wrap.h"[style=dashed,color="#660000"]
+	"Display/ProgressBar.cpp"         -> "Display/ProgressBar.h"[weight=10]
+	"Display/ProgressBar.cpp"         -> "Display/ANSI_Codes.h"[weight=10]
+	"FileIO/Directory.cpp"            -> "FileIO/Directory.h"[weight=10]
+	"FileIO/Directory.cpp"            -> "Vectors/Join.h"[style=dashed,color="#660000"]
+	"FileIO/pipedInput.cpp"           -> "FileIO/pipedInput.h"[weight=10]
+	"FileIO/pipedInput.cpp"           -> "Strings/Manipulate.h"[style=dashed,color="#660000"]
+	"Parameters/Aggregator.cpp"       -> "Parameters/Aggregator.h"[weight=10]
+	"Parameters/Aggregator.cpp"       -> "Vectors/Search.h"[style=dashed,color="#660000"]
+	"Parameters/Aggregator.cpp"       -> "Strings/Wrap.h"[style=dashed,color="#660000"]
+	"Parameters/Aggregator.cpp"       -> "Display/ANSI_Codes.h"[style=dashed,color="#660000"]
+	"Parameters/Aggregator.cpp"       -> "Display/Terminal.h"[style=dashed,color="#660000"]
+	"Parameters/CLI_Reader.cpp"       -> "Parameters/CLI_Reader.h"[weight=10]
+	"Parameters/CLI_Reader.cpp"       -> "FileIO/forLineIn.h"[style=dashed,color="#660000"]
+	"Parameters/CLI_Reader.cpp"       -> "Strings/Stitch.h"[style=dashed,color="#660000"]
+	"Parameters/Describer.cpp"        -> "Parameters/Describer.h"[weight=10]
+	"Parameters/Describer.cpp"        -> "Display/ANSI_Codes.h"[style=dashed,color="#660000"]
+	"Parameters/Describer.cpp"        -> "Strings/Wrap.h"[style=dashed,color="#660000"]
+	"Parameters/NestedAggregator.cpp" -> "Parameters/NestedAggregator.h"[weight=10]
+	"Parameters/NestedAggregator.cpp" -> "Display/Terminal.h"[style=dashed,color="#660000"]
+	"Parameters/NestedAggregator.cpp" -> "Vectors/Search.h"[style=dashed,color="#660000"]
+	"Parameters/NestedAggregator.cpp" -> "Display/Format.h"[style=dashed,color="#660000"]
+	"Parameters/Parameter.cpp"        -> "Parameters/Parameter.h"[weight=10]
+	"Parameters/Parameter.cpp"        -> "Vectors/Search.h"[style=dashed,color="#660000"]
+	"Parameters/Parameter.cpp"        -> "Strings/Cases.h"[style=dashed,color="#660000"]
+	"Strings/ParseTo.cpp"             -> "Strings/ParseTo.h"[weight=10]
+	"Strings/ParseTo.cpp"             -> "Strings/Cases.h"[weight=10]
+	"Strings/ParseTo.cpp"             -> "Concepts.h"[style=dashed,color="#660000"]
+	"Strings/ParseTo.cpp"             -> "Strings/Manipulate.h"[weight=10]
+	"Strings/Wrap.cpp"                -> "Strings/Wrap.h"[weight=10]
+	"Strings/Wrap.cpp"                -> "Strings/Stitch.h"[weight=10]
+	"Strings/Wrap.cpp"                -> "Strings/Manipulate.h"[weight=10]
+	"Strings/Wrap.cpp"                -> "Vectors/Join.h"[style=dashed,color="#660000"]
+	"Strings/Wrap.cpp"                -> "Display/Terminal.h"[style=dashed,color="#660000"]
+	"Time/Timer.cpp"                  -> "Time/Timer.h"[weight=10]
+	"Time/Timer.cpp"                  -> "Time/TimeFormatter.h"[weight=10]
 }

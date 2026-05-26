@@ -15,7 +15,7 @@ render () {
 	codeviz -r $2 -o $1.pdf $4
 	mv $1.* $SCRIPT_DIR/
 	cd $SCRIPT_DIR
-	python3 colouriser.py $1.dot
+	./redot $1.dot
 	$renderer -Tpdf $1.dot -o $1.pdf
 	$renderer -Tpng $1.dot -o $1.png
 }

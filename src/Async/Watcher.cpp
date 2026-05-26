@@ -1,12 +1,10 @@
-#include <JSL/Async.h>
+#include <JSL/Async/Watcher.h>
 #include <JSL/internal/error.h>
 #include <poll.h>
 #include <JSL/Display/Log.h>
 #include <set>
 #include <thread>
 
-
-#include <JSL.h>
 
 namespace JSL::Event
 {
