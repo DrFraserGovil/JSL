@@ -4,7 +4,7 @@
 
 #include <chrono>
 #include <thread>
-
+#include <functional>
 
 
 TEST_CASE("Colour Testing","[display][colour]")
@@ -13,23 +13,23 @@ TEST_CASE("Colour Testing","[display][colour]")
     // namespace bg = JSL::Background;
     namespace crs = JSL::Terminal;
     
-    std::vector<JSL::Format::Command> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
+    std::vector<std::function<JSL::Format::Command(bool)>> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
+
     SECTION("Foreground Colours")
     {
         for (size_t i = 0; i < cols.size(); ++i)
         {
             std::string expected = "\033[3"+std::to_string(i) + "m";
-            assert((std::string)cols[i] == expected);
+            assert((std::string)(cols[i](false)) == expected);
         }
     }
 
-    std::vector<JSL::Format::Command> backgrounds = {txt::BgBlack,txt::BgRed,txt::BgGreen,txt::BgYellow,txt::BgBlue, txt::BgPurple,txt::BgCyan,txt::BgWhite};
     SECTION("Background Colours")
     {
-        for (size_t i = 0; i < backgrounds.size(); ++i)
+        for (size_t i = 0; i < cols.size(); ++i)
         {
             std::string expected = "\033[4"+std::to_string(i) + "m";
-            assert((std::string)backgrounds[i] == expected);
+            assert((std::string)(cols[i](true)) == expected);
         }
     }
 
@@ -43,13 +43,12 @@ TEST_CASE("Colour Testing","[display][colour]")
             uint8_t rb = rand() % 256;
             uint8_t gb = rand() % 256;
             uint8_t bb = rand() % 256;
-            REQUIRE_NOTHROW(std::cout << txt::Colour(r,g,b) << txt::BgColour(rb,gb,bb) << "Testing colours"<<txt::ResetAll);
+            REQUIRE_NOTHROW(std::cout <<txt::Colour(r,g,b) << txt::Colour(rb,gb,bb,true) << "Testing colour " << i <<txt::ResetAll());
             std::cout << std::flush;
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
             REQUIRE_NOTHROW(std::cout << crs::ClearLine);
             
         }
-        std::cout << "\n";
     }
 
     SECTION("RGB Byte Accuracy")

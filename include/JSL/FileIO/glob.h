@@ -1,6 +1,6 @@
 #pragma once
 #include <regex>
-#include <JSL/Concepts/strings.h>
+#include <concepts>
 namespace JSL::IO
 {
 	/*! @brief Converts a glob-string into a regex-string
@@ -9,7 +9,8 @@ namespace JSL::IO
 		@param input A glob-string to be converted
 		@param returns A string representing the glob in standard regex
 	*/	
-	template<JSL::Concept::StringType T>
+	template<class T>
+		requires std::convertible_to<T,std::string>
 	std::string inline makeGlob(T & input)
 	{
 		std::string result ="^";
@@ -83,7 +84,8 @@ namespace JSL::IO
 		@param input A glob-string to be converted
 		@param returns A compiled regex object representing the globstring
 	*/	
-	template<JSL::Concept::StringType T>
+	template<class T>
+		requires std::convertible_to<T,std::string>
 	std::regex inline globToRegex(T & input)
 	{
 		return std::regex(makeGlob(input));

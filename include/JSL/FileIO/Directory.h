@@ -38,7 +38,8 @@ namespace JSL::IO
 		 * @param excludePattern a glob-expression for files and directories to ignore 
 		 * @param maxDepth The maximum number of sub-directories to visit. maxDepth = 0 is no recursion
 		 */
-		template<JSL::Concept::StringType T>
+		template<class T>
+		requires std::convertible_to<T,std::string>
 		static Directory Snapshot(const std::filesystem::path &target, T & ExcludePattern, size_t maxDepth = -1)
 		{
 			return Snapshot(target, globToRegex(ExcludePattern),maxDepth);
@@ -66,7 +67,8 @@ namespace JSL::IO
 		 * @param excludePattern a glob-expression for files and directories to ignore 
 		 * @param maxDepth The maximum number of sub-directories to visit. This overrides the previous recursion parameter.
 		 */
-		template<JSL::Concept::StringType T>
+		template<class T>
+		requires std::convertible_to<T,std::string>
 		void Rescan(T & excludePattern, size_t maxDepth = -1)
 		{
 			Rescan(globToRegex(excludePattern),maxDepth);
@@ -117,7 +119,8 @@ namespace JSL::IO
 			@param matchPattern A glob pattern used to identify files to include
 			@returns A subset of the output of ListFiles, matching the glob
 		*/ 
-		template<JSL::Concept::StringType T>
+		template<class T>
+		requires std::convertible_to<T,std::string>
 		std::set<std::filesystem::path> MatchFiles(T matchPattern) const
 		{
 			return MatchFiles(globToRegex(matchPattern));
@@ -166,28 +169,4 @@ namespace JSL::IO
 		//! @brief Clears the internal storage of the object
 		void Reset();
 	};
-
-	struct report
-	{
-		bool Successful;
-		std::string Message;
-	};
-
-	enum Policy
-	{
-		Strict,
-		Quiet
-	};
-
-	extern Policy DefaultPolicy;
-
-	report mkdir(const std::filesystem::path directory, Policy policy = DefaultPolicy);
-
-	report remove(const std::filesystem::path pathToFile, Policy polict = DefaultPolicy);
-
-	/*
-		An explicit function that forces a user to acknowledge they're deleting a whole directory and all its contents
-	*/
-	report removeDirectory(const std::filesystem::path pathToDirectory, Policy policy = DefaultPolicy);
-
 }

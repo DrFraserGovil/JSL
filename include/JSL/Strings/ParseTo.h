@@ -2,6 +2,7 @@
 #include <JSL/Concepts.h>
 #include "nullstring.h"
 #include <charconv>
+#include <iostream>
 namespace JSL::String
 {
 	/////Helpers

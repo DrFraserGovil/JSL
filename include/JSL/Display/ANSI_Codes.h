@@ -132,7 +132,7 @@ namespace JSL::Format
 	//!@warning Terminals often try to ensure text is visible and may reject some combinations of foreground/background colours based on their own internal contrast measurements. This is implementation specific - but usually means it is impossible to make text that cannot be read. 
 	inline Command Colour(uint8_t r,uint8_t g, uint8_t b,bool targetBackgroundCol = false)
 	{
-		return Command(r,g,b,Foreground);
+		return Command(r,g,b,targetBackgroundCol ? Element::Background : Element::Foreground);
 	}
 
 	

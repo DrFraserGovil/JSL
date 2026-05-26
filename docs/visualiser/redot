@@ -92,10 +92,13 @@ class Network:
 			rgb = palette[N][i%N]
 			palefac = 0.8
 			pale = tuple([int(x + (255-x)*palefac) for x in rgb])
+			darkfac = 0.9
+			dark = tuple([int(x *darkfac) for x in rgb])
 			headerhex = ('#%02x%02x%02x' % rgb)
 			sourcehex = ('#%02x%02x%02x' % pale)
+			darkhex = ('#%02x%02x%02x' % dark)
 
-			groups[g] = [headerhex,sourcehex]
+			groups[g] = [headerhex,sourcehex,darkhex]
 
 		for d in self.Nodes:
 			self.Nodes[d].SetColour(groups[self.Nodes[d].Group])
@@ -111,15 +114,14 @@ class Network:
 					node.Style = "invis"
 					header = str(node.Name).removesuffix(".cpp") + ".h"
 					if header in self.Nodes:
-						print("matches",header)
 						self.Nodes[header].Label +="\\nand .cpp"
 class Node:
 	def __init__(self,match):
 		self.Colour = match.group(1)
 		self.Name,self.Group = SanitizeNames(match.group(2))
 		self.Label = self.Name
-		self.Style = "filled"
-		self.Shape = "Mrecord"
+		self.Style = "\"rounded,filled\""
+		self.Shape = "box"
 		self.IsHeader= True if ".h" in self.Name else False
 		self.Links = []
 		self.Outline = "black"
@@ -140,11 +142,10 @@ class Node:
 		for link,group in self.Links:
 			if ignoreLink(link,self.Name):
 				continue
-			mod = ""
 			if group == self.Group:
 				s += f"\t\"{self.Name}\"{self._buffer}-> \"{link}\"[weight=10]\n"
 			else:
-				s += f"\t\"{self.Name}\"{self._buffer}-> \"{link}\"[style=dashed,color=\"#660000\"]\n"
+				s += f"\t\"{self.Name}\"{self._buffer}-> \"{link}\"[style=dashed,color=\"{self.Line}\"]\n"
 			
 		return s
 		
@@ -160,10 +161,12 @@ class Node:
 		if ".cpp" in self.Name:
 			self.Colour = col[1]
 			self.Outline = col[1]
+			self.Line = col[2]
 			# self.Shape = "diamond"
 		else:
 			self.Colour = col[0]
 			self.Outline = "#000000"
+			self.Line = col[2]
 if __name__ == "__main__":
 	if len(sys.argv) != 2:
 		print(f"Usage: {sys.argv[0]} <filename>")

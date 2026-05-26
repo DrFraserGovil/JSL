@@ -1,5 +1,4 @@
 #include <JSL/Display/Format.h>
-#include <JSL/Display/ANSI_Codes.h>
 #include <JSL/internal/error.h>
 #include <sstream>
 #include <algorithm>
@@ -36,6 +35,7 @@ namespace JSL::Format
 				break;
 			case Background:
 				write_str("\033[48;2;",7);
+				break;
 			default:
 				JSL::internal::FatalError("Cannot assign a colour to TextStyle object",JSL_LOCATION);
 				break;
@@ -77,8 +77,8 @@ namespace JSL::Format
 
 	FormatGroup::FormatGroup()
 	{
-		Foreground = DefaultColour();
-		Background = DefaultColour(true);
+		Foreground = Command("\033[39m",Element::Foreground);
+		Background =Command("\033[40m",Element::Background); 
 	}
 	FormatGroup::FormatGroup(const Command & a) : FormatGroup()
 	{
@@ -130,7 +130,7 @@ namespace JSL::Format
 
 	std::ostream & operator<<(std::ostream& os, const FormatGroup& c)
 	{
-		os << Format::ResetAll();
+		os << "\033[0m";
 		for (auto b : c.StyleBuffer)
 		{
 			os << b;
