@@ -6,7 +6,9 @@
 #include <fstream>
 #include <vector>
 #include <JSL/Strings/Manipulate.h>
+#include <JSL/Strings/ParseTo.h>
 #include "base.h"
+#include <concepts>
 namespace JSL::Archiver{
 
 	class ReadStream
@@ -39,13 +41,21 @@ namespace JSL::Archiver{
 				@throws logic_error when fileName not in the archive
 				*/
 			template<typename...ColumnTypes, typename TupleFunctor>
-			void ForTabularLineIn(std::string delimiter,TupleFunctor perTupleFunction)
+			void ForTabularLineIn(std::string delimiter,TupleFunctor perLineFunction)
 			{
 				ForLineIn([&](std::string_view line){
 					
-					auto row = ParseTo<ColumnTypes...>(String::split_view(line,delimiter));
-
-					perTupleFunction(row);
+					auto row = JSL::String::ParseTo<std::tuple<ColumnTypes...>>(line,delimiter);
+					
+					if constexpr (std::invocable<TupleFunctor,std::tuple<ColumnTypes...>>)
+					{
+						perLineFunction(row);
+					}
+					else
+					{
+						std::apply(perLineFunction,row);
+					}
+						// perTupleFunction(row);
 
 				});
 			}

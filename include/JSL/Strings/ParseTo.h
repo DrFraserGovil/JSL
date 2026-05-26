@@ -201,7 +201,7 @@ namespace JSL::String
 
 			if (tokens.size() != std::tuple_size_v<T>)
 			{
-				throw std::logic_error("Tuple parse error: number of tokens inconsistent with tuple dimensions");
+				throw std::logic_error("Tuple parse error: number of tokens (" + std::to_string(tokens.size()) + ") inconsistent with tuple dimensions (" + std::to_string(std::tuple_size_v<T>) + ")");
 			}
 
 			return internal::ParseToTupleImpl<T>(tokens,std::make_index_sequence<std::tuple_size_v<T>>{});

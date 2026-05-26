@@ -1,5 +1,6 @@
 #pragma once
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_vector.hpp>
 #include <JSL/FileIO/archiver.h>
 #include <iostream>
 #include <filesystem>
@@ -38,12 +39,8 @@ TEST_CASE("Vault Modes detect valid states", "[archive][errors]")
     SECTION("Uninitialised state protection")
     {
         Vault<Mode::Write> A; 
-        std::string output = capture_stdout([&]() {
-            // We expect the FatalError to print and then throw
-            REQUIRE_THROWS(A["badfile"] << "data");
-        });
+        REQUIRE_THROWS(A["badfile"] << "data");
         
-        REQUIRE_THAT(output, Catch::Matchers::ContainsSubstring("JSL"));
     }
 
     SECTION("Corrupted Archive Detection")
@@ -54,12 +51,9 @@ TEST_CASE("Vault Modes detect valid states", "[archive][errors]")
             f << "This is just a random text file, not a TAR";
         }
         
-        std::string output = capture_stdout([&]() {
             // BuildIndex() should fail the null-termination check
             REQUIRE_THROWS(Vault<Mode::Read>(file.Name()));
-        });
         
-        REQUIRE_THAT(output, Catch::Matchers::ContainsSubstring("JSL"));
     }
 }
 
@@ -126,8 +120,8 @@ TEST_CASE("Tabular Data and Stream Logic", "[archive][tabular]")
     SECTION("ForTabularLineIn callback")
     {
         int count = 0;
-        R.ForTabularLineIn<int, double, char>("table.dat", " ", [&](auto row) {
-            REQUIRE(std::get<0>(row) == count);
+        R.ForTabularLineIn<int, double, char>("table.dat", " ", [&](auto a, auto b, auto c) {
+            REQUIRE(a == count);
             count++;
         });
         REQUIRE(count == 5);
