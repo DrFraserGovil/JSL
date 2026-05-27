@@ -45,7 +45,7 @@ TEST_CASE("Path and Directory Utilities", "[io][system]")
         REQUIRE_FALSE(resultRepeat.Successful);
         
         // Test calling it again (should fail with default policy)
-        resultRepeat = JSL::IO::mkdir(deepPath,JSL::IO::Quiet);
+        resultRepeat = JSL::IO::mkdir(deepPath,JSL::IO::Generous);
         REQUIRE(resultRepeat.Successful);
     }
 
@@ -87,7 +87,7 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
     SECTION("rm: Non-existent path handling")
     {
         fs::path ghost = sandbox / "not_there.txt";
-        auto result = JSL::IO::remove(ghost,JSL::IO::Quiet);
+        auto result = JSL::IO::remove(ghost,JSL::IO::Generous);
 
         // Should be successful (nothing to do) but note it didn't exist
         CHECK(result.Successful);
