@@ -2,8 +2,7 @@
 
 #include <charconv>
 #include <memory>
-#include <JSL/Concepts.h>
-#include "nullstring.h"
+#include "SerialiserHelpers.h"
 #include <cmath>
 
 namespace JSL::String

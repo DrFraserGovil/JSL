@@ -4,11 +4,11 @@ Parse Helper Functions
 ==========================
 
 
-.. jsl:: JSL::String::internal::CheckErrors
+.. jsl:: JSL::String::internal::checkErrors
 	:command: doxygenfunction
 	:file: String/ParseTo.h 
 
-.. doxygenfunction:: JSL::String::internal::RejectEmpty
+.. doxygenfunction:: JSL::String::internal::processInput
 
 .. doxygenfunction:: JSL::String::internal::tokenize
 

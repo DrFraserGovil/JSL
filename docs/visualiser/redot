@@ -92,7 +92,7 @@ class Network:
 			rgb = palette[N][i%N]
 			palefac = 0.8
 			pale = tuple([int(x + (255-x)*palefac) for x in rgb])
-			darkfac = 0.9
+			darkfac = 0.8
 			dark = tuple([int(x *darkfac) for x in rgb])
 			headerhex = ('#%02x%02x%02x' % rgb)
 			sourcehex = ('#%02x%02x%02x' % pale)
@@ -143,9 +143,9 @@ class Node:
 			if ignoreLink(link,self.Name):
 				continue
 			if group == self.Group:
-				s += f"\t\"{self.Name}\"{self._buffer}-> \"{link}\"[weight=10]\n"
+				s += f"\t\"{self.Name}\"{self._buffer}-> \"{link}\"[weight=10,penwidth=2]\n"
 			else:
-				s += f"\t\"{self.Name}\"{self._buffer}-> \"{link}\"[style=dashed,color=\"{self.Line}\"]\n"
+				s += f"\t\"{self.Name}\"{self._buffer}-> \"{link}\"[style=dashed,penwidth=3,color=\"{self.Line}\"]\n"
 			
 		return s
 		

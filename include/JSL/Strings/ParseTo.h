@@ -1,6 +1,5 @@
 #pragma once
-#include <JSL/Concepts.h>
-#include "nullstring.h"
+#include "SerialiserHelpers.h"
 #include <charconv>
 #include <iostream>
 namespace JSL::String
