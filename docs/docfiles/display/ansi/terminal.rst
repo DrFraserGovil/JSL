@@ -3,9 +3,10 @@
 ANSI Terminal Commands
 ========================
 
-.. jsl:: JSL::Terminal::IsANSICapable
-	:file: Display/ANSI_Codes.h
-	:command: doxygenfunction
+.. warning::
+	The ANSI Terminal Commands *only* take effect if the output stream is capable of interpreting ANSI escape sequences. Non-ANSI-Capable streams (such as output files) will render them as incomprehensible gibberish. The ANSI status can be queries via the :cpp:class:`JSL::Terminal::Environment`.
+
+	Unlike :ref:`ansi-format`, these commands are **not** silenced when a bad Environment is detected, as the behaviour of (for example) moving a cursor vs. not is fundamentally different from not rendering a format command.  
 
 CursorCommands
 ---------------------

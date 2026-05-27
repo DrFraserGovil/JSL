@@ -16,7 +16,7 @@ Measurement
 
 The above functions only work if one is able to accurately compute the *rendered* size of a line of text. When one enables the inclusion of :ref:`ansi-display` and tab characters, this is much more complex than ``string.size()``.
 
-.. jsl:: JSL::String::trueSize
+.. jsl:: JSL::String::trueSize(std::string_view)
 	:file: Strings/FoldLine.h
 	:command: doxygenfunction
 

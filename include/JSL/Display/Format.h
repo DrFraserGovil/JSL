@@ -23,7 +23,8 @@ namespace JSL::Format
     };
 
     /*!
-        A wrapper around an ANSI string sequence, optimised for inserting into output streams
+        @brief Wrapper around an ANSI string sequence, optimised for inserting into output streams. 
+        @warning Converts sequences to a blank string when JSL::Terminal::Environment reports a non-ANSI output stream, preventing garbling of escape sequences.
     */
     class Command
     {

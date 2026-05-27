@@ -3,7 +3,14 @@
 ANSI Formatting Commands
 ============================
 
-Like the terminal commands, Formatting commands are -- at their heart -- strings of ANSI escape sequences. However, for JSL-aware stream managers (such as the :ref:`Logger <LOG>`), the structures below allow more fine grained control, such as resetting the font colour to default, whilst leaving the background colour untouched.
+Like the terminal commands, Formatting commands are -- at their heart -- strings of ANSI escape sequences. The structures below are wrappers around these strings to provide additional functionality and a more convenient interface.
+
+.. warning::
+	ANSI Escape sequences are only renderable in certain Environments (most modern terminal emulators, for example). If rendered into a file, however, the result is gibberish text. 
+
+	The :cpp:class:`JSL::Format::Command` class replaces ANSI sequences with blank strings when a bad-environment is detecte, disabling formatting, but allowing for an easy user experience. This constrasts with the approach of :ref:`ansi-terminal`, where no such disabling occurs due to the fundamentally different behaviour.
+
+Also note that ANSI control sequences have a non-zero length inside an ``std::string``, but have zero length when rendered to a terminal. This means that ``std::string::size`` is not a reliable indicator of string-length when ANSI control sequences are involved. We provide the :cpp:func:`JSL::String::trueSize` function for this purpose.
 
 Sequence Functions
 ---------------------
