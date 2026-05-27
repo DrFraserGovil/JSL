@@ -77,8 +77,6 @@ namespace JSL::Format
 
 	FormatGroup::FormatGroup()
 	{
-		Foreground = Command("\033[39m",Element::Foreground);
-		Background =Command("\033[40m",Element::Background); 
 	}
 	FormatGroup::FormatGroup(const Command & a) : FormatGroup()
 	{
@@ -120,8 +118,8 @@ namespace JSL::Format
 
 	void FormatGroup::Add(const FormatGroup & group)
 	{
-		Add(group.Foreground);
-		Add(group.Background);
+		if (group.Foreground){ Add(group.Foreground.value());};
+		if (group.Foreground){ Add(group.Background.value());};
 		for (auto b : group.StyleBuffer)
 		{
 			AddBuffer(b);
@@ -135,8 +133,8 @@ namespace JSL::Format
 		{
 			os << b;
 		}
-		os << c.Background;
-		os << c.Foreground;
+		if (c.Background){os << c.Background.value();}
+		if (c.Foreground){os << c.Foreground.value();}
 		return os;
 	}
 

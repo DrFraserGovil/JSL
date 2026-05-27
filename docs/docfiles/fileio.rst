@@ -5,6 +5,7 @@ File I/O
 
 
 .. toctree::
+	fileio/write
 	fileio/directory
 	fileio/glob
 	fileio/system

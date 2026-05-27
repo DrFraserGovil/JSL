@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <cstring>
 #include <sstream>
+#include <optional>
 namespace JSL::Format
 {
     
@@ -86,10 +87,10 @@ namespace JSL::Format
     {
         private:
             //! @brief The current foreground colour (single variable as only 1 colour assigned at a time)
-            Command Foreground;
+            std::optional<Command> Foreground;
             
             //! @brief The current background colour (single variable as only 1 colour assigned at a time)
-            Command Background;
+            std::optional<Command> Background;
             
             //! @brief Adds a style command into the carousel buffer. If an identical command already exists in the buffer, the original instance is erased. 
             void AddBuffer(const Command & cmd);

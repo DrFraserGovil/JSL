@@ -24,7 +24,13 @@ namespace JSL::IO
         internal::checkFile(file, filename);
         file.close();
 	}
-
+    
+    std::ofstream openStream(const std::filesystem::path & filename,std::ios_base::openmode mode)
+    {
+        std::ofstream file(filename, mode);
+        internal::checkFile(file,filename);
+        return file;
+    }
 
     void writeString(const std::filesystem::path& filename, std::string_view content,std::ios_base::openmode mode)
     {

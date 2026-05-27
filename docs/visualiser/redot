@@ -85,12 +85,12 @@ class Network:
 		for d in self.Nodes:
 			self.Nodes[d].CheckFolder(groups)
 
-		palette = colorbrewer.Set3
+		palette = colorbrewer.Set2
 		
 		N = max(min(palette.keys()),min(max(palette.keys()),len(groups)))
 		for i,g in enumerate(groups):
 			rgb = palette[N][i%N]
-			palefac = 0.8
+			palefac = 0.5
 			pale = tuple([int(x + (255-x)*palefac) for x in rgb])
 			darkfac = 0.8
 			dark = tuple([int(x *darkfac) for x in rgb])

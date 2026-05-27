@@ -206,7 +206,7 @@ TEST_CASE("JSL I/O Utilities", "[io]")
         std::vector<std::string> v2 = {"A", "B"};
         std::vector<double> v3 = {1.1, 2.2};
 
-        JSL::IO::writeVector(p, ",", v1, v2, v3);
+        JSL::IO::writeRows(p, ",", v1, v2, v3);
 
         // Expected format:
         // 1,A,1.1
@@ -222,7 +222,7 @@ TEST_CASE("JSL I/O Utilities", "[io]")
         std::vector<std::vector<int>> matrix = {{1, 2}, {3, 4}};
 
         // Using custom delimiters
-        JSL::IO::writeMatrix(p, "|", matrix, ";");
+        JSL::IO::writeRows(p, "|", matrix, ";");
 
         // Expected: 1|2;3|4;
         CHECK(readFile(p) == "1|2;3|4;");

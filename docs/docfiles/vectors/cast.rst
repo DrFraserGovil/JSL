@@ -13,7 +13,7 @@ We have also integrated the :ref:`ParseTo <parseto>` and :ref:`MakeFrom <makestr
 
 .. have to manually document this as doxygen/sphinx don't like function overloads that only differ by their template signature!
 
-.. cpp:function:: template<typename To, template<typename...> typename Container, typename From, typename... Args> Container<To> cast(const Container<From, Args...> & src)
+.. cpp:function:: template<typename To, template<typename...> typename Container, typename From, typename... Args> Container<To> Vector::cast(const Container<From, Args...> & src)
 	 
 	A generalisation of static_cast to STL containers; generates a new object which contains a casting of the original internal type
 	
