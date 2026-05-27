@@ -11,4 +11,5 @@ These functions can be broken down into three groups:
 	vectors/join	
 	vectors/linspace
 	vectors/search
+	vectors/cast
 	:maxdepth: 1
