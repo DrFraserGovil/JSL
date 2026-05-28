@@ -1,6 +1,7 @@
 #pragma once
 #include <string_view>
-#include <vector> 
+#include <vector>
+#include <concepts> 
 #include <ranges>
 namespace JSL::Concept
 {
@@ -11,9 +12,21 @@ namespace JSL::Concept
 		struct is_vector<std::vector<T, A>> : std::true_type {};
 	//end concept
 	
+	// A custom lightweight type-trait alias to replace std::ranges::range_value_t
+    template<typename T>
+    using range_value_t = std::iter_value_t<decltype(std::begin(std::declval<T&>()))>;
+
+	// Core structural check to verify a type supports basic iteration
+    template<typename T>
+    concept Iterable = requires(T& t) 
+    {
+        std::begin(t);
+        std::end(t);
+    };
+
 	//A concept which defines objects that can be iterated through, and has a 'size' member
 	template<typename T>
-	concept SearchableRange = 	std::ranges::input_range<T> && 
+	concept SearchableRange = 	Iterable<T> && 
 								requires(T t)
 								{
 									{ t.size() } -> std::integral;
@@ -27,7 +40,7 @@ namespace JSL::Concept
 								};
 	
 	template<typename T>
-	concept NonStringRange = std::ranges::range<T> && 
+	concept NonStringRange = 	Iterable<T> && 
 								!std::convertible_to<T,std::string_view> && 
 								!std::convertible_to<T,std::string>;
 

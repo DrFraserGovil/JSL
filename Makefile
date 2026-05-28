@@ -5,7 +5,7 @@ BUILD_DIR = .build
 
 # The default target: ensures .build exists, runs cmake, then builds
 all:
-	@make graph
+# 		@make graph
 	@mkdir -p $(BUILD_DIR)
 	@cmake -S . -B $(BUILD_DIR)
 	@make -C $(BUILD_DIR) --no-print-directory

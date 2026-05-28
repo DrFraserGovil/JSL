@@ -1,6 +1,6 @@
 #pragma once
 #include <string_view>
-#include <ranges>
+#include <concepts>
 namespace JSL::Concept
 {
 	template<typename T>

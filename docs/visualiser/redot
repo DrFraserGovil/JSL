@@ -65,7 +65,8 @@ class Network:
 		self.TrimSources()
 	def Render(self):
 		with open(self.File,'w') as file:
-			file.write("digraph codeviz{\n\tconcentrate=true\n\tsplines=true\n\tsep=\"+15,+15\"\n\toverlap=false\n\n\tnode[shape=Mrecord,fontsize=12]\n\n")
+			bcol = "#C2C2C4"
+			file.write(f"digraph codeviz{{\n\tbgcolor=\"{bcol}\"\n\tconcentrate=true\n\tsplines=true\n\tsep=\"+15,+15\"\n\toverlap=false\n\n\tnode[shape=Mrecord,fontsize=12]\n\n")
 
 			for a in self.Nodes:
 				file.write(self.Nodes[a].RenderSelf(self.LongestName))
@@ -85,9 +86,14 @@ class Network:
 		for d in self.Nodes:
 			self.Nodes[d].CheckFolder(groups)
 
-		palette = colorbrewer.Set2
-		
+		palette = colorbrewer.Set3
+
+		colmax = max(palette.keys())	
+
 		N = max(min(palette.keys()),min(max(palette.keys()),len(groups)))
+		print(f"Rendering using {N} colours")
+		if N < len(groups):
+			print("\tThis exceeds the number of colours in the colorbrewer syntax. Duplications may occur")
 		for i,g in enumerate(groups):
 			rgb = palette[N][i%N]
 			palefac = 0.5

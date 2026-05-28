@@ -138,7 +138,7 @@ namespace JSL::String
 		template<JSL::Concept::NonStringRange T>
 		T inline ParseTo(std::string_view sv,std::string_view delimiter)
 		{
-			using InnerT = std::ranges::range_value_t<T>;
+			using InnerT = JSL::Concept::range_value_t<T>;
 			std::vector<std::string_view> tokens;
 			
 			

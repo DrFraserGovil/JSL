@@ -35,7 +35,7 @@ namespace JSL::Vector
 	/// @param target The values to be matched
 	/// @return A vector of indices corresponding to all points where vec[id] == target. If no matches found, vector is empty
 	template<typename T, Concept::SearchableRange R>
-    requires std::convertible_to<T, std::ranges::range_value_t<R>>
+    requires std::convertible_to<T, JSL::Concept::range_value_t<R>>
 	inline std::vector<size_t> FindAll(const R & vec, const T & target)
 	{
 		return FindAllWhere(vec,[&](auto & val){return val == target;}); 

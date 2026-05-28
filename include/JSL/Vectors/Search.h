@@ -2,7 +2,6 @@
 #include <numeric>      // std::iota
 #include <algorithm>  
 #include <vector>
-#include <ranges>
 #include <concepts>
 #include <functional>
 #include <JSL/Concepts/ranges.h>
@@ -36,7 +35,7 @@ namespace JSL::Vector
 	/// @param target The value to be searched for
 	/// @return A SearchResult indicating if the element has been found, and the index it can be found at
 	template<typename T, JSL::Concept::SearchableRange R>
-    requires std::convertible_to<T, std::ranges::range_value_t<R>>
+    requires std::equality_comparable_with<T, JSL::Concept::range_value_t<R>>
 	inline SearchResult find(const R & vec,const T & target )
 	{
 		auto begin = std::begin(vec);
@@ -90,7 +89,7 @@ namespace JSL::Vector
 	/// @param target The values to be matched
 	/// @return True if the value is found, false otherwise
 	template<typename T, Concept::SearchableRange R>
-    requires std::convertible_to<T, std::ranges::range_value_t<R>>
+    requires std::equality_comparable_with<T, JSL::Concept::range_value_t<R>>
 	inline bool contains(const R & vec, const T & target)
 	{
 		return static_cast<bool>(find(vec, target));
