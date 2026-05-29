@@ -3,7 +3,7 @@ SHOW_SOURCE=False
 INCLUDE_SOURCE=True
 DELETE_DOT = False
 
-OUTFILE= ["heirarchy.pdf","heatmap.pdf"]
+OUTFILE= ["heirarchy.png","heatmap.png"]
 ENGINE= ["dot","sfdp"]
 
 IGNORE_GLOBS="**/internal/*"

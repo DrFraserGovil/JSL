@@ -32,4 +32,12 @@ The JSL library is broken up into a series of smaller modules, each of which can
 Internal Dependencies
 ++++++++++++++++++++++
 
-.. image:: visualiser/network.png
+.. figure:: visualiser/heirarchy.png
+	:align: center 
+
+	*The overall inclusion heirarchy. Colours group together files in the modules and submodules of the library*
+
+.. figure:: visualiser/heatmap.png
+	:align: center
+
+	*The inclusion-density of files in the library. Files which are more red have a larger number of library source files which include them, and therefore trigger larger recompiles when they are modified*
