@@ -4,9 +4,10 @@ test/.build
 *.tst
 test/unit_test
 docs/dox
-docs/__pycache__/
+**/__pycache__/
 *.DS_Store
 makefile
+
 # Prerequisites
 *.d
 *.vscode

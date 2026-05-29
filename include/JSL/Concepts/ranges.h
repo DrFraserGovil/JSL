@@ -2,7 +2,6 @@
 #include <string_view>
 #include <vector>
 #include <concepts> 
-#include <ranges>
 namespace JSL::Concept
 {
 	//Define a nice C++20 concept which defines a 'vector type' as any std::vector<T>, but excludes std::string from being too eager

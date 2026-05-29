@@ -3,13 +3,6 @@ set -e
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 
-if [ -z "$1" ]
-  then
-    renderer=dot
-else
-	renderer=$1
-fi
-
 render () {
 	cd $SCRIPT_DIR/../../$3
 	codeviz -r $2 -o $1.pdf $4
@@ -20,5 +13,6 @@ render () {
 	$renderer -Tpng $1.dot -o $1.png
 }
 
-render "network" . include "--ignore JSL/internal/error.h"
-render "network_all" "include src" "" "--ignore include/JSL/internal/error.h"
+
+cd $SCRIPT_DIR
+hiviz -c conf.py $@
