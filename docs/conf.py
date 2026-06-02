@@ -87,4 +87,4 @@ def setup(app):
 	app.add_directive("jsl-class", JSLClassDirective)
 	app.add_directive("jsl-meta", JSLMetaDirective)
 	app.add_directive("jsl", JSLHandover)
-
+	app.connect('html-page-context',cleanIndex)

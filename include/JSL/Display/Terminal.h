@@ -1,7 +1,7 @@
 #pragma once
 #include <cmath>
-
-namespace JSL::Terminal
+#include "ANSI_Codes.h" //to ensure the terminal namespace rename is captured
+namespace JSL::Display::Terminal
 {
 	/*!
 	 * @brief A class representing the current state of the terminal 

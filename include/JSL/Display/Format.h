@@ -8,7 +8,7 @@
 #include <cstring>
 #include <sstream>
 #include <optional>
-namespace JSL::Format
+namespace JSL::Display::Format
 {
     
     /*!
@@ -178,4 +178,9 @@ namespace JSL::Format
         
 
     
+}
+
+namespace JSL
+{
+    namespace Format = JSL::Display::Format;
 }

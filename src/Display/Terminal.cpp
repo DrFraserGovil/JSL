@@ -10,7 +10,7 @@
 	#include <unistd.h>
 #endif
 
-namespace JSL::Terminal
+namespace JSL::Display::Terminal
 {
 	Environment::Environment()
 	{
@@ -142,7 +142,5 @@ namespace JSL::Terminal
 		}
 		_Rows = ws.ws_row;
 		_Columns = ws.ws_col;
-	}
-
-	
+	}	
 }

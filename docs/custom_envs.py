@@ -1,7 +1,7 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 from docutils.statemachine import ViewList  # Add this import
-
+import re
 class JSLClassDirective(Directive):
 	has_content = True
 	required_arguments = 1
@@ -149,3 +149,80 @@ class JSLHandover(Directive):
 		self.state.nested_parse(vl, 0, node)
 		
 		return node.children
+
+
+class IndexGroup:
+	def __init__(self,name):
+		self.Name = name
+		self.Subgroups = {}
+		self.Files = []
+	def Add(self,namespaces,links):
+		front = namespaces[0]
+		if len(namespaces) == 1:
+			self.Files.append([front,links])
+		else:
+			if front not in self.Subgroups:
+				self.Subgroups[front] = IndexGroup(front)
+			self.Subgroups[front].Add(namespaces[1:],links)
+	def Render(self,indent=0):
+		print(f"{"  "*indent}{self.Name}::")
+		indent += 1
+		for file in self.Files:
+			print(f"{"  "*indent}-{file[0]}")
+		for mod in self.Subgroups.values():
+			mod.Render(indent)
+	def count(self):
+		s = len(self.Files)
+		for f in self.Subgroups.values():
+			s += f.count()
+		return s
+	def CollateEntries(self,parent,group,depth):
+		for file,link in self.Files:
+			if depth == 0:
+				group.append((parent+file,link))
+			else:
+				group.append((parent+file,link[0]))
+		for subgroup in self.Subgroups.values():
+			if depth > 0 or subgroup.count() < 2: 
+				subgroup.CollateEntries(parent+subgroup.Name+"::",group,depth+1)
+			else:
+				sub = []
+				subgroup.CollateEntries("",sub,depth+1)
+				group.append((parent+subgroup.Name+"::",([],sub,None)))
+
+	def SphinxRender(self):
+		entries = []
+		self.CollateEntries("",entries,0)
+		return (self.Name,entries)
+
+bracket_re = re.compile(r"(.*)\s\((.*)\)")
+def cleanIndex(app,pagename,templatename,context,doctree):
+	if pagename == "genindex":
+		print("\n\tIntercepting html for modification")
+		group = {}
+
+		def testGroup(group,val):
+			if val not in group.keys():
+				group[val] = IndexGroup(val)
+
+		for letter, entries in context.get("genindexentries",[]):
+			for entry in entries:
+				grab = bracket_re.match(entry[0])
+				if (grab):
+					name = grab.group(1)
+					explode = name.split("::")
+					root = explode[0]
+					if len(explode) > 1:
+						testGroup(group,root)
+						group[root].Add(explode[1:],entry[1])
+					else:
+						n = "Macros & Global Namespace"
+						testGroup(group,n)
+						group[n].Add([root],entry[1])
+
+
+		newentries = []
+		for g in group.values():
+			newentries.append(g.SphinxRender())
+		# print(newentries[0][1][0])
+		context['genindexentries'] = newentries

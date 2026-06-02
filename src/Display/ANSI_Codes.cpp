@@ -8,7 +8,7 @@
 	These are some display commands which  enable the user to shift the cursor around, delete items and otherwise alter the appearance of terminal output. 
 
 */
-namespace JSL::Terminal
+namespace JSL::Display::Terminal
 {
 	CursorCommand MoveToColumn(uint32_t column)
 	{
@@ -22,7 +22,7 @@ namespace JSL::Terminal
 	}
 }
 
-namespace JSL::Format
+namespace JSL::Display::Format
 {	
 	std::string Reset(Element target)
 	{

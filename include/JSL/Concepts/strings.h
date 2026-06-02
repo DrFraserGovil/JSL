@@ -2,8 +2,6 @@
 #include <concepts>
 #include <string_view>
 #include <string>
-#include <chrono>
-#include <memory>
 namespace JSL::Concept
 {
 	template<typename T>

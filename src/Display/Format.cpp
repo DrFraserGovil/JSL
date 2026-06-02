@@ -3,7 +3,7 @@
 #include <sstream>
 #include <algorithm>
 #include <JSL/Display/Terminal.h>
-namespace JSL::Format
+namespace JSL::Display::Format
 {
 
 

@@ -1,5 +1,7 @@
 .. _fileio:
 
+.. cpp::module:: IO
+
 File I/O
 =================
 

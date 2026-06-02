@@ -1,6 +1,5 @@
 #pragma once
-#include <string_view>
-#include <concepts>
+#include <tuple>
 namespace JSL::Concept
 {
 	template<typename T>

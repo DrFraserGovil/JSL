@@ -11,12 +11,12 @@ Most of the time it is not necessary to know the size of the terminal that the o
 Terminal::Environment
 ++++++++++++++++++++++
 
-.. jsl-class:: JSL::Terminal::Environment
+.. jsl-class:: JSL::Display::Terminal::Environment
 	:file: Display/Terminal.h
 
 Access Function
 ++++++++++++++++++++
 
-.. jsl:: JSL::Terminal::Global()
+.. jsl:: JSL::Display::Terminal::Global()
 	:file: Display/Terminal.h
 	:command: doxygenfunction

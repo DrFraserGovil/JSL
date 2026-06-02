@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(JSL)
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 file(GLOB_RECURSE JSL_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 add_library(JSL STATIC
@@ -14,7 +14,7 @@ set_target_properties(JSL PROPERTIES SUFFIX "")
 set_target_properties(JSL PROPERTIES OUTPUT_NAME "JSL.lib")
 
 
-target_include_directories(JSL 
+target_include_directories(JSL
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
     PRIVATE src
 )

@@ -26,7 +26,7 @@ The JSL library is broken up into a series of smaller modules, each of which can
 		:maxdepth: 2
 
 	* :ref:`genindex`
-
+	* :ref:`modindex`
 
 
 Internal Dependencies

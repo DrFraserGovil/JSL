@@ -6,7 +6,8 @@
 	These are some display commands which  enable the user to shift the cursor around, delete items and otherwise alter the appearance of terminal output. 
 
 */
-namespace JSL::Terminal
+
+namespace JSL::Display::Terminal
 {
 	//!@brief A basic wrapper to make CursorCommands look more fancy than simple s, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)
 	typedef std::string CursorCommand; 
@@ -51,9 +52,15 @@ namespace JSL::Terminal
 	CursorCommand MoveToColumn(uint32_t column);
 }
 
-
-namespace JSL::Format
+namespace JSL
 {
+	namespace Terminal = JSL::Display::Terminal;
+}
+
+namespace JSL::Display::Format
+{
+
+
 	/// @brief Returns the specified target back to its default state, as specified by the terminal settings
 	/// @param target The element to be reset to default (does not support bitmasking)
 	/// @return A string representing the ANSI sequence
