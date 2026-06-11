@@ -193,13 +193,13 @@ namespace JSL::Parameter
 
     void Parameter::NestedAggregator::printAsTitle(std::string_view input)
     {
-        auto fg = Format::Black();
-        auto bg = Format::White(true); 
-        if (Terminal::Global().IsANSICapable()) //piggyback off the terminal checking if formatting can be used
+        auto fg = Display::Black();
+        auto bg = Display::White(true); 
+        if (Display::Terminal::Global().IsANSICapable()) //piggyback off the terminal checking if formatting can be used
         {
-            auto titleCol =  fg + Format::Italics() + bg;
+            auto titleCol =  fg + Display::Italics() + bg;
             std::string buffer = (input.size() < lineLength) ? std::string(lineLength - input.size(),' ') : "";
-            std::cout << titleCol << input << buffer << Format::ResetAll() << "\n";
+            std::cout << titleCol << input << buffer << Display::ResetAll() << "\n";
         }
         else
         {

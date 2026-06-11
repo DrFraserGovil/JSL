@@ -37,7 +37,7 @@ namespace JSL::Log::internal
 	void Core::Header()
 	{
 		std::string_view label;
-		Format::Command fmt;
+		Display::Command fmt;
 		switch(Level) {
 			case DEBUG: fmt = Config::Global().DebugColour;label = "[DEBUG] "; break;
 			case INFO: fmt=Config::Global().InfoColour;label = "[INFO]  "; break;
@@ -47,7 +47,7 @@ namespace JSL::Log::internal
 		} 
 		if (Config::Global().ForceClear)
 		{
-			BufferPreamble << JSL::Terminal::ClearLine;
+			BufferPreamble << JSL::Display::Terminal::ClearLine;
 		}
 		if (!ManualFormat)
 		{
@@ -95,7 +95,7 @@ namespace JSL::Log::internal
 		}
 
 		
-		std::cout << Format::ResetAll();
+		std::cout << Display::ResetAll();
 		
 
 		if (Config::Global().AppendNewline)

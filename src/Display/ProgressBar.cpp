@@ -99,8 +99,8 @@ namespace JSL::Display::Progress
         std::ostringstream buffer;
         if (hasRendered)
         {
-            buffer << JSL::Terminal::Move(Terminal::Direction::Up,Depth);
-            buffer << JSL::Terminal::MoveToColumn(0);//move all the way left
+            buffer << JSL::Display::Terminal::Move(Display::Terminal::Direction::Up,Depth);
+            buffer << JSL::Display::Terminal::MoveToColumn(0);//move all the way left
         }
         hasRendered = true;
         for (size_t i = 0; i < Depth; ++i)

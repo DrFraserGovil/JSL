@@ -61,7 +61,7 @@ namespace JSL::Log::internal
 				@returns A reference to the object, allowing for 'chaining' the stream; stream << a << b << c
 			*/
 			template<class T>
-			requires (!Format::FormatType<T> && requires(T t){std::cout << t;})
+			requires (!Display::FormatType<T> && requires(T t){std::cout << t;})
 			Core &operator<<(const T &msg)
 			{
 				if (!StreamActive) //lazy opening of the steam
@@ -75,7 +75,7 @@ namespace JSL::Log::internal
 			}
 			
 			template<class T> 
-			requires (!Format::FormatType<T> && !requires(T t){std::cout << t;})
+			requires (!Display::FormatType<T> && !requires(T t){std::cout << t;})
 			Core & operator<<(const T & msg)
 			{
 				this->operator<<(JSL::String::makeFrom(msg));
@@ -84,7 +84,7 @@ namespace JSL::Log::internal
 			/*!
 				Overloads the stream operator for JSL::Format objects, allowing peristent formatting across linebreaks and in the pregenerated headers.
 			*/
-			template<Format::FormatType Q>
+			template<Display::FormatType Q>
 			Core &operator<<(Q format)
 			{
 				//not strictly necessary as formats are suppresed; but this prevents triggering some complex logic that would be ultimately pointless
@@ -112,7 +112,7 @@ namespace JSL::Log::internal
 			bool ManualFormat = false;
 
 			//! The current format of the line, enabling selective reset calls. 
-			Format::FormatGroup CurrentFormat;
+			Display::FormatGroup CurrentFormat;
 
 			//! The internal Buffer to which Core::operator<< is streamed, and which is then output to terminal.
 			std::stringstream Buffer;

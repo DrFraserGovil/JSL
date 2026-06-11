@@ -32,23 +32,23 @@ namespace JSL::Parameter
     template<class T, class U>
     std::string fmtwrap(T prefix, std::string text, U suffix)
     {
-        if (!Terminal::Global().IsANSICapable()){return text;}
+        if (!Display::Terminal::Global().IsANSICapable()){return text;}
         
         return (std::string)prefix + text + suffix;
     }
     template<class T>
     std::string fmtwrap(T prefix, std::string text)
     {
-        if (!Terminal::Global().IsANSICapable()){return text;}
+        if (!Display::Terminal::Global().IsANSICapable()){return text;}
         
-        return (std::string)prefix + text + Format::ResetAll();
+        return (std::string)prefix + text + Display::ResetAll();
     }
 
     void Aggregator::HelpMenu()
     {
         std::cout << "Usage:\n";
         std::cout << "\t" << cmdCapture  << " [commands] [options]\n";
-        std::cout << Format::Colour(40,40,40) <<  Format::Italics();
+        std::cout << Display::Colour(40,40,40) <<  Display::Italics();
         std::cout << "Commands are any space separated commands before the first option\nOptions must be indicated by at least one dash\n";
         
         //commands are printed only once
@@ -62,9 +62,9 @@ namespace JSL::Parameter
                 std::string suffix="";
                 if (name == defaulter)
                 {
-                    suffix = fmtwrap(Format::Colour(50,50,50)," (default)");
+                    suffix = fmtwrap(Display::Colour(50,50,50)," (default)");
                 }
-                std::string title = fmtwrap(Format::Bold() + Format::Green(), name);
+                std::string title = fmtwrap(Display::Bold() + Display::Green(), name);
                 std::cout << String::tableFormat({title+suffix,txt},{lw,mw+rw}," ") << "\n";
             }
         }

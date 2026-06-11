@@ -10,7 +10,7 @@ namespace JSL::Log
 	{
 		class Core; //forward declaration for friend
 	}
-    /*!
+	/*!
 	\brief A packager for globally accessible variables for the LoggerCore object to refer to. 
 
 	\details The Constructor is private, so only one Log::Config can exist: the one accessed through the Global() member (a Meyer's Singleton). 
@@ -61,17 +61,16 @@ namespace JSL::Log
 			/// @}
 
 			//! If Formatting active, the default colour assigned to LOG(ERROR) messages
-			Format::Command ErrorColour = JSL::Format::Red();
+			Display::Command ErrorColour = JSL::Display::Red();
 
 			//! If Formatting active, the default colour assigned to LOG(WARN) messages
-			Format::Command WarnColour = JSL::Format::Purple();
+			Display::Command WarnColour = JSL::Display::Purple();
 			
 			//! If Formatting active, the default colour assigned to LOG(INFO) messages
-			Format::Command InfoColour = JSL::Format::White();
+			Display::Command InfoColour = JSL::Display::White();
 
 			//! If Formatting active, the default colour assigned to LOG(DEBUG) messages
-			Format::Command DebugColour = JSL::Format::Blue();
-
+			Display::Command DebugColour = JSL::Display::Blue();
 
 			//! The Core class needs to be able to reach inside the private members to access them. 
 			friend class JSL::Log::internal::Core;

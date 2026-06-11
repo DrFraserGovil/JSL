@@ -8,7 +8,7 @@ namespace JSL::String
 {
     size_t trueSize(std::string_view str)
     {
-        return trueSize(str,JSL::Terminal::Global().TabSize());
+        return trueSize(str,JSL::Display::Terminal::Global().TabSize());
     }
     size_t trueSize(std::string_view str,size_t tabSize)
     {

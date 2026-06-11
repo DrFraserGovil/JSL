@@ -3,12 +3,10 @@
 
 #include <iostream>
 #include <string>
-#include <charconv>
 #include <cstdint>
 #include <cstring>
-#include <sstream>
 #include <optional>
-namespace JSL::Display::Format
+namespace JSL::Display
 {
     
     /*!
@@ -178,9 +176,4 @@ namespace JSL::Display::Format
         
 
     
-}
-
-namespace JSL
-{
-    namespace Format = JSL::Display::Format;
 }
