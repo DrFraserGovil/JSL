@@ -2,7 +2,7 @@
 #include <JSL/Display/Terminal.h>
 #include <JSL/internal/error.h>
 #include <JSL/Vectors/Search.h>
-#include <JSL/Display/Log.h>
+#include <JSL/Log.h>
 #include <JSL/Display/Format.h>
 
 

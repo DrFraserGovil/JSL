@@ -1,7 +1,7 @@
 #include <JSL/Async/Watcher.h>
 #include <JSL/internal/error.h>
 #include <poll.h>
-#include <JSL/Display/Log.h>
+#include <JSL/Log.h>
 #include <set>
 #include <thread>
 

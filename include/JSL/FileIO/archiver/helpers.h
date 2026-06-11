@@ -34,13 +34,13 @@ namespace JSL::Archiver::internal
         std::array<char, 8> devmajor{};
         std::array<char, 8> devminor{};
         std::array<char, 155> prefix{};
-        std::array<char, 12> padding{};  
+        std::array<char, 12> padding{};
     };
     static_assert(sizeof(TarHeader) == 512, "TarHeader must be exactly 512 bytes");
 
     struct Security
     {
-        uint32_t UID = 1000; // uid of first normal human user. A good default as tar doesn't *really* need a uid (it's discarded when tar runs) 
+        uint32_t UID = 1000; // uid of first normal human user. A good default as tar doesn't *really* need a uid (it's discarded when tar runs)
         uint32_t GID = 1000;
         std::string UName = "user";
         std::string GName = "user";
@@ -53,7 +53,7 @@ namespace JSL::Archiver::internal
         TarHeader headerBlock;
         std::string data;
         size_t padding;
-    };    
+    };
 
     /*
 		A container for recording the location of files in an archive stream

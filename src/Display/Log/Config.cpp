@@ -1,4 +1,4 @@
-#include <JSL/Display/Log/Config.h>
+#include <JSL/Log/Config.h>
 #include <JSL/Display/Terminal.h>
 
 namespace JSL::Log

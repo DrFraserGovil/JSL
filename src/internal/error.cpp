@@ -1,6 +1,5 @@
 #include <JSL/internal/error.h>
 
-#include "JSL/Display/Log.h"
 
 #include <stdexcept>
 #include <filesystem>

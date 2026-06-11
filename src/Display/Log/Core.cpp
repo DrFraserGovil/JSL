@@ -1,4 +1,4 @@
-#include <JSL/Display/Log/Core.h>
+#include <JSL/Log/Core.h>
 #include <JSL/Strings/Manipulate.h>
 #include <JSL/Strings/Wrap.h>
 

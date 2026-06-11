@@ -1,8 +1,7 @@
 #include <JSL/FileIO/Directory.h>
 #include <regex>
-#include <algorithm>
 #include <filesystem>
-#include <JSL/Display/Log.h>
+#include <JSL/Log.h>
 namespace JSL::IO
 {
 	namespace fs = std::filesystem;

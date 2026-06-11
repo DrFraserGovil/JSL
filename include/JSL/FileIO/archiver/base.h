@@ -9,7 +9,7 @@ namespace JSL::Archiver
         Read,
 		//! Puts the Archive in write mode. If a file exists with the archive name, it is replaced by a blank archive.
 		Write,
-		//! Puts the Archive in write mode. If a file exists with the archive name, it is read as an archive, and the contents copied across.
+		//! @brief Puts the Archive in write mode. If a file exists with the archive name, it is read as an archive, and the contents copied across.
 		Append,
     };
 
@@ -25,6 +25,8 @@ namespace JSL::Archiver
 
                 VaultBase(Mode mode) : FileMode(mode){};
             public:
+                //! @brief some descriptive text
+                //! @param enabled does a thing
                 void SetStrictMode(bool enabled) {StrictMode = enabled;};
         };
     }

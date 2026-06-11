@@ -1,6 +1,5 @@
-#include <JSL/Display/Log/Levels.h>
+#include <JSL/Log/Levels.h>
 #include <JSL/internal/error.h>
-#include <stdexcept>
 #include <string>
 LogLevel JSL::Log::MakeLevel(int level)
 {

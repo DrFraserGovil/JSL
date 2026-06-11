@@ -1,6 +1,6 @@
 #include <JSL/Display/ProgressBar.h>
 #include <JSL/Display/ANSI_Codes.h>
-#include <JSL/Display/Log.h>
+#include <JSL/Log.h>
 #include <sstream>
 #include <JSL/internal/error.h>
 namespace JSL::Display::Progress

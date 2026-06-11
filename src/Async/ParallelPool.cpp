@@ -1,5 +1,5 @@
 #include <JSL/Async/ParallelPool.h>
-#include <JSL/Display/Log.h>
+#include <JSL/Log.h>
 #include <JSL/internal/error.h>
 namespace JSL::Parallel
 {

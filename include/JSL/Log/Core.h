@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include <JSL/Display/Log/Config.h>
+#include <JSL/Log/Config.h>
 #include <JSL/Strings/MakeFrom.h>
 // #include <JSL/Display/Format.h>
 

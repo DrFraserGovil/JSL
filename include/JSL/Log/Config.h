@@ -1,5 +1,5 @@
 #pragma once
-#include <JSL/Display/Log/Levels.h>
+#include <JSL/Log/Levels.h>
 #include <JSL/Display/ANSI_Codes.h>
 #include <unistd.h> // For isatty()
 #include <cstdio>   // For fileno() and stderr

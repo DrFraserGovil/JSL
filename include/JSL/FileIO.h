@@ -3,5 +3,4 @@
 #include <JSL/FileIO/Filesystem.h>
 #include <JSL/FileIO/fileWriters.h>
 #include <JSL/FileIO/pipedInput.h>
-#include <JSL/FileIO/archiver.h>
-#include <JSL/FileIO/glob.h>
+#include <JSL/FileIO/Vault.h>

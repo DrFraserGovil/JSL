@@ -1,17 +1,15 @@
 #pragma once
-#include <numeric>      // std::iota
-#include <algorithm>  
+#include <algorithm>
 #include <vector>
 #include <concepts>
-#include <functional>
 #include <JSL/Concepts/ranges.h>
 namespace JSL::Vector
 {
 	/// @brief A signal that an element was not in the targeted array
-	/// @details The assigned value is the maximum possible size_t (and so this functions like std::string::npos) 
+	/// @details The assigned value is the maximum possible size_t (and so this functions like std::string::npos)
 	inline constexpr size_t NotFound = static_cast<size_t>(-1);
 
-	/// @brief A container for storing search results, which can act simultaneously as the signal that a result was found, and as the index itself, with minimal friction 
+	/// @brief A container for storing search results, which can act simultaneously as the signal that a result was found, and as the index itself, with minimal friction
 	struct SearchResult
 	{
 		/// @brief True if the searched value exists within the input
@@ -20,11 +18,11 @@ namespace JSL::Vector
 		size_t Index;
 		/// @brief An explicit cast for converting the object into a boolean
 		/// @details Allows for ``SearchResult found; if (found)....``
-		explicit operator bool() const { return Found; } 
+		explicit operator bool() const { return Found; }
 		/// @brief An implicit cast for converting the object into an index, allowing the object to be treated as a size_t object wherever it can.
 		/// @warning This is only meaningful if the user first validates that Found is true!
-		operator size_t() const { return Index; } //can do Vector[SearchResult] 
-		
+		operator size_t() const { return Index; } //can do Vector[SearchResult]
+
 	};
 
 	/// @brief Gets the first id such that vec[id] == target
@@ -50,7 +48,7 @@ namespace JSL::Vector
 			return {false,NotFound};
 		}
 	}
-	
+
 	/// @brief Finds the first id such that ``checker(vec[id]) == true``
 	/// @tparam Predicate A function or lambda with signature <bool(r_member)>, where r_member is the type contained within R
 	/// @tparam R an iterable container containing objects of type r_member
@@ -62,7 +60,7 @@ namespace JSL::Vector
 	{
 		auto begin = std::begin(vec);
 		auto it = std::find_if(begin,std::end(vec),checker);
-		
+
 		if (it != std::end(vec))
 		{
 			return {true,static_cast<size_t>(std::distance(begin,it))};
@@ -85,7 +83,7 @@ namespace JSL::Vector
 	/// @brief Detect if a container contains a specified value
 	/// @tparam T An object which can be stored in a container, and has an equality operator
 	/// @tparam R An iterable container containing objects of type T
-	/// @param vec The vector to be searched 
+	/// @param vec The vector to be searched
 	/// @param target The values to be matched
 	/// @return True if the value is found, false otherwise
 	template<typename T, Concept::SearchableRange R>
@@ -94,5 +92,5 @@ namespace JSL::Vector
 	{
 		return static_cast<bool>(find(vec, target));
 	}
-   
+
 }

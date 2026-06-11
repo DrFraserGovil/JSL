@@ -1,7 +1,7 @@
 #include <JSL/FileIO/archiver/writer.h>
 #include <JSL/internal/error.h>
 #include <filesystem>
-#include <JSL/Display/Log.h>
+#include <JSL/Log.h>
 namespace JSL::Archiver
 {
 	Vault<Mode::Write>::Vault() : internal::VaultBase(Mode::Write)
