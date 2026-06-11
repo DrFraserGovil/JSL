@@ -11,19 +11,19 @@
 
 #define JSL_ACTIVE //define a preprocessor variable which allows other libraries to conditionally install off it
 
-
+#include <JSL/Async.h>
+#include <JSL/Concepts.h>
 #include <JSL/Display.h>
-#include <JSL/FileIO.h>
-#include <JSL/Log.h>
+#include <JSL/IO.h>
 #include <JSL/Parameters.h>
 #include <JSL/Strings.h>
 #include <JSL/Time.h>
 #include <JSL/Vectors.h>
-#include <JSL/Async.h>
-#include <JSL/Concepts.h>
 
-//Log adds a macro into the global namespace
-// We undef it here unless explicitly asked for; this prevents pollution but allows us to use logging in our library
+//Log adds a macro into the global namespace, so be a bit careful about including it
 #ifdef JSL_REMOVE_LOG
+    //undef it just in case it snuck into the other header-includes (it shouldn't have, but it pays to be careful)
     #undef LOG
+#else
+    #include <JSL/Log.h>
 #endif
