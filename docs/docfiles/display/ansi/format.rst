@@ -8,7 +8,7 @@ Like the terminal commands, Formatting commands are -- at their heart -- strings
 .. warning::
 	ANSI Escape sequences are only renderable in certain Environments (most modern terminal emulators, for example). If rendered into a file, however, the result is gibberish text. 
 
-	The :cpp:class:`JSL::Display::Format::Command` class replaces ANSI sequences with blank strings when a bad-environment is detecte, disabling formatting, but allowing for an easy user experience. This constrasts with the approach of :ref:`ansi-terminal`, where no such disabling occurs due to the fundamentally different behaviour.
+	The :cpp:class:`JSL::Display::Command` class replaces ANSI sequences with blank strings when a bad-environment is detecte, disabling formatting, but allowing for an easy user experience. This constrasts with the approach of :ref:`ansi-terminal`, where no such disabling occurs due to the fundamentally different behaviour.
 
 Also note that ANSI control sequences have a non-zero length inside an ``std::string``, but have zero length when rendered to a terminal. This means that ``std::string::size`` is not a reliable indicator of string-length when ANSI control sequences are involved. We provide the :cpp:func:`JSL::String::trueSize` function for this purpose.
 
@@ -23,12 +23,12 @@ Sequence Functions
 		:file: Display/ANSI_Codes.h
 		:namespace: JSL::Display::Display::Format
 
-	.. doxygenfunction:: JSL::Display::Format::Bold
-	.. doxygenfunction:: JSL::Display::Format::Faint
-	.. doxygenfunction:: JSL::Display::Format::Italics
-	.. doxygenfunction:: JSL::Display::Format::Underline
-	.. doxygenfunction:: JSL::Display::Format::Highlight
-	.. doxygenfunction:: JSL::Display::Format::Strike
+	.. doxygenfunction:: JSL::Display::Bold
+	.. doxygenfunction:: JSL::Display::Faint
+	.. doxygenfunction:: JSL::Display::Italics
+	.. doxygenfunction:: JSL::Display::Underline
+	.. doxygenfunction:: JSL::Display::Highlight
+	.. doxygenfunction:: JSL::Display::Strike
 
 .. dropdown:: Colours
 	:color: primary
@@ -38,7 +38,7 @@ Sequence Functions
 		:file: Display/ANSI_Codes.h
 		:namespace: JSL::Display::Display::Format
 
-	.. cpp:function:: Command JSL::Display::Format::COLNAME(bool targetBackgroundCol = false)
+	.. cpp:function:: Command JSL::Display::COLNAME(bool targetBackgroundCol = false)
 
 	.. note::
 		Substitute ``COLNAME`` with one of: :cpp:func:`Black`, :cpp:func:`Blue`,
@@ -55,18 +55,18 @@ Sequence Functions
 		:color: secondary
 		:icon: sparkle-fill
 
-		.. doxygenfunction:: JSL::Display::Format::Black
-		.. doxygenfunction:: JSL::Display::Format::Blue
-		.. doxygenfunction:: JSL::Display::Format::Cyan
-		.. doxygenfunction:: JSL::Display::Format::Green
-		.. doxygenfunction:: JSL::Display::Format::Purple
-		.. doxygenfunction:: JSL::Display::Format::Red
-		.. doxygenfunction:: JSL::Display::Format::Yellow
-		.. doxygenfunction:: JSL::Display::Format::White
+		.. doxygenfunction:: JSL::Display::Black
+		.. doxygenfunction:: JSL::Display::Blue
+		.. doxygenfunction:: JSL::Display::Cyan
+		.. doxygenfunction:: JSL::Display::Green
+		.. doxygenfunction:: JSL::Display::Purple
+		.. doxygenfunction:: JSL::Display::Red
+		.. doxygenfunction:: JSL::Display::Yellow
+		.. doxygenfunction:: JSL::Display::White
 
-	.. doxygenfunction:: JSL::Display::Format::DefaultColour
+	.. doxygenfunction:: JSL::Display::DefaultColour
 
-	.. doxygenfunction:: JSL::Display::Format::Colour
+	.. doxygenfunction:: JSL::Display::Colour
 
 .. dropdown:: Resetting
 	:color: primary
@@ -78,8 +78,8 @@ Sequence Functions
 		:file: Display/ANSI_Codes.h
 		:namespace: JSL::Display::Format
 
-	.. doxygenfunction:: JSL::Display::Format::ResetAll
-	.. doxygenfunction:: JSL::Display::Format::Reset
+	.. doxygenfunction:: JSL::Display::ResetAll
+	.. doxygenfunction:: JSL::Display::Reset
 
 
 Internal Documentation
