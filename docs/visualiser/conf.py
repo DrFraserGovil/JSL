@@ -12,3 +12,4 @@ STRIP_NAMES = ["include", "src", "JSL"]
 LIBRARY_ENTRY = "JSL.h"
 LIBRARY_NAME = "JSL Library"
 COLOR_SCHEME = ["group", "link", "group", "link"]
+HORIZONTAL = True

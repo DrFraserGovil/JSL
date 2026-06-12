@@ -2,17 +2,5 @@
 set -e
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-
-render () {
-	cd $SCRIPT_DIR/../../$3
-	codeviz -r $2 -o $1.pdf $4
-	mv $1.* $SCRIPT_DIR/
-	cd $SCRIPT_DIR
-	./redot $1.dot
-	$renderer -Tpdf $1.dot -o $1.pdf
-	$renderer -Tpng $1.dot -o $1.png
-}
-
-
 cd $SCRIPT_DIR
 hiviz -c conf.py $@
