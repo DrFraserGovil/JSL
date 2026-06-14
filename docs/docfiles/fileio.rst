@@ -13,4 +13,5 @@ File I/O
 	fileio/pipe
 	fileio/glob
 	fileio/system
+	fileio/archiver
 	:maxdepth: 1

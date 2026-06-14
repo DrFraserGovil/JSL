@@ -1,9 +1,8 @@
 #pragma once
 #include <array>
 #include <cstdio>
-#include <string>
 
-namespace JSL::IO::Vault::internal
+namespace JSL::IO::internal
 {
 
 	//! A magic number associated with the tar block size. DO NOT CHANGE!

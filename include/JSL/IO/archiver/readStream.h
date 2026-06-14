@@ -28,11 +28,11 @@ namespace JSL::Archiver{
 			/*!
 				@brief Parse the datafile and convert each line into a tuple of datatypes based on an assumed regular tabular. Then performs a callback function on each line.
 
-				@details Each line is converted into a tuple of types specified by the ColumnTypes parameter (i.e. ForTabularLineIn<int,int,int> attempts to read the file as a set of three integers). Tuples are then accessed via std::get<i> to get the ith element of the tuple.
-				@param ColumnTypes An (arbitrary) number of typenames, representing the converted types of each element. typenames must have an associated convert() function.
-				@param TupleFunctor (optional -- usually compiler-inferred) template parameter for the type of the per-tuple callback function
+				@details Each line is converted into a tuple of types specified by the ColumnTypes parameter (i.e. ForTabularLineIn<int,int,int> attempts to read the file as a set of three integers). The callback function can then either be a function of void<std::tuple<ColumnTypes>> (i.e. manually handling the tuple), or a function void<ColumnTypes...>, in which case std::apply is used to unpack the tuple.
+				@tparam ColumnTypes An (arbitrary) number of typenames, representing the converted types of each element. typenames must have an associated convert() function.
+				@tparam TupleFunctor (optional -- usually compiler-inferred) template parameter for the type of the per-tuple callback function. 
 				@param delimiter The string delimiter between ColumnTypes in the file
-				@param perTupleFunction The function to be called on 
+				@param perLineFunction The function to be called on each line.
 
 				@throws runtime_error If the columns of the file cannot be interpreted as a regular grid of len(ColumnTypes) with consistent data types with the specified delimiter
 				@throws runtime_error If a datatype in a column cannot be converted into the specified typr

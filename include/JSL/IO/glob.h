@@ -7,7 +7,7 @@ namespace JSL::IO
 		@tparam T A string-like type (string, string_view, const char*)
 		@details '*' and '?' are converted into their glob equivalent, and other regex-sensitive characters are escaped.
 		@param input A glob-string to be converted
-		@param returns A string representing the glob in standard regex
+		@returns A string representing the glob in standard regex
 	*/	
 	template<class T>
 		requires std::convertible_to<T,std::string>
@@ -82,7 +82,7 @@ namespace JSL::IO
 		@tparam A string-like type (string, string_view, const char*)
 		@details '*' and '?' are converted into their glob equivalent, and other regex-sensitive characters are escaped.
 		@param input A glob-string to be converted
-		@param returns A compiled regex object representing the globstring
+		@returns A compiled regex object representing the globstring
 	*/	
 	template<class T>
 		requires std::convertible_to<T,std::string>

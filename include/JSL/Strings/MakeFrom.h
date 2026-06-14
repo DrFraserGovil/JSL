@@ -44,13 +44,13 @@ namespace JSL::String
 	
 		/*! @brief Converts single chars into strings 
 			@details Necessary because (for some reason) strings are not constructible from single chars 
-		* @param obj A character
+		* @param ltr A character
 		* @return A length-1 string containing the character
 		*/
 		template<>
-		std::string inline makeFrom(const char & obj)
+		std::string inline makeFrom(const char & ltr)
 		{
-			return std::string(1,obj);
+			return std::string(1,ltr);
 		}
 
 	//////////////////////////
@@ -59,14 +59,14 @@ namespace JSL::String
 
 		/*! @brief Converts floating point types into a string with a specified format 
 		* @tparam T A floating point type
-		* @param obj The value to be stringified
+		* @param num The value to be stringified
 		* @param precision The number of decimal places to retain 
 		* @param fmt The format to be used (either fixed or scientific)
 		* @return A string representing the input value
 		* @throws std::runtime_error If the value cannot be converted to a string
 		*/
 		template<std::floating_point T>
-		std::string inline makeFrom(const T & obj, int precision, std::chars_format fmt = std::chars_format::general)
+		std::string inline makeFrom(const T & num, int precision, std::chars_format fmt = std::chars_format::general)
 		{
 			const size_t needed = precision + 16; //16 is worst case scenario of required space for a  negative, hex with maximal radix
 			constexpr size_t stackLimit = 30;
@@ -74,7 +74,7 @@ namespace JSL::String
 			if (needed < stackLimit)
 			{
 				char buffer[stackLimit];
-				result = std::to_chars(buffer, buffer + needed, obj,fmt,precision);
+				result = std::to_chars(buffer, buffer + needed, num,fmt,precision);
 				if (result.ec == std::errc())
 				{
 					return std::string(buffer,result.ptr-buffer);
@@ -83,7 +83,7 @@ namespace JSL::String
 			else
 			{
 				std::vector<char> buffer(needed);
-				result = std::to_chars(buffer.data(), buffer.data() + needed, obj,fmt,precision);
+				result = std::to_chars(buffer.data(), buffer.data() + needed, num,fmt,precision);
 
 				if (result.ec == std::errc())
 				{
@@ -100,34 +100,34 @@ namespace JSL::String
 		/*! @brief Converts integral types into a string with a specified format 
 		* @details Since 'precision' is not defined for integers, this performs a direct cast to double, and hands it off to the floating point overload 
 		* @tparam T An integral type (except bool and char)
-		* @param obj The value to be stringified
+		* @param val The value to be stringified
 		* @return A string representing the input value
 		* @throws std::runtime_error If the value cannot be converted to a string
 		*/
 		template<JSL::Concept::Integer T>
-		std::string inline makeFrom(const T & obj, int precision,std::chars_format fmt = std::chars_format::general)
+		std::string inline makeFrom(const T & val, int precision,std::chars_format fmt = std::chars_format::general)
 		{
 			//precision is ill-defined for integers; so we cast it to double and let the scientific notation switch happen
-			return makeFrom<double>(static_cast<double>(obj),precision,fmt);
+			return makeFrom<double>(static_cast<double>(val),precision,fmt);
 		}
 
 		/*! @brief Converts any numeric type into a string 
 		* @details Uses the principle of 'least representation' to determine length of output string. For resolution control, see the overloads
 		* @details Some floating points may end up larger than the reserved buffer can hold; this triggers a delegation to the more involved overload with a fixed precision.
 		* @tparam T A numeric type (except bool and char)
-		* @param obj The value to be stringified
+		* @param num The value to be stringified
 		* @return A string representing the input value
 		* @throws std::runtime_error If the value cannot be converted to a string
 		*/
 		template<JSL::Concept::Numeric T>
-		std::string inline makeFrom(const T & obj)
+		std::string inline makeFrom(const T & num)
 		{
 			constexpr size_t reserved = std::max(
 				std::numeric_limits<T>::max_digits10 + 9,
 				std::numeric_limits<T>::digits10 + 3
 			);
 			char buf[reserved]{};
-			std::to_chars_result result = std::to_chars(buf, buf + reserved, obj);
+			std::to_chars_result result = std::to_chars(buf, buf + reserved, num);
 
 			if (result.ec != std::errc())
 			{
@@ -141,29 +141,29 @@ namespace JSL::String
 		}
 		
 		/*! @brief Converts booleans into strings 
-		* @param obj A boolean
+		* @param bln A boolean
 		* @return Either "true" or "false"
 		*/
 		template<>
-		std::string inline makeFrom(const bool & obj)
+		std::string inline makeFrom(const bool & bln)
 		{
-			return obj ? "true" : "false";
+			return bln ? "true" : "false";
 		}
 
 	/////////////////////////
 	// Forward declarations
 	/////////////////////////
 		template<JSL::Concept::NonStringRange T>
-		std::string inline makeFrom(const T & obj); 
+		std::string inline makeFrom(const T & vec); 
 
 		template<JSL::Concept::TupleLike T>
-		std::string inline makeFrom(const T & obj);
+		std::string inline makeFrom(const T & tpl);
 	
 		template<JSL::Concept::OptionalLike T>
-		std::string inline makeFrom(const T & obj);
+		std::string inline makeFrom(const T & opt);
 	
 		template<JSL::Concept::SmartPtr T>
-		std::string inline makeFrom(const T & obj);
+		std::string inline makeFrom(const T & ptr);
 	/////////////////////////
 	// Containers 
 	/////////////////////////
@@ -171,16 +171,16 @@ namespace JSL::String
 		/*! @brief Converts an iterable range into a string, recursively converting the contained objects
 			@details The string has bracket endcaps ("[]") and a comma delimiter. For more fine grained control, see JSL::String::stitch
 		* @tparam T An object supporting range-based iteration (but not strings)
-		* @param obj The object to be converted
-		* @return A string representing the input object 
+		* @param vec The object to be converted (not necessarily a std::vector, despite the name)
+		* @return A string representing the input array 
 		*/
 		template<JSL::Concept::NonStringRange T>
-		std::string inline makeFrom(const T & obj)
+		std::string inline makeFrom(const T & vec)
 		{
 			std::ostringstream os;
 			os << "[";
 			bool first = true;
-			for (const auto & v : obj)
+			for (const auto & v : vec)
 			{
 				if (!first)
 				{
@@ -198,19 +198,19 @@ namespace JSL::String
 		/*! @brief Converts a tuple into a string, recursively converting the contained objects	
 			@details The string has bracket endcaps ("()") and a comma delimiter. 
 			@tparam T Any std::tuple or std::pair object 
-			@param obj The value to be stringified
+			@param tpl The value to be stringified
 			@return A string representing the input value
 			@throws std::runtime_error: If the value cannot be converted to a string
 		*/
 		template<JSL::Concept::TupleLike T>
-		std::string inline makeFrom(const T & obj)
+		std::string inline makeFrom(const T & tpl)
 		{
 			std::ostringstream os;
 			os << "(";
 			std::apply([&os, first = true](const auto&... args) mutable
 			{
 				((os << (first ? first = false, "" : ", ") << makeFrom(args)), ...);
-			}, obj);
+			}, tpl);
 			os << ")";
 			return os.str();
 		}
@@ -219,28 +219,28 @@ namespace JSL::String
 	/////////////////////
 		/*! @brief Converts an optional-value into a string, returning either the value (if it exists), or the NULL STRING.	
 			@tparam T Any std::optional object 
-			@param obj The value to be stringified
+			@param opt The value to be stringified
 			@return A string representing the input value
 			@throws std::runtime_error: If the internal type is not supported, or cannot be converted to a string
 		*/
 		template<JSL::Concept::OptionalLike T>
-		std::string inline makeFrom(const T & obj)
+		std::string inline makeFrom(const T & opt)
 		{
-			if (!obj){return JSL_NULL_STRING;}
-			else{return makeFrom(obj.value());}
+			if (!opt){return JSL_NULL_STRING;}
+			else{return makeFrom(opt.value());}
 		}
 		
 		/*! @brief Converts the value held by a smart pointer a into a string, returning either the value (if it exists), or the NULL STRING.	
 			@details This stringifies the object pointed to by the pointer, not the pointer itself
 			@tparam T Any std::unique_ptr or std::shared_ptr objectj 
-			@param obj The pointer associated with the object to be stringified
+			@param ptr The pointer associated with the object to be stringified
 			@return A string representing the pointed-to value
 			@throws std::runtime_error: If the internal type is not supported, or cannot be converted to a string
 		*/
 		template<JSL::Concept::SmartPtr T>
-		std::string inline makeFrom(const T & obj)
+		std::string inline makeFrom(const T & ptr)
 		{
-			if (!obj){return JSL_NULL_STRING;}
-			else{return makeFrom(*obj);}
+			if (!ptr){return JSL_NULL_STRING;}
+			else{return makeFrom(*ptr);}
 		}
 }

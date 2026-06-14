@@ -20,7 +20,7 @@ namespace JSL::Archiver
 			//! Default initialiser, which places the object into an Uninitialised state. 
 			Vault();
 
-			//! Initialises the object and immediately calls Open() @param archivePath The name of the archive on disk @param mode The ::Mode assigned to the object
+			//! Initialises the object and immediately calls Open() @param archivePath The name of the archive on disk @param strictMode The ::Mode assigned to the object
 			Vault(const std::string & archivePath, bool strictMode = false) ;
 
 			~Vault () noexcept;

@@ -81,7 +81,7 @@ namespace JSL::Log
 			*/
 			Config();
 			
-			//! Automatically detected at runtime-start. True if the output stream is a tty terminal capable of interpreting @ref ANSI commands.
+			//! Automatically detected at runtime-start. True if the output stream is a tty terminal capable of interpreting ANSI commands.
 			bool TerminalOutput; 
 
 			

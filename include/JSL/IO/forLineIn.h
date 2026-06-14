@@ -67,7 +67,7 @@ namespace JSL::IO
      * @brief Opens a textfile for reading, converts each line into a sequence of types specified by the template, and then activates a callback function with these typed arguments
      * @tparam ...Ts A list of types supported by the JSL::String::ParseTo function 
      * @tparam Func  A callable object which accepts (Ts...) as an argument
-     * @details ``Ts...`` must have at least two elements (a 1-element call is delegated to the <class T> template above). Internally, the line is converted into a ``std::tuple<Ts...>`` using ``JSL::String::ParseTo`` and ``std::apply`` used to unpack these into the function signature.
+     * @details ``Ts...`` must have at least two elements (a 1-element call is delegated to the T-template above). Internally, the line is converted into a ``std::tuple<Ts...>`` using ``JSL::String::ParseTo`` and ``std::apply`` used to unpack these into the function signature.
      * @param fileName The file to be read
      * @param delimiter The character sequence used to separate elements into the individual types of Ts... 
      * @param callback A function which is applied to each line, must accept (Ts...) as a function signature; i.e. <int,int,bool> must be a callable of type <void(int,int,bool)> 

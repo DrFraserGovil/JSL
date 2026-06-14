@@ -47,7 +47,7 @@ namespace JSL::Vector
 	/// @brief Finds the indices of all matching values within the target up to the specified tolerance
 	/// @param vec The vector to be searched
 	/// @param target The values to be matched
-	/// @param tolereance Values considered equal if |a - b| < tolerance
+	/// @param tolerance Values considered equal if |a - b| < tolerance
 	/// @return A vector of indices corresponding to all points where vec[id] ~= target. If no matches found, vector is empty
 	inline std::vector<size_t> FindAll(std::vector<double> & vec, double target, double tolerance)
 	{
