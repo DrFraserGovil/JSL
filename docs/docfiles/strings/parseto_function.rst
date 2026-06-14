@@ -38,8 +38,4 @@ The following types have overloads and support in the :ref:`makestring` module t
 
 .. note:: 
 
-	Custom types can be fitted into the ``ParseTo`` paradigm either by adding a constructor which accepts a ``string_view`` as an argument.
-
-.. dropdown:: Template Overloads
-	:color: primary
-	:icon: plug
+	Custom types can be fitted into the ``ParseTo`` paradigm by adding a custom constructor which accepts a ``string_view`` as an argument.

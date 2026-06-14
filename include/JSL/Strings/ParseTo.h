@@ -1,7 +1,7 @@
 #pragma once
+#include "JSL/Concepts/pointers.h"
 #include "SerialiserHelpers.h"
 #include <charconv>
-#include <iostream>
 namespace JSL::String
 {
 	/////Helpers
@@ -17,7 +17,7 @@ namespace JSL::String
 
 		/*! @brief Trims the string, then checks if the input string is empty, or a reserved sequence, and throw an error if true.  
 		 * @param sv The string to be parsed - is mutated by a whitespace trimming
-		 * @param typeName THe name of the target type
+		 * @param type The name of the target type
 		 * @param rejectEmpty If true, strings that are empty after trimming throw an error
 		 * @param isOptional True if the target type is std::optional<T>, otherwise false
 		 * @throws std::logic_error if the string is empty and rejectEmpty is true
@@ -28,7 +28,7 @@ namespace JSL::String
 
 		/*! @brief Splits the innermost type of a container-parse into 'tokens' to be parsed 
 			@param sv The string to be tokenised
-			@param delimiter The string used to determine the end of a token and the beginning of the next
+			@param delim The string used to determine the end of a token and the beginning of the next
 			@param typeName The (possibly mangled) name of the parse target type. Used for error messages. 
 		*/
 		std::vector<std::string_view> tokenize(std::string_view sv, std::string_view delim,std::string_view typeName);
@@ -74,8 +74,8 @@ namespace JSL::String
 			@param sv A string to be parsed 
 			@return An object of type T represented by the input string
 		*/
-		template<JSL::Concept::Numeric T>
-		T inline ParseTo(std::string_view sv)
+		template<typename T> 
+		T inline ParseTo(std::string_view sv) requires JSL::Concept::Numeric <T>
 		{
 			internal::processInput(sv,typeid(T).name(),true);
 			T output{};
@@ -91,8 +91,8 @@ namespace JSL::String
 			@param sv A string to be parsed 
 			@return An object of type T represented by the input string
 		*/
-		template<JSL::Concept::ChronoDuration T>
-		T inline ParseTo(std::string_view sv)
+		template<typename T>
+		T inline ParseTo(std::string_view sv) requires JSL::Concept::ChronoDuration<T> 
 		{
 			return T{ParseTo<typename T::rep>(sv)};
 		}
@@ -135,8 +135,8 @@ namespace JSL::String
 	// Containers
 	/////////////////////
 
-		template<JSL::Concept::NonStringRange T>
-		T inline ParseTo(std::string_view sv,std::string_view delimiter)
+		template<typename T>
+		T inline ParseTo(std::string_view sv,std::string_view delimiter) requires JSL::Concept::NonStringRange<T>  
 		{
 			using InnerT = JSL::Concept::range_value_t<T>;
 			std::vector<std::string_view> tokens;
@@ -177,8 +177,8 @@ namespace JSL::String
 			return out;
 		}
 		
-		template<JSL::Concept::NonStringRange T>
-		T inline ParseTo(std::string_view sv)
+		template<typename T>
+		T inline ParseTo(std::string_view sv) requires JSL::Concept::NonStringRange<T> 
 		{
 			return ParseTo<T>(sv,",");
 		}
@@ -193,8 +193,8 @@ namespace JSL::String
 			}
 		}
 
-		template<JSL::Concept::TupleLike T>
-		T ParseTo(std::string_view sv,std::string_view delim)
+		template<typename T>
+		T ParseTo(std::string_view sv,std::string_view delim) requires JSL::Concept::TupleLike<T>
 		{
 			auto tokens = internal::tokenize(sv,delim,typeid(T).name());
 
@@ -205,18 +205,17 @@ namespace JSL::String
 
 			return internal::ParseToTupleImpl<T>(tokens,std::make_index_sequence<std::tuple_size_v<T>>{});
 		}
-		template<JSL::Concept::TupleLike T>
-		T ParseTo(std::string_view sv)
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::TupleLike<T> 
 		{
 			return ParseTo<T>(sv,",");
 		}	
-		
 	////////////////////////
 	// Optional
 	///////////////////////
 	
-		template<JSL::Concept::OptionalLike T>
-		T ParseTo(std::string_view sv)
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::OptionalLike<T> 
 		{
 			internal::processInput(sv,typeid(T).name(),false);
 			//no reject empty as we allow an empty signal to also be a failure
@@ -233,8 +232,8 @@ namespace JSL::String
 	// Smart Pointers
 	///////////////////
 
-		template<JSL::Concept::UniquePtr T>
-		T ParseTo(std::string_view sv)
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::UniquePtr<T>
 		{
 			using type = typename T::element_type;
 			if (sv.empty() || sv == JSL_NULL_STRING)
@@ -243,8 +242,8 @@ namespace JSL::String
 			}
 			return std::make_unique<type>(std::move(ParseTo<type>(sv)));
 		}
-		template<JSL::Concept::SharedPtr T>
-		T ParseTo(std::string_view sv)
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::SharedPtr<T>
 		{
 			using type = typename T::element_type;
 			if (sv.empty() || sv == JSL_NULL_STRING)
@@ -256,13 +255,6 @@ namespace JSL::String
 } // namespace JSL::String
 
 
-//Some of these files are tightly coupled and recursive; they are broken up into blocks
-
-// #include <JSL/Strings/Templates/parse_generic.h>
-// #include <JSL/Strings/Templates/parse_containers.h>
-// #include <JSL/Strings/Templates/parse_tuples.h>
-// #include <JSL/Strings/Templates/parse_optional.h>
-// #include <JSL/Strings/Templates/parse_ptr.h>
 
 
 

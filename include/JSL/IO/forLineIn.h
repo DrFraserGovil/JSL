@@ -21,7 +21,7 @@ namespace JSL::IO
      * @brief Opens a textfile in read mode and iterates line-by-line, splitting the line into a vector based on a delimiter, and passing this to a callback function
      * @param fileName The file to be opened
      * @param delimiter The character sequence used to indicate the end of a chunk (not included in the line view)
-     * @param lineProcessor A function (i.e. a lambda) which operates on a series of views into the line
+     * @param vectorProcessor A function (i.e. a lambda) which operates on a series of views into the line
      * @warning For performance reasons, the callback function acts on a vector-of-views of the line, which passes out of scope as soon as the line callback ends. To preserve a copy of a word, it must be directly constructed into an std::string object
      * @throws runtime_error if the file cannot be located or opened. 
      */

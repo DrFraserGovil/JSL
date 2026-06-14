@@ -1,7 +1,14 @@
 #pragma once
 
 #include <charconv>
+#include <concepts>
 #include <memory>
+#include "JSL/Concepts/numerics.h"
+#include "JSL/Concepts/optional.h"
+#include "JSL/Concepts/pointers.h"
+#include "JSL/Concepts/ranges.h"
+#include "JSL/Concepts/strings.h"
+#include "JSL/Concepts/tuple.h"
 #include "SerialiserHelpers.h"
 #include <cmath>
 
@@ -18,8 +25,7 @@ namespace JSL::String
 		* @throws template_errors if std::string not constructible from the object
 		* @return A string representing the object
 		*/
-		template<class T>
-		std::string inline makeFrom(const T & obj)
+		template<class T> std::string inline makeFrom(const T & obj)
 		{
 			std::ostringstream os;
 			os << obj;
@@ -36,8 +42,7 @@ namespace JSL::String
 		* @throws template_errors if std::string not constructible from the object
 		* @return A string representing the object
 		*/
-		template<JSL::Concept::StringType T>
-		std::string inline makeFrom(const T & obj)
+		template<typename T> std::string inline makeFrom(const T & obj) requires JSL::Concept::StringType<T>
 		{
 			return std::string(obj);
 		}
@@ -47,8 +52,7 @@ namespace JSL::String
 		* @param ltr A character
 		* @return A length-1 string containing the character
 		*/
-		template<>
-		std::string inline makeFrom(const char & ltr)
+		template<> std::string inline makeFrom(const char & ltr)
 		{
 			return std::string(1,ltr);
 		}
@@ -65,8 +69,8 @@ namespace JSL::String
 		* @return A string representing the input value
 		* @throws std::runtime_error If the value cannot be converted to a string
 		*/
-		template<std::floating_point T>
-		std::string inline makeFrom(const T & num, int precision, std::chars_format fmt = std::chars_format::general)
+		template<typename T>
+		std::string inline makeFrom(const T & num, int precision, std::chars_format fmt = std::chars_format::general) requires std::floating_point<T>
 		{
 			const size_t needed = precision + 16; //16 is worst case scenario of required space for a  negative, hex with maximal radix
 			constexpr size_t stackLimit = 30;
@@ -101,11 +105,13 @@ namespace JSL::String
 		* @details Since 'precision' is not defined for integers, this performs a direct cast to double, and hands it off to the floating point overload 
 		* @tparam T An integral type (except bool and char)
 		* @param val The value to be stringified
+		* @param precision The precision to be used after casting the input to a scientific notation
+		* @param fmt The formatting used after casting the input to a double (defaults to scientific)
 		* @return A string representing the input value
 		* @throws std::runtime_error If the value cannot be converted to a string
 		*/
-		template<JSL::Concept::Integer T>
-		std::string inline makeFrom(const T & val, int precision,std::chars_format fmt = std::chars_format::general)
+		template<typename T>
+		std::string inline makeFrom(const T & val, int precision,std::chars_format fmt = std::chars_format::scientific) requires JSL::Concept::Integer<T>
 		{
 			//precision is ill-defined for integers; so we cast it to double and let the scientific notation switch happen
 			return makeFrom<double>(static_cast<double>(val),precision,fmt);
@@ -119,8 +125,7 @@ namespace JSL::String
 		* @return A string representing the input value
 		* @throws std::runtime_error If the value cannot be converted to a string
 		*/
-		template<JSL::Concept::Numeric T>
-		std::string inline makeFrom(const T & num)
+		template<typename T> std::string inline makeFrom(const T & num) requires JSL::Concept::Numeric<T>
 		{
 			constexpr size_t reserved = std::max(
 				std::numeric_limits<T>::max_digits10 + 9,
@@ -144,26 +149,22 @@ namespace JSL::String
 		* @param bln A boolean
 		* @return Either "true" or "false"
 		*/
-		template<>
-		std::string inline makeFrom(const bool & bln)
+		template<> std::string inline makeFrom(const bool & bln)
 		{
 			return bln ? "true" : "false";
 		}
 
 	/////////////////////////
 	// Forward declarations
+	// For nested types
 	/////////////////////////
-		template<JSL::Concept::NonStringRange T>
-		std::string inline makeFrom(const T & vec); 
+		template<typename T> std::string inline makeFrom(const T & vec) requires JSL::Concept::NonStringRange<T>;
 
-		template<JSL::Concept::TupleLike T>
-		std::string inline makeFrom(const T & tpl);
+		template<typename T> std::string inline makeFrom(const T & tpl) requires JSL::Concept::TupleLike<T>;
 	
-		template<JSL::Concept::OptionalLike T>
-		std::string inline makeFrom(const T & opt);
+		template<typename T> std::string inline makeFrom(const T & opt) requires JSL::Concept::OptionalLike<T>;
 	
-		template<JSL::Concept::SmartPtr T>
-		std::string inline makeFrom(const T & ptr);
+		template<typename T> std::string inline makeFrom(const T & ptr) requires JSL::Concept::SmartPtr<T>;
 	/////////////////////////
 	// Containers 
 	/////////////////////////
@@ -174,8 +175,8 @@ namespace JSL::String
 		* @param vec The object to be converted (not necessarily a std::vector, despite the name)
 		* @return A string representing the input array 
 		*/
-		template<JSL::Concept::NonStringRange T>
-		std::string inline makeFrom(const T & vec)
+		template<typename T>
+		std::string inline makeFrom(const T & vec) requires JSL::Concept::NonStringRange<T>
 		{
 			std::ostringstream os;
 			os << "[";
@@ -202,8 +203,8 @@ namespace JSL::String
 			@return A string representing the input value
 			@throws std::runtime_error: If the value cannot be converted to a string
 		*/
-		template<JSL::Concept::TupleLike T>
-		std::string inline makeFrom(const T & tpl)
+		template<typename T>
+		std::string inline makeFrom(const T & tpl) requires JSL::Concept::TupleLike<T>
 		{
 			std::ostringstream os;
 			os << "(";
@@ -223,8 +224,8 @@ namespace JSL::String
 			@return A string representing the input value
 			@throws std::runtime_error: If the internal type is not supported, or cannot be converted to a string
 		*/
-		template<JSL::Concept::OptionalLike T>
-		std::string inline makeFrom(const T & opt)
+		template<typename  T>
+		std::string inline makeFrom(const T & opt) requires JSL::Concept::OptionalLike<T>
 		{
 			if (!opt){return JSL_NULL_STRING;}
 			else{return makeFrom(opt.value());}
@@ -237,8 +238,8 @@ namespace JSL::String
 			@return A string representing the pointed-to value
 			@throws std::runtime_error: If the internal type is not supported, or cannot be converted to a string
 		*/
-		template<JSL::Concept::SmartPtr T>
-		std::string inline makeFrom(const T & ptr)
+		template<typename  T>
+		std::string inline makeFrom(const T & ptr) requires JSL::Concept::SmartPtr<T>
 		{
 			if (!ptr){return JSL_NULL_STRING;}
 			else{return makeFrom(*ptr);}

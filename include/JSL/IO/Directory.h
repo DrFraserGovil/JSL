@@ -16,32 +16,34 @@ namespace JSL::IO
 		/*! @brief Construct a Directory object representing a snapshot of the current contents of a directory
 		 * @param target The path to the directory; either an absolute path or relative to the running location of the code
 		 * @param recursive If true, any directories found within the target are fully constructed, if false only their name is initialised and they appear as empty directories
-		 * @param throws filesystem_error if target is not a valid directory
+		 * @throws filesystem_error if target is not a valid directory
 		 */
 		static Directory Snapshot(const std::filesystem::path &target, bool recursive = false);
 
 		/*! @brief Constructs a Directory object representing a snapshot of a single directory and all its contents, automatically recursing up to a specified limit
 		 * @param target The path to the directory; either an absolute path or relative to the running location of the code
 		 * @param maxDepth The maximum number of sub-directories to visit (0 is equivalent to no recursion)
-		 * @param throws filesystem_error if target is not a valid directory
+		 * @throws filesystem_error if target is not a valid directory
 		 */
 		static Directory Snapshot(const std::filesystem::path &target, size_t maxDepth);
 
 		/*! @brief Constructs a Directory object representing a snapshot of a single directory and all its contents, automatically recursing up to a specified limit, and ignoring specified files
+		 * @param target The path to the directory; either an absolute path or relative to the running location of the code
 		 * @param excludePattern a regular expression; matches are excluded from both the file list and further recursion
 		 * @param maxDepth The maximum number of sub-directories to visit. maxDepth = 0 is no recursion
 		 */
-		static Directory Snapshot(const std::filesystem::path &target, std::regex ExcludePattern, size_t maxDepth = -1);
+		static Directory Snapshot(const std::filesystem::path &target, std::regex excludePattern, size_t maxDepth = -1);
 		
 		/*! @brief Constructs a Directory object representing a snapshot of a single directory and all its contents, automatically recursing up to a specified limit, and ignoring specified files
+		 * @param target The path to the directory; either an absolute path or relative to the running location of the code
 		 * @param excludePattern a glob-expression for files and directories to ignore 
 		 * @param maxDepth The maximum number of sub-directories to visit. maxDepth = 0 is no recursion
 		 */
 		template<class T>
 		requires std::convertible_to<T,std::string>
-		static Directory Snapshot(const std::filesystem::path &target, T & ExcludePattern, size_t maxDepth = -1)
+		static Directory Snapshot(const std::filesystem::path &target, T & excludePattern, size_t maxDepth = -1)
 		{
-			return Snapshot(target, globToRegex(ExcludePattern),maxDepth);
+			return Snapshot(target, globToRegex(excludePattern),maxDepth);
 		}
 
 		/*!
@@ -148,10 +150,10 @@ namespace JSL::IO
 		/*!
 		 * @brief Internal constructor for the Directory class
 		 * @param target The path to the directory; either an absolute path or relative to the running location of the code
-		 * @param recursive If true, any directories found within the target are fully constructed, if false only their name is initialised and they appear as empty directories
 		 * @param maxDepth the value of currentDepth at which recursion is forced to terminate
 		 * @param currentDepth a tracker for the recursion; incremented by 1 for every nested subdirectory
-		 * @param throws filesystem_error if target is not a valid directory
+		 * @param excludePattern Any files which meet this regex pattern are excluded from the directory and subsequent parsing
+		 * @throws filesystem_error if target is not a valid directory
 		 */
 		Directory(const std::filesystem::path &target, size_t maxDepth, size_t currentDepth,std::optional<std::regex> excludePattern = std::nullopt);
 

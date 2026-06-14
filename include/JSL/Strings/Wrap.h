@@ -9,14 +9,14 @@ namespace JSL::String
 	/*! @brief Returns the true width of a string, taking into account tab characters and escape sequences
 		@param str The string to be measured
 		@param tabSize the width (in characters) of a tab block (individual tab characters may occupy less space than this). If this argument is ommitted, the overload uses the JSL::Terminal::Environment object to query the tabsize used by the current output stream, if it is a tty console.
-		@warning This function makes the assumption all control sequences are of the form \x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution.
+		@warning This function makes the assumption all control sequences are of the form \\x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution.
 		@return An approximate calculation of the output size of the string, in characters
 	*/
 	size_t trueSize(std::string_view str, size_t tabSize);
 
 	/*! @brief Returns the true width of a string, taking into account tab characters and escape sequences. The tab width is determined by JSL::Terminal::Environment.
 		@param str The string to be measured
-		@warning This function makes the assumption all control sequences are of the form \x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution.
+		@warning This function makes the assumption all control sequences are of the form \\x1b...m. This is a common format for terminal control sequences, but may not be universally true. Use with caution.
 		@return An approximate calculation of the output size of the string, in characters
 	*/
 	size_t trueSize(std::string_view str);
@@ -42,7 +42,7 @@ namespace JSL::String
 		@param input A set of strings, each representing the columns of a table 
 		@param widths The widths (in characters) of the column to which the text will be wrapped (including delimiting characters)
 		@param delimiter The sequence inserted between adjacent column lines. The width of this sequences is deducted from the width of all columns except the last
-		@param endcap The sequence inserted at the end of every line. The width of this sequence is deducted from the width of the final column
+		@param endCap The sequence inserted at the end of every line. The width of this sequence is deducted from the width of the final column
 		@returns A formatted string  
 		@throws runtime_error if ``input.size() != widths.size()`` 
 	 */
@@ -52,7 +52,7 @@ namespace JSL::String
 		@param input A set of strings, each representing the columns of a table 
 		@param width The (uniform) width assigned to each column 
 		@param delimiter The sequence inserted between adjacent column lines. The width of this sequences is deducted from the width of all columns except the last
-		@param endcap The sequence inserted at the end of every line. The width of this sequence is deducted from the width of the final column
+		@param endCap The sequence inserted at the end of every line. The width of this sequence is deducted from the width of the final column
 		@returns A formatted string  
 	 */
 	std::string tableFormat(const std::vector<std::string_view> & input, size_t width, std::string_view delimiter = "", std::string_view endCap = "" );

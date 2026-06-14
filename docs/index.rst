@@ -35,6 +35,7 @@ The JSL library is broken up into a series of smaller modules, each of which can
 	* :ref:`JSL::Display::Format <ansi>` A module for changing the appearance of text with ANSI escape sequences
 	* :ref:`JSL::Display::Terminal <ansi>`
 	* :ref:`Logging submodule <log>`
+* :ref:`JSL::String <strings>`
 * :ref:`JSL::Log <log>`
 * s
 * :ref:`genindex`

@@ -141,7 +141,6 @@ namespace JSL::IO
 	  * @tparam Outer a container type (corresponding to the columns)
 	 * @tparam Inner an iterable range (corresponding to the rows)
 	 * @param filename The file to be written to (overwrites previous contents)
-	 * @param opts A configuration object (see below). This argument is optional and may be omitted.
 	 * @param contentMatrix The tabular-like object to be written to file	 
 	 */
     template<template<typename...> class Outer, JSL::Concept::NonStringRange Inner, typename... Args>
