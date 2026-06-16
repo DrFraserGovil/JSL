@@ -1,6 +1,8 @@
 #pragma once
 #include <JSL/IO/Filesystem.h>
 #include <JSL/IO/Vault/VaultHeaders.h>
+#include <JSL/Strings/ParseTo.h>
+#include <climits>
 #include <fstream>
 #include <functional>
 #include <map>
@@ -42,7 +44,54 @@ namespace JSL::IO
 			/// @details Surprisingly complex internel implementation, as the individual file blocks are not guaranteed to lie on
 			/// @param callback A function to be performed on each line (excluding the newline character itself) of the text in the file
 			void ForLineIn(std::function<void(std::string_view)> callback);
+
+			/*!
+				@brief Parse the datafile and convert each line into a tuple of datatypes based on an assumed regular tabular. Then performs a callback function on each line.
+				@details Each line is converted into a tuple of types specified by the ColumnTypes parameter (i.e. ForTabularLineIn<int,int,int> attempts to read the file as a set of three integers). The callback function can then either be a function of void<std::tuple<ColumnTypes>> (i.e. manually handling the tuple), or a function void<ColumnTypes...>, in which case std::apply is used to unpack the tuple.
+				@tparam ColumnTypes An (arbitrary) number of typenames, representing the converted types of each element. typenames must have an associated convert() function.
+				@tparam TupleFunctor (optional -- usually compiler-inferred) template parameter for the type of the per-tuple callback function.
+				@param delimiter The string delimiter between ColumnTypes in the file
+				@param perLineFunction The function to be called on each line.
+				@throws runtime_error If the columns of the file cannot be interpreted as a regular grid of len(ColumnTypes) with consistent data types with the specified delimiter
+				@throws runtime_error If a datatype in a column cannot be converted into the specified type
+			*/
+			template <typename... ColumnTypes, typename TupleFunctor>
+			void ForTabularLineIn(std::string_view delimiter, TupleFunctor perLineFunction)
+			{
+				ForLineIn([&](std::string_view line)
+					{
+					
+					auto row = JSL::String::ParseTo<std::tuple<ColumnTypes...>>(line,delimiter);
+
+					if constexpr (std::invocable<TupleFunctor,std::tuple<ColumnTypes...>>)
+					{
+						perLineFunction(row);
+					}
+					else
+					{
+						std::apply(perLineFunction,row);
+					} });
+			}
+
+			/*!
+				@brief Read the file into memory, whilst parsing each line into a tuple of datatypes based on an assumed regular type scheme.
+				@details Each line is converted into a tuple of types specified by the ColumnTypes parameter (i.e. ForTabularLineIn<int,int,int> attempts to read the file as a set of three integers).
+				@tparam ColumnTypes An (arbitrary) number of typenames, representing the converted types of each element. typenames must have an associated convert() function.
+				@param delimiter The string delimiter between ColumnTypes in the file
+				@throws runtime_error If the columns of the file cannot be interpreted as a regular grid of len(ColumnTypes) with consistent data types with the specified delimiter
+				@throws runtime_error If a datatype in a column cannot be converted into the specified type
+				@returns A vector of tuples representing the parsed data
+			*/
+			template <typename... ColumnTypes>
+			std::vector<std::tuple<ColumnTypes...>> AsTable(const std::string &delimiter = " ")
+			{
+				std::vector<std::tuple<ColumnTypes...>> rows;
+				ForTabularLineIn<ColumnTypes...>(delimiter, [&](auto row)
+					{ rows.push_back(row); });
+				return rows;
+			}
 		};
+
 		std::map<std::string, Stream> FileIndex;
 		std::ifstream VaultStream;
 
@@ -96,9 +145,46 @@ namespace JSL::IO
 		std::string AsText(const std::string &file);
 
 		/// @brief Copy the contents of the file into memory, storing each line as an element in a vector
+		/// @details Equivalent to calling [file].AsLines()
 		/// @param file The file in the archive to be acted upon
 		/// @throw runtime_error if file is not within the vault
 		/// @return A vector with element i being the i'th line of the file (excluding the newline character itself)
 		std::vector<std::string> AsLines(const std::string &file);
+
+		/*!
+			@brief Parse the datafile and convert each line into a tuple of datatypes based on an assumed regular tabular. Then performs a callback function on each line.
+			@details Equivalent to calling [file].ForTabularLineIn(...)
+			@tparam ColumnTypes An (arbitrary) number of typenames, representing the converted types of each element. typenames must have an associated convert() function.
+			@tparam TupleFunctor (optional -- usually compiler-inferred) template parameter for the type of the per-tuple callback function.
+			@param file The file in the archive to be acted upon
+			@param delimiter The string delimiter between ColumnTypes in the file
+			@param perLineFunction The function to be called on each line.
+			@throws runtime_error If the columns of the file cannot be interpreted as a regular grid of len(ColumnTypes) with consistent data types with the specified delimiter
+			@throw runtime_error if file is not within the vault
+			@throws runtime_error If a datatype in a column cannot be converted into the specified typr
+			@throws logic_error when called whilst in write mode
+			@throws logic_error when fileName not in the archive
+		*/
+		template <typename... ColumnTypes, typename TupleFunctor>
+		void ForTabularLineIn(const std::string &file, std::string_view delimiter, TupleFunctor perLineFunction)
+		{
+			operator[](file).ForTabularLineIn<ColumnTypes..., TupleFunctor>(delimiter, perLineFunction);
+		}
+
+		/*!
+			@brief Read the specified file into memory, whilst parsing each line into a tuple of datatypes based on an assumed regular type scheme.
+			@tparam ColumnTypes An (arbitrary) number of typenames, representing the converted types of each element. typenames must have an associated convert() function.
+			@param file The file in the archive to be acted upon
+			@param delimiter The string delimiter between ColumnTypes in the file
+			@throws runtime_error If the columns of the file cannot be interpreted as a regular grid of len(ColumnTypes) with consistent data types with the specified delimiter
+			@throw runtime_error if file is not within the vault
+			@throws runtime_error If a datatype in a column cannot be converted into the specified type
+			@returns A vector of tuples representing the parsed data
+		*/
+		template <typename... ColumnTypes, typename TupleFunctor>
+		void AsTable(const std::string &file, std::string_view delimiter)
+		{
+			operator[](file).AsTable<ColumnTypes...>(delimiter);
+		}
 	};
 } // namespace JSL::IO
