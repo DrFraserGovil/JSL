@@ -108,5 +108,6 @@ namespace JSL::IO
 			}
 			
 			Security Settings;
+			void SetPolicy(Policy policy);
 	};
 }

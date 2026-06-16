@@ -21,6 +21,14 @@ namespace JSL::IO
 		Strictness = policy;
 		OpenVault(path);	
 	}
+	
+	VaultWriter::~VaultWriter() noexcept
+	{
+		if (Initialised)
+		{
+			Close();
+		}
+	}
 
 	void VaultWriter::OpenVault(std::string_view path)
 	{
@@ -132,8 +140,7 @@ namespace JSL::IO
 	{
 		//compute how much we wrote to disc
 		size_t sizeWritten = file.tellp() - Start;
-		file.seekp(Start); //send the pointer back to the beginning	
-	
+		file.seekp(0); //send the pointer back to the beginning	
 		//then overwrite the header with the new one, now we know what the actual size written was
 		writeHeader(name, file, security, sizeWritten);
 		
@@ -203,6 +210,7 @@ namespace JSL::IO
 				}
 				writeHeader(name, OutputWriter, Settings, 0); //initialises the header so that the OutputWriter points to the correct location
 				Streams[name] = std::make_unique<DirectStream>(OutputWriter);
+				LargeFile = name;
 			}	
 			else 
 			{
@@ -222,10 +230,21 @@ namespace JSL::IO
 	
 		if (!Streams.contains(streamName))
 		{
-			return NewFile(streamName);
+			if (Strictness == Policy::Generous)
+			{
+				return NewFile(streamName);
+			}
+			else
+			{
+				JSL::internal::FatalError("Strictmode Error", JSL_LOCATION) << "Cannot implicitly open files in a vault whilst strictmode active - switch to Generous, or open a file manually";
+			}
 		}
 		
 		MostRecentStream = Streams[streamName].get();
 		return (*MostRecentStream);
+	}
+	void VaultWriter::SetPolicy(Policy policy)
+	{
+		Strictness = policy;
 	}
 }

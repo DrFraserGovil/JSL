@@ -1,3 +1,4 @@
+#include "JSL/Display/Format.h"
 #include <catch2/catch_test_macros.hpp>
 
 #include <JSL/Display.h>
@@ -9,11 +10,11 @@
 
 TEST_CASE("Colour Testing","[display][colour]")
 {
-    namespace txt = JSL::Format;
+    namespace txt = JSL::Display;
     // namespace bg = JSL::Background;
-    namespace crs = JSL::Terminal;
+    namespace crs = JSL::Display::Terminal;
     
-    std::vector<std::function<JSL::Format::Command(bool)>> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
+    std::vector<std::function<txt::Command(bool)>> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
 
     SECTION("Foreground Colours")
     {
@@ -56,7 +57,7 @@ TEST_CASE("Colour Testing","[display][colour]")
         auto check_rgb = [](uint8_t r, uint8_t g, uint8_t b, std::string expected)
         {
             std::ostringstream oss;
-            oss << JSL::Format::Colour(r, g, b);
+            oss << JSL::Display::Colour(r, g, b);
             REQUIRE(oss.str() == expected);
         };
 

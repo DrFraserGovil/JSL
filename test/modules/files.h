@@ -2,8 +2,9 @@
 #include <filesystem>
 #include <fstream>
 #include "../test_utils/catch_extended.h"
-#include <JSL/FileIO.h>
+#include <JSL/IO.h>
 #include <JSL.h>
+#include "JSL/IO/TemplateWriters.h"
 #include "dummy_file.h"
 TEST_CASE("Reads files correctly","[file][io][input]")
 {
@@ -206,7 +207,7 @@ TEST_CASE("JSL I/O Utilities", "[io]")
         std::vector<std::string> v2 = {"A", "B"};
         std::vector<double> v3 = {1.1, 2.2};
 
-        JSL::IO::writeRows(p, ",", v1, v2, v3);
+        JSL::IO::writeRows(p,{.ColumnDelimiter=","}, v1, v2, v3);
 
         // Expected format:
         // 1,A,1.1
@@ -222,8 +223,7 @@ TEST_CASE("JSL I/O Utilities", "[io]")
         std::vector<std::vector<int>> matrix = {{1, 2}, {3, 4}};
 
         // Using custom delimiters
-        JSL::IO::writeRows(p, "|", matrix, ";");
-
+        JSL::IO::writeRows(p, {.ColumnDelimiter ="|",.RowDelimiter=";"}, matrix);
         // Expected: 1|2;3|4;
         CHECK(readFile(p) == "1|2;3|4;");
     }

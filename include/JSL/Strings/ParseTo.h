@@ -1,5 +1,8 @@
 #pragma once
+#include "JSL/Concepts/optional.h"
 #include "JSL/Concepts/pointers.h"
+#include "JSL/Concepts/ranges.h"
+#include "JSL/Concepts/tuple.h"
 #include "SerialiserHelpers.h"
 #include <charconv>
 namespace JSL::String
@@ -117,20 +120,19 @@ namespace JSL::String
 	// forward declarations
 	/////////////////////////
 
-		template<JSL::Concept::NonStringRange T>
-		T ParseTo(std::string_view sv);
-
-		template<JSL::Concept::TupleLike T>
-		T ParseTo(std::string_view sv);
-		template<JSL::Concept::TupleLike T>
-		T ParseTo(std::string_view sv,std::string_view delim);
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::NonStringRange<T>;
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::TupleLike<T>;
+		template<typename T>
+		T ParseTo(std::string_view sv,std::string_view delim) requires JSL::Concept::TupleLike<T>;
 		
-		template<JSL::Concept::OptionalLike T>
-		T ParseTo(std::string_view sv);
-		template<JSL::Concept::UniquePtr T>
-		T ParseTo(std::string_view sv);
-		template<JSL::Concept::SharedPtr T>
-		T ParseTo(std::string_view sv);
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::OptionalLike<T>;
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::UniquePtr<T>;
+		template<typename T>
+		T ParseTo(std::string_view sv) requires JSL::Concept::SharedPtr<T>;
 	/////////////////////
 	// Containers
 	/////////////////////

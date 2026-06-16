@@ -22,7 +22,7 @@ namespace JSL::Display::Terminal
 	}
 }
 
-namespace JSL::Display::Format
+namespace JSL::Display
 {	
 	std::string Reset(Element target)
 	{

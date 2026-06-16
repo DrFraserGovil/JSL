@@ -99,7 +99,7 @@ namespace JSL::IO
 		void BuildIndex();
 		std::string Name;
 		bool Initialised = false;
-
+		Policy Strictness = Policy::Strict;
 	  public:
 		///! @brief Default constructor that leaves the Vault in an uninitialised state - Open() must be called to make the Vault functional
 		VaultReader();

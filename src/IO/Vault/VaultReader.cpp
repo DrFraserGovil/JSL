@@ -94,7 +94,14 @@ namespace JSL::IO
 	void VaultReader::Open(std::string_view filename, IO::Policy policy)
 	{
 		Name = filename;
-		
+		Strictness = policy;
+		VaultStream.open(Name);
+		if (!VaultStream.is_open())
+		{
+			JSL::internal::FatalError("Bad Vault Access", JSL_LOCATION) << "Could not open " << Name;
+		}
+		BuildIndex();
+		Initialised = true;	
 	}
 	void VaultReader::Close()
 	{
@@ -121,8 +128,7 @@ namespace JSL::IO
 	void VaultReader::BuildIndex()
 	{
 		std::array<char,internal::BLOCK_SIZE> header;
-		int zeroBlockCount = 0; 
-
+		size_t zeroBlockCount = 0; 
 		while (readBlock(header, VaultStream))
 		{
 			// Check for all-zero block (end of archive is (n>=2) such blocks)
@@ -142,7 +148,6 @@ namespace JSL::IO
 				// Parse metadata
 				auto name  = std::string(header.data(), 100);
 				name.erase(name.find('\0')); // Remove null padding
-
 				char size_str[12];
 				std::memcpy(size_str, header.data() + 124, 12); // File size starts at offset 124
 				size_str[11] = '\0'; // Ensure null-termination
