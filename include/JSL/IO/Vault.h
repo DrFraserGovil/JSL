@@ -4,3 +4,4 @@
  */
 
 #include "Vault/VaultWriter.h" // IWYU pragma: export
+#include "Vault/VaultReader.h" // IWYU pragma: export

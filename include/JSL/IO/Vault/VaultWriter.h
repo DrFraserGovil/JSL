@@ -1,16 +1,28 @@
 #pragma once
 #include <JSL/IO/Filesystem.h>
 #include <cstdio>
+#include <functional>
 #include <iosfwd>
+#include <memory>
 #include <optional>
 #include <ostream>
 #include <sstream>
 #include <string_view>
-#include <unordered_map>
+#include <fstream>
+#include <map>
 #include <stdint.h>
 namespace JSL::IO
 {
 
+	// Security settings	
+	struct Security
+	{
+		uint32_t UID = 1000; // uid of first normal human user. A good default as tar doesn't *really* need a uid (it's discarded when tar runs)
+		uint32_t GID = 1000;
+		std::string UName = "user";
+		std::string GName = "user";
+		uint32_t Permission = 0644; //standard linux -rw-r--r-- permission
+	};
 	class VaultWriter
 	{
 		public:
@@ -19,18 +31,22 @@ namespace JSL::IO
 				protected:
 					std::ostream * buffer;
 				public:
+					virtual ~Stream() = default;
+					bool IsLarge = false;
 					template<class T>
 					std::ostream & operator<<(const T msg)
 					{
 						(*buffer) << msg;
 						return (*buffer);
 					}	
+					virtual void Export(std::string_view name, std::ofstream & file, Security & security) = 0;
 			};
 		private:
 			///	@brief An open stream into a single 'file' within the vault.
 			class BufferedStream : public Stream
 			{
 				public:
+					void Export(std::string_view name, std::ofstream & file, Security & security);
 					std::ostringstream StringBuffer;
 					BufferedStream(){buffer = &StringBuffer;}
 			};
@@ -41,22 +57,25 @@ namespace JSL::IO
 			{
 				public:
 					std::ostream * FileStream;
-					std::streampos Start;	
-					void Open(std::ostream & diskStream)
+					std::streampos Start;
+					DirectStream(std::ostream & diskStream)
 					{
+						IsLarge = true;
 						buffer = &diskStream;
 						Start = buffer->tellp();
 					}
+					void Export(std::string_view name, std::ofstream & file, Security & security);
 			};
 		
-			std::unordered_map<std::string, BufferedStream> Streams;
+			std::map<std::string, std::unique_ptr<Stream>,std::less<>> Streams;
 			Stream * MostRecentStream = nullptr;
-			std::optional<DirectStream> LargeFile;
+			std::optional<std::string> LargeFile;
 			
 			bool Initialised = false;
 			Policy Strictness = Policy::Strict;
 			std::string Name;
 			std::string TempName;
+			std::ofstream OutputWriter;
 		public:
 			//! Default initialiser, which places the object into an Uninitialised state. 
 			VaultWriter();
@@ -70,8 +89,10 @@ namespace JSL::IO
 
 			~VaultWriter () noexcept;
 
-			void Open(std::string_view path);
-			
+			void OpenVault(std::string_view path);
+		
+			Stream & NewFile(const std::string & name,bool openAsLarge = false);
+
 			void Close();
 			Stream & operator[](const std::string & streamName);
 			
@@ -86,59 +107,6 @@ namespace JSL::IO
 				return (*MostRecentStream);
 			}
 			
-			// Security settings	
-			uint32_t UID = 1000; // uid of first normal human user. A good default as tar doesn't *really* need a uid (it's discarded when tar runs)
-			uint32_t GID = 1000;
-			std::string UName = "user";
-			std::string GName = "user";
-			uint32_t Permission = 0644; //standard linux -rw-r--r-- permission
+			Security Settings;
 	};
-	// namespace Writer
-	// {
-	// 	struct Exporter
-	// 	{
-	// 		internal::TarHeader headerBlock;
-	// 		std::string data;
-	// 		size_t padding;
-	// 	};
-
-	// 	/*!	@brief An open stream into a single 'file' within the vault.
-	// 	 */
-	// 	class BufferedStream
-	// 	{
-	// 		private:
-	// 			std::ostringstream Buffer;
-
-	// 		public:
-	// 			Exporter Export();
-	// 			template<class T>
-	// 			std::ostream & operator<<(const T msg)
-	// 			{
-	// 				Buffer << msg;
-	// 				return Buffer;
-	// 			}
-	// 	};
-
-	// 	/// @brief An alternative stream for a vault file which is too large to buffer - instead it streams directly onto disk, and post-hoc updates the metadata with the final file size.
-	// 	/// @details Only a single DirectStream can exist per-vault
-	// 	class DirectStream
-	// 	{
-	// 		private:
-	// 			std::ostream * FileStream;
-	// 			size_t StreamCount;
-
-	// 		public:
-	// 			DirectStream(std::ostream & diskStream);
-	// 			Exporter Export();
-	// 			template<class T>
-	// 			std::ostream & operator<<(const T msg)
-	// 			{
-	// 				//get the current position of the filestream pointer
-	// 				auto start = FileStream->tellp();
-	// 				(*FileStream) << msg;
-	// 				StreamCount += (FileStream->tellp() - start);
-	// 			}
-	// 	};
-
-	// }
 }
