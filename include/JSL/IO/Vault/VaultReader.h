@@ -73,32 +73,32 @@ namespace JSL::IO
 		~VaultReader() noexcept;
 
 		/// @brief Get the names of all the files in the archive
-		/// @return A set of unique filenames within the archive which can be read from 
+		/// @return A set of unique filenames within the archive which can be read from
 		std::set<std::string> Files();
 
-		/// @brief Access an individual 'file' within the stream 
-		/// @return A reference to an internal stream 
-		/// @throw runtime_error if file is not within the vault 
-		Stream & operator[](const std::string &file);
+		/// @brief Access an individual 'file' within the stream
+		/// @return A reference to an internal stream
+		/// @throw runtime_error if file is not within the vault
+		Stream &operator[](const std::string &file);
 
-		/// @brief Perform a callback function on every line of the provided file 
+		/// @brief Perform a callback function on every line of the provided file
 		/// @details Equivalent to [file].ForLineIn(callback)
 		/// @param file The file in the archive to be acted upon
 		/// @param callback A function which acts on each line of the file
-		/// @throw runtime_error if file is not within the vault 
+		/// @throw runtime_error if file is not within the vault
 		void ForLineIn(const std::string &file, std::function<void(std::string_view)> callback);
-		 
-		/// @brief Copy the target file into memory as a string 
+
+		/// @brief Copy the target file into memory as a string
 		/// @details Equivalent to [file].AsText()
 		/// @param file The file in the archive to be acted upon
-		/// @throw runtime_error if file is not within the vault 
+		/// @throw runtime_error if file is not within the vault
 		/// @return A string containing the entire file contents
-		std::string AsText(const std::string & file);
+		std::string AsText(const std::string &file);
 
 		/// @brief Copy the contents of the file into memory, storing each line as an element in a vector
 		/// @param file The file in the archive to be acted upon
-		/// @throw runtime_error if file is not within the vault 
+		/// @throw runtime_error if file is not within the vault
 		/// @return A vector with element i being the i'th line of the file (excluding the newline character itself)
-		std::vector<std::string> AsLines(const std::string & file);
+		std::vector<std::string> AsLines(const std::string &file);
 	};
 } // namespace JSL::IO

@@ -71,6 +71,7 @@ namespace JSL::IO
 			}	
 			out.append(line);
 		});
+		return out;
 	}
 	std::vector<std::string> VaultReader::Stream::AsLines()
 	{
