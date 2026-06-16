@@ -119,26 +119,26 @@ TEST_CASE("Tabular Data and Stream Logic", "[archive][tabular]")
 
     VaultReader R(file.Name());
 
-    // SECTION("AsTable conversion")
-    // {
-    //     // Using the new variadic template method
-    //     auto table = R["table.dat"].AsTable<int, double, char>(" ");
+    SECTION("AsTable conversion")
+    {
+        // Using the new variadic template method
+        auto table = R["table.dat"].AsTable<int, double, char>(" ");
         
-    //     REQUIRE(table.size() == 5);
-    //     REQUIRE(std::get<0>(table[2]) == 2);
-    //     REQUIRE(std::get<1>(table[2]) == 3.0);
-    //     REQUIRE(std::get<2>(table[2]) == 'C');
-    // }
+        REQUIRE(table.size() == 5);
+        REQUIRE(std::get<0>(table[2]) == 2);
+        REQUIRE(std::get<1>(table[2]) == 3.0);
+        REQUIRE(std::get<2>(table[2]) == 'C');
+    }
 
-    // SECTION("ForTabularLineIn callback")
-    // {
-    //     int count = 0;
-    //     R.ForTabularLineIn<int, double, char>("table.dat", " ", [&](auto a, auto b, auto c) {
-    //         REQUIRE(a == count);
-    //         count++;
-    //     });
-    //     REQUIRE(count == 5);
-    // }
+    SECTION("ForConvertedLineIn callback")
+    {
+        int count = 0;
+        R.ForConvertedLineIn<int, double, char>("table.dat", " ", [&](auto a, auto b, auto c) {
+            REQUIRE(a == count);
+            count++;
+        });
+        REQUIRE(count == 5);
+    }
 }
 
 TEST_CASE("Large File Seekp Logic", "[archive][largefile]")
