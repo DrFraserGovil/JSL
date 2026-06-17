@@ -32,14 +32,14 @@ namespace JSL::Parameter
     template<class T, class U>
     std::string fmtwrap(T prefix, std::string text, U suffix)
     {
-        if (!Display::Terminal::Global().IsANSICapable()){return text;}
+        if (!Display::Terminal().IsANSICapable()){return text;}
         
         return (std::string)prefix + text + suffix;
     }
     template<class T>
     std::string fmtwrap(T prefix, std::string text)
     {
-        if (!Display::Terminal::Global().IsANSICapable()){return text;}
+        if (!Display::Terminal().IsANSICapable()){return text;}
         
         return (std::string)prefix + text + Display::ResetAll();
     }

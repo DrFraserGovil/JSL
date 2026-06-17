@@ -6,51 +6,6 @@
 
 */
 
-namespace JSL::Display::Terminal
-{
-	//!@brief A basic wrapper to make CursorCommands look more fancy than simple s, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)
-	typedef std::string CursorCommand; 
-	
-	//! @brief Hides the cursor
-	constexpr CursorCommand Hide         = "\033[?25l";
-	
-	
-	//! @brief Shows the cursor
-	constexpr CursorCommand Show         = "\033[?25h";
-	
-	//! @brief Moves the cursor up one line
-	constexpr CursorCommand CursorUp     = "\033[A";
-
-	//! @brief Deletes the previous character (except newlines)
-	//!@details \\b on its own just moves cursor; this moves cursor, erases character, then moves it back again
-	constexpr CursorCommand Backspace    = "\b \b"; 
-
-	//! @brief Erases all characters to the right of the cursor position
-	constexpr CursorCommand EraseAllRight   = "\033[0K";
-	//! @brief Erases all characters to the left of the cursor position
-	constexpr CursorCommand EraseAllLeft    = "\033[1K";
-	
-	//! @brief Clears the entire line (but does not move the cursor position)
-	constexpr CursorCommand ClearLine    = "\033[2K\r";
-
-	//! @brief Clears the entire terminal (and scrollback buffer)
-	constexpr CursorCommand ClearScreen  = "\033[3J\r";
-	
-	//! @brief Moves the cursor to position (1,1) (the top left of the screen)
-	constexpr CursorCommand ResetPosition = "\033[1;1\r";
-
-	//! @brief Specify the direction of terminal movement
-	//! @details The fixed numbers allow us to do some ASCII hackery, and convert the enums to relevant chars
-	enum Direction {Up =0, Down=1,Right=2,Left=3}; 
-
-	//! @brief Move the cursor a specified number of steps in a given direction
-	CursorCommand Move(Direction dir, unsigned int steps);
-
-	//! @brief Moves the cursor to the specified column in the current line (no other text is affected)
-	//! @brief Columns are 1-indexed 
-	CursorCommand MoveToColumn(uint32_t column);
-}
-
 
 namespace JSL::Display
 {

@@ -1,5 +1,5 @@
 #include <JSL/Display/ProgressBar.h>
-#include <JSL/Display/ANSI_Codes.h>
+#include <JSL/Display/Terminal.h>
 #include <JSL/Log.h>
 #include <sstream>
 #include <JSL/internal/error.h>
@@ -99,8 +99,8 @@ namespace JSL::Display::Progress
         std::ostringstream buffer;
         if (hasRendered)
         {
-            buffer << JSL::Display::Terminal::Move(Display::Terminal::Direction::Up,Depth);
-            buffer << JSL::Display::Terminal::MoveToColumn(0);//move all the way left
+            buffer << JSL::Display::Move(Display::Direction::Up,Depth);
+            buffer << JSL::Display::MoveToColumn(0);//move all the way left
         }
         hasRendered = true;
         for (size_t i = 0; i < Depth; ++i)

@@ -13,6 +13,7 @@ namespace JSL::IO
 	class VaultReader
 	{
 	  private:
+		/// @brief A wrapper class which allows the offset-positions of the VaultStream to be treated as a discrete file unit without unpacking the vault 
 		class Stream
 		{
 		  private:
@@ -101,17 +102,26 @@ namespace JSL::IO
 			}
 		};
 
+		/// The map holding streams to individual 'files' within the archive (as pointers to positions within the VaultStream)
 		std::map<std::string, Stream> FileIndex;
+		 
+		///Input filestream from the target file -- references to this are shared between the individual Files in the Index, so this is not a thread-safe object
 		std::ifstream VaultStream;
 
 		/// @brief Scans the archive looking for header blocks, and extracting the metadata to build an index of the vault contents
 		void BuildIndex();
+		 
+		/// The filename of the target vault 
 		std::string Name;
+		
+		/// A flag indicating if the vault has been opened or not
 		bool Initialised = false;
+		
+		/// A file policy which determines if errors should be thrown (Strict) or ignored (Generous) when minor issues arise
 		Policy Strictness = Policy::Strict;
 
 	  public:
-		///! @brief Default constructor that leaves the Vault in an uninitialised state - Open() must be called to make the Vault functional
+		/// @brief Default constructor that leaves the Vault in an uninitialised state - Open() must be called to make the Vault functional
 		VaultReader();
 
 		/*! @brief Constructs the vault and then immediately passes the arguments to Open()

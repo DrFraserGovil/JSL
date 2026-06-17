@@ -8,15 +8,15 @@
 	These are some display commands which  enable the user to shift the cursor around, delete items and otherwise alter the appearance of terminal output. 
 
 */
-namespace JSL::Display::Terminal
+namespace JSL::Display
 {
-	CursorCommand MoveToColumn(uint32_t column)
+	TerminalCommand MoveToColumn(uint32_t column)
 	{
 		column = column > 0 ? column : 1; //ensure that 0-indexing doesn't cause issues as columns are 1 indexed
 		return "\033[" + std::to_string(column) + "G";
 	}
 	
-	CursorCommand Move(Direction dir, unsigned int steps)
+	TerminalCommand Move(Direction dir, unsigned int steps)
 	{
 		return "\033[" + std::to_string(steps) + (char)(dir+65);
 	}
@@ -26,7 +26,7 @@ namespace JSL::Display
 {	
 	std::string Reset(Element target)
 	{
-		if (!Terminal::Global().IsANSICapable())
+		if (!Terminal().IsANSICapable())
 		{
 			return "";
 		}
@@ -44,7 +44,7 @@ namespace JSL::Display
 	}
 	std::string ResetAll()
 	{
-		if (!Terminal::Global().IsANSICapable())
+		if (!Terminal().IsANSICapable())
 		{
 			return "";
 		}

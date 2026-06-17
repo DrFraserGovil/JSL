@@ -53,7 +53,7 @@ namespace JSL::Display
 
 	Command::operator std::string() const
 	{
-		if (Terminal::Global().IsANSICapable())
+		if (Terminal().IsANSICapable())
 		{
 			return std::string(buf,len);
 		}
@@ -65,7 +65,7 @@ namespace JSL::Display
 	
 	std::ostream& operator<<(std::ostream& os, const Command &c )
 	{
-		if (Terminal::Global().IsANSICapable())
+		if (Terminal().IsANSICapable())
 		{
 			return os.write(c.buf, c.len);
 		}

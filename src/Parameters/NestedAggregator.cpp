@@ -174,7 +174,7 @@ namespace JSL::Parameter
             r.CurrentValue = found->ValueString();
             return r;
         }
-        JSL::internal::FatalError("Not found",JSL_LOCATION);
+        JSL::internal::FatalError("Not found",JSL_LOCATION) << "Could not find " << key;
         return Description();
     }
     void Parameter::NestedAggregator::PrintStructure(int indent,std::string runningTitle)
@@ -195,7 +195,7 @@ namespace JSL::Parameter
     {
         auto fg = Display::Black();
         auto bg = Display::White(true); 
-        if (Display::Terminal::Global().IsANSICapable()) //piggyback off the terminal checking if formatting can be used
+        if (Display::Terminal().IsANSICapable()) //piggyback off the terminal checking if formatting can be used
         {
             auto titleCol =  fg + Display::Italics() + bg;
             std::string buffer = (input.size() < lineLength) ? std::string(lineLength - input.size(),' ') : "";

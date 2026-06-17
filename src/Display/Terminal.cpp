@@ -10,21 +10,21 @@
 	#include <unistd.h>
 #endif
 
-namespace JSL::Display::Terminal
+namespace JSL::Display
 {
-	Environment::Environment()
+	GlobalEnvironment::GlobalEnvironment()
 	{
         CacheANSI(); // do this first because it is needed elsewhere
 		CacheSize();
 		CacheTabs();
 	}
-	Environment & Global()
+	GlobalEnvironment & Terminal()
 	{
-		static Environment instance;	
+		static GlobalEnvironment instance;	
 		return instance;
 	}
 
-    void Environment::CacheANSI()
+    void GlobalEnvironment::CacheANSI()
     {
         //have to do some preprocessor messiness to get the right function as it's platform dependent
 		 #ifdef _WIN32
@@ -33,26 +33,26 @@ namespace JSL::Display::Terminal
 			AnsiActive = isatty(fileno(stdout));
 		#endif
     }
-    bool Environment::IsANSICapable()
+    bool GlobalEnvironment::IsANSICapable()
     {
         return AnsiActive;
         // return true;
     }
-	size_t Environment::Rows()
+	size_t GlobalEnvironment::Rows()
 	{
 		return _Rows;
 	}
-	size_t Environment::Columns()
+	size_t GlobalEnvironment::Columns()
 	{
 		if (DynamicUpdates) CacheSize();
 		return _Columns;
 	}
-	size_t Environment::TabSize()
+	size_t GlobalEnvironment::TabSize()
 	{
 		if (DynamicUpdates) CacheTabs();
 		return _Tabsize;
 	}
-	void Environment::CacheTabs()
+	void GlobalEnvironment::CacheTabs()
 	{
 		size_t dtab = 8;
 		if (!AnsiActive)
@@ -130,7 +130,7 @@ namespace JSL::Display::Terminal
         }
 		return;
 	}
-	void Environment::CacheSize()
+	void GlobalEnvironment::CacheSize()
 	{
 		struct winsize ws;
 		if (!AnsiActive || ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == -1) 
