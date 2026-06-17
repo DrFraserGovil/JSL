@@ -12,6 +12,17 @@
 
 namespace JSL::Display
 {
+	TerminalCommand MoveToColumn(uint32_t column)
+	{
+		column = column > 0 ? column : 1; //ensure that 0-indexing doesn't cause issues as columns are 1 indexed
+		return "\033[" + std::to_string(column) + "G";
+	}
+	
+	TerminalCommand Move(Direction dir, unsigned int steps)
+	{
+		return "\033[" + std::to_string(steps) + (char)(dir+65);
+	}
+
 	GlobalEnvironment::GlobalEnvironment()
 	{
         CacheANSI(); // do this first because it is needed elsewhere

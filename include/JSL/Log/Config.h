@@ -61,16 +61,16 @@ namespace JSL::Log
 			/// @}
 
 			//! If Formatting active, the default colour assigned to LOG(ERROR) messages
-			Display::Command ErrorColour = JSL::Display::Red();
+			Display::Format ErrorColour = JSL::Display::Red();
 
 			//! If Formatting active, the default colour assigned to LOG(WARN) messages
-			Display::Command WarnColour = JSL::Display::Purple();
+			Display::Format WarnColour = JSL::Display::Purple();
 			
 			//! If Formatting active, the default colour assigned to LOG(INFO) messages
-			Display::Command InfoColour = JSL::Display::White();
+			Display::Format InfoColour = JSL::Display::White();
 
 			//! If Formatting active, the default colour assigned to LOG(DEBUG) messages
-			Display::Command DebugColour = JSL::Display::Blue();
+			Display::Format DebugColour = JSL::Display::Blue();
 
 			//! The Core class needs to be able to reach inside the private members to access them. 
 			friend class JSL::Log::internal::Core;

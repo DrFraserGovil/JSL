@@ -8,20 +8,20 @@ namespace JSL::Display
 {
 
 
-	Command::Command()
+	Format::Format()
 	{
 		buf[0] = '\0';
 		len = 0;
 	}
 	
-	Command::Command(const std::string & input, Element kind) : type(kind)
+	Format::Format(const std::string & input, Element kind) : type(kind)
 	{
 		len = input.size();
 		std::memcpy(buf, input.c_str(), len);
 		buf[len] = '\0';
 	}
 
-	Command::Command(uint8_t r, uint8_t g, uint8_t b,Element kind)
+	Format::Format(uint8_t r, uint8_t g, uint8_t b,Element kind)
 	{
 		char* ptr = buf;
 		auto write_str = [&](const char* s, size_t n)
@@ -51,7 +51,7 @@ namespace JSL::Display
 		len = static_cast<uint8_t>(ptr - buf);
 	}
 
-	Command::operator std::string() const
+	Format::operator std::string() const
 	{
 		if (Terminal().IsANSICapable())
 		{
@@ -63,7 +63,7 @@ namespace JSL::Display
 		}
 	}
 	
-	std::ostream& operator<<(std::ostream& os, const Command &c )
+	std::ostream& operator<<(std::ostream& os, const Format &c )
 	{
 		if (Terminal().IsANSICapable())
 		{
@@ -79,12 +79,12 @@ namespace JSL::Display
 	FormatGroup::FormatGroup()
 	{
 	}
-	FormatGroup::FormatGroup(const Command & a) : FormatGroup()
+	FormatGroup::FormatGroup(const Format & a) : FormatGroup()
 	{
 		Add(a);
 	}
 
-	void FormatGroup::Add(const Command & cmd)
+	void FormatGroup::Add(const Format & cmd)
 	{
 		switch (cmd.type)
 		{
@@ -100,7 +100,7 @@ namespace JSL::Display
 		}
 	}
 
-	void FormatGroup::AddBuffer(const Command & cmd)
+	void FormatGroup::AddBuffer(const Format & cmd)
 	{
 		if (StyleBuffer.size() >= BufferSize)
 		{

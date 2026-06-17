@@ -37,7 +37,7 @@ namespace JSL::Log::internal
 	void Core::Header()
 	{
 		std::string_view label;
-		Display::Command fmt;
+		Display::Format fmt;
 		switch(Level) {
 			case DEBUG: fmt = Config::Global().DebugColour;label = "[DEBUG] "; break;
 			case INFO: fmt=Config::Global().InfoColour;label = "[INFO]  "; break;

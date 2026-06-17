@@ -8,6 +8,10 @@
 #include <optional>
 namespace JSL::Display
 {
+    /*
+        This file defines the nuts-and-bolts operations for the Format class
+        The actual instantiations of this command are found in ANSI_Codes.h
+    */
     
     /*!
         @brief Describe which element of the terminal text is being modified
@@ -23,19 +27,19 @@ namespace JSL::Display
 
     /*!
         @brief Wrapper around an ANSI string sequence, optimised for inserting into output streams. 
-        @warning Converts sequences to a blank string when JSL::Terminal::Environment reports a non-ANSI output stream, preventing garbling of escape sequences.
+        @warning Converts sequences to a blank string when JSL::Terminal::GlobalEnvironment reports a non-ANSI output stream, preventing garbling of escape sequences.
     */
-    class Command
+    class Format
     {
         public:
 
         //! Null-command constructor. Sets len = 0 so it can be ignored.
-        Command();
+        Format();
 
         //! The constructor for the `basic' ANSI codes
         //! @param input An ANSI escape code 
         //! @param kind An indicator as to which of the foreground/background/style the code modifies
-        Command(const std::string &input, Element kind);
+        Format(const std::string &input, Element kind);
 
         //! @brief A constructor for generating an ANSI command for 24 bit colours for either the Foreground or Background
         //! @param r The red value in the range [0,255] 
@@ -43,16 +47,16 @@ namespace JSL::Display
         //! @param b The blue value in the range [0,255] 
         //! @param kind Either Element::Foreground or Element::Background, to indicate which element is to be coloured
         //! @throws If kind = Element::Style, as this is meaningless 
-        Command(uint8_t r, uint8_t g, uint8_t b,Element kind);
+        Format(uint8_t r, uint8_t g, uint8_t b,Element kind);
 
         //! Outputs the corresponding ANSI command string to the stream
-        friend std::ostream& operator<<(std::ostream& os, const Command& c);
+        friend std::ostream& operator<<(std::ostream& os, const Format& c);
 
         //! Casts the ANSI command to a string
         operator std::string() const;
 
         //! An equality operator that  compares the internal resolved strings
-        bool operator==(const Command& other) const
+        bool operator==(const Format& other) const
         {
             return static_cast<std::string>(*this) == static_cast<std::string>(other);
         }
@@ -68,37 +72,33 @@ namespace JSL::Display
         //! @brief The length of the data in the buffer
         uint8_t len;
 
-        // auto operator<=>(const Command & other)
-        // {
-        //     return static_cast<std::string>(*this) <=> static_cast<std::string>(other);
-        // }
         
     };
 
 
 
     /*!
-        @brief An aggregate container for Command objects, representing a persistent foreground/background/style composite.    
+        @brief An aggregate container for Format objects, representing a persistent foreground/background/style composite.    
         @details Colours are stored as simple variables; the style commands are stored as a `carousel', allowing up to BufferSize unique commands to be stacked. So long as BufferSize >= 2* number of style commands (1 for activation, 1 for decativation), this allows for arbitrary style combinations. We took the easy way out and did the 2x buffer rather than pair up commands with their inverse - so slightly more memory usage at the advantage of less work on our end!  
     */
     class FormatGroup
     {
         private:
             //! @brief The current foreground colour (single variable as only 1 colour assigned at a time)
-            std::optional<Command> Foreground;
+            std::optional<Format> Foreground;
             
             //! @brief The current background colour (single variable as only 1 colour assigned at a time)
-            std::optional<Command> Background;
+            std::optional<Format> Background;
             
             //! @brief Adds a style command into the carousel buffer. If an identical command already exists in the buffer, the original instance is erased. 
-            void AddBuffer(const Command & cmd);
+            void AddBuffer(const Format & cmd);
             
             //! @brief A sequence of unique style commands (inserted from front() to back()). 
-            std::deque<Command> StyleBuffer;
+            std::deque<Format> StyleBuffer;
         public:
-            //! @brief Accumulates the command into the current format, based on the Command::type member. Overrides any existing, conflicting styles.
+            //! @brief Accumulates the command into the current format, based on the Format::type member. Overrides any existing, conflicting styles.
             //! @param cmd A style command to be added to the current aggregate
-            void Add(const Command & cmd);
+            void Add(const Format & cmd);
             
             //! @brief Accumulates the provided group into the current format. Overrides any existing, conflicting styles.
             //! @param cmd A set of styles to be added to the current aggregate
@@ -110,10 +110,10 @@ namespace JSL::Display
             
             //! @brief Constructs a group which is default, except for the provided command. 
             //! @details The default constructor is called to create a default state, and then the command is added in.
-            //! @param a A formatting Command which determines the initial state of the aggregate
-            FormatGroup(const Command & a);
+            //! @param a A formatting Format which determines the initial state of the aggregate
+            FormatGroup(const Format & a);
 
-            //! @brief The streaming function, which activates the latent ANSI sequences in the stored Commands. 
+            //! @brief The streaming function, which activates the latent ANSI sequences in the stored Formats. 
             //! @details The commands are inserted in the order [style.front(),...,style.back(), Background, Foreground]
             //! @param os An output stream (typically std::cout)
             //! @param c The format group to be injected into the steam
