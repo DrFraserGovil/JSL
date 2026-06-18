@@ -14,3 +14,7 @@ ul.toctree-dense ul {
     padding-left: 1.2rem !important;
     margin-top: 2px !important;
 }
+table td ul {
+    margin-left: 0;
+    padding-left: 1em;  /* reduce or set to 0 to remove entirely */
+}

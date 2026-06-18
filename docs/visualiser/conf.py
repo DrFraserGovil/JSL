@@ -13,3 +13,6 @@ LIBRARY_ENTRY = "JSL.h"
 LIBRARY_NAME = "JSL Library"
 COLOR_SCHEME = ["group", "link", "group", "link"]
 HORIZONTAL = True
+NO_CROSSLINK = ["*Concepts.h"]
+MERGE_LINKS = True
+CROSSLINK_STRENGTH = 0.3

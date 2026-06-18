@@ -5,6 +5,8 @@ Time
 
 The following commands provide a convenient interface to measure and represent temporal periods.
 
+.. _time_format:
+    
 Formatting Commands
 ----------------------
 
@@ -16,6 +18,8 @@ Formatting Commands
 
 .. doxygenfunction::  FormatDuration(std::chrono::time_point<std::chrono::system_clock> start, std::chrono::time_point<std::chrono::system_clock> end)
 
+.. _stopwatch:
+    
 Stopwatch & Timer
 -------------------
 
