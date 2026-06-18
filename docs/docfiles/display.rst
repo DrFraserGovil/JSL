@@ -25,14 +25,14 @@ There are four main components of the Display submodule, all of which are nested
 	  - Contents
 
 	* - :ref:`ANSI_Codes <ansi-format>`
-	  - A thing that goes here
+	  - For applying colour and style changes to the output text 
 		 
 	* - :ref:`ProgressBar.h <progress>`
 	  - For displaying the progress of ongoing functions, with options for ANSI-based animated bars, and static bars suitable for file output
 	
 	* - :ref:`Terminal.h <terminal>` 
 	  - For manipulating and querying the status of the output, if it is a 'modern terminal' environment.
-	  
+
 ANSI Escape Codes
 ==================
 

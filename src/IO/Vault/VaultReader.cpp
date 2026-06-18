@@ -1,7 +1,8 @@
 #include "JSL/IO/Filesystem.h"
 #include <JSL/IO/Vault/VaultReader.h>
+#include <JSL/IO/Vault/VaultHeaders.h>
 #include <JSL/internal/error.h>
-#include <array>
+
 #include <cstdio>
 #include <fstream>
 #include <string>

@@ -9,7 +9,7 @@ Streaming to File
 The standard way to write to file in modern C++ is to use an ``ofstream``, and stream the content into the file. We provide a basic wrapper around this:
 
 .. jsl:: JSL::IO::openStream
-    :file: FileIO/fileWriters.h
+    :file: FileIO/FileWriters.h
     :command: doxygenfunction
 
 Subsequent data can then be streamed as normal:
@@ -27,8 +27,10 @@ Subsequent data can then be streamed as normal:
 Initialising & Basic Writing
 +++++++++++++++++++++++++++++
 
+We provide some basic functions which replicate this behaviour, but with additional error handling in the case where the file cannot be opened.
+
 .. jsl:: JSL::IO::initialise
-    :file: FileIO/fileWriters
+    :file: FileIO/FileWriters.h
     :command: doxygenfunction
 
 

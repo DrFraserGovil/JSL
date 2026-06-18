@@ -3,12 +3,7 @@
 Interacting with the Filesystem
 =================================
 
-The following functions make interacting with the filesystem easier.
-
-Reporting System
-+++++++++++++++++++
-
-.. doxygenstruct:: JSL::IO::report
+The following functions make interacting with the filesystem easier: as with the :ref:`directory`, much of this functionality is available through the ``std::filesystem`` interface: this merely makes it more streamlined and easier to use. 
 
 Making Directories
 ++++++++++++++++++++
@@ -32,3 +27,8 @@ Policies
 .. doxygenenum:: JSL::IO::Policy
 
 .. doxygenvariable:: JSL::IO::DefaultPolicy
+    
+Reporting System
++++++++++++++++++++
+
+.. doxygenstruct:: JSL::IO::report

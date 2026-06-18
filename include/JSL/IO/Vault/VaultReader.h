@@ -1,6 +1,5 @@
 #pragma once
 #include <JSL/IO/Filesystem.h>
-#include <JSL/IO/Vault/VaultHeaders.h>
 #include <JSL/Strings/ParseTo.h>
 #include <climits>
 #include <fstream>
@@ -10,6 +9,7 @@
 #include <string_view>
 namespace JSL::IO
 {
+	/// @brief Enables the user to stream data from a TAR-like archive on disk.
 	class VaultReader
 	{
 	  private:

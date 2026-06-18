@@ -5,6 +5,8 @@ Globbing
 
 Users of unix-like systems will be familiar with using ``glob`` syntax to match filenames. We provide a means to convert glob strings into their regex-equivalents. 
 
+This is more or less ends up being a cross-platform implementation of ``fnmatch``, which is part of UNIX-like distributions, but not windows.
+
 The Syntax
 ----------------
 

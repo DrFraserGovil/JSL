@@ -1,23 +1,8 @@
 .. _forlinein:
 
-Reading From File
-=================
+Per-Line File Processing
+==========================
 
-Basic File Reading
-++++++++++++++++++++++++
-
-The following functions allow a user to store the contents of a file directly into memory
-
-.. jsl:: JSL::IO::getFile
-	:file: FileIO/GetFile.h
-	:command: doxygenfunction
-
-.. doxygenfunction:: JSL::IO::getFileLines
-
-.. doxygenfunction:: JSL::IO::getFileWords
-
-File Processing
-++++++++++++++++++
 
 Often, a file is being read in not purely for storage, but because some form of operation is being performed on it. In such a case it is wasteful to store the entire string, and then postprocess it. The ``forLineIn`` routine and its descendents provide a way to operate on a file on a line-by-line basis. 
 
