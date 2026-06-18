@@ -1,9 +1,8 @@
 #pragma once
 #include <JSL/Log/Levels.h>
-#include <JSL/Display/ANSI_Codes.h>
+#include <JSL/Display/Format.h>
 #include <unistd.h> // For isatty()
 #include <cstdio>   // For fileno() and stderr
-#include <mutex>
 namespace JSL::Log
 {
 	namespace internal

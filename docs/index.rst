@@ -47,7 +47,7 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
      - A module for several common template-concepts
       
    * - :ref:`Display.h <display>`
-     - * :ref:`Display/ANSI_Codes.h <ansi-display>`
+     - * :ref:`Display/Format.h <ansi-format>`
        * :ref:`Display/ProgressBar.h <progress>`
        * :ref:`Display/Terminal.h <terminal>`
      - An ANSI Escape Sequence module, with some other visual tools

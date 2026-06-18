@@ -1,4 +1,4 @@
-#include <JSL/Display/ANSI_Codes.h>
+#include <JSL/Display/Format.h>
 #include <JSL/Display/Terminal.h>
 #include <string>
 #include <JSL/internal/error.h>

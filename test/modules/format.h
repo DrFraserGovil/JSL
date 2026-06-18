@@ -12,9 +12,9 @@ TEST_CASE("Colour Testing","[display][colour]")
 {
     namespace txt = JSL::Display;
     // namespace bg = JSL::Background;
-    namespace crs = JSL::Display::Terminal;
+    namespace crs = JSL::Display;
     
-    std::vector<std::function<txt::Command(bool)>> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
+    std::vector<std::function<txt::Format(bool)>> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
 
     SECTION("Foreground Colours")
     {

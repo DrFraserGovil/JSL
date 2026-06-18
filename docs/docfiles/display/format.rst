@@ -8,7 +8,7 @@ Like the terminal commands, Formatting commands are -- at their heart -- strings
 .. warning::
 	ANSI Escape sequences are only renderable in certain Environments (most modern terminal emulators, for example). If rendered into a file, however, the result is gibberish text. 
 
-	The :cpp:class:`JSL::Display::Command` class replaces ANSI sequences with blank strings when a bad-environment is detecte, disabling formatting, but allowing for an easy user experience. This constrasts with the approach of :ref:`ansi-terminal`, where no such disabling occurs due to the fundamentally different behaviour.
+	The :cpp:class:`JSL::Display::Command` class replaces ANSI sequences with blank strings when a bad-environment is detecte, disabling formatting, but allowing for an easy user experience. This constrasts with the approach of :ref:`terminal`, where no such disabling occurs due to the fundamentally different behaviour.
 
 Also note that ANSI control sequences have a non-zero length inside an ``std::string``, but have zero length when rendered to a terminal. This means that ``std::string::size`` is not a reliable indicator of string-length when ANSI control sequences are involved. We provide the :cpp:func:`JSL::String::trueSize` function for this purpose.
 
@@ -82,11 +82,47 @@ Sequence Functions
 	.. doxygenfunction:: JSL::Display::Reset
 
 
-Internal Documentation
----------------------------
-.. toctree::
-	elements
-	command
-	group
-	:maxdepth: 1
 
+.. _ansi-command:
+    
+Underlying Classes
+---------------------
+
+Each of the above functions returns a ``JSL::Display::Format`` object which contains the corresponding ANSI code, and an indicator as to which  :cpp:enum:`~JSL::Display::Element` it belongs to. The magic of these commands is that they can be :ref:`composited together <format-composite>` to create overall format schemas.
+
+.. jsl-class:: JSL::Display::Format
+	:file: Display/Format.h
+
+ANSI Elements
+++++++++++++++++++
+
+Provided that they don't overwrite each other, ANSI sequences can be composited together: ``foreground->red`` and ``style->bold`` results in red-bold text. 
+
+To ensure proper compositing, we split the commands into three elements:
+
+.. jsl:: JSL::Display::Element
+	:file: Display/Format.h
+	:command: doxygenenum
+
+ANSI Format Groups
+++++++++++++++++++++
+
+
+FormatGroup Class
+-----------------------
+ 
+.. _format-composite: 
+ 
+.. jsl-class:: JSL::Display::FormatGroup
+	:file: Display/Format.h
+
+Operator Overloads
+--------------------------
+.. jsL:: JSL::Display::FormatType
+	:file: Display/Format.h
+	:command: doxygenconcept
+	:namespace: JSL::Display::Format
+
+.. doxygenfunction:: JSL::Display::operator+(const T & a, const U & b)
+.. doxygenfunction:: JSL::Display::operator+(const T & a, std::string_view && b)
+.. doxygenfunction:: JSL::Display::operator+(std::string_view && a, const T & b)

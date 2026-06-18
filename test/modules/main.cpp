@@ -1,4 +1,3 @@
-#include "../test_utils/catch_extended.h"
 
 #define JSL_TEST_SPOOF_PIPE
 #include "vectors.h"
