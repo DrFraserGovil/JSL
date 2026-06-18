@@ -1,5 +1,5 @@
 #include <JSL/Parameters/CLI_Reader.h>
-#include <JSL/IO/forLineIn.h>
+#include <JSL/IO/ForLineIn.h>
 #include <JSL/Strings/Stitch.h>
 #include <cstring>
 #include <cctype>

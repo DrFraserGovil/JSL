@@ -13,7 +13,7 @@ The following are some non-obvious design decisions it is useful to remember whi
 Static Snapshot
 +++++++++++++++++
 
-Each ``IO::Directory`` instance represents a snapshot of the filesystem, taken at the moment of the objects initialisation. There is no live-updating, and so entities recorded within the Directory are not guaranteed to exist at a later point in time. 
+Each ``IO::Directory`` instance represents a snapshot of the filesystem, taken at the moment of the object's initialisation. There is no live-updating, and so entities recorded within the Directory are not guaranteed to exist at a later point in time. 
 
 The ``Rescan()`` method updates the snapshot (at the cost of invalidating all pointers and references to previous contents). For a 'live' file system, see the :ref:`async` library.
 

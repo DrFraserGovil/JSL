@@ -1,4 +1,4 @@
-#include <JSL/IO/pipedInput.h>
+#include <JSL/IO/PipedInput.h>
 #include <cstdio>
 #include <iostream>
 #include <sstream>

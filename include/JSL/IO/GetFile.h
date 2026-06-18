@@ -1,5 +1,5 @@
 #pragma once
-#include <JSL/IO/forLineIn.h>
+#include <JSL/IO/ForLineIn.h>
 
 namespace JSL::IO
 {

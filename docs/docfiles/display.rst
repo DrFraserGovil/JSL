@@ -5,7 +5,7 @@ Display
 ############
 
 
-The ``JSL::Display`` module contains classes and objects which enable the user to display information, and modify how that information is displayed.
+The ``JSL::Display`` module contains classes and functions which enable the user to display information, and modify how that information is displayed.
 
 .. toctree::
 	:hidden:

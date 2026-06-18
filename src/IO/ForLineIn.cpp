@@ -1,4 +1,4 @@
-#include <JSL/IO/forLineIn.h>
+#include <JSL/IO/ForLineIn.h>
 #include <fstream>
 #include <string_view>
 #include <JSL/internal/error.h>
