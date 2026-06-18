@@ -5,14 +5,14 @@
 
 namespace JSL::Display
 {
-	//!@brief A basic wrapper to make TerminalCommands look more fancy than simple s, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)
+	//!@brief A basic wrapper to make TerminalCommands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)
 	typedef std::string TerminalCommand; 
 	
 	//! @brief Hides the cursor
-	constexpr TerminalCommand Hide         = "\033[?25l";
+	constexpr TerminalCommand HideCursor         = "\033[?25l";
 	
 	//! @brief Shows the cursor
-	constexpr TerminalCommand Show         = "\033[?25h";
+	constexpr TerminalCommand ShowCursor         = "\033[?25h";
 	
 	//! @brief Moves the cursor up one line
 	constexpr TerminalCommand CursorUp     = "\033[A";

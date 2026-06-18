@@ -49,7 +49,7 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
    * - :ref:`Display.h <display>`
      - * :ref:`Display/ANSI_Codes.h <ansi-display>`
        * :ref:`Display/ProgressBar.h <progress>`
-       * :ref:`Display/Terminal.h <terminalsize>`
+       * :ref:`Display/Terminal.h <terminal>`
      - An ANSI Escape Sequence module, with some other visual tools
 
    * - :ref:`IO.h <fileio>`
