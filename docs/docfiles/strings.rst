@@ -41,7 +41,9 @@ The aim of this module is to provide a consistent interface for string manipulat
          
     * - :ref:`MakeFrom.h <makestring>`
       - Provide a consistent interface to construct strings from a variety of types 
-         
+
+    * - :ref:``
+
     * - :ref:`Wrap.h <textwrap>` 
       - Provides a function to compute the 'true size' of a string, and 'fold' strings to fit a certain character length 
          

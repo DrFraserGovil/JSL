@@ -1,4 +1,5 @@
 #include "JSL/Display/Format.h"
+#include "JSL/Display/FormatClasses.h"
 #include <catch2/catch_test_macros.hpp>
 
 #include <JSL/Display.h>
