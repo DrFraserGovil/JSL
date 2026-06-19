@@ -6,7 +6,7 @@ Wrapping Functions
 These are the functions which underly the basic string-wrapping utilities in the library
 
 .. jsl:: JSL::String::wrap
-	:file: Strings/FoldLine.h
+	:file: Strings/Wrap.h
 	:command: doxygenfunction
 
 .. doxygenfunction:: JSL::String::wrapToString

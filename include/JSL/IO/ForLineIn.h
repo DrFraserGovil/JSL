@@ -2,7 +2,7 @@
 #include <functional>
 #include <filesystem>
 #include <vector>
-#include <JSL/Strings/Manipulate.h>
+#include <JSL/Strings/Split.h>
 #include <JSL/Strings/ParseTo.h>
 
 namespace JSL::IO

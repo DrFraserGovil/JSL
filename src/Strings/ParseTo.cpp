@@ -1,7 +1,8 @@
 #include <JSL/Strings/ParseTo.h>
 #include <JSL/internal/error.h>
 #include <JSL/Strings/Cases.h>
-#include <JSL/Strings/Manipulate.h>
+#include <JSL/Strings/Split.h>
+#include <JSL/Strings/Trim.h>
 namespace JSL::String
 {
 	using namespace JSL::internal; //for errors

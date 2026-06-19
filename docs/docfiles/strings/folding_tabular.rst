@@ -5,7 +5,9 @@ Tabular Formatting
 Functions
 ---------------
 
-
+.. jsl-meta::
+	:file: Strings/Wrap.h 
+	 
 .. doxygenfunction:: JSL::String::tableFormat(const std::vector<std::string_view> & input, std::vector<size_t> widths, std::string_view delimiter,std::string_view endCap)
 .. doxygenfunction:: JSL::String::tableFormat(const std::vector<std::string_view> & input, size_t width, std::string_view delimiter,std::string_view endCap)
 

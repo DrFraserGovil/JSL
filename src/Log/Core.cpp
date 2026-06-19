@@ -1,5 +1,5 @@
 #include <JSL/Log/Core.h>
-#include <JSL/Strings/Manipulate.h>
+#include <JSL/Strings/Split.h>
 #include <JSL/Strings/Wrap.h>
 #include <JSL/Display/Terminal.h>
 #include <filesystem>
