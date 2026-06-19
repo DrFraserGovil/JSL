@@ -18,9 +18,10 @@ The aim of this module is to provide a consistent interface for string manipulat
 
     strings/cases
     strings/folding
-    strings/manipulate
+    strings/split
     strings/makestring
     strings/parseto
+    strings/trim
     strings/join
     strings/null
     
@@ -36,14 +37,16 @@ The aim of this module is to provide a consistent interface for string manipulat
     * - :ref:`Cases.h <stringcase>` 
       - Provides case-independent equality checking and case-conversion functions.
     
-    * - :ref:`Stitch.h <joinstring>` 
-      - Provide functions to join together arbitrary containers of objects into a serialised string
-         
     * - :ref:`MakeFrom.h <makestring>`
       - Provide a consistent interface to construct strings from a variety of types 
-
-    * - :ref:``
-
+    * - :ref:`ParseTo.h <parseto>`         
+      - Provide a consistent template interface to convert strings into typed objects
+    * - :ref:`Stitch.h <joinstring>` 
+      - Provide functions to join together arbitrary containers of objects into a serialised string
+    * - :ref:`Split.h <splitstring>`
+      - Break string[_view] objects up into components based on a delimiter
+    * - :ref:`Trim.h <trimstring>`
+      - Trim whitespace and comments from string[_view] objects
     * - :ref:`Wrap.h <textwrap>` 
       - Provides a function to compute the 'true size' of a string, and 'fold' strings to fit a certain character length 
          

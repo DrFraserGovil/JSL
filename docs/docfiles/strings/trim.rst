@@ -1,6 +1,6 @@
-.. _manipulate:
+.. _trimstring:
 
-Splitting & Trimming
+Trimming Strings
 =======================
 
 The ``string_view`` library is a modern extension to C++ strings, and are a great way to port around 'windows' into an underlying immutable string without needing to allocate large blocks of memory. 
@@ -21,14 +21,7 @@ For this reason it is often useful to retain 'string versions' of functions, eve
  
     This is an explicit exception to the :ref:`usual style guidelines <style>` employed by the JSL
   
-Splitting
---------------
 
-.. jsl:: JSL::String::split_view
-	:command: doxygenfunction
-	:file: Strings/Manipulate.h
-
-.. doxygenfunction:: JSL::String::split
 
 Trimming
 ----------------

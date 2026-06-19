@@ -72,10 +72,11 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
           
    * - :ref:`String.h <strings>`
      - * :ref:`Strings/Cases.h <stringcase>`
-       * :ref:`Strings/Manipulate.h <manipulate>`
        * :ref:`Strings/MakeFrom.h <makestring>`
        * :ref:`Strings/ParseTo.h <parseto>`
        * :ref:`Strings/Stitch.h <joinstring>`
+       * :ref:`Strings/Split.h <splitstring>`
+       * :ref:`Strings/Trim.h <trimstring>`
        * :ref:`Strings/Wrap.h <textwrap>`
      - A string (and ``std::string_view``) manipulation module, including advanced parsers
           
