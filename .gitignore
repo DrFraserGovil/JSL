@@ -8,6 +8,10 @@ docs/dox
 *.DS_Store
 makefile
 
+#Windows guff
+*.vs
+*x64*
+
 # Prerequisites
 *.d
 *.vscode
