@@ -7,6 +7,7 @@
 
 #include <JSL/Log/Config.h>
 #include <JSL/Strings/MakeFrom.h>
+#include <mutex>
 // #include <JSL/Display/Format.h>
 
 /*!

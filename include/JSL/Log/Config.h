@@ -1,7 +1,6 @@
 #pragma once
 #include <JSL/Log/Levels.h>
 #include <JSL/Display/Format.h>
-#include <unistd.h> // For isatty()
 #include <cstdio>   // For fileno() and stderr
 namespace JSL::Log
 {

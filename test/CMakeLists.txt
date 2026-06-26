@@ -4,7 +4,7 @@ project(unit VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-add_compile_options(-O0 -Wall)
+
 
 # create executable in current directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -15,11 +15,14 @@ set(CORE_SOURCES ${ALL_SOURCES})
 # Some extra complexity for the catch2 unit testing setup
 #exclude some files from core sorces (main excluded as catch2-autogenerates)
 
+if(MSVC)
+    add_compile_options(/W4 /Od)
+else()
+    add_compile_options(-Wall -O0)
+endif()
 
-# Only download/build Catch2 if ENABLE_TESTS is passed
-option(ENABLE_TESTS "Build tests" OFF)
 
-if(ENABLE_TESTS)
+
     include(FetchContent)
     FetchContent_Declare(
       Catch2
@@ -35,13 +38,15 @@ if(ENABLE_TESTS)
     add_executable(unit_test ${CORE_SOURCES})
     target_link_libraries(unit_test PRIVATE Catch2::Catch2WithMain)
     target_compile_definitions(unit_test PRIVATE UNITTEST)
-endif()
+
             
 # Add threading libraries
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
-target_link_libraries(unit_test PRIVATE Threads::Threads)
+#target_link_libraries(unit_test PRIVATE Threads::Threads)
+
 
 target_include_directories(unit_test PRIVATE ./resources/)
 add_subdirectory("../" "${CMAKE_CURRENT_BINARY_DIR}/JSL_build")
 target_link_libraries(unit_test PRIVATE JSL)
+

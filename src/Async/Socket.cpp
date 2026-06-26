@@ -1,9 +1,19 @@
+
 #include <JSL/Async/Socket.h>
 #include <JSL/Strings/Cases.h>
+#include <JSL/Log.h>
 #include <JSL/internal/error.h>
 #include <thread>
 #include <chrono>
 #include <JSL/Log.h>
+
+
+#if defined(_WIN32) || defined(_WIN64)
+#define CLOSE closesocket
+#else
+#define CLOSE close
+#endif
+
 namespace JSL::Event
 {
 	using namespace JSL::internal; //for errors
@@ -12,9 +22,9 @@ namespace JSL::Event
 
 	internal::FileDescriptor::~FileDescriptor()
 	{
-		if (FD != -1)
+		if (FD != INVALID_SOCKET_VAL)
 		{
-			close(FD);
+			CLOSE(FD);
 		}
 		if (!IsClient)
 		{
@@ -31,9 +41,9 @@ namespace JSL::Event
 
 	void Antenna::Connect(std::string_view identifier)
 	{
-		if (Resources.FD != -1)
+		if (Resources.FD != INVALID_SOCKET_VAL)
 		{
-			close(Resources.FD);
+			CLOSE(Resources.FD);
 			Resources.FD = -1; //in case socket fails 
 		}
 		Resources.Path = (fs::temp_directory_path() / identifier);
@@ -167,7 +177,7 @@ namespace JSL::Event
 
 	bool Antenna::Send(std::string_view msg)
 	{
-		if (Resources.FD == -1) FatalError("Bad socket",JSL_LOCATION) << "Cannot write to an expired socket";
+		if (Resources.FD == INVALID_SOCKET_VAL) FatalError("Bad socket",JSL_LOCATION) << "Cannot write to an expired socket";
 		//two stage send for SOCK_STREAM
 		
 		if (msg.length() > UINT32_MAX)
@@ -177,7 +187,7 @@ namespace JSL::Event
 		
     
 		//send the actual message
-		if (write(Resources.FD, msg.data(),msg.length()) == -1)
+		if (send(Resources.FD, msg.data(),msg.length(),0) == INVALID_SOCKET_VAL)
         {
            LOG(WARN) << "Failed to send message " << msg;
 		   return false;
@@ -189,7 +199,7 @@ namespace JSL::Event
 	std::string Antenna::Read()
 	{
 		LOG(DEBUG) << "Attempting to read from socket";
-		if (Resources.FD == -1) FatalError("Bad socket",JSL_LOCATION) << "Cannot read from an expired socket";
+		if (Resources.FD == INVALID_SOCKET_VAL) FatalError("Bad socket",JSL_LOCATION) << "Cannot read from an expired socket";
 		
 		int fd = accept(Resources.FD,nullptr,nullptr);
 		auto client = ReadClient(fd);
@@ -218,7 +228,7 @@ namespace JSL::Event
 		return out;
 	}
 
-	Antenna Antenna::ReadClient(int filedescriptior)
+	Antenna Antenna::ReadClient(socket_t filedescriptior)
 	{
 		Antenna out;
 		out.Resources.FD = filedescriptior;
@@ -234,7 +244,7 @@ namespace JSL::Event
 	
 
 		std::vector<char> buffer(Buffer, 0);
-		ssize_t nbytes = read(Resources.FD, buffer.data(), buffer.size());
+		auto nbytes = recv(Resources.FD, buffer.data(), buffer.size(),0);
 		
 		if (nbytes == 0)
 		{

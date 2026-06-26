@@ -121,10 +121,7 @@ namespace JSL::String
 		*/
 		template<typename T> std::string inline makeFrom(const T & num) requires JSL::Concept::Numeric<T>
 		{
-			constexpr size_t reserved = std::max(
-				std::numeric_limits<T>::max_digits10 + 9,
-				std::numeric_limits<T>::digits10 + 3
-			);
+			constexpr size_t reserved = std::max(std::numeric_limits<T>::max_digits10 + 9,std::numeric_limits<T>::digits10 + 3);
 			char buf[reserved]{};
 			std::to_chars_result result = std::to_chars(buf, buf + reserved, num);
 

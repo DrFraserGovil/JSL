@@ -5,6 +5,7 @@
 #include <queue>
 #include <string_view>
 #include <functional>
+#include <variant>
 namespace JSL::Event
 {
 	namespace Task

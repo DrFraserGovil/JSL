@@ -5,6 +5,7 @@
 #include <string>
 #include <cstdint>
 #include <cstring>
+#include <concepts>
 #include <optional>
 namespace JSL::Display
 {

@@ -1,10 +1,21 @@
 #pragma once
 
 #if defined(_WIN32) || defined(_WIN64)
-	///for windows?
+	#ifndef WIN32_LEAN_AND_MEAN
+	#define WIN32_LEAN_AND_MEAN
+	#endif
+	#include <winsock2.h>
+	#include <ws2tcpip.h>
+	#include <afunix.h> // Explicitly required for sockaddr_un on Windows
+
+	// Windows uses SOCKET (unsigned long long) instead of int for descriptors
+	using socket_t = SOCKET;
+	#define INVALID_SOCKET_VAL INVALID_SOCKET
 #else
 	#include <sys/socket.h>
 	#include <sys/un.h>
+	using socket_t = int;
+	#define INVALID_SOCKET_VAL (-1)
 #endif
 
 #include <filesystem>
@@ -18,16 +29,16 @@ namespace JSL::Event
 		//this is a wrapper with a rule-of-5 that ensures move semantics work etc. 
 		struct FileDescriptor
 		{
-			int FD =-1;
+			socket_t FD =INVALID_SOCKET_VAL;
 			std::filesystem::path Path;
 			bool IsClient = true; 
 			FileDescriptor() = default;
-			FileDescriptor(int fd, std::filesystem::path path) : FD(fd), Path(path), IsClient(false){};
+			FileDescriptor(socket_t fd, std::filesystem::path path) : FD(fd), Path(path), IsClient(false){};
 			~FileDescriptor();
 			FileDescriptor& operator=(const FileDescriptor&) = delete;
 			FileDescriptor(FileDescriptor && other) noexcept : FD(other.FD), Path(other.Path), IsClient(other.IsClient){other.FD = -1; other.Path = "";};
 			FileDescriptor & operator=(FileDescriptor && other) noexcept { FD = other.FD; Path = other.Path; IsClient = other.IsClient; other.FD = -1; other.Path = "";return *this;};
-			operator int() const { return FD; }
+			operator socket_t() const { return FD; }
 			operator std::filesystem::path() const {return Path;};
 			operator std::string() const {return Path.string();};
 		};
@@ -57,7 +68,7 @@ namespace JSL::Event
 
 			//state queries
 			bool IsActive();
-			int GetDescriptor(){return Resources;}
+			socket_t GetDescriptor(){return Resources;}
 			std::filesystem::path GetPath(){return Resources;}
 			std::string GetID(){return Identifier;}
 			
@@ -100,7 +111,7 @@ namespace JSL::Event
 			bool Active = false;
 			
 			static Antenna TransmitClient(std::string_view identifier);
-			static Antenna ReadClient(int filedescriptior);
+			static Antenna ReadClient(socket_t filedescriptior);
 
 			std::string GetMessage();
 			void Bind();

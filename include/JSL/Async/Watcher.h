@@ -1,16 +1,35 @@
 #pragma once
 #include <JSL/Async/Socket.h>
 #include <string>
-#include <poll.h>
 #include <functional>
 #include <filesystem>
 #include <string_view>
 #include <map>
 #include <chrono>
-#include <sys/inotify.h>
 #include <queue>
 #include <set>
 #include <atomic>
+
+#if defined(_WIN32) || defined(_WIN64)
+    #ifndef WIN32_LEAN_AND_MEAN
+        #define WIN32_LEAN_AND_MEAN
+    #endif
+    #include <winsock2.h> // Provides WSAPollfd
+    using pollfd_t = WSAPOLLFD;
+    using watch_id_t = void*; // Maps to HANDLE in implementation
+
+    // Abstract the Linux masks so your API footprint doesn't change
+    #define IN_MODIFY  0x00000002
+    #define IN_CREATE  0x00000100
+    #define IN_DELETE  0x00000200
+    #define IN_MOVE    0x000000c0
+    #define IN_IGNORED 0x00008000
+#else
+    #include <poll.h>
+    #include <sys/inotify.h>
+    using pollfd_t = pollfd;
+    using watch_id_t = int;
+#endif
 namespace JSL::Event
 {
 
@@ -61,9 +80,13 @@ namespace JSL::Event
             std::map<int,std::function<void()>> Callbacks;
             std::chrono::steady_clock::duration Timeout; // maximum runtime before exit
             int BlockingTime = 50; //milliseconds
-            int INotifyID = -1;
+            watch_id_t INotifyID = reinterpret_cast<watch_id_t>(-1);
             void InitialiseINotify();
             std::map<int, std::filesystem::path> WatchMap;
+            #if defined(_WIN32) || defined(_WIN64)
+                // Stores the unique directory HANDLEs required by Windows
+                std::map<int, void*> WinDirectoryHandles;
+            #endif
             void UpdateFileBatch();
             size_t DebounceMS = 50;
             std::optional<std::chrono::steady_clock::time_point> InitialiseTime;

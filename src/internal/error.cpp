@@ -21,7 +21,7 @@ namespace JSL::internal
 			{
 				result = result/ *it;
 			}
-			return result;
+			return result.string();
 		}
 
 		return fullPath; // Or return empty if not found
@@ -38,6 +38,7 @@ namespace JSL::internal
 	FatalError::~FatalError() noexcept (false)
 	{
 		throw std::runtime_error(Summary + "\t" +Buffer.str());
+		return;
 	}
 		
 }
