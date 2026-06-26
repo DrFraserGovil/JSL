@@ -7,7 +7,7 @@ In the context of this module, when 'vectors' is used, we generally mean functio
 
 
 .. warning::
-   -- TODO: Fix this problem & then remove the warning
+   .. TODO: Fix this problem & then remove the warning
    This paradigm shift of "vectors = containers" came relatively late in the development of this module. Some function *do* only support std::vectors - this will be patched in a later release
 
 These functions can be broken down into three groups:

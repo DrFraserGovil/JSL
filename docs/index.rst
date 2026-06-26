@@ -5,8 +5,7 @@
 
 The JSL 
 ===============================
--- TODO: 
-
+ 
 The JSL ('Jack Standard Library') is a set of tools developed by me (Jack Fraser-Govil) as a uniform, useful set of boilerplate code I found myself duplicating across numerous C++ projects. 
  
 Overview

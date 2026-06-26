@@ -7,12 +7,11 @@
 
 	It shouldn't be of any interest to anyone else, but just in case, it is distributed under a GNU v3 public license. Go nuts, weirdos.
 */
-// TODO: THere is something here
 #define JSL_ACTIVE // define a preprocessor variable which allows other libraries to conditionally install off it
 
 #if defined(_WIN32) || defined(_WIN64)
-    #include <JSL/Async.h>
-#endif 
+#include <JSL/Async.h>
+#endif
 #include <JSL/Concepts.h>
 #include <JSL/Display.h>
 #include <JSL/IO.h>
