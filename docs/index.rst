@@ -5,7 +5,7 @@
 
 The JSL 
 ===============================
-
+-- TODO: 
 
 The JSL ('Jack Standard Library') is a set of tools developed by me (Jack Fraser-Govil) as a uniform, useful set of boilerplate code I found myself duplicating across numerous C++ projects. 
  
@@ -86,7 +86,7 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
      - A system clock and time-formatting module
         
    * - :ref:`Vector.h <vectors>`
-     - * :ref:`Vectors/Cast.h <vector_cast>`
+     - * :ref:`Vectors/Cast.h <vectorcast>`
        * :ref:`Vectors/Join.h <vectorjoin>`
        * :ref:`Vectors/Linspace.h <linspace>`
        * :ref:`Vectors/Search.h <searcher>`

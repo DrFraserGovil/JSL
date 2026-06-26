@@ -8,6 +8,10 @@ docs/dox
 *.DS_Store
 makefile
 
+# #js stuff picked up in docs
+# *.js 
+#
+
 # Prerequisites
 *.d
 *.vscode
