@@ -177,10 +177,10 @@ namespace JSL::String
         size_t Ne = widths.size() - 1;
         for (size_t i = 0; i < Ne; ++i)
         {
-            widths[i] = std::max(1ul,widths[i]-dsize);
+            widths[i] = std::max((size_t)1,widths[i]-dsize);
         }
         //deduct the endcap size from the last cal
-        widths[Ne]= std::max(1ul,widths[Ne]-esize);
+        widths[Ne]= std::max((size_t)1,widths[Ne]-esize);
 
         std::vector<std::vector<std::string>> linesplitInputs;
         size_t maxL = 0;

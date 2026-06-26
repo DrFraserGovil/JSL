@@ -8,6 +8,7 @@
 #include <string>
 #include <cstring>
 #include <string_view>
+#include <iostream>
 namespace JSL::IO
 {
 	/// STREAM FUNCTIONS
@@ -30,16 +31,21 @@ namespace JSL::IO
 
 			while ((pos=newText.find('\n',last)) != std::string_view::npos)
 			{
+				std::string_view chunk = newText.substr(last, pos - last);
+				if (!chunk.empty() && chunk.back() == '\r')
+				{
+					chunk.remove_suffix(1);
+				}
 				// Extract line, handling the merge if CachedText isn't empty
 				if (!cachedText.empty())
 				{
-					cachedText.append(newText.substr(last, pos - last));
+					cachedText.append(chunk);
 					callback(cachedText);
 					cachedText.clear();
 				}
 				else
 				{
-					callback(newText.substr(last, pos - last));
+					callback(chunk);
 				}
 				last = pos + 1; // Move past '\n'
 			}
@@ -96,7 +102,7 @@ namespace JSL::IO
 	{
 		Name = filename;
 		Strictness = policy;
-		VaultStream.open(Name);
+		VaultStream.open(Name,std::ios::binary);
 		if (!VaultStream.is_open())
 		{
 			JSL::internal::FatalError("Bad Vault Access", JSL_LOCATION) << "Could not open " << Name;

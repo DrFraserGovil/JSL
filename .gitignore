@@ -8,9 +8,9 @@ docs/dox
 *.DS_Store
 makefile
 
-# #js stuff picked up in docs
-# *.js 
-#
+#Windows guff
+*.vs
+*x64*
 
 # Prerequisites
 *.d

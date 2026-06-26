@@ -1,9 +1,15 @@
 #include <JSL/Async/Watcher.h>
 #include <JSL/internal/error.h>
-#include <poll.h>
 #include <JSL/Log.h>
 #include <set>
 #include <thread>
+
+#if defined(_WIN32) || defined(_WIN64)
+	#include <io.h>
+	#define STDIN_FILENO 0
+#else
+	#include <unistd.h>
+#endif
 
 
 namespace JSL::Event
@@ -35,10 +41,12 @@ namespace JSL::Event
 		BlockNewAdds = true;
 		InitialiseTime = clock::now();
 		//do some checks to see if running is a good idea
-		if (INotifyID != -1 && !Callbacks.contains(INotifyID))
-		{
-			LOG(WARN) << "inotify is watching files,  but no callback has been set";
-		}
+		#if !defined(_WIN32)
+				if (INotifyID != -1 && !Callbacks.contains(INotifyID))
+				{
+					LOG(WARN) << "inotify is watching files, but no callback has been set";
+				}
+		#endif
 		if (Callbacks.size() == 0)
 		{
 			LOG(WARN) << "No callbacks have been set, so no blocking can occur";
@@ -63,7 +71,15 @@ namespace JSL::Event
 				currentBlock = std::max(0, (int)std::min(currentBlock, remainingMilliseconds));
 			}
 
-			int pollresult = poll(PollCatchers.data(),PollCatchers.size(),currentBlock);
+			int pollresult = 0;
+			#if defined(_WIN32)
+				// Windows uses WSAPoll for sockets and standard handle loops for directories
+				pollresult = WSAPoll(PollCatchers.data(), static_cast<ULONG>(PollCatchers.size()), currentBlock);
+			#else
+						pollresult = poll(PollCatchers.data(), PollCatchers.size(), currentBlock);
+			#endif
+
+
 			if (AwaitingDebounce && clock::now() >= Wakeup)
 			{
 				for (auto file : FileCache)
@@ -152,7 +168,13 @@ namespace JSL::Event
 		{
 			LOG(DEBUG) << "stdcin callbak initialised";
 			pollfd w;
-			w.fd = STDIN_FILENO;
+			#if defined(_WIN32)
+						// Windows handles STDIN through a distinct console pipeline handle
+						w.fd = reinterpret_cast<UINT_PTR>(GetStdHandle(STD_INPUT_HANDLE));
+			#else
+						w.fd = STDIN_FILENO;
+			#endif
+
 			w.events = POLLIN;
 			PollCatchers.push_back(w);
 			if (BlockNewAdds) FatalError("Bad watch call",JSL_LOCATION) << "Cannot add new watch iterations whilst Watcher is running";
@@ -228,83 +250,160 @@ namespace JSL::Event
 			FatalError("File Does not Exist",JSL_LOCATION) << "Cannot watch " << path.string() << " as it does not exist";
 		}
 
-		if (INotifyID == -1)
+		if (INotifyID == reinterpret_cast<watch_id_t>(-1))
 		{
 			InitialiseINotify();
 		}
+		
+		int wd;
+		#if defined(_WIN32)
+			static int id_counter = 1;
+			wd = id_counter++;
+			// Windows directory handling via absolute parent tracking paths
+			fs::path targetDir = fs::is_directory(path) ? path : path.parent_path();
+			HANDLE hDir = CreateFileW(
+				targetDir.c_str(),
+				FILE_LIST_DIRECTORY,
+				FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
+				NULL,
+				OPEN_EXISTING,
+				FILE_FLAG_BACKUP_SEMANTICS | FILE_FLAG_OVERLAPPED,
+				NULL
+			);
+			if (hDir != INVALID_HANDLE_VALUE)
+			{
+				WinDirectoryHandles[wd] = hDir;
+			}
+		#else
+			wd = inotify_add_watch(INotifyID, path.string().c_str(), watchFlags);
+		#endif
 
-		int wd = inotify_add_watch(INotifyID,path.string().c_str(),watchFlags);
 		WatchMap[wd] = path;
 		return wd;
 	}
 
-
-	alignas(struct inotify_event) thread_local char buffer[4096]; //cstyle buffer array
-
-	void Watcher::UpdateFileBatch()
-	{
-		int length = read(INotifyID, buffer,sizeof(buffer));
-		int i = 0;
-		
-		while (i < length)
+	#if !(defined(_WIN32) || defined(_WIN64))
+		alignas(struct inotify_event) thread_local char buffer[4096];
+	
+		void Watcher::UpdateFileBatch()
 		{
-			struct inotify_event* event = (struct inotify_event*)&buffer[i];
-
-			int id =event->wd;
-
-			//if this is false, we got caught in a race condition where id was removed whilst this event was still in the buffer
-			//in that case, just ignore the file
-			if (WatchMap.contains(id))
+			int length = read(INotifyID, buffer,sizeof(buffer));
+			int i = 0;
+		
+			while (i < length)
 			{
-				fs::path path = WatchMap[id];
-				if (event->len > 0)
-				{
-					path/= event->name;
-				}
-				
-				auto report = FileChange(path, event->mask);
+				struct inotify_event* event = (struct inotify_event*)&buffer[i];
 
-				auto loc = FileCache.find(report);
-				if (loc == FileCache.end())
+				int id =event->wd;
+
+				//if this is false, we got caught in a race condition where id was removed whilst this event was still in the buffer
+				//in that case, just ignore the file
+				if (WatchMap.contains(id))
 				{
-					FileCache.insert(report);
+					fs::path path = WatchMap[id];
+					if (event->len > 0)
+					{
+						path/= event->name;
+					}
+				
+					auto report = FileChange(path, event->mask);
+
+					auto loc = FileCache.find(report);
+					if (loc == FileCache.end())
+					{
+						FileCache.insert(report);
+					}
+					else
+					{
+						auto old = FileCache.extract(loc);
+						old.value().Mask |= report.Mask;
+						FileCache.insert(std::move(old));
+					}
 				}
-				else
+		
+
+				i += sizeof(struct inotify_event) + event->len;
+			}
+		}
+	#else
+		thread_local char win_buffer[4096];
+		void Watcher::UpdateFileBatch()
+		{
+			// Non-blocking query via ReadDirectoryChangesW loop checks
+			for (auto const& [wd, hHandle] : WinDirectoryHandles)
+			{
+				HANDLE hDir = reinterpret_cast<HANDLE>(hHandle);
+				DWORD bytesReturned = 0;
+				OVERLAPPED overlapped{};
+
+				if (ReadDirectoryChangesW(hDir, win_buffer, sizeof(win_buffer), FALSE,
+					FILE_NOTIFY_CHANGE_LAST_WRITE | FILE_NOTIFY_CHANGE_FILE_NAME | FILE_NOTIFY_CHANGE_DIR_NAME,
+					&bytesReturned, &overlapped, NULL) || GetLastError() == ERROR_IO_PENDING)
 				{
-					auto old = FileCache.extract(loc);
-					old.value().Mask |= report.Mask;
-					FileCache.insert(std::move(old));
+					// If immediate updates aren't available, move to next directory handle frame
+					if (bytesReturned == 0) continue;
+
+					auto* notify = reinterpret_cast<FILE_NOTIFY_INFORMATION*>(win_buffer);
+					while (notify)
+					{
+						std::wstring wname(notify->FileName, notify->FileNameLength / sizeof(wchar_t));
+						fs::path changedPath = WatchMap[wd];
+						if (!fs::is_directory(changedPath)) {
+							if (changedPath.filename() != fs::path(wname).filename()) {
+								if (notify->NextEntryOffset == 0) break;
+								notify = reinterpret_cast<FILE_NOTIFY_INFORMATION*>(reinterpret_cast<char*>(notify) + notify->NextEntryOffset);
+								continue;
+							}
+						}
+						else {
+							changedPath /= wname;
+						}
+
+						auto report = FileChange(changedPath, notify->Action);
+						auto loc = FileCache.find(report);
+						if (loc == FileCache.end())
+						{
+							FileCache.insert(report);
+						}
+
+						if (notify->NextEntryOffset == 0) break;
+						notify = reinterpret_cast<FILE_NOTIFY_INFORMATION*>(reinterpret_cast<char*>(notify) + notify->NextEntryOffset);
+					}
 				}
 			}
-		
-
-			i += sizeof(struct inotify_event) + event->len;
 		}
-	}
-
+	#endif
 	void Watcher::SetInotifyCallback(std::function<void(const FileChange &)> callback)
 	{
-		if (INotifyID == -1)
+		if (INotifyID == reinterpret_cast<watch_id_t>(-1))
 		{
 			InitialiseINotify();
 		}
+
+#if !defined(_WIN32)
 		if (!Callbacks.contains(INotifyID))
 		{
 			LOG(DEBUG) << "Filewatcher callback initialised";
-			pollfd w;
+			pollfd_t w{};
 			w.fd = INotifyID;
 			w.events = POLLIN;
 			PollCatchers.push_back(w);
-			if (BlockNewAdds) FatalError("Bad watch call",JSL_LOCATION) << "Cannot add new watch iterations whilst Watcher is running";
-
+			if (BlockNewAdds) FatalError("Bad watch call", JSL_LOCATION) << "Cannot add new watch i:setterations whilst Watcher is running";
 		}
-		
-		CachedCallback = [this,callback](auto file)
+#endif
+
+		CachedCallback = [this, callback](auto file)
 		{
 			callback(file);
 		};
 
-		Callbacks[INotifyID] = [this,callback]()
+		// On Windows, loop directly handles tracking calls instead of poll events
+#if defined(_WIN32)
+		int fake_win_id = 99999;
+		Callbacks[fake_win_id] = [this]()
+#else
+		Callbacks[INotifyID] = [this]()
+#endif
 		{
 			if (!AwaitingDebounce)
 			{
@@ -313,6 +412,7 @@ namespace JSL::Event
 			}
 			UpdateFileBatch();
 		};
+
 	}
 	void Watcher::SetDebounce(size_t milliseconds)
 	{
@@ -322,14 +422,19 @@ namespace JSL::Event
 	{
 		if (!WatchMap.contains(id))
 		{
-			return; //unwatching a nonwatched file is not an error
+			return;
 		}
 
-		inotify_rm_watch(INotifyID,id);
-		// if (attempt <0)
-		// {
-		// 	FatalError("Bad inotify_rm",JSL_LOCATION) << "Could not unwatch " << WatchMap[id].string() << " inotify has crashed";
-		// }
+		#if defined(_WIN32)
+				if (WinDirectoryHandles.contains(id))
+				{
+					CloseHandle(reinterpret_cast<HANDLE>(WinDirectoryHandles[id]));
+					WinDirectoryHandles.erase(id);
+				}
+		#else
+				inotify_rm_watch(INotifyID, id);
+		#endif
+
 		WatchMap.erase(id);
 	}
 	void Watcher::Unwatch(fs::path file)
@@ -347,10 +452,15 @@ namespace JSL::Event
 	}
 	void Watcher::InitialiseINotify()
 	{
-		INotifyID = inotify_init();
-		if (INotifyID < 0)
-		{
-			FatalError("Bad inotify", JSL_LOCATION) << "Could not establish inotify process\nReason: " << std::strerror(errno);
-		}		
+		#if defined(_WIN32)
+				// Set identifier state without blocking system allocations
+				INotifyID = reinterpret_cast<watch_id_t>(1);
+		#else
+				INotifyID = inotify_init1(IN_NONBLOCK);
+				if (INotifyID < 0)
+				{
+					FatalError("Bad inotify", JSL_LOCATION) << "Could not establish inotify process\nReason: " << std::strerror(errno);
+				}
+		#endif
 	}
 };

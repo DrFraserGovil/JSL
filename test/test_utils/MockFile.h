@@ -17,7 +17,7 @@ struct MockFile
 	}
 	std::string Name()
 	{
-		return (std::string)Path;
+		return Path.string();
 	}
 	~MockFile()
 	{

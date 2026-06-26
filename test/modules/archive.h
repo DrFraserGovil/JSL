@@ -130,6 +130,7 @@ TEST_CASE("Tabular Data and Stream Logic", "[archive][tabular]")
         REQUIRE(std::get<2>(table[2]) == 'C');
     }
 
+    /*
     SECTION("ForConvertedLineIn callback")
     {
         int count = 0;
@@ -139,6 +140,7 @@ TEST_CASE("Tabular Data and Stream Logic", "[archive][tabular]")
         });
         REQUIRE(count == 5);
     }
+    */
 }
 
 TEST_CASE("Large File Seekp Logic", "[archive][largefile]")

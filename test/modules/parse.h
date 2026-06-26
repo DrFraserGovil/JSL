@@ -39,7 +39,7 @@ TEST_CASE("Basic types","[utility][JSL::String::ParseTo]")
         REQUIRE(JSL::String::ParseTo<int>("-1") == -1);
         REQUIRE(JSL::String::ParseTo<int>("101") == 101);
         REQUIRE(JSL::String::ParseTo<unsigned int>("123") == 123u);
-        REQUIRE(JSL::String::ParseTo<long>("12345678901") == 12345678901L);
+        REQUIRE(JSL::String::ParseTo<long long>("12345678901") == 12345678901L);
         REQUIRE(JSL::String::ParseTo<long long>("999999999991") == 999999999991LL);
 	}
 

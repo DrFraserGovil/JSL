@@ -1,6 +1,6 @@
 #pragma once
 #include <cmath>
-#include <string>
+#include <string_view>
 #include <cstdint>
 
 namespace JSL::Display
@@ -9,32 +9,32 @@ namespace JSL::Display
 	typedef std::string TerminalCommand; 
 	
 	//! @brief Hides the cursor
-	constexpr TerminalCommand HideCursor         = "\033[?25l";
+	const TerminalCommand HideCursor         = "\033[?25l";
 	
 	//! @brief Shows the cursor
-	constexpr TerminalCommand ShowCursor         = "\033[?25h";
+	const TerminalCommand ShowCursor         = "\033[?25h";
 	
 	//! @brief Moves the cursor up one line
-	constexpr TerminalCommand CursorUp     = "\033[A";
+	const TerminalCommand CursorUp     = "\033[A";
 
 	//! @brief Deletes the previous character (except newlines)
 	//!@details \\b on its own just moves cursor; this moves cursor, erases character, then moves it back again
-	constexpr TerminalCommand Backspace    = "\b \b"; 
+	const TerminalCommand Backspace    = "\b \b"; 
 
 	//! @brief Erases all characters to the right of the cursor position
-	constexpr TerminalCommand EraseAllRight   = "\033[0K";
+	const TerminalCommand EraseAllRight   = "\033[0K";
 
 	//! @brief Erases all characters to the left of the cursor position
-	constexpr TerminalCommand EraseAllLeft    = "\033[1K";
+	const TerminalCommand EraseAllLeft    = "\033[1K";
 	
 	//! @brief Clears the entire line (but does not move the cursor position)
-	constexpr TerminalCommand ClearLine    = "\033[2K\r";
+	const TerminalCommand ClearLine    = "\033[2K\r";
 
 	//! @brief Clears the entire terminal (and scrollback buffer)
-	constexpr TerminalCommand ClearScreen  = "\033[3J\r";
+	const TerminalCommand ClearScreen  = "\033[3J\r";
 	
 	//! @brief Moves the cursor to position (1,1) (the top left of the screen)
-	constexpr TerminalCommand ResetPosition = "\033[1;1\r";
+	const TerminalCommand ResetPosition = "\033[1;1\r";
 
 	//! @brief Specify the direction of terminal movement
 	//! @details The fixed numbers allow us to do some ASCII hackery, and convert the enums to relevant chars
@@ -66,10 +66,10 @@ namespace JSL::Display
 			size_t TabSize();
 			//! @brief Computes the size of a tabstop and caches it for future use
 			//! @details Functions by inserting a tab, requesting a Device Status Report to find the current column, then deleting the line. This makes it somewhat fragile and expensive; so it is recommended that this is not queried often (it runs on startup).
- 			void CacheTabs();
+			void CacheTabs();
 			
 			//! Uses ioctl to query the current dimensions of the terminal, and cache them for future retrieval
- 			void CacheSize(); 
+			void CacheSize(); 
 
 			/*! @brief  Determine if the output stream can interpret ANSI escape sequences
 				@details Uses isatty (and _isatty for windows) to determine if stdout can render ANSI commands.
@@ -87,7 +87,7 @@ namespace JSL::Display
 			friend GlobalEnvironment & Terminal();
 		private:
 			//! Private constructor for singleton uniqueness
-		 	GlobalEnvironment();
+			GlobalEnvironment();
 			//! Internal row cache
 			size_t _Rows;
 			//! Internal column cache

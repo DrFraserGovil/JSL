@@ -1,5 +1,7 @@
 #pragma once
-
+#if defined(_WIN32) || defined(_WIN64)
+#undef ERROR
+#endif
 /*!
     An encoding for different levels of logs. Levels are hierarchical: WARN includes ERROR, and INFO includes WARN (and therefore, also ERROR).
 	

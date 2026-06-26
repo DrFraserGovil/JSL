@@ -17,7 +17,7 @@ namespace JSL::String
 			}
 			else if (result.ec == std::errc::invalid_argument) 
 			{
-				FatalError("Could not complete conversion", JSL_LOCATION) <<  "Error: Invalid argument for conversion: '" << sv   << "` to type " << typeName<< "\n";
+				FatalError("Could not complete conversion", JSL_LOCATION) <<  typeName <<"-Error: Invalid argument for conversion: ('" << sv   << "') to type " << typeName<< "\n";
 				
 			} 
 			else if (result.ec == std::errc::result_out_of_range)
