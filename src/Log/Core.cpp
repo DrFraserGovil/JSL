@@ -44,7 +44,7 @@ namespace JSL::Log::internal
 			fmt = Config::Global().DebugColour;
 			label = "[DEBUG] ";
 			break;
-		case INFO:
+		case INFO /*ignoreme*/:
 			fmt = Config::Global().InfoColour;
 			label = "[INFO]  ";
 			break;

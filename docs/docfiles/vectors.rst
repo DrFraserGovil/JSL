@@ -6,8 +6,9 @@ Vectors
 In the context of this module, when 'vectors' is used, we generally mean functions which extend (or in some cases, merely simplify) the behaviour of `STL containers <https://en.cppreference.com/cpp/container>`_ - not mathematical vectors. 
 
 
-.. warning::
-   .. TODO: Fix this problem & then remove the warning
+.. TODO: Fix the problem of inconsistent 'vectors' & then remove the warning
+
+.. wsarning::
    This paradigm shift of "vectors = containers" came relatively late in the development of this module. Some function *do* only support std::vectors - this will be patched in a later release
 
 These functions can be broken down into three groups:

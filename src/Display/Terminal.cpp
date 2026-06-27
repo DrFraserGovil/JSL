@@ -3,82 +3,85 @@
 #include <iostream>
 #include <string>
 #if defined(_WIN32) || defined(_WIN64)
-	#include <io.h>
-	#include <windows.h>
+#include <io.h>
+#include <windows.h>
 #else
-	#include <unistd.h>
-	#include <sys/ioctl.h>
-	#include <termios.h>
+#include <sys/ioctl.h>
+#include <termios.h>
+#include <unistd.h>
 #endif
 using namespace std::string_literals;
 namespace JSL::Display
 {
 	TerminalCommand MoveToColumn(uint32_t column)
 	{
-		column = column > 0 ? column : 1; //ensure that 0-indexing doesn't cause issues as columns are 1 indexed
+		column = column > 0 ? column : 1; // ensure that 0-indexing doesn't cause issues as columns are 1 indexed
 		return "\033["s + std::to_string(column) + "G"s;
 	}
-	
+
 	TerminalCommand Move(Direction dir, unsigned int steps)
 	{
-		return "\033["s + std::to_string(steps) + (char)(dir+65);
+		return "\033["s + std::to_string(steps) + (char)(dir + 65);
 	}
 
 	GlobalEnvironment::GlobalEnvironment()
 	{
-        CacheANSI(); // do this first because it is needed elsewhere
+		CacheANSI(); // do this first because it is needed elsewhere
 		CacheSize();
 		CacheTabs();
 	}
-	GlobalEnvironment & Terminal()
+	GlobalEnvironment &Terminal()
 	{
-		static GlobalEnvironment instance;	
+		static GlobalEnvironment instance;
 		return instance;
 	}
 
-    void GlobalEnvironment::CacheANSI()
-    {
-        //have to do some preprocessor messiness to get the right function as it's platform dependent
-		 #ifdef _WIN32
-			AnsiActive = _isatty(_fileno(stdout));
-		#else
-			AnsiActive = isatty(fileno(stdout));
-		#endif
-    }
-    bool GlobalEnvironment::IsANSICapable()
-    {
-        return AnsiActive;
-        // return true;
-    }
+	void GlobalEnvironment::CacheANSI()
+	{
+		// have to do some preprocessor messiness to get the right function as it's platform dependent
+#ifdef _WIN32
+		AnsiActive = _isatty(_fileno(stdout));
+#else
+		AnsiActive = isatty(fileno(stdout));
+#endif
+	}
+	bool GlobalEnvironment::IsANSICapable()
+	{
+		return AnsiActive;
+		// return true;
+	}
 	size_t GlobalEnvironment::Rows()
 	{
 		return _Rows;
 	}
 	size_t GlobalEnvironment::Columns()
 	{
-		if (DynamicUpdates) CacheSize();
+		if (DynamicUpdates)
+			CacheSize();
 		return _Columns;
 	}
 	size_t GlobalEnvironment::TabSize()
 	{
-		if (DynamicUpdates) CacheTabs();
+		if (DynamicUpdates)
+			CacheTabs();
 		return _Tabsize;
 	}
 
 #if defined(_WIN32) || defined(_WIN64)
 	size_t winTabs(size_t dtab)
 	{
-		// This was coded by Gemini, and I hate it
-		// TODO: replace this with something not vibe coded
+		// TODO: Replace Gemini-generated code with handwritten code & unit test it
 		HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-		if (hOut == INVALID_HANDLE_VALUE) return dtab;
+		if (hOut == INVALID_HANDLE_VALUE)
+			return dtab;
 
 		CONSOLE_SCREEN_BUFFER_INFO csbi;
-		if (!GetConsoleScreenBufferInfo(hOut, &csbi)) return dtab;
+		if (!GetConsoleScreenBufferInfo(hOut, &csbi))
+			return dtab;
 
-		// In the Windows Console API, the current column is tracked in 
-		// csbi.dwCursorPosition.X. 
-		// When you write a '\t', the console advances to the next 8-character 
+		// In the Windows Console API, the current column is tracked in
+		// csbi.dwCursorPosition.X.
+		// When you write a '\t', the console advances to the next 8-character
 		// boundary by default.
 
 		// We simulate your \r\t logic:
@@ -90,7 +93,7 @@ namespace JSL::Display
 		COORD originalPos = csbi.dwCursorPosition;
 
 		// Move to start of line
-		COORD startOfLine = { 0, originalPos.Y };
+		COORD startOfLine = {0, originalPos.Y};
 		SetConsoleCursorPosition(hOut, startOfLine);
 
 		// Write tab
@@ -121,7 +124,7 @@ namespace JSL::Display
 		struct termios raw = oldt;
 		raw.c_lflag &= ~(ICANON | ECHO); // Turn off line-buffering and screen-echoing
 
-		// Crucial Failsafe: Set a 500ms timeout (5 deciseconds) so non-compliant 
+		// Crucial Failsafe: Set a 500ms timeout (5 deciseconds) so non-compliant
 		// terminals or redirected pipes don't freeze the application process indefinitely.
 		raw.c_cc[VMIN] = 0;
 		raw.c_cc[VTIME] = 2;
@@ -187,54 +190,51 @@ namespace JSL::Display
 			return;
 		}
 
-		#if defined(_WIN32) || defined(_WIN64)
+#if defined(_WIN32) || defined(_WIN64)
 		_Tabsize = winTabs(dtab);
 #else
 		_Tabsize = nixTabs(dtab);
 #endif
 		return;
-
 	}
 	void GlobalEnvironment::CacheSize()
 	{
-		//set defaults
+		// set defaults
 		_Rows = 24;
 		_Columns = 80;
-		
 
-		#if defined(_WIN32) || defined(_WIN64)
-			HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-			if (hOut == INVALID_HANDLE_VALUE || !AnsiActive)
-			{
-				_Rows = 24;
-				_Columns = 80;
-				return;
-			}
+#if defined(_WIN32) || defined(_WIN64)
+		HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+		if (hOut == INVALID_HANDLE_VALUE || !AnsiActive)
+		{
+			_Rows = 24;
+			_Columns = 80;
+			return;
+		}
 
-			CONSOLE_SCREEN_BUFFER_INFO csbi;
-			if (!GetConsoleScreenBufferInfo(hOut, &csbi))
-			{
-				_Rows = 24;
-				_Columns = 80;
-				return;
-			}
+		CONSOLE_SCREEN_BUFFER_INFO csbi;
+		if (!GetConsoleScreenBufferInfo(hOut, &csbi))
+		{
+			_Rows = 24;
+			_Columns = 80;
+			return;
+		}
 
-			// srWindow specifies the window coordinates relative to the console buffer.
-			// Width and height are inclusive, so we add 1 to the differences.
-			_Columns = static_cast<size_t>(csbi.srWindow.Right - csbi.srWindow.Left + 1);
-			_Rows = static_cast<size_t>(csbi.srWindow.Bottom - csbi.srWindow.Top + 1);
-		#else
-			if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == -1) 
-			{
-				// Fallback or error handling if not a TTY
-				_Rows = 24;
-				_Columns = 80;
-				return;
-			}
-			struct winsize ws;
-			_Rows = ws.ws_row;
-			_Columns = ws.ws_col;
-		#endif
-		
-	}	
-}
+		// srWindow specifies the window coordinates relative to the console buffer.
+		// Width and height are inclusive, so we add 1 to the differences.
+		_Columns = static_cast<size_t>(csbi.srWindow.Right - csbi.srWindow.Left + 1);
+		_Rows = static_cast<size_t>(csbi.srWindow.Bottom - csbi.srWindow.Top + 1);
+#else
+		if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == -1)
+		{
+			// Fallback or error handling if not a TTY
+			_Rows = 24;
+			_Columns = 80;
+			return;
+		}
+		struct winsize ws;
+		_Rows = ws.ws_row;
+		_Columns = ws.ws_col;
+#endif
+	}
+} // namespace JSL::Display

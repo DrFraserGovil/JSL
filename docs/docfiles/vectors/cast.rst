@@ -24,5 +24,4 @@ We have also integrated the :ref:`ParseTo <parseto>` and :ref:`MakeFrom <makestr
 	:tparam ...Args: A catcher for other types (i.e. iterators) that are often hidden away by STL containers
 	:param src: The original container to be cast into a new type.
 	:return: A new container containing the same objects as the original, but constructed into a new type.
-			vim.keymap.set('n', '<leader>f', builtin.help_tags, { desc = 'Telescope help tags' })
 	 

@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-The JSL 
+The JSL Package 
 ===============================
  
 The JSL ('Jack Standard Library') is a set of tools developed by me (Jack Fraser-Govil) as a uniform, useful set of boilerplate code I found myself duplicating across numerous C++ projects. 
@@ -27,6 +27,9 @@ Overview
 
 
 The entire library can be included with ``#include <JSL.h>`` (provided it is on your include-path), or for a more IWYU-style approach, the individual modules and submodules can be included by ``#include <JSL/[module]>``.
+.. TODO: The async package needs to be fully documented
+.. TODO: The concepts package needs to be fully documented
+.. TODO: The parameter package needs to be fully documented
  
 .. list-table::
    :header-rows: 1
@@ -64,7 +67,8 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
    * - :ref:`Log.h <log>`
      - * :ref:`Log/Config.h <log-config>`
      - A logging and terminal output module
-          
+         
+
    * - :ref:`Parameter.h <parameters>`
      - (not documented) 
      - A CLI and Settings-aggregtor module
