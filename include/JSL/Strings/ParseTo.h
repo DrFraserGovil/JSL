@@ -11,249 +11,254 @@ namespace JSL::String
 			@param result The output from a call to from_chars
 			@param sv The string being parsed
 			@param typeName The (possibly mangled) typeid name of the target type
-		*/	
-		void checkErrors(std::from_chars_result & result,std::string_view sv,std::string_view typeName);
+		*/
+		void checkErrors(std::from_chars_result &result, std::string_view sv, std::string_view typeName);
 
-
-		/*! @brief Trims the string, then checks if the input string is empty, or a reserved sequence, and throw an error if true.  
+		/*! @brief Trims the string, then checks if the input string is empty, or a reserved sequence, and throw an error if true.
 		 * @param sv The string to be parsed - is mutated by a whitespace trimming
 		 * @param type The name of the target type
 		 * @param rejectEmpty If true, strings that are empty after trimming throw an error
 		 * @param isOptional True if the target type is std::optional<T>, otherwise false
 		 * @throws std::logic_error if the string is empty and rejectEmpty is true
-		 * @throws std::logic_error if sv == "__bool_tag__" but the type is not bool 
-		 * @throws std::logic_error sv is the Null String, and isOptional is false 
+		 * @throws std::logic_error if sv == "__bool_tag__" but the type is not bool
+		 * @throws std::logic_error sv is the Null String, and isOptional is false
 		 */
-		void processInput(std::string_view & sv, std::string_view type, bool rejectEmpty, bool isOptional=false);
+		void processInput(std::string_view &sv, std::string_view type, bool rejectEmpty, bool isOptional = false);
 
-		/*! @brief Splits the innermost type of a container-parse into 'tokens' to be parsed 
+		/*! @brief Splits the innermost type of a container-parse into 'tokens' to be parsed
 			@param sv The string to be tokenised
 			@param delim The string used to determine the end of a token and the beginning of the next
-			@param typeName The (possibly mangled) name of the parse target type. Used for error messages. 
+			@param typeName The (possibly mangled) name of the parse target type. Used for error messages.
 		*/
-		std::vector<std::string_view> tokenize(std::string_view sv, std::string_view delim,std::string_view typeName);
+		std::vector<std::string_view> tokenize(std::string_view sv, std::string_view delim, std::string_view typeName);
 		/*!
 		 * @brief Recursively break nested container types into lower-levels for sequential parsing
 		 * @param sv The string to be meta-tokenised
 		 * @return A vector of tokens suitable for further tokenisation by the inner types.
 		 */
 		std::vector<std::string_view> recursetokens(std::string_view sv);
-	}
+	} // namespace internal
 	/////////////////////
 	// Generic Template
 	/////////////////////
-		
-		/*! @brief The default template for parsing a string into a generic type
-			@details Attempts a naive string-native construction. We don't require that such a construction exists as this is also our gateway to error messages
-			@tparam T A type which can be converted into a string 
-			@param sv A string to be parsed 
-			@return An object of type T represented by the input string
-		*/
-		template<class T>
-		T inline ParseTo(std::string_view sv)
+
+	/*! @brief The default template for parsing a string into a generic type
+		@details Attempts a naive string-native construction. We don't require that such a construction exists as this is also our gateway to error messages
+		@tparam T A type which can be converted into a string
+		@param sv A string to be parsed
+		@return An object of type T represented by the input string
+	*/
+	template <class T>
+	T inline ParseTo(std::string_view sv)
+	{
+		internal::processInput(sv, typeid(T).name(), true);
+		try
 		{
-			internal::processInput(sv,typeid(T).name(),true);
-			try 
-			{
-				return T{sv};
-			}
-			catch (...)
-			{
-				throw std::logic_error("Bad conversion, cannot convert string \"" + std::string(sv) + "\"");
-				return ""; //dead code, suppresses compiler warnings
-			}
+			return T{sv};
 		}
-	
+		catch (...)
+		{
+			throw std::logic_error("Bad conversion, cannot convert string \"" + std::string(sv) + "\"");
+			return ""; // dead code, suppresses compiler warnings
+		}
+	}
+
 	/////////////////////
 	// Numerics
 	/////////////////////
-	
-		/*! @brief Parses strings into numeric types 
-			@warning Uses std::to_chars, which may cause some issues with non-C++20 compliant compilers (Apple Clang, for example), for which this function is not implemented for doubles 
-			@tparam T A type which can be converted into a string 
-			@param sv A string to be parsed 
-			@return An object of type T represented by the input string
-		*/
-		template<typename T> 
-		T inline ParseTo(std::string_view sv) requires JSL::Concept::Numeric <T>
-		{
-			internal::processInput(sv,typeid(T).name(),true);
-			T output{};
-			auto result = std::from_chars(sv.data(),sv.data() + sv.size(), output);
-			internal::checkErrors(result,sv,typeid(T).name());
 
-			return output;
-		}
-		
-		/*! @brief Parses strings into std::chrono::duration objects 
-			@warning This parses numeric values, and then passes them to the duration-constructor, and does not support primitives or any non-numeric values.  
-			@tparam T A type which can be converted into a string 
-			@param sv A string to be parsed 
-			@return An object of type T represented by the input string
-		*/
-		template<typename T>
-		T inline ParseTo(std::string_view sv) requires JSL::Concept::ChronoDuration<T> 
-		{
-			return T{ParseTo<typename T::rep>(sv)};
-		}
+	/*! @brief Parses strings into numeric types
+		@warning Uses std::to_chars, which may cause some issues with non-C++20 compliant compilers (Apple Clang, for example), for which this function is not implemented for doubles
+		@tparam T A type which can be converted into a string
+		@param sv A string to be parsed
+		@return An object of type T represented by the input string
+	*/
+	template <typename T>
+	T inline ParseTo(std::string_view sv)
+		requires JSL::Concept::Numeric<T>
+	{
+		internal::processInput(sv, typeid(T).name(), true);
+		T output{};
+		auto result = std::from_chars(sv.data(), sv.data() + sv.size(), output);
+		internal::checkErrors(result, sv, typeid(T).name());
+
+		return output;
+	}
+
+	/*! @brief Parses strings into std::chrono::duration objects
+		@warning This parses numeric values, and then passes them to the duration-constructor, and does not support primitives or any non-numeric values.
+		@tparam T A type which can be converted into a string
+		@param sv A string to be parsed
+		@return An object of type T represented by the input string
+	*/
+	template <typename T>
+	T inline ParseTo(std::string_view sv)
+		requires JSL::Concept::ChronoDuration<T>
+	{
+		return T{ParseTo<typename T::rep>(sv)};
+	}
 
 	////////////////////
 	// Specialisations
 	////////////////////
 
-		//The apple-clang override for doubles
-		#if defined(__clang__) && defined(__APPLE__)
-			template<>
-			double ParseTo(std::string_view sv);
-		#endif
+// The apple-clang override for doubles
+#if defined(__clang__) && defined(__APPLE__)
+	template <>
+	double ParseTo(std::string_view sv);
+#endif
 
-		template<>
-		char ParseTo(std::string_view sv);
-		
-		template<>
-		bool ParseTo(std::string_view sv);
+	template <>
+	char ParseTo(std::string_view sv);
+
+	template <>
+	bool ParseTo(std::string_view sv);
 
 	/////////////////////////
 	// forward declarations
 	/////////////////////////
 
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::NonStringRange<T>;
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::TupleLike<T>;
-		template<typename T>
-		T ParseTo(std::string_view sv,std::string_view delim) requires JSL::Concept::TupleLike<T>;
-		
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::OptionalLike<T>;
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::UniquePtr<T>;
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::SharedPtr<T>;
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::NonStringRange<T>;
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::TupleLike<T>;
+	template <typename T>
+	T ParseTo(std::string_view sv, std::string_view delim)
+		requires JSL::Concept::TupleLike<T>;
+
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::OptionalLike<T>;
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::UniquePtr<T>;
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::SharedPtr<T>;
 	/////////////////////
 	// Containers
 	/////////////////////
 
-		template<typename T>
-		T inline ParseTo(std::string_view sv,std::string_view delimiter) requires JSL::Concept::NonStringRange<T>  
+	template <typename T>
+	T inline ParseTo(std::string_view sv, std::string_view delimiter)
+		requires JSL::Concept::NonStringRange<T>
+	{
+		using InnerT = JSL::Concept::RangeInternalType<T>;
+		std::vector<std::string_view> tokens;
+
+		T out{};
+		if constexpr (JSL::Concept::NonStringRange<InnerT> || JSL::Concept::TupleLike<InnerT>)
 		{
-			using InnerT = JSL::Concept::range_value_t<T>;
-			std::vector<std::string_view> tokens;
-			
-			
-			T out{};
-			if constexpr (JSL::Concept::NonStringRange<InnerT> || JSL::Concept::TupleLike<InnerT>)
+			tokens = (internal::recursetokens(sv));
+			if (tokens.empty() && !sv.empty())
 			{
-				tokens = (internal::recursetokens(sv));
-				if (tokens.empty() && !sv.empty())
-				{
-					throw std::logic_error("Bad container parse: The string \""  + std::string(sv) + "\" is non-empty, but no matching container boundaries can be found");
-				}
+				throw std::logic_error("Bad container parse: The string \"" + std::string(sv) + "\" is non-empty, but no matching container boundaries can be found");
 			}
-			else
-			{ 
-				tokens = (internal::tokenize(sv,delimiter,typeid(T).name()));	
-			}
-			if (tokens.empty())
-			{
-				return out;
-			}		
-
-
-			std::transform(tokens.begin(),tokens.end(),std::inserter(out,out.end()),
-				[&](const auto & token)
-				{
-					if constexpr (JSL::Concept::NonStringRange<InnerT> || JSL::Concept::TupleLike<InnerT>)
-					{
-						return JSL::String::ParseTo<InnerT>(token, delimiter);
-					}
-					else
-					{
-						return JSL::String::ParseTo<InnerT>(token);
-					}
-				}	
-			);
+		}
+		else
+		{
+			tokens = (internal::tokenize(sv, delimiter, typeid(T).name()));
+		}
+		if (tokens.empty())
+		{
 			return out;
 		}
-		
-		template<typename T>
-		T inline ParseTo(std::string_view sv) requires JSL::Concept::NonStringRange<T> 
-		{
-			return ParseTo<T>(sv,",");
-		}
-	
 
-		namespace internal
-		{
-			template<JSL::Concept::TupleLike T, std::size_t... Is>
-			T ParseToTupleImpl(const std::vector<std::string_view>& tokens, std::index_sequence<Is...>)
+		std::transform(tokens.begin(), tokens.end(), std::inserter(out, out.end()),
+			[&](const auto &token)
 			{
-				return T{ JSL::String::ParseTo<std::tuple_element_t<Is, T>>(tokens[Is])... };
-			}
+				if constexpr (JSL::Concept::NonStringRange<InnerT> || JSL::Concept::TupleLike<InnerT>)
+				{
+					return JSL::String::ParseTo<InnerT>(token, delimiter);
+				}
+				else
+				{
+					return JSL::String::ParseTo<InnerT>(token);
+				}
+			});
+		return out;
+	}
+
+	template <typename T>
+	T inline ParseTo(std::string_view sv)
+		requires JSL::Concept::NonStringRange<T>
+	{
+		return ParseTo<T>(sv, ",");
+	}
+
+	namespace internal
+	{
+		template <JSL::Concept::TupleLike T, std::size_t... Is>
+		T ParseToTupleImpl(const std::vector<std::string_view> &tokens, std::index_sequence<Is...>)
+		{
+			return T{JSL::String::ParseTo<std::tuple_element_t<Is, T>>(tokens[Is])...};
+		}
+	} // namespace internal
+
+	template <typename T>
+	T ParseTo(std::string_view sv, std::string_view delim)
+		requires JSL::Concept::TupleLike<T>
+	{
+		auto tokens = internal::tokenize(sv, delim, typeid(T).name());
+
+		if (tokens.size() != std::tuple_size_v<T>)
+		{
+			throw std::logic_error("Tuple parse error: number of tokens (" + std::to_string(tokens.size()) + ") inconsistent with tuple dimensions (" + std::to_string(std::tuple_size_v<T>) + ")");
 		}
 
-		template<typename T>
-		T ParseTo(std::string_view sv,std::string_view delim) requires JSL::Concept::TupleLike<T>
-		{
-			auto tokens = internal::tokenize(sv,delim,typeid(T).name());
-
-			if (tokens.size() != std::tuple_size_v<T>)
-			{
-				throw std::logic_error("Tuple parse error: number of tokens (" + std::to_string(tokens.size()) + ") inconsistent with tuple dimensions (" + std::to_string(std::tuple_size_v<T>) + ")");
-			}
-
-			return internal::ParseToTupleImpl<T>(tokens,std::make_index_sequence<std::tuple_size_v<T>>{});
-		}
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::TupleLike<T> 
-		{
-			return ParseTo<T>(sv,",");
-		}	
+		return internal::ParseToTupleImpl<T>(tokens, std::make_index_sequence<std::tuple_size_v<T>>{});
+	}
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::TupleLike<T>
+	{
+		return ParseTo<T>(sv, ",");
+	}
 	////////////////////////
 	// Optional
 	///////////////////////
-	
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::OptionalLike<T> 
+
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::OptionalLike<T>
+	{
+		internal::processInput(sv, typeid(T).name(), false);
+		// no reject empty as we allow an empty signal to also be a failure
+
+		if (sv.empty() || sv == JSL_NULL_STRING)
 		{
-			internal::processInput(sv,typeid(T).name(),false);
-			//no reject empty as we allow an empty signal to also be a failure
-
-			if (sv.empty() || sv == JSL_NULL_STRING)
-			{
-				return std::nullopt;
-			}
-
-			return ParseTo<typename T::value_type>(sv);
+			return std::nullopt;
 		}
-	
+
+		return ParseTo<typename T::value_type>(sv);
+	}
+
 	///////////////////
 	// Smart Pointers
 	///////////////////
 
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::UniquePtr<T>
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::UniquePtr<T>
+	{
+		using type = typename T::element_type;
+		if (sv.empty() || sv == JSL_NULL_STRING)
 		{
-			using type = typename T::element_type;
-			if (sv.empty() || sv == JSL_NULL_STRING)
-			{
-				return std::unique_ptr<type>(nullptr);
-			}
-			return std::make_unique<type>(std::move(ParseTo<type>(sv)));
+			return std::unique_ptr<type>(nullptr);
 		}
-		template<typename T>
-		T ParseTo(std::string_view sv) requires JSL::Concept::SharedPtr<T>
+		return std::make_unique<type>(std::move(ParseTo<type>(sv)));
+	}
+	template <typename T>
+	T ParseTo(std::string_view sv)
+		requires JSL::Concept::SharedPtr<T>
+	{
+		using type = typename T::element_type;
+		if (sv.empty() || sv == JSL_NULL_STRING)
 		{
-			using type = typename T::element_type;
-			if (sv.empty() || sv == JSL_NULL_STRING)
-			{
-				return std::shared_ptr<type>(nullptr);
-			}
-			return std::make_shared<type>(std::move(ParseTo<type>(sv)));
+			return std::shared_ptr<type>(nullptr);
 		}
+		return std::make_shared<type>(std::move(ParseTo<type>(sv)));
+	}
 } // namespace JSL::String
-
-
-
-
-

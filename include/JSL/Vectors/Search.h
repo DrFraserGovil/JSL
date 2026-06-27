@@ -1,8 +1,8 @@
 #pragma once
-#include <algorithm>
-#include <vector>
-#include <concepts>
 #include <JSL/Concepts/ranges.h>
+#include <algorithm>
+#include <concepts>
+#include <vector>
 namespace JSL::Vector
 {
 	/// @brief A signal that an element was not in the targeted array
@@ -18,11 +18,16 @@ namespace JSL::Vector
 		size_t Index;
 		/// @brief An explicit cast for converting the object into a boolean
 		/// @details Allows for ``SearchResult found; if (found)....``
-		explicit operator bool() const { return Found; }
+		explicit operator bool() const
+		{
+			return Found;
+		}
 		/// @brief An implicit cast for converting the object into an index, allowing the object to be treated as a size_t object wherever it can.
 		/// @warning This is only meaningful if the user first validates that Found is true!
-		operator size_t() const { return Index; } //can do Vector[SearchResult]
-
+		operator size_t() const
+		{
+			return Index;
+		} // can do Vector[SearchResult]
 	};
 
 	/// @brief Gets the first id such that vec[id] == target
@@ -32,20 +37,20 @@ namespace JSL::Vector
 	/// @param vec The container to be searched through
 	/// @param target The value to be searched for
 	/// @return A SearchResult indicating if the element has been found, and the index it can be found at
-	template<typename T, JSL::Concept::SearchableRange R>
-    requires std::equality_comparable_with<T, JSL::Concept::range_value_t<R>>
-	inline SearchResult find(const R & vec,const T & target )
+	template <typename T, JSL::Concept::SearchableRange R>
+		requires std::equality_comparable_with<T, JSL::Concept::RangeInternalType<R>>
+	inline SearchResult find(const R &vec, const T &target)
 	{
 		auto begin = std::begin(vec);
-		auto it = std::find(begin,std::end(vec),target);
+		auto it = std::find(begin, std::end(vec), target);
 
 		if (it != std::end(vec))
 		{
-			return {true,static_cast<size_t>(std::distance(begin,it))};
+			return {true, static_cast<size_t>(std::distance(begin, it))};
 		}
 		else
 		{
-			return {false,NotFound};
+			return {false, NotFound};
 		}
 	}
 
@@ -55,19 +60,19 @@ namespace JSL::Vector
 	/// @param vec The object to be search through
 	/// @param checker A predicate function which acts on each element of ``vec`` and returns either true or false
 	/// @return A SearchResult indicating where the first suitable element is, if one exists
-	template<Concept::SearchableRange R, class Predicate>
-	inline SearchResult findWhere(const R & vec, Predicate checker )
+	template <Concept::SearchableRange R, class Predicate>
+	inline SearchResult findWhere(const R &vec, Predicate checker)
 	{
 		auto begin = std::begin(vec);
-		auto it = std::find_if(begin,std::end(vec),checker);
+		auto it = std::find_if(begin, std::end(vec), checker);
 
 		if (it != std::end(vec))
 		{
-			return {true,static_cast<size_t>(std::distance(begin,it))};
+			return {true, static_cast<size_t>(std::distance(begin, it))};
 		}
 		else
 		{
-			return {false,NotFound};
+			return {false, NotFound};
 		}
 	}
 
@@ -76,9 +81,7 @@ namespace JSL::Vector
 	/// @param target The value to be searched for
 	/// @param tolerance The floating point error which counts as 'equality'
 	/// @return A SearchResult indicating if the element has been found, and the index it can be found at
-	SearchResult find(const std::vector<double> & vec, double target, double tolerance);
-
-
+	SearchResult find(const std::vector<double> &vec, double target, double tolerance);
 
 	/// @brief Detect if a container contains a specified value
 	/// @tparam T An object which can be stored in a container, and has an equality operator
@@ -86,11 +89,11 @@ namespace JSL::Vector
 	/// @param vec The vector to be searched
 	/// @param target The values to be matched
 	/// @return True if the value is found, false otherwise
-	template<typename T, Concept::SearchableRange R>
-    requires std::equality_comparable_with<T, JSL::Concept::range_value_t<R>>
-	inline bool contains(const R & vec, const T & target)
+	template <typename T, Concept::SearchableRange R>
+		requires std::equality_comparable_with<T, JSL::Concept::RangeInternalType<R>>
+	inline bool contains(const R &vec, const T &target)
 	{
 		return static_cast<bool>(find(vec, target));
 	}
 
-}
+} // namespace JSL::Vector
