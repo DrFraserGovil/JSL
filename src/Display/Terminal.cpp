@@ -225,6 +225,7 @@ namespace JSL::Display
 		_Columns = static_cast<size_t>(csbi.srWindow.Right - csbi.srWindow.Left + 1);
 		_Rows = static_cast<size_t>(csbi.srWindow.Bottom - csbi.srWindow.Top + 1);
 #else
+		struct winsize ws;
 		if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == -1)
 		{
 			// Fallback or error handling if not a TTY
@@ -232,7 +233,6 @@ namespace JSL::Display
 			_Columns = 80;
 			return;
 		}
-		struct winsize ws;
 		_Rows = ws.ws_row;
 		_Columns = ws.ws_col;
 #endif
