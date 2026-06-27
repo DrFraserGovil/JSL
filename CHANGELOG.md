@@ -22,23 +22,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * New Async library for parallel computing and IPC
 * Vault/Archiver system for TAR support
 * More robust unit testing
-
-#### Windows Compatibility 
-
-1.  Lots of pragma guards and redefinitions of linux-specific calls. These can be seen mostly in Async.h and Terminal.h
-2.  Tested against MSVC compiler & some minor tweaks made to the algorithms (and the test suite): all tests currently pass on both gcc and windows. 
-1.  
-
- <!-- HACK: There's some Gemini-created code hanging around in the Windows portions. This could do with being hand reviewed -->
+* Windows Compatibility 
+    - Lots of pragma guards and redefinitions of linux-specific calls. These can be seen mostly in Async.h and Terminal.h
+    - Tested against MSVC compiler & some minor tweaks made to the algorithms (and the test suite): all tests currently pass on both gcc and windows. 
+    -  HACK: There's some Gemini-created code hanging around in the Windows portions. This could do with being hand reviewed
 
 
 ### Changed
 
-* Moved away from a header-only implementation, and shifted to a compiled library setup
+* **De-headified** Moved away from a header-only implementation, and shifted to a compiled library setup
 * **Documentation Overhaul.** The documentation has been overhauled 
-* **Consistent style guide** Explicitly written and enforced
-* **Renaming and Restructuring** Many of the internal submodules and functionshave been renamed or moved into different module. **BACKWARDS COMPATIBILITY WITH PRIOR VERSIONS IS VIOLETED IN ALMOST ALL CASES** 
-* Log module has been revamped to be cleaner and more consistent, and have 'boxing' capabilities 
+* **Consistent style guide.** Explicitly written and enforced
+* **Renaming and Restructuring.** Many of the internal submodules and functionshave been renamed or moved into different module. **BACKWARDS COMPATIBILITY WITH PRIOR VERSIONS IS VIOLETED IN ALMOST ALL CASES** 
+* **Log module revamp.** Interface changed to be cleaner and more consistent, and have 'boxing' capabilities 
 
 ### Removed
 
