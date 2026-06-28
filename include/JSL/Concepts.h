@@ -1,8 +1,8 @@
 #pragma once
 
-#include <JSL/Concepts/numerics.h>
-#include <JSL/Concepts/optional.h>
-#include <JSL/Concepts/pointers.h>
-#include <JSL/Concepts/ranges.h>
-#include <JSL/Concepts/strings.h>
-#include <JSL/Concepts/tuple.h>
+#include <JSL/Concepts/numerics.h> //IWYU pragma:export
+#include <JSL/Concepts/optional.h> //IWYU pragma:export
+#include <JSL/Concepts/pointers.h> //IWYU pragma:export
+#include <JSL/Concepts/ranges.h>   //IWYU pragma:export
+#include <JSL/Concepts/strings.h>  //IWYU pragma:export
+#include <JSL/Concepts/tuple.h>	   //IWYU pragma:export

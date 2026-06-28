@@ -44,6 +44,7 @@ extensions = [ 'sphinx.ext.autodoc',
 	'breathe',
 	# 'exhale'
 ]
+breathe_use_cpp_namespace = True
 breathe_projects = {
 	"JSL":"dox/xml/",
 	}
@@ -59,15 +60,15 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 highlight_language = 'c++'
 
-cpp_index_common_prefix = ['JSL::']
+cpp_index_common_prefix = []
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-# html_theme = 'sphinx_rtd_theme'
-html_theme = 'cloud'
-html_theme_options = {"sidebarwidth":"200px"}
+html_theme = 'sphinx_rtd_theme'
+# html_theme = 'cloud'
+# html_theme_options = {"sidebarwidth":"200px"}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -88,4 +89,3 @@ def setup(app):
 	app.add_directive("jsl-class", JSLClassDirective)
 	app.add_directive("jsl-meta", JSLMetaDirective)
 	app.add_directive("jsl", JSLHandover)
-	app.connect('html-page-context',cleanIndex)

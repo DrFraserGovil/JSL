@@ -12,23 +12,23 @@ Overview
 --------------
 
 .. toctree::
-	:maxdepth: 2
-	:hidden:
+    :maxdepth: 2
+    :hidden:
 
-	docfiles/style
-	Async.h <docfiles/async>
-	Display.h <docfiles/display>
-	FileIO.h <docfiles/fileio>
-	Log.h <docfiles/Log>
-	Parameters.h <docfiles/parameters>
-	Strings.h <docfiles/strings>
-	Time.h <docfiles/time>
-	Vector.h <docfiles/vectors>
+    docfiles/style
+    Async.h <docfiles/async>
+    Concepts.h <docfiles/concepts>
+    Display.h <docfiles/display>
+    FileIO.h <docfiles/fileio>
+    Log.h <docfiles/Log>
+    Parameters.h <docfiles/parameters>
+    Strings.h <docfiles/strings>
+    Time.h <docfiles/time>
+    Vector.h <docfiles/vectors>
 
 
 The entire library can be included with ``#include <JSL.h>`` (provided it is on your include-path), or for a more IWYU-style approach, the individual modules and submodules can be included by ``#include <JSL/[module]>``.
 .. TODO: The async package needs to be fully documented
-.. TODO: The concepts package needs to be fully documented
 .. TODO: The parameter package needs to be fully documented
  
 .. list-table::
@@ -44,9 +44,9 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
      - (not documented) 
      - An asynchronous and parallel computing module
 
-   * - :ref:`Concepts.h <async>`
-     - (not documented) 
-     - A module for several common template-concepts
+   * - :ref:`Concepts.h <concepts>`
+     -  
+     - A header-only module for several common template-concepts
       
    * - :ref:`Display.h <display>`
      - * :ref:`Display/Format.h <ansi-format>`
@@ -102,15 +102,14 @@ Other utilities included in this documentation include:
  
 * :ref:`JSL Style Guide<style>`
 * Internal documentation
-* :ref:`genindex`
 
 Internal Dependencies
 ++++++++++++++++++++++
 
 .. figure:: visualiser/heirarchy.png
-	:align: center 
+    :align: center 
 
-	*The overall inclusion heirarchy of the library headers. Colours group together files in the modules and submodules of the library. To avoid excess visual clutter, the connections between* ``Concepts.h`` *to both* ``VaultHeaders.h`` *and* ``SerialiserHelpers.h`` *have been omitted.*
+    *The overall inclusion heirarchy of the library headers. Colours group together files in the modules and submodules of the library. To avoid excess visual clutter, the connections between* ``Concepts.h`` *to both* ``VaultHeaders.h`` *and* ``SerialiserHelpers.h`` *have been omitted.*
 
 .. figure:: visualiser/heatmap.png
   :align: center

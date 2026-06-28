@@ -12,7 +12,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 <!--  TODO: Rename the Parameter module to CLI   -->
 <!--  TODO: Check the Parameter is optimally written; the new packaging system is pretty good, but needs work -->
 <!--  TODO: Check the Async library. There's almost certainly an overkill of sockets in there, and the parpool could be revived -->
-<!--  TODO: The concepts could be streamlined and made a bit clearer as to what they do. There's also the big load of awful tempaltes found in one of the parsers that might need to be excised  -->
 <!--  TODO: Inconsistent vector <-> container verbiage needs to be fixed (or better delineated in Vectors.h -->
 
 ### Added

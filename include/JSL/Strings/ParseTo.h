@@ -93,7 +93,7 @@ namespace JSL::String
 	*/
 	template <typename T>
 	T inline ParseTo(std::string_view sv)
-		requires JSL::Concept::ChronoDuration<T>
+		requires JSL::Concept::DurationLike<T>
 	{
 		return T{ParseTo<typename T::rep>(sv)};
 	}
