@@ -1,3 +1,4 @@
+#include "JSL/Interface/Config.h"
 #include "JSL/Strings/Stitch.h"
 #include "JSL/Strings/Trim.h"
 #include <JSL/IO/ForLineIn.h>
@@ -8,7 +9,6 @@
 #include <JSL/internal/error.h>
 #include <cctype>
 #include <cstring>
-#include <filesystem>
 #include <optional>
 #include <set>
 
@@ -134,20 +134,21 @@ namespace JSL::Interface
 		}
 	}
 
-	CommandLine::CommandLine(int argc, char **argv, std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases) : Context(context), Aliases(aliases)
+	CommandLine::CommandLine(int argc, char **argv, std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases) : Keys(context, aliases)
 	{
 		auto tokens = tokenizeInput(argc, argv);
 
 		Commands = tokens.Simple;
 
-		Context["config"] = KeyType::Multivalue;
-		Context["config-delim"] = KeyType::String;
+		Keys.Context["config"] = KeyType::Multivalue;
+		Keys.Context["config-delim"] = KeyType::String;
 		for (auto entry : tokens.UnresolvedKeyVals)
 		{
 			std::vector<std::string> &vals = entry.second;
-			std::string key = CheckKey(entry.first);
+			KeyBuffer = entry.first; // have to keep this saved before aliasing, so that the user gets errors regarding the value they actually passes, not what it aliased to
+			std::string key = Keys.CheckAlias(KeyBuffer);
 
-			switch (Context[key])
+			switch (Keys.Context[key])
 			{
 			case KeyType::Flag:
 				FlagCheck(key, vals);
@@ -168,76 +169,8 @@ namespace JSL::Interface
 		{
 			delimiter = Arguments["config-delim"];
 		}
-		if (Arguments.contains("config"))
-		{
-			ParseConfig(delimiter);
-		}
 	}
 
-	namespace fs = std::filesystem;
-	void CommandLine::ParseConfig(std::string_view delimiter)
-	{
-		auto files = JSL::String::split(Arguments["config"], ",");
-		Arguments.erase("config");
-		Arguments.erase("config-delim");
-		std::set<fs::path> visitedFiles = {};
-		for (size_t idx = 0; idx < files.size(); ++idx)
-		{
-			fs::path path(files[idx]);
-			if (!fs::exists(path))
-			{
-				JSL::internal::FatalError("Bad Config File", JSL_LOCATION) << "Cannot find the config file: " << path;
-			}
-			else
-			{
-				visitedFiles.insert(fs::canonical(path));
-			}
-
-			IO::forLineIn(path, [&](auto line) {
-				line = String::trim_view(line, "//"); // trim whitespace and any comments
-				if (!line.empty())
-				{
-					auto sp = String::split_view(line, delimiter);
-					std::string tmp(sp[0]);
-					auto key = CheckKey(tmp);
-
-					if (Arguments.contains(key))
-					{
-						// special case for multivals
-						if (Context[key] == KeyType::Multivalue && !ResetMultis.contains(key))
-						{
-							auto val = JSL::String::stitch(sp, 1, sp.size(), ",");
-							Arguments[key] = val + "," + Arguments[key];
-						}
-					}
-					else
-					{
-						auto val = JSL::String::stitch(sp, 1, sp.size(), delimiter);
-						Arguments[key] = val;
-					}
-				}
-			});
-			// now post process any config files that were re-injected
-			// files assume locations given relative to the file they were in
-			if (Arguments.contains("config-delim"))
-			{
-				JSL::internal::FatalError("Bad Configure", JSL_LOCATION) << "The config file " << path << " attempted to redefine config delimiter: this is not allowed";
-			}
-			if (Arguments.contains("config"))
-			{
-				auto tmp = JSL::String::split_view(Arguments["config"], ",");
-				for (auto file : tmp)
-				{
-					auto canp = fs::canonical(path.parent_path() / file);
-					if (!visitedFiles.contains(canp))
-					{
-						files.push_back(canp);
-					}
-				}
-				Arguments.erase("config");
-			}
-		}
-	}
 	void CommandLine::FlagCheck(const std::string &key, std::vector<std::string> &vals)
 	{
 		if (vals.empty())
@@ -285,7 +218,7 @@ namespace JSL::Interface
 	{
 		if (vals.empty())
 		{
-			ResetMultis.insert(key);
+			Keys.Reset.insert(key);
 			Arguments[key] = "";
 			return;
 		}
@@ -320,24 +253,47 @@ namespace JSL::Interface
 			Arguments[key] = JSL::String::stitch(vals, " ");
 		}
 	}
-	std::string CommandLine::CheckKey(std::string &key)
-	{
-		std::string out;
-		KeyBuffer = key;
-		if (Aliases.contains(key))
-		{
-			out = Aliases[key];
-		}
-		else
-		{
-			out = key;
-		}
 
-		if (!Context.contains(out))
+	ConfigurableCommandLine::ConfigurableCommandLine(int argc, char **argv, std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases) : CommandLine(argc, argv, context, aliases)
+	{
+		if (Arguments.contains("config"))
 		{
-			JSL::internal::FatalError("Unknown CLI key", JSL_LOCATION) << "The key '" << KeyBuffer << "' is not recognised.";
+			auto it = Arguments.find("config-delim");
+			std::string delim = (it != Arguments.end()) ? it->second : " ";
+			LOG(DEBUG) << "Using " << delim;
+			Config C(Arguments["config"], delim, Keys);
+
+			for (auto &pair : C.Data)
+			{
+				const std::string &key = pair.first;
+				auto &vals = pair.second;
+
+				if (Arguments.contains(key))
+				{
+					if (Keys.Context[key] == KeyType::Multivalue && !Keys.Reset.contains(key))
+					{
+						auto trimCLI = String::trim(Arguments[key]);
+						auto trimCon = String::trim(vals);
+						if (trimCLI.empty())
+						{
+							Arguments[key] = trimCon;
+						}
+						else
+						{
+							if (!trimCon.empty())
+							{
+								Arguments[key] = vals + "," + Arguments[key];
+							}
+						}
+					}
+				}
+				else
+				{
+					Arguments[key] = vals;
+				}
+				// if (key
+			}
 		}
-		return out;
 	}
 
 } // namespace JSL::Interface
