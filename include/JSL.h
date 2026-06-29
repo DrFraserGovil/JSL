@@ -15,7 +15,7 @@
 #include <JSL/Concepts.h>
 #include <JSL/Display.h>
 #include <JSL/IO.h>
-#include <JSL/Parameters.h>
+#include <JSL/Interface.h>
 #include <JSL/Strings.h>
 #include <JSL/Time.h>
 #include <JSL/Vectors.h>
