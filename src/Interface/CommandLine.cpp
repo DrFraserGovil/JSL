@@ -104,7 +104,7 @@ InputTokens tokenizeInput(int argc, char **argv)
 namespace JSL::Interface
 {
 
-	CommandLine::CommandLine(int argc, char **argv)
+	CommandLine::CommandLine(int argc, char **argv) : Keys()
 	{
 		auto tokens = tokenizeInput(argc, argv);
 		Commands = tokens.Simple;
@@ -291,7 +291,6 @@ namespace JSL::Interface
 				{
 					Arguments[key] = vals;
 				}
-				// if (key
 			}
 		}
 	}

@@ -21,7 +21,7 @@ Overview
     Display.h <docfiles/display>
     FileIO.h <docfiles/fileio>
     Log.h <docfiles/Log>
-    Parameters.h <docfiles/parameters>
+    docfiles/interface
     Strings.h <docfiles/strings>
     Time.h <docfiles/time>
     Vector.h <docfiles/vectors>
@@ -54,6 +54,9 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
        * :ref:`Display/Terminal.h <terminal>`
      - An ANSI Escape Sequence module, with some other visual tools
 
+   * - :ref:`Interface.h <interface>`
+     - (not documented) 
+     - A Command Line & Configuration file interface with support for large-scale aggregate settings objects
    * - :ref:`IO.h <fileio>`
      - * :ref:`IO/Directory.h <directory>`
        * :ref:`IO/Filesystem.h <filesystem>`
@@ -69,9 +72,6 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
      - A logging and terminal output module
          
 
-   * - :ref:`Parameter.h <parameters>`
-     - (not documented) 
-     - A CLI and Settings-aggregtor module
           
    * - :ref:`String.h <strings>`
      - * :ref:`Strings/Cases.h <stringcase>`

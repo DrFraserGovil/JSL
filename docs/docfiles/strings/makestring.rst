@@ -52,7 +52,7 @@ The following types have overloads and support in the :ref:`parseto` module to s
 
 		A wrapper for converting string-like objects into full std::strings. Supports any object which has a string-casting operator. 
 
-		This is a largely superfluous function, as it turns strings into strings. But it enables generalisable template libraries (i.e. :ref:`parameters`) to have a consistent interface. 
+		This is a largely superfluous function, as it turns strings into strings. But it enables generalisable template libraries (i.e. :ref:`interface`) to have a consistent interface. 
 
 		:tparam T: A string-like type (i.e. std::string, char \*, string_view)
 		:param obj: The string to be stringified

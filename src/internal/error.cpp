@@ -32,7 +32,6 @@ namespace JSL::internal
 		line = callingLine;
 		function = callingFunction;
 		file = shortFile;
-		Buffer << file << "/" << function << "/" << line << ": ";
 	}
 
 	FatalError::~FatalError() noexcept(false)
