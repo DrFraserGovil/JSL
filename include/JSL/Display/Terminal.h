@@ -117,7 +117,7 @@ namespace JSL::Display
 
 	/*!
 	 * @brief Access the global terminal environment state
-	 * @return The singleton-instance of the ::GlobalEnvironment object
+	 * @return The singleton-instance of the GlobalEnvironment object
 	 */
 	GlobalEnvironment &Terminal();
 }; // namespace JSL::Display

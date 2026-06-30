@@ -29,6 +29,12 @@ namespace JSL::Interface
 		//! way to assign tokens; this results in a much more powerful and consistent interface
 		CommandLine(int argc, char **argv, std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases = {});
 
+		//! @brief Perform the type-conversion from the cached string argument into the required output format
+		//! @tparam T The type to convert the string into
+		//! @param id The name (or a known alias) to be retrieved
+		//! @param defaultValue If ``id`` not found in the tokenized input, this is the value to be returned
+		//! @returns Either a typed instantiation of the value stored in Arguments[id], or defaultValue.
+		//! @throws runtime_error if Arguments[id] exists, but cannot be parsed into type T. See JSL::String::ParseTo<T>
 		template <class T>
 		T Parse(std::string id, T defaultValue)
 		{
@@ -37,6 +43,15 @@ namespace JSL::Interface
 			return (ptr != Arguments.end()) ? String::ParseTo<T>(ptr->second) : defaultValue;
 		}
 
+		//! @brief Perform the type-conversion from the cached string argument into the required output format
+		//! @details This alias searches for any of the provided id-aliases. It is therefore best suited to the
+		//'dumb' mode, where aliases are not already stored in the KeyMapper.
+		//! @tparam T The type to convert the string into
+		//! @param ids A list of names (or aliases) that resolve to the same object
+		//! @param defaultValue If no members of ``ids`` are found in the tokenized input, this is the value to be returned
+		//! @returns Either a typed instantiation of the value stored in Arguments[id] (for some ``id \in ids`` or defaultValue.
+		//! @throws runtime_error if Arguments[id] exists, but cannot be parsed into type T. See JSL::String::ParseTo<T>
+		//! @throws runtime_error if multiple entries in the alias list have been assigned by the user. To avoid this, use 'smart' mode to resolve alias clashes
 		template <class T>
 		T Parse(const std::vector<std::string> &ids, T defaultValue)
 		{

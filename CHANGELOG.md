@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 * CLI Interface and parameter aggregator to replace the disgusting MACRO interface previously suggested
+    - The macro interface has been preserved for 'small scale' parameter sets of < 10 parameters. Larger scale groups require an Aggregator approach
 * New Async library for parallel computing and IPC
 * Vault/Archiver system for TAR support
 * More robust unit testing

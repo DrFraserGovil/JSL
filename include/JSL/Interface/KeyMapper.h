@@ -9,8 +9,8 @@ namespace JSL::Interface
 	//! Enum for dictating the different contexts a parameter value might have; distinguished by how they interact with pre-existing values and differing keys
 	enum class KeyType
 	{
-		Flag,		//!< A boolean flag, which might appear on its own (i.e. -q, -r), or which may be followed by a boolean string (1, true, off)
 		Value,		//!< A Standard key-value flag. A single argument is accepted
+		Flag,		//!< A boolean flag, which might appear on its own (i.e. -q, -r), or which may be followed by a boolean string (1, true, off)
 		Multivalue, //!< A key which may accept a series of data points. Successive tokens are consumed until an -arg is found; if values were already found, they are appended (so -q 1 -q 2 is equal to -q 1 2). An empty array clears the current value
 		String,		//!< A single-value, but where the content may have spaces. Successive tokens will be consumed until the next -arg; *unless* the first argument is quote-escaped
 	};
@@ -42,9 +42,11 @@ namespace JSL::Interface
 	class KeyMapper
 	{
 	  public:
+		//! A default constructor, which sets Initialised to false, indicating that no context is present
 		KeyMapper() {};
-		//! Simple constructor
-		//! @param context The value to be
+		//! Simple constructor for assigining context & setting Initialised to true
+		//! @param context The map indicating the KeyType associated with each canonical key; and serving as the central registry for `accepted keys'
+		//! @param aliases A map between potential input keys and their associated canonical form.
 		KeyMapper(std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases = {});
 		//! The expected key type of every parameter that can be parsed by the system; indicating how tokens should be consumed and distributed
 		std::map<std::string, KeyType> Context;
@@ -52,14 +54,16 @@ namespace JSL::Interface
 		std::map<std::string, std::string> Aliases;
 
 		//! Checks a parsed string against the alias list, and returns the canonical name
+		//! If Initialised is false (i.e. no context passed during construction), this just returns the key
 		//! @param key The input value
 		//! @returns The canonical name
-		//! throws runtime_error If the canonical name is not within the context array
+		//! @throws runtime_error If the canonical name is not within the context array
 		std::string CheckAlias(const std::string &key);
 		//! A list of MultiValue contexts that have recieved a reset signal; useful for the Configuration portion, when working out which data to append
 		std::set<std::string> Reset;
 
 	  private:
+		//! Indicates if
 		bool Initialised = false;
 	};
 } // namespace JSL::Interface

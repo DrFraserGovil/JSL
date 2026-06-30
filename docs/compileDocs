@@ -1,7 +1,0 @@
-#!/bin/bash
-
-./visualiser/visualise
-make html
-doxygen doxy.config
-make html
-
