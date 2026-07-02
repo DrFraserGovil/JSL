@@ -1,5 +1,4 @@
 #pragma once
-#include <stdexcept>
 // Unpacking glue to strip tuple parentheses
 #define JSL_UNPACK(macro, tuple) macro tuple
 
@@ -25,29 +24,18 @@
 	JSL_CONCAT(JSL_VEACH_, JSL_COUNT_ARGS(__VA_ARGS__))(macro, __VA_ARGS__)
 
 // Specific expansion passes
-#define JSL_PASS_CONTEXT(type, name, def, trigger, ...)                                                                                                                              \
-	if (__jsl_macro_context.contains(trigger) || __jsl_macro_aliases.contains(trigger)) { throw std::invalid_argument("Trigger '" + std::string(trigger) + "' is already in use"); } \
-	__jsl_macro_context[trigger] = JSL::Interface::MapTypeToKey<type>::value;
-
-#define JSL_PASS_ALIAS(type, name, def, trigger, ...)                                                                                                                    \
-	for (const std::string &al : std::vector<std::string>{__VA_ARGS__})                                                                                                  \
-	{                                                                                                                                                                    \
-		if (__jsl_macro_context.contains(al)) { throw std::invalid_argument("Alias '" + std::string(al) + "' collides with an existing primary trigger"); }              \
-		if (__jsl_macro_aliases.contains(al)) { throw std::invalid_argument("Alias '" + std::string(al) + "' is already in use by '" + __jsl_macro_aliases[al] + "'"); } \
-		__jsl_macro_aliases[al] = trigger;                                                                                                                               \
-	}
+#define JSL_PASS_CONTEXT(type, name, def, ...) \
+	__JSL_CONTEXT.AddContext(JSL::Interface::Context(std::vector<std::string>{__VA_ARGS__}, JSL::Interface::MapTypeToKey<type>::value));
 
 #define JSL_PASS_PARSE(type, name, def, trigger, ...) \
-	type name = __jsl_macro_cli.Parse<type>(trigger, def);
+	type name = __JSL_CLI.Parse<type>(trigger, def);
 
 /* @brief  Main entry point macro
 	@warning Cannot support more than 8 arguments
 */
-#define PARSE_CONFIGURE(argc, argv, commandDestination, ...)                                                              \
-	std::map<std::string, JSL::Interface::KeyType> __jsl_macro_context;                                                   \
-	std::map<std::string, std::string> __jsl_macro_aliases;                                                               \
-	__VA_OPT__(JSL_FOR_EACH(JSL_PASS_CONTEXT, __VA_ARGS__))                                                               \
-	__VA_OPT__(JSL_FOR_EACH(JSL_PASS_ALIAS, __VA_ARGS__))                                                                 \
-	auto __jsl_macro_cli = JSL::Interface::ConfigurableCommandLine(argc, argv, __jsl_macro_context, __jsl_macro_aliases); \
-	__VA_OPT__(JSL_FOR_EACH(JSL_PASS_PARSE, __VA_ARGS__))                                                                 \
-	commandDestination = __jsl_macro_cli.Commands;
+#define JSL_INTERFACE(argc, argv, commandDestination, ...)                               \
+	JSL::Interface::ContextMap __JSL_CONTEXT;                                            \
+	__VA_OPT__(JSL_FOR_EACH(JSL_PASS_CONTEXT, __VA_ARGS__))                              \
+	auto __JSL_CLI = JSL::Interface::ConfigurableCommandLine(argc, argv, __JSL_CONTEXT); \
+	__VA_OPT__(JSL_FOR_EACH(JSL_PASS_PARSE, __VA_ARGS__))                                \
+	commandDestination = __JSL_CLI.Commands;

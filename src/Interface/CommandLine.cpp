@@ -1,11 +1,10 @@
 #include "JSL/Interface/Config.h"
-#include "JSL/Strings/Stitch.h"
-#include "JSL/Strings/Trim.h"
-#include <JSL/IO/ForLineIn.h>
 #include <JSL/Interface/CommandLine.h>
 #include <JSL/Log.h>
 #include <JSL/Strings/ParseTo.h>
 #include <JSL/Strings/Split.h>
+#include <JSL/Strings/Stitch.h>
+#include <JSL/Strings/Trim.h>
 #include <JSL/internal/error.h>
 #include <cctype>
 #include <cstring>
@@ -104,70 +103,54 @@ InputTokens tokenizeInput(int argc, char **argv)
 namespace JSL::Interface
 {
 
-	CommandLine::CommandLine(int argc, char **argv) : Keys()
+	// CommandLine::CommandLine(int argc, char **argv, std::vector<Context> context) : CommandLine(argc, argv, ContextMap(context))
+	// {
+	// }
+	CommandLine::CommandLine(int argc, char **argv, ContextMap context) : ParserBase(context)
 	{
 		auto tokens = tokenizeInput(argc, argv);
+
 		Commands = tokens.Simple;
-
-		for (auto entry : tokens.UnresolvedKeyVals)
+		if (Keys.Initialised)
 		{
-			std::string_view key = entry.first;
-			std::vector<std::string> &vals = entry.second;
-
-			std::string value;
-			if (vals.empty())
-			{
-				value = "__bool_tag__";
-			}
-			else
-			{
-				// we assume a simple 1-arg-per-key; so anything else must be interleaved commands
-				value = vals[0];
-				for (size_t j = 1; j < vals.size(); ++j)
-				{
-					Commands.push_back(vals[j]);
-				}
-			}
-
-			// the simple lexer works from front to back, overwriting any previous entries, so we don't even do any 'existance' checks
-			Arguments.insert_or_assign((std::string)key, value);
+			Context config({"config", "config-file"}, KeyType::Multivalue);
+			Context delim({"config-delim"}, KeyType::String);
+			Keys.AddContext(config);
+			Keys.AddContext(delim);
 		}
-	}
 
-	CommandLine::CommandLine(int argc, char **argv, std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases) : Keys(context, aliases)
-	{
-		auto tokens = tokenizeInput(argc, argv);
-
-		Commands = tokens.Simple;
-
-		Keys.Context["config"] = KeyType::Multivalue;
-		Keys.Context["config-delim"] = KeyType::String;
 		for (auto entry : tokens.UnresolvedKeyVals)
 		{
-			std::vector<std::string> &vals = entry.second;
+			std::vector<std::string> vals = entry.second;
 			KeyBuffer = entry.first; // have to keep this saved before aliasing, so that the user gets errors regarding the value they actually passes, not what it aliased to
-			std::string key = Keys.CheckAlias(KeyBuffer);
 
-			switch (Keys.Context[key])
+			auto clusters = Keys.GetClusteredKeys(KeyBuffer);
+			for (auto subflag : clusters)
 			{
-			case KeyType::Flag:
-				FlagCheck(key, vals);
-				break;
-			case KeyType::Value:
-				ValueCheck(key, vals);
-				break;
-			case KeyType::Multivalue:
-				MultiCheck(key, vals);
-				break;
-			case KeyType::String:
-				StringCheck(key, vals);
+				auto [key, type] = Keys.GetCanonical(subflag);
+
+				switch (type)
+				{
+				case KeyType::Flag:
+					FlagCheck(key, vals);
+					break;
+				case KeyType::Value:
+					ValueCheck(key, vals);
+					break;
+				case KeyType::Multivalue:
+					MultiCheck(key, vals);
+					break;
+				case KeyType::String:
+					StringCheck(key, vals);
+				}
+				vals.clear(); // clear this in the case of clustering, we don't reinject multiple times
 			}
 		}
 
 		std::string delimiter = " ";
-		if (Arguments.contains("config-delim"))
+		if (UnparsedArguments.contains("config-delim"))
 		{
-			delimiter = Arguments["config-delim"];
+			delimiter = UnparsedArguments["config-delim"];
 		}
 	}
 
@@ -175,7 +158,7 @@ namespace JSL::Interface
 	{
 		if (vals.empty())
 		{
-			Arguments[key] = "__bool_tag__";
+			UnparsedArguments[key] = "__bool_tag__";
 			return;
 		}
 		// flags only ever accept one arg, so take it
@@ -191,12 +174,12 @@ namespace JSL::Interface
 		static const std::set<std::string> boolStrings = {"true", "false", "yes", "no", "1", "0", "on", "off"};
 		if (boolStrings.contains(query))
 		{
-			Arguments[key] = query;
+			UnparsedArguments[key] = query;
 		}
 		else
 		{
 			// if here, then a command was mis-paired
-			Arguments[key] = "__bool_tag__";
+			UnparsedArguments[key] = "__bool_tag__";
 			Commands.push_back(query);
 		}
 	}
@@ -204,10 +187,18 @@ namespace JSL::Interface
 	{
 		if (vals.empty())
 		{
-			JSL::internal::FatalError("Missing argument", JSL_LOCATION) << "The key '" << KeyBuffer << "' requires an argument: none provided";
+			if (Keys.Initialised)
+			{
+				JSL::internal::FatalError("Missing argument", JSL_LOCATION) << "The key '" << KeyBuffer << "' requires an argument: none provided";
+			}
+			else
+			{
+				// if in dumb mode, assume this was a boolean flag
+				vals.push_back("__bool_tag__");
+			}
 		}
 
-		Arguments[key] = vals[0];
+		UnparsedArguments[key] = vals[0];
 		// push any remaining args as commands
 		for (size_t i = 1; i < vals.size(); ++i)
 		{
@@ -218,30 +209,30 @@ namespace JSL::Interface
 	{
 		if (vals.empty())
 		{
-			Keys.Reset.insert(key);
-			Arguments[key] = "";
+			Keys.SetReset(key);
+			UnparsedArguments[key] = "";
 			return;
 		}
-		if (Arguments.contains(key) && !Arguments[key].empty())
+		if (UnparsedArguments.contains(key) && !UnparsedArguments[key].empty())
 		{
-			Arguments[key] += "," + JSL::String::stitch(vals, ",");
+			UnparsedArguments[key] += "," + JSL::String::stitch(vals, ",");
 		}
 		else
 		{
-			Arguments[key] = JSL::String::stitch(vals, ",");
+			UnparsedArguments[key] = JSL::String::stitch(vals, ",");
 		}
 	}
 	void CommandLine::StringCheck(const std::string &key, std::vector<std::string> &vals)
 	{
 		if (vals.empty())
 		{
-			Arguments[key] = {};
+			UnparsedArguments[key] = {};
 			return;
 		}
 		if (vals[0].find(' ') != std::string::npos)
 		{
 			// if the first arg has spaces in it, the user properly escaped it; so any subsequent captured signals are errant commands
-			Arguments[key] = vals[0];
+			UnparsedArguments[key] = vals[0];
 			for (size_t j = 1; j < vals.size(); ++j)
 			{
 				Commands.push_back(vals[j]);
@@ -250,46 +241,53 @@ namespace JSL::Interface
 		else
 		{
 			// otherwise; we've been told to look for a string: get that string
-			Arguments[key] = JSL::String::stitch(vals, " ");
+			UnparsedArguments[key] = JSL::String::stitch(vals, " ");
 		}
 	}
 
-	ConfigurableCommandLine::ConfigurableCommandLine(int argc, char **argv, std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases) : CommandLine(argc, argv, context, aliases)
+	ConfigurableCommandLine::ConfigurableCommandLine(int argc, char **argv, ContextMap context) : CommandLine(argc, argv, context)
 	{
-		if (Arguments.contains("config"))
+		if (UnparsedArguments.contains("config"))
 		{
-			auto it = Arguments.find("config-delim");
-			std::string delim = (it != Arguments.end()) ? it->second : " ";
+			auto it = UnparsedArguments.find("config-delim");
+			std::string delim = (it != UnparsedArguments.end()) ? it->second : " ";
 			LOG(DEBUG) << "Using " << delim;
-			Config C(Arguments["config"], delim, Keys);
+			Config C(UnparsedArguments["config"], delim, Keys);
 
-			for (auto &pair : C.Data)
+			for (auto &pair : C.UnparsedArguments)
 			{
-				const std::string &key = pair.first;
+				auto [key, type] = Keys.GetCanonical(pair.first);
+
 				auto &vals = pair.second;
 
-				if (Arguments.contains(key))
+				if (UnparsedArguments.contains(key))
 				{
-					if (Keys.Context[key] == KeyType::Multivalue && !Keys.Reset.contains(key))
+
+					if (type == KeyType::Multivalue)
 					{
-						auto trimCLI = String::trim(Arguments[key]);
-						auto trimCon = String::trim(vals);
-						if (trimCLI.empty())
+						bool resetState = Keys.GetReset(key);
+						if (resetState)
+
 						{
-							Arguments[key] = trimCon;
-						}
-						else
-						{
-							if (!trimCon.empty())
+							auto trimCLI = String::trim(UnparsedArguments[key]);
+							auto trimCon = String::trim(vals);
+							if (trimCLI.empty())
 							{
-								Arguments[key] = vals + "," + Arguments[key];
+								UnparsedArguments[key] = trimCon;
+							}
+							else
+							{
+								if (!trimCon.empty())
+								{
+									UnparsedArguments[key] = vals + "," + UnparsedArguments[key];
+								}
 							}
 						}
 					}
 				}
 				else
 				{
-					Arguments[key] = vals;
+					UnparsedArguments[key] = vals;
 				}
 			}
 		}

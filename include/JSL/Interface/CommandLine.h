@@ -1,76 +1,33 @@
 #pragma once
-#include "KeyMapper.h"
-#include <JSL/Strings/ParseTo.h>
-#include <map>
+#include "ParserBase.h"
 #include <string>
 #include <vector>
 namespace JSL::Interface
 {
-	//! A class for tokenising and organising argv array parsed into the system. The class has two modes: a
-	//! 'dumb' mode and a 'contextual' mode, depending on how it is initialised
-	//! @details We use a command-argument paradigm, where `commands' are plain text (i.e. "push" in a git push),
-	//! and arguments are dash-initialised values that can either be flags ("-q" for quiet mode),
-	//! or accept subsequent tokens as input ("-outfile a.out" for setting the output)
-	class CommandLine
+	/*!	A class for tokenising and organising argv array parsed into the system. The class has two modes: a
+	  'dumb' mode and a 'contextual' mode, depending on how it is initialised
+	  @details We use a command-argument paradigm, where `commands' are plain text (i.e. "push" in a git push),
+	  and arguments are dash-initialised values that can either be flags ("-q" for quiet mode),
+	  or accept subsequent tokens as input ("-outfile a.out" for setting the output)
+	  */
+	class CommandLine : public ParserBase
 	{
 	  public:
 		//! The ' commands' which are usually used to indicate high-level changes in behaviour of the code
 		std::vector<std::string> Commands;
-		//! The 'arguments' which are used to set values, and indicate flags to change the internal settings of the code
-		std::map<std::string, std::string> Arguments;
 
-		//! @brief The 'dumb' mode initialiser for the CommandLine object
-		//! All arguments are assumed to follow a [key] [value] syntax, unless two keys are sequential ([key] [key])
-		//! Any non-dash-beginning values that cannot be assigned to a key fall through into the commands
-		CommandLine(int argc, char **argv);
+		/*! @brief The `smart' initialiser for the CommandLine object
+		  The context and alias arguments are used to construct a Interface::KeyMapper object, which determines the correct
+		  way to assign tokens; this results in a much more powerful and consistent interface
+		  @param argc The number of arguments to be parsed
+		  @param argv The argument array
+		  @param context The ContextMap containing the metadata about accepted commands and how they should be parsed
+		*/
+		CommandLine(int argc, char **argv, ContextMap context = {});
 
-		//! @brief The `smart' initialiser for the CommandLine object
-		//! The context and alias arguments are used to construct a Interface::KeyMapper object, which determines the correct
-		//! way to assign tokens; this results in a much more powerful and consistent interface
-		CommandLine(int argc, char **argv, std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases = {});
-
-		//! @brief Perform the type-conversion from the cached string argument into the required output format
-		//! @tparam T The type to convert the string into
-		//! @param id The name (or a known alias) to be retrieved
-		//! @param defaultValue If ``id`` not found in the tokenized input, this is the value to be returned
-		//! @returns Either a typed instantiation of the value stored in Arguments[id], or defaultValue.
-		//! @throws runtime_error if Arguments[id] exists, but cannot be parsed into type T. See JSL::String::ParseTo<T>
-		template <class T>
-		T Parse(std::string id, T defaultValue)
-		{
-			auto key = Keys.CheckAlias(id); // if the command line was initialised with context & aliases, we get a canonical name
-			auto ptr = Arguments.find(key);
-			return (ptr != Arguments.end()) ? String::ParseTo<T>(ptr->second) : defaultValue;
-		}
-
-		//! @brief Perform the type-conversion from the cached string argument into the required output format
-		//! @details This alias searches for any of the provided id-aliases. It is therefore best suited to the
-		//'dumb' mode, where aliases are not already stored in the KeyMapper.
-		//! @tparam T The type to convert the string into
-		//! @param ids A list of names (or aliases) that resolve to the same object
-		//! @param defaultValue If no members of ``ids`` are found in the tokenized input, this is the value to be returned
-		//! @returns Either a typed instantiation of the value stored in Arguments[id] (for some ``id \in ids`` or defaultValue.
-		//! @throws runtime_error if Arguments[id] exists, but cannot be parsed into type T. See JSL::String::ParseTo<T>
-		//! @throws runtime_error if multiple entries in the alias list have been assigned by the user. To avoid this, use 'smart' mode to resolve alias clashes
-		template <class T>
-		T Parse(const std::vector<std::string> &ids, T defaultValue)
-		{
-			// this is presumably used when we *didn't* give full context, so we're manually managing the aliases
-			bool found = false;
-			T val{};
-			for (auto alias : ids)
-			{
-				auto ptr = Arguments.find(alias);
-				if (ptr != Arguments.end())
-				{
-					if (found) throw std::runtime_error("Duplicate aliases found for " + alias);
-					val = String::ParseTo<T>(ptr->second);
-					found = true;
-				}
-			}
-
-			return found ? val : defaultValue;
-		}
+		// this just transcludes the documentation of the base clase into this class; has no other effect
+		using ParserBase::Parse;
+		using ParserBase::UnparsedArguments;
 
 	  protected:
 		//! Used to determine if a value should be assigned to a KeyType::Flag argument
@@ -83,20 +40,22 @@ namespace JSL::Interface
 		void StringCheck(const std::string &key, std::vector<std::string> &vals);
 		//! The name of the last key passed in (before aliasing); used to keep a consistent record and give useful output
 		std::string KeyBuffer;
-		//! The value which provides the contextual information needed for the 'smart' mode to function
-		KeyMapper Keys;
+
+		// this just transcludes the documentation of the base clase into this class; has no other effect
+		using ParserBase::Keys;
 	};
 
-	//! A union of the CommandLine and Config object
-	//! @details After performing the commandline parsing, any files passed in as "--config" is immediately parsed, with the values
-	//! Patched in to the existing arrays, with the command line given priority over the config
+	/*! A union of the CommandLine and Config object
+	  @details After performing the commandline parsing, any files passed in as "--config" is immediately parsed, with the values
+	  Patched in to the existing arrays, with the command line given priority over the config
+	*/
 	class ConfigurableCommandLine : public CommandLine
 	{
 	  public:
 		//! @brief The `smart' initialiser
 		//! The context and alias arguments are used to construct a Interface::KeyMapper object, which determines the correct
 		//! way to assign tokens; this results in a much more powerful and consistent interface
-		ConfigurableCommandLine(int argc, char **argv, std::map<std::string, KeyType> context, std::map<std::string, std::string> aliases = {});
+		ConfigurableCommandLine(int argc, char **argv, ContextMap context = {});
 	};
 
 } // namespace JSL::Interface

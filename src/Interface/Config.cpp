@@ -16,26 +16,26 @@ namespace JSL::Interface
 {
 	namespace fs = std::filesystem;
 
-	Config::Config(std::filesystem::path path, std::string_view configDelim, KeyMapper &keys) : Keys(keys)
+	Config::Config(std::filesystem::path path, std::string_view configDelim, ContextMap &keys) : ParserBase(keys)
 	{
 
 		Initialise(configDelim);
-		Data["config"] = path.string();
-		Parse();
+		UnparsedArguments["config"] = path.string();
+		ReadConfigFiles();
 	}
 
-	Config::Config(std::vector<std::filesystem::path> paths, std::string_view configDelim, KeyMapper &keys) : Keys(keys)
+	Config::Config(std::vector<std::filesystem::path> paths, std::string_view configDelim, ContextMap &keys) : ParserBase(keys)
 	{
 		Initialise(configDelim);
 
-		Data["config"] = JSL::String::stitch(paths, ",");
-		Parse();
+		UnparsedArguments["config"] = JSL::String::stitch(paths, ",");
+		ReadConfigFiles();
 	}
-	Config::Config(std::string pathlist, std::string_view configDelim, KeyMapper &keys) : Keys(keys)
+	Config::Config(std::string pathlist, std::string_view configDelim, ContextMap &keys) : ParserBase(keys)
 	{
 		Initialise(configDelim);
-		Data["config"] = pathlist;
-		Parse();
+		UnparsedArguments["config"] = pathlist;
+		ReadConfigFiles();
 	}
 
 	void Config::Initialise(std::string_view delim)
@@ -43,10 +43,10 @@ namespace JSL::Interface
 		configDelim = delim;
 	}
 
-	void Config::Parse()
+	void Config::ReadConfigFiles()
 	{
-		auto files = JSL::String::split(Data["config"], ",");
-		Data.erase("config");
+		auto files = JSL::String::split(UnparsedArguments["config"], ",");
+		UnparsedArguments.erase("config");
 		std::set<fs::path> visitedFiles = {};
 		for (size_t idx = 0; idx < files.size(); ++idx)
 		{
@@ -67,46 +67,39 @@ namespace JSL::Interface
 					auto sp = String::split_view(line, configDelim);
 					std::string tmp(sp[0]);
 
-					auto key = Keys.CheckAlias(tmp);
+					auto [key, type] = Keys.GetCanonical(tmp);
 
 					auto val = JSL::String::stitch(sp, 1, sp.size(), configDelim);
-					if (Keys.Context.contains(key))
+					if (type == KeyType::Multivalue)
 					{
-						if (Keys.Context[key] == KeyType::Multivalue)
+						if (val.empty())
 						{
-							if (val.empty())
-							{
-								Data[key] = "";
-							}
-							else
-							{
-								Data[key] += val;
-							}
+							UnparsedArguments[key] = "";
 						}
 						else
 						{
-							if (val.empty())
-							{
-								JSL::internal::FatalError("Bad Config", JSL_LOCATION) << "No value given to config key '" << key << "' in file " << path.string();
-							}
-							Data[key] = val;
+							UnparsedArguments[key] += val;
 						}
 					}
 					else
 					{
-						JSL::internal::FatalError("Bad Config", JSL_LOCATION) << "Unknown configuration key '" << key << "'";
+						if (val.empty())
+						{
+							JSL::internal::FatalError("Bad Config", JSL_LOCATION) << "No value given to config key '" << key << "' in file " << path.string();
+						}
+						UnparsedArguments[key] = val;
 					}
 				}
 			});
 			// now post process any config files that were re-injected
 			// files assume locations given relative to the file they were in
-			if (Data.contains("config-delim"))
+			if (UnparsedArguments.contains("config-delim"))
 			{
 				JSL::internal::FatalError("Bad Configure", JSL_LOCATION) << "The config file " << path << " attempted to redefine config delimiter: this is not allowed";
 			}
-			if (Data.contains("config"))
+			if (UnparsedArguments.contains("config"))
 			{
-				auto tmp = JSL::String::split_view(Data["config"], ",");
+				auto tmp = JSL::String::split_view(UnparsedArguments["config"], ",");
 				for (auto file : tmp)
 				{
 					auto canp = fs::canonical(path.parent_path() / file);
@@ -115,7 +108,7 @@ namespace JSL::Interface
 						files.push_back(canp);
 					}
 				}
-				Data.erase("config");
+				UnparsedArguments.erase("config");
 			}
 		}
 	}
