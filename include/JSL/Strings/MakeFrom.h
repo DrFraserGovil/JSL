@@ -216,8 +216,7 @@ namespace JSL::String
 	{
 		std::ostringstream os;
 		os << "(";
-		std::apply([&os, first = true](const auto &...args) mutable
-			{ ((os << (first ? first = false, "" : ", ") << makeFrom(args)), ...); }, tpl);
+		std::apply([&os, first = true](const auto &...args) mutable { ((os << (first ? first = false, "" : ", ") << makeFrom(args)), ...); }, tpl);
 		os << ")";
 		return os.str();
 	}
@@ -264,4 +263,12 @@ namespace JSL::String
 			return makeFrom(*ptr);
 		}
 	}
+
+	// Define a template that succeeds whenever makeFrom works
+	template <typename T>
+	concept CanMakeFrom = requires(T &&val) {
+		// Evaluates whether this expression is valid and compiles
+		makeFrom(std::forward<T>(val));
+	};
+
 } // namespace JSL::String

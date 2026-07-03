@@ -16,14 +16,25 @@ namespace JSL::Interface
 		//! The ' commands' which are usually used to indicate high-level changes in behaviour of the code
 		std::vector<std::string> Commands;
 
-		/*! @brief The `smart' initialiser for the CommandLine object
-		  The context and alias arguments are used to construct a Interface::KeyMapper object, which determines the correct
-		  way to assign tokens; this results in a much more powerful and consistent interface
-		  @param argc The number of arguments to be parsed
-		  @param argv The argument array
-		  @param context The ContextMap containing the metadata about accepted commands and how they should be parsed
+		/*! @brief Constructs and parses the command line object at initialisation
+			The context and alias arguments are used to construct a Interface::KeyMapper object, which determines the correct
+			way to assign tokens; this results in a much more powerful and consistent interface
+			@param argc The number of arguments to be parsed
+			@param argv The argument array
+			@param context The ContextMap containing the metadata about accepted commands and how they should be parsed
 		*/
 		CommandLine(int argc, char **argv, ContextMap context = {});
+
+		/*! Delayed initialisation; no parsing is called.
+			@param context The ContextMap containing the metadata about accepted commands and how they should be parsed
+		*/
+		CommandLine(ContextMap context);
+
+		/*! Executes the parsing routine on the input data
+			@param argc The number of arguments to be parsed
+			@param argv The argument array
+		*/
+		void Parse(int argc, char **argv);
 
 		// this just transcludes the documentation of the base clase into this class; has no other effect
 		using ParserBase::Parse;

@@ -1,108 +1,156 @@
 #pragma once
-#include <JSL/Interface/Describer.h>
-#include <JSL/Interface/Parameter.h>
-#include <map>
-#include <set>
+// TODO: This needs to be renamed, and the legacy code from the prior iteration needs to be cleaned out
+// TODO: Then it all needs documenting
+#include "Context.h"
+#include "Field.h"
+#include "Help.h"
+#include "JSL/Interface/CommandLine.h"
+#include <JSL/Strings/MakeFrom.h>
 #include <string>
-#include <vector>
-namespace JSL::Parameter
+namespace JSL::Interface
 {
 
-	class NestedAggregator
+	template <typename T>
+	concept HasFieldList = requires(T t) {
+		t.FieldList([](auto &&) {});
+	};
+
+	template <class Derived>
+	class Aggregator
 	{
 	  public:
-		// default spaceship operator
-		auto operator<=>(const NestedAggregator &) const = default;
-
-		std::string Name = "Unnamed Settings Group";
-
-	  protected:
-		void Parse(int argc, char **argv);
-
-		void SetParameter(std::string_view trigger, std::string_view value);
-
-		std::string ShowParameter(std::string_view trigger);
-
-		template <class T>
-		T &GetParameter(std::string_view trigger)
+		std::string Name = "Unnamed Settings Block";
+		std::vector<std::string> Commands;
+		std::vector<std::string> &Parse(int argc, char **argv)
+			requires HasFieldList<Derived>
 		{
-			auto found = FindParameter(static_cast<std::string>(trigger));
-			if (found)
+			CheckInitialised();
+			CapturedName = argv[0];
+			auto cmd = ConfigurableCommandLine(argc, argv, Map);
+			Parse(cmd);
+			Commands = cmd.Commands;
+
+			auto it = std::find(Commands.begin(), Commands.end(), "help");
+			if (cmd.Parse("help", false) || it != Commands.end())
 			{
-				Setting<T> *typedFound = dynamic_cast<Setting<T> *>(found);
-				if (typedFound)
+				Help();
+				exit(0);
+			}
+
+			return Commands;
+		}
+		void Reset()
+			requires HasFieldList<Derived>
+		{
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
 				{
-					return typedFound->Value();
+					field.Reset(); // recurse
 				}
 				else
 				{
-					throw std::logic_error("Parameter -" + std::string(trigger) + " exists but is not of the requested type");
+					field.Value = field.Default;
 				}
-			}
-			else
-			{
-				throw std::logic_error("Parameter -" + std::string(trigger) + "does not exist");
-			}
-			auto dummy = new T(); // unreachable, but silences compiler warning about missing return
-			return *dummy;
+			});
 		}
 
-		void push(std::string_view trigger, std::string_view value);
-		void join(std::string_view trigger, std::string_view value);
-		void remove(std::string_view trigger, std::string_view value);
-		void erase(std::string_view trigger, int pos);
-
-		Description GetDescription(std::string_view key);
-
-		void PrintStructure(int indent, std::string runningTitle);
-
-		template <class T>
-		void Connect(Setting<T> &parameter, T &variable)
+		void Help()
+			requires HasFieldList<Derived>
 		{
-			parameter.Connect(variable);
-			for (auto trigger : parameter.GetTriggers())
-			{
-				RegisteredParameters[trigger] = &parameter;
-			}
+			CheckInitialised();
+			internal::HelpGroup help(Name);
+			bool spoof = false;
+			std::string spoofstring = "";
+			CommandDocs["help"] = "Activates the help display, then exits (equivalent to -h)";
+			Field<bool> helpfield{spoof, "(Inbuilt)", {"h", "help"}, false, "If true, shows the help screen, then quits"};
+			Field<std::string> helpconfig{spoofstring, "(Inbuilt)", {"config"}, "-none-", "If a file is passed to this argument, it is used to configure the remaining parameters, at a lower priority than values set from the command line"};
+			Field<std::string> helpconfigdelim(spoofstring, "(Inbuilt)", {"config-delim"}, "' '", "This value is used to determine the delimiter used to separate key-value pairs in config files.");
+			help.AddField(helpfield);
+			help.AddField(helpconfig);
+			help.AddField(helpconfigdelim);
+			help.AddCommands(CommandDocs);
+			Help(help);
+			help.Print(CapturedName);
 		}
-		void NestGroup(NestedAggregator &aggregator, std::string name);
+		template <class OtherDerived>
+		friend class Aggregator;
 
-		template <class T, class U>
-		void Set(T &value, Setting<T> &configurer, U defaultValue, std::initializer_list<std::string> triggers, std::string name, std::string description)
+	  protected:
+		std::string CapturedName;
+		bool Initialised = false;
+		std::map<std::string, std::string> CommandDocs;
+		void CheckInitialised()
 		{
-			configurer = Setting<T>(static_cast<T>(defaultValue), triggers);
-			Connect(configurer, value);
-			SetInfo(configurer, name, description);
+			if (Initialised) return;
+			Reset();
+			BuildContext();
+			Initialised = true;
 		}
-		template <class T, class U, class V>
-		void Set(T &value, Setting<T> &configurer, V defaultValue, U triggers, std::string name, std::string description)
+		void BuildContext()
+			requires HasFieldList<Derived>
 		{
-			configurer = Setting<T>(static_cast<T>(defaultValue), std::forward<U>(triggers));
-			Connect(configurer, value);
-			SetInfo(configurer, name, description);
+			Map = {};
+			BuildContext(Map);
 		}
-
-		void PrintHelp(std::string_view assignedName);
-		std::map<std::string, internal::Parameter::ParameterBase *> RegisteredParameters;
-		std::map<std::string, NestedAggregator *> NestedAggregators;
-		std::map<std::string, Description> Information;
-
-		internal::Parameter::ParameterBase *FindParameter(const std::string &key);
-		bool TryCluster(std::string_view key, std::string_view value);
-
-		static void printAsTitle(std::string_view input);
-
-		template <class T>
-		void SetInfo(Setting<T> &target, std::string_view name, std::string_view description)
+		void BuildContext(ContextMap &map)
 		{
-			auto key = target.GetTriggers()[0];
-			Description d(target, description, name);
-			Information[key] = d;
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					field.BuildContext(map); // recurse
+				}
+				else
+				{
+					map.AddContext(Context(field.Aliases, InferKeyType(field.Value)));
+				}
+			});
 		}
-		static const size_t lineLength = 80;
-		static const size_t lw = 20;
-		static const size_t mw = 15;
-		static const size_t rw = lineLength - lw - mw;
+
+		void Parse(ConfigurableCommandLine &cmd)
+			requires HasFieldList<Derived>
+		{
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					field.Parse(cmd); // recurse
+				}
+				else
+				{
+					field.Value = cmd.Parse(field.Aliases[0], field.Value);
+				}
+			});
+		}
+		void Help(internal::HelpGroup &help)
+		{
+
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					auto &nested = help.NestGroup(field.Name);
+					field.Help(nested); // recurse
+				}
+				else
+				{
+					help.AddField(field);
+				}
+			});
+		}
+		ContextMap Map = {};
 	};
-
-} // namespace JSL::Parameter
+} // namespace JSL::Interface

@@ -12,14 +12,15 @@ namespace JSL::Interface
 
 	ContextMap::ContextMap(std::vector<Context> context)
 	{
+		SetReserved();
 		for (auto c : context)
 		{
 			AddContext(c);
 		}
-		Initialised = !Registry.empty();
 	}
 	ContextMap::ContextMap(std::initializer_list<Context> context)
 	{
+		SetReserved();
 		for (auto c : std::vector<Context>(context))
 		{
 			AddContext(c);
@@ -33,10 +34,17 @@ namespace JSL::Interface
 		for (auto rawname : input.Aliases)
 		{
 			std::string name(normalize(rawname));
-			if (name.empty())
+			auto hasSpace = (name.find(" ") != name.npos);
+			if (name.empty() || hasSpace)
 			{
 				JSL::internal::FatalError("Bad Alias", JSL_LOCATION) << "The key '" << rawname << "' is an invalid parser ID";
 			}
+
+			if (ReservedAliases.contains(name))
+			{
+				JSL::internal::FatalError("Reserved Alias", JSL_LOCATION) << "The key " << rawname << " is reserved for the underlying context mechanisms";
+			}
+
 			if (AliasMap.contains(name))
 			{
 				JSL::internal::FatalError("Duplicate Alias", JSL_LOCATION) << "The key '" << rawname << "' is already in use";
@@ -47,6 +55,23 @@ namespace JSL::Interface
 			}
 		}
 		Initialised = true;
+	}
+
+	void ContextMap::SetReserved()
+	{
+		Context config({"config", "config-file"}, KeyType::Value);
+		Context configdelim({"config-delim"}, KeyType::Value);
+		Context help({"h", "help"}, KeyType::Flag);
+		auto r = {config, configdelim, help};
+		for (auto q : r)
+		{
+			AddContext(q);
+			for (auto alias : q.Aliases)
+			{
+				ReservedAliases.insert(alias);
+			}
+		}
+		Initialised = false;
 	}
 
 	bool ContextMap::GetReset(const std::string &key)

@@ -45,4 +45,10 @@ namespace JSL::Interface
 		static constexpr KeyType value = KeyType::Multivalue;
 	};
 
+	template <typename T>
+	KeyType InferKeyType(T value)
+	{
+		return MapTypeToKey<T>::value;
+	}
+
 } // namespace JSL::Interface

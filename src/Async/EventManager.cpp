@@ -43,8 +43,7 @@ namespace JSL::Event::Async
 		}
 		else
 		{
-			Workers.AsyncTask([this, job]()
-				{ this->Process(job); });
+			Workers.AsyncTask([this, job]() { this->Process(job); });
 		}
 	}
 

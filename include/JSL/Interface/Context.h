@@ -1,7 +1,7 @@
 #pragma once
 #include "KeyTypes.h"
 #include <map>
-#include <optional>
+#include <set>
 #include <string>
 namespace JSL::Interface
 {
@@ -87,8 +87,10 @@ namespace JSL::Interface
 		int GetContextID(const std::string &key);
 		//! A list of all stored parameters and their associated contexts
 		std::vector<Context> Registry;
+		void SetReserved();
 
 		//! A map between alias strings and the index of the associated parameter in the Registry
 		std::map<std::string, int> AliasMap;
+		std::set<std::string> ReservedAliases;
 	};
 } // namespace JSL::Interface

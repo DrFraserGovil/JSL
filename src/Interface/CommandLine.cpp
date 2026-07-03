@@ -57,8 +57,7 @@ std::optional<std::string_view> isKey(std::string_view s)
 struct InputTokens
 {
 	std::vector<std::string> Simple;
-	std::vector<std::pair<std::string, std::vector<std::string>>>
-		UnresolvedKeyVals;
+	std::vector<std::pair<std::string, std::vector<std::string>>> UnresolvedKeyVals;
 };
 
 InputTokens tokenizeInput(int argc, char **argv)
@@ -103,21 +102,20 @@ InputTokens tokenizeInput(int argc, char **argv)
 namespace JSL::Interface
 {
 
-	// CommandLine::CommandLine(int argc, char **argv, std::vector<Context> context) : CommandLine(argc, argv, ContextMap(context))
-	// {
-	// }
+	CommandLine::CommandLine(ContextMap context) : ParserBase(context)
+	{
+	}
+
 	CommandLine::CommandLine(int argc, char **argv, ContextMap context) : ParserBase(context)
+	{
+		Parse(argc, argv);
+	}
+
+	void CommandLine::Parse(int argc, char **argv)
 	{
 		auto tokens = tokenizeInput(argc, argv);
 
 		Commands = tokens.Simple;
-		if (Keys.Initialised)
-		{
-			Context config({"config", "config-file"}, KeyType::Multivalue);
-			Context delim({"config-delim"}, KeyType::String);
-			Keys.AddContext(config);
-			Keys.AddContext(delim);
-		}
 
 		for (auto entry : tokens.UnresolvedKeyVals)
 		{
@@ -146,14 +144,7 @@ namespace JSL::Interface
 				vals.clear(); // clear this in the case of clustering, we don't reinject multiple times
 			}
 		}
-
-		std::string delimiter = " ";
-		if (UnparsedArguments.contains("config-delim"))
-		{
-			delimiter = UnparsedArguments["config-delim"];
-		}
 	}
-
 	void CommandLine::FlagCheck(const std::string &key, std::vector<std::string> &vals)
 	{
 		if (vals.empty())
