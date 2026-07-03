@@ -1,5 +1,4 @@
 #pragma once
-// TODO: This needs to be renamed, and the legacy code from the prior iteration needs to be cleaned out
 // TODO: Then it all needs documenting
 #include "Context.h"
 #include "Field.h"
