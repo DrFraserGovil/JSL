@@ -21,6 +21,7 @@ namespace JSL::Interface
 	  public:
 		std::string Name = "Unnamed Settings Block";
 		std::vector<std::string> Commands;
+		HelpMetaData HelpData;
 		std::vector<std::string> &Parse(int argc, char **argv)
 			requires HasFieldList<Derived>
 		{
@@ -65,16 +66,17 @@ namespace JSL::Interface
 			internal::HelpGroup help(Name);
 			bool spoof = false;
 			std::string spoofstring = "";
-			CommandDocs["help"] = "Activates the help display, then exits (equivalent to -h)";
+			HelpData.Commands["help"] = "Activates the help display, then exits (equivalent to -h)";
 			Field<bool> helpfield{spoof, "(Inbuilt)", {"h", "help"}, false, "If true, shows the help screen, then quits"};
 			Field<std::string> helpconfig{spoofstring, "(Inbuilt)", {"config"}, "-none-", "If a file is passed to this argument, it is used to configure the remaining parameters, at a lower priority than values set from the command line"};
 			Field<std::string> helpconfigdelim(spoofstring, "(Inbuilt)", {"config-delim"}, "' '", "This value is used to determine the delimiter used to separate key-value pairs in config files.");
 			help.AddField(helpfield);
 			help.AddField(helpconfig);
 			help.AddField(helpconfigdelim);
-			help.AddCommands(CommandDocs);
+			HelpData.CallingName = CapturedName;
+			help.AddCommands(HelpData.Commands);
 			Help(help);
-			help.Print(CapturedName);
+			help.Print(HelpData);
 		}
 		template <class OtherDerived>
 		friend class Aggregator;
@@ -82,7 +84,6 @@ namespace JSL::Interface
 	  protected:
 		std::string CapturedName;
 		bool Initialised = false;
-		std::map<std::string, std::string> CommandDocs;
 		void CheckInitialised()
 		{
 			if (Initialised) return;

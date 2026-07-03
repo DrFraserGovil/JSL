@@ -44,19 +44,20 @@ namespace JSL::Interface::internal
 		auto left = "-" + aliases[0];
 		for (size_t i = 1; i < aliases.size(); ++i)
 		{
+			MaxLWidth = std::max(aliases[i].size(), MaxLWidth);
 			left += ", -" + aliases[i];
 		}
 		auto mid_text = "<" + std::string(type) + ">";
-		mid_text = Display::Colour(0, 155, 185) + std::string(name) + Display::ResetAll() + "\n" + std::regex_replace(mid_text, std::regex("std::"), "");
+		mid_text = Display::Colour(80, 155, 185) + std::string(name) + Display::ResetAll() + "\n<" + type + ">";
 
 		std::string right_text(helpmsg);
 		right_text += "\n" + (std::string)Display::Italics() + Display::Colour(50, 50, 50) + "[Default: " + (std::string)defaultValue + "]" + Display::ResetAll();
 
-		// + Display::Italics + "\n[Default: " + DefaultValue + "]";
-		size_t lw = 20;
-		size_t mw = 20;
-		size_t rw = lineWidth - lw - mw;
-		Fields.push_back(String::tableFormat({left, mid_text, right_text}, {lw, mw, rw}, " "));
+		Fields.push_back({left, mid_text, right_text});
+		size_t ms = String::trueSize(mid_text);
+		size_t ls = String::trueSize(left);
+		MaxMWidth = std::max(ms, MaxMWidth);
+		MaxLWidth = std::max(ls, MaxLWidth);
 	}
 
 	void HelpGroup::AddCommands(std::map<std::string, std::string> &cmds)
@@ -64,7 +65,8 @@ namespace JSL::Interface::internal
 
 		for (auto &[cmd, doc] : cmds)
 		{
-			Commands += String::tableFormat({cmd, doc}, {20, lineWidth - 20});
+			Commands.push_back({cmd, doc});
+			MaxLWidth = std::max(MaxLWidth, cmd.size());
 		}
 	}
 
@@ -88,26 +90,38 @@ namespace JSL::Interface::internal
 		}
 	}
 
-	void HelpGroup::Print(std::string executableName)
+	void HelpGroup::Print(HelpMetaData meta)
 	{
-		if (!executableName.empty())
+
+		int width = std::min(120ul, JSL::Display::Terminal().Columns());
+		size_t minbuff = 3;
+		size_t l = std::min(20ul, MaxLWidth + minbuff);
+		size_t m = std::min(20ul, MaxMWidth + minbuff);
+		size_t remainder = std::max(20, (int)(width - l - m));
+		lineWidth = remainder + l + m;
+		if (!meta.CallingName.empty())
 		{
 
 			std::cout << "Usage:\n";
-			std::cout << "\t" << executableName << " cmd1 cmd2... -flag -key value cmd3\n";
+			std::cout << "\t" << meta.CallingName << meta.UsageString;
 			std::cout << Display::Colour(40, 40, 40) << Display::Italics();
-			std::cout << "Keys are be indicated by at least one dash.\nFlags are booleans implicitly set to `true'.\nCommands are any space-delimited arguments not assigned to a key.\n";
+			std::cout << meta.UsageSubstring;
 			if (!Commands.empty())
 			{
 				TitlePrint("Commands", lineWidth);
-				std::cout << Commands;
+				for (auto cmd : Commands)
+				{
+					std::cout << String::tableFormat({cmd.first, cmd.second}, {l, lineWidth - l}) << "\n";
+				}
 			}
 		}
 		TitlePrint(Name, lineWidth);
 		std::sort(Fields.begin(), Fields.end());
+
 		for (auto f : Fields)
 		{
-			std::cout << f << "\n";
+
+			std::cout << JSL::String::tableFormat({std::get<0>(f), std::get<1>(f), std::get<2>(f)}, {l, m, remainder});
 		}
 		std::sort(Nested.begin(), Nested.end(), [](auto &lhs, auto &rhs) { return lhs.Name < rhs.Name; });
 		for (auto n : Nested)
