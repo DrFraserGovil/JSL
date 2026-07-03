@@ -1,27 +1,156 @@
 #pragma once
-#include <JSL/Interface/NestedAggregator.h>
-
-namespace JSL::Parameter
+// TODO: This needs to be renamed, and the legacy code from the prior iteration needs to be cleaned out
+// TODO: Then it all needs documenting
+#include "Context.h"
+#include "Field.h"
+#include "Help.h"
+#include "JSL/Interface/CommandLine.h"
+#include <JSL/Strings/MakeFrom.h>
+#include <string>
+namespace JSL::Interface
 {
-	class Aggregator : public NestedAggregator
+
+	template <typename T>
+	concept HasFieldList = requires(T t) {
+		t.FieldList([](auto &&) {});
+	};
+
+	template <class Derived>
+	class Aggregator
 	{
 	  public:
-		Aggregator(std::string_view name);
-		void Parse(int argc, char **argv);
+		std::string Name = "Unnamed Settings Block";
+		std::vector<std::string> Commands;
+		std::vector<std::string> &Parse(int argc, char **argv)
+			requires HasFieldList<Derived>
+		{
+			CheckInitialised();
+			CapturedName = argv[0];
+			auto cmd = ConfigurableCommandLine(argc, argv, Map);
+			Parse(cmd);
+			Commands = cmd.Commands;
 
-		Aggregator();
+			auto it = std::find(Commands.begin(), Commands.end(), "help");
+			if (cmd.Parse("help", false) || it != Commands.end())
+			{
+				Help();
+				exit(0);
+			}
 
-		std::vector<std::string> InvokedCommands();
-		std::pair<std::set<std::string>, std::set<std::string>> ParseCommands();
-		void HelpMenu();
+			return Commands;
+		}
+		void Reset()
+			requires HasFieldList<Derived>
+		{
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					field.Reset(); // recurse
+				}
+				else
+				{
+					field.Value = field.Default;
+				}
+			});
+		}
+
+		void Help()
+			requires HasFieldList<Derived>
+		{
+			CheckInitialised();
+			internal::HelpGroup help(Name);
+			bool spoof = false;
+			std::string spoofstring = "";
+			CommandDocs["help"] = "Activates the help display, then exits (equivalent to -h)";
+			Field<bool> helpfield{spoof, "(Inbuilt)", {"h", "help"}, false, "If true, shows the help screen, then quits"};
+			Field<std::string> helpconfig{spoofstring, "(Inbuilt)", {"config"}, "-none-", "If a file is passed to this argument, it is used to configure the remaining parameters, at a lower priority than values set from the command line"};
+			Field<std::string> helpconfigdelim(spoofstring, "(Inbuilt)", {"config-delim"}, "' '", "This value is used to determine the delimiter used to separate key-value pairs in config files.");
+			help.AddField(helpfield);
+			help.AddField(helpconfig);
+			help.AddField(helpconfigdelim);
+			help.AddCommands(CommandDocs);
+			Help(help);
+			help.Print(CapturedName);
+		}
+		template <class OtherDerived>
+		friend class Aggregator;
 
 	  protected:
-		static std::map<std::string, std::string> &RegisteredCommands();
-		std::string &GetDefaultCommand();
-		void AddCommand(std::string name, std::string result);
-		void DefaultCommand(std::string name, std::string result);
-		std::string Name = "Root";
-		bool Help;
-		Setting<bool> HelpToggle;
+		std::string CapturedName;
+		bool Initialised = false;
+		std::map<std::string, std::string> CommandDocs;
+		void CheckInitialised()
+		{
+			if (Initialised) return;
+			Reset();
+			BuildContext();
+			Initialised = true;
+		}
+		void BuildContext()
+			requires HasFieldList<Derived>
+		{
+			Map = {};
+			BuildContext(Map);
+		}
+		void BuildContext(ContextMap &map)
+		{
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					field.BuildContext(map); // recurse
+				}
+				else
+				{
+					map.AddContext(Context(field.Aliases, InferKeyType(field.Value)));
+				}
+			});
+		}
+
+		void Parse(ConfigurableCommandLine &cmd)
+			requires HasFieldList<Derived>
+		{
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					field.Parse(cmd); // recurse
+				}
+				else
+				{
+					field.Value = cmd.Parse(field.Aliases[0], field.Value);
+				}
+			});
+		}
+		void Help(internal::HelpGroup &help)
+		{
+
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					auto &nested = help.NestGroup(field.Name);
+					field.Help(nested); // recurse
+				}
+				else
+				{
+					help.AddField(field);
+				}
+			});
+		}
+		ContextMap Map = {};
 	};
-} // namespace JSL::Parameter
+} // namespace JSL::Interface
