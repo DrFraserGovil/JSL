@@ -41,7 +41,6 @@ Submodules
     * - :ref:`Config.h<cmd-config>`
       - Read through a provided file, and store the results as if they were Arguments passed to the command line.
        
-
     * - :ref:`ParserBase.h<parserbase>`
       - The parent class of the `CommandLine` and `Config` objects.
 

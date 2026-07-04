@@ -6,19 +6,30 @@
 #include <string>
 namespace JSL::Interface
 {
-
+	//! Detects if an Aggregator has been correctly assigned a FieldList member
 	template <typename T>
 	concept HasFieldList = requires(T t) {
 		t.FieldList([](auto &&) {});
 	};
 
+	//! A CRTP class for turning a POD into a fully configurable entity using the ConfigurableCommandLine protocol
 	template <class Derived>
 	class Aggregator
 	{
 	  public:
+		//! The name given to this settings block when displayed on the Help Menu
 		std::string Name = "Unnamed Settings Block";
+
+		//! A list of Commands parsed by the CommandLine
 		std::vector<std::string> Commands;
+
+		//! Metadata associated with the visual display when in the Help Menu
 		HelpMetaData HelpData;
+
+		/*!	The 'activation function' which reads from the program input and any config files, and hten automatically parses the output into the typed member variables
+		 * @param argc The number of arguments to pass to the command line
+		 * @param argv The argument array
+		 */
 		std::vector<std::string> &Parse(int argc, char **argv)
 			requires HasFieldList<Derived>
 		{
@@ -37,6 +48,8 @@ namespace JSL::Interface
 
 			return Commands;
 		}
+
+		//! Resets all member variables to their default value
 		void Reset()
 			requires HasFieldList<Derived>
 		{
@@ -56,6 +69,9 @@ namespace JSL::Interface
 			});
 		}
 
+		/*!	Displays a detailed help message including documentation for all member variables, then calls exit(0);
+		 * @details Automatically activated whenever "-h", "-help" or the "help" command are passed into the CommandLine
+		 */
 		void Help()
 			requires HasFieldList<Derived>
 		{
@@ -79,8 +95,14 @@ namespace JSL::Interface
 		friend class Aggregator;
 
 	  protected:
+		//! The name stored in argv[0], used for display purposes
 		std::string CapturedName;
+
+		//! Set to true when the context map has been constructed
 		bool Initialised = false;
+
+		//! Performs the initialisation steps
+		//! @details Would be part of a default constructor, but has to run *after* the child class has been fully declared
 		void CheckInitialised()
 		{
 			if (Initialised) return;
@@ -88,12 +110,17 @@ namespace JSL::Interface
 			BuildContext();
 			Initialised = true;
 		}
+
+		//! Constructs the ContextMap from the FieldList
+		//! @details This is the version called by the 'Root aggregator', blank-initialising the Map which will be passed down the heirarchy
 		void BuildContext()
 			requires HasFieldList<Derived>
 		{
 			Map = {};
 			BuildContext(Map);
 		}
+		//! Constructs the ContextMap from the FieldList
+		//! @details This is the version which descends through the full aggregator heirarchy, filling in the context map that the Root object holds
 		void BuildContext(ContextMap &map)
 		{
 			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
@@ -112,6 +139,8 @@ namespace JSL::Interface
 			});
 		}
 
+		//! Iterates over the FieldList using the CommandLine estbalished by the root object
+		//! @param cmd A commandline which has already tokenised its input
 		void Parse(ConfigurableCommandLine &cmd)
 			requires HasFieldList<Derived>
 		{
@@ -130,6 +159,9 @@ namespace JSL::Interface
 				}
 			});
 		}
+
+		//! The internal help function, which populates the HelGroup held by the main object
+		//! @param help A storage and formatting device
 		void Help(internal::HelpGroup &help)
 		{
 

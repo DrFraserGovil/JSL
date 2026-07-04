@@ -35,6 +35,8 @@ namespace JSL::Interface
 		std::map<std::string, std::string> Commands;
 
 		friend class JSL::Interface::internal::HelpGroup;
+		template <class T>
+		friend class Aggregator;
 
 	  private:
 		//! The name of the program used to call this, extracted from argv[0] at runtime

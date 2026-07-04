@@ -10,10 +10,8 @@ In such a case, it is of vital importance to minimise the duplication of boilerp
 
 This is the goal of the Aggregator construct, a `Curiously Recurring Template Pattern`_ aimed to act as a wrapper class for a user-defined data-holding class. 
  
+ 
 .. _Curiously Recurring Template Pattern: https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern
-
-How to Build an Aggregator
-----------------------------
  
 .. dropdown:: Why Use An Aggregator
     :color: success
@@ -74,8 +72,77 @@ How to Build an Aggregator
 
             Settings S;
             S.Parse(argc, argv);
-            LOG(INFO) << S.Commands << " Our opinion on halberds: " << S.Opinions.Halberd;
+            if (S.Verbose)
+            {
+                LOG(INFO) << S.Commands << " Our opinion on halberds: " << S.Opinions.Halberd;
+            }
+            else
+            {
+                LOG(INFO) << "Sssh, you need to wait " << S.DispatchDelay << " seconds before asking again";
+            }
         }
+
+    With the addition of just a handful of lines (the HelpData calls, and the FieldList declarations), standard POD classes have been converted into fully-configurable entities, with automated help generation:
+
+    .. rst-class:: terminal-block
+    .. code-block:: text
+
+        $ ./example -v -halberd They\'re Cool!
+        [INFO]  [] Our opinion on halberds: They're Cool!                                         | (example.cpp: 54)
+         
+        $ ./example -delay 100
+        [INFO]  Sssh, you need to wait 100 seconds before asking again                            | (example.cpp: 58)
+         
+        $ ./example -h
+        Usage:
+            ./example cmd1 cmd2... -flag -key value cmd3
+        Keys are be indicated by at least one dash.
+        Flags are booleans implicitly set to `true'.
+        Commands are any space-delimited arguments not assigned to a key.
+        Commands
+        help            Activates the help display, then exits (equivalent to -h)
+
+        pdf             Activates the pdf-output module
+
+        watch           Acivates asynchronous file watch mode
+
+        Settings
+        -config         (Inbuilt)           If a file is passed to this argument, it is used to configure the remaining
+                        <string>            parameters, at a lower priority than values set from the command line
+                                            [Default: -none-]
+        -config-delim   (Inbuilt)           This value is used to determine the delimiter used to separate key-value pairs in
+                        <string>            config files.
+                                            [Default: ' ']
+        -delay          DispatchDelay       Dispatch delay in ms
+                        <int>               [Default: 10]
+        -h, -help       (Inbuilt)           If true, shows the help screen, then quits
+                        <bool>              [Default: false]
+        -v              Verbose             Enable verbose output
+                        <bool>              [Default: false]
+        -watch          WatchedPatterns     Patterns to watch
+                        <vector<string>>    [Default: [*.tex, *.dat]]
+        Opinions
+        -ha, -halberd   Halberd            Tells us what you think of halberds
+                        <string>           [Default: They suck!]
+
+The Aggregator Class-Pattern
+--------------------------------
+
+
+.. jsl-class:: JSL::Interface::Aggregator
+   :file: Interface/Aggregator.h
+
+Helpers
++++++++++
+ 
+.. toctree::
+    :maxdepth: 1
+
+    field 
+    help
+ 
+How to Build an Aggregator
+----------------------------
 
 
 The Aggregator Class should only be used as a base class from which a user-defined class is derived. The following steps convert an existing holder-of-variables into a configurable aggregate:
@@ -213,18 +280,4 @@ The Aggregator Class should only be used as a base class from which a user-defin
             (...)
 
 
-The Aggregator Class-Pattern
---------------------------------
 
-
-.. jsl-class:: JSL::Interface::Aggregator
-   :file: Interface/Aggregator.h
-
-Helpers
-+++++++++
- 
-.. toctree::
-    :maxdepth: 1
-
-    field 
-    help
