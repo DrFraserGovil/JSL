@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 <!-- The following needs to be done before the next release can be completed: -->
 <!--  TODO: Documentation needs to be fully completed  -->
-<!--  TODO: Check the Async library. There's almost certainly an overkill of sockets in there, and the parpool could be revived -->
 <!--  TODO: Inconsistent vector <-> container verbiage needs to be fixed (or better delineated in Vectors.h -->
 
 ### Added
