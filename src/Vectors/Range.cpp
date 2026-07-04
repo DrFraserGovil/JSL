@@ -1,4 +1,4 @@
-#include <JSL/Vectors/Linspace.h>
+#include <JSL/Vectors/Range.h>
 #include <JSL/internal/error.h>
 void JSL::Vector::internal::verifyRange(double begin, double end, size_t resolution)
 {

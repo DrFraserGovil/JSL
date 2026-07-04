@@ -5,17 +5,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased Version]
-
-<!-- The following needs to be done before the next release can be completed: -->
-<!--  TODO: Documentation needs to be fully completed  -->
-<!--  TODO: Inconsistent vector <-> container verbiage needs to be fixed (or better delineated in Vectors.h -->
+## [3.0.0] - 2026-07-04
 
 ### Added
 
 * CLI Interface and parameter aggregator to replace the disgusting MACRO interface previously suggested
     - The macro interface has been preserved for 'small scale' parameter sets of < 10 parameters. Larger scale groups require an Aggregator approach
-* New Async library for parallel computing and IPC
 * Vault/Archiver system for TAR support
 * More robust unit testing
 * Windows Compatibility 
@@ -28,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * **De-headified** Moved away from a header-only implementation, and shifted to a compiled library setup
 * **Documentation Overhaul.** The documentation has been overhauled 
 * **Consistent style guide.** Explicitly written and enforced
-* **Renaming and Restructuring.** Many of the internal submodules and functionshave been renamed or moved into different module. **BACKWARDS COMPATIBILITY WITH PRIOR VERSIONS IS VIOLETED IN ALMOST ALL CASES** 
+* **Renaming and Restructuring.** Many of the internal submodules and functions have been renamed or moved into different module. **BACKWARDS COMPATIBILITY WITH PRIOR VERSIONS IS VIOLATED IN ALMOST ALL CASES** 
 * **Log module revamp.** Interface changed to be cleaner and more consistent, and have 'boxing' capabilities 
 
 ### Removed
