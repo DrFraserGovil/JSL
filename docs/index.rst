@@ -16,7 +16,6 @@ Overview
     :hidden:
 
     docfiles/style
-    Async.h <docfiles/async>
     Concepts.h <docfiles/concepts>
     Display.h <docfiles/display>
     FileIO.h <docfiles/fileio>
@@ -38,9 +37,6 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
      - Submodules
      - Description
 
-   * - :ref:`Async.h <async>`
-     - (not documented) 
-     - An asynchronous and parallel computing module
 
    * - :ref:`Concepts.h <concepts>`
      -  
