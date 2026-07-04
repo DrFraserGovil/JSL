@@ -4,4 +4,4 @@ sphinx_rtd_theme==0.5.1
 readthedocs-sphinx-search==0.1.0
 breathe==4.36.0
 cloud-sptheme==1.10.0
-sphinx-design=0.7.0
+sphinx-design==0.7.0
