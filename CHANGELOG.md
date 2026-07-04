@@ -21,7 +21,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * Windows Compatibility 
     - Lots of pragma guards and redefinitions of linux-specific calls. These can be seen mostly in Async.h and Terminal.h
     - Tested against MSVC compiler & some minor tweaks made to the algorithms (and the test suite): all tests currently pass on both gcc and windows. 
-    -  HACK: There's some Gemini-created code hanging around in the Windows portions. This could do with being hand reviewed
 
 
 ### Changed

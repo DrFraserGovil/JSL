@@ -28,7 +28,6 @@ Overview
 
 
 The entire library can be included with ``#include <JSL.h>`` (provided it is on your include-path), or for a more IWYU-style approach, the individual modules and submodules can be included by ``#include <JSL/[module]>``.
-.. TODO: The async package needs to be fully documented
  
 .. list-table::
    :header-rows: 1
