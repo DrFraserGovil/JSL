@@ -12,10 +12,11 @@ The ``Interface.h`` module provides a unified approach for configuring parameter
 .. toctree::
     :hidden:
      
+    interface/aggregate 
     interface/context
     interface/commandline 
     interface/config 
-   
+    interface/parserbase 
 
 Submodules
 --------------
@@ -27,201 +28,109 @@ Submodules
 
     * - Submodule
       - Contents
+    
+    * - :ref:`Aggregate.h<aggregate>`
+      - A CRTP wrapper which allows easy, compile time generation of a complex 'settings hub' with minimal user effort
 
     * - :ref:`Context.h<context>`
-      - Provide a context map for accepted argument names and how their values should be tokenized
+      - An object for providing context for accepted argument names and how their values should be tokenized
 
     * - :ref:`CommandLine.h<commandline>`
       - Group the values stored in ``argv`` into (positional) ``Commands`` and (flagged) ``Arguments``, either based on a simple parsing, or based on a provided context array.
             
     * - :ref:`Config.h<cmd-config>`
       - Read through a provided file, and store the results as if they were Arguments passed to the command line.
-         
-        
-Internal Constructs
+       
+
+    * - :ref:`ParserBase.h<parserbase>`
+      - The parent class of the `CommandLine` and `Config` objects.
+
+Interface Philosophy
 -----------------------
 
-.. toctree::
+Both the CommandLine parser and the Config file parser operate on the same underlying mechanic: 'tokenize-then-parse'.
 
-    interface/parserbase
-
-
-Usage
-----------
-
-There are a number of  ways that we support using this interface to assign string-input values from outside the program to typed-instances within the runtime. 
-
-
-.. dropdown:: Option 1: Dumb Mode (not recommended)
-    :color: warning
-    :icon: alert
-     
-    The simplest instance is to avoid constructing a ContextMap, and rely on the automatic tokenisation.
-
-    .. code-block:: cpp
-
-        //example.cpp
-        #include <JSL.h>
-        int main(int argc, char **argv)
-        {
-            using namespace JSL::Interface;
-            auto cmd = CommandLine(argc,argv);
-
-            bool verbose = cmd.Parse("v", false); // or "verbose"
-            auto file = cmd.Parse<std::filesystem::path>("f", "input.txt");
-            std::string note = cmd.Parse<std::string>("note", "");
-
-            if (verbose)
-            {
-                std::cout << "Executing commands " << JSL::String::makeFrom(cmd.Commands) << " on " << file << " with note '" << note << "'\n";
-            }
-        }
-    This will work in simple cases:
+1. Both modules scan over their input (either an ``argv`` array, or a file)
+2. The input is tokenized into pairs of strings; a ``key`` and a ``value``
     
-    .. rst-class:: terminal-block
-    .. code-block:: text 
-     
-        $ ./example -note test -f file.dat push -v
-            Executing commands [push] on "file.dat" with note 'test'
+   * With config files, this is simple; each key-value pair occupies their own line of the file, and they key is the first character sequence that occurs before the ``config-delim``; the value is any character sequence after this (including any subsequent ``config-delim``, but stripping out ``//``-delimited comments
+   * The command line is more complex, and requires a :ref:`context map<context>` for advanced tokenisation. In simple terms each key is denoted by beginning with at least one ``-`` character, and the value is all subsequent characters until the next key. The Command Line also has ``commands`` as a third category, which are values not assigned to any key (the ``push`` in ``git push`` would be such an example).
 
-    But without additional context, it will result in nonsense, and fail to throw errors when bad keys are passed, or the order results in ambiguous tokening:
+3. These tokens are then stored as pure strings in a map
+4. The user can then pull typed values out of the object using the ``Parse<T>`` member. This supports type-conversion from any type supported by the :ref:`JSL::String::ParseTo <parseto>` module.
 
-    .. rst-class:: terminal-block
-    .. code-block:: text 
-     
-        $ ./example -note Lorum ipsum dolor sit amet -v -f file.dat
-            Executing commands [ipsum, dolor, sit, amet] on "file.dat" with note 'Lorum'
-             
-        $ ./example  -v push -f file.dat
-            terminate called after throwing an instance of 'std::runtime_error'
-              what(): Cannot convert string "push" to boolean
-        
-        $ ./example -not "That was a typo, so not*e* will be assigned" -v
-            Executing commands [] on "input.txt" with note ''
 
-    These are examples where it is important for the tokeniser to know what it is expecting, before tokenisation can begin. 
+Basic Usage
+-----------------
 
-    Whilst 'dumb mode' may be best for small scale applications, or during initial testing phases, we do not suggest it for stable applications
+.. code-block:: cpp
 
-.. dropdown:: Option 2: Up-Front Declaration
-    :color: primary
-    :icon: code-review 
+   // example.cpp
+    #include <JSL.h>
 
-    In this case, the user declares a ContextMap object, and then passes it to the CommandLine (or Config) object.
-     
-    .. code-block:: cpp
-        
-        //example.cpp
-        #include <JSL.h>
-        int main(int argc, char **argv)
-        {
-            using namespace JSL::Interface;
-            ContextMap context({
-                Context({"v", "verbose"}, KeyType::Flag), 
-                Context({"f", "file"}, KeyType::Value),
-                Context({"n", "note"}, KeyType::String)});
-            auto cmd = CommandLine(argc, argv, context);
-            bool verbose = cmd.Parse("v", false); // or "verbose"
-            auto file = cmd.Parse<std::filesystem::path>("f", "input.txt");
-            std::string note = cmd.Parse<std::string>("note", "");
+    using namespace JSL::Interface;
+    void Print(std::string name, ParserBase &parser)
+    {
+        std::cout << name << ":\n";
+        std::cout << "\tVerbose: " << parser.Parse<bool>("verbose", false) << "\n";
+        std::cout << "\tMessage: " << parser.Parse<std::string>("m", "No message") << "\n";
+        std::cout << "\tDelay:   " << 2*parser.Parse<double>("delay", 0) << "\n"; 
+        //  *2 just to prove it is a double!
+    }
 
-            if (verbose)
-            {
-                std::cout << "Executing commands " << JSL::String::makeFrom(cmd.Commands) << " on " << file << " with note '" << note << "'\n";
-            }
-        } 
+    int main(int argc, char **argv)
+    {
+        // declare the variables we are expecting
+        ContextMap context({
+            Context({"v", "verbose"}, KeyType::Flag),
+            Context({"m", "message"}, KeyType::String),
+            Context({"delay"}, KeyType::Value),
 
-    This can then successfully parse the following complex examples, ensuring that:
-     
-    * The -note gets a long string
-    * Aliases can be used interchangably with the 'canonical name'
-    * The -v doesn't consume the 'push', which is correctly assigned into the commands
-    * An error is thrown when an unregistered key is passesd
+        });
+        using namespace JSL::Interface;
+        auto cmd = CommandLine(argc, argv, context);
 
-    .. rst-class:: terminal-block
-    .. code-block:: text
-        
-        $ ./example -note Lorum ipsum dolor sit amet -verbose push -f file.dat
-            Executing commands [push] on "file.dat" with note 'Lorum ipsum dolor sit amet'
+        std::string configFile = "config.dat";
+        auto config = Config(configFile, " ", context);
 
-        $ ./example -not "That was a typo" -v -f file.dat push
-            terminate called after throwing an instance of 'std::runtime_error'
-              what():  Bad Key  No parameter called 'not' exists
+        auto joint = ConfigurableCommandLine(argc, argv, context);
+        Print("CommandLine", cmd);
+        Print("Config", config);
+        Print("Joint", joint);
+    }
 
-    The ContextMap also serves to act as a guard against alias collisions:
+If we also ensure the following file is on the path:
 
+.. code-block:: text
     
-    .. code-block:: cpp
-        
-        //example.cpp
-        #include <JSL.h>
-        int main(int argc, char **argv)
-        {
-            using namespace JSL::Interface;
-            ContextMap context({
-                Context({"v", "verbose"}, KeyType::Flag), 
-                Context({"vim", "v"}, KeyType::Value)});
+    //config.dat
+    message Hello world!
+    delay 13.13
 
-                (...)
-        } 
+Then at runtime:
+
+.. rst-class:: terminal-block
+.. code-block:: text
     
-    At run time (since C++ can't yet handle compile-time string comparisons!)
-
-    .. rst-class:: terminal-block
-    .. code-block:: text
-     
-        ./example  -v push
-        terminate called after throwing an instance of 'std::runtime_error'
-          what():  Duplicate Alias  The key 'v' is already in use
-
-.. dropdown:: Option 3: The Macro Wrapper
-    :color: secondary
-    :icon: cpu
-    
-    This functions almost identically to the above example, but without the need to up-front declare the names and types, as the ContextMap is generated at compile time by the macros.
-
-
-    .. code-block:: cpp
-        
-        //example.cpp
-        #include <JSL.h>
-        #include <JSL/Interface/Macros.h> // this is *not* included otherwise
-        int main(int argc, char **argv)
-        {
-            JSL_INTERFACE(argc, argv, auto commands,
-                (bool, verbose, false, "v", "verbose"),
-                (std::filesystem::path, file, "input.txt", "f", "file"),
-                (std::string, note, "", "n", "note","and","arbitrary","number","of","aliases"));
-            if (verbose)
-            {
-                std::cout << "Executing commands " << JSL::String::makeFrom(commands) << " on " << file << " with note '" << note << "'\n";
-            }
-        }  
-    
-    This compiles to identical code to "Option 2", but is easier for the developer to maintain as there is a 'single source of truth'.
-
-    .. rst-class:: terminal-block
-    .. code-block:: text
-        
-        $ ./example -note Lorum ipsum dolor sit amet -v -f file.dat push
-            Executing commands [push] on "file.dat" with note 'Lorum ipsum dolor sit amet'
-
-        $ ./example -not "That was a typo" -v -f file.dat push
-            terminate called after throwing an instance of 'std::runtime_error'
-              what():  Bad Key  No parameter called 'not' exists
-
-    .. warning:: 
-        This method has some fairly major drawbacks.
+    $ ./example -v -delay 2 -config config.dat
+    CommandLine:
+        Verbose: 1
+        Message: No message
+        Delay:   4
+    Config:
+        Verbose: 0
+        Message: Hello world!
+        Delay:   26.26
+    Joint:
+        Verbose: 1
+        Message: Hello world!
+        Delay:   4
          
-        1. No more than **eight** (8) arguments can be declared within the macro
-        2. It's a macro wrapper around templated functions: there may be some extremely incomprehensible error messages if you make a mistake
-        3. The macro pollutes the global namespace with a number of preprocessor directives (all preceeded by "JSL_"), and loose variables (preceeded by "__JSL_"). As a result, we do not import this automatically with the rest of the JSL; it must be manually #included.
+    $ ./example -v -delay 2 -config config.dat -badkey
+    terminate called after throwing an instance of 'std::runtime_error'
+          what():  Bad Key  No parameter called 'badkey' exists
 
-
-.. dropdown:: Option 4: Aggregators
-    :color: primary
-    :icon: duplicate
-
-    These first three approaches are suitable when the goal is to configure a handful of 'loose variables' in the main function. They (especially the Macro Wrapper) are not suitable for (for example) simulational codes, where the goal is to configure an aggregate 'settings' object which may contain many dozens - even hundreds- of variables that may configured.
-
-    In such a case, it is of vital importance to minimise the duplication of boilerplate code, and the possibility of semantic drift between where a variable is declared and stored, and where the associated metadata can be found. 
+Note the following behaviours:
+ 
+1. The context map provided a list of 'good' keys; so ``badkey`` was flagged as an error. ``config`` (and ``config-delim``, ``h`` and ``help``) are automatically registered, and so do not throw an error, even if they are unused.
+2. The joint method ensures that the command line value of the delay (2) took priority over the config (13.13); but the config value was used where no command line was assigned (the ``message`` field).
