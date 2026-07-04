@@ -1,5 +1,4 @@
 #pragma once
-// TODO: Then it all needs documenting
 #include "Field.h"
 #include "Help.h"
 #include "JSL/Interface/CommandLine.h"

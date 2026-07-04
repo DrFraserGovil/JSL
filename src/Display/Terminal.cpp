@@ -70,7 +70,7 @@ namespace JSL::Display
 #if defined(_WIN32) || defined(_WIN64)
 	size_t winTabs(size_t dtab)
 	{
-		// TODO: Replace Gemini-generated code with handwritten code & unit test it
+		// HACK:  This is all Gemini-written code. I've tested that it compiles and passes unit tests, but we want a human eye on this to see if what it is doing is nonsense
 		HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		if (hOut == INVALID_HANDLE_VALUE)
 			return dtab;
