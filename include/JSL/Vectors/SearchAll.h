@@ -54,7 +54,7 @@ namespace JSL::Vector
 	*/
 	template <Concept::SearchableRange R>
 		requires std::convertible_to<double, JSL::Concept::RangeInternalType<R>>
-	inline std::vector<size_t> FindAll(R &vec, double target, double tolerance)
+	inline std::vector<size_t> FindAll(const R &vec, double target, double tolerance)
 	{
 		return FindAllWhere(vec, [&](auto &val) { return std::abs(val - target) < tolerance; });
 	}
