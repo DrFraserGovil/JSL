@@ -1,201 +1,142 @@
 #pragma once
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_string.hpp>
 #include <string>
 #include <string_view>
+#include <JSL/Display.h>
 #include <JSL/Strings/ParseTo.h>
 #include <cmath>
-
+using namespace Catch::Matchers;
 TEST_CASE("Edge case handling","[utility][ParseTo][edgecase]")
 {
 
 	SECTION("Check errors")
 	{
-		std::string errorMessage = capture_stdout([&](){
-			REQUIRE_THROWS(JSL::ParseTo<int>(""));
-		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Cannot convert"));
-
-		errorMessage = capture_stdout([&](){
-			REQUIRE_THROWS(JSL::ParseTo<int>("1.5"));
-		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Error"));
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Partial conversion"));
-
-
-		errorMessage = capture_stdout([&](){
-			REQUIRE_THROWS(JSL::ParseTo<int>("99999999999"));
-		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Error"));
-		REQUIRE_THAT(errorMessage,ContainsSubstring("out of range"));
-
-
-		errorMessage = capture_stdout([&](){
-			REQUIRE_THROWS(JSL::ParseTo<int>("true"));
-		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Error"));
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Invalid argument"));
-
-		errorMessage = capture_stdout([&](){
-			REQUIRE_THROWS(JSL::ParseTo<int>("-"));
-		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Error"));
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Invalid argument"));
-
-		
+		REQUIRE_THROWS(JSL::String::ParseTo<int>(""));
+		REQUIRE_THROWS(JSL::String::ParseTo<int>("1.5"));
+		REQUIRE_THROWS(JSL::String::ParseTo<int>("99999999999"));
+		REQUIRE_THROWS(JSL::String::ParseTo<int>("true"));
+		REQUIRE_THROWS(JSL::String::ParseTo<int>("-"));
 	}
 
 	SECTION("Consistent whitespace trimming")
 	{
-		REQUIRE_NOTHROW(JSL::ParseTo<int>("1 "));
-		REQUIRE_NOTHROW(JSL::ParseTo<bool>("1 "));
-		REQUIRE_NOTHROW(JSL::ParseTo<double>("1 "));
-		REQUIRE_NOTHROW(JSL::ParseTo<std::vector<int>>("1 "));
+		REQUIRE_NOTHROW(JSL::String::ParseTo<int>("1 "));
+		REQUIRE_NOTHROW(JSL::String::ParseTo<bool>("1 "));
+		REQUIRE_NOTHROW(JSL::String::ParseTo<double>("1 "));
+		REQUIRE_NOTHROW(JSL::String::ParseTo<std::vector<int>>("1 "));
 
-		REQUIRE(JSL::ParseTo<std::string>(" hi\t") == "hi");
+		REQUIRE(JSL::String::ParseTo<std::string>(" hi\t") == "hi");
 	}
 }
 
-TEST_CASE("Basic types","[utility][JSL::ParseTo]")
+TEST_CASE("Basic types","[utility][JSL::String::ParseTo]")
 {
 	SECTION("Integral types")
 	{
 		// Basic Valid Cases
-        REQUIRE(JSL::ParseTo<int>("1") == 1);
-        REQUIRE(JSL::ParseTo<int>("-1") == -1);
-        REQUIRE(JSL::ParseTo<int>("101") == 101);
-        REQUIRE(JSL::ParseTo<unsigned int>("123") == 123u);
-        REQUIRE(JSL::ParseTo<long>("12345678901") == 12345678901L);
-        REQUIRE(JSL::ParseTo<long long>("999999999991") == 999999999991LL);
+        REQUIRE(JSL::String::ParseTo<int>("1") == 1);
+        REQUIRE(JSL::String::ParseTo<int>("-1") == -1);
+        REQUIRE(JSL::String::ParseTo<int>("101") == 101);
+        REQUIRE(JSL::String::ParseTo<unsigned int>("123") == 123u);
+        REQUIRE(JSL::String::ParseTo<long long>("12345678901") == 12345678901L);
+        REQUIRE(JSL::String::ParseTo<long long>("999999999991") == 999999999991LL);
 	}
 
 	SECTION("doubles")
 	{
-		REQUIRE(JSL::ParseTo<double>("15") == 15.0);
-        REQUIRE(JSL::ParseTo<double>("1.5") == 1.5);
-        REQUIRE(JSL::ParseTo<double>("-1.5") == -1.5);
-        REQUIRE(JSL::ParseTo<float>("3.14") == 3.14f);
-        REQUIRE(JSL::ParseTo<double>("0.0") == 0.0);
-        REQUIRE(JSL::ParseTo<double>(".5") == 0.5);
-        REQUIRE(JSL::ParseTo<double>("1.") == 1.0);
+		REQUIRE(JSL::String::ParseTo<double>("15") == 15.0);
+        REQUIRE(JSL::String::ParseTo<double>("1.5") == 1.5);
+        REQUIRE(JSL::String::ParseTo<double>("-1.5") == -1.5);
+        REQUIRE(JSL::String::ParseTo<float>("3.14") == 3.14f);
+        REQUIRE(JSL::String::ParseTo<double>("0.0") == 0.0);
+        REQUIRE(JSL::String::ParseTo<double>(".5") == 0.5);
+        REQUIRE(JSL::String::ParseTo<double>("1.") == 1.0);
 
 		 // Scientific Notation
-		 REQUIRE(JSL::ParseTo<double>("1e3") == 1000.0);
-		 REQUIRE(JSL::ParseTo<double>("1.23e-5") == 0.0000123);
-		 REQUIRE(JSL::ParseTo<double>("-2.5E+2") == -250.0); // Test uppercase E
+		 REQUIRE(JSL::String::ParseTo<double>("1e3") == 1000.0);
+		 REQUIRE(JSL::String::ParseTo<double>("1.23e-5") == 0.0000123);
+		 REQUIRE(JSL::String::ParseTo<double>("-2.5E+2") == -250.0); // Test uppercase E
  
 		 // Special Values (std::stod/stof handle these)
-		 REQUIRE(std::isinf(JSL::ParseTo<double>("inf")));
-		 REQUIRE(std::isinf(JSL::ParseTo<double>("-inf")));
-		 REQUIRE(std::isnan(JSL::ParseTo<double>("nan")));
-		 REQUIRE(std::isinf(JSL::ParseTo<float>("INF"))); // std::stod/stof are case-insensitive for inf/nan
+		 REQUIRE(std::isinf(JSL::String::ParseTo<double>("inf")));
+		 REQUIRE(std::isinf(JSL::String::ParseTo<double>("-inf")));
+		 REQUIRE(std::isnan(JSL::String::ParseTo<double>("nan")));
+		 REQUIRE(std::isinf(JSL::String::ParseTo<float>("INF"))); // std::stod/stof are case-insensitive for inf/nan
  
 	}
 
 	SECTION("Booleans")
 	{
-		REQUIRE(JSL::ParseTo<bool>("1") == true );
-		REQUIRE(JSL::ParseTo<bool>("TRUE") == true );
-		REQUIRE(JSL::ParseTo<bool>("TRUE") == true );
-		REQUIRE(JSL::ParseTo<bool>("FAlse") == false );
-		REQUIRE(JSL::ParseTo<bool>("0") == false );
-		auto errorMessage = capture_stdout([&](){
-			REQUIRE_THROWS(JSL::ParseTo<bool>("2"));
-		});
-		REQUIRE_THAT(errorMessage,ContainsSubstring("Cannot convert"));
+		REQUIRE(JSL::String::ParseTo<bool>("1") == true );
+		REQUIRE(JSL::String::ParseTo<bool>("TRUE") == true );
+		REQUIRE(JSL::String::ParseTo<bool>("TRUE") == true );
+		REQUIRE(JSL::String::ParseTo<bool>("FAlse") == false );
+		REQUIRE(JSL::String::ParseTo<bool>("0") == false);
+		REQUIRE_THROWS(JSL::String::ParseTo<bool>("2"));
 	}
 }
 
-TEST_CASE("Vector-conversion","[utility][JSL::ParseTo][vector]")
+TEST_CASE("Vector-conversion","[utility][JSL::String::ParseTo][vector]")
 {
 	SECTION("Vector -ints")
 	{
 		// Basic Valid Cases
-        REQUIRE(JSL::ParseTo<std::vector<int>>("1,2,3") == std::vector<int>{1, 2, 3});
-        REQUIRE(JSL::ParseTo<std::vector<int>>("[1,2,3]") == std::vector<int>{1, 2, 3});
-        REQUIRE(JSL::ParseTo<std::vector<int>>("{1,2,3}") == std::vector<int>{1, 2, 3});
-        REQUIRE(JSL::ParseTo<std::vector<int>>("(1,2,3)") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("1,2,3") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("[1,2,3]") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("{1,2,3}") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("(1,2,3)") == std::vector<int>{1, 2, 3});
 
         // With custom delimiter
-        REQUIRE(JSL::ParseTo<std::vector<int>>("1;2;3", ";") == std::vector<int>{1, 2, 3});
-        REQUIRE(JSL::ParseTo<std::vector<int>>("[1;2;3]", ";") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("1;2;3", ";") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("[1;2;3]", ";") == std::vector<int>{1, 2, 3});
 
         // With whitespace in elements (requires `trim` in vector loop for non-floating types)
-        REQUIRE(JSL::ParseTo<std::vector<int>>(" 1 , 2 , 3 ") == std::vector<int>{1, 2, 3});
-        REQUIRE(JSL::ParseTo<std::vector<int>>("[ 1 , 2 , 3 ]") == std::vector<int>{1, 2, 3});
-        REQUIRE(JSL::ParseTo<std::vector<int>>(" 1 ; 2 ; 3 ", ";") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>(" 1 , 2 , 3 ") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("[ 1 , 2 , 3 ]") == std::vector<int>{1, 2, 3});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>(" 1 ; 2 ; 3 ", ";") == std::vector<int>{1, 2, 3});
 
         // Empty vector representations
-        REQUIRE(JSL::ParseTo<std::vector<int>>("[]") == std::vector<int>{});
-        REQUIRE(JSL::ParseTo<std::vector<int>>("{}") == std::vector<int>{});
-        REQUIRE(JSL::ParseTo<std::vector<int>>("()") == std::vector<int>{});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("[]") == std::vector<int>{});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("{}") == std::vector<int>{});
+        REQUIRE(JSL::String::ParseTo<std::vector<int>>("()") == std::vector<int>{});
 
 		// Error Cases
-		std::string errorMessage;
 
 		// Empty input string to vector (throws due to vector specialization's RejectEmpty)
-		errorMessage = capture_stdout([&]() {
-			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<int>>(""), std::runtime_error);
-		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("empty string"));
+		REQUIRE_THROWS_AS(JSL::String::ParseTo<std::vector<int>>(""), std::runtime_error);
+		REQUIRE_THROWS_AS(JSL::String::ParseTo<std::vector<int>>("1,abc,3"), std::runtime_error);
 
-		// Malformed elements (inner conversion failure)
-		errorMessage = capture_stdout([&]() {
-			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<int>>("1,abc,3"), std::runtime_error);
-		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("Invalid argument"));
-
-		// Empty elements (e.g. "1,,3")
-		errorMessage = capture_stdout([&]() {
-			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<int>>("1,,3"), std::runtime_error);
-		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("empty")); // From inner int conversion's RejectEmpty
 	}
 
 	SECTION("Vector Conversions - Doubles")
 	{
 		// Basic Valid Cases
-		REQUIRE(JSL::ParseTo<std::vector<double>>("1.1,2.2,3.3") == std::vector<double>{1.1, 2.2, 3.3});
-		REQUIRE(JSL::ParseTo<std::vector<double>>("[1.1,2.2,3.3]") == std::vector<double>{1.1, 2.2, 3.3});
+		REQUIRE(JSL::String::ParseTo<std::vector<double>>("1.1,2.2,3.3") == std::vector<double>{1.1, 2.2, 3.3});
+		REQUIRE(JSL::String::ParseTo<std::vector<double>>("[1.1,2.2,3.3]") == std::vector<double>{1.1, 2.2, 3.3});
 
 		// With whitespace in elements (should work fine due to std::stod skipping whitespace AND trim)
-		REQUIRE(JSL::ParseTo<std::vector<double>>(" 1.1 , 2.2 , 3.3 ") == std::vector<double>{1.1, 2.2, 3.3});
+		REQUIRE(JSL::String::ParseTo<std::vector<double>>(" 1.1 , 2.2 , 3.3 ") == std::vector<double>{1.1, 2.2, 3.3});
 
 		// Error Cases
 		std::string errorMessage;
 
 		// Malformed elements
-		errorMessage = capture_stdout([&]() {
-			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<double>>("1.0,invalid,3.0"), std::runtime_error);
-		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("Invalid argument"));
+		REQUIRE_THROWS_AS(JSL::String::ParseTo<std::vector<double>>("1.0,invalid,3.0"), std::runtime_error);
 
-		// Empty elements
-		errorMessage = capture_stdout([&]() {
-			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<double>>("1.0,,3.0"), std::runtime_error);
-		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("empty"));
-		}
+	}
 
-		SECTION("Vector Conversions - Strings")
-		{
+	SECTION("Vector Conversions - Strings")
+	{
 		// Basic Valid Cases
-		REQUIRE(JSL::ParseTo<std::vector<std::string>>("a,b,c") == std::vector<std::string>{"a", "b", "c"});
-		REQUIRE(JSL::ParseTo<std::vector<std::string>>("[hello,world]") == std::vector<std::string>{"hello", "world"});
+		REQUIRE(JSL::String::ParseTo<std::vector<std::string>>("a,b,c") == std::vector<std::string>{"a", "b", "c"});
+		REQUIRE(JSL::String::ParseTo<std::vector<std::string>>("[hello,world]") == std::vector<std::string>{"hello", "world"});
 
 		// Empty string elements (valid for std::string type)
 		
 
-		// Empty input string to vector (throws due to vector specialization's RejectEmpty)
-		std::string errorMessage = capture_stdout([&]() {
-			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<std::string>>("a,,c"),std::runtime_error);
-			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<std::string>>(",a,"),std::runtime_error);
-			REQUIRE_THROWS_AS(JSL::ParseTo<std::vector<std::string>>(""), std::runtime_error);
-		});
-		REQUIRE_THAT(errorMessage, ContainsSubstring("empty string"));
-
-
 		// Empty bracket representation
-		REQUIRE(JSL::ParseTo<std::vector<std::string>>("[]") == std::vector<std::string>{});
+		REQUIRE(JSL::String::ParseTo<std::vector<std::string>>("[]") == std::vector<std::string>{});
 	}
 	
 

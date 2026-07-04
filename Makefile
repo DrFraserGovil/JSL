@@ -5,10 +5,19 @@ BUILD_DIR = .build
 
 # The default target: ensures .build exists, runs cmake, then builds
 all:
+# 		@make graph
 	@mkdir -p $(BUILD_DIR)
 	@cmake -S . -B $(BUILD_DIR)
 	@make -C $(BUILD_DIR) --no-print-directory
 
+doc:
+	@cd docs && make html
+
+doc-full:
+	@cd docs && ./compileDocs
+
+graph:
+	@cd docs/visualiser && ./visualise
 
 # Clean up only the build artifacts
 purge:

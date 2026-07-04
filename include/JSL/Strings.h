@@ -1,9 +1,9 @@
 #pragma once
 
 
-#include "Strings/MakeString.h"
-#include "Strings/ParseTo.h"
+#include "Strings/Serialisers.h"
 #include "Strings/Cases.h"
-#include "Strings/Manipulate.h"
-#include "Strings/Join.h"
-#include "Strings/FoldLine.h"
+#include "Strings/Split.h"
+#include "Strings/Stitch.h"
+#include "Strings/Trim.h"
+#include "Strings/Wrap.h"

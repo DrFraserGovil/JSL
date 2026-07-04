@@ -1,4 +1,4 @@
-# Configuration file for the Sphinx documentation builder.
+# o Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'JSL'
-copyright = '2022, J. Fraser-Govil'
+copyright = '2025, J. Fraser-Govil'
 author = 'J. Fraser-Govil'
 
 # The full version, including alpha/beta/rc tags
@@ -31,20 +31,24 @@ release = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.autosectionlabel',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.inheritance_diagram',
-    'breathe'
+	'sphinx.ext.intersphinx',
+	'sphinx.ext.autosectionlabel',
+	'sphinx.ext.todo',
+	'sphinx.ext.coverage',
+	'sphinx.ext.mathjax',
+	'sphinx_design',
+	'sphinx.ext.ifconfig',
+	'sphinx.ext.viewcode',
+	'sphinx.ext.inheritance_diagram',
+	'sphinx_typo3_theme',
+	'breathe',
+	# 'exhale'
 ]
+breathe_use_cpp_namespace = True
 breathe_projects = {
-    "jsl":"dox/xml/",
-    }
-breathe_default_project = "jsl"
+	"JSL":"dox/xml/",
+	}
+breathe_default_project = "JSL"
 breathe_default_members = ('members', 'undoc-members')
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -56,15 +60,32 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 highlight_language = 'c++'
 
-cpp_index_common_prefix = ['JSL::']
+cpp_index_common_prefix = []
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'default'
-
+# html_theme = 'sphinx_rtd_theme'
+html_theme = 'cloud'
+# html_theme_options = {"sidebarwidth":"200px"}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_static_path = ['_static']
+html_css_files = ['custom.css']
+html_permalinks = False
+
+# Prefix each section label with the name of the document it is in
+autosectionlabel_prefix_document = True
+suppress_warnings = ['duplicate_declaration.cpp'] #to suppress miltiple definitions
+
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
+from custom_envs import *
+
+def setup(app):
+	app.add_directive("jsl-class", JSLClassDirective)
+	app.add_directive("jsl-meta", JSLMetaDirective)
+	app.add_directive("jsl", JSLHandover)

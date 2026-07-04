@@ -1,73 +1,97 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <charconv>
 #include <cstdint>
-#include <cstring>
-#include <sstream>
-namespace JSL::Format
+#include <JSL/Display/FormatClasses.h>
+
+
+/*
+	This file defines a bunch of instantiations of the Format class which execute specific commands to induce formatting
+*/
+
+namespace JSL::Display
 {
-    
+/// @brief Returns the specified target back to its default state, as specified by the terminal settings
+	/// @param target The element to be reset to default (does not support bitmasking)
+	/// @return A string representing the ANSI sequence
+	/// @details This returns a string (and not a Command or FormatGroup) specifically because Resets don't play well with the Group infrastructure. A reset is to be applied separately from a FormatGroup
+	std::string Reset(Element target);
 
-    enum Element{
-        ForegroundColour=1<<0,
-        BackgroundColour=1<<1,
-        Style=1<<2,
-        Resetter=1<<3
-    };
-    struct Command
-    {
-        char buf[20];
-        uint8_t len;
-        Element type;
-        Command();
-        Command(const std::string &input, Element kind);
-        Command(uint8_t r, uint8_t g, uint8_t b,const char* control,Element kind);
-        friend std::ostream& operator<<(std::ostream& os, const Command& c);
-        operator std::string() const;
-    };
+	/// @brief Returns the terminal back to its default state, as specified by the terminal settings
+	/// @return A string representing the ANSI `default' sequence
+	/// @details This returns a string (and not a Command or FormatGroup) specifically because Resets don't play well with the Group infrastructure. A reset is to be applied separately from a FormatGroup
+	std::string ResetAll();
 
+	//!@brief Set/unset 'boldface' format (rendered as 'high colour intensity' in some terminals)  
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
+	Format Bold(bool active = true);
+	
+	//!@brief Set/unset 'low intensity' format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
+	Format Faint(bool active = true);
 
+	//!@brief Set/unset Italic typeface 
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
+	Format Italics(bool active = true);
 
-    class FormatGroup
-    {
-        private:
-            std::pair<bool, Command> Foreground = {false,Command()};
-            std::pair<bool, Command> Background= {false,Command()};
-            std::pair<bool, Command> Style= {false,Command()};
-            bool FalseTransparent = true; //elements set false do not force others
-        public:
-            void Add(const Command & cmd);
-            void Add(const FormatGroup & cmd);
-            FormatGroup();
-            FormatGroup(const Command & a);
-            friend std::ostream& operator<<(std::ostream& os, const FormatGroup& c);
-            operator std::string() const;
-    };
+	//!@brief Set/unset Underline format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
+	Format Underline(bool active = true);
+	
+	//!@brief Set/unset Highlight format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
+	Format Highlight(bool active = true);
 
-    FormatGroup operator+(const Command & a,const Command & b);
+	//!@brief Set/unset Strikethrough format
+	//!@param active Toggles the command between activating the style (true) and deactivating (False)
+	//!@returns The relevant ANSI sequence 
+	Format Strike(bool active = true);
 
-    //handle addition for any types convertible into format groups
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Format Black(bool targetBackgroundCol = false);
 
-    template<typename T>
-    concept Formattable = std::is_constructible_v<FormatGroup, T>;
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Format Blue(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Format Cyan(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Format Green(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Format Purple(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Format Red(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Format Yellow(bool targetBackgroundCol = false);
+	
+	//!@brief Sets colour of foreground(background) if input is false(true). 
+	Format White(bool targetBackgroundCol = false);
 
-    template<Formattable T, Formattable U>
-    FormatGroup operator+(const T & a, const U & b)
-    {
-        FormatGroup out(a);
-        out.Add(b);
-        return out;
-    }
-    template<Formattable T>
-    std::string operator+(const T & a, std::string_view && b)
-    {
-        return ((std::string)FormatGroup(a)) + std::string{b};
-    }
-    template<Formattable T>
-    std::string operator+(std::string_view && b, const T & a)
-    {
-        return std::string{b} + ((std::string)FormatGroup(a));
-    }
-        
+	//!@brief Set subsequent text to the *default terminal* colour. 
+	//!@param targetBackgroundCol if false (the default), the colour is used as the 'foreground' (text) colour. If true, the colour is assigned to the background. 
+	//!@returns The associated ANSI command
+	Format DefaultColour(bool targetBackgroundCol = false);
+	
+	//!@brief Sets the subsequent text to a colour specified by an 8-bit RGB colour code
+	//!@param r A [0,255] value indicating the *red* intensity
+	//!@param b A [0,255] value indicating the *blue* intensity
+	//!@param g A [0,255] value indicating the *green* intensity
+	//!@param targetBackgroundCol if false (the default), the colour is used as the 'foreground' (text) colour. If true, the colour is assigned to the background. 
+	//!@warning Terminals often try to ensure text is visible and may reject some combinations of foreground/background colours based on their own internal contrast measurements. This is implementation specific - but usually means it is impossible to make text that cannot be read. 
+	inline Format Colour(uint8_t r,uint8_t g, uint8_t b,bool targetBackgroundCol = false)
+	{
+		return Format(r,g,b,targetBackgroundCol ? Element::Background : Element::Foreground);
+	}
+
+	
 }
+	
+
+ 

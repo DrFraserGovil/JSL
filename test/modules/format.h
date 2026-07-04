@@ -1,35 +1,37 @@
+#include "JSL/Display/Format.h"
+#include "JSL/Display/FormatClasses.h"
 #include <catch2/catch_test_macros.hpp>
 
 #include <JSL/Display.h>
 
 #include <chrono>
 #include <thread>
-
+#include <functional>
 
 
 TEST_CASE("Colour Testing","[display][colour]")
 {
-    namespace txt = JSL::Format;
+    namespace txt = JSL::Display;
     // namespace bg = JSL::Background;
-    namespace crs = JSL::Terminal;
+    namespace crs = JSL::Display;
     
-    std::vector<JSL::Format::Command> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
+    std::vector<std::function<txt::Format(bool)>> cols = {txt::Black,txt::Red,txt::Green,txt::Yellow,txt::Blue, txt::Purple,txt::Cyan,txt::White};
+
     SECTION("Foreground Colours")
     {
         for (size_t i = 0; i < cols.size(); ++i)
         {
             std::string expected = "\033[3"+std::to_string(i) + "m";
-            assert((std::string)cols[i] == expected);
+            assert((std::string)(cols[i](false)) == expected);
         }
     }
 
-    std::vector<JSL::Format::Command> backgrounds = {txt::BgBlack,txt::BgRed,txt::BgGreen,txt::BgYellow,txt::BgBlue, txt::BgPurple,txt::BgCyan,txt::BgWhite};
     SECTION("Background Colours")
     {
-        for (size_t i = 0; i < backgrounds.size(); ++i)
+        for (size_t i = 0; i < cols.size(); ++i)
         {
             std::string expected = "\033[4"+std::to_string(i) + "m";
-            assert((std::string)backgrounds[i] == expected);
+            assert((std::string)(cols[i](true)) == expected);
         }
     }
 
@@ -43,13 +45,12 @@ TEST_CASE("Colour Testing","[display][colour]")
             uint8_t rb = rand() % 256;
             uint8_t gb = rand() % 256;
             uint8_t bb = rand() % 256;
-            REQUIRE_NOTHROW(std::cout << txt::Colour(r,g,b) << txt::BgColour(rb,gb,bb) << "Testing colours"<<txt::ResetAll);
+            REQUIRE_NOTHROW(std::cout <<txt::Colour(r,g,b) << txt::Colour(rb,gb,bb,true) << "Testing colour " << i <<txt::ResetAll());
             std::cout << std::flush;
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
             REQUIRE_NOTHROW(std::cout << crs::ClearLine);
             
         }
-        std::cout << "\n";
     }
 
     SECTION("RGB Byte Accuracy")
@@ -57,7 +58,7 @@ TEST_CASE("Colour Testing","[display][colour]")
         auto check_rgb = [](uint8_t r, uint8_t g, uint8_t b, std::string expected)
         {
             std::ostringstream oss;
-            oss << JSL::Format::Colour(r, g, b);
+            oss << JSL::Display::Colour(r, g, b);
             REQUIRE(oss.str() == expected);
         };
 

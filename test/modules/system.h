@@ -2,7 +2,7 @@
 #include "../test_utils/catch_extended.h"
 
 #define JSL_TEST_SPOOF_PIPE
-#include <JSL/FileIO.h>
+#include <JSL/IO.h>
 #include "dummy_file.h"
 
 // TEST_CASE("Piped Input test","[pipe][input]")
@@ -35,17 +35,17 @@ TEST_CASE("Path and Directory Utilities", "[io][system]")
         fs::path deepPath = sandbox / "level1" / "level2" / "level3";
         
         // Test initial creation
-        auto result = JSL::Filesystem::mkdir(deepPath);
+        auto result = JSL::IO::mkdir(deepPath);
         REQUIRE(result.Successful);
         REQUIRE(fs::exists(deepPath));
         REQUIRE(fs::is_directory(deepPath));
 
         // Test calling it again (should fail with default policy)
-        auto resultRepeat = JSL::Filesystem::mkdir(deepPath);
+        auto resultRepeat = JSL::IO::mkdir(deepPath);
         REQUIRE_FALSE(resultRepeat.Successful);
         
         // Test calling it again (should fail with default policy)
-        resultRepeat = JSL::Filesystem::mkdir(deepPath,JSL::Filesystem::Quiet);
+        resultRepeat = JSL::IO::mkdir(deepPath,JSL::IO::Generous);
         REQUIRE(resultRepeat.Successful);
     }
 
@@ -56,7 +56,7 @@ TEST_CASE("Path and Directory Utilities", "[io][system]")
        
 		create_dummy_file(filePath);
         // Try to mkdir where a file already exists
-        auto result = JSL::Filesystem::mkdir(filePath);
+        auto result = JSL::IO::mkdir(filePath);
         REQUIRE_FALSE(result.Successful);
     }
 
@@ -78,7 +78,7 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
             ofs << "gone soon";
         }
 
-        auto result = JSL::Filesystem::remove(target);
+        auto result = JSL::IO::remove(target);
         CHECK(result.Successful);
         CHECK_FALSE(fs::exists(target));
         
@@ -87,7 +87,7 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
     SECTION("rm: Non-existent path handling")
     {
         fs::path ghost = sandbox / "not_there.txt";
-        auto result = JSL::Filesystem::remove(ghost,JSL::Filesystem::Quiet);
+        auto result = JSL::IO::remove(ghost,JSL::IO::Generous);
 
         // Should be successful (nothing to do) but note it didn't exist
         CHECK(result.Successful);
@@ -96,10 +96,10 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
     SECTION("rm: Directory safety check")
     {
         fs::path folder = sandbox / "safe_folder";
-        JSL::Filesystem::mkdir(folder);
+        JSL::IO::mkdir(folder);
 
         // Try to delete directory without recursive flag
-        auto result = JSL::Filesystem::remove(folder);
+        auto result = JSL::IO::remove(folder);
         CHECK_FALSE(result.Successful);
         CHECK(fs::exists(folder));
     }
@@ -115,7 +115,7 @@ TEST_CASE("File Deletion Utilities", "[io][system]")
             ofs << "payload";
         }
 
-        auto result = JSL::Filesystem::removeDirectory(folder);
+        auto result = JSL::IO::removeDirectory(folder);
         CHECK(result.Successful);
         CHECK_FALSE(fs::exists(folder));
         // Verify the message reports multiple items (folder + inner + deep + data.txt)

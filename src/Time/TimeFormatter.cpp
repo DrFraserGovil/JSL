@@ -4,7 +4,8 @@
 #include <string_view>
 #include <chrono>
 
-namespace JSL
+#include <JSL/Time/TimeFormatter.h>
+namespace JSL::Time
 {
     /*!
 		Given a duration in seconds, convert it into standard Day/Hour/Minute/Second formatted string. Times are restricted to a one-unit contrast (i.e. day + hour, hour + minute), with the final element being reported to 1 decimal accuracy

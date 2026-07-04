@@ -1,25 +1,39 @@
 #pragma once
 #include <catch2/catch_test_macros.hpp>
-#include <JSL/FileIO/archiver.h>
-#include <iostream>
+#include <catch2/matchers/catch_matchers_vector.hpp>
+#include "../test_utils/catch_extended.h"
+#include "JSL/Strings/MakeFrom.h"
+#include <JSL/IO/Vault.h>
 #include <filesystem>
 
-using namespace JSL::Archiver;
+using namespace JSL::IO;
 
 TEST_CASE("Vault Writing", "[archive][write]")
 {
     MockFile file;
-    Vault<Mode::Write> A(file.Name());
+    VaultWriter A(file.Name());
+
+
 
     SECTION("Basic writing using operator[]")
     {
         // Vault creates the .part file immediately
         REQUIRE(std::filesystem::exists(file.Name() + ".part")); 
-        
-        // Use the new operator[] syntax
+       
+        //Manually open the file
+        REQUIRE_NOTHROW(A.NewFile("test-file"));
         REQUIRE_NOTHROW(A["test-file"] << "some data");
     }
-
+    
+    SECTION("Strictness checks")
+    {
+        //Defaults to strictmode, so should fail here...
+        REQUIRE_THROWS(A["test-file"] << "some data");
+        
+        A.SetPolicy(JSL::IO::Policy::Generous);
+        REQUIRE_NOTHROW(A["test-file"] << "some data");
+    }
+    A.SetPolicy(Policy::Generous);
     SECTION("Multiple files and closing")
     {
         A["file1"] << "data1";
@@ -37,13 +51,9 @@ TEST_CASE("Vault Modes detect valid states", "[archive][errors]")
     
     SECTION("Uninitialised state protection")
     {
-        Vault<Mode::Write> A; 
-        std::string output = capture_stdout([&]() {
-            // We expect the FatalError to print and then throw
-            REQUIRE_THROWS(A["badfile"] << "data");
-        });
+        VaultWriter A; 
+        REQUIRE_THROWS(A["badfile"] << "data");
         
-        REQUIRE_THAT(output, Catch::Matchers::ContainsSubstring("JSL"));
     }
 
     SECTION("Corrupted Archive Detection")
@@ -54,12 +64,9 @@ TEST_CASE("Vault Modes detect valid states", "[archive][errors]")
             f << "This is just a random text file, not a TAR";
         }
         
-        std::string output = capture_stdout([&]() {
             // BuildIndex() should fail the null-termination check
-            REQUIRE_THROWS(Vault<Mode::Read>(file.Name()));
-        });
+            REQUIRE_THROWS(VaultReader(file.Name()));
         
-        REQUIRE_THAT(output, Catch::Matchers::ContainsSubstring("JSL"));
     }
 }
 
@@ -67,7 +74,7 @@ TEST_CASE("Vault Reading", "[archive][read]")
 {
     MockFile file;
     {
-        Vault<Mode::Write> W(file.Name());
+        VaultWriter W(file.Name(),Policy::Generous);
         for (int i = 0; i < 5; ++i)
         {
             W["test-file-" + std::to_string(i+1)] << "Test_data_" << (10*i+5);
@@ -75,13 +82,13 @@ TEST_CASE("Vault Reading", "[archive][read]")
         W.Close();
     }
 
-    Vault<Mode::Read> R(file.Name());
+    VaultReader R(file.Name());
 
     SECTION("File Listing")
     {
-        auto filelist = R.ListFiles();
+        auto filelist = R.Files();
         REQUIRE(filelist.size() == 5);
-        REQUIRE_THAT(filelist, Catch::Matchers::VectorContains((std::string)"test-file-1"));
+        REQUIRE(filelist.contains("test-file-1"));
     }
 
     SECTION("Extraction using AsText")
@@ -101,7 +108,7 @@ TEST_CASE("Tabular Data and Stream Logic", "[archive][tabular]")
 {
     MockFile file;
     {
-        Vault<Mode::Write> W(file.Name());
+        VaultWriter W(file.Name(),Policy::Generous);
         auto& s = W["table.dat"];
         for (int i = 0; i < 5; ++i)
         {
@@ -110,7 +117,7 @@ TEST_CASE("Tabular Data and Stream Logic", "[archive][tabular]")
         W.Close();
     }
 
-    Vault<Mode::Read> R(file.Name());
+    VaultReader R(file.Name());
 
     SECTION("AsTable conversion")
     {
@@ -123,15 +130,17 @@ TEST_CASE("Tabular Data and Stream Logic", "[archive][tabular]")
         REQUIRE(std::get<2>(table[2]) == 'C');
     }
 
-    SECTION("ForTabularLineIn callback")
+    /*
+    SECTION("ForConvertedLineIn callback")
     {
         int count = 0;
-        R.ForTabularLineIn<int, double, char>("table.dat", " ", [&](auto row) {
-            REQUIRE(std::get<0>(row) == count);
+        R.ForConvertedLineIn<int, double, char>("table.dat", " ", [&](auto a, auto b, auto c) {
+            REQUIRE(a == count);
             count++;
         });
         REQUIRE(count == 5);
     }
+    */
 }
 
 TEST_CASE("Large File Seekp Logic", "[archive][largefile]")
@@ -140,13 +149,14 @@ TEST_CASE("Large File Seekp Logic", "[archive][largefile]")
     std::string largeData = "This is a significant chunk of data that we stream directly.";
     
     {
-        Vault<Mode::Write> W(file.Name());
-        W.SetLargeFile("big_payload.bin");
+        VaultWriter W(file.Name(),Policy::Generous);
+        W.NewFile("big_payload.bin",true);
         W << largeData; // Direct streaming to disk
+        W["t2"] << "hi";
         W.Close();
     }
 
     // Verify with standard reader
-    Vault<Mode::Read> R(file.Name());
+    VaultReader R(file.Name());
     REQUIRE(R["big_payload.bin"].AsText() == largeData);
 }

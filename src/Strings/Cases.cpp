@@ -1,6 +1,6 @@
 #include <JSL/Strings/Cases.h>
 #include <algorithm>
-namespace JSL
+namespace JSL::String
 {
 	void toUpper(std::string & input)
 	{

@@ -2,9 +2,20 @@
 *.build
 test/.build
 *.tst
-
+test/unit_test
+docs/dox
+**/__pycache__/
 *.DS_Store
 makefile
+
+#Windows guff
+*.vs
+*x64*
+
+# nvim stuff (including telescope & plugin suppression)
+*.js
+.jvim.session
+
 # Prerequisites
 *.d
 *.vscode

@@ -2,7 +2,9 @@
 #include <filesystem>
 #include <fstream>
 #include "../test_utils/catch_extended.h"
-#include <JSL/FileIO.h>
+#include <JSL/IO.h>
+#include <JSL.h>
+#include "JSL/IO/TemplateWriters.h"
 #include "dummy_file.h"
 TEST_CASE("Reads files correctly","[file][io][input]")
 {
@@ -14,7 +16,7 @@ TEST_CASE("Reads files correctly","[file][io][input]")
 	}
 
 	int linesRead = 0;
-	JSL::forLineIn(F.Path,
+	JSL::IO::forLineIn(F.Path,
 		[&](auto line)
 		{
 			REQUIRE(line == "test");
@@ -48,8 +50,8 @@ TEST_CASE("Reads vector input correctly","[file][io][input]")
 	{
 		int i = 0;
 		GenerateVectorFile(F,",",linesWritten);
-		JSL::forSplitLineIn(F.Path,",",[&](auto vec){
-			REQUIRE(JSL::ParseTo<int>(vec[0])==i);
+		JSL::IO::forSplitLineIn(F.Path,",",[&](auto vec){
+			REQUIRE(JSL::String::ParseTo<int>(vec[0])==i);
 			++i;
 		});
 	}
@@ -58,8 +60,8 @@ TEST_CASE("Reads vector input correctly","[file][io][input]")
 	{
 		int i = 0;
 		GenerateVectorFile(F,"_-_",linesWritten);
-		JSL::forSplitLineIn(F.Path,"_-_",[&](auto vec){
-			REQUIRE(JSL::ParseTo<int>(vec[0])==i);
+		JSL::IO::forSplitLineIn(F.Path,"_-_",[&](auto vec){
+			REQUIRE(JSL::String::ParseTo<int>(vec[0])==i);
 			++i;
 		});
 	}
@@ -68,11 +70,11 @@ TEST_CASE("Reads vector input correctly","[file][io][input]")
 	{
 		int i = 0;
 		GenerateVectorFile(F,",",linesWritten);
-		JSL::forLineTupleIn<int,std::string,std::string>(F.Path,",",[&](auto vec){
-			// REQUIRE(JSL::ParseTo<int>(vec[0])==i);
-			REQUIRE(std::get<0>(vec) == i);
-			REQUIRE(std::get<1>(vec) == "test");
-			REQUIRE(std::get<2>(vec) == "gumbo!");
+		JSL::IO::forConvertedLineIn<int,std::string,std::string>(F.Path,",",[&](int a, std::string b, std::string c){
+			// REQUIRE(JSL::String::ParseTo<int>(vec[0])==i);
+			REQUIRE(a == i);
+			REQUIRE(b == "test");
+			REQUIRE(c == "gumbo!");
 			++i;
 		});
 	}
@@ -80,7 +82,7 @@ TEST_CASE("Reads vector input correctly","[file][io][input]")
 	SECTION("Vector parse")
 	{
 		std::string s = "0,1,2,3,4,5,6";
-		auto vec = JSL::ParseTo<std::vector<int>>(s);
+		auto vec = JSL::String::ParseTo<std::vector<int>>(s);
 		for (int i =0; i < 7; ++i)
 		{
 			REQUIRE(vec[i] == i);
@@ -89,7 +91,7 @@ TEST_CASE("Reads vector input correctly","[file][io][input]")
 	SECTION("Vector parse, different delimiters")
 	{
 		std::string s = "0_1_2_3_4_5_6";
-		auto vec = JSL::ParseTo<std::vector<int>>(s,"_");
+		auto vec = JSL::String::ParseTo<std::vector<int>>(s,"_");
 		for (int i =0; i < 7; ++i)
 		{
 			REQUIRE(vec[i] == i);
@@ -112,7 +114,7 @@ TEST_CASE("File System Utilities: listFiles and Globbing", "[files][io][system]"
 
 	SECTION("Non-recursive listing")
     {
-        auto results = JSL::Filesystem::list(sandbox, false);
+        auto results = JSL::IO::Directory::list(sandbox, false);
         
         // Should find test1, test2, README, and subdir (4 items total)
         // Note: we don't assume order, so we REQUIRE size and presence
@@ -131,8 +133,7 @@ TEST_CASE("File System Utilities: listFiles and Globbing", "[files][io][system]"
 
 	SECTION("Recursive listing")
     {
-        auto results = JSL::Filesystem::list(sandbox, true);
-        
+        auto results = JSL::IO::Directory::list(sandbox, true);
         // 4 items from root + 2 from subdir = 6
         REQUIRE(results.size() == 6);
     }
@@ -140,32 +141,31 @@ TEST_CASE("File System Utilities: listFiles and Globbing", "[files][io][system]"
 	SECTION("Globbing with wildcards (*.txt)")
     {
         // Non-recursive glob
-        auto txtFiles = JSL::Filesystem::match(sandbox, "*.tXt", false);
+        auto txtFiles = JSL::IO::Directory::match(sandbox, "*.txt", false);
         REQUIRE(txtFiles.size() == 1);
-        REQUIRE(txtFiles[0].filename() == "test1.txt");
+        REQUIRE(txtFiles.contains(sandbox/"test1.txt"));
 
         // Recursive glob
-        // auto q = JSL::Filesystem::ListFiles
-        auto allTxtFiles = JSL::Filesystem::match(sandbox, "*.txt", true);
+        // auto q = JSL::IO::Filesystem::ListFiles
+        auto allTxtFiles = JSL::IO::Directory::match(sandbox, "*.txt", true);
         REQUIRE(allTxtFiles.size() == 2);
     }
 	SECTION("Globbing with single character (?)")
     {
-        auto match = JSL::Filesystem::match(sandbox, "test?.txt", false);
+        auto match = JSL::IO::Directory::match(sandbox, "test?.txt", false);
         REQUIRE(match.size() == 1);
-        REQUIRE(match[0].filename() == "test1.txt");
+        REQUIRE(match.contains(sandbox/"test1.txt"));
     }
 
-    SECTION("Case Insensitivity")
+    SECTION("Case Sensitivity")
     {
-        auto match = JSL::Filesystem::match(sandbox, "readme.*", false);
-        REQUIRE(match.size() == 1);
-        REQUIRE(match[0].filename() == "README.md");
+        auto match = JSL::IO::Directory::match(sandbox, "readme.*", false);
+        REQUIRE(match.size() == 0);
     }
 
     SECTION("Invalid Directory Handling")
     {
-        auto results = JSL::Filesystem::list(sandbox / "non_existent_path", false);
+        auto results = JSL::IO::Directory::list(sandbox / "non_existent_path", false);
         REQUIRE(results.empty());
     }
 
@@ -186,28 +186,28 @@ TEST_CASE("JSL I/O Utilities", "[io]")
     fs::remove_all(sandbox);
     fs::create_directories(sandbox);
 
-    SECTION("initialiseFile and writeStringToFile")
+    SECTION("initialiseFile and writeString")
     {
         fs::path p = sandbox / "string_test.txt";
         
-        JSL::initialiseFile(p);
+        JSL::IO::initialise(p);
         CHECK(fs::exists(p));
         CHECK(fs::file_size(p) == 0);
 
-        JSL::writeStringToFile(p, "Line 1\n");
-        JSL::writeStringToFile(p, "Line 2", std::ios::app);
+        JSL::IO::writeString(p, "Line 1\n");
+        JSL::IO::writeString(p, "Line 2", std::ios::app);
         
         CHECK(readFile(p) == "Line 1\nLine 2");
     }
 
-    SECTION("writeVectorToFile: Variadic and Delimiters")
+    SECTION("writeVector: Variadic and Delimiters")
     {
         fs::path p = sandbox / "vec_test.csv";
         std::vector<int> v1 = {1, 2};
         std::vector<std::string> v2 = {"A", "B"};
         std::vector<double> v3 = {1.1, 2.2};
 
-        JSL::writeVectorToFile(p, ",", v1, v2, v3);
+        JSL::IO::writeRows(p,{.ColumnDelimiter=","}, v1, v2, v3);
 
         // Expected format:
         // 1,A,1.1
@@ -217,14 +217,13 @@ TEST_CASE("JSL I/O Utilities", "[io]")
         CHECK(content.find("2,B,2.2\n") != std::string::npos);
     }
 
-    SECTION("writeMatrixToFile")
+    SECTION("writeMatrix")
     {
         fs::path p = sandbox / "matrix_test.txt";
         std::vector<std::vector<int>> matrix = {{1, 2}, {3, 4}};
 
         // Using custom delimiters
-        JSL::writeMatrixToFile(p, "|", matrix, ";");
-
+        JSL::IO::writeRows(p, {.ColumnDelimiter ="|",.RowDelimiter=";"}, matrix);
         // Expected: 1|2;3|4;
         CHECK(readFile(p) == "1|2;3|4;");
     }
