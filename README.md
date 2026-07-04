@@ -1,7 +1,7 @@
 # JSL
 
-[![GitHub Release](https://img.shields.io/github/release/DrFraserGovil/JSL/all)](https://github.com/DrFraserGovil/rpgtex/releases/latest) 
-[![Documentation](https://img.shields.io/badge/Documentation-blue.svg)](https://raw.githubusercontent.com/DrFraserGovil/JSL/main/docs/documentation.pdf) 
+[![GitHub Release](https://img.shields.io/github/release/DrFraserGovil/JSL/all)](https://github.com/DrFraserGovil/JSL/releases/latest) 
+[![Documentation](https://img.shields.io/badge/Documentation-8A2BE2.svg)](https://raw.githubusercontent.com/DrFraserGovil/JSL/main/docs/documentation.pdf) 
 [![History](https://img.shields.io/badge/History-yellow.svg)](https://github.com/DrFraserGovil/JSL/blob/main/docs/CHANGELOG.md)
 [![Roadmap](https://img.shields.io/badge/Planned_Features-darkgreen.svg)](https://github.com/DrFraserGovil/JSL/blob/main/docs/ROADMAP.md)
 
