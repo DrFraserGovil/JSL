@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 <!-- TODO: migrate the readthedocs.yaml to docs and update the readthedocs config -->
 
+## [3.0.2] - 2026-07-05
+
+### Bugfix
+
+* Fixed an error in the String::Wrap where totally empty input wouldn't be wrapped to a blank extent (it was treated as a poorly-overhanging trailing whitespace, which is erased)
+* Due to the new opinionated editor, this resulted in a complete file change. The actual bugfix is on line 120.
+
 ## [3.0.1] - 2026-07-04 (2)
 
 ### Added 
