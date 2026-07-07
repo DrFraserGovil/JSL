@@ -1,6 +1,7 @@
 #include <JSL/Display/Format.h>
 #include <JSL/Display/Terminal.h>
 #include <JSL/Interface/Help.h>
+#include <JSL/Log.h>
 #include <JSL/Strings/Wrap.h>
 #include <iostream>
 #include <map>
@@ -27,13 +28,13 @@ namespace JSL::Interface::internal
 		return (it != CommonTypes.end()) ? CommonTypes.at(tname) : tname;
 	}
 
-	HelpGroup::HelpGroup(std::string name) : Name(name)
+	HelpGroup::HelpGroup(std::string name, size_t *lwidth, size_t *mwidth) : Name(name), MaxLWidth(lwidth), MaxMWidth(mwidth)
 	{
 		Depth = 0;
 	}
 	HelpGroup &HelpGroup::NestGroup(std::string name)
 	{
-		Nested.emplace_back(name);
+		Nested.emplace_back(name, MaxLWidth, MaxMWidth);
 		auto &out = Nested.back();
 		out.Depth = Depth + 1;
 		return out;
@@ -44,20 +45,19 @@ namespace JSL::Interface::internal
 		auto left = "-" + aliases[0];
 		for (size_t i = 1; i < aliases.size(); ++i)
 		{
-			MaxLWidth = std::max(aliases[i].size(), MaxLWidth);
 			left += ", -" + aliases[i];
 		}
-		auto mid_text = "<" + std::string(type) + ">";
-		mid_text = Display::Colour(80, 155, 185) + std::string(name) + Display::ResetAll() + "\n<" + type + ">";
+		auto mid_text = Display::Colour(80, 155, 185) + std::string(name) + Display::ResetAll() + "\n<" + type + ">";
 
 		std::string right_text(helpmsg);
 		right_text += "\n" + (std::string)Display::Italics() + Display::Colour(50, 50, 50) + "[Default: " + (std::string)defaultValue + "]" + Display::ResetAll();
 
 		Fields.push_back({left, mid_text, right_text});
-		size_t ms = String::trueSize(mid_text);
+		size_t ms = std::max(2 + type.size(), name.size());
 		size_t ls = String::trueSize(left);
-		MaxMWidth = std::max(ms, MaxMWidth);
-		MaxLWidth = std::max(ls, MaxLWidth);
+		*MaxMWidth = std::max(ms, *MaxMWidth);
+		*MaxLWidth = std::max(ls, *MaxLWidth);
+		LOG(WARN) << "Reporting " << *MaxLWidth << " " << *MaxMWidth;
 	}
 
 	void HelpGroup::AddCommands(std::map<std::string, std::string> &cmds)
@@ -66,7 +66,7 @@ namespace JSL::Interface::internal
 		for (auto &[cmd, doc] : cmds)
 		{
 			Commands.push_back({cmd, doc});
-			MaxLWidth = std::max(MaxLWidth, cmd.size());
+			*MaxLWidth = std::max(*MaxLWidth, cmd.size());
 		}
 	}
 
@@ -95,8 +95,8 @@ namespace JSL::Interface::internal
 
 		int width = std::min(120ul, JSL::Display::Terminal().Columns());
 		size_t minbuff = 3;
-		size_t l = std::min(20ul, MaxLWidth + minbuff);
-		size_t m = std::min(20ul, MaxMWidth + minbuff);
+		size_t l = std::min(20ul, *MaxLWidth + minbuff);
+		size_t m = std::min(20ul, *MaxMWidth + minbuff);
 		size_t remainder = std::max(20, (int)(width - l - m));
 		lineWidth = remainder + l + m;
 		if (!meta.CallingName.empty())

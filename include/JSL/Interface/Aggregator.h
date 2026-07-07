@@ -74,8 +74,10 @@ namespace JSL::Interface
 		void Help()
 			requires HasFieldList<Derived>
 		{
+			size_t maxLWidth = 0;
+			size_t maxMWidth = 0;
 			CheckInitialised();
-			internal::HelpGroup help(Name);
+			internal::HelpGroup help(Name, &maxLWidth, &maxMWidth);
 			bool spoof = false;
 			std::string spoofstring = "";
 			HelpData.Commands["help"] = "Activates the help display, then exits (equivalent to -h)";
@@ -87,6 +89,7 @@ namespace JSL::Interface
 			help.AddField(helpconfigdelim);
 			HelpData.CallingName = CapturedName;
 			help.AddCommands(HelpData.Commands);
+
 			Help(help);
 			help.Print(HelpData);
 		}
