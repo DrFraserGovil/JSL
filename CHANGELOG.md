@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- TODO: migrate the readthedocs.yaml to docs and update the readthedocs config -->
+=======
+## [3.0.3] - 2026-07-05
+
+### Bugfix
+
+* Fixed an error where a raw ASCI sequence was inserted regardless of terminal status when a FormatGroup is piped to a string (replaced with a call to ResetALl which does the correct checks)
+
+### Added
+
+* Aggregator help menu now extends the help menu down the heirarchy so all messages are the same width
 
 ## [3.0.2] - 2026-07-05
 

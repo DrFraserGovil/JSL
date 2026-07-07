@@ -51,7 +51,7 @@ namespace JSL::Interface
 			/*!	Initialises the group
 				@param name The Name field of the calling Aggregator
 			*/
-			HelpGroup(std::string name);
+			HelpGroup(std::string name, size_t *lwidth, size_t *mwidth);
 
 			/*!	Creates a child group, storing it within Nested
 				@param name The Name field of the nested Aggregator
@@ -83,18 +83,17 @@ namespace JSL::Interface
 			//! The line-wrap width used for tabular formatting
 			size_t lineWidth;
 
+			//! The name assigned to this settings group
+			std::string Name;
 			//! The max character count in the left hand column
 			//! If < 20, the column is shrunk to this size, so as not to waste space
-			size_t MaxLWidth = 0;
+			size_t *MaxLWidth;
 			//! The max character count in the middle column
 			//! If < 20, the column is shrunk to this size, so as not to waste space
-			size_t MaxMWidth = 0;
+			size_t *MaxMWidth;
 
 			//! Tracks how deeply nested the current group is
 			size_t Depth;
-
-			//! The name assigned to this settings group
-			std::string Name;
 
 			//! A list of groups nested within the associated Aggregator
 			std::vector<HelpGroup> Nested;
