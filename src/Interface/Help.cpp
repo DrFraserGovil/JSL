@@ -57,7 +57,6 @@ namespace JSL::Interface::internal
 		size_t ls = String::trueSize(left);
 		*MaxMWidth = std::max(ms, *MaxMWidth);
 		*MaxLWidth = std::max(ls, *MaxLWidth);
-		LOG(WARN) << "Reporting " << *MaxLWidth << " " << *MaxMWidth;
 	}
 
 	void HelpGroup::AddCommands(std::map<std::string, std::string> &cmds)
