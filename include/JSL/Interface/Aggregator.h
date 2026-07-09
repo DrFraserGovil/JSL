@@ -1,7 +1,9 @@
 #pragma once
 #include "Field.h"
 #include "Help.h"
+#include "JSL/IO/FileWriters.h"
 #include "JSL/Interface/CommandLine.h"
+#include <filesystem>
 #include <string>
 namespace JSL::Interface
 {
@@ -93,6 +95,22 @@ namespace JSL::Interface
 			Help(help);
 			help.Print(HelpData);
 		}
+
+		//! Constructs a config file which can reconstruct the current state of the aggregator
+		void Export(std::filesystem::path target)
+			requires HasFieldList<Derived>
+		{
+			JSL::IO::writeString(target, ExportAsString());
+		}
+
+		//! Creates a string equal to the contents of the equivalent config file
+		//! @returns A string, which if saved to file, could be read in as a config file.
+		std::string ExportAsString()
+		{
+			std::ostringstream os;
+			Export(os);
+			return os.str();
+		}
 		template <class OtherDerived>
 		friend class Aggregator;
 
@@ -137,6 +155,24 @@ namespace JSL::Interface
 				else
 				{
 					map.AddContext(Context(field.Aliases, InferKeyType(field.Value)));
+				}
+			});
+		}
+
+		void Export(std::ostringstream &os)
+		{
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					field.Export(os);
+				}
+				else
+				{
+					os << field.Aliases[0] << " " << JSL::String::makeFrom(field.Value) << "\n";
 				}
 			});
 		}

@@ -3,21 +3,88 @@
 #include <JSL/Interface/Help.h>
 #include <JSL/Log.h>
 #include <JSL/Strings/Wrap.h>
+#include <filesystem>
 #include <iostream>
 #include <map>
 #include <regex>
-#define insert(type) {typeid(type).name(), std::regex_replace(#type, std::regex("std::"), "")}
-inline const std::map<std::string, std::string> CommonTypes = {
-	insert(int),
-	insert(double),
-	insert(std::string),
-	insert(bool),
-	insert(char),
-	insert(std::vector<int>),
-	insert(std::vector<std::string>),
-	insert(std::vector<double>),
-	insert(size_t)};
-#undef insert
+#include <set>
+// #define insert(type) {typeid(type).name(), std::regex_replace(#type, std::regex("std::"), "")}
+// inline const std::map<std::string, std::string> CommonTypes = {
+// 	insert(int),
+// 	insert(double),
+// 	insert(std::string),
+// 	insert(bool),
+// 	insert(char),
+// 	insert(std::vector<int>),
+// 	insert(std::vector<std::string>),
+// 	insert(std::vector<std::filesystem::path>),
+// 	insert(std::set<std::filesystem::path>),
+// 	insert(std::vector<double>),
+// 	insert(size_t)};
+// #undef insert
+
+// Template struct to hold the base string names
+template <typename T>
+struct TypeName;
+
+// Macro to register just the base types (preprocessor stringification)
+#define REGISTER_BASE(type)                                            \
+	template <>                                                        \
+	struct TypeName<type>                                              \
+	{                                                                  \
+		static std::string Get()                                       \
+		{                                                              \
+			return std::regex_replace(#type, std::regex("std::"), ""); \
+		}                                                              \
+	};
+
+REGISTER_BASE(int)
+REGISTER_BASE(double)
+REGISTER_BASE(std::string)
+REGISTER_BASE(bool)
+REGISTER_BASE(char)
+REGISTER_BASE(size_t)
+REGISTER_BASE(std::filesystem::path)
+#undef REGISTER_BASE
+
+// Helper to insert a base type and its container variants into the map
+template <typename T>
+void InsertTypePermutations(std::map<std::string, std::string> &m)
+{
+	std::string base = TypeName<T>::Get();
+	m[typeid(T).name()] = base;
+	m[typeid(std::vector<T>).name()] = "vector<" + base + ">";
+	m[typeid(std::set<T>).name()] = "set<" + base + ">";
+	m[typeid(std::optional<T>).name()] = "optional<" + base + ">";
+}
+// Handles pair<T1, T2>, map<T1, T2>
+template <typename T1, typename T2>
+void InsertDoubleTypes(std::map<std::string, std::string> &m)
+{
+	std::string t1 = TypeName<T1>::Get();
+	std::string t2 = TypeName<T2>::Get();
+	m[typeid(std::pair<T1, T2>).name()] = "pair<" + t1 + ", " + t2 + ">";
+	m[typeid(std::map<T1, T2>).name()] = "map<" + t1 + ", " + t2 + ">";
+}
+
+// Anchors T1, iterates T2 over all Ts
+template <typename T1, typename... Ts>
+void InsertDoubleTypesForOne(std::map<std::string, std::string> &m)
+{
+	(InsertDoubleTypes<T1, Ts>(m), ...);
+}
+// Variadic template that unfolds the base types at startup
+template <typename... Ts>
+std::map<std::string, std::string> BuildCommonTypesMap()
+{
+	std::map<std::string, std::string> m;
+	(InsertTypePermutations<Ts>(m), ...); // fold expression
+	(InsertDoubleTypesForOne<Ts, Ts...>(m), ...);
+	return m;
+}
+
+// now construct the array
+inline const std::map<std::string, std::string> CommonTypes = BuildCommonTypesMap<int, double, std::string, bool, char, size_t, std::filesystem::path>();
 namespace JSL::Interface::internal
 {
 
@@ -25,7 +92,7 @@ namespace JSL::Interface::internal
 	{
 		std::string tname = t.name();
 		auto it = CommonTypes.find(tname);
-		return (it != CommonTypes.end()) ? CommonTypes.at(tname) : tname;
+		return (it != CommonTypes.end()) ? CommonTypes.at(tname) : "<complex type>";
 	}
 
 	HelpGroup::HelpGroup(std::string name, size_t *lwidth, size_t *mwidth) : Name(name), MaxLWidth(lwidth), MaxMWidth(mwidth)
@@ -95,7 +162,7 @@ namespace JSL::Interface::internal
 		int width = std::min(120ul, JSL::Display::Terminal().Columns());
 		size_t minbuff = 3;
 		size_t l = std::min(20ul, *MaxLWidth + minbuff);
-		size_t m = std::min(20ul, *MaxMWidth + minbuff);
+		size_t m = std::min(30ul, *MaxMWidth + minbuff);
 		size_t remainder = std::max(20, (int)(width - l - m));
 		lineWidth = remainder + l + m;
 		if (!meta.CallingName.empty())
