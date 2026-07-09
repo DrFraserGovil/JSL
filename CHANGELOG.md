@@ -5,6 +5,24 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+ 
+## [3.1.0] - 2026-07-09
+
+
+### Added
+
+* The Aggregator class now has an Export method
+
+### Changed
+
+* The Help menu in the interface now adds indentation and visual signal that a section is nested
+* The .readthedocs.yaml file is now hidden away in the docs/ repository
+ 
+### Bugfixes
+
+* Added source implementations of header-defined functions in the VaultReader; now the functions can actually be called!
+* Typos in some Help menu defalut text fixed
+ 
 ## [3.0.3] - 2026-07-05
 
 ### Bugfix
