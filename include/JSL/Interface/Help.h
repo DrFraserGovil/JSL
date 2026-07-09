@@ -22,7 +22,7 @@ namespace JSL::Interface
 		std::string UsageString = " cmd1 cmd2... -flag -key value cmd3\n";
 
 		//! A string which appears (if ASCI active) in greyed out text beneath the UsageString declaration
-		std::string UsageSubstring = "Keys are be indicated by at least one dash.\nFlags are booleans implicitly set to `true'.\nCommands are any space-delimited arguments not assigned to a key.\n";
+		std::string UsageSubstring = "Keys are indicated by at least one dash.\nFlags are booleans implicitly set to `true'.\nCommands are any space-delimited arguments not assigned to a key.\n";
 
 		//! The 'title' of the program, entered in a summary section.
 		std::string ProgramName = "Program Summary";
