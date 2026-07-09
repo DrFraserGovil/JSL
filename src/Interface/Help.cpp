@@ -114,7 +114,12 @@ namespace JSL::Interface::internal
 				}
 			}
 		}
-		TitlePrint(Name, lineWidth);
+		std::string NestedName = Name;
+		if (Depth > 0)
+		{
+			NestedName = std::string(Depth, ' ') + std::string(Depth, '>') + " " + Name;
+		}
+		TitlePrint(NestedName, lineWidth);
 		std::sort(Fields.begin(), Fields.end());
 
 		for (auto f : Fields)

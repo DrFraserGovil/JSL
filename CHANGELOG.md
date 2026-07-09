@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * Added source implementations of header-defined functions in the VaultReader; now the functions can actually be called!
 
+### Changed
+
+* The Help menu in the interface now adds indentation and visual signal that a section is nested
+
 ## [3.0.3] - 2026-07-05
 
 ### Bugfix
