@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- TODO: migrate the readthedocs.yaml to docs and update the readthedocs config -->
+<!-- TODO: Typos & formatting errors in the Interface default Usage substring -->
+<!-- TODO: Add a stringstream input override allowing LOG << ostringstream; which is equivlane to doing .str() to the stream -->
 =======
+## [Unreleased]
+
+### Bugfix
+
+* Added source implementations of header-defined functions in the VaultReader; now the functions can actually be called!
+
 ## [3.0.3] - 2026-07-05
 
 ### Bugfix
