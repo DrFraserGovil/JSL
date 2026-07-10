@@ -3,6 +3,7 @@
 #include "Help.h"
 #include "JSL/IO/FileWriters.h"
 #include "JSL/Interface/CommandLine.h"
+#include "JSL/Interface/Config.h"
 #include <filesystem>
 #include <string>
 namespace JSL::Interface
@@ -48,6 +49,25 @@ namespace JSL::Interface
 			}
 
 			return Commands;
+		}
+
+		/*!	The 'activation function' which reads from the program input and any config files, and hten automatically parses the output into the typed member variables
+		 * @param argc The number of arguments to pass to the command line
+		 * @param argv The argument array
+		 */
+		void Configure(std::filesystem::path file, std::string delim)
+			requires HasFieldList<Derived>
+		{
+			CheckInitialised();
+			auto cnf = Config(file, delim, Map);
+			Parse(cnf);
+		}
+		void Configure(std::vector<std::string> fileLines, std::string delim)
+			requires HasFieldList<Derived>
+		{
+			CheckInitialised();
+			auto cnf = Config(fileLines, delim, Map);
+			Parse(cnf);
 		}
 
 		//! Resets all member variables to their default value
@@ -179,7 +199,7 @@ namespace JSL::Interface
 
 		//! Iterates over the FieldList using the CommandLine estbalished by the root object
 		//! @param cmd A commandline which has already tokenised its input
-		void Parse(ConfigurableCommandLine &cmd)
+		void Parse(ParserBase &cmd)
 			requires HasFieldList<Derived>
 		{
 			static_cast<Derived *>(this)->FieldList([&](auto &&field) {

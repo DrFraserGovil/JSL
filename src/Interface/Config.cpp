@@ -1,5 +1,6 @@
 #include <JSL/Interface/Config.h>
 
+#include "JSL/IO/GetFile.h"
 #include "JSL/Strings/Stitch.h"
 #include "JSL/Strings/Trim.h"
 #include <JSL/IO/ForLineIn.h>
@@ -16,6 +17,11 @@ namespace JSL::Interface
 {
 	namespace fs = std::filesystem;
 
+	Config::Config(std::vector<std::string> contents, std::string_view configDelim, ContextMap &keys) : ParserBase(keys)
+	{
+		Initialise(configDelim);
+		ParseFileLines(contents, "config constructor");
+	}
 	Config::Config(std::filesystem::path path, std::string_view configDelim, ContextMap &keys) : ParserBase(keys)
 	{
 
@@ -43,6 +49,43 @@ namespace JSL::Interface
 		configDelim = delim;
 	}
 
+	void Config::ParseFileLines(std::vector<std::string> &lines, std::string origin)
+	{
+		for (auto line : lines)
+		{
+
+			line = String::trim_view(line, "//"); // trim whitespace and any comments
+			if (!line.empty())
+			{
+				auto sp = String::split_view(line, configDelim);
+				std::string tmp(sp[0]);
+
+				auto [key, type] = Keys.GetCanonical(tmp);
+
+				auto val = JSL::String::stitch(sp, 1, sp.size(), configDelim);
+				if (type == KeyType::Multivalue)
+				{
+					if (val.empty())
+					{
+						UnparsedArguments[key] = "";
+					}
+					else
+					{
+						UnparsedArguments[key] += val;
+					}
+				}
+				else
+				{
+					if (val.empty())
+					{
+						JSL::internal::FatalError("Bad Config", JSL_LOCATION) << "No value given to config key '" << key << "' in " << origin;
+					}
+					UnparsedArguments[key] = val;
+				}
+			}
+		}
+	}
+
 	void Config::ReadConfigFiles()
 	{
 		auto files = JSL::String::split(UnparsedArguments["config"], ",");
@@ -60,37 +103,9 @@ namespace JSL::Interface
 				visitedFiles.insert(fs::canonical(path));
 			}
 
-			IO::forLineIn(path, [&](auto line) {
-				line = String::trim_view(line, "//"); // trim whitespace and any comments
-				if (!line.empty())
-				{
-					auto sp = String::split_view(line, configDelim);
-					std::string tmp(sp[0]);
+			auto lines = JSL::IO::getFileLines(path);
+			ParseFileLines(lines, path.string());
 
-					auto [key, type] = Keys.GetCanonical(tmp);
-
-					auto val = JSL::String::stitch(sp, 1, sp.size(), configDelim);
-					if (type == KeyType::Multivalue)
-					{
-						if (val.empty())
-						{
-							UnparsedArguments[key] = "";
-						}
-						else
-						{
-							UnparsedArguments[key] += val;
-						}
-					}
-					else
-					{
-						if (val.empty())
-						{
-							JSL::internal::FatalError("Bad Config", JSL_LOCATION) << "No value given to config key '" << key << "' in file " << path.string();
-						}
-						UnparsedArguments[key] = val;
-					}
-				}
-			});
 			// now post process any config files that were re-injected
 			// files assume locations given relative to the file they were in
 			if (UnparsedArguments.contains("config-delim"))
