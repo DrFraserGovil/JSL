@@ -1,7 +1,10 @@
 #pragma once
 #include "Field.h"
 #include "Help.h"
+#include "JSL/IO/FileWriters.h"
 #include "JSL/Interface/CommandLine.h"
+#include "JSL/Interface/Config.h"
+#include <filesystem>
 #include <string>
 namespace JSL::Interface
 {
@@ -48,6 +51,25 @@ namespace JSL::Interface
 			return Commands;
 		}
 
+		/*!	The 'activation function' which reads from the program input and any config files, and hten automatically parses the output into the typed member variables
+		 * @param argc The number of arguments to pass to the command line
+		 * @param argv The argument array
+		 */
+		void Configure(std::filesystem::path file, std::string delim)
+			requires HasFieldList<Derived>
+		{
+			CheckInitialised();
+			auto cnf = Config(file, delim, Map);
+			Parse(cnf);
+		}
+		void Configure(std::vector<std::string> fileLines, std::string delim)
+			requires HasFieldList<Derived>
+		{
+			CheckInitialised();
+			auto cnf = Config(fileLines, delim, Map);
+			Parse(cnf);
+		}
+
 		//! Resets all member variables to their default value
 		void Reset()
 			requires HasFieldList<Derived>
@@ -92,6 +114,22 @@ namespace JSL::Interface
 
 			Help(help);
 			help.Print(HelpData);
+		}
+
+		//! Constructs a config file which can reconstruct the current state of the aggregator
+		void Export(std::filesystem::path target)
+			requires HasFieldList<Derived>
+		{
+			JSL::IO::writeString(target, ExportAsString());
+		}
+
+		//! Creates a string equal to the contents of the equivalent config file
+		//! @returns A string, which if saved to file, could be read in as a config file.
+		std::string ExportAsString()
+		{
+			std::ostringstream os;
+			Export(os);
+			return os.str();
 		}
 		template <class OtherDerived>
 		friend class Aggregator;
@@ -141,9 +179,27 @@ namespace JSL::Interface
 			});
 		}
 
+		void Export(std::ostringstream &os)
+		{
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					field.Export(os);
+				}
+				else
+				{
+					os << field.Aliases[0] << " " << JSL::String::makeFrom(field.Value) << "\n";
+				}
+			});
+		}
+
 		//! Iterates over the FieldList using the CommandLine estbalished by the root object
 		//! @param cmd A commandline which has already tokenised its input
-		void Parse(ConfigurableCommandLine &cmd)
+		void Parse(ParserBase &cmd)
 			requires HasFieldList<Derived>
 		{
 			static_cast<Derived *>(this)->FieldList([&](auto &&field) {

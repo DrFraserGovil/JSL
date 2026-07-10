@@ -9,7 +9,7 @@ build:
     python: "3.12"
   jobs:
     pre_build:
-      - doxygen docs/doxy.config   # adjust path to your Doxyfile
+      - cd docs && doxygen doxy.config
 
 sphinx:
   configuration: docs/conf.py

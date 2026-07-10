@@ -21,7 +21,7 @@ namespace JSL::Log::internal
 		{
 			auto p = std::filesystem::path(callingFile).filename();
 			LineSuffix = "|";
-			FirstLineSuffix = "| (" + p.string() + ": " + std::to_string(callingLine) + ") ";
+			FirstLineSuffix = "| " + p.string() + ": " + std::to_string(callingLine);
 		}
 	}
 
@@ -40,24 +40,24 @@ namespace JSL::Log::internal
 		// The `ignore me' commands are a hack to stop a higher level tool chain from thinking these lines were warnings or errors that needed fixing!
 		switch (Level)
 		{
-		case DEBUG:
-			fmt = Config::Global().DebugColour;
-			label = "[DEBUG] ";
-			break;
-		case INFO /*ignoreme*/:
-			fmt = Config::Global().InfoColour;
-			label = "[INFO]  ";
-			break;
-		case WARN /*Ignore me*/:
-			fmt = Config::Global().WarnColour;
-			label = "[WARN]  ";
-			break;
-		case ERROR /*Ignore me*/:
-			fmt = Config::Global().ErrorColour;
-			label = "[ERROR] ";
-			break;
-		default:
-			throw std::runtime_error("Invalid logger argument");
+			case DEBUG:
+				fmt = Config::Global().DebugColour;
+				label = "[DEBUG] ";
+				break;
+			case INFO /*ignoreme*/:
+				fmt = Config::Global().InfoColour;
+				label = "[INFO]  ";
+				break;
+			case WARN /*Ignore me*/:
+				fmt = Config::Global().WarnColour;
+				label = "[WARN]  ";
+				break;
+			case ERROR /*Ignore me*/:
+				fmt = Config::Global().ErrorColour;
+				label = "[ERROR] ";
+				break;
+			default:
+				throw std::runtime_error("Invalid logger argument");
 		}
 		if (Config::Global().ForceClear)
 		{
@@ -83,13 +83,15 @@ namespace JSL::Log::internal
 		{
 			linebreak += std::string(reservedSpace, ' ');
 		}
+		size_t indentLevel = Config::Global().IndentLevel * Config::Global().IndentWidth;
+		std::string indent = (indentLevel == 0) ? "" : std::string(indentLevel, ' ');
 
 		std::vector<std::string_view> manualSplits = String::split_view(Buffer.view(), "\n");
 		std::vector<std::string> message; // have to be strings as the folding inserts spaces
 
 		for (auto line : manualSplits)
 		{
-			auto folded = JSL::String::wrap(line, Config::Global().LineSize - reservedSpace);
+			auto folded = JSL::String::wrap(line, Config::Global().LineSize - reservedSpace - indentLevel);
 			for (auto subline : folded)
 			{
 				message.push_back(subline);
@@ -100,12 +102,12 @@ namespace JSL::Log::internal
 		std::lock_guard<std::mutex> lock(StreamMutex);
 
 		// the first line automatically includes the correct indentation -- the header accounts for that
-		std::cout << BufferPreamble.view() << message[0] << FirstLineSuffix << CurrentFormat;
+		std::cout << BufferPreamble.view() << indent << message[0] << FirstLineSuffix << CurrentFormat;
 
 		// subequent lines need to indent (or not) based on the presence of the header.
 		for (size_t i = 1; i < message.size(); ++i)
 		{
-			std::cout << linebreak << CurrentFormat << message[i] << LineSuffix;
+			std::cout << linebreak << indent << CurrentFormat << message[i] << LineSuffix;
 		}
 
 		std::cout << Display::ResetAll();
