@@ -2,6 +2,7 @@
 #include <cstddef>
 namespace JSL::Log
 {
+	//! TODO: This needs documenting fully
 	class Indent
 	{
 	  public:

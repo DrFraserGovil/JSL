@@ -12,7 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * JSL::Log::Config can now have an Indent setting incremented or decremented, which automatically indents all text by a chosen amount - now you no longer need to add "\t\t\t" to the beginnign of your output streams to get a nice heiararchy!
 * Interface::Config can now be configured either from a file, or directly from a vector of strings (useful in the case where the 'file'is actually an IO::Vault, not a true file on disk.
 * Aggregator can now be configured without needing a command line parse (useful for re-configurations later in the program lifetime)
- 
+
+### Changed
+
+* Added a compiler flag to the KeyType inference engine in Interface; suppresses unused variable warnings
+
 ## [3.1.0] - 2026-07-09
 
 
