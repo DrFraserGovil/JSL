@@ -83,6 +83,10 @@ namespace JSL::Log::internal
 		{
 			linebreak += std::string(reservedSpace, ' ');
 		}
+		if (Config::Global().IndentLevel > 10)
+		{
+			Config::Global().IndentLevel = 10;
+		}
 		size_t indentLevel = Config::Global().IndentLevel * Config::Global().IndentWidth;
 		std::string indent = (indentLevel == 0) ? "" : std::string(indentLevel, ' ');
 

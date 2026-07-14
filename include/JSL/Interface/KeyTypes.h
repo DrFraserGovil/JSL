@@ -46,7 +46,7 @@ namespace JSL::Interface
 	};
 
 	template <typename T>
-	KeyType InferKeyType(T value)
+	KeyType InferKeyType([[maybe_unused]] T value)
 	{
 		return MapTypeToKey<T>::value;
 	}
