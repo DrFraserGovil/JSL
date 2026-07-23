@@ -5,6 +5,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## Changed
+
+* Changed the definition of the TupleLike concept to exclude iterables, resolving a conflict where types std::array were matching both TupleLike and NonStringRange
+
 ## [3.1.1] - 2026-07-14
 
 ### Bugfix

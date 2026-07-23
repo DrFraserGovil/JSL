@@ -1,4 +1,5 @@
 #pragma once
+#include "ranges.h"
 #include <tuple>
 namespace JSL::Concept
 {
@@ -7,5 +8,5 @@ namespace JSL::Concept
 	concept TupleLike = requires(T t) {
 		std::tuple_size<T>::value;
 		std::apply([](auto &&...) {}, t);
-	};
+	} && !Iterable<T>;
 } // namespace JSL::Concept
