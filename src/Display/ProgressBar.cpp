@@ -16,6 +16,8 @@ namespace JSL::Display::Progress
 			}
 			Progress = std::vector<size_t>(Depth, 0);
 			MarkCount = std::vector<size_t>(Depth, 0);
+			Suffixes.resize(Depth, "");
+			Prefixes.resize(Depth, "");
 		}
 
 		void ProgressEngine::Tick()
@@ -55,6 +57,41 @@ namespace JSL::Display::Progress
 				Progress[Depth - 1] = 0;
 				CheckMarks(0);
 			}
+		}
+		void ProgressEngine::SetPrefix(std::string prefix)
+		{
+			SetPrefix(prefix, Depth - 1);
+		}
+		void ProgressEngine::SetPrefix(std::string prefix, size_t idx)
+		{
+			Prefixes[idx] = prefix;
+		}
+		void ProgressEngine::SetPrefix(std::vector<std::string> &prefixes)
+		{
+			if (prefixes.size() != Depth)
+			{
+				JSL::internal::FatalError("Prefix size mismatch", JSL_LOCATION) << "Tried to assign " << prefixes.size() << " prefixes, but needed " << Depth;
+			}
+			Prefixes = prefixes;
+		}
+
+		void ProgressEngine::SetSuffix(std::string suffix)
+		{
+			SetSuffix(suffix, Depth - 1);
+		}
+		void ProgressEngine::SetSuffix(std::string suffix, size_t idx)
+		{
+			Suffixes[idx] = suffix;
+		}
+
+		void ProgressEngine::SetSuffix(std::vector<std::string> &suffixes)
+		{
+
+			if (suffixes.size() != Depth)
+			{
+				JSL::internal::FatalError("Prefix size mismatch", JSL_LOCATION) << "Tried to assign " << suffixes.size() << " prefixes, but needed " << Depth;
+			}
+			Suffixes = suffixes;
 		}
 
 		void ProgressEngine::CheckMarks(int idx)
@@ -103,7 +140,7 @@ namespace JSL::Display::Progress
 		hasRendered = true;
 		for (size_t i = 0; i < Depth; ++i)
 		{
-			buffer << "[" << std::string(MarkCount[i], Symbol) << std::string(RenderLength - MarkCount[i], ' ') << "] " << "\n";
+			buffer << Prefixes[i] << "[" << std::string(MarkCount[i], Symbol) << std::string(RenderLength - MarkCount[i], ' ') << "] " << Suffixes[i] << "\n";
 		}
 		std::cout << buffer.str() << std::flush;
 	}
