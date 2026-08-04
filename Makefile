@@ -13,7 +13,7 @@ all:
 # 		@make graph
 	@mkdir -p $(BUILD_DIR)
 	@cmake -S . -B $(BUILD_DIR)
-	@make -C $(BUILD_DIR) --no-print-directory
+	@cmake --build $(BUILD_DIR) $(EXTRA_BUILD_FLAGS)
 
 doc:
 	@cd docs && make html
@@ -30,4 +30,4 @@ purge:
 
 clean:
 	@make purge
-	@make all --no-print-directory
+	@make all 
