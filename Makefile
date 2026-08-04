@@ -3,7 +3,7 @@ BUILD_DIR = .build
 ifeq ($(OS),Windows_NT)
   EXTRA_BUILD_FLAGS :=
 else
-  EXTRA_BUILD_FLAGS := --no-print-directory
+  EXTRA_BUILD_FLAGS := -- --no-print-directory
 endif
  
 .PHONY: all test clean resource
