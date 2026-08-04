@@ -3,7 +3,7 @@ BUILD_DIR = .build
 ifeq ($(OS),Windows_NT)
   EXTRA_BUILD_FLAGS :=
 else
-  EXTRA_BUILD_FLAGS := -- --no-print-directory
+  EXTRA_BUILD_FLAGS := --no-print-directory
 endif
  
 .PHONY: all test clean resource
@@ -13,7 +13,7 @@ all:
 # 		@make graph
 	@mkdir -p $(BUILD_DIR)
 	@cmake -S . -B $(BUILD_DIR)
-	@make -C $(BUILD_DIR) $(EXTRA_BUILD_FLAGS)
+	@make -C $(BUILD_DIR) --no-print-directory
 
 doc:
 	@cd docs && make html
