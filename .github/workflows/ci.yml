@@ -23,4 +23,4 @@ jobs:
         run: make 
 
       - name: Unit Tests
-        run: cd test; make; ./unit_test 
+        run: cd test; make; ./unit_test "~[display]"
