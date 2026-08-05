@@ -5,11 +5,19 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## 3.2.0
 
+**Apologies: Due to some parallel development with another project, we skipped robustly documenting changes. This changelog indicates all changes made since 3.1.1. Versions 3.1.2 -> 3.1.4 should be considered vestigial**
+
+## New
+
+* **Cross platform integration testing** A new github action ensures that the JSL compiles and meets all of our unit tests on Ubuntu, macOS and Windows machines. A number of changes to header files / implicit casting operations were made to fulfill this cross-platform promise.
+* **ProgressBar Prefixes** Progress bars can now have text as either prefixes or suffixes to give additional context
+ 
 ## Changed
 
 * Changed the definition of the TupleLike concept to exclude iterables, resolving a conflict where types std::array were matching both TupleLike and NonStringRange
+* Changed the definition of the NonStringRange concept to exclude std::filesystem, which met the criteria under the MSVC implementation
 
 ## [3.1.1] - 2026-07-14
 
