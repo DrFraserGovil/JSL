@@ -1,6 +1,7 @@
 #pragma once
 #include <JSL/Concepts/strings.h>
 #include <concepts>
+#include <filesystem>
 #include <string_view>
 #include <vector>
 namespace JSL::Concept
@@ -36,6 +37,7 @@ namespace JSL::Concept
 	//! @details This is useful because strings ofen try to convert themselves into their underlying vectorish type at inopportune moments.
 	template <typename T>
 	concept NonStringRange = Iterable<T> &&
-							 !StringLike<T>;
+							 !StringLike<T> &&
+							 !std::same_as<std::remove_cvref_t<T>, std::filesystem::path>;
 
 } // namespace JSL::Concept
