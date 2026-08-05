@@ -8,20 +8,6 @@
 #include <map>
 #include <regex>
 #include <set>
-// #define insert(type) {typeid(type).name(), std::regex_replace(#type, std::regex("std::"), "")}
-// inline const std::map<std::string, std::string> CommonTypes = {
-// 	insert(int),
-// 	insert(double),
-// 	insert(std::string),
-// 	insert(bool),
-// 	insert(char),
-// 	insert(std::vector<int>),
-// 	insert(std::vector<std::string>),
-// 	insert(std::vector<std::filesystem::path>),
-// 	insert(std::set<std::filesystem::path>),
-// 	insert(std::vector<double>),
-// 	insert(size_t)};
-// #undef insert
 
 // Template struct to hold the base string names
 template <typename T>
@@ -159,7 +145,7 @@ namespace JSL::Interface::internal
 	void HelpGroup::Print(HelpMetaData meta)
 	{
 
-		int width = std::min(120ul, JSL::Display::Terminal().Columns());
+		int width = std::min((size_t)120, JSL::Display::Terminal().Columns());
 		size_t minbuff = 3;
 		size_t l = std::min(20ul, *MaxLWidth + minbuff);
 		size_t m = std::min(30ul, *MaxMWidth + minbuff);
