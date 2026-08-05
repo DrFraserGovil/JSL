@@ -117,10 +117,10 @@ namespace JSL::Interface
 				auto tmp = JSL::String::split_view(UnparsedArguments["config"], ",");
 				for (auto file : tmp)
 				{
-					auto canp = fs::canonical(path.parent_path() / file);
+					fs::path canp = fs::canonical(path.parent_path() / file);
 					if (!visitedFiles.contains(canp))
 					{
-						files.push_back(canp);
+						files.push_back(canp.string());
 					}
 				}
 				UnparsedArguments.erase("config");
