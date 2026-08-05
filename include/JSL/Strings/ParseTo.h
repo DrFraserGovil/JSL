@@ -1,6 +1,7 @@
 #pragma once
 #include "SerialiserHelpers.h"
 #include <JSL/Concepts.h>
+#include <algorithm>
 #include <charconv>
 namespace JSL::String
 {

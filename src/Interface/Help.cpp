@@ -147,8 +147,8 @@ namespace JSL::Interface::internal
 
 		int width = std::min((size_t)120, JSL::Display::Terminal().Columns());
 		size_t minbuff = 3;
-		size_t l = std::min(20ul, *MaxLWidth + minbuff);
-		size_t m = std::min(30ul, *MaxMWidth + minbuff);
+		size_t l = std::min((size_t)20, *MaxLWidth + minbuff);
+		size_t m = std::min((size_t)30, *MaxMWidth + minbuff);
 		size_t remainder = std::max(20, (int)(width - l - m));
 		lineWidth = remainder + l + m;
 		if (!meta.CallingName.empty())
