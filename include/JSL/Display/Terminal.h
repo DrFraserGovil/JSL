@@ -69,11 +69,14 @@ namespace JSL::Display
 		size_t Rows();
 		//! The number of horizontal characters per line in the current terminal
 		size_t Columns();
-		//! The size of a `tab block' in the current terminal
+
+		//! The size of a `tab block' used by the current application
 		size_t TabSize();
-		//! @brief Computes the size of a tabstop and caches it for future use
-		//! @details Functions by inserting a tab, requesting a Device Status Report to find the current column, then deleting the line. This makes it somewhat fragile and expensive; so it is recommended that this is not queried often (it runs on startup).
-		void CacheTabs();
+
+		//! @brief Allows the user to specify the tabsize that should be used for any parsed string
+		//! @important This does *not* alter the size of raw tabs sent to std::cout; only those processed by LOG and other JSL string manipulators
+		//! @param newtab The character width of a tabstop.
+		void SetTabSize(size_t newtab);
 
 		//! Uses ioctl to query the current dimensions of the terminal, and cache them for future retrieval
 		void CacheSize();
@@ -97,11 +100,11 @@ namespace JSL::Display
 		//! Private constructor for singleton uniqueness
 		GlobalEnvironment();
 		//! Internal row cache
-		size_t _Rows;
+		size_t RowCount;
 		//! Internal column cache
-		size_t _Columns;
-		//! Internal tab cache
-		size_t _Tabsize;
+		size_t ColumnCount;
+		//! Storage for the user-set tabstop size
+		size_t UserTabs = 4;
 
 		//! ansi state
 		bool AnsiActive;
