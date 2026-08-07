@@ -33,11 +33,9 @@ namespace JSL::Log::internal
 	class Core
 	{
 	  public:
-		/*!
-			@brief Constructor for the Core, initialises an entry in the output log. Should never be called outside \ref LOG.
+		/*! @brief Constructor for the Core, initialises an entry in the output log. Should never be called outside \ref LOG.
 
 			@details Note that the Level is used purely for formatting purposes: a Core object *always* outputs a stream. The `log suppression checks' are performed by \ref LOG. The three 'calling' parameters are used to locate the origin of a LOG; they are provided by compile-time flags, but are only used by ERROR and WARN output.
-
 			@param level The LogLevel that the associated entry will be on. Determines formatting.
 			@param callingLine This is the ƒile line on which the \ref LOG call appears
 			@param callingFunction The function in which the LOG call occurred. Provides a pseudo-stack-unwinding.
@@ -45,16 +43,13 @@ namespace JSL::Log::internal
 		*/
 		Core(LogLevel level, int callingLine, const std::string &callingFunction, std::string callingFile);
 
-		/*!
-			@brief Custom destructor which performs the actual output to the terminal
+		/*! @brief Custom destructor which performs the actual output to the terminal
 
 			@details Under normal usage, the LOG(LEVEL) call will cause the temporary object to almost instantly go out of scope. Therefore this destructor will usually be called as soon as the last element is streamed into the object, however there may sometimes be a delay.
 		*/
 		~Core();
 
-		/*!
-			@brief The streaming operator, allowing data to be piped into the stream just as if it were std::cout
-
+		/*! @brief The streaming operator, allowing data to be piped into the stream just as if it were std::cout
 			@param msg The data to be added to the stream. Must be convertible to a stringstream object
 			@returns A reference to the object, allowing for 'chaining' the stream; stream << a << b << c
 		*/
@@ -65,13 +60,15 @@ namespace JSL::Log::internal
 			if (!StreamActive) // lazy opening of the steam
 			{
 				StreamActive = true;
-				Header();
+				CreatePreamble();
 				Buffer << Insert;
 			}
 			Buffer << msg;
 			return *this;
 		}
 
+		//! @brief Overload for datatypes which do not have an implicit streaming operator
+		//! @brief We try passing them through JSL::String::makeFrom first (otherwise an error is thrown)
 		template <class T>
 			requires(!Display::FormatType<T> && !requires(T t) { std::cout << t; })
 		Core &operator<<(const T &msg)
@@ -79,9 +76,9 @@ namespace JSL::Log::internal
 			this->operator<<(JSL::String::makeFrom(msg));
 			return *this;
 		}
-		/*!
-			Overloads the stream operator for JSL::Format objects, allowing peristent formatting across linebreaks and in the pregenerated headers.
-		*/
+
+		//! @brief Overloads the stream operator for JSL::Format objects
+		//! @details Allows for peristent formatting across linebreaks and in the pregenerated headers.
 		template <Display::FormatType Q>
 		Core &operator<<(Q format)
 		{
@@ -131,14 +128,14 @@ namespace JSL::Log::internal
 		std::string FirstLineSuffix = "";
 
 		//! If Config.UseHeaders is true, this function generates headers (such as [ERROR]) for the log entry.
-		void Header();
+		void CreatePreamble();
 
 		/*!
 			@brief The point at which the Buffer is added to the output stream
 
 			@details Called by the destructor if the Buffer contains data. This function tidies up the buffer and formats it for output, before adding it to the output stream.
 		*/
-		void EndMessage();
+		void FlushMessage();
 
 		//! Used to prevent log-interleaving, and make the LOG (mostly) thread-safe. Must be declared static to make it shared across different instances.
 		inline static std::mutex StreamMutex;

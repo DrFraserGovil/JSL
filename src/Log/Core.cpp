@@ -29,11 +29,11 @@ namespace JSL::Log::internal
 	{
 		if (StreamActive) // only add the output to stream if "<<" was actually called
 		{
-			EndMessage();
+			FlushMessage();
 		}
 	}
 
-	void Core::Header()
+	void Core::CreatePreamble()
 	{
 		std::string_view label;
 		Display::Format fmt;
@@ -74,20 +74,22 @@ namespace JSL::Log::internal
 		}
 	}
 
-	void Core::EndMessage()
+	void Core::FlushMessage()
 	{
 		// now format the data so that linebreaks are suitably indented
 		std::string linebreak = "\n";
-		const int reservedSpace = 8;
+		const int reservedSpace = 8; // width of the header labels
 		if (Config::Global().ShowHeaders)
 		{
 			linebreak += std::string(reservedSpace, ' ');
 		}
-		if (Config::Global().IndentLevel > 10)
+
+		if (Config::Global().IndentLevel > Config::Global().MaxIndent)
 		{
-			Config::Global().IndentLevel = 10;
+			Config::Global().IndentLevel = Config::Global().MaxIndent;
 		}
 		size_t indentLevel = Config::Global().IndentLevel * Config::Global().IndentWidth;
+
 		std::string indent = (indentLevel == 0) ? "" : std::string(indentLevel, ' ');
 
 		std::vector<std::string_view> manualSplits = String::split_view(Buffer.view(), "\n");
