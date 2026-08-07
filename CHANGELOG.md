@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changed
 
-* 
+* Rewrote the internal String::wrap logic 
+* Removed the fragile tabsize-detection from GlobalConfiguration, and replaced it with an assertion on the tabsize to use
+* Updated unit tests
 
 
 ## [3.2.0] 2026-08-06
