@@ -148,7 +148,7 @@ namespace JSL::String
 		}
 	}
 
-	std::vector<std::string> wrap2(std::string_view str, size_t width)
+	std::vector<std::string> wrap(std::string_view str, size_t width)
 	{
 		std::vector<std::string_view> lines;
 
@@ -159,7 +159,7 @@ namespace JSL::String
 			auto manuallines = split_view(str, "\n");
 			for (auto line : manuallines)
 			{
-				JSL::Vector::append(out, wrap2(line, width));
+				JSL::Vector::append(out, wrap(line, width));
 			}
 			return out;
 		}
@@ -238,144 +238,6 @@ namespace JSL::String
 			}
 		}
 		return output;
-	}
-	std::vector<std::string> wrap(std::string_view str, size_t width)
-	{
-		std::vector<std::string_view> lines;
-
-		if (str.find("\n") != std::string_view::npos)
-		{
-			std::vector<std::string> out;
-			auto manuallines = split_view(str, "\n");
-			for (auto line : manuallines)
-			{
-				JSL::Vector::append(out, wrap(line, width));
-			}
-			return out;
-		}
-		size_t currentLineStart = 0;
-		auto tabSize = JSL::Display::Terminal().TabSize();
-		size_t chunkStart = 0;
-		size_t currentSize = 0;
-
-		const char notWS = 'a'; // guaranteed to not be a whitespace character!
-		char prevWhitespace = notWS;
-
-		for (size_t i = 0; i <= str.size(); ++i)
-		{
-			char c = ' '; // we pretend there's an extra space on the end...
-			if (i < str.size())
-			{
-				c = str[i];
-			}
-			if (std::isspace(c))
-			{
-				if (prevWhitespace != c) // not repeated whitespace, or new whitespace
-				{
-					if (i > 0)
-					{
-						// terminate the old block
-						auto lineToWord = str.substr(currentLineStart, i - currentLineStart);
-						size_t wordSize = trueSize(lineToWord, tabSize) - currentSize;
-						// have to do this way round as characters like tabs have varying sizes depending on what came before!
-						if (currentSize + wordSize > width)
-						{
-							if (chunkStart > currentLineStart)
-							{
-								lines.push_back(str.substr(currentLineStart, chunkStart - currentLineStart));
-								currentLineStart = chunkStart;
-								// Recompute size from column 0 instead of reusing wordSize
-								auto word = str.substr(chunkStart, i - chunkStart);
-								currentSize = trueSize(word, tabSize);
-							}
-							else
-							{
-								lines.push_back(str.substr(currentLineStart, i - currentLineStart));
-								currentLineStart = i;
-								currentSize = 0;
-							}
-						}
-						else
-						{
-							currentSize += wordSize;
-						}
-					}
-					chunkStart = i;
-				}
-				prevWhitespace = c;
-			}
-			else
-			{
-				if (prevWhitespace != notWS)
-				{
-					chunkStart = i;
-					prevWhitespace = notWS;
-				}
-			}
-		}
-		auto finalLine = str.substr(currentLineStart);
-		if (trueSize(finalLine, tabSize) > 0 || lines.size() == 0)
-		{
-			lines.push_back(finalLine);
-		}
-
-		// unspool the tabs directly and ensure everything is padded
-		std::vector<std::string> out;
-		for (auto &line : lines)
-		{
-			std::string outline;
-			outline.reserve(std::max(line.size(), trueSize(line)));
-			size_t col = 0;
-			bool inEscape = false;
-			for (size_t idx = 0; idx < line.size(); ++idx)
-			{
-				if (!inEscape && line[idx] == '\t')
-				{
-					int w = tabSize - col % tabSize;
-					for (int space = 0; space < w; ++space)
-					{
-						outline.push_back(' ');
-						col += 1;
-					}
-				}
-				else
-				{
-					char c = line[idx];
-					outline.push_back(c);
-					if (c == '\x1b')
-					{
-						inEscape = true;
-					}
-					else
-					{
-						if (inEscape)
-						{
-							if (isANSITerminator(c))
-							{
-								inEscape = false;
-							}
-						}
-						else
-						{
-							col += 1;
-						}
-					}
-				}
-			}
-			// then we have to backtrack any excess spaces
-			auto ts = trueSize(outline);
-			if (ts < width)
-			{
-				outline += std::string(width - ts, ' ');
-				ts += 1;
-			}
-			while (ts > width && outline.back() == ' ')
-			{
-				outline.resize(outline.size() - 1);
-			}
-			out.push_back(outline);
-		}
-		return out;
 	}
 
 	std::string wrapToString(std::string_view str, size_t width, std::string_view delim)
