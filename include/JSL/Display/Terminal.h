@@ -3,6 +3,9 @@
 #include <cstdint>
 #include <string>
 
+// TODO:: Rewrite the Logger so that it manually parses tabstops (and enforces its own width)
+// TODO: Remove the tab-calculation parts from the Terminal object
+
 namespace JSL::Display
 {
 	//!@brief A basic wrapper to make TerminalCommands look more fancy than simple strings, and to remind users that the result of treating them as strings is non-trivial (i.e. the length of these strings does not equate to their length on screen!)
