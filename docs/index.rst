@@ -66,10 +66,9 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
 
    * - :ref:`Log.h <log>`
      - * :ref:`Log/Config.h <log-config>`
+       * :ref:`Log/Indent.h <log-indent>`
      - A logging and terminal output module
-         
-
-          
+              
    * - :ref:`String.h <strings>`
      - * :ref:`Strings/Cases.h <stringcase>`
        * :ref:`Strings/MakeFrom.h <makestring>`

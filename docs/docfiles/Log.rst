@@ -10,11 +10,12 @@ The Logging submodule allows the developer to output text to the output stream w
 Inside the Logger
 ===================
 
-.. toctree::
-	log/levels
-	log/config
-	log/core
-	:maxdepth: 1
+.. toctree:: 
+    log/levels
+    log/config
+    log/core 
+    log/indent 
+    :maxdepth: 1
 
 
 

@@ -5,7 +5,14 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 3.2.0
+## [Unreleased]
+
+## Changed
+
+* 
+
+
+## [3.2.0] 2026-08-06
 
 **Apologies: Due to some parallel development with another project, we skipped robustly documenting changes. This changelog indicates all changes made since 3.1.1. Versions 3.1.2 -> 3.1.4 should be considered vestigial**
 
