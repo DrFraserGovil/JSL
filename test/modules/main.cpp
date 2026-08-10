@@ -5,9 +5,9 @@
 #include "vectors.h"
 //// #include "log.h"
 #include "archive.h"
-#include "async.h"
 #include "files.h"
 #include "parse.h"
+#include "pool.h"
 #include "system.h"
 #include "time.h"
 // no actual main function; catch2 constructs that automagically

@@ -1,5 +1,5 @@
 #pragma once
 
-#include "argSpoofer.h"
 #include "MockFile.h"
+#include "argSpoofer.h"
 #include "coutCatch.h"
