@@ -129,17 +129,17 @@ namespace JSL::Interface
 
 				switch (type)
 				{
-				case KeyType::Flag:
-					FlagCheck(key, vals);
-					break;
-				case KeyType::Value:
-					ValueCheck(key, vals);
-					break;
-				case KeyType::Multivalue:
-					MultiCheck(key, vals);
-					break;
-				case KeyType::String:
-					StringCheck(key, vals);
+					case KeyType::Flag:
+						FlagCheck(key, vals);
+						break;
+					case KeyType::Value:
+						ValueCheck(key, vals);
+						break;
+					case KeyType::Multivalue:
+						MultiCheck(key, vals);
+						break;
+					case KeyType::String:
+						StringCheck(key, vals);
 				}
 				vals.clear(); // clear this in the case of clustering, we don't reinject multiple times
 			}
@@ -180,7 +180,7 @@ namespace JSL::Interface
 		{
 			if (Keys.Initialised)
 			{
-				JSL::internal::FatalError("Missing argument", JSL_LOCATION) << "The key '" << KeyBuffer << "' requires an argument: none provided";
+				JSL::internal::LibraryError("Missing argument", JSL_LOCATION) << "The key '" << KeyBuffer << "' requires an argument: none provided";
 			}
 			else
 			{

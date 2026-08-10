@@ -13,15 +13,15 @@ namespace JSL::String
 		{
 			if (result.ec == std::errc() && (result.ptr != sv.data() + sv.size()))
 			{
-				FatalError("Could not complete conversion", JSL_LOCATION) << "Partial conversion of `" << sv << "` to type " << typeName << " unconverted characters were: " << std::string_view(result.ptr, sv.data() + sv.size() - result.ptr);
+				LibraryError("Could not complete conversion", JSL_LOCATION) << "Partial conversion of `" << sv << "` to type " << typeName << " unconverted characters were: " << std::string_view(result.ptr, sv.data() + sv.size() - result.ptr);
 			}
 			else if (result.ec == std::errc::invalid_argument)
 			{
-				FatalError("Could not complete conversion", JSL_LOCATION) << typeName << "-Error: Invalid argument for conversion: ('" << sv << "') to type " << typeName << "\n";
+				LibraryError("Could not complete conversion", JSL_LOCATION) << typeName << "-Error: Invalid argument for conversion: ('" << sv << "') to type " << typeName << "\n";
 			}
 			else if (result.ec == std::errc::result_out_of_range)
 			{
-				FatalError("Could not complete conversion", JSL_LOCATION) << "Error: Result out of range for conversion: '" << sv << "` to type " << typeName << "\n";
+				LibraryError("Could not complete conversion", JSL_LOCATION) << "Error: Result out of range for conversion: '" << sv << "` to type " << typeName << "\n";
 			}
 		}
 
@@ -29,15 +29,15 @@ namespace JSL::String
 		{
 			if (sv.empty())
 			{
-				FatalError("Could not complete conversion", JSL_LOCATION) << "Cannot convert an empty string to to type " << typeName;
+				LibraryError("Could not complete conversion", JSL_LOCATION) << "Cannot convert an empty string to to type " << typeName;
 			}
 			if (sv == "__bool_tag__" && (typeName != typeid(bool).name() && typeName != "bool"))
 			{
-				FatalError("Could not complete conversion", JSL_LOCATION) << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type '" << typeName << "' " << typeid(bool).name();
+				LibraryError("Could not complete conversion", JSL_LOCATION) << "The string `__bool_tag__` is reserved for boolean conversion, and cannot be converted to type '" << typeName << "' " << typeid(bool).name();
 			}
 			if (sv == JSL_NULL_STRING && !isOptional)
 			{
-				FatalError("Could not complete conversion", JSL_LOCATION) << "String string `__none__` is reserved for std::optional types, and cannot be converted to type " << typeName;
+				LibraryError("Could not complete conversion", JSL_LOCATION) << "String string `__none__` is reserved for std::optional types, and cannot be converted to type " << typeName;
 			}
 		}
 
@@ -71,7 +71,7 @@ namespace JSL::String
 				}
 			}
 
-			JSL::internal::FatalError("Mismatched braces", JSL_LOCATION) << "Could not find " << ender << " character associated with the opener at position " << idx << " in " << sv;
+			JSL::internal::LibraryError("Mismatched braces", JSL_LOCATION) << "Could not find " << ender << " character associated with the opener at position " << idx << " in " << sv;
 			return idx;
 		}
 
@@ -147,7 +147,7 @@ namespace JSL::String
 		internal::processInput(sv, "char", true);
 		if (sv.length() != 1)
 		{
-			JSL::internal::FatalError("Cannot complete string-char conversion", JSL_LOCATION) << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
+			JSL::internal::LibraryError("Cannot complete string-char conversion", JSL_LOCATION) << "Cannot convert string_view '" << sv << "' to char: Expected a single character.";
 		}
 		return sv[0];
 	}
@@ -164,7 +164,7 @@ namespace JSL::String
 		{
 			return false;
 		}
-		JSL::internal::FatalError("Cannot complete string-boolean conversion", JSL_LOCATION) << "Cannot convert string " << sv << " to boolean";
+		JSL::internal::LibraryError("Cannot complete string-boolean conversion", JSL_LOCATION) << "Cannot convert string " << sv << " to boolean";
 		return false; // dead code, but suppresses compiler warning
 	}
 

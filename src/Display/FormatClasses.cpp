@@ -29,15 +29,15 @@ namespace JSL::Display
 
 		switch (kind)
 		{
-		case Foreground:
-			write_str("\033[38;2;", 7);
-			break;
-		case Background:
-			write_str("\033[48;2;", 7);
-			break;
-		default:
-			JSL::internal::FatalError("Cannot assign a colour to TextStyle object", JSL_LOCATION);
-			break;
+			case Foreground:
+				write_str("\033[38;2;", 7);
+				break;
+			case Background:
+				write_str("\033[48;2;", 7);
+				break;
+			default:
+				JSL::internal::LibraryError("Cannot assign a colour to TextStyle object", JSL_LOCATION);
+				break;
 		}
 
 		ptr = std::to_chars(ptr, ptr + 3, r).ptr;
@@ -85,16 +85,16 @@ namespace JSL::Display
 	{
 		switch (cmd.type)
 		{
-		case Element::Foreground:
-			Foreground = cmd;
-			break;
-		case Element::Background:
-			Background = cmd;
-			break;
-		default:
+			case Element::Foreground:
+				Foreground = cmd;
+				break;
+			case Element::Background:
+				Background = cmd;
+				break;
+			default:
 
-			AddBuffer(cmd);
-			break;
+				AddBuffer(cmd);
+				break;
 		}
 	}
 

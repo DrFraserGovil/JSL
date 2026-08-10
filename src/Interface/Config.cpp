@@ -53,7 +53,7 @@ namespace JSL::Interface
 			fs::path path(files[idx]);
 			if (!fs::exists(path))
 			{
-				JSL::internal::FatalError("Bad Config File", JSL_LOCATION) << "Cannot find the config file: " << path;
+				JSL::internal::LibraryError("Bad Config File", JSL_LOCATION) << "Cannot find the config file: " << path;
 			}
 			else
 			{
@@ -85,7 +85,7 @@ namespace JSL::Interface
 					{
 						if (val.empty())
 						{
-							JSL::internal::FatalError("Bad Config", JSL_LOCATION) << "No value given to config key '" << key << "' in file " << path.string();
+							JSL::internal::LibraryError("Bad Config", JSL_LOCATION) << "No value given to config key '" << key << "' in file " << path.string();
 						}
 						UnparsedArguments[key] = val;
 					}
@@ -95,7 +95,7 @@ namespace JSL::Interface
 			// files assume locations given relative to the file they were in
 			if (UnparsedArguments.contains("config-delim"))
 			{
-				JSL::internal::FatalError("Bad Configure", JSL_LOCATION) << "The config file " << path << " attempted to redefine config delimiter: this is not allowed";
+				JSL::internal::LibraryError("Bad Configure", JSL_LOCATION) << "The config file " << path << " attempted to redefine config delimiter: this is not allowed";
 			}
 			if (UnparsedArguments.contains("config"))
 			{

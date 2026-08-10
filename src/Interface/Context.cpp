@@ -37,17 +37,17 @@ namespace JSL::Interface
 			auto hasSpace = (name.find(" ") != name.npos);
 			if (name.empty() || hasSpace)
 			{
-				JSL::internal::FatalError("Bad Alias", JSL_LOCATION) << "The key '" << rawname << "' is an invalid parser ID";
+				JSL::internal::LibraryError("Bad Alias", JSL_LOCATION) << "The key '" << rawname << "' is an invalid parser ID";
 			}
 
 			if (ReservedAliases.contains(name))
 			{
-				JSL::internal::FatalError("Reserved Alias", JSL_LOCATION) << "The key " << rawname << " is reserved for the underlying context mechanisms";
+				JSL::internal::LibraryError("Reserved Alias", JSL_LOCATION) << "The key " << rawname << " is reserved for the underlying context mechanisms";
 			}
 
 			if (AliasMap.contains(name))
 			{
-				JSL::internal::FatalError("Duplicate Alias", JSL_LOCATION) << "The key '" << rawname << "' is already in use";
+				JSL::internal::LibraryError("Duplicate Alias", JSL_LOCATION) << "The key '" << rawname << "' is already in use";
 			}
 			else
 			{
@@ -118,7 +118,7 @@ namespace JSL::Interface
 		}
 		else
 		{
-			JSL::internal::FatalError("Bad Key", JSL_LOCATION) << "No parameter called `" << key << "' exists";
+			JSL::internal::LibraryError("Bad Key", JSL_LOCATION) << "No parameter called `" << key << "' exists";
 			return -1; // dead code but stops clangd from complaining
 		}
 	}
@@ -141,7 +141,7 @@ namespace JSL::Interface
 			}
 			else
 			{
-				JSL::internal::FatalError("Bad Key", JSL_LOCATION) << "No parameter called `" << key << "' exists";
+				JSL::internal::LibraryError("Bad Key", JSL_LOCATION) << "No parameter called `" << key << "' exists";
 			}
 		}
 		return out;
@@ -151,14 +151,14 @@ namespace JSL::Interface
 	{
 		if (Aliases.empty())
 		{
-			JSL::internal::FatalError("Bad Alias Assignment", JSL_LOCATION) << "Cannot create context map with no names";
+			JSL::internal::LibraryError("Bad Alias Assignment", JSL_LOCATION) << "Cannot create context map with no names";
 		}
 	}
 	Context::Context(std::vector<std::string> aliases, KeyType type) : ParseType(type), Aliases(aliases)
 	{
 		if (Aliases.empty())
 		{
-			JSL::internal::FatalError("Bad Alias Assignment", JSL_LOCATION) << "Cannot create context map with no names";
+			JSL::internal::LibraryError("Bad Alias Assignment", JSL_LOCATION) << "Cannot create context map with no names";
 		}
 	}
 } // namespace JSL::Interface

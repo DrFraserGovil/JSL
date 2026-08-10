@@ -148,7 +148,7 @@ namespace JSL::Async
 			}
 
 			default: {
-				JSL::internal::FatalError("Unknown policy", JSL_LOCATION) << "Unknown loop distribution policy";
+				JSL::internal::LibraryError("Unknown policy", JSL_LOCATION) << "Unknown loop distribution policy";
 			}
 		}
 	}
