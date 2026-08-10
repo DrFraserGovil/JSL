@@ -26,8 +26,11 @@ namespace JSL::Async
 		{
 			LOG(WARN) << "Pool destroyed with " << PendingTasks << " tasks still pending.\n Call Synchronise before pool goes out of scope to prevent this issue";
 		}
-		WorkersRunning = false; // atomic so no lock needed
+		{
 
+			std::lock_guard<std::mutex> lock(Queue);
+			WorkersRunning = false;
+		}
 		TaskReady.notify_all();
 
 		for (auto &w : Workers)
@@ -37,6 +40,7 @@ namespace JSL::Async
 				w.join();
 			}
 		}
+		// LOG(INFO) << "Complete";
 	}
 
 	void Pool::Synchronise()

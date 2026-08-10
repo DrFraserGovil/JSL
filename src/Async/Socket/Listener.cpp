@@ -165,8 +165,8 @@ namespace JSL::Async::Socket
 			}
 			if (ready < 0)
 			{
-				if (errno == EINTR) continue; // interrupted, just retry with the same deadline
-				JSL::internal::LibraryError("Bad connection", JSL_LOCATION) << "select() failed while waiting to accept a connection";
+				if (errno == EINTR) continue;					// interrupted, just retry with the same deadline
+				return {INVALID_SOCKET_VAL, ReadStatus::Error}; // genuine error state
 			}
 
 			socket_t fd = accept(FileDescriptor, nullptr, nullptr);
@@ -189,6 +189,11 @@ namespace JSL::Async::Socket
 		if (messageLengthStatus != ReadStatus::Success)
 		{
 			return {messageLengthStatus, ""};
+		}
+
+		if (len > MaxPayload)
+		{
+			return {ReadStatus::MessageTooLong, ""};
 		}
 
 		// now we know the length, we can read in the message
@@ -251,6 +256,10 @@ namespace JSL::Async::Socket
 		CLOSE(FileDescriptor);
 		fs::remove(SocketPath);
 		FileDescriptor = INVALID_SOCKET_VAL;
+	}
+	void Listener::SetMaximumPayload(size_t size)
+	{
+		MaxPayload = size;
 	}
 
 	Listener::~Listener()

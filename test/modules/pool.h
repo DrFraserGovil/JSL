@@ -290,7 +290,6 @@ TEST_CASE("LoopReturn works identically under both distribution policies", "[Poo
 {
 	Pool pool(4);
 	constexpr size_t N = 300;
-
 	auto seq = pool.LoopReturn<int>(N, [](size_t i) { return static_cast<int>(i * i); }, DistributionPolicy::Sequential);
 	auto bal = pool.LoopReturn<int>(N, [](size_t i) { return static_cast<int>(i * i); }, DistributionPolicy::Balanced);
 

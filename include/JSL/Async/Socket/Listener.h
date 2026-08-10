@@ -9,6 +9,7 @@ namespace JSL::Async::Socket
 		Success,
 		TimedOut,
 		ConnectionClosed,
+		MessageTooLong,
 		Error
 	};
 
@@ -31,7 +32,10 @@ namespace JSL::Async::Socket
 		MessageResult Read(std::chrono::milliseconds timeout = std::chrono::milliseconds(50));
 		void Close();
 
+		void SetMaximumPayload(size_t size);
+
 	  private:
+		size_t MaxPayload = 4096;
 		void QuerySocket(bool forceAcquire, std::chrono::milliseconds gracePeriod);
 		bool IsSocketClaimed(bool deleteStale = true);
 		void BindSocket();

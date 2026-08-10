@@ -103,7 +103,7 @@ TEST_CASE("Broadcaster error handling", "[socket][broadcaster]")
 	SECTION("Fails gracefully when listener does not exist")
 	{
 		Broadcaster broadcaster("non_existent_socket.sock");
-		REQUIRE_FALSE(broadcaster.Transmit("lost message"));
+		REQUIRE_THROWS(broadcaster.Transmit("lost message"));
 	}
 }
 
@@ -140,5 +140,24 @@ TEST_CASE("Listener hostile takeover", "[socket][takeover]")
 
 		REQUIRE_NOTHROW(Listener(socketName, true, std::chrono::milliseconds(100)));
 		receiver.join();
+	}
+}
+
+TEST_CASE("Listener rejects payloads that are too long", "[socket][listener]")
+{
+	const std::string socketName = "test_takeover.sock";
+	auto listener1 = std::make_unique<Listener>(socketName, true);
+	size_t maxSize = 100;
+	listener1->SetMaximumPayload(maxSize);
+	SECTION("Throws an error")
+	{
+		std::string bigMessage(maxSize + 1, 'a');
+		std::string smallMessage(maxSize - 1, 'b');
+		Broadcaster B(socketName);
+
+		B.Transmit(bigMessage);
+		REQUIRE(listener1->Read().Status == ReadStatus::MessageTooLong);
+		B.Transmit(smallMessage);
+		REQUIRE(listener1->Read().Status == ReadStatus::Success);
 	}
 }
