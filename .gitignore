@@ -8,6 +8,7 @@ docs/dox
 *.DS_Store
 makefile
 
+old/
 #Windows guff
 *.vs
 *x64*
