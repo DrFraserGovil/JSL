@@ -1,3 +1,4 @@
+#include "JSL/Async/Socket/Broadcaster.h"
 #include <JSL/Async/Socket/Listener.h>
 #include <JSL/Async/Socket/Transmit.h>
 #include <JSL/Log.h>
@@ -38,10 +39,10 @@ namespace JSL::Async::Socket
 		}
 		auto deadline = std::chrono::steady_clock::now() + timeout;
 
-		socket_t clientFd = AcceptIncoming(deadline);
-		if (clientFd == INVALID_SOCKET_VAL)
+		auto [clientFd, status] = AcceptIncoming(deadline);
+		if (status != ReadStatus::Success)
 		{
-			return {ReadStatus::TimedOut, ""};
+			return {status, ""};
 		}
 
 		MessageResult result = ReadStream(clientFd, deadline);
@@ -67,7 +68,11 @@ namespace JSL::Async::Socket
 		// if we are greedy, then begin the takeover process
 		LOG(DEBUG) << "Attempting a hostile takeover of the other active process";
 
-		Transmit(Identifier, "exit");
+		bool messageSent = Transmit(Identifier, "exit");
+		if (!messageSent)
+		{
+			JSL::internal::LibraryError("Socket corrupted", JSL_LOCATION) << "A process is occupying " << SocketPath.string() << " but is blocking incoming messages";
+		}
 		std::this_thread::sleep_for(gracePeriod);
 		bool stillClaimed = IsSocketClaimed();
 		if (stillClaimed)
@@ -137,14 +142,14 @@ namespace JSL::Async::Socket
 		return t;
 	}
 
-	socket_t Listener::AcceptIncoming(std::chrono::steady_clock::time_point deadline)
+	std::pair<socket_t, ReadStatus> Listener::AcceptIncoming(std::chrono::steady_clock::time_point deadline)
 	{
 		while (true)
 		{
 			auto remaining = deadline - std::chrono::steady_clock::now();
 			if (remaining <= std::chrono::steady_clock::duration::zero())
 			{
-				return INVALID_SOCKET_VAL; // timed out
+				return {INVALID_SOCKET_VAL, ReadStatus::TimedOut}; // timed out
 			}
 
 			fd_set readSet;
@@ -156,7 +161,7 @@ namespace JSL::Async::Socket
 
 			if (ready == 0)
 			{
-				return INVALID_SOCKET_VAL; // timed out
+				return {INVALID_SOCKET_VAL, ReadStatus::TimedOut}; // timed out
 			}
 			if (ready < 0)
 			{
@@ -169,31 +174,38 @@ namespace JSL::Async::Socket
 			{
 				if (errno == EINTR || errno == EAGAIN || errno == EWOULDBLOCK) continue;
 
-				JSL::internal::LibraryError("Bad connection", JSL_LOCATION) << "accept() failed after select() reported a pending connection";
+				return {INVALID_SOCKET_VAL, ReadStatus::Error};
 			}
-			return fd;
+			return {fd, ReadStatus::Success};
 		}
 	}
+
 	MessageResult Listener::ReadStream(socket_t fd, std::chrono::steady_clock::time_point deadline)
 	{
 
 		// first must read the length of the message -- so read sizeof(uint32_t) bytes from the stream, which we set by convention to be the length of the next incoming message
 		uint32_t len = 0;
-		if (!ExtractFromStream(fd, reinterpret_cast<char *>(&len), sizeof(len), deadline))
+		auto messageLengthStatus = ExtractFromStream(fd, reinterpret_cast<char *>(&len), sizeof(len), deadline);
+		if (messageLengthStatus != ReadStatus::Success)
 		{
-			return {ReadStatus::ConnectionClosed, ""};
+			return {messageLengthStatus, ""};
 		}
 
 		// now we know the length, we can read in the message
 		std::string msg(len, '\0');
-		if (len > 0 && !ExtractFromStream(fd, msg.data(), len, deadline))
+		if (len > 0)
 		{
-			return {ReadStatus::ConnectionClosed, ""};
+			auto fullMsgStatus = ExtractFromStream(fd, msg.data(), len, deadline);
+			if (fullMsgStatus != ReadStatus::Success)
+			{
+				return {fullMsgStatus, ""};
+			}
 		}
 
 		return {ReadStatus::Success, std::move(msg)};
 	}
-	bool Listener::ExtractFromStream(socket_t fd, char *dest, size_t len, std::chrono::steady_clock::time_point deadline)
+
+	ReadStatus Listener::ExtractFromStream(socket_t fd, char *dest, size_t len, std::chrono::steady_clock::time_point deadline)
 	{
 		size_t received = 0;
 		while (received < len)
@@ -201,7 +213,7 @@ namespace JSL::Async::Socket
 			auto remaining = deadline - std::chrono::steady_clock::now();
 			if (remaining <= std::chrono::steady_clock::duration::zero())
 			{
-				return false; // timed out mid-message
+				return ReadStatus::TimedOut; // timed out mid-message
 			}
 
 			fd_set readSet;
@@ -210,27 +222,27 @@ namespace JSL::Async::Socket
 			timeval tv = ToTimeval(remaining);
 
 			int ready = select(static_cast<int>(fd) + 1, &readSet, nullptr, nullptr, &tv);
-			if (ready == 0) return false; // timed out
+			if (ready == 0) return ReadStatus::TimedOut; // timed out
 			if (ready < 0)
 			{
 				if (errno == EINTR) continue;
 
-				JSL::internal::LibraryError("Bad connection", JSL_LOCATION) << "select() failed while reading from a connection";
+				return ReadStatus::Error;
 			}
 
 			auto n = recv(fd, dest + received, len - received, 0);
 			if (n == 0)
 			{
-				return false; // peer closed mid-message: treat as ConnectionClosed at the caller
+				return ReadStatus::ConnectionClosed; // peer closed mid-message: treat as ConnectionClosed at the caller
 			}
 			if (n < 0)
 			{
 				if (errno == EINTR || errno == EAGAIN || errno == EWOULDBLOCK) continue;
-				JSL::internal::LibraryError("Bad connection", JSL_LOCATION) << "recv() failed unexpectedly despite select() reporting success";
+				return ReadStatus::Error;
 			}
 			received += static_cast<size_t>(n);
 		}
-		return true;
+		return ReadStatus::Success;
 	}
 
 	void Listener::Close()

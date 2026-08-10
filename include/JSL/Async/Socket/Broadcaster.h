@@ -13,7 +13,7 @@ namespace JSL::Async::Socket
 		~Broadcaster();
 
 		void SetTarget(std::string_view socketName);
-		bool Transmit(const std::string &message);
+		bool Transmit(std::string_view message);
 
 	  private:
 		// Rule of five deletion

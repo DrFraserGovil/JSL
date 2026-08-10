@@ -24,7 +24,7 @@ namespace JSL::Async::Socket
 		MakeAddress(socketName);
 	}
 
-	bool Broadcaster::Transmit(const std::string &message)
+	bool Broadcaster::Transmit(std::string_view message)
 	{
 		if (Identifier.empty())
 		{
@@ -47,6 +47,7 @@ namespace JSL::Async::Socket
 		if (send(fd, reinterpret_cast<const char *>(&len), sizeof(len), 0) != sizeof(len))
 		{
 			CLOSE(fd);
+
 			return false;
 		}
 

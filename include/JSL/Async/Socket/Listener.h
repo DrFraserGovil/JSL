@@ -36,9 +36,9 @@ namespace JSL::Async::Socket
 		void QuerySocket(bool forceAcquire, std::chrono::milliseconds gracePeriod);
 		bool IsSocketClaimed(bool deleteStale = true);
 		void BindSocket();
-		socket_t AcceptIncoming(std::chrono::steady_clock::time_point deadline);
+		std::pair<socket_t, ReadStatus> AcceptIncoming(std::chrono::steady_clock::time_point deadline);
 		MessageResult ReadStream(socket_t fd, std::chrono::steady_clock::time_point deadline);
-		bool ExtractFromStream(socket_t fd, char *dest, size_t len, std::chrono::steady_clock::time_point deadline);
+		ReadStatus ExtractFromStream(socket_t fd, char *dest, size_t len, std::chrono::steady_clock::time_point deadline);
 
 		// Rule of five deletion
 		Listener(const Listener &) = delete;
