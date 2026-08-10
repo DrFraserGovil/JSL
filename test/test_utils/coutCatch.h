@@ -1,26 +1,24 @@
 #pragma once
-#include <string>
 #include <functional>
-#include <sstream>
 #include <iostream>
-
+#include <sstream>
+#include <string>
 
 // Helper function to capture stdout
 std::string capture_stdout(std::function<void()> func)
 {
-    std::stringstream ss;
-    // Save the original buffer
-    std::streambuf* old_buf = std::cerr.rdbuf();
-    // Redirect cout to the stringstream buffer
-    std::cerr.rdbuf(ss.rdbuf());
-    // Call the function that produces output
-    func();
-    // Restore the original buffer
-    std::cerr.rdbuf(old_buf);
-    // Return the captured string
-    return ss.str();
-}
+	std::stringstream ss;
+	std::streambuf *old_buf = std::cout.rdbuf();
 
+	struct RdbufGuard
+	{
+		std::ostream &stream;
+		std::streambuf *original;
+		~RdbufGuard() { stream.rdbuf(original); }
+	} guard{std::cout, old_buf};
 
-
-
+	std::cout.rdbuf(ss.rdbuf());
+	func();
+	std::cout.flush();
+	return ss.str();
+} // guard's destructor restores rdbuf here, even if func() threw

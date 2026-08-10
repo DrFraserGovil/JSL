@@ -40,24 +40,24 @@ namespace JSL::Log::internal
 		// The `ignore me' commands are a hack to stop a higher level tool chain from thinking these lines were warnings or errors that needed fixing!
 		switch (Level)
 		{
-		case DEBUG:
-			fmt = Config::Global().DebugColour;
-			label = "[DEBUG] ";
-			break;
-		case INFO /*ignoreme*/:
-			fmt = Config::Global().InfoColour;
-			label = "[INFO]  ";
-			break;
-		case WARN /*Ignore me*/:
-			fmt = Config::Global().WarnColour;
-			label = "[WARN]  ";
-			break;
-		case ERROR /*Ignore me*/:
-			fmt = Config::Global().ErrorColour;
-			label = "[ERROR] ";
-			break;
-		default:
-			throw std::runtime_error("Invalid logger argument");
+			case DEBUG:
+				fmt = Config::Global().DebugColour;
+				label = "[DEBUG] ";
+				break;
+			case INFO /*ignoreme*/:
+				fmt = Config::Global().InfoColour;
+				label = "[INFO]  ";
+				break;
+			case WARN /*Ignore me*/:
+				fmt = Config::Global().WarnColour;
+				label = "[WARN]  ";
+				break;
+			case ERROR /*Ignore me*/:
+				fmt = Config::Global().ErrorColour;
+				label = "[ERROR] ";
+				break;
+			default:
+				throw std::runtime_error("Invalid logger argument");
 		}
 		if (Config::Global().ForceClear)
 		{

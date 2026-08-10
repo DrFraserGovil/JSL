@@ -5,6 +5,7 @@
 #include "vectors.h"
 //// #include "log.h"
 #include "archive.h"
+#include "async.h"
 #include "files.h"
 #include "parse.h"
 #include "system.h"

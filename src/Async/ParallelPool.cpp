@@ -104,7 +104,6 @@ namespace JSL::Async
 			}
 			catch (...)
 			{
-				LOG(ERROR) << "Exception thrown during parallel execution";
 				std::unique_lock lock(Sync);
 				if (!ErrorMessage) { ErrorMessage = std::current_exception(); } // capture the first msg, not the last
 				--PendingTasks;
@@ -114,13 +113,13 @@ namespace JSL::Async
 		}
 	}
 
-	void Pool::LoopTask(size_t nLoop, std::function<void(size_t)> func, Pool::DistributionPolicy policy)
+	void Pool::LoopTask(size_t nLoop, std::function<void(size_t)> func, DistributionPolicy policy)
 	{
 		size_t N = Workers.size();
 
 		switch (policy)
 		{
-			case Pool::DistributionPolicy::Sequential: {
+			case DistributionPolicy::Sequential: {
 				for (size_t w = 0; w < N; ++w)
 				{
 					AsyncTask([nLoop, func, N, w]() {
@@ -132,7 +131,7 @@ namespace JSL::Async
 				}
 				break;
 			}
-			case Pool::DistributionPolicy::Balanced: {
+			case DistributionPolicy::Balanced: {
 				auto next = std::make_shared<std::atomic<size_t>>(0);
 
 				for (size_t w = 0; w < N; ++w)
