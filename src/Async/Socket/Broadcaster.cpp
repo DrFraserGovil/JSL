@@ -30,7 +30,9 @@ namespace JSL::Async::Socket
 		{
 			JSL::internal::LibraryError("Invalid target", JSL_LOCATION) << "Cannot transmit without a target socket name";
 		}
-		if (!fs::exists(SocketPath))
+
+		std::error_code ec;
+		if (fs::status(SocketPath, ec).type() == fs::file_type::not_found)
 		{
 			JSL::internal::LibraryError("No listener", JSL_LOCATION) << "There is no socketfile established at " << SocketPath.string() << ". Create an Async::Listener";
 		}
