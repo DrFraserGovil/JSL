@@ -4,24 +4,20 @@
 namespace JSL::Async::Socket::internal
 {
 
+#ifdef WINMODE
 	class WinsockContext
 	{
 	  public:
 		static void CheckWinsockActive()
 		{
-#ifdef WINMODE
 
 			static WinsockContext instance; // constructed exactly once, thread-safe per C++11 static-local rules
 			(void)instance;
-#else
-			return; // nothing to do for POSIX - is a no-op
-#endif
 		}
 
 	  private:
 		WinsockContext()
 		{
-#ifdef WINMODE
 			WSADATA data;
 			int result = WSAStartup(MAKEWORD(2, 2), &data);
 			if (result != 0)
@@ -29,26 +25,21 @@ namespace JSL::Async::Socket::internal
 				JSL::internal::LibraryError("Failed to initialise Winsock", JSL_LOCATION)
 					<< "WSAStartup failed with error " << result;
 			}
-#else
-			return; // nothing to do for POSIX - is a no-op
-#endif
 		}
 		~WinsockContext()
 		{
-#ifdef WINMODE
 			WSACleanup();
-#else
-			return; // nothing to do for POSIX - is a no-op
-#endif
 		}
 		WinsockContext(const WinsockContext &) = delete;
 		WinsockContext &operator=(const WinsockContext &) = delete;
 	};
-
 	SocketBase::SocketBase()
 	{
 		WinsockContext::CheckWinsockActive();
 	}
+#else
+	SocketBase::SocketBase() {}
+#endif
 
 	const std::vector<char> allowedSymbols = {'-',
 		'_',
