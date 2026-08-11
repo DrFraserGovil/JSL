@@ -32,7 +32,7 @@ namespace JSL::Async::Socket
 		}
 
 		std::error_code ec;
-		if (fs::status(SocketPath, ec).type() == fs::file_type::not_found)
+		if (fs::symlink_status(SocketPath, ec).type() == fs::file_type::not_found)
 		{
 			JSL::internal::LibraryError("No listener", JSL_LOCATION) << "There is no socketfile established at " << SocketPath.string() << ". Create an Async::Listener";
 		}
