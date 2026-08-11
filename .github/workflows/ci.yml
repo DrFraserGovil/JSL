@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false   # let all platforms run even if one fails
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: make 
+
+      - name: Unit Tests (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: cd test && make && ./unit_test "~[display]"
+
+      - name: Unit Tests (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          cd test
+          make
+          .\Debug\unit_test.exe "~[display]"

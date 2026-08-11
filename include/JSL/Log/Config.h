@@ -36,7 +36,7 @@ namespace JSL::Log
 			@details This is called once at startup, and then can either be called manually, or set to re-detect with every log call.
 			@param debugReserve The number of characters to reserve at the right margin for debugging information about the logs
 		*/
-		void AlignSize(size_t debugReserve = 30);
+		void AlignSize(size_t debugReserve = 20);
 
 		/// @name Configuration Variables
 		/// @{
@@ -56,6 +56,10 @@ namespace JSL::Log
 		bool ForceClear = false;
 
 		/// @}
+		//! @brief This value can be changed to automatically increment increment or decrement logs
+		size_t IndentLevel = 0;
+		//! @brief The number of spaces assigned per indent level
+		size_t IndentWidth = 4;
 
 		//! If Formatting active, the default colour assigned to LOG(ERROR) messages
 		Display::Format ErrorColour = JSL::Display::Red();

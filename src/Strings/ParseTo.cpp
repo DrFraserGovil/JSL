@@ -170,7 +170,7 @@ namespace JSL::String
 
 #if defined(__clang__) && defined(__APPLE__)
 	template <>
-	double inline ParseTo(std::string_view sv)
+	double ParseTo(std::string_view sv)
 	{
 		internal::processInput(sv, "double", true);
 		try

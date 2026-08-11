@@ -26,9 +26,7 @@ Overview
     Time.h <docfiles/time>
     Vector.h <docfiles/vectors>
 
-
 The entire library can be included with ``#include <JSL.h>`` (provided it is on your include-path), or for a more IWYU-style approach, the individual modules and submodules can be included by ``#include <JSL/[module]>``.
-.. TODO: The async package needs to be fully documented
  
 .. list-table::
    :header-rows: 1
@@ -39,9 +37,6 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
      - Submodules
      - Description
 
-   * - :ref:`Async.h <async>`
-     - (not documented) 
-     - An asynchronous and parallel computing module
 
    * - :ref:`Concepts.h <concepts>`
      -  

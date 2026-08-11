@@ -1,9 +1,9 @@
 .. _linspace:
 
-Linear-Spaced Vector
+Vector Range
 ==========================
 
 
-.. jsl:: JSL::Vector::linspace
-	:file: Vectors/Linspace.h
+.. jsl:: JSL::Vector::range
+	:file: Vectors/Range.h
 	:command: doxygenfunction

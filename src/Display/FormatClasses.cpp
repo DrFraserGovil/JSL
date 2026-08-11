@@ -127,7 +127,7 @@ namespace JSL::Display
 
 	std::ostream &operator<<(std::ostream &os, const FormatGroup &c)
 	{
-		os << "\033[0m";
+		os << ResetAll();
 		for (auto b : c.StyleBuffer)
 		{
 			os << b;

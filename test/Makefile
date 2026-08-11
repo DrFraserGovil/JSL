@@ -7,13 +7,13 @@ BUILD_DIR = .build
 all:
 	@mkdir -p $(BUILD_DIR)
 	@cmake -S . -B $(BUILD_DIR) -DENABLE_TESTS=ON
-	@cmake --build $(BUILD_DIR) --target unit_test -- --no-print-directory
+	@cmake --build $(BUILD_DIR) --target unit_test 
 
 # 2. Run your tests
 test:
 	@mkdir -p $(BUILD_DIR)
 	@cmake -S . -B $(BUILD_DIR) -DENABLE_TESTS=ON
-	@cmake --build $(BUILD_DIR) --target unit_test -- --no-print-directory
+	@cmake --build $(BUILD_DIR) --target unit_test 
 	@./unit_test
 
 # 3. Clean up only the build artifacts

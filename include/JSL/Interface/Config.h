@@ -14,6 +14,12 @@ namespace JSL::Interface
 	{
 
 	  public:
+		/*! Initialises a Config file reading from a series of strings
+			@param contents A series of strings to be treated as if they were lines of an input config file
+			@param configDelim The separator between the [key] and [data] on each line of the file
+			@param keys A KeyMapper object containing the context and alias for the [key]s found in the data file
+		*/
+		Config(std::vector<std::string> contents, std::string_view configDelim, ContextMap &keys);
 		/*! Initialises a Config file reading from the target file
 			@param path The file to read as a config file
 			@param configDelim The separator between the [key] and [data] on each line of the file
@@ -53,5 +59,10 @@ namespace JSL::Interface
 
 		//! Performs the actual file reading and parsing of the config files
 		void ReadConfigFiles();
+
+		//! Loop over the contents of the strings
+		//! @param lines The lines of input (either from direct function input, or read from a file)
+		//! @param origin The origin of the lines, for error diagnostics
+		void ParseFileLines(std::vector<std::string> &lines, std::string origin);
 	};
 } // namespace JSL::Interface

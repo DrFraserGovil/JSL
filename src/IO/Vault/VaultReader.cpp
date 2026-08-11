@@ -119,8 +119,17 @@ namespace JSL::IO
 			Initialised = false;
 		}
 	}
+	std::string VaultReader::AsText(const std::string &file)
+	{
+		return operator[](file).AsText();
+	}
+	std::vector<std::string> VaultReader::AsLines(const std::string &file)
+	{
+		return operator[](file).AsLines();
+	}
 
-	VaultReader::~VaultReader() noexcept { Close(); }
+	VaultReader::~VaultReader() noexcept
+	{ Close(); }
 
 	///! @brief Reads in BLOCK_SIZE characters from the file, returning true if the expected number of bytes were red
 	///! @param buffer The storage location for the read bytes

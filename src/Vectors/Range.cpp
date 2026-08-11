@@ -1,6 +1,6 @@
-#include <JSL/Vectors/Linspace.h>
+#include <JSL/Vectors/Range.h>
 #include <JSL/internal/error.h>
-std::vector<double> JSL::Vector::linspace(double begin, double end, size_t resolution)
+void JSL::Vector::internal::verifyRange(double begin, double end, size_t resolution)
 {
 	if (resolution < 2)
 	{
@@ -10,13 +10,4 @@ std::vector<double> JSL::Vector::linspace(double begin, double end, size_t resol
 	{
 		JSL::internal::LibraryError("Bad linspace", JSL_LOCATION) << "A linspace must have endpoints which are separated by more than a machine-epsilon";
 	}
-	double delta = (end - begin) / (resolution - 1);
-	std::vector<double> out(resolution);
-
-	for (size_t i = 0; i < resolution; ++i)
-	{
-		out[i] = delta * i + begin;
-	}
-	out.back() = end; // ensure the end is exactly included
-	return out;
 }

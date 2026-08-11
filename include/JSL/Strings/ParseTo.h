@@ -1,6 +1,7 @@
 #pragma once
 #include "SerialiserHelpers.h"
 #include <JSL/Concepts.h>
+#include <algorithm>
 #include <charconv>
 namespace JSL::String
 {
@@ -167,8 +168,7 @@ namespace JSL::String
 		}
 
 		std::transform(tokens.begin(), tokens.end(), std::inserter(out, out.end()),
-			[&](const auto &token)
-			{
+			[&](const auto &token) {
 				if constexpr (JSL::Concept::NonStringRange<InnerT> || JSL::Concept::TupleLike<InnerT>)
 				{
 					return JSL::String::ParseTo<InnerT>(token, delimiter);

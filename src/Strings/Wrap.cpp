@@ -44,7 +44,6 @@ namespace JSL::String
 		}
 		return size;
 	}
-
 	std::vector<std::string> wrap(std::string_view str, size_t width)
 	{
 		std::vector<std::string_view> lines;
@@ -59,7 +58,6 @@ namespace JSL::String
 			}
 			return out;
 		}
-
 		size_t currentLineStart = 0;
 
 		size_t chunkStart = 0;
@@ -119,7 +117,7 @@ namespace JSL::String
 			}
 		}
 		auto finalLine = str.substr(currentLineStart);
-		if (trueSize(finalLine) > 0)
+		if (trueSize(finalLine) > 0 || lines.size() == 0)
 		{
 			lines.push_back(finalLine);
 		}
