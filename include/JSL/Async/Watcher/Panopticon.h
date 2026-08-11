@@ -1,8 +1,9 @@
 #pragma once
-#include "InputWatcher.h"
+#include "../Watcher.h"
 #include <atomic>
 #include <condition_variable>
 #include <deque>
+#include <map>
 #include <optional>
 namespace JSL::Async::Watcher
 {
@@ -30,6 +31,7 @@ namespace JSL::Async::Watcher
 	  public:
 		Panopticon();
 		void SetInputCallback(callback fcn, std::optional<std::string> exitString = std::nullopt);
+		void SetSocketCallback(std::string socketID, callback fcn, bool forceAcquire = false);
 		void Start();
 		void Stop();
 
@@ -39,7 +41,10 @@ namespace JSL::Async::Watcher
 		std::condition_variable AwaitingInstruction;
 		Watcher::Input Input{};
 		std::deque<Instruction> Instructions = {};
-		callback cinCallback;
 		std::atomic<bool> IsRunning;
+
+		callback cinCallback;
+		std::map<std::string, std::unique_ptr<Watcher::Socket>> Socket{};
+		std::map<std::string, callback> socketCallback;
 	};
 }; // namespace JSL::Async::Watcher

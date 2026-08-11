@@ -28,6 +28,22 @@ namespace JSL::Async::Watcher
 			AwaitingInstruction.notify_one();
 		});
 	}
+	void Panopticon::SetSocketCallback(std::string socketID, callback fcn, bool forceAcquire)
+	{
+
+		if (IsRunning)
+		{
+			JSL::internal::LibraryError("In-flight mutation", JSL_LOCATION) << "Cannot modify the cin-callback of a watcher whilst it is running";
+		}
+		Socket[socketID] = std::make_unique<Watcher::Socket>(socketID, [this, socketID = socketID](std::string line) {
+				{
+				std::unique_lock lock(Queue);
+				Instructions.push_back({Instruction::Type::SOCKET, socketID, std::move(line)}); 
+				} 
+				AwaitingInstruction.notify_one(); }, forceAcquire);
+		socketCallback[socketID] = std::move(fcn);
+	}
+
 	void Panopticon::Start()
 	{
 		if (IsRunning)
@@ -38,6 +54,13 @@ namespace JSL::Async::Watcher
 		if (Input.Initialised)
 		{
 			Input.Start();
+		}
+		for (auto &[_, s] : Socket)
+		{
+			if (s->Initialised)
+			{
+				s->Start();
+			}
 		}
 
 		IsRunning = true;
@@ -63,6 +86,9 @@ namespace JSL::Async::Watcher
 						break;
 					case Instruction::Type::CIN:
 						cinCallback(msg);
+						break;
+					case Instruction::Type::SOCKET:
+						socketCallback[id](msg);
 						break;
 					default:
 						LOG(ERROR) << "Not yet handled!";
