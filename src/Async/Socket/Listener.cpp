@@ -83,7 +83,8 @@ namespace JSL::Async::Socket
 
 	bool Listener::IsSocketClaimed(bool deleteStale)
 	{
-		if (!fs::exists(SocketPath))
+		std::error_code ec;
+		if (fs::status(SocketPath, ec).type() == fs::file_type::not_found)
 		{
 			return false;
 		}
