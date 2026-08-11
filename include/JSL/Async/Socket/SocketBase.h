@@ -1,5 +1,6 @@
 #pragma once
 #include "CrossPlatformHeaders.h"
+#include <JSL/internal/error.h>
 #include <filesystem>
 namespace JSL::Async::Socket::internal
 {
