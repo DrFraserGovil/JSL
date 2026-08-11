@@ -8,6 +8,7 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <afunix.h>
+#pragma comment(lib, "Ws2_32.lib")
 // clang-format on
 
 // Windows uses SOCKET (unsigned long long) instead of int for descriptors
