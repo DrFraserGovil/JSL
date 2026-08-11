@@ -5,11 +5,11 @@ namespace fs = std::filesystem;
 
 namespace JSL::Async::Socket
 {
-	Broadcaster::Broadcaster()
+	Broadcaster::Broadcaster() : internal::SocketBase()
 	{
 	}
 
-	Broadcaster::Broadcaster(std::string_view socketName)
+	Broadcaster::Broadcaster(std::string_view socketName) : internal::SocketBase()
 	{
 		SetTarget(socketName);
 	}
