@@ -17,8 +17,10 @@ namespace JSL::Async::Watcher
 	  public:
 		using callback = std::function<void(std::string)>;
 
+		Input();
 		explicit Input(callback fcn);
 
+		void Initialise(callback fcn);
 		~Input();
 
 		void Start();
@@ -26,6 +28,8 @@ namespace JSL::Async::Watcher
 
 		Input(const Input &) = delete;
 		Input &operator=(const Input &) = delete;
+
+		friend class Panopticon;
 
 	  private:
 		void GatherLines(const char *data, size_t len);
@@ -36,7 +40,7 @@ namespace JSL::Async::Watcher
 #else
 		int ShutdownPipe[2]{-1, -1};
 #endif
-
+		bool Initialised = false;
 		callback Callback;
 		std::atomic<bool> Running{false};
 		std::thread WorkerThread;

@@ -17,8 +17,18 @@
 #endif
 namespace JSL::Async::Watcher
 {
-	Input::Input(callback fcn) : Callback(std::move(fcn))
+	Input::Input()
 	{
+		Initialised = false;
+	}
+	Input::Input(callback fcn)
+	{
+		Initialise(fcn);
+	}
+
+	void Input::Initialise(callback fcn)
+	{
+		Callback = fcn;
 #ifndef WINMODE
 		if (::pipe(ShutdownPipe) == 0) // opens a new pipe, and saves the values into ShutdownPipe
 		{
@@ -30,10 +40,12 @@ namespace JSL::Async::Watcher
 			JSL::internal::LibraryError("Invalid pipe", JSL_LOCATION) << "Could not create a pipe for the InputWatcher";
 		}
 #endif
+		Initialised = true;
 	}
 
 	Input::~Input()
 	{
+		if (!Initialised) return;
 		Stop();
 #ifndef WINMODE
 		::close(ShutdownPipe[0]);
@@ -42,6 +54,10 @@ namespace JSL::Async::Watcher
 	}
 	void Input::Start()
 	{
+		if (!Initialised)
+		{
+			JSL::internal::LibraryError("Uninitialised watcher", JSL_LOCATION) << "Cannot Start() an uninitialised Watcher::Input";
+		}
 		if (Running.exchange(true)) return; // if already running, return, otherwise continue
 
 		LineBuffer = ""; // clear it from previous iterations

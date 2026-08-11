@@ -2,7 +2,7 @@
 
 #include "../test_utils/catch_extended.h"
 #include "catch2/matchers/catch_matchers_string.hpp"
-#include <JSL/Async/Watcher.h>
+#include <JSL/Async/Watcher/Panopticon.h>
 #include <JSL/Log.h>
 #include <catch2/catch_test_macros.hpp>
 
@@ -17,22 +17,32 @@ TEST_CASE("Manual testing", "[Manual]")
 {
 	std::cout << ">> " << std::flush;
 
-	std::mutex Pause;
+	JSL::Async::Watcher::Panopticon AllSeer;
 
-	std::unique_lock lock(Pause);
-	std::condition_variable Lock;
-	JSL::Async::Watcher::Input W(
-		[&](auto line) {
-			LOG(WARN) << "User gave: " << line;
-			std::cout << ">> " << std::flush;
+	AllSeer.SetInputCallback([](auto line) {
+		LOG(WARN) << "Got your message: " << line;
+	},
+		"exit");
 
-			if (line == "exit")
-			{
-				Lock.notify_one();
-			}
-		});
-	W.Start();
-
-	Lock.wait(lock);
-	W.Stop();
+	AllSeer.Start();
+	// std::mutex Pause;
+	//
+	//
+	//
+	// std::unique_lock lock(Pause);
+	// std::condition_variable Lock;
+	// JSL::Async::Watcher::Input W(
+	// 	[&](auto line) {
+	// 		LOG(WARN) << "User gave: " << line;
+	// 		std::cout << ">> " << std::flush;
+	//
+	// 		if (line == "exit")
+	// 		{
+	// 			Lock.notify_one();
+	// 		}
+	// 	});
+	// W.Start();
+	//
+	// Lock.wait(lock);
+	// W.Stop();
 }
