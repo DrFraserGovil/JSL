@@ -4,9 +4,11 @@
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif
-#include <afunix.h> // Explicitly required for sockaddr_un on Windows
+// clang-format off
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#include <afunix.h>
+// clang-format on
 
 // Windows uses SOCKET (unsigned long long) instead of int for descriptors
 using socket_t = SOCKET;
