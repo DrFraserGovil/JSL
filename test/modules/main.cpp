@@ -11,4 +11,5 @@
 #include "socket.h"
 #include "system.h"
 #include "time.h"
+#include "watcher.h"
 // no actual main function; catch2 constructs that automagically

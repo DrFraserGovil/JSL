@@ -1,7 +1,3 @@
-// Catch2 v3 style unit tests for JSL::Async::Pool
-// Build note: link against Catch2::Catch2WithMain, or provide your own main
-// via CATCH_CONFIG_MAIN in a separate translation unit.
-
 #include "../test_utils/catch_extended.h"
 #include "catch2/matchers/catch_matchers_string.hpp"
 #include <JSL/Async/ParallelPool.h>
