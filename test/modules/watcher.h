@@ -4,6 +4,7 @@
 #include "catch2/matchers/catch_matchers_string.hpp"
 #include <JSL.h>
 #include <JSL/Async/Socket.h>
+#include <JSL/Async/Watcher/FileWatcher.h>
 #include <JSL/Async/Watcher/Panopticon.h>
 #include <JSL/Log.h>
 #include <catch2/catch_test_macros.hpp>
@@ -34,6 +35,24 @@ TEST_CASE("Manual testing", "[Manual]")
 	//
 	// AllSeer.Start();
 	//
-	auto dir = JSL::IO::Directory::Snapshot("./", ".build");
-	LOG(INFO) << dir.ListAll();
+	auto r = JSL::IO::Directory::Snapshot("mantest");
+	LOG(INFO) << r.ListFiles();
+	std::mutex R;
+	std::condition_variable wait;
+
+	auto W = JSL::Async::Watcher::File("mantest", true, [&](auto batch) {
+		LOG(INFO) << "New batch: " << batch.size();
+		for (auto b : batch)
+		{
+			LOG(INFO) << b.Path;
+			if (b.Path.extension() == ".exit")
+			{
+				wait.notify_one();
+			}
+		}
+	});
+	W.Start();
+
+	std::unique_lock lock(R);
+	wait.wait(lock);
 }

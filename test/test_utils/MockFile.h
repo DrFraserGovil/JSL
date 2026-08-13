@@ -1,11 +1,12 @@
 #pragma once
 #include <filesystem> // C++17 for temporary paths and removal
-#include <iostream>
 #include <fstream>
+#include <iostream>
 extern int MockFileID;
-std::filesystem::path inline makeTemp() {
-    ++MockFileID;
-	return std::filesystem::temp_directory_path() / ("test_archive_" + std::to_string(MockFileID) + ".test"); 
+std::filesystem::path inline makeTemp()
+{
+	++MockFileID;
+	return std::filesystem::temp_directory_path() / ("test_archive_" + std::to_string(MockFileID) + ".test");
 }
 
 struct MockFile
@@ -24,37 +25,41 @@ struct MockFile
 		std::filesystem::remove_all(Path);
 	}
 
-	template<class T>
+	template <class T>
 	void operator<<(const T &msg)
 	{
 		std::ofstream pipe;
 
-		pipe.open(Path,std::ios::app);
+		pipe.open(Path, std::ios::app);
 		pipe << msg;
 		pipe.close();
 	}
 };
 
-class MockDirectory {
-	public:
-		std::filesystem::path Path;
-		MockDirectory(MockFile & file) {
-			std::filesystem::path parent = file.Path.parent_path();
+class MockDirectory
+{
+  public:
+	std::filesystem::path Path;
+	MockDirectory(MockFile &file)
+	{
+		std::filesystem::path parent = file.Path.parent_path();
 
-			// Get the filename without the extension ("file")
-			std::filesystem::path stem = file.Path.stem();
-		
-			// Combine the parent path and the stem to create the new path
-			Path  = parent / stem;
+		// Get the filename without the extension ("file")
+		std::filesystem::path stem = file.Path.stem();
 
-			std::filesystem::create_directories(Path);
+		// Combine the parent path and the stem to create the new path
+		Path = parent / stem;
+
+		std::filesystem::create_directories(Path);
+	}
+	~MockDirectory()
+	{
+		std::error_code ec; // Use error code version to avoid throwing from destructor
+		std::filesystem::remove_all(Path, ec);
+		if (ec)
+		{
+			// Optionally log the error if removal fails
+			std::cerr << "Error removing temporary directory " << Path << ": " << ec.message() << std::endl;
 		}
-		~MockDirectory() {
-			std::error_code ec; // Use error code version to avoid throwing from destructor
-			std::filesystem::remove_all(Path, ec);
-			if (ec) {
-				// Optionally log the error if removal fails
-				std::cerr << "Error removing temporary directory " << Path << ": " << ec.message() << std::endl;
-			}
-		}
-	};
+	}
+};

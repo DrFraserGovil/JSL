@@ -87,4 +87,3 @@ VectorAbsMatcher inline WithinVectorAbs(const std::vector<double> &target, doubl
 		REQUIRE_THAT(captured_msg, !Catch::Matchers::ContainsSubstring("[WARN]")); \
 		return captured_msg;                                                       \
 	}() // Immediately invoke the lambda
-

@@ -68,6 +68,7 @@ namespace JSL::IO
 		}
 		IsRecursive = (depth < maxDepth);
 		std::error_code ec;
+		std::error_code ec2;
 		std::filesystem::directory_iterator it(Path, ec);
 		for (const auto &element : it)
 		{
@@ -93,9 +94,12 @@ namespace JSL::IO
 				{
 
 					auto size = element.file_size(ec);
-					if (ec) continue;
-					auto mtime = element.last_write_time(ec);
-					if (ec) continue;
+					auto mtime = element.last_write_time(ec2);
+					if (ec || ec2)
+					{
+						Others.insert(entry);
+						continue;
+					}
 					MetaData.insert({entry, mtime, size});
 					Files.insert(entry);
 					continue;
@@ -136,6 +140,20 @@ namespace JSL::IO
 		}
 		return out;
 	}
+	std::set<FileMetadata> Directory::ListMetadata(bool useRecursion) const
+	{
+		auto out = MetaData;
+
+		if (IsRecursive && useRecursion)
+		{
+			for (auto &dir : Directories)
+			{
+				out.merge(dir.ListMetadata(useRecursion));
+			}
+		}
+		return out;
+	}
+
 	std::set<std::filesystem::path> Directory::ListDirs(bool useRecursion) const
 	{
 		std::set<fs::path> out;
@@ -158,6 +176,20 @@ namespace JSL::IO
 	{
 		auto out = ListFiles(useRecursion, true);
 		out.merge(ListDirs(useRecursion));
+		return out;
+	}
+	std::set<std::filesystem::path> Directory::ListOthers(bool useRecursion) const
+	{
+
+		auto out = Others;
+
+		if (IsRecursive && useRecursion)
+		{
+			for (auto &dir : Directories)
+			{
+				out.merge(dir.ListOthers(useRecursion));
+			}
+		}
 		return out;
 	}
 

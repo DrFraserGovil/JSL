@@ -49,4 +49,3 @@ find_package(Threads REQUIRED)
 target_include_directories(unit_test PRIVATE ./resources/)
 add_subdirectory("../" "${CMAKE_CURRENT_BINARY_DIR}/JSL_build")
 target_link_libraries(unit_test PRIVATE JSL)
-

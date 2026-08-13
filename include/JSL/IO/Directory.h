@@ -56,6 +56,22 @@ namespace JSL::IO
 		{
 			return Snapshot(target, globToRegex(excludePattern), maxDepth);
 		}
+		template <class T>
+			requires std::convertible_to<T, std::string>
+		static Directory Snapshot(const std::filesystem::path &target, std::vector<T> excludePattern, size_t maxDepth = -1)
+		{
+			if (excludePattern.empty())
+			{
+				return Snapshot(target, maxDepth);
+			}
+
+			return Snapshot(target, multiGlobToRegex(excludePattern), maxDepth);
+		}
+
+		static Directory Empty()
+		{
+			return Directory("");
+		}
 
 		/*!
 		 * @brief Resets the directory and re-initialises it with the new recursion directive
@@ -107,11 +123,19 @@ namespace JSL::IO
 		 */
 		std::set<std::filesystem::path> ListFiles(bool useRecursion = true, bool includeOthers = false) const;
 		/*!
+		 * @brief Get a list of the file-metadata within the current snapshot
+		 * @param useRecursion If true (and the object was initialised recursively), it lists all files within the tree, if false, only outputs files within the top level.
+		 * @return A set of file-metadata of all files present at the time of the last scan
+		 */
+		std::set<FileMetadata> ListMetadata(bool useRecursion = true) const;
+		/*!
 		 * @brief Get a list of *all* filesystem objects within the current snapshot
 		 * @param useRecursion If true (and the object was initialised recursively), it lists all files within the tree, if false, only outputs files within the top level.
 		 * @return A set of filepaths of all files present at the time of the last scan
 		 */
 		std::set<std::filesystem::path> ListAll(bool useRecursion = true) const;
+
+		std::set<std::filesystem::path> ListOthers(bool useRecursion = true) const;
 
 		/*!
 		 * @brief Get a list of all directories within the current snapshot
