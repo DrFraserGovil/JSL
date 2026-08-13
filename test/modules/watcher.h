@@ -2,6 +2,7 @@
 
 #include "../test_utils/catch_extended.h"
 #include "catch2/matchers/catch_matchers_string.hpp"
+#include <JSL.h>
 #include <JSL/Async/Socket.h>
 #include <JSL/Async/Watcher/Panopticon.h>
 #include <JSL/Log.h>
@@ -16,40 +17,23 @@ using namespace JSL::Async;
 
 TEST_CASE("Manual testing", "[Manual]")
 {
-	std::cout << "\n\n>> " << std::flush;
-
-	JSL::Async::Watcher::Panopticon AllSeer;
-
-	AllSeer.SetInputCallback([](auto line) {
-		LOG(INFO) << "Transmitting ping to...";
-		JSL::Async::Socket::Transmit("test.sock", line);
-	},
-		"exit");
-
-	AllSeer.SetSocketCallback("test.sock", [&](std::string line) {
-		LOG(INFO) << "Socket recieved: " << line;
-		std::cout << ">>" << std::flush;
-	});
-
-	AllSeer.Start();
-	// std::mutex Pause;
+	// std::cout << "\n\n>> " << std::flush;
 	//
+	// JSL::Async::Watcher::Panopticon AllSeer;
 	//
+	// AllSeer.SetInputCallback([](auto line) {
+	// 	LOG(INFO) << "Transmitting ping to...";
+	// 	JSL::Async::Socket::Transmit("test.sock", line);
+	// },
+	// 	"exit");
 	//
-	// std::unique_lock lock(Pause);
-	// std::condition_variable Lock;
-	// JSL::Async::Watcher::Input W(
-	// 	[&](auto line) {
-	// 		LOG(WARN) << "User gave: " << line;
-	// 		std::cout << ">> " << std::flush;
+	// AllSeer.SetSocketCallback("test.sock", [&](std::string line) {
+	// 	LOG(INFO) << "Socket recieved: " << line;
+	// 	std::cout << ">>" << std::flush;
+	// });
 	//
-	// 		if (line == "exit")
-	// 		{
-	// 			Lock.notify_one();
-	// 		}
-	// 	});
-	// W.Start();
+	// AllSeer.Start();
 	//
-	// Lock.wait(lock);
-	// W.Stop();
+	auto dir = JSL::IO::Directory::Snapshot("./", ".build");
+	LOG(INFO) << dir.ListAll();
 }

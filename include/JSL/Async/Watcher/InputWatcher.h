@@ -8,10 +8,7 @@
 #include <thread>
 namespace JSL::Async::Watcher
 {
-	// Input: reads stdin on its own thread, splits on newlines itself,
-	// and invokes `callback_` per complete line. Never trusts a line-oriented
-	// blocking call (getline) to be cleanly cancellable — always reads raw
-	// bytes so shutdown can be checked between reads, not stuck mid-line.
+	// This has to be slightly more complicated (i.e. not just a trawl of cin) because we want to be able to interrupt mid-blocking call. That means going slightly deeper than just getline()
 	class Input
 	{
 	  public:

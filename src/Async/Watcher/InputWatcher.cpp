@@ -28,18 +28,11 @@ namespace JSL::Async::Watcher
 
 	void Input::Initialise(callback fcn)
 	{
+		if (Running.load(std::memory_order_acquire))
+		{
+			JSL::internal::LibraryError("Invalid state", JSL_LOCATION) << "Cannot re-initialise an Input watcher while it is running";
+		}
 		Callback = fcn;
-#ifndef WINMODE
-		if (::pipe(ShutdownPipe) == 0) // opens a new pipe, and saves the values into ShutdownPipe
-		{
-			::fcntl(ShutdownPipe[0], F_SETFL, O_NONBLOCK);
-			::fcntl(ShutdownPipe[1], F_SETFL, O_NONBLOCK);
-		}
-		else
-		{
-			JSL::internal::LibraryError("Invalid pipe", JSL_LOCATION) << "Could not create a pipe for the InputWatcher";
-		}
-#endif
 		Initialised = true;
 	}
 
@@ -60,11 +53,20 @@ namespace JSL::Async::Watcher
 		}
 		if (Running.exchange(true)) return; // if already running, return, otherwise continue
 
-		LineBuffer = ""; // clear it from previous iterations
-						 // on windows, have to store the 'running' status as an atomic (on posix, we can implicitly shut it down)
-#ifdef WINMODE
+#ifndef WINMODE
+		if (::pipe(ShutdownPipe) == 0) // opens a new pipe, and saves the values into ShutdownPipe
+		{
+			::fcntl(ShutdownPipe[0], F_SETFL, O_NONBLOCK);
+			::fcntl(ShutdownPipe[1], F_SETFL, O_NONBLOCK);
+		}
+		else
+		{
+			JSL::internal::LibraryError("Invalid pipe", JSL_LOCATION) << "Could not create a shutdown pipe for the InputWatcher";
+		}
+#else
 		ThreadExited.store(false, std::memory_order_release);
 #endif
+		LineBuffer = ""; // clear it from previous iterations
 
 		// spawn the actual watcher process on a new thread
 		WorkerThread = std::thread(&Input::Run, this);
