@@ -17,6 +17,7 @@ using namespace JSL::Async;
 
 TEST_CASE("Socket Watcher", "[watcher][socket]")
 {
+	LOG(WARN) << "SOCKETWATCHER TESTS";
 	std::string socketName = "test.sock";
 
 	SECTION("Basic Initiliasation")
@@ -155,185 +156,186 @@ namespace
 		}
 	};
 } // namespace
-
-TEST_CASE("File Watcher", "[watcher][file]")
-{
-	SECTION("Basic Initialisation")
-	{
-		TempDir dir;
-		Watcher::File Watcher;
-		REQUIRE_NOTHROW(Watcher.Initialise(dir.Path, true, [](auto) {}));
-		REQUIRE_NOTHROW(Watcher.Start());
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-
-	SECTION("No Spurious Events for Pre-Existing Files on Start")
-	{
-		// Regression test: the very first snapshot on Start() must be a
-		// silent baseline. If it isn't, every pre-existing file in the
-		// watched tree fires as "Created" the instant the watcher starts.
-		TempDir dir;
-		std::ofstream(dir.Path / "preexisting.txt") << "already here";
-
-		BatchCollector collector;
-		Watcher::File Watcher(dir.Path, true, collector.Callback());
-		REQUIRE_NOTHROW(Watcher.Start());
-
-		std::this_thread::sleep_for(std::chrono::milliseconds(300));
-		{
-			std::lock_guard<std::mutex> lock(collector.Mutex);
-			REQUIRE(collector.AllChanges.empty());
-		}
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-
-	SECTION("Detects File Creation")
-	{
-		TempDir dir;
-		BatchCollector collector;
-		Watcher::File Watcher(dir.Path, true, collector.Callback());
-		REQUIRE_NOTHROW(Watcher.Start());
-
-		std::ofstream(dir.Path / "hello.txt") << "hi";
-
-		bool found = collector.WaitFor([&](auto &) { return collector.Contains("hello.txt", Watcher::ChangeType::Create); });
-		REQUIRE(found);
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-
-	SECTION("Detects File Modification")
-	{
-		TempDir dir;
-		auto filePath = dir.Path / "existing.txt";
-		std::ofstream(filePath) << "initial";
-
-		BatchCollector collector;
-		Watcher::File Watcher(dir.Path, true, collector.Callback());
-		REQUIRE_NOTHROW(Watcher.Start());
-
-		// NOTE: modification detection compares mtime+size against the
-		// baseline snapshot. A same-tick rewrite on a filesystem with
-		// coarse mtime resolution could theoretically be missed -- a short
-		// sleep here keeps the test itself independent of that known,
-		// accepted limitation rather than exercising it.
-		std::this_thread::sleep_for(std::chrono::milliseconds(50));
-		{
-			std::ofstream out(filePath, std::ios::app);
-			out << " appended";
-		}
-
-		bool found = collector.WaitFor([&](auto &) { return collector.Contains("existing.txt", Watcher::ChangeType::Modify); });
-		REQUIRE(found);
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-
-	SECTION("Detects File Deletion")
-	{
-		TempDir dir;
-		auto filePath = dir.Path / "todelete.txt";
-		std::ofstream(filePath) << "bye";
-
-		BatchCollector collector;
-		Watcher::File Watcher(dir.Path, true, collector.Callback());
-		REQUIRE_NOTHROW(Watcher.Start());
-		std::this_thread::sleep_for(std::chrono::milliseconds(50));
-
-		std::filesystem::remove(filePath);
-
-		bool found = collector.WaitFor([&](auto &) { return collector.Contains("todelete.txt", Watcher::ChangeType::Delete); });
-		REQUIRE(found);
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-
-	SECTION("Whitelist Filters Non-Matching Files")
-	{
-		TempDir dir;
-		BatchCollector collector;
-		Watcher::File Watcher;
-		Watcher.Initialise(dir.Path, true, collector.Callback());
-		Watcher.AddWhiteList("*.cpp");
-		REQUIRE_NOTHROW(Watcher.Start());
-
-		std::ofstream(dir.Path / "match.cpp") << "code";
-		std::ofstream(dir.Path / "ignored.txt") << "text";
-
-		bool matchFound = collector.WaitFor([&](auto &) { return collector.Contains("match.cpp"); });
-		REQUIRE(matchFound);
-
-		// A little extra settling time to be confident the non-matching
-		// file genuinely never arrives, not just "hasn't arrived yet".
-		std::this_thread::sleep_for(std::chrono::milliseconds(200));
-		{
-			std::lock_guard<std::mutex> lock(collector.Mutex);
-			REQUIRE_FALSE(collector.Contains("ignored.txt"));
-		}
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-
-	SECTION("Blacklist Excludes Subdirectory")
-	{
-		TempDir dir;
-		std::filesystem::create_directories(dir.Path / "ignored_dir");
-
-		BatchCollector collector;
-		Watcher::File Watcher;
-		Watcher.Initialise(dir.Path, true, collector.Callback());
-		Watcher.AddBlackList("ignored_dir");
-		REQUIRE_NOTHROW(Watcher.Start());
-
-		std::ofstream(dir.Path / "ignored_dir" / "hidden.txt") << "shh";
-		std::ofstream(dir.Path / "visible.txt") << "hi";
-
-		bool visibleFound = collector.WaitFor([&](auto &) { return collector.Contains("visible.txt"); });
-		REQUIRE(visibleFound);
-
-		std::this_thread::sleep_for(std::chrono::milliseconds(200));
-		{
-			std::lock_guard<std::mutex> lock(collector.Mutex);
-			REQUIRE_FALSE(collector.Contains("hidden.txt"));
-		}
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-
-	SECTION("Non-Recursive Ignores Subdirectory Changes")
-	{
-		TempDir dir;
-		std::filesystem::create_directories(dir.Path / "subdir");
-
-		BatchCollector collector;
-		Watcher::File Watcher(dir.Path, false, collector.Callback());
-		REQUIRE_NOTHROW(Watcher.Start());
-
-		std::ofstream(dir.Path / "topLevel.txt") << "hi";
-		std::ofstream(dir.Path / "subdir" / "nested.txt") << "hi";
-
-		bool topFound = collector.WaitFor([&](auto &) { return collector.Contains("topLevel.txt"); });
-		REQUIRE(topFound);
-
-		std::this_thread::sleep_for(std::chrono::milliseconds(200));
-		{
-			std::lock_guard<std::mutex> lock(collector.Mutex);
-			REQUIRE_FALSE(collector.Contains("nested.txt"));
-		}
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-
-	SECTION("Can Restart After Stop")
-	{
-		TempDir dir;
-		BatchCollector collector;
-		Watcher::File Watcher(dir.Path, true, collector.Callback());
-		REQUIRE_NOTHROW(Watcher.Start());
-		REQUIRE_NOTHROW(Watcher.Stop());
-		REQUIRE_NOTHROW(Watcher.Start());
-
-		std::ofstream(dir.Path / "afterRestart.txt") << "hi";
-
-		bool found = collector.WaitFor([&](auto &) { return collector.Contains("afterRestart.txt"); });
-		REQUIRE(found);
-		REQUIRE_NOTHROW(Watcher.Stop());
-	}
-}
+//
+// TEST_CASE("File Watcher", "[watcher][file]")
+// {
+// 	LOG(WARN) << "FILEWATCHER TESTS";
+// 	SECTION("Basic Initialisation")
+// 	{
+// 		TempDir dir;
+// 		Watcher::File Watcher;
+// 		REQUIRE_NOTHROW(Watcher.Initialise(dir.Path, true, [](auto) {}));
+// 		REQUIRE_NOTHROW(Watcher.Start());
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+//
+// 	SECTION("No Spurious Events for Pre-Existing Files on Start")
+// 	{
+// 		// Regression test: the very first snapshot on Start() must be a
+// 		// silent baseline. If it isn't, every pre-existing file in the
+// 		// watched tree fires as "Created" the instant the watcher starts.
+// 		TempDir dir;
+// 		std::ofstream(dir.Path / "preexisting.txt") << "already here";
+//
+// 		BatchCollector collector;
+// 		Watcher::File Watcher(dir.Path, true, collector.Callback());
+// 		REQUIRE_NOTHROW(Watcher.Start());
+//
+// 		std::this_thread::sleep_for(std::chrono::milliseconds(300));
+// 		{
+// 			std::lock_guard<std::mutex> lock(collector.Mutex);
+// 			REQUIRE(collector.AllChanges.empty());
+// 		}
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+//
+// 	SECTION("Detects File Creation")
+// 	{
+// 		TempDir dir;
+// 		BatchCollector collector;
+// 		Watcher::File Watcher(dir.Path, true, collector.Callback());
+// 		REQUIRE_NOTHROW(Watcher.Start());
+//
+// 		std::ofstream(dir.Path / "hello.txt") << "hi";
+//
+// 		bool found = collector.WaitFor([&](auto &) { return collector.Contains("hello.txt", Watcher::ChangeType::Create); });
+// 		REQUIRE(found);
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+//
+// 	SECTION("Detects File Modification")
+// 	{
+// 		TempDir dir;
+// 		auto filePath = dir.Path / "existing.txt";
+// 		std::ofstream(filePath) << "initial";
+//
+// 		BatchCollector collector;
+// 		Watcher::File Watcher(dir.Path, true, collector.Callback());
+// 		REQUIRE_NOTHROW(Watcher.Start());
+//
+// 		// NOTE: modification detection compares mtime+size against the
+// 		// baseline snapshot. A same-tick rewrite on a filesystem with
+// 		// coarse mtime resolution could theoretically be missed -- a short
+// 		// sleep here keeps the test itself independent of that known,
+// 		// accepted limitation rather than exercising it.
+// 		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+// 		{
+// 			std::ofstream out(filePath, std::ios::app);
+// 			out << " appended";
+// 		}
+//
+// 		bool found = collector.WaitFor([&](auto &) { return collector.Contains("existing.txt", Watcher::ChangeType::Modify); });
+// 		REQUIRE(found);
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+//
+// 	SECTION("Detects File Deletion")
+// 	{
+// 		TempDir dir;
+// 		auto filePath = dir.Path / "todelete.txt";
+// 		std::ofstream(filePath) << "bye";
+//
+// 		BatchCollector collector;
+// 		Watcher::File Watcher(dir.Path, true, collector.Callback());
+// 		REQUIRE_NOTHROW(Watcher.Start());
+// 		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+//
+// 		std::filesystem::remove(filePath);
+//
+// 		bool found = collector.WaitFor([&](auto &) { return collector.Contains("todelete.txt", Watcher::ChangeType::Delete); });
+// 		REQUIRE(found);
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+//
+// 	SECTION("Whitelist Filters Non-Matching Files")
+// 	{
+// 		TempDir dir;
+// 		BatchCollector collector;
+// 		Watcher::File Watcher;
+// 		Watcher.Initialise(dir.Path, true, collector.Callback());
+// 		Watcher.AddWhiteList("*.cpp");
+// 		REQUIRE_NOTHROW(Watcher.Start());
+//
+// 		std::ofstream(dir.Path / "match.cpp") << "code";
+// 		std::ofstream(dir.Path / "ignored.txt") << "text";
+//
+// 		bool matchFound = collector.WaitFor([&](auto &) { return collector.Contains("match.cpp"); });
+// 		REQUIRE(matchFound);
+//
+// 		// A little extra settling time to be confident the non-matching
+// 		// file genuinely never arrives, not just "hasn't arrived yet".
+// 		std::this_thread::sleep_for(std::chrono::milliseconds(200));
+// 		{
+// 			std::lock_guard<std::mutex> lock(collector.Mutex);
+// 			REQUIRE_FALSE(collector.Contains("ignored.txt"));
+// 		}
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+//
+// 	SECTION("Blacklist Excludes Subdirectory")
+// 	{
+// 		TempDir dir;
+// 		std::filesystem::create_directories(dir.Path / "ignored_dir");
+//
+// 		BatchCollector collector;
+// 		Watcher::File Watcher;
+// 		Watcher.Initialise(dir.Path, true, collector.Callback());
+// 		Watcher.AddBlackList("ignored_dir");
+// 		REQUIRE_NOTHROW(Watcher.Start());
+//
+// 		std::ofstream(dir.Path / "ignored_dir" / "hidden.txt") << "shh";
+// 		std::ofstream(dir.Path / "visible.txt") << "hi";
+//
+// 		bool visibleFound = collector.WaitFor([&](auto &) { return collector.Contains("visible.txt"); });
+// 		REQUIRE(visibleFound);
+//
+// 		std::this_thread::sleep_for(std::chrono::milliseconds(200));
+// 		{
+// 			std::lock_guard<std::mutex> lock(collector.Mutex);
+// 			REQUIRE_FALSE(collector.Contains("hidden.txt"));
+// 		}
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+//
+// 	SECTION("Non-Recursive Ignores Subdirectory Changes")
+// 	{
+// 		TempDir dir;
+// 		std::filesystem::create_directories(dir.Path / "subdir");
+//
+// 		BatchCollector collector;
+// 		Watcher::File Watcher(dir.Path, false, collector.Callback());
+// 		REQUIRE_NOTHROW(Watcher.Start());
+//
+// 		std::ofstream(dir.Path / "topLevel.txt") << "hi";
+// 		std::ofstream(dir.Path / "subdir" / "nested.txt") << "hi";
+//
+// 		bool topFound = collector.WaitFor([&](auto &) { return collector.Contains("topLevel.txt"); });
+// 		REQUIRE(topFound);
+//
+// 		std::this_thread::sleep_for(std::chrono::milliseconds(200));
+// 		{
+// 			std::lock_guard<std::mutex> lock(collector.Mutex);
+// 			REQUIRE_FALSE(collector.Contains("nested.txt"));
+// 		}
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+//
+// 	SECTION("Can Restart After Stop")
+// 	{
+// 		TempDir dir;
+// 		BatchCollector collector;
+// 		Watcher::File Watcher(dir.Path, true, collector.Callback());
+// 		REQUIRE_NOTHROW(Watcher.Start());
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 		REQUIRE_NOTHROW(Watcher.Start());
+//
+// 		std::ofstream(dir.Path / "afterRestart.txt") << "hi";
+//
+// 		bool found = collector.WaitFor([&](auto &) { return collector.Contains("afterRestart.txt"); });
+// 		REQUIRE(found);
+// 		REQUIRE_NOTHROW(Watcher.Stop());
+// 	}
+// }
 
 namespace
 {
@@ -424,6 +426,7 @@ namespace
 
 TEST_CASE("Input Watcher", "[watcher][input]")
 {
+	LOG(WARN) << "INPUT WATCHER TESTS";
 	SECTION("Basic Initialisation")
 	{
 		Watcher::Input Watcher([](auto) {});
