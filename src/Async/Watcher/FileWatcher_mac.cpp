@@ -33,7 +33,8 @@ namespace JSL::Async::Watcher
 
 	void File::InitialisePlatformWatchers()
 	{
-		CFStringRef cfPath = CFStringCreateWithCString(nullptr, RootPath.c_str(), kCFStringEncodingUTF8);
+		auto abspath = std::filesystem::absolute(RootPath);
+		CFStringRef cfPath = CFStringCreateWithCString(nullptr, abspath.c_str(), kCFStringEncodingUTF8);
 		CFArrayRef pathsToWatch = CFArrayCreate(nullptr, reinterpret_cast<const void **>(&cfPath), 1, &kCFTypeArrayCallBacks);
 
 		FSEventStreamContext context{};
@@ -60,16 +61,33 @@ namespace JSL::Async::Watcher
 
 	void File::Stop()
 	{
-		if (!Running.exchange(false)) return;
+		if (!Running.exchange(false))
+		{
+			return;
+		}
 
-		// Wait until Run() has actually published a run loop
 		{
 			std::unique_lock<std::mutex> lock(RunLoopMutex);
 			RunLoopReadyCv.wait(lock, [this] { return RunLoopReady; });
 		}
-		CFRunLoopStop(WatcherRunLoop);
 
-		if (WorkerThread.joinable()) WorkerThread.join();
+		if (WatcherRunLoop)
+		{
+			CFRunLoopStop(WatcherRunLoop);
+			CFRunLoopWakeUp(WatcherRunLoop);
+		}
+
+		if (WorkerThread.joinable())
+		{
+			if (std::this_thread::get_id() == WorkerThread.get_id())
+			{
+				WorkerThread.detach();
+			}
+			else
+			{
+				WorkerThread.join();
+			}
+		}
 
 		WatcherRunLoop = nullptr;
 		RunLoopReady = false;
@@ -132,29 +150,43 @@ namespace JSL::Async::Watcher
 
 	void File::Run()
 	{
-		// async guards for the notification that Run has created the loop (so that Stop doesn't destory it before it exists)
-		{
-			std::lock_guard<std::mutex> lock(RunLoopMutex);
-			WatcherRunLoop = CFRunLoopGetCurrent();
-			RunLoopReady = true;
-		}
-		RunLoopReadyCv.notify_all();
+		WatcherRunLoop = CFRunLoopGetCurrent();
+
+		// Attach observer to signal readiness ONLY once the run loop is active
+		CFRunLoopObserverContext ctx{0, this, nullptr, nullptr, nullptr};
+		CFRunLoopObserverRef observer = CFRunLoopObserverCreate(
+			kCFAllocatorDefault,
+			kCFRunLoopEntry,
+			false,
+			0,
+			[](CFRunLoopObserverRef, CFRunLoopActivity, void *info) {
+				auto *self = static_cast<File *>(info);
+				{
+					std::lock_guard<std::mutex> lock(self->RunLoopMutex);
+					self->RunLoopReady = true;
+				}
+				self->RunLoopReadyCv.notify_all();
+			},
+			&ctx);
+		CFRunLoopAddObserver(WatcherRunLoop, observer, kCFRunLoopDefaultMode);
 
 		FSEventStreamScheduleWithRunLoop(Stream, WatcherRunLoop, kCFRunLoopDefaultMode);
 		if (!FSEventStreamStart(Stream))
 		{
 			Running.store(false, std::memory_order_release);
-			FSEventStreamInvalidate(Stream);
-			FSEventStreamRelease(Stream);
-			Stream = nullptr;
+			CFRunLoopRemoveObserver(WatcherRunLoop, observer, kCFRunLoopDefaultMode);
+			CFRelease(observer);
 			return;
 		}
 
-		CFRunLoopRun(); // blocks, delivering callbacks, until CFRunLoopStop() is called (by Stop() or FSEventsCallback on critical error)
+		if (Running.load(std::memory_order_acquire))
+		{
+			CFRunLoopRun();
+		}
 
-		// Must happen on this same thread -- FSEventStreamStop/Invalidate
-		// are documented as required to run on the thread the stream was
-		// scheduled on.
+		CFRunLoopRemoveObserver(WatcherRunLoop, observer, kCFRunLoopDefaultMode);
+		CFRelease(observer);
+
 		FSEventStreamStop(Stream);
 		FSEventStreamInvalidate(Stream);
 		FSEventStreamRelease(Stream);
