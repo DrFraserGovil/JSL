@@ -181,17 +181,17 @@ namespace JSL::String
 
 			if (pos != s_temp.length())
 			{
-				FatalError("Trailing characters in double parsing", JSL_LOCATION) << "Partial conversion of `" << sv << "` to double; unconverted characters were: `" << s_temp.substr(pos) << "`";
+				JSL::internal::LibraryError("Trailing characters in double parsing", JSL_LOCATION) << "Partial conversion of `" << sv << "` to double; unconverted characters were: `" << s_temp.substr(pos) << "`";
 			}
 			return output;
 		}
 		catch (const std::out_of_range &e)
 		{
-			JSL::internal::FatalError("Out-of-range error in double conversion", JSL_LOCATION) << "Error: Result out of range for conversion: '" << sv << "` to double\n";
+			JSL::internal::LibraryError("Out-of-range error in double conversion", JSL_LOCATION) << "Error: Result out of range for conversion: '" << sv << "` to double\n";
 		}
 		catch (const std::invalid_argument &e)
 		{
-			JSL::internal::FatalError("Could not complete conversion (invalid format).", JSL_LOCATION) << "Error: Invalid argument for conversion: '" << sv << "` to double\n";
+			JSL::internal::LibraryError("Could not complete conversion (invalid format).", JSL_LOCATION) << "Error: Invalid argument for conversion: '" << sv << "` to double\n";
 		}
 	}
 #endif
