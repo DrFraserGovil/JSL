@@ -78,14 +78,14 @@ TEST_CASE("Socket Watcher", "[watcher][socket]")
 		std::vector<std::string> output;
 		std::mutex Sync;
 		std::condition_variable cv;
-		JSL::Async::Watcher::Socket Watcher(socketName, [&](auto msg) { output.push_back(msg); if (msg == "World"){cv.notify_one();} });
+		JSL::Async::Watcher::Socket Watcher(socketName, [&](auto msg) { output.push_back(msg); cv.notify_one(); });
 
 		REQUIRE_NOTHROW(Watcher.Start());
 		JSL::Async::Socket::Transmit(socketName, "Hello");
 		JSL::Async::Socket::Transmit(socketName, " ");
 		JSL::Async::Socket::Transmit(socketName, "World"); // the messages were sent in this order on one thread, so we want to assert that they arrive in this order (this guarantee does not hold if transmissions are themselves asynchronous)
 		std::unique_lock lock(Sync);
-		cv.wait(lock, [&] { return !output.empty(); });
+		cv.wait(lock, [&] { return output.size() == 3; });
 		REQUIRE(output.size() == 3);
 		REQUIRE(output[0] == "Hello");
 		REQUIRE(output[1] == " ");
