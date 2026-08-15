@@ -86,7 +86,10 @@ TEST_CASE("Socket Watcher", "[watcher][socket]")
 		JSL::Async::Socket::Transmit(socketName, "World"); // the messages were sent in this order on one thread, so we want to assert that they arrive in this order (this guarantee does not hold if transmissions are themselves asynchronous)
 		std::unique_lock lock(Sync);
 		cv.wait(lock, [&] { return !output.empty(); });
-		REQUIRE(output == std::vector<std::string>{"Hello", " ", "World"});
+		REQUIRE(output.size() == 3);
+		REQUIRE(output[0] == "Hello");
+		REQUIRE(output[1] == " ");
+		REQUIRE(output[2] == "World");
 		REQUIRE_NOTHROW(Watcher.Stop());
 	}
 }
