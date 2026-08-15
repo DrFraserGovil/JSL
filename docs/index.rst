@@ -16,6 +16,7 @@ Overview
     :hidden:
 
     docfiles/style
+    Async.h <docfiles/async>
     Concepts.h <docfiles/concepts>
     Display.h <docfiles/display>
     FileIO.h <docfiles/fileio>

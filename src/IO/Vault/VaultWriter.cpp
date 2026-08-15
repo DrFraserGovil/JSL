@@ -39,7 +39,7 @@ namespace JSL::IO
 		{
 			if (strictmode)
 			{
-				JSL::internal::FatalError("Vault-Strictmode Error", JSL_LOCATION) << "Cannot open a stream which is already open";
+				JSL::internal::LibraryError("Vault-Strictmode Error", JSL_LOCATION) << "Cannot open a stream which is already open";
 			}
 			Close();
 		}
@@ -49,13 +49,13 @@ namespace JSL::IO
 
 		if (strictmode && std::filesystem::exists(Name))
 		{
-			JSL::internal::FatalError("Vault-Strictmode Error", JSL_LOCATION) << Name << " already exists; cannot open new vault here";
+			JSL::internal::LibraryError("Vault-Strictmode Error", JSL_LOCATION) << Name << " already exists; cannot open new vault here";
 		}
 
 		OutputWriter.open(TempName, std::ios::out | std::ios::binary);
 		if (!OutputWriter.is_open())
 		{
-			JSL::internal::FatalError("Vault Error", JSL_LOCATION) << "Could not open " << TempName;
+			JSL::internal::LibraryError("Vault Error", JSL_LOCATION) << "Could not open " << TempName;
 		}
 		Initialised = true;
 	}
@@ -183,17 +183,17 @@ namespace JSL::IO
 	{
 		if (!Initialised)
 		{
-			JSL::internal::FatalError("Bad archive access", JSL_LOCATION) << "Cannot create a file before initialising the archive";
+			JSL::internal::LibraryError("Bad archive access", JSL_LOCATION) << "Cannot create a file before initialising the archive";
 		}
 		if (Streams.contains(name))
 		{
 			if (Strictness == Policy::Strict)
 			{
-				JSL::internal::FatalError("Strictmode Error", JSL_LOCATION) << "Cannot create " << name << " as this already exists in the archive";
+				JSL::internal::LibraryError("Strictmode Error", JSL_LOCATION) << "Cannot create " << name << " as this already exists in the archive";
 			}
 			if (openAsLarge != Streams[name]->IsLarge)
 			{
-				JSL::internal::FatalError("Large File Error", JSL_LOCATION) << "Cannot change large-file status of an already open file (" << name << ")";
+				JSL::internal::LibraryError("Large File Error", JSL_LOCATION) << "Cannot change large-file status of an already open file (" << name << ")";
 			}
 		}
 		else // name not in dict - so need to create it
@@ -202,7 +202,7 @@ namespace JSL::IO
 			{
 				if (LargeFile)
 				{
-					JSL::internal::FatalError("Large File Error", JSL_LOCATION) << "Cannot open " << name << " as a large file, as " << LargeFile.value() << " already exists, and only one file per vault can be marked as large";
+					JSL::internal::LibraryError("Large File Error", JSL_LOCATION) << "Cannot open " << name << " as a large file, as " << LargeFile.value() << " already exists, and only one file per vault can be marked as large";
 				}
 				writeHeader(name, OutputWriter, Settings, 0); // initialises the header so that the OutputWriter points to the correct location
 				Streams[name] = std::make_unique<DirectStream>(OutputWriter);
@@ -221,7 +221,7 @@ namespace JSL::IO
 	{
 		if (!Initialised)
 		{
-			JSL::internal::FatalError("Bad archive access", JSL_LOCATION) << "Cannot access a stream before initialising the archive";
+			JSL::internal::LibraryError("Bad archive access", JSL_LOCATION) << "Cannot access a stream before initialising the archive";
 		}
 
 		if (!Streams.contains(streamName))
@@ -232,7 +232,7 @@ namespace JSL::IO
 			}
 			else
 			{
-				JSL::internal::FatalError("Strictmode Error", JSL_LOCATION) << "Cannot implicitly open files in a vault whilst strictmode active - switch to Generous, or open a file manually";
+				JSL::internal::LibraryError("Strictmode Error", JSL_LOCATION) << "Cannot implicitly open files in a vault whilst strictmode active - switch to Generous, or open a file manually";
 			}
 		}
 

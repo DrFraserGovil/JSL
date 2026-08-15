@@ -254,7 +254,7 @@ namespace JSL::String
 	{
 		if (input.size() != widths.size())
 		{
-			JSL::internal::FatalError("Size mismatch", JSL_LOCATION) << "Input size (" << input.size() << ") must match widths (" << widths.size() << ") for column splitting";
+			JSL::internal::LibraryError("Size mismatch", JSL_LOCATION) << "Input size (" << input.size() << ") must match widths (" << widths.size() << ") for column splitting";
 		}
 		size_t dsize = trueSize(delimiter);
 		size_t esize = trueSize(endCap);
