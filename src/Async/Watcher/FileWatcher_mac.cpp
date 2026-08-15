@@ -2,6 +2,7 @@
 #ifdef MACOSMODE
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreServices/CoreServices.h>
+#include <CoreServices/FSEvents.h>
 #include <JSL/Log.h>
 #include <JSL/internal/error.h>
 

@@ -6,6 +6,9 @@
 #define WINMODE
 #elif defined(__APPLE__) && defined(__MACH__)
 #define MACOSMODE
+#include <CoreFoundation/CoreFoundation.h>
+#include <CoreServices/CoreServices.h>
+#include <CoreServices/FSEvents.h>
 #else
 #define LINUXMODE
 #endif
