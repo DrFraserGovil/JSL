@@ -17,7 +17,6 @@ using namespace JSL::Async;
 
 TEST_CASE("Socket Watcher", "[watcher][socket]")
 {
-	LOG(WARN) << "SOCKETWATCHER TESTS";
 	std::string socketName = "test.sock";
 
 	SECTION("Basic Initiliasation")
@@ -159,7 +158,6 @@ namespace
 //
 TEST_CASE("File Watcher", "[watcher][file]")
 {
-	LOG(WARN) << "FILEWATCHER TESTS";
 	SECTION("Basic Initialisation")
 	{
 		TempDir dir;
@@ -426,7 +424,6 @@ namespace
 
 TEST_CASE("Input Watcher", "[watcher][input]")
 {
-	LOG(WARN) << "INPUT WATCHER TESTS";
 	SECTION("Basic Initialisation")
 	{
 		Watcher::Input Watcher([](auto) {});

@@ -204,6 +204,16 @@ namespace JSL::Async::Watcher
 		{
 			AddWatch(dir);
 		}
+		if (PlatformWatchFiles)
+		{
+			for (auto &file : PreviousMeta)
+			{
+				if (IsWhitelisted(file.Path))
+				{
+					AddWatch(file.Path);
+				}
+			}
+		}
 
 		WorkerThread = std::thread(&File::Run, this);
 	}
