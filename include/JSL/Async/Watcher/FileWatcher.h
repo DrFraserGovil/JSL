@@ -1,6 +1,8 @@
 #pragma once
 #if defined(_WIN32) || defined(_WIN64)
+#include "../Socket/CrossPlatformHeaders.h"
 #include <windows.h>
+
 #define WINMODE
 #elif defined(__APPLE__) && defined(__MACH__)
 #define MACOSMODE
