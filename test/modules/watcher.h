@@ -107,7 +107,7 @@ namespace
 		{
 			static std::atomic<int> counter{0};
 			auto stamp = std::chrono::steady_clock::now().time_since_epoch().count();
-			Path = std::filesystem::temp_directory_path() / ("jsl_filewatcher_test_" + std::to_string(counter++) + "_" + std::to_string(stamp));
+			Path = std::filesystem::temp_directory_path() / ("jsl_watcher_test_" + std::to_string(counter++) + "_" + std::to_string(stamp));
 			std::filesystem::create_directories(Path);
 		}
 		~TempDir()
