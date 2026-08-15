@@ -1,5 +1,5 @@
 #include <JSL/Async/Watcher/FileWatcher.h>
-#ifndef WINMODE
+#ifdef WINMODE
 #include <JSL/Log.h>
 #include <JSL/internal/error.h>
 #include <windows.h>
