@@ -26,6 +26,11 @@ target_include_directories(JSL
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
     PRIVATE src
 )
-
+if(APPLE)
+    target_link_libraries(JSL PRIVATE 
+        "-framework CoreFoundation"
+        "-framework CoreServices"
+    )
+endif()
 # If your library needs specific standard features (like C++20)
 target_compile_features(JSL PUBLIC cxx_std_20)
