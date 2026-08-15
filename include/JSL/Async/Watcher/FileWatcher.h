@@ -1,4 +1,3 @@
-
 #pragma once
 #if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>
@@ -120,6 +119,15 @@ namespace JSL::Async::Watcher
 		HANDLE DirectoryHandle{INVALID_HANDLE_VALUE};
 		HANDLE ShutdownEvent{nullptr};
 		HANDLE ReadEvent{nullptr};
+#endif
+#ifdef MACOSMODE
+		static void FSEventsCallback(ConstFSEventStreamRef streamRef, void *info, size_t numEvents, void *eventPaths,
+			const FSEventStreamEventFlags eventFlags[], const FSEventStreamEventId eventIds[]);
+		FSEventStreamRef Stream{nullptr};
+		CFRunLoopRef WatcherRunLoop{nullptr};
+		std::mutex RunLoopMutex;
+		std::condition_variable RunLoopReadyCv;
+		bool RunLoopReady{false};
 #endif
 	};
 } // namespace JSL::Async::Watcher

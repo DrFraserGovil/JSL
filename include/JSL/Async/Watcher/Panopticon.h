@@ -1,5 +1,7 @@
 #pragma once
-#include "../Watcher.h"
+#include "FileWatcher.h"
+#include "InputWatcher.h"
+#include "SocketWatcher.h"
 #include <atomic>
 #include <condition_variable>
 #include <deque>
