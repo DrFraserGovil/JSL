@@ -126,7 +126,7 @@ namespace JSL::Async::Watcher
 #endif
 #ifdef BSDMODE
 		bool PlatformWatchFiles = true;
-		int InotifyFd{-1};
+		int KqueueFd{-1};
 		int ShutdownPipe[2]{-1, -1};
 		std::map<int, std::filesystem::path> WatchMap; // watch descriptor -> absolute directory path
 		bool PlatformWatchFiles = false;
