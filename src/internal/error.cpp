@@ -38,9 +38,7 @@ namespace JSL::internal
 
 	LibraryError::~LibraryError() noexcept(false)
 	{
-		// std::ostringstream os;
 		throw std::runtime_error(Buffer.str());
-		return;
 	}
 
 } // namespace JSL::internal

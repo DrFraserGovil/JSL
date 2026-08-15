@@ -41,6 +41,8 @@ namespace JSL::Async::Watcher
 		}
 		Running.store(false, std::memory_order_release);
 		JSL::internal::LibraryError("Failed to start watcher", JSL_LOCATION) << msg;
+
+		// declared [[noreturn]]
 	}
 	void File::InitialisePlatformWatchers()
 	{

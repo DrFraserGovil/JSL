@@ -21,6 +21,6 @@ namespace JSL::internal
 			Buffer << input;
 			return *this;
 		}
-		~LibraryError() noexcept(false);
+		[[noreturn]] ~LibraryError() noexcept(false);
 	};
 } // namespace JSL::internal
