@@ -20,6 +20,7 @@ using socket_t = SOCKET;
 #define POSIXMODE
 #include <sys/socket.h>
 #include <sys/un.h>
+#include <unistd.h>
 using socket_t = int;
 #define INVALID_SOCKET_VAL (-1)
 #define CLOSE close
