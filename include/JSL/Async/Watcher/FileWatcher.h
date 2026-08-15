@@ -4,10 +4,8 @@
 #include <windows.h>
 
 #define WINMODE
-#elif defined(__APPLE__) && defined(__MACH__)
-#define MACOSMODE
-#include <CoreFoundation/CoreFoundation.h>
-#include <CoreServices/CoreServices.h>
+#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__) || (defined(__APPLE__) && defined(__MACH__))
+#define BSDMODE
 #else
 #define LINUXMODE
 #endif
@@ -117,21 +115,17 @@ namespace JSL::Async::Watcher
 		int InotifyFd{-1};
 		int ShutdownPipe[2]{-1, -1};
 		std::map<int, std::filesystem::path> WatchMap; // watch descriptor -> absolute directory path
+		bool PlatformWatchFiles = false;
 #endif
 #ifdef WINMODE
 		bool notifyCheck(const char *buf, DWORD len);
 		HANDLE DirectoryHandle{INVALID_HANDLE_VALUE};
 		HANDLE ShutdownEvent{nullptr};
 		HANDLE ReadEvent{nullptr};
+		bool PlatformWatchFiles = false;
 #endif
-#ifdef MACOSMODE
-		static void FSEventsCallback(ConstFSEventStreamRef streamRef, void *info, size_t numEvents, void *eventPaths,
-			const FSEventStreamEventFlags eventFlags[], const FSEventStreamEventId eventIds[]);
-		FSEventStreamRef Stream{nullptr};
-		CFRunLoopRef WatcherRunLoop{nullptr};
-		std::mutex RunLoopMutex;
-		std::condition_variable RunLoopReadyCv;
-		bool RunLoopReady{false};
+#ifdef BSDMODE
+		bool PlatformWatchFiles = true;
 #endif
 	};
 } // namespace JSL::Async::Watcher

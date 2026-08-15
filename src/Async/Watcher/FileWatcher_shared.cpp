@@ -173,13 +173,13 @@ namespace JSL::Async::Watcher
 		{
 			for (auto &d : diff)
 			{
-				if (d.Object == ObjectType::Directory)
+				if (PlatformWatchFiles || d.Object == ObjectType::Directory)
 				{
 					if (d.Change == ChangeType::Create)
 					{
 						AddWatch(d.Path);
 					}
-					else
+					else if (d.Change == ChangeType::Delete)
 					{
 						RemoveWatch(d.Path);
 					}
