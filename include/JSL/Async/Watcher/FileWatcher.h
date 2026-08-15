@@ -114,5 +114,11 @@ namespace JSL::Async::Watcher
 		int ShutdownPipe[2]{-1, -1};
 		std::map<int, std::filesystem::path> WatchMap; // watch descriptor -> absolute directory path
 #endif
+#ifdef WINMODE
+		bool notifyCheck(const char *buf, DWORD len);
+		HANDLE DirectoryHandle{INVALID_HANDLE_VALUE};
+		HANDLE ShutdownEvent{nullptr};
+		HANDLE ReadEvent{nullptr};
+#endif
 	};
 } // namespace JSL::Async::Watcher

@@ -22,8 +22,6 @@ namespace JSL::Async::Watcher
 	File::~File()
 	{
 		Stop();
-		::close(ShutdownPipe[0]);
-		::close(ShutdownPipe[1]);
 	}
 
 	void File::AbortStartup(std::string msg)
@@ -91,6 +89,10 @@ namespace JSL::Async::Watcher
 
 		if (InotifyFd != -1) ::close(InotifyFd);
 		InotifyFd = -1;
+		::close(ShutdownPipe[0]);
+		ShutdownPipe[0] = -1;
+		::close(ShutdownPipe[1]);
+		ShutdownPipe[1] = -1;
 	}
 
 	void File::AddWatch(const std::filesystem::path &dir, bool isFirstWatch)
