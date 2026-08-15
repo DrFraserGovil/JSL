@@ -30,7 +30,8 @@ namespace JSL::Async::Watcher
 	{
 		if (Whitelist.empty()) return true;
 
-		std::string relStr = relativePath.generic_string();
+		auto rootRelative = relativePath.lexically_relative(RootPath);
+		std::string relStr = rootRelative.generic_string();
 		std::string bareName = relativePath.filename().generic_string();
 
 		return (std::regex_match(relStr, combinedWhitelist) || std::regex_match(bareName, combinedWhitelist));
@@ -38,7 +39,8 @@ namespace JSL::Async::Watcher
 	bool File::IsBlacklisted(const std::filesystem::path &relativePath) const
 	{
 		if (Blacklist.empty()) return false;
-		std::string relStr = relativePath.generic_string();
+		auto rootRelative = relativePath.lexically_relative(RootPath);
+		std::string relStr = rootRelative.generic_string();
 		std::string bareName = relativePath.filename().generic_string();
 
 		return (std::regex_match(relStr, combinedBlacklist) || std::regex_match(bareName, combinedBlacklist));
@@ -73,14 +75,13 @@ namespace JSL::Async::Watcher
 	void File::InitialSnapshot()
 	{
 		auto snap = TakeSnapshot();
+		if (CriticalErrorState)
+		{
+			JSL::internal::LibraryError("Bad filewatch", JSL_LOCATION) << "Could not perform the initial directory snapshot for the watcher";
+		}
 		PreviousMeta = snap.ListMetadata();
 		PreviousDirs = snap.ListDirs();
 		PreviousOthers = snap.ListOthers();
-		LOG(INFO) << "Watcher initialised watching " << RootPath << ", and sub " << PreviousDirs;
-		for (auto &m : PreviousMeta)
-		{
-			LOG(INFO) << "\t " << m.Path;
-		}
 	}
 
 	std::set<FileChange> File::ComputeDiff()
@@ -186,5 +187,24 @@ namespace JSL::Async::Watcher
 			}
 			Callback(diff);
 		}
+	}
+	void File::Start()
+	{
+		if (!Initialised)
+		{
+			AbortStartup("File watcher started before Initialise() was called");
+		}
+		if (Running.exchange(true)) return;
+
+		CreateShutdownSystem();
+		InitialisePlatformWatchers();
+		InitialSnapshot();
+		AddWatch(RootPath, true);
+		for (auto &dir : PreviousDirs)
+		{
+			AddWatch(dir);
+		}
+
+		WorkerThread = std::thread(&File::Run, this);
 	}
 } // namespace JSL::Async::Watcher

@@ -100,9 +100,12 @@ namespace JSL::Async::Watcher
 		static constexpr int DebounceMs = 20;
 		static constexpr int MaxDebounceBeforeForce = 10;
 		std::atomic<bool> CriticalErrorState = false;
-		void AddWatch(const std::filesystem::path &dir);
+		void AddWatch(const std::filesystem::path &dir, bool isFirstWatch = false);
 		void RemoveWatch(const std::filesystem::path &dir);
 		void ProcessBatch();
+		void InitialisePlatformWatchers();
+		void CreateShutdownSystem();
+		[[noreturn]] void AbortStartup(std::string msg);
 #ifdef LINUXMODE
 
 		//! @brief Checks if the changes recorded meet the filtering requirements, and if so, signal that a re-cache is needed

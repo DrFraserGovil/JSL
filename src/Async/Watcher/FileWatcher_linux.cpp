@@ -26,20 +26,40 @@ namespace JSL::Async::Watcher
 		::close(ShutdownPipe[1]);
 	}
 
-	void File::Start()
+	void File::AbortStartup(std::string msg)
 	{
-		if (!Initialised)
+		if (InotifyFd != -1)
 		{
-			JSL::internal::LibraryError("Invalid state", JSL_LOCATION) << "File watcher started before Initialise() was called";
+			::close(InotifyFd);
+			InotifyFd = -1;
 		}
-		if (Running.exchange(true)) return;
-
-		/// Create the shutdown messager
+		if (ShutdownPipe[0] != -1)
+		{
+			::close(ShutdownPipe[0]);
+			::close(ShutdownPipe[1]);
+			ShutdownPipe[0] = ShutdownPipe[1] = -1;
+		}
+		Running.store(false, std::memory_order_release);
+		JSL::internal::LibraryError("Failed to start watcher", JSL_LOCATION) << msg;
+	}
+	void File::InitialisePlatformWatchers()
+	{
+		/// initialise the inotify system
+		InotifyFd = inotify_init1(IN_NONBLOCK | IN_CLOEXEC);
+		if (InotifyFd == -1)
+		{
+			Running.store(false, std::memory_order_release);
+			AbortStartup("inotify_init1 failed with message: " + (std::string)std::strerror(errno));
+		}
+	}
+	void File::CreateShutdownSystem()
+	{
 		if (ShutdownPipe[0] != -1)
 		{
 			::close(ShutdownPipe[0]); // close any previously opened pipes
 			::close(ShutdownPipe[1]);
 		}
+		/// Create the shutdown messager
 		if (::pipe(ShutdownPipe) == 0) // opens a new pipe, and saves the values into ShutdownPipe
 		{
 			::fcntl(ShutdownPipe[0], F_SETFL, O_NONBLOCK);
@@ -47,26 +67,9 @@ namespace JSL::Async::Watcher
 		}
 		else
 		{
-			JSL::internal::LibraryError("Invalid pipe", JSL_LOCATION) << "Could not create a pipe for the InputWatcher";
-		}
-
-		/// initialise the inotify system
-		InotifyFd = inotify_init1(IN_NONBLOCK | IN_CLOEXEC);
-		if (InotifyFd == -1)
-		{
 			Running.store(false, std::memory_order_release);
-			JSL::internal::LibraryError("Failed to start watcher", JSL_LOCATION) << "inotify_init1 failed: " << std::strerror(errno);
+			AbortStartup("Could not create a shutdown pipe for the InputWatcher");
 		}
-
-		InitialSnapshot();
-		WatchMap.clear();
-		AddWatch(RootPath);
-		for (auto &dir : PreviousDirs)
-		{
-			AddWatch(dir);
-		}
-
-		WorkerThread = std::thread(&File::Run, this);
 	}
 
 	void File::Stop()
@@ -88,12 +91,21 @@ namespace JSL::Async::Watcher
 		InotifyFd = -1;
 	}
 
-	void File::AddWatch(const std::filesystem::path &dir)
+	void File::AddWatch(const std::filesystem::path &dir, bool isFirstWatch)
 	{
-		LOG(INFO) << "Watching " << dir;
+		if (isFirstWatch)
+		{
+			WatchMap.clear();
+		}
 		// create the inotify instance for this directory
 		int wd = inotify_add_watch(InotifyFd, dir.c_str(), kWatchMask);
-		if (wd == -1) return; // e.g. TOCTOU: dir vanished between listing and watching
+		if (wd == -1)
+		{
+			if (!isFirstWatch) return; // TOCTOU, safe to skip
+
+			// else: didn't establish watch on top level (that's
+			AbortStartup("Coult not establish a watch on the top level directory, with error " + std::string(std::strerror(errno)));
+		}
 
 		// store it so we can work out later who said what
 		WatchMap[wd] = dir;
@@ -101,7 +113,7 @@ namespace JSL::Async::Watcher
 	void File::RemoveWatch(const std::filesystem::path &dir)
 	{
 		int wd = -1;
-		for (auto [tmpwd, path] : WatchMap)
+		for (auto &[tmpwd, path] : WatchMap)
 		{
 			if (path == dir)
 			{
@@ -127,17 +139,24 @@ namespace JSL::Async::Watcher
 		bool pending = false;
 		std::vector<char> buf(kEventBufLen);
 		size_t pushBacks = 0;
+		bool forceProcess = false;
 		while (Running.load(std::memory_order_acquire))
 		{
 			int timeout = pending ? DebounceMs : -1;
+			if (forceProcess) timeout = 0;
 			int ret = ::poll(fds, 2, timeout);
 
-			if (ret == 0) // timed out
+			if (ret == 0 || forceProcess) // timed out
 			{
 				pushBacks = 0;
 				ProcessBatch();
 				pending = false;
-				if (CriticalErrorState) { return; }
+				forceProcess = false;
+				if (CriticalErrorState)
+				{
+					Running = false;
+					return;
+				}
 				continue;
 			}
 			if (ret < 0)
@@ -155,7 +174,7 @@ namespace JSL::Async::Watcher
 				if (n > 0)
 				{
 					// if there was data present, determine if it requires a reprocessing pass
-					pending = inotifyCheck(buf.data(), n);
+					pending = pending || inotifyCheck(buf.data(), n);
 					if (pending)
 					{
 						++pushBacks;
@@ -164,9 +183,7 @@ namespace JSL::Async::Watcher
 					if (pushBacks > MaxDebounceBeforeForce)
 					{
 						pushBacks = 0;
-						ProcessBatch();
-						pending = false;
-						if (CriticalErrorState) { return; }
+						forceProcess = true;
 					}
 				}
 			}
@@ -183,10 +200,19 @@ namespace JSL::Async::Watcher
 			offset += static_cast<ssize_t>(sizeof(struct inotify_event) + event->len);
 
 			auto it = WatchMap.find(event->wd);
-			if (it == WatchMap.end()) continue; // stale/already-removed watch
+			if (it == WatchMap.end()) continue; // stale/already-removed watch; or a SELF_DELETE which we catch in other ways
 
+			if (event->len == 0)
+			{
+				return true; // len == 0 occurs for IN_DELETE_SELF or IN_MOVE_SELF, which is the case for a dir we're watching being moved/deleted -- which is an automatic rescan trigger
+			}
 			std::filesystem::path fullPath = it->second / event->name;
-			if (IsWhitelisted(fullPath) && !IsBlacklisted(fullPath))
+
+			if (event->mask & IN_ISDIR)
+			{
+				if (!IsBlacklisted(fullPath)) return true; // we only *blacklist* directories
+			}
+			else if (IsWhitelisted(fullPath) && !IsBlacklisted(fullPath)) // files need to pass both white and blacklists
 			{
 				return true;
 			}
