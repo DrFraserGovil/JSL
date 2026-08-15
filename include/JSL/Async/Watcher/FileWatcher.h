@@ -13,6 +13,7 @@
 #include <atomic>
 #include <filesystem>
 #include <functional>
+#include <map>
 #include <regex>
 #include <set>
 #include <string>
