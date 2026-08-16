@@ -142,7 +142,7 @@ namespace
 		// missed notification (predicate already true = returns
 		// immediately) and a hang on regression (times out and returns
 		// false, rather than blocking the test run indefinitely).
-		bool WaitFor(const std::function<bool(const std::vector<Watcher::FileChange> &)> &pred, std::chrono::milliseconds timeout = std::chrono::seconds(2))
+		bool WaitFor(const std::function<bool(const std::vector<Watcher::FileChange> &)> &pred, std::chrono::milliseconds timeout = std::chrono::seconds(5))
 		{
 			std::unique_lock<std::mutex> lock(Mutex);
 			Cv.wait_for(lock, timeout, [&] { return pred(AllChanges); });

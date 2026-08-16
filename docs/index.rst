@@ -39,6 +39,7 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
 
    * - :ref:`Async.h <async>`
      - * :ref:`Async/Pool.h <parpool>`
+       * :ref:`Async/Socket.h <socket>`
        * :ref:`Async/Watcher.h <watchers>`
      - A module for asynchronous and parallel computing
 

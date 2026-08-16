@@ -10,23 +10,28 @@ Async Watchers
    watcher_input
    watcher_file
    watcher_socket
-    
+   panopticon
+
 .. list-table::
-	:header-rows: 1
-	:widths: 20,80
-	:class: no-wrap
+    :header-rows: 1
+    :widths: 20,80
+    :class: no-wrap
 
-	* - Submodule
-	  - Contents
+    * - Submodule
+      - Contents
 
-	* - :ref:`Watcher::Input <watcher-input>`
-	  - Applies a callback to all complete-lines which are entered into the standard input stream 
+    * - :ref:`Watcher::Panopticon<panopticon>`
+      - An overall manager class which handles Input, File and Socket callbacks
+
+    * - :ref:`Watcher::Input <watcher-input>`
+      - Applies a callback to all complete-lines which are entered into the standard input stream 
          
-	* - :ref:`Watcher:::File <watcher-file>`
-	  - Applies a callback to each batch of files which are changed in a watched directory
+    * - :ref:`Watcher:::File <watcher-file>`
+      - Applies a callback to each batch of files which are changed in a watched directory
          
-	* - :ref:`Watcher::Socket <watcher-socket>`
-	  - Applies a callback to each line which is recieved on a Socket::Listener 
+    * - :ref:`Watcher::Socket <watcher-socket>`
+      - Applies a callback to each line which is recieved on a Socket::Listener 
+
 
 Motivation
 ----------------

@@ -3,9 +3,6 @@
 #include <JSL/internal/error.h>
 namespace JSL::Async::Watcher
 {
-	Panopticon::Panopticon()
-	{
-	}
 	void Panopticon::SetInputCallback(strCallBack fcn, std::optional<std::string> exitString, bool overwriteExisting)
 	{
 		if (IsRunning)
@@ -31,11 +28,11 @@ namespace JSL::Async::Watcher
 					std::unique_lock lock(Queue);
 					if (exitString && line == *exitString)
 					{
-						Instructions.push_back({Instruction::Type::SHUTDOWN, "", ""});
+						Instructions.push_back({internal::Instruction::Type::SHUTDOWN, "", ""});
 					}
 					else
 					{
-						Instructions.push_back({Instruction::Type::CIN, "cin", std::move(line)});
+						Instructions.push_back({internal::Instruction::Type::CIN, "cin", std::move(line)});
 					}
 				}
 				AwaitingInstruction.notify_one();
@@ -62,7 +59,7 @@ namespace JSL::Async::Watcher
 			SocketTracker[socketID] = std::make_unique<Watcher::Socket>(socketID, [this, socketID = socketID](std::string line) {
 					{
 					std::unique_lock lock(Queue);
-					Instructions.push_back({Instruction::Type::SOCKET, socketID, std::move(line)}); 
+					Instructions.push_back({internal::Instruction::Type::SOCKET, socketID, std::move(line)}); 
 					} 
 					AwaitingInstruction.notify_one(); }, forceAcquire);
 		}
@@ -87,7 +84,7 @@ namespace JSL::Async::Watcher
 			FileTracker[watchedDirectory] = std::make_unique<Watcher::File>(watchedDirectory, recursive, [this, id = watchedDirectory](std::set<FileChange> batch) {
 					{
 					std::unique_lock lock(Queue);
-					Instructions.push_back({Instruction::Type::FILE, id, std::move(batch)}); 
+					Instructions.push_back({internal::Instruction::Type::FILE, id, std::move(batch)}); 
 					} 
 					AwaitingInstruction.notify_one(); });
 		}
@@ -131,7 +128,7 @@ namespace JSL::Async::Watcher
 		IsRunning = true;
 		while (IsRunning)
 		{
-			std::deque<Instruction> localQueue;
+			std::deque<internal::Instruction> localQueue;
 			{
 				std::unique_lock lock(Queue);
 				AwaitingInstruction.wait(lock, [&] { return !Instructions.empty(); });
@@ -145,17 +142,17 @@ namespace JSL::Async::Watcher
 
 				switch (type)
 				{
-					case Instruction::Type::SHUTDOWN:
+					case internal::Instruction::Type::SHUTDOWN:
 						IsRunning = false;
 						localQueue = {}; // flush the local queue
 						break;
-					case Instruction::Type::CIN:
+					case internal::Instruction::Type::CIN:
 						cinCallback(std::get<std::string>(msg));
 						break;
-					case Instruction::Type::SOCKET:
+					case internal::Instruction::Type::SOCKET:
 						socketCallback[id](std::get<std::string>(msg));
 						break;
-					case Instruction::Type::FILE:
+					case internal::Instruction::Type::FILE:
 						fileCallback[id](std::get<std::set<FileChange>>(msg));
 						break;
 					default:
@@ -172,7 +169,7 @@ namespace JSL::Async::Watcher
 	{
 		{
 			std::unique_lock lock(Queue);
-			Instructions.push_back({Instruction::Type::SHUTDOWN, "", ""});
+			Instructions.push_back({internal::Instruction::Type::SHUTDOWN, "", ""});
 		}
 		AwaitingInstruction.notify_one();
 	}

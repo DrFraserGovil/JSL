@@ -35,7 +35,6 @@ namespace JSL::Async::Socket
 		Broadcaster &operator=(const Broadcaster &) = delete;
 		//! Rule of five deletion
 		Broadcaster(Broadcaster &&other) noexcept;
-		//! Rule of five deletion
 		Broadcaster &operator=(Broadcaster &&other) noexcept;
 	};
 }; // namespace JSL::Async::Socket
