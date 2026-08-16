@@ -7,6 +7,7 @@
 #include <JSL/Async/Watcher.h>
 #include <JSL/Log.h>
 #include <catch2/catch_test_macros.hpp>
+#include <future>
 
 #include <atomic>
 #include <chrono>
@@ -508,43 +509,204 @@ TEST_CASE("Input Watcher", "[watcher][input]")
 		REQUIRE_NOTHROW(Watcher.Stop());
 	}
 }
-// TEST_CASE("Manual testing", "[Manual]")
-// {
-// 	// std::cout << "\n\n>> " << std::flush;
-// 	//
-// 	// JSL::Async::Watcher::Panopticon AllSeer;
-// 	//
-// 	// AllSeer.SetInputCallback([](auto line) {
-// 	// 	LOG(INFO) << "Transmitting ping to...";
-// 	// 	JSL::Async::Socket::Transmit("test.sock", line);
-// 	// },
-// 	// 	"exit");
-// 	//
-// 	// AllSeer.SetSocketCallback("test.sock", [&](std::string line) {
-// 	// 	LOG(INFO) << "Socket recieved: " << line;
-// 	// 	std::cout << ">>" << std::flush;
-// 	// });
-// 	//
-// 	// AllSeer.Start();
-// 	//
-// 	auto r = JSL::IO::Directory::Snapshot("mantest");
-// 	LOG(INFO) << r.ListFiles();
-// 	std::mutex R;
-// 	std::condition_variable wait;
-//
-// 	auto W = JSL::Async::Watcher::File("mantest", true, [&](auto batch) {
-// 		LOG(INFO) << "New batch: " << batch.size();
-// 		for (auto b : batch)
-// 		{
-// 			LOG(INFO) << b.Path;
-// 			if (b.Path.extension() == ".exit")
-// 			{
-// 				wait.notify_one();
-// 			}
-// 		}
-// 	});
-// 	W.Start();
-//
-// 	std::unique_lock lock(R);
-// 	wait.wait(lock);
-// }
+
+namespace
+{
+
+	// Panopticon::Start() blocks until Stop() (or an exitString match) is
+	// hit, so every test needs to run it on its own thread. Returns a
+	// future so tests can assert the thread actually terminated within a
+	// bounded time, rather than joining unconditionally and risking a
+	// test-suite hang on regression.
+	std::future<void> RunAsync(Watcher::Panopticon &panopticon)
+	{
+		return std::async(std::launch::async, [&panopticon] { panopticon.Start(); });
+	}
+
+	bool FinishesWithin(std::future<void> &future, std::chrono::milliseconds timeout = std::chrono::seconds(2))
+	{
+		return future.wait_for(timeout) == std::future_status::ready;
+	}
+
+	// A failing REQUIRE throws and unwinds out of the SECTION immediately,
+	// skipping any explicit panopticon.Stop() call written further down.
+	// Left unstopped, Start() never returns -- and a std::future from
+	// std::async blocks in its destructor until the async task actually
+	// finishes. Without this guard, a single failed assertion turns into
+	// a hung test binary instead of a clean failure. Declare this AFTER
+	// the future returned by RunAsync(), so it destructs (and calls
+	// Stop()) BEFORE that future does, on every exit path.
+	struct AutoStop
+	{
+		Watcher::Panopticon &Target;
+		~AutoStop()
+		{
+			Target.Stop();
+		}
+	};
+} // namespace
+  //
+  //
+
+TEST_CASE("Panopticon", "[watcher][panopticon]")
+{
+	SECTION("Starts and Stops With Nothing Registered")
+	{
+		Watcher::Panopticon panopticon;
+		auto result = RunAsync(panopticon);
+		AutoStop stopper{panopticon}; // guarantees Stop() runs even if a REQUIRE below throws
+		panopticon.Stop();
+		REQUIRE(FinishesWithin(result));
+		REQUIRE_NOTHROW(result.get());
+	}
+
+	SECTION("Dispatches Input Callback")
+	{
+		StdinSplicer splicer;
+		LineCollector collector;
+		Watcher::Panopticon panopticon;
+		panopticon.SetInputCallback(collector.Callback());
+
+		auto result = RunAsync(panopticon);
+		AutoStop stopper{panopticon}; // guarantees Stop() runs even if a REQUIRE below throws
+		splicer.Write("hello panopticon\n");
+
+		bool found = collector.WaitFor([](auto &lines) { return !lines.empty(); });
+		REQUIRE(found);
+		REQUIRE(collector.Lines[0] == "hello panopticon");
+
+		panopticon.Stop();
+		REQUIRE(FinishesWithin(result));
+	}
+
+	SECTION("Exit String Stops the Panopticon Without an Explicit Stop")
+	{
+		StdinSplicer splicer;
+		LineCollector collector;
+		Watcher::Panopticon panopticon;
+		panopticon.SetInputCallback(collector.Callback(), "exit");
+
+		auto result = RunAsync(panopticon);
+		AutoStop stopper{panopticon}; // guarantees Stop() runs even if a REQUIRE below throws
+		splicer.Write("exit\n");
+
+		// No explicit Stop() call here -- the exitString match should be
+		// enough on its own to unblock Start().
+		REQUIRE(FinishesWithin(result));
+		REQUIRE_NOTHROW(result.get());
+	}
+
+	SECTION("Dispatches Socket Callback")
+	{
+		std::string socketName = "panopticon_test.sock";
+		LineCollector collector;
+		Watcher::Panopticon panopticon;
+		panopticon.SetSocketCallback(socketName, collector.Callback());
+
+		auto result = RunAsync(panopticon);
+		AutoStop stopper{panopticon}; // guarantees Stop() runs even if a REQUIRE below throws
+		// Give the socket a moment to actually bind before transmitting.
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+		Socket::Transmit(socketName, "hello socket");
+
+		bool found = collector.WaitFor([](auto &lines) { return !lines.empty(); });
+		REQUIRE(found);
+		REQUIRE(collector.Lines[0] == "hello socket");
+
+		panopticon.Stop();
+		REQUIRE(FinishesWithin(result));
+	}
+
+	SECTION("Dispatches File Batch Callback")
+	{
+		TempDir dir;
+		BatchCollector collector;
+		Watcher::Panopticon panopticon;
+		panopticon.SetFileBatchCallback(dir.Path.string(), true, collector.Callback());
+
+		auto result = RunAsync(panopticon);
+		AutoStop stopper{panopticon}; // guarantees Stop() runs even if a REQUIRE below throws
+		// Give the watcher a moment to establish its initial baseline
+		// snapshot before creating the file -- otherwise the file could
+		// land inside that baseline and never fire as Create at all, per
+		// the "No Spurious Events for Pre-Existing Files" behavior.
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+		std::ofstream(dir.Path / "created.txt") << "hi";
+
+		bool found = collector.WaitFor([&](auto &) { return collector.Contains("created.txt", Watcher::ChangeType::Create); });
+		REQUIRE(found);
+
+		panopticon.Stop();
+		REQUIRE(FinishesWithin(result));
+	}
+
+	SECTION("Dispatches Single File Callback Per-File")
+	{
+		TempDir dir;
+		std::mutex mutex;
+		std::condition_variable cv;
+		std::vector<Watcher::FileChange> received;
+
+		Watcher::Panopticon panopticon;
+		panopticon.SetSingleFileCallback(dir.Path.string(), true, [&](Watcher::FileChange change) {
+			{
+				std::lock_guard<std::mutex> lock(mutex);
+				received.push_back(change);
+			}
+			cv.notify_one();
+		});
+
+		auto result = RunAsync(panopticon);
+		AutoStop stopper{panopticon}; // guarantees Stop() runs even if a REQUIRE below throws
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+		std::ofstream(dir.Path / "a.txt") << "a";
+		std::ofstream(dir.Path / "b.txt") << "b";
+
+		std::unique_lock<std::mutex> lock(mutex);
+		bool found = cv.wait_for(lock, std::chrono::seconds(2), [&] { return received.size() >= 2; });
+		REQUIRE(found);
+		REQUIRE(std::any_of(received.begin(), received.end(), [](auto &c) { return c.Path.filename() == "a.txt"; }));
+		REQUIRE(std::any_of(received.begin(), received.end(), [](auto &c) { return c.Path.filename() == "b.txt"; }));
+		lock.unlock();
+
+		panopticon.Stop();
+		REQUIRE(FinishesWithin(result));
+	}
+
+	SECTION("Refuses to Overwrite an Existing Callback by Default")
+	{
+		std::string socketName = "panopticon_overwrite_test.sock";
+		Watcher::Panopticon panopticon;
+		REQUIRE_NOTHROW(panopticon.SetSocketCallback(socketName, [](auto) {}));
+		REQUIRE_THROWS(panopticon.SetSocketCallback(socketName, [](auto) {}));
+		REQUIRE_NOTHROW(panopticon.SetSocketCallback(socketName, [](auto) {}, false, true));
+	}
+
+	SECTION("Refuses to Register Callbacks While Running")
+	{
+		Watcher::Panopticon panopticon;
+		auto result = RunAsync(panopticon);
+		AutoStop stopper{panopticon}; // guarantees Stop() runs even if a REQUIRE below throws
+		// give Start() a moment to actually flip IsRunning before we probe it
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+		REQUIRE_THROWS(panopticon.SetInputCallback([](auto) {}));
+		REQUIRE_THROWS(panopticon.SetSocketCallback("wont_bind.sock", [](auto) {}));
+
+		panopticon.Stop();
+		REQUIRE(FinishesWithin(result));
+	}
+
+	SECTION("Refuses a Second Start While Already Running")
+	{
+		Watcher::Panopticon panopticon;
+		auto result = RunAsync(panopticon);
+		AutoStop stopper{panopticon}; // guarantees Stop() runs even if a REQUIRE below throws
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+		REQUIRE_THROWS(panopticon.Start());
+
+		panopticon.Stop();
+		REQUIRE(FinishesWithin(result));
+	}
+}

@@ -6,42 +6,100 @@ namespace JSL::Async::Watcher
 	Panopticon::Panopticon()
 	{
 	}
-	void Panopticon::SetInputCallback(callback fcn, std::optional<std::string> exitString)
+	void Panopticon::SetInputCallback(strCallBack fcn, std::optional<std::string> exitString, bool overwriteExisting)
 	{
 		if (IsRunning)
 		{
 			JSL::internal::LibraryError("In-flight mutation", JSL_LOCATION) << "Cannot modify the cin-callback of a watcher whilst it is running";
 		}
-		cinCallback = std::move(fcn);
-		Input.Initialise([this, exitString = std::move(exitString)](std::string line) {
+
+		if (cinCallback)
+		{
+			if (!overwriteExisting)
 			{
-				std::unique_lock lock(Queue);
-				if (exitString && line == *exitString)
-				{
-					Instructions.push_back({Instruction::Type::SHUTDOWN, "", ""});
-				}
-				else
-				{
-					Instructions.push_back({Instruction::Type::CIN, "cin", std::move(line)});
-				}
+				JSL::internal::LibraryError("Callback overwrite", JSL_LOCATION) << "A callback is already registered to the Input Watcher. To prevent this error, run with overwriteExisting = true";
 			}
-			AwaitingInstruction.notify_one();
-		});
+			if (exitString)
+			{
+				LOG(WARN) << "Cannot set a new exitString value when overriding a socket callback.";
+			}
+		}
+		else
+		{
+			InputTracker.Initialise([this, exitString = std::move(exitString)](std::string line) {
+				{
+					std::unique_lock lock(Queue);
+					if (exitString && line == *exitString)
+					{
+						Instructions.push_back({Instruction::Type::SHUTDOWN, "", ""});
+					}
+					else
+					{
+						Instructions.push_back({Instruction::Type::CIN, "cin", std::move(line)});
+					}
+				}
+				AwaitingInstruction.notify_one();
+			});
+		}
+		cinCallback = std::move(fcn);
 	}
-	void Panopticon::SetSocketCallback(std::string socketID, callback fcn, bool forceAcquire)
+	void Panopticon::SetSocketCallback(std::string socketID, strCallBack fcn, bool forceAcquire, bool overwriteExisting)
 	{
 
 		if (IsRunning)
 		{
-			JSL::internal::LibraryError("In-flight mutation", JSL_LOCATION) << "Cannot modify the cin-callback of a watcher whilst it is running";
+			JSL::internal::LibraryError("In-flight mutation", JSL_LOCATION) << "Cannot modify the socket-callback of a watcher whilst it is running";
 		}
-		Socket[socketID] = std::make_unique<Watcher::Socket>(socketID, [this, socketID = socketID](std::string line) {
-				{
-				std::unique_lock lock(Queue);
-				Instructions.push_back({Instruction::Type::SOCKET, socketID, std::move(line)}); 
-				} 
-				AwaitingInstruction.notify_one(); }, forceAcquire);
+		if (SocketTracker.contains(socketID))
+		{
+			if (!overwriteExisting)
+			{
+				JSL::internal::LibraryError("Callback overwrite", JSL_LOCATION) << "A callback is already registered to the socket " << socketID << ". To prevent this error, run with overwriteExisting = true";
+			}
+		}
+		else
+		{
+			SocketTracker[socketID] = std::make_unique<Watcher::Socket>(socketID, [this, socketID = socketID](std::string line) {
+					{
+					std::unique_lock lock(Queue);
+					Instructions.push_back({Instruction::Type::SOCKET, socketID, std::move(line)}); 
+					} 
+					AwaitingInstruction.notify_one(); }, forceAcquire);
+		}
 		socketCallback[socketID] = std::move(fcn);
+	}
+	void Panopticon::SetFileBatchCallback(std::string watchedDirectory, bool recursive, batchCallBack fcn, bool overwriteExisting)
+	{
+
+		if (IsRunning)
+		{
+			JSL::internal::LibraryError("In-flight mutation", JSL_LOCATION) << "Cannot modify the file-callback of a watcher whilst it is running";
+		}
+		if (FileTracker.contains(watchedDirectory))
+		{
+			if (!overwriteExisting)
+			{
+				JSL::internal::LibraryError("Callback overwrite", JSL_LOCATION) << "A callback is already registered to the directory " << watchedDirectory << ". To prevent this error, run with overwriteExisting = true";
+			}
+		}
+		else
+		{
+			FileTracker[watchedDirectory] = std::make_unique<Watcher::File>(watchedDirectory, recursive, [this, id = watchedDirectory](std::set<FileChange> batch) {
+					{
+					std::unique_lock lock(Queue);
+					Instructions.push_back({Instruction::Type::FILE, id, std::move(batch)}); 
+					} 
+					AwaitingInstruction.notify_one(); });
+		}
+		fileCallback[watchedDirectory] = std::move(fcn);
+	}
+	void Panopticon::SetSingleFileCallback(std::string watchedDirectory, bool recursive, fileCallBack fcn, bool overwriteExisting)
+	{
+		SetFileBatchCallback(watchedDirectory, recursive, [func = fcn](auto batch) {
+			for (auto &file : batch)
+			{
+				func(file);
+			} }, overwriteExisting);
 	}
 
 	void Panopticon::Start()
@@ -51,15 +109,22 @@ namespace JSL::Async::Watcher
 			JSL::internal::LibraryError("Double Start", JSL_LOCATION) << "Cannot re-start a watcher-set whilst it is already running";
 		}
 
-		if (Input.Initialised)
+		if (InputTracker.Initialised)
 		{
-			Input.Start();
+			InputTracker.Start();
 		}
-		for (auto &[_, s] : Socket)
+		for (auto &[_, s] : SocketTracker)
 		{
 			if (s->Initialised)
 			{
 				s->Start();
+			}
+		}
+		for (auto &[_, f] : FileTracker)
+		{
+			if (f->Initialised)
+			{
+				f->Start();
 			}
 		}
 
@@ -85,10 +150,13 @@ namespace JSL::Async::Watcher
 						localQueue = {}; // flush the local queue
 						break;
 					case Instruction::Type::CIN:
-						cinCallback(msg);
+						cinCallback(std::get<std::string>(msg));
 						break;
 					case Instruction::Type::SOCKET:
-						socketCallback[id](msg);
+						socketCallback[id](std::get<std::string>(msg));
+						break;
+					case Instruction::Type::FILE:
+						fileCallback[id](std::get<std::set<FileChange>>(msg));
 						break;
 					default:
 						LOG(ERROR) << "Not yet handled!";
@@ -110,10 +178,17 @@ namespace JSL::Async::Watcher
 	}
 	void Panopticon::Shutdown()
 	{
-		if (Input.Initialised)
+		if (InputTracker.Initialised)
 		{
-			LOG(INFO) << "Stopping";
-			Input.Stop();
+			InputTracker.Stop();
+		}
+		for (auto &[_, s] : SocketTracker)
+		{
+			if (s->Initialised) s->Stop();
+		}
+		for (auto &[_, f] : FileTracker)
+		{
+			if (f->Initialised) f->Stop();
 		}
 	}
 
