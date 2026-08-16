@@ -14,10 +14,6 @@ namespace JSL::Async::Socket
 		SetTarget(socketName);
 	}
 
-	Broadcaster::~Broadcaster()
-	{
-	}
-
 	void Broadcaster::SetTarget(std::string_view socketName)
 	{
 		Identifier = static_cast<std::string>(socketName);

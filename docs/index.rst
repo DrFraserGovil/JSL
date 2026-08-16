@@ -37,9 +37,14 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
      - Submodules
      - Description
 
+   * - :ref:`Async.h <async>`
+     - * :ref:`Async/Pool.h <parpool>`
+       * :ref:`Async/Watcher.h <watchers>`
+     - A module for asynchronous and parallel computing
+
 
    * - :ref:`Concepts.h <concepts>`
-     -  
+     - 
      - A header-only module for several common template-concepts
       
    * - :ref:`Display.h <display>`
