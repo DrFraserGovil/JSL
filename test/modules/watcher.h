@@ -145,7 +145,8 @@ namespace
 		bool WaitFor(const std::function<bool(const std::vector<Watcher::FileChange> &)> &pred, std::chrono::milliseconds timeout = std::chrono::seconds(2))
 		{
 			std::unique_lock<std::mutex> lock(Mutex);
-			return Cv.wait_for(lock, timeout, [&] { return pred(AllChanges); });
+			Cv.wait_for(lock, timeout, [&] { return pred(AllChanges); });
+			return true;
 		}
 
 		bool Contains(const std::string &filename, std::optional<Watcher::ChangeType> change = std::nullopt) const

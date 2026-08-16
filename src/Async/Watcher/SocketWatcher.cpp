@@ -55,6 +55,11 @@ namespace JSL::Async::Watcher
 			std::rethrow_exception(ex);
 		}
 	}
+	void Socket::SetTimeout(std::chrono::milliseconds time)
+	{
+
+		PollTimeout = time;
+	}
 
 	void Socket::Run()
 	{
