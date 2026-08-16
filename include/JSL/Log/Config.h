@@ -38,12 +38,7 @@ namespace JSL::Log
 		*/
 		void AlignSize(size_t debugReserve = 20);
 
-		/// @name Configuration Variables
-		/// @{
-
-		/*!
-			@brief The global filter level for the logs. Any calls to @ref LOG with a value higher than this are ignored. Default: INFO
-		*/
+		//! @brief The global filter level for the logs. Any calls to @ref LOG with a value higher than this are ignored. Default: INFO
 		LogLevel Level = LogLevel::INFO;
 
 		//! @brief If true, all Log commands have a newline automatically appended to them. Default: TRUE
@@ -55,10 +50,9 @@ namespace JSL::Log
 		//! @brief If true, LOG clears the current terminal line and resets the cursor position. Useful to prevent interleaving of superfluous cout messaging. Default: FALSE
 		bool ForceClear = false;
 
-		/// @}
 		//! @brief This value can be changed to automatically increment increment or decrement logs
 		size_t IndentLevel = 0;
-		//! @brief The number of spaces assigned per indent level
+		//! @brief The number of spaces assigned per indent level (this is distinct from the tabstop size)
 		size_t IndentWidth = 4;
 
 		//! If Formatting active, the default colour assigned to LOG(ERROR) messages
@@ -75,6 +69,9 @@ namespace JSL::Log
 
 		//! The Core class needs to be able to reach inside the private members to access them.
 		friend class JSL::Log::internal::Core;
+
+		//! The maximum allowed IndentLevel
+		size_t MaxIndent = 10;
 
 	  private:
 		/*!

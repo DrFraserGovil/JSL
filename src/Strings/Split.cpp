@@ -8,7 +8,7 @@ namespace JSL::String
 	{
 		if (delimiter.size() == 0)
 		{
-			internal::FatalError("Bad split", JSL_LOCATION) << "Split called with empty delimiter";
+			internal::LibraryError("Bad split", JSL_LOCATION) << "Split called with empty delimiter";
 		}
 		std::vector<T> tokens;
 		size_t start = 0;

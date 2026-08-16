@@ -1,6 +1,6 @@
 #pragma once
-#include <regex>
 #include <concepts>
+#include <regex>
 namespace JSL::IO
 {
 	/*! @brief Converts a glob-string into a regex-string
@@ -8,29 +8,29 @@ namespace JSL::IO
 		@details '*' and '?' are converted into their glob equivalent, and other regex-sensitive characters are escaped.
 		@param input A glob-string to be converted
 		@returns A string representing the glob in standard regex
-	*/	
-	template<class T>
-		requires std::convertible_to<T,std::string>
-	std::string inline makeGlob(T & input)
+	*/
+	template <class T>
+		requires std::convertible_to<T, std::string>
+	std::string inline makeGlob(T &input)
 	{
-		std::string result ="^";
+		std::string result = "^";
 		bool escaped = false;
 		bool firstopen = false;
 		bool open = false;
 
 		for (auto c : input)
 		{
-			if (c== '\0') // if T is a char * we can end up with null terminators ending up in our sequences
+			if (c == '\0') // if T is a char * we can end up with null terminators ending up in our sequences
 			{
 				break;
 			}
 			if (open && !escaped)
 			{
-				
+
 				if (firstopen)
 				{
 					firstopen = false;
-				
+
 					if (c == '!')
 					{
 						result += '^';
@@ -44,13 +44,18 @@ namespace JSL::IO
 					}
 				}
 
-				switch(c)
+				switch (c)
 				{
-					case '*': case '?': result += c; continue;
-					case ']': open = false; break;
-					default: break;
+					case '*':
+					case '?':
+						result += c;
+						continue;
+					case ']':
+						open = false;
+						break;
+					default:
+						break;
 				}
-				
 			}
 			if (escaped)
 			{
@@ -59,20 +64,38 @@ namespace JSL::IO
 			}
 			else
 			{
-				switch(c)
+				switch (c)
 				{
-					case '*': result += ".*"; break;
-					case '?': result += ".";  break;
-					case '\\': escaped = true; break;
-					case '[': open = true; firstopen = true; result += c; break;
+					case '*':
+						result += ".*";
+						break;
+					case '?':
+						result += ".";
+						break;
+					case '\\':
+						escaped = true;
+						break;
+					case '[':
+						open = true;
+						firstopen = true;
+						result += c;
+						break;
 					// Characters that need escaping in regex
-					case '.': case '+': case '^': case '$':
-					case '|': case '(': case ')': case '{': case '}':
+					case '.':
+					case '+':
+					case '^':
+					case '$':
+					case '|':
+					case '(':
+					case ')':
+					case '{':
+					case '}':
 						result += '\\';
 						result += c;
 						break;
-					default: result += c;
-				}			
+					default:
+						result += c;
+				}
 			}
 		}
 		return result + "$";
@@ -83,11 +106,31 @@ namespace JSL::IO
 		@details '*' and '?' are converted into their glob equivalent, and other regex-sensitive characters are escaped.
 		@param input A glob-string to be converted
 		@returns A compiled regex object representing the globstring
-	*/	
-	template<class T>
-		requires std::convertible_to<T,std::string>
-	std::regex inline globToRegex(T & input)
+	*/
+	template <class T>
+		requires std::convertible_to<T, std::string>
+	std::regex inline globToRegex(T &input)
 	{
 		return std::regex(makeGlob(input));
 	}
-}
+
+	/*! @brief Converts a glob-string into a regex object
+		@tparam A string-like type (string, string_view, const char*)
+		@details '*' and '?' are converted into their glob equivalent, and other regex-sensitive characters are escaped.
+		@param input A glob-string to be converted
+		@returns A compiled regex object representing the globstring
+	*/
+	template <class T>
+		requires std::convertible_to<T, std::string>
+	std::regex inline multiGlobToRegex(std::vector<T> input)
+	{
+		std::string combinedPattern = "";
+		for (size_t i = 0; i < input.size(); ++i)
+		{
+			if (i > 0) combinedPattern += "|";
+			combinedPattern += "(?:" + IO::makeGlob(input[i]) + ")"; // add a non-capturing possible-group
+		}
+		return std::regex(combinedPattern);
+	}
+
+} // namespace JSL::IO

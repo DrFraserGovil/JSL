@@ -26,18 +26,19 @@ namespace JSL::internal
 		return fullPath; // Or return empty if not found
 	}
 
-	FatalError::FatalError(std::string msg, int callingLine, const std::string &callingFunction, std::string callingFile) : Summary(msg)
+	LibraryError::LibraryError(std::string msg, int callingLine, const std::string &callingFunction, std::string callingFile) : Summary(msg)
 	{
 		auto shortFile = truncatedFilePath(callingFile, "JSL");
 		line = callingLine;
 		function = callingFunction;
 		file = shortFile;
+		Buffer << "JSL Library Error: " << Summary << "\n";
+		Buffer << "Error origins: " << file << ", line " << line << " in function " << function << "\n";
 	}
 
-	FatalError::~FatalError() noexcept(false)
+	LibraryError::~LibraryError() noexcept(false)
 	{
-		throw std::runtime_error(Summary + "\t" + Buffer.str());
-		return;
+		throw std::runtime_error(Buffer.str());
 	}
 
 } // namespace JSL::internal

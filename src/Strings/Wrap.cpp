@@ -6,6 +6,10 @@
 #include <JSL/internal/error.h>
 namespace JSL::String
 {
+	bool isANSITerminator(char c)
+	{
+		return (c >= '@' && c <= '~' && c != '[');
+	}
 	size_t trueSize(std::string_view str)
 	{
 		return trueSize(str, JSL::Display::Terminal().TabSize());
@@ -24,7 +28,8 @@ namespace JSL::String
 
 			if (inEscape)
 			{
-				if (c == 'm')
+				// this is the range of allowed ANSI termination sequences
+				if (isANSITerminator(c))
 				{
 					inEscape = false;
 				}
@@ -44,10 +49,110 @@ namespace JSL::String
 		}
 		return size;
 	}
+
+	size_t carefullySplitWord(std::string &line, size_t width, std::vector<std::string> &lineList)
+	{
+		// word, so we no know whitespace: only have to be careful about escape sequences
+		size_t prev = 0;
+		size_t size = 0;
+		bool inEscape = false;
+		std::string_view sv(line);
+		std::string_view snippet;
+		for (size_t idx = 0; idx < line.size(); ++idx)
+		{
+			char c = sv[idx];
+
+			if (inEscape)
+			{
+				inEscape = !isANSITerminator(c);
+			}
+			else
+			{
+				if (c == '\x1b')
+				{
+					inEscape = true;
+				}
+				else
+				{
+
+					size += 1; // only increment if not within an escape sequence
+				}
+			}
+			if (size == width)
+			{
+				lineList.emplace_back(sv.substr(prev, idx + 1 - prev)); //+1 because we want to include the character we just scanned
+				size = 0;
+				prev = idx + 1; //+1 to place the beginning of the next word after the character we just scanned
+			}
+		}
+		if (prev != line.size())
+		{
+			line = sv.substr(prev, line.size() - prev);
+			return size;
+		}
+		else
+		{
+
+			line = "";
+			return 0;
+		}
+	}
+
+	void terminateWord(std::vector<std::string> &lineList, std::string &currentLine, std::string &currentWord, size_t &currentLineSize, size_t tabSize, size_t width)
+	{
+		if (!currentWord.empty())
+		{
+			auto wordSize = trueSize(currentWord, tabSize); // by definition, has no tabs, so just the (byte-size) - (byte-size of ANSI)
+			if (currentLineSize + wordSize <= width)
+			{
+				// the new word fits on the row, so add it in to the accumulator
+				currentLine += currentWord;
+				currentLineSize += wordSize;
+			}
+			else
+			{
+				// the new word doesn't fit, so pad the old line with spaces
+
+				if (currentLineSize == 0)
+				{
+					// check if size = 0 but line is not empty (i.e. hidden ansi)
+					currentWord = currentLine + currentWord;
+				}
+				else
+				{
+					if (currentLineSize < width)
+					{
+						currentLine += std::string(width - currentLineSize, ' ');
+					}
+
+					lineList.push_back(currentLine);
+				}
+				// then start a new line with this next word
+
+				if (wordSize > width)
+				{
+					wordSize = carefullySplitWord(currentWord, width, lineList);
+				}
+				currentLine = currentWord;
+				currentLineSize = wordSize;
+			}
+
+			// then check if the new line (Either from the joining or the residual) needs immediately appending
+			if (currentLineSize == width)
+			{
+				lineList.push_back(currentLine);
+				currentLineSize = 0;
+				currentLine = "";
+			}
+			currentWord = "";
+		}
+	}
+
 	std::vector<std::string> wrap(std::string_view str, size_t width)
 	{
 		std::vector<std::string_view> lines;
 
+		// handle manual line breaks recursively
 		if (str.find("\n") != std::string_view::npos)
 		{
 			std::vector<std::string> out;
@@ -58,94 +163,81 @@ namespace JSL::String
 			}
 			return out;
 		}
-		size_t currentLineStart = 0;
 
-		size_t chunkStart = 0;
-		size_t currentSize = 0;
+		// main function loop
+		std::vector<std::string> output;
+		std::string currentLine;
+		std::string currentWord;
+		auto tabSize = JSL::Display::Terminal().TabSize();
+		currentLine.reserve(width);
 
-		const char notWS = 'a'; // guaranteed to not be a whitespace character!
-		char prevWhitespace = notWS;
-
-		for (size_t i = 0; i <= str.size(); ++i)
+		size_t currentLineSize = 0;
+		bool inEscape = false;
+		for (size_t idx = 0; idx < str.size(); ++idx)
 		{
-			char c = ' '; // we pretend there's an extra space on the end...
-			if (i < str.size())
+			auto c = str[idx];
+			if (c == ' ' || c == '\t')
 			{
-				c = str[i];
-			}
-			if (std::isspace(c))
-			{
-				if (prevWhitespace != c) // not repeated whitespace, or new whitespace
+				terminateWord(output, currentLine, currentWord, currentLineSize, tabSize, width);
+
+				// now handle the new whitespace
+
+				// only add whitespace if there's already a character on the line, or this is the first line to be broken
+				if (!currentLine.empty() || output.empty())
 				{
-					if (i > 0)
+					// we know by definition we can fit at least one space in (otherwise we'd have previously hit the immediate append branch above)
+					if (c == ' ')
 					{
-						// terminate the old block
-						auto lineToWord = str.substr(currentLineStart, i - currentLineStart);
-						size_t wordSize = trueSize(lineToWord) - currentSize;
-						// have to do this way round as characters like tabs have varying sizes depending on what came before!
-						if (currentSize + wordSize > width)
-						{
-							if (chunkStart > currentLineStart)
-							{
-								lines.push_back(str.substr(currentLineStart, chunkStart - currentLineStart));
-								currentLineStart = chunkStart;
-								currentSize = wordSize;
-							}
-							else
-							{
-								lines.push_back(str.substr(currentLineStart, i - currentLineStart));
-								currentLineStart = i;
-								currentSize = 0;
-							}
-						}
-						else
-						{
-							currentSize += wordSize;
-						}
+						currentLine.push_back(c);
+						currentLineSize += 1;
 					}
-					chunkStart = i;
+					else
+					{
+						size_t tabStep = tabSize - currentLineSize % tabSize;
+						tabStep = std::min(tabStep, width - currentLineSize); // tab should just take to end of line
+						currentLine += std::string(tabStep, ' ');
+						currentLineSize += tabStep;
+					}
+
+					if (currentLineSize >= width)
+					{
+						output.push_back(currentLine);
+						currentLine = "";
+						currentLineSize = 0;
+					}
 				}
-				prevWhitespace = c;
 			}
 			else
 			{
-				if (prevWhitespace != notWS)
-				{
-					chunkStart = i;
-					prevWhitespace = notWS;
-				}
+				currentWord.push_back(c);
 			}
 		}
-		auto finalLine = str.substr(currentLineStart);
-		if (trueSize(finalLine) > 0 || lines.size() == 0)
-		{
-			lines.push_back(finalLine);
-		}
-		std::vector<std::string> out;
-		for (auto &line : lines)
-		{
-			size_t lineSize = trueSize(line);
 
-			if (lineSize > width)
+		// flush the remaining words and lines
+		terminateWord(output, currentLine, currentWord, currentLineSize, tabSize, width);
+		if (!currentLine.empty())
+		{
+			if (currentLineSize == 0) // trailing ANSI sequence
 			{
-				while (line.back() == ' ' || line.back() == '\t')
+				if (output.empty()) // non contents, just ASCI
 				{
-					line.remove_suffix(1);
+					output.push_back(currentLine); // non padded line with ASCII colouration
 				}
-				lineSize = trueSize(line);
-			}
-
-			// have to repad in case we removed a tab which damaged things!
-			if (lineSize < width)
-			{
-				out.push_back((std::string)line + std::string(width - lineSize, ' '));
+				else
+				{
+					output.back() += currentLine;
+				}
 			}
 			else
 			{
-				out.push_back((std::string)line);
+				if (currentLineSize < width)
+				{
+					currentLine += std::string(width - currentLineSize, ' ');
+				}
+				output.push_back(currentLine);
 			}
 		}
-		return out;
+		return output;
 	}
 
 	std::string wrapToString(std::string_view str, size_t width, std::string_view delim)
@@ -162,7 +254,7 @@ namespace JSL::String
 	{
 		if (input.size() != widths.size())
 		{
-			JSL::internal::FatalError("Size mismatch", JSL_LOCATION) << "Input size (" << input.size() << ") must match widths (" << widths.size() << ") for column splitting";
+			JSL::internal::LibraryError("Size mismatch", JSL_LOCATION) << "Input size (" << input.size() << ") must match widths (" << widths.size() << ") for column splitting";
 		}
 		size_t dsize = trueSize(delimiter);
 		size_t esize = trueSize(endCap);

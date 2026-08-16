@@ -22,7 +22,7 @@ copyright = '2025, J. Fraser-Govil'
 author = 'J. Fraser-Govil'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = '3.3.0'
 
 
 # -- General configuration ---------------------------------------------------

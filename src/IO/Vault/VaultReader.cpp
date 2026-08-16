@@ -105,7 +105,7 @@ namespace JSL::IO
 		VaultStream.open(Name, std::ios::binary);
 		if (!VaultStream.is_open())
 		{
-			JSL::internal::FatalError("Bad Vault Access", JSL_LOCATION) << "Could not open " << Name;
+			JSL::internal::LibraryError("Bad Vault Access", JSL_LOCATION) << "Could not open " << Name;
 		}
 		BuildIndex();
 		Initialised = true;
@@ -180,7 +180,7 @@ namespace JSL::IO
 
 		if (zeroBlockCount != 2)
 		{
-			JSL::internal::FatalError("Corrupted Vault", JSL_LOCATION) << "Scan did not locate null termination sequence. The Vault " + Name + " is corrupted or incomplete";
+			JSL::internal::LibraryError("Corrupted Vault", JSL_LOCATION) << "Scan did not locate null termination sequence. The Vault " + Name + " is corrupted or incomplete";
 		}
 	}
 
@@ -188,7 +188,7 @@ namespace JSL::IO
 	{
 		if (!Initialised)
 		{
-			JSL::internal::FatalError("Bad Vault", JSL_LOCATION) << "Cannot read from a vault before it is initialised";
+			JSL::internal::LibraryError("Bad Vault", JSL_LOCATION) << "Cannot read from a vault before it is initialised";
 		}
 		std::set<std::string> names;
 		for (auto pair : FileIndex)
@@ -202,7 +202,7 @@ namespace JSL::IO
 		auto it = FileIndex.find(file);
 		if (it == FileIndex.end())
 		{
-			JSL::internal::FatalError("Bad Vault Access", JSL_LOCATION) << "File `" + file + "` is not in vault " + Name;
+			JSL::internal::LibraryError("Bad Vault Access", JSL_LOCATION) << "File `" + file + "` is not in vault " + Name;
 		}
 		return it->second;
 	}

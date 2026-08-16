@@ -7,6 +7,10 @@
 #include "archive.h"
 #include "files.h"
 #include "parse.h"
+#include "pool.h"
+#include "socket.h"
 #include "system.h"
 #include "time.h"
+#include "watcher.h"
+#include "wrap.h"
 // no actual main function; catch2 constructs that automagically

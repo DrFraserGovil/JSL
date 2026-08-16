@@ -8,11 +8,11 @@ namespace JSL::Display::Progress
 	namespace internal
 	{
 
-		ProgressEngine::ProgressEngine(std::vector<size_t> &&lengths) : Length(std::move(lengths)), Depth(Length.size())
+		ProgressEngine::ProgressEngine(std::vector<size_t> &&lengths) : Length(std::move(lengths)), Depth(lengths.size())
 		{
 			if (Depth == 0)
 			{
-				JSL::internal::FatalError("Bad progress bar", JSL_LOCATION) << "Depth cannot be 0!";
+				JSL::internal::LibraryError("Bad progress bar", JSL_LOCATION) << "Depth cannot be 0!";
 			}
 			Progress = std::vector<size_t>(Depth, 0);
 			MarkCount = std::vector<size_t>(Depth, 0);
@@ -70,7 +70,7 @@ namespace JSL::Display::Progress
 		{
 			if (prefixes.size() != Depth)
 			{
-				JSL::internal::FatalError("Prefix size mismatch", JSL_LOCATION) << "Tried to assign " << prefixes.size() << " prefixes, but needed " << Depth;
+				JSL::internal::LibraryError("Prefix size mismatch", JSL_LOCATION) << "Tried to assign " << prefixes.size() << " prefixes, but needed " << Depth;
 			}
 			Prefixes = prefixes;
 		}
@@ -89,7 +89,7 @@ namespace JSL::Display::Progress
 
 			if (suffixes.size() != Depth)
 			{
-				JSL::internal::FatalError("Prefix size mismatch", JSL_LOCATION) << "Tried to assign " << suffixes.size() << " prefixes, but needed " << Depth;
+				JSL::internal::LibraryError("Prefix size mismatch", JSL_LOCATION) << "Tried to assign " << suffixes.size() << " prefixes, but needed " << Depth;
 			}
 			Suffixes = suffixes;
 		}
@@ -113,7 +113,7 @@ namespace JSL::Display::Progress
 		}
 		void ProgressEngine::ThrowSizeMismatch(size_t actual)
 		{
-			JSL::internal::FatalError("Vector size mismatch", JSL_LOCATION) << "Positions size (" << actual << ") does not match depth (" << Depth << ")";
+			JSL::internal::LibraryError("Vector size mismatch", JSL_LOCATION) << "Positions size (" << actual << ") does not match depth (" << Depth << ")";
 		}
 	} // namespace internal
 

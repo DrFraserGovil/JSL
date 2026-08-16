@@ -24,7 +24,7 @@ jobs:
 
       - name: Unit Tests (Linux/macOS)
         if: runner.os != 'Windows'
-        run: cd test && make && ./unit_test "~[display]"
+        run: cd test && make && ./unit_test ~[display]
 
       - name: Unit Tests (Windows)
         if: runner.os == 'Windows'

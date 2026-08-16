@@ -16,6 +16,7 @@ Overview
     :hidden:
 
     docfiles/style
+    Async.h <docfiles/async>
     Concepts.h <docfiles/concepts>
     Display.h <docfiles/display>
     FileIO.h <docfiles/fileio>
@@ -36,9 +37,15 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
      - Submodules
      - Description
 
+   * - :ref:`Async.h <async>`
+     - * :ref:`Async/Pool.h <parpool>`
+       * :ref:`Async/Socket.h <socket>`
+       * :ref:`Async/Watcher.h <watchers>`
+     - A module for asynchronous and parallel computing
+
 
    * - :ref:`Concepts.h <concepts>`
-     -  
+     - 
      - A header-only module for several common template-concepts
       
    * - :ref:`Display.h <display>`
@@ -66,10 +73,9 @@ The entire library can be included with ``#include <JSL.h>`` (provided it is on 
 
    * - :ref:`Log.h <log>`
      - * :ref:`Log/Config.h <log-config>`
+       * :ref:`Log/Indent.h <log-indent>`
      - A logging and terminal output module
-         
-
-          
+              
    * - :ref:`String.h <strings>`
      - * :ref:`Strings/Cases.h <stringcase>`
        * :ref:`Strings/MakeFrom.h <makestring>`
