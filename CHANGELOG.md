@@ -5,7 +5,7 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [3.3.0]
+## [3.3.0] 2026-08-16
 
 ## New Module : Async
 
@@ -18,6 +18,7 @@ An entirely new Asynchronous Computing module has been added (or, re-added). It 
     * The Async::Watcher::Input watches for input passed to the standard input stream (i.e. ``std::cin``), and applies a callback to every complete line it recieves
     * The Async::Watcher::File watches for changes in a watched directory (or its children), and applies a callback to each batch of changed files
 * The Async::Panopticon acts as a centralised orchestrator of the Async::Watcher classes, collating them under single master `input manager'
+* The new module is fully documented
 
 ## Added
 
