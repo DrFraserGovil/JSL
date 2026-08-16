@@ -5,13 +5,31 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [3.3.0]
+
+## New Module : Async
+
+An entirely new Asynchronous Computing module has been added (or, re-added). It has been validated to run on Windows, macOS and Ubuntu.
+
+* The Async::Socket class allows for basic string-based Inter-Process Communication; using Unix Domain Sockets.
+* The Async::Pool class allows for streamlined Parallel Task Dispatch, without the excess overhead of spooling up std::thread instances for every new task. Includes support for both void functions and return-value functions either as single-shot dispatches, or (for the largest efficiency gains) by wrapping up tight for-loops. 
+* The Async::Watcher submodule defines three objects which monitor different aspects of the system, and fire a callback function whenever a change is detected: 
+    * The Async::Watcher::Socket watches for messages to a UDS, and applies a callback to every new string message it recieves
+    * The Async::Watcher::Input watches for input passed to the standard input stream (i.e. ``std::cin``), and applies a callback to every complete line it recieves
+    * The Async::Watcher::File watches for changes in a watched directory (or its children), and applies a callback to each batch of changed files
+* The Async::Panopticon acts as a centralised orchestrator of the Async::Watcher classes, collating them under single master `input manager'
+
+## Added
+
+* JSL::IO::multiGlob allows multiple globs to be composited into a single regex
 
 ## Changed
 
+* The IO::Directory class now tracks file metadata as a separate option
 * Rewrote the internal String::wrap logic 
 * Removed the fragile tabsize-detection from GlobalConfiguration, and replaced it with an assertion on the tabsize to use
 * Updated unit tests
+* Multiple minor file changes induced by a renaming effort ``FatalError -> LibraryError`` 
 
 
 ## [3.2.0] 2026-08-06
