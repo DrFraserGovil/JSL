@@ -42,7 +42,6 @@ namespace JSL::Async::Watcher
 	}
 	void Panopticon::SetSocketCallback(std::string socketID, strCallBack fcn, bool forceAcquire, bool overwriteExisting)
 	{
-
 		if (IsRunning)
 		{
 			JSL::internal::LibraryError("In-flight mutation", JSL_LOCATION) << "Cannot modify the socket-callback of a watcher whilst it is running";
@@ -87,6 +86,7 @@ namespace JSL::Async::Watcher
 					Instructions.push_back({internal::Instruction::Type::FILE, id, std::move(batch)}); 
 					} 
 					AwaitingInstruction.notify_one(); });
+			FileTracker[watchedDirectory]->SetDebounceTime(DebounceMs);
 		}
 		fileCallback[watchedDirectory] = std::move(fcn);
 	}
@@ -98,6 +98,14 @@ namespace JSL::Async::Watcher
 				func(file);
 			} }, overwriteExisting);
 	}
+	void Panopticon::SetSingleFileCallback(std::filesystem::path watchedDirectory, bool recursive, fileCallBack fcn, bool overwriteExisting)
+	{
+		SetSingleFileCallback(watchedDirectory.string(), recursive, std::move(fcn), overwriteExisting);
+	}
+	void Panopticon::SetFileBatchCallback(std::filesystem::path watchedDirectory, bool recursive, batchCallBack fcn, bool overwriteExisting)
+	{
+		SetFileBatchCallback(watchedDirectory.string(), recursive, std::move(fcn), overwriteExisting);
+	}
 
 	void Panopticon::Start()
 	{
@@ -106,12 +114,15 @@ namespace JSL::Async::Watcher
 			JSL::internal::LibraryError("Double Start", JSL_LOCATION) << "Cannot re-start a watcher-set whilst it is already running";
 		}
 
+		// The interleaved IsRunning means that if no Async watchers are registered, then Start() is non blocking
 		if (InputTracker.Initialised)
 		{
 			InputTracker.Start();
+			IsRunning = true;
 		}
 		for (auto &[_, s] : SocketTracker)
 		{
+			IsRunning = true;
 			if (s->Initialised)
 			{
 				s->Start();
@@ -119,13 +130,17 @@ namespace JSL::Async::Watcher
 		}
 		for (auto &[_, f] : FileTracker)
 		{
+			IsRunning = true;
 			if (f->Initialised)
 			{
 				f->Start();
 			}
 		}
+		if (!IsRunning)
+		{
+			JSL::internal::LibraryError("Bad Start", JSL_LOCATION) << "No callback functions were registered, and so no asynchronous watchers were launched";
+		}
 
-		IsRunning = true;
 		while (IsRunning)
 		{
 			std::deque<internal::Instruction> localQueue;
@@ -173,6 +188,15 @@ namespace JSL::Async::Watcher
 		}
 		AwaitingInstruction.notify_one();
 	}
+	void Panopticon::SetDebounceTime(size_t milliseconds)
+	{
+		DebounceMs = milliseconds;
+		for (auto &[_, s] : FileTracker)
+		{
+			s->SetDebounceTime(milliseconds);
+		}
+	}
+
 	void Panopticon::Shutdown()
 	{
 		if (InputTracker.Initialised)
