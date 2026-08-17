@@ -41,6 +41,11 @@ namespace
 			Initialise(directory, recursive, std::move(callback));
 			REQUIRE_NOTHROW(Watcher.Start());
 		}
+		void StartTest(std::filesystem::path directory, bool recursive, std::function<void(std::set<Watcher::FileChange>)> callback)
+		{
+			Initialise(directory.string(), recursive, std::move(callback));
+			REQUIRE_NOTHROW(Watcher.Start());
+		}
 
 		void Initialise(std::string directory, bool recursive, std::function<void(std::set<Watcher::FileChange>)> callback)
 		{
