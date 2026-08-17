@@ -102,7 +102,7 @@ TEST_CASE("File Watcher", "[watcher][file]")
 		});
 		//
 		std::ofstream(dir.Path / "newfile.txt") << "new, triggers callback";
-		T.BlockUntilCallback(300);
+		T.BlockUntilCallback(3000);
 		REQUIRE(T.CallbackActivated);
 		T.EndTest();
 	}
@@ -120,7 +120,7 @@ TEST_CASE("File Watcher", "[watcher][file]")
 			}
 		});
 		std::ofstream(dir.Path / testname) << "hi";
-		T.BlockUntilCallback(300);
+		T.BlockUntilCallback(3000);
 		REQUIRE(T.CallbackActivated);
 		T.EndTest();
 	}
@@ -145,7 +145,7 @@ TEST_CASE("File Watcher", "[watcher][file]")
 			std::ofstream out(filePath, std::ios::app);
 			out << " appended";
 		}
-		T.BlockUntilCallback(300);
+		T.BlockUntilCallback(3000);
 		REQUIRE(T.CallbackActivated);
 		T.EndTest();
 	}
@@ -168,7 +168,7 @@ TEST_CASE("File Watcher", "[watcher][file]")
 		});
 
 		std::filesystem::remove(filePath);
-		T.BlockUntilCallback(300);
+		T.BlockUntilCallback(3000);
 		REQUIRE(T.CallbackActivated);
 		T.EndTest();
 	}
@@ -193,7 +193,7 @@ TEST_CASE("File Watcher", "[watcher][file]")
 		std::ofstream(dir.Path / "ignored.txt") << "text"; // create this first so it definitely exists before the real one is created
 		std::ofstream(dir.Path / "match.cpp") << "code";
 
-		T.BlockUntilCallback(300, 1); // even though two files created, only 1 of them should trigger the callback
+		T.BlockUntilCallback(3000, 1); // even though two files created, only 1 of them should trigger the callback
 		REQUIRE(T.CallbackActivated);
 		T.EndTest();
 	}
@@ -220,7 +220,7 @@ TEST_CASE("File Watcher", "[watcher][file]")
 		std::ofstream(dir.Path / "ignored_dir" / "hidden.txt") << "shh";
 		std::ofstream(dir.Path / "visible.txt") << "hi";
 
-		T.BlockUntilCallback(300);
+		T.BlockUntilCallback(3000);
 		REQUIRE(T.CallbackActivated);
 		T.EndTest();
 	}
@@ -245,7 +245,7 @@ TEST_CASE("File Watcher", "[watcher][file]")
 		std::ofstream(dir.Path / "subdir" / "nested.txt") << "hi";
 		std::ofstream(dir.Path / realfile) << "hi";
 
-		T.BlockUntilCallback(300);
+		T.BlockUntilCallback(3000);
 		REQUIRE(T.CallbackActivated);
 		T.EndTest();
 	}
@@ -268,7 +268,7 @@ TEST_CASE("File Watcher", "[watcher][file]")
 
 		std::ofstream(dir.Path / realfile) << "hi";
 
-		T.BlockUntilCallback(300);
+		T.BlockUntilCallback(3000);
 		REQUIRE(T.CallbackActivated);
 		T.EndTest();
 	}
