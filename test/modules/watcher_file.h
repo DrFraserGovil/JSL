@@ -47,6 +47,10 @@ namespace
 			REQUIRE_NOTHROW(Watcher.Start());
 		}
 
+		void Initialise(std::filesystem::path directory, bool recursive, std::function<void(std::set<Watcher::FileChange>)> callback)
+		{
+			Initialise(directory.string(), recursive, std::move(callback));
+		}
 		void Initialise(std::string directory, bool recursive, std::function<void(std::set<Watcher::FileChange>)> callback)
 		{
 			REQUIRE_NOTHROW(
