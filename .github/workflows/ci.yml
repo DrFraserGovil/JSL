@@ -31,4 +31,4 @@ jobs:
         run: |
           cd test
           make
-          .\Debug\unit_test.exe "~[display]"
+          .\unit_test.exe "~[display]"
