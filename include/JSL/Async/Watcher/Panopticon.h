@@ -85,6 +85,18 @@ namespace JSL::Async::Watcher
 		  */
 		void SetFileBatchCallback(std::string watchedDirectory, bool recursive, batchCallBack fcn, bool overwriteExisting = false);
 
+		/*! @brief Activates the Watcher::File module, and assigns the callback function to process the full batch of files passed to the named directory
+			@details Multiple directories may be watched at once by calling this function multiple times with different names. The callbacks are stored per-directory.
+			@param watchedDirectory The name of the directory which is to be monitored
+			@param recursive If true, all child directories will also be monitored for changes
+			@param fcn The callback function to be assigned to output from the directory. This function will act on the main Panopticon thread (not on the Watcher::File thread)
+			@param overwriteExisting Determines if an overwrite call generates an exception
+			@throws std::runtime_error If this function is called after a callback has already been assigned to this directory; unless overwriteExisting is set to true
+			@throws std::runtime_error If this function is called after Start() has been called, but before Stop()
+			@warning There is no check if a directory is watched as a result of being a child of another directory which is watched. This may result in events being 'double counted'. The user is responsible for ensuring that if they watch multiple directories, that there is no overlap
+		  */
+		void SetFileBatchCallback(std::filesystem::path watchedDirectory, bool recursive, batchCallBack fcn, bool overwriteExisting = false);
+
 		/*! @brief An alternative to the SetFileBatchCallback, where the callback function is per-file, rather than for the whole batch. It is otherwise identical in function: Activates the Watcher::File module, and assigns the callback function on each file passed to the named directory
 			@details Multiple directories may be watched at once by calling this function multiple times with different names. The callbacks are stored per-directory.
 			@param watchedDirectory The name of the directory which is to be monitored
@@ -95,6 +107,16 @@ namespace JSL::Async::Watcher
 			@throws std::runtime_error If this function is called after Start() has been called, but before Stop()
 		  */
 		void SetSingleFileCallback(std::string watchedDirectory, bool recursive, fileCallBack fcn, bool overwriteExisting = false);
+		/*! @brief An alternative to the SetFileBatchCallback, where the callback function is per-file, rather than for the whole batch. It is otherwise identical in function: Activates the Watcher::File module, and assigns the callback function on each file passed to the named directory
+			@details Multiple directories may be watched at once by calling this function multiple times with different names. The callbacks are stored per-directory.
+			@param watchedDirectory The name of the directory which is to be monitored
+			@param recursive If true, all child directories will also be monitored for changes
+			@param fcn The callback function to be assigned to output from the directory. This function will act on the main Panopticon thread (not on the Watcher::File thread)
+			@param overwriteExisting Determines if an overwrite call generates an exception
+			@throws std::runtime_error If this function is called after a callback has already been assigned to this directory; unless overwriteExisting is set to true
+			@throws std::runtime_error If this function is called after Start() has been called, but before Stop()
+		  */
+		void SetSingleFileCallback(std::filesystem::path watchedDirectory, bool recursive, fileCallBack fcn, bool overwriteExisting = false);
 
 		/*! A blocking function which activates all initialised Watchers, and executes any tasks placed into the queue. Runs until a SHUTDOWN instruction is provided by one of the threads.
 			@details The SetInputCallback provides a default way to terminate this loop, via the exitString. Otherwise the user must provide some means of calling Stop() within one of the callback functions, or from another asynchronous function.

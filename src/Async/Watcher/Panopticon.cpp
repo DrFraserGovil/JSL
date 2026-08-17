@@ -98,6 +98,14 @@ namespace JSL::Async::Watcher
 				func(file);
 			} }, overwriteExisting);
 	}
+	void Panopticon::SetSingleFileCallback(std::filesystem::path watchedDirectory, bool recursive, fileCallBack fcn, bool overwriteExisting)
+	{
+		SetSingleFileCallback(watchedDirectory.string(), recursive, std::move(fcn), overwriteExisting);
+	}
+	void Panopticon::SetFileBatchCallback(std::filesystem::path watchedDirectory, bool recursive, batchCallBack fcn, bool overwriteExisting)
+	{
+		SetFileBatchCallback(watchedDirectory.string(), recursive, std::move(fcn), overwriteExisting);
+	}
 
 	void Panopticon::Start()
 	{
