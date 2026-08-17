@@ -109,6 +109,7 @@ namespace JSL::Async::Watcher
 		//! @details There may be a small gap in between the invocation of this function and the actual stoppage, where more events may occur.
 		void Stop();
 
+		void SetDebounceTime(size_t milliseconds);
 		friend class Panopticon;
 
 	  private:
@@ -183,7 +184,7 @@ namespace JSL::Async::Watcher
 
 		//! The debounce time between the first filechange and when we report our batch
 		//! This gives the system time to settle (editors etc. often to a whole bunch of save-then-rename in bursts)
-		static constexpr int DebounceMs = 20;
+		int DebounceMs = 20;
 
 		//! If a continual stream of events occurs, it can stunlock the debouncer: this is the maximum number of times the debouncer can be hit before we force a batch to form
 		static constexpr int MaxDebounceBeforeForce = 10;

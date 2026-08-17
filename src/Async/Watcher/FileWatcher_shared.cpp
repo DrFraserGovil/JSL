@@ -84,6 +84,10 @@ namespace JSL::Async::Watcher
 		PreviousOthers = snap.ListOthers();
 	}
 
+	void File::SetDebounceTime(size_t milliseconds)
+	{
+		DebounceMs = milliseconds;
+	}
 	std::set<FileChange> File::ComputeDiff()
 	{
 		auto newSnapshot = TakeSnapshot();

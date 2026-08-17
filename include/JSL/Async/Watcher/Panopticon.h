@@ -99,6 +99,7 @@ namespace JSL::Async::Watcher
 		/*! A blocking function which activates all initialised Watchers, and executes any tasks placed into the queue. Runs until a SHUTDOWN instruction is provided by one of the threads.
 			@details The SetInputCallback provides a default way to terminate this loop, via the exitString. Otherwise the user must provide some means of calling Stop() within one of the callback functions, or from another asynchronous function.
 			@throws std::runtime_error If Start() has already been called, but has not yet been Stop()ed
+			@throws std::runtime_error If no callbacks have been registered
 		 */
 		void Start();
 
@@ -106,6 +107,11 @@ namespace JSL::Async::Watcher
 		//! @details Any instructions which were in the queue beforehand will be completed, but any which arrive after are discared.
 		//! @details This does not wait for the worker threads of the Watchers to sync up; the Synchronisation occurs during Shutdown(), which is a side effect of this function, but not explicitly called.
 		void Stop();
+
+		/*! @brief Sets the debounce scale for all file watchers
+		 *@ param milliseconds The debounce time
+		 */
+		void SetDebounceTime(size_t milliseconds);
 
 	  private:
 		//! Resource cleanup which is triggered when the main loop recieves a SHUTDOWN instruction.
@@ -140,5 +146,8 @@ namespace JSL::Async::Watcher
 
 		//! A map of callbacks, each such that fileCallback[id] corresponds to the callback applied to FileTracker[id] when it pushes an instruction to the queue
 		std::map<std::string, batchCallBack> fileCallback{};
+
+		//! The Debounce timescale assigned to all file watchers
+		size_t DebounceMs = 30;
 	};
 }; // namespace JSL::Async::Watcher

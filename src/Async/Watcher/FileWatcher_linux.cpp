@@ -142,7 +142,7 @@ namespace JSL::Async::Watcher
 
 		bool pending = false;
 		std::vector<char> buf(kEventBufLen);
-		size_t pushBacks = 0;
+		auto timePendingActivated = std::chrono::steady_clock::now();
 		bool forceProcess = false;
 		while (Running.load(std::memory_order_acquire))
 		{
@@ -152,7 +152,6 @@ namespace JSL::Async::Watcher
 
 			if (ret == 0 || forceProcess) // timed out
 			{
-				pushBacks = 0;
 				ProcessBatch();
 				pending = false;
 				forceProcess = false;
@@ -177,17 +176,24 @@ namespace JSL::Async::Watcher
 				ssize_t n = ::read(InotifyFd, buf.data(), buf.size());
 				if (n > 0)
 				{
+					bool wasPending = pending;
 					// if there was data present, determine if it requires a reprocessing pass
 					pending = pending || inotifyCheck(buf.data(), n);
-					if (pending)
+
+					// debounce logic
+					if (pending && !wasPending)
 					{
-						++pushBacks;
+						// i.e. if this is a new debounce sequence
+						timePendingActivated = std::chrono::steady_clock::now();
 					}
-					// quick and dirty circuit breaker in case we get a continual stream of events that stunlock us into a debounce loop
-					if (pushBacks > MaxDebounceBeforeForce)
+					else
 					{
-						pushBacks = 0;
-						forceProcess = true;
+						auto elapsed = std::chrono::steady_clock::now() - timePendingActivated;
+						int msElapsed = std::chrono::duration_cast<std::chrono::milliseconds>(elapsed).count();
+						if (msElapsed > MaxDebounceBeforeForce * DebounceMs)
+						{
+							forceProcess = true;
+						}
 					}
 				}
 			}
