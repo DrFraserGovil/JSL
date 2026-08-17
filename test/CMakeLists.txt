@@ -8,6 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # create executable in current directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+ 
 #find all source files
 file(GLOB_RECURSE ALL_SOURCES "*.cpp")
 list(FILTER ALL_SOURCES EXCLUDE REGEX ".build/.*")
@@ -16,9 +17,11 @@ set(CORE_SOURCES ${ALL_SOURCES})
 #exclude some files from core sorces (main excluded as catch2-autogenerates)
 
 if(MSVC)
-    add_compile_options(/W4 /Od)
+	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_CURRENT_SOURCE_DIR}")
+	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "${CMAKE_CURRENT_SOURCE_DIR}")
+    add_compile_options(/W4)
 else()
-    add_compile_options(-Wall -O0)
+    add_compile_options(-Wall)
 endif()
 
 

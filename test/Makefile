@@ -9,14 +9,8 @@ MAKEFLAGS+=--no-print-directory
 all:
 	@mkdir -p $(BUILD_DIR)
 	@cmake -S . -B $(BUILD_DIR) -DENABLE_TESTS=ON
-	@cmake --build $(BUILD_DIR) --target unit_test $(EXTRA_BUILD_FLAGS)
+	@cmake --build $(BUILD_DIR) --target unit_test --config Release
 
-# 2. Run your tests
-test:
-	@mkdir -p $(BUILD_DIR)
-	@cmake -S . -B $(BUILD_DIR) -DENABLE_TESTS=ON
-	@cmake --build $(BUILD_DIR) --target unit_test 
-	@./unit_test
 
 # 3. Clean up only the build artifacts
 purge:
