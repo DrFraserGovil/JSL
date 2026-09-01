@@ -78,8 +78,9 @@ namespace JSL::Async::Watcher
 		if (!Running.exchange(false)) return;
 
 		uint8_t signal = 1;
-		(void)::write(ShutdownPipe[1], &signal, sizeof(signal));
-		if (WorkerThread.joinable()) WorkerThread.join();
+		[[maybe_unused]] auto tmp = (::write(ShutdownPipe[1], &signal, sizeof(signal)));
+		if (WorkerThread.joinable())
+			WorkerThread.join();
 
 		for (auto &[wd, dir] : WatchMap)
 		{

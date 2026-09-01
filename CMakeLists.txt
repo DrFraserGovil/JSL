@@ -17,9 +17,9 @@ ${JSL_SOURCES}
 )
 
 if(MSVC)
-	target_compile_options(JSL PRIVATE /W4 /O2)
+	target_compile_options(JSL PRIVATE /W4)
 else()
-	target_compile_options(JSL PRIVATE -Wall -Wextra -O3 -march=native)
+	target_compile_options(JSL PRIVATE -Wall -Wextra)
 endif()
 
 #give us a nice name

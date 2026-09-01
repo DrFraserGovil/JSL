@@ -172,7 +172,6 @@ namespace JSL::String
 		currentLine.reserve(width);
 
 		size_t currentLineSize = 0;
-		bool inEscape = false;
 		for (size_t idx = 0; idx < str.size(); ++idx)
 		{
 			auto c = str[idx];
@@ -247,7 +246,7 @@ namespace JSL::String
 
 	std::string tableFormat(const std::vector<std::string_view> &input, size_t width, std::string_view delimiter, std::string_view endCap)
 	{
-		return tableFormat(input, std::vector<size_t>(input.size(), width), delimiter);
+		return tableFormat(input, std::vector<size_t>(input.size(), width), delimiter, endCap);
 	}
 
 	std::string tableFormat(const std::vector<std::string_view> &input, std::vector<size_t> widths, std::string_view delimiter, std::string_view endCap)

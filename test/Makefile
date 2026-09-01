@@ -8,7 +8,7 @@ MAKEFLAGS+=--no-print-directory
 # 1. The default target: ensures .build exists, runs cmake, then builds
 all:
 	@mkdir -p $(BUILD_DIR)
-	@cmake -S . -B $(BUILD_DIR) -DENABLE_TESTS=ON
+	@cmake -S . -B $(BUILD_DIR) -DENABLE_TESTS=ON  -DCMAKE_BUILD_TYPE=Release
 	@cmake --build $(BUILD_DIR) --target unit_test --config Release
 
 
