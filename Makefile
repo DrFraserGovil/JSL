@@ -8,8 +8,8 @@ MAKEFLAGS += --no-print-directory
 all:
 # 		@make graph
 	@mkdir -p $(BUILD_DIR)
-	@cmake -S . -B $(BUILD_DIR)
-	@cmake --build $(BUILD_DIR) 
+	@cmake -S . -B $(BUILD_DIR) -DCMAKE_BUILD_TYPE=Release
+	@cmake --build $(BUILD_DIR) --config Release
 
 doc:
 	@cd docs && make html

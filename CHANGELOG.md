@@ -5,6 +5,13 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 3.3.3 2026-09-01
+
+## Changed
+
+* Reverted some breaking changes induced in MSVC compilers (oops)
+* Removed some unusued variables that were causing compiler flags
+
 ## 3.3.2 2026-09-01
 
 ## Changed 

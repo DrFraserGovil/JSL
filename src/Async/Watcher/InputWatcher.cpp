@@ -93,7 +93,7 @@ namespace JSL::Async::Watcher
 #else
 		// write some data to the ShutdownPipe -- the worker in Run() will see this and exit
 		uint8_t signal = 1;
-		(void)::write(ShutdownPipe[1], &signal, sizeof(signal));
+		[[maybe_unused]] auto tmp = ::write(ShutdownPipe[1], &signal, sizeof(signal));
 
 		// wait for the joining
 		if (WorkerThread.joinable()) WorkerThread.join();
