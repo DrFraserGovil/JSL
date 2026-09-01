@@ -9,12 +9,18 @@ if(WIN32)
     add_compile_definitions(NOMINMAX)
 endif()
 
+ 
 file(GLOB_RECURSE JSL_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 #file(GLOB_RECURSE JSL_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 add_library(JSL STATIC
 ${JSL_SOURCES}
 )
 
+if(MSVC)
+	target_compile_options(JSL PRIVATE /W4 /O2)
+else()
+	target_compile_options(JSL PRIVATE -Wall -Wextra -O3 -march=native)
+endif()
 
 #give us a nice name
 set_target_properties(JSL PROPERTIES PREFIX "")
