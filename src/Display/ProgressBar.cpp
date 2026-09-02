@@ -8,7 +8,7 @@ namespace JSL::Display::Progress
 	namespace internal
 	{
 
-		ProgressEngine::ProgressEngine(std::vector<size_t> &&lengths) : Length(std::move(lengths)), Depth(lengths.size())
+		ProgressEngine::ProgressEngine(std::vector<size_t> &&lengths) : Length(std::move(lengths)), Depth(Length.size())
 		{
 			if (Depth == 0)
 			{
@@ -78,6 +78,7 @@ namespace JSL::Display::Progress
 		void ProgressEngine::SetSuffix(std::string suffix)
 		{
 			SetSuffix(suffix, Depth - 1);
+			Render();
 		}
 		void ProgressEngine::SetSuffix(std::string suffix, size_t idx)
 		{
@@ -135,6 +136,7 @@ namespace JSL::Display::Progress
 		if (hasRendered)
 		{
 			buffer << JSL::Display::Move(Display::Direction::Up, Depth);
+			buffer << JSL::Display::ClearLine;
 			buffer << JSL::Display::MoveToColumn(0); // move all the way left
 		}
 		hasRendered = true;
