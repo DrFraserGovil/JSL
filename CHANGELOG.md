@@ -5,32 +5,47 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+
+
+## [3.3.4] 2026-09-03
+
+### Changed
+
+* Modified this changelog to have a proper heading heirarchy
+* Display::Progress::Bar modified
+    * Fixed a bug in the constructor which would throw an error on correctly-formatted bars
+    * Set the bar to re-render when the prefix/suffix was updated to provide more dynamic output
+
+### Bugfix
+
+* Tentative bugfix to the async module on windows machines
 ## 3.3.3 2026-09-01
 
-## Changed
+### Changed
 
 * Reverted some breaking changes induced in MSVC compilers (oops)
 * Removed some unusued variables that were causing compiler flags
 
-## 3.3.2 2026-09-01
+## [3.3.2] 2026-09-01
 
-## Changed 
+### Changed 
 
 * Added compiler optimisation flags
 
 ## [3.3.1] 2026-08-17
 
-## Changed
+### Changed
 
 * Added an interface for modifying the debounce time in both the Watcher::File object and monitoring Watcher::Panopticon
 
-## Bugfix
+### Bugfix
 
 * Overhauled the unit testing modules for the Async module so that they are less fragile. Your testing suite shouldn't have bugs!
 
 ## [3.3.0] 2026-08-16
 
-## New Module : Async
+### New Module : Async
 
 An entirely new Asynchronous Computing module has been added (or, re-added). It has been validated to run on Windows, macOS and Ubuntu.
 
@@ -43,11 +58,11 @@ An entirely new Asynchronous Computing module has been added (or, re-added). It 
 * The Async::Panopticon acts as a centralised orchestrator of the Async::Watcher classes, collating them under single master `input manager'
 * The new module is fully documented
 
-## Added
+### Added
 
 * JSL::IO::multiGlob allows multiple globs to be composited into a single regex
 
-## Changed
+### Changed
 
 * The IO::Directory class now tracks file metadata as a separate option
 * Rewrote the internal String::wrap logic 
@@ -60,12 +75,12 @@ An entirely new Asynchronous Computing module has been added (or, re-added). It 
 
 **Apologies: Due to some parallel development with another project, we skipped robustly documenting changes. This changelog indicates all changes made since 3.1.1. Versions 3.1.2 -> 3.1.4 should be considered vestigial**
 
-## New
+### New
 
 * **Cross platform integration testing** A new github action ensures that the JSL compiles and meets all of our unit tests on Ubuntu, macOS and Windows machines. A number of changes to header files / implicit casting operations were made to fulfill this cross-platform promise.
 * **ProgressBar Prefixes** Progress bars can now have text as either prefixes or suffixes to give additional context
  
-## Changed
+### Changed
 
 * Changed the definition of the TupleLike concept to exclude iterables, resolving a conflict where types std::array were matching both TupleLike and NonStringRange
 * Changed the definition of the NonStringRange concept to exclude std::filesystem, which met the criteria under the MSVC implementation

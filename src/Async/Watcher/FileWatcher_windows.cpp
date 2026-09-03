@@ -69,6 +69,18 @@ namespace JSL::Async::Watcher
 		{
 			AbortStartup("Could not open a handle to the watched directory: " + std::to_string(GetLastError()));
 		}
+		NotifyBuffer.assign(kNotifyBufferSize, 0);
+		Overlapped = OVERLAPPED{};
+		Overlapped.hEvent = ReadEvent;
+
+		DWORD bytesReturnedSync = 0;
+		BOOL ok = ReadDirectoryChangesW(DirectoryHandle, NotifyBuffer.data(), static_cast<DWORD>(NotifyBuffer.size()),
+			IsRecursive ? TRUE : FALSE, kNotifyFilter, &bytesReturnedSync, &Overlapped, nullptr);
+
+		if (!ok && GetLastError() != ERROR_IO_PENDING)
+		{
+			AbortStartup("Could not issue initial directory watch: " + std::to_string(GetLastError()));
+		}
 	}
 
 	// Windows (via bWatchSubtree) automatically handles recursion, so these are no-ops
@@ -138,18 +150,13 @@ namespace JSL::Async::Watcher
 
 	void File::Run()
 	{
-		std::vector<char> buffer(kNotifyBufferSize);
-
-		OVERLAPPED overlapped{};
-		overlapped.hEvent = ReadEvent;
 
 		HANDLE waitHandles[2] = {ReadEvent, ShutdownEvent};
 
 		bool pending = false;
 		size_t pushBacks = 0;
 		bool forceProcess = false;
-		bool readPending = false; // is there an outstanding, not-yet-completed ReadDirectoryChangesW call?
-
+		bool readPending = true; // is there an outstanding, not-yet-completed ReadDirectoryChangesW call?
 		while (Running.load(std::memory_order_acquire))
 		{
 			if (forceProcess)
@@ -170,8 +177,8 @@ namespace JSL::Async::Watcher
 			{
 				ResetEvent(ReadEvent);
 				DWORD bytesReturnedSync = 0; // unused for an overlapped call, but the parameter is required
-				BOOL ok = ReadDirectoryChangesW(DirectoryHandle, buffer.data(), static_cast<DWORD>(buffer.size()), IsRecursive ? TRUE : FALSE,
-					kNotifyFilter, &bytesReturnedSync, &overlapped, nullptr);
+				BOOL ok = ReadDirectoryChangesW(DirectoryHandle, NotifyBuffer.data(), static_cast<DWORD>(NotifyBuffer.size()), IsRecursive ? TRUE : FALSE,
+					kNotifyFilter, &bytesReturnedSync, &Overlapped, nullptr);
 
 				if (!ok && GetLastError() != ERROR_IO_PENDING)
 				{
@@ -197,15 +204,15 @@ namespace JSL::Async::Watcher
 			}
 			if (waitResult == WAIT_OBJECT_0 + 1) // ShutdownEvent
 			{
-				CancelIoEx(DirectoryHandle, &overlapped);
+				CancelIoEx(DirectoryHandle, &Overlapped);
 				DWORD dummy = 0;
-				GetOverlappedResult(DirectoryHandle, &overlapped, &dummy, TRUE); // wait for the cancel to actually land
+				GetOverlappedResult(DirectoryHandle, &Overlapped, &dummy, TRUE); // wait for the cancel to actually land
 				break;
 			}
 			if (waitResult == WAIT_OBJECT_0) // ReadEvent -- the outstanding read completed
 			{
 				DWORD bytesReturned = 0;
-				BOOL ok = GetOverlappedResult(DirectoryHandle, &overlapped, &bytesReturned, FALSE);
+				BOOL ok = GetOverlappedResult(DirectoryHandle, &Overlapped, &bytesReturned, FALSE);
 				readPending = false;
 
 				if (!ok)
@@ -228,7 +235,7 @@ namespace JSL::Async::Watcher
 					continue;
 				}
 
-				pending = pending || notifyCheck(buffer.data(), bytesReturned);
+				pending = pending || notifyCheck(NotifyBuffer.data(), bytesReturned);
 				if (pending)
 				{
 					++pushBacks;
