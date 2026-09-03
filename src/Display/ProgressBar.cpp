@@ -61,10 +61,12 @@ namespace JSL::Display::Progress
 		void ProgressEngine::SetPrefix(std::string prefix)
 		{
 			SetPrefix(prefix, Depth - 1);
+			Render();
 		}
 		void ProgressEngine::SetPrefix(std::string prefix, size_t idx)
 		{
 			Prefixes[idx] = prefix;
+			Render();
 		}
 		void ProgressEngine::SetPrefix(std::vector<std::string> &prefixes)
 		{
@@ -73,6 +75,7 @@ namespace JSL::Display::Progress
 				JSL::internal::LibraryError("Prefix size mismatch", JSL_LOCATION) << "Tried to assign " << prefixes.size() << " prefixes, but needed " << Depth;
 			}
 			Prefixes = prefixes;
+			Render();
 		}
 
 		void ProgressEngine::SetSuffix(std::string suffix)
@@ -83,6 +86,7 @@ namespace JSL::Display::Progress
 		void ProgressEngine::SetSuffix(std::string suffix, size_t idx)
 		{
 			Suffixes[idx] = suffix;
+			Render();
 		}
 
 		void ProgressEngine::SetSuffix(std::vector<std::string> &suffixes)
@@ -93,6 +97,7 @@ namespace JSL::Display::Progress
 				JSL::internal::LibraryError("Prefix size mismatch", JSL_LOCATION) << "Tried to assign " << suffixes.size() << " prefixes, but needed " << Depth;
 			}
 			Suffixes = suffixes;
+			Render();
 		}
 
 		void ProgressEngine::CheckMarks(int idx)
