@@ -5,7 +5,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 3.3.4 2026-09-03
+
+
+
+## [3.3.4] 2026-09-03
 
 ### Changed
 
@@ -14,6 +17,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     * Fixed a bug in the constructor which would throw an error on correctly-formatted bars
     * Set the bar to re-render when the prefix/suffix was updated to provide more dynamic output
 
+### Bugfix
+
+* Tentative bugfix to the async module on windows machines
 ## 3.3.3 2026-09-01
 
 ### Changed

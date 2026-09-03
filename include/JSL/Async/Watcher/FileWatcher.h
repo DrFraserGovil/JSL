@@ -215,6 +215,7 @@ namespace JSL::Async::Watcher
 
 		//! A collator function for releasing resources (i.e. file descriptors) in the event that the constructor is about to throw
 		[[noreturn]] void AbortStartup(std::string msg);
+
 #ifdef LINUXMODE
 
 		//! @brief Checks if the changes recorded meet the filtering requirements, and if so, signal that a re-cache is needed
@@ -247,6 +248,12 @@ namespace JSL::Async::Watcher
 
 		//! A flag which tells indicates that windows does per-directory watches (not per-file)
 		bool PlatformWatchFiles = false;
+
+		//! The buffer where data is streamed to: has to be a member due to windows shenigans
+		std::vector<char> NotifyBuffer;
+
+		//! Keeps split calls in a queue
+		OVERLAPPED Overlapped{};
 #endif
 #ifdef BSDMODE
 		//! A flag which tells indicates that bsd/kqueue does per-file watches (not per-directory)
@@ -261,6 +268,7 @@ namespace JSL::Async::Watcher
 		//! A map connecting inotify-created file descriptors and the direcotry they map to
 		std::map<int, std::filesystem::path> WatchMap; // watch descriptor -> absolute directory path
 #endif
+
 		//! rule of 3 deletion
 		File(const File &) = delete;
 		//! rule of 3 deletion
