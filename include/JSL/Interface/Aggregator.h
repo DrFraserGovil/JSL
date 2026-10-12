@@ -121,7 +121,7 @@ namespace JSL::Interface
 		void Export(std::filesystem::path target, bool excludeDefaults = false)
 			requires HasFieldList<Derived>
 		{
-			JSL::IO::writeString(target, ExportAsString());
+			JSL::IO::writeString(target, ExportAsString(excludeDefaults));
 		}
 
 		//! Creates a string equal to the contents of the equivalent config file
