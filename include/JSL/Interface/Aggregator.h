@@ -117,18 +117,20 @@ namespace JSL::Interface
 		}
 
 		//! Constructs a config file which can reconstruct the current state of the aggregator
-		void Export(std::filesystem::path target)
+		//! @param excludeDefaults If true, does not include values which are equal to their default (useful for only tracking values which have been altered)
+		void Export(std::filesystem::path target, bool excludeDefaults = false)
 			requires HasFieldList<Derived>
 		{
 			JSL::IO::writeString(target, ExportAsString());
 		}
 
 		//! Creates a string equal to the contents of the equivalent config file
+		//! @param excludeDefaults If true, does not include values which are equal to their default (useful for only tracking values which have been altered)
 		//! @returns A string, which if saved to file, could be read in as a config file.
-		std::string ExportAsString()
+		std::string ExportAsString(bool excludeDefaults = false)
 		{
 			std::ostringstream os;
-			Export(os);
+			Export(os, excludeDefaults);
 			return os.str();
 		}
 		template <class OtherDerived>
@@ -179,7 +181,10 @@ namespace JSL::Interface
 			});
 		}
 
-		void Export(std::ostringstream &os)
+		//! Pipes the contents of the equivalent config file
+		//! @param os An output stream used to store the results
+		//! @param excludeDefaults If true, does not include values which are equal to their default (useful for only tracking values which have been altered)
+		void Export(std::ostringstream &os, bool excludeDefaults = false)
 		{
 			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
 				using E = std::remove_cvref_t<decltype(field)>;
@@ -188,11 +193,14 @@ namespace JSL::Interface
 					"did you forget to define FieldList() on a nested type?");
 				if constexpr (HasFieldList<E>)
 				{
-					field.Export(os);
+					field.Export(os, excludeDefaults);
 				}
 				else
 				{
-					os << field.Aliases[0] << " " << JSL::String::makeFrom(field.Value) << "\n";
+					if (!excludeDefaults || field.Value != field.Default)
+					{
+						os << field.Aliases[0] << " " << JSL::String::makeFrom(field.Value) << "\n";
+					}
 				}
 			});
 		}

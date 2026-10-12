@@ -10,7 +10,7 @@ html:
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 all:
-	@./visualiser/visualise
+	# @./visualiser/visualise
 	@make html
 	@doxygen doxy.config
 	@make html
