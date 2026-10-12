@@ -89,6 +89,14 @@ namespace JSL::Interface
 				}
 			});
 		}
+		//! Searches for a value matching the key, and if present, returns the string representation of its current value
+		//! @param key A usual aggregator alias key
+		//! @return An optional value containing the value (if found), or nullopt if not found
+		std::optional<std::string> GetString(std::string key)
+			requires HasFieldList<Derived>
+		{
+			return ScanForString(key);
+		}
 
 		/*!	Displays a detailed help message including documentation for all member variables, then calls exit(0);
 		 * @details Automatically activated whenever "-h", "-help" or the "help" command are passed into the CommandLine
@@ -173,6 +181,8 @@ namespace JSL::Interface
 				if constexpr (HasFieldList<E>)
 				{
 					field.BuildContext(map); // recurse
+					field.BuildContext();	 // for reach-in options
+					field.Initialised = true;
 				}
 				else
 				{
@@ -247,6 +257,31 @@ namespace JSL::Interface
 				}
 			});
 		}
+
+		std::optional<std::string> ScanForString(std::string_view key)
+		{
+			std::optional<std::string> out = std::nullopt;
+			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
+				using E = std::remove_cvref_t<decltype(field)>;
+				static_assert(IsField<E> || HasFieldList<E>,
+					"FieldList() entry is neither a Field<T> nor an Aggregator: "
+					"did you forget to define FieldList() on a nested type?");
+				if constexpr (HasFieldList<E>)
+				{
+					if (auto nested = field.ScanForString(key)) // recurse
+					{
+						out = nested;
+					}
+				}
+				else if (std::find(field.Aliases.begin(), field.Aliases.end(), key) != field.Aliases.end())
+				{
+					out = JSL::String::makeFrom(field.Value);
+				}
+			});
+
+			return out;
+		}
+
 		ContextMap Map = {};
 	};
 } // namespace JSL::Interface
