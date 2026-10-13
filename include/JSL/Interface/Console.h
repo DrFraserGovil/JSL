@@ -20,6 +20,11 @@ namespace JSL::Interface
 		//! The string which will be used as the key-overwrite command
 		std::string SetString = "set";
 
+		//! The string which will be used as the vector-add command
+		std::string AddString = "add";
+		//! The string which will be used as the vector-remove command
+		std::string RemoveString = "remove";
+
 		//! The string which will be used as the show-value command
 		std::string ShowString = "show";
 
@@ -63,6 +68,12 @@ namespace JSL::Interface
 		//! @param context The context map of the Aggregator being manipulated
 		//! @return An object detailing what actions are to be taken next
 		CmdTokens Tokenise(std::string command, ContextMap context);
+
+		std::pair<std::string, std::string> VectorExtract(std::string input);
+		std::string ConstructReducedVector(std::string original, std::string element);
+
+	  private:
+		CmdTokens internalTokenise(std::vector<std::string> tokens, ContextMap &context, bool hasInverted);
 	};
 
 	namespace internal
@@ -79,6 +90,75 @@ namespace JSL::Interface
 			try
 			{
 				input.Configure(std::vector<std::string>{cmd}, " ");
+			}
+			catch (std::exception &e)
+			{
+				helper.Warn("Could not parse input: " + std::string(e.what()));
+			}
+		}
+		/*! The function which appends the the new user provided value into the new old one
+		 * 	@param input The aggregator being modified
+		 * 	@param helper The helper module
+		 * 	@param cmd 	The user command
+		 */
+		template <class T>
+		void AppendKey(Aggregator<T> &input, ConsoleHelper &helper, std::string &cmd)
+		{
+			try
+			{
+				auto [key, val] = helper.VectorExtract(cmd);
+				if (!key.empty())
+				{
+					auto old = input.GetString(key);
+					if (!old)
+					{
+						helper.Warn("Could not extract current value of " + key);
+						return;
+					}
+					std::string oldStr = old.value();
+					if (oldStr.back() == ']')
+					{
+						oldStr = oldStr.substr(1, oldStr.size() - 2);
+					}
+					input.Configure(std::vector<std::string>{key + " " + oldStr + ", " + val}, " ");
+				}
+			}
+			catch (std::exception &e)
+			{
+				helper.Warn("Could not parse input: " + std::string(e.what()));
+			}
+		}
+		/*! The function which removes a single chosen element from the user chosen vector
+		 * 	@param input The aggregator being modified
+		 * 	@param helper The helper module
+		 * 	@param cmd 	The user command
+		 */
+		template <class T>
+		void RemoveKey(Aggregator<T> &input, ConsoleHelper &helper, std::string &cmd)
+		{
+			try
+			{
+				auto [key, val] = helper.VectorExtract(cmd);
+				if (!key.empty())
+				{
+					auto old = input.GetString(key);
+					if (!old)
+					{
+						helper.Warn("Could not extract current value of " + key);
+						return;
+					}
+					std::string oldStr = old.value();
+					if (oldStr.back() == ']')
+					{
+						oldStr = oldStr.substr(1, oldStr.size() - 2);
+					}
+					auto newVec = helper.ConstructReducedVector(oldStr, val);
+
+					if (!newVec.empty())
+					{
+						input.Configure(std::vector<std::string>{key + " " + newVec}, " ");
+					}
+				}
 			}
 			catch (std::exception &e)
 			{
@@ -141,6 +221,14 @@ namespace JSL::Interface
 			else if (tokens.Command == helper.SetString)
 			{
 				internal::SetKey(aggregator, helper, tokens.Argument);
+			}
+			else if (tokens.Command == helper.AddString)
+			{
+				internal::AppendKey(aggregator, helper, tokens.Argument);
+			}
+			else if (tokens.Command == helper.RemoveString)
+			{
+				internal::RemoveKey(aggregator, helper, tokens.Argument);
 			}
 			else if (tokens.Command == helper.ShowString)
 			{
