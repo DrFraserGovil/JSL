@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [3.4.0] 2026-10-13
+
+### Added
+
+* Made it easier to check if an Interface key actually exists
+    * GetContext added as a member to all Interface::Aggregator instances
+    * Contains added as a function to the ContextMap object 
+
+* Added an interactive 'Console Interface' for updating settings on-the-fly
+* Modified the help menu to accommodate the new console 
 
 
 ## [3.3.4] 2026-09-03

@@ -98,29 +98,34 @@ namespace JSL::Interface
 			return ScanForString(key);
 		}
 
-		/*!	Displays a detailed help message including documentation for all member variables, then calls exit(0);
+		/*!	Displays a detailed help message including documentation for all member variables
 		 * @details Automatically activated whenever "-h", "-help" or the "help" command are passed into the CommandLine
+		 * @param isConsole Set to true when being printed from the console module (rather than the command line). Changes the appearance to match a 'live' view, rather than a 'default' view.
 		 */
-		void Help()
+		void Help(bool isConsole = false)
 			requires HasFieldList<Derived>
 		{
 			size_t maxLWidth = 0;
 			size_t maxMWidth = 0;
 			CheckInitialised();
 			internal::HelpGroup help(Name, &maxLWidth, &maxMWidth);
-			bool spoof = false;
-			std::string spoofstring = "";
-			HelpData.Commands["help"] = "Activates the help display, then exits (equivalent to -h)";
-			Field<bool> helpfield{spoof, "(Inbuilt)", {"h", "help"}, false, "If true, shows the help screen, then quits"};
-			Field<std::string> helpconfig{spoofstring, "(Inbuilt)", {"config"}, "-none-", "If a file is passed to this argument, it is used to configure the remaining parameters, at a lower priority than values set from the command line"};
-			Field<std::string> helpconfigdelim(spoofstring, "(Inbuilt)", {"config-delim"}, "' '", "This value is used to determine the delimiter used to separate key-value pairs in config files.");
-			help.AddField(helpfield);
-			help.AddField(helpconfig);
-			help.AddField(helpconfigdelim);
-			HelpData.CallingName = CapturedName;
-			help.AddCommands(HelpData.Commands);
 
-			Help(help);
+			if (!isConsole)
+			{
+				bool spoof = false;
+				std::string spoofstring = "";
+				HelpData.Commands["help"] = "Activates the help display, then exits (equivalent to -h)";
+				Field<bool> helpfield{spoof, "(Inbuilt)", {"h", "help"}, false, "If true, shows the help screen, then quits"};
+				Field<std::string> helpconfig{spoofstring, "(Inbuilt)", {"config"}, "-none-", "If a file is passed to this argument, it is used to configure the remaining parameters, at a lower priority than values set from the command line"};
+				Field<std::string> helpconfigdelim(spoofstring, "(Inbuilt)", {"config-delim"}, "' '", "This value is used to determine the delimiter used to separate key-value pairs in config files.");
+				help.AddField(helpfield, isConsole);
+				help.AddField(helpconfig, isConsole);
+				help.AddField(helpconfigdelim, isConsole);
+				help.AddCommands(HelpData.Commands);
+				HelpData.CallingName = CapturedName;
+			}
+
+			Help(help, isConsole);
 			help.Print(HelpData);
 		}
 
@@ -140,6 +145,13 @@ namespace JSL::Interface
 			std::ostringstream os;
 			Export(os, excludeDefaults);
 			return os.str();
+		}
+
+		//! Gets a copy of the current key-context
+		//! @returns A copy of the internal member Map
+		ContextMap GetContext()
+		{
+			return Map;
 		}
 		template <class OtherDerived>
 		friend class Aggregator;
@@ -238,7 +250,8 @@ namespace JSL::Interface
 
 		//! The internal help function, which populates the HelGroup held by the main object
 		//! @param help A storage and formatting device
-		void Help(internal::HelpGroup &help)
+		//! @param isConsole Changes if the display is for the 'live console' view (true) or the 'default CLI view' (false)
+		void Help(internal::HelpGroup &help, bool isConsole)
 		{
 
 			static_cast<Derived *>(this)->FieldList([&](auto &&field) {
@@ -249,11 +262,11 @@ namespace JSL::Interface
 				if constexpr (HasFieldList<E>)
 				{
 					auto &nested = help.NestGroup(field.Name);
-					field.Help(nested); // recurse
+					field.Help(nested, isConsole); // recurse
 				}
 				else
 				{
-					help.AddField(field);
+					help.AddField(field, isConsole);
 				}
 			});
 		}

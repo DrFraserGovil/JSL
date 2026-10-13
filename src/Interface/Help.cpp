@@ -93,17 +93,19 @@ namespace JSL::Interface::internal
 		return out;
 	}
 
-	void HelpGroup::Format(std::string name, std::string type, std::string defaultValue, std::string helpmsg, std::vector<std::string> &aliases)
+	void HelpGroup::Format(std::string name, std::string type, std::string defaultValue, std::string helpmsg, std::vector<std::string> &aliases, std::string valueString, bool useDashes)
 	{
-		auto left = "-" + aliases[0];
+		std::string dash = useDashes ? "-" : "";
+
+		auto left = dash + aliases[0];
 		for (size_t i = 1; i < aliases.size(); ++i)
 		{
-			left += ", -" + aliases[i];
+			left += ", " + dash + aliases[i];
 		}
 		auto mid_text = Display::Colour(80, 155, 185) + std::string(name) + Display::ResetAll() + "\n<" + type + ">";
 
 		std::string right_text(helpmsg);
-		right_text += "\n" + (std::string)Display::Italics() + Display::Colour(50, 50, 50) + "[Default: " + (std::string)defaultValue + "]" + Display::ResetAll();
+		right_text += "\n" + (std::string)Display::Italics() + Display::Colour(70, 70, 70) + "[" + valueString + ": " + (std::string)defaultValue + "]" + Display::ResetAll();
 
 		Fields.push_back({left, mid_text, right_text});
 		size_t ms = std::max(2 + type.size(), name.size());
