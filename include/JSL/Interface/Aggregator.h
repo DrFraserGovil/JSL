@@ -51,6 +51,12 @@ namespace JSL::Interface
 			return Commands;
 		}
 
+		//! An alias for 'Reset' that indicates that it also does the initialisation
+		void DefaultInitialise()
+		{
+			Reset();
+		}
+
 		/*!	The 'activation function' which reads from the program input and any config files, and hten automatically parses the output into the typed member variables
 		 * @param argc The number of arguments to pass to the command line
 		 * @param argv The argument array
@@ -88,6 +94,12 @@ namespace JSL::Interface
 					field.Value = field.Default;
 				}
 			});
+
+			if (!Initialised)
+			{
+				BuildContext();
+				Initialised = true;
+			}
 		}
 		//! Searches for a value matching the key, and if present, returns the string representation of its current value
 		//! @param key A usual aggregator alias key
@@ -168,9 +180,7 @@ namespace JSL::Interface
 		void CheckInitialised()
 		{
 			if (Initialised) return;
-			Reset();
-			BuildContext();
-			Initialised = true;
+			Reset(); // reset checks initialisation status
 		}
 
 		//! Constructs the ContextMap from the FieldList
