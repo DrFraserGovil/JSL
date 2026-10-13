@@ -62,11 +62,19 @@ namespace JSL::Interface
 			/*! @brief Stringifies & formats a Field from a FieldList for display purposes
 				@tparam The underlying type of the field
 				@param field An object extracted from a FieldList in the Aggregator
+				@param isLive Prefaces aliases with "-" if true
 			 */
 			template <typename T>
-			void AddField(Field<T> &field)
+			void AddField(Field<T> &field, bool isLive)
 			{
-				Format(field.Name, TypeString(typeid(T)), String::makeFrom(field.Default), field.Help, field.Aliases);
+				if (isLive)
+				{
+					Format(field.Name, TypeString(typeid(T)), String::makeFrom(field.Value), field.Help, field.Aliases, "Value", false);
+				}
+				else
+				{
+					Format(field.Name, TypeString(typeid(T)), String::makeFrom(field.Default), field.Help, field.Aliases, "Default", true);
+				}
 			}
 			/*! @brief Register a list of commands for display
 				@param cmds A map of commands and their documentation
@@ -111,8 +119,9 @@ namespace JSL::Interface
 				@param defaultValue A stringified representation of the default value assigned to the field
 				@param helpmsg The documentation assigned to this field
 				@param aliases A list of aliases unique to the field
+				@param useDashes If true, prefaces aliases with "-"
 			 */
-			void Format(std::string name, std::string type, std::string defaultValue, std::string helpmsg, std::vector<std::string> &aliases);
+			void Format(std::string name, std::string type, std::string defaultValue, std::string helpmsg, std::vector<std::string> &aliases, std::string valueString, bool useDashes);
 
 			/*! Converts typeid(T) into a non-garbled type representaion for common types
 				@param info The type-info of a variable

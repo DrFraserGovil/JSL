@@ -57,6 +57,12 @@ namespace JSL::Interface
 		*/
 		std::pair<std::string, KeyType> GetCanonical(const std::string &key);
 
+		/*! @brief Detects if a key is a valid alias
+		 *	@param key A potential key to be tested
+		 *	@returns True if the key is in the regsitry, otherwise false
+		 */
+		bool Contains(const std::string &key);
+
 		std::vector<std::string> GetClusteredKeys(const std::string &key);
 		/*! Sets the ResetState flag for the associated alias to true
 			@details Has no effect if in 'dumb mode'

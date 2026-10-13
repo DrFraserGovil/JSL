@@ -107,6 +107,11 @@ namespace JSL::Interface
 			return {Registry[id].Aliases[0], Registry[id].ParseType}; // we require Aliases.size() > 0 at construction
 		}
 	}
+	bool ContextMap::Contains(const std::string &key)
+	{
+		return (AliasMap.contains(key));
+	}
+
 	int ContextMap::GetContextID(const std::string &key)
 	{
 		if (!Initialised) { return -1; }
