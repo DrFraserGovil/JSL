@@ -9,6 +9,7 @@
 */
 #define JSL_ACTIVE // define a preprocessor variable which allows other libraries to conditionally install off it
 
+#include <JSL/Async.h>
 #include <JSL/Concepts.h>
 #include <JSL/Display.h>
 #include <JSL/IO.h>
