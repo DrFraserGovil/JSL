@@ -1,5 +1,8 @@
 #if defined(_WIN32)
 #define NOMINMAX
+#ifdef max
+#undef max
+#endif
 #endif
 #include "../test_utils/catch_extended.h"
 #include "catch2/matchers/catch_matchers_string.hpp"
