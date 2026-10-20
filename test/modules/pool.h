@@ -1,8 +1,15 @@
+#if defined(_WIN32)
+#define NOMINMAX
+#ifdef max
+#undef max
+#endif
+#endif
 #include "../test_utils/catch_extended.h"
 #include "catch2/matchers/catch_matchers_string.hpp"
 #include <JSL/Async/ParallelPool.h>
 #include <catch2/catch_test_macros.hpp>
 
+#include <algorithm>
 #include <atomic>
 #include <chrono>
 #include <numeric>

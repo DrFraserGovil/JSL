@@ -1,4 +1,4 @@
-TARGET = ["/home/jfg/CodeProjects/JSL/include/", "/home/jfg/CodeProjects/JSL/src/"]
+TARGET = ["/home/frasergj/docs/Code/JSL/include/", "/home/frasergj/docs/Code/JSL/src/"]
 SHOW_SOURCE = False
 INCLUDE_SOURCE = True
 DELETE_DOT = False
