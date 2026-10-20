@@ -8,6 +8,10 @@
 #include <numeric>
 #include <vector>
 
+#if defined(_WIN32)
+#define NOMINMAX
+#endif
+
 using namespace JSL::Async;
 using namespace std::chrono_literals;
 
