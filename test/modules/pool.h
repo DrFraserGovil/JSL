@@ -1,3 +1,6 @@
+#if defined(_WIN32)
+#define NOMINMAX
+#endif
 #include "../test_utils/catch_extended.h"
 #include "catch2/matchers/catch_matchers_string.hpp"
 #include <JSL/Async/ParallelPool.h>
@@ -8,9 +11,6 @@
 #include <chrono>
 #include <numeric>
 #include <vector>
-#if defined(_WIN32)
-#define NOMINMAX
-#endif
 
 using namespace JSL::Async;
 using namespace std::chrono_literals;
