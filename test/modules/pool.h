@@ -3,11 +3,11 @@
 #include <JSL/Async/ParallelPool.h>
 #include <catch2/catch_test_macros.hpp>
 
+#include <algorithm>
 #include <atomic>
 #include <chrono>
 #include <numeric>
 #include <vector>
-
 #if defined(_WIN32)
 #define NOMINMAX
 #endif
