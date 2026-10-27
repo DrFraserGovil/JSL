@@ -5,6 +5,11 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.5.0] 2026-10-27
+
+* Added a new early-stopping algorithm to forLineIn and getLines which allow large files to be scanned
+* The documentation and testing routines have been updated to account for these new functions
+
 ## [3.4.2] 2026-10-20
 
 * Updated the documentation graphics 

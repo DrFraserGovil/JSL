@@ -24,8 +24,14 @@ TEST_CASE("Reads files correctly", "[file][io][input]")
 	REQUIRE(linesRead == linesWritten);
 }
 
-void GenerateVectorFile(MockFile &file, std::string delimiter, int linesWritten)
+void GenerateVectorFile(MockFile &file, std::string delimiter, int linesWritten, int blankLines = 0)
 {
+	std::vector<char> blanks = {'\v', '\t', ' ', '\f', '\r'};
+	for (int i = 0; i < blankLines; ++i)
+	{
+		file << blanks[i % blanks.size()];
+		file << "\n";
+	}
 	for (int i = 0; i < linesWritten; ++i)
 	{
 		file << i;
@@ -92,6 +98,50 @@ TEST_CASE("Reads vector input correctly", "[file][io][input]")
 		{
 			REQUIRE(vec[i] == i);
 		}
+	}
+}
+
+TEST_CASE("Early Stopping In File Scanning", "[files][io]")
+{
+	MockFile F;
+	int linesWritten = 100;
+	SECTION("Simple Early Stop")
+	{
+		int i = 0;
+		bool earlyStop = false;
+		GenerateVectorFile(F, ",", linesWritten);
+		JSL::IO::forLineIn(F.Path, [&](auto line) { i += 1;
+				earlyStop = i == 10; }, earlyStop);
+
+		REQUIRE(i == 10);
+	}
+	SECTION("Simple Get File")
+	{
+		GenerateVectorFile(F, ",", linesWritten);
+		auto lines = getFileLines(F.Path, 10, true);
+		REQUIRE(lines.size() == 10);
+	}
+	SECTION("Get File Exceeding File Size")
+	{
+		GenerateVectorFile(F, ",", 10);
+		auto lines = getFileLines(F.Path, 15, true);
+		REQUIRE(lines.size() == 10);
+	}
+	SECTION("Get File Ignoring Blank Lines")
+	{
+		size_t fullLines = 10;
+		size_t blankLines = 10;
+		size_t allLines = fullLines + blankLines;
+		GenerateVectorFile(F, ",", fullLines, blankLines);
+		auto lines = getFileLines(F.Path, allLines, true);
+		REQUIRE(lines.size() == allLines);
+
+		auto filtered = getFileLines(F.Path, allLines, false);
+		REQUIRE(filtered.size() == blankLines);
+
+		auto first = JSL::IO::getFileLines(F.Path, 1, false);
+		REQUIRE(first.size() == 1);
+		REQUIRE(first[0] == "0,test,gumbo!");
 	}
 }
 

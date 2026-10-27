@@ -15,7 +15,7 @@ doc:
 	@cd docs && make html
 
 doc-full:
-	@cd docs && ./compileDocs
+	@cd docs && make all
 
 graph:
 	@cd docs/visualiser && ./visualise
