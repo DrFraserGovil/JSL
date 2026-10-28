@@ -31,6 +31,9 @@ namespace JSL::Interface
 		//! The string which will be used as the show-help command
 		std::string HelpString = "help";
 
+		//! The string which is inserted before each input line
+		std::string ConsoleString = ">> ";
+
 		//! The string output when the user enters a non-blank command other that set, show etc.
 		std::string UnrecognisedCommand = "Unrecognised Command";
 
