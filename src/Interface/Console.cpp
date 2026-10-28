@@ -171,7 +171,7 @@ namespace JSL::Interface
 
 	void ConsoleHelper::LoopPrompt()
 	{
-		std::cout << ">>  " << CmdColor << std::flush;
+		std::cout << ConsoleString << CmdColor << std::flush;
 	}
 
 } // namespace JSL::Interface
