@@ -125,7 +125,8 @@ TEST_CASE("Panopticon", "[watcher][panopticon]")
 
 	SECTION("Input Can Be Paused From a Callback, and Resumed")
 	{
-		// while paused, the callback reads the standard input itself: it must get the line, rather than the Watcher::Input
+		// while paused, the callback reads the standard input itself: it must get the line, rather than the Watcher::Input (on
+		// POSIX through std::cin, as a Console would)
 		StdinSplicer splicer;
 		std::atomic<bool> done{false}, sent{false};
 		Watcher::Panopticon panopticon;
@@ -138,7 +139,7 @@ TEST_CASE("Panopticon", "[watcher][panopticon]")
 				panopticon.PauseInput();
 				panopticon.PauseInput(); // a second pause does nothing
 				splicer.Write("direct\n");
-				std::getline(std::cin, direct);
+				direct = ReadStdinLine();
 				panopticon.ResumeInput();
 				panopticon.ResumeInput(); // nor does a second resume
 				splicer.Write("after\n");

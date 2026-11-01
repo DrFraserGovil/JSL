@@ -5,6 +5,7 @@
 #include <catch2/catch_test_macros.hpp>
 #include <chrono>
 #include <filesystem>
+#include <iostream>
 #include <condition_variable>
 #include <vector>
 using namespace JSL::Async;
@@ -67,6 +68,24 @@ namespace
 		int OriginalFd{-1}, ReadFd{-1}, WriteFd{-1};
 #endif
 	};
+
+	// Reads one line from the process's standard input directly, as a program pausing the Input watcher would. On Windows the
+	// StdinSplicer swaps only the Win32 stdin handle (SetStdHandle), which std::cin's C runtime never re-reads, so the line is read
+	// from that handle, as the watcher itself does
+	std::string ReadStdinLine()
+	{
+		std::string line;
+#if defined(_WIN32) || defined(_WIN64)
+		HANDLE input = GetStdHandle(STD_INPUT_HANDLE);
+		char c = 0;
+		DWORD got = 0;
+		while (ReadFile(input, &c, 1, &got, nullptr) && got == 1 && c != '\n') line += c;
+		if (!line.empty() && line.back() == '\r') line.pop_back();
+#else
+		std::getline(std::cin, line);
+#endif
+		return line;
+	}
 
 	// Accumulates every line delivered, so a test can wait for a specific
 	// line/count without caring about exact delivery timing.
