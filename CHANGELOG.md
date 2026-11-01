@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [3.6.0] 2026-11-01
+
+* Added `Panopticon::PauseInput()` and `ResumeInput()`, so a callback can read the standard input itself (e.g. run a Console) without the input watcher racing it
+* Fixed `Watcher::Input` opening a new shutdown pipe on every restart, leaking two file descriptors each time it was stopped and started
+
 ## [3.5.1] 2026-10-28
 
 * Added an option to the Console to allow prompts to vary

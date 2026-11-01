@@ -188,6 +188,22 @@ namespace JSL::Async::Watcher
 		}
 		AwaitingInstruction.notify_one();
 	}
+	void Panopticon::PauseInput()
+	{
+		if (!InputTracker.Initialised)
+		{
+			JSL::internal::LibraryError("No input watcher", JSL_LOCATION) << "Cannot pause the input of a Panopticon with no input callback";
+		}
+		if (InputPaused || !IsRunning) return;
+		InputTracker.Stop(); // joins the worker thread, so nothing reads the standard input once this returns
+		InputPaused = true;
+	}
+	void Panopticon::ResumeInput()
+	{
+		if (!InputPaused) return;
+		InputPaused = false;
+		if (IsRunning) InputTracker.Start();
+	}
 	void Panopticon::SetDebounceTime(size_t milliseconds)
 	{
 		DebounceMs = milliseconds;
@@ -199,6 +215,7 @@ namespace JSL::Async::Watcher
 
 	void Panopticon::Shutdown()
 	{
+		InputPaused = false;
 		if (InputTracker.Initialised)
 		{
 			InputTracker.Stop();

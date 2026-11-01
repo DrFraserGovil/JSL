@@ -4,6 +4,7 @@
 #include <JSL/Log.h>
 #include <catch2/catch_test_macros.hpp>
 #include <chrono>
+#include <filesystem>
 #include <condition_variable>
 #include <vector>
 using namespace JSL::Async;
@@ -169,6 +170,28 @@ TEST_CASE("Input Watcher", "[watcher][input]")
 		REQUIRE(collector.Lines[0] == "after restart");
 		REQUIRE_NOTHROW(Watcher.Stop());
 	}
+
+#if !defined(_WIN32) && !defined(_WIN64)
+	SECTION("Restarting Does Not Leak File Descriptors")
+	{
+		// each Start() used to open a fresh shutdown pipe, closed only by the destructor
+		auto openDescriptors = [] {
+			std::filesystem::path folder = std::filesystem::exists("/proc/self/fd") ? "/proc/self/fd" : "/dev/fd";
+			return std::distance(std::filesystem::directory_iterator(folder), std::filesystem::directory_iterator{});
+		};
+		StdinSplicer splicer;
+		Watcher::Input Watcher([](auto) {});
+		REQUIRE_NOTHROW(Watcher.Start());
+		REQUIRE_NOTHROW(Watcher.Stop());
+		auto before = openDescriptors();
+		for (int i = 0; i < 50; ++i)
+		{
+			REQUIRE_NOTHROW(Watcher.Start());
+			REQUIRE_NOTHROW(Watcher.Stop());
+		}
+		REQUIRE(openDescriptors() == before);
+	}
+#endif
 
 	SECTION("Stop Does Not Hang With No Input Pending")
 	{
