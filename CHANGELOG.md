@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [3.6.1] 2026-11-01
+
+* Fixed the Panopticon's pause-input test on Windows: the test's stdin redirection (`SetStdHandle`) is invisible to `std::cin`, so the test now reads the redirected stdin through the Win32 handle there (the input watcher's own route), and through `std::cin` elsewhere. The library itself is unchanged
+
 ## [3.6.0] 2026-11-01
 
 * Added `Panopticon::PauseInput()` and `ResumeInput()`, so a callback can read the standard input itself (e.g. run a Console) without the input watcher racing it
