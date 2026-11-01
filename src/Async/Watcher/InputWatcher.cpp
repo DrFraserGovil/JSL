@@ -41,8 +41,8 @@ namespace JSL::Async::Watcher
 		if (!Initialised) return;
 		Stop();
 #ifndef WINMODE
-		::close(ShutdownPipe[0]);
-		::close(ShutdownPipe[1]);
+		if (ShutdownPipe[0] >= 0) ::close(ShutdownPipe[0]);
+		if (ShutdownPipe[1] >= 0) ::close(ShutdownPipe[1]);
 #endif
 	}
 	void Input::Start()
@@ -54,14 +54,19 @@ namespace JSL::Async::Watcher
 		if (Running.exchange(true)) return; // if already running, return, otherwise continue
 
 #ifndef WINMODE
-		if (::pipe(ShutdownPipe) == 0) // opens a new pipe, and saves the values into ShutdownPipe
+		// the pipe is opened by the first Start(), and reused by later ones (Stop() drains it), so a restart doesn't leak descriptors
+		if (ShutdownPipe[0] < 0)
 		{
-			::fcntl(ShutdownPipe[0], F_SETFL, O_NONBLOCK);
-			::fcntl(ShutdownPipe[1], F_SETFL, O_NONBLOCK);
-		}
-		else
-		{
-			JSL::internal::LibraryError("Invalid pipe", JSL_LOCATION) << "Could not create a shutdown pipe for the InputWatcher";
+			if (::pipe(ShutdownPipe) == 0) // opens a new pipe, and saves the values into ShutdownPipe
+			{
+				::fcntl(ShutdownPipe[0], F_SETFL, O_NONBLOCK);
+				::fcntl(ShutdownPipe[1], F_SETFL, O_NONBLOCK);
+			}
+			else
+			{
+				Running = false; // so a later Start() can try again
+				JSL::internal::LibraryError("Invalid pipe", JSL_LOCATION) << "Could not create a shutdown pipe for the InputWatcher";
+			}
 		}
 #else
 		ThreadExited.store(false, std::memory_order_release);

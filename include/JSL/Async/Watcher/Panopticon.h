@@ -130,6 +130,20 @@ namespace JSL::Async::Watcher
 		//! @details This does not wait for the worker threads of the Watchers to sync up; the Synchronisation occurs during Shutdown(), which is a side effect of this function, but not explicitly called.
 		void Stop();
 
+		/*! @brief Stops the Watcher::Input reading the standard input, until ResumeInput() is called
+			@details Lets a callback read the standard input itself (e.g. with std::getline(std::cin, ...), or an interactive Console) without
+			the Watcher::Input racing it for each line. Meant to be called from a callback, on the Panopticon's own thread; other watchers carry
+			on, and their instructions are processed once the callback returns. Lines read before the pause are still delivered. Pausing
+			when already paused (or before Start()) does nothing, and a pause still in place when the Panopticon stops is harmless
+			@throws std::runtime_error If no input callback has been registered
+		*/
+		void PauseInput();
+
+		/*! @brief Lets the Watcher::Input read the standard input again, after PauseInput()
+			@details Does nothing if input isn't paused, or if the Panopticon isn't running (Start() starts the input as usual)
+		*/
+		void ResumeInput();
+
 		/*! @brief Sets the debounce scale for all file watchers
 		 *@ param milliseconds The debounce time
 		 */
@@ -153,6 +167,9 @@ namespace JSL::Async::Watcher
 
 		//! The Watcher::Input module -- initialised into a blank state (and therefore unused) until a callback is provided
 		Watcher::Input InputTracker{};
+
+		//! True between PauseInput() and ResumeInput(), while the InputTracker has been stopped on request
+		bool InputPaused = false;
 
 		//! The callback applied to instructions recieved from the InputTracker module
 		strCallBack cinCallback;
